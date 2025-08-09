@@ -1,0 +1,70 @@
+{
+  "nav": {
+    "about": "About",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Get More Customers",
+    "subtitle": "Without the Headache",
+    "description": "Professional SEO services, Google Ads management, and website design for small businesses. We handle your online marketing so you can focus on running your business.",
+    "cta": {
+      "start": "Get Started Today",
+      "view": "See How It Works"
+    }
+  },
+  "about": {
+    "title": "Why Small Businesses Choose Us",
+    "subtitle": "We understand you're busy running your business. That's why we make everything simple.",
+    "features": {
+      "design": {
+        "title": "Done For You",
+        "description": "No need to learn complicated tools. We handle everything from start to finish."
+      },
+      "development": {
+        "title": "Results in 30 Days",
+        "description": "See real customers coming to your business within the first month."
+      },
+      "performance": {
+        "title": "Affordable Pricing",
+        "description": "Plans designed for small business budgets. No hidden fees, no surprises."
+      },
+      "mobile": {
+        "title": "24/7 Support",
+        "description": "Questions? We're here to help. Real people, not robots."
+      }
+    }
+  },
+  "services": {
+    "title": "Digital Marketing Services for Small Business",
+    "subtitle": "SEO, Google Ads, and Website Design - Everything you need to succeed online",
+    "seo": {
+      "title": "Get Found on Google",
+      "description": "When people search for businesses like yours, we make sure they find YOU first. No confusing tech talk - just results.",
+      "features": ["Show up #1 when customers search", "Get 3x more website visitors", "Beat your competitors on Google", "Simple monthly progress reports"],
+      "benefit": "Customers find you, not your competitors"
+    },
+    "googleAds": {
+      "title": "Google & Yelp Ads",
+      "description": "Put your business in front of customers on Google and Yelp right when they're looking for what you offer.",
+      "features": ["Instant visibility on Google & Yelp", "Only pay when people click", "Target your ideal customers", "Full campaign management"],
+      "benefit": "Get customers today, not tomorrow"
+    },
+    "webDesign": {
+      "title": "Website Design & Development",
+      "description": "Get a professional website that turns visitors into customers. Beautiful, fast, and works perfectly on phones.",
+      "features": ["Custom design for your brand", "Works great on all devices", "Easy for customers to use", "Ready in 30 days or less"],
+      "benefit": "A website that actually brings in business"
+    }
+  },
+  "contact": {
+    "title": "Let's Work Together",
+    "subtitle": "Ready to bring your ideas to life? Get in touch and let's create something amazing."
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
+  }
+}
