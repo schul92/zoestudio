@@ -3,12 +3,10 @@
 import { useTranslation } from '@/hooks/useTranslation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useEffect } from 'react'
-import WorkflowModal from './sections/WorkflowModal'
 
 export default function AnimatedHero({ locale = 'en' }: { locale?: string }) {
   const { t } = useTranslation(locale)
   const [showContent, setShowContent] = useState(false)
-  const [isWorkflowOpen, setIsWorkflowOpen] = useState(false)
 
   useEffect(() => {
     const timer = setTimeout(() => setShowContent(true), 500)
@@ -216,25 +214,17 @@ export default function AnimatedHero({ locale = 'en' }: { locale?: string }) {
                   boxShadow: "15px 15px 0px 0px rgba(0,0,0,1)",
                 }}
                 whileTap={{ scale: 0.95 }}
+                onClick={() => {
+                  const servicesSection = document.getElementById('services')
+                  if (servicesSection) {
+                    servicesSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                  }
+                }}
                 className="group relative bg-black text-white px-10 py-5 rounded-xl text-lg font-bold shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] transition-all overflow-hidden"
               >
                 <span className="absolute inset-0 bg-white transform -skew-x-12 -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out" />
                 <span className="relative z-10 group-hover:text-black transition-colors duration-300">
                   {t.hero.cta.start}
-                </span>
-              </motion.button>
-              
-              <motion.button 
-                whileHover={{ 
-                  scale: 1.05,
-                }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => setIsWorkflowOpen(true)}
-                className="group relative border-2 border-black px-10 py-5 rounded-xl text-lg font-bold transition-all overflow-hidden"
-              >
-                <span className="absolute inset-0 bg-black transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
-                <span className="relative z-10 text-black group-hover:text-white transition-colors duration-300">
-                  {t.hero.cta.view}
                 </span>
               </motion.button>
             </motion.div>
@@ -272,13 +262,6 @@ export default function AnimatedHero({ locale = 'en' }: { locale?: string }) {
           />
         </svg>
       </motion.div>
-      
-      {/* Workflow Modal */}
-      <WorkflowModal 
-        isOpen={isWorkflowOpen} 
-        onClose={() => setIsWorkflowOpen(false)}
-        locale={locale}
-      />
     </section>
   )
 }

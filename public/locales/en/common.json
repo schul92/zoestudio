@@ -56,6 +56,12 @@
       "description": "Get a professional website that turns visitors into customers. Beautiful, fast, and works perfectly on phones.",
       "features": ["Custom design for your brand", "Works great on all devices", "Easy for customers to use", "Ready in 30 days or less"],
       "benefit": "A website that actually brings in business"
+    },
+    "llc": {
+      "title": "LLC Formation & Business Setup",
+      "description": "Start your business the right way. We'll help you form your LLC in NJ, get your EIN, and connect you with Chase banking experts.",
+      "features": ["Complete LLC formation in NJ", "EIN (Tax ID) registration", "Free Chase banking consultation", "Business credit card guidance"],
+      "benefit": "Start your business with confidence"
     }
   },
   "contact": {

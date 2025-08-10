@@ -2,13 +2,18 @@
 
 import { useTranslation } from '@/hooks/useTranslation'
 import { motion } from 'framer-motion'
+import { useState } from 'react'
 import ScrollAnimation from '@/components/ui/ScrollAnimation'
+import { useServices } from '@/context/ServiceContext'
 
 export default function Services({ locale = 'en' }: { locale?: string }) {
   const { t } = useTranslation(locale)
+  const { addService, removeService, isServiceSelected, selectedServices } = useServices()
+  const [showTooltip, setShowTooltip] = useState(false)
   
   const services = [
     {
+      id: 'seo',
       title: t.services.seo.title,
       description: t.services.seo.description,
       features: t.services.seo.features,
@@ -77,6 +82,7 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
       )
     },
     {
+      id: 'googleads',
       title: t.services.googleAds.title,
       description: t.services.googleAds.description,
       features: t.services.googleAds.features,
@@ -179,6 +185,7 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
       )
     },
     {
+      id: 'webdesign',
       title: t.services.webDesign.title,
       description: t.services.webDesign.description,
       features: t.services.webDesign.features,
@@ -224,6 +231,92 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
           />
         </svg>
       )
+    },
+    {
+      id: 'llc',
+      title: t.services.llc.title,
+      description: t.services.llc.description,
+      features: t.services.llc.features,
+      benefit: t.services.llc.benefit,
+      icon: (
+        <svg viewBox="0 0 100 100" fill="none" className="w-full h-full">
+          {/* LLC Formation & Business Setup Icon */}
+          
+          {/* Building/Office */}
+          <motion.g
+            animate={{ y: [0, -2, 0] }}
+            transition={{ duration: 3, repeat: Infinity }}
+          >
+            <rect x="30" y="35" width="40" height="40" rx="2" fill="white" stroke="black" strokeWidth="2"/>
+            <rect x="30" y="35" width="40" height="8" fill="#4285F4"/>
+            
+            {/* Windows */}
+            <rect x="36" y="48" width="8" height="8" fill="#E0E0E0"/>
+            <rect x="48" y="48" width="8" height="8" fill="#E0E0E0"/>
+            <rect x="60" y="48" width="8" height="8" fill="#E0E0E0"/>
+            <rect x="36" y="60" width="8" height="8" fill="#E0E0E0"/>
+            <rect x="48" y="60" width="8" height="8" fill="#E0E0E0"/>
+            <rect x="60" y="60" width="8" height="8" fill="#E0E0E0"/>
+            
+            {/* Door */}
+            <rect x="46" y="65" width="8" height="10" fill="#34A853"/>
+          </motion.g>
+          
+          {/* Document/Certificate */}
+          <motion.g
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 0.5, repeat: Infinity, repeatDelay: 3 }}
+          >
+            <rect x="15" y="20" width="25" height="30" rx="1" fill="white" stroke="black" strokeWidth="1.5"/>
+            <line x1="18" y1="26" x2="32" y2="26" stroke="#666" strokeWidth="1"/>
+            <line x1="18" y1="30" x2="32" y2="30" stroke="#666" strokeWidth="1"/>
+            <line x1="18" y1="34" x2="28" y2="34" stroke="#666" strokeWidth="1"/>
+            <text x="27.5" y="44" fontSize="6" fill="black" fontWeight="bold" textAnchor="middle">LLC</text>
+          </motion.g>
+          
+          {/* EIN Document */}
+          <motion.g
+            initial={{ opacity: 0, scale: 0 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.5, delay: 1, repeat: Infinity, repeatDelay: 3 }}
+          >
+            <rect x="60" y="20" width="25" height="30" rx="1" fill="white" stroke="black" strokeWidth="1.5"/>
+            <line x1="63" y1="26" x2="77" y2="26" stroke="#666" strokeWidth="1"/>
+            <line x1="63" y1="30" x2="77" y2="30" stroke="#666" strokeWidth="1"/>
+            <line x1="63" y1="34" x2="73" y2="34" stroke="#666" strokeWidth="1"/>
+            <text x="72.5" y="44" fontSize="6" fill="black" fontWeight="bold" textAnchor="middle">EIN</text>
+          </motion.g>
+          
+          {/* Chase Bank Card */}
+          <motion.g
+            animate={{ x: [0, 5, 0] }}
+            transition={{ duration: 2, repeat: Infinity, delay: 1.5 }}
+          >
+            <rect x="35" y="80" width="30" height="18" rx="2" fill="#0052CC" stroke="black" strokeWidth="1.5"/>
+            <rect x="37" y="85" width="12" height="8" rx="1" fill="#FFD700"/>
+            <circle cx="55" cy="89" r="5" fill="none" stroke="white" strokeWidth="1"/>
+            <circle cx="60" cy="89" r="5" fill="none" stroke="white" strokeWidth="1" opacity="0.7"/>
+            <text x="50" y="95" fontSize="4" fill="white" fontWeight="bold" textAnchor="middle">CHASE</text>
+          </motion.g>
+          
+          {/* Success Checkmark */}
+          <motion.g
+            initial={{ scale: 0 }}
+            animate={{ scale: [0, 1.2, 1] }}
+            transition={{ duration: 0.5, delay: 2, repeat: Infinity, repeatDelay: 3 }}
+          >
+            <circle cx="75" cy="60" r="8" fill="#34A853"/>
+            <motion.path
+              d="M70 60 L73 63 L80 56"
+              stroke="white" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"
+              initial={{ pathLength: 0 }}
+              animate={{ pathLength: 1 }}
+              transition={{ duration: 0.3, delay: 2.2, repeat: Infinity, repeatDelay: 3 }}
+            />
+          </motion.g>
+        </svg>
+      )
     }
   ]
 
@@ -242,13 +335,58 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
             <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-black to-gray-600 bg-clip-text text-transparent">
               {t.services.title}
             </h2>
-            <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto mb-8">
               {t.services.subtitle}
             </p>
+            
+            {/* Service Selection Guide */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5 }}
+              className="inline-flex items-center gap-8 bg-gradient-to-r from-blue-50 to-purple-50 px-8 py-4 rounded-full border-2 border-blue-200"
+            >
+              <div className="flex items-center gap-3">
+                <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold ${
+                  selectedServices.length > 0 ? 'bg-green-500 text-white' : 'bg-gray-300 text-gray-600'
+                }`}>
+                  {selectedServices.length > 0 ? '✓' : '1'}
+                </div>
+                <span className={`text-sm font-medium ${
+                  selectedServices.length > 0 ? 'text-green-600' : 'text-gray-700'
+                }`}>
+                  {locale === 'ko' ? '서비스 선택' : 'Select Services'}
+                </span>
+              </div>
+              
+              <div className="w-12 h-0.5 bg-gray-300"></div>
+              
+              <div className="flex items-center gap-3">
+                <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold ${
+                  selectedServices.length > 0 ? 'bg-blue-500 text-white animate-pulse' : 'bg-gray-300 text-gray-600'
+                }`}>
+                  2
+                </div>
+                <span className="text-sm font-medium text-gray-700">
+                  {locale === 'ko' ? '정보 입력' : 'Your Info'}
+                </span>
+              </div>
+              
+              <div className="w-12 h-0.5 bg-gray-300"></div>
+              
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-gray-300 text-gray-600 flex items-center justify-center font-bold">
+                  3
+                </div>
+                <span className="text-sm font-medium text-gray-700">
+                  {locale === 'ko' ? '상담 시작!' : 'Get Started!'}
+                </span>
+              </div>
+            </motion.div>
           </div>
         </ScrollAnimation>
 
-        <div className="grid lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
           {services.map((service, index) => (
             <motion.div
               key={index}
@@ -298,52 +436,56 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
                 
                 {/* Benefit */}
                 <div className="border-t-2 border-gray-200 pt-6">
-                  <p className="text-center font-semibold text-lg text-black">
+                  <p className="text-center font-semibold text-lg text-black mb-4">
                     ✨ {service.benefit}
                   </p>
+                  
+                  {/* Select/Deselect Button */}
+                  <motion.button
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => {
+                      if (isServiceSelected(service.id)) {
+                        removeService(service.id)
+                      } else {
+                        addService({
+                          id: service.id,
+                          title: service.title,
+                          description: service.description
+                        })
+                        // Show tooltip on first selection
+                        if (selectedServices.length === 0) {
+                          setShowTooltip(true)
+                          setTimeout(() => setShowTooltip(false), 5000)
+                        }
+                      }
+                    }}
+                    className={`relative w-full py-3 px-4 rounded-lg font-bold transition-all overflow-hidden ${
+                      isServiceSelected(service.id)
+                        ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white shadow-lg'
+                        : 'bg-black text-white hover:bg-gray-800'
+                    }`}
+                  >
+                    {isServiceSelected(service.id) && (
+                      <motion.div
+                        initial={{ x: '-100%' }}
+                        animate={{ x: '100%' }}
+                        transition={{ duration: 2, repeat: Infinity }}
+                        className="absolute inset-0 bg-white/20"
+                      />
+                    )}
+                    <span className="relative z-10">
+                      {isServiceSelected(service.id) 
+                        ? (locale === 'ko' ? '✓ 선택됨' : '✓ Selected')
+                        : (locale === 'ko' ? '+ 관심있어요' : '+ I\'m Interested')
+                      }
+                    </span>
+                  </motion.button>
                 </div>
               </div>
             </motion.div>
           ))}
         </div>
-
-        {/* CTA Section */}
-        <ScrollAnimation delay={0.5}>
-          <motion.div 
-            className="relative"
-            whileHover={{ scale: 1.02 }}
-            transition={{ duration: 0.3 }}
-          >
-            <div className="bg-black text-white rounded-3xl p-12 text-center shadow-[0_0_40px_rgba(0,0,0,0.3)]">
-              <h3 className="text-3xl md:text-4xl font-bold mb-4">
-                {locale === 'ko' ? '지금 시작하세요!' : 'Start Growing Today!'}
-              </h3>
-              <p className="text-xl mb-8 opacity-90 max-w-2xl mx-auto">
-                {locale === 'ko' 
-                  ? '무료 상담을 통해 귀하의 비즈니스에 맞는 최적의 솔루션을 찾아보세요'
-                  : 'Get a free consultation and discover the perfect solution for your business'
-                }
-              </p>
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="group relative bg-white text-black px-10 py-5 rounded-xl font-bold text-lg transition-all shadow-[5px_5px_0px_0px_rgba(255,255,255,0.3)] hover:shadow-[8px_8px_0px_0px_rgba(255,255,255,0.5)] overflow-hidden"
-              >
-                <span className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 transform translate-x-full group-hover:translate-x-0 transition-transform duration-500 ease-out" />
-                <span className="relative z-10 group-hover:text-white transition-colors duration-300 flex items-center gap-2">
-                  {locale === 'ko' ? '무료 상담 예약하기' : 'Book Free Consultation'}
-                  <motion.span
-                    className="inline-block"
-                    animate={{ x: [0, 5, 0] }}
-                    transition={{ duration: 1.5, repeat: Infinity }}
-                  >
-                    →
-                  </motion.span>
-                </span>
-              </motion.button>
-            </div>
-          </motion.div>
-        </ScrollAnimation>
       </div>
 
       <style jsx>{`
@@ -359,6 +501,90 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
           animation: spin-slow 10s linear infinite;
         }
       `}</style>
+      
+      {/* Floating Cart with Better Guidance */}
+      {selectedServices.length > 0 && (
+        <motion.div
+          initial={{ y: 100, opacity: 0 }}
+          animate={{ y: 0, opacity: 1 }}
+          exit={{ y: 100, opacity: 0 }}
+          className="fixed bottom-0 left-0 right-0 bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4 shadow-2xl z-40"
+        >
+          {/* First Selection Tooltip */}
+          {showTooltip && (
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: -70 }}
+              exit={{ opacity: 0, y: 20 }}
+              className="absolute right-8 bg-black text-white px-4 py-2 rounded-lg shadow-xl"
+            >
+              <div className="absolute bottom-[-8px] right-8 w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-t-[8px] border-t-black"></div>
+              <p className="text-sm font-medium">
+                {locale === 'ko' ? '👇 여기를 클릭하세요!' : '👇 Click here to continue!'}
+              </p>
+            </motion.div>
+          )}
+          
+          <div className="container mx-auto flex items-center justify-between max-w-6xl">
+            <div className="flex items-center gap-4">
+              <motion.div
+                animate={{ rotate: [0, 10, -10, 0] }}
+                transition={{ duration: 2, repeat: Infinity }}
+                className="text-2xl"
+              >
+                🎉
+              </motion.div>
+              <div>
+                <p className="font-bold text-lg">
+                  {locale === 'ko' 
+                    ? `${selectedServices.length}개 서비스 선택됨` 
+                    : `${selectedServices.length} ${selectedServices.length === 1 ? 'Service' : 'Services'} Selected`
+                  }
+                </p>
+                <p className="text-sm opacity-90">
+                  {locale === 'ko' 
+                    ? '준비되셨나요? 무료 상담을 신청하세요!' 
+                    : 'Ready to grow? Get your free consultation!'
+                  }
+                </p>
+              </div>
+            </div>
+            
+            <div className="flex items-center gap-3">
+              {/* Clear All Button */}
+              <button
+                onClick={() => {
+                  selectedServices.forEach(s => removeService(s.id))
+                }}
+                className="px-4 py-2 bg-white/20 rounded-lg text-white hover:bg-white/30 transition-colors text-sm"
+              >
+                {locale === 'ko' ? '초기화' : 'Clear'}
+              </button>
+              
+              {/* Primary CTA */}
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                onClick={() => {
+                  const contactSection = document.getElementById('contact')
+                  if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                  }
+                }}
+                className="px-6 py-3 bg-white text-purple-600 rounded-lg font-bold shadow-lg hover:shadow-xl transition-all flex items-center gap-2"
+              >
+                <span>{locale === 'ko' ? '다음 단계로' : 'Continue'}</span>
+                <motion.span
+                  animate={{ x: [0, 5, 0] }}
+                  transition={{ duration: 1.5, repeat: Infinity }}
+                >
+                  →
+                </motion.span>
+              </motion.button>
+            </div>
+          </div>
+        </motion.div>
+      )}
     </section>
   )
 }

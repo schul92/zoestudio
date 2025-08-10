@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import '../globals.css'
 import { notFound } from 'next/navigation'
 import { seoConfig, structuredData } from '@/config/seo'
+import { ServiceProvider } from '@/context/ServiceContext'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -110,7 +111,11 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={inter.className} style={{ position: 'relative' }}>{children}</body>
+      <body className={inter.className} style={{ position: 'relative' }}>
+        <ServiceProvider>
+          {children}
+        </ServiceProvider>
+      </body>
     </html>
   )
 }
