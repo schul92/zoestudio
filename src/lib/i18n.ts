@@ -12,6 +12,16 @@ export const translations = {
       services: 'Services',
       about: 'About',
       contact: 'Contact',
+      portfolio: 'Portfolio',
     },
-    hero: {
-      title: 'Illuminate
+  },
+  ko: {
+    nav: {
+      home: '홈',
+      services: '서비스',
+      about: '소개',
+      contact: '연락처',
+      portfolio: '포트폴리오',
+    },
+  },
+}

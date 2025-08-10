@@ -56,7 +56,7 @@ This email was sent from the Zoe Studio LLC website contact form.
     }
 
     // Create transporter with Gmail service
-    const transporter = nodemailer.createTransporter({
+    const transporter = nodemailer.createTransport({
       service: 'gmail',
       auth: {
         user: process.env.EMAIL_USER,

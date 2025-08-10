@@ -41,6 +41,11 @@ export default function Footer({ locale = 'en' }: { locale?: string }) {
                   {locale === 'ko' ? '웹사이트 디자인 & 개발' : 'Website Design & Development'}
                 </Link>
               </li>
+              <li>
+                <Link href={`${prefix}#services`} className="text-gray-600 hover:text-black transition-colors text-sm">
+                  {locale === 'ko' ? 'LLC 설립 서비스' : 'LLC Formation Services'}
+                </Link>
+              </li>
             </ul>
           </div>
           
@@ -51,27 +56,28 @@ export default function Footer({ locale = 'en' }: { locale?: string }) {
             </h3>
             <ul className="space-y-2 text-sm text-gray-600">
               <li>
-                <a href="mailto:hello@zoestudio.com" className="hover:text-black transition-colors">
-                  hello@zoestudio.com
-                </a>
-              </li>
-              <li>
-                <a href="tel:+1234567890" className="hover:text-black transition-colors">
-                  +1 (234) 567-890
+                <a href="tel:+12345678900" className="hover:text-black transition-colors">
+                  +1 (234) 567-8900
                 </a>
               </li>
             </ul>
           </div>
           
-          {/* SEO Keywords */}
+          {/* Service Areas - SEO Optimized */}
           <div>
             <h3 className="font-bold text-lg mb-4">
-              {locale === 'ko' ? '지역' : 'Service Areas'}
+              {locale === 'ko' ? '서비스 지역' : 'Service Areas'}
             </h3>
             <p className="text-sm text-gray-600">
               {locale === 'ko' 
-                ? '서울, 경기도, 인천, 부산, 대구, 광주, 대전 및 전국'
-                : 'New York, Los Angeles, Chicago, Houston, Phoenix, San Francisco, and nationwide'
+                ? '전국 대도시 및 중소도시 | 온라인 비즈니스 | 로컬 비즈니스 | 이커머스'
+                : 'Nationwide Service | Major Metropolitan Areas | Local Business | E-commerce | Remote Consultation Available'
+              }
+            </p>
+            <p className="text-xs text-gray-500 mt-2">
+              {locale === 'ko'
+                ? 'SEO 서비스 | 구글 광고 | 웹사이트 제작 | 디지털 마케팅'
+                : 'Professional SEO Services | Google Ads Management | Web Design | Digital Marketing Solutions'
               }
             </p>
           </div>

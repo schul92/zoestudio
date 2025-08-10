@@ -39,16 +39,12 @@ export default function Header({ locale = 'en' }: { locale?: string }) {
           </Link>
           
           <div className="hidden md:flex items-center space-x-8">
-            <Link href={`${prefix}/#about`} className="relative group py-2">
+            <Link href={`${prefix}/about`} className="relative group py-2">
               <span className="relative z-10 text-black transition-colors duration-300">{t.nav.about}</span>
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300 ease-out" />
             </Link>
             <Link href={`${prefix}/#services`} className="relative group py-2">
               <span className="relative z-10 text-black transition-colors duration-300">{t.nav.services}</span>
-              <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300 ease-out" />
-            </Link>
-            <Link href={`${prefix}/#portfolio`} className="relative group py-2">
-              <span className="relative z-10 text-black transition-colors duration-300">{t.nav.portfolio}</span>
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-black group-hover:w-full transition-all duration-300 ease-out" />
             </Link>
             <Link href={`${prefix}/#contact`} className="relative group py-2">
