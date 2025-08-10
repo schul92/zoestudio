@@ -11,7 +11,7 @@ export default function Footer({ locale = 'en' }: { locale?: string }) {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}
           <div>
-            <h3 className="font-bold text-lg mb-4">ZOE STUDIO LLC</h3>
+            <h3 className="font-bold text-lg mb-4">ZOE LUMOS</h3>
             <p className="text-gray-600 text-sm mb-4">
               {locale === 'ko' 
                 ? '소규모 비즈니스가 온라인에서 성공할 수 있도록 돕는 디지털 마케팅 에이전시'
@@ -55,9 +55,10 @@ export default function Footer({ locale = 'en' }: { locale?: string }) {
               {locale === 'ko' ? '연락처' : 'Contact'}
             </h3>
             <ul className="space-y-2 text-sm text-gray-600">
-              <li>
-                <a href="tel:+12345678900" className="hover:text-black transition-colors">
-                  +1 (234) 567-8900
+              <li className="flex items-center">
+                <span className="mr-2">✉️</span>
+                <a href="mailto:zoestudiollc@gmail.com" className="hover:text-black transition-colors">
+                  zoestudiollc@gmail.com
                 </a>
               </li>
             </ul>

@@ -18,16 +18,44 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [emailError, setEmailError] = useState('')
+  const [emailTouched, setEmailTouched] = useState(false)
+
+  const validateEmail = (email: string) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!email) {
+      return locale === 'ko' ? '이메일을 입력해주세요' : 'Email is required'
+    }
+    if (!emailRegex.test(email)) {
+      return locale === 'ko' ? '올바른 이메일 형식이 아닙니다' : 'Please enter a valid email'
+    }
+    return ''
+  }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [name]: value
     })
+    
+    // Validate email in real-time
+    if (name === 'email' && emailTouched) {
+      setEmailError(validateEmail(value))
+    }
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
+    
+    // Validate email before submitting
+    const emailValidationError = validateEmail(formData.email)
+    if (emailValidationError) {
+      setEmailError(emailValidationError)
+      setEmailTouched(true)
+      return
+    }
+    
     setIsSubmitting(true)
     setSubmitStatus('idle')
 
@@ -199,14 +227,60 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                       <label className="block text-sm font-medium mb-2">
                         {locale === 'ko' ? '이메일 *' : 'Email *'}
                       </label>
-                      <input
-                        type="email"
-                        name="email"
-                        required
-                        value={formData.email}
-                        onChange={handleChange}
-                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-black focus:outline-none transition-colors"
-                      />
+                      <div className="relative">
+                        <input
+                          type="email"
+                          name="email"
+                          required
+                          value={formData.email}
+                          onChange={handleChange}
+                          onBlur={() => {
+                            setEmailTouched(true)
+                            setEmailError(validateEmail(formData.email))
+                          }}
+                          className={`w-full px-4 py-3 pr-10 border-2 rounded-lg focus:outline-none transition-all ${
+                            emailError && emailTouched
+                              ? 'border-red-500 focus:border-red-600 bg-red-50'
+                              : formData.email && !emailError && emailTouched
+                              ? 'border-green-500 focus:border-green-600 bg-green-50'
+                              : 'border-gray-300 focus:border-black'
+                          }`}
+                          placeholder={locale === 'ko' ? 'your@email.com' : 'your@email.com'}
+                        />
+                        {/* Validation Icon */}
+                        {emailTouched && (
+                          <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
+                            {emailError ? (
+                              <motion.div
+                                initial={{ scale: 0 }}
+                                animate={{ scale: 1 }}
+                                className="text-red-500"
+                              >
+                                ❌
+                              </motion.div>
+                            ) : formData.email ? (
+                              <motion.div
+                                initial={{ scale: 0 }}
+                                animate={{ scale: 1 }}
+                                className="text-green-500"
+                              >
+                                ✅
+                              </motion.div>
+                            ) : null}
+                          </div>
+                        )}
+                      </div>
+                      {/* Error Message */}
+                      {emailError && emailTouched && (
+                        <motion.p
+                          initial={{ opacity: 0, y: -10 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          className="mt-2 text-sm text-red-600 flex items-center"
+                        >
+                          <span className="mr-1">⚠️</span>
+                          {emailError}
+                        </motion.p>
+                      )}
                     </div>
                     
                     <div>

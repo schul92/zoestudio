@@ -1,0 +1,37 @@
+[
+  {
+    "timestamp": "2025-08-10T22:23:38.070Z",
+    "type": "service_click",
+    "service": "Website Design & Development",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+    "referrer": "http://localhost:3000/en"
+  },
+  {
+    "timestamp": "2025-08-10T22:34:15.873Z",
+    "type": "service_click",
+    "service": "웹사이트 디자인 & 개발",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+    "referrer": "http://localhost:3000/ko"
+  },
+  {
+    "timestamp": "2025-08-10T22:37:50.125Z",
+    "type": "service_click",
+    "service": "Website Design & Development",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+    "referrer": "http://localhost:3000/en"
+  },
+  {
+    "timestamp": "2025-08-10T22:39:22.530Z",
+    "type": "service_click",
+    "service": "Google & Yelp Ads",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+    "referrer": "http://localhost:3000/en"
+  },
+  {
+    "timestamp": "2025-08-10T22:40:35.745Z",
+    "type": "service_click",
+    "service": "구글 검색 상단에 노출",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+    "referrer": "http://localhost:3000/ko"
+  }
+]

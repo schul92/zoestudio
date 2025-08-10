@@ -5,11 +5,13 @@ import { motion } from 'framer-motion'
 import { useState } from 'react'
 import ScrollAnimation from '@/components/ui/ScrollAnimation'
 import { useServices } from '@/context/ServiceContext'
+import { useTracking } from '@/hooks/useTracking'
 
 export default function Services({ locale = 'en' }: { locale?: string }) {
   const { t } = useTranslation(locale)
   const { addService, removeService, isServiceSelected, selectedServices } = useServices()
   const [showTooltip, setShowTooltip] = useState(false)
+  const { trackServiceClick } = useTracking()
   
   const services = [
     {
@@ -386,7 +388,7 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
           </div>
         </ScrollAnimation>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
           {services.map((service, index) => (
             <motion.div
               key={index}
@@ -397,24 +399,24 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
               whileHover={{ y: -10 }}
               className="group"
             >
-              <div className="relative bg-white border-2 border-black rounded-2xl p-8 h-full shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 overflow-hidden group">
+              <div className="relative bg-white border-2 border-black rounded-2xl p-6 h-full shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 overflow-hidden group flex flex-col">
                 {/* Icon */}
-                <div className="w-32 h-32 mb-6 mx-auto">
+                <div className="w-24 h-24 mb-4 mx-auto">
                   {service.icon}
                 </div>
                 
                 {/* Title */}
-                <h3 className="text-2xl font-bold mb-4 text-center text-black">
+                <h3 className="text-xl font-bold mb-3 text-center text-black">
                   {service.title}
                 </h3>
                 
                 {/* Description */}
-                <p className="text-gray-700 mb-6 text-center">
+                <p className="text-gray-700 mb-4 text-center text-sm leading-relaxed">
                   {service.description}
                 </p>
                 
-                {/* Features */}
-                <div className="space-y-3 mb-8">
+                {/* Features - flex-grow to take available space */}
+                <div className="space-y-2 mb-6 flex-grow">
                   {service.features.slice(0, 3).map((feature: string, idx: number) => (
                     <motion.div
                       key={idx}
@@ -434,9 +436,9 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
                   ))}
                 </div>
                 
-                {/* Benefit */}
-                <div className="border-t-2 border-gray-200 pt-6">
-                  <p className="text-center font-semibold text-lg text-black mb-4">
+                {/* Benefit - Always at bottom */}
+                <div className="border-t-2 border-gray-200 pt-4 mt-auto">
+                  <p className="text-center font-semibold text-base text-black mb-3">
                     ✨ {service.benefit}
                   </p>
                   
@@ -445,6 +447,7 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={() => {
+                      trackServiceClick(service.title) // Track the click
                       if (isServiceSelected(service.id)) {
                         removeService(service.id)
                       } else {
@@ -510,21 +513,6 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
           exit={{ y: 100, opacity: 0 }}
           className="fixed bottom-0 left-0 right-0 bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4 shadow-2xl z-40"
         >
-          {/* First Selection Tooltip */}
-          {showTooltip && (
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: -70 }}
-              exit={{ opacity: 0, y: 20 }}
-              className="absolute right-8 bg-black text-white px-4 py-2 rounded-lg shadow-xl"
-            >
-              <div className="absolute bottom-[-8px] right-8 w-0 h-0 border-l-[8px] border-l-transparent border-r-[8px] border-r-transparent border-t-[8px] border-t-black"></div>
-              <p className="text-sm font-medium">
-                {locale === 'ko' ? '👇 여기를 클릭하세요!' : '👇 Click here to continue!'}
-              </p>
-            </motion.div>
-          )}
-          
           <div className="container mx-auto flex items-center justify-between max-w-6xl">
             <div className="flex items-center gap-4">
               <motion.div
@@ -550,7 +538,34 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
               </div>
             </div>
             
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-3 relative">
+              {/* Simple animated pointer */}
+              {showTooltip && (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0 }}
+                  animate={{ 
+                    opacity: 1, 
+                    scale: 1,
+                    y: [0, -5, 0]
+                  }}
+                  exit={{ opacity: 0, scale: 0 }}
+                  transition={{
+                    y: {
+                      duration: 0.6,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    },
+                    scale: {
+                      duration: 0.3,
+                      type: "spring"
+                    }
+                  }}
+                  className="absolute -top-10 right-12 text-3xl z-50"
+                >
+                  👇
+                </motion.div>
+              )}
+              
               {/* Clear All Button */}
               <button
                 onClick={() => {

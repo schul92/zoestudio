@@ -6,8 +6,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const routes = [
     '',
-    '/services',
-    '/contact',
+    '/about',
+    '/#services',
+    '/#contact',
   ]
 
   const languages = ['en', 'ko']

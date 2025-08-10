@@ -4,6 +4,7 @@ import '../globals.css'
 import { notFound } from 'next/navigation'
 import { seoConfig, structuredData } from '@/config/seo'
 import { ServiceProvider } from '@/context/ServiceContext'
+import GoogleAnalytics from '@/components/GoogleAnalytics'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -21,9 +22,9 @@ export async function generateMetadata({
     title: seo.title,
     description: seo.description,
     keywords: seo.keywords,
-    authors: [{ name: 'Zoe Studio LLC' }],
-    creator: 'Zoe Studio LLC',
-    publisher: 'Zoe Studio LLC',
+    authors: [{ name: 'ZOE LUMOS' }],
+    creator: 'ZOE LUMOS',
+    publisher: 'ZOE LUMOS',
     formatDetection: {
       email: false,
       address: false,
@@ -131,7 +132,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "WebSite",
               "url": "https://zoestudio.com",
-              "name": "ZOE STUDIO LLC",
+              "name": "ZOE LUMOS",
               "description": "Professional SEO Services, Google Ads Management & Web Design",
               "potentialAction": {
                 "@type": "SearchAction",
@@ -173,6 +174,9 @@ export default function RootLayout({
         />
       </head>
       <body className={inter.className} style={{ position: 'relative' }}>
+        {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
+          <GoogleAnalytics GA_MEASUREMENT_ID={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
+        )}
         <ServiceProvider>
           {children}
         </ServiceProvider>
