@@ -40,5 +40,19 @@
     "service": "구글 & 옐프 광고",
     "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
     "referrer": "http://localhost:3000/ko"
+  },
+  {
+    "timestamp": "2025-08-11T00:23:27.654Z",
+    "type": "service_click",
+    "service": "Google & Yelp Ads",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+    "referrer": "http://localhost:3000/en"
+  },
+  {
+    "timestamp": "2025-08-11T00:31:15.058Z",
+    "type": "service_click",
+    "service": "Get Found on Google",
+    "userAgent": "Mozilla/5.0 (Linux; Android 6.0; Nexus 5 Build/MRA58N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Mobile Safari/537.36",
+    "referrer": "http://localhost:3000/en"
   }
 ]

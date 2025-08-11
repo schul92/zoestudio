@@ -341,46 +341,49 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
               {t.services.subtitle}
             </p>
             
-            {/* Service Selection Guide */}
+            {/* Service Selection Guide - Mobile Optimized */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              className="inline-flex items-center gap-8 bg-gradient-to-r from-blue-50 to-purple-50 px-8 py-4 rounded-full border-2 border-blue-200"
+              className="inline-flex flex-col sm:flex-row items-center gap-4 sm:gap-8 bg-gradient-to-r from-blue-50 to-purple-50 px-6 sm:px-8 py-4 rounded-2xl sm:rounded-full border-2 border-blue-200 w-full sm:w-auto max-w-full mx-4 sm:mx-0"
             >
-              <div className="flex items-center gap-3">
-                <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold ${
+              {/* Step 1 */}
+              <div className="flex items-center gap-3 w-full sm:w-auto justify-center sm:justify-start">
+                <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center font-bold flex-shrink-0 ${
                   selectedServices.length > 0 ? 'bg-green-500 text-white' : 'bg-gray-300 text-gray-600'
                 }`}>
                   {selectedServices.length > 0 ? '✓' : '1'}
                 </div>
-                <span className={`text-sm font-medium ${
+                <span className={`text-xs sm:text-sm font-medium ${
                   selectedServices.length > 0 ? 'text-green-600' : 'text-gray-700'
                 }`}>
                   {locale === 'ko' ? '서비스 선택' : 'Select Services'}
                 </span>
               </div>
               
-              <div className="w-12 h-0.5 bg-gray-300"></div>
+              <div className="hidden sm:block w-12 h-0.5 bg-gray-300"></div>
               
-              <div className="flex items-center gap-3">
-                <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold ${
+              {/* Step 2 */}
+              <div className="flex items-center gap-3 w-full sm:w-auto justify-center sm:justify-start">
+                <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center font-bold flex-shrink-0 ${
                   selectedServices.length > 0 ? 'bg-blue-500 text-white animate-pulse' : 'bg-gray-300 text-gray-600'
                 }`}>
                   2
                 </div>
-                <span className="text-sm font-medium text-gray-700">
+                <span className="text-xs sm:text-sm font-medium text-gray-700">
                   {locale === 'ko' ? '정보 입력' : 'Your Info'}
                 </span>
               </div>
               
-              <div className="w-12 h-0.5 bg-gray-300"></div>
+              <div className="hidden sm:block w-12 h-0.5 bg-gray-300"></div>
               
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gray-300 text-gray-600 flex items-center justify-center font-bold">
+              {/* Step 3 */}
+              <div className="flex items-center gap-3 w-full sm:w-auto justify-center sm:justify-start">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gray-300 text-gray-600 flex items-center justify-center font-bold flex-shrink-0">
                   3
                 </div>
-                <span className="text-sm font-medium text-gray-700">
+                <span className="text-xs sm:text-sm font-medium text-gray-700">
                   {locale === 'ko' ? '상담 시작!' : 'Get Started!'}
                 </span>
               </div>
@@ -513,23 +516,23 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
           exit={{ y: 100, opacity: 0 }}
           className="fixed bottom-0 left-0 right-0 bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4 shadow-2xl z-40"
         >
-          <div className="container mx-auto flex items-center justify-between max-w-6xl">
-            <div className="flex items-center gap-4">
+          <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between max-w-6xl gap-4 px-4">
+            <div className="flex items-center gap-3 w-full sm:w-auto">
               <motion.div
                 animate={{ rotate: [0, 10, -10, 0] }}
                 transition={{ duration: 2, repeat: Infinity }}
-                className="text-2xl"
+                className="text-xl sm:text-2xl flex-shrink-0"
               >
                 🎉
               </motion.div>
-              <div>
-                <p className="font-bold text-lg">
+              <div className="flex-1">
+                <p className="font-bold text-base sm:text-lg">
                   {locale === 'ko' 
                     ? `${selectedServices.length}개 서비스 선택됨` 
                     : `${selectedServices.length} ${selectedServices.length === 1 ? 'Service' : 'Services'} Selected`
                   }
                 </p>
-                <p className="text-sm opacity-90">
+                <p className="text-xs sm:text-sm opacity-90 hidden sm:block">
                   {locale === 'ko' 
                     ? '준비되셨나요? 무료 상담을 신청하세요!' 
                     : 'Ready to grow? Get your free consultation!'
@@ -538,7 +541,7 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
               </div>
             </div>
             
-            <div className="flex items-center gap-3 relative">
+            <div className="flex items-center gap-2 sm:gap-3 relative w-full sm:w-auto justify-end">
               {/* Simple animated pointer */}
               {showTooltip && (
                 <motion.div
@@ -560,7 +563,7 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
                       type: "spring"
                     }
                   }}
-                  className="absolute -top-10 right-12 text-3xl z-50"
+                  className="absolute -top-10 right-12 text-2xl sm:text-3xl z-50"
                 >
                   👇
                 </motion.div>
@@ -571,7 +574,7 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
                 onClick={() => {
                   selectedServices.forEach(s => removeService(s.id))
                 }}
-                className="px-4 py-2 bg-white/20 rounded-lg text-white hover:bg-white/30 transition-colors text-sm"
+                className="px-3 sm:px-4 py-2 bg-white/20 rounded-lg text-white hover:bg-white/30 transition-colors text-xs sm:text-sm"
               >
                 {locale === 'ko' ? '초기화' : 'Clear'}
               </button>
@@ -583,15 +586,27 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
                 onClick={() => {
                   const contactSection = document.getElementById('contact')
                   if (contactSection) {
-                    contactSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                    // Get the element position
+                    const rect = contactSection.getBoundingClientRect()
+                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+                    // Account for fixed header height (approximately 80px on mobile)
+                    const offset = 80
+                    const targetPosition = rect.top + scrollTop - offset
+                    
+                    // Smooth scroll to position
+                    window.scrollTo({
+                      top: targetPosition,
+                      behavior: 'smooth'
+                    })
                   }
                 }}
-                className="px-6 py-3 bg-white text-purple-600 rounded-lg font-bold shadow-lg hover:shadow-xl transition-all flex items-center gap-2"
+                className="px-4 sm:px-6 py-2.5 sm:py-3 bg-white text-purple-600 rounded-lg font-bold shadow-lg hover:shadow-xl transition-all flex items-center gap-1 sm:gap-2 text-sm sm:text-base"
               >
                 <span>{locale === 'ko' ? '다음 단계로' : 'Continue'}</span>
                 <motion.span
                   animate={{ x: [0, 5, 0] }}
                   transition={{ duration: 1.5, repeat: Infinity }}
+                  className="text-sm sm:text-base"
                 >
                   →
                 </motion.span>

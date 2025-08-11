@@ -99,7 +99,7 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
   }
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-gray-50 to-white border-t-4 border-black">
+    <section id="contact" className="pt-24 pb-20 md:py-20 bg-gradient-to-br from-gray-50 to-white border-t-4 border-black">
       <div className="container mx-auto px-6">
         <ScrollAnimation>
           <div className="max-w-5xl mx-auto">
