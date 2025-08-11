@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation'
 import { seoConfig, structuredData } from '@/config/seo'
 import { ServiceProvider } from '@/context/ServiceContext'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
+import { SpeedInsights } from '@vercel/speed-insights/next'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -177,6 +178,7 @@ export default function RootLayout({
         {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
           <GoogleAnalytics GA_MEASUREMENT_ID={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
         )}
+        <SpeedInsights />
         <ServiceProvider>
           {children}
         </ServiceProvider>

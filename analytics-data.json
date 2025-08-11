@@ -33,5 +33,12 @@
     "service": "구글 검색 상단에 노출",
     "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
     "referrer": "http://localhost:3000/ko"
+  },
+  {
+    "timestamp": "2025-08-10T23:32:45.419Z",
+    "type": "service_click",
+    "service": "구글 & 옐프 광고",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+    "referrer": "http://localhost:3000/ko"
   }
 ]
