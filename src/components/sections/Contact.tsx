@@ -412,8 +412,8 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                   className="space-y-6"
                 >
                   {/* What Happens Next */}
-                  <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-8 rounded-2xl border-2 border-gray-200">
-                    <h4 className="text-2xl font-bold mb-6 text-black">
+                  <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-6 sm:p-8 rounded-2xl border-2 border-gray-200">
+                    <h4 className="text-xl sm:text-2xl font-bold mb-6 text-gray-900">
                       {locale === 'ko' ? '다음 단계' : 'What Happens Next?'}
                     </h4>
                     <div className="space-y-4">
@@ -422,10 +422,10 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                           1
                         </div>
                         <div>
-                          <p className="font-semibold">
+                          <p className="font-semibold text-gray-900">
                             {locale === 'ko' ? '24시간 내 연락' : 'Contact Within 24 Hours'}
                           </p>
-                          <p className="text-sm text-gray-700">
+                          <p className="text-sm text-gray-800">
                             {locale === 'ko' 
                               ? '귀하의 요청을 검토하고 연락드립니다' 
                               : 'We\'ll review your request and reach out'
@@ -438,10 +438,10 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                           2
                         </div>
                         <div>
-                          <p className="font-semibold">
+                          <p className="font-semibold text-gray-900">
                             {locale === 'ko' ? '무료 상담' : 'Free Consultation'}
                           </p>
-                          <p className="text-sm text-gray-700">
+                          <p className="text-sm text-gray-800">
                             {locale === 'ko' 
                               ? '30분 무료 상담으로 니즈 파악' 
                               : '30-minute call to understand your needs'
@@ -454,10 +454,10 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                           3
                         </div>
                         <div>
-                          <p className="font-semibold">
+                          <p className="font-semibold text-gray-900">
                             {locale === 'ko' ? '맞춤 제안' : 'Custom Proposal'}
                           </p>
-                          <p className="text-sm text-gray-700">
+                          <p className="text-sm text-gray-800">
                             {locale === 'ko' 
                               ? '귀하의 비즈니스를 위한 맞춤 계획' 
                               : 'Tailored plan for your business growth'
@@ -469,22 +469,22 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                   </div>
 
                   {/* Contact Info */}
-                  <div className="bg-white p-8 rounded-2xl border-2 border-gray-200">
-                    <h4 className="text-xl font-bold mb-4">
+                  <div className="bg-white p-6 sm:p-8 rounded-2xl border-2 border-gray-200">
+                    <h4 className="text-lg sm:text-xl font-bold mb-4 text-gray-900">
                       {locale === 'ko' ? '연락처' : 'Get in Touch'}
                     </h4>
                     <div className="space-y-3">
-                      <a href="mailto:zoestudiollc@gmail.com" className="flex items-center gap-3 text-gray-700 hover:text-black transition-colors">
+                      <a href="mailto:zoestudiollc@gmail.com" className="flex items-center gap-3 text-gray-800 hover:text-black transition-colors">
                         <span className="text-xl">✉️</span>
-                        <span className="text-sm">zoestudiollc@gmail.com</span>
+                        <span className="text-sm font-medium">zoestudiollc@gmail.com</span>
                       </a>
-                      <div className="flex items-center gap-3 text-gray-700">
+                      <div className="flex items-center gap-3 text-gray-800">
                         <span className="text-xl">📍</span>
-                        <span className="text-sm">New Jersey, USA</span>
+                        <span className="text-sm font-medium">New Jersey, USA</span>
                       </div>
-                      <div className="flex items-center gap-3 text-gray-700">
+                      <div className="flex items-center gap-3 text-gray-800">
                         <span className="text-xl">⏰</span>
-                        <span className="text-sm">
+                        <span className="text-sm font-medium">
                           {locale === 'ko' ? '월-금 9AM-6PM EST' : 'Mon-Fri 9AM-6PM EST'}
                         </span>
                       </div>
