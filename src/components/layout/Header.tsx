@@ -45,7 +45,7 @@ export default function Header({ locale = 'en' }: { locale?: string }) {
             </div>
           </Link>
           
-          {/* Desktop Navigation */}
+          {/* Desktop Navigation - Hidden on mobile, flex on md and up */}
           <div className="hidden md:flex items-center space-x-8">
             <Link href={`${prefix}/about`} className="relative group py-2">
               <span className={`relative z-10 transition-colors duration-300 ${isAboutPage && !hasScrolled ? 'text-white' : 'text-black'}`}>{t.nav.about}</span>
@@ -62,8 +62,8 @@ export default function Header({ locale = 'en' }: { locale?: string }) {
             <LanguageToggle lightMode={isAboutPage && !hasScrolled} />
           </div>
 
-          {/* Mobile Navigation Menu */}
-          <div className="md:hidden flex items-center space-x-4">
+          {/* Mobile Navigation Menu - Flex on mobile, hidden on md and up */}
+          <div className="flex md:hidden items-center space-x-4">
             <LanguageToggle lightMode={isAboutPage && !hasScrolled} />
             <button className={isAboutPage && !hasScrolled ? 'text-white' : 'text-black'}>
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
