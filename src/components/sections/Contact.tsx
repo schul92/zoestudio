@@ -108,7 +108,7 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
             {/* Header - Improved mobile visibility */}
             <div className="text-center mb-8 md:mb-12">
               <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 px-4">{t.contact.title}</h2>
-              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 max-w-2xl mx-auto px-4">
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-800 max-w-2xl mx-auto px-4">
                 {t.contact.subtitle}
               </p>
             </div>
@@ -176,7 +176,7 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                           {service.title}
                           <button
                             onClick={() => removeService(service.id)}
-                            className="text-gray-500 hover:text-red-500 transition-colors"
+                            className="text-gray-600 hover:text-red-500 transition-colors"
                           >
                             ×
                           </button>
@@ -425,7 +425,7 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                           <p className="font-semibold">
                             {locale === 'ko' ? '24시간 내 연락' : 'Contact Within 24 Hours'}
                           </p>
-                          <p className="text-sm text-gray-600">
+                          <p className="text-sm text-gray-700">
                             {locale === 'ko' 
                               ? '귀하의 요청을 검토하고 연락드립니다' 
                               : 'We\'ll review your request and reach out'
@@ -441,7 +441,7 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                           <p className="font-semibold">
                             {locale === 'ko' ? '무료 상담' : 'Free Consultation'}
                           </p>
-                          <p className="text-sm text-gray-600">
+                          <p className="text-sm text-gray-700">
                             {locale === 'ko' 
                               ? '30분 무료 상담으로 니즈 파악' 
                               : '30-minute call to understand your needs'
@@ -457,7 +457,7 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                           <p className="font-semibold">
                             {locale === 'ko' ? '맞춤 제안' : 'Custom Proposal'}
                           </p>
-                          <p className="text-sm text-gray-600">
+                          <p className="text-sm text-gray-700">
                             {locale === 'ko' 
                               ? '귀하의 비즈니스를 위한 맞춤 계획' 
                               : 'Tailored plan for your business growth'

@@ -138,7 +138,7 @@ export default function AnimatedHero({ locale = 'en' }: { locale?: string }) {
             {/* Animated text with typewriter effect */}
             <motion.div className="space-y-6">
               <motion.h1 
-                className="text-6xl md:text-8xl font-black leading-none text-black"
+                className="text-5xl sm:text-6xl md:text-8xl font-black leading-none text-gray-900"
               >
                 {t.hero.title.split('').map((char, index) => (
                   <motion.span
@@ -151,7 +151,7 @@ export default function AnimatedHero({ locale = 'en' }: { locale?: string }) {
                       type: "spring",
                       stiffness: 120
                     }}
-                    className="inline-block text-black"
+                    className="inline-block text-gray-900"
                     style={{ 
                       display: char === ' ' ? 'inline' : 'inline-block',
                       marginRight: char === ' ' ? '0.25em' : 0
@@ -168,7 +168,7 @@ export default function AnimatedHero({ locale = 'en' }: { locale?: string }) {
                 transition={{ delay: 0.5, duration: 0.5 }} // Faster subtitle
                 className="-mt-2"
               >
-                <h2 className="text-4xl md:text-6xl font-black text-gray-600">
+                <h2 className="text-3xl sm:text-4xl md:text-6xl font-black text-gray-800">
                   {t.hero.subtitle}
                 </h2>
               </motion.div>
@@ -179,7 +179,7 @@ export default function AnimatedHero({ locale = 'en' }: { locale?: string }) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.5 }} // Faster description
-              className="text-xl md:text-2xl text-gray-700 mt-10 mb-12 max-w-3xl mx-auto font-light leading-relaxed"
+              className="text-lg sm:text-xl md:text-2xl text-gray-800 mt-10 mb-12 max-w-3xl mx-auto font-normal leading-relaxed"
             >
               {t.hero.description}
             </motion.p>

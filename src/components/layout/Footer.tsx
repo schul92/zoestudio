@@ -12,7 +12,7 @@ export default function Footer({ locale = 'en' }: { locale?: string }) {
           {/* Company Info */}
           <div>
             <h3 className="font-bold text-lg mb-4">ZOE LUMOS</h3>
-            <p className="text-gray-600 text-sm mb-4">
+            <p className="text-gray-700 text-sm mb-4">
               {locale === 'ko' 
                 ? '소규모 비즈니스가 온라인에서 성공할 수 있도록 돕는 디지털 마케팅 에이전시'
                 : 'Digital marketing agency helping small businesses succeed online'
@@ -27,22 +27,22 @@ export default function Footer({ locale = 'en' }: { locale?: string }) {
             </h3>
             <ul className="space-y-2">
               <li>
-                <Link href={`${prefix}#services`} className="text-gray-600 hover:text-black transition-colors text-sm">
+                <Link href={`${prefix}#services`} className="text-gray-700 hover:text-black transition-colors text-sm">
                   {locale === 'ko' ? 'SEO 서비스' : 'SEO Services'}
                 </Link>
               </li>
               <li>
-                <Link href={`${prefix}#services`} className="text-gray-600 hover:text-black transition-colors text-sm">
+                <Link href={`${prefix}#services`} className="text-gray-700 hover:text-black transition-colors text-sm">
                   {locale === 'ko' ? '구글 & 옐프 광고 관리' : 'Google & Yelp Ads Management'}
                 </Link>
               </li>
               <li>
-                <Link href={`${prefix}#services`} className="text-gray-600 hover:text-black transition-colors text-sm">
+                <Link href={`${prefix}#services`} className="text-gray-700 hover:text-black transition-colors text-sm">
                   {locale === 'ko' ? '웹사이트 디자인 & 개발' : 'Website Design & Development'}
                 </Link>
               </li>
               <li>
-                <Link href={`${prefix}#services`} className="text-gray-600 hover:text-black transition-colors text-sm">
+                <Link href={`${prefix}#services`} className="text-gray-700 hover:text-black transition-colors text-sm">
                   {locale === 'ko' ? 'LLC 설립 서비스' : 'LLC Formation Services'}
                 </Link>
               </li>
@@ -54,7 +54,7 @@ export default function Footer({ locale = 'en' }: { locale?: string }) {
             <h3 className="font-bold text-lg mb-4">
               {locale === 'ko' ? '연락처' : 'Contact'}
             </h3>
-            <ul className="space-y-2 text-sm text-gray-600">
+            <ul className="space-y-2 text-sm text-gray-700">
               <li className="flex items-center">
                 <span className="mr-2">✉️</span>
                 <a href="mailto:zoestudiollc@gmail.com" className="hover:text-black transition-colors">
@@ -69,13 +69,13 @@ export default function Footer({ locale = 'en' }: { locale?: string }) {
             <h3 className="font-bold text-lg mb-4">
               {locale === 'ko' ? '서비스 지역' : 'Service Areas'}
             </h3>
-            <p className="text-sm text-gray-600">
+            <p className="text-sm text-gray-700">
               {locale === 'ko' 
                 ? '전국 대도시 및 중소도시 | 온라인 비즈니스 | 로컬 비즈니스 | 이커머스'
                 : 'Nationwide Service | Major Metropolitan Areas | Local Business | E-commerce | Remote Consultation Available'
               }
             </p>
-            <p className="text-xs text-gray-500 mt-2">
+            <p className="text-xs text-gray-600 mt-2">
               {locale === 'ko'
                 ? 'SEO 서비스 | 구글 광고 | 웹사이트 제작 | 디지털 마케팅'
                 : 'Professional SEO Services | Google Ads Management | Web Design | Digital Marketing Solutions'
@@ -86,14 +86,14 @@ export default function Footer({ locale = 'en' }: { locale?: string }) {
         
         <div className="border-t pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-600 text-sm">
+            <p className="text-gray-700 text-sm">
               © {new Date().getFullYear()} ZOE STUDIO LLC. {t.footer.rights}
             </p>
             <div className="flex space-x-6 mt-4 md:mt-0">
-              <Link href={`${prefix}/privacy`} className="text-gray-600 hover:text-gray-900 transition-colors text-sm">
+              <Link href={`${prefix}/privacy`} className="text-gray-700 hover:text-gray-900 transition-colors text-sm">
                 {t.footer.privacy}
               </Link>
-              <Link href={`${prefix}/terms`} className="text-gray-600 hover:text-gray-900 transition-colors text-sm">
+              <Link href={`${prefix}/terms`} className="text-gray-700 hover:text-gray-900 transition-colors text-sm">
                 {t.footer.terms}
               </Link>
             </div>
