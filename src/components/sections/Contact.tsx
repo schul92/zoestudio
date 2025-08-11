@@ -1,9 +1,10 @@
 'use client'
 
 import { useTranslation } from '@/hooks/useTranslation'
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { useServices } from '@/context/ServiceContext'
+import { trackFormSuccess, trackFormError, trackGAEvent, GA_EVENTS } from '@/utils/analytics'
 
 export default function Contact({ locale = 'en' }: { locale?: string }) {
   const { t } = useTranslation(locale)
@@ -20,6 +21,20 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
   const [emailError, setEmailError] = useState('')
   const [emailTouched, setEmailTouched] = useState(false)
   const [submittedEmail, setSubmittedEmail] = useState('')
+  const formStartTime = useRef<number>(0)
+  
+  // Track when user starts interacting with form
+  useEffect(() => {
+    if (formData.name || formData.email || formData.phone || formData.business || formData.message) {
+      if (formStartTime.current === 0) {
+        formStartTime.current = Date.now()
+        trackGAEvent(GA_EVENTS.FORM_FIELD_INTERACTION, {
+          category: 'engagement',
+          label: 'form_started'
+        })
+      }
+    }
+  }, [formData])
 
   const validateEmail = (email: string) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -48,16 +63,28 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     
+    // Track form attempt
+    trackGAEvent(GA_EVENTS.FORM_SUBMIT_ATTEMPT, {
+      category: 'engagement',
+      label: 'form_submit_clicked',
+      services_count: selectedServices.length
+    })
+    
     // Validate email before submitting
     const emailValidationError = validateEmail(formData.email)
     if (emailValidationError) {
       setEmailError(emailValidationError)
       setEmailTouched(true)
+      // Track validation error
+      trackFormError('email_validation_failed', emailValidationError)
       return
     }
     
     setIsSubmitting(true)
     setSubmitStatus('idle')
+
+    // Calculate time spent on form
+    const timeToSubmit = formStartTime.current ? Math.round((Date.now() - formStartTime.current) / 1000) : 0
 
     try {
       const response = await fetch('/api/contact', {
@@ -75,6 +102,17 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
       if (response.ok) {
         setSubmitStatus('success')
         setSubmittedEmail(formData.email)
+        
+        // Track successful submission with ALL details
+        trackFormSuccess({
+          services: selectedServices.map(s => s.title),
+          hasPhone: !!formData.phone,
+          hasBusinessName: !!formData.business,
+          messageLength: formData.message.length,
+          timeToSubmit: timeToSubmit
+        })
+        
+        // Reset form
         setFormData({
           name: '',
           email: '',
@@ -82,11 +120,16 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
           business: '',
           message: ''
         })
+        formStartTime.current = 0
       } else {
         setSubmitStatus('error')
+        // Track submission error with details
+        trackFormError('server_error', `Status: ${response.status}`)
       }
     } catch (error) {
       setSubmitStatus('error')
+      // Track network error
+      trackFormError('network_error', error instanceof Error ? error.message : 'Unknown error')
     } finally {
       setIsSubmitting(false)
     }
