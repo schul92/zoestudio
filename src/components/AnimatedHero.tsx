@@ -155,7 +155,7 @@ export default function AnimatedHero({ locale = 'en' }: { locale?: string }) {
             {/* Animated text with typewriter effect */}
             <motion.div className="space-y-6">
               <motion.h1 
-                className="text-6xl md:text-8xl font-black leading-none"
+                className="text-6xl md:text-8xl font-black leading-none text-black"
               >
                 {t.hero.title.split('').map((char, index) => (
                   <motion.span
@@ -168,7 +168,7 @@ export default function AnimatedHero({ locale = 'en' }: { locale?: string }) {
                       type: "spring",
                       stiffness: 100
                     }}
-                    className="inline-block"
+                    className="inline-block text-black"
                     style={{ 
                       display: char === ' ' ? 'inline' : 'inline-block',
                       marginRight: char === ' ' ? '0.25em' : 0
@@ -185,7 +185,7 @@ export default function AnimatedHero({ locale = 'en' }: { locale?: string }) {
                 transition={{ delay: 1.5, duration: 1 }}
                 className="-mt-2"
               >
-                <h2 className="text-4xl md:text-6xl font-black text-gray-500">
+                <h2 className="text-4xl md:text-6xl font-black text-gray-600">
                   {t.hero.subtitle}
                 </h2>
               </motion.div>

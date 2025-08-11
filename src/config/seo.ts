@@ -11,12 +11,12 @@ export const seoConfig = {
     }
   },
   ko: {
-    title: 'ZOE LUMOS - 전문 SEO 서비스, 구글 광고 & 웹 디자인 | 디지털 마케팅 에이전시',
-    description: '전문 SEO 서비스, 구글 광고 관리, 맞춤형 웹사이트 디자인으로 온라인 비즈니스를 성장시키세요. ZOE LUMOS가 검색 순위 상승, 트래픽 증가, 전환율 향상을 도와드립니다. 무료 SEO 분석. 검증된 결과.',
-    keywords: 'SEO 서비스, 검색엔진최적화, 구글 광고 관리, PPC 광고, 웹사이트 디자인 및 개발, 로컬 SEO 전문가, 디지털 마케팅 에이전시, SEO 컨설턴트, 구글 광고 전문가, 웹 디자인 서비스, 온라인 마케팅 솔루션, SEO 분석, 키워드 연구, 온페이지 SEO, 오프페이지 SEO, 기술 SEO, 콘텐츠 마케팅, 전환 최적화, 중소기업 SEO, 이커머스 SEO, 모바일 SEO, 옐프 광고, 소셜 미디어 마케팅',
+    title: 'ZOE LUMOS - 뉴욕 뉴저지 한인 비즈니스 전문 마케팅 | 100% 한국어 상담',
+    description: '뉴욕, 뉴저지, 포트리, 팰팍, 플러싱 한인 사업체 전문. 레스토랑, 네일샵, 부동산, 병원 등 모든 한인 비즈니스를 위한 SEO, 구글 광고, 웹사이트 제작. 100% 한국어 상담 가능.',
+    keywords: '뉴욕 한인 마케팅, 뉴저지 한인 마케팅, 포트리 한인, Fort Lee Korean business, 팰팍 한인, Palisades Park Korean, 플러싱 한인 비즈니스, Flushing Korean, 맨하탄 한인, 리지우드 한인, 잉글우드 한인, 한국어 SEO, 한인 구글 광고, 한인 웹사이트 제작, NJ 한인 마케팅, NY 한인 마케팅, 한인 디지털 마케팅, 미주 한인 비즈니스, 교민 사업체 마케팅, 한인 레스토랑 마케팅, 한인 네일샵 마케팅, 한인 부동산 마케팅, 한인 병원 마케팅, 한인 법률사무소 마케팅, Korean American business marketing',
     openGraph: {
-      title: 'ZOE LUMOS - 비즈니스를 온라인에서 성장시키세요',
-      description: '소규모 비즈니스를 위한 전문 SEO, 구글 광고 및 웹사이트 디자인. 구글 검색 상단에 노출. 무료 상담.',
+      title: 'ZOE LUMOS - 뉴욕·뉴저지 한인 비즈니스 성공 파트너',
+      description: '포트리, 팰팍, 플러싱 등 한인 밀집 지역 비즈니스 전문. 100% 한국어 상담. SEO, 구글 광고, 웹사이트 제작.',
       siteName: 'ZOE LUMOS',
       locale: 'ko_KR',
     }
@@ -50,8 +50,36 @@ export const structuredData = {
     "email": "zoestudiollc@gmail.com",
     "address": {
       "@type": "PostalAddress",
-      "addressCountry": "US"
+      "addressCountry": "US",
+      "addressRegion": "NJ, NY",
+      "addressLocality": "Fort Lee, Palisades Park, Flushing, Manhattan"
     },
+    "areaServed": [
+      {
+        "@type": "City",
+        "name": "Fort Lee"
+      },
+      {
+        "@type": "City", 
+        "name": "Palisades Park"
+      },
+      {
+        "@type": "City",
+        "name": "Flushing"
+      },
+      {
+        "@type": "City",
+        "name": "Manhattan"
+      },
+      {
+        "@type": "City",
+        "name": "Ridgewood"
+      },
+      {
+        "@type": "City",
+        "name": "Englewood"
+      }
+    ],
     "priceRange": "$$",
     "openingHours": "Mo-Fr 09:00-18:00",
     "aggregateRating": {
