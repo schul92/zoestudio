@@ -209,7 +209,7 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                           value={formData.name}
                           onChange={handleChange}
                           placeholder={locale === 'ko' ? '홍길동' : 'John Doe'}
-                          className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-black focus:outline-none transition-colors bg-white"
+                          className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-black focus:outline-none transition-colors bg-white text-gray-900 placeholder-gray-500"
                         />
                       </div>
                       
@@ -224,7 +224,7 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                           value={formData.phone}
                           onChange={handleChange}
                           placeholder={locale === 'ko' ? '010-1234-5678' : '(555) 123-4567'}
-                          className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-black focus:outline-none transition-colors bg-white"
+                          className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-black focus:outline-none transition-colors bg-white text-gray-900 placeholder-gray-500"
                         />
                       </div>
                     </div>
@@ -245,7 +245,7 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                             setEmailTouched(true)
                             setEmailError(validateEmail(formData.email))
                           }}
-                          className={`w-full px-4 py-3 pr-10 border-2 rounded-lg focus:outline-none transition-all ${
+                          className={`w-full px-4 py-3 pr-10 border-2 rounded-lg focus:outline-none transition-all text-gray-900 placeholder-gray-500 ${
                             emailError && emailTouched
                               ? 'border-red-500 focus:border-red-600 bg-red-50'
                               : formData.email && !emailError && emailTouched
@@ -319,7 +319,7 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                           ? '귀하의 비즈니스에 대해 더 알려주세요...' 
                           : 'Tell us more about your business needs...'
                         }
-                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-black focus:outline-none transition-colors resize-none bg-white"
+                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-black focus:outline-none transition-colors resize-none bg-white text-gray-900 placeholder-gray-500"
                       />
                     </div>
                     

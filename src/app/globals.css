@@ -8,13 +8,14 @@
   --background-end-rgb: 245, 245, 245;
 }
 
-@media (prefers-color-scheme: dark) {
+/* Disable dark mode for now to ensure consistent text colors */
+/* @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 20, 20, 20;
   }
-}
+} */
 
 body {
   color: rgb(var(--foreground-rgb));
@@ -25,4 +26,15 @@ body {
     )
     rgb(var(--background-start-rgb));
   min-height: 100vh;
+}
+
+/* Ensure all inputs have dark text regardless of system theme */
+input, textarea, select {
+  color: rgb(31, 41, 55) !important; /* text-gray-800 */
+  -webkit-text-fill-color: rgb(31, 41, 55) !important; /* Fix for Safari/iOS */
+}
+
+input::placeholder, textarea::placeholder {
+  color: rgb(156, 163, 175) !important; /* text-gray-400 */
+  -webkit-text-fill-color: rgb(156, 163, 175) !important;
 }
