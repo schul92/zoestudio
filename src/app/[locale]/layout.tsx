@@ -111,6 +111,23 @@ export default function RootLayout({
   return (
     <html lang={params.locale}>
       <head>
+        <style dangerouslySetInnerHTML={{
+          __html: `
+            /* Critical CSS for above-the-fold content */
+            * { margin: 0; padding: 0; box-sizing: border-box; }
+            body { font-family: system-ui, -apple-system, sans-serif; line-height: 1.5; }
+            .min-h-screen { min-height: 100vh; }
+            .flex { display: flex; }
+            .items-center { align-items: center; }
+            .justify-center { justify-content: center; }
+            .bg-white { background-color: white; }
+            .text-black { color: black; }
+            .font-bold { font-weight: 700; }
+            .text-center { text-align: center; }
+            .container { width: 100%; margin: 0 auto; padding: 0 1.5rem; max-width: 1280px; }
+            @media (min-width: 768px) { .md\\:text-8xl { font-size: 6rem; } }
+          `
+        }} />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />

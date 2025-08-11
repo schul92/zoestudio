@@ -14,6 +14,27 @@ const nextConfig = {
   poweredByHeader: false,
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
+    styledComponents: false,
+  },
+  webpack: (config, { isServer }) => {
+    // Optimize CSS loading
+    if (!isServer) {
+      config.optimization.splitChunks = {
+        chunks: 'all',
+        cacheGroups: {
+          default: false,
+          vendors: false,
+          styles: {
+            name: 'styles',
+            test: /\.(css|scss)$/,
+            chunks: 'all',
+            enforce: true,
+            priority: 10,
+          },
+        },
+      };
+    }
+    return config;
   },
   async headers() {
     return [
