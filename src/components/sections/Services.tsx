@@ -346,46 +346,52 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              className="inline-flex flex-col sm:flex-row items-center gap-4 sm:gap-8 bg-gradient-to-r from-blue-50 to-purple-50 px-6 sm:px-8 py-4 rounded-2xl sm:rounded-full border-2 border-blue-200 w-full sm:w-auto max-w-full mx-4 sm:mx-0"
+              className="inline-flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-6 bg-gradient-to-r from-blue-50 to-purple-50 px-6 sm:px-8 py-5 rounded-2xl sm:rounded-full border-2 border-blue-200 w-full sm:w-auto max-w-md sm:max-w-none mx-auto"
             >
               {/* Step 1 */}
-              <div className="flex items-center gap-3 w-full sm:w-auto justify-center sm:justify-start">
-                <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center font-bold flex-shrink-0 ${
-                  selectedServices.length > 0 ? 'bg-green-500 text-white' : 'bg-gray-300 text-gray-600'
+              <div className="flex items-center gap-3 flex-1 sm:flex-initial">
+                <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold flex-shrink-0 transition-all ${
+                  selectedServices.length > 0 ? 'bg-green-500 text-white scale-110' : 'bg-gray-300 text-gray-600'
                 }`}>
                   {selectedServices.length > 0 ? '✓' : '1'}
                 </div>
-                <span className={`text-xs sm:text-sm font-medium ${
-                  selectedServices.length > 0 ? 'text-green-600' : 'text-gray-700'
-                }`}>
-                  {locale === 'ko' ? '서비스 선택' : 'Select Services'}
-                </span>
+                <div className="flex-1 sm:flex-initial">
+                  <span className={`text-sm font-medium block ${
+                    selectedServices.length > 0 ? 'text-green-600' : 'text-gray-700'
+                  }`}>
+                    {locale === 'ko' ? '서비스 선택' : 'Select Services'}
+                  </span>
+                </div>
               </div>
               
-              <div className="hidden sm:block w-12 h-0.5 bg-gray-300"></div>
+              <div className="hidden sm:block w-8 h-0.5 bg-gray-300 self-center"></div>
               
               {/* Step 2 */}
-              <div className="flex items-center gap-3 w-full sm:w-auto justify-center sm:justify-start">
-                <div className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center font-bold flex-shrink-0 ${
-                  selectedServices.length > 0 ? 'bg-blue-500 text-white animate-pulse' : 'bg-gray-300 text-gray-600'
+              <div className="flex items-center gap-3 flex-1 sm:flex-initial">
+                <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold flex-shrink-0 transition-all ${
+                  selectedServices.length > 0 ? 'bg-blue-500 text-white animate-pulse scale-110' : 'bg-gray-300 text-gray-600'
                 }`}>
                   2
                 </div>
-                <span className="text-xs sm:text-sm font-medium text-gray-700">
-                  {locale === 'ko' ? '정보 입력' : 'Your Info'}
-                </span>
+                <div className="flex-1 sm:flex-initial">
+                  <span className="text-sm font-medium text-gray-700 block">
+                    {locale === 'ko' ? '정보 입력' : 'Your Info'}
+                  </span>
+                </div>
               </div>
               
-              <div className="hidden sm:block w-12 h-0.5 bg-gray-300"></div>
+              <div className="hidden sm:block w-8 h-0.5 bg-gray-300 self-center"></div>
               
               {/* Step 3 */}
-              <div className="flex items-center gap-3 w-full sm:w-auto justify-center sm:justify-start">
-                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-gray-300 text-gray-600 flex items-center justify-center font-bold flex-shrink-0">
+              <div className="flex items-center gap-3 flex-1 sm:flex-initial">
+                <div className="w-10 h-10 rounded-full bg-gray-300 text-gray-600 flex items-center justify-center font-bold flex-shrink-0 transition-all">
                   3
                 </div>
-                <span className="text-xs sm:text-sm font-medium text-gray-700">
-                  {locale === 'ko' ? '상담 시작!' : 'Get Started!'}
-                </span>
+                <div className="flex-1 sm:flex-initial">
+                  <span className="text-sm font-medium text-gray-700 block">
+                    {locale === 'ko' ? '상담 시작!' : 'Get Started!'}
+                  </span>
+                </div>
               </div>
             </motion.div>
           </div>

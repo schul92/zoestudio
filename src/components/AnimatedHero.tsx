@@ -26,7 +26,7 @@ export default function AnimatedHero({ locale = 'en' }: { locale?: string }) {
   }, [])
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white" style={{ position: 'relative' }}>
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white pt-20 sm:pt-16 md:pt-0" style={{ position: 'relative' }}>
       {/* Animated background grid */}
       <div className="absolute inset-0 opacity-[0.03]">
         <div className="absolute inset-0" style={{
@@ -107,7 +107,7 @@ export default function AnimatedHero({ locale = 'en' }: { locale?: string }) {
                 />
                 <svg
                   viewBox="0 0 100 100"
-                  className="w-32 h-32 relative z-10"
+                  className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 relative z-10"
                   fill="none"
                 >
                   <motion.path
