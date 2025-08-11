@@ -7,7 +7,7 @@ export default function Footer({ locale = 'en' }: { locale?: string }) {
   
   return (
     <footer className="w-full border-t-4 border-black bg-white">
-      <div className="container mx-auto px-6 py-12">
+      <div className="container mx-auto px-6 py-16">
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Company Info */}
           <div>
