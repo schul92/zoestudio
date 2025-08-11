@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export default function Footer({ locale = 'en' }: { locale?: string }) {
   const { t } = useTranslation(locale)
-  const prefix = locale === 'ko' ? '/ko' : '/en'
+  const prefix = locale === 'ko' ? '/ko' : '' // English uses root, Korean uses /ko
   
   return (
     <footer className="w-full relative bg-gradient-to-b from-gray-50 to-white">

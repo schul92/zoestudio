@@ -16,14 +16,27 @@ const nextConfig = {
     removeConsole: process.env.NODE_ENV === 'production',
     styledComponents: false,
   },
-  webpack: (config, { isServer }) => {
+  // Optimize for modern browsers only
+  experimental: {
+    optimizeCss: false, // Disable until stable
+  },
+  webpack: (config, { isServer, dev }) => {
     // Optimize CSS loading
     if (!isServer) {
       config.optimization.splitChunks = {
         chunks: 'all',
         cacheGroups: {
-          default: false,
-          vendors: false,
+          default: {
+            minChunks: 2,
+            priority: -20,
+            reuseExistingChunk: true,
+          },
+          vendors: {
+            test: /[\\/]node_modules[\\/]/,
+            priority: -10,
+            reuseExistingChunk: true,
+            name: 'vendors',
+          },
           styles: {
             name: 'styles',
             test: /\.(css|scss)$/,

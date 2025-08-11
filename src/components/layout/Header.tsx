@@ -9,12 +9,15 @@ import { usePathname } from 'next/navigation'
 
 export default function Header({ locale = 'en' }: { locale?: string }) {
   const { t } = useTranslation(locale)
-  const prefix = locale === 'ko' ? '/ko' : ''
+  const prefix = locale === 'ko' ? '/ko' : '' // English uses root, Korean uses /ko
   const [hasScrolled, setHasScrolled] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mounted, setMounted] = useState(false)
   const pathname = usePathname()
   const isAboutPage = pathname?.includes('/about')
   
   useEffect(() => {
+    setMounted(true)
     const updateScrolled = () => {
       setHasScrolled(window.scrollY > 20)
     }
@@ -22,6 +25,24 @@ export default function Header({ locale = 'en' }: { locale?: string }) {
     window.addEventListener('scroll', updateScrolled)
     return () => window.removeEventListener('scroll', updateScrolled)
   }, [])
+  
+  // Close mobile menu when route changes
+  useEffect(() => {
+    setMobileMenuOpen(false)
+  }, [pathname])
+  
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'unset'
+    }
+    
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
+  }, [mobileMenuOpen])
   
   return (
     <header 
@@ -70,14 +91,65 @@ export default function Header({ locale = 'en' }: { locale?: string }) {
             </div>
             
             {/* Mobile Menu Button - Only on mobile */}
-            <button className={`md:hidden ml-4 ${isAboutPage && !hasScrolled ? 'text-white' : 'text-black'}`}>
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
+            <button 
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className={`md:hidden ml-4 p-2 ${isAboutPage && !hasScrolled ? 'text-white' : 'text-black'}`}
+              aria-label="Toggle mobile menu"
+            >
+              {mobileMenuOpen ? (
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              ) : (
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              )}
             </button>
           </div>
         </div>
       </nav>
+      
+      {/* Mobile Menu Overlay */}
+      {mobileMenuOpen && (
+        <div 
+          className="md:hidden fixed inset-0 bg-black bg-opacity-50 z-40"
+          style={{ top: '72px' }}
+          onClick={() => setMobileMenuOpen(false)}
+        />
+      )}
+      
+      {/* Mobile Menu Dropdown */}
+      <div 
+        className={`md:hidden fixed left-0 right-0 bg-white shadow-xl transition-all duration-300 ease-in-out z-50 ${
+          mobileMenuOpen ? 'translate-y-0' : '-translate-y-full'
+        }`}
+        style={{ top: '72px' }}
+      >
+        <nav className="px-6 py-6 space-y-2">
+          <Link 
+            href={`${prefix}/about`} 
+            onClick={() => setMobileMenuOpen(false)}
+            className="block py-3 px-4 text-gray-900 hover:bg-gray-100 rounded-lg transition-colors text-lg font-medium"
+          >
+            {t.nav.about}
+          </Link>
+          <Link 
+            href={`${prefix}/#services`} 
+            onClick={() => setMobileMenuOpen(false)}
+            className="block py-3 px-4 text-gray-900 hover:bg-gray-100 rounded-lg transition-colors text-lg font-medium"
+          >
+            {t.nav.services}
+          </Link>
+          <Link 
+            href={`${prefix}/#contact`} 
+            onClick={() => setMobileMenuOpen(false)}
+            className="block py-3 px-4 text-gray-900 hover:bg-gray-100 rounded-lg transition-colors text-lg font-medium"
+          >
+            {t.nav.contact}
+          </Link>
+        </nav>
+      </div>
     </header>
   )
 }

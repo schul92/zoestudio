@@ -1,0 +1,22 @@
+{
+  "name": "ZOE LUMOS - Digital Marketing Agency",
+  "short_name": "ZOE LUMOS",
+  "description": "Professional SEO Services, Google Ads Management & Web Design for Small Businesses",
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "orientation": "portrait",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "marketing", "productivity"],
+  "lang": "en-US",
+  "dir": "ltr"
+}

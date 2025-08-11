@@ -6,24 +6,32 @@ const locales = ['en', 'ko']
 export function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname
   
-  // Check if there is any supported locale in the pathname
+  // Check if the pathname already has a locale
   const pathnameHasLocale = locales.some(
     (locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
   )
 
-  if (pathnameHasLocale) return
+  if (pathnameHasLocale) {
+    // If it's /en or /en/*, redirect to root without /en
+    if (pathname === '/en' || pathname.startsWith('/en/')) {
+      const newPath = pathname.replace(/^\/en/, '') || '/'
+      const url = request.nextUrl.clone()
+      url.pathname = newPath
+      return NextResponse.redirect(url, { status: 301 })
+    }
+    // Korean paths stay as-is
+    return NextResponse.next()
+  }
 
-  // Redirect if there is no locale
-  const locale = 'en'
-  request.nextUrl.pathname = `/${locale}${pathname}`
-  // e.g. incoming request is /products
-  // The new URL is now /en/products
-  return NextResponse.redirect(request.nextUrl)
+  // For paths without locale, rewrite to /en internally (don't change URL)
+  const url = request.nextUrl.clone()
+  url.pathname = `/en${pathname}`
+  return NextResponse.rewrite(url)
 }
 
 export const config = {
   matcher: [
-    // Skip all internal paths (_next)
-    '/((?!_next|api|favicon.ico).*)',
+    // Skip Next.js internals and static files
+    '/((?!_next|api|favicon.ico|sitemap.xml|robots.txt|manifest.json|.*\\..*|site.webmanifest).*)',
   ],
 }

@@ -1,13 +1,15 @@
-# Browsers that we support
-# Target modern browsers only for better performance
+# Target modern browsers only - reduces polyfills by ~13KB
+# Optimized for performance
 
-> 0.5%
-last 2 versions
-Firefox ESR
+# Modern browsers with ES6+ support
+Chrome >= 95
+Firefox >= 95
+Safari >= 15
+Edge >= 95
+
+# Exclude legacy browsers
 not dead
 not IE 11
 not op_mini all
-Chrome >= 90
-Firefox >= 88
-Safari >= 14
-Edge >= 90
+not samsung < 15
+not and_uc < 15
