@@ -37,7 +37,7 @@ export async function generateMetadata({
       address: false,
       telephone: false,
     },
-    metadataBase: new URL('https://zoestudio.com'),
+    metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://zoelumos.com'),
     manifest: '/manifest.json',
     category: 'business',
     alternates: {
@@ -50,16 +50,16 @@ export async function generateMetadata({
     openGraph: {
       title: seo.openGraph.title,
       description: seo.openGraph.description,
-      url: `https://zoestudio.com/${locale}`,
+      url: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://zoelumos.com'}/${locale}`,
       siteName: seo.openGraph.siteName,
       locale: seo.openGraph.locale,
       type: 'website',
       images: [
         {
-          url: '/og-image.png',
+          url: `/api/og?title=${encodeURIComponent(seo.openGraph.title)}&subtitle=${encodeURIComponent(seo.openGraph.description)}`,
           width: 1200,
           height: 630,
-          alt: 'Zoe Studio - Digital Marketing Services',
+          alt: 'ZOE LUMOS - Digital Marketing Services',
         },
       ],
     },

@@ -28,8 +28,9 @@ export const structuredData = {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "ZOE LUMOS",
+    "alternateName": "ZOE STUDIO LLC",
     "url": "https://zoelumos.com",
-    "logo": "https://zoelumos.com/logo.png",
+    "logo": "https://zoelumos.com/favicon.svg",
     "contactPoint": {
       "@type": "ContactPoint",
       "email": "zoestudiollc@gmail.com",
@@ -44,15 +45,18 @@ export const structuredData = {
   },
   localBusiness: {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": "ProfessionalService",
     "name": "ZOE LUMOS",
-    "image": "https://zoelumos.com/logo.png",
+    "alternateName": "ZOE STUDIO LLC",
+    "image": "https://zoelumos.com/favicon.svg",
     "email": "zoestudiollc@gmail.com",
+    "url": "https://zoelumos.com",
+    "telephone": "",
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "US",
-      "addressRegion": "NJ, NY",
-      "addressLocality": "Fort Lee, Palisades Park, Flushing, Manhattan"
+      "addressRegion": "NJ",
+      "addressLocality": "New Jersey"
     },
     "areaServed": [
       {

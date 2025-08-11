@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://zoestudio.com'
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://zoelumos.com'
   const lastModified = new Date()
 
   const routes = [
