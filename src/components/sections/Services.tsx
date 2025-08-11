@@ -589,8 +589,10 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
                     // Get the element position
                     const rect = contactSection.getBoundingClientRect()
                     const scrollTop = window.pageYOffset || document.documentElement.scrollTop
-                    // Account for fixed header height (approximately 80px on mobile)
-                    const offset = 80
+                    // Account for fixed header height - more offset for mobile/tablet
+                    const isMobile = window.innerWidth < 768
+                    const isTablet = window.innerWidth >= 768 && window.innerWidth < 1024
+                    const offset = isMobile ? 100 : isTablet ? 90 : 80
                     const targetPosition = rect.top + scrollTop - offset
                     
                     // Smooth scroll to position

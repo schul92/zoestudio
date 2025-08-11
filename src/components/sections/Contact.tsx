@@ -99,14 +99,14 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
   }
 
   return (
-    <section id="contact" className="pt-24 pb-20 md:py-20 bg-gradient-to-br from-gray-50 to-white border-t-4 border-black">
+    <section id="contact" className="pt-32 pb-20 md:pt-24 md:pb-20 bg-gradient-to-br from-gray-50 to-white border-t-4 border-black">
       <div className="container mx-auto px-6">
         <ScrollAnimation>
           <div className="max-w-5xl mx-auto">
-            {/* Header */}
-            <div className="text-center mb-12">
-              <h2 className="text-5xl md:text-6xl font-black mb-4">{t.contact.title}</h2>
-              <p className="text-xl md:text-2xl text-gray-700 max-w-2xl mx-auto">
+            {/* Header - Improved mobile visibility */}
+            <div className="text-center mb-8 md:mb-12">
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 px-4">{t.contact.title}</h2>
+              <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-700 max-w-2xl mx-auto px-4">
                 {t.contact.subtitle}
               </p>
             </div>

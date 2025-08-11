@@ -217,7 +217,20 @@ export default function AnimatedHero({ locale = 'en' }: { locale?: string }) {
                 onClick={() => {
                   const servicesSection = document.getElementById('services')
                   if (servicesSection) {
-                    servicesSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                    // Get the element position
+                    const rect = servicesSection.getBoundingClientRect()
+                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop
+                    // Account for fixed header height - more offset for mobile/tablet
+                    const isMobile = window.innerWidth < 768
+                    const isTablet = window.innerWidth >= 768 && window.innerWidth < 1024
+                    const offset = isMobile ? 100 : isTablet ? 90 : 80
+                    const targetPosition = rect.top + scrollTop - offset
+                    
+                    // Smooth scroll to position
+                    window.scrollTo({
+                      top: targetPosition,
+                      behavior: 'smooth'
+                    })
                   }
                 }}
                 className="group relative bg-black text-white px-10 py-5 rounded-xl text-lg font-bold shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] transition-all overflow-hidden"
