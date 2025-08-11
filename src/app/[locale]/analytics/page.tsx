@@ -1,7 +1,7 @@
 'use client'
 
-import { useState, useEffect } from 'react'
-import Header from '@/components/layout/Header'
+import { useState, useEffect, useCallback } from 'react'
+import HeaderWrapper from '@/components/layout/HeaderWrapper'
 import Footer from '@/components/layout/Footer'
 
 interface Analytics {
@@ -22,11 +22,7 @@ export default function AnalyticsPage({ params }: { params: { locale: string } }
   const [loading, setLoading] = useState(true)
   const [days, setDays] = useState(7)
 
-  useEffect(() => {
-    fetchAnalytics()
-  }, [days])
-
-  const fetchAnalytics = async () => {
+  const fetchAnalytics = useCallback(async () => {
     try {
       setLoading(true)
       const response = await fetch(`/api/track?days=${days}`)
@@ -37,7 +33,11 @@ export default function AnalyticsPage({ params }: { params: { locale: string } }
     } finally {
       setLoading(false)
     }
-  }
+  }, [days])
+
+  useEffect(() => {
+    fetchAnalytics()
+  }, [fetchAnalytics])
 
   const serviceColors = {
     'SEO': 'bg-blue-500',
@@ -48,7 +48,7 @@ export default function AnalyticsPage({ params }: { params: { locale: string } }
 
   return (
     <>
-      <Header locale={locale} />
+      <HeaderWrapper locale={locale} />
       
       <div className="min-h-screen bg-gray-50 pt-24">
         <div className="container mx-auto px-6 py-12">

@@ -31,7 +31,7 @@ export function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    // Skip Next.js internals and static files
-    '/((?!_next|api|favicon.ico|sitemap.xml|robots.txt|manifest.json|.*\\..*|site.webmanifest).*)',
+    // Skip Next.js internals and all static files
+    '/((?!_next|api|favicon.ico|manifest.json|site.webmanifest|robots.txt|sitemap.xml|.*\\.png|.*\\.jpg|.*\\.jpeg|.*\\.gif|.*\\.svg|.*\\.ico|.*\\.webp).*)',
   ],
 }

@@ -14,40 +14,6 @@ const nextConfig = {
   poweredByHeader: false,
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production',
-    styledComponents: false,
-  },
-  // Optimize for modern browsers only
-  experimental: {
-    optimizeCss: false, // Disable until stable
-  },
-  webpack: (config, { isServer, dev }) => {
-    // Optimize CSS loading
-    if (!isServer) {
-      config.optimization.splitChunks = {
-        chunks: 'all',
-        cacheGroups: {
-          default: {
-            minChunks: 2,
-            priority: -20,
-            reuseExistingChunk: true,
-          },
-          vendors: {
-            test: /[\\/]node_modules[\\/]/,
-            priority: -10,
-            reuseExistingChunk: true,
-            name: 'vendors',
-          },
-          styles: {
-            name: 'styles',
-            test: /\.(css|scss)$/,
-            chunks: 'all',
-            enforce: true,
-            priority: 10,
-          },
-        },
-      };
-    }
-    return config;
   },
   async headers() {
     return [

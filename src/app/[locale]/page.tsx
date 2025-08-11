@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import Header from '@/components/layout/Header'
+import HeaderWrapper from '@/components/layout/HeaderWrapper'
 import Footer from '@/components/layout/Footer'
 import AnimatedHero from '@/components/AnimatedHero'
 import Services from '@/components/sections/Services'
@@ -34,8 +34,8 @@ export async function generateMetadata({
 export default function Home({ params }: { params: { locale: string } }) {
   return (
     <div className="relative">
-      <Header locale={params.locale} />
-      <main className="min-h-screen relative">
+      <HeaderWrapper locale={params.locale} />
+      <main className="min-h-screen relative overflow-x-hidden">
         <AnimatedHero locale={params.locale} />
         <Services locale={params.locale} />
         <Contact locale={params.locale} />

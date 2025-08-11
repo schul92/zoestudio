@@ -10,21 +10,26 @@ import { usePathname } from 'next/navigation'
 export default function Header({ locale = 'en' }: { locale?: string }) {
   const { t } = useTranslation(locale)
   const prefix = locale === 'ko' ? '/ko' : '' // English uses root, Korean uses /ko
+  const pathname = usePathname()
+  const isAboutPage = pathname?.includes('/about')
   const [hasScrolled, setHasScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [mounted, setMounted] = useState(false)
-  const pathname = usePathname()
-  const isAboutPage = pathname?.includes('/about')
   
   useEffect(() => {
     setMounted(true)
+  }, [])
+  
+  useEffect(() => {
+    if (!mounted) return
+    
     const updateScrolled = () => {
       setHasScrolled(window.scrollY > 20)
     }
-    updateScrolled() // Check initial scroll position
+    updateScrolled()
     window.addEventListener('scroll', updateScrolled)
     return () => window.removeEventListener('scroll', updateScrolled)
-  }, [])
+  }, [mounted])
   
   // Close mobile menu when route changes
   useEffect(() => {
@@ -44,56 +49,55 @@ export default function Header({ locale = 'en' }: { locale?: string }) {
     }
   }, [mobileMenuOpen])
   
+  // Use consistent initial state for SSR
+  const scrolledClass = mounted && hasScrolled 
+    ? 'bg-white/95 shadow-lg backdrop-blur-md' 
+    : isAboutPage 
+      ? 'bg-black/40 backdrop-blur-lg border-b border-white/20'
+      : 'bg-white/10 backdrop-blur-sm'
+
   return (
     <header 
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        hasScrolled 
-          ? 'bg-white/95 shadow-lg backdrop-blur-md' 
-          : isAboutPage 
-            ? 'bg-black/40 backdrop-blur-lg border-b border-white/20'
-            : 'bg-white/10 backdrop-blur-sm'
-      }`}
+      className={`fixed top-0 w-full z-[100] transition-all duration-300 ${scrolledClass}`}
     >
-      <nav className="w-full px-8 lg:px-12 xl:px-20 py-6">
+      <nav className="w-full px-4 sm:px-8 lg:px-12 xl:px-20 py-4 sm:py-6">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
           <Link 
             href={`${prefix}/`} 
             className="group flex items-center space-x-3 transition-opacity"
             aria-label={locale === 'ko' ? 'ZOE LUMOS 홈페이지' : 'ZOE LUMOS Homepage'}
           >
-            <div className={`transition-all duration-300 group-hover:scale-110 ${isAboutPage && !hasScrolled ? 'text-white' : 'text-black'} flex items-center`}>
-              <AnimatedLogo width={40} height={40} animate={false} />
-              <span className="text-xl font-bold ml-3 transition-all duration-300 group-hover:translate-x-1">ZOE LUMOS</span>
+            <div className={`transition-all duration-300 group-hover:scale-110 ${isAboutPage && (!mounted || !hasScrolled) ? 'text-white' : 'text-black'} flex items-center`}>
+              <AnimatedLogo width={28} height={28} animate={false} />
+              <span className="text-base sm:text-lg md:text-xl font-bold ml-2 transition-all duration-300 group-hover:translate-x-1 whitespace-nowrap">ZOE LUMOS</span>
             </div>
           </Link>
           
-          {/* Navigation */}
-          <div className="flex items-center">
+          {/* Right Side Navigation */}
+          <div className="flex items-center gap-2 sm:gap-4">
             {/* Desktop Links - Hidden on mobile */}
             <div className="hidden md:flex items-center">
               <Link href={`${prefix}/about`} className="relative group py-2 px-4 min-w-[80px] text-center">
-                <span className={`relative z-10 transition-colors duration-300 ${isAboutPage && !hasScrolled ? 'text-white' : 'text-black'}`}>{t.nav.about}</span>
-                <span className={`absolute bottom-0 left-4 right-4 h-0.5 ${isAboutPage && !hasScrolled ? 'bg-white' : 'bg-black'} scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out`} />
+                <span className={`relative z-10 transition-colors duration-300 ${isAboutPage && (!mounted || !hasScrolled) ? 'text-white' : 'text-black'}`}>{t.nav.about}</span>
+                <span className={`absolute bottom-0 left-4 right-4 h-0.5 ${isAboutPage && (!mounted || !hasScrolled) ? 'bg-white' : 'bg-black'} scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out`} />
               </Link>
               <Link href={`${prefix}/#services`} className="relative group py-2 px-4 min-w-[80px] text-center">
-                <span className={`relative z-10 transition-colors duration-300 ${isAboutPage && !hasScrolled ? 'text-white' : 'text-black'}`}>{t.nav.services}</span>
-                <span className={`absolute bottom-0 left-4 right-4 h-0.5 ${isAboutPage && !hasScrolled ? 'bg-white' : 'bg-black'} scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out`} />
+                <span className={`relative z-10 transition-colors duration-300 ${isAboutPage && (!mounted || !hasScrolled) ? 'text-white' : 'text-black'}`}>{t.nav.services}</span>
+                <span className={`absolute bottom-0 left-4 right-4 h-0.5 ${isAboutPage && (!mounted || !hasScrolled) ? 'bg-white' : 'bg-black'} scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out`} />
               </Link>
               <Link href={`${prefix}/#contact`} className="relative group py-2 px-4 min-w-[80px] text-center">
-                <span className={`relative z-10 transition-colors duration-300 ${isAboutPage && !hasScrolled ? 'text-white' : 'text-black'}`}>{t.nav.contact}</span>
-                <span className={`absolute bottom-0 left-4 right-4 h-0.5 ${isAboutPage && !hasScrolled ? 'bg-white' : 'bg-black'} scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out`} />
+                <span className={`relative z-10 transition-colors duration-300 ${isAboutPage && (!mounted || !hasScrolled) ? 'text-white' : 'text-black'}`}>{t.nav.contact}</span>
+                <span className={`absolute bottom-0 left-4 right-4 h-0.5 ${isAboutPage && (!mounted || !hasScrolled) ? 'bg-white' : 'bg-black'} scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out`} />
               </Link>
             </div>
             
             {/* Language Toggle - Always visible */}
-            <div className="ml-6">
-              <LanguageToggle lightMode={isAboutPage && !hasScrolled} />
-            </div>
+            <LanguageToggle lightMode={isAboutPage && (!mounted || !hasScrolled)} />
             
             {/* Mobile Menu Button - Only on mobile */}
             <button 
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className={`md:hidden ml-4 p-2 ${isAboutPage && !hasScrolled ? 'text-white' : 'text-black'}`}
+              className={`md:hidden p-2 ${isAboutPage && (!mounted || !hasScrolled) ? 'text-white' : 'text-black'}`}
               aria-label="Toggle mobile menu"
             >
               {mobileMenuOpen ? (
@@ -113,19 +117,18 @@ export default function Header({ locale = 'en' }: { locale?: string }) {
       {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
         <div 
-          className="md:hidden fixed inset-0 bg-black bg-opacity-50 z-40"
-          style={{ top: '72px' }}
+          className="md:hidden fixed inset-0 bg-black bg-opacity-50 z-[90]"
+          style={{ top: '56px' }}
           onClick={() => setMobileMenuOpen(false)}
         />
       )}
       
       {/* Mobile Menu Dropdown */}
-      <div 
-        className={`md:hidden fixed left-0 right-0 bg-white shadow-xl transition-all duration-300 ease-in-out z-50 ${
-          mobileMenuOpen ? 'translate-y-0' : '-translate-y-full'
-        }`}
-        style={{ top: '72px' }}
-      >
+      {mobileMenuOpen && (
+        <div 
+          className="md:hidden fixed left-0 right-0 bg-white shadow-xl transition-all duration-300 ease-in-out z-[95] translate-y-0"
+          style={{ top: '56px' }}
+        >
         <nav className="px-6 py-6 space-y-2">
           <Link 
             href={`${prefix}/about`} 
@@ -150,6 +153,7 @@ export default function Header({ locale = 'en' }: { locale?: string }) {
           </Link>
         </nav>
       </div>
+      )}
     </header>
   )
 }

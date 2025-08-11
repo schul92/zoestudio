@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import Header from '@/components/layout/Header'
+import HeaderWrapper from '@/components/layout/HeaderWrapper'
 import Footer from '@/components/layout/Footer'
 import AboutClient from './AboutClient'
 import { seoConfig } from '@/config/seo'
@@ -180,7 +180,7 @@ export default function AboutPage({ params }: { params: { locale: string } }) {
 
   return (
     <>
-      <Header locale={locale} />
+      <HeaderWrapper locale={locale} />
       <AboutClient t={t} locale={locale} />
       <Footer locale={locale} />
     </>
