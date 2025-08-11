@@ -11,12 +11,12 @@ export const seoConfig = {
     }
   },
   ko: {
-    title: 'ZOE LUMOS - 뉴욕 뉴저지 한인 비즈니스 전문 마케팅 | 100% 한국어 상담',
-    description: '뉴욕, 뉴저지, 포트리, 팰팍, 플러싱 한인 사업체 전문. 레스토랑, 네일샵, 부동산, 병원 등 모든 한인 비즈니스를 위한 SEO, 구글 광고, 웹사이트 제작. 100% 한국어 상담 가능.',
-    keywords: '뉴욕 한인 마케팅, 뉴저지 한인 마케팅, 포트리 한인, Fort Lee Korean business, 팰팍 한인, Palisades Park Korean, 플러싱 한인 비즈니스, Flushing Korean, 맨하탄 한인, 리지우드 한인, 잉글우드 한인, 한국어 SEO, 한인 구글 광고, 한인 웹사이트 제작, NJ 한인 마케팅, NY 한인 마케팅, 한인 디지털 마케팅, 미주 한인 비즈니스, 교민 사업체 마케팅, 한인 레스토랑 마케팅, 한인 네일샵 마케팅, 한인 부동산 마케팅, 한인 병원 마케팅, 한인 법률사무소 마케팅, Korean American business marketing',
+    title: 'ZOE LUMOS - 뉴욕 뉴저지 웹사이트 제작 | 구글광고 옐프광고 | SEO 전문',
+    description: '뉴욕 NY 뉴저지 NJ 웹사이트 제작, 구글 광고 (Google Ads), 옐프 광고 (Yelp Ads), SEO 검색엔진 최적화 전문. 포트리, 팰팍, 플러싱 한인 비즈니스 마케팅. 홈페이지 제작부터 온라인 광고까지 원스톱 서비스. 100% 한국어 상담.',
+    keywords: '뉴욕 웹사이트, NY 웹사이트, 뉴저지 웹사이트, NJ 웹사이트, 뉴욕 홈페이지 제작, 뉴저지 홈페이지 제작, NY NJ 웹사이트, 구글광고, Google Ads, 구글애드, 옐프광고, Yelp Ads, 옐프 광고, 뉴욕 구글광고, 뉴저지 구글광고, NY 구글광고, NJ 구글광고, SEO, 검색엔진최적화, 뉴욕 SEO, 뉴저지 SEO, 포트리 웹사이트, Fort Lee 웹사이트, 팰팍 웹사이트, Palisades Park 웹사이트, 플러싱 웹사이트, Flushing 웹사이트, 한인 웹사이트 제작, 한인 홈페이지, 한인 구글광고, 한인 옐프광고, 한인 마케팅, Korean website, Korean Google Ads, Korean Yelp Ads, 미국 웹사이트 제작, 미국 홈페이지 제작, 온라인 마케팅, 디지털 마케팅',
     openGraph: {
-      title: 'ZOE LUMOS - 뉴욕·뉴저지 한인 비즈니스 성공 파트너',
-      description: '포트리, 팰팍, 플러싱 등 한인 밀집 지역 비즈니스 전문. 100% 한국어 상담. SEO, 구글 광고, 웹사이트 제작.',
+      title: 'ZOE LUMOS - NY/NJ 웹사이트 제작 | 구글·옐프 광고 전문',
+      description: '뉴욕 뉴저지 웹사이트 제작, 구글광고, 옐프광고, SEO 전문. 포트리, 팰팍, 플러싱 한인 비즈니스 마케팅. 홈페이지부터 온라인 광고까지. 100% 한국어 상담.',
       siteName: 'ZOE LUMOS',
       locale: 'ko_KR',
     }

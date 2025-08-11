@@ -123,12 +123,12 @@ const content = {
       ],
     },
     services: {
-      title: '우리가 빛을 가져다주는 방법',
+      title: '우리가 제공하는 서비스',
       items: [
-        { title: 'SEO', description: '구글에서 당신의 존재를 밝힙니다' },
-        { title: '구글 광고', description: '당신의 비즈니스에 스포트라이트' },
-        { title: '웹 디자인', description: '빛나는 디지털 경험' },
-        { title: 'LLC 설립', description: '비즈니스 여정의 탄생' },
+        { title: '웹사이트 제작', description: 'NY/NJ 비즈니스를 위한 전문 홈페이지' },
+        { title: '구글 광고', description: 'Google Ads로 즉시 고객 확보' },
+        { title: '옐프 광고', description: 'Yelp Ads로 지역 고객 타겟팅' },
+        { title: 'SEO 최적화', description: '검색 1페이지 상위 노출 보장' },
       ],
     },
     cta: {
