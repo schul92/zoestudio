@@ -6,22 +6,17 @@ import { useState, useEffect } from 'react'
 
 export default function AnimatedHero({ locale = 'en' }: { locale?: string }) {
   const { t } = useTranslation(locale)
-  const [showContent, setShowContent] = useState(false)
-
-  useEffect(() => {
-    const timer = setTimeout(() => setShowContent(true), 500)
-    return () => clearTimeout(timer)
-  }, [])
+  const [showContent, setShowContent] = useState(true) // Show content immediately
 
   // Floating particles - generate once on mount to avoid hydration mismatch
   const [particles, setParticles] = useState<Array<{id: number, x: string, delay: number, duration: number}>>([])
   
   useEffect(() => {
-    setParticles(Array.from({ length: 20 }, (_, i) => ({
+    setParticles(Array.from({ length: 10 }, (_, i) => ({ // Reduce particles for performance
       id: i,
       x: Math.random() * 100 + '%',
       delay: Math.random() * 5,
-      duration: 10 + Math.random() * 20,
+      duration: 15 + Math.random() * 15,
     })))
   }, [])
 
@@ -83,28 +78,16 @@ export default function AnimatedHero({ locale = 'en' }: { locale?: string }) {
           >
             {/* Animated lightbulb logo */}
             <motion.div
-              initial={{ scale: 0, rotate: -180 }}
-              animate={{ scale: 1, rotate: 0 }}
+              initial={{ scale: 0.8, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
               transition={{ 
-                duration: 1.5,
-                type: "spring",
-                stiffness: 100,
-                damping: 15
+                duration: 0.5,
+                ease: "easeOut"
               }}
               className="mb-8 flex justify-center"
             >
               <div className="relative">
-                <motion.div
-                  animate={{ 
-                    rotate: 360,
-                    scale: [1, 1.1, 1]
-                  }}
-                  transition={{
-                    rotate: { duration: 20, repeat: Infinity, ease: "linear" },
-                    scale: { duration: 2, repeat: Infinity, repeatType: "reverse" }
-                  }}
-                  className="absolute inset-0 bg-gradient-to-r from-gray-200 to-gray-400 rounded-full blur-3xl opacity-20"
-                />
+                <div className="absolute inset-0 bg-gradient-to-r from-gray-200 to-gray-400 rounded-full blur-3xl opacity-20" />
                 <svg
                   viewBox="0 0 100 100"
                   className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 relative z-10"
@@ -118,7 +101,7 @@ export default function AnimatedHero({ locale = 'en' }: { locale?: string }) {
                     strokeLinejoin="round"
                     initial={{ pathLength: 0 }}
                     animate={{ pathLength: 1 }}
-                    transition={{ duration: 2, ease: "easeInOut" }}
+                    transition={{ duration: 1, ease: "easeOut" }}
                   />
                   <motion.path
                     d="M42.5 77.5V80C42.5 82.761 44.739 85 47.5 85H52.5C55.261 85 57.5 82.761 57.5 80V77.5"
@@ -128,7 +111,7 @@ export default function AnimatedHero({ locale = 'en' }: { locale?: string }) {
                     strokeLinejoin="round"
                     initial={{ pathLength: 0 }}
                     animate={{ pathLength: 1 }}
-                    transition={{ duration: 1, delay: 1.5, ease: "easeInOut" }}
+                    transition={{ duration: 0.5, delay: 0.5, ease: "easeOut" }}
                   />
                   {/* Glowing effect inside bulb */}
                   <motion.circle
@@ -160,13 +143,13 @@ export default function AnimatedHero({ locale = 'en' }: { locale?: string }) {
                 {t.hero.title.split('').map((char, index) => (
                   <motion.span
                     key={index}
-                    initial={{ opacity: 0, y: 50 }}
+                    initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{
-                      duration: 0.5,
-                      delay: index * 0.05,
+                      duration: 0.3,
+                      delay: index * 0.02, // Faster animation
                       type: "spring",
-                      stiffness: 100
+                      stiffness: 120
                     }}
                     className="inline-block text-black"
                     style={{ 
@@ -182,7 +165,7 @@ export default function AnimatedHero({ locale = 'en' }: { locale?: string }) {
               <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 1.5, duration: 1 }}
+                transition={{ delay: 0.5, duration: 0.5 }} // Faster subtitle
                 className="-mt-2"
               >
                 <h2 className="text-4xl md:text-6xl font-black text-gray-600">
@@ -193,9 +176,9 @@ export default function AnimatedHero({ locale = 'en' }: { locale?: string }) {
 
             {/* Description with fade in */}
             <motion.p 
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 2, duration: 1 }}
+              transition={{ delay: 0.8, duration: 0.5 }} // Faster description
               className="text-xl md:text-2xl text-gray-700 mt-10 mb-12 max-w-3xl mx-auto font-light leading-relaxed"
             >
               {t.hero.description}
@@ -203,9 +186,9 @@ export default function AnimatedHero({ locale = 'en' }: { locale?: string }) {
 
             {/* Animated buttons */}
             <motion.div 
-              initial={{ opacity: 0, scale: 0.8 }}
+              initial={{ opacity: 0, scale: 0.9 }}
               animate={{ opacity: 1, scale: 1 }}
-              transition={{ delay: 2.5, duration: 0.5 }}
+              transition={{ delay: 1, duration: 0.3 }} // Faster button
               className="flex flex-col sm:flex-row gap-6 justify-center items-center"
             >
               <motion.button 

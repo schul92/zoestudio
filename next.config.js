@@ -5,11 +5,19 @@ const nextConfig = {
     formats: ['image/avif', 'image/webp'],
     domains: [],
     minimumCacheTTL: 60,
+    deviceSizes: [640, 750, 828, 1080, 1200],
+    imageSizes: [16, 32, 48, 64, 96],
   },
   reactStrictMode: true,
   swcMinify: true,
   compress: true,
   poweredByHeader: false,
+  compiler: {
+    removeConsole: process.env.NODE_ENV === 'production',
+  },
+  experimental: {
+    optimizeCss: true,
+  },
   async headers() {
     return [
       {
