@@ -196,40 +196,45 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <div className="grid md:grid-cols-2 gap-4">
                       <div>
-                        <label className="block text-sm font-medium mb-2">
+                        <label className="block text-sm font-bold text-gray-800 mb-2" htmlFor="name">
                           {locale === 'ko' ? '이름 *' : 'Name *'}
                         </label>
                         <input
                           type="text"
+                          id="name"
                           name="name"
                           required
                           value={formData.name}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-black focus:outline-none transition-colors"
+                          placeholder={locale === 'ko' ? '홍길동' : 'John Doe'}
+                          className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-black focus:outline-none transition-colors bg-white"
                         />
                       </div>
                       
                       <div>
-                        <label className="block text-sm font-medium mb-2">
+                        <label className="block text-sm font-bold text-gray-800 mb-2" htmlFor="phone">
                           {locale === 'ko' ? '전화번호' : 'Phone'}
                         </label>
                         <input
                           type="tel"
+                          id="phone"
                           name="phone"
                           value={formData.phone}
                           onChange={handleChange}
-                          className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-black focus:outline-none transition-colors"
+                          placeholder={locale === 'ko' ? '010-1234-5678' : '(555) 123-4567'}
+                          className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-black focus:outline-none transition-colors bg-white"
                         />
                       </div>
                     </div>
                     
                     <div>
-                      <label className="block text-sm font-medium mb-2">
+                      <label className="block text-sm font-bold text-gray-800 mb-2" htmlFor="email">
                         {locale === 'ko' ? '이메일 *' : 'Email *'}
                       </label>
                       <div className="relative">
                         <input
                           type="email"
+                          id="email"
                           name="email"
                           required
                           value={formData.email}
@@ -243,9 +248,9 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                               ? 'border-red-500 focus:border-red-600 bg-red-50'
                               : formData.email && !emailError && emailTouched
                               ? 'border-green-500 focus:border-green-600 bg-green-50'
-                              : 'border-gray-300 focus:border-black'
+                              : 'border-gray-300 focus:border-black bg-white'
                           }`}
-                          placeholder={locale === 'ko' ? 'your@email.com' : 'your@email.com'}
+                          placeholder={locale === 'ko' ? 'example@email.com' : 'example@email.com'}
                         />
                         {/* Validation Icon */}
                         {emailTouched && (
@@ -284,23 +289,26 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                     </div>
                     
                     <div>
-                      <label className="block text-sm font-medium mb-2">
+                      <label className="block text-sm font-bold text-gray-800 mb-2" htmlFor="business">
                         {locale === 'ko' ? '비즈니스 이름' : 'Business Name'}
                       </label>
                       <input
                         type="text"
+                        id="business"
                         name="business"
                         value={formData.business}
                         onChange={handleChange}
-                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-black focus:outline-none transition-colors"
+                        placeholder={locale === 'ko' ? '귀사명' : 'Your Company'}
+                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-black focus:outline-none transition-colors bg-white"
                       />
                     </div>
                     
                     <div>
-                      <label className="block text-sm font-medium mb-2">
+                      <label className="block text-sm font-bold text-gray-800 mb-2" htmlFor="message">
                         {locale === 'ko' ? '추가 메시지' : 'Additional Message'}
                       </label>
                       <textarea
+                        id="message"
                         name="message"
                         rows={4}
                         value={formData.message}
@@ -309,7 +317,7 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                           ? '귀하의 비즈니스에 대해 더 알려주세요...' 
                           : 'Tell us more about your business needs...'
                         }
-                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-black focus:outline-none transition-colors resize-none"
+                        className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-black focus:outline-none transition-colors resize-none bg-white"
                       />
                     </div>
                     
