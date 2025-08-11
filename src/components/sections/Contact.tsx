@@ -20,6 +20,7 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
   const [emailError, setEmailError] = useState('')
   const [emailTouched, setEmailTouched] = useState(false)
+  const [submittedEmail, setSubmittedEmail] = useState('')
 
   const validateEmail = (email: string) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -74,6 +75,7 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
 
       if (response.ok) {
         setSubmitStatus('success')
+        setSubmittedEmail(formData.email)
         setFormData({
           name: '',
           email: '',
@@ -339,16 +341,50 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                     
                     {submitStatus === 'success' && (
                       <motion.div 
-                        initial={{ opacity: 0, y: -10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="p-4 bg-green-50 border-2 border-green-300 rounded-lg"
+                        initial={{ opacity: 0, scale: 0.9 }}
+                        animate={{ opacity: 1, scale: 1 }}
+                        transition={{ type: "spring", duration: 0.5 }}
+                        className="p-6 bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-400 rounded-xl shadow-lg"
                       >
-                        <p className="text-green-700 font-medium text-center">
-                          {locale === 'ko' 
-                            ? '✅ 상담 신청이 접수되었습니다! 곧 연락드리겠습니다.' 
-                            : '✅ Request received! We\'ll contact you soon.'
-                          }
-                        </p>
+                        <div className="text-center space-y-3">
+                          <motion.div
+                            initial={{ scale: 0 }}
+                            animate={{ scale: 1 }}
+                            transition={{ delay: 0.2, type: "spring" }}
+                            className="text-4xl"
+                          >
+                            ✅
+                          </motion.div>
+                          <p className="text-green-800 font-bold text-lg">
+                            {locale === 'ko' 
+                              ? '상담 신청이 접수되었습니다!' 
+                              : 'Request Successfully Submitted!'
+                            }
+                          </p>
+                          <div className="bg-white p-3 rounded-lg border border-green-200">
+                            <p className="text-gray-700 text-sm">
+                              {locale === 'ko' 
+                                ? '확인 이메일을 다음 주소로 보냈습니다:' 
+                                : 'Confirmation email sent to:'
+                              }
+                            </p>
+                            <p className="text-green-700 font-semibold text-base mt-1">
+                              📧 {submittedEmail}
+                            </p>
+                          </div>
+                          <p className="text-gray-600 text-sm">
+                            {locale === 'ko' 
+                              ? '이메일함을 확인해주세요. 스팸함도 확인하시기 바랍니다.' 
+                              : 'Please check your inbox. Don\'t forget to check spam folder too.'
+                            }
+                          </p>
+                          <p className="text-gray-700 font-medium">
+                            {locale === 'ko' 
+                              ? '24시간 이내에 연락드리겠습니다.' 
+                              : 'We\'ll contact you within 24 hours.'
+                            }
+                          </p>
+                        </div>
                       </motion.div>
                     )}
                     

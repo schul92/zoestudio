@@ -7,8 +7,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     '',
     '/about',
-    '/#services',
-    '/#contact',
   ]
 
   const languages = ['en', 'ko']
@@ -23,6 +21,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified,
         changeFrequency: route === '' ? 'daily' : 'weekly',
         priority: route === '' ? 1.0 : 0.8,
+        alternates: {
+          languages: {
+            en: `${baseUrl}/en${route}`,
+            ko: `${baseUrl}/ko${route}`,
+          }
+        }
       })
     })
   })
