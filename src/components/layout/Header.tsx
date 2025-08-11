@@ -32,7 +32,7 @@ export default function Header({ locale = 'en' }: { locale?: string }) {
             : 'bg-white/10 backdrop-blur-sm'
       }`}
     >
-      <nav className="container mx-auto px-6 py-4">
+      <nav className="container mx-auto px-6 py-6">
         <div className="flex items-center justify-between">
           <Link 
             href={`${prefix}/`} 
@@ -45,7 +45,7 @@ export default function Header({ locale = 'en' }: { locale?: string }) {
             </div>
           </Link>
           
-          {/* Desktop Navigation - Only visible on md and up */}
+          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <Link href={`${prefix}/about`} className="relative group py-2">
               <span className={`relative z-10 transition-colors duration-300 ${isAboutPage && !hasScrolled ? 'text-white' : 'text-black'}`}>{t.nav.about}</span>
@@ -62,7 +62,7 @@ export default function Header({ locale = 'en' }: { locale?: string }) {
             <LanguageToggle lightMode={isAboutPage && !hasScrolled} />
           </div>
 
-          {/* Mobile Navigation - Only visible below md */}
+          {/* Mobile Navigation Menu */}
           <div className="md:hidden flex items-center space-x-4">
             <LanguageToggle lightMode={isAboutPage && !hasScrolled} />
             <button className={isAboutPage && !hasScrolled ? 'text-white' : 'text-black'}>
