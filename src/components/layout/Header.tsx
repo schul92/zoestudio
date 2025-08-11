@@ -18,6 +18,7 @@ export default function Header({ locale = 'en' }: { locale?: string }) {
     const updateScrolled = () => {
       setHasScrolled(window.scrollY > 20)
     }
+    updateScrolled() // Check initial scroll position
     window.addEventListener('scroll', updateScrolled)
     return () => window.removeEventListener('scroll', updateScrolled)
   }, [])
@@ -32,8 +33,8 @@ export default function Header({ locale = 'en' }: { locale?: string }) {
             : 'bg-white/10 backdrop-blur-sm'
       }`}
     >
-      <nav className="container mx-auto px-6 py-6">
-        <div className="flex items-center justify-between">
+      <nav className="w-full px-8 lg:px-12 xl:px-20 py-6">
+        <div className="max-w-7xl mx-auto flex items-center justify-between">
           <Link 
             href={`${prefix}/`} 
             className="group flex items-center space-x-3 transition-opacity"
@@ -46,26 +47,30 @@ export default function Header({ locale = 'en' }: { locale?: string }) {
           </Link>
           
           {/* Navigation */}
-          <div className="flex items-center space-x-8">
+          <div className="flex items-center">
             {/* Desktop Links - Hidden on mobile */}
-            <Link href={`${prefix}/about`} className="hidden md:block relative group py-2">
-              <span className={`relative z-10 transition-colors duration-300 ${isAboutPage && !hasScrolled ? 'text-white' : 'text-black'}`}>{t.nav.about}</span>
-              <span className={`absolute bottom-0 left-0 w-0 h-0.5 ${isAboutPage && !hasScrolled ? 'bg-white' : 'bg-black'} group-hover:w-full transition-all duration-300 ease-out`} />
-            </Link>
-            <Link href={`${prefix}/#services`} className="hidden md:block relative group py-2">
-              <span className={`relative z-10 transition-colors duration-300 ${isAboutPage && !hasScrolled ? 'text-white' : 'text-black'}`}>{t.nav.services}</span>
-              <span className={`absolute bottom-0 left-0 w-0 h-0.5 ${isAboutPage && !hasScrolled ? 'bg-white' : 'bg-black'} group-hover:w-full transition-all duration-300 ease-out`} />
-            </Link>
-            <Link href={`${prefix}/#contact`} className="hidden md:block relative group py-2">
-              <span className={`relative z-10 transition-colors duration-300 ${isAboutPage && !hasScrolled ? 'text-white' : 'text-black'}`}>{t.nav.contact}</span>
-              <span className={`absolute bottom-0 left-0 w-0 h-0.5 ${isAboutPage && !hasScrolled ? 'bg-white' : 'bg-black'} group-hover:w-full transition-all duration-300 ease-out`} />
-            </Link>
+            <div className="hidden md:flex items-center">
+              <Link href={`${prefix}/about`} className="relative group py-2 px-4 min-w-[80px] text-center">
+                <span className={`relative z-10 transition-colors duration-300 ${isAboutPage && !hasScrolled ? 'text-white' : 'text-black'}`}>{t.nav.about}</span>
+                <span className={`absolute bottom-0 left-4 right-4 h-0.5 ${isAboutPage && !hasScrolled ? 'bg-white' : 'bg-black'} scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out`} />
+              </Link>
+              <Link href={`${prefix}/#services`} className="relative group py-2 px-4 min-w-[80px] text-center">
+                <span className={`relative z-10 transition-colors duration-300 ${isAboutPage && !hasScrolled ? 'text-white' : 'text-black'}`}>{t.nav.services}</span>
+                <span className={`absolute bottom-0 left-4 right-4 h-0.5 ${isAboutPage && !hasScrolled ? 'bg-white' : 'bg-black'} scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out`} />
+              </Link>
+              <Link href={`${prefix}/#contact`} className="relative group py-2 px-4 min-w-[80px] text-center">
+                <span className={`relative z-10 transition-colors duration-300 ${isAboutPage && !hasScrolled ? 'text-white' : 'text-black'}`}>{t.nav.contact}</span>
+                <span className={`absolute bottom-0 left-4 right-4 h-0.5 ${isAboutPage && !hasScrolled ? 'bg-white' : 'bg-black'} scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out`} />
+              </Link>
+            </div>
             
             {/* Language Toggle - Always visible */}
-            <LanguageToggle lightMode={isAboutPage && !hasScrolled} />
+            <div className="ml-6">
+              <LanguageToggle lightMode={isAboutPage && !hasScrolled} />
+            </div>
             
             {/* Mobile Menu Button - Only on mobile */}
-            <button className={`md:hidden ${isAboutPage && !hasScrolled ? 'text-white' : 'text-black'}`}>
+            <button className={`md:hidden ml-4 ${isAboutPage && !hasScrolled ? 'text-white' : 'text-black'}`}>
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
               </svg>
