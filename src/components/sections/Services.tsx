@@ -194,43 +194,59 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
       benefit: t.services.webDesign.benefit,
       icon: (
         <svg viewBox="0 0 100 100" fill="none" className="w-full h-full">
-          {/* Simple Website Design Icon */}
+          {/* E-Commerce Website & Shopify Icon */}
           
           {/* Main Screen */}
-          <rect x="25" y="25" width="50" height="35" rx="2" stroke="black" strokeWidth="2" fill="white"/>
-          <rect x="25" y="25" width="50" height="7" fill="#F5F5F5"/>
-          <circle cx="29" cy="28.5" r="1" fill="#FF5252"/>
-          <circle cx="33" cy="28.5" r="1" fill="#FFEB3B"/>
-          <circle cx="37" cy="28.5" r="1" fill="#4CAF50"/>
+          <rect x="20" y="20" width="60" height="40" rx="2" stroke="black" strokeWidth="2" fill="white"/>
+          <rect x="20" y="20" width="60" height="8" fill="#95BF47"/> {/* Shopify green */}
+          <circle cx="25" cy="24" r="1.5" fill="white"/>
+          <circle cx="30" cy="24" r="1.5" fill="white"/>
+          <circle cx="35" cy="24" r="1.5" fill="white"/>
           
-          {/* Simple animated content */}
-          <motion.rect
-            x="32" y="37" width="36" height="3" rx="1" fill="#4285F4"
-            animate={{ opacity: [0.3, 1, 0.3] }}
+          {/* Shopping Cart Icon in header */}
+          <path d="M70 24 L68 22 L66 24 M66 22 L70 22" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+          <circle cx="67" cy="25" r="0.5" fill="white"/>
+          <circle cx="69" cy="25" r="0.5" fill="white"/>
+          
+          {/* Product Grid */}
+          <rect x="26" y="34" width="12" height="12" rx="1" fill="#F5F5F5" stroke="black" strokeWidth="1"/>
+          <rect x="42" y="34" width="12" height="12" rx="1" fill="#F5F5F5" stroke="black" strokeWidth="1"/>
+          <rect x="58" y="34" width="12" height="12" rx="1" fill="#F5F5F5" stroke="black" strokeWidth="1"/>
+          
+          {/* Shopping Bag/Cart Animation */}
+          <motion.g
+            animate={{ y: [0, -2, 0] }}
             transition={{ duration: 2, repeat: Infinity }}
-          />
-          <motion.rect
-            x="32" y="43" width="28" height="3" rx="1" fill="#34A853"
-            animate={{ opacity: [0.3, 1, 0.3] }}
-            transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
-          />
-          <motion.rect
-            x="32" y="49" width="32" height="3" rx="1" fill="#FBBC04"
-            animate={{ opacity: [0.3, 1, 0.3] }}
-            transition={{ duration: 2, repeat: Infinity, delay: 1 }}
-          />
+          >
+            <path d="M45 50 L45 54 L55 54 L55 50" stroke="black" strokeWidth="2" fill="white"/>
+            <path d="M47 50 C47 48, 48 47, 50 47 C52 47, 53 48, 53 50" stroke="black" strokeWidth="1.5" fill="none"/>
+          </motion.g>
           
-          {/* Simple responsive devices */}
-          <rect x="30" y="68" width="15" height="12" rx="1" stroke="black" strokeWidth="1.5" fill="white"/>
+          {/* Dollar Sign Animation */}
+          <motion.text
+            x="50" y="43" 
+            fontSize="8" 
+            fill="#95BF47"
+            fontWeight="bold"
+            textAnchor="middle"
+            animate={{ opacity: [0, 1, 0] }}
+            transition={{ duration: 2, repeat: Infinity }}
+          >
+            $
+          </motion.text>
+          
+          {/* Mobile & Tablet */}
+          <rect x="25" y="68" width="15" height="12" rx="1" stroke="black" strokeWidth="1.5" fill="white"/>
           <rect x="55" y="70" width="10" height="13" rx="1" stroke="black" strokeWidth="1.5" fill="white"/>
           
-          {/* Simple animation dot */}
+          {/* Shopify Badge */}
           <motion.circle
-            cx="50" cy="75" r="2"
-            fill="#4285F4"
-            animate={{ scale: [1, 1.5, 1], opacity: [1, 0.5, 1] }}
+            cx="50" cy="75" r="3"
+            fill="#95BF47"
+            animate={{ scale: [1, 1.2, 1] }}
             transition={{ duration: 2, repeat: Infinity }}
           />
+          <text x="50" y="77" fontSize="4" fill="white" fontWeight="bold" textAnchor="middle">S</text>
         </svg>
       )
     },
