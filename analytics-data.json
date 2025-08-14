@@ -82,5 +82,12 @@
     "service": "Website Design & Development",
     "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
     "referrer": "http://localhost:3000/en"
+  },
+  {
+    "timestamp": "2025-08-13T13:44:08.070Z",
+    "type": "service_click",
+    "service": "쇼핑몰 & 이커머스 웹사이트 제작",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+    "referrer": "http://localhost:3000/ko"
   }
 ]

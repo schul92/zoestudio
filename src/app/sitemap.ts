@@ -4,32 +4,65 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://zoelumos.com'
   const lastModified = new Date()
 
-  const routes = [
-    '',
-    '/about',
+  // Main pages without locale prefix (treated as English)
+  const mainPages = [
+    {
+      url: `${baseUrl}`,
+      lastModified,
+      changeFrequency: 'daily' as const,
+      priority: 1.0,
+      alternates: {
+        languages: {
+          'x-default': `${baseUrl}`,
+          en: `${baseUrl}`,
+          ko: `${baseUrl}/ko`,
+        }
+      }
+    },
+    {
+      url: `${baseUrl}/about`,
+      lastModified,
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+      alternates: {
+        languages: {
+          'x-default': `${baseUrl}/about`,
+          en: `${baseUrl}/about`,
+          ko: `${baseUrl}/ko/about`,
+        }
+      }
+    },
   ]
 
-  const languages = ['en', 'ko']
-
-  const sitemapEntries: MetadataRoute.Sitemap = []
-
-  // Generate entries for each language and route combination
-  languages.forEach(lang => {
-    routes.forEach(route => {
-      sitemapEntries.push({
-        url: `${baseUrl}/${lang}${route}`,
-        lastModified,
-        changeFrequency: route === '' ? 'daily' : 'weekly',
-        priority: route === '' ? 1.0 : 0.8,
-        alternates: {
-          languages: {
-            en: `${baseUrl}/en${route}`,
-            ko: `${baseUrl}/ko${route}`,
-          }
+  // Korean pages with /ko prefix
+  const koreanPages = [
+    {
+      url: `${baseUrl}/ko`,
+      lastModified,
+      changeFrequency: 'daily' as const,
+      priority: 1.0,
+      alternates: {
+        languages: {
+          'x-default': `${baseUrl}`,
+          en: `${baseUrl}`,
+          ko: `${baseUrl}/ko`,
         }
-      })
-    })
-  })
+      }
+    },
+    {
+      url: `${baseUrl}/ko/about`,
+      lastModified,
+      changeFrequency: 'weekly' as const,
+      priority: 0.8,
+      alternates: {
+        languages: {
+          'x-default': `${baseUrl}/about`,
+          en: `${baseUrl}/about`,
+          ko: `${baseUrl}/ko/about`,
+        }
+      }
+    },
+  ]
 
-  return sitemapEntries
+  return [...mainPages, ...koreanPages]
 }
