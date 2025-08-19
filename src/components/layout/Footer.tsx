@@ -51,6 +51,11 @@ export default function Footer({ locale = 'en' }: { locale?: string }) {
                 </Link>
               </li>
               <li>
+                <Link href={`${prefix}/pricing`} className="text-gray-600 hover:text-black hover:translate-x-1 inline-block transition-all duration-200 text-sm">
+                  {locale === 'ko' ? '요금 및 플랜' : 'Plans & Pricing'}
+                </Link>
+              </li>
+              <li>
                 <Link href={`${prefix}#services`} className="text-gray-600 hover:text-black hover:translate-x-1 inline-block transition-all duration-200 text-sm">
                   {locale === 'ko' ? 'LLC 설립 서비스' : 'LLC Formation Services'}
                 </Link>

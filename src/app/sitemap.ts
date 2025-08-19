@@ -32,6 +32,45 @@ export default function sitemap(): MetadataRoute.Sitemap {
         }
       }
     },
+    {
+      url: `${baseUrl}/pricing`,
+      lastModified,
+      changeFrequency: 'weekly' as const,
+      priority: 0.9,
+      alternates: {
+        languages: {
+          'x-default': `${baseUrl}/pricing`,
+          en: `${baseUrl}/pricing`,
+          ko: `${baseUrl}/ko/pricing`,
+        }
+      }
+    },
+    {
+      url: `${baseUrl}/ny-website`,
+      lastModified,
+      changeFrequency: 'weekly' as const,
+      priority: 0.95,
+      alternates: {
+        languages: {
+          'x-default': `${baseUrl}/ny-website`,
+          en: `${baseUrl}/ny-website`,
+          ko: `${baseUrl}/ko/ny-website`,
+        }
+      }
+    },
+    {
+      url: `${baseUrl}/nj-website`,
+      lastModified,
+      changeFrequency: 'weekly' as const,
+      priority: 0.95,
+      alternates: {
+        languages: {
+          'x-default': `${baseUrl}/nj-website`,
+          en: `${baseUrl}/nj-website`,
+          ko: `${baseUrl}/ko/nj-website`,
+        }
+      }
+    },
   ]
 
   // Korean pages with /ko prefix
@@ -59,6 +98,45 @@ export default function sitemap(): MetadataRoute.Sitemap {
           'x-default': `${baseUrl}/about`,
           en: `${baseUrl}/about`,
           ko: `${baseUrl}/ko/about`,
+        }
+      }
+    },
+    {
+      url: `${baseUrl}/ko/pricing`,
+      lastModified,
+      changeFrequency: 'weekly' as const,
+      priority: 0.9,
+      alternates: {
+        languages: {
+          'x-default': `${baseUrl}/pricing`,
+          en: `${baseUrl}/pricing`,
+          ko: `${baseUrl}/ko/pricing`,
+        }
+      }
+    },
+    {
+      url: `${baseUrl}/ko/ny-website`,
+      lastModified,
+      changeFrequency: 'weekly' as const,
+      priority: 0.95,
+      alternates: {
+        languages: {
+          'x-default': `${baseUrl}/ny-website`,
+          en: `${baseUrl}/ny-website`,
+          ko: `${baseUrl}/ko/ny-website`,
+        }
+      }
+    },
+    {
+      url: `${baseUrl}/ko/nj-website`,
+      lastModified,
+      changeFrequency: 'weekly' as const,
+      priority: 0.95,
+      alternates: {
+        languages: {
+          'x-default': `${baseUrl}/nj-website`,
+          en: `${baseUrl}/nj-website`,
+          ko: `${baseUrl}/ko/nj-website`,
         }
       }
     },

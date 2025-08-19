@@ -3,7 +3,7 @@
 import dynamic from 'next/dynamic'
 
 const Header = dynamic(() => import('./Header'), {
-  ssr: false,
+  ssr: true,
   loading: () => (
     <header className="fixed top-0 w-full z-[100] bg-white/10 backdrop-blur-sm">
       <nav className="w-full px-4 sm:px-8 lg:px-12 xl:px-20 py-4 sm:py-6">

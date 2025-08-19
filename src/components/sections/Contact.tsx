@@ -8,7 +8,7 @@ import { trackFormSuccess, trackFormError, trackGAEvent, GA_EVENTS } from '@/uti
 
 export default function Contact({ locale = 'en' }: { locale?: string }) {
   const { t } = useTranslation(locale)
-  const { selectedServices, removeService } = useServices()
+  const { selectedServices, removeService, addService, clearServices } = useServices()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -21,7 +21,55 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
   const [emailError, setEmailError] = useState('')
   const [emailTouched, setEmailTouched] = useState(false)
   const [submittedEmail, setSubmittedEmail] = useState('')
+  const [cameFromPricing, setCameFromPricing] = useState(false)
+  const [isMounted, setIsMounted] = useState(false)
   const formStartTime = useRef<number>(0)
+  
+  // Set mounted state
+  useEffect(() => {
+    setIsMounted(true)
+  }, [])
+  
+  // Check if user came from pricing page - only runs on client
+  useEffect(() => {
+    if (!isMounted) return
+    
+    const pricingComplete = sessionStorage.getItem('pricingComplete')
+    const savedPricing = sessionStorage.getItem('selectedPricing')
+    
+    if (pricingComplete === 'true' && savedPricing) {
+      try {
+        const pricingServices = JSON.parse(savedPricing)
+        clearServices()
+        pricingServices.forEach((service: any) => {
+          addService(service)
+        })
+        setCameFromPricing(true)
+        
+        // Clear the session storage
+        sessionStorage.removeItem('pricingComplete')
+        sessionStorage.removeItem('selectedPricing')
+        
+        // Show welcome message
+        const welcomeDiv = document.createElement('div')
+        welcomeDiv.className = 'fixed top-20 left-1/2 transform -translate-x-1/2 bg-green-100 border-2 border-green-400 text-green-800 px-6 py-4 rounded-lg shadow-lg z-50 flex items-center gap-3'
+        welcomeDiv.innerHTML = `
+          <span class="text-2xl">✅</span>
+          <div>
+            <p class="font-bold">${locale === 'en' ? 'Great! Your pricing selections have been added.' : '좋습니다! 가격 선택이 추가되었습니다.'}</p>
+            <p class="text-sm mt-1">${locale === 'en' ? 'Please fill out the form below to get your custom proposal.' : '맞춤 제안서를 받으려면 아래 양식을 작성해주세요.'}</p>
+          </div>
+        `
+        document.body.appendChild(welcomeDiv)
+        
+        setTimeout(() => {
+          welcomeDiv.remove()
+        }, 5000)
+      } catch (error) {
+        console.error('Error loading pricing selections:', error)
+      }
+    }
+  }, [isMounted, clearServices, addService, locale])
   
   // Track when user starts interacting with form
   useEffect(() => {
@@ -94,7 +142,13 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
         },
         body: JSON.stringify({
           ...formData,
-          services: selectedServices.map(s => s.title).join(', '),
+          services: selectedServices.map(s => {
+            // Format service with price if available
+            if (s.price && s.price !== s.title) {
+              return `${s.title} (${s.price})`
+            }
+            return s.title
+          }).join(' | '),
           to: 'zoestudiollc@gmail.com'
         }),
       })
@@ -136,9 +190,19 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
   }
 
   const scrollToServices = () => {
-    const servicesSection = document.getElementById('services')
-    if (servicesSection) {
-      servicesSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    if (typeof window === 'undefined') return
+    
+    // Check if we're on the pricing page
+    const currentPath = window.location.pathname
+    if (currentPath.includes('/pricing')) {
+      // Navigate back to pricing page
+      window.location.href = `${locale === 'ko' ? '/ko' : ''}/pricing#pricing-grid`
+    } else {
+      // Scroll to services section on main page
+      const servicesSection = document.getElementById('services')
+      if (servicesSection) {
+        servicesSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
     }
   }
 
@@ -184,14 +248,31 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                     }
                   </p>
 
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={scrollToServices}
-                    className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all"
-                  >
-                    {locale === 'ko' ? '서비스 선택하러 가기 ↑' : 'Select Services ↑'}
-                  </motion.button>
+                  <div className="flex flex-col gap-4">
+                    <motion.button
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      onClick={scrollToServices}
+                      className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all"
+                    >
+                      {locale === 'ko' ? '서비스 선택하러 가기 ↑' : 'Select Services ↑'}
+                    </motion.button>
+                    
+                    <div className="flex items-center gap-4">
+                      <div className="flex-1 h-px bg-gray-300"></div>
+                      <span className="text-gray-500 text-sm">{locale === 'ko' ? '또는' : 'or'}</span>
+                      <div className="flex-1 h-px bg-gray-300"></div>
+                    </div>
+                    
+                    <motion.a
+                      href={`${locale === 'ko' ? '/ko' : ''}/pricing`}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                      className="bg-gradient-to-r from-indigo-500 to-purple-500 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all text-center"
+                    >
+                      {locale === 'ko' ? '💎 가격 플랜 보기' : '💎 View Pricing Plans'}
+                    </motion.a>
+                  </div>
                 </div>
               </motion.div>
             ) : (
@@ -204,33 +285,72 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                   className="bg-white p-8 rounded-2xl border-2 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]"
                 >
                   {/* Selected Services Display */}
-                  <div className="mb-6 p-4 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg border-2 border-blue-200">
-                    <h4 className="font-bold text-sm text-gray-700 mb-2">
-                      {locale === 'ko' ? '선택한 서비스:' : 'Selected Services:'}
-                    </h4>
+                  <motion.div 
+                    initial={cameFromPricing ? { scale: 0.95, opacity: 0 } : {}}
+                    animate={cameFromPricing ? { scale: 1, opacity: 1 } : {}}
+                    transition={{ duration: 0.5 }}
+                    className={`mb-6 p-4 rounded-lg border-2 ${
+                      cameFromPricing 
+                        ? 'bg-gradient-to-r from-green-50 to-emerald-50 border-green-300' 
+                        : 'bg-gradient-to-r from-blue-50 to-purple-50 border-blue-200'
+                    }`}
+                  >
+                    <div className="flex items-center justify-between mb-2">
+                      <h4 className="font-bold text-sm text-gray-700">
+                        {cameFromPricing 
+                          ? (locale === 'ko' ? '✅ 가격 선택 완료:' : '✅ Pricing Selection Complete:')
+                          : (locale === 'ko' ? '선택한 서비스:' : 'Selected Services:')
+                        }
+                      </h4>
+                      {cameFromPricing && (
+                        <span className="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full font-semibold">
+                          {locale === 'ko' ? '확인됨' : 'Confirmed'}
+                        </span>
+                      )}
+                    </div>
                     <div className="flex flex-wrap gap-2">
                       {selectedServices.map(service => (
-                        <span
+                        <motion.span
                           key={service.id}
-                          className="px-3 py-1 bg-white rounded-full text-sm font-medium text-gray-800 border border-gray-300 flex items-center gap-2 inline-flex"
+                          initial={cameFromPricing ? { scale: 0 } : {}}
+                          animate={cameFromPricing ? { scale: 1 } : {}}
+                          transition={{ delay: 0.1 }}
+                          className={`px-3 py-1 rounded-full text-sm font-medium flex items-center gap-2 inline-flex ${
+                            service.id.startsWith('tier-') 
+                              ? 'bg-indigo-100 text-indigo-800 border border-indigo-300'
+                              : service.id.startsWith('subscription-')
+                              ? 'bg-purple-100 text-purple-800 border border-purple-300'
+                              : 'bg-white text-gray-800 border border-gray-300'
+                          }`}
                         >
                           {service.title}
+                          {service.price && service.price !== service.title && (
+                            <span className="text-xs opacity-75">({service.price})</span>
+                          )}
                           <button
                             onClick={() => removeService(service.id)}
                             className="text-gray-600 hover:text-red-500 transition-colors"
                           >
                             ×
                           </button>
-                        </span>
+                        </motion.span>
                       ))}
                     </div>
-                    <button
-                      onClick={scrollToServices}
-                      className="mt-3 text-sm text-blue-600 hover:text-blue-700 font-medium"
-                    >
-                      {locale === 'ko' ? '서비스 변경 ↑' : 'Change Services ↑'}
-                    </button>
-                  </div>
+                    {cameFromPricing ? (
+                      <p className="mt-3 text-xs text-gray-600">
+                        {locale === 'ko' 
+                          ? '💡 선택하신 내용을 기반으로 맞춤 제안서를 준비하겠습니다' 
+                          : '💡 We\'ll prepare a custom proposal based on your selections'}
+                      </p>
+                    ) : (
+                      <button
+                        onClick={scrollToServices}
+                        className="mt-3 text-sm text-blue-600 hover:text-blue-700 font-medium"
+                      >
+                        {locale === 'ko' ? '서비스 변경 ↑' : 'Change Services ↑'}
+                      </button>
+                    )}
+                  </motion.div>
 
                   <h3 className="text-2xl font-bold mb-6">
                     {locale === 'ko' ? '무료 상담 신청' : 'Request Free Consultation'}

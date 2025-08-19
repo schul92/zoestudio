@@ -89,5 +89,47 @@
     "service": "쇼핑몰 & 이커머스 웹사이트 제작",
     "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
     "referrer": "http://localhost:3000/ko"
+  },
+  {
+    "timestamp": "2025-08-15T02:52:53.946Z",
+    "type": "service_click",
+    "service": "E-Commerce Website & Shopify Store",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36",
+    "referrer": "http://localhost:3002/"
+  },
+  {
+    "timestamp": "2025-08-17T17:49:37.980Z",
+    "type": "service_click",
+    "service": "Get Found on Google",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+    "referrer": "http://localhost:3000/"
+  },
+  {
+    "timestamp": "2025-08-19T20:40:38.718Z",
+    "type": "service_click",
+    "service": "구글 광고 & 옐프 광고",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+    "referrer": "http://localhost:3000/ko"
+  },
+  {
+    "timestamp": "2025-08-19T20:40:38.981Z",
+    "type": "service_click",
+    "service": "구글 광고 & 옐프 광고",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+    "referrer": "http://localhost:3000/ko"
+  },
+  {
+    "timestamp": "2025-08-19T20:40:39.518Z",
+    "type": "service_click",
+    "service": "구글 광고 & 옐프 광고",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+    "referrer": "http://localhost:3000/ko"
+  },
+  {
+    "timestamp": "2025-08-19T20:40:39.978Z",
+    "type": "service_click",
+    "service": "구글 광고 & 옐프 광고",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+    "referrer": "http://localhost:3000/ko"
   }
 ]
