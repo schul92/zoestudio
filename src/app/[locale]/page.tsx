@@ -21,6 +21,11 @@ const ContactWrapper = dynamic(() => import('@/components/sections/ContactWrappe
   loading: () => <div className="min-h-[600px] bg-gradient-to-br from-gray-50 to-white" />
 })
 
+const LocationLinks = dynamic(() => import('@/components/sections/LocationLinks'), {
+  ssr: true,
+  loading: () => <div className="min-h-[400px] bg-gray-50" />
+})
+
 // Client-only component for scroll progress
 const ScrollProgress = dynamic(() => import('@/components/ui/ScrollProgress'), {
   ssr: false
@@ -57,6 +62,7 @@ export default function Home({ params }: { params: { locale: string } }) {
       <main className="min-h-screen relative overflow-x-hidden">
         <AnimatedHero locale={params.locale} />
         <Services locale={params.locale} />
+        <LocationLinks locale={params.locale} />
         <ContactWrapper locale={params.locale} />
       </main>
       <Footer locale={params.locale} />

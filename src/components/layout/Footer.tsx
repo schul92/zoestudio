@@ -56,8 +56,13 @@ export default function Footer({ locale = 'en' }: { locale?: string }) {
                 </Link>
               </li>
               <li>
-                <Link href={`${prefix}#services`} className="text-gray-600 hover:text-black hover:translate-x-1 inline-block transition-all duration-200 text-sm">
-                  {locale === 'ko' ? 'LLC 설립 서비스' : 'LLC Formation Services'}
+                <Link href={`${prefix}/ny-website`} className="text-gray-600 hover:text-black hover:translate-x-1 inline-block transition-all duration-200 text-sm">
+                  {locale === 'ko' ? '뉴욕 웹사이트 제작' : 'New York Web Design'}
+                </Link>
+              </li>
+              <li>
+                <Link href={`${prefix}/nj-website`} className="text-gray-600 hover:text-black hover:translate-x-1 inline-block transition-all duration-200 text-sm">
+                  {locale === 'ko' ? '뉴저지 웹사이트 제작' : 'New Jersey Web Design'}
                 </Link>
               </li>
             </ul>
@@ -93,11 +98,24 @@ export default function Footer({ locale = 'en' }: { locale?: string }) {
               <div className="absolute -bottom-2 left-0 w-8 h-0.5 bg-gray-400 group-hover:w-16 group-hover:bg-black transition-all duration-300"></div>
             </div>
             <div className="space-y-3">
-              <p className="text-sm text-gray-600 leading-relaxed">
+              <p className="text-sm text-gray-600 leading-relaxed mb-3">
                 {locale === 'ko' 
                   ? '전국 대도시 및 중소도시 | 온라인 비즈니스 | 로컬 비즈니스 | 이커머스'
                   : 'Nationwide Service | Major Metropolitan Areas | Local Business | E-commerce | Remote Consultation Available'
                 }
+              </p>
+              
+              {/* Location Pages for SEO */}
+              <div className="space-y-2">
+                <Link href={`${prefix}/ny-website`} className="block text-xs text-gray-500 hover:text-black transition-colors">
+                  {locale === 'ko' ? '🗽 뉴욕 지역' : '🗽 New York Area'}
+                </Link>
+                <Link href={`${prefix}/nj-website`} className="block text-xs text-gray-500 hover:text-black transition-colors">
+                  {locale === 'ko' ? '🌉 뉴저지 지역' : '🌉 New Jersey Area'}
+                </Link>
+              </div>
+              
+              <p className="text-sm text-gray-600 leading-relaxed mt-3">
               </p>
               <div className="pt-2 space-y-1">
                 {(locale === 'ko' 
