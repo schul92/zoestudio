@@ -131,5 +131,40 @@
     "service": "구글 광고 & 옐프 광고",
     "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
     "referrer": "http://localhost:3000/ko"
+  },
+  {
+    "timestamp": "2025-08-23T04:04:47.395Z",
+    "type": "service_click",
+    "service": "E-Commerce Website & Shopify Store",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+    "referrer": "http://localhost:3001/"
+  },
+  {
+    "timestamp": "2025-08-23T04:11:35.338Z",
+    "type": "service_click",
+    "service": "Google & Yelp Ads",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+    "referrer": "http://localhost:3001/"
+  },
+  {
+    "timestamp": "2025-08-23T04:11:38.968Z",
+    "type": "service_click",
+    "service": "E-Commerce Website & Shopify Store",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+    "referrer": "http://localhost:3001/"
+  },
+  {
+    "timestamp": "2025-08-23T04:11:56.911Z",
+    "type": "service_click",
+    "service": "Google & Yelp Ads",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+    "referrer": "http://localhost:3001/"
+  },
+  {
+    "timestamp": "2025-08-23T04:11:57.367Z",
+    "type": "service_click",
+    "service": "E-Commerce Website & Shopify Store",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+    "referrer": "http://localhost:3001/"
   }
 ]

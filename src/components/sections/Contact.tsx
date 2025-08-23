@@ -5,6 +5,7 @@ import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { useServices } from '@/context/ServiceContext'
 import { trackFormSuccess, trackFormError, trackGAEvent, GA_EVENTS } from '@/utils/analytics'
+import Modal from '@/components/ui/Modal'
 
 export default function Contact({ locale = 'en' }: { locale?: string }) {
   const { t } = useTranslation(locale)
@@ -18,6 +19,7 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
   })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [modalState, setModalState] = useState<{ isOpen: boolean; type: 'success' | 'error' | 'loading' }>({ isOpen: false, type: 'loading' })
   const [emailError, setEmailError] = useState('')
   const [emailTouched, setEmailTouched] = useState(false)
   const [submittedEmail, setSubmittedEmail] = useState('')
@@ -130,6 +132,7 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
     
     setIsSubmitting(true)
     setSubmitStatus('idle')
+    setModalState({ isOpen: true, type: 'loading' })
 
     // Calculate time spent on form
     const timeToSubmit = formStartTime.current ? Math.round((Date.now() - formStartTime.current) / 1000) : 0
@@ -156,6 +159,7 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
       if (response.ok) {
         setSubmitStatus('success')
         setSubmittedEmail(formData.email)
+        setModalState({ isOpen: true, type: 'success' })
         
         // Track successful submission with ALL details
         trackFormSuccess({
@@ -165,27 +169,40 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
           messageLength: formData.message.length,
           timeToSubmit: timeToSubmit
         })
-        
-        // Reset form
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          business: '',
-          message: ''
-        })
-        formStartTime.current = 0
       } else {
         setSubmitStatus('error')
+        setModalState({ isOpen: true, type: 'error' })
         // Track submission error with details
         trackFormError('server_error', `Status: ${response.status}`)
       }
     } catch (error) {
       setSubmitStatus('error')
+      setModalState({ isOpen: true, type: 'error' })
       // Track network error
       trackFormError('network_error', error instanceof Error ? error.message : 'Unknown error')
     } finally {
       setIsSubmitting(false)
+    }
+  }
+
+  const handleModalClose = () => {
+    setModalState({ isOpen: false, type: 'loading' })
+    
+    // If success, reset form and clear services
+    if (submitStatus === 'success') {
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        business: '',
+        message: ''
+      })
+      clearServices()
+      formStartTime.current = 0
+      setSubmitStatus('idle')
+      
+      // Scroll to top smoothly
+      window.scrollTo({ top: 0, behavior: 'smooth' })
     }
   }
 
@@ -207,7 +224,16 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
   }
 
   return (
-    <section id="contact" className="pt-20 pb-20 md:pt-24 md:pb-20 bg-gradient-to-br from-gray-50 to-white border-t-4 border-black relative z-10">
+    <>
+      {/* Modal for success/error/loading states */}
+      <Modal
+        isOpen={modalState.isOpen}
+        onClose={handleModalClose}
+        type={modalState.type}
+        locale={locale}
+      />
+      
+      <section id="contact" className="pt-20 pb-20 md:pt-24 md:pb-20 bg-gradient-to-br from-gray-50 to-white border-t-4 border-black relative z-10">
       <div className="container mx-auto px-6">
         <div className="max-w-5xl mx-auto">
           {/* Header - Improved mobile visibility */}
@@ -499,70 +525,6 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                         }
                       </span>
                     </motion.button>
-                    
-                    {submitStatus === 'success' && (
-                      <motion.div 
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ type: "spring", duration: 0.5 }}
-                        className="p-6 bg-gradient-to-r from-green-50 to-emerald-50 border-2 border-green-400 rounded-xl shadow-lg"
-                      >
-                        <div className="text-center space-y-3">
-                          <motion.div
-                            initial={{ scale: 0 }}
-                            animate={{ scale: 1 }}
-                            transition={{ delay: 0.2, type: "spring" }}
-                            className="text-4xl"
-                          >
-                            ✅
-                          </motion.div>
-                          <p className="text-green-800 font-bold text-lg">
-                            {locale === 'ko' 
-                              ? '상담 신청이 접수되었습니다!' 
-                              : 'Request Successfully Submitted!'
-                            }
-                          </p>
-                          <div className="bg-white p-3 rounded-lg border border-green-200">
-                            <p className="text-gray-700 text-sm">
-                              {locale === 'ko' 
-                                ? '확인 이메일을 다음 주소로 보냈습니다:' 
-                                : 'Confirmation email sent to:'
-                              }
-                            </p>
-                            <p className="text-green-700 font-semibold text-base mt-1">
-                              📧 {submittedEmail}
-                            </p>
-                          </div>
-                          <p className="text-gray-600 text-sm">
-                            {locale === 'ko' 
-                              ? '이메일함을 확인해주세요. 스팸함도 확인하시기 바랍니다.' 
-                              : 'Please check your inbox. Don\'t forget to check spam folder too.'
-                            }
-                          </p>
-                          <p className="text-gray-700 font-medium">
-                            {locale === 'ko' 
-                              ? '24시간 이내에 연락드리겠습니다.' 
-                              : 'We\'ll contact you within 24 hours.'
-                            }
-                          </p>
-                        </div>
-                      </motion.div>
-                    )}
-                    
-                    {submitStatus === 'error' && (
-                      <motion.div 
-                        initial={{ opacity: 0, y: -10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="p-4 bg-red-50 border-2 border-red-300 rounded-lg"
-                      >
-                        <p className="text-red-700 font-medium text-center">
-                          {locale === 'ko' 
-                            ? '❌ 오류가 발생했습니다. 다시 시도해주세요.' 
-                            : '❌ An error occurred. Please try again.'
-                          }
-                        </p>
-                      </motion.div>
-                    )}
                   </form>
                 </motion.div>
                 
@@ -657,5 +619,6 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
           </div>
       </div>
     </section>
+    </>
   )
 }
