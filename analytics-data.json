@@ -166,5 +166,47 @@
     "service": "E-Commerce Website & Shopify Store",
     "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
     "referrer": "http://localhost:3001/"
+  },
+  {
+    "timestamp": "2025-08-23T04:19:20.206Z",
+    "type": "service_click",
+    "service": "Google & Yelp Ads",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+    "referrer": "http://localhost:3001/"
+  },
+  {
+    "timestamp": "2025-08-23T04:19:20.693Z",
+    "type": "service_click",
+    "service": "E-Commerce Website & Shopify Store",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+    "referrer": "http://localhost:3001/"
+  },
+  {
+    "timestamp": "2025-08-23T04:19:50.603Z",
+    "type": "service_click",
+    "service": "Google & Yelp Ads",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+    "referrer": "http://localhost:3001/"
+  },
+  {
+    "timestamp": "2025-08-23T04:19:50.780Z",
+    "type": "service_click",
+    "service": "E-Commerce Website & Shopify Store",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+    "referrer": "http://localhost:3001/"
+  },
+  {
+    "timestamp": "2025-08-23T04:20:27.314Z",
+    "type": "service_click",
+    "service": "구글 광고 & 옐프 광고",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+    "referrer": "http://localhost:3001/ko"
+  },
+  {
+    "timestamp": "2025-08-23T04:20:27.704Z",
+    "type": "service_click",
+    "service": "쇼핑몰 & 이커머스 웹사이트 제작",
+    "userAgent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/139.0.0.0 Safari/537.36",
+    "referrer": "http://localhost:3001/ko"
   }
 ]
