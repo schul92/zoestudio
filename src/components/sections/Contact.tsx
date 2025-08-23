@@ -20,6 +20,7 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
   const [modalState, setModalState] = useState<{ isOpen: boolean; type: 'success' | 'error' | 'loading' }>({ isOpen: false, type: 'loading' })
+  const [submissionSummary, setSubmissionSummary] = useState<{ email: string; name: string; services: string[]; business?: string } | null>(null)
   const [emailError, setEmailError] = useState('')
   const [emailTouched, setEmailTouched] = useState(false)
   const [submittedEmail, setSubmittedEmail] = useState('')
@@ -159,6 +160,20 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
       if (response.ok) {
         setSubmitStatus('success')
         setSubmittedEmail(formData.email)
+        
+        // Store submission summary for modal
+        setSubmissionSummary({
+          email: formData.email,
+          name: formData.name,
+          services: selectedServices.map(s => {
+            if (s.price && s.price !== s.title) {
+              return `${s.title} (${s.price})`
+            }
+            return s.title
+          }),
+          business: formData.business || undefined
+        })
+        
         setModalState({ isOpen: true, type: 'success' })
         
         // Track successful submission with ALL details
@@ -200,6 +215,7 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
       clearServices()
       formStartTime.current = 0
       setSubmitStatus('idle')
+      setSubmissionSummary(null)
       
       // Scroll to top smoothly
       window.scrollTo({ top: 0, behavior: 'smooth' })
@@ -231,6 +247,7 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
         onClose={handleModalClose}
         type={modalState.type}
         locale={locale}
+        submissionData={submissionSummary || undefined}
       />
       
       <section id="contact" className="pt-20 pb-20 md:pt-24 md:pb-20 bg-gradient-to-br from-gray-50 to-white border-t-4 border-black relative z-10">

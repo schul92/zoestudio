@@ -11,25 +11,24 @@ interface ModalProps {
   title?: string
   message?: string
   locale?: string
+  submissionData?: {
+    email: string
+    name: string
+    services: string[]
+    business?: string
+  }
 }
 
-export default function Modal({ isOpen, onClose, type, title, message, locale = 'en' }: ModalProps) {
+export default function Modal({ isOpen, onClose, type, title, message, locale = 'en', submissionData }: ModalProps) {
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
     if (isOpen) {
       setIsVisible(true)
-      // Auto close success modals after 3 seconds
-      if (type === 'success') {
-        const timer = setTimeout(() => {
-          onClose()
-        }, 3000)
-        return () => clearTimeout(timer)
-      }
     } else {
       setIsVisible(false)
     }
-  }, [isOpen, onClose, type])
+  }, [isOpen])
 
   // Prevent body scroll when modal is open
   useEffect(() => {
@@ -147,15 +146,92 @@ export default function Modal({ isOpen, onClose, type, title, message, locale = 
                   {displayMessage}
                 </p>
 
+                {/* Show submission details for success */}
+                {type === 'success' && submissionData && (
+                  <div className="space-y-4 mb-6">
+                    <div className="bg-gray-50 rounded-lg p-4 text-left">
+                      <h4 className="text-sm font-semibold text-gray-700 mb-3">
+                        {locale === 'ko' ? '제출된 정보:' : 'Submitted Information:'}
+                      </h4>
+                      
+                      <div className="space-y-2">
+                        <div className="flex items-start gap-2">
+                          <span className="text-gray-500 text-sm">📧</span>
+                          <div>
+                            <p className="text-xs text-gray-500">
+                              {locale === 'ko' ? '이메일' : 'Email'}
+                            </p>
+                            <p className="text-sm font-medium text-gray-900">
+                              {submissionData.email}
+                            </p>
+                          </div>
+                        </div>
+                        
+                        <div className="flex items-start gap-2">
+                          <span className="text-gray-500 text-sm">👤</span>
+                          <div>
+                            <p className="text-xs text-gray-500">
+                              {locale === 'ko' ? '이름' : 'Name'}
+                            </p>
+                            <p className="text-sm font-medium text-gray-900">
+                              {submissionData.name}
+                            </p>
+                          </div>
+                        </div>
+                        
+                        {submissionData.business && (
+                          <div className="flex items-start gap-2">
+                            <span className="text-gray-500 text-sm">🏢</span>
+                            <div>
+                              <p className="text-xs text-gray-500">
+                                {locale === 'ko' ? '회사' : 'Business'}
+                              </p>
+                              <p className="text-sm font-medium text-gray-900">
+                                {submissionData.business}
+                              </p>
+                            </div>
+                          </div>
+                        )}
+                        
+                        {submissionData.services.length > 0 && (
+                          <div className="flex items-start gap-2">
+                            <span className="text-gray-500 text-sm">📋</span>
+                            <div className="flex-1">
+                              <p className="text-xs text-gray-500 mb-1">
+                                {locale === 'ko' ? '선택한 서비스' : 'Selected Services'}
+                              </p>
+                              <div className="flex flex-wrap gap-1">
+                                {submissionData.services.map((service, index) => (
+                                  <span key={index} className="text-xs bg-indigo-100 text-indigo-700 px-2 py-1 rounded">
+                                    {service}
+                                  </span>
+                                ))}
+                              </div>
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                    
+                    <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-3">
+                      <p className="text-xs text-yellow-800">
+                        💡 {locale === 'ko' 
+                          ? '이메일 주소가 맞는지 확인해주세요. 잘못된 경우 다시 문의해주시기 바랍니다.' 
+                          : 'Please verify your email address is correct. If incorrect, please submit again.'}
+                      </p>
+                    </div>
+                  </div>
+                )}
+
                 {/* Action Buttons */}
                 {type === 'success' && (
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     onClick={onClose}
-                    className="px-6 py-3 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-lg font-semibold hover:shadow-lg transition-shadow"
+                    className="px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-lg font-bold text-lg hover:shadow-lg transition-shadow"
                   >
-                    {locale === 'ko' ? '확인' : 'Got it!'}
+                    {locale === 'ko' ? '확인했습니다 ✓' : 'Confirmed & Close ✓'}
                   </motion.button>
                 )}
 
