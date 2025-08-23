@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { CheckCircle, XCircle, X, Loader2 } from 'lucide-react'
+import { CheckCircle, XCircle, X, Send, Mail, Sparkles } from 'lucide-react'
 
 interface ModalProps {
   isOpen: boolean
@@ -58,12 +58,81 @@ export default function Modal({ isOpen, onClose, type, title, message, locale = 
         return <XCircle className="w-16 h-16 text-red-500" />
       case 'loading':
         return (
-          <motion.div
-            animate={{ rotate: 360 }}
-            transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
-          >
-            <Loader2 className="w-16 h-16 text-indigo-600" />
-          </motion.div>
+          <div className="relative">
+            {/* Envelope container */}
+            <motion.div
+              className="relative"
+              initial={{ scale: 0.8 }}
+              animate={{ scale: [0.8, 1, 0.8] }}
+              transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+            >
+              <Mail className="w-16 h-16 text-indigo-600" />
+            </motion.div>
+            
+            {/* Flying paper plane */}
+            <motion.div
+              className="absolute -top-2 -right-2"
+              initial={{ x: 0, y: 0, opacity: 0 }}
+              animate={{
+                x: [0, 30, 60],
+                y: [0, -10, -30],
+                opacity: [0, 1, 0],
+              }}
+              transition={{
+                duration: 1.5,
+                repeat: Infinity,
+                ease: 'easeOut',
+              }}
+            >
+              <Send className="w-6 h-6 text-indigo-500" />
+            </motion.div>
+            
+            {/* Sparkles around */}
+            <motion.div
+              className="absolute -top-1 -left-1"
+              animate={{
+                scale: [0, 1, 0],
+                rotate: [0, 180],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                delay: 0.5,
+              }}
+            >
+              <Sparkles className="w-4 h-4 text-yellow-400" />
+            </motion.div>
+            
+            <motion.div
+              className="absolute -bottom-1 -right-1"
+              animate={{
+                scale: [0, 1, 0],
+                rotate: [0, -180],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                delay: 1,
+              }}
+            >
+              <Sparkles className="w-4 h-4 text-yellow-400" />
+            </motion.div>
+            
+            <motion.div
+              className="absolute top-1/2 -left-3"
+              animate={{
+                scale: [0, 1, 0],
+                rotate: [0, 360],
+              }}
+              transition={{
+                duration: 2,
+                repeat: Infinity,
+                delay: 1.5,
+              }}
+            >
+              <Sparkles className="w-3 h-3 text-purple-400" />
+            </motion.div>
+          </div>
         )
     }
   }
@@ -86,8 +155,8 @@ export default function Modal({ isOpen, onClose, type, title, message, locale = 
         }
       case 'loading':
         return {
-          title: locale === 'ko' ? '전송 중...' : 'Sending...',
-          message: locale === 'ko' ? '잠시만 기다려주세요' : 'Please wait a moment'
+          title: locale === 'ko' ? '메시지 전송 중...' : 'Sending Your Message...',
+          message: locale === 'ko' ? '귀하의 요청을 안전하게 전송하고 있습니다' : 'Your request is being securely transmitted'
         }
     }
   }
@@ -256,15 +325,40 @@ export default function Modal({ isOpen, onClose, type, title, message, locale = 
                   </div>
                 )}
 
-                {/* Progress bar for loading */}
+                {/* Progress bar and dots for loading */}
                 {type === 'loading' && (
-                  <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
-                    <motion.div
-                      className="h-full bg-gradient-to-r from-indigo-500 to-purple-500"
-                      initial={{ width: '0%' }}
-                      animate={{ width: '90%' }}
-                      transition={{ duration: 2, ease: 'easeOut' }}
-                    />
+                  <div className="space-y-4">
+                    <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
+                      <motion.div
+                        className="h-full bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-500 bg-[length:200%_100%]"
+                        initial={{ width: '0%' }}
+                        animate={{ 
+                          width: '75%',
+                          backgroundPosition: ['0% 50%', '100% 50%', '0% 50%']
+                        }}
+                        transition={{ 
+                          width: { duration: 2, ease: 'easeOut' },
+                          backgroundPosition: { duration: 3, repeat: Infinity, ease: 'linear' }
+                        }}
+                      />
+                    </div>
+                    
+                    {/* Animated dots */}
+                    <div className="flex justify-center gap-1">
+                      {[0, 1, 2].map((index) => (
+                        <motion.div
+                          key={index}
+                          className="w-2 h-2 bg-indigo-600 rounded-full"
+                          initial={{ opacity: 0.3 }}
+                          animate={{ opacity: [0.3, 1, 0.3] }}
+                          transition={{
+                            duration: 1.5,
+                            repeat: Infinity,
+                            delay: index * 0.2,
+                          }}
+                        />
+                      ))}
+                    </div>
                   </div>
                 )}
               </div>
