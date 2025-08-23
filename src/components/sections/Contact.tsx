@@ -225,16 +225,26 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
   const scrollToServices = () => {
     if (typeof window === 'undefined') return
     
-    // Check if we're on the pricing page
     const currentPath = window.location.pathname
+    
+    // Check if we're on the pricing page
     if (currentPath.includes('/pricing')) {
       // Navigate back to pricing page
       window.location.href = `${locale === 'ko' ? '/ko' : ''}/pricing#pricing-grid`
-    } else {
-      // Scroll to services section on main page
+    } 
+    // Check if we're on NY or NJ website pages
+    else if (currentPath.includes('/ny-website') || currentPath.includes('/nj-website')) {
+      // Navigate to main page services section
+      window.location.href = `${locale === 'ko' ? '/ko' : '/'}#services`
+    } 
+    else {
+      // Try to scroll to services section on current page
       const servicesSection = document.getElementById('services')
       if (servicesSection) {
         servicesSection.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      } else {
+        // If no services section, navigate to main page
+        window.location.href = `${locale === 'ko' ? '/ko' : '/'}#services`
       }
     }
   }
