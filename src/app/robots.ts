@@ -8,7 +8,11 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: '*',
         allow: '/',
-        disallow: ['/api/', '/analytics/', '/_next/', '/en/'], // Disallow /en/ to prevent indexing redirects
+        disallow: [
+          '/api/', 
+          '/analytics/', 
+          '/en/'  // Only block /en/ redirects, not /_next/
+        ],
       },
     ],
     sitemap: `${baseUrl}/sitemap.xml`,
