@@ -199,41 +199,6 @@ const content = {
   },
 }
 
-export function generateStaticParams() {
-  return [
-    { locale: 'en' },
-    { locale: 'ko' }
-  ]
-}
-
-export async function generateMetadata({
-  params,
-}: {
-  params: { locale: string }
-}): Promise<Metadata> {
-  const locale = params.locale as 'en' | 'ko'
-  const seo = seoConfig[locale]
-  const t = content[locale]
-  
-  return {
-    title: `${t.hero.title} ${t.hero.tagline} | ZOE LUMOS`,
-    description: t.hero.description,
-    openGraph: {
-      title: `${t.hero.title} ${t.hero.tagline}`,
-      description: t.hero.description,
-      url: `https://zoestudio.com/${locale}/about`,
-      type: 'website',
-    },
-    alternates: {
-      canonical: `https://zoestudio.com/${locale}/about`,
-      languages: {
-        'en': '/en/about',
-        'ko': '/ko/about',
-      },
-    },
-  }
-}
-
 export default function AboutPage({ params }: { params: { locale: string } }) {
   const locale = params.locale as 'en' | 'ko'
   const t = content[locale]
