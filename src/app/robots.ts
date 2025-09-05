@@ -10,11 +10,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
         disallow: ['/api/', '/analytics/', '/_next/', '/en/'], // Disallow /en/ to prevent indexing redirects
       },
-      {
-        userAgent: 'Googlebot',
-        allow: '/',
-        disallow: ['/api/', '/analytics/', '/_next/', '/en/'], // Explicitly tell Google not to index /en/ URLs
-      },
     ],
     sitemap: `${baseUrl}/sitemap.xml`,
     host: baseUrl,

@@ -5,12 +5,20 @@ import Contact from '@/components/sections/Contact'
 import Link from 'next/link'
 import { Building2, Globe, Search, TrendingUp, Users, Zap } from 'lucide-react'
 
+export async function generateStaticParams() {
+  return [
+    { locale: 'en' },
+    { locale: 'ko' }
+  ]
+}
+
 export async function generateMetadata({
   params,
 }: {
   params: { locale: string }
 }): Promise<Metadata> {
   const locale = params.locale as 'en' | 'ko'
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://zoelumos.com'
   
   if (locale === 'ko') {
     return {
@@ -20,14 +28,29 @@ export async function generateMetadata({
       openGraph: {
         title: '뉴저지 웹사이트 제작 전문 - ZOE LUMOS',
         description: '뉴저지 최고의 한인 웹사이트 제작 업체. 포트리부터 에디슨까지, NJ 전 지역 한인 비즈니스를 위한 맞춤 웹사이트 개발.',
+        url: `${baseUrl}/ko/nj-website`,
+        siteName: 'ZOE LUMOS',
         locale: 'ko_KR',
         alternateLocale: 'en_US',
+        type: 'website',
       },
       alternates: {
-        canonical: 'https://zoelumos.com/ko/nj-website',
+        canonical: `${baseUrl}/ko/nj-website`,
         languages: {
-          'en': 'https://zoelumos.com/nj-website',
-          'ko': 'https://zoelumos.com/ko/nj-website',
+          'x-default': `${baseUrl}/nj-website`,
+          'en': `${baseUrl}/nj-website`,
+          'ko': `${baseUrl}/ko/nj-website`,
+        },
+      },
+      robots: {
+        index: true,
+        follow: true,
+        googleBot: {
+          index: true,
+          follow: true,
+          'max-video-preview': -1,
+          'max-image-preview': 'large',
+          'max-snippet': -1,
         },
       },
     }
@@ -40,14 +63,29 @@ export async function generateMetadata({
     openGraph: {
       title: 'New Jersey Website Design & Development - ZOE LUMOS',
       description: 'Leading web development agency in New Jersey. Custom websites for NJ businesses from Fort Lee to Edison.',
+      url: `${baseUrl}/nj-website`,
+      siteName: 'ZOE LUMOS',
       locale: 'en_US',
       alternateLocale: 'ko_KR',
+      type: 'website',
     },
     alternates: {
-      canonical: 'https://zoelumos.com/nj-website',
+      canonical: `${baseUrl}/nj-website`,
       languages: {
-        'en': 'https://zoelumos.com/nj-website',
-        'ko': 'https://zoelumos.com/ko/nj-website',
+        'x-default': `${baseUrl}/nj-website`,
+        'en': `${baseUrl}/nj-website`,
+        'ko': `${baseUrl}/ko/nj-website`,
+      },
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
       },
     },
   }
@@ -55,6 +93,7 @@ export async function generateMetadata({
 
 export default function NJWebsitePage({ params }: { params: { locale: string } }) {
   const locale = params.locale as 'en' | 'ko'
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://zoelumos.com'
   
   // Structured data for local SEO
   const localBusinessSchema = {
@@ -64,7 +103,7 @@ export default function NJWebsitePage({ params }: { params: { locale: string } }
     description: locale === 'ko' 
       ? '뉴저지 최고의 웹사이트 제작 전문 업체'
       : 'Premier website design agency in New Jersey',
-    url: `https://zoelumos.com/${locale === 'ko' ? 'ko/' : ''}nj-website`,
+    url: `${baseUrl}/${locale === 'ko' ? 'ko/' : ''}nj-website`,
     telephone: '+1-201-555-0123',
     email: 'nj@zoelumos.com',
     address: {

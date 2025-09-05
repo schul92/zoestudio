@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://zoelumos.com/ko</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zoelumos.com"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zoelumos.com"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://zoelumos.com/ko"/>
+  </url>
+  <url>
+    <loc>https://zoelumos.com/ko/about</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zoelumos.com/about"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zoelumos.com/about"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://zoelumos.com/ko/about"/>
+  </url>
+  <url>
+    <loc>https://zoelumos.com/ko/pricing</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zoelumos.com/pricing"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zoelumos.com/pricing"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://zoelumos.com/ko/pricing"/>
+  </url>
+  <url>
+    <loc>https://zoelumos.com/ko/ny-website</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zoelumos.com/ny-website"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zoelumos.com/ny-website"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://zoelumos.com/ko/ny-website"/>
+  </url>
+  <url>
+    <loc>https://zoelumos.com/ko/nj-website</loc>
+    <lastmod>2024-01-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://zoelumos.com/nj-website"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://zoelumos.com/nj-website"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://zoelumos.com/ko/nj-website"/>
+  </url>
+</urlset>

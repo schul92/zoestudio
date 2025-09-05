@@ -4,6 +4,66 @@ import Footer from '@/components/layout/Footer'
 import AboutClient from './AboutClient'
 import { seoConfig } from '@/config/seo'
 
+export async function generateStaticParams() {
+  return [
+    { locale: 'en' },
+    { locale: 'ko' }
+  ]
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: { locale: string }
+}): Promise<Metadata> {
+  const locale = params.locale as 'en' | 'ko'
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://zoelumos.com'
+  
+  const metadata = {
+    en: {
+      title: 'About Us - ZOE LUMOS | Digital Marketing Agency',
+      description: 'Learn about ZOE LUMOS - Bringing Life & Light to Your Digital Presence. Professional web design and digital marketing services in Fort Lee, NJ & NYC.',
+    },
+    ko: {
+      title: '회사 소개 - ZOE LUMOS | 디지털 마케팅 에이전시',
+      description: 'ZOE LUMOS 소개 - 디지털 프레즌스에 생명과 빛을 가져다 드립니다. 포트리 NJ & NYC 전문 웹 디자인 및 디지털 마케팅 서비스.',
+    }
+  }
+  
+  return {
+    title: metadata[locale].title,
+    description: metadata[locale].description,
+    alternates: {
+      canonical: locale === 'en' ? `${baseUrl}/about` : `${baseUrl}/ko/about`,
+      languages: {
+        'x-default': `${baseUrl}/about`,
+        'en': `${baseUrl}/about`,
+        'ko': `${baseUrl}/ko/about`,
+      },
+    },
+    openGraph: {
+      title: metadata[locale].title,
+      description: metadata[locale].description,
+      url: locale === 'en' ? `${baseUrl}/about` : `${baseUrl}/ko/about`,
+      siteName: 'ZOE LUMOS',
+      locale: locale === 'ko' ? 'ko_KR' : 'en_US',
+      alternateLocale: locale === 'ko' ? 'en_US' : 'ko_KR',
+      type: 'website',
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
+  }
+}
+
 const content = {
   en: {
     hero: {

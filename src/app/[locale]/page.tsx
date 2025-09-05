@@ -45,12 +45,39 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const locale = params.locale as 'en' | 'ko'
   const seo = seoConfig[locale]
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://zoelumos.com'
   
   return {
-    title: `${seo.title} | Home`,
+    title: seo.title,
     description: seo.description,
+    keywords: seo.keywords,
     alternates: {
-      canonical: `https://zoestudio.com/${locale}`,
+      canonical: locale === 'en' ? baseUrl : `${baseUrl}/ko`,
+      languages: {
+        'x-default': baseUrl,
+        'en': baseUrl,
+        'ko': `${baseUrl}/ko`,
+      },
+    },
+    openGraph: {
+      title: seo.openGraph.title,
+      description: seo.openGraph.description,
+      url: locale === 'en' ? baseUrl : `${baseUrl}/ko`,
+      siteName: 'ZOE LUMOS',
+      locale: locale === 'ko' ? 'ko_KR' : 'en_US',
+      alternateLocale: locale === 'ko' ? 'en_US' : 'ko_KR',
+      type: 'website',
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
     },
   }
 }

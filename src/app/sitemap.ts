@@ -4,143 +4,50 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://zoelumos.com'
   const lastModified = new Date()
 
-  // Main pages without locale prefix (treated as English)
-  const mainPages = [
-    {
-      url: `${baseUrl}`,
-      lastModified,
-      changeFrequency: 'daily' as const,
-      priority: 1.0,
-      alternates: {
-        languages: {
-          'x-default': `${baseUrl}`,
-          en: `${baseUrl}`,
-          ko: `${baseUrl}/ko`,
-        }
-      }
-    },
-    {
-      url: `${baseUrl}/about`,
-      lastModified,
-      changeFrequency: 'weekly' as const,
-      priority: 0.8,
-      alternates: {
-        languages: {
-          'x-default': `${baseUrl}/about`,
-          en: `${baseUrl}/about`,
-          ko: `${baseUrl}/ko/about`,
-        }
-      }
-    },
-    {
-      url: `${baseUrl}/pricing`,
-      lastModified,
-      changeFrequency: 'weekly' as const,
-      priority: 0.9,
-      alternates: {
-        languages: {
-          'x-default': `${baseUrl}/pricing`,
-          en: `${baseUrl}/pricing`,
-          ko: `${baseUrl}/ko/pricing`,
-        }
-      }
-    },
-    {
-      url: `${baseUrl}/ny-website`,
-      lastModified,
-      changeFrequency: 'weekly' as const,
-      priority: 0.95,
-      alternates: {
-        languages: {
-          'x-default': `${baseUrl}/ny-website`,
-          en: `${baseUrl}/ny-website`,
-          ko: `${baseUrl}/ko/ny-website`,
-        }
-      }
-    },
-    {
-      url: `${baseUrl}/nj-website`,
-      lastModified,
-      changeFrequency: 'weekly' as const,
-      priority: 0.95,
-      alternates: {
-        languages: {
-          'x-default': `${baseUrl}/nj-website`,
-          en: `${baseUrl}/nj-website`,
-          ko: `${baseUrl}/ko/nj-website`,
-        }
-      }
-    },
+  const pages = [
+    '',
+    '/about',
+    '/pricing',
+    '/ny-website',
+    '/nj-website',
   ]
 
-  // Korean pages with /ko prefix
-  const koreanPages = [
-    {
-      url: `${baseUrl}/ko`,
-      lastModified,
-      changeFrequency: 'daily' as const,
-      priority: 1.0,
-      alternates: {
-        languages: {
-          'x-default': `${baseUrl}`,
-          en: `${baseUrl}`,
-          ko: `${baseUrl}/ko`,
-        }
-      }
-    },
-    {
-      url: `${baseUrl}/ko/about`,
-      lastModified,
-      changeFrequency: 'weekly' as const,
-      priority: 0.8,
-      alternates: {
-        languages: {
-          'x-default': `${baseUrl}/about`,
-          en: `${baseUrl}/about`,
-          ko: `${baseUrl}/ko/about`,
-        }
-      }
-    },
-    {
-      url: `${baseUrl}/ko/pricing`,
-      lastModified,
-      changeFrequency: 'weekly' as const,
-      priority: 0.9,
-      alternates: {
-        languages: {
-          'x-default': `${baseUrl}/pricing`,
-          en: `${baseUrl}/pricing`,
-          ko: `${baseUrl}/ko/pricing`,
-        }
-      }
-    },
-    {
-      url: `${baseUrl}/ko/ny-website`,
-      lastModified,
-      changeFrequency: 'weekly' as const,
-      priority: 0.95,
-      alternates: {
-        languages: {
-          'x-default': `${baseUrl}/ny-website`,
-          en: `${baseUrl}/ny-website`,
-          ko: `${baseUrl}/ko/ny-website`,
-        }
-      }
-    },
-    {
-      url: `${baseUrl}/ko/nj-website`,
-      lastModified,
-      changeFrequency: 'weekly' as const,
-      priority: 0.95,
-      alternates: {
-        languages: {
-          'x-default': `${baseUrl}/nj-website`,
-          en: `${baseUrl}/nj-website`,
-          ko: `${baseUrl}/ko/nj-website`,
-        }
-      }
-    },
-  ]
+  // Generate entries for both English (no prefix) and Korean (/ko prefix)
+  const sitemapEntries: MetadataRoute.Sitemap = []
 
-  return [...mainPages, ...koreanPages]
+  // English pages (without locale prefix)
+  pages.forEach((page) => {
+    sitemapEntries.push({
+      url: `${baseUrl}${page}`,
+      lastModified,
+      changeFrequency: page === '' ? 'daily' : 'weekly',
+      priority: page === '' ? 1.0 : page.includes('website') ? 0.95 : page === '/pricing' ? 0.9 : 0.8,
+      alternates: {
+        languages: {
+          'x-default': `${baseUrl}${page}`,
+          'en': `${baseUrl}${page}`,
+          'ko': `${baseUrl}/ko${page}`,
+        }
+      }
+    })
+  })
+
+  // Korean pages (with /ko prefix)
+  pages.forEach((page) => {
+    sitemapEntries.push({
+      url: `${baseUrl}/ko${page}`,
+      lastModified,
+      changeFrequency: page === '' ? 'daily' : 'weekly',
+      priority: page === '' ? 1.0 : page.includes('website') ? 0.95 : page === '/pricing' ? 0.9 : 0.8,
+      alternates: {
+        languages: {
+          'x-default': `${baseUrl}${page}`,
+          'en': `${baseUrl}${page}`,
+          'ko': `${baseUrl}/ko${page}`,
+        }
+      }
+    })
+  })
+
+  return sitemapEntries
 }
