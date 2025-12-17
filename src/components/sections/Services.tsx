@@ -21,7 +21,7 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
       features: t.services.seo.features,
       benefit: t.services.seo.benefit,
       icon: (
-        <svg viewBox="0 0 100 100" fill="none" className="w-full h-full">
+        <svg viewBox="0 0 100 100" fill="none" className="w-full h-full" role="img" aria-label="SEO service icon - search magnifying glass with growth chart">
           {/* Modern Minimalist SEO Icon */}
           
           {/* Central Search Circle */}
@@ -90,7 +90,7 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
       features: t.services.googleAds.features,
       benefit: t.services.googleAds.benefit,
       icon: (
-        <svg viewBox="0 0 100 100" fill="none" className="w-full h-full">
+        <svg viewBox="0 0 100 100" fill="none" className="w-full h-full" role="img" aria-label="Google Ads service icon - digital advertising cards">
           {/* Clean Digital Ads Icon */}
           
           {/* Ad Cards Animation */}
@@ -193,7 +193,7 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
       features: t.services.webDesign.features,
       benefit: t.services.webDesign.benefit,
       icon: (
-        <svg viewBox="0 0 100 100" fill="none" className="w-full h-full">
+        <svg viewBox="0 0 100 100" fill="none" className="w-full h-full" role="img" aria-label="Web design and Shopify e-commerce service icon">
           {/* E-Commerce Website & Shopify Icon */}
           
           {/* Main Screen */}
@@ -257,7 +257,7 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
       features: t.services.llc.features,
       benefit: t.services.llc.benefit,
       icon: (
-        <svg viewBox="0 0 100 100" fill="none" className="w-full h-full">
+        <svg viewBox="0 0 100 100" fill="none" className="w-full h-full" role="img" aria-label="LLC formation and business setup service icon">
           {/* LLC Formation & Business Setup Icon */}
           
           {/* Building/Office */}

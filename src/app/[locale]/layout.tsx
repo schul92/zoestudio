@@ -80,11 +80,7 @@ export async function generateMetadata({
         'max-snippet': -1,
       },
     },
-    verification: {
-      google: 'google-site-verification-code',
-      yandex: 'yandex-verification',
-      yahoo: 'yahoo-verification',
-    },
+    // Add real verification codes when available from Google Search Console, Yandex Webmaster, etc.
     other: {
       'msapplication-TileColor': '#000000',
       'mobile-web-app-capable': 'yes',
@@ -132,9 +128,9 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='M50 20C36.193 20 25 31.193 25 45C25 53.284 29.163 60.622 35.547 65.047C36.719 65.922 37.5 67.266 37.5 68.75V75C37.5 76.381 38.619 77.5 40 77.5H60C61.381 77.5 62.5 76.381 62.5 75V68.75C62.5 67.266 63.281 65.922 64.453 65.047C70.837 60.622 75 53.284 75 45C75 31.193 63.807 20 50 20Z' stroke='black' stroke-width='3' fill='none'/><path d='M42.5 77.5V80C42.5 82.761 44.739 85 47.5 85H52.5C55.261 85 57.5 82.761 57.5 80V77.5' stroke='black' stroke-width='3'/></svg>" />
-        <link rel="alternate" hrefLang="en" href="https://zoestudio.com/" />
-        <link rel="alternate" hrefLang="ko" href="https://zoestudio.com/ko" />
-        <link rel="alternate" hrefLang="x-default" href="https://zoestudio.com/" />
+        <link rel="alternate" hrefLang="en" href="https://zoelumos.com/" />
+        <link rel="alternate" hrefLang="ko" href="https://zoelumos.com/ko" />
+        <link rel="alternate" hrefLang="x-default" href="https://zoelumos.com/" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
         <meta name="theme-color" content="#000000" />
         <meta name="google" content="notranslate" />
@@ -158,12 +154,12 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebSite",
-              "url": "https://zoestudio.com",
+              "url": "https://zoelumos.com",
               "name": "ZOE LUMOS",
               "description": "Professional SEO Services, Google Ads Management & Web Design",
               "potentialAction": {
                 "@type": "SearchAction",
-                "target": "https://zoestudio.com/search?q={search_term_string}",
+                "target": "https://zoelumos.com/search?q={search_term_string}",
                 "query-input": "required name=search_term_string"
               },
               "inLanguage": ["en-US", "ko-KR"]
@@ -181,19 +177,19 @@ export default function RootLayout({
                   "@type": "ListItem",
                   "position": 1,
                   "name": "Home",
-                  "item": `https://zoestudio.com/${params.locale}`
+                  "item": `https://zoelumos.com/${params.locale}`
                 },
                 {
                   "@type": "ListItem",
                   "position": 2,
                   "name": "Services",
-                  "item": `https://zoestudio.com/${params.locale}#services`
+                  "item": `https://zoelumos.com/${params.locale}#services`
                 },
                 {
                   "@type": "ListItem",
                   "position": 3,
                   "name": "Contact",
-                  "item": `https://zoestudio.com/${params.locale}#contact`
+                  "item": `https://zoelumos.com/${params.locale}#contact`
                 }
               ]
             }),

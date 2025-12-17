@@ -86,6 +86,8 @@ export default function AnimatedHero({ locale = 'en' }: { locale?: string }) {
               viewBox="0 0 100 100"
               className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 relative z-10"
               fill="none"
+              role="img"
+              aria-label="ZOE LUMOS - Digital marketing lightbulb icon representing bright ideas and innovation"
             >
               <path
                 d="M50 20C36.193 20 25 31.193 25 45C25 53.284 29.163 60.622 35.547 65.047C36.719 65.922 37.5 67.266 37.5 68.75V75C37.5 76.381 38.619 77.5 40 77.5H60C61.381 77.5 62.5 76.381 62.5 75V68.75C62.5 67.266 63.281 65.922 64.453 65.047C70.837 60.622 75 53.284 75 45C75 31.193 63.807 20 50 20Z"
