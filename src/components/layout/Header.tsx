@@ -85,6 +85,10 @@ export default function Header({ locale = 'en' }: { locale?: string }) {
                 <span className={`relative z-10 transition-colors duration-300 ${isAboutPage && (!mounted || !hasScrolled) ? 'text-white' : 'text-black'}`}>{t.nav.services}</span>
                 <span className={`absolute bottom-0 left-4 right-4 h-0.5 ${isAboutPage && (!mounted || !hasScrolled) ? 'bg-white' : 'bg-black'} scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out`} />
               </Link>
+              <Link href={`${prefix}/portfolio`} className="relative group py-2 px-4 min-w-[80px] text-center">
+                <span className={`relative z-10 transition-colors duration-300 ${isAboutPage && (!mounted || !hasScrolled) ? 'text-white' : 'text-black'}`}>{t.nav.portfolio}</span>
+                <span className={`absolute bottom-0 left-4 right-4 h-0.5 ${isAboutPage && (!mounted || !hasScrolled) ? 'bg-white' : 'bg-black'} scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out`} />
+              </Link>
               <Link href={`${prefix}/pricing`} className="relative group py-2 px-4 min-w-[80px] text-center">
                 <span className={`relative z-10 transition-colors duration-300 ${isAboutPage && (!mounted || !hasScrolled) ? 'text-white' : 'text-black'}`}>{t.nav.pricing}</span>
                 <span className={`absolute bottom-0 left-4 right-4 h-0.5 ${isAboutPage && (!mounted || !hasScrolled) ? 'bg-white' : 'bg-black'} scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out`} />
@@ -148,14 +152,21 @@ export default function Header({ locale = 'en' }: { locale?: string }) {
           >
             {t.nav.services}
           </Link>
-          <Link 
-            href={`${prefix}/pricing`} 
+          <Link
+            href={`${prefix}/portfolio`}
+            onClick={() => setMobileMenuOpen(false)}
+            className="block py-3 px-4 text-gray-900 hover:bg-gray-100 rounded-lg transition-colors text-lg font-medium"
+          >
+            {t.nav.portfolio}
+          </Link>
+          <Link
+            href={`${prefix}/pricing`}
             onClick={() => setMobileMenuOpen(false)}
             className="block py-3 px-4 text-gray-900 hover:bg-gray-100 rounded-lg transition-colors text-lg font-medium"
           >
             {t.nav.pricing}
           </Link>
-          <Link 
+          <Link
             href={`${prefix}/#contact`} 
             onClick={() => setMobileMenuOpen(false)}
             className="block py-3 px-4 text-gray-900 hover:bg-gray-100 rounded-lg transition-colors text-lg font-medium"
