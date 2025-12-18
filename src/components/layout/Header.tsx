@@ -6,6 +6,7 @@ import LanguageToggle from '@/components/ui/LanguageToggle'
 import { useTranslation } from '@/hooks/useTranslation'
 import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
+import { InstagramNavHover, InstagramMobileLink } from '@/components/ui/InstagramHover'
 
 export default function Header({ locale = 'en' }: { locale?: string }) {
   const { t } = useTranslation(locale)
@@ -43,12 +44,12 @@ export default function Header({ locale = 'en' }: { locale?: string }) {
     } else {
       document.body.style.overflow = 'unset'
     }
-    
+
     return () => {
       document.body.style.overflow = 'unset'
     }
   }, [mobileMenuOpen])
-  
+
   // Use consistent initial state for SSR
   const scrolledClass = mounted && hasScrolled 
     ? 'bg-white/95 shadow-lg backdrop-blur-md' 
@@ -97,8 +98,11 @@ export default function Header({ locale = 'en' }: { locale?: string }) {
                 <span className={`relative z-10 transition-colors duration-300 ${isAboutPage && (!mounted || !hasScrolled) ? 'text-white' : 'text-black'}`}>{t.nav.contact}</span>
                 <span className={`absolute bottom-0 left-4 right-4 h-0.5 ${isAboutPage && (!mounted || !hasScrolled) ? 'bg-white' : 'bg-black'} scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out`} />
               </Link>
+
+              {/* Instagram with hover dropdown */}
+              <InstagramNavHover locale={locale} lightMode={isAboutPage && (!mounted || !hasScrolled)} />
             </div>
-            
+
             {/* Language Toggle - Always visible */}
             <LanguageToggle lightMode={isAboutPage && (!mounted || !hasScrolled)} />
             
@@ -167,12 +171,15 @@ export default function Header({ locale = 'en' }: { locale?: string }) {
             {t.nav.pricing}
           </Link>
           <Link
-            href={`${prefix}/#contact`} 
+            href={`${prefix}/#contact`}
             onClick={() => setMobileMenuOpen(false)}
             className="block py-3 px-4 text-gray-900 hover:bg-gray-100 rounded-lg transition-colors text-lg font-medium"
           >
             {t.nav.contact}
           </Link>
+
+          {/* Instagram link in mobile menu */}
+          <InstagramMobileLink onClose={() => setMobileMenuOpen(false)} />
         </nav>
       </div>
       )}

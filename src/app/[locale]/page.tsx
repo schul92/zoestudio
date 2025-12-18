@@ -1,5 +1,4 @@
 import { Metadata } from 'next'
-import { Suspense } from 'react'
 import dynamic from 'next/dynamic'
 import HeaderWrapper from '@/components/layout/HeaderWrapper'
 import Footer from '@/components/layout/Footer'
@@ -24,11 +23,6 @@ const ContactWrapper = dynamic(() => import('@/components/sections/ContactWrappe
 const LocationLinks = dynamic(() => import('@/components/sections/LocationLinks'), {
   ssr: true,
   loading: () => <div className="min-h-[400px] bg-gray-50" />
-})
-
-const InstagramSection = dynamic(() => import('@/components/sections/InstagramSection'), {
-  ssr: true,
-  loading: () => <div className="min-h-[500px] bg-gradient-to-b from-white to-gray-50" />
 })
 
 // Client-only component for scroll progress
@@ -94,7 +88,6 @@ export default function Home({ params }: { params: { locale: string } }) {
       <main className="min-h-screen relative overflow-x-hidden">
         <AnimatedHero locale={params.locale} />
         <Services locale={params.locale} />
-        <InstagramSection locale={params.locale} />
         <LocationLinks locale={params.locale} />
         <ContactWrapper locale={params.locale} />
       </main>

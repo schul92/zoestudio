@@ -3,7 +3,7 @@ import HeaderWrapper from '@/components/layout/HeaderWrapper'
 import Footer from '@/components/layout/Footer'
 import Contact from '@/components/sections/Contact'
 import Link from 'next/link'
-import { Building2, Globe, Search, TrendingUp, Users, Zap } from 'lucide-react'
+import { Globe, Search, Zap } from 'lucide-react'
 
 export async function generateStaticParams() {
   return [

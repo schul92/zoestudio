@@ -78,10 +78,48 @@ export default function AnimatedHero({ locale = 'en' }: { locale?: string }) {
 
       {/* Main content - Always visible, animations are optional */}
       <div className="relative z-10 text-center px-4 sm:px-6 md:px-8 max-w-6xl mx-auto w-full">
-        {/* Lightbulb logo */}
+        {/* Lightbulb logo with glow effect - lights up on load */}
         <div className="mb-8 flex justify-center">
           <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-gray-200 to-gray-400 rounded-full blur-3xl opacity-20" />
+            {/* Outer glow ring - fades in */}
+            {mounted && (
+              <motion.div
+                className="absolute inset-0 rounded-full"
+                style={{
+                  background: 'radial-gradient(circle, rgba(251,191,36,0.4) 0%, rgba(251,191,36,0) 70%)',
+                  width: '200%',
+                  height: '200%',
+                  left: '-50%',
+                  top: '-50%',
+                }}
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{
+                  opacity: [0, 0.5, 0.8, 0.5],
+                  scale: [0.5, 1, 1.2, 1],
+                }}
+                transition={{
+                  duration: 3,
+                  times: [0, 0.3, 0.6, 1],
+                  repeat: Infinity,
+                  repeatDelay: 0,
+                  ease: "easeInOut"
+                }}
+              />
+            )}
+            {/* Inner glow - fades in */}
+            <motion.div
+              className="absolute inset-0 rounded-full blur-2xl"
+              style={{
+                background: 'radial-gradient(circle, rgba(251,191,36,0.6) 0%, rgba(245,158,11,0.3) 50%, transparent 70%)',
+                width: '150%',
+                height: '150%',
+                left: '-25%',
+                top: '-25%',
+              }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1.5, delay: 0.3 }}
+            />
             <svg
               viewBox="0 0 100 100"
               className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 relative z-10"
@@ -89,40 +127,185 @@ export default function AnimatedHero({ locale = 'en' }: { locale?: string }) {
               role="img"
               aria-label="ZOE LUMOS - Digital marketing lightbulb icon representing bright ideas and innovation"
             >
-              <path
-                d="M50 20C36.193 20 25 31.193 25 45C25 53.284 29.163 60.622 35.547 65.047C36.719 65.922 37.5 67.266 37.5 68.75V75C37.5 76.381 38.619 77.5 40 77.5H60C61.381 77.5 62.5 76.381 62.5 75V68.75C62.5 67.266 63.281 65.922 64.453 65.047C70.837 60.622 75 53.284 75 45C75 31.193 63.807 20 50 20Z"
-                stroke="black"
-                strokeWidth="3"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
+              {/* Glow filter definition */}
+              <defs>
+                <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+                  <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                  <feMerge>
+                    <feMergeNode in="coloredBlur"/>
+                    <feMergeNode in="SourceGraphic"/>
+                  </feMerge>
+                </filter>
+                <linearGradient id="bulbGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#FBBF24" />
+                  <stop offset="50%" stopColor="#F59E0B" />
+                  <stop offset="100%" stopColor="#D97706" />
+                </linearGradient>
+                <linearGradient id="bulbGradientOff" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stopColor="#9CA3AF" />
+                  <stop offset="100%" stopColor="#6B7280" />
+                </linearGradient>
+                <radialGradient id="innerGlow" cx="50%" cy="40%" r="50%">
+                  <stop offset="0%" stopColor="#FEF3C7" />
+                  <stop offset="100%" stopColor="#FBBF24" />
+                </radialGradient>
+                <radialGradient id="innerGlowOff" cx="50%" cy="40%" r="50%">
+                  <stop offset="0%" stopColor="#E5E7EB" />
+                  <stop offset="100%" stopColor="#D1D5DB" />
+                </radialGradient>
+              </defs>
+
+              {/* Bulb - starts gray/off, transitions to golden */}
+              {mounted ? (
+                <motion.path
+                  d="M50 20C36.193 20 25 31.193 25 45C25 53.284 29.163 60.622 35.547 65.047C36.719 65.922 37.5 67.266 37.5 68.75V75C37.5 76.381 38.619 77.5 40 77.5H60C61.381 77.5 62.5 76.381 62.5 75V68.75C62.5 67.266 63.281 65.922 64.453 65.047C70.837 60.622 75 53.284 75 45C75 31.193 63.807 20 50 20Z"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  initial={{
+                    fill: "url(#innerGlowOff)",
+                    stroke: "url(#bulbGradientOff)",
+                    filter: "none"
+                  }}
+                  animate={{
+                    fill: "url(#innerGlow)",
+                    stroke: "url(#bulbGradient)",
+                    filter: "url(#glow)"
+                  }}
+                  transition={{ duration: 1.2, delay: 0.2, ease: "easeOut" }}
+                />
+              ) : (
+                <path
+                  d="M50 20C36.193 20 25 31.193 25 45C25 53.284 29.163 60.622 35.547 65.047C36.719 65.922 37.5 67.266 37.5 68.75V75C37.5 76.381 38.619 77.5 40 77.5H60C61.381 77.5 62.5 76.381 62.5 75V68.75C62.5 67.266 63.281 65.922 64.453 65.047C70.837 60.622 75 53.284 75 45C75 31.193 63.807 20 50 20Z"
+                  fill="url(#innerGlowOff)"
+                  stroke="url(#bulbGradientOff)"
+                  strokeWidth="3"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                />
+              )}
+
+              {/* Base of bulb */}
               <path
                 d="M42.5 77.5V80C42.5 82.761 44.739 85 47.5 85H52.5C55.261 85 57.5 82.761 57.5 80V77.5"
-                stroke="black"
+                stroke="#B45309"
                 strokeWidth="3"
                 strokeLinecap="round"
                 strokeLinejoin="round"
+                fill="#D97706"
               />
+
+              {/* Screw threads on base */}
+              <path d="M40 77.5H60" stroke="#92400E" strokeWidth="1.5" />
+              <path d="M41 80H59" stroke="#92400E" strokeWidth="1.5" />
+              <path d="M43 82.5H57" stroke="#92400E" strokeWidth="1.5" />
+
+              {/* Filament - starts dark, lights up */}
+              {mounted && (
+                <>
+                  <motion.path
+                    d="M45 55V40C45 37 47 35 50 35C53 35 55 37 55 40V55"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    fill="none"
+                    initial={{ stroke: "#9CA3AF", opacity: 0.3 }}
+                    animate={{
+                      stroke: "#FEF3C7",
+                      opacity: [0.3, 1, 0.6, 1, 0.6],
+                    }}
+                    transition={{
+                      stroke: { duration: 0.8, delay: 0.5 },
+                      opacity: { duration: 1.5, delay: 1.3, repeat: Infinity, ease: "easeInOut" }
+                    }}
+                  />
+                  <motion.path
+                    d="M47 45H53"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    initial={{ stroke: "#9CA3AF", opacity: 0.3 }}
+                    animate={{
+                      stroke: "#FEF3C7",
+                      opacity: [0.3, 1, 0.6, 1, 0.6],
+                    }}
+                    transition={{
+                      stroke: { duration: 0.8, delay: 0.6 },
+                      opacity: { duration: 1.5, delay: 1.5, repeat: Infinity, ease: "easeInOut" }
+                    }}
+                  />
+                </>
+              )}
+
+              {/* Pulsing light rays - delayed start */}
               {mounted && (
                 <motion.circle
                   cx="50"
                   cy="45"
-                  r="15"
-                  fill="black"
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ 
-                    opacity: [0, 0.2, 0],
-                    scale: [0, 1.5, 0]
+                  r="18"
+                  fill="none"
+                  stroke="#FBBF24"
+                  strokeWidth="2"
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  animate={{
+                    opacity: [0, 0.6, 0],
+                    scale: [0.8, 1.5, 0.8]
                   }}
                   transition={{
-                    duration: 2,
-                    delay: 2,
+                    duration: 2.5,
+                    delay: 1.5,
                     repeat: Infinity,
-                    repeatDelay: 1
+                    ease: "easeOut"
                   }}
                 />
               )}
             </svg>
+
+            {/* Sparkle effects - delayed to appear after bulb lights up */}
+            {mounted && (
+              <>
+                <motion.div
+                  className="absolute w-2 h-2 bg-yellow-300 rounded-full"
+                  style={{ top: '10%', right: '15%' }}
+                  initial={{ scale: 0, opacity: 0 }}
+                  animate={{
+                    scale: [0, 1, 0],
+                    opacity: [0, 1, 0],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    delay: 1.5,
+                  }}
+                />
+                <motion.div
+                  className="absolute w-1.5 h-1.5 bg-amber-400 rounded-full"
+                  style={{ top: '20%', left: '10%' }}
+                  initial={{ scale: 0, opacity: 0 }}
+                  animate={{
+                    scale: [0, 1, 0],
+                    opacity: [0, 1, 0],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    delay: 2,
+                  }}
+                />
+                <motion.div
+                  className="absolute w-1 h-1 bg-yellow-200 rounded-full"
+                  style={{ bottom: '30%', right: '5%' }}
+                  initial={{ scale: 0, opacity: 0 }}
+                  animate={{
+                    scale: [0, 1, 0],
+                    opacity: [0, 1, 0],
+                  }}
+                  transition={{
+                    duration: 2,
+                    repeat: Infinity,
+                    delay: 2.5,
+                  }}
+                />
+              </>
+            )}
           </div>
         </div>
 

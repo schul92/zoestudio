@@ -303,27 +303,27 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
 
                   <div className="flex flex-col gap-4">
                     <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
+                      whileHover={{ scale: 1.02, backgroundColor: '#ffffff', color: '#000000' }}
+                      whileTap={{ scale: 0.98 }}
                       onClick={scrollToServices}
-                      className="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all"
+                      className="bg-black text-white px-8 py-4 rounded-xl font-bold text-lg border-2 border-black transition-all duration-300"
                     >
                       {locale === 'ko' ? '서비스 선택하러 가기 ↑' : 'Select Services ↑'}
                     </motion.button>
-                    
+
                     <div className="flex items-center gap-4">
                       <div className="flex-1 h-px bg-gray-300"></div>
                       <span className="text-gray-500 text-sm">{locale === 'ko' ? '또는' : 'or'}</span>
                       <div className="flex-1 h-px bg-gray-300"></div>
                     </div>
-                    
+
                     <motion.a
                       href={`${locale === 'ko' ? '/ko' : ''}/pricing`}
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                      className="bg-gradient-to-r from-indigo-500 to-purple-500 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all text-center"
+                      whileHover={{ scale: 1.02, backgroundColor: '#000000', color: '#ffffff' }}
+                      whileTap={{ scale: 0.98 }}
+                      className="bg-white text-black px-8 py-4 rounded-xl font-bold text-lg border-2 border-black transition-all duration-300 text-center"
                     >
-                      {locale === 'ko' ? '💎 가격 플랜 보기' : '💎 View Pricing Plans'}
+                      {locale === 'ko' ? '가격 플랜 보기' : 'View Pricing Plans'}
                     </motion.a>
                   </div>
                 </div>
