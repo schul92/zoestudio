@@ -4,7 +4,7 @@ import { useTranslation } from '@/hooks/useTranslation'
 import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { useServices } from '@/context/ServiceContext'
-import { trackFormSuccess, trackFormError, trackGAEvent, GA_EVENTS } from '@/utils/analytics'
+import { trackFormSuccess, trackFormError, trackGAEvent, GA_EVENTS, trackEmailClick, trackButtonClick } from '@/utils/analytics'
 import Modal from '@/components/ui/Modal'
 
 export default function Contact({ locale = 'en' }: { locale?: string }) {
@@ -305,7 +305,10 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                     <motion.button
                       whileHover={{ scale: 1.02, backgroundColor: '#ffffff', color: '#000000' }}
                       whileTap={{ scale: 0.98 }}
-                      onClick={scrollToServices}
+                      onClick={() => {
+                        trackButtonClick('Select Services', 'contact-section')
+                        scrollToServices()
+                      }}
                       className="bg-black text-white px-8 py-4 rounded-xl font-bold text-lg border-2 border-black transition-all duration-300"
                     >
                       {locale === 'ko' ? '서비스 선택하러 가기 ↑' : 'Select Services ↑'}
@@ -319,6 +322,7 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
 
                     <motion.a
                       href={`${locale === 'ko' ? '/ko' : ''}/pricing`}
+                      onClick={() => trackButtonClick('View Pricing Plans', 'contact-section')}
                       whileHover={{ scale: 1.02, backgroundColor: '#000000', color: '#ffffff' }}
                       whileTap={{ scale: 0.98 }}
                       className="bg-white text-black px-8 py-4 rounded-xl font-bold text-lg border-2 border-black transition-all duration-300 text-center"
@@ -624,7 +628,11 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                       {locale === 'ko' ? '연락처' : 'Get in Touch'}
                     </h4>
                     <div className="space-y-3">
-                      <a href="mailto:zoestudiollc@gmail.com" className="flex items-center gap-3 text-gray-800 hover:text-black transition-colors">
+                      <a
+                        href="mailto:zoestudiollc@gmail.com"
+                        onClick={() => trackEmailClick('zoestudiollc@gmail.com')}
+                        className="flex items-center gap-3 text-gray-800 hover:text-black transition-colors"
+                      >
                         <span className="text-xl">✉️</span>
                         <span className="text-sm font-medium">zoestudiollc@gmail.com</span>
                       </a>

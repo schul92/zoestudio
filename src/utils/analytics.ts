@@ -134,11 +134,97 @@ export const getFormAnalyticsData = () => {
   // For now, return structure for reference
   return {
     totalSubmissions: 0,
-    successfulSubmissions: 0, 
+    successfulSubmissions: 0,
     failedSubmissions: 0,
     averageServicesSelected: 0,
     topServices: [],
     conversionRate: 0,
     averageTimeToSubmit: 0,
   }
+}
+
+// Track scroll depth
+export const trackScrollDepth = (depth: number) => {
+  trackGAEvent('scroll_depth', {
+    category: 'engagement',
+    label: `${depth}%`,
+    value: depth,
+  })
+}
+
+// Track CTA button clicks
+export const trackButtonClick = (buttonName: string, location: string) => {
+  trackGAEvent('button_click', {
+    category: 'engagement',
+    label: buttonName,
+    page_source: location,
+  })
+}
+
+// Track outbound link clicks
+export const trackOutboundLink = (url: string, linkText?: string) => {
+  trackGAEvent('outbound_link', {
+    category: 'engagement',
+    label: linkText || url,
+  })
+}
+
+// Track page views with custom data (for Korean SEO pages)
+export const trackCustomPageView = (pageName: string, pageType: string, locale: string) => {
+  trackGAEvent('custom_page_view', {
+    category: 'navigation',
+    label: pageName,
+    page_source: pageType,
+  })
+
+  // Also send standard page_view
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('event', 'page_view', {
+      page_title: pageName,
+      page_location: window.location.href,
+      page_path: window.location.pathname,
+      language: locale,
+      page_type: pageType,
+    })
+  }
+}
+
+// Track phone number clicks
+export const trackPhoneClick = (phoneNumber: string) => {
+  trackGAEvent('phone_click', {
+    category: 'conversion',
+    label: phoneNumber,
+  })
+}
+
+// Track email clicks
+export const trackEmailClick = (email: string) => {
+  trackGAEvent('email_click', {
+    category: 'conversion',
+    label: email,
+  })
+}
+
+// Initialize scroll tracking
+export const initScrollTracking = () => {
+  if (typeof window === 'undefined') return
+
+  const scrollDepths = [25, 50, 75, 90, 100]
+  const trackedDepths: Set<number> = new Set()
+
+  const handleScroll = () => {
+    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight
+    const scrollPercent = Math.round((window.scrollY / scrollHeight) * 100)
+
+    scrollDepths.forEach(depth => {
+      if (scrollPercent >= depth && !trackedDepths.has(depth)) {
+        trackedDepths.add(depth)
+        trackScrollDepth(depth)
+      }
+    })
+  }
+
+  window.addEventListener('scroll', handleScroll, { passive: true })
+
+  return () => window.removeEventListener('scroll', handleScroll)
 }

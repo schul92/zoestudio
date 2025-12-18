@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation'
 import { Check } from 'lucide-react'
 import { useServices } from '@/context/ServiceContext'
 import { motion } from 'framer-motion'
+import { trackButtonClick } from '@/utils/analytics'
 
 interface PricingCTAProps {
   tierId: string
@@ -23,6 +24,9 @@ export default function PricingCTA({ tierId, tierName, locale, isEnterprise = fa
   const [showContinue, setShowContinue] = useState(false)
 
   const handleTierSelection = () => {
+    // Track button click
+    trackButtonClick(`Select ${tierName} Plan`, 'pricing-page')
+
     // Clear any existing selections first
     clearServices()
     

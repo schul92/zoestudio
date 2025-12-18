@@ -3,6 +3,7 @@
 import { useTranslation } from '@/hooks/useTranslation'
 import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
+import { trackButtonClick } from '@/utils/analytics'
 
 export default function AnimatedHero({ locale = 'en' }: { locale?: string }) {
   const { t } = useTranslation(locale)
@@ -329,8 +330,9 @@ export default function AnimatedHero({ locale = 'en' }: { locale?: string }) {
 
         {/* CTA Button */}
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-          <button 
+          <button
             onClick={() => {
+              trackButtonClick('Get Started CTA', 'hero')
               const servicesSection = document.getElementById('services')
               if (servicesSection) {
                 const rect = servicesSection.getBoundingClientRect()
@@ -339,7 +341,7 @@ export default function AnimatedHero({ locale = 'en' }: { locale?: string }) {
                 const isTablet = window.innerWidth >= 768 && window.innerWidth < 1024
                 const offset = isMobile ? 100 : isTablet ? 90 : 80
                 const targetPosition = rect.top + scrollTop - offset
-                
+
                 window.scrollTo({
                   top: targetPosition,
                   behavior: 'smooth'

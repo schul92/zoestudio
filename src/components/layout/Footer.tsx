@@ -1,6 +1,7 @@
 import { useTranslation } from '@/hooks/useTranslation'
 import Link from 'next/link'
 import InstagramHover, { InstagramIconLink } from '@/components/ui/InstagramHover'
+import FooterEmailLink from '@/components/layout/FooterEmailLink'
 
 export default function Footer({ locale = 'en' }: { locale?: string }) {
   const { t } = useTranslation(locale)
@@ -78,15 +79,7 @@ export default function Footer({ locale = 'en' }: { locale?: string }) {
               <div className="absolute -bottom-2 left-0 w-8 h-0.5 bg-gray-400 group-hover:w-16 group-hover:bg-black transition-all duration-300"></div>
             </div>
             <div className="space-y-3">
-              <a
-                href="mailto:zoestudiollc@gmail.com"
-                className="flex items-center group/link text-gray-600 hover:text-black transition-colors duration-200"
-              >
-                <span className="mr-3 text-lg group-hover/link:scale-110 transition-transform duration-200">✉️</span>
-                <span className="text-sm border-b border-transparent hover:border-black transition-all duration-200">
-                  zoestudiollc@gmail.com
-                </span>
-              </a>
+              <FooterEmailLink email="zoestudiollc@gmail.com" />
 
               {/* Instagram with hover dropdown - Client Component */}
               <InstagramHover position="top" showLabel={true} locale={locale} />

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react'
+import { trackOutboundLink } from '@/utils/analytics'
 
 const INSTAGRAM_PROFILE = 'https://www.instagram.com/zoelumos/'
 
@@ -66,6 +67,7 @@ export default function InstagramHover({ position = 'bottom', showLabel = true, 
         href={INSTAGRAM_PROFILE}
         target="_blank"
         rel="noopener noreferrer"
+        onClick={() => trackOutboundLink(INSTAGRAM_PROFILE, 'Instagram Profile')}
         className="flex items-center group/link text-gray-600 hover:text-black transition-colors duration-200"
       >
         <span className="mr-3 group-hover/link:scale-110 transition-transform duration-200">
@@ -91,6 +93,7 @@ export default function InstagramHover({ position = 'bottom', showLabel = true, 
                 href={video.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackOutboundLink(video.instagramUrl, `Instagram Reel ${index + 1}`)}
                 className="block relative group/video flex-1"
               >
                 <div className="aspect-[9/16] rounded-lg overflow-hidden bg-gray-100">
@@ -144,6 +147,7 @@ export function InstagramNavHover({ locale = 'en', lightMode = false }: { locale
         href={INSTAGRAM_PROFILE}
         target="_blank"
         rel="noopener noreferrer"
+        onClick={() => trackOutboundLink(INSTAGRAM_PROFILE, 'Instagram Nav')}
         className={`relative group py-2 px-3 flex items-center transition-colors duration-300 ${lightMode ? 'text-white hover:text-white/80' : 'text-black hover:text-gray-600'}`}
         aria-label="Instagram @zoelumos"
       >
@@ -167,6 +171,7 @@ export function InstagramNavHover({ locale = 'en', lightMode = false }: { locale
                 href={video.instagramUrl}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackOutboundLink(video.instagramUrl, `Instagram Reel Nav ${index + 1}`)}
                 className="block relative group/video flex-1"
               >
                 <div className="aspect-[9/16] rounded-lg overflow-hidden bg-gray-100">
@@ -190,6 +195,7 @@ export function InstagramNavHover({ locale = 'en', lightMode = false }: { locale
             href={INSTAGRAM_PROFILE}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackOutboundLink(INSTAGRAM_PROFILE, 'Instagram View Profile')}
             className="mt-3 block text-center text-xs text-gray-500 hover:text-pink-500 transition-colors"
           >
             {locale === 'ko' ? '프로필 보기' : 'View Profile'}
@@ -207,6 +213,7 @@ export function InstagramIconLink() {
       href={INSTAGRAM_PROFILE}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => trackOutboundLink(INSTAGRAM_PROFILE, 'Instagram Footer Icon')}
       className="text-gray-500 hover:text-pink-500 transition-colors duration-200"
       aria-label="Instagram @zoelumos"
     >
@@ -217,12 +224,17 @@ export function InstagramIconLink() {
 
 // Mobile menu link
 export function InstagramMobileLink({ onClose }: { onClose?: () => void }) {
+  const handleClick = () => {
+    trackOutboundLink(INSTAGRAM_PROFILE, 'Instagram Mobile Menu')
+    onClose?.()
+  }
+
   return (
     <a
       href={INSTAGRAM_PROFILE}
       target="_blank"
       rel="noopener noreferrer"
-      onClick={onClose}
+      onClick={handleClick}
       className="flex items-center gap-3 py-3 px-4 text-gray-900 hover:bg-gray-100 rounded-lg transition-colors text-lg font-medium"
     >
       <InstagramIcon className="w-5 h-5" />
