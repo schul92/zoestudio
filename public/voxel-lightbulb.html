@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voxel Lightbulb</title>
+    <style>
+        * { margin: 0; padding: 0; }
+        body { margin: 0; overflow: hidden; background: transparent; }
+        canvas { display: block; background: transparent; }
+    </style>
+</head>
+<body>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+            }
+        }
+    </script>
+
+    <script type="module">
+        import * as THREE from 'three';
+        import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+        const VOXEL_SIZE = 0.8;  // Smaller voxels
+        const GAP = 0.04;
+        const PALETTE = {
+            GLASS_LIT: 0xffee55,
+            GLASS_DIM: 0xffdd44,
+            FILAMENT: 0x553311,
+            METAL_LIGHT: 0xc0c0c0,
+            METAL_DARK: 0x808080,
+            TIP: 0x404040
+        };
+
+        let scrollProgress = 0; // 0 = assembled, 1 = fully exploded
+
+        const scene = new THREE.Scene();
+        scene.background = null;
+
+        const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.set(0, 5, 18);
+
+        // Optimize for mobile
+        const isMobile = window.innerWidth < 768;
+        const renderer = new THREE.WebGLRenderer({
+            antialias: !isMobile, // Disable antialiasing on mobile for performance
+            alpha: true,
+            premultipliedAlpha: false,
+            powerPreference: 'high-performance'
+        });
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1.5 : 2));
+        renderer.setClearColor(0x000000, 0);
+        document.body.appendChild(renderer.domElement);
+
+        const controls = new OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true;
+        controls.dampingFactor = 0.05;
+        controls.autoRotate = true;
+        controls.autoRotateSpeed = 0.5;
+        controls.enableZoom = false;
+        controls.enablePan = false;
+        controls.target.set(0, 4, 0);
+
+        // Lighting
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+        scene.add(ambientLight);
+
+        const dirLight = new THREE.DirectionalLight(0xffffff, 0.8);
+        dirLight.position.set(10, 20, 10);
+        scene.add(dirLight);
+
+        const bulbLight = new THREE.PointLight(0xffdd44, 25, 35);
+        bulbLight.position.set(0, 6, 0);
+        scene.add(bulbLight);
+
+        // Add extra glow light
+        const glowLight = new THREE.PointLight(0xffee88, 15, 20);
+        glowLight.position.set(0, 7, 0);
+        scene.add(glowLight);
+
+        // Voxel storage
+        const voxelGroup = new THREE.Group();
+        const voxels = [];
+        const geometry = new THREE.BoxGeometry(VOXEL_SIZE - GAP, VOXEL_SIZE - GAP, VOXEL_SIZE - GAP);
+
+        function createVoxel(x, y, z, color) {
+            const material = new THREE.MeshStandardMaterial({
+                color: color,
+                roughness: 0.2,
+                metalness: 0.1,
+                transparent: true,
+                opacity: 0.5  // Make all voxels semi-transparent
+            });
+
+            if (color === PALETTE.GLASS_LIT || color === PALETTE.GLASS_DIM) {
+                material.emissive = new THREE.Color(0xffee66);
+                material.emissiveIntensity = 0.6;
+                material.opacity = 0.4;  // Glass even more transparent
+                material.roughness = 0.1;
+            }
+
+            const mesh = new THREE.Mesh(geometry, material);
+            const originalPos = new THREE.Vector3(x * VOXEL_SIZE, y * VOXEL_SIZE, z * VOXEL_SIZE);
+            mesh.position.copy(originalPos);
+
+            // Subtle explosion - pieces drift outward gently
+            const centerY = 5;
+            const dir = new THREE.Vector3(x * 0.5, (y - centerY) * 0.3, z * 0.5);
+            if (dir.length() < 0.1) dir.set(Math.random() - 0.5, 1, Math.random() - 0.5);
+            dir.normalize();
+
+            const explosionForce = 3 + Math.random() * 4; // Gentler explosion
+            const explosionVel = dir.multiplyScalar(explosionForce);
+
+            voxels.push({
+                mesh: mesh,
+                originalPos: originalPos.clone(),
+                explosionVel: explosionVel,
+                rotationVel: new THREE.Vector3(
+                    (Math.random() - 0.5) * 3,
+                    (Math.random() - 0.5) * 3,
+                    (Math.random() - 0.5) * 3
+                ),
+                isGlass: color === PALETTE.GLASS_LIT || color === PALETTE.GLASS_DIM
+            });
+
+            voxelGroup.add(mesh);
+            return mesh;
+        }
+
+        // Build the Bulb (smaller scale)
+        createVoxel(0, 0, 0, PALETTE.TIP);
+
+        for (let y = 1; y <= 4; y++) {
+            let width = 1;
+            let color = (y % 2 === 0) ? PALETTE.METAL_LIGHT : PALETTE.METAL_DARK;
+            for (let x = -width; x <= width; x++) {
+                for (let z = -width; z <= width; z++) {
+                    if (Math.abs(x) === width && Math.abs(z) === width) continue;
+                    createVoxel(x, y, z, color);
+                }
+            }
+        }
+
+        for (let y = 5; y <= 12; y++) {
+            let radius = 0;
+            if (y === 5) radius = 1;
+            else if (y === 6) radius = 2;
+            else if (y === 7) radius = 3;
+            else if (y === 8) radius = 3;
+            else if (y === 9) radius = 3;
+            else if (y === 10) radius = 2;
+            else if (y === 11) radius = 1;
+            else if (y === 12) radius = 0;
+
+            for (let x = -radius; x <= radius; x++) {
+                for (let z = -radius; z <= radius; z++) {
+                    const dist = Math.sqrt(x*x + z*z);
+                    if (dist > radius + 0.5) continue;
+                    if (y === 12 && (x!==0 || z!==0)) continue;
+
+                    let voxelColor = PALETTE.GLASS_LIT;
+                    const isInternal = (z === 0);
+
+                    if (isInternal) {
+                        if (x === 0 && y > 5 && y < 8) voxelColor = PALETTE.FILAMENT;
+                        if (Math.abs(x) === 1 && y >= 7 && y <= 9) voxelColor = PALETTE.FILAMENT;
+                        if (x === 0 && y === 8) voxelColor = PALETTE.FILAMENT;
+                    }
+
+                    if (voxelColor === PALETTE.GLASS_LIT && (Math.abs(x) === radius || Math.abs(z) === radius)) {
+                       voxelColor = PALETTE.GLASS_DIM;
+                    }
+
+                    createVoxel(x, y, z, voxelColor);
+                }
+            }
+        }
+
+        // Center the bulb
+        const box = new THREE.Box3().setFromObject(voxelGroup);
+        const center = box.getCenter(new THREE.Vector3());
+        voxelGroup.position.x = -center.x;
+        voxelGroup.position.z = -center.z;
+        const baseY = -center.y + 4;
+        voxelGroup.position.y = baseY;
+
+        scene.add(voxelGroup);
+
+        // Easing function for smooth animation
+        function easeOutCubic(t) {
+            return 1 - Math.pow(1 - t, 3);
+        }
+
+        function easeInOutQuad(t) {
+            return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+        }
+
+        // Listen for scroll messages from parent
+        window.addEventListener('message', (event) => {
+            if (event.data && typeof event.data.scrollProgress === 'number') {
+                scrollProgress = Math.max(0, Math.min(1, event.data.scrollProgress));
+            }
+        });
+
+        const clock = new THREE.Clock();
+        let lastRenderTime = 0;
+        const targetFPS = isMobile ? 30 : 60;
+        const frameInterval = 1000 / targetFPS;
+
+        function animate(currentTime) {
+            requestAnimationFrame(animate);
+
+            // Throttle frame rate on mobile
+            if (isMobile && currentTime - lastRenderTime < frameInterval) return;
+            lastRenderTime = currentTime;
+
+            const time = clock.getElapsedTime();
+            const easedProgress = easeOutCubic(scrollProgress);
+
+            // Animate voxels based on scroll
+            voxels.forEach((v, i) => {
+                // Calculate target position based on scroll
+                const targetPos = v.originalPos.clone().add(
+                    v.explosionVel.clone().multiplyScalar(easedProgress)
+                );
+
+                // Smoothly interpolate to target
+                v.mesh.position.lerp(targetPos, 0.1);
+
+                // Rotate based on scroll progress
+                v.mesh.rotation.x = v.rotationVel.x * easedProgress;
+                v.mesh.rotation.y = v.rotationVel.y * easedProgress;
+                v.mesh.rotation.z = v.rotationVel.z * easedProgress;
+
+                // Fade glass pieces as they explode
+                if (v.isGlass) {
+                    v.mesh.material.emissiveIntensity = 0.6 * (1 - easedProgress * 0.5);
+                    v.mesh.material.opacity = 0.4 - easedProgress * 0.15;
+                }
+            });
+
+            // Dim lights as it explodes
+            bulbLight.intensity = 25 * (1 - easedProgress * 0.7);
+            glowLight.intensity = 15 * (1 - easedProgress * 0.7);
+
+            // Gentle floating when assembled
+            if (scrollProgress < 0.1) {
+                voxelGroup.position.y = baseY + Math.sin(time * 1.5) * 0.15;
+            }
+
+            controls.update();
+            renderer.render(scene, camera);
+        }
+
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        requestAnimationFrame(animate);
+    </script>
+</body>
+</html>

@@ -81,13 +81,27 @@ const nextConfig = {
   },
   async headers() {
     return [
+      // Allow iframe for voxel lightbulb
+      {
+        source: '/voxel-lightbulb.html',
+        headers: [
+          {
+            key: 'X-Frame-Options',
+            value: 'SAMEORIGIN',
+          },
+          {
+            key: 'Content-Type',
+            value: 'text/html',
+          },
+        ],
+      },
       // Default headers for all routes
       {
         source: '/:path*',
         headers: [
           {
             key: 'X-Frame-Options',
-            value: 'DENY',
+            value: 'SAMEORIGIN',
           },
           {
             key: 'X-Content-Type-Options',

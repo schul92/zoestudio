@@ -67,6 +67,16 @@ export default function Footer({ locale = 'en' }: { locale?: string }) {
                   {locale === 'ko' ? '뉴저지 웹사이트 제작' : 'New Jersey Web Design'}
                 </Link>
               </li>
+              <li>
+                <Link href={`${prefix}/reviews`} className="text-gray-600 hover:text-black hover:translate-x-1 inline-block transition-all duration-200 text-sm">
+                  {locale === 'ko' ? '고객 후기' : 'Client Reviews'}
+                </Link>
+              </li>
+              <li>
+                <Link href={`${prefix}/blog`} className="text-gray-600 hover:text-black hover:translate-x-1 inline-block transition-all duration-200 text-sm">
+                  {locale === 'ko' ? '블로그' : 'Blog'}
+                </Link>
+              </li>
             </ul>
           </div>
 

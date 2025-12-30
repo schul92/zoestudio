@@ -2,7 +2,7 @@
 
 import { useTranslation } from '@/hooks/useTranslation'
 import { motion } from 'framer-motion'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import ScrollAnimation from '@/components/ui/ScrollAnimation'
 import { useServices } from '@/context/ServiceContext'
 import { useTracking } from '@/hooks/useTracking'
@@ -12,6 +12,11 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
   const { addService, removeService, isServiceSelected, selectedServices } = useServices()
   const [showTooltip, setShowTooltip] = useState(false)
   const { trackServiceClick } = useTracking()
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
   
   const services = [
     {
@@ -367,25 +372,25 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
               {/* Step 1 */}
               <div className="flex items-center gap-3 flex-1 sm:flex-initial">
                 <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold flex-shrink-0 transition-all ${
-                  selectedServices.length > 0 ? 'bg-green-500 text-white scale-110' : 'bg-gray-300 text-gray-600'
+                  mounted && selectedServices.length > 0 ? 'bg-green-500 text-white scale-110' : 'bg-gray-300 text-gray-600'
                 }`}>
-                  {selectedServices.length > 0 ? '✓' : '1'}
+                  {mounted && selectedServices.length > 0 ? '✓' : '1'}
                 </div>
                 <div className="flex-1 sm:flex-initial">
                   <span className={`text-sm font-medium block ${
-                    selectedServices.length > 0 ? 'text-green-600' : 'text-gray-700'
+                    mounted && selectedServices.length > 0 ? 'text-green-600' : 'text-gray-700'
                   }`}>
                     {locale === 'ko' ? '서비스 선택' : 'Select Services'}
                   </span>
                 </div>
               </div>
-              
+
               <div className="hidden sm:block w-8 h-0.5 bg-gray-300 self-center"></div>
-              
+
               {/* Step 2 */}
               <div className="flex items-center gap-3 flex-1 sm:flex-initial">
                 <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold flex-shrink-0 transition-all ${
-                  selectedServices.length > 0 ? 'bg-blue-500 text-white animate-pulse scale-110' : 'bg-gray-300 text-gray-600'
+                  mounted && selectedServices.length > 0 ? 'bg-blue-500 text-white animate-pulse scale-110' : 'bg-gray-300 text-gray-600'
                 }`}>
                   2
                 </div>
@@ -421,12 +426,48 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: index * 0.2 }}
               viewport={{ once: true }}
-              whileHover={{ y: -10 }}
-              className="group"
+              whileHover={{ y: -15, scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="group cursor-pointer"
+              data-hover="true"
+              data-hover-text="Select"
+              onClick={() => {
+                trackServiceClick(service.title)
+                if (isServiceSelected(service.id)) {
+                  removeService(service.id)
+                } else {
+                  addService({
+                    id: service.id,
+                    title: service.title,
+                    description: service.description
+                  })
+                  if (selectedServices.length === 0) {
+                    setShowTooltip(true)
+                    setTimeout(() => setShowTooltip(false), 5000)
+                  }
+                }
+              }}
             >
-              <div className="relative bg-white border-2 border-black rounded-2xl p-6 h-full shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] transition-all duration-300 overflow-hidden group flex flex-col">
-                {/* Icon */}
-                <div className="w-24 h-24 mb-4 mx-auto">
+              <div className={`relative rounded-2xl p-6 h-full transition-all duration-500 ease-out overflow-hidden group flex flex-col ${
+                mounted && isServiceSelected(service.id)
+                  ? 'bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-500 shadow-[8px_8px_0px_0px_rgba(34,197,94,1)] group-hover:shadow-[16px_16px_0px_0px_rgba(34,197,94,1)]'
+                  : 'bg-white border-2 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] group-hover:shadow-[16px_16px_0px_0px_rgba(0,0,0,1)]'
+              }`}>
+                {/* Selected checkmark badge */}
+                {mounted && isServiceSelected(service.id) && (
+                  <motion.div
+                    initial={{ scale: 0, rotate: -180 }}
+                    animate={{ scale: 1, rotate: 0 }}
+                    className="absolute top-3 right-3 w-8 h-8 bg-green-500 rounded-full flex items-center justify-center shadow-lg z-10"
+                  >
+                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </motion.div>
+                )}
+
+                {/* Icon with hover scale effect */}
+                <div className="w-24 h-24 mb-4 mx-auto transition-transform duration-500 ease-out group-hover:scale-110">
                   {service.icon}
                 </div>
                 
@@ -467,34 +508,15 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
                     ✨ {service.benefit}
                   </p>
                   
-                  {/* Select/Deselect Button */}
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                    onClick={() => {
-                      trackServiceClick(service.title) // Track the click
-                      if (isServiceSelected(service.id)) {
-                        removeService(service.id)
-                      } else {
-                        addService({
-                          id: service.id,
-                          title: service.title,
-                          description: service.description
-                        })
-                        // Show tooltip on first selection
-                        if (selectedServices.length === 0) {
-                          setShowTooltip(true)
-                          setTimeout(() => setShowTooltip(false), 5000)
-                        }
-                      }
-                    }}
+                  {/* Selection Status Indicator */}
+                  <div
                     className={`relative w-full py-3 px-4 rounded-lg font-bold transition-all overflow-hidden ${
-                      isServiceSelected(service.id)
+                      mounted && isServiceSelected(service.id)
                         ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white shadow-lg'
-                        : 'bg-black text-white hover:bg-gray-800'
+                        : 'bg-black text-white group-hover:bg-gray-800'
                     }`}
                   >
-                    {isServiceSelected(service.id) && (
+                    {mounted && isServiceSelected(service.id) && (
                       <motion.div
                         initial={{ x: '-100%' }}
                         animate={{ x: '100%' }}
@@ -502,13 +524,13 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
                         className="absolute inset-0 bg-white/20"
                       />
                     )}
-                    <span className="relative z-10">
-                      {isServiceSelected(service.id) 
+                    <span className="relative z-10 flex items-center justify-center gap-2">
+                      {mounted && isServiceSelected(service.id)
                         ? (locale === 'ko' ? '✓ 선택됨' : '✓ Selected')
-                        : (locale === 'ko' ? '+ 관심있어요' : '+ I\'m Interested')
+                        : (locale === 'ko' ? '+ 클릭하여 선택' : '+ Click to Select')
                       }
                     </span>
-                  </motion.button>
+                  </div>
                 </div>
               </div>
             </motion.div>
@@ -531,7 +553,7 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
       `}</style>
       
       {/* Floating Cart with Better Guidance */}
-      {selectedServices.length > 0 && (
+      {mounted && selectedServices.length > 0 && (
         <motion.div
           initial={{ y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}

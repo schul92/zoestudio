@@ -6,6 +6,7 @@ import { seoConfig, structuredData } from '@/config/seo'
 import { ServiceProvider } from '@/context/ServiceContext'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
 import AnalyticsWrapper from '@/components/AnalyticsWrapper'
+import CustomCursor from '@/components/CustomCursor'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -80,7 +81,10 @@ export async function generateMetadata({
         'max-snippet': -1,
       },
     },
-    // Add real verification codes when available from Google Search Console, Yandex Webmaster, etc.
+    verification: {
+      google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || '',
+      yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION || '',
+    },
     other: {
       'msapplication-TileColor': '#000000',
       'mobile-web-app-capable': 'yes',
@@ -196,7 +200,8 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={inter.className} style={{ position: 'relative' }}>
+      <body className={`${inter.className} cursor-auto md:cursor-none`} style={{ position: 'relative' }}>
+        <CustomCursor />
         {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
           <GoogleAnalytics GA_MEASUREMENT_ID={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
         )}

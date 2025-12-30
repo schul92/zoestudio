@@ -63,10 +63,12 @@ export default function Header({ locale = 'en' }: { locale?: string }) {
     >
       <nav className="w-full px-4 sm:px-8 lg:px-12 xl:px-20 py-4 sm:py-6">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
-          <Link 
-            href={`${prefix}/`} 
+          <Link
+            href={`${prefix}/`}
             className="group flex items-center space-x-3 transition-opacity"
             aria-label={locale === 'ko' ? 'ZOE LUMOS 홈페이지' : 'ZOE LUMOS Homepage'}
+            data-hover="true"
+            data-hover-text=""
           >
             <div className={`transition-all duration-300 group-hover:scale-110 ${isAboutPage && (!mounted || !hasScrolled) ? 'text-white' : 'text-black'} flex items-center`}>
               <AnimatedLogo width={28} height={28} animate={false} />
@@ -78,23 +80,23 @@ export default function Header({ locale = 'en' }: { locale?: string }) {
           <div className="flex items-center gap-2 sm:gap-4">
             {/* Desktop Links - Hidden on mobile */}
             <div className="hidden md:flex items-center">
-              <Link href={`${prefix}/about`} className="relative group py-2 px-4 min-w-[80px] text-center">
+              <Link href={`${prefix}/about`} className="relative group py-2 px-4 min-w-[80px] text-center" data-hover="true" data-hover-text="">
                 <span className={`relative z-10 transition-colors duration-300 ${isAboutPage && (!mounted || !hasScrolled) ? 'text-white' : 'text-black'}`}>{t.nav.about}</span>
                 <span className={`absolute bottom-0 left-4 right-4 h-0.5 ${isAboutPage && (!mounted || !hasScrolled) ? 'bg-white' : 'bg-black'} scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out`} />
               </Link>
-              <Link href={`${prefix}/#services`} className="relative group py-2 px-4 min-w-[80px] text-center">
+              <Link href={`${prefix}/#services`} className="relative group py-2 px-4 min-w-[80px] text-center" data-hover="true" data-hover-text="">
                 <span className={`relative z-10 transition-colors duration-300 ${isAboutPage && (!mounted || !hasScrolled) ? 'text-white' : 'text-black'}`}>{t.nav.services}</span>
                 <span className={`absolute bottom-0 left-4 right-4 h-0.5 ${isAboutPage && (!mounted || !hasScrolled) ? 'bg-white' : 'bg-black'} scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out`} />
               </Link>
-              <Link href={`${prefix}/portfolio`} className="relative group py-2 px-4 min-w-[80px] text-center">
+              <Link href={`${prefix}/portfolio`} className="relative group py-2 px-4 min-w-[80px] text-center" data-hover="true" data-hover-text="">
                 <span className={`relative z-10 transition-colors duration-300 ${isAboutPage && (!mounted || !hasScrolled) ? 'text-white' : 'text-black'}`}>{t.nav.portfolio}</span>
                 <span className={`absolute bottom-0 left-4 right-4 h-0.5 ${isAboutPage && (!mounted || !hasScrolled) ? 'bg-white' : 'bg-black'} scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out`} />
               </Link>
-              <Link href={`${prefix}/pricing`} className="relative group py-2 px-4 min-w-[80px] text-center">
+              <Link href={`${prefix}/pricing`} className="relative group py-2 px-4 min-w-[80px] text-center" data-hover="true" data-hover-text="">
                 <span className={`relative z-10 transition-colors duration-300 ${isAboutPage && (!mounted || !hasScrolled) ? 'text-white' : 'text-black'}`}>{t.nav.pricing}</span>
                 <span className={`absolute bottom-0 left-4 right-4 h-0.5 ${isAboutPage && (!mounted || !hasScrolled) ? 'bg-white' : 'bg-black'} scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out`} />
               </Link>
-              <Link href={`${prefix}/#contact`} className="relative group py-2 px-4 min-w-[80px] text-center">
+              <Link href={`${prefix}/#contact`} className="relative group py-2 px-4 min-w-[80px] text-center" data-hover="true" data-hover-text="">
                 <span className={`relative z-10 transition-colors duration-300 ${isAboutPage && (!mounted || !hasScrolled) ? 'text-white' : 'text-black'}`}>{t.nav.contact}</span>
                 <span className={`absolute bottom-0 left-4 right-4 h-0.5 ${isAboutPage && (!mounted || !hasScrolled) ? 'bg-white' : 'bg-black'} scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out`} />
               </Link>

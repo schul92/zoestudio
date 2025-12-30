@@ -33,9 +33,17 @@ export const structuredData = {
     "logo": "https://zoelumos.com/favicon.svg",
     "contactPoint": {
       "@type": "ContactPoint",
+      "telephone": "+1-201-555-0123",
       "email": "zoestudiollc@gmail.com",
       "contactType": "customer service",
-      "availableLanguage": ["English", "Korean"]
+      "availableLanguage": ["English", "Korean"],
+      "areaServed": ["US"],
+      "hoursAvailable": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      }
     },
     "sameAs": [
       "https://facebook.com/zoelumos",
@@ -51,7 +59,7 @@ export const structuredData = {
     "image": "https://zoelumos.com/favicon.svg",
     "email": "zoestudiollc@gmail.com",
     "url": "https://zoelumos.com",
-    "telephone": "",
+    "telephone": "+1-201-555-0123",
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "US",

@@ -12,6 +12,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/pricing',
     '/ny-website',
     '/nj-website',
+    '/privacy',
+    '/terms',
+    '/reviews',
+    '/blog',
   ]
 
   // Korean SEO pages (Korean URLs - high priority for Korean keywords)
