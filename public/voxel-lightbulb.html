@@ -24,7 +24,11 @@
         import * as THREE from 'three';
         import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
-        const VOXEL_SIZE = 0.8;  // Smaller voxels
+        // Performance detection
+        const isMobile = window.innerWidth < 768 || /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+        const isLowPower = isMobile || navigator.hardwareConcurrency <= 4;
+
+        const VOXEL_SIZE = 0.8;
         const GAP = 0.04;
         const PALETTE = {
             GLASS_LIT: 0xffee55,
@@ -35,7 +39,8 @@
             TIP: 0x404040
         };
 
-        let scrollProgress = 0; // 0 = assembled, 1 = fully exploded
+        let scrollProgress = 0;
+        let targetScrollProgress = 0;
 
         const scene = new THREE.Scene();
         scene.background = null;
@@ -43,80 +48,116 @@
         const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
         camera.position.set(0, 5, 18);
 
-        // Optimize for mobile
-        const isMobile = window.innerWidth < 768;
         const renderer = new THREE.WebGLRenderer({
-            antialias: !isMobile, // Disable antialiasing on mobile for performance
+            antialias: false, // Disable for all - big perf gain
             alpha: true,
             premultipliedAlpha: false,
             powerPreference: 'high-performance'
         });
         renderer.setSize(window.innerWidth, window.innerHeight);
-        renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1.5 : 2));
+        renderer.setPixelRatio(isMobile ? 1 : Math.min(window.devicePixelRatio, 1.5));
         renderer.setClearColor(0x000000, 0);
         document.body.appendChild(renderer.domElement);
 
         const controls = new OrbitControls(camera, renderer.domElement);
         controls.enableDamping = true;
-        controls.dampingFactor = 0.05;
+        controls.dampingFactor = 0.08;
         controls.autoRotate = true;
         controls.autoRotateSpeed = 0.5;
         controls.enableZoom = false;
         controls.enablePan = false;
         controls.target.set(0, 4, 0);
 
-        // Lighting
-        const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+        // Simplified lighting for mobile
+        const ambientLight = new THREE.AmbientLight(0xffffff, isMobile ? 0.7 : 0.5);
         scene.add(ambientLight);
 
-        const dirLight = new THREE.DirectionalLight(0xffffff, 0.8);
+        const dirLight = new THREE.DirectionalLight(0xffffff, isMobile ? 0.5 : 0.8);
         dirLight.position.set(10, 20, 10);
         scene.add(dirLight);
 
-        const bulbLight = new THREE.PointLight(0xffdd44, 25, 35);
+        // Single light for mobile, multiple for desktop
+        const bulbLight = new THREE.PointLight(0xffdd44, isMobile ? 20 : 25, 35);
         bulbLight.position.set(0, 6, 0);
         scene.add(bulbLight);
 
-        // Add extra glow light
-        const glowLight = new THREE.PointLight(0xffee88, 15, 20);
-        glowLight.position.set(0, 7, 0);
-        scene.add(glowLight);
+        let glowLight = null;
+        if (!isMobile) {
+            glowLight = new THREE.PointLight(0xffee88, 15, 20);
+            glowLight.position.set(0, 7, 0);
+            scene.add(glowLight);
+        }
 
-        // Voxel storage
+        // Voxel data storage
         const voxelGroup = new THREE.Group();
-        const voxels = [];
+        const voxelData = []; // Store position/velocity data
         const geometry = new THREE.BoxGeometry(VOXEL_SIZE - GAP, VOXEL_SIZE - GAP, VOXEL_SIZE - GAP);
 
-        function createVoxel(x, y, z, color) {
-            const material = new THREE.MeshStandardMaterial({
-                color: color,
-                roughness: 0.2,
-                metalness: 0.1,
-                transparent: true,
-                opacity: 0.5  // Make all voxels semi-transparent
-            });
-
-            if (color === PALETTE.GLASS_LIT || color === PALETTE.GLASS_DIM) {
-                material.emissive = new THREE.Color(0xffee66);
-                material.emissiveIntensity = 0.6;
-                material.opacity = 0.4;  // Glass even more transparent
-                material.roughness = 0.1;
+        // Use simpler materials on mobile
+        function createMaterial(color, isGlass) {
+            if (isMobile) {
+                // Use basic material on mobile - much faster
+                const mat = new THREE.MeshLambertMaterial({
+                    color: color,
+                    transparent: isGlass,
+                    opacity: isGlass ? 0.6 : 0.8
+                });
+                if (isGlass) {
+                    mat.emissive = new THREE.Color(0xffee66);
+                    mat.emissiveIntensity = 0.4;
+                }
+                return mat;
+            } else {
+                const mat = new THREE.MeshStandardMaterial({
+                    color: color,
+                    roughness: 0.2,
+                    metalness: 0.1,
+                    transparent: true,
+                    opacity: isGlass ? 0.4 : 0.5
+                });
+                if (isGlass) {
+                    mat.emissive = new THREE.Color(0xffee66);
+                    mat.emissiveIntensity = 0.6;
+                    mat.roughness = 0.1;
+                }
+                return mat;
             }
+        }
 
+        // Pre-create shared materials to reduce draw calls
+        const materials = {
+            glass: createMaterial(PALETTE.GLASS_LIT, true),
+            glassDim: createMaterial(PALETTE.GLASS_DIM, true),
+            filament: createMaterial(PALETTE.FILAMENT, false),
+            metalLight: createMaterial(PALETTE.METAL_LIGHT, false),
+            metalDark: createMaterial(PALETTE.METAL_DARK, false),
+            tip: createMaterial(PALETTE.TIP, false)
+        };
+
+        function getMaterial(color) {
+            if (color === PALETTE.GLASS_LIT) return materials.glass;
+            if (color === PALETTE.GLASS_DIM) return materials.glassDim;
+            if (color === PALETTE.FILAMENT) return materials.filament;
+            if (color === PALETTE.METAL_LIGHT) return materials.metalLight;
+            if (color === PALETTE.METAL_DARK) return materials.metalDark;
+            return materials.tip;
+        }
+
+        function createVoxel(x, y, z, color) {
+            const material = getMaterial(color);
             const mesh = new THREE.Mesh(geometry, material);
             const originalPos = new THREE.Vector3(x * VOXEL_SIZE, y * VOXEL_SIZE, z * VOXEL_SIZE);
             mesh.position.copy(originalPos);
 
-            // Subtle explosion - pieces drift outward gently
             const centerY = 5;
             const dir = new THREE.Vector3(x * 0.5, (y - centerY) * 0.3, z * 0.5);
             if (dir.length() < 0.1) dir.set(Math.random() - 0.5, 1, Math.random() - 0.5);
             dir.normalize();
 
-            const explosionForce = 3 + Math.random() * 4; // Gentler explosion
+            const explosionForce = 3 + Math.random() * 4;
             const explosionVel = dir.multiplyScalar(explosionForce);
 
-            voxels.push({
+            voxelData.push({
                 mesh: mesh,
                 originalPos: originalPos.clone(),
                 explosionVel: explosionVel,
@@ -132,7 +173,7 @@
             return mesh;
         }
 
-        // Build the Bulb (smaller scale)
+        // Build the Bulb
         createVoxel(0, 0, 0, PALETTE.TIP);
 
         for (let y = 1; y <= 4; y++) {
@@ -191,62 +232,60 @@
 
         scene.add(voxelGroup);
 
-        // Easing function for smooth animation
         function easeOutCubic(t) {
             return 1 - Math.pow(1 - t, 3);
         }
 
-        function easeInOutQuad(t) {
-            return t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
-        }
-
-        // Listen for scroll messages from parent
+        // Listen for scroll messages
         window.addEventListener('message', (event) => {
             if (event.data && typeof event.data.scrollProgress === 'number') {
-                scrollProgress = Math.max(0, Math.min(1, event.data.scrollProgress));
+                targetScrollProgress = Math.max(0, Math.min(1, event.data.scrollProgress));
             }
         });
 
         const clock = new THREE.Clock();
         let lastRenderTime = 0;
-        const targetFPS = isMobile ? 30 : 60;
+        const targetFPS = isMobile ? 24 : 60; // Lower FPS on mobile
         const frameInterval = 1000 / targetFPS;
+
+        // Temporary vectors to avoid GC
+        const tempVec = new THREE.Vector3();
 
         function animate(currentTime) {
             requestAnimationFrame(animate);
 
-            // Throttle frame rate on mobile
-            if (isMobile && currentTime - lastRenderTime < frameInterval) return;
-            lastRenderTime = currentTime;
+            // Throttle frame rate
+            const delta = currentTime - lastRenderTime;
+            if (delta < frameInterval) return;
+            lastRenderTime = currentTime - (delta % frameInterval);
+
+            // Smooth scroll progress interpolation
+            scrollProgress += (targetScrollProgress - scrollProgress) * (isMobile ? 0.15 : 0.1);
 
             const time = clock.getElapsedTime();
             const easedProgress = easeOutCubic(scrollProgress);
 
-            // Animate voxels based on scroll
-            voxels.forEach((v, i) => {
-                // Calculate target position based on scroll
-                const targetPos = v.originalPos.clone().add(
-                    v.explosionVel.clone().multiplyScalar(easedProgress)
-                );
+            // Animate voxels - optimized loop
+            const lerpFactor = isMobile ? 0.15 : 0.1;
+            for (let i = 0; i < voxelData.length; i++) {
+                const v = voxelData[i];
 
-                // Smoothly interpolate to target
-                v.mesh.position.lerp(targetPos, 0.1);
+                // Calculate target position inline
+                tempVec.copy(v.explosionVel).multiplyScalar(easedProgress);
+                tempVec.add(v.originalPos);
 
-                // Rotate based on scroll progress
+                v.mesh.position.lerp(tempVec, lerpFactor);
+
+                // Simplified rotation
                 v.mesh.rotation.x = v.rotationVel.x * easedProgress;
                 v.mesh.rotation.y = v.rotationVel.y * easedProgress;
                 v.mesh.rotation.z = v.rotationVel.z * easedProgress;
+            }
 
-                // Fade glass pieces as they explode
-                if (v.isGlass) {
-                    v.mesh.material.emissiveIntensity = 0.6 * (1 - easedProgress * 0.5);
-                    v.mesh.material.opacity = 0.4 - easedProgress * 0.15;
-                }
-            });
-
-            // Dim lights as it explodes
-            bulbLight.intensity = 25 * (1 - easedProgress * 0.7);
-            glowLight.intensity = 15 * (1 - easedProgress * 0.7);
+            // Light intensity - only update when needed
+            const lightIntensity = 1 - easedProgress * 0.7;
+            bulbLight.intensity = (isMobile ? 20 : 25) * lightIntensity;
+            if (glowLight) glowLight.intensity = 15 * lightIntensity;
 
             // Gentle floating when assembled
             if (scrollProgress < 0.1) {
@@ -257,10 +296,15 @@
             renderer.render(scene, camera);
         }
 
+        // Debounced resize
+        let resizeTimeout;
         window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                camera.aspect = window.innerWidth / window.innerHeight;
+                camera.updateProjectionMatrix();
+                renderer.setSize(window.innerWidth, window.innerHeight);
+            }, 100);
         });
 
         requestAnimationFrame(animate);
