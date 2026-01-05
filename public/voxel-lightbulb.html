@@ -7,7 +7,7 @@
     <style>
         * { margin: 0; padding: 0; }
         body { margin: 0; overflow: hidden; background: transparent; }
-        canvas { display: block; background: transparent; }
+        canvas { display: block; background: transparent; pointer-events: none; }
     </style>
 </head>
 <body>
@@ -49,7 +49,7 @@
         camera.position.set(0, 5, 18);
 
         const renderer = new THREE.WebGLRenderer({
-            antialias: false, // Disable for all - big perf gain
+            antialias: false,
             alpha: true,
             premultipliedAlpha: false,
             powerPreference: 'high-performance'
@@ -59,14 +59,18 @@
         renderer.setClearColor(0x000000, 0);
         document.body.appendChild(renderer.domElement);
 
-        const controls = new OrbitControls(camera, renderer.domElement);
-        controls.enableDamping = true;
-        controls.dampingFactor = 0.08;
-        controls.autoRotate = true;
-        controls.autoRotateSpeed = 0.5;
-        controls.enableZoom = false;
-        controls.enablePan = false;
-        controls.target.set(0, 4, 0);
+        // Only use OrbitControls on desktop - mobile just auto-rotates
+        let controls = null;
+        if (!isMobile) {
+            controls = new OrbitControls(camera, renderer.domElement);
+            controls.enableDamping = true;
+            controls.dampingFactor = 0.08;
+            controls.autoRotate = true;
+            controls.autoRotateSpeed = 0.5;
+            controls.enableZoom = false;
+            controls.enablePan = false;
+            controls.target.set(0, 4, 0);
+        }
 
         // Simplified lighting for mobile
         const ambientLight = new THREE.AmbientLight(0xffffff, isMobile ? 0.7 : 0.5);
@@ -96,17 +100,11 @@
         // Use simpler materials on mobile
         function createMaterial(color, isGlass) {
             if (isMobile) {
-                // Use basic material on mobile - much faster
-                const mat = new THREE.MeshLambertMaterial({
-                    color: color,
-                    transparent: isGlass,
-                    opacity: isGlass ? 0.6 : 0.8
+                // Use basic material on mobile - fastest possible
+                return new THREE.MeshBasicMaterial({
+                    color: isGlass ? 0xffee88 : color,
+                    transparent: false
                 });
-                if (isGlass) {
-                    mat.emissive = new THREE.Color(0xffee66);
-                    mat.emissiveIntensity = 0.4;
-                }
-                return mat;
             } else {
                 const mat = new THREE.MeshStandardMaterial({
                     color: color,
@@ -176,7 +174,9 @@
         // Build the Bulb
         createVoxel(0, 0, 0, PALETTE.TIP);
 
-        for (let y = 1; y <= 4; y++) {
+        // Simplified base on mobile
+        const baseStep = isMobile ? 2 : 1;
+        for (let y = 1; y <= 4; y += baseStep) {
             let width = 1;
             let color = (y % 2 === 0) ? PALETTE.METAL_LIGHT : PALETTE.METAL_DARK;
             for (let x = -width; x <= width; x++) {
@@ -188,6 +188,9 @@
         }
 
         for (let y = 5; y <= 12; y++) {
+            // On mobile, skip some layers for fewer voxels
+            if (isMobile && (y === 6 || y === 10)) continue;
+
             let radius = 0;
             if (y === 5) radius = 1;
             else if (y === 6) radius = 2;
@@ -200,6 +203,9 @@
 
             for (let x = -radius; x <= radius; x++) {
                 for (let z = -radius; z <= radius; z++) {
+                    // On mobile, skip corner voxels
+                    if (isMobile && Math.abs(x) === radius && Math.abs(z) === radius) continue;
+
                     const dist = Math.sqrt(x*x + z*z);
                     if (dist > radius + 0.5) continue;
                     if (y === 12 && (x!==0 || z!==0)) continue;
@@ -245,11 +251,12 @@
 
         const clock = new THREE.Clock();
         let lastRenderTime = 0;
-        const targetFPS = isMobile ? 24 : 60; // Lower FPS on mobile
+        const targetFPS = isMobile ? 20 : 60; // Even lower FPS on mobile
         const frameInterval = 1000 / targetFPS;
 
         // Temporary vectors to avoid GC
         const tempVec = new THREE.Vector3();
+        let lastEasedProgress = 0;
 
         function animate(currentTime) {
             requestAnimationFrame(animate);
@@ -260,39 +267,49 @@
             lastRenderTime = currentTime - (delta % frameInterval);
 
             // Smooth scroll progress interpolation
-            scrollProgress += (targetScrollProgress - scrollProgress) * (isMobile ? 0.15 : 0.1);
+            scrollProgress += (targetScrollProgress - scrollProgress) * (isMobile ? 0.2 : 0.1);
 
             const time = clock.getElapsedTime();
             const easedProgress = easeOutCubic(scrollProgress);
 
-            // Animate voxels - optimized loop
-            const lerpFactor = isMobile ? 0.15 : 0.1;
-            for (let i = 0; i < voxelData.length; i++) {
-                const v = voxelData[i];
+            // Only update voxels if progress changed significantly
+            const progressChanged = Math.abs(easedProgress - lastEasedProgress) > 0.001;
+            if (progressChanged) {
+                lastEasedProgress = easedProgress;
 
-                // Calculate target position inline
-                tempVec.copy(v.explosionVel).multiplyScalar(easedProgress);
-                tempVec.add(v.originalPos);
+                // Animate voxels - optimized loop
+                const lerpFactor = isMobile ? 0.25 : 0.1;
+                for (let i = 0; i < voxelData.length; i++) {
+                    const v = voxelData[i];
 
-                v.mesh.position.lerp(tempVec, lerpFactor);
+                    // Calculate target position inline
+                    tempVec.copy(v.explosionVel).multiplyScalar(easedProgress);
+                    tempVec.add(v.originalPos);
 
-                // Simplified rotation
-                v.mesh.rotation.x = v.rotationVel.x * easedProgress;
-                v.mesh.rotation.y = v.rotationVel.y * easedProgress;
-                v.mesh.rotation.z = v.rotationVel.z * easedProgress;
+                    v.mesh.position.lerp(tempVec, lerpFactor);
+
+                    // Simplified rotation
+                    v.mesh.rotation.x = v.rotationVel.x * easedProgress;
+                    v.mesh.rotation.y = v.rotationVel.y * easedProgress;
+                    v.mesh.rotation.z = v.rotationVel.z * easedProgress;
+                }
+
+                // Light intensity
+                bulbLight.intensity = (isMobile ? 15 : 25) * (1 - easedProgress * 0.7);
+                if (glowLight) glowLight.intensity = 15 * (1 - easedProgress * 0.7);
             }
-
-            // Light intensity - only update when needed
-            const lightIntensity = 1 - easedProgress * 0.7;
-            bulbLight.intensity = (isMobile ? 20 : 25) * lightIntensity;
-            if (glowLight) glowLight.intensity = 15 * lightIntensity;
 
             // Gentle floating when assembled
             if (scrollProgress < 0.1) {
                 voxelGroup.position.y = baseY + Math.sin(time * 1.5) * 0.15;
             }
 
-            controls.update();
+            // Simple auto-rotate on mobile, controls on desktop
+            if (isMobile) {
+                voxelGroup.rotation.y += 0.004;
+            } else if (controls) {
+                controls.update();
+            }
             renderer.render(scene, camera);
         }
 
