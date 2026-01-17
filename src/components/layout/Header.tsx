@@ -13,6 +13,8 @@ export default function Header({ locale = 'en' }: { locale?: string }) {
   const prefix = locale === 'ko' ? '/ko' : '' // English uses root, Korean uses /ko
   const pathname = usePathname()
   const isAboutPage = pathname?.includes('/about')
+  const isPricingPage = pathname?.includes('/pricing')
+  const isPortfolioPage = pathname?.includes('/portfolio')
   const [hasScrolled, setHasScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [mounted, setMounted] = useState(false)
@@ -80,7 +82,7 @@ export default function Header({ locale = 'en' }: { locale?: string }) {
             <div className="hidden md:flex items-center">
               <Link href={`${prefix}/about`} className="relative group py-2 px-4 min-w-[80px] text-center" data-hover="true" data-hover-text="">
                 <span className="relative z-10 transition-colors duration-300 text-white">{t.nav.about}</span>
-                <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-amber-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
+                <span className={`absolute bottom-0 left-4 right-4 h-0.5 bg-amber-400 transition-transform duration-300 ease-out ${isAboutPage ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} />
               </Link>
               <Link href={`${prefix}/#services`} className="relative group py-2 px-4 min-w-[80px] text-center" data-hover="true" data-hover-text="">
                 <span className="relative z-10 transition-colors duration-300 text-white">{t.nav.services}</span>
@@ -88,11 +90,11 @@ export default function Header({ locale = 'en' }: { locale?: string }) {
               </Link>
               <Link href={`${prefix}/portfolio`} className="relative group py-2 px-4 min-w-[80px] text-center" data-hover="true" data-hover-text="">
                 <span className="relative z-10 transition-colors duration-300 text-white">{t.nav.portfolio}</span>
-                <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-amber-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
+                <span className={`absolute bottom-0 left-4 right-4 h-0.5 bg-amber-400 transition-transform duration-300 ease-out ${isPortfolioPage ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} />
               </Link>
               <Link href={`${prefix}/pricing`} className="relative group py-2 px-4 min-w-[80px] text-center" data-hover="true" data-hover-text="">
                 <span className="relative z-10 transition-colors duration-300 text-white">{t.nav.pricing}</span>
-                <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-amber-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
+                <span className={`absolute bottom-0 left-4 right-4 h-0.5 bg-amber-400 transition-transform duration-300 ease-out ${isPricingPage ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} />
               </Link>
               <Link href={`${prefix}/#contact`} className="relative group py-2 px-4 min-w-[80px] text-center" data-hover="true" data-hover-text="">
                 <span className="relative z-10 transition-colors duration-300 text-white">{t.nav.contact}</span>

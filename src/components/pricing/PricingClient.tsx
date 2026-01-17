@@ -269,19 +269,19 @@ export default function PricingClient({ locale }: PricingClientProps) {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -20 }}
-            className="max-w-4xl mx-auto mt-12 p-8 bg-white rounded-2xl border-2 border-gray-200 shadow-xl"
+            className="max-w-4xl mx-auto mt-12 p-8 bg-[#1a1a1a] rounded-2xl border border-white/10 shadow-xl"
           >
             <div className="text-center">
               <motion.div
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 transition={{ type: "spring", duration: 0.5 }}
-                className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4"
+                className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4"
               >
-                <Check className="w-8 h-8 text-green-600" />
+                <Check className="w-8 h-8 text-green-400" />
               </motion.div>
-              
-              <h3 className="text-2xl font-bold text-gray-900 mb-3">
+
+              <h3 className="text-2xl font-bold text-white mb-3">
                 {selectedTier && selectedSubscription 
                   ? (locale === 'en' ? '🎉 Excellent! Both Steps Complete' : '🎉 훌륭합니다! 모든 단계 완료')
                   : (locale === 'en' ? '👍 Great Start! One More Step' : '👍 좋은 시작! 한 단계 더')
@@ -291,52 +291,52 @@ export default function PricingClient({ locale }: PricingClientProps) {
               {/* Progress Steps Display */}
               <div className="flex items-center justify-center gap-2 mb-6">
                 <div className={`flex items-center gap-2 px-3 py-2 rounded-lg ${
-                  selectedTier ? 'bg-green-100' : 'bg-gray-100'
+                  selectedTier ? 'bg-green-500/20' : 'bg-white/5'
                 }`}>
                   <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${
-                    selectedTier ? 'bg-green-500 text-white' : 'bg-gray-300 text-gray-600'
+                    selectedTier ? 'bg-green-500 text-white' : 'bg-white/20 text-gray-400'
                   }`}>
                     {selectedTier ? '✓' : '1'}
                   </span>
                   <span className={`text-sm font-medium ${
-                    selectedTier ? 'text-green-800' : 'text-gray-600'
+                    selectedTier ? 'text-green-400' : 'text-gray-400'
                   }`}>
                     {locale === 'en' ? 'Step 1: Tier' : '1단계: 티어'}
                   </span>
                 </div>
-                <div className="text-gray-400">→</div>
+                <div className="text-gray-500">→</div>
                 <div className={`flex items-center gap-2 px-3 py-2 rounded-lg ${
-                  selectedSubscription ? 'bg-green-100' : 'bg-gray-100'
+                  selectedSubscription ? 'bg-green-500/20' : 'bg-white/5'
                 }`}>
                   <span className={`w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold ${
-                    selectedSubscription ? 'bg-green-500 text-white' : 'bg-gray-300 text-gray-600'
+                    selectedSubscription ? 'bg-green-500 text-white' : 'bg-white/20 text-gray-400'
                   }`}>
                     {selectedSubscription ? '✓' : '2'}
                   </span>
                   <span className={`text-sm font-medium ${
-                    selectedSubscription ? 'text-green-800' : 'text-gray-600'
+                    selectedSubscription ? 'text-green-400' : 'text-gray-400'
                   }`}>
                     {locale === 'en' ? 'Step 2: Care Plan' : '2단계: 케어 플랜'}
                   </span>
                 </div>
               </div>
               
-              <div className="mb-6 bg-gray-50 p-4 rounded-lg">
-                <p className="text-gray-700 font-medium mb-2">
+              <div className="mb-6 bg-white/5 p-4 rounded-lg">
+                <p className="text-gray-300 font-medium mb-2">
                   {locale === 'en' ? 'Your Package:' : '패키지:'}
                 </p>
                 <div className="space-y-2">
                   {selectedServices.map((service) => (
                     <div
                       key={service.id}
-                      className="flex items-center justify-between bg-white px-3 py-2 rounded-lg border border-gray-200"
+                      className="flex items-center justify-between bg-[#111111] px-3 py-2 rounded-lg border border-white/10"
                     >
-                      <span className="text-sm font-medium text-gray-800">
+                      <span className="text-sm font-medium text-white">
                         {service.id.startsWith('tier-') ? '🏢 ' : '🛡️ '}
                         {service.title}
                       </span>
                       {service.price && (
-                        <span className="text-sm text-gray-600">
+                        <span className="text-sm text-gray-400">
                           {service.price}
                         </span>
                       )}
@@ -347,16 +347,16 @@ export default function PricingClient({ locale }: PricingClientProps) {
 
               {!selectedTier || !selectedSubscription ? (
                 <>
-                  <p className="text-amber-600 mb-6 font-medium">
-                    {!selectedTier && !selectedSubscription 
-                      ? (locale === 'en' 
+                  <p className="text-amber-400 mb-6 font-medium">
+                    {!selectedTier && !selectedSubscription
+                      ? (locale === 'en'
                         ? "Please complete both steps above to continue"
                         : "계속하려면 위의 두 단계를 모두 완료해주세요")
                       : !selectedTier
-                      ? (locale === 'en' 
+                      ? (locale === 'en'
                         ? "👆 Please select a website tier above (Step 1)"
                         : "👆 위에서 웹사이트 티어를 선택해주세요 (1단계)")
-                      : (locale === 'en' 
+                      : (locale === 'en'
                         ? "👆 Please select a care plan above (Step 2)"
                         : "👆 위에서 케어 플랜을 선택해주세요 (2단계)")
                     }
@@ -366,7 +366,7 @@ export default function PricingClient({ locale }: PricingClientProps) {
                       const targetId = !selectedTier ? 'pricing-grid' : 'subscription-section'
                       const targetSection = document.getElementById(targetId)
                       if (targetSection) {
-                        targetSection.scrollIntoView({ 
+                        targetSection.scrollIntoView({
                           behavior: 'smooth',
                           block: 'start'
                         })
@@ -376,9 +376,9 @@ export default function PricingClient({ locale }: PricingClientProps) {
                         }, 2000)
                       }
                     }}
-                    className="px-6 py-3 bg-gray-200 text-gray-600 rounded-xl font-medium hover:bg-gray-300 transition-colors inline-flex items-center gap-2"
+                    className="px-6 py-3 bg-white/10 text-gray-300 rounded-xl font-medium hover:bg-white/20 transition-colors inline-flex items-center gap-2"
                   >
-                    {!selectedTier 
+                    {!selectedTier
                       ? (locale === 'en' ? 'Select Website Tier ↑' : '웹사이트 티어 선택 ↑')
                       : (locale === 'en' ? 'Select Care Plan ↑' : '케어 플랜 선택 ↑')
                     }
@@ -386,7 +386,7 @@ export default function PricingClient({ locale }: PricingClientProps) {
                 </>
               ) : (
                 <>
-                  <p className="text-gray-600 mb-6">
+                  <p className="text-gray-400 mb-6">
                     {locale === 'en' 
                       ? "Final step! Fill out the contact form and we'll prepare your custom proposal within 24 hours."
                       : "마지막 단계! 연락처 양식을 작성하시면 24시간 내에 맞춤 제안서를 준비해드리겠습니다."}

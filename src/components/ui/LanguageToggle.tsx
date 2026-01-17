@@ -84,20 +84,16 @@ export default function LanguageToggle({ lightMode = false }: { lightMode?: bool
       </button>
       
       {/* Dropdown on hover */}
-      <div className={`absolute top-full mt-2 right-0 w-32 py-2 bg-white border border-gray-200 rounded-lg shadow-lg 
+      <div className={`absolute top-full mt-2 right-0 w-32 py-2 bg-[#1a1a1a] border border-white/20 rounded-lg shadow-lg
         opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50`}>
         <div
           onClick={toggleLanguage}
-          className="px-4 py-2 hover:bg-gray-50 cursor-pointer flex items-center justify-between"
+          className="px-4 py-2 hover:bg-white/10 cursor-pointer flex items-center justify-between"
         >
           {currentLocale === 'en' ? (
-            <>
-              <span className="text-sm font-medium">🇰🇷 한국어</span>
-            </>
+            <span className="text-sm font-medium text-white">🇰🇷 KO</span>
           ) : (
-            <>
-              <span className="text-sm font-medium">🇺🇸 English</span>
-            </>
+            <span className="text-sm font-medium text-white">🇺🇸 EN</span>
           )}
         </div>
       </div>
