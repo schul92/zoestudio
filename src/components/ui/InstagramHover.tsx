@@ -68,13 +68,13 @@ export default function InstagramHover({ position = 'bottom', showLabel = true, 
         target="_blank"
         rel="noopener noreferrer"
         onClick={() => trackOutboundLink(INSTAGRAM_PROFILE, 'Instagram Profile')}
-        className="flex items-center group/link text-gray-600 hover:text-black transition-colors duration-200"
+        className="flex items-center group/link text-gray-400 hover:text-amber-400 transition-colors duration-200"
       >
         <span className="mr-3 group-hover/link:scale-110 transition-transform duration-200">
           <InstagramIcon className="w-5 h-5" />
         </span>
         {showLabel && (
-          <span className="text-sm border-b border-transparent hover:border-black transition-all duration-200">
+          <span className="text-sm border-b border-transparent group-hover/link:border-amber-400 transition-all duration-200">
             @zoelumos
           </span>
         )}
