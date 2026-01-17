@@ -7,22 +7,22 @@ import { seoConfig } from '@/config/seo'
 // Dynamically import heavy components with SSR enabled for SEO-critical content
 const AnimatedHero = dynamic(() => import('@/components/AnimatedHero'), {
   ssr: true,
-  loading: () => <div className="h-screen bg-gradient-to-br from-blue-50 to-white" />
+  loading: () => <div className="h-screen bg-[#1a1a1a]" />
 })
 
 const Services = dynamic(() => import('@/components/sections/Services'), {
   ssr: true,
-  loading: () => <div className="min-h-[600px] bg-white" />
+  loading: () => <div className="min-h-[600px] bg-[#111111]" />
 })
 
 const ContactWrapper = dynamic(() => import('@/components/sections/ContactWrapper'), {
   ssr: true,
-  loading: () => <div className="min-h-[600px] bg-gradient-to-br from-gray-50 to-white" />
+  loading: () => <div className="min-h-[600px] bg-[#111111]" />
 })
 
 const LocationLinks = dynamic(() => import('@/components/sections/LocationLinks'), {
   ssr: true,
-  loading: () => <div className="min-h-[400px] bg-gray-50" />
+  loading: () => <div className="min-h-[400px] bg-[#111111]" />
 })
 
 // Client-only component for scroll progress

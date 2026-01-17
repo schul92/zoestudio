@@ -50,12 +50,10 @@ export default function Header({ locale = 'en' }: { locale?: string }) {
     }
   }, [mobileMenuOpen])
 
-  // Use consistent initial state for SSR
-  const scrolledClass = mounted && hasScrolled 
-    ? 'bg-white/95 shadow-lg backdrop-blur-md' 
-    : isAboutPage 
-      ? 'bg-black/40 backdrop-blur-lg border-b border-white/20'
-      : 'bg-white/10 backdrop-blur-sm'
+  // Use consistent initial state for SSR - Dark theme
+  const scrolledClass = mounted && hasScrolled
+    ? 'bg-[#111111]/95 shadow-lg backdrop-blur-md border-b border-white/10'
+    : 'bg-transparent backdrop-blur-sm'
 
   return (
     <header 
@@ -70,7 +68,7 @@ export default function Header({ locale = 'en' }: { locale?: string }) {
             data-hover="true"
             data-hover-text=""
           >
-            <div className={`transition-all duration-300 group-hover:scale-110 ${isAboutPage && (!mounted || !hasScrolled) ? 'text-white' : 'text-black'} flex items-center`}>
+            <div className="transition-all duration-300 group-hover:scale-110 text-white flex items-center">
               <AnimatedLogo width={28} height={28} animate={false} />
               <span className="text-base sm:text-lg md:text-xl font-bold ml-2 transition-all duration-300 group-hover:translate-x-1 whitespace-nowrap">ZOE LUMOS</span>
             </div>
@@ -81,37 +79,37 @@ export default function Header({ locale = 'en' }: { locale?: string }) {
             {/* Desktop Links - Hidden on mobile */}
             <div className="hidden md:flex items-center">
               <Link href={`${prefix}/about`} className="relative group py-2 px-4 min-w-[80px] text-center" data-hover="true" data-hover-text="">
-                <span className={`relative z-10 transition-colors duration-300 ${isAboutPage && (!mounted || !hasScrolled) ? 'text-white' : 'text-black'}`}>{t.nav.about}</span>
-                <span className={`absolute bottom-0 left-4 right-4 h-0.5 ${isAboutPage && (!mounted || !hasScrolled) ? 'bg-white' : 'bg-black'} scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out`} />
+                <span className="relative z-10 transition-colors duration-300 text-white">{t.nav.about}</span>
+                <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-amber-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
               </Link>
               <Link href={`${prefix}/#services`} className="relative group py-2 px-4 min-w-[80px] text-center" data-hover="true" data-hover-text="">
-                <span className={`relative z-10 transition-colors duration-300 ${isAboutPage && (!mounted || !hasScrolled) ? 'text-white' : 'text-black'}`}>{t.nav.services}</span>
-                <span className={`absolute bottom-0 left-4 right-4 h-0.5 ${isAboutPage && (!mounted || !hasScrolled) ? 'bg-white' : 'bg-black'} scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out`} />
+                <span className="relative z-10 transition-colors duration-300 text-white">{t.nav.services}</span>
+                <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-amber-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
               </Link>
               <Link href={`${prefix}/portfolio`} className="relative group py-2 px-4 min-w-[80px] text-center" data-hover="true" data-hover-text="">
-                <span className={`relative z-10 transition-colors duration-300 ${isAboutPage && (!mounted || !hasScrolled) ? 'text-white' : 'text-black'}`}>{t.nav.portfolio}</span>
-                <span className={`absolute bottom-0 left-4 right-4 h-0.5 ${isAboutPage && (!mounted || !hasScrolled) ? 'bg-white' : 'bg-black'} scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out`} />
+                <span className="relative z-10 transition-colors duration-300 text-white">{t.nav.portfolio}</span>
+                <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-amber-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
               </Link>
               <Link href={`${prefix}/pricing`} className="relative group py-2 px-4 min-w-[80px] text-center" data-hover="true" data-hover-text="">
-                <span className={`relative z-10 transition-colors duration-300 ${isAboutPage && (!mounted || !hasScrolled) ? 'text-white' : 'text-black'}`}>{t.nav.pricing}</span>
-                <span className={`absolute bottom-0 left-4 right-4 h-0.5 ${isAboutPage && (!mounted || !hasScrolled) ? 'bg-white' : 'bg-black'} scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out`} />
+                <span className="relative z-10 transition-colors duration-300 text-white">{t.nav.pricing}</span>
+                <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-amber-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
               </Link>
               <Link href={`${prefix}/#contact`} className="relative group py-2 px-4 min-w-[80px] text-center" data-hover="true" data-hover-text="">
-                <span className={`relative z-10 transition-colors duration-300 ${isAboutPage && (!mounted || !hasScrolled) ? 'text-white' : 'text-black'}`}>{t.nav.contact}</span>
-                <span className={`absolute bottom-0 left-4 right-4 h-0.5 ${isAboutPage && (!mounted || !hasScrolled) ? 'bg-white' : 'bg-black'} scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out`} />
+                <span className="relative z-10 transition-colors duration-300 text-white">{t.nav.contact}</span>
+                <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-amber-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
               </Link>
 
               {/* Instagram with hover dropdown */}
-              <InstagramNavHover locale={locale} lightMode={isAboutPage && (!mounted || !hasScrolled)} />
+              <InstagramNavHover locale={locale} lightMode={true} />
             </div>
 
             {/* Language Toggle - Always visible */}
-            <LanguageToggle lightMode={isAboutPage && (!mounted || !hasScrolled)} />
-            
+            <LanguageToggle lightMode={true} />
+
             {/* Mobile Menu Button - Only on mobile */}
-            <button 
+            <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className={`md:hidden p-2 ${isAboutPage && (!mounted || !hasScrolled) ? 'text-white' : 'text-black'}`}
+              className="md:hidden p-2 text-white"
               aria-label="Toggle mobile menu"
             >
               {mobileMenuOpen ? (
@@ -139,43 +137,43 @@ export default function Header({ locale = 'en' }: { locale?: string }) {
       
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div 
-          className="md:hidden fixed left-0 right-0 bg-white shadow-xl transition-all duration-300 ease-in-out z-[95] translate-y-0"
+        <div
+          className="md:hidden fixed left-0 right-0 bg-[#1a1a1a] shadow-xl transition-all duration-300 ease-in-out z-[95] translate-y-0 border-t border-white/10"
           style={{ top: '56px' }}
         >
         <nav className="px-6 py-6 space-y-2">
-          <Link 
-            href={`${prefix}/about`} 
+          <Link
+            href={`${prefix}/about`}
             onClick={() => setMobileMenuOpen(false)}
-            className="block py-3 px-4 text-gray-900 hover:bg-gray-100 rounded-lg transition-colors text-lg font-medium"
+            className="block py-3 px-4 text-white hover:bg-white/10 rounded-lg transition-colors text-lg font-medium"
           >
             {t.nav.about}
           </Link>
-          <Link 
-            href={`${prefix}/#services`} 
+          <Link
+            href={`${prefix}/#services`}
             onClick={() => setMobileMenuOpen(false)}
-            className="block py-3 px-4 text-gray-900 hover:bg-gray-100 rounded-lg transition-colors text-lg font-medium"
+            className="block py-3 px-4 text-white hover:bg-white/10 rounded-lg transition-colors text-lg font-medium"
           >
             {t.nav.services}
           </Link>
           <Link
             href={`${prefix}/portfolio`}
             onClick={() => setMobileMenuOpen(false)}
-            className="block py-3 px-4 text-gray-900 hover:bg-gray-100 rounded-lg transition-colors text-lg font-medium"
+            className="block py-3 px-4 text-white hover:bg-white/10 rounded-lg transition-colors text-lg font-medium"
           >
             {t.nav.portfolio}
           </Link>
           <Link
             href={`${prefix}/pricing`}
             onClick={() => setMobileMenuOpen(false)}
-            className="block py-3 px-4 text-gray-900 hover:bg-gray-100 rounded-lg transition-colors text-lg font-medium"
+            className="block py-3 px-4 text-white hover:bg-white/10 rounded-lg transition-colors text-lg font-medium"
           >
             {t.nav.pricing}
           </Link>
           <Link
             href={`${prefix}/#contact`}
             onClick={() => setMobileMenuOpen(false)}
-            className="block py-3 px-4 text-gray-900 hover:bg-gray-100 rounded-lg transition-colors text-lg font-medium"
+            className="block py-3 px-4 text-white hover:bg-white/10 rounded-lg transition-colors text-lg font-medium"
           >
             {t.nav.contact}
           </Link>

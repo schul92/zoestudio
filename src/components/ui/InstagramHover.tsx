@@ -235,7 +235,7 @@ export function InstagramMobileLink({ onClose }: { onClose?: () => void }) {
       target="_blank"
       rel="noopener noreferrer"
       onClick={handleClick}
-      className="flex items-center gap-3 py-3 px-4 text-gray-900 hover:bg-gray-100 rounded-lg transition-colors text-lg font-medium"
+      className="flex items-center gap-3 py-3 px-4 text-white hover:bg-white/10 rounded-lg transition-colors text-lg font-medium"
     >
       <InstagramIcon className="w-5 h-5" />
       <span>Instagram</span>

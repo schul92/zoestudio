@@ -2,116 +2,102 @@
 
 import { useTranslation } from '@/hooks/useTranslation'
 import { motion } from 'framer-motion'
-import { useState, useEffect, useRef } from 'react'
+import { useState, useEffect } from 'react'
 import { trackButtonClick } from '@/utils/analytics'
 
 export default function AnimatedHero({ locale = 'en' }: { locale?: string }) {
   const { t } = useTranslation(locale)
   const [mounted, setMounted] = useState(false)
-  const [isBroken, setIsBroken] = useState(false)
-  const [manualMode, setManualMode] = useState(false)
-  const iframeRef = useRef<HTMLIFrameElement>(null)
-  const sectionRef = useRef<HTMLElement>(null)
+  const [isLoaded, setIsLoaded] = useState(false)
 
   useEffect(() => {
     setMounted(true)
   }, [])
 
-  // Send scroll progress to iframe
-  useEffect(() => {
-    if (!mounted) return
-
-    const handleScroll = () => {
-      if (!sectionRef.current || !iframeRef.current?.contentWindow) return
-      if (manualMode) return // Don't override manual control
-
-      const rect = sectionRef.current.getBoundingClientRect()
-      const sectionHeight = rect.height
-      const scrolled = -rect.top
-
-      // Calculate progress: 0 at top, 1 when scrolled past section
-      const progress = Math.max(0, Math.min(1, scrolled / (sectionHeight * 0.8)))
-
-      // Send to iframe
-      iframeRef.current.contentWindow.postMessage(
-        { scrollProgress: progress },
-        '*'
-      )
-    }
-
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    handleScroll() // Initial call
-
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [mounted, manualMode])
-
-  // Handle manual break/fix toggle
-  const handleBreakToggle = () => {
-    const newBroken = !isBroken
-    setIsBroken(newBroken)
-    setManualMode(true)
-
-    trackButtonClick(newBroken ? 'Break Lightbulb' : 'Fix Lightbulb', 'hero')
-
-    if (iframeRef.current?.contentWindow) {
-      iframeRef.current.contentWindow.postMessage(
-        { scrollProgress: newBroken ? 1 : 0 },
-        '*'
-      )
-    }
-
-    // Reset to scroll mode after 3 seconds if assembled
-    if (!newBroken) {
-      setTimeout(() => {
-        setManualMode(false)
-      }, 2000)
-    }
-  }
-
-  return (
-    <section
-      ref={sectionRef}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white"
-    >
-      {/* Voxel Lightbulb - Full screen background */}
-      <div className="absolute inset-0 z-0 pointer-events-none">
-        <iframe
-          ref={iframeRef}
-          src="/voxel-lightbulb.html"
-          className="w-full h-full border-0"
-          style={{
-            background: 'transparent',
-          }}
-          title="3D Voxel Lightbulb"
-          loading="eager"
-        />
-      </div>
-
-      {/* Content overlay */}
-      <div className="relative z-10 text-center px-4 sm:px-6 md:px-8 max-w-6xl mx-auto w-full pointer-events-none">
-        {/* Text content */}
-        <motion.div
-          className="space-y-4 sm:space-y-6"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-        >
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-8xl font-black leading-tight text-gray-900 drop-shadow-[0_2px_10px_rgba(255,255,255,0.8)]">
-            <span className="block sm:inline">{t.hero.title}</span>
-          </h1>
-
-          <div className="mt-2 sm:-mt-2">
-            <h2 className="text-xl sm:text-3xl md:text-4xl lg:text-6xl font-black text-gray-800 break-words drop-shadow-[0_2px_10px_rgba(255,255,255,0.8)]">
+  // Avoid hydration mismatch by not rendering anything different on server vs client initially
+  if (!mounted) {
+    return (
+      <section className="relative min-h-screen overflow-hidden bg-[#1a1a1a]">
+        {/* Loading placeholder */}
+        <div className="absolute inset-0 z-0 bg-gradient-to-br from-[#1a1a1a] via-[#2a2a2a] to-[#1a1a1a]">
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="w-12 h-12 border-4 border-amber-400/30 border-t-amber-400 rounded-full animate-spin" />
+          </div>
+        </div>
+        {/* Cover for Spline watermark */}
+        <div className="absolute bottom-0 right-0 w-48 h-16 bg-gradient-to-tl from-[#1a1a1a] via-[#1a1a1a] to-transparent z-[5]" />
+        {/* Content placeholder to prevent layout shift */}
+        <div className="absolute bottom-36 sm:bottom-32 md:bottom-32 lg:bottom-36 right-4 sm:right-8 md:right-12 lg:right-16 xl:right-24 z-10 max-w-xl text-right opacity-0">
+          <div className="space-y-2 sm:space-y-3">
+            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black leading-tight text-white">
+              {t.hero.title}
+            </h1>
+            <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-amber-400">
               {t.hero.subtitle}
             </h2>
           </div>
+        </div>
+      </section>
+    )
+  }
+
+  return (
+    <section className="relative min-h-screen overflow-hidden bg-[#1a1a1a]">
+      {/* Loading placeholder with gradient that matches the scene */}
+      <div
+        className={`absolute inset-0 z-0 bg-gradient-to-br from-[#1a1a1a] via-[#2a2a2a] to-[#1a1a1a] transition-opacity duration-700 ${isLoaded ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}
+      >
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="w-12 h-12 border-4 border-amber-400/30 border-t-amber-400 rounded-full animate-spin" />
+        </div>
+      </div>
+
+      {/* Spline 3D Animation via iframe - uses Spline's CDN optimization */}
+      <div className={`absolute inset-0 z-0 transition-opacity duration-700 overflow-hidden ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
+        <iframe
+          src="https://my.spline.design/animatedlightdesktop-6X8ZfDzkCg2Db5sXXa6vdDxb/"
+          frameBorder="0"
+          className="border-0 -mt-16 sm:-mt-8 md:mt-0"
+          style={{
+            background: 'transparent',
+            width: 'calc(100% + 200px)',
+            height: 'calc(100% + 100px)',
+            marginBottom: '-100px',
+            marginRight: '-200px',
+          }}
+          title="3D Animation"
+          loading="eager"
+          onLoad={() => setIsLoaded(true)}
+          allow="autoplay"
+        />
+      </div>
+
+      {/* Cover for Spline watermark */}
+      <div className="absolute bottom-0 right-0 w-48 h-16 bg-gradient-to-tl from-[#1a1a1a] via-[#1a1a1a] to-transparent z-[5]" />
+
+      {/* Content overlay - positioned bottom-right, moved higher */}
+      <div className="absolute bottom-36 sm:bottom-32 md:bottom-32 lg:bottom-36 right-4 sm:right-8 md:right-12 lg:right-16 xl:right-24 z-10 max-w-xl text-right">
+        {/* Text content */}
+        <motion.div
+          className="space-y-2 sm:space-y-3"
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-black leading-tight text-white drop-shadow-[0_2px_20px_rgba(0,0,0,0.8)]">
+            {t.hero.title}
+          </h1>
+
+          <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-bold text-amber-400 drop-shadow-[0_2px_20px_rgba(0,0,0,0.8)]">
+            {t.hero.subtitle}
+          </h2>
         </motion.div>
 
         {/* Description */}
         <motion.p
-          className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-800 mt-6 sm:mt-8 md:mt-10 mb-8 sm:mb-10 md:mb-12 max-w-3xl mx-auto font-medium leading-relaxed px-2 sm:px-4 md:px-6 drop-shadow-[0_1px_8px_rgba(255,255,255,0.9)]"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
+          className="text-sm sm:text-base md:text-lg text-gray-300 mt-3 sm:mt-4 mb-6 sm:mb-8 ml-auto max-w-md font-medium leading-relaxed drop-shadow-[0_1px_10px_rgba(0,0,0,0.9)]"
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
           {t.hero.description}
@@ -119,7 +105,7 @@ export default function AnimatedHero({ locale = 'en' }: { locale?: string }) {
 
         {/* CTA Button */}
         <motion.div
-          className="flex flex-col sm:flex-row gap-6 justify-center items-center pointer-events-auto"
+          className="flex justify-end"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
@@ -142,25 +128,10 @@ export default function AnimatedHero({ locale = 'en' }: { locale?: string }) {
                 })
               }
             }}
-            className="group relative bg-black text-white px-6 sm:px-8 md:px-10 py-3 sm:py-4 md:py-5 rounded-xl text-base sm:text-lg font-bold shadow-[5px_5px_0px_0px_rgba(0,0,0,1)] transition-all overflow-hidden hover:shadow-[10px_10px_0px_0px_rgba(0,0,0,1)]"
-            data-hover="true"
-            data-hover-text="Go"
+            className="group relative bg-amber-400 text-black px-6 sm:px-8 py-3 sm:py-4 rounded-lg text-base sm:text-lg font-bold shadow-lg transition-all overflow-hidden hover:bg-amber-300 hover:shadow-xl hover:scale-105"
           >
-            <span className="absolute inset-0 bg-white transform -skew-x-12 -translate-x-full group-hover:translate-x-0 transition-transform duration-300 ease-out" />
-            <span className="relative z-10 group-hover:text-black transition-colors duration-300">
+            <span className="relative z-10">
               {t.hero.cta.start}
-            </span>
-          </button>
-
-          <button
-            onClick={handleBreakToggle}
-            className="group relative bg-transparent border-2 border-black text-black px-6 sm:px-8 py-3 sm:py-4 rounded-xl text-base sm:text-lg font-bold shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] transition-all overflow-hidden hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)] hover:bg-black hover:text-white"
-            data-hover="true"
-            data-hover-text={isBroken ? 'Fix' : 'Break'}
-          >
-            <span className="flex items-center gap-2">
-              <span>{isBroken ? '🔧' : '💡'}</span>
-              <span>{isBroken ? 'Fix It' : 'Break It'}</span>
             </span>
           </button>
         </motion.div>

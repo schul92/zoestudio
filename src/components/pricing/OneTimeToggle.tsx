@@ -56,12 +56,12 @@ export default function OneTimeToggle({ locale }: OneTimeToggleProps) {
   return (
     <div className="flex flex-col items-center justify-center gap-4 mb-12">
       <div className="flex items-center gap-4">
-        <span className={`text-sm font-medium ${!isAnnual ? 'text-gray-900' : 'text-gray-500'}`}>
+        <span className={`text-sm font-medium ${!isAnnual ? 'text-white' : 'text-gray-500'}`}>
           {locale === 'en' ? 'No Commitment' : '약정 없음'}
         </span>
         <button
           onClick={() => setIsAnnual(!isAnnual)}
-          className="relative inline-flex h-6 w-11 items-center rounded-full bg-gray-200 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+          className="relative inline-flex h-6 w-11 items-center rounded-full bg-gray-700 transition-colors focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 focus:ring-offset-gray-900"
           role="switch"
           aria-checked={isAnnual}
           aria-label="Toggle annual subscription commitment"
@@ -71,7 +71,7 @@ export default function OneTimeToggle({ locale }: OneTimeToggleProps) {
           }`} />
         </button>
         <div className="flex items-center gap-2">
-          <span className={`text-sm font-medium ${isAnnual ? 'text-gray-900' : 'text-gray-500'}`}>
+          <span className={`text-sm font-medium ${isAnnual ? 'text-white' : 'text-gray-500'}`}>
             {locale === 'en' ? 'Annual Subscription' : '연간 구독'}
           </span>
           <span className="inline-flex items-center rounded-full bg-gradient-to-r from-green-500 to-emerald-500 px-3 py-1 text-xs font-bold text-white">
@@ -79,9 +79,9 @@ export default function OneTimeToggle({ locale }: OneTimeToggleProps) {
           </span>
         </div>
       </div>
-      <p className="text-sm text-gray-600 text-center max-w-2xl">
+      <p className="text-sm text-gray-400 text-center max-w-2xl">
         {isAnnual ? (
-          locale === 'en' 
+          locale === 'en'
             ? 'Commit to an annual subscription and save 30% on your one-time build fee. Cancel anytime after 12 months.'
             : '연간 구독을 약정하고 일회성 제작비에서 30% 할인을 받으세요. 12개월 후 언제든지 취소 가능합니다.'
         ) : (

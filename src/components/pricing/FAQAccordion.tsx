@@ -25,7 +25,7 @@ export default function FAQAccordion({ items, locale }: FAQAccordionProps) {
       {items.map((item, index) => (
         <div
           key={index}
-          className="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden transition-all duration-200 hover:shadow-md"
+          className="bg-[#1a1a1a] rounded-2xl shadow-sm border border-gray-700 overflow-hidden transition-all duration-200 hover:shadow-md hover:border-gray-600"
         >
           <button
             onClick={() => toggleItem(index)}
@@ -33,17 +33,17 @@ export default function FAQAccordion({ items, locale }: FAQAccordionProps) {
             aria-expanded={openIndex === index}
             aria-controls={`faq-answer-${index}`}
           >
-            <h3 className="text-lg font-semibold text-gray-900 pr-8">
+            <h3 className="text-lg font-semibold text-white pr-8">
               {item.question}
             </h3>
             <ChevronDown
-              className={`w-5 h-5 text-gray-500 flex-shrink-0 transition-transform duration-200 ${
+              className={`w-5 h-5 text-gray-400 flex-shrink-0 transition-transform duration-200 ${
                 openIndex === index ? 'rotate-180' : ''
               }`}
               aria-hidden="true"
             />
           </button>
-          
+
           <div
             id={`faq-answer-${index}`}
             className={`transition-all duration-200 ease-in-out ${
@@ -53,7 +53,7 @@ export default function FAQAccordion({ items, locale }: FAQAccordionProps) {
             }`}
           >
             <div className="px-6 pb-5">
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-gray-400 leading-relaxed">
                 {item.answer}
               </p>
             </div>

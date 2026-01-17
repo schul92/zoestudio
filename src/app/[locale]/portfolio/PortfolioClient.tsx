@@ -43,15 +43,15 @@ export default function PortfolioClient({ t, projects, locale }: PortfolioClient
   }
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-[#111111]">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-gray-50 to-white">
+      <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#1a1a1a] to-[#111111]">
         <div className="max-w-6xl mx-auto text-center">
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="text-sm font-medium text-gray-500 tracking-wider uppercase mb-4"
+            className="text-sm font-medium text-gray-400 tracking-wider uppercase mb-4"
           >
             {t.hero.subtitle}
           </motion.p>
@@ -59,7 +59,7 @@ export default function PortfolioClient({ t, projects, locale }: PortfolioClient
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-4xl sm:text-5xl md:text-6xl font-bold text-black mb-6"
+            className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6"
           >
             {t.hero.title}
           </motion.h1>
@@ -67,7 +67,7 @@ export default function PortfolioClient({ t, projects, locale }: PortfolioClient
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto"
+            className="text-lg sm:text-xl text-gray-400 max-w-2xl mx-auto"
           >
             {t.hero.description}
           </motion.p>
@@ -92,7 +92,7 @@ export default function PortfolioClient({ t, projects, locale }: PortfolioClient
                   href={project.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block relative aspect-[16/10] rounded-2xl overflow-hidden bg-gray-100 mb-6 shadow-lg hover:shadow-2xl transition-shadow duration-300"
+                  className="block relative aspect-[16/10] rounded-2xl overflow-hidden bg-[#1a1a1a] mb-6 shadow-lg hover:shadow-2xl transition-shadow duration-300"
                 >
                   {!imageErrors[project.id] ? (
                     <Image
@@ -135,31 +135,31 @@ export default function PortfolioClient({ t, projects, locale }: PortfolioClient
                 {/* Project Info */}
                 <div className="space-y-3">
                   <div className="flex items-center gap-3">
-                    <span className="text-sm font-medium text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
+                    <span className="text-sm font-medium text-gray-300 bg-[#2a2a2a] px-3 py-1 rounded-full">
                       {project.category}
                     </span>
                   </div>
 
-                  <h2 className="text-2xl font-bold text-black group-hover:text-gray-700 transition-colors">
+                  <h2 className="text-2xl font-bold text-white group-hover:text-gray-300 transition-colors">
                     <a href={project.url} target="_blank" rel="noopener noreferrer">
                       {project.title}
                     </a>
                   </h2>
 
-                  <p className="text-gray-600 leading-relaxed">
+                  <p className="text-gray-400 leading-relaxed">
                     {project.description}
                   </p>
 
                   {/* Services Tags */}
                   <div className="pt-2">
-                    <p className="text-xs font-medium text-gray-400 uppercase tracking-wider mb-2">
+                    <p className="text-xs font-medium text-gray-500 uppercase tracking-wider mb-2">
                       {t.servicesLabel}
                     </p>
                     <div className="flex flex-wrap gap-2">
                       {project.services.map((service, i) => (
                         <span
                           key={i}
-                          className="text-sm text-gray-700 border border-gray-200 px-3 py-1 rounded-full hover:border-black hover:text-black transition-colors"
+                          className="text-sm text-gray-300 border border-gray-700 px-3 py-1 rounded-full hover:border-white hover:text-white transition-colors"
                         >
                           {service}
                         </span>

@@ -20,7 +20,7 @@ export default function Error({
   }, [error])
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-red-50 to-orange-50">
+    <div className="min-h-screen flex items-center justify-center bg-[#111111]">
       <div className="text-center px-6 py-12 max-w-2xl">
         <div className="mb-8">
           <svg
@@ -44,37 +44,37 @@ export default function Error({
             <text x="50" y="50" textAnchor="middle" fontSize="20" fill="currentColor">500</text>
           </svg>
         </div>
-        
-        <h1 className="text-6xl font-bold text-red-600 mb-4">500</h1>
-        <h2 className="text-2xl font-semibold text-gray-800 mb-4">
+
+        <h1 className="text-6xl font-bold text-red-500 mb-4">500</h1>
+        <h2 className="text-2xl font-semibold text-white mb-4">
           {isKorean ? '오류가 발생했습니다' : 'Something went wrong!'}
         </h2>
-        <p className="text-gray-600 mb-8">
-          {isKorean 
-            ? '일시적인 오류가 발생했습니다. 잠시 후 다시 시도해주세요.' 
+        <p className="text-gray-400 mb-8">
+          {isKorean
+            ? '일시적인 오류가 발생했습니다. 잠시 후 다시 시도해주세요.'
             : 'An unexpected error occurred. Please try again later.'
           }
         </p>
-        
+
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button
             onClick={reset}
-            className="px-6 py-3 bg-black text-white rounded-lg font-semibold hover:bg-gray-800 transition-colors"
+            className="px-6 py-3 bg-amber-400 text-black rounded-lg font-semibold hover:bg-amber-300 transition-colors"
           >
             {isKorean ? '다시 시도' : 'Try Again'}
           </button>
           <Link
             href={`/${locale}`}
-            className="px-6 py-3 bg-white text-black border-2 border-black rounded-lg font-semibold hover:bg-gray-50 transition-colors"
+            className="px-6 py-3 bg-transparent text-white border-2 border-white rounded-lg font-semibold hover:bg-white/10 transition-colors"
           >
             {isKorean ? '홈으로 돌아가기' : 'Go to Homepage'}
           </Link>
         </div>
-        
-        <div className="mt-8 p-4 bg-gray-100 rounded-lg">
-          <p className="text-sm text-gray-600">
-            {isKorean 
-              ? '계속해서 문제가 발생하면 zoestudiollc@gmail.com으로 문의해주세요.' 
+
+        <div className="mt-8 p-4 bg-[#1a1a1a] rounded-lg border border-gray-700">
+          <p className="text-sm text-gray-400">
+            {isKorean
+              ? '계속해서 문제가 발생하면 zoestudiollc@gmail.com으로 문의해주세요.'
               : 'If the problem persists, please contact us at zoestudiollc@gmail.com'
             }
           </p>

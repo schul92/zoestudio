@@ -8,19 +8,19 @@ export default function Footer({ locale = 'en' }: { locale?: string }) {
   const prefix = locale === 'ko' ? '/ko' : '' // English uses root, Korean uses /ko
 
   return (
-    <footer className="w-full relative bg-gradient-to-b from-gray-50 to-white">
+    <footer className="w-full relative bg-[#0a0a0a]">
       {/* Modern border with gradient */}
-      <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-black to-transparent"></div>
+      <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-amber-400/50 to-transparent"></div>
 
       <div className="w-full px-8 lg:px-12 xl:px-20 pt-32 pb-16">
         <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-12 mb-12">
           {/* Company Info */}
           <div className="group">
             <div className="relative mb-6">
-              <h3 className="font-bold text-xl text-gray-900 tracking-wide">ZOE LUMOS</h3>
-              <div className="absolute -bottom-2 left-0 w-12 h-0.5 bg-black group-hover:w-24 transition-all duration-300"></div>
+              <h3 className="font-bold text-xl text-white tracking-wide">ZOE LUMOS</h3>
+              <div className="absolute -bottom-2 left-0 w-12 h-0.5 bg-amber-400 group-hover:w-24 transition-all duration-300"></div>
             </div>
-            <p className="text-gray-600 text-sm leading-relaxed">
+            <p className="text-gray-400 text-sm leading-relaxed">
               {locale === 'ko'
                 ? '소규모 비즈니스가 온라인에서 성공할 수 있도록 돕는 디지털 마케팅 에이전시'
                 : 'Digital marketing agency helping small businesses succeed online'
@@ -31,49 +31,49 @@ export default function Footer({ locale = 'en' }: { locale?: string }) {
           {/* Services */}
           <div className="group">
             <div className="relative mb-6">
-              <h3 className="font-bold text-lg text-gray-900 uppercase tracking-wider text-sm">
+              <h3 className="font-bold text-lg text-white uppercase tracking-wider text-sm">
                 {locale === 'ko' ? '서비스' : 'Services'}
               </h3>
-              <div className="absolute -bottom-2 left-0 w-8 h-0.5 bg-gray-400 group-hover:w-16 group-hover:bg-black transition-all duration-300"></div>
+              <div className="absolute -bottom-2 left-0 w-8 h-0.5 bg-gray-600 group-hover:w-16 group-hover:bg-amber-400 transition-all duration-300"></div>
             </div>
             <ul className="space-y-3">
               <li>
-                <Link href={`${prefix}#services`} className="text-gray-600 hover:text-black hover:translate-x-1 inline-block transition-all duration-200 text-sm">
+                <Link href={`${prefix}#services`} className="text-gray-400 hover:text-amber-400 hover:translate-x-1 inline-block transition-all duration-200 text-sm">
                   {locale === 'ko' ? 'SEO 서비스' : 'SEO Services'}
                 </Link>
               </li>
               <li>
-                <Link href={`${prefix}#services`} className="text-gray-600 hover:text-black hover:translate-x-1 inline-block transition-all duration-200 text-sm">
+                <Link href={`${prefix}#services`} className="text-gray-400 hover:text-amber-400 hover:translate-x-1 inline-block transition-all duration-200 text-sm">
                   {locale === 'ko' ? '구글 & 옐프 광고 관리' : 'Google & Yelp Ads Management'}
                 </Link>
               </li>
               <li>
-                <Link href={`${prefix}#services`} className="text-gray-600 hover:text-black hover:translate-x-1 inline-block transition-all duration-200 text-sm">
+                <Link href={`${prefix}#services`} className="text-gray-400 hover:text-amber-400 hover:translate-x-1 inline-block transition-all duration-200 text-sm">
                   {locale === 'ko' ? '웹사이트 디자인 & 개발' : 'Website Design & Development'}
                 </Link>
               </li>
               <li>
-                <Link href={`${prefix}/pricing`} className="text-gray-600 hover:text-black hover:translate-x-1 inline-block transition-all duration-200 text-sm">
+                <Link href={`${prefix}/pricing`} className="text-gray-400 hover:text-amber-400 hover:translate-x-1 inline-block transition-all duration-200 text-sm">
                   {locale === 'ko' ? '요금 및 플랜' : 'Plans & Pricing'}
                 </Link>
               </li>
               <li>
-                <Link href={`${prefix}/ny-website`} className="text-gray-600 hover:text-black hover:translate-x-1 inline-block transition-all duration-200 text-sm">
+                <Link href={`${prefix}/ny-website`} className="text-gray-400 hover:text-amber-400 hover:translate-x-1 inline-block transition-all duration-200 text-sm">
                   {locale === 'ko' ? '뉴욕 웹사이트 제작' : 'New York Web Design'}
                 </Link>
               </li>
               <li>
-                <Link href={`${prefix}/nj-website`} className="text-gray-600 hover:text-black hover:translate-x-1 inline-block transition-all duration-200 text-sm">
+                <Link href={`${prefix}/nj-website`} className="text-gray-400 hover:text-amber-400 hover:translate-x-1 inline-block transition-all duration-200 text-sm">
                   {locale === 'ko' ? '뉴저지 웹사이트 제작' : 'New Jersey Web Design'}
                 </Link>
               </li>
               <li>
-                <Link href={`${prefix}/reviews`} className="text-gray-600 hover:text-black hover:translate-x-1 inline-block transition-all duration-200 text-sm">
+                <Link href={`${prefix}/reviews`} className="text-gray-400 hover:text-amber-400 hover:translate-x-1 inline-block transition-all duration-200 text-sm">
                   {locale === 'ko' ? '고객 후기' : 'Client Reviews'}
                 </Link>
               </li>
               <li>
-                <Link href={`${prefix}/blog`} className="text-gray-600 hover:text-black hover:translate-x-1 inline-block transition-all duration-200 text-sm">
+                <Link href={`${prefix}/blog`} className="text-gray-400 hover:text-amber-400 hover:translate-x-1 inline-block transition-all duration-200 text-sm">
                   {locale === 'ko' ? '블로그' : 'Blog'}
                 </Link>
               </li>
@@ -83,10 +83,10 @@ export default function Footer({ locale = 'en' }: { locale?: string }) {
           {/* Contact */}
           <div className="group">
             <div className="relative mb-6">
-              <h3 className="font-bold text-lg text-gray-900 uppercase tracking-wider text-sm">
+              <h3 className="font-bold text-lg text-white uppercase tracking-wider text-sm">
                 {locale === 'ko' ? '연락처' : 'Contact'}
               </h3>
-              <div className="absolute -bottom-2 left-0 w-8 h-0.5 bg-gray-400 group-hover:w-16 group-hover:bg-black transition-all duration-300"></div>
+              <div className="absolute -bottom-2 left-0 w-8 h-0.5 bg-gray-600 group-hover:w-16 group-hover:bg-amber-400 transition-all duration-300"></div>
             </div>
             <div className="space-y-3">
               <FooterEmailLink email="zoestudiollc@gmail.com" />
@@ -99,13 +99,13 @@ export default function Footer({ locale = 'en' }: { locale?: string }) {
           {/* Service Areas - SEO Optimized */}
           <div className="group">
             <div className="relative mb-6">
-              <h3 className="font-bold text-lg text-gray-900 uppercase tracking-wider text-sm">
+              <h3 className="font-bold text-lg text-white uppercase tracking-wider text-sm">
                 {locale === 'ko' ? '서비스 지역' : 'Service Areas'}
               </h3>
-              <div className="absolute -bottom-2 left-0 w-8 h-0.5 bg-gray-400 group-hover:w-16 group-hover:bg-black transition-all duration-300"></div>
+              <div className="absolute -bottom-2 left-0 w-8 h-0.5 bg-gray-600 group-hover:w-16 group-hover:bg-amber-400 transition-all duration-300"></div>
             </div>
             <div className="space-y-3">
-              <p className="text-sm text-gray-600 leading-relaxed mb-3">
+              <p className="text-sm text-gray-400 leading-relaxed mb-3">
                 {locale === 'ko'
                   ? '전국 대도시 및 중소도시 | 온라인 비즈니스 | 로컬 비즈니스 | 이커머스'
                   : 'Nationwide Service | Major Metropolitan Areas | Local Business | E-commerce | Remote Consultation Available'
@@ -114,22 +114,22 @@ export default function Footer({ locale = 'en' }: { locale?: string }) {
 
               {/* Location Pages for SEO */}
               <div className="space-y-2">
-                <Link href={`${prefix}/ny-website`} className="block text-xs text-gray-500 hover:text-black transition-colors">
+                <Link href={`${prefix}/ny-website`} className="block text-xs text-gray-500 hover:text-amber-400 transition-colors">
                   {locale === 'ko' ? '🗽 뉴욕 지역' : '🗽 New York Area'}
                 </Link>
-                <Link href={`${prefix}/nj-website`} className="block text-xs text-gray-500 hover:text-black transition-colors">
+                <Link href={`${prefix}/nj-website`} className="block text-xs text-gray-500 hover:text-amber-400 transition-colors">
                   {locale === 'ko' ? '🌉 뉴저지 지역' : '🌉 New Jersey Area'}
                 </Link>
               </div>
 
-              <p className="text-sm text-gray-600 leading-relaxed mt-3">
+              <p className="text-sm text-gray-400 leading-relaxed mt-3">
               </p>
               <div className="pt-2 space-y-1">
                 {(locale === 'ko'
                   ? ['SEO 서비스', '구글 광고', '웹사이트 제작', '디지털 마케팅']
                   : ['Professional SEO Services', 'Google Ads Management', 'Web Design', 'Digital Marketing Solutions']
                 ).map((tag, index) => (
-                  <span key={index} className="inline-block text-xs bg-gray-100 text-gray-700 px-2 py-1 mr-2 mb-1 hover:bg-gray-200 transition-colors duration-200">
+                  <span key={index} className="inline-block text-xs bg-white/5 text-gray-400 px-2 py-1 mr-2 mb-1 hover:bg-amber-400/20 hover:text-amber-400 transition-colors duration-200">
                     {tag}
                   </span>
                 ))}
@@ -142,17 +142,17 @@ export default function Footer({ locale = 'en' }: { locale?: string }) {
         <div className="max-w-7xl mx-auto">
           <div className="relative">
             <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-gray-200"></div>
+              <div className="w-full border-t border-white/10"></div>
             </div>
-            <div className="relative bg-gradient-to-b from-gray-50 to-white">
-              <div className="h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
+            <div className="relative">
+              <div className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
             </div>
           </div>
 
           <div className="pt-8">
             <div className="flex flex-col md:flex-row justify-between items-center">
               <div className="flex items-center gap-4">
-                <p className="text-gray-600 text-sm">
+                <p className="text-gray-500 text-sm">
                   © 2025 ZOE STUDIO LLC. {t.footer.rights}
                 </p>
                 <InstagramIconLink />
@@ -160,17 +160,17 @@ export default function Footer({ locale = 'en' }: { locale?: string }) {
               <div className="flex space-x-8 mt-4 md:mt-0">
                 <Link
                   href={`${prefix}/privacy`}
-                  className="text-gray-600 hover:text-black text-sm relative group"
+                  className="text-gray-500 hover:text-amber-400 text-sm relative group"
                 >
                   <span>{t.footer.privacy}</span>
-                  <span className="absolute -bottom-1 left-0 w-0 h-px bg-black group-hover:w-full transition-all duration-200"></span>
+                  <span className="absolute -bottom-1 left-0 w-0 h-px bg-amber-400 group-hover:w-full transition-all duration-200"></span>
                 </Link>
                 <Link
                   href={`${prefix}/terms`}
-                  className="text-gray-600 hover:text-black text-sm relative group"
+                  className="text-gray-500 hover:text-amber-400 text-sm relative group"
                 >
                   <span>{t.footer.terms}</span>
-                  <span className="absolute -bottom-1 left-0 w-0 h-px bg-black group-hover:w-full transition-all duration-200"></span>
+                  <span className="absolute -bottom-1 left-0 w-0 h-px bg-amber-400 group-hover:w-full transition-all duration-200"></span>
                 </Link>
               </div>
             </div>

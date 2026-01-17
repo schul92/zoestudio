@@ -344,21 +344,21 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
   ]
 
   return (
-    <section id="services" className="py-20 bg-white relative overflow-hidden">
+    <section id="services" className="py-20 bg-[#111111] relative overflow-hidden">
       {/* Animated background pattern */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute inset-0" style={{
-          backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 35px, black 35px, black 70px)`,
+          backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 35px, white 35px, white 70px)`,
         }}/>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
         <ScrollAnimation>
           <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-black to-gray-600 bg-clip-text text-transparent">
+            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
               {t.services.title}
             </h2>
-            <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto mb-8">
+            <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">
               {t.services.subtitle}
             </p>
             
@@ -367,7 +367,7 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              className="inline-flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-6 bg-gradient-to-r from-blue-50 to-purple-50 px-6 sm:px-8 py-5 rounded-2xl sm:rounded-full border-2 border-blue-200 w-full sm:w-auto max-w-md sm:max-w-none mx-auto"
+              className="inline-flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-6 bg-white/5 px-6 sm:px-8 py-5 rounded-2xl sm:rounded-full border-2 border-white/20 w-full sm:w-auto max-w-md sm:max-w-none mx-auto"
             >
               {/* Step 1 */}
               <div className="flex items-center gap-3 flex-1 sm:flex-initial">
@@ -378,14 +378,14 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
                 </div>
                 <div className="flex-1 sm:flex-initial">
                   <span className={`text-sm font-medium block ${
-                    mounted && selectedServices.length > 0 ? 'text-green-600' : 'text-gray-700'
+                    mounted && selectedServices.length > 0 ? 'text-green-400' : 'text-gray-300'
                   }`}>
                     {locale === 'ko' ? '서비스 선택' : 'Select Services'}
                   </span>
                 </div>
               </div>
 
-              <div className="hidden sm:block w-8 h-0.5 bg-gray-300 self-center"></div>
+              <div className="hidden sm:block w-8 h-0.5 bg-gray-600 self-center"></div>
 
               {/* Step 2 */}
               <div className="flex items-center gap-3 flex-1 sm:flex-initial">
@@ -395,21 +395,21 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
                   2
                 </div>
                 <div className="flex-1 sm:flex-initial">
-                  <span className="text-sm font-medium text-gray-700 block">
+                  <span className="text-sm font-medium text-gray-300 block">
                     {locale === 'ko' ? '정보 입력' : 'Your Info'}
                   </span>
                 </div>
               </div>
-              
-              <div className="hidden sm:block w-8 h-0.5 bg-gray-300 self-center"></div>
-              
+
+              <div className="hidden sm:block w-8 h-0.5 bg-gray-600 self-center"></div>
+
               {/* Step 3 */}
               <div className="flex items-center gap-3 flex-1 sm:flex-initial">
-                <div className="w-10 h-10 rounded-full bg-gray-300 text-gray-600 flex items-center justify-center font-bold flex-shrink-0 transition-all">
+                <div className="w-10 h-10 rounded-full bg-gray-600 text-gray-300 flex items-center justify-center font-bold flex-shrink-0 transition-all">
                   3
                 </div>
                 <div className="flex-1 sm:flex-initial">
-                  <span className="text-sm font-medium text-gray-700 block">
+                  <span className="text-sm font-medium text-gray-300 block">
                     {locale === 'ko' ? '상담 시작!' : 'Get Started!'}
                   </span>
                 </div>
@@ -450,8 +450,8 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
             >
               <div className={`relative rounded-2xl p-6 h-full transition-all duration-500 ease-out overflow-hidden group flex flex-col ${
                 mounted && isServiceSelected(service.id)
-                  ? 'bg-gradient-to-br from-green-50 to-emerald-50 border-2 border-green-500 shadow-[8px_8px_0px_0px_rgba(34,197,94,1)] group-hover:shadow-[16px_16px_0px_0px_rgba(34,197,94,1)]'
-                  : 'bg-white border-2 border-black shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] group-hover:shadow-[16px_16px_0px_0px_rgba(0,0,0,1)]'
+                  ? 'bg-gradient-to-br from-green-900/50 to-emerald-900/50 border-2 border-green-500 shadow-[8px_8px_0px_0px_rgba(34,197,94,1)] group-hover:shadow-[16px_16px_0px_0px_rgba(34,197,94,1)]'
+                  : 'bg-[#1a1a1a] border-2 border-white/20 shadow-[8px_8px_0px_0px_rgba(251,191,36,0.5)] group-hover:shadow-[16px_16px_0px_0px_rgba(251,191,36,0.7)]'
               }`}>
                 {/* Selected checkmark badge */}
                 {mounted && isServiceSelected(service.id) && (
@@ -472,12 +472,12 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
                 </div>
                 
                 {/* Title */}
-                <h3 className="text-xl font-bold mb-3 text-center text-black">
+                <h3 className="text-xl font-bold mb-3 text-center text-white">
                   {service.title}
                 </h3>
-                
+
                 {/* Description */}
-                <p className="text-gray-700 mb-4 text-center text-sm leading-relaxed">
+                <p className="text-gray-400 mb-4 text-center text-sm leading-relaxed">
                   {service.description}
                 </p>
                 
@@ -493,18 +493,18 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
                       className="flex items-start"
                     >
                       <div className="w-5 h-5 mr-3 mt-0.5 flex-shrink-0">
-                        <svg viewBox="0 0 20 20" fill="currentColor" className="text-black">
+                        <svg viewBox="0 0 20 20" fill="currentColor" className="text-amber-400">
                           <path d="M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm-2 15l-5-5 1.41-1.41L8 12.17l7.59-7.59L17 6l-9 9z"/>
                         </svg>
                       </div>
-                      <span className="text-gray-700 text-sm">{feature}</span>
+                      <span className="text-gray-300 text-sm">{feature}</span>
                     </motion.div>
                   ))}
                 </div>
                 
                 {/* Benefit - Always at bottom */}
-                <div className="border-t-2 border-gray-200 pt-4 mt-auto">
-                  <p className="text-center font-semibold text-base text-black mb-3">
+                <div className="border-t-2 border-white/10 pt-4 mt-auto">
+                  <p className="text-center font-semibold text-base text-white mb-3">
                     ✨ {service.benefit}
                   </p>
                   
@@ -513,7 +513,7 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
                     className={`relative w-full py-3 px-4 rounded-lg font-bold transition-all overflow-hidden ${
                       mounted && isServiceSelected(service.id)
                         ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white shadow-lg'
-                        : 'bg-black text-white group-hover:bg-gray-800'
+                        : 'bg-amber-400 text-black group-hover:bg-amber-300'
                     }`}
                   >
                     {mounted && isServiceSelected(service.id) && (

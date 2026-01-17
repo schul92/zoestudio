@@ -6,7 +6,6 @@ import { seoConfig, structuredData } from '@/config/seo'
 import { ServiceProvider } from '@/context/ServiceContext'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
 import AnalyticsWrapper from '@/components/AnalyticsWrapper'
-import CustomCursor from '@/components/CustomCursor'
 
 const inter = Inter({ 
   subsets: ['latin'],
@@ -115,13 +114,11 @@ export default function RootLayout({
           __html: `
             /* Critical CSS for above-the-fold content */
             * { margin: 0; padding: 0; box-sizing: border-box; }
-            body { font-family: system-ui, -apple-system, sans-serif; line-height: 1.5; }
+            body { font-family: system-ui, -apple-system, sans-serif; line-height: 1.5; background-color: #111111; color: #ffffff; }
             .min-h-screen { min-height: 100vh; }
             .flex { display: flex; }
             .items-center { align-items: center; }
             .justify-center { justify-content: center; }
-            .bg-white { background-color: white; }
-            .text-black { color: black; }
             .font-bold { font-weight: 700; }
             .text-center { text-align: center; }
             .container { width: 100%; margin: 0 auto; padding: 0 1.5rem; max-width: 1280px; }
@@ -200,8 +197,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${inter.className} cursor-auto md:cursor-none`} style={{ position: 'relative' }}>
-        <CustomCursor />
+      <body className={`${inter.className} bg-[#111111] text-white`} style={{ position: 'relative' }}>
         {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
           <GoogleAnalytics GA_MEASUREMENT_ID={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
         )}
