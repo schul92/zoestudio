@@ -14,6 +14,18 @@ export default function AnimatedHero({ locale = 'en' }: { locale?: string }) {
     setMounted(true)
   }, [])
 
+  // Reset isLoaded when locale changes to handle iframe reload
+  useEffect(() => {
+    setIsLoaded(false)
+
+    // Fallback: if iframe doesn't trigger onLoad (e.g., cached), show content after timeout
+    const fallbackTimer = setTimeout(() => {
+      setIsLoaded(true)
+    }, 3000)
+
+    return () => clearTimeout(fallbackTimer)
+  }, [locale])
+
   // Avoid hydration mismatch by not rendering anything different on server vs client initially
   if (!mounted) {
     return (
@@ -55,6 +67,7 @@ export default function AnimatedHero({ locale = 'en' }: { locale?: string }) {
       {/* Spline 3D Animation via iframe - uses Spline's CDN optimization */}
       <div className={`absolute inset-0 z-0 transition-opacity duration-700 overflow-hidden ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
         <iframe
+          key={`spline-${locale}`}
           src="https://my.spline.design/animatedlightdesktop-6X8ZfDzkCg2Db5sXXa6vdDxb/"
           frameBorder="0"
           className="border-0 -mt-16 sm:-mt-8 md:mt-0"
