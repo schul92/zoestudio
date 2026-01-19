@@ -128,10 +128,10 @@ export default function AboutClient({ t, locale }: { t: any, locale: string }) {
       </section>
 
       {/* Name Meaning Section */}
-      <section className="py-32 bg-white relative overflow-hidden">
+      <section className="py-32 bg-[#111111] relative overflow-hidden">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-20">{t.meaning.title}</h2>
-          
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-20 text-white">{t.meaning.title}</h2>
+
           <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
             {/* ZOE */}
             <motion.div
@@ -140,12 +140,12 @@ export default function AboutClient({ t, locale }: { t: any, locale: string }) {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <div className="bg-gradient-to-br from-green-50 to-emerald-50 p-10 rounded-3xl border-2 border-green-200 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-green-200/30 to-transparent rounded-full -mr-32 -mt-32" />
-                <h3 className="text-6xl font-bold text-green-600 mb-2">{t.meaning.zoe.word}</h3>
+              <div className="bg-[#1a1a1a] p-10 rounded-3xl border-2 border-green-500/30 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-green-500/10 to-transparent rounded-full -mr-32 -mt-32" />
+                <h3 className="text-6xl font-bold text-green-400 mb-2">{t.meaning.zoe.word}</h3>
                 <p className="text-sm text-gray-500 mb-2">{t.meaning.zoe.origin}</p>
-                <p className="text-2xl font-semibold text-gray-800 mb-4">{t.meaning.zoe.meaning}</p>
-                <p className="text-gray-600">{t.meaning.zoe.description}</p>
+                <p className="text-2xl font-semibold text-white mb-4">{t.meaning.zoe.meaning}</p>
+                <p className="text-gray-400">{t.meaning.zoe.description}</p>
               </div>
             </motion.div>
 
@@ -156,12 +156,12 @@ export default function AboutClient({ t, locale }: { t: any, locale: string }) {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
             >
-              <div className="bg-gradient-to-br from-yellow-50 to-orange-50 p-10 rounded-3xl border-2 border-yellow-200 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-yellow-200/30 to-transparent rounded-full -mr-32 -mt-32" />
-                <h3 className="text-6xl font-bold text-yellow-600 mb-2">{t.meaning.lumos.word}</h3>
+              <div className="bg-[#1a1a1a] p-10 rounded-3xl border-2 border-amber-400/30 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-amber-400/10 to-transparent rounded-full -mr-32 -mt-32" />
+                <h3 className="text-6xl font-bold text-amber-400 mb-2">{t.meaning.lumos.word}</h3>
                 <p className="text-sm text-gray-500 mb-2">{t.meaning.lumos.origin}</p>
-                <p className="text-2xl font-semibold text-gray-800 mb-4">{t.meaning.lumos.meaning}</p>
-                <p className="text-gray-600">{t.meaning.lumos.description}</p>
+                <p className="text-2xl font-semibold text-white mb-4">{t.meaning.lumos.meaning}</p>
+                <p className="text-gray-400">{t.meaning.lumos.description}</p>
               </div>
             </motion.div>
           </div>
@@ -169,15 +169,15 @@ export default function AboutClient({ t, locale }: { t: any, locale: string }) {
       </section>
 
       {/* Philosophy Section */}
-      <section className="py-32 bg-gray-50">
+      <section className="py-32 bg-[#0a0a0a]">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-20">{t.philosophy.title}</h2>
-          
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-20 text-white">{t.philosophy.title}</h2>
+
           <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
             {t.philosophy.items.map((item: any, index: number) => (
               <motion.div
                 key={index}
-                className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-shadow"
+                className="bg-[#1a1a1a] p-8 rounded-2xl border border-white/10 hover:border-amber-400/30 transition-all"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.2 }}
@@ -185,8 +185,8 @@ export default function AboutClient({ t, locale }: { t: any, locale: string }) {
                 whileHover={{ y: -10 }}
               >
                 <div className="text-5xl mb-4">{item.icon}</div>
-                <h3 className="text-xl font-bold mb-3">{item.title}</h3>
-                <p className="text-gray-600">{item.description}</p>
+                <h3 className="text-xl font-bold mb-3 text-white">{item.title}</h3>
+                <p className="text-gray-400">{item.description}</p>
               </motion.div>
             ))}
           </div>
@@ -222,10 +222,10 @@ export default function AboutClient({ t, locale }: { t: any, locale: string }) {
       </section>
 
       {/* Services - How We Bring Light */}
-      <section className="py-32 bg-white">
+      <section className="py-32 bg-[#111111]">
         <div className="container mx-auto px-6">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-20">{t.services.title}</h2>
-          
+          <h2 className="text-4xl md:text-5xl font-bold text-center mb-20 text-white">{t.services.title}</h2>
+
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
             {t.services.items.map((item: any, index: number) => (
               <motion.div
@@ -236,10 +236,10 @@ export default function AboutClient({ t, locale }: { t: any, locale: string }) {
                 transition={{ delay: index * 0.1 }}
                 viewport={{ once: true }}
               >
-                <div className="bg-gradient-to-br from-yellow-400 to-orange-400 p-[2px] rounded-2xl">
-                  <div className="bg-white rounded-2xl p-8 h-full hover:bg-gradient-to-br hover:from-yellow-50 hover:to-orange-50 transition-all">
-                    <h3 className="text-xl font-bold mb-2">{item.title}</h3>
-                    <p className="text-gray-600 text-sm">{item.description}</p>
+                <div className="bg-gradient-to-br from-amber-400 to-orange-500 p-[2px] rounded-2xl">
+                  <div className="bg-[#1a1a1a] rounded-2xl p-8 h-full hover:bg-[#222222] transition-all">
+                    <h3 className="text-xl font-bold mb-2 text-white">{item.title}</h3>
+                    <p className="text-gray-400 text-sm">{item.description}</p>
                   </div>
                 </div>
               </motion.div>
@@ -249,7 +249,7 @@ export default function AboutClient({ t, locale }: { t: any, locale: string }) {
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 bg-gradient-to-br from-yellow-400 to-orange-500 text-black relative overflow-hidden">
+      <section className="py-32 bg-[#0a0a0a] relative overflow-hidden">
         {/* Animated Background */}
         <div className="absolute inset-0 opacity-30">
           {[...Array(3)].map((_, i) => (
@@ -261,7 +261,7 @@ export default function AboutClient({ t, locale }: { t: any, locale: string }) {
                 height: `${300 + i * 100}px`,
                 left: `${10 + i * 30}%`,
                 top: `${-50 + i * 20}%`,
-                background: 'radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%)',
+                background: 'radial-gradient(circle, rgba(251,191,36,0.2) 0%, transparent 70%)',
               }}
               animate={{
                 y: [0, 30, 0],
@@ -278,7 +278,7 @@ export default function AboutClient({ t, locale }: { t: any, locale: string }) {
 
         <div className="container mx-auto px-6 text-center relative z-10">
           <motion.h2
-            className="text-5xl md:text-6xl font-bold mb-6"
+            className="text-5xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-400"
             initial={{ scale: 0.5, opacity: 0 }}
             whileInView={{ scale: 1, opacity: 1 }}
             transition={{ type: "spring" }}
@@ -287,7 +287,7 @@ export default function AboutClient({ t, locale }: { t: any, locale: string }) {
             {t.cta.title}
           </motion.h2>
           <motion.p
-            className="text-xl mb-10"
+            className="text-xl mb-10 text-gray-300"
             initial={{ y: 20, opacity: 0 }}
             whileInView={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2 }}
@@ -303,7 +303,7 @@ export default function AboutClient({ t, locale }: { t: any, locale: string }) {
           >
             <a
               href={`${prefix}/#contact`}
-              className="inline-block bg-black text-white px-10 py-5 text-lg font-bold rounded-full hover:scale-110 transition-transform shadow-2xl"
+              className="inline-block bg-amber-400 text-black px-10 py-5 text-lg font-bold rounded-full hover:bg-amber-300 hover:scale-110 transition-all shadow-2xl"
             >
               {t.cta.button}
             </a>
