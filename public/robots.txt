@@ -1,0 +1,35 @@
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://zoelumos.com/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1
+
+# Block admin and private paths
+Disallow: /api/
+Disallow: /_next/
+Disallow: /private/
+
+# Allow important static assets
+Allow: /_next/static/
+Allow: /images/
+Allow: /portfolio/
+
+# Important pages for indexing
+Allow: /
+Allow: /ko
+Allow: /about
+Allow: /ko/about
+Allow: /portfolio
+Allow: /ko/portfolio
+Allow: /pricing
+Allow: /ko/pricing
+Allow: /nj-website
+Allow: /ko/뉴저지-웹사이트
+Allow: /ny-website
+Allow: /ko/뉴욕-웹사이트
+Allow: /ko/웹사이트-제작
+Allow: /ko/쇼핑몰-제작

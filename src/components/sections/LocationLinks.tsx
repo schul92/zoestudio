@@ -4,11 +4,12 @@ import { MapPin, ChevronRight } from 'lucide-react'
 export default function LocationLinks({ locale = 'en' }: { locale?: string }) {
   const prefix = locale === 'ko' ? '/ko' : ''
   
+  // Use Korean URL slugs for Korean locale (better for Korean SEO)
   const locations = [
     {
       name: locale === 'ko' ? '뉴욕 웹사이트 제작' : 'New York Web Design',
-      href: `${prefix}/ny-website`,
-      description: locale === 'ko' 
+      href: locale === 'ko' ? '/ko/뉴욕-웹사이트' : '/ny-website',
+      description: locale === 'ko'
         ? '맨하탄, 브루클린, 퀸즈, 플러싱 지역 전문'
         : 'Manhattan, Brooklyn, Queens, Flushing specialists',
       icon: '🗽',
@@ -16,7 +17,7 @@ export default function LocationLinks({ locale = 'en' }: { locale?: string }) {
     },
     {
       name: locale === 'ko' ? '뉴저지 웹사이트 제작' : 'New Jersey Web Design',
-      href: `${prefix}/nj-website`,
+      href: locale === 'ko' ? '/ko/뉴저지-웹사이트' : '/nj-website',
       description: locale === 'ko'
         ? '포트리, 팰리세이드파크, 에지워터 지역 전문'
         : 'Fort Lee, Palisades Park, Edgewater specialists',
