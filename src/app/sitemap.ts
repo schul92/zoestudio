@@ -63,8 +63,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
   })
 
   // Korean SEO pages (Korean URL slugs - important for Korean search)
+  // Only include Korean locale versions with Korean URLs
   koreanSeoPages.forEach((page) => {
-    // Korean version with Korean URL
+    // Korean version with Korean URL (primary for Korean SEO)
     sitemapEntries.push({
       url: `${baseUrl}/ko${page.path}`,
       lastModified,
@@ -72,23 +73,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: page.priority,
       alternates: {
         languages: {
-          'x-default': `${baseUrl}${page.enPath || page.path}`,
-          'en': `${baseUrl}${page.enPath || page.path}`,
-          'ko': `${baseUrl}/ko${page.path}`,
-        }
-      }
-    })
-
-    // English version with Korean URL (for cross-linking)
-    sitemapEntries.push({
-      url: `${baseUrl}${page.path}`,
-      lastModified,
-      changeFrequency: 'weekly',
-      priority: page.priority - 0.1,
-      alternates: {
-        languages: {
-          'x-default': `${baseUrl}${page.enPath || page.path}`,
-          'en': `${baseUrl}${page.path}`,
+          'x-default': `${baseUrl}${page.enPath}`,
+          'en': `${baseUrl}${page.enPath}`,
           'ko': `${baseUrl}/ko${page.path}`,
         }
       }

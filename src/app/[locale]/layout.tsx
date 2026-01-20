@@ -36,7 +36,7 @@ export async function generateMetadata({
       address: false,
       telephone: false,
     },
-    metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://zoelumos.com'),
+    metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'),
     manifest: '/manifest.json',
     category: 'business',
     alternates: {
@@ -129,9 +129,9 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='M50 20C36.193 20 25 31.193 25 45C25 53.284 29.163 60.622 35.547 65.047C36.719 65.922 37.5 67.266 37.5 68.75V75C37.5 76.381 38.619 77.5 40 77.5H60C61.381 77.5 62.5 76.381 62.5 75V68.75C62.5 67.266 63.281 65.922 64.453 65.047C70.837 60.622 75 53.284 75 45C75 31.193 63.807 20 50 20Z' stroke='black' stroke-width='3' fill='none'/><path d='M42.5 77.5V80C42.5 82.761 44.739 85 47.5 85H52.5C55.261 85 57.5 82.761 57.5 80V77.5' stroke='black' stroke-width='3'/></svg>" />
-        <link rel="alternate" hrefLang="en" href="https://zoelumos.com/" />
-        <link rel="alternate" hrefLang="ko" href="https://zoelumos.com/ko" />
-        <link rel="alternate" hrefLang="x-default" href="https://zoelumos.com/" />
+        <link rel="alternate" hrefLang="en" href="https://www.zoelumos.com/" />
+        <link rel="alternate" hrefLang="ko" href="https://www.zoelumos.com/ko" />
+        <link rel="alternate" hrefLang="x-default" href="https://www.zoelumos.com/" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
         <meta name="theme-color" content="#000000" />
         <meta name="google" content="notranslate" />
@@ -155,15 +155,18 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebSite",
-              "url": "https://zoelumos.com",
+              "url": "https://www.zoelumos.com",
               "name": "ZOE LUMOS",
-              "description": "Professional SEO Services, Google Ads Management & Web Design",
+              "alternateName": params.locale === 'ko' ? "조이루모스 - 뉴저지 웹사이트 제작" : "ZOE LUMOS",
+              "description": params.locale === 'ko'
+                ? "뉴저지 웹사이트 제작, 뉴욕 웹사이트 제작 전문. 구글광고, 옐프광고, SEO 서비스."
+                : "Professional SEO Services, Google Ads Management & Web Design",
               "potentialAction": {
                 "@type": "SearchAction",
-                "target": "https://zoelumos.com/search?q={search_term_string}",
+                "target": "https://www.zoelumos.com/search?q={search_term_string}",
                 "query-input": "required name=search_term_string"
               },
-              "inLanguage": ["en-US", "ko-KR"]
+              "inLanguage": params.locale === 'ko' ? "ko-KR" : "en-US"
             }),
           }}
         />
@@ -177,20 +180,20 @@ export default function RootLayout({
                 {
                   "@type": "ListItem",
                   "position": 1,
-                  "name": "Home",
-                  "item": `https://zoelumos.com/${params.locale}`
+                  "name": params.locale === 'ko' ? "홈" : "Home",
+                  "item": params.locale === 'ko' ? "https://www.zoelumos.com/ko" : "https://www.zoelumos.com"
                 },
                 {
                   "@type": "ListItem",
                   "position": 2,
-                  "name": "Services",
-                  "item": `https://zoelumos.com/${params.locale}#services`
+                  "name": params.locale === 'ko' ? "서비스" : "Services",
+                  "item": params.locale === 'ko' ? "https://www.zoelumos.com/ko#services" : "https://www.zoelumos.com#services"
                 },
                 {
                   "@type": "ListItem",
                   "position": 3,
-                  "name": "Contact",
-                  "item": `https://zoelumos.com/${params.locale}#contact`
+                  "name": params.locale === 'ko' ? "문의하기" : "Contact",
+                  "item": params.locale === 'ko' ? "https://www.zoelumos.com/ko#contact" : "https://www.zoelumos.com#contact"
                 }
               ]
             }),

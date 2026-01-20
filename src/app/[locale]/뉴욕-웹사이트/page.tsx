@@ -18,7 +18,7 @@ export async function generateMetadata({
   params: { locale: string }
 }): Promise<Metadata> {
   const locale = params.locale as 'en' | 'ko'
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://zoelumos.com'
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
 
   return {
     title: locale === 'ko'
@@ -39,6 +39,12 @@ export async function generateMetadata({
       siteName: 'ZOE LUMOS 조이루모스',
       locale: locale === 'ko' ? 'ko_KR' : 'en_US',
       type: 'website',
+      images: [{
+        url: `${baseUrl}/og-ny-website.jpg`,
+        width: 1200,
+        height: 630,
+        alt: locale === 'ko' ? '뉴욕 웹사이트 제작' : 'New York Website Design',
+      }],
     },
     alternates: {
       canonical: locale === 'ko' ? `${baseUrl}/ko/뉴욕-웹사이트` : `${baseUrl}/뉴욕-웹사이트`,
@@ -64,7 +70,7 @@ export async function generateMetadata({
 
 export default function NYWebsiteKoreanPage({ params }: { params: { locale: string } }) {
   const locale = params.locale as 'en' | 'ko'
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://zoelumos.com'
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
   const isKorean = locale === 'ko'
 
   const organizationSchema = {
@@ -76,6 +82,7 @@ export default function NYWebsiteKoreanPage({ params }: { params: { locale: stri
     description: isKorean
       ? '뉴욕, 뉴저지 한인 비즈니스를 위한 웹사이트 제작 전문 업체'
       : 'Professional web design agency for Korean-American businesses in NY and NJ',
+    inLanguage: isKorean ? 'ko' : 'en',
   }
 
   const localBusinessSchema = {
@@ -88,6 +95,7 @@ export default function NYWebsiteKoreanPage({ params }: { params: { locale: stri
       ? '뉴욕 최고의 웹사이트 제작 전문 업체. 맨하탄, 플러싱, 퀸즈 한인 비즈니스 전문.'
       : 'Premier website design agency in New York for Korean-American businesses.',
     url: isKorean ? `${baseUrl}/ko/뉴욕-웹사이트` : `${baseUrl}/ny-website`,
+    inLanguage: isKorean ? 'ko' : 'en',
     telephone: '+1-201-555-0123',
     email: 'hello@zoelumos.com',
     address: {
@@ -120,6 +128,8 @@ export default function NYWebsiteKoreanPage({ params }: { params: { locale: stri
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
+    dateModified: '2026-01-20',
+    inLanguage: isKorean ? 'ko' : 'en',
     mainEntity: [
       {
         '@type': 'Question',
@@ -127,8 +137,8 @@ export default function NYWebsiteKoreanPage({ params }: { params: { locale: stri
         acceptedAnswer: {
           '@type': 'Answer',
           text: isKorean
-            ? '뉴욕 웹사이트 제작 비용은 $1,000부터 시작합니다. 기본 비즈니스 웹사이트는 $1,000-$2,500, 이커머스 쇼핑몰은 $3,000-$6,000입니다. 맨하탄, 플러싱, 퀸즈 전 지역 동일 가격입니다.'
-            : 'NYC website design starts at $1,000. Basic business sites are $1,000-$2,500, e-commerce $3,000-$6,000.',
+            ? 'ZOE LUMOS(조이루모스)의 뉴욕 웹사이트 제작 비용은 프로젝트 유형에 따라 다릅니다. 2026년 1월 기준, 기본 비즈니스 웹사이트는 $1,000-$2,500 (5페이지 기준, 모바일 반응형 포함), Shopify 이커머스 쇼핑몰은 $3,000-$6,000 (상품 등록 50개 포함, 결제 시스템 연동)입니다. 모든 가격에는 기본 SEO, SSL 인증서, 1년 호스팅이 포함됩니다. 맨하탄 K-Town, 플러싱, 퀸즈, 브루클린 등 뉴욕 전 지역 동일 가격이 적용됩니다.'
+            : 'ZOE LUMOS website design pricing in New York varies by project type. As of January 2026, basic business websites cost $1,000-$2,500 (5 pages, mobile responsive), and Shopify e-commerce stores cost $3,000-$6,000 (50 products included, payment integration). All prices include basic SEO, SSL certificate, and 1-year hosting. Same pricing applies across Manhattan K-Town, Flushing, Queens, and Brooklyn.',
         },
       },
       {
@@ -137,8 +147,8 @@ export default function NYWebsiteKoreanPage({ params }: { params: { locale: stri
         acceptedAnswer: {
           '@type': 'Answer',
           text: isKorean
-            ? '네, 저희는 뉴욕 한인 비즈니스 전문입니다. 한국어와 영어 이중언어 웹사이트를 제작하며, 플러싱, 맨하탄 K-Town 비즈니스 경험이 풍부합니다.'
-            : 'Yes, we specialize in NYC Korean businesses with bilingual Korean-English websites.',
+            ? '네, ZOE LUMOS는 뉴욕 한인 비즈니스 웹사이트 제작 전문 에이전시입니다. 2020년 설립 이후 100개 이상의 한인 비즈니스 웹사이트를 제작했습니다. 한국어와 영어 이중언어 웹사이트 제작이 가능하며, 모든 상담은 한국어로 진행됩니다 (카카오톡 상담 가능). 플러싱 한인타운 레스토랑, 맨하탄 32번가 K-Town 비즈니스, 퀸즈 뷰티샵, 브루클린 한인 업체 등 다양한 뉴욕 한인 비즈니스 웹사이트를 제작한 경험이 있습니다.'
+            : 'Yes, ZOE LUMOS specializes in Korean-American business websites in New York City. Since 2020, we have built over 100 Korean business websites. We create bilingual Korean-English websites with all consultations available in Korean (KakaoTalk available). Our experience includes Flushing Koreatown restaurants, Manhattan 32nd Street K-Town businesses, Queens beauty salons, and Brooklyn Korean businesses.',
         },
       },
       {
@@ -147,8 +157,8 @@ export default function NYWebsiteKoreanPage({ params }: { params: { locale: stri
         acceptedAnswer: {
           '@type': 'Answer',
           text: isKorean
-            ? '기본 웹사이트는 1-2주, 이커머스 쇼핑몰은 2-4주 정도 소요됩니다. 뉴욕 비즈니스 속도에 맞춘 긴급 제작도 가능합니다.'
-            : 'Basic websites take 1-2 weeks, e-commerce 2-4 weeks. Rush delivery available for NYC business pace.',
+            ? 'ZOE LUMOS의 뉴욕 웹사이트 제작 기간은 프로젝트 규모에 따라 다릅니다. 기본 비즈니스 웹사이트(5페이지)는 평균 10일 (1-2주), Shopify 이커머스 쇼핑몰은 평균 21일 (2-4주)이 소요됩니다. 뉴욕 비즈니스의 빠른 속도에 맞춘 긴급 제작 옵션도 제공합니다 - 20% 추가 비용으로 제작 기간 50% 단축 가능. 제작 과정: 1단계 상담/견적(1-2일) → 2단계 디자인 시안(3-5일) → 3단계 개발(5-10일) → 4단계 수정/검수(2-3일) → 5단계 런칭.'
+            : 'ZOE LUMOS website development timeline in NYC depends on project scope. Basic business websites (5 pages) take an average of 10 days (1-2 weeks), Shopify e-commerce stores take 21 days (2-4 weeks). Rush delivery option available at 20% premium for 50% faster delivery, matching NYC business pace. Process: Consultation (1-2 days) → Design mockup (3-5 days) → Development (5-10 days) → Revisions (2-3 days) → Launch.',
         },
       },
       {
@@ -157,8 +167,8 @@ export default function NYWebsiteKoreanPage({ params }: { params: { locale: stri
         acceptedAnswer: {
           '@type': 'Answer',
           text: isKorean
-            ? '네, 모든 웹사이트에 기본 SEO가 포함됩니다. 추가로 뉴욕 로컬 SEO, 구글 마이 비즈니스 최적화, 구글 광고 관리 서비스를 제공합니다.'
-            : 'Yes, basic SEO is included. We also offer NYC local SEO, Google My Business optimization, and Google Ads management.',
+            ? '네, ZOE LUMOS는 뉴욕 로컬 SEO 서비스를 전문으로 제공합니다. 모든 웹사이트에 기본 SEO(메타태그, 사이트맵, 모바일 최적화)가 포함되며, 추가 월정액 SEO 서비스($500/월~)도 제공합니다. 서비스 내용: 구글 마이 비즈니스 최적화, 한국어/영어 키워드 최적화, 구글 1페이지 노출 전략, 월간 성과 리포트. 평균적으로 3-6개월 내 "뉴욕 [업종]", "플러싱 [업종]" 검색 시 구글 1페이지 노출을 목표로 합니다.'
+            : 'Yes, ZOE LUMOS provides specialized New York local SEO services. All websites include basic SEO (meta tags, sitemap, mobile optimization), with additional monthly SEO services available ($500/month+). Services include: Google My Business optimization, Korean/English keyword targeting, Google page 1 ranking strategy, monthly performance reports. Average goal: Google page 1 ranking for "NYC [industry]" and "Flushing [industry]" searches within 3-6 months.',
         },
       },
       {
@@ -167,8 +177,8 @@ export default function NYWebsiteKoreanPage({ params }: { params: { locale: stri
         acceptedAnswer: {
           '@type': 'Answer',
           text: isKorean
-            ? '네, 맨하탄, 플러싱 등 뉴욕 전 지역에서 직접 미팅 가능합니다. 화상 미팅도 가능합니다.'
-            : 'Yes, we offer in-person consultations throughout NYC including Manhattan and Flushing.',
+            ? '네, ZOE LUMOS는 뉴욕 전 지역에서 직접 방문 상담을 제공합니다. 상담 방법: 1) 맨하탄 K-Town(32번가) 미팅 (무료), 2) 플러싱 한인타운 미팅 (무료), 3) 퀸즈, 브루클린 등 뉴욕 전 지역 출장 미팅 (무료), 4) 화상 미팅 (Zoom/Google Meet), 5) 카카오톡 상담. 본사는 뉴저지 포트리에 있지만, 뉴욕 고객을 위해 맨하탄과 플러싱에서 정기적으로 미팅을 진행합니다. 첫 상담은 무료이며, 프로젝트 견적서와 제작 일정표를 제공합니다.'
+            : 'Yes, ZOE LUMOS provides in-person consultations throughout New York City. Consultation options: 1) Manhattan K-Town (32nd St) meeting (free), 2) Flushing Koreatown meeting (free), 3) On-site meetings in Queens, Brooklyn, and all NYC (free), 4) Video meeting (Zoom/Google Meet), 5) KakaoTalk chat. While headquartered in Fort Lee, NJ, we conduct regular meetings in Manhattan and Flushing for NYC clients. First consultation is free with project quote and timeline.',
         },
       },
     ],
