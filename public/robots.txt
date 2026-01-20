@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://zoelumos.com/sitemap.xml
+Sitemap: https://www.zoelumos.com/sitemap.xml
 
 # Crawl-delay for polite crawling
 Crawl-delay: 1
