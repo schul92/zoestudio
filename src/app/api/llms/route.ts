@@ -1,4 +1,6 @@
-# ZOE LUMOS (조이루모스)
+import { NextResponse } from 'next/server'
+
+const llmsContent = `# ZOE LUMOS (조이루모스)
 
 > Korean-American digital marketing agency specializing in website design, SEO, and Google Ads for businesses in New Jersey and New York. 100% Korean language support available.
 
@@ -119,3 +121,13 @@ A: Yes, all websites include basic SEO. We also offer monthly SEO services start
 
 ---
 Last Updated: January 2026
+`
+
+export async function GET() {
+  return new NextResponse(llmsContent, {
+    headers: {
+      'Content-Type': 'text/plain; charset=utf-8',
+      'Cache-Control': 'public, max-age=86400',
+    },
+  })
+}

@@ -79,6 +79,15 @@ const nextConfig = {
     }
     return config
   },
+  async rewrites() {
+    return [
+      // Serve llms.txt from API route for AI crawlers
+      {
+        source: '/llms.txt',
+        destination: '/api/llms',
+      },
+    ]
+  },
   async headers() {
     return [
       // Allow iframe for voxel lightbulb
