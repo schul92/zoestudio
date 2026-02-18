@@ -2,13 +2,8 @@ import { Metadata } from 'next'
 import dynamic from 'next/dynamic'
 import HeaderWrapper from '@/components/layout/HeaderWrapper'
 import Footer from '@/components/layout/Footer'
+import AnimatedHero from '@/components/AnimatedHero'
 import { seoConfig } from '@/config/seo'
-
-// Dynamically import heavy components with SSR enabled for SEO-critical content
-const AnimatedHero = dynamic(() => import('@/components/AnimatedHero'), {
-  ssr: true,
-  loading: () => <div className="h-screen bg-[#1a1a1a]" />
-})
 
 const Services = dynamic(() => import('@/components/sections/Services'), {
   ssr: true,
