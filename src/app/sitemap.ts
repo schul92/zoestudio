@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/pricing',
     '/ny-website',
     '/nj-website',
+    '/fort-lee-web-design',
     '/privacy',
     '/terms',
     '/reviews',
@@ -24,6 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/뉴욕-웹사이트', enPath: '/ny-website', priority: 0.95 },
     { path: '/웹사이트-제작', enPath: '/website-design', priority: 0.9 },
     { path: '/쇼핑몰-제작', enPath: '/ecommerce', priority: 0.9 },
+    { path: '/포트리-웹디자인', enPath: '/fort-lee-web-design', priority: 0.95 },
   ]
 
   const sitemapEntries: MetadataRoute.Sitemap = []
