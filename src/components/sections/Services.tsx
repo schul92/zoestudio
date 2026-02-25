@@ -344,12 +344,11 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
   ]
 
   return (
-    <section id="services" className="py-20 bg-[#111111] relative overflow-hidden">
-      {/* Animated background pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `repeating-linear-gradient(45deg, transparent, transparent 35px, white 35px, white 70px)`,
-        }}/>
+    <section id="services" className="grain-overlay py-20 bg-[#111111] relative overflow-hidden">
+      {/* Subtle radial gradients (matching hero) */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_30%,rgba(245,158,11,0.03),transparent_70%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(168,85,247,0.02),transparent_50%)]" />
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
@@ -367,7 +366,7 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              className="inline-flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-6 bg-white/5 px-6 sm:px-8 py-5 rounded-2xl sm:rounded-full border-2 border-white/20 w-full sm:w-auto max-w-md sm:max-w-none mx-auto"
+              className="inline-flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-6 bg-white/[0.03] px-6 sm:px-8 py-5 rounded-2xl sm:rounded-full border border-white/[0.08] backdrop-blur-sm w-full sm:w-auto max-w-md sm:max-w-none mx-auto"
             >
               {/* Step 1 */}
               <div className="flex items-center gap-3 flex-1 sm:flex-initial">
@@ -385,7 +384,7 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
                 </div>
               </div>
 
-              <div className="hidden sm:block w-8 h-0.5 bg-gray-600 self-center"></div>
+              <div className="hidden sm:block w-8 h-px bg-white/[0.12] self-center"></div>
 
               {/* Step 2 */}
               <div className="flex items-center gap-3 flex-1 sm:flex-initial">
@@ -401,11 +400,11 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
                 </div>
               </div>
 
-              <div className="hidden sm:block w-8 h-0.5 bg-gray-600 self-center"></div>
+              <div className="hidden sm:block w-8 h-px bg-white/[0.12] self-center"></div>
 
               {/* Step 3 */}
               <div className="flex items-center gap-3 flex-1 sm:flex-initial">
-                <div className="w-10 h-10 rounded-full bg-gray-600 text-gray-300 flex items-center justify-center font-bold flex-shrink-0 transition-all">
+                <div className="w-10 h-10 rounded-full bg-white/[0.06] border border-white/[0.1] text-gray-400 flex items-center justify-center font-bold flex-shrink-0 transition-all">
                   3
                 </div>
                 <div className="flex-1 sm:flex-initial">
@@ -450,8 +449,8 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
             >
               <div className={`relative rounded-2xl p-6 h-full transition-all duration-500 ease-out overflow-hidden group flex flex-col ${
                 mounted && isServiceSelected(service.id)
-                  ? 'bg-gradient-to-br from-green-900/50 to-emerald-900/50 border-2 border-green-500 shadow-[8px_8px_0px_0px_rgba(34,197,94,1)] group-hover:shadow-[16px_16px_0px_0px_rgba(34,197,94,1)]'
-                  : 'bg-[#1a1a1a] border-2 border-white/20 shadow-[8px_8px_0px_0px_rgba(251,191,36,0.5)] group-hover:shadow-[16px_16px_0px_0px_rgba(251,191,36,0.7)]'
+                  ? 'bg-green-500/[0.05] border border-green-500/50 shadow-[0_0_16px_rgba(34,197,94,0.15)]'
+                  : 'bg-white/[0.03] border border-white/[0.08] hover:border-amber-500/30 hover:shadow-glow-sm'
               }`}>
                 {/* Selected checkmark badge */}
                 {mounted && isServiceSelected(service.id) && (
@@ -503,7 +502,7 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
                 </div>
                 
                 {/* Benefit - Always at bottom */}
-                <div className="border-t-2 border-white/10 pt-4 mt-auto">
+                <div className="border-t border-white/[0.08] pt-4 mt-auto">
                   <p className="text-center font-semibold text-base text-white mb-3">
                     ✨ {service.benefit}
                   </p>
@@ -661,6 +660,9 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
           </div>
         </motion.div>
       )}
+
+      {/* Bottom divider */}
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500/20 to-transparent" />
     </section>
   )
 }

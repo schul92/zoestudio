@@ -260,8 +260,17 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
         submissionData={submissionSummary || undefined}
       />
       
-      <section id="contact" className="pt-20 pb-20 md:pt-24 md:pb-20 bg-[#0a0a0a] border-t border-white/10 relative z-10">
-      <div className="container mx-auto px-6">
+      <section id="contact" className="grain-overlay pt-20 pb-20 md:pt-24 md:pb-20 bg-[#0a0a0a] relative z-10 overflow-hidden">
+      {/* Top gradient divider (replaces border-t) */}
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500/20 to-transparent" />
+
+      {/* Subtle radial gradients */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_40%_at_50%_20%,rgba(245,158,11,0.03),transparent_70%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_80%,rgba(168,85,247,0.02),transparent_50%)]" />
+      </div>
+
+      <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-5xl mx-auto">
           {/* Header - Improved mobile visibility */}
           <div className="text-center mb-8 md:mb-12">
@@ -278,7 +287,7 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                 animate={{ opacity: 1, y: 0 }}
                 className="max-w-2xl mx-auto text-center"
               >
-                <div className="bg-[#1a1a1a] rounded-3xl p-12 border-2 border-white/10 shadow-xl">
+                <div className="bg-white/[0.03] rounded-3xl p-12 border border-white/[0.08]">
                   <motion.div
                     animate={{ scale: [1, 1.1, 1] }}
                     transition={{ duration: 2, repeat: Infinity }}
@@ -309,15 +318,15 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                         trackButtonClick('Select Services', 'contact-section')
                         scrollToServices()
                       }}
-                      className="bg-amber-400 text-black px-8 py-4 rounded-xl font-bold text-lg border-2 border-amber-400 hover:bg-amber-300 transition-all duration-300"
+                      className="bg-gradient-to-b from-amber-400 to-amber-500 text-black px-8 py-4 rounded-xl font-bold text-lg shadow-glow hover:shadow-glow-lg hover:brightness-110 transition-all duration-300"
                     >
                       {locale === 'ko' ? '서비스 선택하러 가기 ↑' : 'Select Services ↑'}
                     </motion.button>
 
                     <div className="flex items-center gap-4">
-                      <div className="flex-1 h-px bg-white/20"></div>
+                      <div className="flex-1 h-px bg-white/[0.08]"></div>
                       <span className="text-gray-500 text-sm">{locale === 'ko' ? '또는' : 'or'}</span>
-                      <div className="flex-1 h-px bg-white/20"></div>
+                      <div className="flex-1 h-px bg-white/[0.08]"></div>
                     </div>
 
                     <motion.a
@@ -325,7 +334,7 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                       onClick={() => trackButtonClick('View Pricing Plans', 'contact-section')}
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      className="bg-transparent text-white px-8 py-4 rounded-xl font-bold text-lg border-2 border-white/30 hover:border-amber-400 hover:text-amber-400 transition-all duration-300 text-center"
+                      className="bg-white/[0.03] text-white/90 px-8 py-4 rounded-xl font-bold text-lg border border-white/[0.12] hover:border-white/25 hover:bg-white/[0.06] hover:text-white transition-all duration-300 text-center backdrop-blur-sm"
                     >
                       {locale === 'ko' ? '가격 플랜 보기' : 'View Pricing Plans'}
                     </motion.a>
@@ -339,17 +348,17 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                 <motion.div
                   initial={{ opacity: 0, x: -50 }}
                   animate={{ opacity: 1, x: 0 }}
-                  className="bg-[#1a1a1a] p-8 rounded-2xl border-2 border-white/20 shadow-[8px_8px_0px_0px_rgba(251,191,36,0.3)]"
+                  className="bg-white/[0.03] p-8 rounded-2xl border border-white/[0.08]"
                 >
                   {/* Selected Services Display */}
                   <motion.div
                     initial={cameFromPricing ? { scale: 0.95, opacity: 0 } : {}}
                     animate={cameFromPricing ? { scale: 1, opacity: 1 } : {}}
                     transition={{ duration: 0.5 }}
-                    className={`mb-6 p-4 rounded-lg border-2 ${
+                    className={`mb-6 p-4 rounded-lg ${
                       cameFromPricing
-                        ? 'bg-green-900/20 border-green-500/50'
-                        : 'bg-white/5 border-white/20'
+                        ? 'bg-green-500/[0.05] border border-green-500/30'
+                        : 'bg-white/[0.03] border border-white/[0.08]'
                     }`}
                   >
                     <div className="flex items-center justify-between mb-2">
@@ -427,7 +436,7 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                           value={formData.name}
                           onChange={handleChange}
                           placeholder={locale === 'ko' ? '홍길동' : 'John Doe'}
-                          className="w-full px-4 py-3 border-2 border-white/20 rounded-lg focus:border-amber-400 focus:outline-none transition-colors bg-white/5 text-white placeholder-gray-500"
+                          className="w-full px-4 py-3 border border-white/[0.1] rounded-xl focus:border-amber-500/40 focus:outline-none transition-colors bg-white/[0.04] text-white placeholder-gray-500"
                         />
                       </div>
 
@@ -442,7 +451,7 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                           value={formData.phone}
                           onChange={handleChange}
                           placeholder={locale === 'ko' ? '010-1234-5678' : '(555) 123-4567'}
-                          className="w-full px-4 py-3 border-2 border-white/20 rounded-lg focus:border-amber-400 focus:outline-none transition-colors bg-white/5 text-white placeholder-gray-500"
+                          className="w-full px-4 py-3 border border-white/[0.1] rounded-xl focus:border-amber-500/40 focus:outline-none transition-colors bg-white/[0.04] text-white placeholder-gray-500"
                         />
                       </div>
                     </div>
@@ -463,12 +472,12 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                             setEmailTouched(true)
                             setEmailError(validateEmail(formData.email))
                           }}
-                          className={`w-full px-4 py-3 pr-10 border-2 rounded-lg focus:outline-none transition-all text-white placeholder-gray-500 ${
+                          className={`w-full px-4 py-3 pr-10 border rounded-xl focus:outline-none transition-all text-white placeholder-gray-500 ${
                             emailError && emailTouched
-                              ? 'border-red-500 focus:border-red-600 bg-red-900/20'
+                              ? 'border-red-500/50 focus:border-red-500/70 bg-red-500/[0.05]'
                               : formData.email && !emailError && emailTouched
-                              ? 'border-green-500 focus:border-green-600 bg-green-900/20'
-                              : 'border-white/20 focus:border-amber-400 bg-white/5'
+                              ? 'border-green-500/50 focus:border-green-500/70 bg-green-500/[0.05]'
+                              : 'border-white/[0.1] focus:border-amber-500/40 bg-white/[0.04]'
                           }`}
                           placeholder={locale === 'ko' ? 'example@email.com' : 'example@email.com'}
                         />
@@ -519,7 +528,7 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                         value={formData.business}
                         onChange={handleChange}
                         placeholder={locale === 'ko' ? '귀사명' : 'Your Company'}
-                        className="w-full px-4 py-3 border-2 border-white/20 rounded-lg focus:border-amber-400 focus:outline-none transition-colors bg-white/5 text-white placeholder-gray-500"
+                        className="w-full px-4 py-3 border border-white/[0.1] rounded-xl focus:border-amber-500/40 focus:outline-none transition-colors bg-white/[0.04] text-white placeholder-gray-500"
                       />
                     </div>
 
@@ -537,7 +546,7 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                           ? '귀하의 비즈니스에 대해 더 알려주세요...'
                           : 'Tell us more about your business needs...'
                         }
-                        className="w-full px-4 py-3 border-2 border-white/20 rounded-lg focus:border-amber-400 focus:outline-none transition-colors resize-none bg-white/5 text-white placeholder-gray-500"
+                        className="w-full px-4 py-3 border border-white/[0.1] rounded-xl focus:border-amber-500/40 focus:outline-none transition-colors resize-none bg-white/[0.04] text-white placeholder-gray-500"
                       />
                     </div>
                     
@@ -546,7 +555,7 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                       disabled={isSubmitting}
                       whileHover={{ scale: 1.02 }}
                       whileTap={{ scale: 0.98 }}
-                      className="w-full bg-amber-400 text-black py-4 rounded-lg font-bold text-lg relative overflow-hidden group disabled:opacity-50 disabled:cursor-not-allowed hover:bg-amber-300 transition-all shadow-lg hover:shadow-xl"
+                      className="w-full bg-gradient-to-b from-amber-400 to-amber-500 text-black py-4 rounded-xl font-bold text-lg relative overflow-hidden group disabled:opacity-50 disabled:cursor-not-allowed hover:brightness-110 transition-all shadow-glow hover:shadow-glow-lg"
                     >
                       <span className="relative z-10">
                         {isSubmitting
@@ -565,7 +574,7 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                   className="space-y-6"
                 >
                   {/* What Happens Next */}
-                  <div className="bg-white/5 p-6 sm:p-8 rounded-2xl border-2 border-white/10">
+                  <div className="bg-white/[0.03] p-6 sm:p-8 rounded-2xl border border-white/[0.08]">
                     <h4 className="text-xl sm:text-2xl font-bold mb-6 text-white">
                       {locale === 'ko' ? '다음 단계' : 'What Happens Next?'}
                     </h4>
@@ -622,7 +631,7 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                   </div>
 
                   {/* Contact Info */}
-                  <div className="bg-[#1a1a1a] p-6 sm:p-8 rounded-2xl border-2 border-white/10">
+                  <div className="bg-white/[0.03] p-6 sm:p-8 rounded-2xl border border-white/[0.08]">
                     <h4 className="text-lg sm:text-xl font-bold mb-4 text-white">
                       {locale === 'ko' ? '연락처' : 'Get in Touch'}
                     </h4>

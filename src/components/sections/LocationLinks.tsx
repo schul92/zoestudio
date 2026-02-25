@@ -27,8 +27,14 @@ export default function LocationLinks({ locale = 'en' }: { locale?: string }) {
   ]
   
   return (
-    <section className="py-16 bg-[#111111]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="grain-overlay py-16 bg-[#111111] relative overflow-hidden">
+      {/* Subtle radial gradients */}
+      <div className="pointer-events-none absolute inset-0">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_40%_at_50%_50%,rgba(245,158,11,0.02),transparent_70%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(96,165,250,0.02),transparent_50%)]" />
+      </div>
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
             {locale === 'ko' ? '서비스 지역' : 'Service Areas'}
@@ -45,7 +51,7 @@ export default function LocationLinks({ locale = 'en' }: { locale?: string }) {
             <Link
               key={location.href}
               href={location.href}
-              className="group relative bg-[#1a1a1a] rounded-xl p-8 transition-all duration-300 transform hover:-translate-y-1 border-2 border-white/10 hover:border-amber-400/50"
+              className="group relative bg-white/[0.03] rounded-xl p-8 transition-all duration-300 transform hover:-translate-y-1 border border-white/[0.08] hover:border-amber-500/30 hover:shadow-glow-sm"
             >
               <div className="flex items-start justify-between">
                 <div className="flex-1">
@@ -62,7 +68,7 @@ export default function LocationLinks({ locale = 'en' }: { locale?: string }) {
                     {location.keywords.map((keyword) => (
                       <span
                         key={keyword}
-                        className="px-3 py-1 bg-white/5 text-gray-400 rounded-full text-sm group-hover:bg-amber-400/20 group-hover:text-amber-400 transition-colors"
+                        className="px-3 py-1 bg-white/[0.04] text-gray-500 rounded-full text-sm border border-white/[0.06] group-hover:border-amber-500/20 group-hover:text-amber-400/80 transition-colors"
                       >
                         {keyword}
                       </span>
@@ -73,7 +79,7 @@ export default function LocationLinks({ locale = 'en' }: { locale?: string }) {
               </div>
 
               {/* SEO-friendly additional text */}
-              <div className="mt-4 pt-4 border-t border-white/10">
+              <div className="mt-4 pt-4 border-t border-white/[0.06]">
                 <p className="text-xs text-gray-500">
                   {locale === 'ko'
                     ? '✓ 로컬 SEO 최적화 ✓ 구글 1위 보장 ✓ 한국어/영어 지원'
@@ -93,6 +99,9 @@ export default function LocationLinks({ locale = 'en' }: { locale?: string }) {
           </p>
         </div>
       </div>
+
+      {/* Bottom divider */}
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500/20 to-transparent" />
     </section>
   )
 }
