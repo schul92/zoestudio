@@ -317,7 +317,7 @@ export default function Modal({ isOpen, onClose, type, title, message, locale = 
                     <motion.a
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
-                      href="mailto:zoestudiollc@gmail.com"
+                      href="mailto:info@zoelumos.com"
                       className="px-6 py-3 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 transition-colors"
                     >
                       {locale === 'ko' ? '이메일 보내기' : 'Send Email'}

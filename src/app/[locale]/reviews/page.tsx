@@ -195,7 +195,7 @@ function generateReviewSchema(locale: 'en' | 'ko') {
     "image": "https://zoelumos.com/favicon.svg",
     "url": "https://zoelumos.com",
     "telephone": "+1-201-555-0123",
-    "email": "zoestudiollc@gmail.com",
+    "email": "info@zoelumos.com",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Fort Lee",

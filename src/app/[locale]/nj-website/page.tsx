@@ -105,7 +105,7 @@ export default function NJWebsitePage({ params }: { params: { locale: string } }
       : 'Premier website design agency in New Jersey',
     url: `${baseUrl}/${locale === 'ko' ? 'ko/' : ''}nj-website`,
     telephone: '+1-201-555-0123',
-    email: 'nj@zoelumos.com',
+    email: 'info@zoelumos.com',
     address: {
       '@type': 'PostalAddress',
       streetAddress: '2200 Center Ave',

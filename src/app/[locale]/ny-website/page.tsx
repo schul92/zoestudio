@@ -105,7 +105,7 @@ export default function NYWebsitePage({ params }: { params: { locale: string } }
       : 'Premier website design agency in New York',
     url: `${baseUrl}/${locale === 'ko' ? 'ko/' : ''}ny-website`,
     telephone: '+1-201-555-0123',
-    email: 'nyc@zoelumos.com',
+    email: 'info@zoelumos.com',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'New York',

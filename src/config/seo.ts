@@ -34,7 +34,7 @@ export const structuredData = {
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "+1-201-555-0123",
-      "email": "zoestudiollc@gmail.com",
+      "email": "info@zoelumos.com",
       "contactType": "customer service",
       "availableLanguage": ["English", "Korean"],
       "areaServed": ["US"],
@@ -58,7 +58,7 @@ export const structuredData = {
     "alternateName": ["ZOE STUDIO LLC", "조이루모스", "뉴저지 웹사이트 전문", "뉴욕 웹사이트 전문"],
     "description": "뉴저지 웹사이트 제작, 뉴욕 웹사이트 제작 전문 업체. NJ 홈페이지 제작, NY 홈페이지 제작. 포트리, 팰팍, 플러싱 한인 비즈니스 웹사이트.",
     "image": "https://zoelumos.com/favicon.svg",
-    "email": "zoestudiollc@gmail.com",
+    "email": "info@zoelumos.com",
     "url": "https://zoelumos.com",
     "telephone": "+1-201-555-0123",
     "address": {

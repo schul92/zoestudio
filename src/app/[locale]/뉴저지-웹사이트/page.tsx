@@ -112,7 +112,7 @@ export default function NJWebsiteKoreanPage({ params }: { params: { locale: stri
       : 'Premier website design agency in New Jersey for Korean-American businesses.',
     url: isKorean ? `${baseUrl}/ko/뉴저지-웹사이트` : `${baseUrl}/nj-website`,
     telephone: '+1-201-555-0123',
-    email: 'hello@zoelumos.com',
+    email: 'info@zoelumos.com',
     address: {
       '@type': 'PostalAddress',
       streetAddress: '2200 Center Ave',
@@ -242,8 +242,8 @@ export default function NJWebsiteKoreanPage({ params }: { params: { locale: stri
         acceptedAnswer: {
           '@type': 'Answer',
           text: isKorean
-            ? '네, ZOE LUMOS는 뉴저지 포트리에 사무실을 운영하고 있어 직접 방문 상담이 가능합니다. 상담 방법: 1) 포트리 사무실 방문 (무료, 평일 9AM-6PM), 2) 뉴저지 전 지역 출장 미팅 (포트리, 팰팍, 에디슨, 체리힐 등 - 무료), 3) 화상 미팅 (Zoom/Google Meet), 4) 카카오톡 상담. 첫 상담은 무료이며, 프로젝트 견적서와 제작 일정표를 제공합니다. 상담 예약: hello@zoelumos.com 또는 카카오톡으로 문의해 주세요.'
-            : 'Yes, ZOE LUMOS has an office in Fort Lee, NJ for in-person consultations. Consultation options: 1) Fort Lee office visit (free, weekdays 9AM-6PM), 2) On-site meetings throughout NJ (Fort Lee, Palisades Park, Edison, Cherry Hill - free), 3) Video meeting (Zoom/Google Meet), 4) KakaoTalk chat. First consultation is free, including project quote and timeline. Book at hello@zoelumos.com or via KakaoTalk.',
+            ? '네, ZOE LUMOS는 뉴저지 포트리에 사무실을 운영하고 있어 직접 방문 상담이 가능합니다. 상담 방법: 1) 포트리 사무실 방문 (무료, 평일 9AM-6PM), 2) 뉴저지 전 지역 출장 미팅 (포트리, 팰팍, 에디슨, 체리힐 등 - 무료), 3) 화상 미팅 (Zoom/Google Meet), 4) 카카오톡 상담. 첫 상담은 무료이며, 프로젝트 견적서와 제작 일정표를 제공합니다. 상담 예약: info@zoelumos.com 또는 카카오톡으로 문의해 주세요.'
+            : 'Yes, ZOE LUMOS has an office in Fort Lee, NJ for in-person consultations. Consultation options: 1) Fort Lee office visit (free, weekdays 9AM-6PM), 2) On-site meetings throughout NJ (Fort Lee, Palisades Park, Edison, Cherry Hill - free), 3) Video meeting (Zoom/Google Meet), 4) KakaoTalk chat. First consultation is free, including project quote and timeline. Book at info@zoelumos.com or via KakaoTalk.',
         },
       },
     ],
@@ -614,7 +614,7 @@ export default function NJWebsiteKoreanPage({ params }: { params: { locale: stri
                 {isKorean ? '전화 상담' : 'Call Us'}
               </a>
               <a
-                href="mailto:hello@zoelumos.com"
+                href="mailto:info@zoelumos.com"
                 className="flex items-center gap-2 px-6 py-3 bg-emerald-500 text-white rounded-xl font-bold hover:bg-emerald-400 transition-colors"
               >
                 <Mail className="w-5 h-5" />

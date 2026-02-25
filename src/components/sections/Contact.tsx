@@ -153,7 +153,7 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
             }
             return s.title
           }).join(' | '),
-          to: 'zoestudiollc@gmail.com'
+          to: 'info@zoelumos.com'
         }),
       })
 
@@ -628,12 +628,12 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                     </h4>
                     <div className="space-y-3">
                       <a
-                        href="mailto:zoestudiollc@gmail.com"
-                        onClick={() => trackEmailClick('zoestudiollc@gmail.com')}
+                        href="mailto:info@zoelumos.com"
+                        onClick={() => trackEmailClick('info@zoelumos.com')}
                         className="flex items-center gap-3 text-gray-300 hover:text-amber-400 transition-colors"
                       >
                         <span className="text-xl">✉️</span>
-                        <span className="text-sm font-medium">zoestudiollc@gmail.com</span>
+                        <span className="text-sm font-medium">info@zoelumos.com</span>
                       </a>
                       <div className="flex items-center gap-3 text-gray-300">
                         <span className="text-xl">📍</span>

@@ -97,7 +97,7 @@ export default function NYWebsiteKoreanPage({ params }: { params: { locale: stri
     url: isKorean ? `${baseUrl}/ko/뉴욕-웹사이트` : `${baseUrl}/ny-website`,
     inLanguage: isKorean ? 'ko' : 'en',
     telephone: '+1-201-555-0123',
-    email: 'hello@zoelumos.com',
+    email: 'info@zoelumos.com',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'New York',
@@ -544,7 +544,7 @@ export default function NYWebsiteKoreanPage({ params }: { params: { locale: stri
                 {isKorean ? '전화 상담' : 'Call Us'}
               </a>
               <a
-                href="mailto:hello@zoelumos.com"
+                href="mailto:info@zoelumos.com"
                 className="flex items-center gap-2 px-6 py-3 bg-blue-500 text-white rounded-xl font-bold hover:bg-blue-400 transition-colors"
               >
                 <Mail className="w-5 h-5" />
