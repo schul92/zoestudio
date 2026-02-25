@@ -1,17 +1,16 @@
 'use client'
 
-import dynamic from 'next/dynamic'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { useTranslation } from '@/hooks/useTranslation'
 
-const AntigravityParticles = dynamic(
-  () => import('@/components/AntigravityParticles'),
-  { ssr: false }
-)
-const HeroBulb = dynamic(() => import('@/components/HeroBulb'), { ssr: false })
-
 export default function AnimatedHero({ locale = 'en' }: { locale?: string }) {
   const { t } = useTranslation(locale)
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   return (
     <section className="grain-overlay relative min-h-screen overflow-hidden bg-[#0a0a0a]">
@@ -22,8 +21,8 @@ export default function AnimatedHero({ locale = 'en' }: { locale?: string }) {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(96,165,250,0.02),transparent_50%)]" />
       </div>
 
-      {/* Anti-gravity particle canvas */}
-      <AntigravityParticles />
+      {/* Anti-gravity particle canvas — client only */}
+      {mounted && <ClientParticles />}
 
       {/* Centered hero content */}
       <div className="relative z-10 mx-auto flex min-h-screen max-w-5xl flex-col items-center justify-center px-6 text-center">
@@ -33,9 +32,9 @@ export default function AnimatedHero({ locale = 'en' }: { locale?: string }) {
           Zoe Studio
         </p>
 
-        {/* Lightbulb — floating above title */}
+        {/* Lightbulb — client only */}
         <div className="relative mb-6 h-[180px] w-[140px] md:mb-8 md:h-[240px] md:w-[180px]">
-          <HeroBulb />
+          {mounted && <ClientBulb />}
         </div>
 
         {/* Title */}
@@ -74,4 +73,21 @@ export default function AnimatedHero({ locale = 'en' }: { locale?: string }) {
       <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500/20 to-transparent" />
     </section>
   )
+}
+
+/* Lazy-loaded client-only wrappers to avoid hydration mismatch */
+function ClientParticles() {
+  const [Comp, setComp] = useState<React.ComponentType | null>(null)
+  useEffect(() => {
+    import('@/components/AntigravityParticles').then(m => setComp(() => m.default))
+  }, [])
+  return Comp ? <Comp /> : null
+}
+
+function ClientBulb() {
+  const [Comp, setComp] = useState<React.ComponentType | null>(null)
+  useEffect(() => {
+    import('@/components/HeroBulb').then(m => setComp(() => m.default))
+  }, [])
+  return Comp ? <Comp /> : null
 }
