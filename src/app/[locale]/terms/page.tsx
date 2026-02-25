@@ -177,7 +177,7 @@ Upon termination, client shall pay for all services rendered.`
         content: `For questions about these Terms, please contact us:
 
 **ZOE STUDIO LLC**
-Email: zoestudiollc@gmail.com
+Email: info@zoelumos.com
 Website: https://zoelumos.com`
       }
     ]
@@ -303,7 +303,7 @@ Website: https://zoelumos.com`
         content: `본 약관에 대한 문의사항이 있으시면 연락해 주세요:
 
 **ZOE STUDIO LLC**
-이메일: zoestudiollc@gmail.com
+이메일: info@zoelumos.com
 웹사이트: https://zoelumos.com`
       }
     ]

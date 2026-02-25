@@ -115,7 +115,7 @@ const content = {
 - The right to request deletion of your data
 - The right to opt-out of marketing communications
 
-To exercise these rights, please contact us at zoestudiollc@gmail.com.`
+To exercise these rights, please contact us at info@zoelumos.com.`
       },
       {
         title: '7. Children\'s Privacy',
@@ -130,7 +130,7 @@ To exercise these rights, please contact us at zoestudiollc@gmail.com.`
         content: `If you have questions about this Privacy Policy, please contact us:
 
 **ZOE STUDIO LLC**
-Email: zoestudiollc@gmail.com
+Email: info@zoelumos.com
 Website: https://zoelumos.com`
       }
     ]
@@ -194,7 +194,7 @@ Website: https://zoelumos.com`
 - 정보 삭제 요청 권리
 - 마케팅 수신 거부 권리
 
-이러한 권리를 행사하려면 zoestudiollc@gmail.com으로 연락해 주세요.`
+이러한 권리를 행사하려면 info@zoelumos.com으로 연락해 주세요.`
       },
       {
         title: '7. 아동 개인정보',
@@ -209,7 +209,7 @@ Website: https://zoelumos.com`
         content: `개인정보 처리방침에 대한 문의사항이 있으시면 연락해 주세요:
 
 **ZOE STUDIO LLC**
-이메일: zoestudiollc@gmail.com
+이메일: info@zoelumos.com
 웹사이트: https://zoelumos.com`
       }
     ]

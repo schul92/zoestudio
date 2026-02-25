@@ -89,7 +89,7 @@ export default function Footer({ locale = 'en' }: { locale?: string }) {
               <div className="absolute -bottom-2 left-0 w-8 h-0.5 bg-gray-600 group-hover:w-16 group-hover:bg-amber-400 transition-all duration-300"></div>
             </div>
             <div className="space-y-3">
-              <FooterEmailLink email="zoestudiollc@gmail.com" />
+              <FooterEmailLink email="info@zoelumos.com" />
 
               {/* Instagram with hover dropdown - Client Component */}
               <InstagramHover position="top" showLabel={true} locale={locale} />

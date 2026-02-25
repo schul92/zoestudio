@@ -56,7 +56,7 @@
 ### 3. Environment Variables (Production)
 Add these to your hosting provider's environment variables:
 ```
-EMAIL_USER=zoestudiollc@gmail.com
+EMAIL_USER=info@zoelumos.com
 EMAIL_PASS=dlhedddapdsojxxc
 NEXT_PUBLIC_GA_MEASUREMENT_ID=G-YOUR-ID-HERE
 ```
@@ -148,7 +148,7 @@ Tested and working on:
 ## 📞 Support Contacts
 - Domain Registrar: [Your registrar]
 - Hosting Provider: [Your host]
-- Email Service: Gmail (zoestudiollc@gmail.com)
+- Email Service: Gmail (info@zoelumos.com)
 
 ## Notes
 - The website uses Next.js 14.2.5 with App Router

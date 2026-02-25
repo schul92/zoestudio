@@ -32,7 +32,7 @@ Follow the prompts to:
 
 #### EMAIL_USER
 - Key: `EMAIL_USER`
-- Value: `zoestudiollc@gmail.com`
+- Value: `info@zoelumos.com`
 - Environments: ✅ Production, ✅ Preview, ✅ Development
 - Click **Save**
 
@@ -53,7 +53,7 @@ Follow the prompts to:
 ```bash
 # Add EMAIL_USER
 vercel env add EMAIL_USER
-? What's the value of EMAIL_USER? zoestudiollc@gmail.com
+? What's the value of EMAIL_USER? info@zoelumos.com
 ? Add EMAIL_USER to which Environments? Production, Preview, Development
 
 # Add EMAIL_PASS (mark as sensitive)
@@ -154,7 +154,7 @@ vercel --prod --force
 
 | Variable | Value | Type | Environment |
 |----------|-------|------|-------------|
-| EMAIL_USER | zoestudiollc@gmail.com | Server-side | All |
+| EMAIL_USER | info@zoelumos.com | Server-side | All |
 | EMAIL_PASS | dlhedddapdsojxxc | Server-side (Sensitive) | All |
 | NEXT_PUBLIC_GA_MEASUREMENT_ID | G-DDZ3SJ8XM2 | Client-side | All |
 

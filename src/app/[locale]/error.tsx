@@ -74,8 +74,8 @@ export default function Error({
         <div className="mt-8 p-4 bg-[#1a1a1a] rounded-lg border border-gray-700">
           <p className="text-sm text-gray-400">
             {isKorean
-              ? '계속해서 문제가 발생하면 zoestudiollc@gmail.com으로 문의해주세요.'
-              : 'If the problem persists, please contact us at zoestudiollc@gmail.com'
+              ? '계속해서 문제가 발생하면 info@zoelumos.com으로 문의해주세요.'
+              : 'If the problem persists, please contact us at info@zoelumos.com'
             }
           </p>
         </div>

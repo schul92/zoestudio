@@ -16,7 +16,7 @@ export async function POST(request: Request) {
 
     // Email configuration
     const emailData = {
-      to: to || 'zoestudiollc@gmail.com',
+      to: to || 'info@zoelumos.com',
       subject: `New Contact Form Submission from ${name}`,
       html: `
         <h2>New Contact Form Submission</h2>
@@ -115,11 +115,11 @@ This email was sent from the ZOE LUMOS website contact form.
             <p style="color: #666; font-size: 14px;">
               Best regards,<br>
               ZOE LUMOS Team<br>
-              ✉️ zoestudiollc@gmail.com
+              ✉️ info@zoelumos.com
             </p>
           </div>
         `,
-        text: `Thank you for reaching out!\n\nHi ${name},\n\nWe've received your message and will get back to you within 24 hours.\n\nYour Message:\n${message}\n\nBest regards,\nZOE LUMOS Team\nzoestudiollc@gmail.com`
+        text: `Thank you for reaching out!\n\nHi ${name},\n\nWe've received your message and will get back to you within 24 hours.\n\nYour Message:\n${message}\n\nBest regards,\nZOE LUMOS Team\ninfo@zoelumos.com`
       })
       console.log('Confirmation email sent to:', email)
     } catch (confirmError) {
