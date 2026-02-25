@@ -23,6 +23,15 @@ export default function LocationLinks({ locale = 'en' }: { locale?: string }) {
         : 'Fort Lee, Palisades Park, Edgewater specialists',
       icon: '🌉',
       keywords: locale === 'ko' ? ['뉴저지', 'NJ', '포트리'] : ['New Jersey', 'NJ', 'Fort Lee']
+    },
+    {
+      name: locale === 'ko' ? '버겐카운티 SEO' : 'Bergen County SEO',
+      href: `${prefix}/bergen-county-seo`,
+      description: locale === 'ko'
+        ? '포트리, 팰팍, 잉글우드, 노스버겐 로컬 SEO 전문'
+        : 'Local SEO for Fort Lee, Englewood, North Bergen businesses',
+      icon: '📍',
+      keywords: locale === 'ko' ? ['버겐카운티', 'SEO', '잉글우드'] : ['Bergen County', 'SEO', 'Englewood']
     }
   ]
   
@@ -46,7 +55,7 @@ export default function LocationLinks({ locale = 'en' }: { locale?: string }) {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-3 gap-8">
           {locations.map((location) => (
             <Link
               key={location.href}

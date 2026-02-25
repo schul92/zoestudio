@@ -1,11 +1,11 @@
 export const seoConfig = {
   en: {
-    title: 'ZOE LUMOS - Professional SEO Services, Google Ads & Web Design | Digital Marketing Agency',
-    description: 'Boost your online presence with expert SEO services, Google Ads management, and custom website design. ZOE LUMOS helps businesses rank higher, get more traffic, and increase conversions. Free SEO audit. Proven results.',
+    title: 'ZOE LUMOS - Website Design & SEO Agency | Bergen County NJ & NYC | Free Audit',
+    description: 'ZOE LUMOS: Bergen County & NYC web design + SEO agency. Custom websites from $1,000. Local SEO for Fort Lee, Palisades Park, Englewood. Korean & English bilingual. Free SEO audit → call today.',
     keywords: 'Shopify development, e-commerce website design, online store setup, Shopify store, ecommerce SEO, SEO services, search engine optimization, Google Ads management, PPC advertising, website design and development, local SEO expert, digital marketing agency, SEO consultant, Google Ads specialist, web design services, online marketing solutions, SEO audit, keyword research, on-page SEO, off-page SEO, technical SEO, content marketing, conversion optimization, small business SEO, ecommerce SEO, mobile SEO, Yelp advertising, social media marketing, Shopify expert, online selling, payment processing, shopping cart setup',
     openGraph: {
-      title: 'ZOE LUMOS - Grow Your Business Online',
-      description: 'Professional SEO, Google Ads & Website Design for Small Businesses. Get Found on Google. Free Consultation.',
+      title: 'ZOE LUMOS - Website Design & SEO | Bergen County NJ & NYC',
+      description: 'Custom websites & local SEO for small businesses. Korean-English bilingual. Fort Lee, Palisades Park, Englewood, NYC. Free consultation.',
       siteName: 'ZOE LUMOS',
       locale: 'en_US',
     }
@@ -111,6 +111,21 @@ export const structuredData = {
       {
         "@type": "AdministrativeArea",
         "name": "Bergen County",
+        "containedInPlace": { "@type": "State", "name": "New Jersey" }
+      },
+      {
+        "@type": "City",
+        "name": "North Bergen",
+        "containedInPlace": { "@type": "State", "name": "New Jersey" }
+      },
+      {
+        "@type": "City",
+        "name": "Cliffside Park",
+        "containedInPlace": { "@type": "State", "name": "New Jersey" }
+      },
+      {
+        "@type": "City",
+        "name": "Leonia",
         "containedInPlace": { "@type": "State", "name": "New Jersey" }
       }
     ],
