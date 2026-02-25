@@ -1,17 +1,33 @@
+'use client'
+
+import { Suspense } from 'react'
+import dynamic from 'next/dynamic'
 import Link from 'next/link'
 import { useTranslation } from '@/hooks/useTranslation'
+
+const LightBulb3D = dynamic(() => import('@/components/3d/LightBulb3D'), {
+  ssr: false,
+})
+
+function BulbFallback() {
+  return (
+    <div className="flex h-full w-full items-center justify-center">
+      <div className="h-48 w-48 rounded-full bg-[radial-gradient(circle,rgba(251,191,36,0.3),transparent_70%)] blur-2xl" />
+    </div>
+  )
+}
 
 export default function AnimatedHero({ locale = 'en' }: { locale?: string }) {
   const { t } = useTranslation(locale)
 
   return (
-    <section className="relative min-h-[90vh] overflow-hidden bg-[#1a1a1a]">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(251,191,36,0.18),transparent_38%),radial-gradient(circle_at_80%_28%,rgba(255,255,255,0.09),transparent_42%),radial-gradient(circle_at_62%_78%,rgba(251,191,36,0.08),transparent_35%)]" />
-      <div className="absolute -left-24 top-20 h-72 w-72 rounded-full border border-amber-300/20 blur-sm" />
-      <div className="absolute -right-20 bottom-16 h-80 w-80 rounded-full border border-white/10" />
+    <section className="relative min-h-[90vh] overflow-hidden bg-gradient-to-b from-[#0a0a0a] to-[#111111]">
+      {/* Subtle radial glow from right side (bulb illumination) */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_40%,rgba(251,191,36,0.1),transparent_50%)]" />
 
-      <div className="relative z-10 mx-auto flex min-h-[90vh] max-w-7xl items-center px-6 py-20 md:px-10">
-        <div className="max-w-3xl">
+      <div className="relative z-10 mx-auto flex min-h-[90vh] max-w-7xl flex-col-reverse items-center px-6 py-12 md:flex-row md:px-10 md:py-20">
+        {/* Text - left 60% on desktop */}
+        <div className="w-full md:w-[60%]">
           <p className="mb-4 inline-flex items-center rounded-full border border-amber-300/30 bg-amber-300/10 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-amber-300">
             Zoe Studio
           </p>
@@ -42,6 +58,13 @@ export default function AnimatedHero({ locale = 'en' }: { locale?: string }) {
               {t.hero.cta.view}
             </Link>
           </div>
+        </div>
+
+        {/* 3D Bulb - right 40% on desktop, top on mobile */}
+        <div className="mb-8 h-[280px] w-full md:mb-0 md:h-[520px] md:w-[40%]">
+          <Suspense fallback={<BulbFallback />}>
+            <LightBulb3D />
+          </Suspense>
         </div>
       </div>
     </section>
