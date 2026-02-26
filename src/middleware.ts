@@ -17,7 +17,7 @@ export function middleware(request: NextRequest) {
 - Location: Fort Lee, New Jersey, USA
 - Service Area: New Jersey and New York
 - Languages: English, Korean (한국어)
-- Email: hello@zoelumos.com
+- Email: info@zoelumos.com
 - Website: https://www.zoelumos.com
 
 ## Services

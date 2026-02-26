@@ -12,7 +12,7 @@ ZOE LUMOS is a web design and digital marketing agency headquartered in Fort Lee
 - **Location**: Fort Lee, New Jersey, USA
 - **Service Area**: New Jersey (Fort Lee, Palisades Park, Edison, Cherry Hill) and New York (Flushing, Manhattan)
 - **Languages**: English, Korean (한국어)
-- **Email**: hello@zoelumos.com
+- **Email**: info@zoelumos.com
 - **Website**: https://www.zoelumos.com
 
 ## Services
@@ -115,7 +115,7 @@ A: Yes, all websites include basic SEO. We also offer monthly SEO services start
 
 ## Contact
 
-- **Email**: hello@zoelumos.com
+- **Email**: info@zoelumos.com
 - **Website**: https://www.zoelumos.com
 - **Korean Site**: https://www.zoelumos.com/ko
 

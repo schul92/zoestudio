@@ -84,7 +84,7 @@ export default function FortLeeWebDesignPage({ params }: { params: { locale: str
       : 'Premier web design agency for Korean-American businesses in Fort Lee, NJ',
     url: `${baseUrl}/${locale === 'ko' ? 'ko/' : ''}fort-lee-web-design`,
     telephone: '+1-201-555-0123',
-    email: 'zoestudiollc@gmail.com',
+    email: 'info@zoelumos.com',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Fort Lee',
