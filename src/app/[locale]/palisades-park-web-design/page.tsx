@@ -77,7 +77,7 @@ export default function PalisadesParkWebDesignPage({ params }: { params: { local
   
   const localBusinessSchema = {
     '@context': 'https://schema.org',
-    '@type': 'WebDesignAgency',
+    '@type': 'ProfessionalService',
     name: locale === 'ko' ? 'ZOE LUMOS - 팰팍 웹디자인' : 'ZOE LUMOS - Palisades Park Web Design',
     description: locale === 'ko' 
       ? '팰리세이즈파크 한인 비즈니스를 위한 웹사이트 제작 전문 에이전시'
