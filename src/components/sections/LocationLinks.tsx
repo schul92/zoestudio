@@ -23,6 +23,24 @@ export default function LocationLinks({ locale = 'en' }: { locale?: string }) {
         : 'Fort Lee, Palisades Park, Edgewater specialists',
       icon: '🌉',
       keywords: locale === 'ko' ? ['뉴저지', 'NJ', '포트리'] : ['New Jersey', 'NJ', 'Fort Lee']
+    },
+    {
+      name: locale === 'ko' ? '포트리 웹디자인' : 'Fort Lee Web Design',
+      href: `${prefix}/fort-lee-web-design`,
+      description: locale === 'ko'
+        ? '포트리 한인 비즈니스 전문 웹사이트 & SEO'
+        : 'Korean business web design & SEO specialists',
+      icon: '🏙️',
+      keywords: locale === 'ko' ? ['포트리', 'Fort Lee', '버겐카운티'] : ['Fort Lee', 'Bergen County', 'Korean']
+    },
+    {
+      name: locale === 'ko' ? '팰팍 웹디자인' : 'Palisades Park Web Design',
+      href: `${prefix}/palisades-park-web-design`,
+      description: locale === 'ko'
+        ? '팰팍 Broad Ave 한인 비즈니스 전문'
+        : 'Broad Ave Korean business specialists',
+      icon: '🇰🇷',
+      keywords: locale === 'ko' ? ['팰팍', '팰리세이즈파크', 'Broad Ave'] : ['Palisades Park', 'Koreatown', 'Broad Ave']
     }
   ]
   
