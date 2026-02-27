@@ -23,7 +23,7 @@ export async function generateMetadata({
   if (locale === 'ko') {
     return {
       title: '팰팍 웹사이트 제작 | 팰리세이즈파크 한인 웹디자인 전문 | ZOE LUMOS',
-      description: '팰리세이즈파크(Palisades Park) 웹사이트 제작 전문. 팰팍 한인 비즈니스 웹디자인, 홈페이지 제작, 구글 SEO, 한인 마케팅. Broad Ave 상권 전문. 100% 한국어 상담.',
+      description: '팰팍 한인 비즈니스 웹사이트 제작 전문. Broad Ave 상권 맞춤 웹디자인, 구글 SEO, 로컬 마케팅. 100% 한국어 상담.',
       keywords: '팰팍 웹사이트, 팰리세이즈파크 웹사이트, Palisades Park 웹사이트, 팰팍 홈페이지 제작, 팰팍 한인 비즈니스, 팰팍 웹디자인, 팰팍 SEO, 팰팍 구글 광고, 팰팍 마케팅, 버겐카운티 한인 웹사이트',
       openGraph: {
         title: '팰팍 웹사이트 제작 전문 - ZOE LUMOS',
@@ -48,7 +48,7 @@ export async function generateMetadata({
   
   return {
     title: 'Palisades Park Web Design | Korean Business Website Experts NJ | ZOE LUMOS',
-    description: 'Palisades Park, NJ web design agency specializing in Korean-American businesses. Broad Ave business district experts. Website development, local SEO, Google Ads. Bilingual Korean & English. Free consultation.',
+    description: 'Palisades Park NJ web design for Korean-American businesses. Broad Ave specialists for websites, local SEO, and Google Ads. Bilingual Korean/English.',
     keywords: 'Palisades Park web design, Palisades Park NJ website, Palisades Park web developer, Korean business Palisades Park, Palisades Park SEO, Broad Ave businesses, Korean American web design NJ, Bergen County web design',
     openGraph: {
       title: 'Palisades Park Web Design - Korean Business Experts | ZOE LUMOS',
@@ -83,7 +83,6 @@ export default function PalisadesParkWebDesignPage({ params }: { params: { local
       ? '팰리세이즈파크 한인 비즈니스를 위한 웹사이트 제작 전문 에이전시'
       : 'Web design agency specializing in Korean-American businesses in Palisades Park, NJ',
     url: `${baseUrl}/${locale === 'ko' ? 'ko/' : ''}palisades-park-web-design`,
-    telephone: '+1-201-555-0123',
     email: 'info@zoelumos.com',
     address: {
       '@type': 'PostalAddress',
@@ -107,11 +106,6 @@ export default function PalisadesParkWebDesignPage({ params }: { params: { local
     ],
     priceRange: '$$',
     openingHours: 'Mo-Fr 09:00-18:00',
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '5',
-      reviewCount: '89',
-    },
     knowsLanguage: ['English', 'Korean'],
   }
 
@@ -410,8 +404,8 @@ export default function PalisadesParkWebDesignPage({ params }: { params: { local
               <Link href="#contact" className="inline-block px-10 py-4 bg-white text-green-600 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors">
                 {locale === 'ko' ? '무료 상담 예약 →' : 'Book Free Consultation →'}
               </Link>
-              <Link href={`/${locale === 'ko' ? 'ko/' : ''}fort-lee-web-design`} className="inline-block px-10 py-4 border-2 border-white text-white rounded-lg font-bold text-lg hover:bg-green-700 transition-colors">
-                {locale === 'ko' ? '포트리 서비스 보기' : 'See Fort Lee Services'}
+              <Link href="#contact" className="inline-block px-10 py-4 border-2 border-white text-white rounded-lg font-bold text-lg hover:bg-green-700 transition-colors">
+                {locale === 'ko' ? '상담 바로 예약' : 'Book Consultation'}
               </Link>
             </div>
           </div>

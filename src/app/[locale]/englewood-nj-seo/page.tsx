@@ -46,7 +46,7 @@ export async function generateMetadata({
 
   return {
     title: 'Englewood NJ SEO Agency | Small Business SEO from $499/mo | ZOE LUMOS',
-    description: '#1 rated SEO agency in Englewood, NJ. Small business SEO starting $499/mo. Local SEO, Google Business Profile optimization, Google Ads management for Bergen County. Bilingual Korean & English. Free SEO audit.',
+    description: 'Englewood NJ SEO for small businesses. From $499/mo with local SEO, Google Business Profile optimization, and Google Ads. Bilingual KR/EN. Free audit.',
     keywords: 'Englewood NJ SEO, SEO agency Englewood NJ, small business SEO agency Englewood NJ, SEO experts Englewood NJ, local SEO Englewood, Bergen County SEO, digital marketing Englewood NJ',
     alternates: {
       canonical: `${baseUrl}/englewood-nj-seo`,
