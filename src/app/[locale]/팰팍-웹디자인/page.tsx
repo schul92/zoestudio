@@ -1,4 +1,9 @@
-// Korean URL alias for Palisades Park Web Design
-// Redirects to the canonical English-slug page for SEO consolidation
-export { default } from '../palisades-park-web-design/page'
-export { generateMetadata, generateStaticParams } from '../palisades-park-web-design/page'
+import { redirect } from 'next/navigation'
+
+export default function KoreanAliasPalisadesParkPage({
+  params,
+}: {
+  params: { locale: string }
+}) {
+  redirect(`/${params.locale}/palisades-park-web-design`)
+}

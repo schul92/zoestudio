@@ -33,7 +33,7 @@ export const structuredData = {
     "logo": "https://zoelumos.com/favicon.svg",
     "contactPoint": {
       "@type": "ContactPoint",
-      "telephone": "+1-201-555-0123",
+      "telephone": process.env.NEXT_PUBLIC_BUSINESS_PHONE || undefined,
       "email": "info@zoelumos.com",
       "contactType": "customer service",
       "availableLanguage": ["English", "Korean"],
@@ -60,7 +60,7 @@ export const structuredData = {
     "image": "https://zoelumos.com/favicon.svg",
     "email": "info@zoelumos.com",
     "url": "https://zoelumos.com",
-    "telephone": "+1-201-555-0123",
+    "telephone": process.env.NEXT_PUBLIC_BUSINESS_PHONE || undefined,
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "US",

@@ -77,13 +77,13 @@ export default function PalisadesParkWebDesignPage({ params }: { params: { local
   
   const localBusinessSchema = {
     '@context': 'https://schema.org',
-    '@type': 'WebDesignAgency',
+    '@type': 'ProfessionalService',
     name: locale === 'ko' ? 'ZOE LUMOS - 팰팍 웹디자인' : 'ZOE LUMOS - Palisades Park Web Design',
     description: locale === 'ko' 
       ? '팰리세이즈파크(팰팍) 한인 비즈니스를 위한 웹사이트 제작 전문 에이전시'
       : 'Web design agency for Korean-American businesses in Palisades Park, NJ',
     url: `${baseUrl}/${locale === 'ko' ? 'ko/' : ''}palisades-park-web-design`,
-    telephone: '+1-201-555-0123',
+    // telephone intentionally omitted until verified public business number is available,
     email: 'info@zoelumos.com',
     address: {
       '@type': 'PostalAddress',
@@ -215,11 +215,11 @@ export default function PalisadesParkWebDesignPage({ params }: { params: { local
             <div className="flex flex-wrap justify-center gap-8 text-gray-600">
               <div className="flex items-center gap-2">
                 <Star className="w-5 h-5 text-yellow-500 fill-yellow-500" />
-                <span>{locale === 'ko' ? '5.0 평점 (89개 리뷰)' : '5.0 Rating (89 Reviews)'}</span>
+                <span>{locale === 'ko' ? '고객 만족도 높은 서비스' : 'Top-rated client satisfaction'}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Users className="w-5 h-5 text-green-500" />
-                <span>{locale === 'ko' ? '팰팍 · 포트리 한인 비즈니스 50+' : '50+ Palisades Park & Fort Lee Businesses'}</span>
+                <span>{locale === 'ko' ? '팰팍 · 포트리 한인 비즈니스 전문' : 'Specialists in Palisades Park & Fort Lee businesses'}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Zap className="w-5 h-5 text-blue-500" />
