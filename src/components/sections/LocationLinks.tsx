@@ -23,6 +23,24 @@ export default function LocationLinks({ locale = 'en' }: { locale?: string }) {
         : 'Fort Lee, Palisades Park, Edgewater specialists',
       icon: '🌉',
       keywords: locale === 'ko' ? ['뉴저지', 'NJ', '포트리'] : ['New Jersey', 'NJ', 'Fort Lee']
+    },
+    {
+      name: locale === 'ko' ? '포트리 웹디자인' : 'Fort Lee Web Design',
+      href: locale === 'ko' ? '/ko/포트리-웹디자인' : '/fort-lee-web-design',
+      description: locale === 'ko'
+        ? '포트리 현지 에이전시, 버겐카운티 전문'
+        : 'Local Fort Lee agency, Bergen County experts',
+      icon: '🏙️',
+      keywords: locale === 'ko' ? ['포트리', 'Fort Lee', '버겐카운티'] : ['Fort Lee', 'Bergen County', 'NJ']
+    },
+    {
+      name: locale === 'ko' ? '팰팍 웹디자인' : 'Palisades Park Web Design',
+      href: locale === 'ko' ? '/ko/팰팍-웹디자인' : '/palisades-park-web-design',
+      description: locale === 'ko'
+        ? 'Broad Ave 상권 전문, 팰팍 한인 비즈니스'
+        : 'Broad Ave specialists, Korean business experts',
+      icon: '🏘️',
+      keywords: locale === 'ko' ? ['팰팍', 'Broad Ave', '팰리세이즈파크'] : ['Palisades Park', 'Broad Ave', 'Korean']
     }
   ]
   
@@ -46,7 +64,7 @@ export default function LocationLinks({ locale = 'en' }: { locale?: string }) {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-6">
           {locations.map((location) => (
             <Link
               key={location.href}

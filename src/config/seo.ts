@@ -1,8 +1,8 @@
 export const seoConfig = {
   en: {
-    title: 'ZOE LUMOS - Fort Lee NJ Web Design & SEO | Korean Business Digital Marketing Agency',
-    description: 'Fort Lee, NJ web design & SEO agency for Korean-American businesses. Serving Bergen County, Englewood, North Bergen & NYC metro. Website development, Google Ads, local SEO. Bilingual English & Korean. Free consultation.',
-    keywords: 'Fort Lee web design, Fort Lee NJ web designer, Bergen County web design, Korean business marketing NYC, NJ Korean SEO, Korean American digital marketing, Fort Lee website development, Palisades Park web design, small business SEO New Jersey, Korean web agency NJ, SEO services, Google Ads management, Shopify development, e-commerce website design, local SEO expert, website design and development, digital marketing agency, SEO consultant, web design services, small business SEO, ecommerce SEO, Englewood NJ SEO, North Bergen web design, small business SEO agency NJ, low cost SEO New Jersey, NJ web designer, web design Bergen County',
+    title: 'ZOE LUMOS - Fort Lee NJ Web Design & SEO | Korean Business Marketing Agency',
+    description: 'Fort Lee, NJ web design & SEO agency specializing in Korean-American businesses. From $1,000. Bergen County, Palisades Park, Englewood, North Bergen & NYC metro. Bilingual websites, Google Ads, local SEO. ★ 5.0 rated. Free consultation.',
+    keywords: 'Fort Lee web design, Fort Lee NJ web designer, Bergen County web design, Korean business marketing NYC, NJ Korean SEO, Korean American digital marketing, Fort Lee website development, Palisades Park web design, small business SEO New Jersey, Korean web agency NJ, SEO services, Google Ads management, Shopify development, e-commerce website design, local SEO expert, website design and development, digital marketing agency, SEO consultant, web design services, small business SEO, ecommerce SEO, Englewood NJ SEO, North Bergen web design, small business SEO agency NJ, low cost SEO New Jersey, NJ web designer, web design Bergen County, Palisades Park website, 팰팍 web design, Broad Ave web design',
     openGraph: {
       title: 'ZOE LUMOS - Fort Lee NJ Web Design & SEO for Korean Businesses',
       description: 'Fort Lee NJ web design & SEO agency. Korean-American business specialists in Bergen County, Englewood, North Bergen & NYC metro. Free consultation.',
