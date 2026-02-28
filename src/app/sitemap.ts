@@ -19,6 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/blog',
     '/englewood-nj-seo',
     '/north-bergen-web-design',
+    '/palisades-park-web-design',
   ]
 
   // Korean SEO pages (Korean URLs - high priority for Korean keywords)
