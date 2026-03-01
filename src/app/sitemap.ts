@@ -19,6 +19,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/blog',
     '/englewood-nj-seo',
     '/north-bergen-web-design',
+    '/palisades-park-web-design',
+    '/nj-seo-services',
   ]
 
   // Korean SEO pages (Korean URLs - high priority for Korean keywords)
@@ -28,6 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/웹사이트-제작', enPath: '/website-design', priority: 0.9 },
     { path: '/쇼핑몰-제작', enPath: '/ecommerce', priority: 0.9 },
     { path: '/포트리-웹디자인', enPath: '/fort-lee-web-design', priority: 0.95 },
+    { path: '/팰팍-웹사이트', enPath: '/palisades-park-web-design', priority: 0.95 },
   ]
 
   const sitemapEntries: MetadataRoute.Sitemap = []
