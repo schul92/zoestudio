@@ -23,6 +23,33 @@ export default function LocationLinks({ locale = 'en' }: { locale?: string }) {
         : 'Fort Lee, Palisades Park, Edgewater specialists',
       icon: '🌉',
       keywords: locale === 'ko' ? ['뉴저지', 'NJ', '포트리'] : ['New Jersey', 'NJ', 'Fort Lee']
+    },
+    {
+      name: locale === 'ko' ? '포트리 웹디자인' : 'Fort Lee Web Design',
+      href: `${prefix}/fort-lee-web-design`,
+      description: locale === 'ko'
+        ? '포트리 한인 비즈니스 전문 웹디자인 & SEO'
+        : 'Korean business web design & SEO specialists in Fort Lee',
+      icon: '🏙️',
+      keywords: locale === 'ko' ? ['포트리', 'Fort Lee', '버겐카운티'] : ['Fort Lee', 'Bergen County', 'NJ']
+    },
+    {
+      name: locale === 'ko' ? '팰팍 웹사이트 제작' : 'Palisades Park Web Design',
+      href: `${prefix}/palisades-park-web-design`,
+      description: locale === 'ko'
+        ? '팰리세이즈파크 브로드애비뉴 한인 비즈니스 전문'
+        : 'Broad Avenue Korean business website specialists',
+      icon: '🏘️',
+      keywords: locale === 'ko' ? ['팰팍', 'Palisades Park', '브로드애비뉴'] : ['Palisades Park', 'Broad Ave', 'NJ']
+    },
+    {
+      name: locale === 'ko' ? 'NJ SEO 서비스' : 'NJ SEO Services',
+      href: `${prefix}/nj-seo-services`,
+      description: locale === 'ko'
+        ? '뉴저지 소규모 비즈니스 검색엔진 최적화 전문'
+        : 'Affordable SEO for NJ small businesses',
+      icon: '🔍',
+      keywords: locale === 'ko' ? ['SEO', '검색최적화', '구글'] : ['SEO', 'Google', 'Rankings']
     }
   ]
   
@@ -46,7 +73,7 @@ export default function LocationLinks({ locale = 'en' }: { locale?: string }) {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {locations.map((location) => (
             <Link
               key={location.href}
