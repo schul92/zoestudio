@@ -45,9 +45,9 @@ export async function generateMetadata({
   }
 
   return {
-    title: 'Englewood NJ SEO Agency | Small Business SEO Services | ZOE LUMOS',
-    description: 'Expert SEO agency in Englewood, NJ. Local SEO, Google Business Profile optimization, and digital marketing for small businesses in Bergen County. Bilingual English & Korean services.',
-    keywords: 'Englewood NJ SEO, SEO agency Englewood NJ, small business SEO agency Englewood NJ, SEO experts Englewood NJ, local SEO Englewood, Bergen County SEO, digital marketing Englewood NJ',
+    title: 'Englewood NJ Small Business SEO Agency | ZOE LUMOS',
+    description: 'Small business SEO agency in Englewood, NJ. Local SEO for Bergen County with Google Business Profile optimization, keyword strategy, and bilingual Korean/English support. Free SEO audit.',
+    keywords: 'small business SEO agency Englewood NJ, SEO experts Englewood NJ, Englewood NJ SEO, SEO agency Englewood NJ, local SEO Englewood, Bergen County SEO, digital marketing Englewood NJ, SEO experts North Bergen NJ, low cost SEO New Jersey, SEO consultant Bergen County',
     alternates: {
       canonical: `${baseUrl}/englewood-nj-seo`,
       languages: {
