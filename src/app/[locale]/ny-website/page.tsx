@@ -57,8 +57,8 @@ export async function generateMetadata({
   }
   
   return {
-    title: 'New York Website Design & Development | NYC Web Agency | ZOE LUMOS',
-    description: '#1 Website development in New York. Professional web design for Manhattan, Brooklyn, Queens businesses. Local NYC SEO, Google optimization, Shopify e-commerce experts.',
+    title: 'New York Website Design & Development | NYC Korean Business Web Agency | ZOE LUMOS',
+    description: 'NYC website design from $1,000. Professional web development for Manhattan, Brooklyn, Queens & Flushing businesses. Bilingual Korean-English sites, local NYC SEO, Shopify e-commerce. ★ Free consultation.',
     keywords: 'New York website, NYC web design, Manhattan website, Brooklyn website, Queens website, Flushing website, New York Shopify, NYC e-commerce, New York SEO, NYC Google Ads',
     openGraph: {
       title: 'New York Website Design & Development - ZOE LUMOS',
