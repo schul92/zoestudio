@@ -23,6 +23,24 @@ export default function LocationLinks({ locale = 'en' }: { locale?: string }) {
         : 'Fort Lee, Palisades Park, Edgewater specialists',
       icon: '🌉',
       keywords: locale === 'ko' ? ['뉴저지', 'NJ', '포트리'] : ['New Jersey', 'NJ', 'Fort Lee']
+    },
+    {
+      name: locale === 'ko' ? '잉글우드 SEO 서비스' : 'Englewood NJ SEO',
+      href: `${prefix}/englewood-nj-seo`,
+      description: locale === 'ko'
+        ? '소상공인 대상 로컬 SEO 및 구글 마이비즈니스 최적화'
+        : 'Local SEO and Google Business Profile optimization for small businesses',
+      icon: '🔎',
+      keywords: locale === 'ko' ? ['잉글우드', 'SEO', '버겐카운티'] : ['Englewood', 'SEO', 'Bergen County']
+    },
+    {
+      name: locale === 'ko' ? '노스버겐 웹디자인' : 'North Bergen Web Design',
+      href: `${prefix}/north-bergen-web-design`,
+      description: locale === 'ko'
+        ? '노스버겐/허드슨카운티 비즈니스 대상 웹디자인 + SEO'
+        : 'Web design + SEO for North Bergen and Hudson County businesses',
+      icon: '📍',
+      keywords: locale === 'ko' ? ['노스버겐', '웹디자인', '허드슨'] : ['North Bergen', 'Web Design', 'Hudson County']
     }
   ]
   
@@ -46,7 +64,7 @@ export default function LocationLinks({ locale = 'en' }: { locale?: string }) {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
           {locations.map((location) => (
             <Link
               key={location.href}
@@ -94,9 +112,31 @@ export default function LocationLinks({ locale = 'en' }: { locale?: string }) {
         <div className="mt-12 text-center">
           <p className="text-sm text-gray-500 max-w-3xl mx-auto">
             {locale === 'ko'
-              ? 'ZOE LUMOS는 뉴욕 웹사이트 제작과 뉴저지 웹사이트 제작 분야의 선두 업체입니다. 구글 검색 최적화를 통해 귀하의 비즈니스가 "뉴욕 웹사이트" 또는 "뉴저지 웹사이트" 검색 시 상위에 노출되도록 보장합니다.'
-              : 'ZOE LUMOS is the leading web design agency for New York website development and New Jersey website creation. We ensure your business ranks #1 for local searches through expert SEO optimization.'}
+              ? 'ZOE LUMOS는 뉴욕 웹사이트 제작과 뉴저지 웹사이트 제작 분야의 선두 업체입니다. 구글 검색 최적화를 통해 귀하의 비즈니스가 "뉴욕 웹사이트" 또는 "뉴저지 웹사이트" 검색 시 상위에 노출되도록 지원합니다.'
+              : 'ZOE LUMOS is a specialized web design agency for New York and New Jersey businesses. We help improve local visibility through practical, bilingual SEO strategies.'}
           </p>
+        </div>
+
+        {/* Question-based local intent content block */}
+        <div className="mt-10 max-w-4xl mx-auto rounded-xl border border-white/10 bg-white/[0.02] p-6">
+          <h3 className="text-lg font-semibold text-white mb-3">
+            {locale === 'ko' ? '자주 검색되는 지역 SEO 질문' : 'Popular Local SEO Questions'}
+          </h3>
+          <ul className="space-y-2 text-sm text-gray-400">
+            {locale === 'ko' ? (
+              <>
+                <li>• 포트리 한인 비즈니스 웹사이트 제작 비용은 얼마나 드나요?</li>
+                <li>• 팰리세이즈파크 소상공인을 위한 로컬 SEO는 어떻게 시작하나요?</li>
+                <li>• 버겐카운티에서 구글맵 상위 노출을 하려면 무엇이 필요한가요?</li>
+              </>
+            ) : (
+              <>
+                <li>• How much does small business web design cost in Fort Lee, NJ?</li>
+                <li>• What is the best local SEO strategy for Palisades Park businesses?</li>
+                <li>• How can Bergen County businesses rank higher on Google Maps?</li>
+              </>
+            )}
+          </ul>
         </div>
       </div>
 
