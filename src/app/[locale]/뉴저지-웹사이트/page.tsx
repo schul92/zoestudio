@@ -404,7 +404,7 @@ export default function NJWebsiteKoreanPage({ params }: { params: { locale: stri
         </section>
 
         {/* NJ Service Areas */}
-        <section className="py-16 px-4 bg-white">
+        <section className="py-16 px-4 bg-white text-gray-900">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
               {isKorean ? '뉴저지 서비스 지역' : 'NJ Service Areas'}
@@ -429,7 +429,7 @@ export default function NJWebsiteKoreanPage({ params }: { params: { locale: stri
         </section>
 
         {/* Services */}
-        <section className="py-16 px-4 bg-gray-50">
+        <section className="py-16 px-4 bg-gray-50 text-gray-900">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
               {isKorean ? '뉴저지 웹사이트 제작 서비스' : 'NJ Website Design Services'}
@@ -454,7 +454,7 @@ export default function NJWebsiteKoreanPage({ params }: { params: { locale: stri
         </section>
 
         {/* Why Choose Us */}
-        <section className="py-16 px-4 bg-white">
+        <section className="py-16 px-4 bg-white text-gray-900">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
               {isKorean ? '왜 조이루모스를 선택해야 할까요?' : 'Why Choose ZOE LUMOS?'}
@@ -510,7 +510,7 @@ export default function NJWebsiteKoreanPage({ params }: { params: { locale: stri
         </section>
 
         {/* Industries We Serve */}
-        <section className="py-16 px-4 bg-gray-50">
+        <section className="py-16 px-4 bg-gray-50 text-gray-900">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
               {isKorean ? '뉴저지 업종별 웹사이트' : 'NJ Industry-Specific Websites'}
@@ -575,7 +575,7 @@ export default function NJWebsiteKoreanPage({ params }: { params: { locale: stri
         </section>
 
         {/* FAQ Section */}
-        <section className="py-16 px-4 bg-white">
+        <section className="py-16 px-4 bg-white text-gray-900">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
               {isKorean ? '자주 묻는 질문' : 'Frequently Asked Questions'}

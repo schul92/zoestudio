@@ -75,7 +75,7 @@ export default function CAWebsitePage({ params }: { params: { locale: string } }
           </div>
         </section>
 
-        <section className="py-20 px-4 bg-white">
+        <section className="py-20 px-4 bg-white text-gray-900">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">{ko ? '왜 캘리포니아 비즈니스들이 저희를 선택할까요?' : 'Why CA Businesses Choose Us'}</h2>
             <div className="grid md:grid-cols-3 gap-8">

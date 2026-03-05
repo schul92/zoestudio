@@ -271,7 +271,7 @@ export default function NYWebsitePage({ params }: { params: { locale: string } }
         </section>
 
         {/* Why Choose Us */}
-        <section className="py-20 px-4 bg-white">
+        <section className="py-20 px-4 bg-white text-gray-900">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
               {locale === 'ko' 
@@ -330,7 +330,7 @@ export default function NYWebsitePage({ params }: { params: { locale: string } }
         </section>
 
         {/* NYC Specific Services */}
-        <section className="py-20 px-4 bg-gray-50">
+        <section className="py-20 px-4 bg-gray-50 text-gray-900">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
               {locale === 'ko' 

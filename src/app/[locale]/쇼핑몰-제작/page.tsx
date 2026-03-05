@@ -172,7 +172,7 @@ export default function EcommercePage({ params }: { params: { locale: string } }
         </section>
 
         {/* Features */}
-        <section className="py-16 px-4 bg-white">
+        <section className="py-16 px-4 bg-white text-gray-900">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-4">{isKorean ? '쇼핑몰 기능' : 'E-commerce Features'}</h2>
             <p className="text-center text-gray-600 mb-12">{isKorean ? '온라인 판매에 필요한 모든 기능' : 'Everything you need to sell online'}</p>
@@ -189,7 +189,7 @@ export default function EcommercePage({ params }: { params: { locale: string } }
         </section>
 
         {/* Packages */}
-        <section id="packages" className="py-16 px-4 bg-gray-50">
+        <section id="packages" className="py-16 px-4 bg-gray-50 text-gray-900">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-4">{isKorean ? '쇼핑몰 제작 패키지' : 'E-commerce Packages'}</h2>
             <p className="text-center text-gray-600 mb-12">{isKorean ? '비즈니스 규모에 맞는 패키지' : 'Packages for every business size'}</p>
@@ -223,7 +223,7 @@ export default function EcommercePage({ params }: { params: { locale: string } }
         </section>
 
         {/* Platforms */}
-        <section className="py-16 px-4 bg-white">
+        <section className="py-16 px-4 bg-white text-gray-900">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12">{isKorean ? '지원 플랫폼' : 'Supported Platforms'}</h2>
             <div className="grid md:grid-cols-3 gap-8">
@@ -242,7 +242,7 @@ export default function EcommercePage({ params }: { params: { locale: string } }
         </section>
 
         {/* FAQ */}
-        <section className="py-16 px-4 bg-gray-50">
+        <section className="py-16 px-4 bg-gray-50 text-gray-900">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12">{isKorean ? '자주 묻는 질문' : 'FAQ'}</h2>
             <div className="space-y-6">
@@ -257,7 +257,7 @@ export default function EcommercePage({ params }: { params: { locale: string } }
         </section>
 
         {/* Related Links */}
-        <section className="py-12 px-4 bg-white">
+        <section className="py-12 px-4 bg-white text-gray-900">
           <div className="max-w-4xl mx-auto text-center">
             <h3 className="text-lg font-bold mb-4">{isKorean ? '관련 서비스' : 'Related Services'}</h3>
             <div className="flex flex-wrap justify-center gap-4">

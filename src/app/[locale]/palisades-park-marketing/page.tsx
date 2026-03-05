@@ -247,7 +247,7 @@ export default function PalisadesParkMarketingPage({ params }: { params: { local
         </section>
 
         {/* Why Palisades Park */}
-        <section className="py-16 px-4 bg-white">
+        <section className="py-16 px-4 bg-white text-gray-900">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
               {locale === 'ko' ? '왜 팰팍 한인 비즈니스에 전문 마케팅이 필요한가?' : 'Why Palisades Park Korean Businesses Need Expert Marketing'}
@@ -292,7 +292,7 @@ export default function PalisadesParkMarketingPage({ params }: { params: { local
         </section>
 
         {/* Services */}
-        <section className="py-20 px-4 bg-gray-50">
+        <section className="py-20 px-4 bg-gray-50 text-gray-900">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
               {locale === 'ko' ? '팰팍 한인 비즈니스 맞춤 서비스' : 'Services for Palisades Park Businesses'}
@@ -342,7 +342,7 @@ export default function PalisadesParkMarketingPage({ params }: { params: { local
         </section>
 
         {/* Serving Areas */}
-        <section className="py-16 px-4 bg-white">
+        <section className="py-16 px-4 bg-white text-gray-900">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-8">
               {locale === 'ko' ? '팰팍 & 주변 지역 서비스' : 'Serving Palisades Park & Nearby Areas'}
@@ -368,7 +368,7 @@ export default function PalisadesParkMarketingPage({ params }: { params: { local
         </section>
 
         {/* Business Types */}
-        <section className="py-20 px-4 bg-gray-50">
+        <section className="py-20 px-4 bg-gray-50 text-gray-900">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12">
               {locale === 'ko' ? '팰팍 업종별 전문 마케팅' : 'Industry-Specific Marketing for Palisades Park'}

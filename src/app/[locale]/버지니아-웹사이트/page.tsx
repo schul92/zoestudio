@@ -292,7 +292,7 @@ export default function VAWebsiteKoreanPage({ params }: { params: { locale: stri
         </section>
 
         {/* VA Service Areas */}
-        <section className="py-16 px-4 bg-white">
+        <section className="py-16 px-4 bg-white text-gray-900">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">{isKorean ? '버지니아 서비스 지역' : 'Virginia Service Areas'}</h2>
             <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
@@ -311,7 +311,7 @@ export default function VAWebsiteKoreanPage({ params }: { params: { locale: stri
         </section>
 
         {/* Services */}
-        <section className="py-16 px-4 bg-gray-50">
+        <section className="py-16 px-4 bg-gray-50 text-gray-900">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">{isKorean ? '버지니아 웹사이트 제작 서비스' : 'VA Website Design Services'}</h2>
             <p className="text-center text-gray-600 mb-12">{isKorean ? '버지니아 한인 비즈니스에 최적화된 웹서비스' : 'Web services optimized for VA Korean businesses'}</p>
@@ -329,7 +329,7 @@ export default function VAWebsiteKoreanPage({ params }: { params: { locale: stri
         </section>
 
         {/* Why Choose Us */}
-        <section className="py-16 px-4 bg-white">
+        <section className="py-16 px-4 bg-white text-gray-900">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">{isKorean ? '왜 조이루모스를 선택해야 할까요?' : 'Why Choose ZOE LUMOS?'}</h2>
             <div className="grid md:grid-cols-3 gap-8">
@@ -353,7 +353,7 @@ export default function VAWebsiteKoreanPage({ params }: { params: { locale: stri
         </section>
 
         {/* Industries We Serve */}
-        <section className="py-16 px-4 bg-gray-50">
+        <section className="py-16 px-4 bg-gray-50 text-gray-900">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">{isKorean ? '버지니아 업종별 웹사이트' : 'VA Industry-Specific Websites'}</h2>
             <p className="text-center text-gray-600 mb-12">{isKorean ? '버지니아 한인 비즈니스 업종별 맞춤 웹사이트' : 'Custom websites for VA Korean business industries'}</p>
@@ -380,7 +380,7 @@ export default function VAWebsiteKoreanPage({ params }: { params: { locale: stri
         </section>
 
         {/* FAQ Section */}
-        <section className="py-16 px-4 bg-white">
+        <section className="py-16 px-4 bg-white text-gray-900">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">{isKorean ? '자주 묻는 질문' : 'Frequently Asked Questions'}</h2>
             <div className="space-y-6">

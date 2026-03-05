@@ -168,7 +168,7 @@ export default function WebsiteDesignPage({ params }: { params: { locale: string
         </section>
 
         {/* Features */}
-        <section className="py-16 px-4 bg-white">
+        <section className="py-16 px-4 bg-white text-gray-900">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12">{isKorean ? '웹사이트 제작 특징' : 'Website Design Features'}</h2>
             <div className="grid md:grid-cols-4 gap-8">
@@ -189,7 +189,7 @@ export default function WebsiteDesignPage({ params }: { params: { locale: string
         </section>
 
         {/* Pricing Packages */}
-        <section className="py-16 px-4 bg-gray-50">
+        <section className="py-16 px-4 bg-gray-50 text-gray-900">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-4">{isKorean ? '웹사이트 제작 패키지' : 'Website Design Packages'}</h2>
             <p className="text-center text-gray-600 mb-12">{isKorean ? '비즈니스에 맞는 패키지를 선택하세요' : 'Choose the package that fits your business'}</p>
@@ -223,7 +223,7 @@ export default function WebsiteDesignPage({ params }: { params: { locale: string
         </section>
 
         {/* Process */}
-        <section className="py-16 px-4 bg-white">
+        <section className="py-16 px-4 bg-white text-gray-900">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12">{isKorean ? '웹사이트 제작 과정' : 'Website Design Process'}</h2>
             <div className="grid md:grid-cols-4 gap-8">
@@ -244,7 +244,7 @@ export default function WebsiteDesignPage({ params }: { params: { locale: string
         </section>
 
         {/* FAQ */}
-        <section className="py-16 px-4 bg-gray-50">
+        <section className="py-16 px-4 bg-gray-50 text-gray-900">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl font-bold text-center mb-12">{isKorean ? '자주 묻는 질문' : 'FAQ'}</h2>
             <div className="space-y-6">
@@ -259,7 +259,7 @@ export default function WebsiteDesignPage({ params }: { params: { locale: string
         </section>
 
         {/* Related Links */}
-        <section className="py-12 px-4 bg-white">
+        <section className="py-12 px-4 bg-white text-gray-900">
           <div className="max-w-4xl mx-auto text-center">
             <h3 className="text-lg font-bold mb-4">{isKorean ? '관련 서비스' : 'Related Services'}</h3>
             <div className="flex flex-wrap justify-center gap-4">

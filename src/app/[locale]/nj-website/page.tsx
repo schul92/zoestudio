@@ -279,7 +279,7 @@ export default function NJWebsitePage({ params }: { params: { locale: string } }
         </section>
 
         {/* Why Choose Us */}
-        <section className="py-20 px-4 bg-white">
+        <section className="py-20 px-4 bg-white text-gray-900">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
               {locale === 'ko' 
@@ -338,7 +338,7 @@ export default function NJWebsitePage({ params }: { params: { locale: string } }
         </section>
 
         {/* NJ Specific Services */}
-        <section className="py-20 px-4 bg-gray-50">
+        <section className="py-20 px-4 bg-gray-50 text-gray-900">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
               {locale === 'ko' 
@@ -400,7 +400,7 @@ export default function NJWebsitePage({ params }: { params: { locale: string } }
         </section>
 
         {/* Testimonial */}
-        <section className="py-20 px-4 bg-white">
+        <section className="py-20 px-4 bg-white text-gray-900">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold mb-8">
               {locale === 'ko' 
