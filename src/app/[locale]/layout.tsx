@@ -55,7 +55,7 @@ export async function generateMetadata({
       type: 'website',
       images: [
         {
-          url: `/api/og?title=${encodeURIComponent(seo.openGraph.title)}&subtitle=${encodeURIComponent(seo.openGraph.description)}`,
+          url: `https://www.zoelumos.com/api/og?title=${encodeURIComponent(seo.openGraph.title)}&subtitle=${encodeURIComponent(seo.openGraph.description)}`,
           width: 1200,
           height: 630,
           alt: 'ZOE LUMOS - Digital Marketing Services',
@@ -66,7 +66,7 @@ export async function generateMetadata({
       card: 'summary_large_image',
       title: seo.openGraph.title,
       description: seo.openGraph.description,
-      images: ['/twitter-image.png'],
+      images: [`https://www.zoelumos.com/api/og?title=${encodeURIComponent(seo.openGraph.title)}&subtitle=${encodeURIComponent(seo.openGraph.description)}`],
       creator: '@zoestudio',
     },
     robots: {

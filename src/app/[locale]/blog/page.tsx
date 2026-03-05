@@ -62,117 +62,155 @@ export async function generateMetadata({
 const blogPosts = [
   {
     id: 1,
-    slug: 'local-seo-guide-small-business',
-    date: '2024-12-15',
+    slug: 'korean-business-website-guide-2026',
+    date: '2026-03-01',
+    readTime: 10,
+    category: {
+      en: 'Web Design',
+      ko: '웹 디자인'
+    },
+    title: {
+      en: '2026 Guide: Building a Website for Korean-American Businesses',
+      ko: '2026년 미국 한인 비즈니스 웹사이트 제작 완벽 가이드'
+    },
+    excerpt: {
+      en: 'Everything Korean-American business owners need to know about building a bilingual website in 2026. From NJ to CA, TX to GA.',
+      ko: 'NJ, NY, CA, TX, GA 등 미국 전역 한인 사업주를 위한 이중언어 웹사이트 제작 가이드. 비용, 기간, 필수 기능 총정리.'
+    },
+    image: '/blog/korean-business-website.jpg'
+  },
+  {
+    id: 2,
+    slug: 'local-seo-korean-business-2026',
+    date: '2026-02-20',
     readTime: 8,
     category: {
       en: 'SEO',
       ko: 'SEO'
     },
     title: {
-      en: 'The Complete Local SEO Guide for Small Businesses in 2024',
-      ko: '2024년 소규모 비즈니스를 위한 완벽한 로컬 SEO 가이드'
+      en: 'Local SEO for Korean Businesses: NJ, NY, CA, TX & Beyond',
+      ko: '한인 비즈니스 로컬 SEO 가이드: 뉴저지, 뉴욕, 캘리포니아, 텍사스'
     },
     excerpt: {
-      en: 'Learn how to dominate local search results and attract more customers in your area with proven SEO strategies.',
-      ko: '검증된 SEO 전략으로 로컬 검색 결과를 장악하고 지역 고객을 더 많이 유치하는 방법을 배워보세요.'
+      en: 'How Korean-American businesses can dominate local Google search in their city. Proven strategies for Fort Lee, Flushing, LA Koreatown, and more.',
+      ko: '포트리, 플러싱, LA 코리아타운, 애틀랜타 등 한인 밀집 지역에서 구글 상위 노출하는 방법. 실전 SEO 전략.'
     },
     image: '/blog/local-seo.jpg'
   },
   {
-    id: 2,
-    slug: 'google-ads-mistakes-avoid',
-    date: '2024-12-10',
+    id: 3,
+    slug: 'google-ads-korean-business',
+    date: '2026-02-10',
     readTime: 6,
     category: {
       en: 'Google Ads',
       ko: '구글 광고'
     },
     title: {
-      en: '7 Google Ads Mistakes That Are Wasting Your Money',
-      ko: '돈을 낭비하는 7가지 구글 광고 실수'
+      en: 'Google Ads for Korean Businesses: Stop Wasting Money',
+      ko: '한인 비즈니스 구글 광고: 돈 낭비 없는 광고 전략'
     },
     excerpt: {
-      en: 'Avoid these common Google Ads mistakes that drain your budget without delivering results.',
-      ko: '결과 없이 예산만 소진하는 흔한 구글 광고 실수들을 피하세요.'
+      en: 'Korean-American business owners: avoid these 7 Google Ads mistakes. Bilingual ad strategies that actually convert.',
+      ko: '한인 사업주가 흔히 하는 구글 광고 7가지 실수. 한영 이중언어 광고로 실제 고객 전환하는 전략.'
     },
     image: '/blog/google-ads.jpg'
   },
   {
-    id: 3,
-    slug: 'website-speed-seo-ranking',
-    date: '2024-12-05',
-    readTime: 5,
-    category: {
-      en: 'Web Design',
-      ko: '웹 디자인'
-    },
-    title: {
-      en: 'How Website Speed Affects Your SEO Rankings',
-      ko: '웹사이트 속도가 SEO 순위에 미치는 영향'
-    },
-    excerpt: {
-      en: 'Discover why page speed is crucial for SEO and learn practical tips to make your website faster.',
-      ko: '페이지 속도가 SEO에 왜 중요한지 알아보고 웹사이트를 더 빠르게 만드는 실용적인 팁을 배워보세요.'
-    },
-    image: '/blog/website-speed.jpg'
-  },
-  {
     id: 4,
-    slug: 'shopify-seo-ecommerce',
-    date: '2024-11-28',
+    slug: 'shopify-korean-ecommerce',
+    date: '2026-01-28',
     readTime: 10,
     category: {
       en: 'E-commerce',
       ko: '이커머스'
     },
     title: {
-      en: 'Shopify SEO: The Ultimate Guide to Ranking Your Online Store',
-      ko: '쇼피파이 SEO: 온라인 스토어 순위 올리기 완벽 가이드'
+      en: 'Shopify for Korean Businesses: Complete Setup Guide',
+      ko: '한인 비즈니스 Shopify 쇼핑몰 제작 완벽 가이드'
     },
     excerpt: {
-      en: 'Master Shopify SEO with this comprehensive guide covering product pages, collections, and technical optimization.',
-      ko: '제품 페이지, 컬렉션, 기술 최적화를 다루는 이 종합 가이드로 쇼피파이 SEO를 마스터하세요.'
+      en: 'Set up a Shopify store for your Korean-American business. Korean payment options, bilingual product pages, and SEO tips.',
+      ko: '미국 한인 사업주를 위한 Shopify 쇼핑몰 구축 가이드. 한국어 상품 페이지, 결제 시스템, SEO 최적화 총정리.'
     },
     image: '/blog/shopify-seo.jpg'
   },
   {
     id: 5,
-    slug: 'yelp-advertising-restaurants',
-    date: '2024-11-20',
+    slug: 'nj-ny-website-cost-2026',
+    date: '2026-01-15',
+    readTime: 7,
+    category: {
+      en: 'Pricing',
+      ko: '비용 안내'
+    },
+    title: {
+      en: 'How Much Does a Website Cost in 2026? (NJ/NY/CA/TX)',
+      ko: '2026년 웹사이트 제작 비용 총정리 (뉴저지/뉴욕/캘리포니아/텍사스)'
+    },
+    excerpt: {
+      en: 'Transparent pricing guide for website design in 2026. Compare costs across NJ, NY, California, Texas, and nationwide.',
+      ko: '2026년 미국 한인 웹사이트 제작 비용 비교. 뉴저지, 뉴욕, 캘리포니아, 텍사스 지역별 가격 안내.'
+    },
+    image: '/blog/website-cost.jpg'
+  },
+  {
+    id: 6,
+    slug: 'yelp-advertising-korean-restaurants',
+    date: '2026-01-05',
     readTime: 7,
     category: {
       en: 'Yelp Ads',
       ko: '옐프 광고'
     },
     title: {
-      en: 'Is Yelp Advertising Worth It for Restaurants?',
-      ko: '레스토랑에게 옐프 광고가 가치가 있을까?'
+      en: 'Yelp Advertising for Korean Restaurants: Worth It?',
+      ko: '한인 레스토랑 옐프 광고: 효과 있을까?'
     },
     excerpt: {
-      en: 'An honest analysis of Yelp advertising for restaurants, including costs, benefits, and alternatives.',
-      ko: '비용, 장점, 대안을 포함한 레스토랑을 위한 옐프 광고에 대한 솔직한 분석.'
+      en: 'Should your Korean restaurant invest in Yelp ads? Honest ROI analysis with real data from NJ, NY, and LA restaurants.',
+      ko: '한인 레스토랑 옐프 광고 효과 분석. NJ, NY, LA 한인 레스토랑 실제 데이터 기반 ROI 분석.'
     },
     image: '/blog/yelp-ads.jpg'
   },
   {
-    id: 6,
-    slug: 'korean-business-marketing-usa',
-    date: '2024-11-15',
+    id: 7,
+    slug: 'california-korean-website-design',
+    date: '2025-12-20',
+    readTime: 8,
+    category: {
+      en: 'Web Design',
+      ko: '웹 디자인'
+    },
+    title: {
+      en: 'Website Design for Korean Businesses in California',
+      ko: '캘리포니아 한인 비즈니스 웹사이트 제작 가이드'
+    },
+    excerpt: {
+      en: 'LA Koreatown, Orange County, San Francisco — web design tips for California Korean-American businesses.',
+      ko: 'LA 코리아타운, 오렌지카운티, 샌프란시스코 한인 비즈니스를 위한 웹사이트 제작 팁과 전략.'
+    },
+    image: '/blog/california-korean.jpg'
+  },
+  {
+    id: 8,
+    slug: 'texas-georgia-korean-business-online',
+    date: '2025-12-10',
     readTime: 8,
     category: {
       en: 'Marketing',
       ko: '마케팅'
     },
     title: {
-      en: 'Digital Marketing Strategies for Korean Businesses in the USA',
-      ko: '미국 내 한인 비즈니스를 위한 디지털 마케팅 전략'
+      en: 'Growing Your Korean Business Online in Texas & Georgia',
+      ko: '텍사스·조지아 한인 비즈니스 온라인 성장 전략'
     },
     excerpt: {
-      en: 'Tailored marketing strategies for Korean-American businesses targeting both Korean and American customers.',
-      ko: '한인 및 미국인 고객 모두를 타겟팅하는 한인 비즈니스를 위한 맞춤형 마케팅 전략.'
+      en: 'Dallas, Houston, Atlanta — how Korean businesses in the South are winning with digital marketing in 2026.',
+      ko: '달라스, 휴스턴, 애틀랜타 한인 비즈니스의 디지털 마케팅 성공 전략. 2026년 최신 트렌드.'
     },
-    image: '/blog/korean-business.jpg'
+    image: '/blog/texas-georgia.jpg'
   }
 ]
 

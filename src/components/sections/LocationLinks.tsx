@@ -7,23 +7,59 @@ export default function LocationLinks({ locale = 'en' }: { locale?: string }) {
   // Use Korean URL slugs for Korean locale (better for Korean SEO)
   const locations = [
     {
-      name: locale === 'ko' ? '뉴욕 웹사이트 제작' : 'New York Web Design',
-      href: locale === 'ko' ? '/ko/뉴욕-웹사이트' : '/ny-website',
-      description: locale === 'ko'
-        ? '맨하탄, 브루클린, 퀸즈, 플러싱 지역 전문'
-        : 'Manhattan, Brooklyn, Queens, Flushing specialists',
-      icon: '🗽',
-      keywords: locale === 'ko' ? ['뉴욕', 'NYC', '맨하탄'] : ['New York', 'NYC', 'Manhattan']
-    },
-    {
       name: locale === 'ko' ? '뉴저지 웹사이트 제작' : 'New Jersey Web Design',
       href: locale === 'ko' ? '/ko/뉴저지-웹사이트' : '/nj-website',
       description: locale === 'ko'
-        ? '포트리, 팰리세이드파크, 에지워터 지역 전문'
-        : 'Fort Lee, Palisades Park, Edgewater specialists',
+        ? '포트리, 팰팍, 에디슨, 체리힐 한인 비즈니스'
+        : 'Fort Lee, Palisades Park, Edison specialists',
       icon: '🌉',
       keywords: locale === 'ko' ? ['뉴저지', 'NJ', '포트리'] : ['New Jersey', 'NJ', 'Fort Lee']
-    }
+    },
+    {
+      name: locale === 'ko' ? '뉴욕 웹사이트 제작' : 'New York Web Design',
+      href: locale === 'ko' ? '/ko/뉴욕-웹사이트' : '/ny-website',
+      description: locale === 'ko'
+        ? '맨하탄, 플러싱, 퀸즈, 브루클린 한인 비즈니스'
+        : 'Manhattan, Flushing, Queens, Brooklyn specialists',
+      icon: '🗽',
+      keywords: locale === 'ko' ? ['뉴욕', 'NYC', '플러싱'] : ['New York', 'NYC', 'Flushing']
+    },
+    {
+      name: locale === 'ko' ? '캘리포니아 웹사이트 제작' : 'California Web Design',
+      href: locale === 'ko' ? '/ko/캘리포니아-웹사이트' : '/ca-website',
+      description: locale === 'ko'
+        ? 'LA 코리아타운, 오렌지카운티, 샌프란시스코'
+        : 'LA Koreatown, Orange County, San Francisco',
+      icon: '🌴',
+      keywords: locale === 'ko' ? ['캘리포니아', 'LA', '코리아타운'] : ['California', 'LA', 'Koreatown']
+    },
+    {
+      name: locale === 'ko' ? '텍사스 웹사이트 제작' : 'Texas Web Design',
+      href: locale === 'ko' ? '/ko/텍사스-웹사이트' : '/tx-website',
+      description: locale === 'ko'
+        ? '달라스, 휴스턴, 오스틴 한인 비즈니스'
+        : 'Dallas, Houston, Austin Korean businesses',
+      icon: '⛳',
+      keywords: locale === 'ko' ? ['텍사스', 'TX', '달라스'] : ['Texas', 'TX', 'Dallas']
+    },
+    {
+      name: locale === 'ko' ? '조지아 웹사이트 제작' : 'Georgia Web Design',
+      href: locale === 'ko' ? '/ko/조지아-웹사이트' : '/ga-website',
+      description: locale === 'ko'
+        ? '애틀랜타, 둘루스, 수와니 한인 비즈니스'
+        : 'Atlanta, Duluth, Suwanee Korean businesses',
+      icon: '🍑',
+      keywords: locale === 'ko' ? ['조지아', 'GA', '애틀랜타'] : ['Georgia', 'GA', 'Atlanta']
+    },
+    {
+      name: locale === 'ko' ? '버지니아 웹사이트 제작' : 'Virginia Web Design',
+      href: locale === 'ko' ? '/ko/버지니아-웹사이트' : '/va-website',
+      description: locale === 'ko'
+        ? '노던버지니아, 애난데일, 센터빌 한인 비즈니스'
+        : 'Northern Virginia, Annandale, Centreville Korean businesses',
+      icon: '🏛️',
+      keywords: locale === 'ko' ? ['버지니아', 'VA', '애난데일'] : ['Virginia', 'VA', 'Annandale']
+    },
   ]
   
   return (
@@ -41,12 +77,12 @@ export default function LocationLinks({ locale = 'en' }: { locale?: string }) {
           </h2>
           <p className="text-lg text-gray-400 max-w-2xl mx-auto">
             {locale === 'ko'
-              ? '뉴욕과 뉴저지 전 지역의 한인 비즈니스를 위한 전문 웹사이트 제작'
-              : 'Professional web development for businesses across New York and New Jersey'}
+              ? '미국 전역 한인 비즈니스를 위한 전문 웹사이트 제작'
+              : 'Professional web development for Korean-American businesses nationwide'}
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
           {locations.map((location) => (
             <Link
               key={location.href}
@@ -94,8 +130,8 @@ export default function LocationLinks({ locale = 'en' }: { locale?: string }) {
         <div className="mt-12 text-center">
           <p className="text-sm text-gray-500 max-w-3xl mx-auto">
             {locale === 'ko'
-              ? 'ZOE LUMOS는 뉴욕 웹사이트 제작과 뉴저지 웹사이트 제작 분야의 선두 업체입니다. 구글 검색 최적화를 통해 귀하의 비즈니스가 "뉴욕 웹사이트" 또는 "뉴저지 웹사이트" 검색 시 상위에 노출되도록 보장합니다.'
-              : 'ZOE LUMOS is the leading web design agency for New York website development and New Jersey website creation. We ensure your business ranks #1 for local searches through expert SEO optimization.'}
+              ? 'ZOE LUMOS는 미국 전역 한인 비즈니스 웹사이트 제작 전문 에이전시입니다. 뉴저지, 뉴욕, 캘리포니아, 텍사스, 조지아, 버지니아 외 하와이, 일리노이, 워싱턴, 메릴랜드, 펜실베이니아, 플로리다까지 전국 서비스.'
+              : 'ZOE LUMOS is the leading web design agency for Korean-American businesses nationwide. Serving NJ, NY, CA, TX, GA, VA, HI, IL, WA, MD, PA, FL and all 50 states.'}
           </p>
         </div>
       </div>

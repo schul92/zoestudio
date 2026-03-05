@@ -1,22 +1,22 @@
 export const seoConfig = {
   en: {
-    title: 'ZOE LUMOS - Fort Lee NJ Web Design & SEO | Korean Business Digital Marketing Agency',
-    description: 'Fort Lee, NJ web design & SEO agency for Korean-American businesses. Serving Bergen County, Englewood, North Bergen & NYC metro. Website development, Google Ads, local SEO. Bilingual English & Korean. Free consultation.',
-    keywords: 'Fort Lee web design, Fort Lee NJ web designer, Bergen County web design, Korean business marketing NYC, NJ Korean SEO, Korean American digital marketing, Fort Lee website development, Palisades Park web design, small business SEO New Jersey, Korean web agency NJ, SEO services, Google Ads management, Shopify development, e-commerce website design, local SEO expert, website design and development, digital marketing agency, SEO consultant, web design services, small business SEO, ecommerce SEO, Englewood NJ SEO, North Bergen web design, small business SEO agency NJ, low cost SEO New Jersey, NJ web designer, web design Bergen County',
+    title: 'ZOE LUMOS - Korean Business Web Design & SEO Agency | NJ NY CA TX GA VA Nationwide',
+    description: 'Web design & SEO agency for Korean-American businesses nationwide. Serving NJ, NY, CA, TX, GA, VA, IL, WA, and all 50 states. Website development, Google Ads, Shopify, local SEO. Bilingual English & Korean. Free consultation.',
+    keywords: 'Korean web design, Korean American website, Korean business website, Korean SEO agency, NJ web design, NY web design, California Korean website, Texas Korean website, Georgia Korean website, Virginia Korean website, Fort Lee web design, Bergen County web design, Korean business marketing, Shopify development, e-commerce website design, local SEO expert, digital marketing agency, SEO services, Google Ads management, small business SEO, Korean web agency, bilingual website design',
     openGraph: {
-      title: 'ZOE LUMOS - Fort Lee NJ Web Design & SEO for Korean Businesses',
-      description: 'Fort Lee NJ web design & SEO agency. Korean-American business specialists in Bergen County, Englewood, North Bergen & NYC metro. Free consultation.',
+      title: 'ZOE LUMOS - Korean Business Web Design & SEO Agency Nationwide',
+      description: 'Web design & SEO for Korean-American businesses in NJ, NY, CA, TX, GA, VA and all 50 states. Bilingual experts. Free consultation.',
       siteName: 'ZOE LUMOS',
       locale: 'en_US',
     }
   },
   ko: {
-    title: '뉴저지 웹사이트 제작 | 뉴욕 웹사이트 | 뉴저지 사이트 제작 전문 - ZOE LUMOS',
-    description: '뉴저지 웹사이트 제작, 뉴욕 웹사이트 제작 전문 업체. 뉴저지 사이트 제작, NJ 홈페이지 제작, NY 홈페이지 제작. 포트리, 팰팍, 에디슨, 플러싱 한인 비즈니스 웹사이트. 구글 광고, 옐프 광고, SEO 전문. 100% 한국어 상담.',
-    keywords: '뉴저지 웹사이트, 뉴저지 웹사이트 제작, 뉴저지 사이트 제작, 뉴저지 홈페이지, 뉴저지 홈페이지 제작, NJ 웹사이트, NJ 웹사이트 제작, NJ 사이트 제작, NJ 홈페이지 제작, 뉴욕 웹사이트, 뉴욕 웹사이트 제작, NY 웹사이트, NY 홈페이지 제작, 포트리 웹사이트, 포트리 웹디자인, 포트리 홈페이지 제작, 팰팍 웹사이트, 에디슨 웹사이트, 플러싱 웹사이트, 맨하탄 웹사이트, 한인 웹사이트, 한인 웹사이트 제작, 한인 홈페이지 제작, 한인 마케팅 에이전시, 한인 디지털 마케팅, 쇼피파이, Shopify, 쇼핑몰 제작, 이커머스 웹사이트, 뉴저지 쇼핑몰 제작, 구글광고, Google Ads, 옐프광고, 뉴저지 SEO, 뉴욕 SEO, 검색엔진최적화, 미주 한인 비즈니스, 디지털 마케팅, 웹디자인, 웹개발, 반응형 웹사이트, 지역 SEO, 구글 마이비즈니스, 버겐카운티 웹사이트, 포트리 한인 비즈니스, 팰리세이즈파크 웹사이트',
+    title: '미국 한인 웹사이트 제작 | 뉴저지 뉴욕 캘리포니아 텍사스 전국 | ZOE LUMOS',
+    description: '미국 전역 한인 웹사이트 제작 전문. 뉴저지, 뉴욕, 캘리포니아, 텍사스, 조지아, 버지니아 등 미국 전 지역. 한인 비즈니스 홈페이지, 쇼핑몰 제작, 구글 광고, SEO 전문. 100% 한국어 상담.',
+    keywords: '미국 한인 웹사이트, 한인 웹사이트 제작, 한인 홈페이지 제작, 뉴저지 웹사이트, 뉴저지 웹사이트 제작, 뉴욕 웹사이트, 뉴욕 웹사이트 제작, 캘리포니아 웹사이트 제작, LA 한인 웹사이트, 텍사스 웹사이트 제작, 달라스 한인 웹사이트, 조지아 웹사이트 제작, 애틀랜타 한인 웹사이트, 버지니아 웹사이트 제작, 일리노이 웹사이트, 시카고 한인 웹사이트, 워싱턴 웹사이트, 시애틀 한인 웹사이트, 하와이 웹사이트, 플로리다 웹사이트, NJ 웹사이트, NY 웹사이트, 포트리 웹사이트, 팰팍 웹사이트, 플러싱 웹사이트, 한인 쇼핑몰 제작, 쇼피파이, 구글광고, 옐프광고, 한인 SEO, 검색엔진최적화, 미주 한인 비즈니스, 디지털 마케팅, 웹디자인',
     openGraph: {
-      title: '뉴저지 웹사이트 제작 | 뉴욕 웹사이트 | ZOE LUMOS',
-      description: '뉴저지 웹사이트 제작, 뉴욕 웹사이트 제작 전문. 뉴저지 사이트 제작, NJ 홈페이지 제작, NY 홈페이지 제작. 포트리, 팰팍, 플러싱 한인 비즈니스. 100% 한국어 상담.',
+      title: '미국 한인 웹사이트 제작 | 전국 한인 비즈니스 전문 | ZOE LUMOS',
+      description: '미국 전역 한인 웹사이트 제작. NJ, NY, CA, TX, GA, VA 등 전 지역. 쇼핑몰, SEO, 구글광고. 100% 한국어 상담.',
       siteName: 'ZOE LUMOS 조이루모스',
       locale: 'ko_KR',
     }
