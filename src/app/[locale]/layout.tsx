@@ -49,7 +49,7 @@ export async function generateMetadata({
     openGraph: {
       title: seo.openGraph.title,
       description: seo.openGraph.description,
-      url: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://zoelumos.com'}/${locale}`,
+      url: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'}/${locale}`,
       siteName: seo.openGraph.siteName,
       locale: seo.openGraph.locale,
       type: 'website',

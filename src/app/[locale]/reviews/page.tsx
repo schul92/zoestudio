@@ -16,7 +16,7 @@ export async function generateMetadata({
   params: { locale: string }
 }): Promise<Metadata> {
   const locale = params.locale as 'en' | 'ko'
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://zoelumos.com'
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
 
   const metadata = {
     en: {
@@ -178,7 +178,7 @@ function generateReviewSchema(locale: 'en' | 'ko') {
     "itemReviewed": {
       "@type": "LocalBusiness",
       "name": "ZOE LUMOS",
-      "image": "https://zoelumos.com/favicon.svg",
+      "image": "https://www.zoelumos.com/favicon.svg",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Fort Lee",
@@ -192,9 +192,8 @@ function generateReviewSchema(locale: 'en' | 'ko') {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "name": "ZOE LUMOS",
-    "image": "https://zoelumos.com/favicon.svg",
-    "url": "https://zoelumos.com",
-    "telephone": "+1-201-555-0123",
+    "image": "https://www.zoelumos.com/favicon.svg",
+    "url": "https://www.zoelumos.com",
     "email": "info@zoelumos.com",
     "address": {
       "@type": "PostalAddress",

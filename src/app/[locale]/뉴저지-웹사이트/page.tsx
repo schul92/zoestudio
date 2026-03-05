@@ -3,7 +3,7 @@ import HeaderWrapper from '@/components/layout/HeaderWrapper'
 import Footer from '@/components/layout/Footer'
 import Contact from '@/components/sections/Contact'
 import Link from 'next/link'
-import { Building2, Globe, Search, CheckCircle, Star, Users, Zap, Phone, Mail, MapPin } from 'lucide-react'
+import { Building2, Globe, Search, CheckCircle, Star, Users, Zap, Mail, MapPin } from 'lucide-react'
 
 export async function generateStaticParams() {
   return [
@@ -91,7 +91,7 @@ export default function NJWebsiteKoreanPage({ params }: { params: { locale: stri
     },
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: '+1-201-555-0123',
+      email: 'info@zoelumos.com',
       contactType: 'sales',
       availableLanguage: ['English', 'Korean'],
     },
@@ -111,7 +111,6 @@ export default function NJWebsiteKoreanPage({ params }: { params: { locale: stri
       ? '뉴저지 최고의 웹사이트 제작 전문 업체. 포트리, 팰팍, 에디슨 한인 비즈니스 전문.'
       : 'Premier website design agency in New Jersey for Korean-American businesses.',
     url: isKorean ? `${baseUrl}/ko/뉴저지-웹사이트` : `${baseUrl}/nj-website`,
-    telephone: '+1-201-555-0123',
     email: 'info@zoelumos.com',
     address: {
       '@type': 'PostalAddress',
@@ -607,15 +606,8 @@ export default function NJWebsiteKoreanPage({ params }: { params: { locale: stri
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a
-                href="tel:+12015550123"
-                className="flex items-center gap-2 px-6 py-3 bg-white text-emerald-600 rounded-xl font-bold hover:bg-gray-100 transition-colors"
-              >
-                <Phone className="w-5 h-5" />
-                {isKorean ? '전화 상담' : 'Call Us'}
-              </a>
-              <a
                 href="mailto:info@zoelumos.com"
-                className="flex items-center gap-2 px-6 py-3 bg-emerald-500 text-white rounded-xl font-bold hover:bg-emerald-400 transition-colors"
+                className="flex items-center gap-2 px-6 py-3 bg-white text-emerald-600 rounded-xl font-bold hover:bg-gray-100 transition-colors"
               >
                 <Mail className="w-5 h-5" />
                 {isKorean ? '이메일 문의' : 'Email Us'}

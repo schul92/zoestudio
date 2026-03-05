@@ -39,7 +39,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const locale = params.locale as 'en' | 'ko'
   const seo = seoConfig[locale]
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://zoelumos.com'
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
   
   return {
     title: seo.title,

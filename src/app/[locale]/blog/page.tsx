@@ -16,7 +16,7 @@ export async function generateMetadata({
   params: { locale: string }
 }): Promise<Metadata> {
   const locale = params.locale as 'en' | 'ko'
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://zoelumos.com'
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
 
   const metadata = {
     en: {
@@ -185,13 +185,13 @@ function generateBlogSchema(locale: 'en' | 'ko') {
     "description": locale === 'en'
       ? 'Expert digital marketing insights, SEO tips, and web design best practices'
       : '전문 디지털 마케팅 인사이트, SEO 팁, 웹 디자인 모범 사례',
-    "url": `https://zoelumos.com${locale === 'ko' ? '/ko' : ''}/blog`,
+    "url": `https://www.zoelumos.com${locale === 'ko' ? '/ko' : ''}/blog`,
     "publisher": {
       "@type": "Organization",
       "name": "ZOE LUMOS",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://zoelumos.com/favicon.svg"
+        "url": "https://www.zoelumos.com/favicon.svg"
       }
     },
     "blogPost": blogPosts.map(post => ({

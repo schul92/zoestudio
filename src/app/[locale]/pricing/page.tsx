@@ -351,7 +351,7 @@ export default function PricingPage({ params }: { params: { locale: string } }) 
     '@context': 'https://schema.org',
     '@type': 'Product',
     name: 'Web Design & Development Services',
-    image: 'https://zoelumos.com/og-image.png',
+    image: 'https://www.zoelumos.com/og-image.png',
     description: 'Professional web design and development services for businesses in NY/NJ. Custom websites, e-commerce solutions, SEO optimization, and digital marketing.',
     brand: {
       '@type': 'Brand',
@@ -366,7 +366,7 @@ export default function PricingPage({ params }: { params: { locale: string } }) 
         description: 'Free plan for personal projects and small websites. 1-3 pages, mobile responsive, basic SEO.',
         availability: 'https://schema.org/InStock',
         priceValidUntil: '2025-12-31',
-        url: 'https://zoelumos.com/pricing',
+        url: 'https://www.zoelumos.com/pricing',
       },
       {
         '@type': 'Offer',
@@ -376,7 +376,7 @@ export default function PricingPage({ params }: { params: { locale: string } }) 
         description: 'Professional plan for growing businesses. Up to 10 pages, custom design, advanced SEO, analytics.',
         availability: 'https://schema.org/InStock',
         priceValidUntil: '2025-12-31',
-        url: 'https://zoelumos.com/pricing',
+        url: 'https://www.zoelumos.com/pricing',
       },
       {
         '@type': 'Offer',
@@ -386,7 +386,7 @@ export default function PricingPage({ params }: { params: { locale: string } }) 
         description: 'Complete e-commerce solution. Unlimited pages, full e-commerce setup, payment processing, CRM.',
         availability: 'https://schema.org/InStock',
         priceValidUntil: '2025-12-31',
-        url: 'https://zoelumos.com/pricing',
+        url: 'https://www.zoelumos.com/pricing',
       },
       {
         '@type': 'Offer',
@@ -396,7 +396,7 @@ export default function PricingPage({ params }: { params: { locale: string } }) 
         description: 'Custom solutions for large organizations. Dedicated support, SLA, custom integrations. Contact for custom pricing.',
         availability: 'https://schema.org/InStock',
         priceValidUntil: '2025-12-31',
-        url: 'https://zoelumos.com/pricing',
+        url: 'https://www.zoelumos.com/pricing',
       },
     ],
     aggregateRating: {
@@ -415,13 +415,13 @@ export default function PricingPage({ params }: { params: { locale: string } }) 
         '@type': 'ListItem',
         position: 1,
         name: 'Home',
-        item: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://zoelumos.com'}/${locale === 'en' ? '' : 'ko'}`,
+        item: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'}/${locale === 'en' ? '' : 'ko'}`,
       },
       {
         '@type': 'ListItem',
         position: 2,
         name: locale === 'en' ? 'Pricing' : '가격',
-        item: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://zoelumos.com'}/${locale === 'en' ? '' : 'ko/'}pricing`,
+        item: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'}/${locale === 'en' ? '' : 'ko/'}pricing`,
       },
     ],
   }

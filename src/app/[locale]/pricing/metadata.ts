@@ -14,7 +14,7 @@ export function generatePricingMetadata(locale: 'en' | 'ko'): Metadata {
     }
   }
 
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://zoelumos.com'
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
 
   return {
     title: metadata[locale].title,

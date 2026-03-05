@@ -16,7 +16,7 @@ export async function generateMetadata({
   params: { locale: string }
 }): Promise<Metadata> {
   const locale = params.locale as 'en' | 'ko'
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://zoelumos.com'
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
 
   const metadata = {
     en: {
@@ -131,7 +131,7 @@ To exercise these rights, please contact us at info@zoelumos.com.`
 
 **ZOE STUDIO LLC**
 Email: info@zoelumos.com
-Website: https://zoelumos.com`
+Website: https://www.zoelumos.com`
       }
     ]
   },
@@ -210,7 +210,7 @@ Website: https://zoelumos.com`
 
 **ZOE STUDIO LLC**
 이메일: info@zoelumos.com
-웹사이트: https://zoelumos.com`
+웹사이트: https://www.zoelumos.com`
       }
     ]
   }

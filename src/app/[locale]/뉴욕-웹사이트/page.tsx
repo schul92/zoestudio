@@ -3,7 +3,7 @@ import HeaderWrapper from '@/components/layout/HeaderWrapper'
 import Footer from '@/components/layout/Footer'
 import Contact from '@/components/sections/Contact'
 import Link from 'next/link'
-import { Building2, Globe, Search, CheckCircle, Star, Users, Zap, Phone, Mail, MapPin } from 'lucide-react'
+import { Building2, Globe, Search, CheckCircle, Star, Users, Zap, Mail, MapPin } from 'lucide-react'
 
 export async function generateStaticParams() {
   return [
@@ -96,7 +96,6 @@ export default function NYWebsiteKoreanPage({ params }: { params: { locale: stri
       : 'Premier website design agency in New York for Korean-American businesses.',
     url: isKorean ? `${baseUrl}/ko/뉴욕-웹사이트` : `${baseUrl}/ny-website`,
     inLanguage: isKorean ? 'ko' : 'en',
-    telephone: '+1-201-555-0123',
     email: 'info@zoelumos.com',
     address: {
       '@type': 'PostalAddress',
@@ -537,15 +536,8 @@ export default function NYWebsiteKoreanPage({ params }: { params: { locale: stri
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a
-                href="tel:+12015550123"
-                className="flex items-center gap-2 px-6 py-3 bg-white text-blue-600 rounded-xl font-bold hover:bg-gray-100 transition-colors"
-              >
-                <Phone className="w-5 h-5" />
-                {isKorean ? '전화 상담' : 'Call Us'}
-              </a>
-              <a
                 href="mailto:info@zoelumos.com"
-                className="flex items-center gap-2 px-6 py-3 bg-blue-500 text-white rounded-xl font-bold hover:bg-blue-400 transition-colors"
+                className="flex items-center gap-2 px-6 py-3 bg-white text-blue-600 rounded-xl font-bold hover:bg-gray-100 transition-colors"
               >
                 <Mail className="w-5 h-5" />
                 {isKorean ? '이메일 문의' : 'Email Us'}

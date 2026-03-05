@@ -18,7 +18,7 @@ export async function generateMetadata({
   params: { locale: string }
 }): Promise<Metadata> {
   const locale = params.locale as 'en' | 'ko'
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://zoelumos.com'
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
   
   if (locale === 'ko') {
     return {
@@ -93,7 +93,7 @@ export async function generateMetadata({
 
 export default function NYWebsitePage({ params }: { params: { locale: string } }) {
   const locale = params.locale as 'en' | 'ko'
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://zoelumos.com'
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
   
   // Structured data for local SEO
   const localBusinessSchema = {
@@ -104,7 +104,6 @@ export default function NYWebsitePage({ params }: { params: { locale: string } }
       ? '뉴욕 최고의 웹사이트 제작 전문 업체'
       : 'Premier website design agency in New York',
     url: `${baseUrl}/${locale === 'ko' ? 'ko/' : ''}ny-website`,
-    telephone: '+1-201-555-0123',
     email: 'info@zoelumos.com',
     address: {
       '@type': 'PostalAddress',
