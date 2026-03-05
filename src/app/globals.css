@@ -2,6 +2,29 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Fix: light background sections need dark text (overrides body text-white) */
+.bg-gray-50,
+.bg-gray-100,
+section.bg-white {
+  color: rgb(17, 24, 39) !important;
+}
+.bg-gray-50 h1, .bg-gray-50 h2, .bg-gray-50 h3,
+.bg-gray-100 h1, .bg-gray-100 h2, .bg-gray-100 h3,
+section.bg-white h1, section.bg-white h2, section.bg-white h3 {
+  color: rgb(17, 24, 39) !important;
+}
+.bg-gray-50 p, .bg-gray-50 span, .bg-gray-50 li,
+.bg-gray-100 p, .bg-gray-100 span, .bg-gray-100 li,
+section.bg-white p, section.bg-white span, section.bg-white li {
+  color: inherit !important;
+}
+.bg-gray-50 .text-green-500, .bg-gray-100 .text-green-500, section.bg-white .text-green-500 {
+  color: rgb(34, 197, 94) !important;
+}
+.bg-gray-50 .text-gray-600, .bg-gray-100 .text-gray-600, section.bg-white .text-gray-600 {
+  color: rgb(75, 85, 99) !important;
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 255, 255, 255;
