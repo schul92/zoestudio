@@ -37,8 +37,13 @@ body {
   min-height: 100vh;
 }
 
-/* Ensure all inputs have dark text regardless of system theme */
-input, textarea, select {
+/* Ensure all form elements have consistent font and color */
+input, textarea, select, button {
+  font-family: inherit !important;
+}
+
+/* Light-background form inputs (e.g. .bg-gray-50 sections) */
+.bg-gray-50 input, .bg-gray-50 textarea, .bg-gray-50 select {
   color: rgb(31, 41, 55) !important;
   -webkit-text-fill-color: rgb(31, 41, 55) !important;
 }
