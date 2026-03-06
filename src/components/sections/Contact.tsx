@@ -546,7 +546,8 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                           ? '귀하의 비즈니스에 대해 더 알려주세요...'
                           : 'Tell us more about your business needs...'
                         }
-                        className="w-full px-4 py-3 border border-white/[0.1] rounded-xl focus:border-amber-500/40 focus:outline-none transition-colors resize-none bg-white/[0.04] text-white placeholder-gray-500"
+                        className="w-full px-4 py-3 border border-white/[0.1] rounded-xl focus:border-amber-500/40 focus:outline-none transition-colors resize-none bg-white/[0.04] text-white placeholder-gray-500 font-sans"
+                        style={{ fontFamily: 'inherit' }}
                       />
                     </div>
                     
