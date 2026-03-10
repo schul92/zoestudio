@@ -25,11 +25,11 @@ export async function generateMetadata({
       ? '버지니아 웹사이트 제작 | 북버지니아 한인 홈페이지 전문 | 조이루모스'
       : 'Virginia Website Design | NoVA Korean Business Web Development | ZOE LUMOS',
     description: locale === 'ko'
-      ? '버지니아 웹사이트 제작 전문 업체 조이루모스. 애난데일, 센터빌, 페어팩스 한인 비즈니스 홈페이지 제작. 버지니아 SEO 최적화, 구글 상위노출, 쇼핑몰 제작.'
+      ? '버지니아 웹사이트 제작 전문 업체 조이루모스. 애난데일, 센터빌, 페어팩스 한인 홈페이지 제작. SEO, 구글 상위노출, 광고대행, 소셜미디어 관리, 구글/인스타 광고.'
       : 'Professional Virginia website design for Korean-American businesses. Annandale, Centreville, Fairfax web development. VA SEO, Google ranking, e-commerce.',
     keywords: locale === 'ko'
-      ? '버지니아 웹사이트, 버지니아 웹사이트 제작, 북버지니아 웹사이트, 애난데일 웹사이트, 센터빌 웹사이트, 페어팩스 웹사이트, 버지니아 한인 웹사이트, 버지니아 SEO'
-      : 'Virginia website, VA website design, Northern Virginia Korean website, Annandale website, Centreville website, Fairfax website, VA SEO',
+      ? '버지니아 웹사이트, 버지니아 웹사이트 제작, 북버지니아 웹사이트, 애난데일 웹사이트, 센터빌 웹사이트, 페어팩스 웹사이트, 버지니아 한인 웹사이트, 버지니아 SEO, 버지니아 광고대행, 버지니아 소셜미디어, 버지니아 인스타광고, 한인 광고대행'
+      : 'Virginia website, VA website design, Northern Virginia Korean website, Annandale website, Centreville website, Fairfax website, VA SEO, Virginia social media management, Virginia Google Ads, Virginia Korean advertising agency',
     openGraph: {
       title: locale === 'ko' ? '버지니아 웹사이트 제작 전문 - 조이루모스' : 'Virginia Website Design - ZOE LUMOS',
       description: locale === 'ko'

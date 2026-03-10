@@ -18,11 +18,11 @@ export async function generateMetadata({ params }: { params: { locale: string } 
       ? '플로리다 웹사이트 제작 | 마이애미 올랜도 한인 홈페이지 전문 | 조이루모스'
       : 'Florida Website Design | Miami Orlando Korean Business Web Development | ZOE LUMOS',
     description: locale === 'ko'
-      ? '플로리다 웹사이트 제작 전문 업체 조이루모스. 마이애미, 올랜도, 탬파, 잭슨빌 한인 비즈니스 홈페이지 제작. 플로리다 SEO 최적화, 구글 상위노출.'
+      ? '플로리다 웹사이트 제작 전문 업체 조이루모스. 마이애미, 올랜도, 탬파 한인 홈페이지 제작. SEO, 구글 상위노출, 광고대행, 소셜미디어 관리, 구글/인스타 광고.'
       : 'Professional Florida website design for Korean-American businesses. Miami, Orlando, Tampa, Jacksonville web development. FL SEO, Google ranking.',
     keywords: locale === 'ko'
-      ? '플로리다 웹사이트, 플로리다 웹사이트 제작, 마이애미 웹사이트, 올랜도 웹사이트, 플로리다 한인 웹사이트, 마이애미 한인 홈페이지, 플로리다 SEO'
-      : 'Florida website, FL website design, Miami Korean website, Orlando Korean website, Tampa website, FL SEO',
+      ? '플로리다 웹사이트, 플로리다 웹사이트 제작, 마이애미 웹사이트, 올랜도 웹사이트, 플로리다 한인 웹사이트, 마이애미 한인 홈페이지, 플로리다 SEO, 플로리다 광고대행, 플로리다 소셜미디어, 플로리다 인스타광고, 한인 광고대행'
+      : 'Florida website, FL website design, Miami Korean website, Orlando Korean website, Tampa website, FL SEO, Florida social media management, Florida Google Ads, Florida Korean advertising agency',
     openGraph: {
       title: locale === 'ko' ? '플로리다 웹사이트 제작 전문 - 조이루모스' : 'Florida Website Design - ZOE LUMOS',
       description: locale === 'ko' ? '플로리다 한인 비즈니스를 위한 최고의 웹사이트 제작 서비스.' : 'Premier website design for FL Korean businesses.',

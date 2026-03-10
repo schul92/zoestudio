@@ -18,11 +18,11 @@ export async function generateMetadata({ params }: { params: { locale: string } 
       ? '메릴랜드 웹사이트 제작 | 볼티모어 한인 홈페이지 전문 | 조이루모스'
       : 'Maryland Website Design | Baltimore Korean Business Web Development | ZOE LUMOS',
     description: locale === 'ko'
-      ? '메릴랜드 웹사이트 제작 전문 업체 조이루모스. 엘리컷시티, 콜럼비아, 게이더스버그, 볼티모어 한인 비즈니스 홈페이지 제작. 메릴랜드 SEO 최적화, 구글 상위노출.'
+      ? '메릴랜드 웹사이트 제작 전문 업체 조이루모스. 엘리컷시티, 콜럼비아, 게이더스버그 한인 홈페이지. SEO, 구글 상위노출, 광고대행, 소셜미디어 관리, 구글/인스타 광고.'
       : 'Professional Maryland website design for Korean-American businesses. Ellicott City, Columbia, Gaithersburg, Baltimore web development. MD SEO, Google ranking.',
     keywords: locale === 'ko'
-      ? '메릴랜드 웹사이트, 메릴랜드 웹사이트 제작, 엘리컷시티 웹사이트, 콜럼비아 웹사이트, 게이더스버그 웹사이트, 메릴랜드 한인 웹사이트, 메릴랜드 SEO'
-      : 'Maryland website, MD website design, Ellicott City Korean website, Columbia website, Gaithersburg website, MD SEO',
+      ? '메릴랜드 웹사이트, 메릴랜드 웹사이트 제작, 엘리컷시티 웹사이트, 콜럼비아 웹사이트, 게이더스버그 웹사이트, 메릴랜드 한인 웹사이트, 메릴랜드 SEO, 메릴랜드 광고대행, 메릴랜드 소셜미디어, 메릴랜드 인스타광고, 한인 광고대행'
+      : 'Maryland website, MD website design, Ellicott City Korean website, Columbia website, Gaithersburg website, MD SEO, Maryland social media management, Maryland Google Ads, Maryland Korean advertising agency',
     openGraph: {
       title: locale === 'ko' ? '메릴랜드 웹사이트 제작 전문 - 조이루모스' : 'Maryland Website Design - ZOE LUMOS',
       description: locale === 'ko' ? '메릴랜드 한인 비즈니스를 위한 최고의 웹사이트 제작 서비스.' : 'Premier website design for MD Korean businesses.',

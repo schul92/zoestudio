@@ -32,26 +32,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/palisades-park-marketing',
     '/ridgefield-web-design',
     '/edgewater-web-design',
+    '/advertising',
   ]
 
   // Korean SEO pages (Korean URLs - high priority for Korean keywords)
   const koreanSeoPages = [
     { path: '/뉴저지-웹사이트', enPath: '/nj-website', priority: 0.95 },
     { path: '/뉴욕-웹사이트', enPath: '/ny-website', priority: 0.95 },
-    { path: '/웹사이트-제작', enPath: '/website-design', priority: 0.9 },
+    { path: '/웹사이트-제작', enPath: '/website-design', priority: 0.95 },
     { path: '/쇼핑몰-제작', enPath: '/ecommerce', priority: 0.9 },
     { path: '/포트리-웹디자인', enPath: '/fort-lee-web-design', priority: 0.95 },
-    { path: '/캘리포니아-웹사이트', enPath: '/ca-website', priority: 0.9 },
-    { path: '/텍사스-웹사이트', enPath: '/tx-website', priority: 0.9 },
-    { path: '/조지아-웹사이트', enPath: '/ga-website', priority: 0.9 },
-    { path: '/버지니아-웹사이트', enPath: '/va-website', priority: 0.9 },
-    { path: '/일리노이-웹사이트', enPath: '/il-website', priority: 0.9 },
-    { path: '/워싱턴-웹사이트', enPath: '/wa-website', priority: 0.9 },
-    { path: '/메릴랜드-웹사이트', enPath: '/md-website', priority: 0.9 },
-    { path: '/하와이-웹사이트', enPath: '/hi-website', priority: 0.9 },
-    { path: '/펜실베이니아-웹사이트', enPath: '/pa-website', priority: 0.9 },
-    { path: '/플로리다-웹사이트', enPath: '/fl-website', priority: 0.9 },
+    { path: '/캘리포니아-웹사이트', enPath: '/ca-website', priority: 0.95 },
+    { path: '/텍사스-웹사이트', enPath: '/tx-website', priority: 0.95 },
+    { path: '/조지아-웹사이트', enPath: '/ga-website', priority: 0.95 },
+    { path: '/버지니아-웹사이트', enPath: '/va-website', priority: 0.95 },
+    { path: '/일리노이-웹사이트', enPath: '/il-website', priority: 0.95 },
+    { path: '/워싱턴-웹사이트', enPath: '/wa-website', priority: 0.95 },
+    { path: '/메릴랜드-웹사이트', enPath: '/md-website', priority: 0.95 },
+    { path: '/하와이-웹사이트', enPath: '/hi-website', priority: 0.95 },
+    { path: '/펜실베이니아-웹사이트', enPath: '/pa-website', priority: 0.95 },
+    { path: '/플로리다-웹사이트', enPath: '/fl-website', priority: 0.95 },
     { path: '/팰팍-마케팅', enPath: '/palisades-park-marketing', priority: 0.95 },
+    { path: '/광고대행', enPath: '/advertising', priority: 0.95 },
   ]
 
   const sitemapEntries: MetadataRoute.Sitemap = []
@@ -97,7 +99,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     sitemapEntries.push({
       url: `${baseUrl}/ko${page.path}`,
       lastModified,
-      changeFrequency: 'weekly',
+      changeFrequency: 'daily',
       priority: page.priority,
       alternates: {
         languages: {

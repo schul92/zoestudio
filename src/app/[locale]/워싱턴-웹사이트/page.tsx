@@ -18,11 +18,11 @@ export async function generateMetadata({ params }: { params: { locale: string } 
       ? '워싱턴 웹사이트 제작 | 시애틀 한인 홈페이지 전문 | 조이루모스'
       : 'Washington Website Design | Seattle Korean Business Web Development | ZOE LUMOS',
     description: locale === 'ko'
-      ? '워싱턴주 웹사이트 제작 전문 업체 조이루모스. 시애틀, 페더럴웨이, 타코마, 린우드 한인 비즈니스 홈페이지 제작. 워싱턴 SEO 최적화, 구글 상위노출.'
+      ? '워싱턴주 웹사이트 제작 전문 업체 조이루모스. 시애틀, 페더럴웨이, 타코마 한인 홈페이지 제작. SEO, 구글 상위노출, 광고대행, 소셜미디어 관리, 구글/인스타 광고.'
       : 'Professional Washington website design for Korean-American businesses. Seattle, Federal Way, Tacoma, Lynnwood web development. WA SEO, Google ranking.',
     keywords: locale === 'ko'
-      ? '워싱턴 웹사이트, 워싱턴 웹사이트 제작, 시애틀 웹사이트, 시애틀 한인 웹사이트, 페더럴웨이 웹사이트, 타코마 웹사이트, 워싱턴 SEO'
-      : 'Washington website, WA website design, Seattle Korean website, Federal Way website, Tacoma website, WA SEO',
+      ? '워싱턴 웹사이트, 워싱턴 웹사이트 제작, 시애틀 웹사이트, 시애틀 한인 웹사이트, 페더럴웨이 웹사이트, 타코마 웹사이트, 워싱턴 SEO, 워싱턴 광고대행, 워싱턴 소셜미디어, 워싱턴 인스타광고, 한인 광고대행'
+      : 'Washington website, WA website design, Seattle Korean website, Federal Way website, Tacoma website, WA SEO, Washington social media management, Washington Google Ads, Washington Korean advertising agency',
     openGraph: {
       title: locale === 'ko' ? '워싱턴 웹사이트 제작 전문 - 조이루모스' : 'Washington Website Design - ZOE LUMOS',
       description: locale === 'ko'

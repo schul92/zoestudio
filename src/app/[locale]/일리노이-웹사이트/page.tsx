@@ -18,11 +18,11 @@ export async function generateMetadata({ params }: { params: { locale: string } 
       ? '일리노이 웹사이트 제작 | 시카고 한인 홈페이지 전문 | 조이루모스'
       : 'Illinois Website Design | Chicago Korean Business Web Development | ZOE LUMOS',
     description: locale === 'ko'
-      ? '일리노이 웹사이트 제작 전문 업체 조이루모스. 시카고, 글렌뷰, 나일스, 마운트프로스펙트 한인 비즈니스 홈페이지 제작. 일리노이 SEO 최적화, 구글 상위노출.'
+      ? '일리노이 웹사이트 제작 전문 업체 조이루모스. 시카고, 글렌뷰, 나일스 한인 홈페이지 제작. SEO, 구글 상위노출, 광고대행, 소셜미디어 관리, 구글/인스타 광고.'
       : 'Professional Illinois website design for Korean-American businesses. Chicago, Glenview, Niles, Mount Prospect web development. IL SEO, Google ranking, e-commerce.',
     keywords: locale === 'ko'
-      ? '일리노이 웹사이트, 일리노이 웹사이트 제작, 시카고 웹사이트, 시카고 한인 웹사이트, 글렌뷰 웹사이트, 나일스 웹사이트, 일리노이 SEO, 시카고 한인 홈페이지'
-      : 'Illinois website, IL website design, Chicago Korean website, Glenview website, Niles website, IL Shopify, IL SEO',
+      ? '일리노이 웹사이트, 일리노이 웹사이트 제작, 시카고 웹사이트, 시카고 한인 웹사이트, 글렌뷰 웹사이트, 나일스 웹사이트, 일리노이 SEO, 시카고 한인 홈페이지, 일리노이 광고대행, 일리노이 소셜미디어, 일리노이 인스타광고, 한인 광고대행'
+      : 'Illinois website, IL website design, Chicago Korean website, Glenview website, Niles website, IL Shopify, IL SEO, Illinois social media management, Illinois Google Ads, Illinois Korean advertising agency',
     openGraph: {
       title: locale === 'ko' ? '일리노이 웹사이트 제작 전문 - 조이루모스' : 'Illinois Website Design - ZOE LUMOS',
       description: locale === 'ko'

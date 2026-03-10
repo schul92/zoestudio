@@ -25,11 +25,11 @@ export async function generateMetadata({
       ? '조지아 웹사이트 제작 | 애틀랜타 한인 홈페이지 전문 | 조이루모스'
       : 'Georgia Website Design | Atlanta Korean Business Web Development | ZOE LUMOS',
     description: locale === 'ko'
-      ? '조지아 웹사이트 제작 전문 업체 조이루모스. 애틀랜타, 둘루스, 수와니, 존스크릭 한인 비즈니스 홈페이지 제작. 조지아 SEO 최적화, 구글 상위노출, 쇼핑몰 제작.'
+      ? '조지아 웹사이트 제작 전문 업체 조이루모스. 애틀랜타, 둘루스, 수와니 한인 홈페이지 제작. SEO, 구글 상위노출, 광고대행, 소셜미디어 관리, 구글/인스타 광고.'
       : 'Professional Georgia website design for Korean-American businesses. Atlanta, Duluth, Suwanee, Johns Creek web development. GA SEO, Google ranking, e-commerce.',
     keywords: locale === 'ko'
-      ? '조지아 웹사이트, 조지아 웹사이트 제작, 애틀랜타 웹사이트, 둘루스 웹사이트, 수와니 웹사이트, 조지아 한인 웹사이트, 애틀랜타 한인 홈페이지, 조지아 쇼핑몰, 조지아 SEO'
-      : 'Georgia website, GA website design, Atlanta Korean website, Duluth website, Suwanee website, GA Shopify, GA SEO',
+      ? '조지아 웹사이트, 조지아 웹사이트 제작, 애틀랜타 웹사이트, 둘루스 웹사이트, 수와니 웹사이트, 조지아 한인 웹사이트, 애틀랜타 한인 홈페이지, 조지아 쇼핑몰, 조지아 SEO, 조지아 광고대행, 조지아 소셜미디어, 조지아 인스타광고, 한인 광고대행'
+      : 'Georgia website, GA website design, Atlanta Korean website, Duluth website, Suwanee website, GA Shopify, GA SEO, Georgia social media management, Georgia Google Ads, Georgia Korean advertising agency',
     openGraph: {
       title: locale === 'ko' ? '조지아 웹사이트 제작 전문 - 조이루모스' : 'Georgia Website Design - ZOE LUMOS',
       description: locale === 'ko'

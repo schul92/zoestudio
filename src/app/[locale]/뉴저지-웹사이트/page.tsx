@@ -26,11 +26,11 @@ export async function generateMetadata({
       ? '뉴저지 웹사이트 제작 | NJ 한인 홈페이지 제작 전문 | 조이루모스'
       : 'New Jersey Website Design | NJ Korean Business Web Development | ZOE LUMOS',
     description: locale === 'ko'
-      ? '뉴저지 웹사이트 제작 전문 업체 조이루모스. 포트리, 팰팍, 에디슨, 체리힐 한인 비즈니스 홈페이지 제작. 뉴저지 SEO 최적화, 구글 상위노출, 쇼핑몰 제작. 무료 상담 가능.'
+      ? '뉴저지 웹사이트 제작 전문 업체 조이루모스. 포트리, 팰팍, 에디슨 한인 홈페이지 제작. SEO 최적화, 구글 상위노출, 광고대행, 소셜미디어 관리, 구글/인스타 광고.'
       : 'Professional New Jersey website design for Korean-American businesses. Fort Lee, Palisades Park, Edison web development. NJ SEO, Google ranking, e-commerce.',
     keywords: locale === 'ko'
-      ? '뉴저지 웹사이트, 뉴저지 웹사이트 제작, 뉴저지 홈페이지, NJ 웹사이트, 뉴저지 한인 웹사이트, 포트리 웹사이트, 팰팍 웹사이트, 에디슨 웹사이트, 뉴저지 쇼핑몰, 뉴저지 SEO, 뉴저지 구글광고, 뉴저지 웹디자인, 뉴저지 웹개발'
-      : 'New Jersey website, NJ website design, NJ Korean website, Fort Lee website, Palisades Park website, Edison website, NJ Shopify, NJ SEO',
+      ? '뉴저지 웹사이트, 뉴저지 웹사이트 제작, 뉴저지 홈페이지, NJ 웹사이트, 뉴저지 한인 웹사이트, 포트리 웹사이트, 팰팍 웹사이트, 에디슨 웹사이트, 뉴저지 쇼핑몰, 뉴저지 SEO, 뉴저지 구글광고, 뉴저지 웹디자인, 뉴저지 웹개발, 뉴저지 광고대행, 뉴저지 소셜미디어, 뉴저지 인스타광고, 한인 광고대행'
+      : 'New Jersey website, NJ website design, NJ Korean website, Fort Lee website, Palisades Park website, Edison website, NJ Shopify, NJ SEO, New Jersey social media management, New Jersey Google Ads, New Jersey Korean advertising agency',
     openGraph: {
       title: locale === 'ko' ? '뉴저지 웹사이트 제작 전문 - 조이루모스' : 'New Jersey Website Design - ZOE LUMOS',
       description: locale === 'ko'

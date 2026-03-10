@@ -3,7 +3,7 @@ import HeaderWrapper from '@/components/layout/HeaderWrapper'
 import Footer from '@/components/layout/Footer'
 import Contact from '@/components/sections/Contact'
 import Link from 'next/link'
-import { Globe, Smartphone, Zap, Shield, CheckCircle, Star, Clock, DollarSign } from 'lucide-react'
+import { Globe, Smartphone, Zap, Shield, CheckCircle, Star, Clock, DollarSign, ArrowRight, MessageCircle } from 'lucide-react'
 
 export async function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'ko' }]
@@ -15,14 +15,14 @@ export async function generateMetadata({ params }: { params: { locale: string } 
 
   return {
     title: locale === 'ko'
-      ? '웹사이트 제작 | 홈페이지 제작 전문 | 뉴욕 뉴저지 한인 웹디자인 | 조이루모스'
-      : 'Website Design & Development | NY NJ Korean Web Agency | ZOE LUMOS',
+      ? '웹사이트 제작 문의 | 홈페이지 제작 전문 | 미국 전역 한인 웹디자인 | 조이루모스'
+      : 'Website Design & Development | Free Consultation | Korean Web Agency | ZOE LUMOS',
     description: locale === 'ko'
-      ? '전문 웹사이트 제작 서비스. 뉴욕, 뉴저지 한인 비즈니스를 위한 맞춤 홈페이지 제작. 반응형 웹디자인, SEO 최적화, 빠른 제작. $1,000부터 시작.'
-      : 'Professional website design services for NY NJ Korean businesses. Responsive web design, SEO optimization, fast delivery. Starting at $1,000.',
+      ? '웹사이트 제작 문의는 조이루모스에게! 미국 전역 한인 비즈니스를 위한 맞춤 홈페이지 제작. 무료 상담, 반응형 웹디자인, SEO 최적화, 빠른 제작. $1,000부터 시작.'
+      : 'Professional website design services for Korean businesses across the US. Free consultation, responsive web design, SEO optimization, fast delivery. Starting at $1,000.',
     keywords: locale === 'ko'
-      ? '웹사이트 제작, 홈페이지 제작, 웹디자인, 한인 웹사이트, 뉴욕 웹사이트 제작, 뉴저지 웹사이트 제작, 반응형 웹사이트, SEO 웹사이트, 워드프레스, 커스텀 웹사이트'
-      : 'website design, web development, Korean website, NY web design, NJ web design, responsive website, SEO website, WordPress, custom website',
+      ? '웹사이트 제작, 웹사이트 제작 문의, 홈페이지 제작, 홈페이지 제작 문의, 웹디자인, 한인 웹사이트, 뉴욕 웹사이트 제작, 뉴저지 웹사이트 제작, 반응형 웹사이트, SEO 웹사이트, 워드프레스, 커스텀 웹사이트, 웹사이트 제작 비용 문의'
+      : 'website design, web development, free consultation, Korean website, NY web design, NJ web design, responsive website, SEO website, WordPress, custom website',
     openGraph: {
       title: locale === 'ko' ? '웹사이트 제작 전문 - 조이루모스' : 'Website Design - ZOE LUMOS',
       description: locale === 'ko'
@@ -94,6 +94,26 @@ export default function WebsiteDesignPage({ params }: { params: { locale: string
           text: isKorean
             ? '네, 한국어와 영어 이중언어 웹사이트 전문입니다. 한인 비즈니스에 최적화된 웹사이트를 제작합니다.'
             : 'Yes, we specialize in bilingual Korean-English websites optimized for Korean businesses.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: isKorean ? '웹사이트 제작 문의 방법은 어떻게 되나요?' : 'How can I inquire about website creation?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: isKorean
+            ? '웹사이트 제작 문의는 전화, 이메일, 또는 홈페이지 문의 폼을 통해 가능합니다. 무료 상담을 통해 프로젝트 범위, 일정, 견적을 안내드립니다. 지금 바로 문의하시면 24시간 이내에 답변드립니다.'
+            : 'You can inquire via phone, email, or our website contact form. We offer a free consultation to discuss project scope, timeline, and pricing. Contact us now and we will respond within 24 hours.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: isKorean ? '웹사이트 제작 비용 문의는 어떻게 하나요?' : 'How do I ask about website development costs?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: isKorean
+            ? '웹사이트 제작 비용 문의는 무료 상담을 통해 정확한 견적을 받으실 수 있습니다. 기본 $1,000부터 시작하며, 비즈니스 규모와 필요한 기능에 따라 맞춤 견적을 제공합니다. 부담 없이 문의해주세요.'
+            : 'You can get an accurate quote through our free consultation. Starting at $1,000, we provide custom quotes based on your business size and required features. Feel free to reach out anytime.',
         },
       },
     ],
@@ -243,6 +263,59 @@ export default function WebsiteDesignPage({ params }: { params: { locale: string
           </div>
         </section>
 
+        {/* 웹사이트 제작 문의 */}
+        {isKorean && (
+          <section className="py-16 px-4 bg-violet-50 text-gray-900">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-black text-center mb-6">
+                <span className="text-violet-600">웹사이트 제작 문의</span>
+              </h2>
+              <p className="text-lg text-gray-700 text-center mb-8 max-w-2xl mx-auto">
+                웹사이트 제작이 필요하신가요? 조이루모스는 미국 전역 한인 비즈니스를 위한 전문 웹사이트 제작 서비스를 제공합니다. 웹사이트 제작 문의부터 런칭까지, 한국어로 편하게 상담받으세요.
+              </p>
+              <div className="grid md:grid-cols-3 gap-6 mb-8">
+                <div className="bg-white p-6 rounded-xl text-center shadow-sm">
+                  <Clock className="w-8 h-8 text-violet-600 mx-auto mb-3" />
+                  <h3 className="font-bold mb-2">빠른 응답</h3>
+                  <p className="text-gray-600 text-sm">문의 후 24시간 이내 답변</p>
+                </div>
+                <div className="bg-white p-6 rounded-xl text-center shadow-sm">
+                  <DollarSign className="w-8 h-8 text-violet-600 mx-auto mb-3" />
+                  <h3 className="font-bold mb-2">무료 견적</h3>
+                  <p className="text-gray-600 text-sm">부담 없는 무료 상담 및 견적</p>
+                </div>
+                <div className="bg-white p-6 rounded-xl text-center shadow-sm">
+                  <MessageCircle className="w-8 h-8 text-violet-600 mx-auto mb-3" />
+                  <h3 className="font-bold mb-2">한국어 상담</h3>
+                  <p className="text-gray-600 text-sm">한국어로 편하게 문의하세요</p>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* 문의하기 CTA */}
+        <section className="py-16 px-4 bg-gradient-to-r from-violet-600 to-purple-700 text-white">
+          <div className="max-w-4xl mx-auto text-center">
+            <h2 className="text-3xl md:text-4xl font-black mb-4">
+              {isKorean ? '지금 무료 상담 문의하기' : 'Get Your Free Consultation Today'}
+            </h2>
+            <p className="text-lg mb-8 opacity-90 max-w-2xl mx-auto">
+              {isKorean
+                ? '웹사이트 제작 비용이 궁금하신가요? 홈페이지 제작 문의를 주시면 24시간 이내에 맞춤 견적을 보내드립니다. 부담 없이 무료로 상담받으세요!'
+                : 'Curious about website development costs? Contact us for a free consultation and receive a custom quote within 24 hours. No obligation!'}
+            </p>
+            <div className="flex flex-wrap gap-4 justify-center">
+              <Link href="#contact" className="px-8 py-4 bg-white text-violet-700 rounded-xl font-bold text-lg hover:bg-gray-100 transition-colors shadow-lg inline-flex items-center gap-2">
+                {isKorean ? '문의하기' : 'Contact Us'} <ArrowRight className="w-5 h-5" />
+              </Link>
+              <a href="tel:+12017174745" className="px-8 py-4 bg-transparent text-white border-2 border-white rounded-xl font-bold text-lg hover:bg-white/10 transition-colors inline-flex items-center gap-2">
+                {isKorean ? '전화 문의: (201) 717-4745' : 'Call: (201) 717-4745'}
+              </a>
+            </div>
+          </div>
+        </section>
+
         {/* FAQ */}
         <section className="py-16 px-4 bg-gray-50 text-gray-900">
           <div className="max-w-4xl mx-auto">
@@ -262,12 +335,34 @@ export default function WebsiteDesignPage({ params }: { params: { locale: string
         <section className="py-12 px-4 bg-white text-gray-900">
           <div className="max-w-4xl mx-auto text-center">
             <h3 className="text-lg font-bold mb-4">{isKorean ? '관련 서비스' : 'Related Services'}</h3>
-            <div className="flex flex-wrap justify-center gap-4">
+            <div className="flex flex-wrap justify-center gap-4 mb-8">
               <Link href={isKorean ? '/ko/쇼핑몰-제작' : '/ecommerce'} className="text-violet-600 hover:underline">{isKorean ? '쇼핑몰 제작' : 'E-commerce'}</Link>
-              <span className="text-gray-400">|</span>
-              <Link href={isKorean ? '/ko/뉴욕-웹사이트' : '/ny-website'} className="text-violet-600 hover:underline">{isKorean ? '뉴욕 웹사이트' : 'NYC Website'}</Link>
-              <span className="text-gray-400">|</span>
-              <Link href={isKorean ? '/ko/뉴저지-웹사이트' : '/nj-website'} className="text-violet-600 hover:underline">{isKorean ? '뉴저지 웹사이트' : 'NJ Website'}</Link>
+            </div>
+
+            <h3 className="text-lg font-bold mb-4">{isKorean ? '지역별 웹사이트 제작 서비스' : 'Website Services by State'}</h3>
+            <div className="flex flex-wrap justify-center gap-3">
+              {[
+                { ko: '뉴저지', koSlug: '뉴저지-웹사이트', en: 'New Jersey', enSlug: 'nj-website' },
+                { ko: '뉴욕', koSlug: '뉴욕-웹사이트', en: 'New York', enSlug: 'ny-website' },
+                { ko: '캘리포니아', koSlug: '캘리포니아-웹사이트', en: 'California', enSlug: 'ca-website' },
+                { ko: '텍사스', koSlug: '텍사스-웹사이트', en: 'Texas', enSlug: 'tx-website' },
+                { ko: '조지아', koSlug: '조지아-웹사이트', en: 'Georgia', enSlug: 'ga-website' },
+                { ko: '버지니아', koSlug: '버지니아-웹사이트', en: 'Virginia', enSlug: 'va-website' },
+                { ko: '일리노이', koSlug: '일리노이-웹사이트', en: 'Illinois', enSlug: 'il-website' },
+                { ko: '워싱턴', koSlug: '워싱턴-웹사이트', en: 'Washington', enSlug: 'wa-website' },
+                { ko: '메릴랜드', koSlug: '메릴랜드-웹사이트', en: 'Maryland', enSlug: 'md-website' },
+                { ko: '하와이', koSlug: '하와이-웹사이트', en: 'Hawaii', enSlug: 'hi-website' },
+                { ko: '펜실베이니아', koSlug: '펜실베이니아-웹사이트', en: 'Pennsylvania', enSlug: 'pa-website' },
+                { ko: '플로리다', koSlug: '플로리다-웹사이트', en: 'Florida', enSlug: 'fl-website' },
+              ].map((state, idx) => (
+                <Link
+                  key={idx}
+                  href={isKorean ? `/ko/${state.koSlug}` : `/${state.enSlug}`}
+                  className="px-4 py-2 bg-violet-50 text-violet-700 rounded-lg hover:bg-violet-100 transition-colors text-sm font-medium"
+                >
+                  {isKorean ? `${state.ko} 웹사이트 제작` : `${state.en} Website`}
+                </Link>
+              ))}
             </div>
           </div>
         </section>

@@ -18,11 +18,11 @@ export async function generateMetadata({ params }: { params: { locale: string } 
       ? '펜실베이니아 웹사이트 제작 | 필라델피아 한인 홈페이지 전문 | 조이루모스'
       : 'Pennsylvania Website Design | Philadelphia Korean Business Web Development | ZOE LUMOS',
     description: locale === 'ko'
-      ? '펜실베이니아 웹사이트 제작 전문 업체 조이루모스. 필라델피아, 킹오브프러시아, 첼튼햄 한인 비즈니스 홈페이지 제작. 펜실베이니아 SEO 최적화, 구글 상위노출.'
+      ? '펜실베이니아 웹사이트 제작 전문 업체 조이루모스. 필라델피아, 킹오브프러시아 한인 홈페이지. SEO, 구글 상위노출, 광고대행, 소셜미디어 관리, 구글/인스타 광고.'
       : 'Professional Pennsylvania website design for Korean-American businesses. Philadelphia, King of Prussia, Cheltenham web development. PA SEO, Google ranking.',
     keywords: locale === 'ko'
-      ? '펜실베이니아 웹사이트, 펜실베이니아 웹사이트 제작, 필라델피아 웹사이트, 필라델피아 한인 웹사이트, 킹오브프러시아 웹사이트, 펜실베이니아 SEO'
-      : 'Pennsylvania website, PA website design, Philadelphia Korean website, King of Prussia website, PA SEO',
+      ? '펜실베이니아 웹사이트, 펜실베이니아 웹사이트 제작, 필라델피아 웹사이트, 필라델피아 한인 웹사이트, 킹오브프러시아 웹사이트, 펜실베이니아 SEO, 펜실베이니아 광고대행, 펜실베이니아 소셜미디어, 펜실베이니아 인스타광고, 한인 광고대행'
+      : 'Pennsylvania website, PA website design, Philadelphia Korean website, King of Prussia website, PA SEO, Pennsylvania social media management, Pennsylvania Google Ads, Pennsylvania Korean advertising agency',
     openGraph: {
       title: locale === 'ko' ? '펜실베이니아 웹사이트 제작 전문 - 조이루모스' : 'Pennsylvania Website Design - ZOE LUMOS',
       description: locale === 'ko' ? '펜실베이니아 한인 비즈니스를 위한 최고의 웹사이트 제작 서비스.' : 'Premier website design for PA Korean businesses.',

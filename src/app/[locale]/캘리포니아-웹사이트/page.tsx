@@ -25,11 +25,11 @@ export async function generateMetadata({
       ? '캘리포니아 웹사이트 제작 | LA 한인 홈페이지 제작 전문 | 조이루모스'
       : 'California Website Design | LA Korean Business Web Development | ZOE LUMOS',
     description: locale === 'ko'
-      ? '캘리포니아 웹사이트 제작 전문 업체 조이루모스. LA 코리아타운, 오렌지카운티, 샌프란시스코 한인 비즈니스 홈페이지 제작. 캘리포니아 SEO 최적화, 구글 상위노출, 쇼핑몰 제작. 무료 상담 가능.'
+      ? '캘리포니아 웹사이트 제작 전문 업체 조이루모스. LA 코리아타운, 오렌지카운티, 샌프란시스코 한인 홈페이지. SEO, 구글 상위노출, 광고대행, 소셜미디어 관리, 구글/인스타 광고.'
       : 'Professional California website design for Korean-American businesses. LA Koreatown, Orange County, San Francisco web development. CA SEO, Google ranking, e-commerce.',
     keywords: locale === 'ko'
-      ? '캘리포니아 웹사이트, 캘리포니아 웹사이트 제작, LA 웹사이트, LA 한인 웹사이트, 코리아타운 웹사이트, 오렌지카운티 웹사이트, 풀러턴 웹사이트, 캘리포니아 쇼핑몰, 캘리포니아 SEO, 캘리포니아 구글광고'
-      : 'California website, CA website design, LA Korean website, Koreatown website, Orange County website, Fullerton website, CA Shopify, CA SEO',
+      ? '캘리포니아 웹사이트, 캘리포니아 웹사이트 제작, LA 웹사이트, LA 한인 웹사이트, 코리아타운 웹사이트, 오렌지카운티 웹사이트, 풀러턴 웹사이트, 캘리포니아 쇼핑몰, 캘리포니아 SEO, 캘리포니아 구글광고, 캘리포니아 광고대행, 캘리포니아 소셜미디어, 캘리포니아 인스타광고, 한인 광고대행'
+      : 'California website, CA website design, LA Korean website, Koreatown website, Orange County website, Fullerton website, CA Shopify, CA SEO, California social media management, California Google Ads, California Korean advertising agency',
     openGraph: {
       title: locale === 'ko' ? '캘리포니아 웹사이트 제작 전문 - 조이루모스' : 'California Website Design - ZOE LUMOS',
       description: locale === 'ko'

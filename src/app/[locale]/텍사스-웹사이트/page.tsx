@@ -25,11 +25,11 @@ export async function generateMetadata({
       ? '텍사스 웹사이트 제작 | 달라스 휴스턴 한인 홈페이지 전문 | 조이루모스'
       : 'Texas Website Design | Dallas Houston Korean Business Web Development | ZOE LUMOS',
     description: locale === 'ko'
-      ? '텍사스 웹사이트 제작 전문 업체 조이루모스. 달라스, 휴스턴, 캐롤턴 한인 비즈니스 홈페이지 제작. 텍사스 SEO 최적화, 구글 상위노출, 쇼핑몰 제작. 무료 화상 상담.'
+      ? '텍사스 웹사이트 제작 전문 업체 조이루모스. 달라스, 휴스턴, 캐롤턴 한인 홈페이지 제작. SEO, 구글 상위노출, 광고대행, 소셜미디어 관리, 구글/인스타 광고.'
       : 'Professional Texas website design for Korean-American businesses. Dallas, Houston, Carrollton web development. TX SEO, Google ranking, e-commerce.',
     keywords: locale === 'ko'
-      ? '텍사스 웹사이트, 텍사스 웹사이트 제작, 달라스 웹사이트, 휴스턴 웹사이트, 캐롤턴 웹사이트, 텍사스 한인 웹사이트, 달라스 한인 홈페이지, 텍사스 쇼핑몰, 텍사스 SEO, 텍사스 구글광고'
-      : 'Texas website, TX website design, Dallas Korean website, Houston Korean website, Carrollton website, TX Shopify, TX SEO',
+      ? '텍사스 웹사이트, 텍사스 웹사이트 제작, 달라스 웹사이트, 휴스턴 웹사이트, 캐롤턴 웹사이트, 텍사스 한인 웹사이트, 달라스 한인 홈페이지, 텍사스 쇼핑몰, 텍사스 SEO, 텍사스 구글광고, 텍사스 광고대행, 텍사스 소셜미디어, 텍사스 인스타광고, 한인 광고대행'
+      : 'Texas website, TX website design, Dallas Korean website, Houston Korean website, Carrollton website, TX Shopify, TX SEO, Texas social media management, Texas Google Ads, Texas Korean advertising agency',
     openGraph: {
       title: locale === 'ko' ? '텍사스 웹사이트 제작 전문 - 조이루모스' : 'Texas Website Design - ZOE LUMOS',
       description: locale === 'ko'

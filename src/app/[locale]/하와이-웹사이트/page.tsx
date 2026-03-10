@@ -18,11 +18,11 @@ export async function generateMetadata({ params }: { params: { locale: string } 
       ? '하와이 웹사이트 제작 | 호놀룰루 한인 홈페이지 전문 | 조이루모스'
       : 'Hawaii Website Design | Honolulu Korean Business Web Development | ZOE LUMOS',
     description: locale === 'ko'
-      ? '하와이 웹사이트 제작 전문 업체 조이루모스. 호놀룰루, 와이키키, 카폴레이, 진주만 한인 비즈니스 홈페이지 제작. 하와이 SEO 최적화, 관광 비즈니스 웹사이트.'
+      ? '하와이 웹사이트 제작 전문 업체 조이루모스. 호놀룰루, 와이키키, 카폴레이 한인 홈페이지 제작. SEO, 구글 상위노출, 광고대행, 소셜미디어 관리, 구글/인스타 광고.'
       : 'Professional Hawaii website design for Korean-American businesses. Honolulu, Waikiki, Kapolei web development. HI SEO, tourism business websites.',
     keywords: locale === 'ko'
-      ? '하와이 웹사이트, 하와이 웹사이트 제작, 호놀룰루 웹사이트, 하와이 한인 웹사이트, 와이키키 웹사이트, 하와이 관광 웹사이트, 하와이 SEO'
-      : 'Hawaii website, HI website design, Honolulu Korean website, Waikiki website, Hawaii tourism website, HI SEO',
+      ? '하와이 웹사이트, 하와이 웹사이트 제작, 호놀룰루 웹사이트, 하와이 한인 웹사이트, 와이키키 웹사이트, 하와이 관광 웹사이트, 하와이 SEO, 하와이 광고대행, 하와이 소셜미디어, 하와이 인스타광고, 한인 광고대행'
+      : 'Hawaii website, HI website design, Honolulu Korean website, Waikiki website, Hawaii tourism website, HI SEO, Hawaii social media management, Hawaii Google Ads, Hawaii Korean advertising agency',
     openGraph: {
       title: locale === 'ko' ? '하와이 웹사이트 제작 전문 - 조이루모스' : 'Hawaii Website Design - ZOE LUMOS',
       description: locale === 'ko' ? '하와이 한인 비즈니스를 위한 최고의 웹사이트 제작 서비스.' : 'Premier website design for HI Korean businesses.',

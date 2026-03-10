@@ -25,11 +25,11 @@ export async function generateMetadata({
       ? '뉴욕 웹사이트 제작 | NYC 한인 홈페이지 제작 전문 | 조이루모스'
       : 'New York Website Design | NYC Korean Business Web Development | ZOE LUMOS',
     description: locale === 'ko'
-      ? '뉴욕 웹사이트 제작 전문 업체 조이루모스. 맨하탄, 플러싱, 브루클린, 퀸즈 한인 비즈니스 홈페이지 제작. 뉴욕 SEO 최적화, 구글 상위노출, 쇼핑몰 제작. 무료 상담 가능.'
+      ? '뉴욕 웹사이트 제작 전문 업체 조이루모스. 맨하탄, 플러싱, 브루클린, 퀸즈 한인 홈페이지 제작. SEO 최적화, 구글 상위노출, 광고대행, 소셜미디어 관리, 구글/인스타 광고.'
       : 'Professional New York website design for Korean-American businesses. Manhattan, Flushing, Brooklyn, Queens web development. NYC SEO, Google ranking, e-commerce.',
     keywords: locale === 'ko'
-      ? '뉴욕 웹사이트, 뉴욕 웹사이트 제작, 뉴욕 홈페이지, NYC 웹사이트, 뉴욕 한인 웹사이트, 맨하탄 웹사이트, 플러싱 웹사이트, 브루클린 웹사이트, 퀸즈 웹사이트, 뉴욕 쇼핑몰, 뉴욕 SEO, 뉴욕 구글광고, 뉴욕 웹디자인, 뉴욕 웹개발'
-      : 'New York website, NYC website design, NYC Korean website, Manhattan website, Flushing website, Brooklyn website, Queens website, NYC Shopify, NYC SEO',
+      ? '뉴욕 웹사이트, 뉴욕 웹사이트 제작, 뉴욕 홈페이지, NYC 웹사이트, 뉴욕 한인 웹사이트, 맨하탄 웹사이트, 플러싱 웹사이트, 브루클린 웹사이트, 퀸즈 웹사이트, 뉴욕 쇼핑몰, 뉴욕 SEO, 뉴욕 구글광고, 뉴욕 웹디자인, 뉴욕 웹개발, 뉴욕 광고대행, 뉴욕 소셜미디어, 뉴욕 인스타광고, 한인 광고대행'
+      : 'New York website, NYC website design, NYC Korean website, Manhattan website, Flushing website, Brooklyn website, Queens website, NYC Shopify, NYC SEO, New York social media management, New York Google Ads, New York Korean advertising agency',
     openGraph: {
       title: locale === 'ko' ? '뉴욕 웹사이트 제작 전문 - 조이루모스' : 'New York Website Design - ZOE LUMOS',
       description: locale === 'ko'
