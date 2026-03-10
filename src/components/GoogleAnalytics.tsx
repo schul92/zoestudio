@@ -24,6 +24,7 @@ export default function GoogleAnalytics({ GA_MEASUREMENT_ID }: { GA_MEASUREMENT_
               optimize_id: 'OPT-${GA_MEASUREMENT_ID}',
               custom_map: {'dimension1': 'user_type'}
             });
+            gtag('config', 'AW-17470017955');
           `,
         }}
       />
