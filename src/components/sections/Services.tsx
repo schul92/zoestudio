@@ -340,6 +340,126 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
           </motion.g>
         </svg>
       )
+    },
+    {
+      id: 'socialmedia',
+      title: t.services.socialMedia.title,
+      description: t.services.socialMedia.description,
+      features: t.services.socialMedia.features,
+      benefit: t.services.socialMedia.benefit,
+      icon: (
+        <svg viewBox="0 0 100 100" fill="none" className="w-full h-full" role="img" aria-label="Social media management service icon">
+          {/* Phone Frame */}
+          <rect x="28" y="8" width="44" height="72" rx="8" fill="white" stroke="black" strokeWidth="2"/>
+          <rect x="42" y="11" width="16" height="3" rx="1.5" fill="#E0E0E0"/>
+
+          {/* Screen Content - Feed Posts */}
+          <rect x="32" y="18" width="36" height="48" rx="2" fill="#FAFAFA"/>
+
+          {/* Post 1 - Image placeholder with gradient */}
+          <defs>
+            <linearGradient id="igGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#833AB4"/>
+              <stop offset="50%" stopColor="#E1306C"/>
+              <stop offset="100%" stopColor="#F77737"/>
+            </linearGradient>
+          </defs>
+
+          <motion.g
+            animate={{ y: [0, -18, -18, 0] }}
+            transition={{ duration: 4, repeat: Infinity, times: [0, 0.3, 0.7, 1] }}
+          >
+            {/* Post with IG gradient border */}
+            <rect x="34" y="20" width="32" height="24" rx="3" fill="url(#igGrad)" opacity="0.9"/>
+            <rect x="35" y="21" width="30" height="22" rx="2.5" fill="white"/>
+
+            {/* Heart icon */}
+            <motion.path
+              d="M45 30 C45 28, 47 27, 49 28.5 C51 27, 53 28, 53 30 C53 33, 49 35, 49 35 C49 35, 45 33, 45 30Z"
+              fill="#E1306C"
+              animate={{ scale: [1, 1.3, 1] }}
+              transition={{ duration: 0.8, repeat: Infinity, repeatDelay: 2 }}
+              style={{ transformOrigin: '49px 31px' }}
+            />
+
+            {/* Like count */}
+            <text x="50" y="41" fontSize="5" fill="#333" fontWeight="bold" textAnchor="middle">2,847 likes</text>
+
+            {/* Second post peek */}
+            <rect x="34" y="46" width="32" height="24" rx="3" fill="#1877F2" opacity="0.15"/>
+            <rect x="35" y="47" width="30" height="22" rx="2.5" fill="white"/>
+            <circle cx="42" cy="55" r="4" fill="#1877F2" opacity="0.3"/>
+            <rect x="48" y="53" width="14" height="2" rx="1" fill="#E0E0E0"/>
+            <rect x="48" y="57" width="10" height="2" rx="1" fill="#E0E0E0"/>
+          </motion.g>
+
+          {/* Notification Badges popping up */}
+          <motion.g
+            animate={{ scale: [0, 1.2, 1], opacity: [0, 1, 1] }}
+            transition={{ duration: 0.5, repeat: Infinity, repeatDelay: 3 }}
+          >
+            <circle cx="68" cy="18" r="7" fill="#E1306C"/>
+            <text x="68" y="21" fontSize="8" fill="white" fontWeight="bold" textAnchor="middle">+5</text>
+          </motion.g>
+
+          {/* Platform Icons floating around the phone */}
+          {/* Instagram */}
+          <motion.g
+            animate={{ y: [0, -4, 0], x: [0, 2, 0] }}
+            transition={{ duration: 3, repeat: Infinity }}
+          >
+            <rect x="8" y="22" width="16" height="16" rx="5" fill="url(#igGrad)"/>
+            <circle cx="16" cy="30" r="3.5" stroke="white" strokeWidth="1.2" fill="none"/>
+            <circle cx="20" cy="26" r="1" fill="white"/>
+          </motion.g>
+
+          {/* TikTok */}
+          <motion.g
+            animate={{ y: [0, -4, 0], x: [0, -2, 0] }}
+            transition={{ duration: 3, repeat: Infinity, delay: 0.5 }}
+          >
+            <rect x="76" y="22" width="16" height="16" rx="5" fill="black"/>
+            <text x="84" y="33" fontSize="9" fill="white" fontWeight="bold" textAnchor="middle">T</text>
+            <text x="83.5" y="32.5" fontSize="9" fill="#25F4EE" fontWeight="bold" textAnchor="middle" opacity="0.5">T</text>
+            <text x="84.5" y="33.5" fontSize="9" fill="#FE2C55" fontWeight="bold" textAnchor="middle" opacity="0.5">T</text>
+          </motion.g>
+
+          {/* Facebook */}
+          <motion.g
+            animate={{ y: [0, -4, 0], x: [0, 2, 0] }}
+            transition={{ duration: 3, repeat: Infinity, delay: 1 }}
+          >
+            <circle cx="16" cy="56" r="8" fill="#1877F2"/>
+            <text x="16" y="60" fontSize="11" fill="white" fontWeight="bold" textAnchor="middle">f</text>
+          </motion.g>
+
+          {/* Google Business */}
+          <motion.g
+            animate={{ y: [0, -4, 0], x: [0, -2, 0] }}
+            transition={{ duration: 3, repeat: Infinity, delay: 1.5 }}
+          >
+            <circle cx="84" cy="56" r="8" fill="white" stroke="#4285F4" strokeWidth="1.5"/>
+            <text x="84" y="60" fontSize="9" fill="#4285F4" fontWeight="bold" textAnchor="middle">G</text>
+          </motion.g>
+
+          {/* Publish/Send arrows flying out */}
+          <motion.path
+            d="M50 70 L42 78 M50 70 L58 78 M50 70 L50 82"
+            stroke="#4CAF50" strokeWidth="1.5" strokeLinecap="round"
+            animate={{ opacity: [0, 1, 0], y: [0, 5, 10] }}
+            transition={{ duration: 2, repeat: Infinity }}
+          />
+
+          {/* Bottom badge */}
+          <motion.g
+            animate={{ scale: [1, 1.05, 1] }}
+            transition={{ duration: 2, repeat: Infinity }}
+          >
+            <rect x="22" y="84" width="56" height="13" rx="6.5" fill="#FFD700"/>
+            <text x="50" y="93" fontSize="7" fill="black" fontWeight="bold" textAnchor="middle">WE POST FOR YOU</text>
+          </motion.g>
+        </svg>
+      )
     }
   ]
 
@@ -417,7 +537,7 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
           </div>
         </ScrollAnimation>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mb-16">
           {services.map((service, index) => (
             <motion.div
               key={index}

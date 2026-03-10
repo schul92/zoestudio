@@ -107,3 +107,13 @@ input::placeholder, textarea::placeholder {
 .card-premium:hover::before {
   opacity: 1;
 }
+
+/* Floating animation for phone mockup */
+@keyframes float {
+  0%, 100% { transform: translateY(-50%) translateX(0); }
+  50% { transform: translateY(calc(-50% - 12px)) translateX(4px); }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+}

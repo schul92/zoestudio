@@ -1,16 +1,24 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import Link from 'next/link'
 import { useTranslation } from '@/hooks/useTranslation'
 
 export default function AnimatedHero({ locale = 'en' }: { locale?: string }) {
   const { t } = useTranslation(locale)
   const [mounted, setMounted] = useState(false)
+  const videoRef = useRef<HTMLVideoElement>(null)
 
   useEffect(() => {
     setMounted(true)
   }, [])
+
+  // Lazy-play video after mount to not block initial render
+  useEffect(() => {
+    if (mounted && videoRef.current) {
+      videoRef.current.play().catch(() => {})
+    }
+  }, [mounted])
 
   return (
     <section className="grain-overlay relative min-h-screen overflow-hidden bg-[#0a0a0a]">
@@ -26,15 +34,28 @@ export default function AnimatedHero({ locale = 'en' }: { locale?: string }) {
 
       {/* Centered hero content */}
       <div className="relative z-10 mx-auto flex min-h-screen max-w-5xl flex-col items-center justify-center px-6 text-center">
-        {/* Badge */}
-        <p className="mb-8 inline-flex items-center gap-2 rounded-full border border-amber-500/20 bg-amber-500/[0.07] px-5 py-2 text-[11px] font-medium uppercase tracking-[0.25em] text-amber-400/90 backdrop-blur-sm">
-          <span className="h-1.5 w-1.5 rounded-full bg-amber-400 animate-pulse" />
-          Zoe Studio
-        </p>
+        {/* Hero Video — Lightbulb advertisement */}
+        <div className="relative mb-2 md:mb-4 w-[340px] h-[340px] sm:w-[450px] sm:h-[450px] md:w-[600px] md:h-[600px] lg:w-[750px] lg:h-[750px] -mt-4">
+          {/* Warm glow behind video */}
+          <div className="absolute inset-0 bg-amber-500/[0.04] rounded-full blur-[80px] pointer-events-none scale-75" />
 
-        {/* Lightbulb — client only */}
-        <div className="relative mb-6 h-[180px] w-[140px] md:mb-8 md:h-[240px] md:w-[180px]">
-          {mounted && <ClientBulb />}
+          {/* Video with aggressive radial fade */}
+          <div className="relative w-full h-full" style={{
+            maskImage: 'radial-gradient(ellipse 70% 75% at 50% 48%, black 30%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.1) 65%, transparent 80%)',
+            WebkitMaskImage: 'radial-gradient(ellipse 70% 75% at 50% 48%, black 30%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.1) 65%, transparent 80%)',
+          }}>
+            <video
+              ref={videoRef}
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              poster="/videos/hero-poster.jpg"
+              className="w-full h-full object-cover"
+            >
+              <source src="/videos/hero-bg.mp4" type="video/mp4" />
+            </video>
+          </div>
         </div>
 
         {/* Title */}
@@ -80,14 +101,6 @@ function ClientParticles() {
   const [Comp, setComp] = useState<React.ComponentType | null>(null)
   useEffect(() => {
     import('@/components/AntigravityParticles').then(m => setComp(() => m.default))
-  }, [])
-  return Comp ? <Comp /> : null
-}
-
-function ClientBulb() {
-  const [Comp, setComp] = useState<React.ComponentType | null>(null)
-  useEffect(() => {
-    import('@/components/HeroBulb').then(m => setComp(() => m.default))
   }, [])
   return Comp ? <Comp /> : null
 }

@@ -63,6 +63,13 @@
       "description": "Start your business the right way. We'll help you form your LLC in NJ, get your EIN, and connect you with Chase banking experts.",
       "features": ["Complete LLC formation in NJ", "EIN (Tax ID) registration", "Free Chase banking consultation", "Business credit card guidance"],
       "benefit": "Start your business with confidence"
+    },
+    "socialMedia": {
+      "title": "Social Media Management",
+      "description": "We post for you. You don't need to know anything about social media — just focus on running your business while we grow your online presence.",
+      "features": ["Instagram, Facebook & TikTok posting", "Google Business profile management", "Professional content creation", "Monthly performance reports"],
+      "benefit": "Stay visible without lifting a finger",
+      "platforms": ["Instagram", "Facebook", "TikTok", "Google Business"]
     }
   },
   "contact": {
