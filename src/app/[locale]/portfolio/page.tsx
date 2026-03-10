@@ -65,6 +65,40 @@ export async function generateMetadata({
 
 const projects = [
   {
+    id: 'tj-flowers',
+    url: 'https://tjflowers-2.myshopify.com/',
+    image: '/portfolio/tj-flowers.jpg',
+    en: {
+      title: 'TJ Flowers & Events',
+      category: 'Flower Shop / E-Commerce',
+      description: 'Full Shopify e-commerce build for TJ Flower Shop, a beloved NJ flower shop since 1988. Featuring 66+ orchid varieties, same-day NYC delivery, wedding & event services, and subscription plans.',
+      services: ['Shopify Development', 'E-Commerce Design', 'SEO Optimization', 'Product Photography'],
+    },
+    ko: {
+      title: 'TJ Flowers & Events',
+      category: '꽃집 / 이커머스',
+      description: '1988년부터 운영된 NJ 꽃집 TJ Flower Shop의 Shopify 쇼핑몰 구축. 66종 이상의 난초, 당일 NYC 배달, 웨딩 & 이벤트 서비스, 정기 구독 플랜 제공.',
+      services: ['Shopify 개발', '이커머스 디자인', 'SEO 최적화', '상품 사진 촬영'],
+    },
+  },
+  {
+    id: 'carek9',
+    url: 'https://carek9.com/',
+    image: '/portfolio/carek9.jpg',
+    en: {
+      title: 'CareK9',
+      category: 'Pet Products / E-Commerce',
+      description: 'Shopify e-commerce store for CareK9, a premium natural dog treat and paw care brand. Features product collections, a Care Magazine blog, and integrated payment processing with free shipping tiers.',
+      services: ['Shopify Development', 'E-Commerce Design', 'SEO Optimization', 'Brand Identity'],
+    },
+    ko: {
+      title: 'CareK9',
+      category: '반려동물 용품 / 이커머스',
+      description: '프리미엄 천연 강아지 간식 & 발 관리 브랜드 CareK9의 Shopify 쇼핑몰 구축. 상품 컬렉션, Care Magazine 블로그, 결제 시스템 및 무료 배송 기능 포함.',
+      services: ['Shopify 개발', '이커머스 디자인', 'SEO 최적화', '브랜드 아이덴티티'],
+    },
+  },
+  {
     id: 'kona-coffee',
     url: 'https://konacoffeedonut.com/',
     image: '/portfolio/kona-coffee.jpg',

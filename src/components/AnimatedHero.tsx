@@ -73,19 +73,13 @@ export default function AnimatedHero({ locale = 'en' }: { locale?: string }) {
           {t.hero.description}
         </p>
 
-        {/* CTAs */}
-        <div className="mt-10 flex flex-wrap justify-center gap-4">
+        {/* CTA */}
+        <div className="mt-10 mb-16">
           <Link
             href="#services"
-            className="group relative inline-flex items-center justify-center rounded-xl bg-gradient-to-b from-amber-400 to-amber-500 px-8 py-4 text-sm font-semibold text-black shadow-glow transition-all duration-300 hover:shadow-glow-lg hover:brightness-110 active:scale-[0.97]"
+            className="group relative inline-flex items-center justify-center rounded-xl bg-gradient-to-b from-amber-400 to-amber-500 px-10 py-4 text-sm font-semibold text-black shadow-glow transition-all duration-300 hover:shadow-glow-lg hover:brightness-110 active:scale-[0.97]"
           >
             {t.hero.cta.start}
-          </Link>
-          <Link
-            href="#contact"
-            className="inline-flex items-center justify-center rounded-xl border border-white/[0.12] bg-white/[0.03] px-8 py-4 text-sm font-semibold text-white/90 backdrop-blur-sm transition-all duration-300 hover:border-white/25 hover:bg-white/[0.06] hover:text-white active:scale-[0.97]"
-          >
-            {t.hero.cta.view}
           </Link>
         </div>
       </div>
