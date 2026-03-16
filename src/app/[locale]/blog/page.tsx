@@ -331,60 +331,59 @@ export default function BlogPage({ params }: { params: { locale: string } }) {
           {/* Blog Posts Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {blogPosts.map((post) => (
-              <article
+              <Link
                 key={post.id}
-                className="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:border-gray-200 hover:shadow-lg transition-all"
+                href={`${prefix}/blog/${post.slug}`}
+                className="group block"
               >
-                {/* Placeholder Image */}
-                <div className="h-48 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
-                  <span className="text-4xl">
-                    {post.category.en === 'SEO' && '🔍'}
-                    {post.category.en === 'Google Ads' && '📊'}
-                    {post.category.en === 'Web Design' && '🎨'}
-                    {post.category.en === 'E-commerce' && '🛒'}
-                    {post.category.en === 'Yelp Ads' && '⭐'}
-                    {post.category.en === 'Marketing' && '📈'}
-                  </span>
-                </div>
-
-                <div className="p-6">
-                  <div className="flex items-center gap-3 mb-3">
-                    <span className="text-xs font-medium text-black bg-gray-100 px-2 py-1 rounded">
-                      {post.category[locale]}
-                    </span>
-                    <span className="text-xs text-gray-400">
-                      {post.readTime} {t.minRead}
+                <article className="h-full bg-white rounded-2xl overflow-hidden border border-gray-100 hover:border-gray-200 hover:shadow-lg transition-all">
+                  {/* Placeholder Image */}
+                  <div className="h-48 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
+                    <span className="text-4xl">
+                      {post.category.en === 'SEO' && '🔍'}
+                      {post.category.en === 'Google Ads' && '📊'}
+                      {post.category.en === 'Web Design' && '🎨'}
+                      {post.category.en === 'E-commerce' && '🛒'}
+                      {post.category.en === 'Yelp Ads' && '⭐'}
+                      {post.category.en === 'Marketing' && '📈'}
+                      {post.category.en === 'Pricing' && '💰'}
                     </span>
                   </div>
 
-                  <h2 className="font-semibold text-gray-900 mb-2 group-hover:text-gray-700 transition-colors line-clamp-2">
-                    {post.title[locale]}
-                  </h2>
+                  <div className="p-6">
+                    <div className="flex items-center gap-3 mb-3">
+                      <span className="text-xs font-medium text-black bg-gray-100 px-2 py-1 rounded">
+                        {post.category[locale]}
+                      </span>
+                      <span className="text-xs text-gray-400">
+                        {post.readTime} {t.minRead}
+                      </span>
+                    </div>
 
-                  <p className="text-sm text-gray-600 mb-4 line-clamp-2">
-                    {post.excerpt[locale]}
-                  </p>
+                    <h2 className="font-semibold text-gray-900 mb-2 group-hover:text-gray-700 transition-colors line-clamp-2">
+                      {post.title[locale]}
+                    </h2>
 
-                  <div className="flex items-center justify-between">
-                    <span className="text-xs text-gray-400">
-                      {new Date(post.date).toLocaleDateString(locale === 'ko' ? 'ko-KR' : 'en-US', {
-                        year: 'numeric',
-                        month: 'short',
-                        day: 'numeric'
-                      })}
-                    </span>
-                    <span className="text-sm font-medium text-gray-900 group-hover:translate-x-1 transition-transform">
-                      {t.readMore} →
-                    </span>
+                    <p className="text-sm text-gray-600 mb-4 line-clamp-2">
+                      {post.excerpt[locale]}
+                    </p>
+
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs text-gray-400">
+                        {new Date(post.date).toLocaleDateString(locale === 'ko' ? 'ko-KR' : 'en-US', {
+                          year: 'numeric',
+                          month: 'short',
+                          day: 'numeric'
+                        })}
+                      </span>
+                      <span className="text-sm font-medium text-gray-900 group-hover:translate-x-1 transition-transform">
+                        {t.readMore} →
+                      </span>
+                    </div>
                   </div>
-                </div>
-              </article>
+                </article>
+              </Link>
             ))}
-          </div>
-
-          {/* Coming Soon Notice */}
-          <div className="text-center mb-16 p-8 bg-gray-50 rounded-2xl">
-            <p className="text-gray-600">{t.comingSoon}</p>
           </div>
 
           {/* Newsletter Subscribe */}
