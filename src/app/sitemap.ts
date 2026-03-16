@@ -32,6 +32,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/palisades-park-marketing',
     '/ridgefield-web-design',
     '/edgewater-web-design',
+    '/cliffside-park-web-design',
     '/advertising',
   ]
 
@@ -53,6 +54,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/펜실베이니아-웹사이트', enPath: '/pa-website', priority: 0.95 },
     { path: '/플로리다-웹사이트', enPath: '/fl-website', priority: 0.95 },
     { path: '/팰팍-마케팅', enPath: '/palisades-park-marketing', priority: 0.95 },
+    { path: '/클리프사이드파크-웹디자인', enPath: '/cliffside-park-web-design', priority: 0.95 },
     { path: '/광고대행', enPath: '/advertising', priority: 0.95 },
   ]
 
