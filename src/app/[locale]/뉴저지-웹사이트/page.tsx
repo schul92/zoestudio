@@ -144,8 +144,8 @@ export default function NJWebsiteKoreanPage({ params }: { params: { locale: stri
     },
     aggregateRating: {
       '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '47',
+      ratingValue: '5',
+      reviewCount: '6',
     },
     inLanguage: isKorean ? 'ko' : 'en',
   }

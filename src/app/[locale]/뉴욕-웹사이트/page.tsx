@@ -119,8 +119,8 @@ export default function NYWebsiteKoreanPage({ params }: { params: { locale: stri
     priceRange: '$$',
     aggregateRating: {
       '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '52',
+      ratingValue: '5',
+      reviewCount: '6',
     },
   }
 

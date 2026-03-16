@@ -52,15 +52,15 @@ export async function generateMetadata({ params }: { params: { locale: string } 
 
 export default function RidgefieldWebDesignPage({ params }: { params: { locale: string } }) {
   const locale = params.locale as 'en' | 'ko'
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://zoelumos.com'
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
 
   const localBusinessSchema = {
     '@context': 'https://schema.org',
-    '@type': 'WebDesignAgency',
+    '@type': ['LocalBusiness', 'ProfessionalService'],
     name: locale === 'ko' ? 'ZOE LUMOS - 리지필드 웹디자인' : 'ZOE LUMOS - Ridgefield Web Design',
     description: locale === 'ko' ? '리지필드 한인 비즈니스를 위한 웹사이트 제작 에이전시' : 'Web design agency for Korean-American businesses in Ridgefield, NJ',
     url: `${baseUrl}/${locale === 'ko' ? 'ko/' : ''}ridgefield-web-design`,
-    telephone: '+1-201-555-0123', email: 'info@zoelumos.com',
+    email: 'info@zoelumos.com',
     address: { '@type': 'PostalAddress', addressLocality: 'Ridgefield', addressRegion: 'NJ', postalCode: '07657', addressCountry: 'US' },
     geo: { '@type': 'GeoCoordinates', latitude: '40.8334', longitude: '-74.0099' },
     areaServed: [
@@ -69,7 +69,7 @@ export default function RidgefieldWebDesignPage({ params }: { params: { locale: 
       { '@type': 'AdministrativeArea', name: 'Bergen County' },
     ],
     priceRange: '$$', openingHours: 'Mo-Fr 09:00-18:00',
-    aggregateRating: { '@type': 'AggregateRating', ratingValue: '5', reviewCount: '89' },
+    aggregateRating: { '@type': 'AggregateRating', ratingValue: '5', reviewCount: '6' },
     knowsLanguage: ['English', 'Korean'],
   }
 

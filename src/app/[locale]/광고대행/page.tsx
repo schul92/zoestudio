@@ -143,8 +143,8 @@ export default function AdvertisingKoreanPage({ params }: { params: { locale: st
     },
     aggregateRating: {
       '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '47',
+      ratingValue: '5',
+      reviewCount: '6',
     },
     inLanguage: isKorean ? 'ko' : 'en',
   }

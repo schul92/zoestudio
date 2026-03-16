@@ -98,7 +98,7 @@ export default function NYWebsitePage({ params }: { params: { locale: string } }
   // Structured data for local SEO
   const localBusinessSchema = {
     '@context': 'https://schema.org',
-    '@type': 'WebDesignAgency',
+    '@type': ['LocalBusiness', 'ProfessionalService'],
     name: 'ZOE LUMOS - New York Website Design',
     description: locale === 'ko' 
       ? '뉴욕 최고의 웹사이트 제작 전문 업체'

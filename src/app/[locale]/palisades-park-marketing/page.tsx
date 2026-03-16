@@ -77,13 +77,12 @@ export default function PalisadesParkMarketingPage({ params }: { params: { local
   
   const localBusinessSchema = {
     '@context': 'https://schema.org',
-    '@type': 'MarketingAgency',
+    '@type': ['LocalBusiness', 'ProfessionalService'],
     name: locale === 'ko' ? 'ZOE LUMOS - 팰리세이즈파크 마케팅' : 'ZOE LUMOS - Palisades Park Marketing',
     description: locale === 'ko' 
       ? '팰리세이즈파크(팰팍) 한인 비즈니스를 위한 디지털 마케팅 에이전시'
       : 'Digital marketing agency for Korean-American businesses in Palisades Park, NJ',
     url: `${baseUrl}/${locale === 'ko' ? 'ko/' : ''}palisades-park-marketing`,
-    telephone: '+1-201-555-0123',
     email: 'info@zoelumos.com',
     address: {
       '@type': 'PostalAddress',
@@ -110,7 +109,7 @@ export default function PalisadesParkMarketingPage({ params }: { params: { local
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '5',
-      reviewCount: '89',
+      reviewCount: '6',
     },
     knowsLanguage: ['English', 'Korean'],
   }

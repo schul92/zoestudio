@@ -73,17 +73,16 @@ export async function generateMetadata({
 
 export default function FortLeeWebDesignPage({ params }: { params: { locale: string } }) {
   const locale = params.locale as 'en' | 'ko'
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://zoelumos.com'
-  
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
+
   const localBusinessSchema = {
     '@context': 'https://schema.org',
-    '@type': 'WebDesignAgency',
+    '@type': ['LocalBusiness', 'ProfessionalService'],
     name: locale === 'ko' ? 'ZOE LUMOS - 포트리 웹디자인' : 'ZOE LUMOS - Fort Lee Web Design',
     description: locale === 'ko' 
       ? '포트리 한인 비즈니스를 위한 웹사이트 제작 전문 에이전시'
       : 'Premier web design agency for Korean-American businesses in Fort Lee, NJ',
     url: `${baseUrl}/${locale === 'ko' ? 'ko/' : ''}fort-lee-web-design`,
-    telephone: '+1-201-555-0123',
     email: 'info@zoelumos.com',
     address: {
       '@type': 'PostalAddress',
@@ -110,7 +109,7 @@ export default function FortLeeWebDesignPage({ params }: { params: { locale: str
     aggregateRating: {
       '@type': 'AggregateRating',
       ratingValue: '5',
-      reviewCount: '89',
+      reviewCount: '6',
     },
     knowsLanguage: ['English', 'Korean'],
   }

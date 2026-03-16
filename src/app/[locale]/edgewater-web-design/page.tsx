@@ -50,15 +50,15 @@ export async function generateMetadata({ params }: { params: { locale: string } 
 
 export default function EdgewaterWebDesignPage({ params }: { params: { locale: string } }) {
   const locale = params.locale as 'en' | 'ko'
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://zoelumos.com'
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
 
   const localBusinessSchema = {
     '@context': 'https://schema.org',
-    '@type': 'WebDesignAgency',
+    '@type': ['LocalBusiness', 'ProfessionalService'],
     name: locale === 'ko' ? 'ZOE LUMOS - 에지워터 웹디자인' : 'ZOE LUMOS - Edgewater Web Design',
     description: locale === 'ko' ? '에지워터 한인 비즈니스를 위한 웹사이트 제작 에이전시' : 'Web design agency for Korean-American businesses in Edgewater, NJ',
     url: `${baseUrl}/${locale === 'ko' ? 'ko/' : ''}edgewater-web-design`,
-    telephone: '+1-201-555-0123', email: 'info@zoelumos.com',
+    email: 'info@zoelumos.com',
     address: { '@type': 'PostalAddress', addressLocality: 'Edgewater', addressRegion: 'NJ', postalCode: '07020', addressCountry: 'US' },
     geo: { '@type': 'GeoCoordinates', latitude: '40.8271', longitude: '-73.9754' },
     areaServed: [
@@ -67,7 +67,7 @@ export default function EdgewaterWebDesignPage({ params }: { params: { locale: s
       { '@type': 'AdministrativeArea', name: 'Bergen County' },
     ],
     priceRange: '$$', openingHours: 'Mo-Fr 09:00-18:00',
-    aggregateRating: { '@type': 'AggregateRating', ratingValue: '5', reviewCount: '89' },
+    aggregateRating: { '@type': 'AggregateRating', ratingValue: '5', reviewCount: '6' },
     knowsLanguage: ['English', 'Korean'],
   }
 

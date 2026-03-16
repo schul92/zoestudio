@@ -28,35 +28,37 @@ export const structuredData = {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "ZOE LUMOS",
-    "alternateName": ["ZOE STUDIO LLC", "조이루모스", "뉴저지 웹사이트 제작", "뉴욕 웹사이트 제작"],
+    "legalName": "ZOE STUDIO LLC",
+    "alternateName": ["조이루모스", "Zoe Studio"],
     "url": "https://www.zoelumos.com",
-    "logo": "https://www.zoelumos.com/favicon.svg",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.zoelumos.com/og-image.png",
+      "width": 512,
+      "height": 512
+    },
+    "email": "info@zoelumos.com",
+    "description": "Bilingual Korean-English digital marketing agency serving Korean-American small businesses nationwide. Services include web design, SEO, Google Ads, and e-commerce.",
     "contactPoint": {
       "@type": "ContactPoint",
       "email": "info@zoelumos.com",
       "contactType": "customer service",
       "availableLanguage": ["English", "Korean"],
-      "areaServed": ["US"],
-      "hoursAvailable": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "09:00",
-        "closes": "18:00"
-      }
+      "areaServed": "US"
     },
     "sameAs": [
-      "https://facebook.com/zoelumos",
-      "https://instagram.com/zoelumos",
-      "https://linkedin.com/company/zoelumos"
+      "https://www.facebook.com/zoelumos",
+      "https://www.instagram.com/zoelumos",
+      "https://www.linkedin.com/company/zoelumos"
     ]
   },
   localBusiness: {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
+    "@type": ["LocalBusiness", "ProfessionalService"],
     "name": "ZOE LUMOS",
-    "alternateName": ["ZOE STUDIO LLC", "조이루모스", "뉴저지 웹사이트 전문", "뉴욕 웹사이트 전문"],
-    "description": "뉴저지 웹사이트 제작, 뉴욕 웹사이트 제작 전문 업체. NJ 홈페이지 제작, NY 홈페이지 제작. 포트리, 팰팍, 플러싱 한인 비즈니스 웹사이트.",
-    "image": "https://www.zoelumos.com/favicon.svg",
+    "alternateName": ["ZOE STUDIO LLC", "조이루모스"],
+    "description": "Bilingual Korean-English digital marketing agency in Fort Lee, NJ. Web design, SEO, Google Ads, and Shopify e-commerce for Korean-American businesses nationwide.",
+    "image": "https://www.zoelumos.com/og-image.png",
     "email": "info@zoelumos.com",
     "url": "https://www.zoelumos.com",
     "address": {
@@ -85,7 +87,7 @@ export const structuredData = {
       {
         "@type": "City",
         "name": "Flushing",
-        "containedInPlace": { "@type": "City", "name": "Queens, New York" }
+        "containedInPlace": { "@type": "AdministrativeArea", "name": "Queens" }
       },
       {
         "@type": "City",
@@ -105,7 +107,7 @@ export const structuredData = {
       {
         "@type": "City",
         "name": "Bayside",
-        "containedInPlace": { "@type": "City", "name": "Queens, New York" }
+        "containedInPlace": { "@type": "AdministrativeArea", "name": "Queens" }
       },
       {
         "@type": "City",
@@ -134,12 +136,15 @@ export const structuredData = {
       }
     ],
     "priceRange": "$$",
-    "openingHours": "Mo-Fr 09:00-18:00",
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5",
-      "reviewCount": "89"
-    }
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00",
+        "closes": "18:00"
+      }
+    ],
+    "knowsLanguage": ["en-US", "ko-KR"]
   },
   faqPage: {
     "@context": "https://schema.org",

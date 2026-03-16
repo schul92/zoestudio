@@ -401,8 +401,8 @@ export default function PricingPage({ params }: { params: { locale: string } }) 
     ],
     aggregateRating: {
       '@type': 'AggregateRating',
-      ratingValue: 4.9,
-      reviewCount: 127,
+      ratingValue: 5,
+      reviewCount: 6,
     },
     areaServed: ['Fort Lee, NJ', 'New York City', 'Online'],
   }
