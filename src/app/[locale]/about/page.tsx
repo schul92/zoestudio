@@ -21,12 +21,12 @@ export async function generateMetadata({
   
   const metadata = {
     en: {
-      title: 'About Us - ZOE LUMOS | Digital Marketing Agency',
-      description: 'Learn about ZOE LUMOS - Bringing Life & Light to Your Digital Presence. Professional web design and digital marketing services in Fort Lee, NJ & NYC.',
+      title: 'About ZOE LUMOS | Fort Lee NJ Web Design & SEO Expert',
+      description: 'ZOE LUMOS — Next.js web design for small businesses to organizations in NJ & NYC. SEO-first builds, transparent pricing, special promos running now.',
     },
     ko: {
-      title: '회사 소개 - ZOE LUMOS | 디지털 마케팅 에이전시',
-      description: 'ZOE LUMOS 소개 - 디지털 프레즌스에 생명과 빛을 가져다 드립니다. 포트리 NJ & NYC 전문 웹 디자인 및 디지털 마케팅 서비스.',
+      title: 'ZOE LUMOS 소개 | 포트리 NJ 웹디자인 & SEO 전문가',
+      description: 'ZOE LUMOS — NJ & NYC 소규모 비즈니스부터 중견 기업까지 Next.js 웹사이트 제작. SEO 중심 개발, 투명한 가격, 신규 고객 프로모션 진행 중.',
     }
   }
   
@@ -125,6 +125,17 @@ const content = {
         { title: 'LLC Formation', description: 'Birth of your business journey' },
       ],
     },
+    founder: {
+      label: 'MEET THE FOUNDER',
+      name: 'Founder & Lead Developer',
+      role: 'Fort Lee, NJ · Serving NJ & NYC',
+      bio1: 'I started ZOE LUMOS because I saw too many small businesses with great products but invisible online presence. My background is in web performance and SEO — I build every site on Next.js, not because it\'s trendy, but because it genuinely loads faster, ranks higher, and converts better than the alternatives. That matters when your customers are searching on their phones at 11pm.',
+      bio2: 'I\'ve built websites for corner restaurants, multi-location healthcare providers, nonprofit organizations, real estate teams, and e-commerce brands. Whether you\'re a solo business owner opening your first location or a growing organization ready to scale — I can build the right solution. No gatekeeping, no upselling what you don\'t need.',
+      bio3: '100% transparent pricing is non-negotiable here. You see the full cost upfront — no surprise invoices, no hidden fees. And right now, I\'m running special launch promotions for new clients. Reach out and let\'s talk.',
+      skills: ['Next.js', 'SEO & Analytics', 'Google Ads', 'Shopify', 'Core Web Vitals', 'Bilingual Sites'],
+      promoLabel: 'Current promos available',
+      promoButton: 'Get in touch',
+    },
     cta: {
       title: 'Ready to Shine?',
       subtitle: 'Let us bring life and light to your business',
@@ -191,6 +202,17 @@ const content = {
         { title: 'SEO 최적화', description: '검색 1페이지 상위 노출 보장' },
       ],
     },
+    founder: {
+      label: '창업자를 소개합니다',
+      name: '창업자 & 수석 개발자',
+      role: '포트리, NJ · NJ & NYC 서비스',
+      bio1: '저는 ZOE LUMOS를 시작하게 된 이유가 있습니다. 좋은 제품과 서비스를 가진 소규모 비즈니스들이 온라인에서 보이지 않는 것을 너무 많이 봤기 때문입니다. 저는 웹 성능과 SEO 전문가로, 모든 웹사이트를 Next.js로 제작합니다. 유행을 따르는 게 아닙니다 — Next.js는 실제로 더 빠르게 로딩되고, 검색 순위가 높으며, 일반 홈페이지 제작 툴보다 전환율이 높기 때문입니다.',
+      bio2: '작은 식당부터 다지점 의료기관, 비영리 단체, 부동산 팀, 이커머스 브랜드까지 다양한 업종의 웹사이트를 제작해왔습니다. 처음 사업을 시작하는 소규모 사업자부터 확장을 준비하는 중견 기업까지 — 필요에 맞는 솔루션을 제공합니다. 필요하지 않은 서비스를 억지로 팔지 않습니다.',
+      bio3: '100% 투명한 가격 정책은 저의 원칙입니다. 전체 비용을 미리 확인할 수 있으며, 숨겨진 요금이 없습니다. 지금 신규 고객을 위한 특별 프로모션을 진행 중입니다. 연락 주세요.',
+      skills: ['Next.js', 'SEO & 분석', '구글 광고', 'Shopify', '코어 웹 바이탈', '이중언어 사이트'],
+      promoLabel: '현재 프로모션 진행 중',
+      promoButton: '문의하기',
+    },
     cta: {
       title: '빛날 준비가 되셨나요?',
       subtitle: '당신의 비즈니스에 생명과 빛을 가져다드립니다',
@@ -202,10 +224,34 @@ const content = {
 export default function AboutPage({ params }: { params: { locale: string } }) {
   const locale = params.locale as 'en' | 'ko'
   const t = content[locale]
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
+
+  const personSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    jobTitle: 'Founder & Lead Developer',
+    worksFor: {
+      '@type': 'Organization',
+      name: 'ZOE LUMOS',
+      url: baseUrl,
+    },
+    knowsAbout: ['Web Design', 'SEO', 'Next.js', 'Google Ads', 'Shopify', 'Core Web Vitals', 'Bilingual Websites'],
+    url: `${baseUrl}/${locale === 'ko' ? 'ko/' : ''}about`,
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'Fort Lee',
+      addressRegion: 'NJ',
+      addressCountry: 'US',
+    },
+  }
 
   return (
     <>
       <HeaderWrapper locale={locale} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
+      />
       <AboutClient t={t} locale={locale} />
       <Footer locale={locale} />
     </>

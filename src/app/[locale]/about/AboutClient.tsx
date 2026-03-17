@@ -248,6 +248,75 @@ export default function AboutClient({ t, locale }: { t: any, locale: string }) {
         </div>
       </section>
 
+      {/* Founder Bio Section */}
+      <section className="py-32 bg-[#0d0d0d]">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <motion.p
+              className="text-amber-400 text-sm font-bold tracking-widest uppercase mb-4"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+            >
+              {t.founder.label}
+            </motion.p>
+
+            <div className="grid md:grid-cols-[auto_1fr] gap-10 items-start">
+              {/* Avatar */}
+              <motion.div
+                className="flex-shrink-0"
+                initial={{ opacity: 0, x: -30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+              >
+                <div className="w-24 h-24 md:w-32 md:h-32 rounded-2xl bg-gradient-to-br from-amber-400 to-orange-500 flex items-center justify-center text-black font-bold text-2xl md:text-3xl shadow-lg shadow-amber-500/20">
+                  ZL
+                </div>
+              </motion.div>
+
+              {/* Bio */}
+              <motion.div
+                initial={{ opacity: 0, x: 30 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+              >
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-1">{t.founder.name}</h2>
+                <p className="text-gray-400 text-sm mb-6">{t.founder.role}</p>
+
+                <div className="space-y-4 text-gray-300 leading-relaxed mb-8">
+                  <p>{t.founder.bio1}</p>
+                  <p>{t.founder.bio2}</p>
+                  <p>{t.founder.bio3}</p>
+                </div>
+
+                {/* Skill Chips */}
+                <div className="flex flex-wrap gap-2 mb-8">
+                  {t.founder.skills.map((skill: string, i: number) => (
+                    <span
+                      key={i}
+                      className="px-3 py-1 bg-white/5 border border-white/10 rounded-full text-sm text-gray-300"
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Promo CTA */}
+                <div className="flex items-center gap-4 flex-wrap">
+                  <span className="text-amber-400 font-semibold text-sm">✦ {t.founder.promoLabel}</span>
+                  <a
+                    href={`${prefix}/#contact`}
+                    className="bg-amber-400 text-black px-6 py-3 rounded-full font-bold text-sm hover:bg-amber-300 hover:scale-105 transition-all"
+                  >
+                    {t.founder.promoButton}
+                  </a>
+                </div>
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-32 bg-[#0a0a0a] relative overflow-hidden">
         {/* Animated Background */}
