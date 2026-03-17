@@ -280,13 +280,13 @@ export default function PricingServer({ locale, content: t }: PricingServerProps
                   data-tier={tier.id}
                   className={`relative rounded-2xl p-8 ${
                     tier.popular
-                      ? 'border-2 border-indigo-500 shadow-xl'
+                      ? 'border-2 border-[#B12492] shadow-xl'
                       : 'border border-gray-700'
                   } bg-[#1a1a1a]`}
                 >
                   {tier.popular && (
                     <div className="absolute -top-4 left-1/2 -translate-x-1/2">
-                      <span className="inline-flex items-center rounded-full bg-indigo-500 px-4 py-1 text-xs font-semibold text-white">
+                      <span className="inline-flex items-center rounded-full bg-[#B12492] px-4 py-1 text-xs font-semibold text-white">
                         {locale === 'en' ? 'MOST POPULAR' : '가장 인기'}
                       </span>
                     </div>
@@ -294,7 +294,7 @@ export default function PricingServer({ locale, content: t }: PricingServerProps
 
                   <div className="mb-8">
                     <div className="mb-4">
-                      <Icon className="h-8 w-8 text-indigo-400" aria-hidden="true" />
+                      <Icon className="h-8 w-8 text-[#B12492]" aria-hidden="true" />
                     </div>
                     <h3 className="text-2xl font-bold text-white mb-2">{tier.name}</h3>
                     <p className="text-sm text-gray-400 mb-4">{tier.description[locale]}</p>
@@ -386,7 +386,7 @@ export default function PricingServer({ locale, content: t }: PricingServerProps
                 ? 'Keep your website running smoothly with our monthly care plans. Get updates, support, and peace of mind.'
                 : '월간 관리 플랜으로 웹사이트를 원활하게 운영하세요. 업데이트, 지원, 안심을 제공합니다.'}
             </p>
-            <p className="text-sm text-indigo-400 font-medium">
+            <p className="text-sm text-[#B12492] font-medium">
               {locale === 'en'
                 ? '💡 Tip: You can select this first! We\'ll guide you to choose a website tier next.'
                 : '💡 팁: 이것을 먼저 선택할 수 있습니다! 다음에 웹사이트 티어를 선택하도록 안내해드립니다.'}
@@ -443,9 +443,9 @@ export default function PricingServer({ locale, content: t }: PricingServerProps
             </div>
 
             {/* Growth - $199/mo */}
-            <div className="bg-[#1a1a1a] rounded-xl p-6 shadow-lg border-2 border-indigo-500 relative">
+            <div className="bg-[#1a1a1a] rounded-xl p-6 shadow-lg border-2 border-[#B12492] relative">
               <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                <span className="bg-indigo-500 text-white px-3 py-1 rounded-full text-xs font-bold">
+                <span className="bg-[#B12492] text-white px-3 py-1 rounded-full text-xs font-bold">
                   {locale === 'en' ? 'POPULAR' : '인기'}
                 </span>
               </div>
@@ -605,7 +605,7 @@ export default function PricingServer({ locale, content: t }: PricingServerProps
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
               <div>
                 <div className="w-12 h-12 bg-indigo-900/50 rounded-full flex items-center justify-center mx-auto mb-3">
-                  <Zap className="w-6 h-6 text-indigo-400" />
+                  <Zap className="w-6 h-6 text-[#B12492]" />
                 </div>
                 <h4 className="font-semibold text-white mb-2">
                   {locale === 'en' ? 'Always Updated' : '항상 최신'}
@@ -657,7 +657,7 @@ export default function PricingServer({ locale, content: t }: PricingServerProps
         <div className="max-w-3xl mx-auto">
           <div className="text-center mb-12">
             <div className="inline-flex items-center justify-center w-12 h-12 bg-indigo-900/50 rounded-full mb-4">
-              <HelpCircle className="w-6 h-6 text-indigo-400" />
+              <HelpCircle className="w-6 h-6 text-[#B12492]" />
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
               {locale === 'en' ? 'Frequently Asked Questions' : '자주 묻는 질문'}
@@ -677,7 +677,7 @@ export default function PricingServer({ locale, content: t }: PricingServerProps
             </p>
             <a
               href={`${locale === 'ko' ? '/ko' : '/'}#contact`}
-              className="inline-flex items-center justify-center px-6 py-3 bg-transparent text-indigo-400 border-2 border-indigo-500 rounded-lg font-semibold hover:bg-indigo-500/10 transition-colors"
+              className="inline-flex items-center justify-center px-6 py-3 bg-transparent text-[#B12492] border-2 border-[#B12492] rounded-lg font-semibold hover:bg-[#B12492]/10 transition-colors"
             >
               {locale === 'en' ? 'Contact Support' : '지원팀 문의'}
             </a>
