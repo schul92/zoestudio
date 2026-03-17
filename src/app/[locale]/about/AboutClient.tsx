@@ -287,6 +287,9 @@ export default function AboutClient({ t, locale }: { t: any, locale: string }) {
                   <p>{t.founder.bio1}</p>
                   <p>{t.founder.bio2}</p>
                   <p>{t.founder.bio3}</p>
+                  <div className="border-l-2 border-amber-400 pl-4 text-gray-200">
+                    <p>{t.founder.bio4}</p>
+                  </div>
                 </div>
 
                 {/* Skill Chips */}
