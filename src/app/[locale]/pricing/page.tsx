@@ -1,450 +1,334 @@
-import { notFound } from 'next/navigation'
-import { Metadata } from 'next'
+'use client'
+
+import { useState } from 'react'
+import { useParams } from 'next/navigation'
+import { motion, AnimatePresence } from 'framer-motion'
 import HeaderWrapper from '@/components/layout/HeaderWrapper'
 import Footer from '@/components/layout/Footer'
-import PricingServer from '@/components/pricing/PricingServer'
-import PricingClientWrapper from '@/components/pricing/PricingClientWrapper'
-import { generatePricingMetadata } from './metadata'
+import Link from 'next/link'
 
-const locales = ['en', 'ko']
-
-export async function generateStaticParams() {
-  return locales.map((locale) => ({ locale }))
+const services = {
+  en: [
+    { id: 'webdesign', emoji: '🌐', title: 'Web Design & Development', desc: 'Custom website for any business — restaurant, medical, nonprofit, e-commerce.' },
+    { id: 'revamp',   emoji: '⚡', title: 'Website Revamp & Migration', desc: 'On OpenCart, old WordPress, or Wix? We modernize and migrate to any platform.' },
+    { id: 'seo',      emoji: '📈', title: 'SEO & GEO', desc: 'Rank on Google and get found by AI search (ChatGPT, Perplexity).' },
+    { id: 'ads',      emoji: '🎯', title: 'Google Ads', desc: 'Get in front of customers immediately with targeted ad campaigns.' },
+    { id: 'social',   emoji: '📱', title: 'Social Media Management', desc: 'We post for you — Instagram, TikTok, Facebook, Google Business.' },
+  ],
+  ko: [
+    { id: 'webdesign', emoji: '🌐', title: '웹사이트 디자인 & 개발', desc: '식당, 의료, 비영리, 이커머스 등 모든 업종의 맞춤 웹사이트.' },
+    { id: 'revamp',   emoji: '⚡', title: '웹사이트 리뉴얼 & 이전', desc: 'OpenCart, 구형 워드프레스, Wix 사용 중이신가요? 원하는 플랫폼으로 이전해드립니다.' },
+    { id: 'seo',      emoji: '📈', title: 'SEO & GEO', desc: '구글 상위 노출 + AI 검색(ChatGPT, Perplexity) 최적화.' },
+    { id: 'ads',      emoji: '🎯', title: '구글 광고', desc: '타겟 광고로 즉시 신규 고객을 확보하세요.' },
+    { id: 'social',   emoji: '📱', title: '소셜미디어 관리', desc: '인스타그램, 틱톡, 페이스북, 구글 비즈니스 — 저희가 대신 포스팅합니다.' },
+  ],
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { locale: string }
-}): Promise<Metadata> {
-  const locale = params.locale as 'en' | 'ko'
-  return generatePricingMetadata(locale)
-}
-
-const content = {
+const copy = {
   en: {
-    hero: {
-      title: 'Simple, transparent pricing',
-      subtitle: 'Choose the perfect plan for your needs. Always flexible to scale.',
-      cta1: 'Get Started',
-      cta2: 'Contact Sales',
-      location: 'Fort Lee, NJ & NYC — work with us from anywhere online.',
-    },
-    plans: {
-      title: 'Choose Your Plan',
-      brochure: 'Brochure',
-      ecommerce: 'E-commerce',
-      launchTime: 'Launch Time',
-      edits: 'Unlimited edits for 7 days',
-      edits1Month: '1-month revisions window',
-      features: 'Features',
-    },
-    brochurePlans: {
-      iron: {
-        name: 'Iron',
-        price: '$500 ~ $1,000',
-        launchTime: '2–3 days',
-        features: [
-          '3 pages, mobile-ready',
-          'Template-based design',
-          'Contact information',
-          'Basic hosting setup',
-          'Quick turnaround',
-        ],
-      },
-      silver: {
-        name: 'Silver',
-        price: '$1,000 ~ $2,000',
-        launchTime: '3–5 days',
-        features: [
-          '5 pages, responsive design',
-          'Basic SEO setup',
-          'Contact form integration',
-          'GA4 base install',
-          'Content ready required',
-        ],
-      },
-      gold: {
-        name: 'Gold',
-        price: '$2,000 ~ $4,000',
-        launchTime: '5–7 days',
-        features: [
-          'Custom layout design',
-          'Blog/portfolio sections',
-          'Event tracking preset',
-          'Speed & image optimization',
-          'SEO upgrades included',
-        ],
-      },
-    },
-    ecommercePlans: {
-      gold: {
-        name: 'Gold',
-        price: '$4,000 ~ $6,000',
-        launchTime: '2–3 weeks',
-        features: [
-          'Shopify setup complete',
-          'Payments/shipping/tax setup',
-          'Up to 20 products',
-          'GA4 + funnel events',
-          'view_item, add_to_cart, checkout tracking',
-        ],
-      },
-      platinum: {
-        name: 'Platinum',
-        price: '$6,000 ~ $10,000',
-        launchTime: '1–3 months',
-        features: [
-          'Advanced theme customization',
-          'Collections & automations',
-          'Remarketing pixels setup',
-          'CRM/email integration',
-          'Analytics dashboard',
-        ],
-      },
-    },
-    subscription: {
-      title: 'Care Plans — Keep Growing',
-      subtitle: 'Start with a one-time build → keep growing from $99/mo.',
-      required: 'E-commerce sites require Care Pro or Scale plans',
-      basic: {
-        name: 'Care Basic',
-        price: 'from $99/mo',
-        features: [
-          'Hosting included',
-          'Daily backups',
-          'Security monitoring',
-          'Minor updates (30 min/mo)',
-        ],
-      },
-      growth: {
-        name: 'Care Growth',
-        price: 'from $199/mo',
-        features: [
-          'Everything in Basic',
-          '+1 hr monthly updates',
-          '1 blog post upload',
-          'Keyword performance check',
-        ],
-      },
-      pro: {
-        name: 'Care Pro',
-        price: 'from $399/mo',
-        badge: 'For E-commerce',
-        features: [
-          'Everything in Growth',
-          '+2 hrs monthly updates',
-          'Product uploads (up to 10)',
-          'Sales performance tracking',
-          'Inventory management support',
-          'Monthly optimization',
-        ],
-      },
-      scale: {
-        name: 'Care Scale',
-        price: 'from $799/mo',
-        badge: 'For E-commerce',
-        features: [
-          'Everything in Pro',
-          '+4 hrs monthly updates',
-          'Advanced conversion report',
-          'Weekly strategy calls',
-          'A/B testing & optimization',
-          'Priority support 24/7',
-        ],
-      },
-    },
-    faq: {
-      title: 'Frequently Asked Questions',
-      items: [
-        {
-          question: 'Why are there price ranges?',
-          answer: 'Every project is unique. The final price depends on complexity, custom features, and content volume. We provide a detailed quote after understanding your needs.',
-        },
-        {
-          question: "What's included in 7-day unlimited edits?",
-          answer: 'After launch, you have 7 full days to request any changes—text, images, layout adjustments. We implement all reasonable edits to ensure you love your site.',
-        },
-        {
-          question: 'Can I cancel my subscription?',
-          answer: "Yes, you can cancel anytime. Your services pause and you can resume whenever you're ready. No long-term contracts required.",
-        },
-      ],
-    },
+    step1Label: 'Step 1 of 2',
+    step2Label: 'Step 2 of 2',
+    headline: "Let's figure out\nwhat you need.",
+    sub: 'No forms. No pricing tables. Just tell us what you\'re building — we\'ll come back with a custom plan within 24 hours.',
+    pickLabel: 'What are you looking for?',
+    pickHint: 'Pick everything that applies',
+    nextBtn: 'Next — tell us about your project →',
+    step2Headline: 'Almost there.',
+    step2Sub: 'A few quick details and we\'ll put together a custom plan for you.',
+    namePlaceholder: 'Your name',
+    businessPlaceholder: 'Business name (optional)',
+    emailPlaceholder: 'Email address',
+    phonePlaceholder: 'Phone or KakaoTalk ID (optional)',
+    descPlaceholder: 'Tell us a bit about your project — what do you have now, what do you want?',
+    submitBtn: 'Send — get my custom plan',
+    sending: 'Sending...',
+    backBtn: '← Back',
+    successHeadline: "We got it. 🎉",
+    successSub: "We'll review your project and get back to you within 24 hours with ideas and next steps.",
+    successBack: 'Back to home',
+    required: 'Please select at least one service.',
+    requiredContact: 'Please fill in your name and email.',
   },
   ko: {
-    hero: {
-      title: '간단하고 투명한 가격',
-      subtitle: '귀하의 필요에 맞는 완벽한 플랜을 선택하세요. 항상 유연하게 확장 가능합니다.',
-      cta1: '시작하기',
-      cta2: '영업팀 문의',
-      location: '포트리, NJ & NYC — 온라인으로 어디서나 협업 가능.',
-    },
-    plans: {
-      title: '플랜 선택하기',
-      brochure: '브로슈어',
-      ecommerce: '이커머스',
-      launchTime: '런칭 시간',
-      edits: '7일간 무제한 수정',
-      edits1Month: '1개월 수정 기간',
-      features: '특징',
-    },
-    brochurePlans: {
-      iron: {
-        name: '아이언',
-        price: '$500 ~ $1,000',
-        launchTime: '2–3일',
-        features: [
-          '3페이지, 모바일 대응',
-          '템플릿 기반 디자인',
-          '연락처 정보',
-          '기본 호스팅 설정',
-          '빠른 제작',
-        ],
-      },
-      silver: {
-        name: '실버',
-        price: '$1,000 ~ $2,000',
-        launchTime: '3–5일',
-        features: [
-          '5페이지, 반응형 디자인',
-          '기본 SEO 설정',
-          '문의 폼 연동',
-          'GA4 기본 설치',
-          '콘텐츠 준비 필요',
-        ],
-      },
-      gold: {
-        name: '골드',
-        price: '$2,000 ~ $4,000',
-        launchTime: '5–7일',
-        features: [
-          '맞춤 레이아웃 디자인',
-          '블로그/포트폴리오 섹션',
-          '이벤트 추적 사전설정',
-          '속도 및 이미지 최적화',
-          'SEO 업그레이드 포함',
-        ],
-      },
-    },
-    ecommercePlans: {
-      gold: {
-        name: '골드',
-        price: '$4,000 ~ $6,000',
-        launchTime: '2–3주',
-        features: [
-          'Shopify 완벽 설정',
-          '결제/배송/세금 설정',
-          '최대 20개 상품',
-          'GA4 + 퍼널 이벤트',
-          '상품보기, 장바구니, 결제 추적',
-        ],
-      },
-      platinum: {
-        name: '플래티넘',
-        price: '$6,000 ~ $10,000',
-        launchTime: '1–3개월',
-        features: [
-          '고급 테마 커스터마이징',
-          '컬렉션 및 자동화',
-          '리마케팅 픽셀 설정',
-          'CRM/이메일 연동',
-          '분석 대시보드',
-        ],
-      },
-    },
-    subscription: {
-      title: '케어 플랜 — 지속적인 성장',
-      subtitle: '일회성 제작으로 시작 → 월 $99부터 지속 성장.',
-      required: '이커머스 사이트는 케어 프로 또는 스케일 플랜 필수',
-      basic: {
-        name: '케어 베이직',
-        price: '월 $99부터',
-        features: [
-          '호스팅 포함',
-          '일일 백업',
-          '보안 모니터링',
-          '간단한 업데이트 (월 30분)',
-        ],
-      },
-      growth: {
-        name: '케어 그로스',
-        price: '월 $199부터',
-        features: [
-          '베이직의 모든 기능',
-          '+월 1시간 업데이트',
-          '블로그 포스트 1개 업로드',
-          '키워드 성과 체크',
-        ],
-      },
-      pro: {
-        name: '케어 프로',
-        price: '월 $399부터',
-        badge: '이커머스용',
-        features: [
-          '그로스의 모든 기능',
-          '+월 2시간 업데이트',
-          '상품 업로드 (최대 10개)',
-          '판매 성과 추적',
-          '재고 관리 지원',
-          '월간 최적화',
-        ],
-      },
-      scale: {
-        name: '케어 스케일',
-        price: '월 $799부터',
-        badge: '이커머스용',
-        features: [
-          '프로의 모든 기능',
-          '+월 4시간 업데이트',
-          '고급 전환 리포트',
-          '주간 전략 통화',
-          'A/B 테스팅 및 최적화',
-          '24/7 우선 지원',
-        ],
-      },
-    },
-    faq: {
-      title: '자주 묻는 질문',
-      items: [
-        {
-          question: '왜 가격이 범위로 표시되나요?',
-          answer: '모든 프로젝트는 독특합니다. 최종 가격은 복잡도, 맞춤 기능, 콘텐츠 양에 따라 결정됩니다. 귀하의 요구사항을 파악한 후 상세 견적을 제공합니다.',
-        },
-        {
-          question: '7일 무제한 수정에는 무엇이 포함되나요?',
-          answer: '런칭 후 7일 동안 텍스트, 이미지, 레이아웃 조정 등 모든 변경을 요청할 수 있습니다. 만족하실 때까지 합리적인 모든 수정을 구현합니다.',
-        },
-        {
-          question: '구독을 취소할 수 있나요?',
-          answer: '네, 언제든지 취소 가능합니다. 서비스는 일시정지되며 준비되면 언제든 재개할 수 있습니다. 장기 계약은 필요 없습니다.',
-        },
-      ],
-    },
+    step1Label: '1단계 / 2단계',
+    step2Label: '2단계 / 2단계',
+    headline: '무엇이 필요하신지\n알려주세요.',
+    sub: '복잡한 양식도, 가격표도 없습니다. 원하시는 것만 말씀해 주시면 24시간 내에 맞춤 플랜으로 연락드립니다.',
+    pickLabel: '어떤 서비스가 필요하신가요?',
+    pickHint: '해당되는 것을 모두 선택해 주세요',
+    nextBtn: '다음 — 프로젝트 설명 →',
+    step2Headline: '거의 다 됐어요.',
+    step2Sub: '간단한 정보만 입력해 주시면 맞춤 플랜을 준비해 드립니다.',
+    namePlaceholder: '이름',
+    businessPlaceholder: '비즈니스 이름 (선택)',
+    emailPlaceholder: '이메일 주소',
+    phonePlaceholder: '전화번호 또는 카카오톡 ID (선택)',
+    descPlaceholder: '현재 상황과 원하시는 것을 간단히 알려주세요.',
+    submitBtn: '보내기 — 맞춤 플랜 받기',
+    sending: '전송 중...',
+    backBtn: '← 이전',
+    successHeadline: '접수됐습니다. 🎉',
+    successSub: '24시간 내에 아이디어와 다음 단계를 포함한 맞춤 플랜을 보내드립니다.',
+    successBack: '홈으로 돌아가기',
+    required: '서비스를 하나 이상 선택해 주세요.',
+    requiredContact: '이름과 이메일을 입력해 주세요.',
   },
 }
 
-export default function PricingPage({ params }: { params: { locale: string } }) {
-  const locale = params.locale as 'en' | 'ko'
-  
-  if (!locales.includes(locale)) {
-    notFound()
+export default function StartProjectPage() {
+  const params = useParams()
+  const locale = (params?.locale as string) === 'ko' ? 'ko' : 'en'
+  const prefix = locale === 'ko' ? '/ko' : ''
+  const t = copy[locale]
+  const serviceList = services[locale]
+
+  const [step, setStep] = useState<1 | 2 | 'done'>(1)
+  const [selected, setSelected] = useState<string[]>([])
+  const [form, setForm] = useState({ name: '', business: '', email: '', phone: '', desc: '' })
+  const [error, setError] = useState('')
+  const [sending, setSending] = useState(false)
+
+  const toggle = (id: string) => {
+    setSelected(prev => prev.includes(id) ? prev.filter(s => s !== id) : [...prev, id])
+    setError('')
   }
 
-  const t = content[locale]
-
-  // Generate structured data for SEO
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: t.faq.items.map((item: any) => ({
-      '@type': 'Question',
-      name: item.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: item.answer,
-      },
-    })),
+  const goStep2 = () => {
+    if (selected.length === 0) { setError(t.required); return }
+    setStep(2)
   }
 
-  const productSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Product',
-    name: 'Web Design & Development Services',
-    image: 'https://www.zoelumos.com/og-image.png',
-    description: 'Professional web design and development services for businesses in NY/NJ. Custom websites, e-commerce solutions, SEO optimization, and digital marketing.',
-    brand: {
-      '@type': 'Brand',
-      name: 'ZOE LUMOS',
-    },
-    offers: [
-      {
-        '@type': 'Offer',
-        name: 'Hobby',
-        price: 0,
-        priceCurrency: 'USD',
-        description: 'Free plan for personal projects and small websites. 1-3 pages, mobile responsive, basic SEO.',
-        availability: 'https://schema.org/InStock',
-        priceValidUntil: '2025-12-31',
-        url: 'https://www.zoelumos.com/pricing',
-      },
-      {
-        '@type': 'Offer',
-        name: 'Plus',
-        price: 99,
-        priceCurrency: 'USD',
-        description: 'Professional plan for growing businesses. Up to 10 pages, custom design, advanced SEO, analytics.',
-        availability: 'https://schema.org/InStock',
-        priceValidUntil: '2025-12-31',
-        url: 'https://www.zoelumos.com/pricing',
-      },
-      {
-        '@type': 'Offer',
-        name: 'Pro',
-        price: 299,
-        priceCurrency: 'USD',
-        description: 'Complete e-commerce solution. Unlimited pages, full e-commerce setup, payment processing, CRM.',
-        availability: 'https://schema.org/InStock',
-        priceValidUntil: '2025-12-31',
-        url: 'https://www.zoelumos.com/pricing',
-      },
-      {
-        '@type': 'Offer',
-        name: 'Enterprise',
-        price: 999,
-        priceCurrency: 'USD',
-        description: 'Custom solutions for large organizations. Dedicated support, SLA, custom integrations. Contact for custom pricing.',
-        availability: 'https://schema.org/InStock',
-        priceValidUntil: '2025-12-31',
-        url: 'https://www.zoelumos.com/pricing',
-      },
-    ],
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: 5,
-      reviewCount: 6,
-    },
-    areaServed: ['Fort Lee, NJ', 'New York City', 'Online'],
-  }
-  
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: 'Home',
-        item: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'}/${locale === 'en' ? '' : 'ko'}`,
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: locale === 'en' ? 'Pricing' : '가격',
-        item: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'}/${locale === 'en' ? '' : 'ko/'}pricing`,
-      },
-    ],
+  const submit = async () => {
+    if (!form.name.trim() || !form.email.trim()) { setError(t.requiredContact); return }
+    setSending(true)
+    const selectedTitles = serviceList.filter(s => selected.includes(s.id)).map(s => s.title).join(', ')
+    try {
+      await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: form.name,
+          business: form.business,
+          email: form.email,
+          phone: form.phone,
+          message: `Services: ${selectedTitles}\n\n${form.desc}`,
+          locale,
+        }),
+      })
+    } catch (_) {}
+    setSending(false)
+    setStep('done')
   }
 
   return (
     <>
       <HeaderWrapper locale={locale} />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
-      
-      <PricingServer locale={locale} content={t} />
-      <PricingClientWrapper locale={locale} />
-      
+      <main className="min-h-screen bg-[#080808] pt-28 pb-24 relative overflow-hidden">
+        {/* Grid texture */}
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:64px_64px]" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_0%,rgba(177,36,146,0.06),transparent_70%)]" />
+
+        <div className="container mx-auto px-6 max-w-3xl relative z-10">
+
+          <AnimatePresence mode="wait">
+
+            {/* ── Step 1: Pick services ── */}
+            {step === 1 && (
+              <motion.div
+                key="step1"
+                initial={{ opacity: 0, x: 40 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -40 }}
+                transition={{ duration: 0.35 }}
+              >
+                {/* Progress */}
+                <div className="flex items-center gap-3 mb-10">
+                  <div className="flex items-center gap-2">
+                    <div className="w-6 h-6 rounded-full bg-[#B12492] flex items-center justify-center text-white text-[11px] font-black">1</div>
+                    <span className="text-[11px] font-black text-[#B12492] tracking-widest uppercase">{t.step1Label}</span>
+                  </div>
+                  <div className="flex-1 h-px bg-white/10" />
+                  <div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center text-gray-600 text-[11px] font-black">2</div>
+                </div>
+
+                {/* Headline */}
+                <h1 className="text-5xl md:text-6xl font-black text-white leading-[0.95] tracking-tight mb-4 whitespace-pre-line">
+                  {t.headline}
+                </h1>
+                <p className="text-gray-500 text-base leading-relaxed mb-12 max-w-lg">{t.sub}</p>
+
+                {/* Service cards */}
+                <p className="text-xs font-black tracking-[0.2em] text-gray-600 uppercase mb-4">
+                  {t.pickLabel} <span className="text-gray-700 normal-case font-normal tracking-normal">— {t.pickHint}</span>
+                </p>
+
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
+                  {serviceList.map((s) => {
+                    const on = selected.includes(s.id)
+                    return (
+                      <motion.button
+                        key={s.id}
+                        onClick={() => toggle(s.id)}
+                        whileTap={{ scale: 0.97 }}
+                        className={`text-left rounded-2xl p-5 border transition-all duration-200 ${
+                          on
+                            ? 'bg-[#B12492]/10 border-[#B12492]/50 shadow-[0_0_20px_rgba(177,36,146,0.1)]'
+                            : 'bg-[#0e0e0e] border-white/[0.07] hover:border-white/20'
+                        }`}
+                      >
+                        <div className="flex items-start justify-between mb-2">
+                          <span className="text-2xl">{s.emoji}</span>
+                          <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center transition-all flex-shrink-0 ${
+                            on ? 'bg-[#B12492] border-[#B12492]' : 'border-white/20'
+                          }`}>
+                            {on && <span className="text-white text-[10px] font-black">✓</span>}
+                          </div>
+                        </div>
+                        <h3 className={`font-black text-sm mb-1 transition-colors ${on ? 'text-white' : 'text-gray-300'}`}>
+                          {s.title}
+                        </h3>
+                        <p className="text-gray-600 text-xs leading-relaxed">{s.desc}</p>
+                      </motion.button>
+                    )
+                  })}
+                </div>
+
+                {error && <p className="text-red-400 text-sm mb-4">{error}</p>}
+
+                <motion.button
+                  onClick={goStep2}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.97 }}
+                  className="w-full sm:w-auto relative overflow-hidden bg-[#B12492] text-white font-black px-8 py-4 rounded-xl text-sm flex items-center gap-2"
+                >
+                  {t.nextBtn}
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent -skew-x-12"
+                    animate={{ x: ['-100%', '200%'] }}
+                    transition={{ duration: 2.5, repeat: Infinity, repeatDelay: 1 }}
+                  />
+                </motion.button>
+              </motion.div>
+            )}
+
+            {/* ── Step 2: Contact details ── */}
+            {step === 2 && (
+              <motion.div
+                key="step2"
+                initial={{ opacity: 0, x: 40 }}
+                animate={{ opacity: 1, x: 0 }}
+                exit={{ opacity: 0, x: -40 }}
+                transition={{ duration: 0.35 }}
+              >
+                {/* Progress */}
+                <div className="flex items-center gap-3 mb-10">
+                  <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center text-white text-[11px] font-black">✓</div>
+                  <div className="flex-1 h-px bg-[#B12492]/40" />
+                  <div className="flex items-center gap-2">
+                    <div className="w-6 h-6 rounded-full bg-[#B12492] flex items-center justify-center text-white text-[11px] font-black">2</div>
+                    <span className="text-[11px] font-black text-[#B12492] tracking-widest uppercase">{t.step2Label}</span>
+                  </div>
+                </div>
+
+                {/* Selected summary */}
+                <div className="flex flex-wrap gap-2 mb-8">
+                  {serviceList.filter(s => selected.includes(s.id)).map(s => (
+                    <span key={s.id} className="inline-flex items-center gap-1.5 bg-[#B12492]/15 border border-[#B12492]/30 text-[#B12492] rounded-full px-3 py-1 text-xs font-bold">
+                      {s.emoji} {s.title}
+                    </span>
+                  ))}
+                </div>
+
+                <h2 className="text-4xl md:text-5xl font-black text-white leading-tight tracking-tight mb-3">
+                  {t.step2Headline}
+                </h2>
+                <p className="text-gray-500 text-base mb-10">{t.step2Sub}</p>
+
+                <div className="space-y-3 mb-8">
+                  {[
+                    { key: 'name', placeholder: t.namePlaceholder, required: true },
+                    { key: 'business', placeholder: t.businessPlaceholder, required: false },
+                    { key: 'email', placeholder: t.emailPlaceholder, required: true, type: 'email' },
+                    { key: 'phone', placeholder: t.phonePlaceholder, required: false },
+                  ].map(({ key, placeholder, type }) => (
+                    <input
+                      key={key}
+                      type={type || 'text'}
+                      placeholder={placeholder}
+                      value={form[key as keyof typeof form]}
+                      onChange={e => setForm(f => ({ ...f, [key]: e.target.value }))}
+                      className="w-full bg-[#0e0e0e] border border-white/[0.08] rounded-xl px-4 py-3.5 text-white placeholder-gray-600 text-sm focus:outline-none focus:border-[#B12492]/50 transition-colors"
+                    />
+                  ))}
+                  <textarea
+                    placeholder={t.descPlaceholder}
+                    rows={4}
+                    value={form.desc}
+                    onChange={e => setForm(f => ({ ...f, desc: e.target.value }))}
+                    className="w-full bg-[#0e0e0e] border border-white/[0.08] rounded-xl px-4 py-3.5 text-white placeholder-gray-600 text-sm focus:outline-none focus:border-[#B12492]/50 transition-colors resize-none"
+                  />
+                </div>
+
+                {error && <p className="text-red-400 text-sm mb-4">{error}</p>}
+
+                <div className="flex flex-col sm:flex-row gap-3">
+                  <button
+                    onClick={() => { setStep(1); setError('') }}
+                    className="px-5 py-3.5 rounded-xl bg-white/[0.05] text-gray-400 hover:bg-white/10 hover:text-white transition-all text-sm font-medium"
+                  >
+                    {t.backBtn}
+                  </button>
+                  <motion.button
+                    onClick={submit}
+                    disabled={sending}
+                    whileHover={{ scale: 1.02 }}
+                    whileTap={{ scale: 0.97 }}
+                    className="flex-1 relative overflow-hidden bg-[#B12492] text-white font-black px-8 py-3.5 rounded-xl text-sm disabled:opacity-60"
+                  >
+                    {sending ? t.sending : t.submitBtn}
+                    {!sending && (
+                      <motion.div
+                        className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent -skew-x-12"
+                        animate={{ x: ['-100%', '200%'] }}
+                        transition={{ duration: 2.5, repeat: Infinity, repeatDelay: 1 }}
+                      />
+                    )}
+                  </motion.button>
+                </div>
+              </motion.div>
+            )}
+
+            {/* ── Done ── */}
+            {step === 'done' && (
+              <motion.div
+                key="done"
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.4 }}
+                className="text-center py-20"
+              >
+                <motion.div
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ delay: 0.1, type: 'spring', stiffness: 200 }}
+                  className="w-20 h-20 rounded-full bg-[#B12492]/20 border border-[#B12492]/40 flex items-center justify-center text-4xl mx-auto mb-8"
+                >
+                  🎉
+                </motion.div>
+                <h2 className="text-4xl md:text-5xl font-black text-white mb-4">{t.successHeadline}</h2>
+                <p className="text-gray-400 text-lg max-w-md mx-auto mb-10">{t.successSub}</p>
+                <Link
+                  href={prefix || '/'}
+                  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/[0.06] border border-white/10 text-gray-300 hover:bg-white/10 hover:text-white transition-all text-sm font-medium"
+                >
+                  {t.successBack}
+                </Link>
+              </motion.div>
+            )}
+
+          </AnimatePresence>
+        </div>
+      </main>
       <Footer locale={locale} />
     </>
   )
