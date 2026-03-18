@@ -38,38 +38,71 @@
     }
   },
   "services": {
-    "title": "Digital Marketing Services for Small Business",
-    "subtitle": "SEO, Google Ads, and Website Design - Everything you need to succeed online",
+    "title": "Web Design & Development — Built to Be Found",
+    "subtitle": "We design, build, and grow your online presence. Modern websites that rank on Google and convert visitors into customers.",
     "seo": {
-      "title": "Get Found on Google",
-      "description": "When people search for businesses like yours, we make sure they find YOU first. No confusing tech talk - just results.",
-      "features": ["Show up #1 when customers search", "Get 3x more website visitors", "Beat your competitors on Google", "Simple monthly progress reports"],
+      "title": "SEO & GEO — Get Found Everywhere",
+      "description": "We optimize your site so customers find you on Google, AI search (ChatGPT, Perplexity), and everywhere else. No jargon — just results.",
+      "features": [
+        "Rank #1 on Google searches",
+        "Visible on AI search (ChatGPT, Perplexity)",
+        "Korean + English keyword strategy",
+        "Monthly ranking reports"
+      ],
       "benefit": "Customers find you, not your competitors"
     },
     "googleAds": {
       "title": "Google & Yelp Ads",
       "description": "Put your business in front of customers on Google and Yelp right when they're looking for what you offer.",
-      "features": ["Instant visibility on Google & Yelp", "Only pay when people click", "Target your ideal customers", "Full campaign management"],
+      "features": [
+        "Instant visibility on Google & Yelp",
+        "Only pay when people click",
+        "Target your ideal customers",
+        "Full campaign management"
+      ],
       "benefit": "Get customers today, not tomorrow"
     },
     "webDesign": {
-      "title": "E-Commerce Website & Shopify Store",
-      "description": "Launch your online store with custom Shopify development. Sell products 24/7 with a professional e-commerce website. From simple websites to full online stores.",
-      "features": ["Custom Shopify store setup", "E-commerce website design", "Payment processing setup", "Product catalog & inventory", "Mobile-optimized checkout", "Ready to sell in 30 days"],
-      "benefit": "Start selling online immediately"
-    },
-    "llc": {
-      "title": "LLC Formation & Business Setup",
-      "description": "Start your business the right way. We'll help you form your LLC in NJ, get your EIN, and connect you with Chase banking experts.",
-      "features": ["Complete LLC formation in NJ", "EIN (Tax ID) registration", "Free Chase banking consultation", "Business credit card guidance"],
-      "benefit": "Start your business with confidence"
+      "title": "Web Design & Development",
+      "description": "Custom-built websites for any type of business — restaurants, medical offices, nonprofits, e-commerce, and more. The design you want, built the way you need.",
+      "features": [
+        "Custom design from scratch",
+        "SEO + GEO optimized from day one",
+        "Mobile-first, fast-loading",
+        "CMS — manage your own content",
+        "Shopify, Squarespace, or custom",
+        "Any business type, any size"
+      ],
+      "benefit": "A website that actually works for you"
     },
     "socialMedia": {
       "title": "Social Media Management",
       "description": "We post for you. You don't need to know anything about social media — just focus on running your business while we grow your online presence.",
-      "features": ["Instagram, Facebook & TikTok posting", "Google Business profile management", "Professional content creation", "Monthly performance reports"],
+      "features": [
+        "Instagram, Facebook & TikTok posting",
+        "Google Business profile management",
+        "Professional content creation",
+        "Monthly performance reports"
+      ],
       "benefit": "Stay visible without lifting a finger",
-      "platforms": ["Instagram", "Facebook", "TikTok", "Google Business"]
+      "platforms": [
+        "Instagram",
+        "Facebook",
+        "TikTok",
+        "Google Business"
+      ]
+    },
+    "revamp": {
+      "title": "Website Revamp & Migration",
+      "description": "Still on OpenCart, old WordPress, or a slow outdated site? We migrate and modernize your website to any platform you want — fast and clean.",
+      "features": [
+        "Migrate from any old platform",
+        "SEO + GEO upgrade included",
+        "Shopify, Squarespace, or custom",
+        "Keep your Google rankings intact",
+        "Zero downtime migration"
+      ],
+      "benefit": "Your old site, reborn"
     }
   },
   "contact": {

@@ -2,6 +2,7 @@ import { Check, X, Sparkles, Users, Building2, Zap, HelpCircle } from 'lucide-re
 import OneTimeToggle from './OneTimeToggle'
 import FAQAccordion from './FAQAccordion'
 import PricingCTA from './PricingCTA'
+import PriceReveal from './PriceReveal'
 
 interface PricingServerProps {
   locale: 'en' | 'ko'
@@ -305,10 +306,11 @@ export default function PricingServer({ locale, content: t }: PricingServerProps
                         <span className="text-4xl font-bold text-white">{tier.displayPrice[locale]}</span>
                       ) : (
                         <>
-                          <div className="flex items-baseline">
-                            <span className="text-3xl font-bold text-white price-display">{tier.displayPrice[locale]}</span>
-                            <span className="ml-2 text-sm text-gray-400">{locale === 'en' ? 'one-time' : '일회성'}</span>
-                          </div>
+                          <PriceReveal
+                            price={tier.displayPrice[locale]}
+                            suffix={locale === 'en' ? 'one-time' : '일회성'}
+                            locale={locale}
+                          />
                           <div className="annual-discount-badge hidden mt-1 inline-flex items-center rounded-full bg-green-900/50 px-2 py-0.5 text-xs font-medium text-green-300">
                             {locale === 'en' ? '30% off with annual subscription' : '연간 구독 시 30% 할인'}
                           </div>
@@ -399,8 +401,7 @@ export default function PricingServer({ locale, content: t }: PricingServerProps
               <div className="mb-6">
                 <h3 className="text-xl font-bold text-white mb-2">Starter</h3>
                 <div className="flex items-baseline mb-3">
-                  <span className="text-3xl font-bold text-white">$99</span>
-                  <span className="ml-2 text-gray-400">/{locale === 'en' ? 'month' : '월'}</span>
+                  <PriceReveal price="$99" suffix={`/${locale === 'en' ? 'month' : '월'}`} locale={locale} />
                 </div>
                 <p className="text-sm text-gray-400">
                   {locale === 'en' ? 'Essential maintenance' : '필수 유지보수'}
@@ -452,8 +453,7 @@ export default function PricingServer({ locale, content: t }: PricingServerProps
               <div className="mb-6">
                 <h3 className="text-xl font-bold text-white mb-2">Growth</h3>
                 <div className="flex items-baseline mb-3">
-                  <span className="text-3xl font-bold text-white">$199</span>
-                  <span className="ml-2 text-gray-400">/{locale === 'en' ? 'month' : '월'}</span>
+                  <PriceReveal price="$199" suffix={`/${locale === 'en' ? 'month' : '월'}`} locale={locale} />
                 </div>
                 <p className="text-sm text-gray-400">
                   {locale === 'en' ? 'For growing sites' : '성장하는 사이트용'}
@@ -500,8 +500,7 @@ export default function PricingServer({ locale, content: t }: PricingServerProps
               <div className="mb-6">
                 <h3 className="text-xl font-bold text-white mb-2">Pro</h3>
                 <div className="flex items-baseline mb-3">
-                  <span className="text-3xl font-bold text-white">$399</span>
-                  <span className="ml-2 text-gray-400">/{locale === 'en' ? 'month' : '월'}</span>
+                  <PriceReveal price="$399" suffix={`/${locale === 'en' ? 'month' : '월'}`} locale={locale} />
                 </div>
                 <p className="text-sm text-gray-400">
                   {locale === 'en' ? 'Professional support' : '전문 지원'}
@@ -553,8 +552,7 @@ export default function PricingServer({ locale, content: t }: PricingServerProps
               <div className="mb-6">
                 <h3 className="text-xl font-bold text-white mb-2">Scale</h3>
                 <div className="flex items-baseline mb-3">
-                  <span className="text-3xl font-bold text-white">$799</span>
-                  <span className="ml-2 text-gray-400">/{locale === 'en' ? 'month' : '월'}</span>
+                  <PriceReveal price="$799" suffix={`/${locale === 'en' ? 'month' : '월'}`} locale={locale} />
                 </div>
                 <p className="text-sm text-gray-400">
                   {locale === 'en' ? 'Full-service solution' : '풀 서비스 솔루션'}

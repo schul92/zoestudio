@@ -3,7 +3,6 @@
 import { useTranslation } from '@/hooks/useTranslation'
 import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
-import ScrollAnimation from '@/components/ui/ScrollAnimation'
 import { useServices } from '@/context/ServiceContext'
 import { useTracking } from '@/hooks/useTracking'
 
@@ -14,761 +13,381 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
   const { trackServiceClick } = useTracking()
   const [mounted, setMounted] = useState(false)
 
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-  
+  useEffect(() => { setMounted(true) }, [])
+
+  const isKo = locale === 'ko'
+  const [scrolling, setScrolling] = useState(false)
+
   const services = [
     {
-      id: 'seo',
-      title: t.services.seo.title,
-      description: t.services.seo.description,
-      features: t.services.seo.features,
-      benefit: t.services.seo.benefit,
-      icon: (
-        <svg viewBox="0 0 100 100" fill="none" className="w-full h-full" role="img" aria-label="SEO service icon - search magnifying glass with growth chart">
-          {/* Modern Minimalist SEO Icon */}
-          
-          {/* Central Search Circle */}
-          <motion.circle
-            cx="50" cy="45" r="25"
-            stroke="black" strokeWidth="2" fill="white"
-            animate={{ scale: [1, 1.05, 1] }}
-            transition={{ duration: 3, repeat: Infinity }}
-          />
-          
-          {/* Magnifying Glass Handle */}
-          <line x1="67" y1="57" x2="75" y2="65" stroke="black" strokeWidth="3" strokeLinecap="round"/>
-          
-          {/* Growth Arrow Inside */}
-          <motion.path
-            d="M35 45 L45 35 L55 40 L65 30"
-            stroke="#4CAF50" strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round"
-            strokeDasharray="40"
-            strokeDashoffset="40"
-            animate={{ strokeDashoffset: 0 }}
-            transition={{ duration: 1.5, repeat: Infinity, repeatDelay: 1 }}
-          />
-          
-          {/* Data Points */}
-          <motion.circle cx="35" cy="45" r="2" fill="#4CAF50"
-            animate={{ scale: [0, 1.2, 1] }}
-            transition={{ duration: 0.5, delay: 0.2, repeat: Infinity, repeatDelay: 2 }}
-          />
-          <motion.circle cx="45" cy="35" r="2" fill="#4CAF50"
-            animate={{ scale: [0, 1.2, 1] }}
-            transition={{ duration: 0.5, delay: 0.4, repeat: Infinity, repeatDelay: 2 }}
-          />
-          <motion.circle cx="55" cy="40" r="2" fill="#4CAF50"
-            animate={{ scale: [0, 1.2, 1] }}
-            transition={{ duration: 0.5, delay: 0.6, repeat: Infinity, repeatDelay: 2 }}
-          />
-          <motion.circle cx="65" cy="30" r="2" fill="#4CAF50"
-            animate={{ scale: [0, 1.2, 1] }}
-            transition={{ duration: 0.5, delay: 0.8, repeat: Infinity, repeatDelay: 2 }}
-          />
-          
-          {/* Ranking Badge */}
-          <motion.g
-            animate={{ y: [2, -2, 2] }}
-            transition={{ duration: 2, repeat: Infinity }}
-          >
-            <rect x="35" y="70" width="30" height="12" rx="6" fill="#FFD700"/>
-            <text x="50" y="78" fontSize="8" fill="white" fontWeight="bold" textAnchor="middle">#1</text>
-          </motion.g>
-          
-          {/* Percentage Indicator */}
-          <motion.text
-            x="50" y="92" fontSize="10" fill="#4CAF50" fontWeight="bold" textAnchor="middle"
-            animate={{ opacity: [0.5, 1, 0.5] }}
-            transition={{ duration: 2, repeat: Infinity }}
-          >
-            +185%
-          </motion.text>
-        </svg>
-      )
-    },
-    {
-      id: 'googleads',
-      title: t.services.googleAds.title,
-      description: t.services.googleAds.description,
-      features: t.services.googleAds.features,
-      benefit: t.services.googleAds.benefit,
-      icon: (
-        <svg viewBox="0 0 100 100" fill="none" className="w-full h-full" role="img" aria-label="Google Ads service icon - digital advertising cards">
-          {/* Clean Digital Ads Icon */}
-          
-          {/* Ad Cards Animation */}
-          <motion.g
-            animate={{ y: [0, -5, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-          >
-            {/* First Ad Card */}
-            <rect x="20" y="25" width="25" height="18" rx="2" fill="white" stroke="black" strokeWidth="2"/>
-            <rect x="22" y="27" width="8" height="5" rx="1" fill="#4285F4"/>
-            <text x="26" y="31" fontSize="3.5" fill="white" fontWeight="bold" textAnchor="middle">AD</text>
-            <rect x="22" y="34" width="21" height="2" fill="#E0E0E0"/>
-            <rect x="22" y="37" width="16" height="2" fill="#E0E0E0"/>
-          </motion.g>
-          
-          <motion.g
-            animate={{ y: [0, -5, 0] }}
-            transition={{ duration: 2, repeat: Infinity, delay: 0.3 }}
-          >
-            {/* Second Ad Card */}
-            <rect x="35" y="35" width="25" height="18" rx="2" fill="white" stroke="black" strokeWidth="2"/>
-            <rect x="37" y="37" width="8" height="5" rx="1" fill="#D32F2F"/>
-            <text x="41" y="41" fontSize="3.5" fill="white" fontWeight="bold" textAnchor="middle">AD</text>
-            <rect x="37" y="44" width="21" height="2" fill="#E0E0E0"/>
-            <rect x="37" y="47" width="16" height="2" fill="#E0E0E0"/>
-          </motion.g>
-          
-          <motion.g
-            animate={{ y: [0, -5, 0] }}
-            transition={{ duration: 2, repeat: Infinity, delay: 0.6 }}
-          >
-            {/* Third Ad Card */}
-            <rect x="50" y="45" width="25" height="18" rx="2" fill="white" stroke="black" strokeWidth="2"/>
-            <rect x="52" y="47" width="8" height="5" rx="1" fill="#34A853"/>
-            <text x="56" y="51" fontSize="3.5" fill="white" fontWeight="bold" textAnchor="middle">AD</text>
-            <rect x="52" y="54" width="21" height="2" fill="#E0E0E0"/>
-            <rect x="52" y="57" width="16" height="2" fill="#E0E0E0"/>
-          </motion.g>
-          
-          {/* Click Indicators */}
-          <motion.circle
-            cx="30" cy="50" r="2"
-            fill="black"
-            animate={{ 
-              scale: [0, 1, 1, 0],
-              opacity: [0, 1, 1, 0]
-            }}
-            transition={{ duration: 2, repeat: Infinity }}
-          />
-          <motion.circle
-            cx="30" cy="50" r="5"
-            fill="none"
-            stroke="black"
-            strokeWidth="1"
-            animate={{ 
-              scale: [0, 1.5],
-              opacity: [1, 0]
-            }}
-            transition={{ duration: 2, repeat: Infinity }}
-          />
-          
-          <motion.circle
-            cx="65" cy="55" r="2"
-            fill="black"
-            animate={{ 
-              scale: [0, 1, 1, 0],
-              opacity: [0, 1, 1, 0]
-            }}
-            transition={{ duration: 2, repeat: Infinity, delay: 1 }}
-          />
-          <motion.circle
-            cx="65" cy="55" r="5"
-            fill="none"
-            stroke="black"
-            strokeWidth="1"
-            animate={{ 
-              scale: [0, 1.5],
-              opacity: [1, 0]
-            }}
-            transition={{ duration: 2, repeat: Infinity, delay: 1 }}
-          />
-          
-          {/* Target Symbol */}
-          <motion.g
-            animate={{ rotate: [0, 360] }}
-            transition={{ duration: 10, repeat: Infinity, ease: "linear" }}
-            style={{ transformOrigin: "50px 75px" }}
-          >
-            <circle cx="50" cy="75" r="8" fill="none" stroke="black" strokeWidth="1.5"/>
-            <circle cx="50" cy="75" r="5" fill="none" stroke="black" strokeWidth="1"/>
-            <circle cx="50" cy="75" r="2" fill="black"/>
-          </motion.g>
-        </svg>
-      )
-    },
-    {
       id: 'webdesign',
+      number: '01',
+      emoji: '🌐',
       title: t.services.webDesign.title,
       description: t.services.webDesign.description,
       features: t.services.webDesign.features,
       benefit: t.services.webDesign.benefit,
-      icon: (
-        <svg viewBox="0 0 100 100" fill="none" className="w-full h-full" role="img" aria-label="Web design and Shopify e-commerce service icon">
-          {/* E-Commerce Website & Shopify Icon */}
-          
-          {/* Main Screen */}
-          <rect x="20" y="20" width="60" height="40" rx="2" stroke="black" strokeWidth="2" fill="white"/>
-          <rect x="20" y="20" width="60" height="8" fill="#95BF47"/> {/* Shopify green */}
-          <circle cx="25" cy="24" r="1.5" fill="white"/>
-          <circle cx="30" cy="24" r="1.5" fill="white"/>
-          <circle cx="35" cy="24" r="1.5" fill="white"/>
-          
-          {/* Shopping Cart Icon in header */}
-          <path d="M70 24 L68 22 L66 24 M66 22 L70 22" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
-          <circle cx="67" cy="25" r="0.5" fill="white"/>
-          <circle cx="69" cy="25" r="0.5" fill="white"/>
-          
-          {/* Product Grid */}
-          <rect x="26" y="34" width="12" height="12" rx="1" fill="#F5F5F5" stroke="black" strokeWidth="1"/>
-          <rect x="42" y="34" width="12" height="12" rx="1" fill="#F5F5F5" stroke="black" strokeWidth="1"/>
-          <rect x="58" y="34" width="12" height="12" rx="1" fill="#F5F5F5" stroke="black" strokeWidth="1"/>
-          
-          {/* Shopping Bag/Cart Animation */}
-          <motion.g
-            animate={{ y: [0, -2, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-          >
-            <path d="M45 50 L45 54 L55 54 L55 50" stroke="black" strokeWidth="2" fill="white"/>
-            <path d="M47 50 C47 48, 48 47, 50 47 C52 47, 53 48, 53 50" stroke="black" strokeWidth="1.5" fill="none"/>
-          </motion.g>
-          
-          {/* Dollar Sign Animation */}
-          <motion.text
-            x="50" y="43" 
-            fontSize="8" 
-            fill="#95BF47"
-            fontWeight="bold"
-            textAnchor="middle"
-            animate={{ opacity: [0, 1, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-          >
-            $
-          </motion.text>
-          
-          {/* Mobile & Tablet */}
-          <rect x="25" y="68" width="15" height="12" rx="1" stroke="black" strokeWidth="1.5" fill="white"/>
-          <rect x="55" y="70" width="10" height="13" rx="1" stroke="black" strokeWidth="1.5" fill="white"/>
-          
-          {/* Shopify Badge */}
-          <motion.circle
-            cx="50" cy="75" r="3"
-            fill="#95BF47"
-            animate={{ scale: [1, 1.2, 1] }}
-            transition={{ duration: 2, repeat: Infinity }}
-          />
-          <text x="50" y="77" fontSize="4" fill="white" fontWeight="bold" textAnchor="middle">S</text>
-        </svg>
-      )
+      seoBadge: true,
     },
     {
-      id: 'llc',
-      title: t.services.llc.title,
-      description: t.services.llc.description,
-      features: t.services.llc.features,
-      benefit: t.services.llc.benefit,
-      icon: (
-        <svg viewBox="0 0 100 100" fill="none" className="w-full h-full" role="img" aria-label="LLC formation and business setup service icon">
-          {/* LLC Formation & Business Setup Icon */}
-          
-          {/* Building/Office */}
-          <motion.g
-            animate={{ y: [0, -2, 0] }}
-            transition={{ duration: 3, repeat: Infinity }}
-          >
-            <rect x="30" y="35" width="40" height="40" rx="2" fill="white" stroke="black" strokeWidth="2"/>
-            <rect x="30" y="35" width="40" height="8" fill="#4285F4"/>
-            
-            {/* Windows */}
-            <rect x="36" y="48" width="8" height="8" fill="#E0E0E0"/>
-            <rect x="48" y="48" width="8" height="8" fill="#E0E0E0"/>
-            <rect x="60" y="48" width="8" height="8" fill="#E0E0E0"/>
-            <rect x="36" y="60" width="8" height="8" fill="#E0E0E0"/>
-            <rect x="48" y="60" width="8" height="8" fill="#E0E0E0"/>
-            <rect x="60" y="60" width="8" height="8" fill="#E0E0E0"/>
-            
-            {/* Door */}
-            <rect x="46" y="65" width="8" height="10" fill="#34A853"/>
-          </motion.g>
-          
-          {/* Document/Certificate */}
-          <motion.g
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.5, repeat: Infinity, repeatDelay: 3 }}
-          >
-            <rect x="15" y="20" width="25" height="30" rx="1" fill="white" stroke="black" strokeWidth="1.5"/>
-            <line x1="18" y1="26" x2="32" y2="26" stroke="#666" strokeWidth="1"/>
-            <line x1="18" y1="30" x2="32" y2="30" stroke="#666" strokeWidth="1"/>
-            <line x1="18" y1="34" x2="28" y2="34" stroke="#666" strokeWidth="1"/>
-            <text x="27.5" y="44" fontSize="6" fill="black" fontWeight="bold" textAnchor="middle">LLC</text>
-          </motion.g>
-          
-          {/* EIN Document */}
-          <motion.g
-            initial={{ opacity: 0, scale: 0 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 1, repeat: Infinity, repeatDelay: 3 }}
-          >
-            <rect x="60" y="20" width="25" height="30" rx="1" fill="white" stroke="black" strokeWidth="1.5"/>
-            <line x1="63" y1="26" x2="77" y2="26" stroke="#666" strokeWidth="1"/>
-            <line x1="63" y1="30" x2="77" y2="30" stroke="#666" strokeWidth="1"/>
-            <line x1="63" y1="34" x2="73" y2="34" stroke="#666" strokeWidth="1"/>
-            <text x="72.5" y="44" fontSize="6" fill="black" fontWeight="bold" textAnchor="middle">EIN</text>
-          </motion.g>
-          
-          {/* Chase Bank Card */}
-          <motion.g
-            animate={{ x: [0, 5, 0] }}
-            transition={{ duration: 2, repeat: Infinity, delay: 1.5 }}
-          >
-            <rect x="35" y="80" width="30" height="18" rx="2" fill="#0052CC" stroke="black" strokeWidth="1.5"/>
-            <rect x="37" y="85" width="12" height="8" rx="1" fill="#FFD700"/>
-            <circle cx="55" cy="89" r="5" fill="none" stroke="white" strokeWidth="1"/>
-            <circle cx="60" cy="89" r="5" fill="none" stroke="white" strokeWidth="1" opacity="0.7"/>
-            <text x="50" y="95" fontSize="4" fill="white" fontWeight="bold" textAnchor="middle">CHASE</text>
-          </motion.g>
-          
-          {/* Success Checkmark */}
-          <motion.g
-            initial={{ scale: 0 }}
-            animate={{ scale: [0, 1.2, 1] }}
-            transition={{ duration: 0.5, delay: 2, repeat: Infinity, repeatDelay: 3 }}
-          >
-            <circle cx="75" cy="60" r="8" fill="#34A853"/>
-            <motion.path
-              d="M70 60 L73 63 L80 56"
-              stroke="white" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"
-              initial={{ pathLength: 0 }}
-              animate={{ pathLength: 1 }}
-              transition={{ duration: 0.3, delay: 2.2, repeat: Infinity, repeatDelay: 3 }}
-            />
-          </motion.g>
-        </svg>
-      )
+      id: 'revamp',
+      number: '02',
+      emoji: '⚡',
+      title: t.services.revamp.title,
+      description: t.services.revamp.description,
+      features: t.services.revamp.features,
+      benefit: t.services.revamp.benefit,
+      seoBadge: true,
+    },
+    {
+      id: 'seo',
+      number: '03',
+      emoji: '📈',
+      title: t.services.seo.title,
+      description: t.services.seo.description,
+      features: t.services.seo.features,
+      benefit: t.services.seo.benefit,
+      seoBadge: false,
+    },
+    {
+      id: 'googleads',
+      number: '04',
+      emoji: '🎯',
+      title: t.services.googleAds.title,
+      description: t.services.googleAds.description,
+      features: t.services.googleAds.features,
+      benefit: t.services.googleAds.benefit,
+      seoBadge: false,
     },
     {
       id: 'socialmedia',
+      number: '05',
+      emoji: '📱',
       title: t.services.socialMedia.title,
       description: t.services.socialMedia.description,
       features: t.services.socialMedia.features,
       benefit: t.services.socialMedia.benefit,
-      icon: (
-        <svg viewBox="-5 0 110 100" fill="none" className="w-full h-full overflow-visible" role="img" aria-label="Social media management service icon">
-          {/* Phone Frame */}
-          <rect x="30" y="2" width="40" height="62" rx="7" fill="white" stroke="black" strokeWidth="2"/>
-          <rect x="42" y="5" width="16" height="3" rx="1.5" fill="#E0E0E0"/>
-
-          {/* Screen Content - Feed Posts */}
-          <rect x="34" y="12" width="32" height="40" rx="2" fill="#FAFAFA"/>
-
-          <defs>
-            <linearGradient id="igGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#833AB4"/>
-              <stop offset="50%" stopColor="#E1306C"/>
-              <stop offset="100%" stopColor="#F77737"/>
-            </linearGradient>
-          </defs>
-
-          <motion.g
-            animate={{ y: [0, -14, -14, 0] }}
-            transition={{ duration: 4, repeat: Infinity, times: [0, 0.3, 0.7, 1] }}
-          >
-            {/* Post with IG gradient border */}
-            <rect x="36" y="14" width="28" height="20" rx="3" fill="url(#igGrad)" opacity="0.9"/>
-            <rect x="37" y="15" width="26" height="18" rx="2.5" fill="white"/>
-
-            {/* Heart icon */}
-            <motion.path
-              d="M46 22 C46 20, 48 19, 50 20.5 C52 19, 54 20, 54 22 C54 25, 50 27, 50 27 C50 27, 46 25, 46 22Z"
-              fill="#E1306C"
-              animate={{ scale: [1, 1.3, 1] }}
-              transition={{ duration: 0.8, repeat: Infinity, repeatDelay: 2 }}
-              style={{ transformOrigin: '50px 23px' }}
-            />
-
-            {/* Like count */}
-            <text x="50" y="31" fontSize="4" fill="#333" fontWeight="bold" textAnchor="middle">2,847 likes</text>
-
-            {/* Second post peek */}
-            <rect x="36" y="36" width="28" height="20" rx="3" fill="#1877F2" opacity="0.15"/>
-            <rect x="37" y="37" width="26" height="18" rx="2.5" fill="white"/>
-            <circle cx="43" cy="44" r="3" fill="#1877F2" opacity="0.3"/>
-            <rect x="48" y="42" width="12" height="2" rx="1" fill="#E0E0E0"/>
-            <rect x="48" y="46" width="8" height="2" rx="1" fill="#E0E0E0"/>
-          </motion.g>
-
-          {/* Notification Badge */}
-          <motion.g
-            animate={{ scale: [0, 1.2, 1], opacity: [0, 1, 1] }}
-            transition={{ duration: 0.5, repeat: Infinity, repeatDelay: 3 }}
-          >
-            <circle cx="66" cy="10" r="6" fill="#E1306C"/>
-            <text x="66" y="13" fontSize="7" fill="white" fontWeight="bold" textAnchor="middle">+5</text>
-          </motion.g>
-
-          {/* Platform Icons */}
-          {/* Instagram */}
-          <motion.g
-            animate={{ y: [0, -3, 0], x: [0, 2, 0] }}
-            transition={{ duration: 3, repeat: Infinity }}
-          >
-            <rect x="8" y="16" width="14" height="14" rx="4" fill="url(#igGrad)"/>
-            <circle cx="15" cy="23" r="3" stroke="white" strokeWidth="1" fill="none"/>
-            <circle cx="19" cy="19" r="0.8" fill="white"/>
-          </motion.g>
-
-          {/* TikTok */}
-          <motion.g
-            animate={{ y: [0, -3, 0], x: [0, -2, 0] }}
-            transition={{ duration: 3, repeat: Infinity, delay: 0.5 }}
-          >
-            <rect x="78" y="16" width="14" height="14" rx="4" fill="black"/>
-            <text x="85" y="26" fontSize="8" fill="white" fontWeight="bold" textAnchor="middle">T</text>
-            <text x="84.5" y="25.5" fontSize="8" fill="#25F4EE" fontWeight="bold" textAnchor="middle" opacity="0.5">T</text>
-            <text x="85.5" y="26.5" fontSize="8" fill="#FE2C55" fontWeight="bold" textAnchor="middle" opacity="0.5">T</text>
-          </motion.g>
-
-          {/* Facebook */}
-          <motion.g
-            animate={{ y: [0, -3, 0], x: [0, 2, 0] }}
-            transition={{ duration: 3, repeat: Infinity, delay: 1 }}
-          >
-            <circle cx="15" cy="48" r="7" fill="#1877F2"/>
-            <text x="15" y="51" fontSize="9" fill="white" fontWeight="bold" textAnchor="middle">f</text>
-          </motion.g>
-
-          {/* Google Business */}
-          <motion.g
-            animate={{ y: [0, -3, 0], x: [0, -2, 0] }}
-            transition={{ duration: 3, repeat: Infinity, delay: 1.5 }}
-          >
-            <circle cx="85" cy="48" r="7" fill="white" stroke="#4285F4" strokeWidth="1.5"/>
-            <text x="85" y="51" fontSize="8" fill="#4285F4" fontWeight="bold" textAnchor="middle">G</text>
-          </motion.g>
-
-          {/* WE POST FOR YOU badge */}
-          <rect x="-5" y="70" width="110" height="18" rx="9" fill="#FFD700"/>
-          <text x="50" y="82.5" fontSize="9" fill="black" fontWeight="bold" textAnchor="middle">WE POST FOR YOU</text>
-        </svg>
-      )
-    }
+      seoBadge: false,
+    },
   ]
 
+  const handleClick = (service: typeof services[0]) => {
+    trackServiceClick(service.title)
+    if (isServiceSelected(service.id)) {
+      removeService(service.id)
+    } else {
+      addService({ id: service.id, title: service.title, description: service.description })
+      if (selectedServices.length === 0) {
+        setShowTooltip(true)
+        setTimeout(() => setShowTooltip(false), 5000)
+      }
+    }
+  }
+
+  const seoBadgeLabel = isKo ? 'SEO + GEO 포함' : 'SEO + GEO Included'
+  const selectLabel = isKo ? '+ 선택하기' : '+ Select'
+  const selectedLabel = isKo ? '✓ 선택됨' : '✓ Selected'
+
   return (
-    <section id="services" className="grain-overlay py-20 bg-[#111111] relative overflow-hidden">
-      {/* Subtle radial gradients (matching hero) */}
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_30%,rgba(245,158,11,0.03),transparent_70%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_70%,rgba(168,85,247,0.02),transparent_50%)]" />
-      </div>
+    <section id="services" className="py-28 bg-[#080808] relative overflow-hidden">
+      {/* Subtle grid texture */}
+      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:64px_64px]" />
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_100%_70%_at_50%_50%,transparent_50%,#080808_100%)]" />
 
-      <div className="container mx-auto px-6 relative z-10">
-        <ScrollAnimation>
-          <div className="text-center mb-20">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">
-              {t.services.title}
-            </h2>
-            <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">
-              {t.services.subtitle}
-            </p>
-            
-            {/* Service Selection Guide - Mobile Optimized */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
-              className="inline-flex flex-col sm:flex-row items-stretch sm:items-center gap-3 sm:gap-6 bg-white/[0.03] px-6 sm:px-8 py-5 rounded-2xl sm:rounded-full border border-white/[0.08] backdrop-blur-sm w-full sm:w-auto max-w-md sm:max-w-none mx-auto"
-            >
-              {/* Step 1 */}
-              <div className="flex items-center gap-3 flex-1 sm:flex-initial">
-                <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold flex-shrink-0 transition-all ${
-                  mounted && selectedServices.length > 0 ? 'bg-green-500 text-white scale-110' : 'bg-gray-300 text-gray-600'
-                }`}>
-                  {mounted && selectedServices.length > 0 ? '✓' : '1'}
-                </div>
-                <div className="flex-1 sm:flex-initial">
-                  <span className={`text-sm font-medium block ${
-                    mounted && selectedServices.length > 0 ? 'text-green-400' : 'text-gray-300'
-                  }`}>
-                    {locale === 'ko' ? '서비스 선택' : 'Select Services'}
-                  </span>
-                </div>
-              </div>
+      <div className="container mx-auto px-6 relative z-10 max-w-7xl">
 
-              <div className="hidden sm:block w-8 h-px bg-white/[0.12] self-center"></div>
-
-              {/* Step 2 */}
-              <div className="flex items-center gap-3 flex-1 sm:flex-initial">
-                <div className={`w-10 h-10 rounded-full flex items-center justify-center font-bold flex-shrink-0 transition-all ${
-                  mounted && selectedServices.length > 0 ? 'bg-blue-500 text-white animate-pulse scale-110' : 'bg-gray-300 text-gray-600'
-                }`}>
-                  2
-                </div>
-                <div className="flex-1 sm:flex-initial">
-                  <span className="text-sm font-medium text-gray-300 block">
-                    {locale === 'ko' ? '정보 입력' : 'Your Info'}
-                  </span>
-                </div>
-              </div>
-
-              <div className="hidden sm:block w-8 h-px bg-white/[0.12] self-center"></div>
-
-              {/* Step 3 */}
-              <div className="flex items-center gap-3 flex-1 sm:flex-initial">
-                <div className="w-10 h-10 rounded-full bg-white/[0.06] border border-white/[0.1] text-gray-400 flex items-center justify-center font-bold flex-shrink-0 transition-all">
-                  3
-                </div>
-                <div className="flex-1 sm:flex-initial">
-                  <span className="text-sm font-medium text-gray-300 block">
-                    {locale === 'ko' ? '상담 시작!' : 'Get Started!'}
-                  </span>
-                </div>
-              </div>
-            </motion.div>
+        {/* ── Header ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-16"
+        >
+          <div className="flex items-center gap-3 mb-6">
+            <span className="w-10 h-px bg-[#B12492]" />
+            <span className="text-[11px] font-black tracking-[0.25em] text-[#B12492] uppercase">
+              {isKo ? '서비스' : 'Our Services'}
+            </span>
           </div>
-        </ScrollAnimation>
+          <h2 className="text-5xl md:text-7xl font-black text-white leading-[0.95] tracking-tight mb-5">
+            {isKo ? (
+              <>우리가 만듭니다.<br /><span className="text-gray-500">당신은 발견됩니다.</span></>
+            ) : (
+              <>We Build.<br /><span className="text-gray-500">You Get Found.</span></>
+            )}
+          </h2>
+          <p className="text-base md:text-lg text-gray-500 max-w-lg leading-relaxed">
+            {t.services.subtitle}
+          </p>
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mb-16">
-          {services.map((service, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              viewport={{ once: true }}
-              whileHover={{ y: -15, scale: 1.02 }}
-              whileTap={{ scale: 0.98 }}
-              className="group cursor-pointer"
-              data-hover="true"
-              data-hover-text="Select"
-              onClick={() => {
-                trackServiceClick(service.title)
-                if (isServiceSelected(service.id)) {
-                  removeService(service.id)
-                } else {
-                  addService({
-                    id: service.id,
-                    title: service.title,
-                    description: service.description
-                  })
-                  if (selectedServices.length === 0) {
-                    setShowTooltip(true)
-                    setTimeout(() => setShowTooltip(false), 5000)
-                  }
-                }
-              }}
-            >
-              <div className={`relative rounded-2xl p-6 h-full transition-all duration-500 ease-out overflow-hidden group flex flex-col ${
-                mounted && isServiceSelected(service.id)
-                  ? 'bg-green-500/[0.05] border border-green-500/50 shadow-[0_0_16px_rgba(34,197,94,0.15)]'
-                  : 'bg-white/[0.03] border border-white/[0.08] hover:border-amber-500/30 hover:shadow-glow-sm'
-              }`}>
-                {/* Selected checkmark badge */}
-                {mounted && isServiceSelected(service.id) && (
-                  <motion.div
-                    initial={{ scale: 0, rotate: -180 }}
-                    animate={{ scale: 1, rotate: 0 }}
-                    className="absolute top-3 right-3 w-8 h-8 bg-green-500 rounded-full flex items-center justify-center shadow-lg z-10"
-                  >
-                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </motion.div>
-                )}
+        {/* ── Top row: 2 primary cards ── */}
+        <div className="grid md:grid-cols-2 gap-3 mb-3">
+          {services.slice(0, 2).map((service, i) => {
+            const selected = mounted && isServiceSelected(service.id)
+            return (
+              <motion.div
+                key={service.id}
+                initial={{ opacity: 0, y: 32 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.55, delay: i * 0.1 }}
+                onClick={() => handleClick(service)}
+                className={`group relative rounded-3xl p-8 md:p-10 cursor-pointer overflow-hidden transition-all duration-300 ${
+                  selected
+                    ? 'bg-[#B12492]/10 border border-[#B12492]/50 shadow-[0_0_40px_rgba(177,36,146,0.12)]'
+                    : 'bg-[#0e0e0e] border border-white/[0.07] hover:border-white/[0.15] hover:bg-[#111]'
+                }`}
+              >
+                {/* Ghost number */}
+                <span className="pointer-events-none select-none absolute -bottom-6 -right-4 text-[11rem] font-black leading-none text-white/[0.025]">
+                  {service.number}
+                </span>
 
-                {/* Icon with hover scale effect */}
-                <div className="w-24 h-auto mb-4 mx-auto transition-transform duration-500 ease-out group-hover:scale-110">
-                  {service.icon}
+                {/* Top meta row */}
+                <div className="flex items-start justify-between mb-8">
+                  <span className="text-[11px] font-black tracking-[0.2em] text-gray-700">{service.number}</span>
+                  <div className="flex items-center gap-2">
+                    <span className="inline-flex items-center gap-1.5 bg-[#B12492]/15 text-[#B12492] border border-[#B12492]/25 rounded-full px-3 py-1 text-[11px] font-black tracking-wide">
+                      ✦ {seoBadgeLabel}
+                    </span>
+                    {selected && (
+                      <motion.span
+                        initial={{ scale: 0, rotate: -90 }}
+                        animate={{ scale: 1, rotate: 0 }}
+                        className="w-7 h-7 rounded-full bg-[#B12492] flex items-center justify-center text-white text-xs font-black"
+                      >✓</motion.span>
+                    )}
+                  </div>
                 </div>
-                
+
                 {/* Title */}
-                <h3 className="text-xl font-bold mb-3 text-center text-white">
+                <h3 className="text-3xl md:text-4xl font-black text-white leading-tight mb-4 tracking-tight">
                   {service.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-gray-400 mb-4 text-center text-sm leading-relaxed">
+                <p className="text-gray-400 text-sm leading-relaxed mb-7 max-w-sm">
                   {service.description}
                 </p>
-                
-                {/* Features - flex-grow to take available space */}
-                <div className="space-y-2 mb-6 flex-grow">
-                  {service.features.slice(0, 3).map((feature: string, idx: number) => (
-                    <motion.div
-                      key={idx}
-                      initial={{ opacity: 0, x: -20 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{ duration: 0.4, delay: 0.1 * idx }}
-                      viewport={{ once: true }}
-                      className="flex items-start"
+
+                {/* Feature chips */}
+                <div className="flex flex-wrap gap-2 mb-8">
+                  {service.features.map((f: string, fi: number) => (
+                    <span
+                      key={fi}
+                      className={`rounded-full px-3 py-1 text-xs border transition-colors ${
+                        f.includes('SEO') || f.includes('GEO')
+                          ? 'bg-[#B12492]/10 border-[#B12492]/30 text-[#B12492]'
+                          : 'bg-white/[0.04] border-white/[0.08] text-gray-500'
+                      }`}
                     >
-                      <div className="w-5 h-5 mr-3 mt-0.5 flex-shrink-0">
-                        <svg viewBox="0 0 20 20" fill="currentColor" className="text-amber-400">
-                          <path d="M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm-2 15l-5-5 1.41-1.41L8 12.17l7.59-7.59L17 6l-9 9z"/>
-                        </svg>
-                      </div>
-                      <span className="text-gray-300 text-sm">{feature}</span>
-                    </motion.div>
+                      {f}
+                    </span>
                   ))}
                 </div>
-                
-                {/* Benefit - Always at bottom */}
-                <div className="border-t border-white/[0.08] pt-4 mt-auto">
-                  <p className="text-center font-semibold text-base text-white mb-3">
-                    ✨ {service.benefit}
-                  </p>
-                  
-                  {/* Selection Status Indicator */}
-                  <div
-                    className={`relative w-full py-3 px-4 rounded-lg font-bold transition-all overflow-hidden ${
-                      mounted && isServiceSelected(service.id)
-                        ? 'bg-gradient-to-r from-green-500 to-emerald-500 text-white shadow-lg'
-                        : 'bg-amber-400 text-black group-hover:bg-amber-300'
-                    }`}
-                  >
-                    {mounted && isServiceSelected(service.id) && (
-                      <motion.div
-                        initial={{ x: '-100%' }}
-                        animate={{ x: '100%' }}
-                        transition={{ duration: 2, repeat: Infinity }}
-                        className="absolute inset-0 bg-white/20"
-                      />
-                    )}
-                    <span className="relative z-10 flex items-center justify-center gap-2">
-                      {mounted && isServiceSelected(service.id)
-                        ? (locale === 'ko' ? '✓ 선택됨' : '✓ Selected')
-                        : (locale === 'ko' ? '+ 클릭하여 선택' : '+ Click to Select')
-                      }
-                    </span>
-                  </div>
+
+                {/* CTA */}
+                <div className={`inline-flex items-center gap-2 rounded-xl px-5 py-3 text-sm font-black transition-all ${
+                  selected
+                    ? 'bg-[#B12492] text-white'
+                    : 'bg-white text-black group-hover:bg-gray-100'
+                }`}>
+                  {selected ? selectedLabel : selectLabel}
+                  {!selected && (
+                    <motion.span animate={{ x: [0, 4, 0] }} transition={{ duration: 1.5, repeat: Infinity }}>
+                      →
+                    </motion.span>
+                  )}
                 </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            )
+          })}
+        </div>
+
+        {/* ── Bottom row: 3 supporting cards ── */}
+        <div className="grid md:grid-cols-3 gap-3 mb-16">
+          {services.slice(2).map((service, i) => {
+            const selected = mounted && isServiceSelected(service.id)
+            return (
+              <motion.div
+                key={service.id}
+                initial={{ opacity: 0, y: 32 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.55, delay: 0.2 + i * 0.08 }}
+                onClick={() => handleClick(service)}
+                className={`group relative rounded-3xl p-6 cursor-pointer overflow-hidden transition-all duration-300 ${
+                  selected
+                    ? 'bg-amber-400/[0.08] border border-amber-400/40 shadow-[0_0_24px_rgba(251,191,36,0.08)]'
+                    : 'bg-[#0e0e0e] border border-white/[0.07] hover:border-white/[0.15] hover:bg-[#111]'
+                }`}
+              >
+                {/* Ghost number */}
+                <span className="pointer-events-none select-none absolute -bottom-4 -right-2 text-[7rem] font-black leading-none text-white/[0.025]">
+                  {service.number}
+                </span>
+
+                {/* Number + selected check */}
+                <div className="flex items-center justify-between mb-5">
+                  <span className="text-[11px] font-black tracking-[0.2em] text-gray-700">{service.number}</span>
+                  {selected && (
+                    <motion.span
+                      initial={{ scale: 0 }}
+                      animate={{ scale: 1 }}
+                      className="w-6 h-6 rounded-full bg-amber-400 flex items-center justify-center text-black text-[10px] font-black"
+                    >✓</motion.span>
+                  )}
+                </div>
+
+                {/* Emoji */}
+                <div className="text-3xl mb-4">{service.emoji}</div>
+
+                {/* Title */}
+                <h3 className="text-xl font-black text-white mb-2 leading-tight tracking-tight">
+                  {service.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-gray-500 text-sm leading-relaxed mb-5">
+                  {service.description}
+                </p>
+
+                {/* 2 feature chips */}
+                <div className="flex flex-wrap gap-1.5 mb-5">
+                  {service.features.slice(0, 2).map((f: string, fi: number) => (
+                    <span key={fi} className="bg-white/[0.04] border border-white/[0.07] text-gray-600 rounded-full px-2.5 py-0.5 text-[11px]">
+                      {f}
+                    </span>
+                  ))}
+                </div>
+
+                {/* Select indicator */}
+                <span className={`text-[11px] font-black tracking-wide transition-colors ${
+                  selected ? 'text-amber-400' : 'text-gray-700 group-hover:text-gray-400'
+                }`}>
+                  {selected ? selectedLabel : selectLabel}
+                </span>
+              </motion.div>
+            )
+          })}
         </div>
       </div>
 
-      <style jsx>{`
-        @keyframes spin-slow {
-          from {
-            transform: rotate(0deg);
-          }
-          to {
-            transform: rotate(360deg);
-          }
-        }
-        .animate-spin-slow {
-          animation: spin-slow 10s linear infinite;
-        }
-      `}</style>
-      
-      {/* Floating Cart with Better Guidance */}
+      {/* ── Floating cart bar ── */}
       {mounted && selectedServices.length > 0 && (
         <motion.div
-          initial={{ y: 100, opacity: 0 }}
+          initial={{ y: 120, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          exit={{ y: 100, opacity: 0 }}
-          className="fixed bottom-0 left-0 right-0 bg-gradient-to-r from-blue-600 to-purple-600 text-white p-4 shadow-2xl z-40"
+          transition={{ type: 'spring', stiffness: 300, damping: 28 }}
+          className="fixed bottom-0 left-0 right-0 z-40 border-t border-white/10 bg-[#0a0a0a]/97 backdrop-blur-md"
         >
-          <div className="container mx-auto flex flex-col sm:flex-row items-center justify-between max-w-6xl gap-4 px-4">
-            <div className="flex items-center gap-3 w-full sm:w-auto">
-              <motion.div
-                animate={{ rotate: [0, 10, -10, 0] }}
-                transition={{ duration: 2, repeat: Infinity }}
-                className="text-xl sm:text-2xl flex-shrink-0"
-              >
-                🎉
-              </motion.div>
-              <div className="flex-1">
-                <p className="font-bold text-base sm:text-lg">
-                  {locale === 'ko' 
-                    ? `${selectedServices.length}개 서비스 선택됨` 
-                    : `${selectedServices.length} ${selectedServices.length === 1 ? 'Service' : 'Services'} Selected`
-                  }
-                </p>
-                <p className="text-xs sm:text-sm opacity-90 hidden sm:block">
-                  {locale === 'ko' 
-                    ? '준비되셨나요? 무료 상담을 신청하세요!' 
-                    : 'Ready to grow? Get your free consultation!'
-                  }
-                </p>
+          {/* Progress steps — desktop only */}
+          <div className="hidden sm:flex items-center justify-center gap-0 border-b border-white/[0.06] py-2.5 px-4">
+            {[
+              { label: isKo ? '서비스 선택' : 'Pick services', done: true },
+              { label: isKo ? '정보 입력' : 'Fill your info', done: false },
+              { label: isKo ? '무료 상담' : 'Free consult', done: false },
+            ].map((step, i) => (
+              <div key={i} className="flex items-center gap-0">
+                <div className="flex items-center gap-2 px-3">
+                  <div className={`w-5 h-5 rounded-full flex items-center justify-center text-[10px] font-black flex-shrink-0 ${
+                    step.done ? 'bg-[#B12492] text-white' : 'bg-white/[0.06] text-gray-600'
+                  }`}>
+                    {step.done ? '✓' : i + 1}
+                  </div>
+                  <span className={`text-[11px] font-bold tracking-wide ${
+                    step.done ? 'text-[#B12492]' : i === 1 ? 'text-gray-300' : 'text-gray-600'
+                  }`}>{step.label}</span>
+                </div>
+                {i < 2 && <span className="text-gray-700 text-xs mx-1">──</span>}
               </div>
-            </div>
-            
-            <div className="flex items-center gap-2 sm:gap-3 relative w-full sm:w-auto justify-end">
-              {/* Simple animated pointer */}
-              {showTooltip && (
-                <motion.div
-                  initial={{ opacity: 0, scale: 0 }}
-                  animate={{ 
-                    opacity: 1, 
-                    scale: 1,
-                    y: [0, -5, 0]
-                  }}
-                  exit={{ opacity: 0, scale: 0 }}
-                  transition={{
-                    y: {
-                      duration: 0.6,
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    },
-                    scale: {
-                      duration: 0.3,
-                      type: "spring"
-                    }
-                  }}
-                  className="absolute -top-10 right-12 text-2xl sm:text-3xl z-50"
-                >
-                  👇
-                </motion.div>
-              )}
-              
-              {/* Clear All Button */}
-              <button
-                onClick={() => {
-                  selectedServices.forEach(s => removeService(s.id))
-                }}
-                className="px-3 sm:px-4 py-2 bg-white/20 rounded-lg text-white hover:bg-white/30 transition-colors text-xs sm:text-sm"
-              >
-                {locale === 'ko' ? '초기화' : 'Clear'}
-              </button>
-              
-              {/* Primary CTA */}
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => {
-                  const contactSection = document.getElementById('contact')
-                  if (contactSection) {
-                    // Get the element position
-                    const rect = contactSection.getBoundingClientRect()
-                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop
-                    // Account for fixed header height - more offset for mobile/tablet
-                    const isMobile = window.innerWidth < 768
-                    const isTablet = window.innerWidth >= 768 && window.innerWidth < 1024
-                    const offset = isMobile ? 100 : isTablet ? 90 : 80
-                    const targetPosition = rect.top + scrollTop - offset
-                    
-                    // Smooth scroll to position
-                    window.scrollTo({
-                      top: targetPosition,
-                      behavior: 'smooth'
-                    })
-                  }
-                }}
-                className="px-4 sm:px-6 py-2.5 sm:py-3 bg-white text-purple-600 rounded-lg font-bold shadow-lg hover:shadow-xl transition-all flex items-center gap-1 sm:gap-2 text-sm sm:text-base"
-              >
-                <span>{locale === 'ko' ? '다음 단계로' : 'Continue'}</span>
+            ))}
+          </div>
+
+          <div className="container mx-auto max-w-6xl px-4 py-3 flex flex-col sm:flex-row sm:items-center gap-3">
+
+            {/* Selected service chips */}
+            <div className="flex items-center gap-2 flex-wrap flex-1 min-w-0">
+              <span className="text-[11px] font-black tracking-widest text-gray-600 uppercase flex-shrink-0">
+                {isKo ? '선택' : 'Selected:'}
+              </span>
+              {selectedServices.map((s) => (
                 <motion.span
-                  animate={{ x: [0, 5, 0] }}
-                  transition={{ duration: 1.5, repeat: Infinity }}
-                  className="text-sm sm:text-base"
+                  key={s.id}
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0.8, opacity: 0 }}
+                  className="inline-flex items-center gap-1.5 bg-[#B12492]/15 border border-[#B12492]/30 text-white rounded-full pl-3 pr-2 py-1 text-xs font-bold"
                 >
-                  →
+                  {s.title}
+                  <button
+                    onClick={(e) => { e.stopPropagation(); removeService(s.id) }}
+                    className="w-4 h-4 rounded-full bg-white/10 hover:bg-white/25 flex items-center justify-center text-[10px] text-gray-400 hover:text-white transition-colors"
+                    aria-label={`Remove ${s.title}`}
+                  >×</button>
                 </motion.span>
+              ))}
+            </div>
+
+            {/* Actions */}
+            <div className="flex items-center gap-2 flex-shrink-0 justify-end">
+              <button
+                onClick={() => selectedServices.forEach(s => removeService(s.id))}
+                className="px-3 py-2 rounded-lg bg-white/[0.05] text-gray-500 hover:bg-white/10 hover:text-gray-300 transition-all text-xs font-medium"
+              >
+                {isKo ? '전체 삭제' : 'Clear all'}
+              </button>
+
+              <motion.button
+                whileHover={{ scale: 1.03 }}
+                whileTap={{ scale: 0.96 }}
+                animate={!scrolling ? {
+                  boxShadow: ['0 0 0px rgba(177,36,146,0)', '0 0 20px rgba(177,36,146,0.5)', '0 0 0px rgba(177,36,146,0)']
+                } : {}}
+                transition={{ duration: 2, repeat: Infinity }}
+                onClick={() => {
+                  setScrolling(true)
+                  const el = document.getElementById('contact')
+                  if (el) {
+                    const offset = window.innerWidth < 768 ? 100 : 80
+                    window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - offset, behavior: 'smooth' })
+                  }
+                  setTimeout(() => setScrolling(false), 1500)
+                }}
+                className="relative overflow-hidden px-5 py-2.5 rounded-xl bg-[#B12492] text-white font-black text-sm flex items-center gap-2 min-w-[160px] justify-center"
+              >
+                {scrolling ? (
+                  <>
+                    <motion.span
+                      animate={{ rotate: 360 }}
+                      transition={{ duration: 0.8, repeat: Infinity, ease: 'linear' }}
+                      className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full"
+                    />
+                    {isKo ? '이동 중...' : 'Going there...'}
+                  </>
+                ) : (
+                  <>
+                    {isKo ? '다음 단계 — 정보 입력' : 'Step 2 — Fill your info'}
+                    <motion.span animate={{ x: [0, 4, 0] }} transition={{ duration: 1.2, repeat: Infinity }}>→</motion.span>
+                  </>
+                )}
+                {/* Shimmer */}
+                {!scrolling && (
+                  <motion.div
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent -skew-x-12"
+                    animate={{ x: ['-100%', '200%'] }}
+                    transition={{ duration: 2.5, repeat: Infinity, repeatDelay: 1 }}
+                  />
+                )}
               </motion.button>
             </div>
           </div>
         </motion.div>
       )}
 
-      {/* Bottom divider */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500/20 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
     </section>
   )
 }
