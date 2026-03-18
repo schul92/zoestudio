@@ -91,7 +91,7 @@ export default function PricingCTA({ tierId, tierName, locale, isEnterprise = fa
           isSelected
             ? 'bg-green-600 text-white'
             : popular
-            ? 'bg-[#B12492] text-white hover:bg-[#9a1e7e]'
+            ? 'bg-indigo-600 text-white hover:bg-indigo-700'
             : isEnterprise
             ? 'bg-gray-900 text-white hover:bg-gray-800'
             : 'bg-white text-gray-900 border border-gray-300 hover:bg-gray-50'
