@@ -32,6 +32,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/palisades-park-marketing',
     '/ridgefield-web-design',
     '/edgewater-web-design',
+    '/cliffside-park-web-design',
   ]
 
   // Korean SEO pages (Korean URLs - high priority for Korean keywords)
