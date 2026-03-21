@@ -1,11 +1,11 @@
 export const seoConfig = {
   en: {
-    title: 'ZOE LUMOS - Korean Business Web Design & SEO | Fort Lee NJ, NYC & Nationwide',
-    description: 'Bilingual web design & SEO agency trusted by Korean-American small businesses. Custom websites, Google Ads, local SEO in Fort Lee, Englewood, North Bergen, Palisades Park & nationwide. Free consultation — call today.',
-    keywords: 'Korean web design, Korean American website, Korean business website, Korean SEO agency, NJ web design, NY web design, Fort Lee web design, Bergen County web design, Korean business marketing, Shopify development, e-commerce website design, local SEO expert, digital marketing agency, SEO services, Google Ads management, small business SEO NJ, small business SEO agency Englewood NJ, SEO experts North Bergen NJ, Korean web agency, bilingual website design, korean business marketing nyc, 한인 마케팅 에이전시, Palisades Park marketing, Ridgefield web design, Edgewater web design, low cost SEO New Jersey, small business SEO agency North Bergen NJ',
+    title: 'ZOE LUMOS | Korean-American Web Design & SEO Agency | Fort Lee NJ & Nationwide',
+    description: 'Bilingual Korean-English web design & SEO agency for Korean-American small businesses. Affordable websites, Google Ads, local SEO in Fort Lee, Palisades Park, Englewood, Flushing & nationwide. 한국어 상담 가능. Free consultation today.',
+    keywords: 'Korean web design agency, Korean American website design, Korean business website NJ, Korean SEO agency New Jersey, Fort Lee web design, Palisades Park web design, Bergen County web design, Korean business marketing NJ, bilingual website design, Korean restaurant website, Korean spa website, Korean business Google Ads, local SEO Fort Lee NJ, Englewood NJ web design, North Bergen web design, Flushing NY web design, Korean American digital marketing, 한인 웹사이트 제작 뉴저지, 한인 마케팅 에이전시 NJ, small business SEO New Jersey, affordable web design NJ, how to get more Korean customers online, Korean business SEO expert, web design for Korean restaurants, Korean hair salon website, Shopify Korean store, e-commerce Korean business',
     openGraph: {
-      title: 'ZOE LUMOS - Bilingual Web Design & SEO for Korean Businesses',
-      description: 'Trusted by Korean-American small businesses in Fort Lee, Englewood, North Bergen & nationwide. Custom websites, local SEO, Google Ads. Free consultation.',
+      title: 'ZOE LUMOS | Korean-American Web Design & SEO | Fort Lee NJ',
+      description: 'Bilingual web design & SEO for Korean-American businesses in Fort Lee, Palisades Park, Flushing & nationwide. Custom websites, local SEO, Google Ads. 한국어 상담 가능.',
       siteName: 'ZOE LUMOS',
       locale: 'en_US',
     }

@@ -987,4 +987,174 @@ export const blogContent: BlogPost[] = [
       ],
     },
   },
+  // ─────────────────────────────────────────────────────────────────
+  // ARTICLE 5 — Google Business Profile for Korean businesses
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'google-business-profile-korean-restaurant-guide',
+    date: '2026-03-21',
+    updatedDate: '2026-03-21',
+    readTime: 8,
+    category: { en: 'Local SEO', ko: '로컬 SEO' },
+    title: {
+      en: 'Google Business Profile for Korean Restaurants & Shops in NJ/NY (2026 Guide)',
+      ko: '뉴저지·뉴욕 한인 식당·가게 구글 비즈니스 프로필 완벽 가이드 (2026)',
+    },
+    metaDescription: {
+      en: 'How to set up and optimize your Google Business Profile for your Korean restaurant, spa, or shop in Fort Lee, Palisades Park, Flushing, or anywhere in NJ/NY. Get found on Google Maps today.',
+      ko: '포트리, 팰팍, 플러싱 한인 식당·가게를 구글 지도 상위에 노출시키는 방법. 구글 비즈니스 프로필 설정부터 최적화까지 ZOE LUMOS가 총정리.',
+    },
+    author: 'ZOE LUMOS Team',
+    sections: {
+      en: [
+        {
+          type: 'intro',
+          content:
+            'When someone in Fort Lee searches "Korean BBQ near me" or "Korean spa Palisades Park," Google Maps is the first thing they see — not websites. That means your Google Business Profile (GBP) is often more important than your website for local discovery. Yet most Korean small business owners either have an incomplete profile or no profile at all. This guide walks you through exactly how to set up, verify, and optimize your GBP to get found by more local customers in 2026.',
+        },
+        {
+          type: 'h2',
+          content: 'Step 1: Claim or Create Your Google Business Profile',
+        },
+        {
+          type: 'p',
+          content:
+            'Go to business.google.com and sign in with your Google account. Search for your business name. If it already exists (Google auto-generates listings from other sources), click "Claim this business." If not, click "Add your business." Use your exact legal business name — consistency across the web matters for SEO.',
+        },
+        {
+          type: 'h2',
+          content: 'Step 2: Verify Your Business',
+        },
+        {
+          type: 'p',
+          content:
+            'Google will verify you own the business via a postcard sent to your address, a phone call, or video verification (most common in 2026). The verification process takes 1–14 days. Do not skip this step — unverified listings rank much lower on Google Maps.',
+        },
+        {
+          type: 'h2',
+          content: 'Step 3: Fill Out Every Single Field',
+        },
+        {
+          type: 'ul',
+          content: 'Complete these fields for maximum visibility:',
+          items: [
+            'Business name (exact match to your signage)',
+            'Category — pick the most specific one (e.g., "Korean Restaurant" not just "Restaurant")',
+            'Address and service area',
+            'Phone number (must match your website)',
+            'Website URL',
+            'Hours — including holiday hours',
+            'Business description (750 characters, include "Korean," your city, and your specialty)',
+            'Photos — at least 10 high-quality photos of your space, food, or products',
+            'Attributes (e.g., "Korean-owned," "Korean-speaking staff," "Dine-in," "Takeout")',
+          ],
+        },
+        {
+          type: 'tip',
+          content:
+            'Pro tip: Add Korean language as a spoken language in the Attributes section. This helps you appear in searches from Korean-speaking customers and shows cultural authenticity.',
+        },
+        {
+          type: 'h2',
+          content: 'Step 4: Get Reviews (This is the #1 ranking factor)',
+        },
+        {
+          type: 'p',
+          content:
+            'Google reviews are the single biggest factor in local map rankings. Businesses with 50+ reviews and a 4.5+ star rating dominate the local pack. The best way to get reviews: simply ask satisfied customers in person, send a follow-up text with a direct link, or put a QR code at your register. Responding to every review — good and bad — also signals to Google that you are an active, engaged business.',
+        },
+        {
+          type: 'h2',
+          content: 'Step 5: Post Weekly Updates',
+        },
+        {
+          type: 'p',
+          content:
+            'Google Posts are like mini social media posts that appear directly on your business profile in search results. Post weekly specials, events, or promotions. Businesses that post regularly rank higher because Google sees them as active. Each post should include your target keywords naturally (e.g., "This week at our Fort Lee Korean restaurant…").',
+        },
+        {
+          type: 'tip',
+          content:
+            'Common mistake: Using your personal name or a generic email for GBP management. Always use a business email you control, and never let someone else "own" your listing. If an agency set up your GBP, make sure you are listed as the primary owner.',
+        },
+        {
+          type: 'h2',
+          content: 'Local SEO Beyond Google Business Profile',
+        },
+        {
+          type: 'p',
+          content:
+            'GBP is step one. For sustained local SEO, you also need: (1) a fast, mobile-optimized website with your city and Korean keywords on the homepage, (2) consistent NAP (Name, Address, Phone) listings on Yelp, Naver, and local directories, and (3) backlinks from local NJ/NY publications and community sites.',
+        },
+        {
+          type: 'cta',
+          content:
+            'Not sure if your Google Business Profile is set up correctly? ZOE LUMOS offers free GBP audits for Korean-American businesses in NJ and NY. We\'ll tell you exactly what\'s missing and how to fix it. Book a free consultation today.',
+        },
+      ],
+      ko: [
+        {
+          type: 'intro',
+          content:
+            '포트리에서 누군가 "한국 BBQ 맛집"을 검색하면 가장 먼저 보이는 건 웹사이트가 아니라 구글 지도(Google Maps)입니다. 즉, 구글 비즈니스 프로필(GBP)이 로컬 비즈니스에게는 웹사이트보다 더 중요한 경우가 많습니다. 그런데 대부분의 한인 소상공인들은 프로필을 아직 등록도 안 했거나, 등록해도 정보가 불완전합니다. 이 가이드에서 2026년 기준으로 GBP 설정부터 최적화까지 모두 정리해 드립니다.',
+        },
+        {
+          type: 'h2',
+          content: '1단계: 구글 비즈니스 프로필 생성 또는 소유권 확인',
+        },
+        {
+          type: 'p',
+          content:
+            'business.google.com에 접속해서 내 구글 계정으로 로그인합니다. 내 사업체 이름을 검색해 보세요. 이미 등록되어 있으면 "비즈니스 소유권 주장"을 클릭하고, 없으면 "비즈니스 추가"를 클릭하세요. 사업체 이름은 간판과 정확히 동일하게 입력해야 합니다.',
+        },
+        {
+          type: 'h2',
+          content: '2단계: 사업체 인증(Verification)',
+        },
+        {
+          type: 'p',
+          content:
+            '구글은 실제 사업체 소유자인지 확인하기 위해 우편, 전화, 또는 영상 인증을 요청합니다. 인증에는 1~14일이 소요됩니다. 인증을 하지 않으면 구글 지도에서 훨씬 낮은 순위로 표시됩니다.',
+        },
+        {
+          type: 'h2',
+          content: '3단계: 모든 정보 빠짐없이 입력하기',
+        },
+        {
+          type: 'ul',
+          content: '최대 노출을 위해 다음 항목을 모두 입력하세요:',
+          items: [
+            '사업체 이름 (간판과 동일)',
+            '카테고리 — 최대한 구체적으로 (예: "한식당")',
+            '주소 및 서비스 지역',
+            '전화번호 (웹사이트와 동일해야 함)',
+            '웹사이트 주소',
+            '영업시간 (공휴일 포함)',
+            '사업 소개 (750자, 한국어·영어 키워드와 도시명 포함)',
+            '사진 — 매장, 음식, 상품 고화질 사진 10장 이상',
+            '속성 — "한국어 서비스 가능", "포장 가능" 등',
+          ],
+        },
+        {
+          type: 'h2',
+          content: '4단계: 리뷰 받기 (순위 결정의 핵심 요소)',
+        },
+        {
+          type: 'p',
+          content:
+            '구글 리뷰는 로컬 지도 순위에서 가장 중요한 단일 요소입니다. 리뷰 50개 이상, 별점 4.5 이상인 가게들이 상위 노출을 독점합니다. 가장 효과적인 방법: 만족한 손님에게 직접 부탁하거나, 영수증에 QR코드를 인쇄해 주세요. 리뷰에 빠짐없이 답하는 것도 구글에게 활발한 사업체라는 신호를 줍니다.',
+        },
+        {
+          type: 'tip',
+          content:
+            '자주 하는 실수: 개인 이메일이나 대행사 이름으로 GBP를 관리하는 경우. 반드시 내가 직접 관리할 수 있는 사업체 이메일로 소유권을 유지하세요.',
+        },
+        {
+          type: 'cta',
+          content:
+            '내 구글 비즈니스 프로필이 제대로 설정되어 있는지 확인하고 싶으신가요? ZOE LUMOS는 NJ·NY 한인 비즈니스를 위한 무료 GBP 감사(Audit)를 제공합니다. 지금 무료 상담을 예약하세요.',
+        },
+      ],
+    },
+  },
 ]

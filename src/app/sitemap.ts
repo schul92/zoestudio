@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next'
+import { blogContent } from '@/data/blogContent'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
@@ -105,6 +106,36 @@ export default function sitemap(): MetadataRoute.Sitemap {
           'x-default': `${baseUrl}${page.enPath}`,
           'en': `${baseUrl}${page.enPath}`,
           'ko': `${baseUrl}/ko${page.path}`,
+        }
+      }
+    })
+  })
+
+  // Blog posts (individual articles)
+  blogContent.forEach((post) => {
+    sitemapEntries.push({
+      url: `${baseUrl}/blog/${post.slug}`,
+      lastModified: new Date(post.updatedDate),
+      changeFrequency: 'monthly',
+      priority: 0.75,
+      alternates: {
+        languages: {
+          'x-default': `${baseUrl}/blog/${post.slug}`,
+          'en': `${baseUrl}/blog/${post.slug}`,
+          'ko': `${baseUrl}/ko/blog/${post.slug}`,
+        }
+      }
+    })
+    sitemapEntries.push({
+      url: `${baseUrl}/ko/blog/${post.slug}`,
+      lastModified: new Date(post.updatedDate),
+      changeFrequency: 'monthly',
+      priority: 0.75,
+      alternates: {
+        languages: {
+          'x-default': `${baseUrl}/blog/${post.slug}`,
+          'en': `${baseUrl}/blog/${post.slug}`,
+          'ko': `${baseUrl}/ko/blog/${post.slug}`,
         }
       }
     })
