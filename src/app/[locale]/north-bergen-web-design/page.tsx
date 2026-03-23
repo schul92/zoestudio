@@ -69,9 +69,49 @@ export async function generateMetadata({
 
 export default function NorthBergenWebDesign({ params }: { params: { locale: string } }) {
   const isKo = params.locale === 'ko'
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
+
+  const faqSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: isKo ? [
+      {
+        '@type': 'Question',
+        name: '노스버겐 웹사이트 제작 비용은 얼마인가요?',
+        acceptedAnswer: { '@type': 'Answer', text: '노스버겐 웹사이트 제작은 $1,000부터 시작합니다. 비즈니스 유형과 기능에 따라 $1,000-$5,000 범위입니다. 무료 상담으로 정확한 견적을 받아보세요.' }
+      },
+      {
+        '@type': 'Question',
+        name: 'SEO 전문 에이전시를 노스버겐 NJ에서 찾고 있어요. ZOE LUMOS가 도움이 되나요?',
+        acceptedAnswer: { '@type': 'Answer', text: '네! ZOE LUMOS는 노스버겐 및 허드슨카운티 전 지역 한인·일반 소규모 비즈니스를 위한 로컬 SEO 전문 에이전시입니다. 구글 검색 상위 노출, 구글 비즈니스 최적화, 한/영 이중언어 SEO를 제공합니다.' }
+      },
+      {
+        '@type': 'Question',
+        name: '한국어로 상담이 가능한가요?',
+        acceptedAnswer: { '@type': 'Answer', text: '네, 100% 한국어 상담이 가능합니다. 한인 비즈니스 전문 에이전시로서 한국어와 영어 모두 지원합니다.' }
+      }
+    ] : [
+      {
+        '@type': 'Question',
+        name: 'How much does web design cost in North Bergen, NJ?',
+        acceptedAnswer: { '@type': 'Answer', text: 'Web design in North Bergen starts at $1,000. Depending on your business type and features needed, projects range $1,000-$5,000. Contact us for a free quote.' }
+      },
+      {
+        '@type': 'Question',
+        name: 'Do you offer SEO services for small businesses in North Bergen NJ?',
+        acceptedAnswer: { '@type': 'Answer', text: 'Yes! ZOE LUMOS is a local SEO agency specializing in North Bergen and Hudson County small businesses. We offer Google local SEO, Google Business Profile optimization, and bilingual Korean-English SEO strategies.' }
+      },
+      {
+        '@type': 'Question',
+        name: 'Can you build a bilingual Korean-English website in North Bergen?',
+        acceptedAnswer: { '@type': 'Answer', text: 'Absolutely. We specialize in bilingual Korean-English websites for Korean-American businesses in North Bergen, Hudson County, and the greater NYC metro area.' }
+      }
+    ]
+  }
 
   return (
     <div className="relative">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <HeaderWrapper locale={params.locale} />
       <main className="min-h-screen relative overflow-x-hidden">
         {/* Hero */}
