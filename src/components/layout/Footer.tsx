@@ -91,6 +91,19 @@ export default function Footer({ locale = 'en' }: { locale?: string }) {
             <div className="space-y-3">
               <FooterEmailLink email="info@zoelumos.com" />
 
+              {/* KakaoTalk */}
+              <a
+                href="http://pf.kakao.com/_xhxdxmlX/chat"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-gray-400 hover:text-[#FEE500] transition-colors text-sm"
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="flex-shrink-0">
+                  <path d="M12 3C6.477 3 2 6.463 2 10.691c0 2.724 1.8 5.113 4.508 6.463-.2.723-.722 2.62-.828 3.026-.13.502.184.496.387.36.16-.106 2.544-1.726 3.576-2.428.766.112 1.56.17 2.357.17 5.523 0 10-3.463 10-7.591S17.523 3 12 3Z" fill="currentColor"/>
+                </svg>
+                {locale === 'ko' ? '카카오톡 상담' : 'KakaoTalk Chat'}
+              </a>
+
               {/* Instagram with hover dropdown - Client Component */}
               <InstagramHover position="top" showLabel={true} locale={locale} />
             </div>

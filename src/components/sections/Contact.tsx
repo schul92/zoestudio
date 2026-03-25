@@ -6,6 +6,7 @@ import { motion } from 'framer-motion'
 import { useServices } from '@/context/ServiceContext'
 import { trackFormSuccess, trackFormError, trackGAEvent, GA_EVENTS, trackEmailClick, trackButtonClick } from '@/utils/analytics'
 import Modal from '@/components/ui/Modal'
+import { Mail, MapPin, Clock, CheckCircle, XCircle, AlertTriangle, Target } from 'lucide-react'
 
 export default function Contact({ locale = 'en' }: { locale?: string }) {
   const { t } = useTranslation(locale)
@@ -291,9 +292,9 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                   <motion.div
                     animate={{ scale: [1, 1.1, 1] }}
                     transition={{ duration: 2, repeat: Infinity }}
-                    className="text-6xl mb-6"
+                    className="mb-6 text-amber-400"
                   >
-                    🎯
+                    <Target className="w-16 h-16 mx-auto" />
                   </motion.div>
 
                   <h3 className="text-2xl font-bold mb-4 text-white">
@@ -490,7 +491,7 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                                 animate={{ scale: 1 }}
                                 className="text-red-500"
                               >
-                                ❌
+                                <XCircle className="w-5 h-5" />
                               </motion.div>
                             ) : formData.email ? (
                               <motion.div
@@ -498,7 +499,7 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                                 animate={{ scale: 1 }}
                                 className="text-green-500"
                               >
-                                ✅
+                                <CheckCircle className="w-5 h-5" />
                               </motion.div>
                             ) : null}
                           </div>
@@ -509,9 +510,11 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                         <motion.p
                           initial={{ opacity: 0, y: -10 }}
                           animate={{ opacity: 1, y: 0 }}
-                          className="mt-2 text-sm text-red-600 flex items-center"
+                          role="alert"
+                          aria-live="polite"
+                          className="mt-2 text-sm text-red-500 flex items-center gap-1.5"
                         >
-                          <span className="mr-1">⚠️</span>
+                          <AlertTriangle className="w-4 h-4 flex-shrink-0" />
                           {emailError}
                         </motion.p>
                       )}
@@ -642,15 +645,29 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                         onClick={() => trackEmailClick('info@zoelumos.com')}
                         className="flex items-center gap-3 text-gray-300 hover:text-amber-400 transition-colors"
                       >
-                        <span className="text-xl">✉️</span>
+                        <Mail className="w-5 h-5 flex-shrink-0" />
                         <span className="text-sm font-medium">info@zoelumos.com</span>
                       </a>
+                      <a
+                        href="http://pf.kakao.com/_xhxdxmlX/chat"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={() => trackButtonClick('KakaoTalk Chat', 'contact-info')}
+                        className="flex items-center gap-3 text-gray-300 hover:text-[#FEE500] transition-colors"
+                      >
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="flex-shrink-0">
+                          <path d="M12 3C6.477 3 2 6.463 2 10.691c0 2.724 1.8 5.113 4.508 6.463-.2.723-.722 2.62-.828 3.026-.13.502.184.496.387.36.16-.106 2.544-1.726 3.576-2.428.766.112 1.56.17 2.357.17 5.523 0 10-3.463 10-7.591S17.523 3 12 3Z" fill="currentColor"/>
+                        </svg>
+                        <span className="text-sm font-medium">
+                          {locale === 'ko' ? '카카오톡 상담 @zoelumos' : 'KakaoTalk @zoelumos'}
+                        </span>
+                      </a>
                       <div className="flex items-center gap-3 text-gray-300">
-                        <span className="text-xl">📍</span>
+                        <MapPin className="w-5 h-5 flex-shrink-0" />
                         <span className="text-sm font-medium">New Jersey, USA</span>
                       </div>
                       <div className="flex items-center gap-3 text-gray-300">
-                        <span className="text-xl">⏰</span>
+                        <Clock className="w-5 h-5 flex-shrink-0" />
                         <span className="text-sm font-medium">
                           {locale === 'ko' ? '월-금 9AM-6PM EST' : 'Mon-Fri 9AM-6PM EST'}
                         </span>

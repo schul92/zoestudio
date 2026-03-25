@@ -25,6 +25,10 @@ const ScrollProgress = dynamic(() => import('@/components/ui/ScrollProgress'), {
   ssr: false
 })
 
+const KakaoFloatingButton = dynamic(() => import('@/components/ui/KakaoFloatingButton'), {
+  ssr: false
+})
+
 export function generateStaticParams() {
   return [
     { locale: 'en' },
@@ -37,7 +41,7 @@ export async function generateMetadata({
 }: {
   params: { locale: string }
 }): Promise<Metadata> {
-  const locale = params.locale as 'en' | 'ko'
+  const locale: 'en' | 'ko' = params?.locale === 'ko' ? 'ko' : 'en'
   const seo = seoConfig[locale]
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
   
@@ -77,17 +81,20 @@ export async function generateMetadata({
 }
 
 export default function Home({ params }: { params: { locale: string } }) {
+  const locale: 'en' | 'ko' = params?.locale === 'ko' ? 'ko' : 'en'
+
   return (
     <div className="relative">
-      <HeaderWrapper locale={params.locale} />
+      <HeaderWrapper locale={locale} />
       <main className="min-h-screen relative overflow-x-hidden">
-        <AnimatedHero locale={params.locale} />
-        <Services locale={params.locale} />
-        <LocationLinks locale={params.locale} />
-        <ContactWrapper locale={params.locale} />
+        <AnimatedHero locale={locale} />
+        <Services locale={locale} />
+        <LocationLinks locale={locale} />
+        <ContactWrapper locale={locale} />
       </main>
-      <Footer locale={params.locale} />
+      <Footer locale={locale} />
       <ScrollProgress />
+      <KakaoFloatingButton />
     </div>
   )
 }

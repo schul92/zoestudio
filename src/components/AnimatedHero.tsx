@@ -7,7 +7,10 @@ import { useTranslation } from '@/hooks/useTranslation'
 export default function AnimatedHero({ locale = 'en' }: { locale?: string }) {
   const { t } = useTranslation(locale)
   const [mounted, setMounted] = useState(false)
+  const backgroundVideoRef = useRef<HTMLVideoElement>(null)
   const videoRef = useRef<HTMLVideoElement>(null)
+  const heroVideoSrc = '/videos/hero-bg.mp4?v=20260310c'
+  const heroPosterSrc = '/videos/hero-poster.jpg?v=20260310c'
 
   useEffect(() => {
     setMounted(true)
@@ -15,8 +18,9 @@ export default function AnimatedHero({ locale = 'en' }: { locale?: string }) {
 
   // Lazy-play video after mount to not block initial render
   useEffect(() => {
-    if (mounted && videoRef.current) {
-      videoRef.current.play().catch(() => {})
+    if (mounted) {
+      backgroundVideoRef.current?.play().catch(() => {})
+      videoRef.current?.play().catch(() => {})
     }
   }, [mounted])
 
@@ -45,15 +49,34 @@ export default function AnimatedHero({ locale = 'en' }: { locale?: string }) {
             WebkitMaskImage: 'radial-gradient(ellipse 70% 75% at 50% 48%, black 30%, rgba(0,0,0,0.5) 50%, rgba(0,0,0,0.1) 65%, transparent 80%)',
           }}>
             <video
+              ref={backgroundVideoRef}
+              muted
+              loop
+              playsInline
+              preload="metadata"
+              poster={heroPosterSrc}
+              aria-hidden="true"
+              className="absolute inset-0 w-full h-full object-cover scale-125 blur-3xl opacity-45 saturate-75"
+            >
+              <source src={heroVideoSrc} type="video/mp4" />
+            </video>
+
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_68%_72%_at_50%_48%,transparent_34%,rgba(10,10,10,0.08)_58%,rgba(10,10,10,0.45)_82%,rgba(10,10,10,0.85)_100%)]" />
+
+            <video
               ref={videoRef}
               muted
               loop
               playsInline
               preload="metadata"
-              poster="/videos/hero-poster.jpg"
-              className="w-full h-full object-cover"
+              poster={heroPosterSrc}
+              className="relative z-10 w-full h-full object-contain scale-[0.96]"
+              style={{
+                maskImage: 'radial-gradient(ellipse 76% 68% at 50% 46%, black 42%, rgba(0,0,0,0.95) 58%, rgba(0,0,0,0.5) 74%, transparent 92%)',
+                WebkitMaskImage: 'radial-gradient(ellipse 76% 68% at 50% 46%, black 42%, rgba(0,0,0,0.95) 58%, rgba(0,0,0,0.5) 74%, transparent 92%)',
+              }}
             >
-              <source src="/videos/hero-bg.mp4" type="video/mp4" />
+              <source src={heroVideoSrc} type="video/mp4" />
             </video>
           </div>
         </div>
@@ -74,13 +97,27 @@ export default function AnimatedHero({ locale = 'en' }: { locale?: string }) {
         </p>
 
         {/* CTA */}
-        <div className="mt-10 mb-16">
+        <div className="mt-10 mb-16 flex flex-col sm:flex-row items-center gap-4">
           <Link
             href="#services"
             className="group relative inline-flex items-center justify-center rounded-xl bg-gradient-to-b from-amber-400 to-amber-500 px-10 py-4 text-sm font-semibold text-black shadow-glow transition-all duration-300 hover:shadow-glow-lg hover:brightness-110 active:scale-[0.97]"
           >
             {t.hero.cta.start}
           </Link>
+          <a
+            href="http://pf.kakao.com/_xhxdxmlX/chat"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="group inline-flex items-center justify-center gap-2 rounded-xl border border-[#FEE500]/30 bg-[#FEE500]/10 px-8 py-4 text-sm font-semibold text-[#FEE500] transition-all duration-300 hover:bg-[#FEE500]/20 hover:border-[#FEE500]/50 active:scale-[0.97]"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M12 3C6.477 3 2 6.463 2 10.691c0 2.724 1.8 5.113 4.508 6.463-.2.723-.722 2.62-.828 3.026-.13.502.184.496.387.36.16-.106 2.544-1.726 3.576-2.428.766.112 1.56.17 2.357.17 5.523 0 10-3.463 10-7.591S17.523 3 12 3Z"
+                fill="#FEE500"
+              />
+            </svg>
+            {locale === 'ko' ? '카카오톡 상담' : 'Chat on KakaoTalk'}
+          </a>
         </div>
       </div>
 

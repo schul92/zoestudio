@@ -180,6 +180,20 @@ export default function Header({ locale = 'en' }: { locale?: string }) {
             {t.nav.contact}
           </Link>
 
+          {/* KakaoTalk link in mobile menu */}
+          <a
+            href="http://pf.kakao.com/_xhxdxmlX/chat"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setMobileMenuOpen(false)}
+            className="flex items-center gap-3 py-3 px-4 text-[#FEE500] hover:bg-[#FEE500]/10 rounded-lg transition-colors text-lg font-medium"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+              <path d="M12 3C6.477 3 2 6.463 2 10.691c0 2.724 1.8 5.113 4.508 6.463-.2.723-.722 2.62-.828 3.026-.13.502.184.496.387.36.16-.106 2.544-1.726 3.576-2.428.766.112 1.56.17 2.357.17 5.523 0 10-3.463 10-7.591S17.523 3 12 3Z" fill="currentColor"/>
+            </svg>
+            {locale === 'ko' ? '카카오톡 상담' : 'KakaoTalk Chat'}
+          </a>
+
           {/* Instagram link in mobile menu */}
           <InstagramMobileLink onClose={() => setMobileMenuOpen(false)} />
         </nav>

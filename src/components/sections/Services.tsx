@@ -5,6 +5,15 @@ import { motion } from 'framer-motion'
 import { useState, useEffect } from 'react'
 import { useServices } from '@/context/ServiceContext'
 import { useTracking } from '@/hooks/useTracking'
+import { Globe, Zap, TrendingUp, Target, Smartphone } from 'lucide-react'
+
+const serviceIcons: Record<string, React.ReactNode> = {
+  'globe': <Globe className="w-7 h-7" />,
+  'zap': <Zap className="w-7 h-7" />,
+  'trending-up': <TrendingUp className="w-7 h-7" />,
+  'target': <Target className="w-7 h-7" />,
+  'smartphone': <Smartphone className="w-7 h-7" />,
+}
 
 export default function Services({ locale = 'en' }: { locale?: string }) {
   const { t } = useTranslation(locale)
@@ -22,7 +31,7 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
     {
       id: 'webdesign',
       number: '01',
-      emoji: '🌐',
+      icon: 'globe',
       title: t.services.webDesign.title,
       description: t.services.webDesign.description,
       features: t.services.webDesign.features,
@@ -32,7 +41,7 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
     {
       id: 'revamp',
       number: '02',
-      emoji: '⚡',
+      icon: 'zap',
       title: t.services.revamp.title,
       description: t.services.revamp.description,
       features: t.services.revamp.features,
@@ -42,7 +51,7 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
     {
       id: 'seo',
       number: '03',
-      emoji: '📈',
+      icon: 'trending-up',
       title: t.services.seo.title,
       description: t.services.seo.description,
       features: t.services.seo.features,
@@ -52,7 +61,7 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
     {
       id: 'googleads',
       number: '04',
-      emoji: '🎯',
+      icon: 'target',
       title: t.services.googleAds.title,
       description: t.services.googleAds.description,
       features: t.services.googleAds.features,
@@ -62,7 +71,7 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
     {
       id: 'socialmedia',
       number: '05',
-      emoji: '📱',
+      icon: 'smartphone',
       title: t.services.socialMedia.title,
       description: t.services.socialMedia.description,
       features: t.services.socialMedia.features,
@@ -241,8 +250,8 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
                   )}
                 </div>
 
-                {/* Emoji */}
-                <div className="text-3xl mb-4">{service.emoji}</div>
+                {/* Icon */}
+                <div className="text-gray-400 mb-4">{serviceIcons[service.icon]}</div>
 
                 {/* Title */}
                 <h3 className="text-xl font-black text-white mb-2 leading-tight tracking-tight">
