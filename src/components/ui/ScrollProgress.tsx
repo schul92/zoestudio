@@ -2,8 +2,11 @@
 
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useState, useEffect } from 'react'
+import { useServices } from '@/context/ServiceContext'
 
 export default function ScrollProgress() {
+  const { selectedServices } = useServices()
+  const hasFloatingCart = selectedServices.length > 0
   const { scrollYProgress } = useScroll()
   const [isVisible, setIsVisible] = useState(true)
   const [hasScrolled, setHasScrolled] = useState(false)
@@ -61,7 +64,7 @@ export default function ScrollProgress() {
         x: isVisible ? 0 : -100
       }}
       transition={{ duration: 0.3 }}
-      className="fixed bottom-8 left-8 z-50"
+      className={`fixed left-8 z-50 ${hasFloatingCart ? 'bottom-24 sm:bottom-20' : 'bottom-8'}`}
     >
       <div 
         className="relative cursor-pointer group"

@@ -315,69 +315,56 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
             ))}
           </div>
 
-          <div className="container mx-auto max-w-6xl px-4 py-3 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
-
-            {/* Selected service chips — scrollable on mobile */}
-            <div className="flex items-center gap-2 flex-1 min-w-0 overflow-x-auto scrollbar-hide">
-              <span className="text-[11px] font-black tracking-widest text-gray-600 uppercase flex-shrink-0">
-                {isKo ? '선택' : 'Selected:'}
-              </span>
+          <div className="container mx-auto max-w-6xl px-4 py-2.5 sm:py-3 flex items-center gap-3">
+            {/* Service count + clear */}
+            <div className="flex items-center gap-2 min-w-0">
               <span className="inline-flex items-center gap-1.5 bg-[#B12492]/15 border border-[#B12492]/30 text-white rounded-full px-3 py-1 text-xs font-bold flex-shrink-0">
-                {selectedServices.length}{isKo ? '개 서비스' : ' services'}
+                {selectedServices.length}{isKo ? '개 선택' : ' selected'}
               </span>
               <button
                 onClick={() => selectedServices.forEach(s => removeService(s.id))}
-                className="text-gray-500 hover:text-gray-300 transition-colors text-[11px] font-medium flex-shrink-0 underline underline-offset-2"
+                className="text-gray-500 hover:text-gray-300 transition-colors text-[11px] font-medium flex-shrink-0"
               >
                 {isKo ? '초기화' : 'Clear'}
               </button>
             </div>
 
-            {/* Actions */}
-            <div className="flex items-center gap-2 flex-shrink-0 justify-end">
-              <motion.button
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.96 }}
-                animate={!scrolling ? {
-                  boxShadow: ['0 0 0px rgba(177,36,146,0)', '0 0 20px rgba(177,36,146,0.5)', '0 0 0px rgba(177,36,146,0)']
-                } : {}}
-                transition={{ duration: 2, repeat: Infinity }}
-                onClick={() => {
-                  setScrolling(true)
-                  const el = document.getElementById('contact')
-                  if (el) {
-                    const offset = window.innerWidth < 768 ? 100 : 80
-                    window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - offset, behavior: 'smooth' })
-                  }
-                  setTimeout(() => setScrolling(false), 1500)
-                }}
-                className="relative overflow-hidden px-5 py-2.5 rounded-xl bg-[#B12492] text-white font-black text-sm flex items-center gap-2 min-w-[160px] justify-center"
-              >
-                {scrolling ? (
-                  <>
-                    <motion.span
-                      animate={{ rotate: 360 }}
-                      transition={{ duration: 0.8, repeat: Infinity, ease: 'linear' }}
-                      className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full"
-                    />
-                    {isKo ? '이동 중...' : 'Going there...'}
-                  </>
-                ) : (
-                  <>
-                    {isKo ? '다음 단계 — 정보 입력' : 'Step 2 — Fill your info'}
-                    <motion.span animate={{ x: [0, 4, 0] }} transition={{ duration: 1.2, repeat: Infinity }}>→</motion.span>
-                  </>
-                )}
-                {/* Shimmer */}
-                {!scrolling && (
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent -skew-x-12"
-                    animate={{ x: ['-100%', '200%'] }}
-                    transition={{ duration: 2.5, repeat: Infinity, repeatDelay: 1 }}
+            {/* CTA button */}
+            <motion.button
+              whileTap={{ scale: 0.96 }}
+              onClick={() => {
+                setScrolling(true)
+                const el = document.getElementById('contact')
+                if (el) {
+                  const offset = window.innerWidth < 768 ? 100 : 80
+                  window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - offset, behavior: 'smooth' })
+                }
+                setTimeout(() => setScrolling(false), 1500)
+              }}
+              className="relative overflow-hidden ml-auto px-4 sm:px-5 py-2.5 rounded-xl bg-[#B12492] text-white font-black text-xs sm:text-sm flex items-center gap-2 flex-shrink-0"
+            >
+              {scrolling ? (
+                <>
+                  <motion.span
+                    animate={{ rotate: 360 }}
+                    transition={{ duration: 0.8, repeat: Infinity, ease: 'linear' }}
+                    className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full"
                   />
-                )}
-              </motion.button>
-            </div>
+                  {isKo ? '이동 중...' : 'Going...'}
+                </>
+              ) : (
+                <>
+                  {isKo ? '다음 단계 →' : 'Next Step →'}
+                </>
+              )}
+              {!scrolling && (
+                <motion.div
+                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent -skew-x-12"
+                  animate={{ x: ['-100%', '200%'] }}
+                  transition={{ duration: 2.5, repeat: Infinity, repeatDelay: 1 }}
+                />
+              )}
+            </motion.button>
           </div>
         </motion.div>
       )}

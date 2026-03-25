@@ -20,11 +20,6 @@ const LocationLinks = dynamic(() => import('@/components/sections/LocationLinks'
   loading: () => <div className="min-h-[400px] bg-[#111111]" />
 })
 
-// Client-only component for scroll progress
-const ScrollProgress = dynamic(() => import('@/components/ui/ScrollProgress'), {
-  ssr: false
-})
-
 const KakaoFloatingButton = dynamic(() => import('@/components/ui/KakaoFloatingButton'), {
   ssr: false
 })
@@ -106,7 +101,6 @@ export default function Home({ params }: { params: { locale: string } }) {
         <ContactWrapper locale={locale} />
       </main>
       <Footer locale={locale} />
-      <ScrollProgress />
       <KakaoFloatingButton />
     </div>
   )
