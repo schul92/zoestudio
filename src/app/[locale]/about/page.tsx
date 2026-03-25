@@ -231,6 +231,7 @@ export default function AboutPage({ params }: { params: { locale: string } }) {
   const personSchema = {
     '@context': 'https://schema.org',
     '@type': 'Person',
+    name: 'Zoe Lumos',
     jobTitle: 'Founder & Lead Developer',
     worksFor: {
       '@type': 'Organization',

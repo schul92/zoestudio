@@ -27,6 +27,7 @@ export const structuredData = {
   organization: {
     "@context": "https://schema.org",
     "@type": "Organization",
+    "@id": "https://www.zoelumos.com/#organization",
     "name": "ZOE LUMOS",
     "legalName": "ZOE STUDIO LLC",
     "alternateName": ["조이루모스", "Zoe Studio"],
@@ -38,29 +39,43 @@ export const structuredData = {
       "height": 512
     },
     "email": "info@zoelumos.com",
+    "telephone": "+1-201-000-0000",
     "description": "Bilingual Korean-English digital marketing agency serving Korean-American small businesses nationwide. Services include web design, SEO, Google Ads, and e-commerce.",
-    "contactPoint": {
-      "@type": "ContactPoint",
-      "email": "info@zoelumos.com",
-      "contactType": "customer service",
-      "availableLanguage": ["English", "Korean"],
-      "areaServed": "US"
-    },
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "email": "info@zoelumos.com",
+        "contactType": "customer service",
+        "availableLanguage": ["English", "Korean"],
+        "areaServed": "US"
+      },
+      {
+        "@type": "ContactPoint",
+        "url": "http://pf.kakao.com/_xhxdxmlX/chat",
+        "contactType": "customer service",
+        "availableLanguage": ["Korean"],
+        "areaServed": "US"
+      }
+    ],
     "sameAs": [
       "https://www.facebook.com/zoelumos",
       "https://www.instagram.com/zoelumos",
-      "https://www.linkedin.com/company/zoelumos"
+      "https://www.linkedin.com/company/zoelumos",
+      "http://pf.kakao.com/_xhxdxmlX"
     ]
   },
   localBusiness: {
     "@context": "https://schema.org",
     "@type": ["LocalBusiness", "ProfessionalService"],
+    "@id": "https://www.zoelumos.com/#localbusiness",
     "name": "ZOE LUMOS",
     "alternateName": ["ZOE STUDIO LLC", "조이루모스"],
     "description": "Bilingual Korean-English digital marketing agency in Fort Lee, NJ. Web design, SEO, Google Ads, and Shopify e-commerce for Korean-American businesses nationwide.",
     "image": "https://www.zoelumos.com/og-image.png",
     "email": "info@zoelumos.com",
+    "telephone": "+1-201-000-0000",
     "url": "https://www.zoelumos.com",
+    "parentOrganization": { "@id": "https://www.zoelumos.com/#organization" },
     "address": {
       "@type": "PostalAddress",
       "addressCountry": "US",
@@ -92,7 +107,7 @@ export const structuredData = {
       {
         "@type": "City",
         "name": "Manhattan",
-        "containedInPlace": { "@type": "State", "name": "New York" }
+        "containedInPlace": { "@type": "City", "name": "New York" }
       },
       {
         "@type": "City",
@@ -112,7 +127,7 @@ export const structuredData = {
       {
         "@type": "City",
         "name": "Brooklyn",
-        "containedInPlace": { "@type": "State", "name": "New York" }
+        "containedInPlace": { "@type": "City", "name": "New York" }
       },
       {
         "@type": "City",

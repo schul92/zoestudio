@@ -203,10 +203,10 @@ function generateReviewSchema(locale: 'en' | 'ko') {
     },
     "aggregateRating": {
       "@type": "AggregateRating",
-      "ratingValue": "5",
-      "reviewCount": reviews.length.toString(),
-      "bestRating": "5",
-      "worstRating": "1"
+      "ratingValue": 5,
+      "reviewCount": reviews.length,
+      "bestRating": 5,
+      "worstRating": 1
     },
     "review": reviewSchemas
   }

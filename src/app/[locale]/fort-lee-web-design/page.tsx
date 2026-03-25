@@ -18,7 +18,7 @@ export async function generateMetadata({
   params: { locale: string }
 }): Promise<Metadata> {
   const locale = params.locale as 'en' | 'ko'
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://zoelumos.com'
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
   
   if (locale === 'ko') {
     return {
@@ -215,7 +215,7 @@ export default function FortLeeWebDesignPage({ params }: { params: { locale: str
             <div className="flex flex-wrap justify-center gap-8 text-gray-600">
               <div className="flex items-center gap-2">
                 <Star className="w-5 h-5 text-yellow-500 fill-yellow-500" />
-                <span>{locale === 'ko' ? '5.0 평점 (89개 리뷰)' : '5.0 Rating (89 Reviews)'}</span>
+                <span>{locale === 'ko' ? '5.0 평점' : '5.0 Rating'}</span>
               </div>
               <div className="flex items-center gap-2">
                 <Users className="w-5 h-5 text-blue-500" />

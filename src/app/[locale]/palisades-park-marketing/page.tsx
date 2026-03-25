@@ -18,7 +18,7 @@ export async function generateMetadata({
   params: { locale: string }
 }): Promise<Metadata> {
   const locale = params.locale as 'en' | 'ko'
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://zoelumos.com'
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
   
   if (locale === 'ko') {
     return {
@@ -73,7 +73,7 @@ export async function generateMetadata({
 
 export default function PalisadesParkMarketingPage({ params }: { params: { locale: string } }) {
   const locale = params.locale as 'en' | 'ko'
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://zoelumos.com'
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
   
   const localBusinessSchema = {
     '@context': 'https://schema.org',

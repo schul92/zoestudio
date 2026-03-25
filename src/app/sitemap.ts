@@ -62,8 +62,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     sitemapEntries.push({
       url: `${baseUrl}${page}`,
       lastModified,
-      changeFrequency: page === '' ? 'daily' : 'weekly',
-      priority: page === '' ? 1.0 : page.includes('website') ? 0.95 : page === '/pricing' ? 0.9 : 0.8,
       alternates: {
         languages: {
           'x-default': `${baseUrl}${page}`,
@@ -79,8 +77,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     sitemapEntries.push({
       url: `${baseUrl}/ko${page}`,
       lastModified,
-      changeFrequency: page === '' ? 'daily' : 'weekly',
-      priority: page === '' ? 1.0 : page.includes('website') ? 0.95 : page === '/pricing' ? 0.9 : 0.8,
       alternates: {
         languages: {
           'x-default': `${baseUrl}${page}`,
@@ -92,14 +88,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   })
 
   // Korean SEO pages (Korean URL slugs - important for Korean search)
-  // Only include Korean locale versions with Korean URLs
   koreanSeoPages.forEach((page) => {
-    // Korean version with Korean URL (primary for Korean SEO)
     sitemapEntries.push({
       url: `${baseUrl}/ko${page.path}`,
       lastModified,
-      changeFrequency: 'daily',
-      priority: page.priority,
       alternates: {
         languages: {
           'x-default': `${baseUrl}${page.enPath}`,

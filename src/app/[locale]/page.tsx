@@ -3,7 +3,7 @@ import dynamic from 'next/dynamic'
 import HeaderWrapper from '@/components/layout/HeaderWrapper'
 import Footer from '@/components/layout/Footer'
 import AnimatedHero from '@/components/AnimatedHero'
-import { seoConfig } from '@/config/seo'
+import { seoConfig, structuredData } from '@/config/seo'
 
 const Services = dynamic(() => import('@/components/sections/Services'), {
   ssr: true,
@@ -85,6 +85,19 @@ export default function Home({ params }: { params: { locale: string } }) {
 
   return (
     <div className="relative">
+      {/* FAQPage schema — only on homepage where FAQ content context exists */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData.faqPage) }}
+      />
+      {/* Service schema — render on homepage */}
+      {structuredData.services.map((service, i) => (
+        <script
+          key={i}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(service) }}
+        />
+      ))}
       <HeaderWrapper locale={locale} />
       <main className="min-h-screen relative overflow-x-hidden">
         <AnimatedHero locale={locale} />

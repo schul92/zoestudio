@@ -153,7 +153,9 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "WebSite",
+              "@id": "https://www.zoelumos.com/#website",
               "url": "https://www.zoelumos.com",
+              "publisher": { "@id": "https://www.zoelumos.com/#organization" },
               "name": "ZOE LUMOS",
               "alternateName": locale === 'ko' ? "조이루모스 - 뉴저지 웹사이트 제작" : "ZOE LUMOS",
               "description": locale === 'ko'
@@ -163,12 +165,7 @@ export default function RootLayout({
             }),
           }}
         />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(structuredData.faqPage),
-          }}
-        />
+        {/* FAQPage schema moved to homepage only — Google requires FAQ content to be visible on the page */}
       </head>
       <body className={`${inter.className} bg-[#111111] text-white`} style={{ position: 'relative' }}>
         {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
