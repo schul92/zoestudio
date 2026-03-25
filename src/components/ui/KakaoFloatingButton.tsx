@@ -15,15 +15,21 @@ export default function KakaoFloatingButton() {
     return () => clearTimeout(timer)
   }, [])
 
+  // Hide on mobile when cart bar is open to avoid overlap
+  if (hasFloatingCart) {
+    return null
+  }
+
   return (
     <a
       href={KAKAO_CHAT_URL}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat on KakaoTalk"
-      className={`fixed right-6 z-50 flex items-center gap-2 rounded-full bg-[#FEE500] px-4 py-3 text-[#3C1E1E] shadow-lg transition-all duration-500 hover:scale-105 hover:shadow-xl active:scale-95 touch-action-manipulation ${
+      className={`fixed right-4 sm:right-6 bottom-6 z-50 flex items-center gap-2 rounded-full bg-[#FEE500] px-4 py-3 text-[#3C1E1E] shadow-lg transition-all duration-500 hover:scale-105 hover:shadow-xl active:scale-95 ${
         visible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
-      } ${hasFloatingCart ? 'bottom-24 sm:bottom-28' : 'bottom-6'}`}
+      }`}
+      style={{ touchAction: 'manipulation' }}
     >
       <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path

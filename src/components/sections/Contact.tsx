@@ -261,7 +261,7 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
         submissionData={submissionSummary || undefined}
       />
       
-      <section id="contact" className="grain-overlay pt-20 pb-20 md:pt-24 md:pb-20 bg-[#0a0a0a] relative z-10 overflow-hidden">
+      <section id="contact" className={`grain-overlay pt-20 md:pt-24 bg-[#0a0a0a] relative z-10 overflow-hidden ${selectedServices.length > 0 ? 'pb-48 sm:pb-36 md:pb-28' : 'pb-20 md:pb-20'}`}>
       {/* Top gradient divider (replaces border-t) */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500/20 to-transparent" />
 

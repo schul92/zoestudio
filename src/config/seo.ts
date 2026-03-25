@@ -39,7 +39,6 @@ export const structuredData = {
       "height": 512
     },
     "email": "info@zoelumos.com",
-    "telephone": "+1-201-000-0000",
     "description": "Bilingual Korean-English digital marketing agency serving Korean-American small businesses nationwide. Services include web design, SEO, Google Ads, and e-commerce.",
     "contactPoint": [
       {
@@ -73,7 +72,6 @@ export const structuredData = {
     "description": "Bilingual Korean-English digital marketing agency in Fort Lee, NJ. Web design, SEO, Google Ads, and Shopify e-commerce for Korean-American businesses nationwide.",
     "image": "https://www.zoelumos.com/og-image.png",
     "email": "info@zoelumos.com",
-    "telephone": "+1-201-000-0000",
     "url": "https://www.zoelumos.com",
     "parentOrganization": { "@id": "https://www.zoelumos.com/#organization" },
     "address": {

@@ -315,40 +315,26 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
             ))}
           </div>
 
-          <div className="container mx-auto max-w-6xl px-4 py-3 flex flex-col sm:flex-row sm:items-center gap-3">
+          <div className="container mx-auto max-w-6xl px-4 py-3 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3">
 
-            {/* Selected service chips */}
-            <div className="flex items-center gap-2 flex-wrap flex-1 min-w-0">
+            {/* Selected service chips — scrollable on mobile */}
+            <div className="flex items-center gap-2 flex-1 min-w-0 overflow-x-auto scrollbar-hide">
               <span className="text-[11px] font-black tracking-widest text-gray-600 uppercase flex-shrink-0">
                 {isKo ? '선택' : 'Selected:'}
               </span>
-              {selectedServices.map((s) => (
-                <motion.span
-                  key={s.id}
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  exit={{ scale: 0.8, opacity: 0 }}
-                  className="inline-flex items-center gap-1.5 bg-[#B12492]/15 border border-[#B12492]/30 text-white rounded-full pl-3 pr-2 py-1 text-xs font-bold"
-                >
-                  {s.title}
-                  <button
-                    onClick={(e) => { e.stopPropagation(); removeService(s.id) }}
-                    className="w-4 h-4 rounded-full bg-white/10 hover:bg-white/25 flex items-center justify-center text-[10px] text-gray-400 hover:text-white transition-colors"
-                    aria-label={`Remove ${s.title}`}
-                  >×</button>
-                </motion.span>
-              ))}
+              <span className="inline-flex items-center gap-1.5 bg-[#B12492]/15 border border-[#B12492]/30 text-white rounded-full px-3 py-1 text-xs font-bold flex-shrink-0">
+                {selectedServices.length}{isKo ? '개 서비스' : ' services'}
+              </span>
+              <button
+                onClick={() => selectedServices.forEach(s => removeService(s.id))}
+                className="text-gray-500 hover:text-gray-300 transition-colors text-[11px] font-medium flex-shrink-0 underline underline-offset-2"
+              >
+                {isKo ? '초기화' : 'Clear'}
+              </button>
             </div>
 
             {/* Actions */}
             <div className="flex items-center gap-2 flex-shrink-0 justify-end">
-              <button
-                onClick={() => selectedServices.forEach(s => removeService(s.id))}
-                className="px-3 py-2 rounded-lg bg-white/[0.05] text-gray-500 hover:bg-white/10 hover:text-gray-300 transition-all text-xs font-medium"
-              >
-                {isKo ? '전체 삭제' : 'Clear all'}
-              </button>
-
               <motion.button
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.96 }}
