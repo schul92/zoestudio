@@ -32,6 +32,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/palisades-park-marketing',
     '/ridgefield-web-design',
     '/edgewater-web-design',
+    '/fairview-nj-web-design',
   ]
 
   // Korean SEO pages (Korean URLs - high priority for Korean keywords)
@@ -53,6 +54,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/플로리다-웹사이트', enPath: '/fl-website', priority: 0.95 },
     { path: '/팰팍-마케팅', enPath: '/palisades-park-marketing', priority: 0.95 },
     { path: '/광고대행', enPath: '/pricing', priority: 0.95 },
+    { path: '/페어뷰-웹디자인', enPath: '/fairview-nj-web-design', priority: 0.95 },
   ]
 
   const sitemapEntries: MetadataRoute.Sitemap = []
