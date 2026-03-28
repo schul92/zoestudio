@@ -47,11 +47,11 @@ export async function generateMetadata({
   }
   
   return {
-    title: 'Fort Lee Web Design & Development | Korean Business Website Expert | ZOE LUMOS',
-    description: 'Fort Lee, NJ #1 web design agency. Korean-American business website specialists in Bergen County. Local SEO, Google Ads, Shopify e-commerce. Bilingual Korean & English. Free consultation.',
-    keywords: 'Fort Lee web design, Fort Lee NJ website, Fort Lee web developer, Bergen County web design, Korean business Fort Lee, Fort Lee SEO, Fort Lee digital marketing, Korean American web design NJ, small business SEO NJ, korean business marketing nyc, NJ web design agency',
+    title: 'Fort Lee Web Design & SEO | Korean Business Website & SEO Expert | ZOE LUMOS',
+    description: 'Fort Lee, NJ #1 web design & SEO agency. Korean-American business website specialists in Bergen County. SEO Fort Lee NJ, local SEO, Google Ads, Shopify e-commerce. Bilingual Korean & English. Free consultation.',
+    keywords: 'Fort Lee web design, Fort Lee NJ website, Fort Lee web developer, Bergen County web design, Korean business Fort Lee, Fort Lee SEO, SEO Fort Lee NJ, Fort Lee digital marketing, Korean American web design NJ, small business SEO NJ, korean business marketing nyc, NJ web design agency, seo fort lee nj, fort lee seo services',
     openGraph: {
-      title: 'Fort Lee Web Design & Development - ZOE LUMOS',
+      title: 'Fort Lee Web Design & SEO Services - ZOE LUMOS',
       description: '#1 Web design agency in Fort Lee, NJ. Korean-American business specialists.',
       url: `${baseUrl}/fort-lee-web-design`,
       siteName: 'ZOE LUMOS',
