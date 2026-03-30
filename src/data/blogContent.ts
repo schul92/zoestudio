@@ -987,4 +987,203 @@ export const blogContent: BlogPost[] = [
       ],
     },
   },
+  // ─────────────────────────────────────────────────────────────────
+  // ARTICLE 5 — Social Media Marketing for Korean Businesses in NJ
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'korean-business-social-media-marketing-nj-2026',
+    date: '2026-03-30',
+    updatedDate: '2026-03-30',
+    readTime: 8,
+    category: { en: 'Social Media', ko: '소셜미디어' },
+    title: {
+      en: 'Social Media Marketing for Korean Businesses in NJ & NYC (2026 Guide)',
+      ko: '뉴저지 한인 비즈니스 소셜미디어 마케팅 완벽 가이드 (2026)',
+    },
+    metaDescription: {
+      en: 'Complete guide to social media marketing for Korean-American businesses in Fort Lee, Palisades Park, and NYC metro. Instagram, KakaoTalk, Naver strategies that actually work.',
+      ko: '포트리, 팰팍, 뉴욕 한인 비즈니스를 위한 소셜미디어 마케팅 완벽 가이드. 인스타그램, 카카오톡, 네이버 활용 전략으로 매출을 높이세요.',
+    },
+    author: 'ZOE LUMOS',
+    sections: {
+      en: [
+        {
+          type: 'intro',
+          content:
+            'Korean-American business owners in Fort Lee, Palisades Park, and the NYC metro face a unique social media challenge: your customers live in two worlds. They use Instagram and Google like any American consumer — but they also rely heavily on KakaoTalk group chats, Naver blogs, and Korean-language Facebook groups to find local businesses. This guide breaks down exactly which platforms to prioritize and how to build a bilingual social media strategy that drives real foot traffic and leads.',
+        },
+        {
+          type: 'h2',
+          content: 'Why Korean Businesses in NJ Need a Different Social Media Strategy',
+        },
+        {
+          type: 'p',
+          content:
+            'The Korean-American community in Bergen County (Fort Lee, Palisades Park, Ridgefield, Tenafly) is among the most digitally active in the US — but they use social media differently than the general population. Word-of-mouth still drives most purchasing decisions, but that word-of-mouth now happens in KakaoTalk group chats and Korean-language Facebook groups with thousands of members. A restaurant that goes viral in a "포트리 맛집" (Fort Lee restaurants) KakaoTalk group can see 3x their normal weekend traffic within 48 hours.',
+        },
+        {
+          type: 'h2',
+          content: 'Platform Priority for Korean-American Businesses (Fort Lee / Palisades Park)',
+        },
+        {
+          type: 'ul',
+          content: 'Platform priorities:',
+          items: [
+            '**Instagram** (highest ROI): Visual-first platform ideal for food, beauty, retail. Post bilingual captions. Use both English and Korean hashtags.',
+            '**Google Business Profile** (most underutilized): Korean-speaking customers search in Korean — "포트리 맛집", "팰팍 네일샵". Optimize your GBP with Korean-language posts.',
+            '**KakaoTalk / KakaoStory**: Set up a KakaoTalk Channel for your business. Share promotions and coupons directly to followers.',
+            '**Facebook** (Korean community groups): Join and participate authentically in local Korean community groups. Never spam — add value first.',
+            '**Naver Blog**: If you serve first-generation Korean immigrants, a Naver blog with local content builds trust and drives traffic from Korea-based searches.',
+          ],
+        },
+        {
+          type: 'h2',
+          content: 'Instagram Strategy for Korean Businesses in Bergen County',
+        },
+        {
+          type: 'p',
+          content:
+            'Instagram remains the #1 paid and organic channel for Korean small businesses in the NYC metro. The key to success: bilingual content. Post your caption in English first (for the algorithm), then Korean. Use location tags for Fort Lee, Palisades Park, Englewood, and Manhattan simultaneously — this expands your reach to both local and Korean-diaspora audiences across the region.',
+        },
+        {
+          type: 'tip',
+          content:
+            'Pro tip: The best-performing Korean business Instagram accounts in NJ post 4–5 times per week (3 feed posts + 2 Stories minimum). Reels with Korean music or trending sounds in both languages consistently outperform static posts by 3–5x in reach.',
+        },
+        {
+          type: 'h2',
+          content: 'How to Use Google Business Profile in Korean',
+        },
+        {
+          type: 'p',
+          content:
+            'Most Korean business owners in NJ set up their Google Business Profile in English and never touch it again. This is a massive missed opportunity. Google Business Profile now fully supports Korean-language posts, Q&A, and business descriptions. Post weekly updates in both Korean and English. Respond to Korean-language reviews in Korean — this signals to Google that your business serves Korean-speaking customers and boosts your visibility for Korean-language searches like "포트리 한식" or "팰팍 법률사무소".',
+        },
+        {
+          type: 'h2',
+          content: 'Social Media Content Calendar for Korean Businesses',
+        },
+        {
+          type: 'ul',
+          content: 'Recommended weekly content schedule:',
+          items: [
+            'Monday: Educational content (tip about your industry in both languages)',
+            'Wednesday: Behind-the-scenes or staff spotlight (builds trust and community)',
+            'Friday: Promotion or weekend special (highest engagement days)',
+            'Saturday: User-generated content or customer spotlight',
+            'Daily: Stories with polls, questions, or behind-the-scenes clips (low effort, high retention)',
+          ],
+        },
+        {
+          type: 'h2',
+          content: 'Common Social Media Mistakes Korean Businesses Make',
+        },
+        {
+          type: 'ul',
+          content: 'Mistakes to avoid:',
+          items: [
+            'Posting only in Korean: You lose 70%+ of potential reach from English-speaking customers and the algorithm.',
+            'Ignoring Google reviews: Korean community members check Google reviews extensively before visiting a new business.',
+            'No link in bio: Every Instagram post should drive traffic somewhere — your website, booking page, or menu.',
+            'Inconsistent posting: The algorithm rewards consistency. 3 posts/week consistently beats 15 posts one week and zero the next.',
+            'Not using local hashtags: #FortLeeNJ, #PalisadesPark, #BergenCounty, #한인 hashtags put you in front of local discovery searches.',
+          ],
+        },
+        {
+          type: 'cta',
+          content:
+            'Want a done-for-you social media strategy for your Korean-American business in Fort Lee, Palisades Park, or the NYC metro? ZOE LUMOS handles bilingual content creation, scheduling, and community management. Book a free strategy consultation today.',
+        },
+      ],
+      ko: [
+        {
+          type: 'intro',
+          content:
+            '포트리, 팰팍(팰리세이즈 파크), 뉴욕 메트로 지역의 한인 사업주들은 독특한 소셜미디어 과제에 직면해 있습니다. 고객들은 두 세계에 살고 있습니다 — 일반 미국 소비자처럼 인스타그램과 구글을 사용하지만, 동시에 카카오톡 단체채팅, 네이버 블로그, 한국어 페이스북 그룹을 통해 지역 비즈니스를 찾습니다. 이 가이드는 어떤 플랫폼을 우선시해야 하는지, 그리고 실제 매출로 이어지는 이중언어 소셜미디어 전략을 어떻게 만드는지 정확히 설명합니다.',
+        },
+        {
+          type: 'h2',
+          content: '뉴저지 한인 비즈니스에 다른 소셜미디어 전략이 필요한 이유',
+        },
+        {
+          type: 'p',
+          content:
+            '버겐 카운티(포트리, 팰팍, 리지필드, 테나플라이)의 한인 커뮤니티는 미국에서 가장 디지털 활동이 활발한 그룹 중 하나지만, 일반 미국인과는 다르게 소셜미디어를 사용합니다. 구전 마케팅이 여전히 대부분의 구매 결정을 이끌지만, 이제 그 구전은 수천 명의 회원이 있는 카카오톡 단체채팅과 한국어 페이스북 그룹에서 일어납니다. "포트리 맛집" 카카오톡 그룹에서 입소문이 난 식당은 48시간 내에 주말 트래픽이 3배로 늘어나는 것을 경험할 수 있습니다.',
+        },
+        {
+          type: 'h2',
+          content: '한인 비즈니스를 위한 플랫폼 우선순위 (포트리 / 팰팍)',
+        },
+        {
+          type: 'ul',
+          content: '플랫폼 우선순위:',
+          items: [
+            '**인스타그램** (ROI 최고): 음식, 뷰티, 소매업에 이상적인 비주얼 우선 플랫폼. 이중언어 캡션 작성. 영어와 한국어 해시태그 모두 활용.',
+            '**구글 비즈니스 프로필** (가장 과소 활용): 한국어를 사용하는 고객들은 한국어로 검색합니다 — "포트리 맛집", "팰팍 네일샵". 한국어 게시물로 GBP를 최적화하세요.',
+            '**카카오톡 / 카카오스토리**: 비즈니스용 카카오톡 채널을 개설하세요. 프로모션과 쿠폰을 팔로워에게 직접 전달하세요.',
+            '**페이스북** (한인 커뮤니티 그룹): 지역 한인 커뮤니티 그룹에 진정성 있게 참여하세요. 스팸은 절대 금물 — 먼저 가치를 제공하세요.',
+            '**네이버 블로그**: 1세대 한인 이민자를 주 고객으로 한다면, 지역 콘텐츠로 네이버 블로그를 운영하면 신뢰를 쌓고 한국 기반 검색 트래픽을 유도합니다.',
+          ],
+        },
+        {
+          type: 'h2',
+          content: '버겐 카운티 한인 비즈니스를 위한 인스타그램 전략',
+        },
+        {
+          type: 'p',
+          content:
+            '인스타그램은 뉴욕 메트로 한인 소규모 비즈니스의 유료 및 유기적 채널 모두에서 1위를 유지하고 있습니다. 성공의 핵심은 이중언어 콘텐츠입니다. 캡션은 영어로 먼저 작성하고(알고리즘용), 그 다음 한국어를 작성하세요. 포트리, 팰팍, 잉글우드, 맨해튼의 위치 태그를 동시에 사용하면 지역 고객과 전국의 한인 독자들에게까지 도달 범위를 넓힐 수 있습니다.',
+        },
+        {
+          type: 'tip',
+          content:
+            '프로 팁: NJ에서 성과가 좋은 한인 비즈니스 인스타그램 계정은 주 4~5회 게시합니다(피드 게시물 3개 + 스토리 최소 2개). 한국 음악이나 트렌딩 사운드를 활용한 릴스는 정적 게시물보다 도달률이 3~5배 높습니다.',
+        },
+        {
+          type: 'h2',
+          content: '구글 비즈니스 프로필 한국어 최적화 방법',
+        },
+        {
+          type: 'p',
+          content:
+            '뉴저지 한인 사업주 대부분이 구글 비즈니스 프로필을 영어로 설정한 후 그냥 방치합니다. 이것은 엄청난 기회를 놓치는 것입니다. 구글 비즈니스 프로필은 이제 한국어 게시물, Q&A, 비즈니스 설명을 완전히 지원합니다. 한국어와 영어로 주 1회 업데이트를 게시하세요. 한국어 리뷰에는 한국어로 답변하세요 — 이는 구글에 귀하의 비즈니스가 한국어 사용 고객을 서비스한다는 신호를 보내어 "포트리 한식"이나 "팰팍 법률사무소" 같은 한국어 검색에서 노출을 높입니다.',
+        },
+        {
+          type: 'h2',
+          content: '한인 비즈니스 소셜미디어 콘텐츠 캘린더',
+        },
+        {
+          type: 'ul',
+          content: '주간 콘텐츠 일정:',
+          items: [
+            '월요일: 교육 콘텐츠 (업종 관련 팁, 이중언어)',
+            '수요일: 비하인드 씬 또는 직원 소개 (신뢰와 커뮤니티 구축)',
+            '금요일: 프로모션 또는 주말 특가 (참여율이 가장 높은 날)',
+            '토요일: 고객이 올린 콘텐츠(UGC) 또는 고객 인터뷰',
+            '매일: 스토리 — 설문, 질문, 비하인드 씬 클립 (노력 대비 높은 유지율)',
+          ],
+        },
+        {
+          type: 'h2',
+          content: '한인 비즈니스가 흔히 하는 소셜미디어 실수',
+        },
+        {
+          type: 'ul',
+          content: '피해야 할 실수:',
+          items: [
+            '한국어로만 게시: 영어권 잠재 고객의 70% 이상 도달 기회를 잃고, 알고리즘에도 불리합니다.',
+            '구글 리뷰 무시: 한인 커뮤니티 회원들은 새로운 비즈니스를 방문하기 전 구글 리뷰를 꼼꼼히 확인합니다.',
+            '링크 인 바이오 없음: 모든 인스타그램 게시물은 웹사이트, 예약 페이지, 또는 메뉴 등 어딘가로 트래픽을 유도해야 합니다.',
+            '불규칙한 게시: 알고리즘은 일관성을 보상합니다. 주 3회 꾸준한 게시가 1주에 15번 게시 후 다음 주 0번보다 낫습니다.',
+            '지역 해시태그 미사용: #FortLeeNJ, #PalisadesPark, #BergenCounty, #한인 해시태그는 지역 발견 검색에서 노출을 높입니다.',
+          ],
+        },
+        {
+          type: 'cta',
+          content:
+            '포트리, 팰팍, 뉴욕 메트로의 한인 비즈니스를 위한 완성형 소셜미디어 전략을 원하시나요? ZOE LUMOS는 이중언어 콘텐츠 제작, 스케줄링, 커뮤니티 관리를 모두 처리합니다. 지금 무료 전략 상담을 예약하세요.',
+        },
+      ],
+    },
+  },
 ]
