@@ -987,4 +987,183 @@ export const blogContent: BlogPost[] = [
       ],
     },
   },
+  // ─────────────────────────────────────────────────────────────────
+  // NEW ARTICLE — Google My Business for Korean-American businesses
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'google-my-business-korean-business-nj',
+    date: '2026-03-20',
+    updatedDate: '2026-03-20',
+    readTime: 8,
+    category: { en: 'Local SEO', ko: '로컬 SEO' },
+    title: {
+      en: 'Google My Business for Korean-American Businesses in NJ: Complete 2026 Guide',
+      ko: '뉴저지 한인 비즈니스 구글 마이비즈니스 완벽 설정 가이드 2026',
+    },
+    metaDescription: {
+      en: 'Step-by-step Google Business Profile setup guide for Korean-American businesses in Fort Lee, Palisades Park, and Bergen County NJ. Rank higher on Google Maps in 2026.',
+      ko: '포트리, 팰팍, 버겐카운티 한인 비즈니스를 위한 구글 마이비즈니스 완벽 설정 가이드. 구글맵 상위 노출 전략 2026년판.',
+    },
+    author: 'ZOE LUMOS Team',
+    sections: {
+      en: [
+        {
+          type: 'intro',
+          content:
+            'If you run a Korean-American business in Fort Lee, Palisades Park, Cliffside Park, or anywhere in Bergen County, NJ, your Google Business Profile (formerly Google My Business) is the single most powerful free marketing tool available to you. When someone searches "Korean restaurant near me," "한식 포트리," or "best nail salon Palisades Park," the businesses that appear at the top of Google Maps are the ones that have optimized their profiles. This guide covers exactly how to do that in 2026.',
+        },
+        {
+          type: 'h2',
+          content: 'Why Google Business Profile matters more than ever in 2026',
+        },
+        {
+          type: 'p',
+          content:
+            'Over 80% of consumers use Google to find local businesses. In Korean-dense markets like Palisades Park and Fort Lee, this figure is even higher among Korean-speaking customers who search in Korean on their smartphones. Google\'s local pack — the map and three business listings that appear above regular search results — captures the lion\'s share of clicks for any local search query. If you\'re not in that map pack, you\'re invisible to most local searchers.',
+        },
+        {
+          type: 'p',
+          content:
+            'What makes 2026 different is that Google now uses AI-generated summaries for local searches, pulling data directly from your Business Profile. Businesses with complete, regularly updated profiles are far more likely to be cited in these AI overviews, giving them prime visibility without paying for ads.',
+        },
+        {
+          type: 'h2',
+          content: 'Step 1: Claim and verify your Google Business Profile',
+        },
+        {
+          type: 'p',
+          content:
+            'Go to business.google.com and search for your business. If it exists, claim it. If not, create it from scratch. Google will verify your business by sending a postcard to your physical address, calling your phone number, or (for established websites) instant verification via Search Console. For Korean-American businesses, make sure to enter your business name exactly as it appears on your storefront — including any Korean characters if applicable. Google supports Korean (Hangul) business names.',
+        },
+        {
+          type: 'h2',
+          content: 'Step 2: Complete every section of your profile',
+        },
+        {
+          type: 'ul',
+          content: 'Essential profile fields to fill out:',
+          items: [
+            'Business name (English + Korean if used)',
+            'Category: Choose the most specific primary category (e.g., "Korean Restaurant" not just "Restaurant")',
+            'Address: Must be exact — Google checks this against Maps data',
+            'Phone number: Use a local NJ/NY number if possible',
+            'Website: Link to your actual website, not a third-party directory',
+            'Hours: Keep these accurate and update for holidays',
+            'Description: Write a 750-character description including your key services and location keywords',
+            'Services/Menu: Add every service or menu item with descriptions',
+            'Photos: Upload at least 20 high-quality photos (interior, exterior, products/food, team)',
+          ],
+        },
+        {
+          type: 'h2',
+          content: 'Step 3: Add bilingual content — the Korean edge',
+        },
+        {
+          type: 'p',
+          content:
+            'Most of your competitors in Fort Lee and Palisades Park are not optimizing their Google Business Profiles for Korean-language searches. This is your opportunity. Write your business description in both English and Korean. Use Google Posts (available in the profile dashboard) to publish updates in Korean about specials, events, or new menu items. Korean-language posts with photos significantly increase engagement from Korean-speaking users and signal to Google that your business is relevant for Korean-language searches.',
+        },
+        {
+          type: 'tip',
+          content:
+            'Pro Tip: Add Korean keywords naturally into your business description. For example, a Korean BBQ restaurant in Fort Lee should mention "포트리 한식 레스토랑," "포트리 고기집," and "포트리 한국 음식" — exact phrases that local customers type into Google Maps.',
+        },
+        {
+          type: 'h2',
+          content: 'Step 4: Get reviews — and respond to them',
+        },
+        {
+          type: 'p',
+          content:
+            'Google reviews are one of the strongest ranking factors for local SEO. A business with 50 reviews at 4.7 stars will almost always outrank a competitor with 10 reviews at 5.0 stars. Ask every satisfied customer to leave a Google review. Make it easy: send them a direct link (find it in your Business Profile dashboard under "Get more reviews"). Respond to every review — positive and negative — professionally and in the customer\'s language. If a Korean customer leaves a Korean-language review, respond in Korean. This signals cultural competence and builds trust.',
+        },
+        {
+          type: 'h2',
+          content: 'Step 5: Use Google Posts weekly',
+        },
+        {
+          type: 'p',
+          content:
+            'Google Posts are short updates (up to 1,500 characters) that appear on your Business Profile. Businesses that post weekly show higher engagement and Google uses post activity as a freshness signal. Use posts to announce specials, seasonal menus, events, new services, or business updates. Include a call-to-action button (Call Now, Book, Learn More, Order Online). Bilingual posts — one in English, one in Korean — double your reach.',
+        },
+        {
+          type: 'cta',
+          content:
+            'Need help setting up or optimizing your Google Business Profile? ZOE LUMOS offers bilingual Google Business Profile setup and management for Korean-American businesses in Fort Lee, Palisades Park, Cliffside Park, and all of Bergen County. Contact us for a free audit.',
+        },
+      ],
+      ko: [
+        {
+          type: 'intro',
+          content:
+            '포트리, 팰팍, 클리프사이드파크, 버겐카운티 어디서든 한인 비즈니스를 운영하신다면, 구글 비즈니스 프로필(구 구글 마이비즈니스)이 지금 당장 활용할 수 있는 가장 강력한 무료 마케팅 도구입니다. 누군가 "근처 한식당," "한식 포트리," "팰팍 네일샵 추천"을 검색할 때, 구글 지도 상단에 나타나는 업체는 프로필을 최적화한 곳들입니다. 이 가이드에서 2026년 기준 정확한 방법을 알려드립니다.',
+        },
+        {
+          type: 'h2',
+          content: '2026년, 구글 비즈니스 프로필이 그 어느 때보다 중요한 이유',
+        },
+        {
+          type: 'p',
+          content:
+            '전체 소비자의 80% 이상이 구글로 근처 업체를 찾습니다. 팰팍, 포트리 같은 한인 밀집 지역에서는 한국어로 스마트폰 검색하는 한인 고객 비율이 더 높습니다. 구글 로컬 팩 — 일반 검색 결과 위에 지도와 함께 3개 업체가 표시되는 영역 — 이 로컬 검색 클릭의 대부분을 가져갑니다. 거기에 없으면 대부분의 고객에게 보이지 않습니다.',
+        },
+        {
+          type: 'h2',
+          content: '1단계: 구글 비즈니스 프로필 등록 및 인증',
+        },
+        {
+          type: 'p',
+          content:
+            'business.google.com에 접속해 내 업체를 검색하세요. 이미 등록된 경우 소유권을 주장하고, 없으면 새로 만드세요. 구글은 실제 주소로 엽서 발송, 전화 인증, 또는 서치 콘솔 연동으로 즉시 인증하는 방법으로 검증합니다. 한인 비즈니스는 간판에 적힌 이름 그대로 — 한글 포함 — 입력하세요. 구글은 한글 업체명을 지원합니다.',
+        },
+        {
+          type: 'h2',
+          content: '2단계: 프로필 모든 항목 완성하기',
+        },
+        {
+          type: 'ul',
+          content: '반드시 채워야 할 필수 항목:',
+          items: [
+            '업체명 (영어 + 한글)',
+            '카테고리: 최대한 구체적으로 (예: "Restaurant" 대신 "Korean Restaurant")',
+            '주소: 정확하게 입력 (구글 지도와 일치해야 함)',
+            '전화번호: 뉴저지/뉴욕 지역번호 사용 권장',
+            '웹사이트: 실제 홈페이지 URL (외부 디렉터리 링크 금지)',
+            '영업시간: 정확하게, 공휴일 반영',
+            '소개글: 750자 내 핵심 서비스 및 지역 키워드 포함',
+            '서비스/메뉴: 모든 서비스/메뉴 항목과 설명 추가',
+            '사진: 내부, 외부, 음식/상품, 팀 사진 최소 20장',
+          ],
+        },
+        {
+          type: 'h2',
+          content: '3단계: 한국어 콘텐츠 추가 — 경쟁자와의 차별점',
+        },
+        {
+          type: 'p',
+          content:
+            '포트리, 팰팍 경쟁업체 대부분은 구글 프로필을 한국어 검색에 최적화하지 않았습니다. 이게 여러분의 기회입니다. 업체 소개를 한국어와 영어 둘 다 작성하세요. 구글 포스트(대시보드에서 작성 가능)로 한국어 특가, 이벤트, 신메뉴 소식을 올리세요. 사진과 함께하는 한국어 포스트는 한인 고객 참여를 크게 높이고, 구글에 한국어 검색 관련성을 신호합니다.',
+        },
+        {
+          type: 'tip',
+          content:
+            '실전 팁: 소개글에 자연스럽게 한국어 키워드를 넣으세요. 포트리 한식 식당이라면 "포트리 한식 레스토랑," "포트리 고기집," "포트리 한국 음식" 같은 정확한 표현을 — 실제 고객이 구글 지도에 입력하는 단어 그대로 — 포함시키세요.',
+        },
+        {
+          type: 'h2',
+          content: '4단계: 리뷰 받기 & 반드시 답글 달기',
+        },
+        {
+          type: 'p',
+          content:
+            '구글 리뷰는 로컬 SEO 순위에서 가장 강력한 요소 중 하나입니다. 리뷰 50개 4.7점 업체가 리뷰 10개 5.0점 업체보다 거의 항상 상위에 랭크됩니다. 만족한 고객마다 리뷰를 부탁하세요. 쉽게: 대시보드 "더 많은 리뷰 받기"에서 직접 링크를 전송하세요. 모든 리뷰 — 좋든 나쁘든 — 에 고객 언어로 전문적으로 답글을 다세요. 한국어 리뷰엔 한국어로 답변하세요. 문화적 공감과 신뢰를 형성합니다.',
+        },
+        {
+          type: 'cta',
+          content:
+            '구글 비즈니스 프로필 설정이나 최적화에 도움이 필요하신가요? ZOE LUMOS는 포트리, 팰팍, 클리프사이드파크, 버겐카운티 전역 한인 비즈니스를 위한 한국어 구글 프로필 설정 및 관리 서비스를 제공합니다. 무료 점검 상담을 신청하세요.',
+        },
+      ],
+    },
+  },
 ]
