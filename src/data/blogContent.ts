@@ -987,4 +987,193 @@ export const blogContent: BlogPost[] = [
       ],
     },
   },
+  // ─────────────────────────────────────────────────────────────────
+  // ARTICLE 6 — Instagram marketing for Korean-American small businesses
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'instagram-marketing-korean-business-2026',
+    date: '2026-04-01',
+    updatedDate: '2026-04-01',
+    readTime: 9,
+    category: { en: 'Social Media', ko: '소셜 미디어' },
+    title: {
+      en: 'Instagram Marketing for Korean-American Small Businesses in 2026',
+      ko: '2026년 한인 소규모 비즈니스를 위한 인스타그램 마케팅 완벽 가이드',
+    },
+    metaDescription: {
+      en: 'How Korean-American small businesses in NJ and NYC can grow with Instagram in 2026. Bilingual content strategy, Reels, hashtags, and local SEO tips from ZOE LUMOS.',
+      ko: '2026년 뉴저지·뉴욕 한인 소규모 비즈니스를 위한 인스타그램 마케팅 전략. 릴스, 해시태그, 이중언어 콘텐츠, 팔로워 증가 방법을 ZOE LUMOS가 안내합니다.',
+    },
+    author: 'ZOE LUMOS Team',
+    sections: {
+      en: [
+        {
+          type: 'intro',
+          content:
+            'Instagram is the number one social media platform for Korean-American small businesses in 2026. Whether you run a Korean restaurant in Palisades Park, a nail salon in Fort Lee, a beauty supply store in Flushing, or a Korean bakery in Cliffside Park — your customers are on Instagram every single day. The businesses that grow are the ones that show up consistently with the right content. This guide gives you a practical Instagram marketing strategy designed specifically for Korean-American small businesses in the NY/NJ metro area.',
+        },
+        {
+          type: 'h2',
+          content: 'Why does Instagram marketing matter for Korean businesses in NJ and NYC?',
+        },
+        {
+          type: 'p',
+          content:
+            'Korean-American consumers in Bergen County, Flushing, and Manhattan Koreatown are among the most digitally engaged consumer segments in the United States. Surveys show that over 80% of Korean-American adults aged 18–45 use Instagram weekly, and more than 60% say they have discovered a local Korean business through Instagram before visiting in person. For small businesses in competitive markets like Broad Avenue in Palisades Park or Fort Lee's Main Street, Instagram is not just a nice-to-have — it is a direct pipeline to new customers.',
+        },
+        {
+          type: 'h2',
+          content: 'What type of Instagram content works best for Korean-American businesses?',
+        },
+        {
+          type: 'ul',
+          content: 'Top-performing Instagram content formats for Korean small businesses in 2026:',
+          items: [
+            'Reels (15–30 seconds): Food preparation, behind-the-scenes, new product unboxing — organic reach is 3–5x higher than static posts',
+            'Bilingual captions: Korean headline + English detail drives engagement from both Korean-speaking and English-speaking audiences',
+            'Before/after posts: Nail art, hair transformations, renovation work — extremely high save and share rates',
+            'Limited-time offers: Flash specials, weekend deals, seasonal items — drives immediate foot traffic',
+            'Customer reviews + photos: Reposting customer content (UGC) with permission builds social proof',
+            'Staff introductions in Korean: Builds community trust with Korean-speaking customers',
+          ],
+        },
+        {
+          type: 'h2',
+          content: 'How often should a Korean small business post on Instagram?',
+        },
+        {
+          type: 'p',
+          content:
+            'For Korean-American small businesses, the optimal Instagram posting frequency in 2026 is 4–5 feed posts per week plus 3–5 Stories per day. Reels should be posted at least 2–3 times per week — Instagram's algorithm in 2026 heavily favors Reels over static images for new audience discovery. Consistency matters more than volume: a business that posts 4 quality times per week will outperform one that posts 10 mediocre times. If you are managing Instagram yourself while running your business, start with 3 posts per week and 2–3 Stories per day, then build from there.',
+        },
+        {
+          type: 'h2',
+          content: 'What Instagram hashtags should Korean businesses in NJ and NYC use?',
+        },
+        {
+          type: 'ul',
+          content: 'Recommended hashtag mix for Korean businesses in NJ/NYC (use 10–15 per post):',
+          items: [
+            'Location-specific: #fortleenj #palisadespark #northbergen #cliffsidepark #flushingny #koreatown',
+            'Community: #koreanamerican #koreanbusiness #한인비즈니스 #팰팍맛집 #포트리맛집',
+            'Industry-specific: #koreannails #koreanrestaurant #kbeauty #koreanbakery #koreanhairsalon',
+            'Discovery: #njfoodie #njrestaurants #nyceats #bergencounty #njeats',
+            'Brand: create your own branded hashtag for customer UGC collection',
+          ],
+        },
+        {
+          type: 'h2',
+          content: 'Should Korean-American businesses post in Korean or English on Instagram?',
+        },
+        {
+          type: 'p',
+          content:
+            'Both — and strategically. The most effective approach for Korean-American businesses in Fort Lee, Palisades Park, and Flushing is bilingual captions: a compelling hook in Korean at the top, followed by an English summary. This approach reaches both Korean-speaking first-generation immigrants who prefer Korean content and English-dominant second-generation Korean-Americans. It also signals to Instagram's algorithm that your content is relevant to both Korean and English speakers, potentially doubling your organic reach. ZOE LUMOS provides bilingual social media content creation as part of its monthly social media management packages starting at $400/month.',
+        },
+        {
+          type: 'h2',
+          content: 'How does Instagram help with local SEO for Korean businesses?',
+        },
+        {
+          type: 'p',
+          content:
+            'Instagram indirectly supports your local SEO in several important ways. A strong Instagram presence generates brand searches on Google — when people see your restaurant on Instagram and Google "Korean restaurant Fort Lee NJ" to find your website, that branded search signal tells Google your business is relevant and trustworthy. Instagram location tags also make your business discoverable to people browsing the Fort Lee, Palisades Park, or Bergen County location tags. Linking your Instagram profile to your Google Business Profile creates consistent NAP (name, address, phone) signals that strengthen your local SEO rankings.',
+        },
+        {
+          type: 'tip',
+          content:
+            'Pro tip: Tag your business location in every Instagram post and Story. Instagram's "Nearby" feature surfaces location-tagged posts to users exploring that area — a free local discovery channel most Korean small businesses are not using.',
+        },
+        {
+          type: 'h2',
+          content: 'Should Korean businesses run Instagram ads?',
+        },
+        {
+          type: 'p',
+          content:
+            'Instagram ads work extremely well for Korean-American businesses when targeting is done correctly. The key is to target by ZIP codes (07024 for Fort Lee, 07650 for Palisades Park, 07047 for North Bergen, 11354 for Flushing Queens) combined with interest targeting like "Korean food," "K-beauty," or "Korean culture." A modest budget of $10–$20/day running a Reels ad featuring your product or service can generate 500–1,500 local impressions per day. ZOE LUMOS recommends starting with a 2-week test campaign at $200–$300 total before committing to a monthly ad budget.',
+        },
+        {
+          type: 'cta',
+          content:
+            'Want a professional bilingual Instagram marketing strategy for your Korean business in Fort Lee, Palisades Park, or the NYC metro area? ZOE LUMOS offers social media management packages starting at $400/month. Book a free consultation today.',
+        },
+      ],
+      ko: [
+        {
+          type: 'intro',
+          content:
+            '2026년, 인스타그램은 한인 소규모 비즈니스에게 가장 중요한 소셜 미디어 플랫폼입니다. 팰리세이즈파크의 한국 식당, 포트리의 네일샵, 플러싱의 뷰티 스토어, 클리프사이드파크의 한국 베이커리 — 어떤 업종이든 고객들은 매일 인스타그램을 사용하고 있습니다. 성장하는 비즈니스는 올바른 콘텐츠로 꾸준히 나타나는 곳입니다. 이 가이드는 뉴저지·뉴욕 메트로 지역 한인 소규모 비즈니스를 위한 실용적인 인스타그램 마케팅 전략을 제공합니다.',
+        },
+        {
+          type: 'h2',
+          content: '인스타그램 마케팅이 왜 뉴저지·뉴욕 한인 비즈니스에 중요한가요?',
+        },
+        {
+          type: 'p',
+          content:
+            '버겐카운티, 플러싱, 맨해튼 코리아타운의 한인 소비자들은 미국에서 디지털 참여도가 가장 높은 소비자 그룹 중 하나입니다. 조사에 따르면 18~45세 한인 미국인의 80% 이상이 매주 인스타그램을 사용하며, 60% 이상이 직접 방문하기 전에 인스타그램을 통해 지역 한인 비즈니스를 발견했다고 답했습니다. 팰팍 브로드 애비뉴나 포트리 메인 스트리트처럼 경쟁이 치열한 시장에서 인스타그램은 선택이 아닌 필수입니다.',
+        },
+        {
+          type: 'h2',
+          content: '한인 비즈니스에 효과적인 인스타그램 콘텐츠는 무엇인가요?',
+        },
+        {
+          type: 'ul',
+          content: '2026년 한인 소규모 비즈니스 최고 성과 인스타그램 콘텐츠 형식:',
+          items: [
+            '릴스(15~30초): 음식 준비 과정, 비하인드씬, 신제품 언박싱 — 정적 게시물보다 오가닉 도달률 3~5배 높음',
+            '이중언어 캡션: 한국어 헤드라인 + 영어 세부 내용으로 두 언어권 고객 모두에게 어필',
+            '비포/애프터 게시물: 네일아트, 헤어 변신, 인테리어 공사 — 저장 및 공유율 매우 높음',
+            '한정 특가 제공: 플래시 특가, 주말 딜, 시즌 아이템 — 즉각적인 방문 유도',
+            '고객 리뷰 + 사진: 고객 UGC(사용자 생성 콘텐츠) 재게시로 소셜 증거 구축',
+            '한국어 직원 소개: 한국어 사용 고객과의 커뮤니티 신뢰 형성',
+          ],
+        },
+        {
+          type: 'h2',
+          content: '인스타그램 게시 빈도는 얼마나 되어야 하나요?',
+        },
+        {
+          type: 'p',
+          content:
+            '한인 소규모 비즈니스의 2026년 최적 인스타그램 게시 빈도는 주 4~5개의 피드 게시물과 하루 3~5개의 스토리입니다. 릴스는 최소 주 2~3회 게시해야 합니다 — 2026년 인스타그램 알고리즘은 새로운 오디언스 발견을 위해 정적 이미지보다 릴스를 크게 선호합니다. 양보다 일관성이 더 중요합니다: 주 4회 퀄리티 있는 게시물을 올리는 비즈니스가 10회 평범한 게시물을 올리는 비즈니스보다 성과가 좋습니다.',
+        },
+        {
+          type: 'h2',
+          content: '뉴저지·뉴욕 한인 비즈니스에 적합한 해시태그는 무엇인가요?',
+        },
+        {
+          type: 'ul',
+          content: '뉴저지·뉴욕 한인 비즈니스 추천 해시태그 조합 (게시물당 10~15개 사용):',
+          items: [
+            '위치 기반: #포트리 #팰팍 #팰리세이즈파크 #노스버겐 #플러싱 #코리아타운',
+            '커뮤니티: #한인비즈니스 #한인마케팅 #koreanamerican #koreanbusiness',
+            '업종별: #한국네일 #한국식당 #케이뷰티 #한국베이커리 #한국미용실',
+            '탐색용: #njfoodie #bergencounty #njeats #nyceats #팰팍맛집 #포트리맛집',
+            '브랜드: 고객 UGC 수집을 위한 자체 브랜드 해시태그 생성',
+          ],
+        },
+        {
+          type: 'tip',
+          content:
+            '팁: 모든 인스타그램 게시물과 스토리에 비즈니스 위치를 태그하세요. 인스타그램의 "근처" 기능은 위치 태그된 게시물을 해당 지역을 탐색하는 사용자에게 노출시킵니다 — 대부분의 한인 소규모 비즈니스가 활용하지 않는 무료 로컬 발견 채널입니다.',
+        },
+        {
+          type: 'h2',
+          content: '인스타그램 광고를 운영해야 할까요?',
+        },
+        {
+          type: 'p',
+          content:
+            '타겟팅이 올바르게 이루어질 때 인스타그램 광고는 한인 비즈니스에 매우 효과적입니다. 핵심은 포트리(07024), 팰팍(07650), 노스버겐(07047), 플러싱(11354) 등 우편번호와 "한국 음식", "K뷰티", "한국 문화" 같은 관심사 타겟팅을 조합하는 것입니다. 하루 $10~$20의 적절한 예산으로 릴스 광고를 운영하면 하루 500~1,500회 로컬 노출을 생성할 수 있습니다. 월 광고 예산을 결정하기 전에 총 $200~$300의 2주 테스트 캠페인으로 시작하는 것을 권장합니다.',
+        },
+        {
+          type: 'cta',
+          content:
+            '포트리, 팰리세이즈파크, 또는 뉴욕 메트로 지역에서 한인 비즈니스를 위한 전문적인 이중언어 인스타그램 마케팅 전략이 필요하신가요? ZOE LUMOS는 월 $400부터 소셜 미디어 관리 패키지를 제공합니다. 오늘 무료 상담을 예약하세요.',
+        },
+      ],
+    },
+  },
 ]
