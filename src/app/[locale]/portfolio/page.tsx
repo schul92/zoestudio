@@ -132,6 +132,23 @@ const projects = [
       services: ['웹사이트 디자인', '다중 매장 설정', '브랜드 통합'],
     },
   },
+  {
+    id: 'salt-polish',
+    url: 'https://saltpolish.com/',
+    image: '/portfolio/salt-polish.jpg',
+    en: {
+      title: 'Salt & Polish Nail Bar',
+      category: 'Beauty / Nail Salon',
+      description: 'Elegant website for a non-toxic, vegan nail salon in Waltham, MA. Features service menus, gallery, FAQ section, and a clean design reflecting the brand\'s commitment to health-conscious beauty.',
+      services: ['Website Design', 'SEO Optimization', 'Mobile Responsive', 'Brand Identity'],
+    },
+    ko: {
+      title: 'Salt & Polish Nail Bar',
+      category: '뷰티 / 네일 살롱',
+      description: 'MA 월섬에 위치한 비건·무독성 네일 살롱을 위한 세련된 웹사이트. 서비스 메뉴, 갤러리, FAQ 섹션과 건강을 중시하는 브랜드 철학을 반영한 클린 디자인.',
+      services: ['웹사이트 디자인', 'SEO 최적화', '모바일 반응형', '브랜드 아이덴티티'],
+    },
+  },
 ]
 
 const content = {
