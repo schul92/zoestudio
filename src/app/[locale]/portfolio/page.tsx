@@ -66,7 +66,7 @@ export async function generateMetadata({
 const projects = [
   {
     id: 'tj-flowers',
-    url: 'https://tjflowers-2.myshopify.com/',
+    url: 'https://tjflowersandevents.com/',
     image: '/portfolio/tj-flowers.jpg',
     en: {
       title: 'TJ Flowers & Events',
