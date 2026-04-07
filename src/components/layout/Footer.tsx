@@ -166,7 +166,7 @@ export default function Footer({ locale = 'en' }: { locale?: string }) {
             <div className="flex flex-col md:flex-row justify-between items-center">
               <div className="flex items-center gap-4">
                 <p className="text-gray-500 text-sm">
-                  © 2025 ZOE STUDIO LLC. {t.footer.rights}
+                  © {new Date().getFullYear()} ZOE STUDIO LLC. {t.footer.rights}
                 </p>
                 <InstagramIconLink />
               </div>

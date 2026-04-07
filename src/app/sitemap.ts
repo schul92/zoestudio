@@ -1,8 +1,8 @@
 import { MetadataRoute } from 'next'
+import { blogContent } from '@/data/blogContent'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
-  const lastModified = new Date()
 
   // Standard pages (English URLs)
   const standardPages = [
@@ -61,7 +61,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   standardPages.forEach((page) => {
     sitemapEntries.push({
       url: `${baseUrl}${page}`,
-      lastModified,
       alternates: {
         languages: {
           'x-default': `${baseUrl}${page}`,
@@ -76,7 +75,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   standardPages.forEach((page) => {
     sitemapEntries.push({
       url: `${baseUrl}/ko${page}`,
-      lastModified,
       alternates: {
         languages: {
           'x-default': `${baseUrl}${page}`,
@@ -91,12 +89,37 @@ export default function sitemap(): MetadataRoute.Sitemap {
   koreanSeoPages.forEach((page) => {
     sitemapEntries.push({
       url: `${baseUrl}/ko${page.path}`,
-      lastModified,
       alternates: {
         languages: {
           'x-default': `${baseUrl}${page.enPath}`,
           'en': `${baseUrl}${page.enPath}`,
           'ko': `${baseUrl}/ko${page.path}`,
+        }
+      }
+    })
+  })
+
+  // Blog posts
+  blogContent.forEach((post) => {
+    sitemapEntries.push({
+      url: `${baseUrl}/blog/${post.slug}`,
+      lastModified: new Date(post.updatedDate || post.date),
+      alternates: {
+        languages: {
+          'x-default': `${baseUrl}/blog/${post.slug}`,
+          'en': `${baseUrl}/blog/${post.slug}`,
+          'ko': `${baseUrl}/ko/blog/${post.slug}`,
+        }
+      }
+    })
+    sitemapEntries.push({
+      url: `${baseUrl}/ko/blog/${post.slug}`,
+      lastModified: new Date(post.updatedDate || post.date),
+      alternates: {
+        languages: {
+          'x-default': `${baseUrl}/blog/${post.slug}`,
+          'en': `${baseUrl}/blog/${post.slug}`,
+          'ko': `${baseUrl}/ko/blog/${post.slug}`,
         }
       }
     })

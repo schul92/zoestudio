@@ -155,63 +155,6 @@ const blogPosts = [
     },
     image: '/blog/website-cost.jpg'
   },
-  {
-    id: 6,
-    slug: 'yelp-advertising-korean-restaurants',
-    date: '2026-01-05',
-    readTime: 7,
-    category: {
-      en: 'Yelp Ads',
-      ko: '옐프 광고'
-    },
-    title: {
-      en: 'Yelp Advertising for Korean Restaurants: Worth It?',
-      ko: '한인 레스토랑 옐프 광고: 효과 있을까?'
-    },
-    excerpt: {
-      en: 'Should your Korean restaurant invest in Yelp ads? Honest ROI analysis with real data from NJ, NY, and LA restaurants.',
-      ko: '한인 레스토랑 옐프 광고 효과 분석. NJ, NY, LA 한인 레스토랑 실제 데이터 기반 ROI 분석.'
-    },
-    image: '/blog/yelp-ads.jpg'
-  },
-  {
-    id: 7,
-    slug: 'california-korean-website-design',
-    date: '2025-12-20',
-    readTime: 8,
-    category: {
-      en: 'Web Design',
-      ko: '웹 디자인'
-    },
-    title: {
-      en: 'Website Design for Korean Businesses in California',
-      ko: '캘리포니아 한인 비즈니스 웹사이트 제작 가이드'
-    },
-    excerpt: {
-      en: 'LA Koreatown, Orange County, San Francisco — web design tips for California Korean-American businesses.',
-      ko: 'LA 코리아타운, 오렌지카운티, 샌프란시스코 한인 비즈니스를 위한 웹사이트 제작 팁과 전략.'
-    },
-    image: '/blog/california-korean.jpg'
-  },
-  {
-    id: 8,
-    slug: 'texas-georgia-korean-business-online',
-    date: '2025-12-10',
-    readTime: 8,
-    category: {
-      en: 'Marketing',
-      ko: '마케팅'
-    },
-    title: {
-      en: 'Growing Your Korean Business Online in Texas & Georgia',
-      ko: '텍사스·조지아 한인 비즈니스 온라인 성장 전략'
-    },
-    excerpt: {
-      en: 'Dallas, Houston, Atlanta — how Korean businesses in the South are winning with digital marketing in 2026.',
-      ko: '달라스, 휴스턴, 애틀랜타 한인 비즈니스의 디지털 마케팅 성공 전략. 2026년 최신 트렌드.'
-    },
-    image: '/blog/texas-georgia.jpg'
-  }
 ]
 
 // Blog Schema

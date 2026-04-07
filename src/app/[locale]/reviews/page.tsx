@@ -177,30 +177,14 @@ function generateReviewSchema(locale: 'en' | 'ko') {
     },
     "itemReviewed": {
       "@type": "LocalBusiness",
-      "name": "ZOE LUMOS",
-      "image": "https://www.zoelumos.com/favicon.svg",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Fort Lee",
-        "addressRegion": "NJ",
-        "addressCountry": "US"
-      }
+      "@id": "https://www.zoelumos.com/#localbusiness"
     }
   }))
 
   return {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "name": "ZOE LUMOS",
-    "image": "https://www.zoelumos.com/favicon.svg",
-    "url": "https://www.zoelumos.com",
-    "email": "info@zoelumos.com",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Fort Lee",
-      "addressRegion": "NJ",
-      "addressCountry": "US"
-    },
+    "@id": "https://www.zoelumos.com/#localbusiness",
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": 5,

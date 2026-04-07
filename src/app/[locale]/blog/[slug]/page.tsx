@@ -90,6 +90,16 @@ function BlogPostingSchema({
     },
     inLanguage: locale === 'ko' ? 'ko-KR' : 'en-US',
     articleSection: post.category[locale],
+    image: {
+      '@type': 'ImageObject',
+      url: `${baseUrl}/og-image.png`,
+      width: 1200,
+      height: 630,
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `${baseUrl}${prefix}/blog/${post.slug}`,
+    },
   }
   return (
     <script

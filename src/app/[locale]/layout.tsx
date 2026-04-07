@@ -161,7 +161,15 @@ export default function RootLayout({
               "description": locale === 'ko'
                 ? "뉴저지 웹사이트 제작, 뉴욕 웹사이트 제작 전문. 구글광고, 옐프광고, SEO 서비스."
                 : "Professional SEO Services, Google Ads Management & Web Design",
-              "inLanguage": ["en-US", "ko-KR"]
+              "inLanguage": ["en-US", "ko-KR"],
+              "potentialAction": {
+                "@type": "SearchAction",
+                "target": {
+                  "@type": "EntryPoint",
+                  "urlTemplate": "https://www.zoelumos.com/blog?q={search_term_string}"
+                },
+                "query-input": "required name=search_term_string"
+              }
             }),
           }}
         />

@@ -50,7 +50,7 @@ export const structuredData = {
       },
       {
         "@type": "ContactPoint",
-        "url": "http://pf.kakao.com/_xhxdxmlX/chat",
+        "url": "https://pf.kakao.com/_xhxdxmlX/chat",
         "contactType": "customer service",
         "availableLanguage": ["Korean"],
         "areaServed": "US"
@@ -60,7 +60,7 @@ export const structuredData = {
       "https://www.facebook.com/zoelumos",
       "https://www.instagram.com/zoelumos",
       "https://www.linkedin.com/company/zoelumos",
-      "http://pf.kakao.com/_xhxdxmlX"
+      "https://pf.kakao.com/_xhxdxmlX"
     ]
   },
   localBusiness: {
@@ -76,6 +76,7 @@ export const structuredData = {
     "parentOrganization": { "@id": "https://www.zoelumos.com/#organization" },
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "2200 Center Ave",
       "addressCountry": "US",
       "addressRegion": "NJ",
       "addressLocality": "Fort Lee",
@@ -157,7 +158,14 @@ export const structuredData = {
         "closes": "18:00"
       }
     ],
-    "knowsLanguage": ["en-US", "ko-KR"]
+    "knowsLanguage": ["en-US", "ko-KR"],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": 5,
+      "reviewCount": 6,
+      "bestRating": 5,
+      "worstRating": 1
+    }
   },
   faqPage: {
     "@context": "https://schema.org",
@@ -168,7 +176,7 @@ export const structuredData = {
         "name": "How much does website design cost for a small business in New Jersey?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "ZOE LUMOS offers affordable website design packages for small businesses in NJ starting from competitive rates. We provide custom solutions for Korean-American businesses in Fort Lee, Palisades Park, Englewood, and North Bergen. Contact us for a free consultation and quote."
+          "text": "ZOE LUMOS offers website design packages for small businesses in NJ starting at $1,000 for basic sites, $2,000-$3,500 for standard business websites, and $3,000-$6,000 for Shopify e-commerce stores. All packages include SEO optimization, mobile-responsive design, and bilingual (English/Korean) support. We serve Fort Lee, Palisades Park, Englewood, and North Bergen."
         }
       },
       {
@@ -176,7 +184,7 @@ export const structuredData = {
         "name": "한인 비즈니스 웹사이트 제작 비용은 얼마인가요?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "ZOE LUMOS는 뉴저지, 뉴욕 지역 한인 비즈니스를 위한 맞춤형 웹사이트 제작 서비스를 제공합니다. 포트리, 팰팍, 에디슨 등 NJ 전 지역과 맨하탄, 플러싱 등 NY 지역을 서비스합니다. 무료 상담을 통해 정확한 견적을 받아보세요."
+          "text": "ZOE LUMOS의 한인 비즈니스 웹사이트 제작 비용은 기본 사이트 $1,000부터, 비즈니스 웹사이트 $2,000-$3,500, 쇼피파이 쇼핑몰 $3,000-$6,000입니다. 모든 패키지에 SEO 최적화, 모바일 반응형 디자인, 한영 이중언어 지원이 포함됩니다. 포트리, 팰팍, 에디슨 등 NJ 전 지역과 맨하탄, 플러싱 등 NY 지역을 서비스합니다."
         }
       },
       {
@@ -192,7 +200,39 @@ export const structuredData = {
         "name": "What areas do you serve in New Jersey and New York?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "We serve Korean-American businesses throughout NJ (Fort Lee, Palisades Park, Englewood, North Bergen, Edison, Ridgewood, Cliffside Park) and NY (Manhattan, Flushing, Bayside, Brooklyn). We offer both in-person consultations and remote services."
+          "text": "We serve Korean-American businesses throughout NJ (Fort Lee, Palisades Park, Englewood, North Bergen, Edison, Ridgewood, Cliffside Park) and NY (Manhattan, Flushing, Bayside, Brooklyn). We also serve clients nationwide in CA, TX, GA, VA, IL, and more. We offer both in-person consultations and remote services."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How long does it take to build a bilingual Korean-English website?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A standard bilingual website takes 2-4 weeks from start to launch. E-commerce sites with product listings take 4-6 weeks. ZOE LUMOS handles all Korean and English content, SEO setup, and domain configuration included in the timeline."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "이중언어 한영 웹사이트 제작 기간은 얼마나 걸리나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "일반 이중언어 웹사이트는 착수 후 2-4주, 쇼핑몰 사이트는 4-6주 정도 소요됩니다. ZOE LUMOS는 한국어·영어 콘텐츠 작성, SEO 설정, 도메인 구성을 모두 포함하여 진행합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is GEO and how is it different from SEO?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "GEO (Generative Engine Optimization) optimizes your content for AI-powered search like Google AI Overviews, ChatGPT, and Perplexity. While traditional SEO focuses on ranking in Google's organic results, GEO ensures your business appears when customers use AI assistants. ZOE LUMOS includes both SEO and GEO in our optimization services."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "GEO란 무엇이며 SEO와 어떻게 다른가요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "GEO(생성형 엔진 최적화)는 Google AI Overviews, ChatGPT, Perplexity 등 AI 기반 검색에 콘텐츠를 최적화합니다. 기존 SEO가 구글 검색 순위에 집중한다면, GEO는 고객이 AI 어시스턴트를 사용할 때 비즈니스가 노출되도록 합니다. ZOE LUMOS는 SEO와 GEO를 모두 포함하여 서비스합니다."
         }
       }
     ]
@@ -203,8 +243,7 @@ export const structuredData = {
       "@type": "Service",
       "serviceType": "Search Engine Optimization",
       "provider": {
-        "@type": "Organization",
-        "name": "ZOE LUMOS"
+        "@id": "https://www.zoelumos.com/#organization"
       },
       "areaServed": {
         "@type": "Country",
@@ -232,6 +271,63 @@ export const structuredData = {
           }
         ]
       }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Web Design and Development",
+      "provider": {
+        "@id": "https://www.zoelumos.com/#organization"
+      },
+      "url": "https://www.zoelumos.com/portfolio",
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Web Design Services",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Custom Website Design",
+              "description": "Custom bilingual website design for Korean-American businesses starting at $1,000"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Shopify E-Commerce Development",
+              "description": "Full Shopify store setup with bilingual product pages, payment processing, and SEO"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "Website Revamp & Migration",
+              "description": "Modernize and migrate existing websites with zero downtime"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Google Ads Management",
+      "provider": {
+        "@id": "https://www.zoelumos.com/#organization"
+      },
+      "url": "https://www.zoelumos.com/pricing",
+      "areaServed": {
+        "@type": "Country",
+        "name": "United States"
+      },
+      "description": "Bilingual Google Ads campaigns for Korean-American businesses. Keyword research, ad copywriting in English and Korean, bid management, and conversion tracking."
     }
   ]
 }

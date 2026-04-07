@@ -98,60 +98,32 @@ export default function NJWebsitePage({ params }: { params: { locale: string } }
   // Structured data for local SEO
   const localBusinessSchema = {
     '@context': 'https://schema.org',
-    '@type': ['LocalBusiness', 'ProfessionalService'],
-    name: 'ZOE LUMOS - New Jersey Website Design',
-    description: locale === 'ko' 
+    '@type': 'WebPage',
+    '@id': `${baseUrl}/${locale === 'ko' ? 'ko/' : ''}nj-website`,
+    name: locale === 'ko' ? '뉴저지 웹사이트 제작' : 'New Jersey Website Design',
+    description: locale === 'ko'
       ? '뉴저지 최고의 웹사이트 제작 전문 업체'
       : 'Premier website design agency in New Jersey',
     url: `${baseUrl}/${locale === 'ko' ? 'ko/' : ''}nj-website`,
-    email: 'info@zoelumos.com',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: '2200 Center Ave',
-      addressLocality: 'Fort Lee',
-      addressRegion: 'NJ',
-      postalCode: '07024',
-      addressCountry: 'US',
+    isPartOf: { '@id': 'https://www.zoelumos.com/#website' },
+    about: { '@id': 'https://www.zoelumos.com/#localbusiness' },
+    breadcrumb: {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Home',
+          item: baseUrl,
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: locale === 'ko' ? '뉴저지 웹사이트' : 'NJ Website Design',
+          item: `${baseUrl}/${locale === 'ko' ? 'ko/' : ''}nj-website`,
+        }
+      ],
     },
-    areaServed: [
-      {
-        '@type': 'City',
-        name: 'Fort Lee',
-        '@id': 'https://en.wikipedia.org/wiki/Fort_Lee,_New_Jersey'
-      },
-      {
-        '@type': 'City',
-        name: 'Palisades Park',
-      },
-      {
-        '@type': 'City',
-        name: 'Ridgefield',
-      },
-      {
-        '@type': 'City',
-        name: 'Edison',
-      },
-      {
-        '@type': 'City',
-        name: 'Cherry Hill',
-      },
-      {
-        '@type': 'City',
-        name: 'Englewood Cliffs',
-      }
-    ],
-    priceRange: '$1,000-$10,000',
-    paymentAccepted: 'Cash, Credit Card, Bank Transfer',
-    openingHours: 'Mo-Fr 09:00-18:00',
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: '40.8509',
-      longitude: '-73.9701',
-    },
-    sameAs: [
-      'https://www.instagram.com/zoelumos',
-      'https://www.linkedin.com/company/zoelumos',
-    ],
   }
 
   const faqSchema = {
@@ -171,7 +143,7 @@ export default function NJWebsitePage({ params }: { params: { locale: string } }
         name: '뉴저지 한인 비즈니스를 위한 웹사이트 제작이 가능한가요?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: '네, 저희는 뉴저지 한인 비즈니스 전문입니다. 포트리, 팰팍, 리지필드, 에디슨 등 NJ 전역의 한인 비즈니스를 위한 이중언어 웹사이트를 제작합니다. 뉴저지 한인타운 비즈니스 90% 이상이 저희 서비스를 이용합니다.'
+          text: '네, 저희는 뉴저지 한인 비즈니스 전문입니다. 포트리, 팰팍, 리지필드, 에디슨 등 NJ 전역의 한인 비즈니스를 위한 이중언어 웹사이트를 제작합니다. 다수의 뉴저지 한인타운 비즈니스가 저희 서비스를 이용합니다.'
         }
       },
       {
@@ -196,7 +168,7 @@ export default function NJWebsitePage({ params }: { params: { locale: string } }
         name: 'Do you serve Korean businesses in NJ?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Yes, we specialize in Korean-American businesses in NJ. We create bilingual websites for businesses in Fort Lee, Palisades Park, Ridgefield, Edison, and throughout New Jersey. Over 90% of Korean businesses in NJ Koreatowns use our services.'
+          text: 'Yes, we specialize in Korean-American businesses in NJ. We create bilingual websites for businesses in Fort Lee, Palisades Park, Ridgefield, Edison, and throughout New Jersey. Many Korean businesses in NJ Koreatowns trust us for their web presence.'
         }
       },
       {

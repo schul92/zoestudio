@@ -7,18 +7,26 @@ export default function HeroBulb() {
   const [offset, setOffset] = useState({ x: 0, y: 0 })
 
   useEffect(() => {
+    let rafId: number | null = null
     const handleMove = (e: MouseEvent) => {
-      if (!containerRef.current) return
-      const rect = containerRef.current.getBoundingClientRect()
-      const cx = rect.left + rect.width / 2
-      const cy = rect.top + rect.height / 2
-      const maxTilt = 10
-      const x = ((e.clientX - cx) / (window.innerWidth / 2)) * maxTilt
-      const y = ((e.clientY - cy) / (window.innerHeight / 2)) * maxTilt
-      setOffset({ x, y: -y })
+      if (rafId !== null) return
+      rafId = requestAnimationFrame(() => {
+        if (!containerRef.current) { rafId = null; return }
+        const rect = containerRef.current.getBoundingClientRect()
+        const cx = rect.left + rect.width / 2
+        const cy = rect.top + rect.height / 2
+        const maxTilt = 10
+        const x = ((e.clientX - cx) / (window.innerWidth / 2)) * maxTilt
+        const y = ((e.clientY - cy) / (window.innerHeight / 2)) * maxTilt
+        setOffset({ x, y: -y })
+        rafId = null
+      })
     }
-    window.addEventListener('mousemove', handleMove)
-    return () => window.removeEventListener('mousemove', handleMove)
+    window.addEventListener('mousemove', handleMove, { passive: true })
+    return () => {
+      window.removeEventListener('mousemove', handleMove)
+      if (rafId !== null) cancelAnimationFrame(rafId)
+    }
   }, [])
 
   return (
