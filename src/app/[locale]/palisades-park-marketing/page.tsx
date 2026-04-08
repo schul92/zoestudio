@@ -24,7 +24,7 @@ export async function generateMetadata({
     return {
       title: '팰리세이즈파크 마케팅 에이전시 | 팰팍 웹사이트 제작 | 한인 마케팅 에이전시 뉴저지 | ZOE LUMOS',
       description: '팰리세이즈파크(팰팍) 한인 마케팅 에이전시. 팰팍 웹사이트 제작, 홈페이지 디자인, 구글 SEO, 소셜미디어 마케팅. 한인 마케팅 에이전시 뉴저지 1위. 100% 한국어 상담 가능.',
-      keywords: '팰팍 웹사이트 제작, 팰리세이즈파크 마케팅, 한인 마케팅 에이전시 뉴저지, 팰팍 홈페이지, 팰팍 SEO, 팰리세이즈파크 웹디자인, 한인 마케팅 에이전시, 뉴저지 한인 마케팅, 팰팍 구글 광고, 버겐카운티 한인 비즈니스',
+      keywords: '팰팍 웹사이트 제작, 팰리세이즈파크 마케팅, 한인 마케팅 에이전시 뉴저지, 팰팍 홈페이지, 팰팍 SEO, 팰리세이즈파크 웹디자인, 한인 마케팅 에이전시, 뉴저지 한인 마케팅, 팰팍 구글 광고, 버겐카운티 한인 비즈니스, 팰팍 소셜미디어 마케팅, 한인 인스타그램 마케팅',
       openGraph: {
         title: '팰팍 웹사이트 제작 & 한인 마케팅 - ZOE LUMOS',
         description: '팰리세이즈파크 한인 비즈니스를 위한 마케팅 에이전시. 웹사이트 제작, SEO, 구글 광고.',
@@ -49,7 +49,7 @@ export async function generateMetadata({
   return {
     title: 'Palisades Park Marketing Agency | Korean Business Marketing NJ | Small Business SEO NJ | ZOE LUMOS',
     description: 'Palisades Park, NJ #1 Korean marketing agency. Website design, SEO, Google Ads for Korean-American small businesses. Small business SEO NJ specialist. Bilingual Korean & English. Free consultation.',
-    keywords: 'Palisades Park marketing, Korean marketing agency NJ, small business SEO NJ, Palisades Park web design, Korean business marketing NYC, 한인 마케팅 에이전시 뉴저지, Palisades Park SEO, Bergen County Korean business, NJ Korean digital marketing',
+    keywords: 'Palisades Park marketing, Korean marketing agency NJ, small business SEO NJ, Palisades Park web design, Korean business marketing NYC, 한인 마케팅 에이전시 뉴저지, Palisades Park SEO, Bergen County Korean business, NJ Korean digital marketing, Korean social media marketing NJ, Instagram marketing Korean business',
     openGraph: {
       title: 'Palisades Park Marketing Agency - Korean Business Experts - ZOE LUMOS',
       description: '#1 Korean marketing agency in Palisades Park, NJ. Website design, SEO & digital marketing.',
