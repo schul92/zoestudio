@@ -2,7 +2,7 @@ export const seoConfig = {
   en: {
     title: 'ZOE LUMOS - Korean Business Web Design & SEO | Fort Lee NJ, NYC & Nationwide',
     description: 'Bilingual web design & SEO agency trusted by Korean-American small businesses. Custom websites, Google Ads, local SEO in Fort Lee, Englewood, North Bergen, Palisades Park & nationwide. Free consultation — call today.',
-    keywords: 'Korean web design, Korean American website, Korean business website, Korean SEO agency, NJ web design, NY web design, Fort Lee web design, Bergen County web design, Korean business marketing, Shopify development, e-commerce website design, local SEO expert, digital marketing agency, SEO services, Google Ads management, small business SEO NJ, small business SEO agency Englewood NJ, SEO experts North Bergen NJ, Korean web agency, bilingual website design, korean business marketing nyc, 한인 마케팅 에이전시, Palisades Park marketing, Ridgefield web design, Edgewater web design, low cost SEO New Jersey, small business SEO agency North Bergen NJ',
+    keywords: 'Korean web design, Korean American website, Korean business website, Korean SEO agency, NJ web design, NY web design, Fort Lee web design, Bergen County web design, Korean business marketing, Shopify development, e-commerce website design, local SEO expert, digital marketing agency, SEO services, Google Ads management, small business SEO NJ, small business SEO agency Englewood NJ, SEO experts North Bergen NJ, Korean web agency, bilingual website design, korean business marketing nyc, 한인 마케팅 에이전시, Palisades Park marketing, Ridgefield web design, Edgewater web design, low cost SEO New Jersey, small business SEO agency North Bergen NJ, korean restaurant website nj, korean american small business marketing, bilingual website design new jersey, korean business website design nyc, Cliffside Park web design',
     openGraph: {
       title: 'ZOE LUMOS - Bilingual Web Design & SEO for Korean Businesses',
       description: 'Trusted by Korean-American small businesses in Fort Lee, Englewood, North Bergen & nationwide. Custom websites, local SEO, Google Ads. Free consultation.',
@@ -234,6 +234,22 @@ export const structuredData = {
           "@type": "Answer",
           "text": "GEO(생성형 엔진 최적화)는 Google AI Overviews, ChatGPT, Perplexity 등 AI 기반 검색에 콘텐츠를 최적화합니다. 기존 SEO가 구글 검색 순위에 집중한다면, GEO는 고객이 AI 어시스턴트를 사용할 때 비즈니스가 노출되도록 합니다. ZOE LUMOS는 SEO와 GEO를 모두 포함하여 서비스합니다."
         }
+      },
+      {
+        "@type": "Question",
+        "name": "한인 식당 온라인 마케팅은 어떻게 하나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ZOE LUMOS는 한인 식당을 위한 전문 온라인 마케팅을 제공합니다. 구글 비즈니스 프로필 최적화, 옐프 관리, 인스타그램 마케팅, 메뉴 웹사이트 제작, 온라인 주문 시스템 연동까지 원스탑으로 도와드립니다. 포트리, 팰리세이즈 파크 한인 식당 마케팅 전문."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why choose a bilingual marketing agency over a general web design company?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Korean-American businesses need an agency that understands both cultures. ZOE LUMOS creates bilingual websites optimized for both English and Korean search, manages Google Ads in both languages, and provides 100% Korean-language support. Unlike general agencies, we know the Korean-American market in Bergen County and NYC inside out."
+        }
       }
     ]
   },
@@ -330,4 +346,5 @@ export const structuredData = {
       "description": "Bilingual Google Ads campaigns for Korean-American businesses. Keyword research, ad copywriting in English and Korean, bid management, and conversion tracking."
     }
   ]
+}]
 }
