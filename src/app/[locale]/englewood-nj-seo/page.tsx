@@ -22,9 +22,9 @@ export async function generateMetadata({
   
   if (locale === 'ko') {
     return {
-      title: '잉글우드 NJ SEO & 디지털 마케팅 | 한인 비즈니스 검색엔진 최적화 | ZOE LUMOS',
-      description: '잉글우드 NJ 지역 한인 비즈니스를 위한 SEO 전문 서비스. 구글 검색 최적화, 로컬 SEO, 구글 마이비즈니스 관리. 버겐카운티 한인 사업체 디지털 마케팅.',
-      keywords: '잉글우드 SEO, Englewood NJ SEO, 잉글우드 디지털 마케팅, 버겐카운티 SEO, 한인 SEO 서비스, 잉글우드 한인 비즈니스',
+      title: '잉글우드 NJ SEO 전문 에이전시 | 소규모 비즈니스 SEO | ZOE LUMOS',
+      description: '잉글우드 NJ 소규모 비즈니스 SEO 전문 에이전시. 구글 검색 최적화, 로컬 SEO, 구글 마이비즈니스 관리. 버겐카운티 한인 사업체 디지털 마케팅. 무료 SEO 진단.',
+      keywords: '잉글우드 SEO, Englewood NJ SEO, small business seo agency englewood nj, 잉글우드 디지털 마케팅, 버겐카운티 SEO, 한인 SEO 서비스, 잉글우드 한인 비즈니스, local seo services, seo experts north bergen nj, small business seo new jersey',
       alternates: {
         canonical: `${baseUrl}/ko/englewood-nj-seo`,
         languages: {
@@ -45,9 +45,9 @@ export async function generateMetadata({
   }
 
   return {
-    title: 'Englewood NJ SEO Agency | Small Business SEO Services | ZOE LUMOS',
-    description: 'Expert SEO agency in Englewood, NJ. Local SEO, Google Business Profile optimization, and digital marketing for small businesses in Bergen County. Bilingual English & Korean services.',
-    keywords: 'Englewood NJ SEO, SEO agency Englewood NJ, small business SEO agency Englewood NJ, SEO experts Englewood NJ, local SEO Englewood, Bergen County SEO, digital marketing Englewood NJ',
+    title: 'Small Business SEO Agency Englewood NJ | Local SEO Services | ZOE LUMOS',
+    description: 'Affordable small business SEO agency in Englewood NJ. Local SEO services, Google Business Profile optimization, and digital marketing for Bergen County businesses. SEO experts serving North Bergen, Fort Lee & all NJ. Free SEO audit.',
+    keywords: 'small business SEO agency Englewood NJ, SEO experts North Bergen NJ, local SEO services, small business SEO new jersey, low cost SEO new jersey, Englewood NJ SEO, Bergen County SEO, local SEO expert, digital marketing Englewood NJ, SEO company NJ',
     alternates: {
       canonical: `${baseUrl}/englewood-nj-seo`,
       languages: {
