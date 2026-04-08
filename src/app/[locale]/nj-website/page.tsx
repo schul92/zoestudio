@@ -23,7 +23,7 @@ export async function generateMetadata({
   if (locale === 'ko') {
     return {
       title: '뉴저지 웹사이트 제작 전문 | NJ 한인 비즈니스 웹개발 | ZOE LUMOS',
-      description: '뉴저지 웹사이트 제작 1위 업체. 포트리, 팰팍, 리지필드, 에디슨 한인 비즈니스를 위한 전문 웹사이트 개발. 뉴저지 로컬 SEO, 구글 최적화, 쇼피파이 이커머스 전문.',
+      description: '뉴저지 웹사이트 제작 전문 업체. 포트리·팰팍·리지필드·에디슨 한인 비즈니스 100개+ 제작 실적. 로컬 SEO, 구글 1페이지 보장, 쇼피파이 전문. $499부터, 무료 상담.',
       keywords: '뉴저지 웹사이트, 뉴저지 웹사이트 제작, NJ 웹개발, 뉴저지 한인 웹사이트, 포트리 웹사이트, 팰팍 웹사이트, 리지필드 웹사이트, 에디슨 웹사이트, 체리힐 웹사이트, 뉴저지 쇼피파이, 뉴저지 이커머스, 뉴저지 SEO, 뉴저지 구글 광고',
       openGraph: {
         title: '뉴저지 웹사이트 제작 전문 - ZOE LUMOS',
@@ -58,7 +58,7 @@ export async function generateMetadata({
   
   return {
     title: 'New Jersey Website Design & Development | NJ Web Agency | ZOE LUMOS',
-    description: '#1 Website development in New Jersey. Professional web design for Fort Lee, Palisades Park, Edison businesses. Local NJ SEO, Google optimization, Shopify e-commerce experts.',
+    description: 'Award-winning NJ web design from $499. Fort Lee, Palisades Park, Edison & Bergen County businesses trust ZOE LUMOS. Local SEO, Google Ads, Shopify. Free quote in 24hrs.',
     keywords: 'New Jersey website, NJ web design, Fort Lee website, Palisades Park website, Edison website, Ridgefield website, Cherry Hill website, New Jersey Shopify, NJ e-commerce, New Jersey SEO, NJ Google Ads',
     openGraph: {
       title: 'New Jersey Website Design & Development - ZOE LUMOS',
