@@ -987,4 +987,224 @@ export const blogContent: BlogPost[] = [
       ],
     },
   },
+
+  // ─────────────────────────────────────────────────────────────────
+  // ARTICLE 5 — Shopify vs WordPress for Korean businesses
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'shopify-vs-wordpress-korean-business-2026',
+    date: '2026-03-31',
+    updatedDate: '2026-03-31',
+    readTime: 9,
+    category: { en: 'Web Design', ko: '웹 디자인' },
+    title: {
+      en: 'Shopify vs WordPress: Which is Better for Korean-American Businesses in 2026?',
+      ko: 'Shopify vs WordPress: 2026년 미국 한인 비즈니스에 어느 플랫폼이 더 나을까요?',
+    },
+    metaDescription: {
+      en: 'Shopify or WordPress for your Korean-American business? Compare costs, Korean language support, SEO, and ease of use to make the right choice for NJ & NYC businesses.',
+      ko: 'Shopify vs WordPress 비교 — 미국 한인 비즈니스를 위한 최적의 웹사이트 플랫폼은? NJ·NY 소상공인을 위한 2026년 가이드.',
+    },
+    author: 'ZOE LUMOS Team',
+    sections: {
+      en: [
+        {
+          type: 'intro',
+          content:
+            'One of the most common questions we hear from Korean-American business owners in Fort Lee, Palisades Park, and Flushing is: "Should I use Shopify or WordPress?" Both platforms have real strengths — but the right answer depends on your business type, budget, and long-term goals. This guide breaks it down clearly so you can decide with confidence.',
+        },
+        {
+          type: 'h2',
+          content: 'Shopify: Best for Korean-American E-Commerce Businesses',
+        },
+        {
+          type: 'p',
+          content:
+            'If you sell physical products — Korean beauty, food, clothing, gifts, or specialty items — Shopify is almost always the better choice. It was built for online retail, and it shows. You get inventory management, payment processing, shipping integrations, and abandoned cart recovery all built in. Shopify also offers Korean language packs and supports KRW pricing if you sell internationally.',
+        },
+        {
+          type: 'ul',
+          content: 'Shopify strengths for Korean businesses:',
+          items: [
+            'Built-in Korean language theme support',
+            'No technical setup — launch in days, not weeks',
+            'Excellent mobile shopping experience (critical for Korean shoppers)',
+            'Shopify Payments supports all major cards + Apple Pay',
+            'Strong app ecosystem: Kakao Channel integration, Korean SMS apps',
+            'Easier for non-technical owners to manage day-to-day',
+          ],
+        },
+        {
+          type: 'h2',
+          content: 'WordPress: Best for Service Businesses & SEO Power',
+        },
+        {
+          type: 'p',
+          content:
+            'For Korean-American service businesses — restaurants, hair salons, medical clinics, law offices, real estate agents, tutoring centers — WordPress (with WooCommerce if needed) offers superior SEO flexibility. With plugins like Yoast SEO or Rank Math, you can fine-tune every meta tag, schema markup, and hreflang tag for bilingual Korean/English content. This level of SEO control is hard to match on Shopify.',
+        },
+        {
+          type: 'ul',
+          content: 'WordPress strengths for Korean service businesses:',
+          items: [
+            'Full control over Korean & English SEO (hreflang, meta, schema)',
+            'Custom page layouts with no template constraints',
+            'Blog content in Korean and English — critical for local SEO ranking',
+            'Lower monthly cost (hosting ~$20–50/mo vs Shopify $39–105/mo)',
+            'Better for location-specific landing pages (Fort Lee, Palisades Park, Flushing, etc.)',
+            'Unlimited customization with no transaction fees',
+          ],
+        },
+        {
+          type: 'h2',
+          content: 'Cost Comparison: Shopify vs WordPress in 2026',
+        },
+        {
+          type: 'ul',
+          content: 'Monthly costs to consider:',
+          items: [
+            'Shopify Basic: $39/mo + 2.9% + 30¢ per transaction',
+            'Shopify Standard: $105/mo + 2.6% + 30¢ per transaction',
+            'WordPress hosting (managed): $20–50/mo, no transaction fees',
+            'WordPress development cost: typically $1,500–4,000 upfront',
+            'Shopify store setup by ZOE LUMOS: typically $1,200–3,500',
+          ],
+        },
+        {
+          type: 'tip',
+          content:
+            "Pro tip: If your Korean business earns over $10,000/month in online sales, Shopify's transaction fees can add up to $300+/month. At that point, WooCommerce on WordPress often becomes more cost-effective. We run this math for every client before recommending a platform.",
+        },
+        {
+          type: 'h2',
+          content: 'Bilingual Korean-English Support',
+        },
+        {
+          type: 'p',
+          content:
+            'Both platforms support bilingual websites, but the approach differs. On WordPress, you can use WPML or Polylang plugins to create full /ko/ and /en/ URL paths with proper hreflang tags — which is the Google-recommended approach for bilingual SEO. Shopify handles this with Markets or third-party translation apps like Langify, but URL structure is less flexible. For businesses where Korean-language Google ranking matters (팰리세이즈 파크, 포트리 한인 검색 등), WordPress typically performs better.',
+        },
+        {
+          type: 'h2',
+          content: 'Our Recommendation for Korean-American Businesses',
+        },
+        {
+          type: 'ul',
+          content: 'Platform recommendation by business type:',
+          items: [
+            'Korean online store / K-beauty / food delivery → Shopify',
+            'Restaurant, café, salon → WordPress',
+            'Korean medical clinic / law office / tutoring → WordPress',
+            'Korean grocery / specialty retail with physical + online → Shopify',
+            'Korean real estate agent / financial advisor → WordPress',
+            "Not sure? Start with WordPress — it scales to anything",
+          ],
+        },
+        {
+          type: 'cta',
+          content:
+            "Not sure which platform is right for your Korean-American business in NJ or NY? ZOE LUMOS offers free consultations in Korean and English. We'll review your business goals, budget, and target customers — then recommend the exact platform and package that makes sense. No sales pressure, just honest advice.",
+        },
+      ],
+      ko: [
+        {
+          type: 'intro',
+          content:
+            '포트리, 팰팍, 플러싱의 한인 사업주분들이 가장 많이 하시는 질문 중 하나가 "Shopify랑 WordPress 중에 뭘 써야 하나요?"입니다. 두 플랫폼 모두 장점이 있지만, 정답은 비즈니스 유형·예산·목표에 따라 달라집니다. 이 가이드에서 명확하게 비교해 드립니다.',
+        },
+        {
+          type: 'h2',
+          content: 'Shopify: 한인 이커머스 쇼핑몰에 최적',
+        },
+        {
+          type: 'p',
+          content:
+            '한국 뷰티, 식품, 의류, 선물용품 등 실물 상품을 판매하신다면 Shopify가 거의 항상 더 나은 선택입니다. Shopify는 온라인 소매를 위해 만들어진 플랫폼으로, 재고 관리·결제·배송 연동·장바구니 복구 기능이 모두 기본 제공됩니다. 한국어 언어팩도 지원하며, 해외 판매 시 원화(KRW) 가격 설정도 가능합니다.',
+        },
+        {
+          type: 'ul',
+          content: 'Shopify의 한인 비즈니스 강점:',
+          items: [
+            '한국어 테마 기본 지원',
+            '기술 설정 없이 며칠 안에 오픈 가능',
+            '모바일 쇼핑 경험 우수 (한인 고객에게 중요)',
+            'Shopify Payments: 주요 카드 + Apple Pay 지원',
+            '카카오 채널 연동, 한국어 SMS 앱 등 앱 생태계 풍부',
+            '비기술 사업주도 일상 관리 쉬움',
+          ],
+        },
+        {
+          type: 'h2',
+          content: 'WordPress: 서비스업 & SEO 파워에 최적',
+        },
+        {
+          type: 'p',
+          content:
+            '한식당, 미용실, 한의원, 법무사, 부동산, 학원 등 서비스 비즈니스라면 WordPress(필요 시 WooCommerce 포함)가 SEO 유연성에서 우월합니다. Yoast SEO나 Rank Math 플러그인으로 메타 태그, 스키마 마크업, 한영 hreflang 태그를 세밀하게 조정할 수 있어, "팰리세이즈 파크 한식당", "포트리 미용실" 같은 로컬 검색에서 강합니다.',
+        },
+        {
+          type: 'ul',
+          content: 'WordPress의 한인 서비스업 강점:',
+          items: [
+            '한국어·영어 이중언어 SEO 완전 제어 (hreflang, 메타, 스키마)',
+            '템플릿 제약 없는 커스텀 레이아웃',
+            '한·영 블로그 콘텐츠 — 로컬 SEO 순위에 결정적',
+            '월 비용 저렴 (호스팅 $20–50 vs Shopify $39–105)',
+            '포트리, 팰팍, 플러싱 등 지역별 랜딩 페이지에 유리',
+            '거래 수수료 없는 무제한 커스터마이징',
+          ],
+        },
+        {
+          type: 'h2',
+          content: '2026년 비용 비교: Shopify vs WordPress',
+        },
+        {
+          type: 'ul',
+          content: '월간 비용 비교:',
+          items: [
+            'Shopify Basic: 월 $39 + 거래 수수료 2.9% + 30¢',
+            'Shopify Standard: 월 $105 + 거래 수수료 2.6% + 30¢',
+            'WordPress 관리형 호스팅: 월 $20–50, 거래 수수료 없음',
+            'WordPress 개발 비용: 보통 $1,500–4,000 초기 비용',
+            'ZOE LUMOS Shopify 스토어 구축: 보통 $1,200–3,500',
+          ],
+        },
+        {
+          type: 'tip',
+          content:
+            '팁: 한인 비즈니스의 온라인 매출이 월 $10,000 이상이면, Shopify 거래 수수료만 월 $300+가 될 수 있습니다. 이 시점에서는 WooCommerce(WordPress)가 더 경제적인 경우가 많습니다. 저희는 플랫폼 추천 전에 항상 이 계산을 먼저 해드립니다.',
+        },
+        {
+          type: 'h2',
+          content: '한영 이중언어 지원 비교',
+        },
+        {
+          type: 'p',
+          content:
+            '두 플랫폼 모두 이중언어 웹사이트를 지원하지만 방식이 다릅니다. WordPress는 WPML이나 Polylang 플러그인으로 /ko/, /en/ URL 경로와 hreflang 태그를 완벽하게 구현할 수 있어 구글 권장 방식에 부합합니다. Shopify는 Markets나 Langify 같은 번역 앱을 사용하지만 URL 구조가 덜 유연합니다. 한국어 구글 검색 순위(팰리세이즈 파크, 포트리 한인 검색 등)가 중요한 비즈니스에는 WordPress가 대체로 성과가 좋습니다.',
+        },
+        {
+          type: 'h2',
+          content: '한인 비즈니스 유형별 추천 플랫폼',
+        },
+        {
+          type: 'ul',
+          content: '비즈니스 유형별 플랫폼 추천:',
+          items: [
+            '한인 온라인 쇼핑몰 / K-뷰티 / 식품 배달 → Shopify',
+            '한식당, 카페, 미용실 → WordPress',
+            '한의원, 법무사, 학원 → WordPress',
+            '한인 식료품점 / 오프라인+온라인 병행 → Shopify',
+            '한인 부동산, 재무 어드바이저 → WordPress',
+            '잘 모르겠다면? WordPress — 어떤 방향으로도 확장 가능',
+          ],
+        },
+        {
+          type: 'cta',
+          content:
+            'NJ·NY 한인 비즈니스에 어떤 플랫폼이 맞는지 모르겠으신가요? ZOE LUMOS는 한국어·영어 무료 상담을 제공합니다. 비즈니스 목표, 예산, 타겟 고객을 검토해 최적의 플랫폼과 패키지를 솔직하게 추천해 드립니다.',
+        },
+      ],
+    },
+  },
 ]
