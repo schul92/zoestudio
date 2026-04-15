@@ -47,3 +47,25 @@ next-env.d.ts
 # OS
 Thumbs.db
 .config/
+
+# Claude / local tooling artifacts
+.claude/
+.playwright-mcp/
+.serena/
+screenshots/
+renders/
+ACTION-PLAN.md
+FULL-AUDIT-REPORT.md
+
+# Local dev assets
+flyer-*.png
+hero-*.png
+antigravity-*.png
+vercel-production.png
+blog-article.png
+blog-listing.png
+blog-new.png
+mobile-check.jpeg
+schema-audit-*.json
+here.MP3
+zoe_lumos_editted_v1.mp4

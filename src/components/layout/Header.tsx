@@ -15,6 +15,7 @@ export default function Header({ locale = 'en' }: { locale?: string }) {
   const isAboutPage = pathname?.includes('/about')
   const isPricingPage = pathname?.includes('/pricing')
   const isPortfolioPage = pathname?.includes('/portfolio')
+  const isBlogPage = pathname?.includes('/blog')
   const [hasScrolled, setHasScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [mounted, setMounted] = useState(false)
@@ -96,6 +97,10 @@ export default function Header({ locale = 'en' }: { locale?: string }) {
                 <span className="relative z-10 transition-colors duration-300 text-white">{t.nav.pricing}</span>
                 <span className={`absolute bottom-0 left-4 right-4 h-0.5 bg-amber-400 transition-transform duration-300 ease-out ${isPricingPage ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} />
               </Link>
+              <Link href={`${prefix}/blog`} className="relative group py-2 px-4 min-w-[80px] text-center" data-hover="true" data-hover-text="">
+                <span className="relative z-10 transition-colors duration-300 text-white">{t.nav.blog}</span>
+                <span className={`absolute bottom-0 left-4 right-4 h-0.5 bg-amber-400 transition-transform duration-300 ease-out ${isBlogPage ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} />
+              </Link>
               <Link href={`${prefix}/#contact`} className="relative group py-2 px-4 min-w-[80px] text-center" data-hover="true" data-hover-text="">
                 <span className="relative z-10 transition-colors duration-300 text-white">{t.nav.contact}</span>
                 <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-amber-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
@@ -171,6 +176,13 @@ export default function Header({ locale = 'en' }: { locale?: string }) {
             className="block py-3 px-4 text-white hover:bg-white/10 rounded-lg transition-colors text-lg font-medium"
           >
             {t.nav.pricing}
+          </Link>
+          <Link
+            href={`${prefix}/blog`}
+            onClick={() => setMobileMenuOpen(false)}
+            className="block py-3 px-4 text-white hover:bg-white/10 rounded-lg transition-colors text-lg font-medium"
+          >
+            {t.nav.blog}
           </Link>
           <Link
             href={`${prefix}/#contact`}
