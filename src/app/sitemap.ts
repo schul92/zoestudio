@@ -13,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/ny-website',
     '/nj-website',
     '/fort-lee-web-design',
+    '/korean-web-design-new-jersey',
     '/privacy',
     '/terms',
     '/reviews',

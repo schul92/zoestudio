@@ -195,7 +195,6 @@ const content = {
     description: 'Tips, strategies, and best practices to grow your business online',
     readMore: 'Read More',
     minRead: 'min read',
-    comingSoon: 'Full articles coming soon! Subscribe to get notified.',
     categories: 'Categories',
     subscribe: {
       title: 'Stay Updated',
@@ -210,7 +209,6 @@ const content = {
     description: '온라인 비즈니스 성장을 위한 팁, 전략, 모범 사례',
     readMore: '자세히 보기',
     minRead: '분 읽기',
-    comingSoon: '전체 글은 곧 공개됩니다! 알림을 받으려면 구독하세요.',
     categories: '카테고리',
     subscribe: {
       title: '최신 소식 받기',

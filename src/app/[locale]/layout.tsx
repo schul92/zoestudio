@@ -43,13 +43,7 @@ export async function generateMetadata({
     metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'),
     manifest: '/manifest.json',
     category: 'business',
-    alternates: {
-      canonical: locale === 'en' ? '/' : `/${locale}`,
-      languages: {
-        'en': '/',
-        'ko': '/ko',
-      },
-    },
+    // Canonical + hreflang are set per-page to avoid layout-level collision.
     openGraph: {
       title: seo.openGraph.title,
       description: seo.openGraph.description,
