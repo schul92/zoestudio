@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import HeaderWrapper from '@/components/layout/HeaderWrapper'
 import Footer from '@/components/layout/Footer'
-import Link from 'next/link'
+import BlogListing from '@/components/blog/BlogListing'
 
 export async function generateStaticParams() {
   return [
@@ -263,158 +263,42 @@ const content = {
   en: {
     title: 'Blog',
     subtitle: 'Digital Marketing Insights',
-    description: 'Tips, strategies, and best practices to grow your business online',
-    readMore: 'Read More',
+    description: 'Tips, strategies, and best practices to grow your Korean-American business online',
+    readMore: 'Read',
     minRead: 'min read',
-    categories: 'Categories',
-    subscribe: {
-      title: 'Stay Updated',
-      description: 'Get the latest digital marketing tips delivered to your inbox',
-      placeholder: 'Enter your email',
-      button: 'Subscribe'
-    }
+    featured: 'Featured',
+    all: 'All',
+    searchPlaceholder: 'Search articles...',
+    noResults: 'No articles match your filter.',
   },
   ko: {
     title: '블로그',
     subtitle: '디지털 마케팅 인사이트',
-    description: '온라인 비즈니스 성장을 위한 팁, 전략, 모범 사례',
-    readMore: '자세히 보기',
-    minRead: '분 읽기',
-    categories: '카테고리',
-    subscribe: {
-      title: '최신 소식 받기',
-      description: '최신 디지털 마케팅 팁을 이메일로 받아보세요',
-      placeholder: '이메일 입력',
-      button: '구독하기'
-    }
-  }
+    description: '한인 비즈니스 온라인 성장을 위한 팁, 전략, 모범 사례',
+    readMore: '읽기',
+    minRead: '분',
+    featured: '추천',
+    all: '전체',
+    searchPlaceholder: '검색...',
+    noResults: '검색 결과가 없습니다.',
+  },
 }
+
+// Map each blog post slug to its generated hero image
+const postsWithImages = blogPosts.map((p) => ({ ...p, image: `/blog/${p.slug}.png` }))
 
 export default function BlogPage({ params }: { params: { locale: string } }) {
   const locale = params.locale as 'en' | 'ko'
   const t = content[locale]
-  const prefix = locale === 'ko' ? '/ko' : ''
-
-  // Get unique categories
-  const categories = Array.from(new Set(blogPosts.map(post => post.category[locale])))
 
   return (
     <>
       <HeaderWrapper locale={locale} />
-
-      {/* Blog Schema */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(generateBlogSchema(locale)),
-        }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBlogSchema(locale)) }}
       />
-
-      <main className="min-h-screen bg-white pt-24 pb-16">
-        <div className="max-w-6xl mx-auto px-6 lg:px-8">
-          {/* Breadcrumb */}
-          <nav className="mb-8 text-sm">
-            <Link href={prefix || '/'} className="text-gray-500 hover:text-black transition-colors">
-              {locale === 'ko' ? '홈' : 'Home'}
-            </Link>
-            <span className="mx-2 text-gray-400">/</span>
-            <span className="text-gray-900">{t.title}</span>
-          </nav>
-
-          {/* Header */}
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">{t.title}</h1>
-            <p className="text-xl text-gray-600 mb-2">{t.subtitle}</p>
-            <p className="text-gray-500">{t.description}</p>
-          </div>
-
-          {/* Categories */}
-          <div className="flex flex-wrap justify-center gap-2 mb-12">
-            {categories.map((category) => (
-              <span
-                key={category}
-                className="px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm hover:bg-gray-200 cursor-pointer transition-colors"
-              >
-                {category}
-              </span>
-            ))}
-          </div>
-
-          {/* Blog Posts Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
-            {blogPosts.map((post) => (
-              <Link
-                key={post.id}
-                href={`${prefix}/blog/${post.slug}`}
-                className="group block"
-              >
-                <article className="h-full bg-white rounded-2xl overflow-hidden border border-gray-100 hover:border-gray-200 hover:shadow-lg transition-all">
-                  {/* Placeholder Image */}
-                  <div className="h-48 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center">
-                    <span className="text-4xl">
-                      {post.category.en === 'SEO' && '🔍'}
-                      {post.category.en === 'Google Ads' && '📊'}
-                      {post.category.en === 'Web Design' && '🎨'}
-                      {post.category.en === 'E-commerce' && '🛒'}
-                      {post.category.en === 'Yelp Ads' && '⭐'}
-                      {post.category.en === 'Marketing' && '📈'}
-                      {post.category.en === 'Pricing' && '💰'}
-                    </span>
-                  </div>
-
-                  <div className="p-6">
-                    <div className="flex items-center gap-3 mb-3">
-                      <span className="text-xs font-medium text-black bg-gray-100 px-2 py-1 rounded">
-                        {post.category[locale]}
-                      </span>
-                      <span className="text-xs text-gray-400">
-                        {post.readTime} {t.minRead}
-                      </span>
-                    </div>
-
-                    <h2 className="font-semibold text-gray-900 mb-2 group-hover:text-gray-700 transition-colors line-clamp-2">
-                      {post.title[locale]}
-                    </h2>
-
-                    <p className="text-sm text-gray-600 mb-4 line-clamp-2">
-                      {post.excerpt[locale]}
-                    </p>
-
-                    <div className="flex items-center justify-between">
-                      <span className="text-xs text-gray-400">
-                        {new Date(post.date).toLocaleDateString(locale === 'ko' ? 'ko-KR' : 'en-US', {
-                          year: 'numeric',
-                          month: 'short',
-                          day: 'numeric'
-                        })}
-                      </span>
-                      <span className="text-sm font-medium text-gray-900 group-hover:translate-x-1 transition-transform">
-                        {t.readMore} →
-                      </span>
-                    </div>
-                  </div>
-                </article>
-              </Link>
-            ))}
-          </div>
-
-          {/* Newsletter Subscribe */}
-          <div className="bg-black rounded-3xl p-8 md:p-12 text-center text-white">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">{t.subscribe.title}</h2>
-            <p className="text-gray-300 mb-8">{t.subscribe.description}</p>
-            <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder={t.subscribe.placeholder}
-                className="flex-1 px-6 py-4 rounded-full text-black focus:outline-none focus:ring-2 focus:ring-white"
-              />
-              <button className="bg-white text-black font-semibold px-8 py-4 rounded-full hover:bg-gray-100 transition-colors">
-                {t.subscribe.button}
-              </button>
-            </div>
-          </div>
-        </div>
-      </main>
+      <BlogListing posts={postsWithImages} locale={locale} content={t} />
       <Footer locale={locale} />
     </>
   )
