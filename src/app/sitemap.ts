@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next'
 import { blogContent } from '@/data/blogContent'
+import { koreanCities } from '@/data/koreanCities'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
@@ -33,10 +34,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/palisades-park-marketing',
     '/ridgefield-web-design',
     '/edgewater-web-design',
+    // Korean-American city hub pages
+    ...koreanCities.map((c) => `/${c.slug}`),
   ]
 
   // Korean SEO pages (Korean URLs - high priority for Korean keywords)
   const koreanSeoPages = [
+    // City hub Korean slugs
+    ...koreanCities.map((c) => ({ path: `/${c.koSlug}`, enPath: `/${c.slug}`, priority: 0.95 })),
     { path: '/뉴저지-웹사이트', enPath: '/nj-website', priority: 0.95 },
     { path: '/뉴욕-웹사이트', enPath: '/ny-website', priority: 0.95 },
     { path: '/웹사이트-제작', enPath: '/nj-website', priority: 0.95 },
