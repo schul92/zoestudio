@@ -141,19 +141,90 @@ const blogPosts = [
     slug: 'nj-ny-website-cost-2026',
     date: '2026-01-15',
     readTime: 7,
-    category: {
-      en: 'Pricing',
-      ko: '비용 안내'
-    },
-    title: {
-      en: 'How Much Does a Website Cost in 2026? (NJ/NY/CA/TX)',
-      ko: '2026년 웹사이트 제작 비용 총정리 (뉴저지/뉴욕/캘리포니아/텍사스)'
-    },
-    excerpt: {
-      en: 'Transparent pricing guide for website design in 2026. Compare costs across NJ, NY, California, Texas, and nationwide.',
-      ko: '2026년 미국 한인 웹사이트 제작 비용 비교. 뉴저지, 뉴욕, 캘리포니아, 텍사스 지역별 가격 안내.'
-    },
+    category: { en: 'Pricing', ko: '비용 안내' },
+    title: { en: 'How Much Does a Website Cost in 2026? (NJ/NY/CA/TX)', ko: '2026년 웹사이트 제작 비용 총정리 (뉴저지/뉴욕/캘리포니아/텍사스)' },
+    excerpt: { en: 'Transparent pricing guide for website design in 2026. Compare costs across NJ, NY, California, Texas, and nationwide.', ko: '2026년 미국 한인 웹사이트 제작 비용 비교. 뉴저지, 뉴욕, 캘리포니아, 텍사스 지역별 가격 안내.' },
     image: '/blog/website-cost.jpg'
+  },
+  {
+    id: 6,
+    slug: 'do-i-need-a-website-korean-business',
+    date: '2026-04-15',
+    readTime: 9,
+    category: { en: 'Foundations', ko: '기초 가이드' },
+    title: { en: 'Do Korean-American Businesses Actually Need a Website in 2026?', ko: '2026년, 미국 한인 비즈니스에 정말 웹사이트가 필요할까요?' },
+    excerpt: { en: 'An honest look at whether your Korean-American business needs a website in 2026, or if Instagram, KakaoTalk, and Google Business Profile are enough.', ko: '인스타그램, 카카오톡, 구글 비즈니스 프로필만 있으면 되는 시대에 과연 한인 비즈니스에 웹사이트가 필요한지 솔직하게 분석합니다.' },
+    image: '/blog/need-website.jpg'
+  },
+  {
+    id: 7,
+    slug: 'website-cost-hidden-fees-usa',
+    date: '2026-04-14',
+    readTime: 8,
+    category: { en: 'Pricing', ko: '비용 안내' },
+    title: { en: 'The Real Cost of a Website in 2026 — A Korean-American Business Owner\'s Guide to Hidden Fees', ko: '2026년 웹사이트의 진짜 비용 — 한인 사업주를 위한 숨은 비용 완벽 가이드' },
+    excerpt: { en: 'What a website actually costs in 2026 beyond the sticker price. Hidden fees, 3-year total cost of ownership, and red flags to avoid.', ko: '2026년 웹사이트의 표면 가격 너머 진짜 비용. 숨은 수수료, 3년 총 소유 비용, 피해야 할 위험 신호 총정리.' },
+    image: '/blog/hidden-fees.jpg'
+  },
+  {
+    id: 8,
+    slug: 'korean-restaurant-website-essentials',
+    date: '2026-04-13',
+    readTime: 10,
+    category: { en: 'Industry Guide', ko: '업종별 가이드' },
+    title: { en: '11 Essentials Every Korean Restaurant Website Needs in 2026', ko: '2026년 한식당 웹사이트에 꼭 필요한 11가지' },
+    excerpt: { en: 'From bilingual menus to KakaoTalk integration — the 11 must-have features every Korean restaurant website needs to convert visitors into diners.', ko: '이중언어 메뉴부터 카카오톡 연동까지 — 방문자를 실제 고객으로 전환시키는 한식당 웹사이트 필수 11가지 요소.' },
+    image: '/blog/korean-restaurant.jpg'
+  },
+  {
+    id: 9,
+    slug: 'naver-vs-google-korean-business-usa',
+    date: '2026-04-12',
+    readTime: 7,
+    category: { en: 'SEO', ko: 'SEO' },
+    title: { en: 'Naver vs Google: Where Should Your US-Based Korean Business Actually Rank?', ko: '네이버 vs 구글: 미국 한인 비즈니스는 어디에 랭크해야 할까?' },
+    excerpt: { en: 'Most Korean-Americans in the US search on Google, not Naver. An honest breakdown of where to invest your SEO budget for a US-based Korean business.', ko: '미국의 한인들은 대부분 네이버가 아닌 구글을 사용합니다. 미국 한인 비즈니스가 SEO 예산을 어디에 투자해야 하는지 솔직하게 분석합니다.' },
+    image: '/blog/naver-vs-google.jpg'
+  },
+  {
+    id: 10,
+    slug: 'kakaotalk-channel-us-korean-business',
+    date: '2026-04-11',
+    readTime: 7,
+    category: { en: 'Marketing', ko: '마케팅' },
+    title: { en: 'How to Use KakaoTalk Channel for a US-Based Korean Business (2026 Guide)', ko: '미국 한인 비즈니스를 위한 카카오톡 채널 활용 가이드 (2026년 완벽판)' },
+    excerpt: { en: 'A step-by-step guide to setting up and using KakaoTalk Channel from the US for your Korean-American business — customer service, marketing, and retention.', ko: '미국에서 한인 비즈니스용 카카오톡 채널을 설정하고 활용하는 단계별 가이드 — 고객 응대, 마케팅, 재방문 유도까지.' },
+    image: '/blog/kakaotalk.jpg'
+  },
+  {
+    id: 11,
+    slug: 'case-study-korean-nail-salon-seo-10x',
+    date: '2026-04-10',
+    readTime: 9,
+    category: { en: 'Case Study', ko: '사례 연구' },
+    title: { en: 'Case Study: How We 10×\'d a Korean Nail Salon\'s Organic Traffic in 6 Months', ko: '사례 연구: 한인 네일샵의 유입 트래픽을 6개월 만에 10배로 만든 방법' },
+    excerpt: { en: 'A step-by-step case study of how ZOE LUMOS grew a North Bergen Korean nail salon\'s organic Google traffic from 40 to 430 monthly visits in 6 months.', ko: 'North Bergen 한인 네일샵의 월 유입을 6개월 만에 40명에서 430명으로 늘린 ZOE LUMOS의 단계별 사례 연구.' },
+    image: '/blog/nail-salon-case.jpg'
+  },
+  {
+    id: 12,
+    slug: 'bilingual-seo-technical-guide-hreflang',
+    date: '2026-04-09',
+    readTime: 11,
+    category: { en: 'Technical SEO', ko: '기술 SEO' },
+    title: { en: 'The Technical Bilingual SEO Playbook — hreflang, Canonicals, and Language-Aware Architecture', ko: '이중언어 SEO 기술 플레이북 — hreflang, 캐노니컬, 언어 인식 아키텍처' },
+    excerpt: { en: 'A developer-friendly, honest guide to implementing bilingual Korean-English SEO correctly. hreflang, canonicals, URL structure, and common mistakes.', ko: '이중언어 한영 SEO를 올바르게 구현하는 개발자 친화적 가이드. hreflang, 캐노니컬, URL 구조, 흔한 실수들.' },
+    image: '/blog/hreflang-seo.jpg'
+  },
+  {
+    id: 13,
+    slug: 'wordpress-to-nextjs-korean-business-migration',
+    date: '2026-04-08',
+    readTime: 10,
+    category: { en: 'Technical', ko: '기술' },
+    title: { en: 'Migrating from WordPress to Next.js — A Korean Business Case Study', ko: '워드프레스에서 Next.js로 — 한인 비즈니스 마이그레이션 사례' },
+    excerpt: { en: 'A honest walkthrough of migrating a Korean-American business website from WordPress to Next.js — decisions, risks, metrics, and when NOT to migrate.', ko: '한인 비즈니스 웹사이트를 워드프레스에서 Next.js로 마이그레이션하는 솔직한 가이드 — 결정, 리스크, 지표, 그리고 마이그레이션하지 말아야 할 때.' },
+    image: '/blog/wordpress-nextjs.jpg'
   },
 ]
 
