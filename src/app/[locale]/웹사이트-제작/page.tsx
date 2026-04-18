@@ -15,19 +15,19 @@ export async function generateMetadata({ params }: { params: { locale: string } 
 
   return {
     title: locale === 'ko'
-      ? '웹사이트 제작 문의 | 홈페이지 제작 전문 | 미국 전역 한인 웹디자인 | 조이루모스'
-      : 'Website Design & Development | Free Consultation | Korean Web Agency | ZOE LUMOS',
+      ? '미국 웹사이트 제작 | 미국 홈페이지 제작 전문 | 한인 웹디자인 에이전시 | ZOE LUMOS'
+      : 'US Website Design for Korean Businesses | Professional Web Agency | ZOE LUMOS',
     description: locale === 'ko'
-      ? '웹사이트 제작 문의는 조이루모스에게! 미국 전역 한인 비즈니스를 위한 맞춤 홈페이지 제작. 무료 상담, 반응형 웹디자인, SEO 최적화, 빠른 제작. $1,000부터 시작.'
-      : 'Professional website design services for Korean businesses across the US. Free consultation, responsive web design, SEO optimization, fast delivery. Starting at $1,000.',
+      ? '미국 웹사이트 제작 전문 에이전시 ZOE LUMOS. 미국 한인 비즈니스를 위한 이중언어 홈페이지 제작, SEO 최적화, 구글 광고. NJ, NY, LA, 전국 서비스. $1,000부터. 무료 상담.'
+      : 'Professional US website design for Korean-American businesses. Bilingual websites, SEO, Google Ads. Serving NJ, NY, LA, and nationwide. From $1,000. Free consultation.',
     keywords: locale === 'ko'
-      ? '웹사이트 제작, 웹사이트 제작 문의, 홈페이지 제작, 홈페이지 제작 문의, 웹디자인, 한인 웹사이트, 뉴욕 웹사이트 제작, 뉴저지 웹사이트 제작, 반응형 웹사이트, SEO 웹사이트, 워드프레스, 커스텀 웹사이트, 웹사이트 제작 비용 문의'
-      : 'website design, web development, free consultation, Korean website, NY web design, NJ web design, responsive website, SEO website, WordPress, custom website',
+      ? '미국 웹사이트 제작, 미국 홈페이지 제작, 미국 웹사이트 만들기, 한인 웹사이트 제작, 미국 웹디자인, 한인 홈페이지, 뉴욕 웹사이트 제작, 뉴저지 웹사이트 제작, 엘에이 웹사이트 제작, 미국 웹사이트 제작 비용, 미국 홈페이지 제작 비용, 이중언어 웹사이트'
+      : 'US website design, Korean American web design, bilingual website, Korean web agency, NY web design, NJ web design, LA web design, Korean business website, SEO website',
     openGraph: {
-      title: locale === 'ko' ? '웹사이트 제작 전문 - 조이루모스' : 'Website Design - ZOE LUMOS',
+      title: locale === 'ko' ? '미국 웹사이트 제작 전문 - ZOE LUMOS' : 'US Website Design - ZOE LUMOS',
       description: locale === 'ko'
-        ? '뉴욕, 뉴저지 한인 비즈니스를 위한 전문 웹사이트 제작'
-        : 'Professional website design for NY NJ Korean businesses',
+        ? '미국 한인 비즈니스를 위한 이중언어 웹사이트 제작 전문 에이전시'
+        : 'Professional bilingual website design for Korean-American businesses',
       url: locale === 'ko' ? `${baseUrl}/ko/웹사이트-제작` : `${baseUrl}/웹사이트-제작`,
       siteName: 'ZOE LUMOS',
       locale: locale === 'ko' ? 'ko_KR' : 'en_US',
