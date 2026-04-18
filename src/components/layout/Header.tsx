@@ -54,7 +54,9 @@ export default function Header({ locale = 'en' }: { locale?: string }) {
   }, [mobileMenuOpen])
 
   // Use consistent initial state for SSR - Dark theme
-  const scrolledClass = mounted && hasScrolled
+  // Force dark header on non-homepage (white-background) pages
+  const isHomepage = pathname === '/' || pathname === '/ko' || pathname === '/en'
+  const scrolledClass = (mounted && hasScrolled) || !isHomepage
     ? 'bg-[#111111]/95 shadow-lg backdrop-blur-md border-b border-white/10'
     : 'bg-transparent backdrop-blur-sm'
 
