@@ -2,7 +2,7 @@ export const seoConfig = {
   en: {
     title: 'ZOE LUMOS - Korean Business Web Design & SEO | Fort Lee NJ, NYC & Nationwide',
     description: 'Bilingual web design & SEO agency trusted by Korean-American small businesses. Custom websites, Google Ads, local SEO in Fort Lee, Englewood, North Bergen, Palisades Park & nationwide. Free consultation — call today.',
-    keywords: 'Korean web design, Korean American website, Korean business website, Korean SEO agency, NJ web design, NY web design, Fort Lee web design, Bergen County web design, Korean business marketing, Shopify development, e-commerce website design, local SEO expert, digital marketing agency, SEO services, Google Ads management, small business SEO NJ, small business SEO agency Englewood NJ, SEO experts North Bergen NJ, Korean web agency, bilingual website design, korean business marketing nyc, 한인 마케팅 에이전시, Palisades Park marketing, Ridgefield web design, Edgewater web design, low cost SEO New Jersey, small business SEO agency North Bergen NJ',
+    keywords: 'Korean web design, Korean American website, Korean business website, Korean SEO agency, NJ web design, NY web design, Fort Lee web design, Bergen County web design, Korean business marketing, Shopify development, e-commerce website design, local SEO expert, digital marketing agency, SEO services, Google Ads management, small business SEO NJ, small business SEO agency Englewood NJ, SEO experts North Bergen NJ, Korean web agency, bilingual website design, korean business marketing nyc, 한인 마케팅 에이전시, Palisades Park marketing, Ridgefield web design, Edgewater web design, low cost SEO New Jersey, small business SEO agency North Bergen NJ, Cliffside Park web design, AI website design NJ, Korean restaurant website, Korean business Google Ads, affordable web design Bergen County, Leonia web design',
     openGraph: {
       title: 'ZOE LUMOS - Bilingual Web Design & SEO for Korean Businesses',
       description: 'Trusted by Korean-American small businesses in Fort Lee, Englewood, North Bergen & nationwide. Custom websites, local SEO, Google Ads. Free consultation.',
@@ -13,7 +13,7 @@ export const seoConfig = {
   ko: {
     title: '미국 한인 웹사이트 제작 | 뉴저지 뉴욕 캘리포니아 텍사스 전국 | ZOE LUMOS',
     description: '미국 전역 한인 웹사이트 제작 전문. 뉴저지, 뉴욕, 캘리포니아, 텍사스, 조지아, 버지니아 등 미국 전 지역. 한인 비즈니스 홈페이지, 쇼핑몰 제작, 구글 광고, SEO 전문. 100% 한국어 상담.',
-    keywords: '미국 한인 웹사이트, 한인 웹사이트 제작, 한인 홈페이지 제작, 뉴저지 웹사이트, 뉴저지 웹사이트 제작, 뉴욕 웹사이트, 뉴욕 웹사이트 제작, 캘리포니아 웹사이트 제작, LA 한인 웹사이트, 텍사스 웹사이트 제작, 달라스 한인 웹사이트, 조지아 웹사이트 제작, 애틀랜타 한인 웹사이트, 버지니아 웹사이트 제작, 일리노이 웹사이트, 시카고 한인 웹사이트, 워싱턴 웹사이트, 시애틀 한인 웹사이트, 하와이 웹사이트, 플로리다 웹사이트, NJ 웹사이트, NY 웹사이트, 포트리 웹사이트, 팰팍 웹사이트, 팰팍 웹사이트 제작, 플러싱 웹사이트, 한인 쇼핑몰 제작, 쇼피파이, 구글광고, 옐프광고, 한인 SEO, 검색엔진최적화, 미주 한인 비즈니스, 디지털 마케팅, 웹디자인, 한인 마케팅 에이전시 뉴저지, 리지필드 웹사이트, 에지워터 웹사이트',
+    keywords: '미국 한인 웹사이트, 한인 웹사이트 제작, 한인 홈페이지 제작, 뉴저지 웹사이트, 뉴저지 웹사이트 제작, 뉴욕 웹사이트, 뉴욕 웹사이트 제작, 캘리포니아 웹사이트 제작, LA 한인 웹사이트, 텍사스 웹사이트 제작, 달라스 한인 웹사이트, 조지아 웹사이트 제작, 애틀랜타 한인 웹사이트, 버지니아 웹사이트 제작, 일리노이 웹사이트, 시카고 한인 웹사이트, 워싱턴 웹사이트, 시애틀 한인 웹사이트, 하와이 웹사이트, 플로리다 웹사이트, NJ 웹사이트, NY 웹사이트, 포트리 웹사이트, 팰팍 웹사이트, 팰팍 웹사이트 제작, 플러싱 웹사이트, 한인 쇼핑몰 제작, 쇼피파이, 구글광고, 옐프광고, 한인 SEO, 검색엔진최적화, 미주 한인 비즈니스, 디지털 마케팅, 웹디자인, 한인 마케팅 에이전시 뉴저지, 리지필드 웹사이트, 에지워터 웹사이트, 클리프사이드파크 웹사이트, AI 웹사이트 제작, 한인 식당 홈페이지, 한인 구글광고 대행, 버겐카운티 웹사이트 제작',
     openGraph: {
       title: '미국 한인 웹사이트 제작 | 전국 한인 비즈니스 전문 | ZOE LUMOS',
       description: '미국 전역 한인 웹사이트 제작. NJ, NY, CA, TX, GA, VA 등 전 지역. 쇼핑몰, SEO, 구글광고. 100% 한국어 상담.',
@@ -141,6 +141,11 @@ export const structuredData = {
       {
         "@type": "City",
         "name": "Cliffside Park",
+        "containedInPlace": { "@type": "State", "name": "New Jersey" }
+      },
+      {
+        "@type": "City",
+        "name": "Leonia",
         "containedInPlace": { "@type": "State", "name": "New Jersey" }
       },
       {
