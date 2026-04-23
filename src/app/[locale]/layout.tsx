@@ -169,7 +169,7 @@ export default function RootLayout({
         />
         {/* FAQPage schema moved to homepage only — Google requires FAQ content to be visible on the page */}
       </head>
-      <body className={`${inter.className} bg-[#111111] text-white`} style={{ position: 'relative' }}>
+      <body className={`${inter.className} bg-brand-ivory text-brand-charcoal`} style={{ position: 'relative' }}>
         {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
           <GoogleAnalytics GA_MEASUREMENT_ID={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
         )}

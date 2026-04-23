@@ -1,0 +1,86 @@
+[
+  {
+    "lang": "en",
+    "imagePrompt": "A modern laptop on a clean minimalist desk showing a beautiful conversion-focused business website mockup. Warm editorial lighting, teal and magenta accents, Bergen County NJ skyline through window at golden hour. Photorealistic, premium feel, square 1:1, no text overlays.",
+    "summary": "Your website should work harder than you do. Zoe Lumos builds conversion-focused sites for NJ small businesses — fast, beautiful, and built to bring customers in while you sleep.",
+    "cta": { "actionType": "LEARN_MORE", "url": "https://zoelumos.com" }
+  },
+  {
+    "lang": "ko",
+    "imagePrompt": "Elegant Korean-American coffee shop interior with a tablet on the counter showing a beautifully designed restaurant website. Soft warm lighting, Korean aesthetic mixed with modern Western cafe vibe. Photorealistic, 1:1 square, premium editorial style, no text.",
+    "summary": "뉴저지에서 웹사이트가 필요하신가요? Zoe Lumos는 한인 비즈니스를 위한 빠르고 세련된 웹사이트와 SEO를 제공합니다. 첫 클릭부터 첫 예약까지 - 함께 시작해요.",
+    "cta": { "actionType": "LEARN_MORE", "url": "https://zoelumos.com/ko" }
+  },
+  {
+    "lang": "en",
+    "imagePrompt": "Close-up of hands on a laptop keyboard coding a website, with glowing UI mockups floating above the screen showing before/after of a business website transformation. Dark moody studio lighting, neon teal and pink accents. Photorealistic, cinematic, 1:1 square.",
+    "summary": "Before: a dusty WordPress site nobody visits. After: a lightning-fast modern site ranking on Google page 1. That's the Zoe Lumos transformation. Bergen County NJ — DM us.",
+    "cta": { "actionType": "LEARN_MORE", "url": "https://zoelumos.com" }
+  },
+  {
+    "lang": "en",
+    "imagePrompt": "A smartphone on a marble table showing a beautiful mobile-first business website. Morning coffee and a notebook beside it. Warm natural light, editorial magazine style, shallow depth of field, photorealistic, 1:1.",
+    "summary": "70% of your customers find you on mobile first. Is your website actually good on a phone? We build mobile-first sites that convert. Free audit, zero pressure.",
+    "cta": { "actionType": "LEARN_MORE", "url": "https://zoelumos.com" }
+  },
+  {
+    "lang": "ko",
+    "imagePrompt": "A Korean-American nail salon interior with a sleek tablet showing a modern booking website. Clean white and rose gold aesthetic, soft diffused lighting. Photorealistic, premium spa editorial style, 1:1 square.",
+    "summary": "네일샵, 미용실, 식당, 병원 - 뉴저지 한인 비즈니스를 위한 전문 웹사이트 제작. 구글 상단 노출과 예약 시스템까지. Zoe Lumos와 함께 시작하세요.",
+    "cta": { "actionType": "LEARN_MORE", "url": "https://zoelumos.com/ko" }
+  },
+  {
+    "lang": "en",
+    "imagePrompt": "A designer's workspace with dual monitors showing Figma design files and a finished website side by side. Plants, minimalist decor, Korean calligraphy on the wall. Warm soft lighting, editorial, photorealistic, 1:1.",
+    "summary": "Most web designers hand you a pretty site and disappear. We build, rank, and maintain — so your site keeps earning. Bergen County NJ. Korean + English.",
+    "cta": { "actionType": "LEARN_MORE", "url": "https://zoelumos.com" }
+  },
+  {
+    "lang": "en",
+    "imagePrompt": "An elegant restaurant interior at dusk with a QR code menu on the table glowing softly. Focus on the menu tablet showing a beautiful restaurant website. Warm amber lighting, upscale dining vibe, photorealistic, 1:1 square.",
+    "summary": "Restaurant owners: your website is your second front door. Make it beautiful, fast, and booking-ready. Zoe Lumos — NJ's Korean-American design studio.",
+    "cta": { "actionType": "LEARN_MORE", "url": "https://zoelumos.com" }
+  },
+  {
+    "lang": "ko",
+    "imagePrompt": "A modern medical clinic waiting area with a patient looking at a tablet displaying a clean healthcare website. Minimalist interior, natural light, calming blue and white tones. Photorealistic, premium, 1:1 square.",
+    "summary": "병원 홈페이지가 고객의 첫인상입니다. 전문성과 신뢰를 담은 웹사이트로 구글 검색 상단에 노출되세요. 뉴저지 한인 의료진을 위한 Zoe Lumos.",
+    "cta": { "actionType": "LEARN_MORE", "url": "https://zoelumos.com/ko" }
+  },
+  {
+    "lang": "en",
+    "imagePrompt": "A glowing Google search results page on a laptop screen with a local business listed at position #1. Clean modern office desk, late afternoon light, out of focus NJ skyline in background. Photorealistic, editorial tech style, 1:1.",
+    "summary": "Ranking #1 on Google for your service + city isn't magic. It's technical SEO done right. We've done it for clients across NJ. Let's do it for you.",
+    "cta": { "actionType": "LEARN_MORE", "url": "https://zoelumos.com" }
+  },
+  {
+    "lang": "en",
+    "imagePrompt": "A bustling small business storefront at dawn with a window decal showing a QR code and elegant website preview. Urban Bergen County street scene, cinematic golden hour light. Photorealistic, inviting warm tones, 1:1 square.",
+    "summary": "Small business owners in NJ: you don't need a $20k website. You need one that works. Starting at $0 down. Monthly plans. Bergen County local.",
+    "cta": { "actionType": "LEARN_MORE", "url": "https://zoelumos.com" }
+  },
+  {
+    "lang": "ko",
+    "imagePrompt": "A cozy Korean bakery interior with a laptop on the counter showing a beautiful cafe website. Warm pastries in the display case, soft morning light streaming in. Photorealistic, magazine editorial style, 1:1 square.",
+    "summary": "카페, 베이커리, 레스토랑 - 고객이 찾아오게 만드는 웹사이트. 뉴저지 Bergen County 기반 한인 전문 웹디자인 스튜디오 Zoe Lumos입니다.",
+    "cta": { "actionType": "LEARN_MORE", "url": "https://zoelumos.com/ko" }
+  },
+  {
+    "lang": "en",
+    "imagePrompt": "An architect's flat-lay workspace showing wireframe sketches transitioning into a polished website on a tablet. Coffee, fountain pen, Korean brush stroke artwork. Top-down shot, warm editorial light, photorealistic, 1:1.",
+    "summary": "Design isn't decoration — it's strategy. Every pixel on a Zoe Lumos site is there to earn you a customer. That's the difference.",
+    "cta": { "actionType": "LEARN_MORE", "url": "https://zoelumos.com" }
+  },
+  {
+    "lang": "en",
+    "imagePrompt": "A split-screen composition: left side is a slow outdated 2015-style website on an old monitor, right side is a blazing-fast modern 2026 website on a sleek laptop. Studio lighting, dramatic comparison, photorealistic, 1:1 square.",
+    "summary": "Is your website still from 2015? Google ranks fast, modern sites higher. We rebuild old sites into lead-generating machines. Free audit this week.",
+    "cta": { "actionType": "LEARN_MORE", "url": "https://zoelumos.com" }
+  },
+  {
+    "lang": "ko",
+    "imagePrompt": "A sleek tablet on a desk displaying analytics dashboard with rising graphs. Soft ambient teal and magenta lighting, bonsai plant, Korean minimalist desk setup. Photorealistic, premium tech editorial, 1:1 square.",
+    "summary": "웹사이트는 투자입니다. Zoe Lumos 고객들은 SEO로 매달 새로운 고객을 만나고 있어요. 뉴저지 한인 비즈니스 전문 - 상담은 무료입니다.",
+    "cta": { "actionType": "LEARN_MORE", "url": "https://zoelumos.com/ko" }
+  }
+]

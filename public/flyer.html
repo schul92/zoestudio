@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>ZOE LUMOS Flyer</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;700;900&family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet"/>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px;
+    height: 1080px;
+    background: #080808;
+    font-family: 'Noto Sans KR', 'Inter', sans-serif;
+    overflow: hidden;
+  }
+
+  .canvas {
+    width: 1080px;
+    height: 1080px;
+    background: #09090f;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* ── Background ── */
+  .bg-grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.024) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.024) 1px, transparent 1px);
+    background-size: 54px 54px;
+    pointer-events: none;
+  }
+  .blob1 {
+    position: absolute;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle at 30% 25%, rgba(177,36,146,0.18) 0%, transparent 60%);
+    top: -150px; left: -80px;
+    pointer-events: none;
+  }
+  .blob2 {
+    position: absolute;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle at 70% 70%, rgba(177,36,146,0.10) 0%, transparent 65%);
+    bottom: -100px; right: -60px;
+    pointer-events: none;
+  }
+
+  /* ── HEADER ── */
+  .header {
+    position: relative; z-index: 2;
+    padding: 30px 52px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-shrink: 0;
+  }
+
+  .pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(177,36,146,0.11);
+    border: 1.5px solid rgba(177,36,146,0.32);
+    border-radius: 999px;
+    padding: 8px 18px 8px 12px;
+  }
+  .pill-dot {
+    width: 7px; height: 7px;
+    background: #B12492;
+    border-radius: 50%;
+    box-shadow: 0 0 7px rgba(177,36,146,0.8);
+    animation: blink 2s ease-in-out infinite;
+    flex-shrink: 0;
+  }
+  @keyframes blink {
+    0%,100% { opacity:1; transform:scale(1); }
+    50% { opacity:0.45; transform:scale(0.65); }
+  }
+  .pill span {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #C84AB0;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+  }
+
+  .logo-mark {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    font-weight: 900;
+    color: rgba(255,255,255,0.28);
+    letter-spacing: 0.18em;
+  }
+  .logo-mark em { color: #B12492; font-style: normal; }
+
+  .header-rule {
+    position: relative; z-index: 2;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, rgba(177,36,146,0.35) 30%, rgba(177,36,146,0.35) 70%, transparent 100%);
+    margin: 18px 52px 0;
+    flex-shrink: 0;
+  }
+
+  /* ── HEADLINE BAND ── */
+  .headline-band {
+    position: relative; z-index: 2;
+    padding: 28px 52px 0;
+    flex-shrink: 0;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 32px;
+  }
+
+  .headline-left {}
+  .eyebrow {
+    font-family: 'Inter', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.2);
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .headline {
+    font-size: 78px;
+    font-weight: 900;
+    color: #fff;
+    line-height: 1.02;
+    letter-spacing: -0.03em;
+  }
+  .headline em { font-style: normal; color: #B12492; }
+
+  .headline-right {
+    padding-bottom: 6px;
+    flex-shrink: 0;
+    text-align: right;
+  }
+  .tagline {
+    font-size: 17px;
+    font-weight: 400;
+    color: rgba(255,255,255,0.32);
+    line-height: 1.6;
+    letter-spacing: 0em;
+    text-align: right;
+  }
+
+  /* Stats inline */
+  .stats {
+    display: flex;
+    gap: 0;
+    background: rgba(255,255,255,0.025);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 14px;
+    overflow: hidden;
+    margin-top: 12px;
+  }
+  .stat {
+    flex: 1;
+    padding: 13px 0;
+    text-align: center;
+    border-right: 1px solid rgba(255,255,255,0.06);
+  }
+  .stat:last-child { border-right: none; }
+  .stat-num {
+    font-family: 'Inter', sans-serif;
+    font-size: 22px;
+    font-weight: 900;
+    color: #B12492;
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .stat-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.28);
+    margin-top: 3px;
+    letter-spacing: 0.04em;
+  }
+
+  /* ── RULE ── */
+  .mid-rule {
+    position: relative; z-index: 2;
+    height: 1px;
+    background: rgba(255,255,255,0.06);
+    margin: 22px 52px 0;
+    flex-shrink: 0;
+  }
+
+  /* ── 3-COL CONTENT ── */
+  .content {
+    position: relative; z-index: 2;
+    flex: 1;
+    padding: 20px 52px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    min-height: 0;
+  }
+
+  /* COL 1: Steps */
+  .col-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .steps-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    gap: 10px;
+  }
+  .col-label {
+    font-family: 'Inter', sans-serif;
+    font-size: 9.5px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.18);
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .step {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    padding: 14px 16px;
+    background: rgba(255,255,255,0.025);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 14px;
+    position: relative;
+    overflow: hidden;
+  }
+  .step::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 3px;
+    background: #B12492;
+  }
+  .step-num {
+    font-family: 'Inter', sans-serif;
+    font-size: 9px;
+    font-weight: 900;
+    color: #B12492;
+    background: rgba(177,36,146,0.15);
+    border-radius: 5px;
+    padding: 3px 6px;
+    letter-spacing: 0.05em;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .step-title {
+    font-size: 15.5px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.3;
+  }
+  .step-title em { font-style: normal; color: #C84AB0; }
+  .step-desc {
+    font-size: 12px;
+    color: rgba(255,255,255,0.32);
+    margin-top: 3px;
+    font-weight: 400;
+    line-height: 1.4;
+  }
+
+  /* COL 2: Checks */
+  .col-checks {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .checks-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    gap: 8px;
+  }
+  .check-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 14px;
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.055);
+    border-radius: 12px;
+    flex: 1;
+  }
+  .check-icon {
+    width: 20px; height: 20px;
+    border-radius: 50%;
+    background: rgba(177,36,146,0.15);
+    border: 1.5px solid rgba(177,36,146,0.4);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    color: #B12492;
+    font-size: 9px;
+    font-weight: 900;
+    font-family: 'Inter', sans-serif;
+  }
+  .check-text {
+    font-size: 15.5px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.85);
+  }
+
+
+  /* ── BOTTOM ── */
+  .bottom {
+    position: relative; z-index: 2;
+    padding: 16px 52px 30px;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 14px;
+    align-items: center;
+    flex-shrink: 0;
+  }
+
+  .contact-bar {
+    display: flex;
+    align-items: center;
+    background: rgba(177,36,146,0.09);
+    border: 1.5px solid rgba(177,36,146,0.24);
+    border-radius: 16px;
+    padding: 16px 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .contact-bar::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1.5px;
+    background: linear-gradient(90deg, transparent, rgba(177,36,146,0.65), transparent);
+  }
+  .c-left { flex: 1; }
+  .c-cta {
+    font-size: 9.5px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .c-url {
+    font-family: 'Inter', sans-serif;
+    font-size: 22px;
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: -0.02em;
+  }
+  .c-url em { color: #B12492; font-style: normal; }
+
+  .c-divider {
+    width: 1px; height: 32px;
+    background: rgba(177,36,146,0.2);
+    margin: 0 24px;
+    flex-shrink: 0;
+  }
+
+  .c-details {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  .c-detail {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.4);
+  }
+
+  .cta-btn {
+    background: #B12492;
+    border-radius: 14px;
+    padding: 16px 24px;
+    text-align: center;
+    flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
+    min-width: 150px;
+  }
+  .cta-btn::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.18) 0%, transparent 55%);
+  }
+  .cta-top {
+    font-size: 9.5px;
+    font-weight: 700;
+    color: rgba(255,255,255,0.58);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 3px;
+  }
+  .cta-main {
+    font-size: 17px;
+    font-weight: 900;
+    color: #fff;
+    letter-spacing: -0.01em;
+    white-space: nowrap;
+  }
+  .cta-sub {
+    font-size: 10px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.55);
+    margin-top: 3px;
+  }
+</style>
+</head>
+<body>
+<div class="canvas">
+  <div class="bg-grid"></div>
+  <div class="blob1"></div>
+  <div class="blob2"></div>
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="pill">
+      <div class="pill-dot"></div>
+      <span>전국 한인 비즈니스 전문 웹사이트 제작 — 온라인으로 전국 어디든</span>
+    </div>
+    <div class="logo-mark">ZOE <em>LUMOS</em></div>
+  </div>
+  <div class="header-rule"></div>
+
+  <!-- HEADLINE BAND -->
+  <div class="headline-band">
+    <div class="headline-left">
+      <div class="eyebrow">WEB DESIGN &amp; SEO — SERVING ALL 50 STATES</div>
+      <div class="headline">고객이 <em>먼저</em><br/>찾아오는 웹사이트</div>
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-num">50+</div>
+          <div class="stat-label">프로젝트 완료</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">5★</div>
+          <div class="stat-label">고객 만족도</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">24h</div>
+          <div class="stat-label">답변 보장</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">투명한 가격</div>
+        </div>
+      </div>
+    </div>
+    <div class="headline-right">
+      <div class="tagline">
+        검색도 되고, 팔리기까지 하는<br/>
+        웹사이트를 만들어 드립니다.<br/>
+        <span style="color:rgba(255,255,255,0.18);">구글 · ChatGPT · 네이버 모두</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="mid-rule"></div>
+
+  <!-- 3-COL CONTENT -->
+  <div class="content">
+
+    <!-- Col 1: Services -->
+    <div class="col-steps">
+      <div class="col-label">OUR SERVICES</div>
+      <div class="steps-list">
+      <div class="step">
+        <div class="step-num">01</div>
+        <div>
+          <div class="step-title"><em>SEO + GEO</em> 기본 탑재</div>
+          <div class="step-desc">구글 & ChatGPT에서 내 가게가 먼저 뜹니다</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">02</div>
+        <div>
+          <div class="step-title">원하는 <em>어떤 플랫폼</em>이든</div>
+          <div class="step-desc">Shopify · Squarespace · 맞춤 개발 모두 가능</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">03</div>
+        <div>
+          <div class="step-title">오래된 사이트 <em>리뉴얼</em>도</div>
+          <div class="step-desc">OpenCart · 구형 WordPress → 현대적으로 이전</div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">04</div>
+        <div>
+          <div class="step-title">소셜 미디어 &amp; <em>광고</em></div>
+          <div class="step-desc">구글 광고 · 인스타그램 · KakaoTalk 채널</div>
+        </div>
+      </div>
+      </div>
+    </div>
+
+    <!-- Col 2: WHY -->
+    <div class="col-checks">
+      <div class="col-label">WHY ZOE LUMOS</div>
+      <div class="checks-inner">
+        <div class="check-row">
+          <div class="check-icon">✓</div>
+          <div class="check-text">100% 투명한 가격</div>
+        </div>
+        <div class="check-row">
+          <div class="check-icon">✓</div>
+          <div class="check-text">한국어 상담 가능</div>
+        </div>
+        <div class="check-row">
+          <div class="check-icon">✓</div>
+          <div class="check-text">직접 관리 가능한 CMS</div>
+        </div>
+        <div class="check-row">
+          <div class="check-icon">✓</div>
+          <div class="check-text">모바일 완벽 최적화</div>
+        </div>
+        <div class="check-row">
+          <div class="check-icon">✓</div>
+          <div class="check-text">24시간 내 답변</div>
+        </div>
+        <div class="check-row">
+          <div class="check-icon">✓</div>
+          <div class="check-text">장기 계약 없음</div>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+  <!-- BOTTOM -->
+  <div class="bottom">
+    <div class="contact-bar">
+      <div class="c-left">
+        <div class="c-cta">지금 바로 문의하세요</div>
+        <div class="c-url">www.<em>zoelumos</em>.com</div>
+      </div>
+      <div class="c-divider"></div>
+      <div class="c-details">
+        <div class="c-detail">📧 info@zoelumos.com</div>
+        <div class="c-detail">📍 Fort Lee, NJ (전국 원격 가능)</div>
+      </div>
+    </div>
+
+    <div class="cta-btn">
+      <div class="cta-top">무료 상담</div>
+      <div class="cta-main">지금 시작하기</div>
+      <div class="cta-sub">전국 어디서나 온라인</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

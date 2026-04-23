@@ -1,0 +1,26 @@
+- banner [ref=e3]:
+  - generic [ref=e6]:
+    - heading [level=1] [ref=e7]:
+      - link [ref=e8] [cursor=pointer]:
+        - /url: "javascript:"
+        - img [ref=e9]
+    - navigation [ref=e10]:
+      - list [ref=e11]:
+        - listitem [ref=e12] [cursor=pointer]:
+          - link "홈 피드" [ref=e13]:
+            - /url: /community?new=1
+        - listitem [ref=e14] [cursor=pointer]:
+          - link "멘토링" [ref=e15]:
+            - /url: /community/mentoring?new=1
+        - listitem [ref=e16] [cursor=pointer]:
+          - link "커뮤니티" [ref=e17]:
+            - /url: /talk/community?new=1
+        - listitem [ref=e18] [cursor=pointer]:
+          - link "클럽" [ref=e19]:
+            - /url: /community/club?menu=around
+    - generic [ref=e20]:
+      - link [ref=e22] [cursor=pointer]:
+        - /url: "javascript:"
+      - link "로그인" [ref=e24] [cursor=pointer]:
+        - /url: "javascript:"
+  - generic [ref=e26] [cursor=pointer]: 글쓰기
