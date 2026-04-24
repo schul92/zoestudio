@@ -328,18 +328,35 @@ export default function HangulWordmark({
       }
     })
 
-    // Orbit light — moving specular highlight
+    // Orbit light — moving specular highlight. Parented to the group so it
+    // tracks with the wordmark when the group is scaled on mobile.
     const orbitLight = new THREE.PointLight(0xfff0d0, 3.5, 600, 1.4)
     orbitLight.position.set(180, 80, 200)
-    scene.add(orbitLight)
+    group.add(orbitLight)
 
-    // Subtle motes
+    // Visible companion sprite for the orbit light so the user actually sees
+    // a glowing orb circling the letters, not just its specular effect.
+    const orbitSpriteTex = makeMoteTexture()
+    const orbitSprite = new THREE.Sprite(
+      new THREE.SpriteMaterial({
+        map: orbitSpriteTex,
+        color: 0xffe0a8,
+        transparent: true,
+        opacity: 0.9,
+        blending: THREE.AdditiveBlending,
+        depthWrite: false,
+      }),
+    )
+    orbitSprite.scale.setScalar(90)
+    group.add(orbitSprite)
+
+    // Motes — parented to group so they scale + stay near the letters on mobile
     const moteTex = makeMoteTexture()
     const moteMat = new THREE.SpriteMaterial({
       map: moteTex,
       color: 0xfff3d0,
       transparent: true,
-      opacity: 0.9,
+      opacity: 1.0,
       blending: THREE.AdditiveBlending,
       depthWrite: false,
     })
@@ -355,10 +372,11 @@ export default function HangulWordmark({
       twinkleSpeed: number
     }
     const motes: Mote[] = []
-    for (let i = 0; i < 12; i++) {
+    const MOTE_COUNT = 18
+    for (let i = 0; i < MOTE_COUNT; i++) {
       const sprite = new THREE.Sprite(moteMat.clone())
-      const ang = (i / 12) * Math.PI * 2 + Math.random() * 0.5
-      const r = 160 + Math.random() * 140
+      const ang = (i / MOTE_COUNT) * Math.PI * 2 + Math.random() * 0.5
+      const r = 140 + Math.random() * 160
       const m: Mote = {
         sprite,
         baseX: Math.cos(ang) * r,
@@ -366,13 +384,13 @@ export default function HangulWordmark({
         baseZ: -30 + Math.random() * 120,
         phase: Math.random() * Math.PI * 2,
         speed: 0.3 + Math.random() * 0.6,
-        size: 8 + Math.random() * 18,
+        size: 14 + Math.random() * 26,
         twinklePhase: Math.random() * Math.PI * 2,
         twinkleSpeed: 1 + Math.random() * 1.5,
       }
       sprite.position.set(m.baseX, m.baseY, m.baseZ)
       sprite.scale.setScalar(m.size)
-      scene.add(sprite)
+      group.add(sprite)
       motes.push(m)
     }
 
@@ -441,6 +459,14 @@ export default function HangulWordmark({
       const flashPhase = (t % 5) / 5
       const flash = flashPhase < 0.15 ? Math.sin((flashPhase / 0.15) * Math.PI) * 4.5 : 0
       orbitLight.intensity = (3.0 + flash) * popEase
+
+      // Visible orb sprite follows the light so the user sees a glowing
+      // planet circling the wordmark. Opacity pulses with the flash.
+      orbitSprite.position.copy(orbitLight.position)
+      ;(orbitSprite.material as THREE.SpriteMaterial).opacity =
+        (0.55 + flash * 0.08 + Math.sin(t * 1.1) * 0.06) * popEase
+      const scalePulse = 90 + Math.sin(t * 1.4) * 6 + flash * 10
+      orbitSprite.scale.setScalar(scalePulse)
 
       // Subtle emissive pulse on the front face
       const idlePulse = 0.05 + Math.sin(t * 1.2) * 0.03
