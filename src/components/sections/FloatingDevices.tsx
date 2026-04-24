@@ -53,6 +53,16 @@ export default function FloatingDevices({ locale = 'en' }: { locale?: 'en' | 'ko
   const sectionRef = useRef<HTMLElement>(null)
   const [mouse, setMouse] = useState({ x: 0, y: 0 }) // -1..1
   const [scrollProgress, setScrollProgress] = useState(0) // 0..1
+  const [isDesktop, setIsDesktop] = useState(true)
+
+  // Disable 3D translations/rotations on mobile to prevent horizontal overflow
+  useEffect(() => {
+    const mq = window.matchMedia('(min-width: 768px)')
+    const update = () => setIsDesktop(mq.matches)
+    update()
+    mq.addEventListener('change', update)
+    return () => mq.removeEventListener('change', update)
+  }, [])
 
   // Track mouse across the section (desktop only)
   useEffect(() => {
@@ -166,6 +176,7 @@ export default function FloatingDevices({ locale = 'en' }: { locale?: 'en' | 'ko
             scrollShift={scrollProgress * -40}
             aspectClass="aspect-[16/10]"
             index={0}
+            isDesktop={isDesktop}
           />
 
           {/* Center device — Salt & Polish */}
@@ -184,6 +195,7 @@ export default function FloatingDevices({ locale = 'en' }: { locale?: 'en' | 'ko
             aspectClass="aspect-[4/5]"
             index={1}
             highlight
+            isDesktop={isDesktop}
           />
 
           {/* Right device — Kona Coffee Donut */}
@@ -201,6 +213,7 @@ export default function FloatingDevices({ locale = 'en' }: { locale?: 'en' | 'ko
             scrollShift={scrollProgress * -60}
             aspectClass="aspect-[16/10]"
             index={2}
+            isDesktop={isDesktop}
           />
 
           {/* Stage filler — invisible spacer to reserve vertical space */}
@@ -237,6 +250,7 @@ function DeviceCard({
   aspectClass,
   index,
   highlight,
+  isDesktop,
 }: {
   device: Device
   locale: 'en' | 'ko'
@@ -246,6 +260,7 @@ function DeviceCard({
   aspectClass: string
   index: number
   highlight?: boolean
+  isDesktop: boolean
 }) {
   const positionClass =
     anchor === 'left'
@@ -254,16 +269,22 @@ function DeviceCard({
       ? 'md:right-[2%] md:w-[36%]'
       : 'md:left-1/2 md:-translate-x-1/2 md:w-[32%]'
 
-  const style: React.CSSProperties = {
-    transform: `
-      translate3d(${baseTransform.x}%, calc(${baseTransform.y}% + ${scrollShift}px), ${baseTransform.z}px)
-      rotateX(${baseTransform.rotateX}deg)
-      rotateY(${baseTransform.rotateY}deg)
-    `,
-    transformStyle: 'preserve-3d',
-    transition: 'box-shadow .6s ease',
-    willChange: 'transform',
-  }
+  // On mobile: no 3D translate/rotate so cards sit flush in the container
+  // and don't overflow horizontally. Tilt + parallax is a desktop-only flourish.
+  const style: React.CSSProperties = isDesktop
+    ? {
+        transform: `
+          translate3d(${baseTransform.x}%, calc(${baseTransform.y}% + ${scrollShift}px), ${baseTransform.z}px)
+          rotateX(${baseTransform.rotateX}deg)
+          rotateY(${baseTransform.rotateY}deg)
+        `,
+        transformStyle: 'preserve-3d',
+        transition: 'box-shadow .6s ease',
+        willChange: 'transform',
+      }
+    : {
+        transition: 'box-shadow .6s ease',
+      }
 
   return (
     <div

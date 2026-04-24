@@ -253,7 +253,14 @@ body.has-editorial-cursor [contenteditable="true"] { cursor: text; }
 .ed-label.on { color: var(--ivory); }
 
 /* ── Word-mask reveal ──────────────────────────── */
-.mask-row { display: block; overflow: hidden; line-height: 1; }
+/* padding-top gives breathing room for tall ascenders/diacritics so letters
+   like L, h, t, K aren't clipped at the top on display-size serif text. */
+.mask-row {
+  display: block;
+  overflow: hidden;
+  line-height: 1.05;
+  padding-top: 0.08em;
+}
 .mask-rise {
   display: block;
   transform: translateY(110%);
