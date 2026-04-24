@@ -6,6 +6,7 @@ import { usePathname } from 'next/navigation'
 import { useTranslation } from '@/hooks/useTranslation'
 import Magnetic from '@/components/ui/motion/Magnetic'
 import { industries } from '@/data/industriesData'
+import { cityMarkets } from '@/data/cityMarketData'
 
 /**
  * Map an EN or KO path to the matching path in the other locale.
@@ -20,6 +21,20 @@ function computeOtherLocaleHref(pathname: string, locale: string): string {
   const decoded = (() => {
     try { return decodeURIComponent(stripped) } catch { return stripped }
   })()
+
+  // Industry × city crossover: /industries/[industry]/[city]
+  const crossover = decoded.match(/^\/industries\/([^/]+)\/([^/]+)\/?$/)
+  if (crossover) {
+    const [, iSlug, cSlug] = crossover
+    const fromKey = isKo ? 'ko' : 'en'
+    const toKey = isKo ? 'en' : 'ko'
+    const ind = industries.find((i) => i.slug[fromKey] === iSlug)
+    const city = cityMarkets.find((c) => c.slug[fromKey] === cSlug)
+    if (ind && city) {
+      const newPath = `/industries/${ind.slug[toKey]}/${city.slug[toKey]}`
+      return isKo ? newPath : `/ko${newPath}`
+    }
+  }
 
   // Industry detail page translation
   const industryMatch = decoded.match(/^\/industries\/(.+?)\/?$/)
@@ -59,9 +74,9 @@ export default function HeaderNew({ locale = 'en' }: { locale?: string }) {
   }, [menuOpen])
 
   const nav = [
-    { href: `${prefix}/about`, label: t.nav.about },
     { href: `${prefix}/portfolio`, label: locale === 'ko' ? '작업' : 'Work' },
     { href: `${prefix}/industries`, label: locale === 'ko' ? '업종' : 'Industries' },
+    { href: `${prefix}/audit`, label: locale === 'ko' ? '무료 감사' : 'Free audit' },
     { href: `${prefix}/blog`, label: t.nav.blog },
   ]
 

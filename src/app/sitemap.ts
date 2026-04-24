@@ -2,6 +2,7 @@ import { MetadataRoute } from 'next'
 import { blogContent } from '@/data/blogContent'
 import { koreanCities } from '@/data/koreanCities'
 import { industries } from '@/data/industriesData'
+import { cityMarkets } from '@/data/cityMarketData'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
@@ -106,6 +107,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })
   })
 
+  // Audit tool (both locales)
+  sitemapEntries.push({
+    url: `${baseUrl}/audit`,
+    alternates: {
+      languages: {
+        'x-default': `${baseUrl}/audit`,
+        en: `${baseUrl}/audit`,
+        ko: `${baseUrl}/ko/audit`,
+      },
+    },
+  })
+  sitemapEntries.push({
+    url: `${baseUrl}/ko/audit`,
+    alternates: {
+      languages: {
+        'x-default': `${baseUrl}/audit`,
+        en: `${baseUrl}/audit`,
+        ko: `${baseUrl}/ko/audit`,
+      },
+    },
+  })
+
   // Industries index (both locales)
   sitemapEntries.push({
     url: `${baseUrl}/industries`,
@@ -149,6 +172,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
           ko: `${baseUrl}/ko/industries/${ind.slug.ko}`,
         },
       },
+    })
+
+    // City × industry crossover pages (local SEO plays)
+    cityMarkets.forEach((c) => {
+      sitemapEntries.push({
+        url: `${baseUrl}/industries/${ind.slug.en}/${c.slug.en}`,
+        alternates: {
+          languages: {
+            'x-default': `${baseUrl}/industries/${ind.slug.en}/${c.slug.en}`,
+            en: `${baseUrl}/industries/${ind.slug.en}/${c.slug.en}`,
+            ko: `${baseUrl}/ko/industries/${ind.slug.ko}/${c.slug.ko}`,
+          },
+        },
+      })
+      sitemapEntries.push({
+        url: `${baseUrl}/ko/industries/${ind.slug.ko}/${c.slug.ko}`,
+        alternates: {
+          languages: {
+            'x-default': `${baseUrl}/industries/${ind.slug.en}/${c.slug.en}`,
+            en: `${baseUrl}/industries/${ind.slug.en}/${c.slug.en}`,
+            ko: `${baseUrl}/ko/industries/${ind.slug.ko}/${c.slug.ko}`,
+          },
+        },
+      })
     })
   })
 
