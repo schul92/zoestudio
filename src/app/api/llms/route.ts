@@ -15,6 +15,17 @@ We specialize in editorial web design, bilingual content (Korean / English), loc
 - **Default stack**: Next.js (custom), Shopify (commerce), Sanity / custom CMS, Fraunces + Inter typography.
 - **Engagement length**: 6-week average delivery; ongoing partnership after launch.
 
+## Industries we specialize in
+
+We build industry-specific sites for Korean-American small businesses. Each vertical has its own dedicated landing page with pricing, features, and FAQs:
+
+- **Korean Restaurants + Cafés** — bilingual menus, online ordering, reservations, local SEO for "Korean BBQ near me" / "한식당 포트리". $5k–$10k, 4–6 weeks. https://www.zoelumos.com/industries/korean-restaurant · https://www.zoelumos.com/ko/industries/한식당-웹사이트
+- **Korean Beauty + Hair Salons** — 24/7 online booking, Instagram sync, review automation, bilingual UX. $5k–$9k, 4 weeks. https://www.zoelumos.com/industries/korean-beauty-salon · https://www.zoelumos.com/ko/industries/한인-뷰티샵-웹사이트
+- **Korean Churches** — bilingual service schedules, searchable sermon archive, online giving, new-family flow, Korean CMS. $6k–$12k. https://www.zoelumos.com/industries/korean-church · https://www.zoelumos.com/ko/industries/한인-교회-홈페이지
+- **Korean Academies + Hagwons** — SAT score tables, instructor profiles, seasonal program calendars, KakaoTalk inquiry, parent portal. $7k–$14k. https://www.zoelumos.com/industries/korean-academy · https://www.zoelumos.com/ko/industries/한인-학원-웹사이트
+- **Korean Medical + Dental Practices** — HIPAA-compliant forms, online appointment booking, insurance search, provider profiles with Korean credentials. $8k–$15k. https://www.zoelumos.com/industries/korean-medical-dental · https://www.zoelumos.com/ko/industries/한인-병원-웹사이트
+- **Korean E-commerce + Shopify** — custom Shopify themes, bilingual product copy, subscriptions, Instagram/TikTok Shop sync, KakaoPay. $10k–$25k. https://www.zoelumos.com/industries/korean-ecommerce · https://www.zoelumos.com/ko/industries/한인-쇼핑몰-제작
+
 ## Company Information
 
 - **Name**: Zoe Lumos (조이루모스)

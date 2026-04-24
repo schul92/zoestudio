@@ -17,12 +17,14 @@ export default function Footer({ locale = 'en' }: { locale?: string }) {
       ] as [string, string][],
     },
     {
-      title: isKo ? '서비스' : 'Disciplines',
+      title: isKo ? '업종별 전문성' : 'Industries',
       links: [
-        [isKo ? '웹디자인' : 'Web design', `${prefix}/#services`],
-        [isKo ? 'SEO · GEO' : 'SEO & GEO', `${prefix}/#services`],
-        [isKo ? '구글 · 옐프 광고' : 'Google & Yelp ads', `${prefix}/#services`],
-        [isKo ? 'Shopify 커머스' : 'Shopify commerce', `${prefix}/#services`],
+        [isKo ? '한식당' : 'Korean restaurants', isKo ? '/ko/industries/한식당-웹사이트' : '/industries/korean-restaurant'],
+        [isKo ? '뷰티샵 · 헤어' : 'Beauty + salon', isKo ? '/ko/industries/한인-뷰티샵-웹사이트' : '/industries/korean-beauty-salon'],
+        [isKo ? '교회' : 'Korean church', isKo ? '/ko/industries/한인-교회-홈페이지' : '/industries/korean-church'],
+        [isKo ? '학원' : 'Academy · hagwon', isKo ? '/ko/industries/한인-학원-웹사이트' : '/industries/korean-academy'],
+        [isKo ? '의료 · 치과' : 'Medical + dental', isKo ? '/ko/industries/한인-병원-웹사이트' : '/industries/korean-medical-dental'],
+        [isKo ? '쇼핑몰 · Shopify' : 'E-commerce', isKo ? '/ko/industries/한인-쇼핑몰-제작' : '/industries/korean-ecommerce'],
       ] as [string, string][],
     },
     {

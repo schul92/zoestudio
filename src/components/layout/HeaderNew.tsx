@@ -5,6 +5,38 @@ import { useEffect, useState } from 'react'
 import { usePathname } from 'next/navigation'
 import { useTranslation } from '@/hooks/useTranslation'
 import Magnetic from '@/components/ui/motion/Magnetic'
+import { industries } from '@/data/industriesData'
+
+/**
+ * Map an EN or KO path to the matching path in the other locale.
+ * Handles: industries, home, fallback-to-root-swap.
+ */
+function computeOtherLocaleHref(pathname: string, locale: string): string {
+  // Normalize: is current path Korean-prefixed?
+  const isKo = locale === 'ko'
+  const stripped = isKo ? pathname.replace(/^\/ko/, '') || '/' : pathname
+
+  // Decode any URL-encoded hangul so we can match data slugs
+  const decoded = (() => {
+    try { return decodeURIComponent(stripped) } catch { return stripped }
+  })()
+
+  // Industry detail page translation
+  const industryMatch = decoded.match(/^\/industries\/(.+?)\/?$/)
+  if (industryMatch) {
+    const slug = industryMatch[1]
+    const fromKey = isKo ? 'ko' : 'en'
+    const toKey = isKo ? 'en' : 'ko'
+    const ind = industries.find((i) => i.slug[fromKey] === slug)
+    if (ind) {
+      const newPath = `/industries/${ind.slug[toKey]}`
+      return isKo ? newPath : `/ko${newPath}`
+    }
+  }
+
+  // Default: flip /ko prefix
+  return isKo ? stripped : `/ko${pathname}`
+}
 
 export default function HeaderNew({ locale = 'en' }: { locale?: string }) {
   const { t } = useTranslation(locale)
@@ -28,14 +60,12 @@ export default function HeaderNew({ locale = 'en' }: { locale?: string }) {
 
   const nav = [
     { href: `${prefix}/about`, label: t.nav.about },
-    { href: `${prefix}/#work`, label: locale === 'ko' ? '작업' : 'Work' },
-    { href: `${prefix}/#services`, label: t.nav.services },
+    { href: `${prefix}/portfolio`, label: locale === 'ko' ? '작업' : 'Work' },
+    { href: `${prefix}/industries`, label: locale === 'ko' ? '업종' : 'Industries' },
     { href: `${prefix}/blog`, label: t.nav.blog },
   ]
 
-  const otherLocaleHref = locale === 'ko'
-    ? (pathname?.replace(/^\/ko/, '') || '/')
-    : `/ko${pathname || ''}`
+  const otherLocaleHref = computeOtherLocaleHref(pathname || '/', locale)
 
   return (
     <header

@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next'
 import { blogContent } from '@/data/blogContent'
 import { koreanCities } from '@/data/koreanCities'
+import { industries } from '@/data/industriesData'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
@@ -102,6 +103,52 @@ export default function sitemap(): MetadataRoute.Sitemap {
           'ko': `${baseUrl}/ko${page.path}`,
         }
       }
+    })
+  })
+
+  // Industries index (both locales)
+  sitemapEntries.push({
+    url: `${baseUrl}/industries`,
+    alternates: {
+      languages: {
+        'x-default': `${baseUrl}/industries`,
+        en: `${baseUrl}/industries`,
+        ko: `${baseUrl}/ko/industries`,
+      },
+    },
+  })
+  sitemapEntries.push({
+    url: `${baseUrl}/ko/industries`,
+    alternates: {
+      languages: {
+        'x-default': `${baseUrl}/industries`,
+        en: `${baseUrl}/industries`,
+        ko: `${baseUrl}/ko/industries`,
+      },
+    },
+  })
+
+  // Industry vertical pages
+  industries.forEach((ind) => {
+    sitemapEntries.push({
+      url: `${baseUrl}/industries/${ind.slug.en}`,
+      alternates: {
+        languages: {
+          'x-default': `${baseUrl}/industries/${ind.slug.en}`,
+          en: `${baseUrl}/industries/${ind.slug.en}`,
+          ko: `${baseUrl}/ko/industries/${ind.slug.ko}`,
+        },
+      },
+    })
+    sitemapEntries.push({
+      url: `${baseUrl}/ko/industries/${ind.slug.ko}`,
+      alternates: {
+        languages: {
+          'x-default': `${baseUrl}/industries/${ind.slug.en}`,
+          en: `${baseUrl}/industries/${ind.slug.en}`,
+          ko: `${baseUrl}/ko/industries/${ind.slug.ko}`,
+        },
+      },
     })
   })
 
