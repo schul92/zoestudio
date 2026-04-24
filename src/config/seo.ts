@@ -1,22 +1,22 @@
 export const seoConfig = {
   en: {
-    title: 'ZOE LUMOS - Korean Business Web Design & SEO | Fort Lee NJ, NYC & Nationwide',
-    description: 'Bilingual web design & SEO agency trusted by Korean-American small businesses. Custom websites, Google Ads, local SEO in Fort Lee, Englewood, North Bergen, Palisades Park & nationwide. Free consultation — call today.',
-    keywords: 'Korean web design, Korean American website, Korean business website, Korean SEO agency, NJ web design, NY web design, Fort Lee web design, Bergen County web design, Korean business marketing, Shopify development, e-commerce website design, local SEO expert, digital marketing agency, SEO services, Google Ads management, small business SEO NJ, small business SEO agency Englewood NJ, SEO experts North Bergen NJ, Korean web agency, bilingual website design, korean business marketing nyc, 한인 마케팅 에이전시, Palisades Park marketing, Ridgefield web design, Edgewater web design, low cost SEO New Jersey, small business SEO agency North Bergen NJ',
+    title: 'Zoe Lumos — Websites worth remembering | Korean-American web design studio, Fort Lee NJ',
+    description: 'Editorial web design, SEO, and Shopify for Korean-American businesses. From Fort Lee to LA, we build quiet, high-performance websites that rank on Google and convert visitors into customers. Bilingual studio, free consultation.',
+    keywords: 'Korean web design, Korean American website, bilingual web design agency, Korean business website, Korean SEO agency, NJ web design, NY web design, Fort Lee web design, Bergen County web design, Shopify development, e-commerce website design, local SEO expert, digital marketing agency, Google Ads management, small business SEO NJ, Korean web agency, luxury web design NJ, editorial web design, boutique web design studio, 한인 마케팅 에이전시, Palisades Park marketing, Ridgefield web design, Edgewater web design, low cost SEO New Jersey',
     openGraph: {
-      title: 'ZOE LUMOS - Bilingual Web Design & SEO for Korean Businesses',
-      description: 'Trusted by Korean-American small businesses in Fort Lee, Englewood, North Bergen & nationwide. Custom websites, local SEO, Google Ads. Free consultation.',
-      siteName: 'ZOE LUMOS',
+      title: 'Zoe Lumos — Websites worth remembering',
+      description: 'American–Korean design studio. Editorial web design, SEO, and Shopify for Korean-American businesses across the US. Fort Lee · Manhattan · LA · Atlanta · Chicago.',
+      siteName: 'Zoe Lumos',
       locale: 'en_US',
     }
   },
   ko: {
-    title: '미국 한인 웹사이트 제작 | 뉴저지 뉴욕 캘리포니아 텍사스 전국 | ZOE LUMOS',
-    description: '미국 전역 한인 웹사이트 제작 전문. 뉴저지, 뉴욕, 캘리포니아, 텍사스, 조지아, 버지니아 등 미국 전 지역. 한인 비즈니스 홈페이지, 쇼핑몰 제작, 구글 광고, SEO 전문. 100% 한국어 상담.',
-    keywords: '미국 한인 웹사이트, 한인 웹사이트 제작, 한인 홈페이지 제작, 뉴저지 웹사이트, 뉴저지 웹사이트 제작, 뉴욕 웹사이트, 뉴욕 웹사이트 제작, 캘리포니아 웹사이트 제작, LA 한인 웹사이트, 텍사스 웹사이트 제작, 달라스 한인 웹사이트, 조지아 웹사이트 제작, 애틀랜타 한인 웹사이트, 버지니아 웹사이트 제작, 일리노이 웹사이트, 시카고 한인 웹사이트, 워싱턴 웹사이트, 시애틀 한인 웹사이트, 하와이 웹사이트, 플로리다 웹사이트, NJ 웹사이트, NY 웹사이트, 포트리 웹사이트, 팰팍 웹사이트, 팰팍 웹사이트 제작, 플러싱 웹사이트, 한인 쇼핑몰 제작, 쇼피파이, 구글광고, 옐프광고, 한인 SEO, 검색엔진최적화, 미주 한인 비즈니스, 디지털 마케팅, 웹디자인, 한인 마케팅 에이전시 뉴저지, 리지필드 웹사이트, 에지워터 웹사이트',
+    title: '오래도록 기억되는 웹사이트 | 한인 웹디자인 스튜디오 ZOE LUMOS | 뉴저지 · LA · 전국',
+    description: '미국 전역 한인 비즈니스를 위한 에디토리얼 웹사이트 제작, SEO, Shopify. 포트리에서 LA까지 — 구글 상위 노출과 고객 전환을 만들어내는, 조용하지만 단단한 웹사이트. 한국어 · 영어 이중언어 상담.',
+    keywords: '미국 한인 웹사이트, 한인 웹사이트 제작, 한인 홈페이지 제작, 뉴저지 웹사이트, 뉴저지 웹사이트 제작, 뉴욕 웹사이트, 뉴욕 웹사이트 제작, 캘리포니아 웹사이트 제작, LA 한인 웹사이트, 텍사스 웹사이트 제작, 달라스 한인 웹사이트, 조지아 웹사이트 제작, 애틀랜타 한인 웹사이트, 버지니아 웹사이트 제작, 일리노이 웹사이트, 시카고 한인 웹사이트, 워싱턴 웹사이트, 시애틀 한인 웹사이트, 하와이 웹사이트, 플로리다 웹사이트, NJ 웹사이트, NY 웹사이트, 포트리 웹사이트, 팰팍 웹사이트, 플러싱 웹사이트, 한인 쇼핑몰 제작, 쇼피파이, 구글광고, 옐프광고, 한인 SEO, 검색엔진최적화, 미주 한인 비즈니스, 디지털 마케팅, 웹디자인',
     openGraph: {
-      title: '미국 한인 웹사이트 제작 | 전국 한인 비즈니스 전문 | ZOE LUMOS',
-      description: '미국 전역 한인 웹사이트 제작. NJ, NY, CA, TX, GA, VA 등 전 지역. 쇼핑몰, SEO, 구글광고. 100% 한국어 상담.',
+      title: '오래도록 기억되는 웹사이트 | ZOE LUMOS',
+      description: '미국 전역 한인 비즈니스를 위한 에디토리얼 웹디자인 스튜디오. NJ · NY · CA · TX · GA · VA 등. 웹사이트 제작, SEO, Shopify, 구글광고.',
       siteName: 'ZOE LUMOS 조이루모스',
       locale: 'ko_KR',
     }
@@ -39,7 +39,9 @@ export const structuredData = {
       "height": 512
     },
     "email": "info@zoelumos.com",
-    "description": "Bilingual Korean-English digital marketing agency serving Korean-American small businesses nationwide. Services include web design, SEO, Google Ads, and e-commerce.",
+    "description": "American-Korean design studio for Korean-American businesses. Editorial web design, SEO, Shopify e-commerce, and Google Ads — serving Fort Lee, Manhattan, LA, Atlanta, Chicago, and nationwide. Bilingual (English · Korean).",
+    "slogan": "Websites worth remembering.",
+    "foundingDate": "2019",
     "contactPoint": [
       {
         "@type": "ContactPoint",
@@ -69,7 +71,8 @@ export const structuredData = {
     "@id": "https://www.zoelumos.com/#localbusiness",
     "name": "ZOE LUMOS",
     "alternateName": ["ZOE STUDIO LLC", "조이루모스"],
-    "description": "Bilingual Korean-English digital marketing agency in Fort Lee, NJ. Web design, SEO, Google Ads, and Shopify e-commerce for Korean-American businesses nationwide.",
+    "description": "American-Korean design studio in Fort Lee, NJ. Editorial web design, SEO, Google Ads, and Shopify e-commerce for Korean-American businesses across the US. Bilingual studio (English · Korean).",
+    "slogan": "Websites worth remembering.",
     "image": "https://www.zoelumos.com/og-image.png",
     "email": "info@zoelumos.com",
     "url": "https://www.zoelumos.com",

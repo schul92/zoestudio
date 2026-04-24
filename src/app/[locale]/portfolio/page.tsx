@@ -190,8 +190,49 @@ export default function PortfolioPage({ params }: { params: { locale: string } }
     ...project[locale],
   }))
 
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
+  const prefix = locale === 'ko' ? '/ko' : ''
+  const crumbs = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: locale === 'ko' ? '홈' : 'Home', item: `${baseUrl}${prefix || ''}` },
+      { '@type': 'ListItem', position: 2, name: t.hero.title, item: `${baseUrl}${prefix}/portfolio` },
+    ],
+  }
+  const collection = {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    '@id': `${baseUrl}${prefix}/portfolio#collection`,
+    url: `${baseUrl}${prefix}/portfolio`,
+    name: t.hero.title,
+    description: t.hero.description,
+    inLanguage: locale === 'ko' ? 'ko-KR' : 'en-US',
+    isPartOf: { '@id': `${baseUrl}/#website` },
+    publisher: { '@id': `${baseUrl}/#organization` },
+    mainEntity: {
+      '@type': 'ItemList',
+      numberOfItems: localizedProjects.length,
+      itemListElement: localizedProjects.map((p, i) => ({
+        '@type': 'ListItem',
+        position: i + 1,
+        item: {
+          '@type': 'CreativeWork',
+          name: p.title,
+          url: p.url,
+          image: `${baseUrl}${p.image}`,
+          about: p.category,
+          keywords: p.services.join(', '),
+          creator: { '@id': `${baseUrl}/#organization` },
+        },
+      })),
+    },
+  }
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(crumbs) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collection) }} />
       <HeaderWrapper locale={locale} />
       <PortfolioClient t={t} projects={localizedProjects} locale={locale} />
       <Footer locale={locale} />

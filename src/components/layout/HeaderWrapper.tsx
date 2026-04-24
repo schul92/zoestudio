@@ -2,7 +2,7 @@
 
 import dynamic from 'next/dynamic'
 
-const Header = dynamic(() => import('./HeaderRedesign'), {
+const Header = dynamic(() => import('./HeaderNew'), {
   ssr: true,
   loading: () => (
     <header className="fixed top-0 w-full z-[100] bg-white/10 backdrop-blur-sm">

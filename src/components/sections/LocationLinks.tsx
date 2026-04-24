@@ -1,143 +1,215 @@
-import Link from 'next/link'
-import { MapPin, ChevronRight } from 'lucide-react'
+'use client'
 
-export default function LocationLinks({ locale = 'en' }: { locale?: string }) {
-  const prefix = locale === 'ko' ? '/ko' : ''
-  
-  // Use Korean URL slugs for Korean locale (better for Korean SEO)
+import { useState } from 'react'
+import Link from 'next/link'
+import InView from '@/components/ui/motion/InView'
+import USMap, { cities } from './USMap'
+
+export default function LocationLinks({
+  locale = 'en',
+  sectionNumber = '05',
+}: {
+  locale?: string
+  sectionNumber?: string
+}) {
+  const isKo = locale === 'ko'
+  const [active, setActive] = useState<string | null>(null)
+
   const locations = [
     {
-      name: locale === 'ko' ? '뉴저지 웹사이트 제작' : 'New Jersey Web Design',
-      href: locale === 'ko' ? '/ko/뉴저지-웹사이트' : '/nj-website',
-      description: locale === 'ko'
-        ? '포트리, 팰팍, 에디슨, 체리힐 한인 비즈니스'
-        : 'Fort Lee, Palisades Park, Edison specialists',
-      icon: '🌉',
-      keywords: locale === 'ko' ? ['뉴저지', 'NJ', '포트리'] : ['New Jersey', 'NJ', 'Fort Lee']
+      id: 'nj',
+      name: isKo ? '뉴저지' : 'New Jersey',
+      cities: isKo ? '포트리 · 팰팍 · 에디슨' : 'Fort Lee · Palisades Park · Edison',
+      href: isKo ? '/ko/뉴저지-웹사이트' : '/nj-website',
     },
     {
-      name: locale === 'ko' ? '뉴욕 웹사이트 제작' : 'New York Web Design',
-      href: locale === 'ko' ? '/ko/뉴욕-웹사이트' : '/ny-website',
-      description: locale === 'ko'
-        ? '맨하탄, 플러싱, 퀸즈, 브루클린 한인 비즈니스'
-        : 'Manhattan, Flushing, Queens, Brooklyn specialists',
-      icon: '🗽',
-      keywords: locale === 'ko' ? ['뉴욕', 'NYC', '플러싱'] : ['New York', 'NYC', 'Flushing']
+      id: 'ny',
+      name: isKo ? '뉴욕' : 'New York',
+      cities: isKo ? '맨하탄 · 플러싱 · 브루클린' : 'Manhattan · Flushing · Brooklyn',
+      href: isKo ? '/ko/뉴욕-웹사이트' : '/ny-website',
     },
     {
-      name: locale === 'ko' ? '캘리포니아 웹사이트 제작' : 'California Web Design',
-      href: locale === 'ko' ? '/ko/캘리포니아-웹사이트' : '/ca-website',
-      description: locale === 'ko'
-        ? 'LA 코리아타운, 오렌지카운티, 샌프란시스코'
-        : 'LA Koreatown, Orange County, San Francisco',
-      icon: '🌴',
-      keywords: locale === 'ko' ? ['캘리포니아', 'LA', '코리아타운'] : ['California', 'LA', 'Koreatown']
+      id: 'ca',
+      name: isKo ? '캘리포니아' : 'California',
+      cities: isKo ? 'LA · 오렌지 카운티 · 샌프란시스코' : 'LA · Orange County · SF',
+      href: isKo ? '/ko/캘리포니아-웹사이트' : '/ca-website',
     },
     {
-      name: locale === 'ko' ? '텍사스 웹사이트 제작' : 'Texas Web Design',
-      href: locale === 'ko' ? '/ko/텍사스-웹사이트' : '/tx-website',
-      description: locale === 'ko'
-        ? '달라스, 휴스턴, 오스틴 한인 비즈니스'
-        : 'Dallas, Houston, Austin Korean businesses',
-      icon: '⛳',
-      keywords: locale === 'ko' ? ['텍사스', 'TX', '달라스'] : ['Texas', 'TX', 'Dallas']
+      id: 'tx',
+      name: isKo ? '텍사스' : 'Texas',
+      cities: isKo ? '달라스 · 휴스턴 · 오스틴' : 'Dallas · Houston · Austin',
+      href: isKo ? '/ko/텍사스-웹사이트' : '/tx-website',
     },
     {
-      name: locale === 'ko' ? '조지아 웹사이트 제작' : 'Georgia Web Design',
-      href: locale === 'ko' ? '/ko/조지아-웹사이트' : '/ga-website',
-      description: locale === 'ko'
-        ? '애틀랜타, 둘루스, 수와니 한인 비즈니스'
-        : 'Atlanta, Duluth, Suwanee Korean businesses',
-      icon: '🍑',
-      keywords: locale === 'ko' ? ['조지아', 'GA', '애틀랜타'] : ['Georgia', 'GA', 'Atlanta']
+      id: 'ga',
+      name: isKo ? '조지아' : 'Georgia',
+      cities: isKo ? '애틀랜타 · 둘루스 · 수와니' : 'Atlanta · Duluth · Suwanee',
+      href: isKo ? '/ko/조지아-웹사이트' : '/ga-website',
     },
     {
-      name: locale === 'ko' ? '버지니아 웹사이트 제작' : 'Virginia Web Design',
-      href: locale === 'ko' ? '/ko/버지니아-웹사이트' : '/va-website',
-      description: locale === 'ko'
-        ? '노던버지니아, 애난데일, 센터빌 한인 비즈니스'
-        : 'Northern Virginia, Annandale, Centreville Korean businesses',
-      icon: '🏛️',
-      keywords: locale === 'ko' ? ['버지니아', 'VA', '애난데일'] : ['Virginia', 'VA', 'Annandale']
+      id: 'va',
+      name: isKo ? '버지니아' : 'Virginia',
+      cities: isKo ? '애난데일 · 센터빌 · 페어팩스' : 'Annandale · Centreville · Fairfax',
+      href: isKo ? '/ko/버지니아-웹사이트' : '/va-website',
+    },
+    {
+      id: 'il',
+      name: isKo ? '일리노이' : 'Illinois',
+      cities: isKo ? '시카고 · 나일스 · 글렌뷰' : 'Chicago · Niles · Glenview',
+      href: isKo ? '/ko/일리노이-웹사이트' : '/il-website',
+    },
+    {
+      id: 'wa',
+      name: isKo ? '워싱턴' : 'Washington',
+      cities: isKo ? '시애틀 · 벨뷰 · 린우드' : 'Seattle · Bellevue · Lynnwood',
+      href: isKo ? '/ko/워싱턴-웹사이트' : '/wa-website',
+    },
+    {
+      id: 'md',
+      name: isKo ? '메릴랜드' : 'Maryland',
+      cities: isKo ? '엘리콧시티 · 게이더스버그 · 록빌' : 'Ellicott City · Gaithersburg · Rockville',
+      href: isKo ? '/ko/메릴랜드-웹사이트' : '/md-website',
+    },
+    {
+      id: 'hi',
+      name: isKo ? '하와이' : 'Hawaii',
+      cities: isKo ? '호놀룰루 · 카일루아' : 'Honolulu · Kailua',
+      href: isKo ? '/ko/하와이-웹사이트' : '/hi-website',
     },
   ]
-  
+
+  const cityRoll = [
+    'Fort Lee', 'Palisades Park', 'Flushing', 'Manhattan', 'Brooklyn',
+    'Koreatown LA', 'Orange County', 'San Francisco', 'Dallas', 'Houston',
+    'Atlanta', 'Duluth', 'Chicago', 'Seattle', 'Annandale', 'Ellicott City', 'Honolulu',
+  ]
+
   return (
-    <section className="grain-overlay py-16 bg-[#111111] relative overflow-hidden">
-      {/* Subtle radial gradients */}
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_40%_at_50%_50%,rgba(245,158,11,0.02),transparent_70%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_30%,rgba(96,165,250,0.02),transparent_50%)]" />
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            {locale === 'ko' ? '서비스 지역' : 'Service Areas'}
-          </h2>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto">
-            {locale === 'ko'
-              ? '미국 전역 한인 비즈니스를 위한 전문 웹사이트 제작'
-              : 'Professional web development for Korean-American businesses nationwide'}
-          </p>
+    <section className="relative bg-bone section-pad hair-bottom">
+      <div className="container-edge">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 mb-16 md:mb-20">
+          <div className="md:col-span-5">
+            <InView className="flex items-center gap-3 overline text-ash mb-6 hair-draw pb-4">
+              <span className="section-num not-italic text-ink font-normal">§ {sectionNumber}</span>
+              <span className="h-px w-10 bg-hairline" />
+              <span>{isKo ? '서비스 지역' : 'Presence'}</span>
+            </InView>
+            <h2 className="font-display text-display-lg text-ink tracking-luxury">
+              <InView as="span" className="mask-row">
+                <span className="mask-rise block">
+                  {isKo ? '비즈니스가' : 'Wherever your'}
+                </span>
+              </InView>
+              <InView as="span" className="mask-row" delay={150}>
+                <span className="mask-rise block italic font-light text-gold fraunces-soft">
+                  {isKo ? '있는 곳이라면.' : 'business lives.'}
+                </span>
+              </InView>
+            </h2>
+          </div>
+          <div className="md:col-span-6 md:col-start-7 md:pt-16">
+            <InView as="p" className="reveal text-body-lg text-graphite leading-[1.7] max-w-xl">
+              <span>
+                {isKo
+                  ? '포트리에서 시작해 뉴욕, LA, 애틀랜타, 시카고까지. 한인 · 미국인 비즈니스 모두를 위한 로컬 SEO와 (필요하다면) 이중언어 콘텐츠를 제공합니다.'
+                  : 'From Fort Lee to Atlanta, Chicago to LA — local SEO, brand systems, and bilingual content when it fits. Korean-American businesses and American-founded brands alike.'}
+              </span>
+            </InView>
+          </div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {locations.map((location) => (
-            <Link
-              key={location.href}
-              href={location.href}
-              className="group relative bg-white/[0.03] rounded-xl p-8 transition-all duration-300 transform hover:-translate-y-1 border border-white/[0.08] hover:border-amber-500/30 hover:shadow-glow-sm"
-            >
-              <div className="flex items-start justify-between">
-                <div className="flex-1">
-                  <div className="flex items-center gap-3 mb-4">
-                    <span className="text-4xl">{location.icon}</span>
-                    <h3 className="text-2xl font-bold text-white group-hover:text-amber-400 transition-colors">
-                      {location.name}
-                    </h3>
-                  </div>
-                  <p className="text-gray-400 mb-4">
-                    {location.description}
-                  </p>
-                  <div className="flex flex-wrap gap-2">
-                    {location.keywords.map((keyword) => (
-                      <span
-                        key={keyword}
-                        className="px-3 py-1 bg-white/[0.04] text-gray-500 rounded-full text-sm border border-white/[0.06] group-hover:border-amber-500/20 group-hover:text-amber-400/80 transition-colors"
-                      >
-                        {keyword}
-                      </span>
-                    ))}
-                  </div>
+        {/* Map + list */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-14 items-start">
+          <div className="md:col-span-7 md:sticky md:top-28">
+            <InView className="reveal">
+              <div className="relative">
+                <div className="absolute -top-4 left-0 overline text-ash">
+                  {isKo ? '10개 주 · 150+ 프로젝트' : '10 states · 150+ projects'}
                 </div>
-                <ChevronRight className="w-6 h-6 text-gray-500 group-hover:text-amber-400 transition-colors transform group-hover:translate-x-1" />
+                <USMap
+                  activeId={active}
+                  onHover={setActive}
+                  className="w-full h-auto text-ink"
+                />
               </div>
+            </InView>
+          </div>
 
-              {/* SEO-friendly additional text */}
-              <div className="mt-4 pt-4 border-t border-white/[0.06]">
-                <p className="text-xs text-gray-500">
-                  {locale === 'ko'
-                    ? '✓ 로컬 SEO 최적화 ✓ 구글 1위 보장 ✓ 한국어/영어 지원'
-                    : '✓ Local SEO Optimized ✓ Google #1 Rankings ✓ Bilingual Support'}
-                </p>
-              </div>
-            </Link>
-          ))}
-        </div>
-
-        {/* Additional SEO text */}
-        <div className="mt-12 text-center">
-          <p className="text-sm text-gray-500 max-w-3xl mx-auto">
-            {locale === 'ko'
-              ? 'ZOE LUMOS는 미국 전역 한인 비즈니스 웹사이트 제작 전문 에이전시입니다. 뉴저지, 뉴욕, 캘리포니아, 텍사스, 조지아, 버지니아 외 하와이, 일리노이, 워싱턴, 메릴랜드, 펜실베이니아, 플로리다까지 전국 서비스.'
-              : 'ZOE LUMOS is the leading web design agency for Korean-American businesses nationwide. Serving NJ, NY, CA, TX, GA, VA, HI, IL, WA, MD, PA, FL and all 50 states.'}
-          </p>
+          <ul className="md:col-span-5">
+            {locations.map((loc, i) => {
+              const isActive = active === loc.id
+              return (
+                <InView
+                  key={loc.href}
+                  as="li"
+                  className="reveal border-b border-hairline first:border-t"
+                  delay={i * 40}
+                >
+                  <Link
+                    href={loc.href}
+                    data-cursor="view"
+                    onMouseEnter={() => setActive(loc.id)}
+                    onMouseLeave={() => setActive(null)}
+                    onFocus={() => setActive(loc.id)}
+                    onBlur={() => setActive(null)}
+                    className={`group flex items-baseline justify-between gap-6 py-5 md:py-6 transition-all duration-500 ${
+                      isActive ? 'pl-4' : ''
+                    }`}
+                  >
+                    <div className="flex items-baseline gap-4">
+                      <span
+                        className={`section-num text-sm transition-colors duration-500 ${
+                          isActive ? 'text-gold' : ''
+                        }`}
+                      >
+                        0{i + 1}
+                      </span>
+                      <div>
+                        <div className={`font-display text-[clamp(1.4rem,2.2vw,1.9rem)] tracking-luxury leading-tight fraunces-soft transition-all duration-500 ${
+                          isActive ? 'italic text-gold font-light' : 'text-ink'
+                        }`}>
+                          {loc.name}
+                        </div>
+                        <p className="mt-1 text-[12px] text-ash">{loc.cities}</p>
+                      </div>
+                    </div>
+                    <span
+                      aria-hidden
+                      className={`transition-all duration-500 ${
+                        isActive ? 'text-gold translate-x-0' : 'text-ash -translate-x-2'
+                      }`}
+                    >
+                      ↗
+                    </span>
+                  </Link>
+                </InView>
+              )
+            })}
+          </ul>
         </div>
       </div>
 
-      {/* Bottom divider */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500/20 to-transparent" />
+      {/* Reverse marquee */}
+      <div className="mt-24 md:mt-32 hair-y py-6 marq-wrap" data-dir="reverse" data-cursor="drag">
+        <div className="overflow-hidden">
+          <div className="marq font-display text-ash/80">
+            {[...cityRoll, ...cityRoll, ...cityRoll].map((c, i) => (
+              <span key={i} className="flex items-center gap-10 text-[clamp(1.1rem,2vw,1.6rem)]">
+                <span className="italic font-light fraunces-soft">{c}</span>
+                <span className="w-1 h-1 rounded-full bg-gold" />
+              </span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <div className="container-edge">
+        <p className="mt-14 text-[13px] text-ash max-w-3xl leading-[1.7]">
+          {isKo
+            ? 'ZOE LUMOS는 미국 전역 한인 비즈니스의 웹사이트 제작과 디지털 마케팅을 전담합니다. 뉴저지, 뉴욕, 캘리포니아, 텍사스, 조지아, 버지니아 외 하와이, 펜실베이니아, 플로리다까지 50개 주 서비스.'
+            : 'Zoe Lumos serves Korean-American businesses across all 50 states — with bilingual teams, local SEO expertise, and ten dedicated city practices.'}
+        </p>
+      </div>
     </section>
   )
 }

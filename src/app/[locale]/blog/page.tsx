@@ -61,6 +61,25 @@ export async function generateMetadata({
 // Blog posts data (can be moved to a separate file or CMS later)
 const blogPosts = [
   {
+    id: 0,
+    slug: 'why-anthropic-chose-aws',
+    date: '2026-04-22',
+    readTime: 9,
+    category: {
+      en: 'Architecture',
+      ko: '아키텍처'
+    },
+    title: {
+      en: 'Why Anthropic Built Claude on AWS (And What Small Businesses Can Learn)',
+      ko: '앤트로픽은 왜 Claude를 AWS 위에 올렸나 — 그리고 소규모 비즈니스가 배울 점'
+    },
+    excerpt: {
+      en: 'The $8B bet, Trainium2 chips, Project Rainier, and the quiet lesson hiding inside all of it: the smartest companies don\'t build infrastructure — they pick the right partner.',
+      ko: '80억 달러의 베팅, Trainium2 칩, 프로젝트 레이니어, 그리고 이 모든 것에 숨겨진 조용한 교훈 — 가장 똑똑한 회사들은 인프라를 직접 짓지 않는다. 올바른 파트너를 고른다.'
+    },
+    image: '/blog/why-anthropic-chose-aws.png'
+  },
+  {
     id: 1,
     slug: 'korean-business-website-guide-2026',
     date: '2026-03-01',
@@ -307,12 +326,27 @@ export default function BlogPage({ params }: { params: { locale: string } }) {
   const locale = params.locale as 'en' | 'ko'
   const t = content[locale]
 
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
+  const prefix = locale === 'ko' ? '/ko' : ''
+  const crumbs = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: locale === 'ko' ? '홈' : 'Home', item: `${baseUrl}${prefix || ''}` },
+      { '@type': 'ListItem', position: 2, name: t.title, item: `${baseUrl}${prefix}/blog` },
+    ],
+  }
+
   return (
     <>
       <HeaderWrapper locale={locale} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(generateBlogSchema(locale)) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(crumbs) }}
       />
       <BlogListing posts={postsWithImages} locale={locale} content={t} />
       <Footer locale={locale} />

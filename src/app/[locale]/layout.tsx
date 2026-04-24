@@ -1,23 +1,35 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Fraunces } from 'next/font/google'
 import '../globals.css'
 import { seoConfig, structuredData } from '@/config/seo'
 import { ServiceProvider } from '@/context/ServiceContext'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
 import AnalyticsWrapper from '@/components/AnalyticsWrapper'
+import SmoothScroll from '@/components/ui/motion/SmoothScroll'
+import CursorEditorial from '@/components/ui/motion/CursorEditorial'
 
-const inter = Inter({ 
+const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
   preload: true,
-  fallback: ['system-ui', 'arial']
+  fallback: ['system-ui', 'arial'],
+  variable: '--font-sans',
+})
+
+const fraunces = Fraunces({
+  subsets: ['latin'],
+  display: 'swap',
+  weight: ['300', '400', '500', '600'],
+  style: ['normal', 'italic'],
+  variable: '--font-serif',
+  preload: true,
 })
 
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   maximumScale: 5,
-  themeColor: '#000000',
+  themeColor: '#FAF7F0',
 }
 
 export async function generateMetadata({
@@ -110,7 +122,7 @@ export default function RootLayout({
           __html: `
             /* Critical CSS for above-the-fold content */
             * { margin: 0; padding: 0; box-sizing: border-box; }
-            body { font-family: system-ui, -apple-system, sans-serif; line-height: 1.5; background-color: #111111; color: #ffffff; }
+            body { font-family: system-ui, -apple-system, sans-serif; line-height: 1.5; background-color: #FAF7F0; color: #141414; }
             .min-h-screen { min-height: 100vh; }
             .flex { display: flex; }
             .items-center { align-items: center; }
@@ -124,7 +136,6 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-        <link rel="preload" as="image" href="/videos/hero-poster.jpg?v=20260310c" fetchPriority="high" />
         <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='M50 20C36.193 20 25 31.193 25 45C25 53.284 29.163 60.622 35.547 65.047C36.719 65.922 37.5 67.266 37.5 68.75V75C37.5 76.381 38.619 77.5 40 77.5H60C61.381 77.5 62.5 76.381 62.5 75V68.75C62.5 67.266 63.281 65.922 64.453 65.047C70.837 60.622 75 53.284 75 45C75 31.193 63.807 20 50 20Z' stroke='black' stroke-width='3' fill='none'/><path d='M42.5 77.5V80C42.5 82.761 44.739 85 47.5 85H52.5C55.261 85 57.5 82.761 57.5 80V77.5' stroke='black' stroke-width='3'/></svg>" />
         <meta name="google" content="notranslate" />
         <meta property="og:type" content="website" />
@@ -169,11 +180,13 @@ export default function RootLayout({
         />
         {/* FAQPage schema moved to homepage only — Google requires FAQ content to be visible on the page */}
       </head>
-      <body className={`${inter.className} bg-brand-ivory text-brand-charcoal`} style={{ position: 'relative' }}>
+      <body className={`${inter.variable} ${fraunces.variable} font-sans bg-ivory text-ink antialiased`} style={{ position: 'relative' }}>
         {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
           <GoogleAnalytics GA_MEASUREMENT_ID={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
         )}
         <AnalyticsWrapper />
+        <SmoothScroll />
+        <CursorEditorial />
         <ServiceProvider>
           {children}
         </ServiceProvider>

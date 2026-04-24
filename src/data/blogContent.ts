@@ -21,6 +21,88 @@ export interface BlogPost {
 
 export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
+  // ARTICLE 0 — Why Anthropic chose AWS (architecture)
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'why-anthropic-chose-aws',
+    date: '2026-04-22',
+    updatedDate: '2026-04-22',
+    readTime: 9,
+    category: { en: 'Architecture', ko: '아키텍처' },
+    title: {
+      en: 'Why Anthropic Built Claude on AWS (And What Small Businesses Can Learn)',
+      ko: '앤트로픽은 왜 Claude를 AWS 위에 올렸나 — 그리고 소규모 비즈니스가 배울 점',
+    },
+    metaDescription: {
+      en: 'Anthropic made AWS its primary cloud and training partner with Amazon investing up to $8B. Here is why the bet made sense — Trainium2 chips, Project Rainier, Bedrock distribution — and the quiet lesson for any business building on the internet in 2026.',
+      ko: '앤트로픽이 AWS를 주요 클라우드 및 학습 파트너로 선택하고, 아마존은 최대 80억 달러를 투자했다. Trainium2 칩, 프로젝트 레이니어, Bedrock 유통망 — 이 선택이 합리적인 이유와, 2026년 인터넷 위에서 사업하는 모든 이에게 조용히 남기는 교훈.',
+    },
+    author: 'Zoe Lumos Studio',
+    sections: {
+      en: [
+        { type: 'intro', content: "When Amazon committed up to $8 billion to Anthropic and Anthropic named AWS its primary cloud and primary training partner, the headlines focused on the number. The interesting story is everywhere else — in the chips, the data centers, the distribution channels, and in a small, quiet lesson tucked inside the whole deal that applies to any business building on the internet today, Korean-American café or otherwise." },
+        { type: 'h2', content: 'What actually happened' },
+        { type: 'p', content: "Anthropic makes Claude — the AI model that now sits behind a growing slice of the knowledge economy. Training and serving a frontier model at Claude's scale is a physical-world problem. You need electricity, cooling, custom chips, networking, and the software layer to orchestrate it all. Building that from scratch would take five years and tens of billions of dollars before you wrote a single line of model code." },
+        { type: 'p', content: 'Amazon Web Services already has that. It already owns data centers in dozens of regions, has designed its own AI training silicon called Trainium2, and sells enterprise AI through a product called Amazon Bedrock. Anthropic had the models. AWS had the infrastructure to run them and the sales force to sell them. The deal, simplified: AWS invests up to $8B into Anthropic. Anthropic makes AWS its primary cloud. Claude runs on Trainium2 chips inside a new cluster called Project Rainier — reported to bring roughly five times the compute that was used to train previous Claude generations. Claude models ship through Amazon Bedrock to millions of AWS enterprise customers who were never going to shop for an AI model elsewhere.' },
+        { type: 'h2', content: 'Why Anthropic said yes' },
+        { type: 'p', content: 'The easy read is "Anthropic took the check." The interesting read is: they chose vertical integration without having to pay for it.' },
+        { type: 'ul', content: 'Four reasons the partnership made sense for Anthropic:', items: [
+          'Compute at frontier scale — Project Rainier is one of the largest AI training clusters ever built. Without a partner like AWS, Anthropic would have to compete with hyperscalers for GPU supply and data-center leases. Owning a dedicated slice of AWS removes that competition.',
+          "Silicon that isn't NVIDIA — Trainium2 is Amazon's answer to NVIDIA's H100 and B200. Using Trainium softens Anthropic's exposure to NVIDIA pricing and allocation, and co-design with AWS engineers lets them squeeze more training efficiency per dollar.",
+          'Instant distribution via Bedrock — Every Fortune 500 company with an AWS contract can call Claude through Bedrock without a new vendor, legal review, or procurement cycle. That turns AWS into a direct sales channel for Claude in every industry that still lives behind enterprise procurement.',
+          'Focus — The money and infrastructure free Anthropic to keep doing the one thing it is actually good at: training models. Nobody on the Claude team needs to spend Q3 negotiating with utility companies about substation capacity in Oregon.',
+        ] },
+        { type: 'h2', content: 'Why AWS said yes' },
+        { type: 'p', content: "The mirror version. Microsoft's partnership with OpenAI gave Azure a several-year lead in enterprise AI. AWS had to answer. A deep alignment with Anthropic gives AWS a front-row frontier model, a flagship customer for Trainium chips (validating the investment to every other AI lab watching), and a credible AI story to tell on enterprise sales calls. For AWS, the Anthropic partnership is less about a single customer and more about making Trainium a viable alternative to NVIDIA — which, if it works, is worth far more than $8B over a decade." },
+        { type: 'tip', content: 'The pattern is bigger than one deal. Frontier AI is increasingly a co-investment between a hyperscaler (compute + distribution) and a lab (research). Microsoft × OpenAI. Amazon × Anthropic. Google × its own DeepMind. Owning the physical layer is how you own the market.' },
+        { type: 'h2', content: 'What a small business should take from this' },
+        { type: 'p', content: 'It sounds distant — billions of dollars, custom silicon, Oregon substations. But the decision pattern is the same one a Korean-American dental practice in Fort Lee or a café in Honolulu faces every time it thinks about its website, payments, delivery, or marketing stack. The question is never really "should we build it?" — the question is "what should we own, and what should we rent from someone who has already spent a decade perfecting it?"' },
+        { type: 'p', content: 'Anthropic did not try to become a data-center company. It chose a partner whose entire reason for existing was to be the best data-center company, and it used that partnership to stay focused on the thing only Anthropic can do — training the actual model. The small-business version of this decision looks modest but works identically. You do not need your own servers. You do not need to write a booking engine from scratch. You do not need to reinvent email, invoicing, or analytics.' },
+        { type: 'ul', content: 'What this looks like in practice, for the kind of client we work with at Zoe Lumos:', items: [
+          "Hosting on a platform built for the modern web (Vercel, Cloudflare, AWS Amplify) rather than a VPS you have to patch. Same principle Anthropic applied, three orders of magnitude smaller.",
+          "Commerce on Shopify — not because it is the only option, but because fraud detection, tax, inventory, and checkout reliability are not your studio's core competency. Let someone who has spent 15 years on it handle it.",
+          'Payments via Stripe. Delivery via your integrated partner. Analytics via Google + PostHog. Every one of these is a "rent, do not build" decision.',
+          'Own the things that make you different — your brand, your copy, your customer relationships, your craft. Rent everything else from the company that does it better than you ever will.',
+        ] },
+        { type: 'h2', content: 'How we think about architecture for our own clients' },
+        { type: 'p', content: "When we build a website at Zoe Lumos, the instinct is never \"how much of this can we assemble from scratch?\" The instinct is \"which boring, difficult, already-solved problems can we get off our client's plate so their business can be about the thing only they can do?\" We pick Next.js for the front-end because someone else has spent years on rendering, caching, and image optimization. We pick Shopify when commerce is serious. We pick Vercel for hosting because edge-caching a static page is a problem that was solved a decade ago by people who care about it more than we do. Then we spend our time on the parts that are genuinely custom — the typography, the editorial direction, the bilingual voice, the subtle motion that makes a site feel like yours and not a template." },
+        { type: 'p', content: "The $8B deal between Anthropic and AWS is the extreme end of the same discipline. Rent the hard physical-world problems from a partner who is world-class at them. Spend your irreplaceable hours on the parts of the work that only you can do. That is the quiet architecture principle underneath both a frontier AI lab and a neighborhood dental practice's new website. The scale is different. The shape of the decision is the same." },
+        { type: 'cta', content: 'Thinking about the stack behind your next website? We make these architecture decisions with every client — what to own, what to rent, what to build custom. A 30-minute conversation is enough to sketch the shape of it together.' },
+      ],
+      ko: [
+        { type: 'intro', content: '아마존이 앤트로픽에 최대 80억 달러를 투자하고, 앤트로픽이 AWS를 주요 클라우드 및 학습 파트너로 지정했을 때 — 헤드라인은 숫자에 집중했다. 정작 흥미로운 이야기는 다른 곳에 있다. 칩, 데이터센터, 유통 채널, 그리고 이 거래 속에 조용히 자리잡은 교훈 — 오늘날 인터넷 위에서 사업하는 누구에게나 적용되는 교훈. 포트리의 카페든, 프런티어 AI 연구소든.' },
+        { type: 'h2', content: '무슨 일이 벌어진 건가' },
+        { type: 'p', content: '앤트로픽은 Claude를 만든다. 오늘날 지식 경제의 점점 더 큰 부분을 뒤에서 받치고 있는 AI 모델이다. Claude 규모의 프런티어 모델을 학습시키고 서비스한다는 것은 본질적으로 "물리 세계"의 문제다. 전기, 냉각, 맞춤 칩, 네트워킹, 그리고 이 모든 것을 묶어내는 소프트웨어 레이어가 필요하다. 이걸 처음부터 짓는다면 — 모델 코드를 한 줄 쓰기도 전에 5년과 수백억 달러가 사라진다.' },
+        { type: 'p', content: 'AWS에는 이미 그것이 있다. 수십 개 리전의 데이터센터, 자체 설계한 AI 학습 실리콘(Trainium2), 그리고 Amazon Bedrock이라는 엔터프라이즈 AI 유통 제품까지. 앤트로픽에는 모델이 있었다. AWS에는 그걸 돌릴 인프라와, 그걸 팔 영업 조직이 있었다. 거래를 단순화하자면 — AWS는 앤트로픽에 최대 80억 달러를 투자한다. 앤트로픽은 AWS를 주 클라우드로 삼는다. Claude는 프로젝트 레이니어라는 새 클러스터 안 Trainium2 칩 위에서 돌아간다 (이전 Claude 세대를 학습시키는 데 쓴 것의 약 5배에 달하는 연산 자원). 그리고 Claude는 Amazon Bedrock을 통해, 다른 곳에서 AI 모델을 쇼핑할 리 없는 수백만 AWS 엔터프라이즈 고객에게 배송된다.' },
+        { type: 'h2', content: '앤트로픽은 왜 "예"라고 했나' },
+        { type: 'p', content: '쉬운 해석은 "앤트로픽이 수표를 받은 것". 더 흥미로운 해석은 — 돈을 내지 않고 수직 통합을 선택한 것.' },
+        { type: 'ul', content: '앤트로픽 입장에서 이 거래가 말이 되는 네 가지 이유.', items: [
+          '프런티어 수준의 연산 — 프로젝트 레이니어는 역사상 가장 큰 AI 학습 클러스터 중 하나다. AWS 같은 파트너 없이는 앤트로픽이 다른 하이퍼스케일러와 GPU 공급 · 데이터센터 임대를 놓고 경쟁해야 한다. AWS 안에 전용 구획을 갖는다는 것은 그 경쟁에서 빠지는 것이다.',
+          'NVIDIA가 아닌 실리콘 — Trainium2는 NVIDIA H100 · B200에 대한 아마존의 답이다. Trainium을 쓰는 순간, 앤트로픽은 NVIDIA의 가격 · 할당 구조에 덜 노출된다. 거기에 AWS 엔지니어와의 공동 설계로 달러당 학습 효율을 더 짜낼 수 있다.',
+          'Bedrock을 통한 즉시 유통 — AWS 계약이 있는 모든 Fortune 500 기업은 새 벤더 계약 · 법무 리뷰 · 조달 절차 없이 Bedrock에서 바로 Claude를 호출할 수 있다. 이는 AWS를 "엔터프라이즈 조달의 벽 뒤에서만 사는" 산업 전반에서 Claude의 직영 판매 채널로 만든다.',
+          '집중 — 돈과 인프라가 앤트로픽을 해방시켜, 앤트로픽이 실제로 잘하는 유일한 일 — 모델 학습 — 에만 집중하게 만든다. Claude 팀 누구도 3분기를 오레곤 변전소 용량을 놓고 전력회사와 협상하는 데 쓸 필요가 없다.',
+        ] },
+        { type: 'h2', content: 'AWS는 왜 "예"라고 했나' },
+        { type: 'p', content: '거울 이미지다. Microsoft와 OpenAI의 제휴는 Azure에게 엔터프라이즈 AI에서 수년간의 우위를 선물했다. AWS는 답을 내야 했다. 앤트로픽과의 깊은 정렬은 AWS에게 최전선 모델, Trainium 칩의 플래그십 고객(다른 모든 AI 랩에게 이 투자가 합리적임을 증명), 그리고 엔터프라이즈 세일즈 통화에서 꺼낼 수 있는 설득력 있는 AI 서사를 동시에 제공한다. AWS에게 이 제휴는 단일 고객 확보가 아니다 — Trainium을 NVIDIA의 실질 대안으로 만드는 작업이다. 그것이 성공한다면, 10년에 걸쳐 80억 달러보다 훨씬 큰 가치를 갖는다.' },
+        { type: 'tip', content: '패턴은 이 한 건의 거래보다 크다. 프런티어 AI는 점점 하이퍼스케일러(연산 · 유통) × 연구소(리서치)의 공동 투자 게임이 되고 있다. Microsoft × OpenAI. Amazon × Anthropic. Google × 자체 DeepMind. 물리 레이어를 소유하는 것이 곧 시장을 소유하는 길이다.' },
+        { type: 'h2', content: '소규모 비즈니스는 여기서 무엇을 가져가야 할까' },
+        { type: 'p', content: '멀게 들린다 — 수십억 달러, 맞춤 실리콘, 오레곤의 변전소. 하지만 이 의사결정의 패턴은, 포트리의 한인 치과나 호놀룰루 카페가 웹사이트 · 결제 · 배송 · 마케팅 스택을 고민할 때 매번 마주하는 것과 정확히 같다. 질문은 사실 "직접 만들어야 하나?"가 아니다. 질문은 — "우리가 소유해야 할 것은 무엇이고, 누군가 10년 넘게 완성해 놓은 것에서 무엇을 빌릴 것인가?" 이다.' },
+        { type: 'p', content: '앤트로픽은 데이터센터 회사가 되려 하지 않았다. 데이터센터 회사로서 세상에 존재하는 이유 자체가 그것인 파트너를 선택하고, 자신은 오직 자신만이 할 수 있는 일 — 모델 학습 — 에 집중했다. 소규모 비즈니스 버전의 같은 결정은 규모만 작을 뿐 구조는 동일하다. 자체 서버가 필요하지 않다. 예약 시스템을 처음부터 짜지 않아도 된다. 이메일 · 청구 · 분석을 다시 발명할 필요가 없다.' },
+        { type: 'ul', content: 'Zoe Lumos에서 우리가 일하는 방식에서 이것이 실제로 어떤 모습인지.', items: [
+          '현대 웹을 위해 설계된 플랫폼(Vercel · Cloudflare · AWS Amplify) 위에 호스팅 — 직접 패치하는 VPS가 아니라. 앤트로픽이 적용한 원리의 세 자릿수 축소판이다.',
+          '커머스는 Shopify — 유일한 선택지여서가 아니라, 사기 탐지 · 세금 · 재고 · 결제 안정성은 스튜디오의 핵심 역량이 아니기 때문. 15년을 쏟은 회사에게 맡기면 된다.',
+          '결제는 Stripe. 배송은 통합 파트너. 분석은 Google + PostHog. 모두 "짓지 말고 빌리자"의 결정이다.',
+          '차별점을 만드는 것만 소유하라 — 브랜드, 카피, 고객 관계, 장인정신. 그 외의 모든 것은, 당신이 평생 걸쳐도 못 이길 회사에게서 빌려라.',
+        ] },
+        { type: 'h2', content: '우리가 고객의 아키텍처를 생각하는 방식' },
+        { type: 'p', content: 'Zoe Lumos에서 웹사이트를 만들 때, 본능은 결코 "이 중 얼마를 우리가 처음부터 조립할 수 있지?"가 아니다. 본능은 "이미 해결된, 지루하고 어려운 문제 중 무엇을 고객의 접시에서 치워야, 그들의 비즈니스가 오직 그들만이 할 수 있는 것에 집중하게 될까?" 이다. 프론트엔드는 Next.js — 렌더링 · 캐싱 · 이미지 최적화에 수년을 쏟은 사람들이 있기 때문. 커머스가 진지해지면 Shopify. 호스팅은 Vercel — 정적 페이지를 엣지 캐싱하는 문제는 10년 전, 우리보다 더 신경 쓰는 사람들에 의해 풀렸기 때문. 그 결과 우리가 시간을 쓰는 곳은 — 진짜로 맞춤이 필요한 부분에만. 타이포그래피, 에디토리얼 디렉션, 이중언어 보이스, 사이트가 "당신의 것"처럼 느껴지게 만드는 미묘한 모션.' },
+        { type: 'p', content: '앤트로픽과 AWS의 80억 달러 거래는 같은 원칙의 극단이다. 물리 세계의 어려운 문제는 세계 최고인 파트너에게 빌려라. 당신만이 할 수 있는 일에, 대체 불가능한 시간을 써라. 프런티어 AI 연구소와 동네 치과의 새 웹사이트 뒤에 똑같이 흐르는 조용한 아키텍처 원칙. 규모는 다르다. 의사결정의 모양은 같다.' },
+        { type: 'cta', content: '다음 웹사이트 뒤의 스택을 고민 중이신가요? 어떤 걸 소유하고, 어떤 걸 빌리고, 어떤 걸 맞춤으로 지을지 — 저희가 모든 프로젝트에서 내리는 결정입니다. 30분 대화면 그 모양이 보입니다.' },
+      ],
+    },
+  },
+
+  // ─────────────────────────────────────────────────────────────────
   // ARTICLE 1 — Korean-American website guide 2026
   // ─────────────────────────────────────────────────────────────────
   {

@@ -1,19 +1,34 @@
 import { NextResponse } from 'next/server'
 
-const llmsContent = `# ZOE LUMOS (조이루모스)
+const llmsContent = `# Zoe Lumos (조이루모스) — Websites worth remembering
 
-> Korean-American digital marketing agency specializing in website design, SEO, and Google Ads for Korean businesses nationwide. Serving NJ, NY, CA, TX, GA, VA, IL, WA, MD, HI, PA, FL. 100% Korean language support available.
+> American-Korean design studio for Korean-American businesses. Editorial web design, SEO, Shopify e-commerce, and Google Ads — from Fort Lee NJ to LA. Bilingual studio (English · Korean). 150+ projects delivered across 10 US states. 5.0 customer satisfaction.
 
-ZOE LUMOS is a web design and digital marketing agency headquartered in Fort Lee, New Jersey. Founded to serve the Korean-American business community across the United States, we provide professional website design, SEO optimization, Google Ads management, and Shopify e-commerce solutions. We serve Korean communities in 12+ states including New Jersey, New York, California, Texas, Georgia, Virginia, Illinois, Washington, Maryland, Hawaii, Pennsylvania, and Florida. All consultations available in Korean (한국어 상담 가능).
+Zoe Lumos is an editorial, boutique design studio headquartered in Fort Lee, New Jersey. We build quiet, high-performance, SEO-first websites for Korean-American businesses across the United States — and for American-founded brands that value craft. Every engagement begins with a conversation and ends with something that keeps compounding.
+
+We specialize in editorial web design, bilingual content (Korean / English), local SEO + GEO (AI-search optimization), Shopify e-commerce, and Google + Yelp ads. Studio is based in Fort Lee NJ with active city practices in Manhattan, LA (Koreatown), Dallas, Atlanta, Chicago, Seattle, Annandale, Ellicott City, and Honolulu.
+
+## Positioning
+
+- **Slogan**: "Websites worth remembering."
+- **Studio ethos**: Quiet craft, loud results. Editorial direction, bilingual copy, SEO + GEO on day one.
+- **Default stack**: Next.js (custom), Shopify (commerce), Sanity / custom CMS, Fraunces + Inter typography.
+- **Engagement length**: 6-week average delivery; ongoing partnership after launch.
 
 ## Company Information
 
-- **Name**: ZOE LUMOS (조이루모스)
-- **Location**: Fort Lee, New Jersey, USA
-- **Service Area**: Nationwide - NJ, NY, CA, TX, GA, VA, IL, WA, MD, HI, PA, FL and more
+- **Name**: Zoe Lumos (조이루모스)
+- **Legal entity**: ZOE STUDIO LLC
+- **Founded**: 2019
+- **Location**: Fort Lee, New Jersey, USA (studio)
+- **Service area**: Nationwide — active city practices in 10 states (NJ, NY, CA, TX, GA, VA, IL, WA, MD, HI); also serves PA, FL, OH, MA and all 50 states remotely
 - **Languages**: English, Korean (한국어)
 - **Email**: info@zoelumos.com
 - **Website**: https://www.zoelumos.com
+- **Hours**: Mon — Fri · 9–6 ET (Korean consultations available outside US hours)
+- **Projects delivered**: 150+
+- **Average Lighthouse score**: 98 / 100 (median across launches)
+- **Reply SLA**: Within one business day
 
 ## Services
 
@@ -116,13 +131,15 @@ Yelp Ads management for local service businesses including restaurants, salons, 
 - Real Estate Agencies
 - Retail & E-commerce
 
-## Why Choose ZOE LUMOS
+## Why Zoe Lumos
 
-1. **100% Korean Language Support**: All consultations in Korean (한국어 상담)
-2. **Nationwide Korean Community Expertise**: Understanding of Korean-American business markets across 12+ states
-3. **Bilingual Websites**: Korean and English website development
-4. **Google Page 1 Guarantee**: SEO optimization for local search
-5. **In-Person & Remote**: Fort Lee office with remote services available nationwide
+1. **Editorial craft, not template work**: Every project is custom-designed in-house — typography, direction, and interaction built for your brand.
+2. **Fully bilingual studio**: Korean-first conversations, English-first execution. KakaoTalk, email, and phone available in both languages.
+3. **SEO + GEO from day one**: Every site ships with structured data, hreflang, Core Web Vitals optimization, and AI-search readiness (llms.txt, citability).
+4. **Measurable results**: Median 312% organic traffic lift within 90 days; 2.4× average conversion uplift vs. prior sites.
+5. **Speed baked in**: Next.js / Shopify stacks; median 98/100 Lighthouse; AVIF image optimization; edge-cached SSG.
+6. **Selected work**: TJ Flowers (Manhattan · 2023), Salt & Polish (Fort Lee · 2024), Kona Coffee Donut (Honolulu · 2024), CareK9 (Edgewater · 2024), Mochinut (multi-city · 2023).
+7. **Process**: Discover (wk 1) → Design (wk 2–3) → Build (wk 4–5) → Grow (wk 6+). Two review rounds per phase. Ongoing support after launch.
 
 ## Pricing Summary
 
@@ -157,20 +174,23 @@ Yelp Ads management for local service businesses including restaurants, salons, 
 
 ## FAQs
 
-**Q: How much does a website cost in New Jersey?**
-A: Business websites start at $1,000. E-commerce/Shopify stores start at $3,000. All prices include responsive design and basic SEO.
+**Q: How much does a website from Zoe Lumos cost?**
+A: Business websites start at $5,000 — $10,000. E-commerce / Shopify stores typically run $10,000 — $25,000. Larger brand + site builds are $25,000+. Every engagement is scoped to a fixed investment before kickoff.
 
 **Q: Do you offer Korean language consultations?**
-A: Yes, 100% Korean language support is available. We also offer KakaoTalk consultations (카톡 상담 가능).
+A: Yes — 100% bilingual studio. English and Korean. KakaoTalk, email, or call (카톡 상담 가능).
 
-**Q: How long does website development take?**
-A: Basic websites take 1-2 weeks. E-commerce stores take 2-4 weeks. Rush delivery available.
+**Q: How long does a website take?**
+A: Six weeks is our average timeline, broken into four movements: Discover (wk 1), Design (wk 2–3), Build (wk 4–5), Grow (wk 6+). Rush options available.
 
 **Q: Do you serve businesses outside Fort Lee?**
-A: Yes, we serve Korean businesses nationwide across 12+ states including NJ, NY, CA, TX, GA, VA, IL, WA, MD, HI, PA, and FL.
+A: Yes. Active city practices in 10 states (NJ, NY, CA, TX, GA, VA, IL, WA, MD, HI); remote engagements in all 50 states.
 
-**Q: Can you help with Google ranking (SEO)?**
-A: Yes, all websites include basic SEO. We also offer monthly SEO services starting at $500/month with Google Page 1 ranking focus.
+**Q: Do you do only Korean-American businesses?**
+A: No. We specialize in Korean-American businesses and American-founded brands alike. The bilingual layer is available when it fits your audience.
+
+**Q: Can you help with Google ranking (SEO) and AI search (GEO)?**
+A: Yes. Every site ships with local SEO, structured data, hreflang, and Core Web Vitals optimization. We also build for AI search surfaces (ChatGPT, Perplexity, Google AI Overviews) via llms.txt + citability patterns. Ongoing SEO retainers available.
 
 ## Contact
 

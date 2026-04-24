@@ -1,192 +1,143 @@
-import { useTranslation } from '@/hooks/useTranslation'
 import Link from 'next/link'
-import InstagramHover, { InstagramIconLink } from '@/components/ui/InstagramHover'
-import FooterEmailLink from '@/components/layout/FooterEmailLink'
+import Magnetic from '@/components/ui/motion/Magnetic'
 
 export default function Footer({ locale = 'en' }: { locale?: string }) {
-  const { t } = useTranslation(locale)
-  const prefix = locale === 'ko' ? '/ko' : '' // English uses root, Korean uses /ko
+  const isKo = locale === 'ko'
+  const prefix = isKo ? '/ko' : ''
+  const year = new Date().getFullYear()
+
+  const cols = [
+    {
+      title: isKo ? '스튜디오' : 'Studio',
+      links: [
+        [isKo ? '소개' : 'About', `${prefix}/about`],
+        [isKo ? '포트폴리오' : 'Work', `${prefix}/portfolio`],
+        [isKo ? '블로그' : 'Journal', `${prefix}/blog`],
+        [isKo ? '가격' : 'Pricing', `${prefix}/pricing`],
+      ] as [string, string][],
+    },
+    {
+      title: isKo ? '서비스' : 'Disciplines',
+      links: [
+        [isKo ? '웹디자인' : 'Web design', `${prefix}/#services`],
+        [isKo ? 'SEO · GEO' : 'SEO & GEO', `${prefix}/#services`],
+        [isKo ? '구글 · 옐프 광고' : 'Google & Yelp ads', `${prefix}/#services`],
+        [isKo ? 'Shopify 커머스' : 'Shopify commerce', `${prefix}/#services`],
+      ] as [string, string][],
+    },
+    {
+      title: isKo ? '지역' : 'Cities',
+      links: [
+        [isKo ? '뉴저지' : 'New Jersey', isKo ? '/ko/뉴저지-웹사이트' : '/nj-website'],
+        [isKo ? '뉴욕' : 'New York', isKo ? '/ko/뉴욕-웹사이트' : '/ny-website'],
+        [isKo ? 'LA · 캘리포니아' : 'LA · California', isKo ? '/ko/캘리포니아-웹사이트' : '/ca-website'],
+        [isKo ? '애틀랜타' : 'Atlanta', isKo ? '/ko/조지아-웹사이트' : '/ga-website'],
+      ] as [string, string][],
+    },
+  ]
 
   return (
-    <footer className="w-full relative bg-[#0a0a0a]">
-      {/* Modern border with gradient */}
-      <div className="absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-amber-400/50 to-transparent"></div>
-
-      <div className="w-full px-8 lg:px-12 xl:px-20 pt-32 pb-16">
-        <div className="max-w-7xl mx-auto grid md:grid-cols-4 gap-12 mb-12">
-          {/* Company Info */}
-          <div className="group">
-            <div className="relative mb-6">
-              <h3 className="font-bold text-xl text-white tracking-wide">ZOE LUMOS</h3>
-              <div className="absolute -bottom-2 left-0 w-12 h-0.5 bg-amber-400 group-hover:w-24 transition-all duration-300"></div>
+    <footer className="bg-ivory hair-top">
+      <div className="container-edge pt-24 pb-14">
+        {/* Big wordmark */}
+        <div className="flex items-end justify-between gap-8 flex-wrap pb-20 border-b border-hairline">
+          <Link href={`${prefix}/`} data-cursor="hide" className="group block">
+            <div className="font-display text-[clamp(3rem,10vw,9rem)] leading-[0.9] tracking-luxury text-ink fraunces-soft">
+              Zoe<span className="italic font-light text-gold">&nbsp;Lumos</span>
             </div>
-            <p className="text-gray-400 text-sm leading-relaxed">
-              {locale === 'ko'
-                ? '소규모 비즈니스가 온라인에서 성공할 수 있도록 돕는 디지털 마케팅 에이전시'
-                : 'Digital marketing agency helping small businesses succeed online'
-              }
+            <div className="overline text-ash mt-4">
+              {isKo ? '한인 · 미국인 디자인 스튜디오' : 'An American-Korean design studio'}
+            </div>
+          </Link>
+
+          <Magnetic strength={14}>
+            <Link
+              href={`${prefix}/#contact`}
+              data-cursor={isKo ? '시작' : 'Begin'}
+              className="btn-ink shrink-0"
+            >
+              {isKo ? '프로젝트 의뢰' : 'Start a project'}
+              <span className="arrow">→</span>
+            </Link>
+          </Magnetic>
+        </div>
+
+        {/* Columns */}
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 py-16">
+          <div className="md:col-span-4">
+            <p className="overline text-ash mb-5">{isKo ? '연락' : 'Contact'}</p>
+            <a
+              href="mailto:info@zoelumos.com"
+              className="font-display text-2xl md:text-3xl text-ink italic font-light hover:text-gold transition-colors"
+            >
+              info@zoelumos.com
+            </a>
+            <p className="mt-6 text-[13px] text-ash leading-[1.7]">
+              {isKo
+                ? '뉴저지 포트리 · 월 — 금 9–6 ET\n한국어 상담 상시'
+                : 'Fort Lee, New Jersey\nMon — Fri · 9 — 6 ET · KR 대응'}
             </p>
           </div>
 
-          {/* Services */}
-          <div className="group">
-            <div className="relative mb-6">
-              <h3 className="font-bold text-lg text-white uppercase tracking-wider text-sm">
-                {locale === 'ko' ? '서비스' : 'Services'}
-              </h3>
-              <div className="absolute -bottom-2 left-0 w-8 h-0.5 bg-gray-600 group-hover:w-16 group-hover:bg-amber-400 transition-all duration-300"></div>
+          {cols.map((c) => (
+            <div key={c.title} className="md:col-span-2 md:col-start-auto">
+              <p className="overline text-ash mb-5">{c.title}</p>
+              <ul className="space-y-3">
+                {c.links.map(([label, href]) => (
+                  <li key={label}>
+                    <Link
+                      href={href}
+                      className="text-[14px] text-graphite hover:text-ink transition-colors"
+                    >
+                      {label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
             </div>
-            <ul className="space-y-3">
+          ))}
+
+          <div className="md:col-span-2">
+            <p className="overline text-ash mb-5">{isKo ? '팔로우' : 'Follow'}</p>
+            <ul className="space-y-3 text-[14px]">
               <li>
-                <Link href={`${prefix}#services`} className="text-gray-400 hover:text-amber-400 hover:translate-x-1 inline-block transition-all duration-200 text-sm">
-                  {locale === 'ko' ? 'SEO 서비스' : 'SEO Services'}
-                </Link>
+                <a
+                  href="https://instagram.com/zoelumos"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-graphite hover:text-ink transition-colors"
+                >
+                  Instagram ↗
+                </a>
               </li>
               <li>
-                <Link href={`${prefix}#services`} className="text-gray-400 hover:text-amber-400 hover:translate-x-1 inline-block transition-all duration-200 text-sm">
-                  {locale === 'ko' ? '구글 & 옐프 광고 관리' : 'Google & Yelp Ads Management'}
-                </Link>
-              </li>
-              <li>
-                <Link href={`${prefix}#services`} className="text-gray-400 hover:text-amber-400 hover:translate-x-1 inline-block transition-all duration-200 text-sm">
-                  {locale === 'ko' ? '웹사이트 디자인 & 개발' : 'Website Design & Development'}
-                </Link>
-              </li>
-              <li>
-                <Link href={`${prefix}/pricing`} className="text-gray-400 hover:text-amber-400 hover:translate-x-1 inline-block transition-all duration-200 text-sm">
-                  {locale === 'ko' ? '요금 및 플랜' : 'Plans & Pricing'}
-                </Link>
-              </li>
-              <li>
-                <Link href={locale === 'ko' ? '/ko/뉴욕-웹사이트' : '/ny-website'} className="text-gray-400 hover:text-amber-400 hover:translate-x-1 inline-block transition-all duration-200 text-sm">
-                  {locale === 'ko' ? '뉴욕 웹사이트 제작' : 'New York Web Design'}
-                </Link>
-              </li>
-              <li>
-                <Link href={locale === 'ko' ? '/ko/뉴저지-웹사이트' : '/nj-website'} className="text-gray-400 hover:text-amber-400 hover:translate-x-1 inline-block transition-all duration-200 text-sm">
-                  {locale === 'ko' ? '뉴저지 웹사이트 제작' : 'New Jersey Web Design'}
-                </Link>
-              </li>
-              <li>
-                <Link href={`${prefix}/reviews`} className="text-gray-400 hover:text-amber-400 hover:translate-x-1 inline-block transition-all duration-200 text-sm">
-                  {locale === 'ko' ? '고객 후기' : 'Client Reviews'}
-                </Link>
-              </li>
-              <li>
-                <Link href={`${prefix}/blog`} className="text-gray-400 hover:text-amber-400 hover:translate-x-1 inline-block transition-all duration-200 text-sm">
-                  {locale === 'ko' ? '블로그' : 'Blog'}
-                </Link>
+                <a
+                  href="http://pf.kakao.com/_xhxdxmlX/chat"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-graphite hover:text-ink transition-colors"
+                >
+                  KakaoTalk ↗
+                </a>
               </li>
             </ul>
           </div>
-
-          {/* Contact */}
-          <div className="group">
-            <div className="relative mb-6">
-              <h3 className="font-bold text-lg text-white uppercase tracking-wider text-sm">
-                {locale === 'ko' ? '연락처' : 'Contact'}
-              </h3>
-              <div className="absolute -bottom-2 left-0 w-8 h-0.5 bg-gray-600 group-hover:w-16 group-hover:bg-amber-400 transition-all duration-300"></div>
-            </div>
-            <div className="space-y-3">
-              <FooterEmailLink email="info@zoelumos.com" />
-
-              {/* KakaoTalk */}
-              <a
-                href="http://pf.kakao.com/_xhxdxmlX/chat"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-gray-400 hover:text-[#FEE500] transition-colors text-sm"
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" className="flex-shrink-0">
-                  <path d="M12 3C6.477 3 2 6.463 2 10.691c0 2.724 1.8 5.113 4.508 6.463-.2.723-.722 2.62-.828 3.026-.13.502.184.496.387.36.16-.106 2.544-1.726 3.576-2.428.766.112 1.56.17 2.357.17 5.523 0 10-3.463 10-7.591S17.523 3 12 3Z" fill="currentColor"/>
-                </svg>
-                {locale === 'ko' ? '카카오톡 상담' : 'KakaoTalk Chat'}
-              </a>
-
-              {/* Instagram with hover dropdown - Client Component */}
-              <InstagramHover position="top" showLabel={true} locale={locale} />
-            </div>
-          </div>
-
-          {/* Service Areas - SEO Optimized */}
-          <div className="group">
-            <div className="relative mb-6">
-              <h3 className="font-bold text-lg text-white uppercase tracking-wider text-sm">
-                {locale === 'ko' ? '서비스 지역' : 'Service Areas'}
-              </h3>
-              <div className="absolute -bottom-2 left-0 w-8 h-0.5 bg-gray-600 group-hover:w-16 group-hover:bg-amber-400 transition-all duration-300"></div>
-            </div>
-            <div className="space-y-3">
-              <p className="text-sm text-gray-400 leading-relaxed mb-3">
-                {locale === 'ko'
-                  ? '전국 대도시 및 중소도시 | 온라인 비즈니스 | 로컬 비즈니스 | 이커머스'
-                  : 'Nationwide Service | Major Metropolitan Areas | Local Business | E-commerce | Remote Consultation Available'
-                }
-              </p>
-
-              {/* Location Pages for SEO - Use Korean URL slugs for Korean locale */}
-              <div className="space-y-2">
-                <Link href={locale === 'ko' ? '/ko/뉴욕-웹사이트' : '/ny-website'} className="block text-xs text-gray-500 hover:text-amber-400 transition-colors">
-                  {locale === 'ko' ? '🗽 뉴욕 웹사이트' : '🗽 New York Area'}
-                </Link>
-                <Link href={locale === 'ko' ? '/ko/뉴저지-웹사이트' : '/nj-website'} className="block text-xs text-gray-500 hover:text-amber-400 transition-colors">
-                  {locale === 'ko' ? '🌉 뉴저지 웹사이트' : '🌉 New Jersey Area'}
-                </Link>
-              </div>
-
-              <p className="text-sm text-gray-400 leading-relaxed mt-3">
-              </p>
-              <div className="pt-2 space-y-1">
-                {(locale === 'ko'
-                  ? ['SEO 서비스', '구글 광고', '웹사이트 제작', '디지털 마케팅']
-                  : ['Professional SEO Services', 'Google Ads Management', 'Web Design', 'Digital Marketing Solutions']
-                ).map((tag, index) => (
-                  <span key={index} className="inline-block text-xs bg-white/5 text-gray-400 px-2 py-1 mr-2 mb-1 hover:bg-amber-400/20 hover:text-amber-400 transition-colors duration-200">
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
         </div>
 
-        {/* Bottom section with modern divider */}
-        <div className="max-w-7xl mx-auto">
-          <div className="relative">
-            <div className="absolute inset-0 flex items-center">
-              <div className="w-full border-t border-white/10"></div>
-            </div>
-            <div className="relative">
-              <div className="h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
-            </div>
-          </div>
-
-          <div className="pt-8">
-            <div className="flex flex-col md:flex-row justify-between items-center">
-              <div className="flex items-center gap-4">
-                <p className="text-gray-500 text-sm">
-                  © {new Date().getFullYear()} ZOE STUDIO LLC. {t.footer.rights}
-                </p>
-                <InstagramIconLink />
-              </div>
-              <div className="flex space-x-8 mt-4 md:mt-0">
-                <Link
-                  href={`${prefix}/privacy`}
-                  className="text-gray-500 hover:text-amber-400 text-sm relative group"
-                >
-                  <span>{t.footer.privacy}</span>
-                  <span className="absolute -bottom-1 left-0 w-0 h-px bg-amber-400 group-hover:w-full transition-all duration-200"></span>
-                </Link>
-                <Link
-                  href={`${prefix}/terms`}
-                  className="text-gray-500 hover:text-amber-400 text-sm relative group"
-                >
-                  <span>{t.footer.terms}</span>
-                  <span className="absolute -bottom-1 left-0 w-0 h-px bg-amber-400 group-hover:w-full transition-all duration-200"></span>
-                </Link>
-              </div>
-            </div>
+        {/* Legal row */}
+        <div className="pt-10 border-t border-hairline flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <p className="text-[12px] text-ash">
+            © {year} Zoe Lumos Studio, LLC · {isKo ? '모든 권리 보유' : 'All rights reserved'}
+          </p>
+          <div className="flex items-center gap-6 text-[12px] text-ash">
+            <Link href={`${prefix}/privacy`} className="hover:text-ink transition-colors">
+              {isKo ? '개인정보처리방침' : 'Privacy'}
+            </Link>
+            <Link href={`${prefix}/terms`} className="hover:text-ink transition-colors">
+              {isKo ? '이용약관' : 'Terms'}
+            </Link>
+            <span className="gold-dot" />
+            <span>{isKo ? '뉴저지에서 제작' : 'Crafted in New Jersey'}</span>
           </div>
         </div>
       </div>
