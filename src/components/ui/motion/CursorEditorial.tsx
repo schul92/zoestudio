@@ -76,6 +76,7 @@ export default function CursorEditorial() {
       mx = e.clientX
       my = e.clientY
       if (!dot.classList.contains('on')) dot.classList.add('on')
+      if (!ring.classList.contains('on')) ring.classList.add('on')
     }
 
     const onOver = (e: PointerEvent) => {
@@ -102,8 +103,14 @@ export default function CursorEditorial() {
       }
     }
 
-    const onLeave = () => dot.classList.remove('on')
-    const onEnter = () => dot.classList.add('on')
+    const onLeave = () => {
+      dot.classList.remove('on')
+      ring.classList.remove('on')
+    }
+    const onEnter = () => {
+      dot.classList.add('on')
+      ring.classList.add('on')
+    }
 
     const tick = () => {
       dx += (mx - dx) * 0.32
