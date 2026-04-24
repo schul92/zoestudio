@@ -20,8 +20,20 @@ export default function CursorEditorial() {
   const ringRef = useRef<HTMLDivElement | null>(null)
   const labelRef = useRef<HTMLSpanElement | null>(null)
   const [mounted, setMounted] = useState(false)
+  const [supported, setSupported] = useState(false)
 
-  useEffect(() => setMounted(true), [])
+  useEffect(() => {
+    setMounted(true)
+    // Only render the cursor DOM on devices with a fine pointer (mouse).
+    // On touch/mobile the ring would otherwise float as a phantom circle in
+    // the top-left corner since no pointermove ever fires to transform it.
+    if (typeof window !== 'undefined') {
+      setSupported(
+        window.matchMedia('(hover: hover) and (pointer: fine)').matches &&
+          !window.matchMedia('(prefers-reduced-motion: reduce)').matches,
+      )
+    }
+  }, [])
 
   useEffect(() => {
     if (!mounted) return
@@ -124,9 +136,9 @@ export default function CursorEditorial() {
     }
   }, [mounted])
 
-  // Render the DOM nodes unconditionally (after mount) so refs attach before
-  // the effect reads them. CSS keeps them invisible until .on is added.
-  if (!mounted) return null
+  // Render nothing on touch devices — no mousemove will ever transform the
+  // ring, so it would sit as a stray circle at (0,0).
+  if (!mounted || !supported) return null
 
   return (
     <>

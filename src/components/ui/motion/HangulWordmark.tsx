@@ -272,22 +272,28 @@ export default function HangulWordmark({
     const iGroup = buildLetter(iShapes, spacing / 2)
     group.add(jiGroup)
     group.add(iGroup)
-    group.scale.setScalar(0.9)
 
-    // Responsive camera fit — dolly in/out so "조이" never clips on narrow
-    // viewports. Reads the actual bounding box and fits both axes with padding.
+    // Measure unscaled content, then fit by scaling the group.
+    // We keep the camera at a fixed distance so the 3D extrusion stays
+    // visually prominent — only the letter size changes per aspect ratio.
+    group.scale.setScalar(1)
     const fitBox = new THREE.Box3().setFromObject(group)
     const fitSize = new THREE.Vector3()
     fitBox.getSize(fitSize)
     const contentW = fitSize.x
     const contentH = fitSize.y
+
     const fitCamera = () => {
       const vFov = (camera.fov * Math.PI) / 180
-      // Narrower viewports need more padding (extra breathing room for tilt).
-      const pad = camera.aspect < 1 ? 1.55 : camera.aspect < 1.4 ? 1.35 : 1.2
-      const distV = contentH / (2 * Math.tan(vFov / 2))
-      const distH = contentW / (2 * Math.tan(vFov / 2) * camera.aspect)
-      camera.position.z = Math.max(distV, distH) * pad
+      const visibleH = 2 * camera.position.z * Math.tan(vFov / 2)
+      const visibleW = visibleH * camera.aspect
+      // Narrower viewports: more side padding + extra room for tilt motion.
+      const padH = camera.aspect < 1 ? 0.6 : 0.75
+      const padW = camera.aspect < 1 ? 0.72 : 0.8
+      const scaleForH = (visibleH * padH) / contentH
+      const scaleForW = (visibleW * padW) / contentW
+      const s = Math.min(scaleForH, scaleForW, 1.0)
+      group.scale.setScalar(s)
     }
     fitCamera()
 
