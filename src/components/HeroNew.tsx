@@ -13,6 +13,12 @@ const Aurora = dynamic(() => import('@/components/ui/motion/Aurora'), {
   loading: () => null,
 })
 
+// 3D interactive hero centerpiece — translucent gold glass orb
+const HeroOrb = dynamic(() => import('@/components/ui/motion/HeroOrb'), {
+  ssr: false,
+  loading: () => null,
+})
+
 const copy = {
   en: {
     eyebrow: 'Zoe Lumos · Est. New Jersey',
@@ -131,7 +137,7 @@ export default function HeroNew({ locale = 'en' }: { locale?: string }) {
       </div>
 
       {/* Display headline */}
-      <div ref={parRef} className="container-edge pb-10 md:pb-16">
+      <div ref={parRef} className="container-edge pb-6 md:pb-10">
         <h1 className="font-display text-hero text-ink tracking-luxury">
           <MaskReveal delay={120} as="span" className="font-normal">
             {t.line1[0]}
@@ -145,10 +151,26 @@ export default function HeroNew({ locale = 'en' }: { locale?: string }) {
         </h1>
       </div>
 
-      {/* Asymmetric row: sub + CTAs */}
+      {/* Asymmetric row: 3D orb (left) + sub + CTAs (right) */}
       <div className="container-edge">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 pb-20 md:pb-28">
-          <div className="md:col-start-7 md:col-span-6">
+        <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center pb-20 md:pb-28">
+          {/* 3D Orb — desktop only, ~45% width, explicit square dims */}
+          <div
+            className={`hidden lg:block relative shrink-0 transition-all duration-[1800ms] ease-[cubic-bezier(.16,1,.3,1)] ${
+              mount
+                ? 'opacity-100 scale-100 translate-y-0'
+                : 'opacity-0 scale-90 translate-y-6'
+            }`}
+            style={{
+              transitionDelay: '500ms',
+              width: 'min(45vw, 560px)',
+              height: 'min(45vw, 560px)',
+            }}
+          >
+            <HeroOrb className="absolute inset-0" />
+          </div>
+
+          <div className="w-full lg:flex-1 lg:max-w-xl">
             <p
               className={`text-body-lg text-graphite leading-[1.65] max-w-xl transition-all duration-1000 ${
                 mount ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
