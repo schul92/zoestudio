@@ -70,6 +70,9 @@ export default function CursorEditorial() {
       const hit = overInteractive(e.target)
       if (hit) {
         ring.classList.add('big')
+        // Filled black disc only when there's a label to display. Otherwise
+        // stay as a small subtle ring so nav/text links remain legible.
+        ring.classList.toggle('labeled', !!hit.label)
         if (hit.mode === 'hide') {
           ring.classList.add('hide')
           dot.classList.add('hide')
@@ -80,7 +83,7 @@ export default function CursorEditorial() {
         label.textContent = hit.label || ''
         label.classList.toggle('on', !!hit.label)
       } else {
-        ring.classList.remove('big', 'hide')
+        ring.classList.remove('big', 'labeled', 'hide')
         dot.classList.remove('hide')
         label.textContent = ''
         label.classList.remove('on')

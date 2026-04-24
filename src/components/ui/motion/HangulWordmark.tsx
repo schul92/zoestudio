@@ -274,6 +274,23 @@ export default function HangulWordmark({
     group.add(iGroup)
     group.scale.setScalar(0.9)
 
+    // Responsive camera fit — dolly in/out so "조이" never clips on narrow
+    // viewports. Reads the actual bounding box and fits both axes with padding.
+    const fitBox = new THREE.Box3().setFromObject(group)
+    const fitSize = new THREE.Vector3()
+    fitBox.getSize(fitSize)
+    const contentW = fitSize.x
+    const contentH = fitSize.y
+    const fitCamera = () => {
+      const vFov = (camera.fov * Math.PI) / 180
+      // Narrower viewports need more padding (extra breathing room for tilt).
+      const pad = camera.aspect < 1 ? 1.55 : camera.aspect < 1.4 ? 1.35 : 1.2
+      const distV = contentH / (2 * Math.tan(vFov / 2))
+      const distH = contentW / (2 * Math.tan(vFov / 2) * camera.aspect)
+      camera.position.z = Math.max(distV, distH) * pad
+    }
+    fitCamera()
+
     // Pop-in animation state
     let currentDepth = 0
     const applyDepth = (d: number) => {
@@ -373,6 +390,7 @@ export default function HangulWordmark({
       renderer.setSize(width, height)
       camera.aspect = width / height
       camera.updateProjectionMatrix()
+      fitCamera()
       refreshRect()
     }
     window.addEventListener('resize', onResize)

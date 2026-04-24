@@ -220,10 +220,19 @@ body.has-editorial-cursor [contenteditable="true"] { cursor: text; }
   display: flex; align-items: center; justify-content: center;
   backdrop-filter: blur(1px);
 }
+/* Generic hover (no label) — small subtle ring that doesn't cover text */
 .ed-ring.big {
+  width: 44px; height: 44px;
+  background: transparent;
+  border-color: rgba(20,20,20,0.35);
+  mix-blend-mode: difference;
+}
+/* Labeled hover (e.g., "View", "Begin") — big filled disc with text inside */
+.ed-ring.big.labeled {
   width: 96px; height: 96px;
   background: var(--ink);
   border-color: var(--ink);
+  mix-blend-mode: normal;
 }
 .ed-ring.big .ed-label { color: var(--ivory); }
 .ed-ring.hide { opacity: 0; }
