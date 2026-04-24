@@ -1,86 +1,65 @@
 'use client'
 
+/**
+ * Hero section — rebuilt from the Claude Design handoff (Hero.html).
+ * Scope: hero section only. Preserves existing site header + sections
+ * that follow. Uses the warm ivory palette (#f2ece2) and the extruded
+ * 3D "조이" Hangul wordmark as the centerpiece.
+ */
+
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
 import { useEffect, useRef, useState } from 'react'
-import MaskReveal from '@/components/ui/motion/MaskReveal'
 import Magnetic from '@/components/ui/motion/Magnetic'
-import CountUp from '@/components/ui/motion/CountUp'
 
-// Aurora is WebGL + Three.js — lazy-load client-side only so it never blocks SSR/LCP
-const Aurora = dynamic(() => import('@/components/ui/motion/Aurora'), {
+// 3D wordmark — lazy-loaded client-only so SSR + LCP stay clean
+const HangulWordmark = dynamic(() => import('@/components/ui/motion/HangulWordmark'), {
   ssr: false,
   loading: () => null,
 })
 
 const copy = {
   en: {
-    eyebrow: 'Zoe Lumos · Est. New Jersey',
-    studio: 'An American-Korean design studio',
-    line1: ['Websites'],
-    line2: ['worth'],
-    line3: ['remembering.'],
-    sub: 'We craft considered, quiet, high-performance websites for Korean-American businesses — from Fort Lee boutiques to Los Angeles studios.',
+    eyebrowLeft: 'Zoe Lumos — Est. New Jersey',
+    eyebrowRight: 'An American–Korean design studio',
+    subKo: '웹사이트 디자인 스튜디오',
+    subEn: (
+      <>
+        A Korean-American studio building <span>considered, quiet,</span> high-performance
+        websites for the brands that care about every detail.
+      </>
+    ),
     cta1: 'Start a project',
     cta2: 'Selected work',
-    marquee: [
-      'Web Design',
-      'Brand Systems',
-      'SEO & GEO',
-      'Shopify Commerce',
-      'Bilingual Content',
-      'Google Ads',
-      'Editorial Direction',
-    ],
-    stats: [
-      { num: '150', suf: '+', label: 'Projects delivered' },
-      { num: '9', suf: '', label: 'US cities served' },
-      { num: '100', suf: '%', label: 'Customer satisfaction' },
-      { num: '24/7', suf: '', label: 'Korean support' },
-    ],
+    scroll: 'Scroll',
   },
   ko: {
-    eyebrow: 'ZOE LUMOS · 뉴저지 · 2019',
-    studio: '한인 · 미국인 디자인 스튜디오',
-    line1: ['오래도록'],
-    line2: ['기억되는'],
-    line3: ['웹사이트.'],
-    sub: '포트리의 작은 부티크부터 LA의 스튜디오까지 — 한인 비즈니스를 위해 고요하고 단단한 웹사이트를 만듭니다.',
+    eyebrowLeft: 'Zoe Lumos — 2019, 뉴저지',
+    eyebrowRight: '한인 · 미국인 디자인 스튜디오',
+    subKo: '오래도록 기억되는 웹사이트',
+    subEn: (
+      <>
+        포트리에서 LA까지 — <span>조용하지만 단단한,</span> 매 디테일이 고려된 한인 ·
+        미국인 디자인 스튜디오.
+      </>
+    ),
     cta1: '프로젝트 의뢰',
     cta2: '작업 둘러보기',
-    marquee: [
-      '웹디자인',
-      '브랜드 시스템',
-      'SEO · GEO',
-      'Shopify 커머스',
-      '이중언어 콘텐츠',
-      '구글 광고',
-      '에디토리얼 디렉션',
-    ],
-    stats: [
-      { num: '150', suf: '+', label: '완료 프로젝트' },
-      { num: '9', suf: '', label: '서비스 도시' },
-      { num: '100', suf: '%', label: '고객 만족도' },
-      { num: '24/7', suf: '', label: '한국어 지원' },
-    ],
+    scroll: '아래로',
   },
 }
 
 export default function HeroNew({ locale = 'en' }: { locale?: string }) {
   const t = copy[locale as 'en' | 'ko'] || copy.en
   const prefix = locale === 'ko' ? '/ko' : ''
-  const [mount, setMount] = useState(false)
-  const parRef = useRef<HTMLDivElement>(null)
+
+  // Subtle parallax — replicates the design's scroll offset on wordmark/subcopy
+  const wordmarkRef = useRef<HTMLDivElement>(null)
+  const subcopyRef = useRef<HTMLDivElement>(null)
+  const eyebrowRef = useRef<HTMLDivElement>(null)
+  const ctasRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
-    const id = requestAnimationFrame(() => setMount(true))
-    return () => cancelAnimationFrame(id)
-  }, [])
-
-  // Subtle parallax on hero display
-  useEffect(() => {
-    const el = parRef.current
-    if (!el) return
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     if (reduced) return
     let raf = 0
@@ -88,7 +67,14 @@ export default function HeroNew({ locale = 'en' }: { locale?: string }) {
       cancelAnimationFrame(raf)
       raf = requestAnimationFrame(() => {
         const y = window.scrollY
-        el.style.transform = `translate3d(0, ${Math.min(y * 0.08, 80)}px, 0)`
+        if (wordmarkRef.current)
+          wordmarkRef.current.style.transform = `translate3d(0, ${y * -0.08}px, 0)`
+        if (subcopyRef.current)
+          subcopyRef.current.style.transform = `translate3d(0, ${y * -0.14}px, 0)`
+        if (eyebrowRef.current)
+          eyebrowRef.current.style.transform = `translate3d(0, ${y * -0.25}px, 0)`
+        if (ctasRef.current)
+          ctasRef.current.style.transform = `translate3d(0, ${y * -0.06}px, 0)`
       })
     }
     window.addEventListener('scroll', onScroll, { passive: true })
@@ -98,133 +84,245 @@ export default function HeroNew({ locale = 'en' }: { locale?: string }) {
     }
   }, [])
 
+  // Loading veil that dismisses once the 3D scene mounts
+  const [veilVisible, setVeilVisible] = useState(true)
+  useEffect(() => {
+    const dismiss = () => setVeilVisible(false)
+    // Dismiss on first paint after a beat, or if wordmark never loads
+    const fallback = setTimeout(dismiss, 1800)
+    const onReady = () => {
+      clearTimeout(fallback)
+      setTimeout(dismiss, 320)
+    }
+    // Any canvas mounting inside the hero signals readiness
+    const observer = new MutationObserver(() => {
+      if (document.querySelector('.hero-wordmark-stage canvas')) onReady()
+    })
+    const target = document.querySelector('.hero-wordmark-stage')
+    if (target) observer.observe(target, { childList: true, subtree: true })
+    return () => {
+      clearTimeout(fallback)
+      observer.disconnect()
+    }
+  }, [])
+
   return (
-    <section className="relative bg-ivory overflow-hidden isolate">
-      {/* Aurora shader background — spans the top-fold only */}
-      <div className="absolute inset-x-0 top-0 h-[120vh] -z-10 pointer-events-none">
-        <Aurora />
-        {/* Soft fade to ivory at bottom so the marquee/stats aren't affected */}
-        <div
-          aria-hidden
-          className="absolute inset-x-0 bottom-0 h-48"
-          style={{ background: 'linear-gradient(to bottom, rgba(250,247,240,0), #FAF7F0)' }}
-        />
-      </div>
+    <section
+      className="zl-hero relative overflow-hidden"
+      style={{
+        // Scoped design tokens — apply only inside .zl-hero
+        ['--zl-bg' as string]: '#f2ece2',
+        ['--zl-ink' as string]: '#151414',
+        ['--zl-ink-soft' as string]: '#3a3836',
+        ['--zl-muted' as string]: '#8a8378',
+        ['--zl-gold' as string]: '#b48a43',
+        ['--zl-rule' as string]: 'rgba(21, 20, 20, 0.12)',
+        background: '#f2ece2',
+      }}
+    >
+      {/* Grain overlay — fixed over the hero only */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 z-[2]"
+        style={{
+          opacity: 0.28,
+          mixBlendMode: 'multiply',
+          backgroundImage:
+            "url(\"data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.08  0 0 0 0 0.08  0 0 0 0 0.08  0 0 0 0.08 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>\")",
+        }}
+      />
 
-      <div className="hair-bottom" />
-
-      {/* Top meta bar */}
-      <div className="container-edge">
-        <div
-          className={`flex items-center justify-between pt-28 md:pt-36 lg:pt-40 pb-8 transition-all duration-1000 ${
-            mount ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-          }`}
-        >
-          <div className="flex items-center gap-3 overline text-ash">
-            <span className="gold-dot" />
-            <span>{t.eyebrow}</span>
-          </div>
-          <span className="hidden md:inline-block overline text-ash">
-            {t.studio}
+      {/* Loading veil */}
+      <div
+        aria-hidden
+        className={`pointer-events-none fixed inset-0 z-[200] flex items-center justify-center transition-all duration-700 ${
+          veilVisible ? 'opacity-100 visible' : 'opacity-0 invisible'
+        }`}
+        style={{ background: '#f2ece2' }}
+      >
+        <div className="flex items-center gap-3.5 font-display italic text-[22px] text-[color:var(--zl-ink,#151414)]">
+          <span
+            className="inline-block w-2 h-2 rounded-full"
+            style={{
+              background: '#b48a43',
+              animation: 'zl-pulse 1.4s cubic-bezier(0.2,0.8,0.2,1) infinite',
+            }}
+          />
+          <span>
+            Zoe <em className="not-italic font-normal">Lumos</em>
           </span>
         </div>
       </div>
 
-      {/* Display headline */}
-      <div ref={parRef} className="container-edge pb-10 md:pb-16">
-        <h1 className="font-display text-hero text-ink tracking-luxury">
-          <MaskReveal delay={120} as="span" className="font-normal">
-            {t.line1[0]}
-          </MaskReveal>
-          <MaskReveal delay={260} as="span" className="italic font-light text-gold fraunces-soft group">
-            {t.line2[0]}
-          </MaskReveal>
-          <MaskReveal delay={400} as="span" className="font-normal">
-            {t.line3[0]}
-          </MaskReveal>
-        </h1>
-      </div>
+      {/* Hero content */}
+      <div className="relative z-[5] px-6 md:px-12 pt-24 md:pt-28 pb-14 md:pb-20 min-h-[100svh] flex flex-col">
+        {/* Eyebrow row */}
+        <div
+          ref={eyebrowRef}
+          className="flex items-center justify-between px-1 pb-10 md:pb-12"
+        >
+          <span
+            className="inline-flex items-center text-[11px] uppercase"
+            style={{
+              letterSpacing: '0.22em',
+              color: 'var(--zl-muted)',
+            }}
+          >
+            <span
+              className="inline-block w-[5px] h-[5px] rounded-full mr-2.5 -translate-y-[2px]"
+              style={{ background: 'var(--zl-gold)' }}
+            />
+            {t.eyebrowLeft}
+          </span>
+          <span
+            className="hidden md:inline text-[11px] uppercase"
+            style={{ letterSpacing: '0.22em', color: 'var(--zl-muted)' }}
+          >
+            {t.eyebrowRight}
+          </span>
+        </div>
 
-      {/* Asymmetric row: sub + CTAs */}
-      <div className="container-edge">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 pb-20 md:pb-28">
-          <div className="md:col-start-7 md:col-span-6">
-            <p
-              className={`text-body-lg text-graphite leading-[1.65] max-w-xl transition-all duration-1000 ${
-                mount ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-              }`}
-              style={{ transitionDelay: '800ms' }}
-            >
-              {t.sub}
-            </p>
+        {/* 3D wordmark stage */}
+        <div
+          ref={wordmarkRef}
+          className="relative mx-auto w-full flex-1 min-h-[420px]"
+          style={{
+            maxWidth: 1400,
+            height: 'clamp(420px, 62vh, 720px)',
+          }}
+        >
+          <div className="hero-wordmark-stage absolute inset-0 pointer-events-auto">
+            <HangulWordmark />
+          </div>
+        </div>
 
-            <div
-              className={`mt-10 flex flex-wrap items-center gap-6 transition-all duration-1000 ${
-                mount ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-              }`}
-              style={{ transitionDelay: '950ms' }}
+        {/* Subcopy — Korean serif left, English sans right */}
+        <div
+          ref={subcopyRef}
+          className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-end px-1 pt-6 pb-3 mx-auto w-full"
+          style={{ maxWidth: 1400 }}
+        >
+          <p
+            className="m-0"
+            style={{
+              fontFamily: 'var(--font-serif), "Noto Serif KR", Georgia, serif',
+              fontWeight: 400,
+              fontSize: 'clamp(28px, 3.8vw, 52px)',
+              letterSpacing: '-0.015em',
+              lineHeight: 1.08,
+              color: 'var(--zl-ink)',
+            }}
+          >
+            {t.subKo}
+          </p>
+          <p
+            className="md:justify-self-end md:text-right m-0 max-w-[460px] text-[15px] leading-[1.55]"
+            style={{ color: 'var(--zl-ink-soft)' }}
+          >
+            {t.subEn}
+          </p>
+        </div>
+
+        {/* CTAs right-aligned */}
+        <div
+          ref={ctasRef}
+          className="flex justify-start md:justify-end items-center gap-5 md:gap-6 pt-8 md:pt-10 px-1 mx-auto w-full"
+          style={{ maxWidth: 1400 }}
+        >
+          <Magnetic strength={20} radius={120}>
+            <Link
+              href={`${prefix}/#contact`}
+              data-cursor={locale === 'ko' ? '시작' : 'Begin'}
+              className="zl-btn-primary inline-flex items-center gap-3 px-7 py-[18px] rounded-full text-[15px] transition-all"
+              style={{
+                background: 'var(--zl-ink)',
+                color: 'var(--zl-bg)',
+                boxShadow:
+                  '0 14px 40px -14px rgba(21,20,20,0.45), inset 0 0 0 1px rgba(255,255,255,0.05)',
+              }}
             >
-              <Magnetic strength={16} radius={130}>
-                <Link
-                  href={`${prefix}/#contact`}
-                  data-cursor={locale === 'ko' ? '시작' : 'Begin'}
-                  className="btn-ink"
-                >
-                  {t.cta1}
-                  <span className="arrow">→</span>
-                </Link>
-              </Magnetic>
-              <Link
-                href={`${prefix}/portfolio`}
-                data-cursor="view"
-                className="btn-ghost"
+              <span>{t.cta1}</span>
+              <span aria-hidden className="zl-arrow transition-transform duration-500">
+                →
+              </span>
+            </Link>
+          </Magnetic>
+          <Magnetic strength={12} radius={110}>
+            <Link
+              href={`${prefix}/portfolio`}
+              data-cursor="view"
+              className="inline-flex items-center gap-2.5 px-1 py-2.5 text-[15px]"
+              style={{ color: 'var(--zl-ink)' }}
+            >
+              <span
+                className="pb-[3px]"
+                style={{ borderBottom: '1px solid currentColor' }}
               >
                 {t.cta2}
-                <span aria-hidden>↗</span>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Discipline marquee */}
-      <div
-        className={`hair-y py-8 marq-wrap transition-opacity duration-1000 ${mount ? 'opacity-100' : 'opacity-0'}`}
-        style={{ transitionDelay: '1100ms' }}
-        data-cursor="drag"
-      >
-        <div className="overflow-hidden">
-          <div className="marq font-display text-graphite/70">
-            {[...t.marquee, ...t.marquee, ...t.marquee].map((word, i) => (
-              <span key={i} className="flex items-center gap-14 text-[clamp(1.5rem,3vw,2.5rem)]">
-                <span className="italic font-light fraunces-soft">{word}</span>
-                <span className="gold-dot shrink-0" />
               </span>
-            ))}
-          </div>
+              <span
+                aria-hidden
+                className="text-[14px]"
+                style={{ opacity: 0.7 }}
+              >
+                ↗
+              </span>
+            </Link>
+          </Magnetic>
+        </div>
+
+        {/* Scroll pill */}
+        <div
+          aria-hidden
+          className="absolute left-1/2 -translate-x-1/2 bottom-6 flex items-center gap-2.5 text-[10px] uppercase"
+          style={{
+            letterSpacing: '0.24em',
+            color: 'var(--zl-muted)',
+            opacity: 0.85,
+          }}
+        >
+          <span
+            className="block w-7 h-px"
+            style={{
+              background: 'currentColor',
+              animation: 'zl-pull 2.4s cubic-bezier(0.2,0.8,0.2,1) infinite',
+            }}
+          />
+          <span>{t.scroll}</span>
         </div>
       </div>
 
-      {/* Stats */}
-      <div className="container-edge">
-        <div className="grid grid-cols-2 md:grid-cols-4 divide-x divide-hairline">
-          {t.stats.map((s, i) => (
-            <div
-              key={i}
-              className={`py-10 md:py-14 px-4 md:px-8 first:pl-0 last:pr-0 transition-all duration-1000 ${
-                mount ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-              }`}
-              style={{ transitionDelay: `${1250 + i * 90}ms` }}
-            >
-              <div className="font-display text-[clamp(2.5rem,5vw,3.75rem)] leading-none text-ink">
-                <CountUp value={s.num} duration={1600} />
-                <span className="italic font-light text-gold">{s.suf}</span>
-              </div>
-              <div className="mt-3 overline text-ash">{s.label}</div>
-            </div>
-          ))}
-        </div>
-      </div>
+      <style jsx>{`
+        @keyframes zl-pulse {
+          0%,
+          100% {
+            transform: scale(1);
+            opacity: 1;
+          }
+          50% {
+            transform: scale(1.6);
+            opacity: 0.4;
+          }
+        }
+        @keyframes zl-pull {
+          0%,
+          100% {
+            transform: translateX(0);
+            opacity: 0.3;
+          }
+          50% {
+            transform: translateX(6px);
+            opacity: 1;
+          }
+        }
+        .zl-btn-primary:hover {
+          box-shadow: 0 24px 60px -18px rgba(21, 20, 20, 0.6),
+            inset 0 0 0 1px rgba(255, 255, 255, 0.1);
+        }
+        .zl-btn-primary:hover .zl-arrow {
+          transform: translateX(4px);
+        }
+      `}</style>
     </section>
   )
 }
