@@ -12,6 +12,11 @@ import {
   baseUrl,
 } from '@/config/schemas'
 
+const FloatingDevices = dynamic(() => import('@/components/sections/FloatingDevices'), {
+  ssr: true,
+  loading: () => <div className="min-h-[400px] bg-ivory" />
+})
+
 const Services = dynamic(() => import('@/components/sections/Services'), {
   ssr: true,
   loading: () => <div className="min-h-[600px] bg-ivory" />
@@ -234,6 +239,7 @@ export default function Home({ params }: { params: { locale: string } }) {
       <HeaderWrapper locale={locale} />
       <main className="min-h-screen relative overflow-x-hidden">
         <HeroNew locale={locale} />
+        <FloatingDevices locale={locale as 'en' | 'ko'} />
         <Services locale={locale} />
         <SelectedWork locale={locale} sectionNumber="02" />
         <Process locale={locale} sectionNumber="03" />

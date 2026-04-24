@@ -1,10 +1,17 @@
 'use client'
 
 import Link from 'next/link'
+import dynamic from 'next/dynamic'
 import { useEffect, useRef, useState } from 'react'
 import MaskReveal from '@/components/ui/motion/MaskReveal'
 import Magnetic from '@/components/ui/motion/Magnetic'
 import CountUp from '@/components/ui/motion/CountUp'
+
+// Aurora is WebGL + Three.js — lazy-load client-side only so it never blocks SSR/LCP
+const Aurora = dynamic(() => import('@/components/ui/motion/Aurora'), {
+  ssr: false,
+  loading: () => null,
+})
 
 const copy = {
   en: {
@@ -92,7 +99,18 @@ export default function HeroNew({ locale = 'en' }: { locale?: string }) {
   }, [])
 
   return (
-    <section className="relative bg-ivory overflow-hidden">
+    <section className="relative bg-ivory overflow-hidden isolate">
+      {/* Aurora shader background — spans the top-fold only */}
+      <div className="absolute inset-x-0 top-0 h-[120vh] -z-10 pointer-events-none">
+        <Aurora />
+        {/* Soft fade to ivory at bottom so the marquee/stats aren't affected */}
+        <div
+          aria-hidden
+          className="absolute inset-x-0 bottom-0 h-48"
+          style={{ background: 'linear-gradient(to bottom, rgba(250,247,240,0), #FAF7F0)' }}
+        />
+      </div>
+
       <div className="hair-bottom" />
 
       {/* Top meta bar */}
