@@ -163,8 +163,14 @@ export default function HangulWordmark({
     let width = el.clientWidth
     let height = el.clientHeight
 
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true })
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+    const renderer = new THREE.WebGLRenderer({
+      antialias: true,
+      alpha: true,
+      powerPreference: 'high-performance',
+    })
+    // Cap at 1.5x to halve fragment shader cost on retina displays.
+    // Visually near-identical to 2x for this scene, 2x faster on most GPUs.
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5))
     renderer.setSize(width, height)
     renderer.outputColorSpace = THREE.SRGBColorSpace
     renderer.toneMapping = THREE.ACESFilmicToneMapping
@@ -181,7 +187,7 @@ export default function HangulWordmark({
     const key = new THREE.DirectionalLight(0xfff3dc, 1.5)
     key.position.set(200, 300, 400)
     key.castShadow = true
-    key.shadow.mapSize.set(1024, 1024)
+    key.shadow.mapSize.set(512, 512)
     key.shadow.camera.left = -300
     key.shadow.camera.right = 300
     key.shadow.camera.top = 300
@@ -348,13 +354,18 @@ export default function HangulWordmark({
     }
 
     // Mouse tracking (window-level, normalized against container)
+    // Cache the container rect — recompute only on resize/scroll, not per mousemove
     const mouse = { x: 0, y: 0, tx: 0, ty: 0 }
+    let rect = el.getBoundingClientRect()
+    const refreshRect = () => {
+      rect = el.getBoundingClientRect()
+    }
     const onMove = (e: MouseEvent) => {
-      const r = el.getBoundingClientRect()
-      mouse.tx = (e.clientX - (r.left + r.width / 2)) / (r.width / 2)
-      mouse.ty = (e.clientY - (r.top + r.height / 2)) / (r.height / 2)
+      mouse.tx = (e.clientX - (rect.left + rect.width / 2)) / (rect.width / 2)
+      mouse.ty = (e.clientY - (rect.top + rect.height / 2)) / (rect.height / 2)
     }
     window.addEventListener('mousemove', onMove, { passive: true })
+    window.addEventListener('scroll', refreshRect, { passive: true })
 
     const onResize = () => {
       width = el.clientWidth
@@ -362,6 +373,7 @@ export default function HangulWordmark({
       renderer.setSize(width, height)
       camera.aspect = width / height
       camera.updateProjectionMatrix()
+      refreshRect()
     }
     window.addEventListener('resize', onResize)
 
@@ -372,7 +384,10 @@ export default function HangulWordmark({
     const loop = () => {
       raf = requestAnimationFrame(loop)
       const t = (performance.now() - startTime) / 1000
-      clock.getDelta()
+      const dt = clock.getDelta()
+      // Frame-rate independent exponential smoothing.
+      // Larger rate = snappier. 18/sec ≈ 63% catch-up per ~55ms.
+      const rotLerp = 1 - Math.exp(-18 * dt)
 
       // Pop progress
       if (popAnim.active) {
@@ -383,8 +398,10 @@ export default function HangulWordmark({
         if (progress >= 1) popAnim.active = false
       }
 
-      mouse.x += (mouse.tx - mouse.x) * 0.06
-      mouse.y += (mouse.ty - mouse.y) * 0.06
+      // Instant target — only the visible rotation is smoothed below.
+      // Single-layer smoothing feels more responsive than double-lerp.
+      mouse.x = mouse.tx
+      mouse.y = mouse.ty
 
       const popProgress = popAnim.active
         ? Math.min((performance.now() - popAnim.start) / popAnim.duration, 1)
@@ -424,8 +441,8 @@ export default function HangulWordmark({
       const baseRY = tiltY * popEase
       const rx = baseRX + mouse.y * 0.18 * motion * popEase
       const ry = baseRY + mouse.x * 0.35 * motion * popEase
-      group.rotation.x += (rx - group.rotation.x) * 0.08
-      group.rotation.y += (ry - group.rotation.y) * 0.08
+      group.rotation.x += (rx - group.rotation.x) * rotLerp
+      group.rotation.y += (ry - group.rotation.y) * rotLerp
       group.position.y = Math.sin(t * 0.6) * 3 * motion * popEase
 
       renderer.render(scene, camera)
@@ -435,6 +452,7 @@ export default function HangulWordmark({
     return () => {
       cancelAnimationFrame(raf)
       window.removeEventListener('mousemove', onMove)
+      window.removeEventListener('scroll', refreshRect)
       window.removeEventListener('resize', onResize)
       renderer.dispose()
       if (renderer.domElement && renderer.domElement.parentNode) {

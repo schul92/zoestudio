@@ -21,8 +21,7 @@ const HangulWordmark = dynamic(() => import('@/components/ui/motion/HangulWordma
 const copy = {
   en: {
     eyebrowLeft: 'Zoe Lumos — Est. New Jersey',
-    eyebrowRight: 'An American–Korean design studio',
-    subKo: '웹사이트 디자인 스튜디오',
+    eyebrowRight: 'Korean-American design studio',
     subEn: (
       <>
         A Korean-American studio building <span>considered, quiet,</span> high-performance
@@ -35,8 +34,7 @@ const copy = {
   },
   ko: {
     eyebrowLeft: 'Zoe Lumos — 2019, 뉴저지',
-    eyebrowRight: '한인 · 미국인 디자인 스튜디오',
-    subKo: '오래도록 기억되는 웹사이트',
+    eyebrowRight: '한인·미국인 디자인 스튜디오',
     subEn: (
       <>
         포트리에서 LA까지 — <span>조용하지만 단단한,</span> 매 디테일이 고려된 한인 ·
@@ -155,11 +153,11 @@ export default function HeroNew({ locale = 'en' }: { locale?: string }) {
       </div>
 
       {/* Hero content */}
-      <div className="relative z-[5] px-6 md:px-12 pt-24 md:pt-28 pb-14 md:pb-20 min-h-[100svh] flex flex-col">
+      <div className="relative z-[5] px-5 md:px-12 pt-20 md:pt-28 pb-16 md:pb-20 min-h-[100svh] flex flex-col">
         {/* Eyebrow row */}
         <div
           ref={eyebrowRef}
-          className="flex items-center justify-between px-1 pb-10 md:pb-12"
+          className="flex items-center justify-between px-1 pb-6 md:pb-12"
         >
           <span
             className="inline-flex items-center text-[11px] uppercase"
@@ -185,10 +183,10 @@ export default function HeroNew({ locale = 'en' }: { locale?: string }) {
         {/* 3D wordmark stage */}
         <div
           ref={wordmarkRef}
-          className="relative mx-auto w-full flex-1 min-h-[420px]"
+          className="relative mx-auto w-full flex-1"
           style={{
             maxWidth: 1400,
-            height: 'clamp(420px, 62vh, 720px)',
+            height: 'clamp(300px, 58vh, 720px)',
           }}
         >
           <div className="hero-wordmark-stage absolute inset-0 pointer-events-auto">
@@ -196,27 +194,14 @@ export default function HeroNew({ locale = 'en' }: { locale?: string }) {
           </div>
         </div>
 
-        {/* Subcopy — Korean serif left, English sans right */}
+        {/* Subcopy — single editorial paragraph, right-aligned on desktop */}
         <div
           ref={subcopyRef}
-          className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-end px-1 pt-6 pb-3 mx-auto w-full"
+          className="flex justify-start md:justify-end px-1 pt-6 pb-3 mx-auto w-full"
           style={{ maxWidth: 1400 }}
         >
           <p
-            className="m-0"
-            style={{
-              fontFamily: 'var(--font-serif), "Noto Serif KR", Georgia, serif',
-              fontWeight: 400,
-              fontSize: 'clamp(28px, 3.8vw, 52px)',
-              letterSpacing: '-0.015em',
-              lineHeight: 1.08,
-              color: 'var(--zl-ink)',
-            }}
-          >
-            {t.subKo}
-          </p>
-          <p
-            className="md:justify-self-end md:text-right m-0 max-w-[460px] text-[15px] leading-[1.55]"
+            className="md:text-right m-0 max-w-[520px] text-[15px] leading-[1.55]"
             style={{ color: 'var(--zl-ink-soft)' }}
           >
             {t.subEn}
@@ -226,7 +211,7 @@ export default function HeroNew({ locale = 'en' }: { locale?: string }) {
         {/* CTAs right-aligned */}
         <div
           ref={ctasRef}
-          className="flex justify-start md:justify-end items-center gap-5 md:gap-6 pt-8 md:pt-10 px-1 mx-auto w-full"
+          className="flex flex-wrap justify-start md:justify-end items-center gap-x-5 gap-y-4 md:gap-6 pt-6 md:pt-10 px-1 mx-auto w-full"
           style={{ maxWidth: 1400 }}
         >
           <Magnetic strength={20} radius={120}>
