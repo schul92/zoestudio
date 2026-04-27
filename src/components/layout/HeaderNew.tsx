@@ -91,22 +91,22 @@ export default function HeaderNew({ locale = 'en' }: { locale?: string }) {
       }`}
     >
       <div className="container-edge">
-        <div className="flex items-center justify-between h-20 md:h-24">
+        <div className="flex items-center justify-between h-24 md:h-28">
           {/* Wordmark */}
           <Link href={`${prefix}/`} data-cursor="hide" className="group flex items-center gap-3">
             <span className="gold-dot transition-transform duration-700 group-hover:scale-150" />
-            <span className="font-display text-[22px] md:text-[26px] leading-none tracking-luxury text-ink fraunces-soft">
+            <span className="font-display text-[26px] md:text-[32px] leading-none tracking-luxury text-ink fraunces-soft">
               Zoe<span className="italic font-light text-gold">&nbsp;Lumos</span>
             </span>
           </Link>
 
           {/* Desktop nav */}
-          <nav className="hidden lg:flex items-center gap-10">
+          <nav className="hidden lg:flex items-center gap-12">
             {nav.map((l) => (
               <Link
                 key={l.href}
                 href={l.href}
-                className="text-[13px] tracking-wide text-graphite hover:text-ink transition-colors duration-300"
+                className="text-[15px] tracking-wide text-graphite hover:text-ink transition-colors duration-300"
               >
                 {l.label}
               </Link>
@@ -114,10 +114,10 @@ export default function HeaderNew({ locale = 'en' }: { locale?: string }) {
           </nav>
 
           {/* Right cluster */}
-          <div className="flex items-center gap-5 md:gap-7">
+          <div className="flex items-center gap-5 md:gap-8">
             <Link
               href={otherLocaleHref}
-              className="hidden sm:inline-flex text-[11px] uppercase tracking-[0.24em] text-ash hover:text-ink transition-colors"
+              className="hidden sm:inline-flex text-[12px] uppercase tracking-[0.24em] text-ash hover:text-ink transition-colors"
               aria-label="Switch language"
             >
               {locale === 'ko' ? 'EN' : 'KR'}
@@ -125,25 +125,25 @@ export default function HeaderNew({ locale = 'en' }: { locale?: string }) {
 
             <Link
               href={`${prefix}/#contact`}
-              className="hidden md:inline-flex items-center gap-2 text-[13px] font-medium text-ink"
+              className="hidden md:inline-flex items-center gap-2 text-[15px] font-medium text-ink"
             >
               <span className="relative">
                 {locale === 'ko' ? '프로젝트 의뢰' : 'Inquire'}
                 <span className="absolute left-0 right-0 -bottom-1 h-px bg-ink" />
               </span>
-              <span aria-hidden className="text-[11px]">↗</span>
+              <span aria-hidden className="text-[12px]">↗</span>
             </Link>
 
             <button
               onClick={() => setMenuOpen((v) => !v)}
               aria-label="Menu"
-              className="lg:hidden w-10 h-10 flex items-center justify-center"
+              className="lg:hidden w-11 h-11 flex items-center justify-center"
             >
               <span className="sr-only">Menu</span>
-              <div className="w-6 flex flex-col gap-[5px]">
-                <span className={`h-px bg-ink transition-all duration-500 ${menuOpen ? 'rotate-45 translate-y-[6px]' : ''}`} />
-                <span className={`h-px bg-ink transition-all duration-500 ${menuOpen ? 'opacity-0' : ''}`} />
-                <span className={`h-px bg-ink transition-all duration-500 ${menuOpen ? '-rotate-45 -translate-y-[6px]' : ''}`} />
+              <div className="w-7 flex flex-col gap-[6px]">
+                <span className={`h-[1.5px] bg-ink transition-all duration-500 ${menuOpen ? 'rotate-45 translate-y-[7px]' : ''}`} />
+                <span className={`h-[1.5px] bg-ink transition-all duration-500 ${menuOpen ? 'opacity-0' : ''}`} />
+                <span className={`h-[1.5px] bg-ink transition-all duration-500 ${menuOpen ? '-rotate-45 -translate-y-[7px]' : ''}`} />
               </div>
             </button>
           </div>
@@ -152,7 +152,7 @@ export default function HeaderNew({ locale = 'en' }: { locale?: string }) {
 
       {/* Mobile menu */}
       <div
-        className={`lg:hidden fixed inset-0 top-20 bg-ivory transition-all duration-700 ${
+        className={`lg:hidden fixed inset-0 top-24 bg-ivory transition-all duration-700 ${
           menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >

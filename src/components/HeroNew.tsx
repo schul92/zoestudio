@@ -153,7 +153,7 @@ export default function HeroNew({ locale = 'en' }: { locale?: string }) {
       </div>
 
       {/* Hero content */}
-      <div className="relative z-[5] px-5 md:px-12 pt-20 md:pt-28 pb-16 md:pb-20 min-h-[100svh] flex flex-col">
+      <div className="relative z-[5] px-5 md:px-12 pt-28 md:pt-32 pb-16 md:pb-20 min-h-[100svh] flex flex-col">
         {/* Eyebrow row */}
         <div
           ref={eyebrowRef}
