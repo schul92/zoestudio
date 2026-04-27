@@ -1540,12 +1540,12 @@ export const blogContent: BlogPost[] = [
     readTime: 7,
     category: { en: 'Marketing', ko: '마케팅' },
     title: {
-      en: 'How to Use KakaoTalk Channel for a US-Based Korean Business (2026 Guide)',
-      ko: '미국 한인 비즈니스를 위한 카카오톡 채널 활용 가이드 (2026년 완벽판)',
+      en: 'KakaoTalk Channel & Advertising Guide for US Korean Businesses (2026)',
+      ko: '미국 한인 비즈니스를 위한 카카오톡 채널·광고 가이드 (2026년 최신판)',
     },
     metaDescription: {
-      en: 'A step-by-step guide to setting up and using KakaoTalk Channel from the US for your Korean-American business — customer service, marketing, and retention.',
-      ko: '미국에서 한인 비즈니스용 카카오톡 채널을 설정하고 활용하는 단계별 가이드 — 고객 응대, 마케팅, 재방문 유도까지.',
+      en: 'Set up KakaoTalk Channel from the US in 20 min. Step-by-step: business setup, ads, broadcasts, website integration. Used daily by 85% of Korean-Americans.',
+      ko: '미국에서 카카오톡 채널 20분 만에 설정하기. 비즈니스 등록, 광고, 단체 메시지, 웹사이트 연동까지 — 미주 한인 85%가 매일 사용.',
     },
     author: 'ZOE LUMOS Team',
     sections: {

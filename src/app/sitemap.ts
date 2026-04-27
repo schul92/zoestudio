@@ -36,6 +36,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/palisades-park-marketing',
     '/ridgefield-web-design',
     '/edgewater-web-design',
+    '/bilingual-seo-new-york',
     // Korean-American city hub pages
     ...koreanCities.map((c) => `/${c.slug}`),
   ]
