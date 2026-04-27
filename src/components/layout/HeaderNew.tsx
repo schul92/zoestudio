@@ -137,7 +137,7 @@ export default function HeaderNew({ locale = 'en' }: { locale?: string }) {
             <button
               onClick={() => setMenuOpen((v) => !v)}
               aria-label="Menu"
-              className="lg:hidden w-11 h-11 flex items-center justify-center"
+              className="flex lg:!hidden items-center justify-center w-11 h-11"
             >
               <span className="sr-only">Menu</span>
               <div className="w-7 flex flex-col gap-[6px]">
