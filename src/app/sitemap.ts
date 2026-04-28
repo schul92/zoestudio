@@ -37,6 +37,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/ridgefield-web-design',
     '/edgewater-web-design',
     '/bilingual-seo-new-york',
+    '/korean-web-design-agencies-nj-compared',
+    '/services/kakaotalk-integration',
+    '/services/google-business-profile-optimization',
     // Korean-American city hub pages
     ...koreanCities.map((c) => `/${c.slug}`),
   ]
