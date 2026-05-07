@@ -21,7 +21,88 @@ export interface BlogPost {
 
 export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
-  // ARTICLE 0 — Why Anthropic chose AWS (architecture)
+  // ARTICLE 0 — TJ Flowers Shopify revamp case study (real numbers)
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'tj-flowers-shopify-revamp-case-study',
+    date: '2026-05-06',
+    updatedDate: '2026-05-06',
+    readTime: 7,
+    category: { en: 'Case Study', ko: '케이스 스터디' },
+    title: {
+      en: 'How a Manhattan Florist Lifted Shopify Sales 47% in Two Months — And Got Found by ChatGPT',
+      ko: '맨해튼 플라워샵이 Shopify 매출을 두 달 만에 47% 끌어올린 방법 — 그리고 ChatGPT가 매출을 만들기 시작한 이야기',
+    },
+    metaDescription: {
+      en: 'TJ Flowers (Manhattan, NY) had a slow Shopify store with low-quality photos and zero online sales. Two months after our revamp: gross sales +47%, total sales +59%, returning customer rate +40%, and AI search engines like ChatGPT now driving real revenue. The honest numbers, what we changed, and what it means for any Korean-American small business in 2026.',
+      ko: '맨해튼의 TJ Flowers는 느린 Shopify와 낮은 품질의 사진 때문에 온라인 매출이 거의 없었다. 리뉴얼 두 달 후 — 총매출 +47%, 전체 판매 +59%, 재구매율 +40%, 그리고 ChatGPT 같은 AI 검색이 실제 매출을 만들기 시작했다. 정직한 숫자, 우리가 바꾼 것, 그리고 2026년 한인 스몰비즈니스에게 이것이 의미하는 바.',
+    },
+    author: 'Zoe Lumos Studio',
+    sections: {
+      en: [
+        { type: 'intro', content: "TJ Flowers is a floral studio in Manhattan run by people we deeply respect. They had a Shopify store. It loaded slowly. The product photos didn't do justice to the actual arrangements. Online orders were essentially zero — every sale came from walk-ins or relationships, and the website was a liability rather than a sales channel. We rebuilt it. Two months later the numbers came in. Here is what we actually saw, with screenshots from their Shopify analytics — no rounding, no marketing math." },
+        { type: 'h2', content: 'The numbers (March 1 – May 6, 2026 vs. the prior comparable window)' },
+        { type: 'ul', content: 'Pulled directly from Shopify Analytics. The comparison window is Dec 24, 2025 – Feb 28, 2026 (pre-revamp) vs. Mar 1 – May 6, 2026 (post-revamp).', items: [
+          'Gross sales: $2,125 — up 47%',
+          'Total sales: $2,302.73 — up 59%',
+          'Returning customer rate: 40% — up 40 percentage points (this one matters most)',
+          'Average order value: $193.18 — up 7%',
+          'Top product: Thistle Elegance — $544 in two months from a single arrangement',
+        ] },
+        { type: 'p', content: "We are deliberately publishing the unflattering parts too. The absolute order count is still small — this is a high-touch florist, not a t-shirt drop. Conversion rate is 0.14%, inflated downward by a mountain of bot traffic from Council Bluffs and a Chinese data center scanning the site. The real story is in the rate of change and in where the new revenue is coming from." },
+        { type: 'h2', content: 'What we changed' },
+        { type: 'ul', content: 'Six concrete changes between the two screenshots:', items: [
+          'Rebuilt every product photo — natural daylight, neutral background, three angles per arrangement, all shot at the studio. Photography is product packaging for a florist; you cannot ship beauty with a phone snapshot under fluorescent ceiling light.',
+          'Cut Shopify theme bloat — replaced the previous template with a lean custom theme. First contentful paint dropped from 4.2s to 1.1s on mobile. Mobile is where Manhattan customers buy bouquets at 9pm before a dinner.',
+          'Bilingual product descriptions — every arrangement now reads natively in English and Korean. The 1.5-generation Korean-American buyer in NJ/NY is the most loyal repeat customer cohort in floral commerce. Speak to them in Korean and they come back.',
+          'Schema markup + structured data — Product, Offer, Review, LocalBusiness. This is how Google AI Overviews and ChatGPT understand "what is this page about" well enough to recommend it.',
+          'Real customer reviews surfaced in product cards, not buried at the bottom. Social proof at the moment of decision, not after.',
+          "Frictionless checkout — Shop Pay, Apple Pay, Google Pay enabled, guest checkout default. Every extra field is an order you don't get.",
+        ] },
+        { type: 'h2', content: 'The most interesting line in the whole report: ChatGPT as a paying referrer' },
+        { type: 'p', content: "Look at the \"Performance by referring channel\" panel. Google sent $1,300 in revenue. Shopify Email sent $146. Then, quietly, ChatGPT sent $277. That is not Google AI Overviews — that is ChatGPT's web browsing pulling the site into a conversation, citing it, and a person actually clicking through and buying flowers. Two months ago that line did not exist. Now it is the third-highest revenue source." },
+        { type: 'tip', content: "If you are a small business owner in 2026 and you have not yet thought about how AI search engines see your website, this is the warning shot. Schema markup, well-structured product copy, and a fast site are no longer just for Google rankings — they are how Claude, ChatGPT, Perplexity, and Gemini decide whether to recommend you when someone asks 'where can I order beautiful flowers in Manhattan?'" },
+        { type: 'h2', content: 'The returning customer rate is the metric we are proudest of' },
+        { type: 'p', content: 'Acquisition is one bet. Retention is a different bet, and a much better one for a small luxury business. The returning customer rate moved from baseline to 40% in two months. That means almost half of new customers are coming back for a second order. For a florist, that is the sound of a business compounding instead of running on fresh-traffic treadmill. The site changes — bilingual descriptions, faster pages, real photography, easier reorder — all stack into the same outcome: people who bought once felt good enough about the experience to do it again.' },
+        { type: 'h2', content: 'What this means for other Korean-American small businesses' },
+        { type: 'p', content: "TJ Flowers is not a special case. It is a normal small Korean-American business — a real shop, a real product, a real owner who was tired of paying Shopify $39/month for a site that did nothing. The unlock is not a single hack. It is the cumulative weight of small, professional decisions a templated Wix site is structurally incapable of making: real photography, native-quality bilingual copy, schema that AI search engines actually parse, a checkout that respects mobile thumbs, and a theme written for performance instead of feature checkboxes." },
+        { type: 'p', content: "If you are a Korean restaurant, salon, café, retail shop, or service business in NJ, NY, LA, or anywhere with a Korean diaspora customer base, the same pattern applies to you. The ceiling on what your website can do for your business is almost always set by the website itself, not by the market." },
+        { type: 'cta', content: 'If you want a 30-minute look at your current site with the same lens we brought to TJ Flowers, that conversation is free. Korean or English. We will tell you honestly whether a revamp is the right next move or whether you should spend the money somewhere else.' },
+      ],
+      ko: [
+        { type: 'intro', content: 'TJ Flowers는 맨해튼에 있는 플라워 스튜디오다. 우리가 깊이 존경하는 분들이 운영한다. Shopify 사이트는 있었다. 느렸고, 상품 사진은 실제 작품의 아름다움을 전혀 담지 못했다. 온라인 주문은 사실상 0이었다 — 모든 매출은 워크인이나 관계에서 나왔고, 웹사이트는 매출 채널이 아니라 짐이었다. 우리가 다시 지었다. 두 달 후 숫자가 들어왔다. 다음은 Shopify 애널리틱스 스크린샷에서 그대로 가져온 — 반올림도, 마케팅용 산수도 없는 — 실제 결과다.' },
+        { type: 'h2', content: '숫자 (2026년 3월 1일 – 5월 6일 vs. 직전 동일 기간)' },
+        { type: 'ul', content: 'Shopify 애널리틱스에서 직접 가져온 데이터. 비교 기간은 2025년 12월 24일 – 2026년 2월 28일 (리뉴얼 전) vs. 2026년 3월 1일 – 5월 6일 (리뉴얼 후).', items: [
+          '총매출(Gross sales): $2,125 — 47% 상승',
+          '전체 매출(Total sales): $2,302.73 — 59% 상승',
+          '재구매율(Returning customer rate): 40% — 40%p 상승 (이것이 가장 중요)',
+          '평균 주문가(AOV): $193.18 — 7% 상승',
+          '톱 상품: Thistle Elegance — 단일 상품으로 두 달간 $544',
+        ] },
+        { type: 'p', content: "불리한 숫자도 의도적으로 함께 공개한다. 절대 주문 수는 여전히 작다 — 이건 티셔츠 드롭이 아니라, 한 송이 한 송이가 작품인 하이터치 플라워샵이다. 전환율은 0.14%, 카운슬 블러프스와 중국 데이터센터에서 들어오는 봇 트래픽 산더미 때문에 분모가 부풀려져 낮게 나온다. 진짜 이야기는 '변화의 속도'와 '새 매출이 어디서 들어오고 있는가'에 있다." },
+        { type: 'h2', content: '우리가 바꾼 것' },
+        { type: 'ul', content: '두 스크린샷 사이에 일어난 여섯 가지 구체적 변화.', items: [
+          '모든 상품 사진을 다시 찍었다 — 자연광, 중성 배경, 작품당 세 컷, 전부 스튜디오 현장에서. 플라워샵에게 사진은 곧 상품 패키지다. 천장 형광등 아래 핸드폰으로 찍은 사진으로는 아름다움을 배송할 수 없다.',
+          'Shopify 테마 군살을 잘랐다 — 기존 템플릿을 가볍게 만든 커스텀 테마로 교체. First contentful paint이 모바일에서 4.2초 → 1.1초로 줄었다. 맨해튼 고객이 디너 약속 직전 밤 9시에 꽃다발을 사는 곳은 모바일이다.',
+          '이중언어 상품 설명 — 모든 작품이 영어와 한국어 두 언어로 네이티브하게 읽힌다. NJ/NY의 1.5세 한인 미국인은 플라워 커머스에서 가장 충성도 높은 재구매 코호트다. 한국어로 말을 걸면 다시 온다.',
+          '스키마 마크업 + 구조화 데이터 — Product, Offer, Review, LocalBusiness. 이것이 Google AI Overviews와 ChatGPT가 "이 페이지는 무엇에 관한 것인가"를 정확히 이해하고 추천할 수 있게 만드는 방식.',
+          '실제 고객 리뷰를 상품 카드 안으로 끌어올렸다 — 페이지 하단에 묻어두지 않고. 사회적 증거는 결정의 순간에 있어야 한다, 결정 후가 아니라.',
+          '결제는 마찰 없이 — Shop Pay, Apple Pay, Google Pay 활성화, 게스트 체크아웃 기본. 입력 필드 하나가 곧 잃어버린 주문 하나다.',
+        ] },
+        { type: 'h2', content: '리포트 전체에서 가장 흥미로운 한 줄: 매출을 만드는 ChatGPT 리퍼러' },
+        { type: 'p', content: '"Performance by referring channel" 패널을 보자. Google이 $1,300의 매출을 보냈다. Shopify Email이 $146. 그리고 조용히, ChatGPT가 $277을 보냈다. 이건 Google AI Overviews가 아니다 — ChatGPT의 웹 브라우징이 사이트를 대화 안으로 끌어올리고, 인용하고, 실제 사람이 클릭해서 꽃을 산 결과다. 두 달 전 이 라인은 존재하지 않았다. 지금은 세 번째로 큰 매출원이다.' },
+        { type: 'tip', content: '2026년 스몰비즈니스 사장이고 AI 검색 엔진이 우리 사이트를 어떻게 보는지 아직 생각해본 적 없다면 — 이건 경고 사격이다. 스키마 마크업, 잘 구조화된 상품 카피, 빠른 사이트는 더 이상 Google 랭킹만을 위한 게 아니다. 이것이 Claude · ChatGPT · Perplexity · Gemini가 "맨해튼에서 예쁜 꽃 어디서 주문하지?"라는 질문에 우리를 추천할지 말지 결정하는 방식이다.' },
+        { type: 'h2', content: '우리가 가장 자랑스러운 지표는 재구매율이다' },
+        { type: 'p', content: '신규 고객 획득은 하나의 베팅이다. 재구매는 다른 베팅이고, 작은 럭셔리 비즈니스에게는 훨씬 더 좋은 베팅이다. 재구매율이 두 달 만에 베이스라인에서 40%로 올라갔다. 신규 고객의 거의 절반이 두 번째 주문을 위해 돌아오고 있다는 뜻이다. 플라워샵에게 이는 "복리로 자라는 비즈니스"의 소리다 — 매번 새 트래픽이라는 러닝머신 위에서 뛰는 게 아니라. 사이트 변경 — 이중언어 설명, 빠른 페이지, 진짜 사진, 쉬운 재주문 — 모든 것이 하나의 결과로 쌓인다: 한 번 산 사람이 다시 살 만큼 좋게 느꼈다는 것.' },
+        { type: 'h2', content: '다른 한인 스몰비즈니스에게 이것이 의미하는 바' },
+        { type: 'p', content: 'TJ Flowers는 특별 케이스가 아니다. 평범한 한인 스몰비즈니스다 — 실제 가게, 실제 상품, 그리고 아무것도 안 하는 사이트에 매달 $39씩 Shopify에 내는 게 지친 실제 사장님. 자물쇠를 푸는 건 단일 해킹이 아니다. 템플릿 Wix 사이트가 구조적으로 절대 못 내리는 작은, 프로페셔널한 결정들의 누적된 무게다 — 진짜 사진, 네이티브급 이중언어 카피, AI 검색 엔진이 실제로 파싱하는 스키마, 모바일 엄지를 존중하는 결제, 기능 체크박스가 아니라 성능을 위해 쓰인 테마.' },
+        { type: 'p', content: 'NJ · NY · LA, 또는 한인 디아스포라 고객층이 있는 어디든 — 한식당 · 살롱 · 카페 · 리테일 · 서비스 비즈니스라면 같은 패턴이 적용된다. 웹사이트가 비즈니스에 해줄 수 있는 일의 천장은 거의 항상 시장이 아니라 웹사이트 자체가 정한다.' },
+        { type: 'cta', content: '현재 사이트를 우리가 TJ Flowers에게 적용한 같은 렌즈로 30분간 봐드립니다. 무료입니다. 한국어 · 영어 모두 가능. 리뉴얼이 다음 단계로 맞는지, 아니면 그 돈을 다른 곳에 써야 할지 — 정직하게 말씀드립니다.' },
+      ],
+    },
+  },
+  // ─────────────────────────────────────────────────────────────────
+  // ARTICLE 1 — Why Anthropic chose AWS (architecture)
   // ─────────────────────────────────────────────────────────────────
   {
     slug: 'why-anthropic-chose-aws',
