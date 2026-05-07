@@ -61,6 +61,36 @@ export async function generateMetadata({
 // Blog posts data (can be moved to a separate file or CMS later)
 const blogPosts = [
   {
+    id: 100,
+    slug: 'korean-restaurant-own-app-vs-doordash',
+    date: '2026-05-07',
+    readTime: 7,
+    category: { en: 'App Development', ko: '앱 개발' },
+    title: { en: 'Korean Restaurant Own App vs DoorDash: $14K App Pays Back in 4 Months', ko: '한식당 자체 앱 vs 도어대시 — $14,000 앱이 4개월 만에 본전 뽑는 이유' },
+    excerpt: { en: 'DoorDash takes 30%. At $20K/mo delivery that is $72K/yr lost. A $14K own-app pays back in 4 months if you migrate 40% of repeat orders. Honest math.', ko: '도어대시 수수료 30% — 월 $20,000 배달 매출이면 연 $72,000 손실. $14,000짜리 자체 앱은 재주문의 40%만 옮겨도 4개월이면 본전. 솔직한 계산.' },
+    image: '/blog/korean-restaurant-own-app-vs-doordash.png'
+  },
+  {
+    id: 101,
+    slug: 'pwa-vs-native-app-korean-smb',
+    date: '2026-05-07',
+    readTime: 6,
+    category: { en: 'App Development', ko: '앱 개발' },
+    title: { en: 'PWA vs Native App: When $4K Is Enough vs When You Need $15K', ko: 'PWA vs 네이티브 앱: $4,000으로 충분한 경우 vs $15,000이 필요한 경우' },
+    excerpt: { en: 'Skip the $15K native app if a $4K PWA is enough. Decision framework for Korean SMBs: when web-based works, when iOS push and App Store visibility require native.', ko: '$4,000짜리 PWA로 충분하면 $15,000짜리 네이티브 앱은 건너뛰세요. 한인 소상공업 의사결정 가이드 — 웹 기반이 통할 때, iOS 푸시와 앱스토어 노출이 필요해서 네이티브가 필수인 때.' },
+    image: '/blog/pwa-vs-native-app-korean-smb.png'
+  },
+  {
+    id: 102,
+    slug: 'app-store-submission-korean-business-guide',
+    date: '2026-05-07',
+    readTime: 8,
+    category: { en: 'App Development', ko: '앱 개발' },
+    title: { en: 'App Store Submission for Korean SMBs: Apple Developer, DUNS, and the Guideline 4.3 Trap', ko: '한인 사장님을 위한 앱스토어 등록 — Apple Developer·DUNS·Guideline 4.3 함정' },
+    excerpt: { en: 'Apple Developer enrollment ($99/yr), DUNS for LLCs, App Privacy nutrition labels, and the Guideline 4.3 rejection that kills cheap "app builder" services. Real mechanics for Korean small business owners shipping their first app.', ko: 'Apple Developer 가입 ($99/년), LLC를 위한 DUNS, App Privacy 라벨, 그리고 저가 "앱 빌더" 서비스를 죽이는 Guideline 4.3 거절 — 첫 앱을 출시하는 한인 사장님을 위한 실제 메커니즘.' },
+    image: '/blog/app-store-submission-korean-business-guide.png'
+  },
+  {
     id: 0,
     slug: 'tj-flowers-shopify-revamp-case-study',
     date: '2026-05-06',
@@ -165,12 +195,12 @@ const blogPosts = [
       ko: '이커머스'
     },
     title: {
-      en: 'Shopify for Korean Businesses: Complete Setup Guide',
-      ko: '한인 비즈니스 Shopify 쇼핑몰 제작 완벽 가이드'
+      en: 'Shopify for Korean Sellers in the US: 5 Setup Wins [2026]',
+      ko: '미국 한인 셀러를 위한 Shopify 구축 5단계 [2026]'
     },
     excerpt: {
-      en: 'Set up a Shopify store for your Korean-American business. Korean payment options, bilingual product pages, and SEO tips.',
-      ko: '미국 한인 사업주를 위한 Shopify 쇼핑몰 구축 가이드. 한국어 상품 페이지, 결제 시스템, SEO 최적화 총정리.'
+      en: 'Launch a Korean-language Shopify store in the US: payment gateways, hangul fonts, Naver Shopping feed, and KRW/USD pricing — set up in one day.',
+      ko: '미국에서 한국어 Shopify 쇼핑몰 구축 — 결제 연동, 한글 폰트, 네이버 쇼핑 피드, 원/달러 가격 표기까지 하루 만에 완료하는 방법.'
     },
     image: '/blog/shopify-seo.jpg'
   },
@@ -190,8 +220,8 @@ const blogPosts = [
     date: '2026-04-15',
     readTime: 9,
     category: { en: 'Foundations', ko: '기초 가이드' },
-    title: { en: 'Do Korean-American Businesses Actually Need a Website in 2026?', ko: '2026년, 미국 한인 비즈니스에 정말 웹사이트가 필요할까요?' },
-    excerpt: { en: 'An honest look at whether your Korean-American business needs a website in 2026, or if Instagram, KakaoTalk, and Google Business Profile are enough.', ko: '인스타그램, 카카오톡, 구글 비즈니스 프로필만 있으면 되는 시대에 과연 한인 비즈니스에 웹사이트가 필요한지 솔직하게 분석합니다.' },
+    title: { en: '7 Signs Your Korean Business Loses Sales Without a Website', ko: '한인 비즈니스가 웹사이트 없이 매출을 잃는 7가지 신호' },
+    excerpt: { en: 'Instagram and Naver alone cost Korean-American businesses ~30% of new customers. Here is when a website pays for itself — and when it does not.', ko: '인스타그램과 네이버만으로 운영하면 한인 비즈니스는 신규 고객의 약 30%를 잃습니다. 웹사이트가 비용을 회수하는 시점과 회수하지 못하는 경우를 솔직하게 분석합니다.' },
     image: '/blog/need-website.jpg'
   },
   {
@@ -230,8 +260,8 @@ const blogPosts = [
     date: '2026-04-11',
     readTime: 7,
     category: { en: 'Marketing', ko: '마케팅' },
-    title: { en: 'How to Use KakaoTalk Channel for a US-Based Korean Business (2026 Guide)', ko: '미국 한인 비즈니스를 위한 카카오톡 채널 활용 가이드 (2026년 완벽판)' },
-    excerpt: { en: 'A step-by-step guide to setting up and using KakaoTalk Channel from the US for your Korean-American business — customer service, marketing, and retention.', ko: '미국에서 한인 비즈니스용 카카오톡 채널을 설정하고 활용하는 단계별 가이드 — 고객 응대, 마케팅, 재방문 유도까지.' },
+    title: { en: 'KakaoTalk Channel from the US: 20-Min Setup for Korean Businesses (2026)', ko: '미국에서 카카오톡 채널 20분 만에 만들기 — 한인 비즈니스 완벽 가이드 (2026)' },
+    excerpt: { en: '85% of Korean-Americans use KakaoTalk daily. Here is how to set up a business Channel from the US in 20 minutes — registration, ads, broadcasts, and website integration. No Korean phone number required.', ko: '미주 한인 85%가 매일 쓰는 카카오톡 — 미국에서 비즈니스 채널을 20분 만에 만드는 방법. 사업자 등록, 광고, 단체 메시지, 웹사이트 연동까지. 한국 번호 없이 가능.' },
     image: '/blog/kakaotalk.jpg'
   },
   {
@@ -275,7 +305,7 @@ const blogPosts = [
   { id: 21, slug: 'korean-hair-salon-website-guide', date: '2026-04-17', readTime: 7, category: { en: 'Industry Guide', ko: '업종별 가이드' }, title: { en: 'Korean Hair Salon Website Guide', ko: '한인 헤어살롱 웹사이트 가이드' }, excerpt: { en: 'Build a Korean hair salon website that shows K-style authority: stylist portfolios, online booking, pricing.', ko: 'K-스타일 전문성을 보여주는 한인 헤어살롱 웹사이트: 디자이너 포트폴리오, 예약.' }, image: '/blog/korean-hair-salon-website-guide.png' },
   { id: 22, slug: 'korean-insurance-financial-services-website', date: '2026-04-17', readTime: 8, category: { en: 'Industry Guide', ko: '업종별 가이드' }, title: { en: 'Korean Insurance & Financial Services Website Guide', ko: '한인 보험 & 금융 서비스 웹사이트 가이드' }, excerpt: { en: 'Build a Korean insurance or financial services website that generates qualified leads while meeting compliance standards.', ko: '규정을 준수하면서 자격 있는 리드를 생성하는 한인 보험/금융 서비스 웹사이트 구축법.' }, image: '/blog/korean-insurance-financial-services-website.png' },
   // Phase 3 — GSC gap-targeting
-  { id: 23, slug: 'local-seo-guide-korean-business-2026', date: '2026-04-18', readTime: 10, category: { en: 'SEO', ko: 'SEO' }, title: { en: 'Local SEO 101: Complete Guide for Korean-American Small Businesses', ko: '로컬 SEO 101: 한인 소상공업 완벽 가이드' }, excerpt: { en: 'Everything about local SEO for Korean-American businesses. Google Business Profile, citations, reviews, and ranking factors.', ko: '한인 소상공업을 위한 로컬 SEO의 모든 것. GBP, 인용, 리뷰, 랭킹 요소.' }, image: '/blog/local-seo-guide-korean-business-2026.png' },
+  { id: 23, slug: 'local-seo-guide-korean-business-2026', date: '2026-04-18', readTime: 10, category: { en: 'SEO', ko: 'SEO' }, title: { en: 'Local SEO for Korean Businesses: 9-Step Playbook [2026]', ko: '한인 비즈니스 로컬 SEO 9단계 플레이북 [2026]' }, excerpt: { en: '9-step local SEO playbook for Korean restaurants, salons, and shops in NJ/NY/LA. Rank in Google Maps, fix duplicate listings, win Korean reviews.', ko: '한인 식당·살롱·소매점을 위한 9단계 로컬 SEO 플레이북. NJ·NY·LA에서 구글 지도 상위 노출, 중복 리스팅 정리, 한국어 리뷰 확보까지.' }, image: '/blog/local-seo-guide-korean-business-2026.png' },
   { id: 24, slug: 'bilingual-seo-new-york-korean-business', date: '2026-04-18', readTime: 8, category: { en: 'SEO', ko: 'SEO' }, title: { en: 'Bilingual SEO for New York Korean Businesses', ko: '뉴욕 한인 비즈니스 이중언어 SEO' }, excerpt: { en: 'How NYC Korean businesses can rank on Google in both English and Korean simultaneously.', ko: '뉴욕 한인 비즈니스가 영어와 한국어 양쪽으로 동시 랭크하는 방법.' }, image: '/blog/bilingual-seo-new-york-korean-business.png' },
   { id: 25, slug: 'google-business-profile-korean-business-optimization', date: '2026-04-18', readTime: 9, category: { en: 'Marketing', ko: '마케팅' }, title: { en: 'Google Business Profile Optimization for Korean Businesses', ko: '한인 비즈니스 구글 비즈니스 프로필 최적화' }, excerpt: { en: 'Step-by-step GBP optimization guide for Korean-American businesses. Photos, posts, reviews, bilingual descriptions.', ko: '한인 비즈니스 GBP 최적화 단계별 가이드. 사진, 포스트, 리뷰, 이중언어 설명.' }, image: '/blog/google-business-profile-korean-business-optimization.png' },
   { id: 26, slug: 'affordable-seo-new-jersey-korean-business', date: '2026-04-18', readTime: 7, category: { en: 'SEO', ko: 'SEO' }, title: { en: 'Affordable SEO for NJ Korean Businesses — What $500/Month Gets You', ko: '뉴저지 한인 비즈니스 합리적 SEO — 월 $500으로 뭘 받나' }, excerpt: { en: 'What affordable SEO actually looks like for NJ Korean businesses. Real deliverables, realistic timelines, red flags.', ko: '뉴저지 한인 비즈니스의 합리적 SEO. 실제 산출물, 현실적 일정, 위험 신호.' }, image: '/blog/affordable-seo-new-jersey-korean-business.png' },
