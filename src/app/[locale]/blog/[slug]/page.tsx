@@ -171,6 +171,118 @@ function RenderSection({ section }: { section: BlogSection }) {
           </Link>
         </aside>
       )
+    case 'stats': {
+      // items: 'CHANGE|LABEL|ABSOLUTE'
+      const cards = (section.items || []).map((s) => {
+        const [change, label, absolute] = s.split('|')
+        const positive = change?.trim().startsWith('+')
+        return { change: change?.trim(), label: label?.trim(), absolute: absolute?.trim(), positive }
+      })
+      return (
+        <div className="my-12">
+          {section.content && (
+            <p className="overline text-gold mb-5">{section.content}</p>
+          )}
+          <ul className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+            {cards.map((c, i) => (
+              <li
+                key={i}
+                className="relative bg-bone rounded-[2px] p-5 md:p-6 hair-y overflow-hidden"
+              >
+                <div className="flex items-baseline gap-2 mb-1">
+                  <span
+                    className={`font-display text-[clamp(1.75rem,3.4vw,2.6rem)] leading-none tracking-luxury ${
+                      c.positive ? 'text-ink' : 'text-graphite'
+                    }`}
+                  >
+                    {c.change}
+                  </span>
+                  {c.positive && (
+                    <span aria-hidden className="text-gold text-sm">↑</span>
+                  )}
+                </div>
+                <p className="text-[11px] uppercase tracking-[0.18em] text-graphite mt-2">
+                  {c.label}
+                </p>
+                {c.absolute && (
+                  <p className="text-[13px] text-ink/70 mt-1">{c.absolute}</p>
+                )}
+              </li>
+            ))}
+          </ul>
+        </div>
+      )
+    }
+    case 'bars': {
+      // items: 'LABEL|VALUE[|highlight]' — value as a number string (for relative widths)
+      const rows = (section.items || []).map((s) => {
+        const [label, value, flag] = s.split('|')
+        return { label: label?.trim(), value: parseFloat(value), highlight: flag?.trim() === 'highlight', raw: value?.trim() }
+      })
+      const max = Math.max(...rows.map((r) => r.value || 0))
+      return (
+        <div className="my-12">
+          {section.content && (
+            <p className="overline text-gold mb-5">{section.content}</p>
+          )}
+          <ul className="space-y-4">
+            {rows.map((r, i) => {
+              const pct = max > 0 ? Math.max(8, (r.value / max) * 100) : 0
+              return (
+                <li key={i}>
+                  <div className="flex items-baseline justify-between mb-1.5">
+                    <span
+                      className={`text-[14px] ${r.highlight ? 'text-ink font-medium' : 'text-graphite'}`}
+                    >
+                      {r.label}
+                      {r.highlight && (
+                        <span className="ml-2 text-[10px] uppercase tracking-[0.18em] text-gold">
+                          new
+                        </span>
+                      )}
+                    </span>
+                    <span
+                      className={`font-display text-[clamp(1rem,1.4vw,1.25rem)] tracking-luxury ${
+                        r.highlight ? 'text-ink' : 'text-graphite'
+                      }`}
+                    >
+                      ${r.raw}
+                    </span>
+                  </div>
+                  <div className="relative h-3 rounded-[2px] bg-ink/[0.04] overflow-hidden">
+                    <div
+                      className={`absolute inset-y-0 left-0 ${
+                        r.highlight ? 'bg-gold' : 'bg-ink/40'
+                      }`}
+                      style={{ width: `${pct}%`, transition: 'width 600ms cubic-bezier(0.2,0.8,0.2,1)' }}
+                    />
+                  </div>
+                </li>
+              )
+            })}
+          </ul>
+        </div>
+      )
+    }
+    case 'screenshot':
+      // content: image src; items[0]: caption
+      return (
+        <figure className="my-12">
+          <div className="rounded-[2px] overflow-hidden hair-y bg-bone">
+            <img
+              src={section.content}
+              alt={section.items?.[0] || ''}
+              loading="lazy"
+              className="w-full h-auto block"
+            />
+          </div>
+          {section.items?.[0] && (
+            <figcaption className="overline text-graphite mt-3">
+              {section.items[0]}
+            </figcaption>
+          )}
+        </figure>
+      )
     default:
       return null
   }

@@ -62,6 +62,25 @@ export async function generateMetadata({
 const blogPosts = [
   {
     id: 0,
+    slug: 'tj-flowers-shopify-revamp-case-study',
+    date: '2026-05-06',
+    readTime: 7,
+    category: {
+      en: 'Case Study',
+      ko: '케이스 스터디'
+    },
+    title: {
+      en: 'How a Manhattan Florist Lifted Shopify Sales 47% in Under Four Weeks — And Got Found by ChatGPT',
+      ko: '맨해튼 플라워샵이 Shopify 매출을 4주 만에 47% 끌어올린 방법 — 그리고 ChatGPT가 매출을 만들기 시작한 이야기'
+    },
+    excerpt: {
+      en: 'Real Shopify analytics from a real client we revamped. New site launched April 10, 2026. By May 6 — under four weeks later — gross sales +47%, total +59%, returning customer rate now 40%, and ChatGPT quietly became the third-largest revenue source. The honest numbers and what we changed.',
+      ko: '실제 클라이언트의 실제 Shopify 애널리틱스. 새 사이트는 2026년 4월 10일 런칭. 5월 6일까지 — 4주 미만 — 총매출 +47%, 전체 +59%, 재구매율 40%, 그리고 ChatGPT가 조용히 세 번째로 큰 매출원이 되었다. 정직한 숫자와 우리가 바꾼 것.'
+    },
+    image: '/blog/tj-flowers-shopify-revamp-case-study.png'
+  },
+  {
+    id: 1,
     slug: 'why-anthropic-chose-aws',
     date: '2026-04-22',
     readTime: 9,

@@ -1,5 +1,5 @@
 export interface BlogSection {
-  type: 'intro' | 'h2' | 'p' | 'ul' | 'tip' | 'cta'
+  type: 'intro' | 'h2' | 'p' | 'ul' | 'tip' | 'cta' | 'stats' | 'bars' | 'screenshot'
   content: string
   items?: string[]
 }
@@ -41,6 +41,12 @@ export const blogContent: BlogPost[] = [
     sections: {
       en: [
         { type: 'intro', content: "TJ Flowers is a floral studio in Manhattan run by people we deeply respect. They had a Shopify store. It loaded slowly. The product photos didn't do justice to the actual arrangements. Online orders were essentially zero — every sale came from walk-ins or relationships, and the website was a liability rather than a sales channel. We launched the new site the second week of April 2026. The first order came in on April 10. Less than four weeks later, the numbers came in. Here is what we actually saw, with screenshots from their Shopify analytics — no rounding, no marketing math." },
+        { type: 'stats', content: 'In under four weeks, post-launch (vs. prior baseline window)', items: [
+          '+47%|Gross sales|$2,125',
+          '+59%|Total sales|$2,302.73',
+          '+40pp|Returning customers|now 40%',
+          '+7%|Avg order value|$193.18',
+        ] },
         { type: 'h2', content: 'The numbers (post-launch: Apr 10 – May 6, 2026)' },
         { type: 'ul', content: 'Pulled directly from Shopify Analytics. Comparison window: Dec 24, 2025 – Feb 28, 2026 (pre-revamp baseline) vs. Mar 1 – May 6, 2026 — but essentially all of the new revenue lands after the April 10 launch, so the lift you see below is roughly four weeks of work, not two months.', items: [
           'Gross sales: $2,125 — up 47%',
@@ -62,6 +68,12 @@ export const blogContent: BlogPost[] = [
         ] },
         { type: 'h2', content: 'The most interesting line in the whole report: ChatGPT as a paying referrer' },
         { type: 'p', content: "Look at the \"Performance by referring channel\" panel. Google sent $1,300 in revenue. Shopify Email sent $146. Then, quietly, ChatGPT sent $277. That is not Google AI Overviews — that is ChatGPT's web browsing pulling the site into a conversation, citing it, and a person actually clicking through and buying flowers. Two months ago that line did not exist. Now it is the third-highest revenue source." },
+        { type: 'bars', content: 'Revenue by referring channel — under 4 weeks post-launch', items: [
+          'Google search|1300',
+          'Unattributed|348',
+          'ChatGPT|277|highlight',
+          'Shopify email|146',
+        ] },
         { type: 'tip', content: "If you are a small business owner in 2026 and you have not yet thought about how AI search engines see your website, this is the warning shot. Schema markup, well-structured product copy, and a fast site are no longer just for Google rankings — they are how Claude, ChatGPT, Perplexity, and Gemini decide whether to recommend you when someone asks 'where can I order beautiful flowers in Manhattan?'" },
         { type: 'h2', content: 'The returning customer rate is the metric we are proudest of' },
         { type: 'p', content: 'Acquisition is one bet. Retention is a different bet, and a much better one for a small luxury business. The returning customer rate moved from baseline to 40% in under a month. That means almost half of new customers are coming back for a second order — and "a month" here is a generous frame, since the new site only went live in the second week of April. For a florist, that is the sound of a business compounding instead of running on a fresh-traffic treadmill. The site changes — bilingual descriptions, faster pages, real photography, easier reorder — all stack into the same outcome: people who bought once felt good enough about the experience to do it again, fast.' },
@@ -72,6 +84,12 @@ export const blogContent: BlogPost[] = [
       ],
       ko: [
         { type: 'intro', content: 'TJ Flowers는 맨해튼에 있는 플라워 스튜디오다. 우리가 깊이 존경하는 분들이 운영한다. Shopify 사이트는 있었다. 느렸고, 상품 사진은 실제 작품의 아름다움을 전혀 담지 못했다. 온라인 주문은 사실상 0이었다 — 모든 매출은 워크인이나 관계에서 나왔고, 웹사이트는 매출 채널이 아니라 짐이었다. 새 사이트는 2026년 4월 둘째 주에 런칭했다. 첫 주문은 4월 10일에 들어왔다. 4주가 채 지나지 않아 숫자가 나왔다. 다음은 Shopify 애널리틱스 스크린샷에서 그대로 가져온 — 반올림도, 마케팅용 산수도 없는 — 실제 결과다.' },
+        { type: 'stats', content: '런칭 후 4주 미만 (직전 동일 기간 대비)', items: [
+          '+47%|총매출|$2,125',
+          '+59%|전체 매출|$2,302.73',
+          '+40%p|재구매율|현재 40%',
+          '+7%|평균 주문가|$193.18',
+        ] },
         { type: 'h2', content: '숫자 (런칭 후: 2026년 4월 10일 – 5월 6일)' },
         { type: 'ul', content: 'Shopify 애널리틱스에서 직접 가져온 데이터. 비교 기간은 2025년 12월 24일 – 2026년 2월 28일 (리뉴얼 전 베이스라인) vs. 2026년 3월 1일 – 5월 6일이지만 — 새 매출의 거의 전부가 4월 10일 런칭 이후에 발생했으므로, 아래 상승률은 사실상 두 달이 아닌 약 4주의 결과다.', items: [
           '총매출(Gross sales): $2,125 — 47% 상승',
@@ -93,6 +111,12 @@ export const blogContent: BlogPost[] = [
         ] },
         { type: 'h2', content: '리포트 전체에서 가장 흥미로운 한 줄: 매출을 만드는 ChatGPT 리퍼러' },
         { type: 'p', content: '"Performance by referring channel" 패널을 보자. Google이 $1,300의 매출을 보냈다. Shopify Email이 $146. 그리고 조용히, ChatGPT가 $277을 보냈다. 이건 Google AI Overviews가 아니다 — ChatGPT의 웹 브라우징이 사이트를 대화 안으로 끌어올리고, 인용하고, 실제 사람이 클릭해서 꽃을 산 결과다. 두 달 전 이 라인은 존재하지 않았다. 지금은 세 번째로 큰 매출원이다.' },
+        { type: 'bars', content: '리퍼러별 매출 — 런칭 후 4주 미만', items: [
+          'Google search|1300',
+          '미식별 (Unattributed)|348',
+          'ChatGPT|277|highlight',
+          'Shopify email|146',
+        ] },
         { type: 'tip', content: '2026년 스몰비즈니스 사장이고 AI 검색 엔진이 우리 사이트를 어떻게 보는지 아직 생각해본 적 없다면 — 이건 경고 사격이다. 스키마 마크업, 잘 구조화된 상품 카피, 빠른 사이트는 더 이상 Google 랭킹만을 위한 게 아니다. 이것이 Claude · ChatGPT · Perplexity · Gemini가 "맨해튼에서 예쁜 꽃 어디서 주문하지?"라는 질문에 우리를 추천할지 말지 결정하는 방식이다.' },
         { type: 'h2', content: '우리가 가장 자랑스러운 지표는 재구매율이다' },
         { type: 'p', content: '신규 고객 획득은 하나의 베팅이다. 재구매는 다른 베팅이고, 작은 럭셔리 비즈니스에게는 훨씬 더 좋은 베팅이다. 재구매율이 한 달도 안 되어 베이스라인에서 40%로 올라갔다 — "한 달"이라는 표현조차 너그럽다. 새 사이트가 4월 둘째 주에야 런칭했기 때문. 신규 고객의 거의 절반이 두 번째 주문을 위해 돌아오고 있다는 뜻이다. 플라워샵에게 이는 "복리로 자라는 비즈니스"의 소리다 — 매번 새 트래픽이라는 러닝머신 위에서 뛰는 게 아니라. 사이트 변경 — 이중언어 설명, 빠른 페이지, 진짜 사진, 쉬운 재주문 — 모든 것이 하나의 결과로 쌓인다: 한 번 산 사람이 다시 살 만큼 좋게 느꼈다는 것 — 그것도 빠르게.' },
