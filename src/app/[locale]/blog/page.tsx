@@ -100,12 +100,12 @@ const blogPosts = [
       ko: '케이스 스터디'
     },
     title: {
-      en: 'How a Manhattan Florist Lifted Shopify Sales 47% in Under Four Weeks — And Got Found by ChatGPT',
-      ko: '맨해튼 플라워샵이 Shopify 매출을 4주 만에 47% 끌어올린 방법 — 그리고 ChatGPT가 매출을 만들기 시작한 이야기'
+      en: 'Manhattan Florist Case Study: $0 → $3,114 in 4 Weeks [2026]',
+      ko: '맨해튼 플라워샵 케이스 스터디: 4주 만에 $0 → $3,114 [2026]'
     },
     excerpt: {
-      en: 'Real Shopify analytics from a real client we revamped. New site launched April 10, 2026. By May 6 — under four weeks later — gross sales +47%, total +59%, returning customer rate now 40%, and ChatGPT quietly became the third-largest revenue source. The honest numbers and what we changed.',
-      ko: '실제 클라이언트의 실제 Shopify 애널리틱스. 새 사이트는 2026년 4월 10일 런칭. 5월 6일까지 — 4주 미만 — 총매출 +47%, 전체 +59%, 재구매율 40%, 그리고 ChatGPT가 조용히 세 번째로 큰 매출원이 되었다. 정직한 숫자와 우리가 바꾼 것.'
+      en: 'Manhattan florist launched a new Shopify site April 10, 2026. Four weeks later: $3,114 in real online sales, 68% from Google organic search, 38% returning customer rate (industry avg 15-20%), and $277 from ChatGPT. Bot traffic and migration imports excluded. Honest numbers, what we changed, and what it means for any Korean-American small business.',
+      ko: '맨해튼 플라워샵이 2026년 4월 10일 새 Shopify 사이트 런칭. 4주 후 — 진짜 온라인 매출 $3,114, 그중 68%가 구글 자연검색에서, 재구매율 38% (업계 평균 15-20%), $277은 ChatGPT에서. 봇 트래픽과 마이그레이션 임포트 제외한 정직한 숫자. 우리가 바꾼 것, 그리고 한인 스몰비즈니스에게 의미하는 바.'
     },
     image: '/blog/tj-flowers-shopify-revamp-case-study.png'
   },
