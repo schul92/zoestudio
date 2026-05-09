@@ -109,6 +109,35 @@ function BlogPostingSchema({
   )
 }
 
+// ─── FAQPage JSON-LD schema (only emitted when post.faq exists) ───────────────
+function FAQPageSchema({
+  post,
+  locale,
+}: {
+  post: (typeof blogContent)[0]
+  locale: 'en' | 'ko'
+}) {
+  if (!post.faq || post.faq.length === 0) return null
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: post.faq.map((item) => ({
+      '@type': 'Question',
+      name: item.q[locale],
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.a[locale],
+      },
+    })),
+  }
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  )
+}
+
 // ─── Section renderer ─────────────────────────────────────────────────────────
 function RenderSection({ section }: { section: BlogSection }) {
   switch (section.type) {
@@ -340,6 +369,7 @@ export default function BlogPostPage({
     <>
       <HeaderWrapper locale={locale} />
       <BlogPostingSchema post={post} locale={locale} />
+      <FAQPageSchema post={post} locale={locale} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(crumbs) }}
@@ -397,6 +427,41 @@ export default function BlogPostPage({
             </article>
           </div>
         </section>
+
+        {/* Visible FAQ accordion — only when post.faq exists */}
+        {post.faq && post.faq.length > 0 && (
+          <section className="hair-top bg-ivory">
+            <div className="container-edge max-w-3xl py-16 md:py-24">
+              <div className="flex items-center gap-3 overline text-ash mb-6 hair-draw pb-4">
+                <span className="section-num italic text-ink">FAQ</span>
+                <span className="h-px w-10 bg-hairline" />
+                <span>{locale === 'ko' ? '자주 묻는 질문' : 'Frequently asked questions'}</span>
+              </div>
+              <ul className="space-y-3">
+                {post.faq.map((item, i) => (
+                  <li key={i}>
+                    <details className="group border-b border-hairline py-4">
+                      <summary className="flex items-start justify-between gap-6 cursor-pointer list-none">
+                        <h3 className="font-display text-[clamp(1.05rem,1.4vw,1.25rem)] leading-[1.4] tracking-luxury text-ink m-0 group-open:text-gold transition-colors">
+                          {item.q[locale]}
+                        </h3>
+                        <span
+                          aria-hidden
+                          className="mt-1 text-ink/40 transition-transform duration-300 group-open:rotate-45 text-2xl leading-none"
+                        >
+                          +
+                        </span>
+                      </summary>
+                      <p className="mt-4 text-[15px] md:text-[16px] text-graphite leading-[1.75]">
+                        {item.a[locale]}
+                      </p>
+                    </details>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </section>
+        )}
 
         {/* Bottom CTA — editorial ivory */}
         <section className="hair-top hair-bottom bg-bone">

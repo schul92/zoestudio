@@ -47,6 +47,11 @@ const LocationLinks = dynamic(() => import('@/components/sections/LocationLinks'
   loading: () => <div className="min-h-[400px] bg-bone" />
 })
 
+const BlogRail = dynamic(() => import('@/components/sections/BlogRail'), {
+  ssr: true,
+  loading: () => <div className="min-h-[600px] bg-ivory" />
+})
+
 const KakaoFloatingButton = dynamic(() => import('@/components/ui/KakaoFloatingButton'), {
   ssr: false
 })
@@ -244,8 +249,9 @@ export default function Home({ params }: { params: { locale: string } }) {
         <SelectedWork locale={locale} sectionNumber="02" />
         <Process locale={locale} sectionNumber="03" />
         <Proof locale={locale} sectionNumber="04" />
-        <LocationLinks locale={locale} sectionNumber="05" />
-        <ContactWrapper locale={locale} sectionNumber="06" />
+        <BlogRail locale={locale} sectionNumber="05" />
+        <LocationLinks locale={locale} sectionNumber="06" />
+        <ContactWrapper locale={locale} sectionNumber="07" />
       </main>
       <Footer locale={locale} />
       <KakaoFloatingButton />

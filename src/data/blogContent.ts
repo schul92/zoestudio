@@ -4,6 +4,11 @@ export interface BlogSection {
   items?: string[]
 }
 
+export interface BlogFAQ {
+  q: { en: string; ko: string }
+  a: { en: string; ko: string }
+}
+
 export interface BlogPost {
   slug: string
   date: string
@@ -13,6 +18,7 @@ export interface BlogPost {
   title: { en: string; ko: string }
   metaDescription: { en: string; ko: string }
   author: string
+  faq?: BlogFAQ[]
   sections: {
     en: BlogSection[]
     ko: BlogSection[]
@@ -38,6 +44,58 @@ export const blogContent: BlogPost[] = [
       ko: '도어대시 수수료 30% — 월 $20,000 배달 매출이면 연 $72,000 손실. $14,000짜리 자체 앱은 재주문의 40%만 옮겨도 4개월이면 본전. 솔직한 계산.',
     },
     author: 'Zoe Lumos Studio',
+    faq: [
+      {
+        q: {
+          en: 'How much does DoorDash take from a Korean restaurant per order?',
+          ko: '도어대시는 한식당에 주문당 얼마의 수수료를 가져가나요?',
+        },
+        a: {
+          en: 'Most Korean restaurants in NJ/NY sit on the 25-30% Premier or Plus tier because that is where you have to be for app search visibility. On a $30 banchan order, the platform takes $9. Across $20,000/month in delivery revenue, that is $72,000/year going to a Silicon Valley software company instead of your kitchen.',
+          ko: 'NJ·NY의 한식당 대부분은 앱 내 검색 노출 때문에 25-30% Premier 또는 Plus 등급에 있습니다. $30 반찬 주문 한 건에 플랫폼이 $9을 가져갑니다. 월 $20,000 배달 매출이면 연 $72,000이 주방 대신 실리콘밸리 소프트웨어 회사로 흘러갑니다.',
+        },
+      },
+      {
+        q: {
+          en: 'How much does it cost to build a custom restaurant app in 2026?',
+          ko: '2026년 식당 자체 앱 제작 비용은 얼마인가요?',
+        },
+        a: {
+          en: 'Three honest tiers: PWA (browser-based app) at $4-6K for menu and basic ordering, hybrid React Native at $9-14K for full ordering plus push notifications and Apple Wallet loyalty, and fully native iOS+Android at $18-28K. Annual maintenance runs 15-20% of build cost, plus Apple Developer ($99/year) and Google Play ($25 one-time).',
+          ko: '솔직한 세 가지 등급 — PWA (브라우저 기반 앱) $4-6K (메뉴와 기본 주문), 하이브리드 React Native $9-14K (전체 주문 + 푸시 알림 + Apple Wallet 로열티), 풀 네이티브 iOS+Android $18-28K. 연간 유지보수는 제작비의 15-20%, 추가로 Apple Developer ($99/년)과 Google Play ($25 일회성).',
+        },
+      },
+      {
+        q: {
+          en: 'When does a Korean restaurant own app pay back its development cost?',
+          ko: '한식당 자체 앱은 언제 개발비를 회수하나요?',
+        },
+        a: {
+          en: 'A $14K own-app pays back in roughly 4 months if you migrate 40% of repeat orders off DoorDash. The math: at $20K/month in DoorDash revenue with 30% commission, you lose $6K/month. Migrating 40% of repeat orders to your own app saves $2,400/month, which means breakeven at $14K / $2,400 = ~5.8 months — call it 4-6 months conservatively.',
+          ko: '$14,000짜리 자체 앱은 재주문의 40%를 도어대시에서 빼내면 약 4개월에 본전을 뽑습니다. 계산 — 도어대시 월 매출 $20,000에서 30% 수수료면 월 $6,000 손실. 재주문의 40%를 자체 앱으로 옮기면 월 $2,400 절약, 즉 $14,000 / $2,400 = 약 5.8개월에 손익분기 — 보수적으로 4-6개월입니다.',
+        },
+      },
+      {
+        q: {
+          en: 'Should every Korean restaurant build its own ordering app?',
+          ko: '모든 한식당이 자체 주문 앱을 만들어야 하나요?',
+        },
+        a: {
+          en: 'No. Build your own app only if monthly delivery revenue exceeds $8K, you have 200+ unique repeat customers per month, you already have a KakaoTalk Channel or Instagram following over 1,000, and you operate in a Korean diaspora area (Bergen County, K-town LA, Annandale VA). If your delivery revenue is under $5K/month or your business is mostly dine-in, stay on marketplaces and skip the app.',
+          ko: '아닙니다. 다음 조건이 모두 맞을 때만 자체 앱을 만드세요 — 월 배달 매출이 $8,000을 넘고, 월 200명 이상의 고유 재방문 고객이 있고, 카카오톡 채널이나 1,000명 이상 인스타그램 팔로워가 있으며, 한인 디아스포라 지역(버겐 카운티, LA 한인타운, 애난데일)에서 운영할 때. 배달 매출이 월 $5,000 미만이거나 매출 대부분이 매장 식사라면 마켓플레이스에 머물고 앱은 건너뛰세요.',
+        },
+      },
+      {
+        q: {
+          en: 'Should we replace DoorDash entirely with our own app?',
+          ko: '도어대시를 자체 앱으로 완전 대체해야 하나요?',
+        },
+        a: {
+          en: 'No. The hybrid model is the answer. Marketplaces like DoorDash are excellent at discovery — they bring first-time customers who would never have found you. Your own app captures those customers on order #2, #3, #4 with a 10-15% loyalty discount that is still cheaper than the 30% commission. Restaurants typically migrate 30-50% of repeat orders within 90 days when they actively promote the app via printed QR codes in takeout bags.',
+          ko: '아닙니다. 하이브리드 모델이 답입니다. 도어대시 같은 마켓플레이스는 발견에 탁월해서 — 우리 가게를 절대 못 찾았을 신규 고객을 데려옵니다. 자체 앱은 그 고객이 두 번째, 세 번째, 네 번째 주문을 할 때 10-15% 로열티 할인으로 끌어오는 역할 — 그래도 30% 수수료보다 저렴합니다. 포장 봉투에 QR 코드를 적극 홍보한 식당들은 90일 이내 재주문의 30-50%가 자체 앱으로 이동합니다.',
+        },
+      },
+    ],
     sections: {
       en: [
         { type: 'intro', content: "Every Korean restaurant owner we talk to has the same complaint about DoorDash, UberEats, and Grubhub: the commission is killing margins, but the orders are real. The honest answer is not 'replace them' — it is 'route the repeat customers off them.' This article does the math on when a $14K own-app investment makes sense, and when it absolutely does not." },
@@ -301,6 +359,58 @@ export const blogContent: BlogPost[] = [
       ko: '맨해튼 플라워샵이 2026년 4월 10일 새 Shopify 사이트 런칭. 4주 후 — 온라인 매출 $3,114, 그중 68%가 구글 검색에서, $277이 ChatGPT에서. 봇 트래픽 제외한 정직한 숫자.',
     },
     author: 'Zoe Lumos Studio',
+    faq: [
+      {
+        q: {
+          en: 'How much revenue did TJ Flowers generate in the first 4 weeks after the Shopify revamp?',
+          ko: 'TJ Flowers는 Shopify 리뉴얼 후 첫 4주 동안 얼마의 매출을 만들었나요?',
+        },
+        a: {
+          en: '$3,114 in real Shopify-native online sales across 15 orders between April 10 and May 8, 2026. This excludes 250 historical OpenCart orders that were imported during migration ($34,286 in lifetime value, NOT new revenue) and 5 internal test orders ($2,230).',
+          ko: '2026년 4월 10일부터 5월 8일까지 15건의 주문에서 실제 Shopify 네이티브 온라인 매출 $3,114을 만들었습니다. 마이그레이션으로 임포트된 OpenCart 과거 주문 250건 ($34,286 누적 가치)과 내부 테스트 주문 5건 ($2,230)은 제외한 숫자입니다.',
+        },
+      },
+      {
+        q: {
+          en: 'What channel drove the most revenue?',
+          ko: '어느 채널에서 매출이 가장 많이 나왔나요?',
+        },
+        a: {
+          en: 'Google organic search drove 68% of revenue ($1,800), with zero ad spend. Direct traffic was second at $854. ChatGPT — the AI search engine — was third at $277, a brand new revenue source that did not exist before the revamp.',
+          ko: '구글 자연검색이 매출의 68% ($1,800)를 만들었으며 광고비는 0원이었습니다. Direct 트래픽이 $854로 두 번째, ChatGPT (AI 검색 엔진)가 $277로 세 번째 — 리뉴얼 전에는 존재하지 않던 완전히 새로운 매출원입니다.',
+        },
+      },
+      {
+        q: {
+          en: 'How is the returning customer rate so high (38%)?',
+          ko: '재구매율이 어떻게 그렇게 높은가요 (38%)?',
+        },
+        a: {
+          en: 'The 38% returning customer rate is driven entirely by 4 super-loyal customers from the January 2026 cohort, who keep ordering quarterly. The industry average for florists is 15-20%. Cohort honesty: every other monthly cohort sits at 0% retention so far.',
+          ko: '38% 재구매율은 2026년 1월 코호트의 4명 슈퍼 충성 고객이 분기마다 다시 주문하는 데서 전적으로 비롯됩니다. 플라워샵 업계 평균은 15-20%입니다. 코호트 정직성 — 다른 모든 월별 코호트는 현재 0% 재방문 상태입니다.',
+        },
+      },
+      {
+        q: {
+          en: 'What was wrong with the old OpenCart site?',
+          ko: '기존 OpenCart 사이트는 무엇이 문제였나요?',
+        },
+        a: {
+          en: 'Before the revamp, TJ Flowers had been on OpenCart for years averaging under $300/month in online sales — sometimes 1-2 orders per month, sometimes zero. The site was technically online but commercially dead. Slow loading, poor product photography, no schema markup, and no bilingual support.',
+          ko: '리뉴얼 전 TJ Flowers는 수년간 OpenCart에서 월 평균 $300 미만의 온라인 매출 — 어떤 달은 주문이 1-2건, 어떤 달은 0건이었습니다. 기술적으로는 온라인이었지만 상업적으로는 죽어있었습니다. 느린 로딩, 부실한 상품 사진, 스키마 마크업 없음, 이중언어 지원 없음.',
+        },
+      },
+      {
+        q: {
+          en: 'What specific changes drove the results?',
+          ko: '구체적으로 무엇을 바꿨나요?',
+        },
+        a: {
+          en: 'Six concrete fixes: rebuilt every product photo in natural daylight; cut Shopify theme bloat (mobile First Contentful Paint dropped from 4.2s to 1.1s); added Product/Offer/Review/LocalBusiness schema markup; bilingual English+Korean product descriptions; surfaced reviews in product cards; frictionless checkout with Shop Pay/Apple Pay/Google Pay.',
+          ko: '여섯 가지 구체적 수정: 모든 상품 사진을 자연광으로 재촬영, Shopify 테마 군살 제거 (모바일 First Contentful Paint 4.2초 → 1.1초), Product/Offer/Review/LocalBusiness 스키마 마크업 추가, 한·영 이중언어 상품 설명, 상품 카드에 리뷰 노출, Shop Pay/Apple Pay/Google Pay로 마찰 없는 결제.',
+        },
+      },
+    ],
     sections: {
       en: [
         { type: 'intro', content: "TJ Flowers is a Manhattan floral studio. Before we touched anything, online sales were essentially zero — every order came from walk-ins, phone calls, or relationships. The site loaded slowly, the photography didn't do justice to the arrangements, and the product copy read like an AI-generated catalog. We rebuilt it. The new Shopify site went live on April 10, 2026. Twenty-eight days later, we pulled the numbers — directly from Shopify, with bot traffic and migration imports excluded. Here is what we actually saw." },
@@ -1986,6 +2096,58 @@ export const blogContent: BlogPost[] = [
       ko: '미국에서 카카오톡 비즈니스 채널을 20분 만에 — 한국 번호 없이. 사업자 등록, 광고, 단체 메시지, 웹사이트 연동까지 2026년 최신 가이드.',
     },
     author: 'ZOE LUMOS Team',
+    faq: [
+      {
+        q: {
+          en: 'Can I open a KakaoTalk Channel from the United States?',
+          ko: '미국에서 카카오톡 채널을 만들 수 있나요?',
+        },
+        a: {
+          en: 'Yes. You can open a KakaoTalk Channel from the US without a Korean phone number. Use a US phone number for verification and your US business registration (LLC, EIN, or sole proprietorship) for the business profile. Setup takes about 20 minutes.',
+          ko: '네, 미국에서 한국 번호 없이도 카카오톡 채널을 만들 수 있습니다. 인증은 미국 번호로, 비즈니스 프로필은 미국 사업자 등록 (LLC, EIN, 또는 개인사업자)으로 진행하면 됩니다. 설정은 약 20분 걸립니다.',
+        },
+      },
+      {
+        q: {
+          en: 'Do I need a Korean phone number to verify a KakaoTalk Business Channel?',
+          ko: '카카오톡 비즈니스 채널 인증에 한국 번호가 필요한가요?',
+        },
+        a: {
+          en: 'No. KakaoTalk allows verification with a US mobile number for business accounts. Personal accounts created with a US number can be converted to business Channels by uploading US business registration documents.',
+          ko: '아니요. 카카오톡은 비즈니스 계정의 경우 미국 휴대폰 번호로도 인증을 받을 수 있습니다. 미국 번호로 만든 개인 계정도 미국 사업자 등록 서류를 업로드하면 비즈니스 채널로 전환할 수 있습니다.',
+        },
+      },
+      {
+        q: {
+          en: 'How much does KakaoTalk Channel cost for a small business?',
+          ko: '소상공업이 카카오톡 채널을 사용하는 비용은 얼마인가요?',
+        },
+        a: {
+          en: 'The Channel itself is free to create and operate. You only pay when sending paid broadcasts (about $0.015 per message in 2026) or running KakaoTalk Ads. Customer chat and standard messaging are free.',
+          ko: '채널 생성과 운영 자체는 무료입니다. 비용은 유료 단체 메시지를 보낼 때만 발생합니다 (2026년 기준 메시지당 약 $0.015) 또는 카카오톡 광고를 돌릴 때. 고객 상담과 일반 메시지는 무료입니다.',
+        },
+      },
+      {
+        q: {
+          en: 'How do I integrate a KakaoTalk Channel button into my website?',
+          ko: '웹사이트에 카카오톡 채널 버튼을 어떻게 연동하나요?',
+        },
+        a: {
+          en: 'Add a floating "Chat on KakaoTalk" button using the official Kakao JS SDK with your Channel ID, or simply link to your Channel URL (pf.kakao.com/_xxxxx/chat). On Korean-American business sites, this single button often outperforms email contact forms 3-5x.',
+          ko: '공식 카카오 JS SDK와 채널 ID로 "카카오톡 상담" 플로팅 버튼을 추가하거나, 단순히 채널 URL (pf.kakao.com/_xxxxx/chat)로 링크할 수 있습니다. 한인·미국인 비즈니스 사이트에서는 이 한 버튼이 이메일 문의 폼보다 3-5배 더 잘 작동합니다.',
+        },
+      },
+      {
+        q: {
+          en: 'Why should a US-based Korean business use KakaoTalk Channel instead of just SMS or email?',
+          ko: '미국 한인 비즈니스가 SMS나 이메일 대신 카카오톡 채널을 써야 하는 이유는?',
+        },
+        a: {
+          en: 'Korean-American customers — especially first-generation and 1.5-generation — strongly prefer KakaoTalk for daily communication. Open rates on KakaoTalk broadcasts run 60-80% (vs 15-25% for email). Customers reply faster, the medium feels familiar, and Korean-language nuance translates better than in formal email.',
+          ko: '한인 미국인 고객 — 특히 1세대·1.5세대 — 은 일상 소통에 카카오톡을 압도적으로 선호합니다. 카카오톡 단체 메시지의 오픈율은 60-80% (이메일은 15-25%)입니다. 고객 응답이 빠르고, 매체가 친숙하며, 한국어의 뉘앙스가 정중한 이메일보다 더 잘 전달됩니다.',
+        },
+      },
+    ],
     sections: {
       en: [
         { type: 'intro', content: 'KakaoTalk is the single most underutilized marketing channel for US-based Korean businesses. Most owners use it for personal chats and never set up a business Channel — missing out on a customer touchpoint that Korean-American customers strongly prefer. For context: 98% of Korean smartphone users have KakaoTalk installed, and roughly 85% of US-based Korean-American first-generation immigrants use it daily. Your customers are already in the app. They just have no way to contact your business through it. This guide walks you through setting up a KakaoTalk Channel from the US, integrating it with your website, and using it strategically for marketing and customer service.' },
