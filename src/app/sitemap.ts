@@ -5,7 +5,9 @@ import { industries } from '@/data/industriesData'
 import { cityMarkets } from '@/data/cityMarketData'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
+  // Force www host — Vercel apex 307-redirects to www, so canonicals must be www
+  const baseUrl = (process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com')
+    .replace(/^https?:\/\/zoelumos\.com/, 'https://www.zoelumos.com')
 
   // Standard pages (English URLs)
   const standardPages = [

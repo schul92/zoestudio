@@ -1,7 +1,9 @@
 import { MetadataRoute } from 'next'
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
+  // Force www host even if Vercel env var is set to non-www apex
+  const baseUrl = (process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com')
+    .replace(/^https?:\/\/zoelumos\.com/, 'https://www.zoelumos.com')
 
   return {
     rules: [

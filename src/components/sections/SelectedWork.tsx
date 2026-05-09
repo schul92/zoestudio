@@ -206,6 +206,8 @@ export default function SelectedWork({
                     fill
                     sizes="520px"
                     className="object-cover"
+                    priority={i === 0}
+                    loading={i === 0 ? 'eager' : 'lazy'}
                   />
                 </div>
                 {/* Corner marks */}

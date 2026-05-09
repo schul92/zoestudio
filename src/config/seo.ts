@@ -58,11 +58,33 @@ export const structuredData = {
         "areaServed": "US"
       }
     ],
+    "founder": {
+      "@type": "Person",
+      "name": "Steve Song",
+      "jobTitle": "Founder",
+      "url": "https://www.zoelumos.com/about",
+      "sameAs": [
+        "https://www.linkedin.com/in/stevesong"
+      ],
+      "knowsAbout": [
+        "Korean-American web design",
+        "Bilingual SEO",
+        "Shopify development",
+        "KakaoTalk Channel marketing",
+        "Mobile app development"
+      ]
+    },
+    "knowsLanguage": ["en-US", "ko-KR"],
+    "areaServed": {
+      "@type": "Country",
+      "name": "United States"
+    },
     "sameAs": [
       "https://www.facebook.com/zoelumos",
       "https://www.instagram.com/zoelumos",
       "https://www.linkedin.com/company/zoelumos",
-      "https://pf.kakao.com/_xhxdxmlX"
+      "https://pf.kakao.com/_xhxdxmlX",
+      "https://github.com/schul92/zoestudio"
     ]
   },
   localBusiness: {
@@ -244,6 +266,8 @@ export const structuredData = {
     {
       "@context": "https://schema.org",
       "@type": "Service",
+      "name": "Bilingual SEO for Korean-American Businesses",
+      "description": "Korean-English bilingual SEO including hreflang setup, schema markup, Korean review acquisition, Naver Webmaster registration, and Generative Engine Optimization (GEO) for ChatGPT, Claude, Perplexity, and Google AI Overviews.",
       "serviceType": "Search Engine Optimization",
       "provider": {
         "@id": "https://www.zoelumos.com/#organization"
@@ -278,6 +302,8 @@ export const structuredData = {
     {
       "@context": "https://schema.org",
       "@type": "Service",
+      "name": "Editorial Web Design for Korean-American Businesses",
+      "description": "Custom bilingual web design and Shopify e-commerce builds for Korean-American restaurants, salons, retail, and service businesses. Schema markup, mobile-first performance, and revamp/migration support included.",
       "serviceType": "Web Design and Development",
       "provider": {
         "@id": "https://www.zoelumos.com/#organization"
@@ -321,6 +347,7 @@ export const structuredData = {
     {
       "@context": "https://schema.org",
       "@type": "Service",
+      "name": "Bilingual Google Ads Management",
       "serviceType": "Google Ads Management",
       "provider": {
         "@id": "https://www.zoelumos.com/#organization"

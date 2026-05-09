@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import HeaderWrapper from '@/components/layout/HeaderWrapper'
 import Footer from '@/components/layout/Footer'
 import BlogListing from '@/components/blog/BlogListing'
+import { blogContent } from '@/data/blogContent'
 
 export async function generateStaticParams() {
   return [
@@ -330,7 +331,7 @@ function generateBlogSchema(locale: 'en' | 'ko') {
         "url": "https://www.zoelumos.com/favicon.svg"
       }
     },
-    "blogPost": blogPosts.map(post => ({
+    "blogPost": blogPostsForSchema.map(post => ({
       "@type": "BlogPosting",
       "headline": post.title[locale],
       "description": post.excerpt[locale],
@@ -368,8 +369,38 @@ const content = {
   },
 }
 
-// Map each blog post slug to its generated hero image
-const postsWithImages = blogPosts.map((p) => ({ ...p, image: `/blog/${p.slug}.png` }))
+// Auto-derive from blogContent.ts — single source of truth, never goes stale.
+// Hand-curated featured ordering: TJ Flowers + 3 app-dev posts pinned at top
+// (id 0-3), everything else by date desc.
+const FEATURED_SLUGS = [
+  'tj-flowers-shopify-revamp-case-study',
+  'korean-restaurant-own-app-vs-doordash',
+  'pwa-vs-native-app-korean-smb',
+  'app-store-submission-korean-business-guide',
+]
+const sortedContent = [...blogContent].sort((a, b) => {
+  const ai = FEATURED_SLUGS.indexOf(a.slug)
+  const bi = FEATURED_SLUGS.indexOf(b.slug)
+  if (ai !== -1 || bi !== -1) {
+    if (ai === -1) return 1
+    if (bi === -1) return -1
+    return ai - bi
+  }
+  return new Date(b.date).getTime() - new Date(a.date).getTime()
+})
+const postsWithImages = sortedContent.map((p, i) => ({
+  id: i,
+  slug: p.slug,
+  date: p.date,
+  readTime: p.readTime,
+  category: p.category,
+  title: p.title,
+  excerpt: p.metaDescription,
+  image: `/blog/${p.slug}.png`,
+}))
+// Keep `blogPosts` reference alive for the JSON-LD generator below.
+// (Using the auto-derived list ensures schema and rendered list stay in sync.)
+const blogPostsForSchema = postsWithImages
 
 export default function BlogPage({ params }: { params: { locale: string } }) {
   const locale = params.locale as 'en' | 'ko'

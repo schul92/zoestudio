@@ -6,12 +6,12 @@ export default function GoogleAnalytics({ GA_MEASUREMENT_ID }: { GA_MEASUREMENT_
   return (
     <>
       <Script
-        strategy="afterInteractive"
+        strategy="lazyOnload"
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
       />
       <Script
         id="google-analytics"
-        strategy="afterInteractive"
+        strategy="lazyOnload"
         dangerouslySetInnerHTML={{
           __html: `
             window.dataLayer = window.dataLayer || [];
@@ -20,11 +20,8 @@ export default function GoogleAnalytics({ GA_MEASUREMENT_ID }: { GA_MEASUREMENT_
             gtag('config', '${GA_MEASUREMENT_ID}', {
               page_path: window.location.pathname,
               send_page_view: true,
-              cookie_flags: 'SameSite=None;Secure',
-              optimize_id: 'OPT-${GA_MEASUREMENT_ID}',
-              custom_map: {'dimension1': 'user_type'}
+              cookie_flags: 'SameSite=None;Secure'
             });
-            gtag('config', 'AW-17470017955');
           `,
         }}
       />

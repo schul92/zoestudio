@@ -27,7 +27,8 @@ export async function generateMetadata({
   const post = blogContent.find((p) => p.slug === params.slug)
   if (!post) return {}
 
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
+  const baseUrl = (process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com')
+    .replace(/^https?:\/\/zoelumos\.com/, 'https://www.zoelumos.com')
   const prefix = locale === 'ko' ? '/ko' : ''
   const url = `${baseUrl}${prefix}/blog/${post.slug}`
 
@@ -65,7 +66,8 @@ function BlogPostingSchema({
   post: (typeof blogContent)[0]
   locale: 'en' | 'ko'
 }) {
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
+  const baseUrl = (process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com')
+    .replace(/^https?:\/\/zoelumos\.com/, 'https://www.zoelumos.com')
   const prefix = locale === 'ko' ? '/ko' : ''
   const schema = {
     '@context': 'https://schema.org',
@@ -76,12 +78,27 @@ function BlogPostingSchema({
     dateModified: post.updatedDate,
     url: `${baseUrl}${prefix}/blog/${post.slug}`,
     author: {
-      '@type': 'Organization',
-      name: 'ZOE LUMOS',
-      url: baseUrl,
+      '@type': 'Person',
+      name: 'Steve Song',
+      jobTitle: locale === 'ko' ? '대표 — ZOE LUMOS' : 'Founder — ZOE LUMOS',
+      url: `${baseUrl}/about`,
+      sameAs: [
+        'https://www.linkedin.com/in/stevesong',
+      ],
+      knowsAbout: [
+        'Korean-American web design',
+        'Bilingual SEO',
+        'Shopify development',
+        'KakaoTalk Channel marketing',
+        'Mobile app development',
+      ],
+      worksFor: {
+        '@id': `${baseUrl}/#organization`,
+      },
     },
     publisher: {
       '@type': 'Organization',
+      '@id': `${baseUrl}/#organization`,
       name: 'ZOE LUMOS',
       logo: {
         '@type': 'ImageObject',
@@ -354,7 +371,8 @@ export default function BlogPostPage({
       locale === 'ko' ? '무료 상담 받기 →' : 'Get a Free Consultation →',
   }
 
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
+  const baseUrl = (process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com')
+    .replace(/^https?:\/\/zoelumos\.com/, 'https://www.zoelumos.com')
   const crumbs = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',

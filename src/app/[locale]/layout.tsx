@@ -28,7 +28,8 @@ const fraunces = Fraunces({
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
-  maximumScale: 5,
+  // No maximumScale — Lighthouse a11y deducts for it; some screen readers
+  // respect it and prevent users from zooming. Default (no cap) is correct.
   themeColor: '#FAF7F0',
 }
 
@@ -52,14 +53,14 @@ export async function generateMetadata({
       address: false,
       telephone: false,
     },
-    metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'),
+    metadataBase: new URL((process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com').replace(/^https?:\/\/zoelumos\.com/, 'https://www.zoelumos.com')),
     manifest: '/manifest.json',
     category: 'business',
     // Canonical + hreflang are set per-page to avoid layout-level collision.
     openGraph: {
       title: seo.openGraph.title,
       description: seo.openGraph.description,
-      url: `${process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'}/${locale}`,
+      url: `${(process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com').replace(/^https?:\/\/zoelumos\.com/, 'https://www.zoelumos.com')}/${locale}`,
       siteName: seo.openGraph.siteName,
       locale: seo.openGraph.locale,
       type: 'website',

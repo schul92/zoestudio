@@ -15,7 +15,11 @@ import { cityMarkets } from '@/data/cityMarketData'
 function computeOtherLocaleHref(pathname: string, locale: string): string {
   // Normalize: is current path Korean-prefixed?
   const isKo = locale === 'ko'
-  const stripped = isKo ? pathname.replace(/^\/ko/, '') || '/' : pathname
+  // Strip BOTH /ko and /en prefixes — usePathname() may return either depending
+  // on Next.js middleware behavior. Without this, an EN page emitted /ko/en/...
+  // which 404s sitewide.
+  const stripped =
+    pathname.replace(/^\/(ko|en)(?=\/|$)/, '') || '/'
 
   // Decode any URL-encoded hangul so we can match data slugs
   const decoded = (() => {
@@ -49,8 +53,8 @@ function computeOtherLocaleHref(pathname: string, locale: string): string {
     }
   }
 
-  // Default: flip /ko prefix
-  return isKo ? stripped : `/ko${pathname}`
+  // Default: flip /ko prefix using normalized (stripped) path
+  return isKo ? stripped : `/ko${stripped === '/' ? '' : stripped}`
 }
 
 export default function HeaderNew({ locale = 'en' }: { locale?: string }) {
