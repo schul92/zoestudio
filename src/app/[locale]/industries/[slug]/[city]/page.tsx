@@ -10,7 +10,9 @@ import CountUp from '@/components/ui/motion/CountUp'
 import { industries, industryBySlug } from '@/data/industriesData'
 import { cityMarkets, cityBySlug } from '@/data/cityMarketData'
 
-const BASE = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
+// Force www host even if Vercel env var is set to non-www apex
+const BASE = (process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com')
+  .replace(/^https?:\/\/zoelumos\.com/, 'https://www.zoelumos.com')
 
 export function generateStaticParams() {
   const params: { locale: string; slug: string; city: string }[] = []
@@ -154,6 +156,22 @@ export default function CrossoverPage({
     },
     {
       q: isKo
+        ? `${city.name.ko} 외 인접 지역(${city.neighborhoods.ko.slice(0, 2).join(' · ')}) 고객도 잡을 수 있나요?`
+        : `Can we capture nearby markets like ${city.neighborhoods.en.slice(0, 2).join(' and ')} too?`,
+      a: isKo
+        ? `네. 사이트는 ${city.fullName.ko}을 중심으로 만들지만, ${city.neighborhoods.ko.slice(0, 3).join(' · ')} 지역 검색 의도도 함께 잡도록 설계합니다. 별도 도시 페이지를 만들 수도 있고, 한 페이지 안에서 모두 다룰 수도 있습니다.`
+        : `Yes. The site is built around ${city.fullName.en} but architected to also rank for searches from ${city.neighborhoods.en.slice(0, 3).join(', ')}. We can either build separate city pages or cover all of them within one expanded local page, depending on volume.`,
+    },
+    {
+      q: isKo
+        ? `${industry.name.ko}의 경우 평균 제작 기간은 얼마나 걸리나요?`
+        : `How long does a ${industry.name.en.toLowerCase()} project usually take?`,
+      a: isKo
+        ? `평균 4–6주입니다. 1주차: 발견과 설계. 2-3주차: 디자인과 카피. 4-5주차: 개발과 통합. 6주차: 런칭과 SEO 제출. 한국어 카피가 미리 준비되어 있으면 1주 단축 가능합니다.`
+        : `4–6 weeks average. Week 1: discovery + IA. Weeks 2-3: design + copy. Weeks 4-5: build + integrations. Week 6: launch + SEO submission. If Korean copy is pre-written we can compress by one week.`,
+    },
+    {
+      q: isKo
         ? `한국어로 상담할 수 있나요?`
         : 'Can we consult in Korean?',
       a: isKo
@@ -166,7 +184,7 @@ export default function CrossoverPage({
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     '@id': `${url}#faq`,
-    mainEntity: [...cityFaqs, ...industry.faqs.slice(0, 2).map((f) => ({ q: f.q[locale], a: f.a[locale] }))].map((f) => ({
+    mainEntity: [...cityFaqs, ...industry.faqs.slice(0, 3).map((f) => ({ q: f.q[locale], a: f.a[locale] }))].map((f) => ({
       '@type': 'Question',
       name: f.q,
       acceptedAnswer: { '@type': 'Answer', text: f.a },
