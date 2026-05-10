@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import HeaderWrapper from '@/components/layout/HeaderWrapper'
 import Footer from '@/components/layout/Footer'
+import RelatedCluster from '@/components/blog/RelatedCluster'
 import { blogContent, BlogSection } from '@/data/blogContent'
 
 // ─── Static params: every slug × every locale ────────────────────────────────
@@ -145,6 +146,36 @@ function FAQPageSchema({
         '@type': 'Answer',
         text: item.a[locale],
       },
+    })),
+  }
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+    />
+  )
+}
+
+// ─── HowTo JSON-LD schema (only emitted when post.howto exists) ───────────────
+function HowToSchema({
+  post,
+  locale,
+}: {
+  post: (typeof blogContent)[0]
+  locale: 'en' | 'ko'
+}) {
+  if (!post.howto) return null
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'HowTo',
+    name: post.howto.name[locale],
+    description: post.howto.description[locale],
+    ...(post.howto.totalTime ? { totalTime: post.howto.totalTime } : {}),
+    step: post.howto.steps.map((s, i) => ({
+      '@type': 'HowToStep',
+      position: i + 1,
+      name: s.name[locale],
+      text: s.text[locale],
     })),
   }
   return (
@@ -388,6 +419,7 @@ export default function BlogPostPage({
       <HeaderWrapper locale={locale} />
       <BlogPostingSchema post={post} locale={locale} />
       <FAQPageSchema post={post} locale={locale} />
+      <HowToSchema post={post} locale={locale} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(crumbs) }}
@@ -439,6 +471,38 @@ export default function BlogPostPage({
         <section className="py-16 md:py-24">
           <div className="container-edge">
             <article className="mx-auto max-w-[720px]">
+              {/* Visible HowTo answer block — surfaces concrete steps for AI /
+                  featured-snippet capture and gives buyers an immediate skim. */}
+              {post.howto && (
+                <aside className="mb-14 px-7 py-7 md:px-9 md:py-9 bg-bone rounded-[2px] hair-y">
+                  <p className="overline text-gold mb-3">
+                    {locale === 'ko' ? '빠른 답변' : 'Quick answer'}
+                  </p>
+                  <h2 className="font-display text-[clamp(1.4rem,2vw,1.8rem)] leading-[1.2] tracking-luxury text-ink m-0 mb-4">
+                    {post.howto.name[locale]}
+                  </h2>
+                  <p className="text-[15px] text-graphite leading-[1.65] mb-6">
+                    {post.howto.description[locale]}
+                  </p>
+                  <ol className="space-y-4">
+                    {post.howto.steps.map((s, i) => (
+                      <li key={i} className="flex items-start gap-4">
+                        <span className="font-display text-[1.4rem] leading-none tracking-luxury text-gold shrink-0 mt-[0.05em] w-7">
+                          {i + 1}.
+                        </span>
+                        <div className="min-w-0">
+                          <h3 className="font-display text-[1.05rem] md:text-[1.1rem] leading-[1.35] tracking-luxury text-ink m-0">
+                            {s.name[locale]}
+                          </h3>
+                          <p className="mt-1.5 text-[14px] md:text-[15px] text-graphite leading-[1.65]">
+                            {s.text[locale]}
+                          </p>
+                        </div>
+                      </li>
+                    ))}
+                  </ol>
+                </aside>
+              )}
               {sections.map((section, i) => (
                 <RenderSection key={i} section={section} />
               ))}
@@ -480,6 +544,9 @@ export default function BlogPostPage({
             </div>
           </section>
         )}
+
+        {/* Related cluster — pillar + 5 sibling posts in same topic */}
+        <RelatedCluster currentSlug={post.slug} locale={locale} />
 
         {/* Bottom CTA — editorial ivory */}
         <section className="hair-top hair-bottom bg-bone">

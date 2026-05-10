@@ -1,9 +1,13 @@
 'use client'
 
 /**
- * Editorial blog rail — surfaces 3 most-recent blog posts on the homepage.
- * Drives traffic from the homepage (high impression count) into the content
- * engine (where most users currently never make the jump).
+ * Editorial blog rail — surfaces 6 strategically-chosen blog posts on the
+ * homepage. Drives traffic from the homepage (high impression count) into the
+ * content engine, with descriptive anchor text that compounds the rankings
+ * of underperforming page-1 posts.
+ *
+ * Selection logic: 1 case study + 2 high-CTR-leak page-1 posts + 1 city/SEO
+ * comparison + 2 evergreen-topic anchors. Updated when new tentpole ships.
  */
 
 import Link from 'next/link'
@@ -20,18 +24,19 @@ type Post = {
   image: string
 }
 
-// Hand-curated list of 3 most-impactful posts to surface on the homepage.
-// Update when new tentpole content ships.
+// Hand-curated 6-card grid. Each anchor is descriptive (not "Read more")
+// and points at a high-impression-but-low-CTR or rising-tide page so the
+// homepage's organic authority compounds into the deep-page rankings.
 const FEATURED: Post[] = [
   {
     slug: 'tj-flowers-shopify-revamp-case-study',
     title: {
-      en: 'Manhattan Florist: $0 → $3,114 in 4 Weeks',
-      ko: '맨해튼 플라워샵: 4주 만에 $0 → $3,114',
+      en: 'Manhattan florist earned $3,114 + $277 from ChatGPT in 4 weeks',
+      ko: '맨해튼 플라워샵: 4주 만에 $3,114 + ChatGPT에서 $277',
     },
     excerpt: {
-      en: 'Real Shopify analytics from a real client. 68% from Google, $277 from ChatGPT, 38% returning customer rate.',
-      ko: '실제 클라이언트의 진짜 Shopify 데이터. 68%가 구글에서, $277은 ChatGPT, 재구매율 38%.',
+      en: 'Real Shopify analytics from a real client. 68% from Google organic, $277 from ChatGPT, 38% returning customer rate. Bot traffic excluded.',
+      ko: '실제 Shopify 데이터. 매출의 68%가 구글 자연검색, $277이 ChatGPT, 재구매율 38%. 봇 트래픽 제외.',
     },
     category: { en: 'Case Study', ko: '케이스 스터디' },
     date: '2026-05-08',
@@ -39,14 +44,29 @@ const FEATURED: Post[] = [
     image: '/blog/tj-flowers-shopify-revamp-case-study.png',
   },
   {
-    slug: 'korean-restaurant-own-app-vs-doordash',
+    slug: 'kakaotalk-channel-us-korean-business',
     title: {
-      en: 'Korean Restaurant Own App vs DoorDash',
-      ko: '한식당 자체 앱 vs 도어대시',
+      en: 'Open a KakaoTalk Channel from the US in 20 minutes (no Korean phone)',
+      ko: '미국에서 카카오톡 채널 20분 만에 만들기 (한국 번호 없이)',
     },
     excerpt: {
-      en: 'DoorDash takes 30%. At $20K/mo delivery that is $72K/yr lost. A $14K own-app pays back in 4 months.',
-      ko: '도어대시 수수료 30%. 월 $20K 배달이면 연 $72K 손실. $14K 자체 앱은 4개월이면 본전.',
+      en: '85% of Korean-Americans use KakaoTalk daily. Step-by-step setup, ads, broadcasts, website integration — without a Korean phone number.',
+      ko: '미주 한인 85%가 매일 쓰는 카카오톡. 한국 번호 없이 비즈니스 채널 설정, 광고, 단체 메시지, 웹사이트 연동까지.',
+    },
+    category: { en: 'Marketing', ko: '마케팅' },
+    date: '2026-04-11',
+    readTime: 7,
+    image: '/blog/kakaotalk-channel-us-korean-business.png',
+  },
+  {
+    slug: 'korean-restaurant-own-app-vs-doordash',
+    title: {
+      en: 'Korean restaurant own app vs DoorDash: $14K pays back in 4 months',
+      ko: '한식당 자체 앱 vs 도어대시: $14K가 4개월 만에 본전',
+    },
+    excerpt: {
+      en: 'DoorDash takes 30%. At $20K/mo delivery that is $72K/yr lost. A $14K own-app pays back in 4 months if you migrate 40% of repeat orders.',
+      ko: '도어대시 수수료 30%. 월 $20K 배달이면 연 $72K 손실. 재주문의 40%를 자체 앱으로 옮기면 4개월이면 본전.',
     },
     category: { en: 'App Development', ko: '앱 개발' },
     date: '2026-05-07',
@@ -54,19 +74,49 @@ const FEATURED: Post[] = [
     image: '/blog/korean-restaurant-own-app-vs-doordash.png',
   },
   {
-    slug: 'pwa-vs-native-app-korean-smb',
+    slug: 'do-i-need-a-website-korean-business',
     title: {
-      en: 'PWA vs Native App: $4K vs $15K',
-      ko: 'PWA vs 네이티브 앱: $4,000 vs $15,000',
+      en: '7 signs your Korean business loses sales without a website',
+      ko: '한인 비즈니스가 웹사이트 없이 매출을 잃는 7가지 신호',
     },
     excerpt: {
-      en: 'Skip the $15K native app if a $4K PWA is enough. Decision framework for Korean SMBs.',
-      ko: '$4,000 PWA로 충분하면 $15,000 네이티브 앱은 건너뛰세요. 한인 소상공업 의사결정 가이드.',
+      en: 'Instagram and Naver alone cost Korean-American businesses ~30% of new customers. Honest framework for when a website pays for itself.',
+      ko: '인스타와 네이버만 운영하면 한인 비즈니스는 신규 고객의 30%를 잃습니다. 웹사이트가 비용을 회수하는 시점을 정직하게.',
     },
-    category: { en: 'App Development', ko: '앱 개발' },
-    date: '2026-05-07',
-    readTime: 6,
-    image: '/blog/pwa-vs-native-app-korean-smb.png',
+    category: { en: 'Foundations', ko: '기초 가이드' },
+    date: '2026-04-15',
+    readTime: 9,
+    image: '/blog/do-i-need-a-website-korean-business.png',
+  },
+  {
+    slug: 'instagram-vs-website-korean-business',
+    title: {
+      en: 'Instagram vs website for Korean small business — the honest tradeoff',
+      ko: '인스타그램 vs 웹사이트 — 한인 자영업자의 솔직한 비교',
+    },
+    excerpt: {
+      en: 'Instagram has zero discovery from Google or ChatGPT. Korean SMBs that rely only on it cannot rank for "Korean BBQ near me" or any AI search query.',
+      ko: '인스타그램은 구글·ChatGPT 검색에 노출되지 않습니다. 인스타만 운영하면 "Korean BBQ near me" 같은 검색에 우리 가게가 절대 안 나옵니다.',
+    },
+    category: { en: 'Foundations', ko: '기초 가이드' },
+    date: '2026-03-15',
+    readTime: 8,
+    image: '/blog/instagram-vs-website-korean-business.png',
+  },
+  {
+    slug: 'local-seo-guide-korean-business-2026',
+    title: {
+      en: 'Local SEO for Korean businesses — 9-step playbook [2026]',
+      ko: '한인 비즈니스 로컬 SEO 9단계 플레이북 [2026]',
+    },
+    excerpt: {
+      en: '9-step local SEO playbook for Korean restaurants, salons, and shops in NJ/NY/LA. Rank in Google Maps, fix duplicate listings, win Korean reviews.',
+      ko: '한인 식당·살롱·소매점을 위한 9단계 로컬 SEO 플레이북. 구글 지도 상위 노출, 중복 리스팅 정리, 한국어 리뷰 확보.',
+    },
+    category: { en: 'SEO', ko: 'SEO' },
+    date: '2026-04-18',
+    readTime: 10,
+    image: '/blog/local-seo-guide-korean-business-2026.png',
   },
 ]
 

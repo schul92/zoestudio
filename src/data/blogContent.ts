@@ -9,6 +9,18 @@ export interface BlogFAQ {
   a: { en: string; ko: string }
 }
 
+export interface BlogHowToStep {
+  name: { en: string; ko: string }
+  text: { en: string; ko: string }
+}
+
+export interface BlogHowTo {
+  name: { en: string; ko: string }
+  description: { en: string; ko: string }
+  totalTime?: string // ISO 8601 duration like "PT20M"
+  steps: BlogHowToStep[]
+}
+
 export interface BlogPost {
   slug: string
   date: string
@@ -19,6 +31,7 @@ export interface BlogPost {
   metaDescription: { en: string; ko: string }
   author: string
   faq?: BlogFAQ[]
+  howto?: BlogHowTo
   sections: {
     en: BlogSection[]
     ko: BlogSection[]
@@ -2148,6 +2161,54 @@ export const blogContent: BlogPost[] = [
         },
       },
     ],
+    howto: {
+      name: {
+        en: 'How to set up a KakaoTalk Channel for a US business',
+        ko: '미국에서 카카오톡 비즈니스 채널 만들기',
+      },
+      description: {
+        en: 'Open a verified KakaoTalk Business Channel from the United States in about 20 minutes — no Korean phone number required. Use your US business registration to verify and integrate the chat link into your website.',
+        ko: '미국에서 한국 번호 없이 약 20분 만에 인증된 카카오톡 비즈니스 채널을 만드는 방법. 미국 사업자 등록으로 인증하고 웹사이트에 채팅 버튼을 연동합니다.',
+      },
+      totalTime: 'PT20M',
+      steps: [
+        {
+          name: { en: 'Create a KakaoTalk account with a US phone', ko: '미국 번호로 카카오톡 계정 생성' },
+          text: {
+            en: 'Download KakaoTalk on iOS or Android, sign up with your US mobile number, and complete SMS verification. A US number works fine — Korean numbers are not required.',
+            ko: 'iOS 또는 Android에서 카카오톡을 다운로드하고 미국 휴대폰 번호로 가입한 뒤 SMS 인증을 완료하세요. 미국 번호로 충분합니다 — 한국 번호는 필요 없습니다.',
+          },
+        },
+        {
+          name: { en: 'Open the Channel Manager (center-pf.kakao.com)', ko: '채널 관리자 열기 (center-pf.kakao.com)' },
+          text: {
+            en: 'Visit https://center-pf.kakao.com on a desktop browser and log in with the same Kakao account. Click "Add Channel" and pick the business profile type that matches your operation.',
+            ko: '데스크탑 브라우저에서 https://center-pf.kakao.com 에 접속해 같은 카카오 계정으로 로그인하세요. "채널 추가"를 누르고 운영 형태에 맞는 비즈니스 프로필 유형을 선택합니다.',
+          },
+        },
+        {
+          name: { en: 'Submit US business verification documents', ko: '미국 사업자 인증 서류 제출' },
+          text: {
+            en: 'Upload your US LLC formation certificate (or sole proprietorship trade name), EIN letter, and business address proof. Verification typically processes within 1–3 business days.',
+            ko: '미국 LLC 설립 증명서 (또는 개인사업자 등록증), EIN 안내문, 사업장 주소 증빙을 업로드하세요. 인증은 보통 영업일 기준 1–3일 안에 처리됩니다.',
+          },
+        },
+        {
+          name: { en: 'Configure greeting, auto-reply, and broadcast settings', ko: '인사말·자동 응답·단체 메시지 설정' },
+          text: {
+            en: 'Inside Channel Manager, set a Korean+English welcome greeting, configure off-hours auto-reply, and decide on broadcast cadence (1–2 per week is the sweet spot).',
+            ko: '채널 관리자에서 한·영 환영 인사말을 설정하고, 영업시간 외 자동 응답을 구성하며, 단체 메시지 발송 빈도를 정합니다 (주 1–2회가 적정).',
+          },
+        },
+        {
+          name: { en: 'Add the KakaoTalk button to your website', ko: '웹사이트에 카카오톡 버튼 추가' },
+          text: {
+            en: 'Embed the official Kakao JS SDK with your Channel ID, or link a "Chat on KakaoTalk" button to https://pf.kakao.com/_<your-id>/chat. Place the button as a floating bottom-right CTA — Korean-American customers convert 3–5× faster on Kakao than on email forms.',
+            ko: '공식 카카오 JS SDK에 채널 ID를 입력해 임베드하거나, "카카오톡 상담" 버튼을 https://pf.kakao.com/_<our-id>/chat 으로 링크하세요. 우측 하단 플로팅 CTA로 배치하면 — 한인 고객은 이메일 폼보다 카카오에서 3–5배 빠르게 전환됩니다.',
+          },
+        },
+      ],
+    },
     sections: {
       en: [
         { type: 'intro', content: 'KakaoTalk is the single most underutilized marketing channel for US-based Korean businesses. Most owners use it for personal chats and never set up a business Channel — missing out on a customer touchpoint that Korean-American customers strongly prefer. For context: 98% of Korean smartphone users have KakaoTalk installed, and roughly 85% of US-based Korean-American first-generation immigrants use it daily. Your customers are already in the app. They just have no way to contact your business through it. This guide walks you through setting up a KakaoTalk Channel from the US, integrating it with your website, and using it strategically for marketing and customer service.' },
