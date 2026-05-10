@@ -43,7 +43,7 @@ export const blogContent: BlogPost[] = [
       en: 'DoorDash takes 30%. At $20K/mo delivery that is $72K/yr lost. A $14K own-app pays back in 4 months if you migrate 40% of repeat orders. Honest math.',
       ko: '도어대시 수수료 30% — 월 $20,000 배달 매출이면 연 $72,000 손실. $14,000짜리 자체 앱은 재주문의 40%만 옮겨도 4개월이면 본전. 솔직한 계산.',
     },
-    author: 'Zoe Lumos Studio',
+    author: 'Steve Song',
     faq: [
       {
         q: {
@@ -182,7 +182,7 @@ export const blogContent: BlogPost[] = [
       en: 'Skip the $15K native app if a $4K PWA is enough. Decision framework for Korean SMBs: when web-based works, when iOS push and App Store visibility require native.',
       ko: '$4,000짜리 PWA로 충분하면 $15,000짜리 네이티브 앱은 건너뛰세요. 한인 소상공업 의사결정 가이드 — 웹 기반이 통할 때, iOS 푸시와 앱스토어 노출이 필요해서 네이티브가 필수인 때.',
     },
-    author: 'Zoe Lumos Studio',
+    author: 'Steve Song',
     sections: {
       en: [
         { type: 'intro', content: 'A Progressive Web App (PWA) is a website that behaves like an app — installable, full-screen, with offline support. A native iOS/Android app is the real thing — built in Swift or Kotlin (or React Native/Flutter as cross-platform alternatives), submitted to the App Store, with full access to phone hardware. The price difference is real: $4K vs $15K. The capability difference is also real. Here is when each is the right call for a Korean small business.' },
@@ -283,7 +283,7 @@ export const blogContent: BlogPost[] = [
       en: 'Apple Developer enrollment ($99/yr), DUNS for LLCs, App Privacy nutrition labels, and the Guideline 4.3 rejection that kills cheap "app builder" services. Real mechanics for Korean small business owners shipping their first app.',
       ko: 'Apple Developer 가입 ($99/년), LLC를 위한 DUNS, App Privacy 라벨, 그리고 저가 "앱 빌더" 서비스를 죽이는 Guideline 4.3 거절 — 첫 앱을 출시하는 한인 사장님을 위한 실제 메커니즘.',
     },
-    author: 'Zoe Lumos Studio',
+    author: 'Steve Song',
     sections: {
       en: [
         { type: 'intro', content: 'Most "Korean restaurant gets an app" stories die at the App Store submission step. Not because the app is bad — because nobody told the owner about DUNS numbers, App Privacy labels, or the famous Guideline 4.3 that auto-rejects template apps. Here is the actual sequence for a Korean SMB owner shipping their first app to iOS and Android in 2026.' },
@@ -358,7 +358,7 @@ export const blogContent: BlogPost[] = [
       en: 'Manhattan florist launched a new Shopify site April 10, 2026. Four weeks later: $3,114 online sales, 68% from Google organic, $277 from ChatGPT. Bot traffic excluded — honest numbers.',
       ko: '맨해튼 플라워샵이 2026년 4월 10일 새 Shopify 사이트 런칭. 4주 후 — 온라인 매출 $3,114, 그중 68%가 구글 검색에서, $277이 ChatGPT에서. 봇 트래픽 제외한 정직한 숫자.',
     },
-    author: 'Zoe Lumos Studio',
+    author: 'Steve Song',
     faq: [
       {
         q: {
@@ -585,7 +585,7 @@ export const blogContent: BlogPost[] = [
       en: 'Anthropic made AWS its primary cloud and training partner with Amazon investing up to $8B. Here is why the bet made sense — Trainium2 chips, Project Rainier, Bedrock distribution — and the quiet lesson for any business building on the internet in 2026.',
       ko: '앤트로픽이 AWS를 주요 클라우드 및 학습 파트너로 선택하고, 아마존은 최대 80억 달러를 투자했다. Trainium2 칩, 프로젝트 레이니어, Bedrock 유통망 — 이 선택이 합리적인 이유와, 2026년 인터넷 위에서 사업하는 모든 이에게 조용히 남기는 교훈.',
     },
-    author: 'Zoe Lumos Studio',
+    author: 'Steve Song',
     sections: {
       en: [
         { type: 'intro', content: "When Amazon committed up to $8 billion to Anthropic and Anthropic named AWS its primary cloud and primary training partner, the headlines focused on the number. The interesting story is everywhere else — in the chips, the data centers, the distribution channels, and in a small, quiet lesson tucked inside the whole deal that applies to any business building on the internet today, Korean-American café or otherwise." },
@@ -667,7 +667,7 @@ export const blogContent: BlogPost[] = [
       en: 'Complete 2026 guide to building a bilingual Korean-American business website in NJ, NY, and beyond. Costs, features, and expert tips from ZOE LUMOS.',
       ko: '2026년 미국 한인 비즈니스를 위한 이중언어 웹사이트 제작 완벽 가이드. 비용, 기간, 필수 기능을 ZOE LUMOS가 총정리합니다.',
     },
-    author: 'ZOE LUMOS Team',
+    author: 'Steve Song',
     sections: {
       en: [
         {
@@ -967,7 +967,7 @@ export const blogContent: BlogPost[] = [
       en: 'Master local SEO for your Korean-American business in NJ, NY, and LA. Rank on Google, optimize your Business Profile, and attract bilingual customers.',
       ko: '포트리, 플러싱, LA 코리아타운 한인 비즈니스를 위한 로컬 SEO 완벽 가이드. 구글 상위 노출, 비즈니스 프로필 최적화 전략.',
     },
-    author: 'ZOE LUMOS Team',
+    author: 'Steve Song',
     sections: {
       en: [
         {
@@ -1199,7 +1199,7 @@ export const blogContent: BlogPost[] = [
       en: 'Learn how Korean-American businesses can run profitable Google Ads campaigns in 2026. Avoid common mistakes and set the right budget with ZOE LUMOS.',
       ko: '2026년 한인 비즈니스 구글 광고 성공 전략. 흔한 실수를 피하고 올바른 예산을 설정하는 방법을 ZOE LUMOS가 알려드립니다.',
     },
-    author: 'ZOE LUMOS Team',
+    author: 'Steve Song',
     sections: {
       en: [
         {
@@ -1414,7 +1414,7 @@ export const blogContent: BlogPost[] = [
       en: 'Launch a Korean-language Shopify store in the US: payment gateways, hangul fonts, Naver Shopping feed, and KRW/USD pricing — set up in one day.',
       ko: '미국에서 한국어 Shopify 쇼핑몰 구축 — 결제 연동, 한글 폰트, 네이버 쇼핑 피드, 원/달러 가격 표기까지 하루 만에 완료하는 방법.',
     },
-    author: 'ZOE LUMOS Team',
+    author: 'Steve Song',
     sections: {
       en: [
         { type: 'intro', content: 'Shopify is the single best e-commerce platform for Korean-American small businesses in 2026. It is affordable, reliable, and flexible enough to handle bilingual stores, Korean payment preferences, international shipping, and the quirks of serving both Korean-speaking and English-speaking customers. This guide walks through the exact setup we use for Korean-American client stores at ZOE LUMOS — from theme selection to Korean payment gateways to bilingual SEO.' },
@@ -1497,7 +1497,7 @@ export const blogContent: BlogPost[] = [
       en: 'Transparent 2026 website pricing for Korean businesses in NJ and NY. Compare costs, understand what you get, and avoid overpaying. From $1,000 to $6,000+.',
       ko: '2026년 뉴저지·뉴욕 한인 비즈니스 웹사이트 제작 비용 완전 분석. $1,000~$6,000+ 패키지 비교, 월 유지비 안내.',
     },
-    author: 'ZOE LUMOS Team',
+    author: 'Steve Song',
     sections: {
       en: [
         {
@@ -1717,7 +1717,7 @@ export const blogContent: BlogPost[] = [
       en: 'Instagram and Naver alone cost Korean-American businesses ~30% of new customers. Here is when a website pays for itself — and when it does not.',
       ko: '인스타그램과 네이버만으로 운영하면 한인 비즈니스는 신규 고객의 약 30%를 잃습니다. 웹사이트가 비용을 회수하는 시점과 회수하지 못하는 경우를 솔직하게 분석합니다.',
     },
-    author: 'ZOE LUMOS Team',
+    author: 'Steve Song',
     sections: {
       en: [
         { type: 'intro', content: 'A question we hear almost weekly from Korean-American business owners: "My business already gets customers from Instagram and KakaoTalk — do I really need a website?" It is a fair question. Instagram alone can run a profitable nail salon or Korean bakery. KakaoTalk handles customer service for many Korean-American businesses without a single line of code. So why bother? This article gives you the honest answer — not the marketing answer. Sometimes the honest answer is no. Most of the time it is yes, and we will explain exactly why.' },
@@ -1830,7 +1830,7 @@ export const blogContent: BlogPost[] = [
       en: 'What a website actually costs in 2026 beyond the sticker price. Hidden fees, 3-year total cost of ownership, and red flags to avoid.',
       ko: '2026년 웹사이트의 표면 가격 너머 진짜 비용. 숨은 수수료, 3년 총 소유 비용, 피해야 할 위험 신호 총정리.',
     },
-    author: 'ZOE LUMOS Team',
+    author: 'Steve Song',
     sections: {
       en: [
         { type: 'intro', content: 'A Korean restaurant owner in Palisades Park called us last year, frustrated. She had signed a $99/month "website package" two years prior, thinking it was cheap. Now she realized she had paid $2,376 — for a site she could not edit, did not own, and could not move elsewhere without losing her data. The sticker price on a website is almost never the real price. This guide breaks down exactly what you will actually pay in 2026 for a proper website, what to watch for in quotes, and how to calculate 3-year total cost of ownership before you sign anything.' },
@@ -1949,7 +1949,7 @@ export const blogContent: BlogPost[] = [
       en: 'From bilingual menus to KakaoTalk integration — the 11 must-have features every Korean restaurant website needs to convert visitors into diners.',
       ko: '이중언어 메뉴부터 카카오톡 연동까지 — 방문자를 실제 고객으로 전환시키는 한식당 웹사이트 필수 11가지 요소.',
     },
-    author: 'ZOE LUMOS Team',
+    author: 'Steve Song',
     sections: {
       en: [
         { type: 'intro', content: 'Korean restaurants in the US face a unique challenge: they serve two distinct customer bases. Korean-American diners who expect Korean menus, KakaoTalk contact, and cultural familiarity. And non-Korean adventurous diners who need clear descriptions, pronunciation guides, and photographs of what they are ordering. Building a website that serves both without confusing either is harder than most owners realize. After building sites for Korean BBQ, bunsik, bakeries, and fine-dining restaurants from Fort Lee to Flushing, here are the 11 elements we have learned are non-negotiable.' },
@@ -2022,7 +2022,7 @@ export const blogContent: BlogPost[] = [
       en: 'Most Korean-Americans in the US search on Google, not Naver. An honest breakdown of where to invest your SEO budget for a US-based Korean business.',
       ko: '미국의 한인들은 대부분 네이버가 아닌 구글을 사용합니다. 미국 한인 비즈니스가 SEO 예산을 어디에 투자해야 하는지 솔직하게 분석합니다.',
     },
-    author: 'ZOE LUMOS Team',
+    author: 'Steve Song',
     sections: {
       en: [
         { type: 'intro', content: 'A common myth in Korean-American business circles: "My customers are Korean, so I need Naver SEO." This belief costs Korean-American businesses thousands of dollars per year on Naver optimization services that produce almost no measurable traffic. The reality is that Korean-Americans living in the US — even first-generation immigrants — primarily use Google. This article cuts through the confusion and tells you exactly where to invest your SEO budget based on where your customers actually are.' },
@@ -2095,7 +2095,7 @@ export const blogContent: BlogPost[] = [
       en: 'Open a KakaoTalk Channel from the US in 20 minutes — no Korean phone number needed. Step-by-step setup, ads, and broadcasts for 2026.',
       ko: '미국에서 카카오톡 비즈니스 채널을 20분 만에 — 한국 번호 없이. 사업자 등록, 광고, 단체 메시지, 웹사이트 연동까지 2026년 최신 가이드.',
     },
-    author: 'ZOE LUMOS Team',
+    author: 'Steve Song',
     faq: [
       {
         q: {
@@ -2242,7 +2242,7 @@ export const blogContent: BlogPost[] = [
       en: 'A step-by-step case study of how ZOE LUMOS grew a North Bergen Korean nail salon\'s organic Google traffic from 40 to 430 monthly visits in 6 months.',
       ko: 'North Bergen 한인 네일샵의 월 유입을 6개월 만에 40명에서 430명으로 늘린 ZOE LUMOS의 단계별 사례 연구.',
     },
-    author: 'ZOE LUMOS Team',
+    author: 'Steve Song',
     sections: {
       en: [
         { type: 'intro', content: 'In October 2025, a Korean-owned nail salon in North Bergen, NJ came to us frustrated. Google Analytics showed 40 monthly organic visitors. Bookings from the website? Maybe one a month. The owner had paid $1,800 for a "professional" website two years prior and was convinced websites just did not work for salons. Six months later, the same business was receiving 430 monthly organic visitors, 15+ online bookings per month, and was ranked in the top 3 for "nail salon North Bergen" and "네일샵 노스버겐". This is the exact playbook we ran — reproducible, no gimmicks, no black-hat tactics.' },
@@ -2337,7 +2337,7 @@ export const blogContent: BlogPost[] = [
       en: 'A developer-friendly, honest guide to implementing bilingual Korean-English SEO correctly. hreflang, canonicals, URL structure, and common mistakes.',
       ko: '이중언어 한영 SEO를 올바르게 구현하는 개발자 친화적 가이드. hreflang, 캐노니컬, URL 구조, 흔한 실수들.',
     },
-    author: 'ZOE LUMOS Team',
+    author: 'Steve Song',
     sections: {
       en: [
         { type: 'intro', content: 'Bilingual SEO is where most Korean-American business websites go wrong — not in the visible content, but in the invisible metadata. A beautiful, professionally-written Korean page that uses the wrong hreflang value or conflicts with a canonical tag will fail to rank even if the content itself is excellent. This guide is the technical playbook we follow at ZOE LUMOS when building bilingual sites. If you are a developer, a technical founder, or working with one, this is the part of SEO that gets skipped in most guides.' },
@@ -2426,7 +2426,7 @@ export const blogContent: BlogPost[] = [
       en: 'A honest walkthrough of migrating a Korean-American business website from WordPress to Next.js — decisions, risks, metrics, and when NOT to migrate.',
       ko: '한인 비즈니스 웹사이트를 워드프레스에서 Next.js로 마이그레이션하는 솔직한 가이드 — 결정, 리스크, 지표, 그리고 마이그레이션하지 말아야 할 때.',
     },
-    author: 'ZOE LUMOS Team',
+    author: 'Steve Song',
     sections: {
       en: [
         { type: 'intro', content: 'Roughly 40% of the Korean-American business websites we audit are on WordPress. Of those, maybe half are fine and should stay on WordPress. The other half would benefit from migrating to a modern stack like Next.js — faster load times, better SEO, lower attack surface, cheaper hosting. But migration is a risky operation. Done wrong, you can lose your Google rankings, break hundreds of internal links, or corrupt content. This guide walks through when migration makes sense, when it does not, and the exact playbook we follow at ZOE LUMOS when we do it for clients.' },
@@ -2557,7 +2557,7 @@ export const blogContent: BlogPost[] = [
     category: { en: 'Industry Guide', ko: '업종별 가이드' },
     title: { en: 'The Ultimate Korean Nail Salon Website Guide — Booking, SEO & Trust', ko: '한인 네일샵 웹사이트 완벽 가이드 — 예약, SEO, 신뢰 구축' },
     metaDescription: { en: 'How to build a Korean nail salon website that books appointments 24/7. Online booking, before/after galleries, review management, and local SEO.', ko: '24시간 예약 가능한 한인 네일샵 웹사이트 만드는 법. 온라인 예약, 비포/애프터 갤러리, 리뷰 관리, 로컬 SEO.' },
-    author: 'ZOE LUMOS Team',
+    author: 'Steve Song',
     sections: {
       en: [
         { type: 'intro', content: 'Korean-owned nail salons dominate the US market — an estimated 45% of all nail salons in America are Korean-owned. Yet the vast majority operate without a proper website, relying entirely on walk-ins, Yelp, and word-of-mouth. In 2026, that is leaving thousands of dollars in bookings on the table every month. A well-built nail salon website does one thing above all else: it converts Google searches into booked appointments while you sleep. This guide covers every element you need, based on our experience building salon websites across NJ, NY, and CA.' },
@@ -2607,7 +2607,7 @@ export const blogContent: BlogPost[] = [
     category: { en: 'Industry Guide', ko: '업종별 가이드' },
     title: { en: 'Korean Dental Practice Website Guide — HIPAA, Trust & Patient Acquisition', ko: '한인 치과 웹사이트 가이드 — HIPAA 준수, 신뢰, 환자 유입' },
     metaDescription: { en: 'Build a HIPAA-compliant Korean dental practice website that acquires patients. Bilingual content, insurance info, online scheduling, and local SEO.', ko: 'HIPAA 준수 한인 치과 웹사이트 구축법. 이중언어, 보험 정보, 온라인 예약, 로컬 SEO.' },
-    author: 'ZOE LUMOS Team',
+    author: 'Steve Song',
     sections: {
       en: [
         { type: 'intro', content: 'Korean-American dentists face a unique positioning challenge. They serve two patient populations: Korean-speaking patients who specifically seek out a Korean dentist for language comfort, and English-speaking patients who find them through Google. The website must serve both without confusing either. On top of that, dental websites have strict HIPAA compliance requirements that most small agencies get wrong. This guide covers everything a Korean dental practice needs in a website — from patient acquisition to compliance.' },
@@ -2653,7 +2653,7 @@ export const blogContent: BlogPost[] = [
     category: { en: 'Industry Guide', ko: '업종별 가이드' },
     title: { en: 'Korean Law Firm Website Guide — Immigration, Trust & Lead Generation', ko: '한인 로펌 웹사이트 가이드 — 이민, 신뢰, 고객 유입' },
     metaDescription: { en: 'How to build a Korean law firm website that generates qualified leads. Practice areas, attorney bios, client trust signals, and bilingual SEO.', ko: '자격 있는 리드를 생성하는 한인 로펌 웹사이트 만드는 법. 전문 분야, 변호사 프로필, 신뢰 신호, 이중언어 SEO.' },
-    author: 'ZOE LUMOS Team',
+    author: 'Steve Song',
     sections: {
       en: [
         { type: 'intro', content: 'Korean-American law firms — especially immigration, personal injury, real estate, and business law — operate in one of the most competitive website landscapes in digital marketing. Yet most Korean law firm websites we audit make the same critical mistakes: generic stock photos of gavels, no attorney bios with real credentials, buried contact information, and zero Korean-language content. A properly built Korean law firm website is a 24/7 lead generation machine. This guide covers how to build one that works.' },
@@ -2699,7 +2699,7 @@ export const blogContent: BlogPost[] = [
     category: { en: 'Industry Guide', ko: '업종별 가이드' },
     title: { en: 'Korean Real Estate Agent Website Guide — MLS, Listings & Korean Buyer Trust', ko: '한인 부동산 에이전트 웹사이트 가이드 — MLS, 매물, 한인 바이어 신뢰' },
     metaDescription: { en: 'Build a Korean real estate agent website with IDX/MLS integration, bilingual property searches, and trust signals for Korean-American buyers.', ko: 'IDX/MLS 연동, 이중언어 매물 검색, 한인 바이어 신뢰를 갖춘 한인 부동산 에이전트 웹사이트 구축법.' },
-    author: 'ZOE LUMOS Team',
+    author: 'Steve Song',
     sections: {
       en: [
         { type: 'intro', content: 'Korean-American real estate agents hold a unique position in the market. Korean-speaking buyers — especially recent immigrants and investors — seek out Korean agents not just for language but for cultural understanding of one of the biggest financial decisions of their lives. A strong website amplifies this trust advantage and generates leads around the clock. This guide covers the essential features, from MLS integration to Korean-language property pages that actually rank.' },
@@ -2741,7 +2741,7 @@ export const blogContent: BlogPost[] = [
     category: { en: 'Industry Guide', ko: '업종별 가이드' },
     title: { en: 'Korean Church Website Guide — Sermons, Events & Community Connection', ko: '한인 교회 웹사이트 가이드 — 설교, 행사, 커뮤니티 연결' },
     metaDescription: { en: 'A practical guide to building a Korean church website: sermon archives, event registration, online giving, and bilingual content for KA congregations.', ko: '한인 교회 웹사이트 구축 실전 가이드: 설교 아카이브, 행사 등록, 온라인 헌금, 이중언어 콘텐츠.' },
-    author: 'ZOE LUMOS Team',
+    author: 'Steve Song',
     sections: {
       en: [
         { type: 'intro', content: 'There are over 4,000 Korean churches in the United States — from 50-member house churches to 5,000-member megachurches. Most share a common problem: their website is either nonexistent or a forgotten WordPress site from 2015 with broken links and outdated sermon info. In 2026, your church website is often the first touchpoint for Korean families relocating to your city. A welcoming, bilingual, mobile-friendly church website is as important as the Sunday bulletin. This guide covers what you actually need.' },
@@ -2783,7 +2783,7 @@ export const blogContent: BlogPost[] = [
     category: { en: 'Industry Guide', ko: '업종별 가이드' },
     title: { en: 'Korean Tutoring & SAT Prep Website Guide — Enrollment, Parent Trust & Results', ko: '한인 학원 & SAT 웹사이트 가이드 — 등록, 학부모 신뢰, 성과' },
     metaDescription: { en: 'Build a Korean tutoring or SAT prep website that parents trust: student results, instructor bios, online enrollment, and parent-facing Korean content.', ko: '학부모가 신뢰하는 한인 학원/SAT 웹사이트 구축법: 학생 성과, 강사 소개, 온라인 등록, 한국어 학부모 콘텐츠.' },
-    author: 'ZOE LUMOS Team',
+    author: 'Steve Song',
     sections: {
       en: [
         { type: 'intro', content: 'Korean-American parents invest more per capita in education than almost any other demographic in America. SAT prep, math tutoring, English writing, college counseling — the Korean-American tutoring industry generates hundreds of millions annually. Yet most Korean 학원 (hagwon) websites are outdated Word-of-mouth-only operations with no online presence. In 2026, the tutor or academy with a professional website and clear results wins the enrollment. This guide covers what Korean tutoring centers need in a website.' },
@@ -2829,7 +2829,7 @@ export const blogContent: BlogPost[] = [
     category: { en: 'Industry Guide', ko: '업종별 가이드' },
     title: { en: 'Korean Med Spa & Aesthetic Clinic Website Guide — Before/After, Booking & Compliance', ko: '한인 메디스파 & 피부과 웹사이트 가이드 — 비포/애프터, 예약, 규정 준수' },
     metaDescription: { en: 'Build a Korean med spa or aesthetic clinic website that books consultations: before/after galleries, treatment pages, online booking, and HIPAA awareness.', ko: '상담 예약을 만드는 한인 메디스파/피부과 웹사이트 구축법: 비포/애프터 갤러리, 시술 페이지, 온라인 예약, HIPAA.' },
-    author: 'ZOE LUMOS Team',
+    author: 'Steve Song',
     sections: {
       en: [
         { type: 'intro', content: 'Korean-American med spas and aesthetic clinics are booming — driven by the global K-beauty influence and the Korean-American community\'s cultural comfort with aesthetic procedures. Botox, fillers, laser treatments, PRP facials, and body contouring are mainstream services. Yet most Korean med spa websites fail to convert because they look like generic medical sites instead of premium aesthetic brands. This guide covers how to build a website that matches the quality of your services and books consultations around the clock.' },
@@ -2875,7 +2875,7 @@ export const blogContent: BlogPost[] = [
     category: { en: 'Industry Guide', ko: '업종별 가이드' },
     title: { en: 'Korean Hair Salon Website Guide — Portfolio, Booking & K-Style Authority', ko: '한인 헤어살롱 웹사이트 가이드 — 포트폴리오, 예약, K-스타일' },
     metaDescription: { en: 'Build a Korean hair salon website that shows K-style authority: stylist portfolios, online booking, pricing, and Instagram integration.', ko: 'K-스타일 전문성을 보여주는 한인 헤어살롱 웹사이트: 디자이너 포트폴리오, 온라인 예약, 가격, 인스타 연동.' },
-    author: 'ZOE LUMOS Team',
+    author: 'Steve Song',
     sections: {
       en: [
         { type: 'intro', content: 'Korean hair salons in America have a built-in advantage: K-beauty and K-drama trends make Korean haircuts and styling aspirational for customers of all backgrounds. Korean-style layered cuts, C-curls, curtain bangs, and men\'s two-block cuts are searched hundreds of thousands of times per month. A Korean hair salon website that positions itself as the local K-style authority — not just another salon — attracts both Korean clients seeking comfort and non-Korean clients seeking the K-look.' },
@@ -2917,7 +2917,7 @@ export const blogContent: BlogPost[] = [
     category: { en: 'Industry Guide', ko: '업종별 가이드' },
     title: { en: 'Korean Insurance & Financial Services Website Guide — Trust, Compliance & Lead Generation', ko: '한인 보험 & 금융 서비스 웹사이트 가이드 — 신뢰, 규정, 리드 생성' },
     metaDescription: { en: 'Build a Korean insurance or financial services website that generates qualified leads while meeting compliance standards. Life, auto, business, and financial planning.', ko: '규정을 준수하면서 자격 있는 리드를 생성하는 한인 보험/금융 서비스 웹사이트 구축법.' },
-    author: 'ZOE LUMOS Team',
+    author: 'Steve Song',
     sections: {
       en: [
         { type: 'intro', content: 'Korean-American insurance agents and financial advisors occupy a trust-intensive niche. Life insurance, business insurance, auto insurance, retirement planning, and investment advisory — these are products where the client must trust the advisor with their family\'s financial future. Korean-American clients overwhelmingly prefer working with Korean-speaking agents who understand their unique financial situation: bilingual documentation needs, transnational asset considerations, Korean tax implications, and cultural expectations around family financial planning. Your website must establish this trust instantly.' },
@@ -2962,7 +2962,7 @@ export const blogContent: BlogPost[] = [
     category: { en: 'SEO', ko: 'SEO' },
     title: { en: 'Local SEO for Korean Businesses: 9-Step Playbook [2026]', ko: '한인 비즈니스 로컬 SEO 9단계 플레이북 [2026]' },
     metaDescription: { en: '9-step local SEO playbook for Korean restaurants, salons, and shops in NJ/NY/LA. Rank in Google Maps, fix duplicate listings, win Korean reviews.', ko: '한인 식당·살롱·소매점을 위한 9단계 로컬 SEO 플레이북. NJ·NY·LA에서 구글 지도 상위 노출, 중복 리스팅 정리, 한국어 리뷰 확보까지.' },
-    author: 'ZOE LUMOS Team',
+    author: 'Steve Song',
     sections: {
       en: [
         { type: 'intro', content: 'Local SEO is the single most cost-effective marketing channel for Korean-American small businesses. When someone searches "Korean restaurant near me" or "한인 치과 포트리" on Google, local SEO determines whether your business shows up or disappears. Unlike paid ads, local SEO works 24/7 without a daily budget. Unlike social media, the traffic is high-intent — these are people actively looking for what you sell. This guide covers everything from scratch: what local SEO is, why it matters specifically for Korean-American businesses, and the exact steps to implement it.' },
@@ -3054,7 +3054,7 @@ export const blogContent: BlogPost[] = [
     category: { en: 'SEO', ko: 'SEO' },
     title: { en: 'Bilingual SEO for New York Korean Businesses — Rank in English AND Korean', ko: '뉴욕 한인 비즈니스 이중언어 SEO — 영어와 한국어 동시 랭킹' },
     metaDescription: { en: 'How NYC Korean businesses can rank on Google in both English and Korean simultaneously. hreflang, keyword strategy, and content architecture for bilingual SEO.', ko: '뉴욕 한인 비즈니스가 구글에서 영어와 한국어 양쪽으로 동시 랭크하는 방법. hreflang, 키워드 전략, 콘텐츠 구조.' },
-    author: 'ZOE LUMOS Team',
+    author: 'Steve Song',
     sections: {
       en: [
         { type: 'intro', content: 'New York City has 175,000+ Korean-Americans — the second largest concentration in the US after LA. For Korean businesses in Flushing, Bayside, Manhattan\'s K-town, and beyond, the SEO challenge is unique: you need to rank for both "Korean BBQ near me" (English-speaking food lovers) AND "플러싱 한식당" (Korean-speaking locals seeking comfort). Most NYC Korean businesses do neither well. This guide shows you how to do both.' },
@@ -3100,7 +3100,7 @@ export const blogContent: BlogPost[] = [
     category: { en: 'Marketing', ko: '마케팅' },
     title: { en: 'Google Business Profile Optimization for Korean Businesses — The Complete 2026 Playbook', ko: '한인 비즈니스 구글 비즈니스 프로필 최적화 — 2026 완벽 플레이북' },
     metaDescription: { en: 'Step-by-step GBP optimization guide for Korean-American businesses. Photos, posts, reviews, bilingual descriptions, and ranking strategies that work.', ko: '한인 비즈니스 GBP 최적화 단계별 가이드. 사진, 포스트, 리뷰, 이중언어 설명, 실전 랭킹 전략.' },
-    author: 'ZOE LUMOS Team',
+    author: 'Steve Song',
     sections: {
       en: [
         { type: 'intro', content: 'Your Google Business Profile is often the first thing potential customers see — before your website, before your Instagram, before anything. When someone searches for your business or your service category in Google or Google Maps, the GBP listing determines whether they click, call, or scroll past. For Korean-American businesses, GBP is especially powerful because it allows bilingual optimization that most competitors overlook. This guide is the exact playbook we use to optimize GBP for Korean business clients.' },
@@ -3174,7 +3174,7 @@ export const blogContent: BlogPost[] = [
     category: { en: 'SEO', ko: 'SEO' },
     title: { en: 'Affordable SEO for New Jersey Korean Businesses — What $500/Month Actually Gets You', ko: '뉴저지 한인 비즈니스 합리적 SEO — 월 $500으로 실제로 뭘 받나' },
     metaDescription: { en: 'What affordable SEO actually looks like for NJ Korean businesses in 2026. Real deliverables, realistic timelines, and red flags to avoid in cheap SEO packages.', ko: '2026년 뉴저지 한인 비즈니스의 합리적 SEO란. 실제 산출물, 현실적 일정, 저가 SEO 패키지의 위험 신호.' },
-    author: 'ZOE LUMOS Team',
+    author: 'Steve Song',
     sections: {
       en: [
         { type: 'intro', content: 'NJ Korean business owners searching for "affordable SEO" or "low cost SEO New Jersey" are looking for the same thing: real SEO results without paying $3,000-$5,000 per month that enterprise agencies charge. The good news: effective local SEO for a small Korean business in Bergen County, Hudson County, or anywhere in NJ can be done for $300-$800/month. The bad news: most agencies selling SEO under $300/month are delivering nothing of value. This guide explains what affordable SEO should actually include, what results to expect, and how to avoid getting scammed.' },
@@ -3250,7 +3250,7 @@ export const blogContent: BlogPost[] = [
     category: { en: 'Marketing', ko: '마케팅' },
     title: { en: 'Instagram vs Website — What Korean-American Businesses Actually Need in 2026', ko: '인스타그램 vs 웹사이트 — 한인 비즈니스에 실제로 필요한 것 (2026)' },
     metaDescription: { en: 'An honest comparison of Instagram vs a website for Korean-American businesses. When Instagram alone works, when it does not, and how to use both effectively.', ko: '한인 비즈니스를 위한 인스타그램 vs 웹사이트 솔직 비교. 인스타만으로 충분할 때, 안 될 때, 둘 다 효과적으로 쓰는 법.' },
-    author: 'ZOE LUMOS Team',
+    author: 'Steve Song',
     sections: {
       en: [
         { type: 'intro', content: 'The most common pushback we hear from Korean-American business owners: "I already have Instagram — why do I need a website?" It is a reasonable question, especially since Korean businesses on Instagram can build impressive followings and real revenue from the platform alone. But the answer depends entirely on what your business needs and where your customers are in 2026. This is the honest breakdown — including the cases where Instagram alone is genuinely enough.' },
@@ -3338,7 +3338,7 @@ export const blogContent: BlogPost[] = [
       en: 'Spending $1,000/month on ads? Here is exactly when to use Google vs Meta for Korean-American businesses, with real conversion benchmarks from 40+ NJ/NY/CA campaigns.',
       ko: '월 $1,000 광고 예산이라면 — 한인 비즈니스가 구글과 메타 중 어디에 써야 하는지, NJ/NY/CA 40개+ 캠페인 실전 데이터로 정리.',
     },
-    author: 'ZOE LUMOS Team',
+    author: 'Steve Song',
     sections: {
       en: [
         { type: 'intro', content: 'Most Korean-American small businesses we audit are spending money on the wrong platform. Not because Google or Meta is bad — both work — but because nobody told them which one matches the way their customers actually buy. After running campaigns for 40+ Korean-American businesses across New Jersey, New York, and California, we can collapse the decision into one sentence: Google captures demand that already exists, Meta creates demand that did not. The difference matters more than your ad creative.' },
@@ -3430,7 +3430,7 @@ export const blogContent: BlogPost[] = [
       en: 'Most US-based Korean businesses are completely missing from Naver — even though Korean-American customers check Naver before Google for Korean topics. Step-by-step setup guide.',
       ko: '미국 한인 비즈니스 대부분은 네이버에 아예 등록되어 있지 않습니다 — 한인 고객이 한국 토픽은 구글보다 네이버를 먼저 보는데도. 단계별 설정 가이드.',
     },
-    author: 'ZOE LUMOS Team',
+    author: 'Steve Song',
     sections: {
       en: [
         { type: 'intro', content: 'Walk into any Fort Lee café where Korean-Americans are working on laptops and look at the browser tabs. Many of them have Naver open. Korean-American customers — especially first-generation and 1.5-generation — habitually check Naver for restaurant reviews, Korean recipes, immigration questions, K-beauty, and any topic that has more authoritative content in Korean than in English. If your Korean-American business is invisible on Naver, you are missing a customer touchpoint that competitors with even basic Naver presence are quietly capturing.' },
@@ -3506,7 +3506,7 @@ export const blogContent: BlogPost[] = [
       en: 'Korean cafés in NJ/NY/CA: exactly what your website needs in 2026 — menu schema, online ordering, Instagram-ready photography, KakaoTalk integration, and the local SEO that drives walk-ins.',
       ko: 'NJ/NY/CA 한인 카페가 2026년 웹사이트에서 갖춰야 할 것 — 메뉴 스키마, 온라인 주문, 인스타용 사진, 카카오톡 연동, 그리고 실제 매장 방문을 만드는 로컬 SEO.',
     },
-    author: 'ZOE LUMOS Team',
+    author: 'Steve Song',
     sections: {
       en: [
         { type: 'intro', content: 'A Korean café in 2026 is competing with three different layers of attention: locals who Google "Korean café near me", Korean-Americans who scroll Instagram for the next aesthetic spot, and tourists who just want something photogenic before they walk in. Your website is what closes the visit after Instagram opened it. Most Korean-American cafés we audit have a one-page Squarespace site with a menu PDF and zero local SEO. They are leaving 30–50% of weekly walk-ins on the table because Google does not know they exist for the right queries.' },
@@ -3588,7 +3588,7 @@ export const blogContent: BlogPost[] = [
       en: 'Your old WordPress site is slow, the design feels dated, and bookings are flat. Do you redesign or rebuild? Honest framework with 2026 cost ranges for Korean-American businesses.',
       ko: '오래된 워드프레스 사이트가 느리고 디자인은 낡았으며 예약은 정체. 리디자인할 것인가, 리빌드할 것인가? 한인 비즈니스를 위한 솔직한 판단 기준과 2026년 비용 범위.',
     },
-    author: 'ZOE LUMOS Team',
+    author: 'Steve Song',
     sections: {
       en: [
         { type: 'intro', content: 'Most Korean-American business owners we talk to come in saying "we want a redesign", but only about half of them actually need one. The other half need a rebuild — same content, completely different foundation underneath. Confusing the two costs you 6–12 months of slower performance and double the eventual budget. Here is how to tell which one you actually need before you spend $5,000 on the wrong project.' },
@@ -3662,7 +3662,7 @@ export const blogContent: BlogPost[] = [
       en: 'Spent $1,000 on Yelp and Google Ads for a Korean restaurant in NJ. Here is the cost-per-customer, ROI breakdown, and which channel won in 2026.',
       ko: 'NJ/NY 한인 식당은 매주 옐프 영업 전화 받습니다. 받아야 할까요? 12개 한인 식당 계정 실제 전환 데이터 — 어느 플랫폼이 광고비를 예약으로 바꾸는가.',
     },
-    author: 'ZOE LUMOS Team',
+    author: 'Steve Song',
     sections: {
       en: [
         { type: 'intro', content: 'Every Korean restaurant owner in New York or New Jersey gets the same call once a quarter: a Yelp salesperson explaining how Yelp Ads will fill empty tables. Many owners say yes, run $300–$500/month for 3 months, see no measurable lift, and quietly cancel. Some keep paying because the cancellation conversation is more painful than the spend. We pulled the numbers from 12 Korean restaurant ad accounts running both Yelp and Google Ads in 2026, and the answer is more nuanced than either Yelp or Google sales reps tell you. It depends on your category, your reviews, and what you are actually paying for.' },
@@ -3740,7 +3740,7 @@ export const blogContent: BlogPost[] = [
       en: 'Picking the right website platform for your Korean-American business in 2026. Honest tradeoffs on bilingual support, SEO, costs, and what actually breaks at scale.',
       ko: '2026년 한인 비즈니스에 맞는 웹사이트 플랫폼 고르기. 이중언어 지원·SEO·비용·확장 시 실제 문제까지 솔직한 트레이드오프.',
     },
-    author: 'ZOE LUMOS Team',
+    author: 'Steve Song',
     sections: {
       en: [
         { type: 'intro', content: 'Almost every Korean-American business owner we audit started on the wrong platform. Not because Squarespace, WordPress, or Shopify are bad — they are not — but because nobody walked them through which one matches their actual business. The wrong choice costs you 12–24 months of slow growth and eventually a $5,000–$10,000 platform migration. Here is the honest decision framework, with the bilingual considerations that change the math for Korean-American businesses specifically.' },
@@ -3816,7 +3816,7 @@ export const blogContent: BlogPost[] = [
       en: 'Korean grocery stores and marts in NJ/NY/CA: how to build the website, weekly flyer page, online ordering, and KakaoTalk channel that actually drives foot traffic and pickup orders.',
       ko: 'NJ/NY/CA 한인 마트가 실제 매장 방문과 픽업 주문을 만드는 웹사이트, 주간 전단 페이지, 온라인 주문, 카카오톡 채널 구축법.',
     },
-    author: 'ZOE LUMOS Team',
+    author: 'Steve Song',
     sections: {
       en: [
         { type: 'intro', content: 'H Mart, Hannam Chain, Galleria Market, Zion Market — the major Korean grocery chains have figured out their digital presence. The hundreds of independent Korean marts in NJ, NY, CA, GA, and TX mostly have not. Most still rely on KakaoTalk group chats with regulars and a phone number on a printed weekly flyer. We have audited 14 independent Korean marts in 2026 and the pattern is consistent: the ones that built even a basic website with weekly flyer + online ordering grew foot traffic 25–40% year over year, while the ones that did not are losing share to H Mart and Instacart. Here is the playbook.' },
@@ -3900,7 +3900,7 @@ export const blogContent: BlogPost[] = [
       en: 'Most Korean-American business websites use Google Translate or freelance translators and end up with awkward Korean copy that hurts conversion. Translation vs localization, with real before-and-after examples.',
       ko: '대부분의 한인 비즈니스 웹사이트는 구글 번역이나 프리랜서 번역으로 어색한 한국어 카피가 전환을 깎습니다. 번역 vs 현지화, 실제 비포 애프터 예시.',
     },
-    author: 'ZOE LUMOS Team',
+    author: 'Steve Song',
     sections: {
       en: [
         { type: 'intro', content: 'Korean-American customers spot a machine-translated website in three seconds. The grammar is technically correct but the rhythm is off, the sentence-ending honorifics are wrong for a business context, the marketing tone reads like a 1990s product manual, and the call-to-action does not feel like something a Korean person would write. The damage shows up in your conversion rate — Korean-language pages translated rather than localized convert 30–60% lower than their English equivalents in our audit data. Here is what is actually going wrong, and how to fix it without paying for a full agency rewrite.' },
@@ -3980,7 +3980,7 @@ export const blogContent: BlogPost[] = [
       en: 'Toast vs Square vs ChowNow vs UberEats vs DoorDash vs custom for Korean restaurants in NJ/NY/CA. Real fee breakdowns, conversion rates, and which platform fits which restaurant type.',
       ko: 'NJ/NY/CA 한인 식당의 Toast vs Square vs ChowNow vs UberEats vs DoorDash vs 커스텀 비교. 실제 수수료 분석, 전환율, 어떤 플랫폼이 어떤 식당에 맞는지.',
     },
-    author: 'ZOE LUMOS Team',
+    author: 'Steve Song',
     sections: {
       en: [
         { type: 'intro', content: 'Korean restaurant owners get pitched online ordering platforms every week. The pitch decks all sound similar; the actual fee structures are wildly different. After helping 18 Korean-American restaurants integrate online ordering across the major platforms in 2025–2026, we have a clear-eyed view of which platform fits which restaurant. Spoiler: there is no single best answer, and the wrong choice can cost you 8–15% of every order in fees you did not need to pay.' },
@@ -4052,7 +4052,7 @@ export const blogContent: BlogPost[] = [
       en: 'Korean dental practices and medical clinics in NJ/NY/CA: Zocdoc vs NexHealth vs Solv vs custom booking — what works, what wastes money, and what Korean-American patients actually use.',
       ko: 'NJ/NY/CA 한인 치과·의원: Zocdoc vs NexHealth vs Solv vs 커스텀 예약 — 무엇이 작동하고, 무엇이 돈 낭비고, 한인 환자가 실제 쓰는 것.',
     },
-    author: 'ZOE LUMOS Team',
+    author: 'Steve Song',
     sections: {
       en: [
         { type: 'intro', content: 'Korean-American medical and dental clinics in 2026 face an unusual booking problem. Younger patients (under 40) demand online booking — they will not call. Older patients (50+) prefer phone, often in Korean, and resent being pushed to online forms. The wrong booking system either alienates one group or costs you $400–$800/month in fees you did not need to pay. After helping 11 Korean-American clinics in NJ, NY, and CA implement booking systems in 2025–2026, here is the honest comparison.' },

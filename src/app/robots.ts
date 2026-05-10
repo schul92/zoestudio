@@ -75,6 +75,21 @@ export default function robots(): MetadataRoute.Robots {
         userAgent: 'OAI-SearchBot',
         allow: '/',
       },
+      // Naver — Korean search market (40% of KR diaspora audience defaults to Naver)
+      {
+        userAgent: 'Yeti',
+        allow: '/',
+      },
+      // Daum — Korean portal
+      {
+        userAgent: 'Daum',
+        allow: '/',
+      },
+      // ByteDance — Doubao AI / TikTok search (large in Asian markets)
+      {
+        userAgent: 'Bytespider',
+        allow: '/',
+      },
     ],
     sitemap: `${baseUrl}/sitemap.xml`,
   }
