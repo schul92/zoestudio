@@ -35,6 +35,8 @@ export const PILLARS = {
     posts: [
       'korean-restaurant-website-essentials',
       'korean-restaurant-own-app-vs-doordash',
+      'toast-vs-square-korean-restaurant',
+      'chatgpt-search-korean-restaurant-visibility',
       'korean-restaurant-online-ordering-platforms-2026',
       'yelp-ads-vs-google-ads-korean-restaurant',
       'korean-cafe-coffee-shop-website-guide',
@@ -61,6 +63,7 @@ export const PILLARS = {
       'do-i-need-a-website-korean-business',
       'website-redesign-vs-rebuild-korean-business',
       'squarespace-wordpress-shopify-korean-business',
+      'squarespace-vs-wix-vs-nextjs-korean-business',
       'wordpress-to-nextjs-korean-business-migration',
       'shopify-korean-ecommerce',
       'pwa-vs-native-app-korean-smb',
@@ -75,6 +78,7 @@ export const PILLARS = {
     pillarSlug: 'kakaotalk-channel-us-korean-business',
     posts: [
       'kakaotalk-channel-us-korean-business',
+      'kakaotalk-channel-vs-instagram-korean-business',
       'instagram-vs-website-korean-business',
       'google-business-profile-korean-business-optimization',
       'google-ads-korean-business',
@@ -93,6 +97,7 @@ export const PILLARS = {
       'korean-insurance-financial-services-website',
       'korean-tutoring-sat-prep-website',
       'korean-church-website-guide',
+      'starting-korean-business-america-2026',
     ],
   },
 } as const
@@ -154,4 +159,11 @@ export const POST_TO_PILLAR: Record<string, PillarKey> = {
   'korean-insurance-financial-services-website': 'professional-services',
   'korean-tutoring-sat-prep-website': 'professional-services',
   'korean-church-website-guide': 'professional-services',
+
+  // 2026-05-10 batch
+  'kakaotalk-channel-vs-instagram-korean-business': 'kakaotalk-marketing',
+  'toast-vs-square-korean-restaurant': 'restaurant-marketing',
+  'chatgpt-search-korean-restaurant-visibility': 'restaurant-marketing',
+  'squarespace-vs-wix-vs-nextjs-korean-business': 'website-cost',
+  'starting-korean-business-america-2026': 'professional-services',
 }
