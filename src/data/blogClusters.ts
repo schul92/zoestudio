@@ -26,6 +26,8 @@ export const PILLARS = {
       'affordable-seo-new-jersey-korean-business',
       'case-study-korean-nail-salon-seo-10x',
       'tj-flowers-shopify-revamp-case-study',
+      'google-ai-overviews-korean-business-citation-2026',
+      'ai-search-korean-business-owner-survival-guide-2026',
     ],
   },
   'restaurant-marketing': {
@@ -39,8 +41,13 @@ export const PILLARS = {
       'chatgpt-search-korean-restaurant-visibility',
       'korean-restaurant-online-ordering-platforms-2026',
       'yelp-ads-vs-google-ads-korean-restaurant',
+      'yelp-optimization-korean-restaurant-no-ads-2026',
       'korean-cafe-coffee-shop-website-guide',
       'korean-grocery-mart-online-presence-guide',
+      'korean-bakery-cafe-website-essentials-2026',
+      'korean-food-truck-catering-website-guide-2026',
+      'doordash-vs-ubereats-vs-own-app-korean-restaurant',
+      'korean-restaurant-marketing-annandale-va',
     ],
   },
   'beauty-wellness': {
@@ -51,6 +58,7 @@ export const PILLARS = {
       'korean-medspa-aesthetic-clinic-website',
       'korean-nail-salon-website-guide',
       'korean-hair-salon-website-guide',
+      'korean-salon-spa-local-seo-new-jersey-2026',
     ],
   },
   'website-cost': {
@@ -79,8 +87,11 @@ export const PILLARS = {
     posts: [
       'kakaotalk-channel-us-korean-business',
       'kakaotalk-channel-vs-instagram-korean-business',
+      'kakaotalk-channel-automation-korean-restaurants',
+      'kakaotalk-advertising-agency-usa-guide-2026',
       'instagram-vs-website-korean-business',
       'google-business-profile-korean-business-optimization',
+      'google-business-profile-multi-location-korean-franchise-2026',
       'google-ads-korean-business',
       'google-ads-vs-meta-ads-korean-business-2026',
     ],
@@ -166,4 +177,19 @@ export const POST_TO_PILLAR: Record<string, PillarKey> = {
   'chatgpt-search-korean-restaurant-visibility': 'restaurant-marketing',
   'squarespace-vs-wix-vs-nextjs-korean-business': 'website-cost',
   'starting-korean-business-america-2026': 'professional-services',
+
+  // 2026-05-11 batch (recent additions before this one)
+  'kakaotalk-channel-automation-korean-restaurants': 'kakaotalk-marketing',
+  'doordash-vs-ubereats-vs-own-app-korean-restaurant': 'restaurant-marketing',
+  'korean-restaurant-marketing-annandale-va': 'restaurant-marketing',
+  'ai-search-korean-business-owner-survival-guide-2026': 'bilingual-seo',
+
+  // 2026-05-12 — 10000X impressions push (6 new bilingual posts)
+  'kakaotalk-advertising-agency-usa-guide-2026': 'kakaotalk-marketing',
+  'korean-salon-spa-local-seo-new-jersey-2026': 'beauty-wellness',
+  'google-ai-overviews-korean-business-citation-2026': 'bilingual-seo',
+  'google-business-profile-multi-location-korean-franchise-2026': 'kakaotalk-marketing',
+  'yelp-optimization-korean-restaurant-no-ads-2026': 'restaurant-marketing',
+  'korean-bakery-cafe-website-essentials-2026': 'restaurant-marketing',
+  'korean-food-truck-catering-website-guide-2026': 'restaurant-marketing',
 }
