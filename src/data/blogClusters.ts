@@ -26,8 +26,6 @@ export const PILLARS = {
       'affordable-seo-new-jersey-korean-business',
       'case-study-korean-nail-salon-seo-10x',
       'tj-flowers-shopify-revamp-case-study',
-      'google-ai-overviews-korean-business-citation-2026',
-      'ai-search-korean-business-owner-survival-guide-2026',
     ],
   },
   'restaurant-marketing': {
@@ -111,6 +109,20 @@ export const PILLARS = {
       'starting-korean-business-america-2026',
     ],
   },
+  'ai-services': {
+    label: { en: 'AI for Korean Small Businesses', ko: '한인 스몰비즈니스 AI 활용' },
+    pillarUrl: '/ai-consulting-korean-business',
+    pillarSlug: 'ai-consulting-korean-small-business-decision-guide-2026',
+    posts: [
+      'ai-consulting-korean-small-business-decision-guide-2026',
+      'chatgpt-for-korean-restaurant-owners-2026',
+      'ai-bilingual-customer-service-korean-business-2026',
+      'ai-photography-korean-small-business-2026',
+      'ai-google-review-response-korean-business-2026',
+      'google-ai-overviews-korean-business-citation-2026',
+      'ai-search-korean-business-owner-survival-guide-2026',
+    ],
+  },
 } as const
 
 export type PillarKey = keyof typeof PILLARS
@@ -182,14 +194,23 @@ export const POST_TO_PILLAR: Record<string, PillarKey> = {
   'kakaotalk-channel-automation-korean-restaurants': 'kakaotalk-marketing',
   'doordash-vs-ubereats-vs-own-app-korean-restaurant': 'restaurant-marketing',
   'korean-restaurant-marketing-annandale-va': 'restaurant-marketing',
-  'ai-search-korean-business-owner-survival-guide-2026': 'bilingual-seo',
+  // ai-search-korean-business-owner-survival-guide-2026 moved to ai-services below
 
   // 2026-05-12 — 10000X impressions push (6 new bilingual posts)
   'kakaotalk-advertising-agency-usa-guide-2026': 'kakaotalk-marketing',
   'korean-salon-spa-local-seo-new-jersey-2026': 'beauty-wellness',
-  'google-ai-overviews-korean-business-citation-2026': 'bilingual-seo',
   'google-business-profile-multi-location-korean-franchise-2026': 'kakaotalk-marketing',
   'yelp-optimization-korean-restaurant-no-ads-2026': 'restaurant-marketing',
   'korean-bakery-cafe-website-essentials-2026': 'restaurant-marketing',
   'korean-food-truck-catering-website-guide-2026': 'restaurant-marketing',
+
+  // 2026-05-13 — AI services cluster (5 new posts + 2 pre-existing moved here)
+  'ai-consulting-korean-small-business-decision-guide-2026': 'ai-services',
+  'chatgpt-for-korean-restaurant-owners-2026': 'ai-services',
+  'ai-bilingual-customer-service-korean-business-2026': 'ai-services',
+  'ai-photography-korean-small-business-2026': 'ai-services',
+  'ai-google-review-response-korean-business-2026': 'ai-services',
+  // moved from bilingual-seo (stronger fit in ai-services)
+  'google-ai-overviews-korean-business-citation-2026': 'ai-services',
+  'ai-search-korean-business-owner-survival-guide-2026': 'ai-services',
 }
