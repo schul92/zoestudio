@@ -7,7 +7,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const GEMINI_KEY = process.env.GEMINI_API_KEY || 'AIzaSyDW7XO33Fjiybr94nZ6eHnsb9m7kLUn_q0';
+const GEMINI_KEY = process.env.GEMINI_API_KEY;
+if (!GEMINI_KEY) { console.error('Set GEMINI_API_KEY'); process.exit(1); }
 const MODEL = 'gemini-3.1-flash-image-preview';
 
 const ADS = [

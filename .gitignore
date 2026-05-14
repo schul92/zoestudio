@@ -30,6 +30,15 @@ yarn-error.log*
 .env.production
 .env.development
 
+# Secrets / API keys — never commit
+*.key
+*-secret.json
+*-credentials.json
+*api-key*
+*api_key*
+*gemini*key*
+.env*.backup
+
 # Vercel
 .vercel
 
