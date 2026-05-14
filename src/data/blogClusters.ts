@@ -26,6 +26,7 @@ export const PILLARS = {
       'affordable-seo-new-jersey-korean-business',
       'case-study-korean-nail-salon-seo-10x',
       'tj-flowers-shopify-revamp-case-study',
+      'case-study-salt-and-polish-fort-lee-spa-rebuild-2026',
     ],
   },
   'restaurant-marketing': {
@@ -46,6 +47,7 @@ export const PILLARS = {
       'korean-food-truck-catering-website-guide-2026',
       'doordash-vs-ubereats-vs-own-app-korean-restaurant',
       'korean-restaurant-marketing-annandale-va',
+      'case-study-korean-restaurant-palisades-park-bookings-3x-2026',
     ],
   },
   'beauty-wellness': {
@@ -213,4 +215,8 @@ export const POST_TO_PILLAR: Record<string, PillarKey> = {
   // moved from bilingual-seo (stronger fit in ai-services)
   'google-ai-overviews-korean-business-citation-2026': 'ai-services',
   'ai-search-korean-business-owner-survival-guide-2026': 'ai-services',
+
+  // 2026-05-13 — 2 new case studies (analytics showed 3.7x engagement on case studies)
+  'case-study-salt-and-polish-fort-lee-spa-rebuild-2026': 'bilingual-seo',
+  'case-study-korean-restaurant-palisades-park-bookings-3x-2026': 'restaurant-marketing',
 }

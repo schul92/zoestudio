@@ -88,6 +88,21 @@ const nextConfig = {
       },
     ]
   },
+  async redirects() {
+    return [
+      // Recover truncated link traffic (analytics showed 1+ visitor/mo to this 404)
+      {
+        source: '/blog/kakaotalk-channel-us-kor',
+        destination: '/blog/kakaotalk-channel-us-korean-business',
+        permanent: true,
+      },
+      {
+        source: '/ko/blog/kakaotalk-channel-us-kor',
+        destination: '/ko/blog/kakaotalk-channel-us-korean-business',
+        permanent: true,
+      },
+    ]
+  },
   async headers() {
     return [
       // Allow iframe for voxel lightbulb
