@@ -89,7 +89,9 @@ export default function HeaderNew({ locale = 'en' }: { locale?: string }) {
   return (
     <header
       className={`fixed top-0 inset-x-0 z-[100] transition-all duration-700 ${
-        scrolled
+        menuOpen
+          ? 'bg-ivory'
+          : scrolled
           ? 'bg-ivory/85 backdrop-blur-xl hair-bottom'
           : 'bg-transparent'
       }`}
@@ -156,7 +158,7 @@ export default function HeaderNew({ locale = 'en' }: { locale?: string }) {
 
       {/* Mobile menu */}
       <div
-        className={`lg:hidden fixed inset-0 top-24 bg-ivory transition-all duration-700 ${
+        className={`lg:hidden fixed inset-0 top-24 bg-ivory z-[90] transition-all duration-700 ${
           menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
       >
