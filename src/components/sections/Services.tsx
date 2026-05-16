@@ -20,24 +20,36 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
     },
     {
       no: '02',
+      title: (t.services as any).takeover.title,
+      blurb: (t.services as any).takeover.description,
+      tags: (t.services as any).takeover.features.slice(0, 4),
+    },
+    {
+      no: '03',
+      title: (t.services as any).costAudit.title,
+      blurb: (t.services as any).costAudit.description,
+      tags: (t.services as any).costAudit.features.slice(0, 4),
+    },
+    {
+      no: '04',
       title: t.services.revamp.title,
       blurb: t.services.revamp.description,
       tags: t.services.revamp.features.slice(0, 4),
     },
     {
-      no: '03',
+      no: '05',
       title: t.services.seo.title,
       blurb: t.services.seo.description,
       tags: t.services.seo.features.slice(0, 4),
     },
     {
-      no: '04',
+      no: '06',
       title: t.services.googleAds.title,
       blurb: t.services.googleAds.description,
       tags: t.services.googleAds.features.slice(0, 4),
     },
     {
-      no: '05',
+      no: '07',
       title: t.services.socialMedia.title,
       blurb: t.services.socialMedia.description,
       tags: t.services.socialMedia.features.slice(0, 4),
@@ -175,7 +187,7 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
 
                 <div className="col-span-12 md:col-span-4 md:col-start-8 md:pt-2">
                   <ul className="flex flex-wrap gap-x-6 gap-y-2">
-                    {it.tags.map((tag, ti) => (
+                    {it.tags.map((tag: string, ti: number) => (
                       <li
                         key={tag}
                         className={`text-[13px] text-ash flex items-center gap-2 transition-all duration-500 ${

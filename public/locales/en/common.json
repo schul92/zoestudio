@@ -64,17 +64,43 @@
       "benefit": "Get customers today, not tomorrow"
     },
     "webDesign": {
-      "title": "Web Design & Development",
-      "description": "Custom-built websites for any type of business — restaurants, medical offices, nonprofits, e-commerce, and more. The design you want, built the way you need.",
+      "title": "Shopify Expert Builds",
+      "description": "We're a Shopify Expert + Korean-American studio. Custom Shopify, Next.js, or Squarespace builds for restaurants, beauty, medical, e-commerce, and more. The TJ Flowers Shopify rebuild (Manhattan florist) hit 5× search visibility in 6 weeks.",
       "features": [
-        "Custom design from scratch",
-        "SEO + GEO optimized from day one",
-        "Mobile-first, fast-loading",
+        "Shopify Expert — themes, apps, custom Liquid",
+        "SEO + AI-search ready from day one",
+        "Mobile-first, sub-1.5s load times",
         "CMS — manage your own content",
-        "Shopify, Squarespace, or custom",
-        "Any business type, any size"
+        "Bilingual (Korean + English)",
+        "Native checkout, no app dependencies"
       ],
-      "benefit": "A website that actually works for you"
+      "benefit": "Proven Shopify Expert + 60+ launched sites"
+    },
+    "takeover": {
+      "title": "Takeover My Existing Site",
+      "description": "Already have a Shopify, WordPress, Squarespace, or OpenCart site you're tired of paying for? We take it over — fix what's broken, cut what you don't need, modernize what's worth keeping. No full rebuild required.",
+      "features": [
+        "Audit your current Shopify / WordPress / Squarespace stack",
+        "Cancel apps you don't need — save $200–800/mo",
+        "Fix performance, SEO, and checkout funnel leaks",
+        "Take over your existing agency contract",
+        "Fixed-scope project, no monthly retainer",
+        "Keep your Google rankings + customer data intact"
+      ],
+      "benefit": "Lower monthly costs, better performance — without rebuilding"
+    },
+    "costAudit": {
+      "title": "Shopify & SaaS Cost Audit",
+      "description": "Most Korean SMB owners overpay $200–$800/month on Shopify apps, marketing tools, and SaaS subscriptions that don't drive revenue. We audit your entire stack and cut what's not working — guaranteed savings or it's free.",
+      "features": [
+        "Full Shopify app + plan audit",
+        "Marketing tools (Klaviyo, Mailchimp, Yotpo) review",
+        "Identify duplicate or unused subscriptions",
+        "Negotiate or downgrade plan tiers",
+        "Cancel apps blocking your checkout speed",
+        "Typical savings: $3,600–$9,600/year"
+      ],
+      "benefit": "Save more in 30 days than the audit costs"
     },
     "socialMedia": {
       "title": "Social Media Management",
@@ -95,7 +121,7 @@
     },
     "revamp": {
       "title": "Website Revamp & Migration",
-      "description": "Still on OpenCart, old WordPress, or a slow outdated site? We migrate and modernize your website to any platform you want — fast and clean.",
+      "description": "Still on OpenCart, old WordPress, or a slow outdated site? We migrate and modernize your website to any platform you want — fast and clean. TJ Flowers came off OpenCart and hit 5× search visibility in 6 weeks.",
       "features": [
         "Migrate from any old platform",
         "SEO + GEO upgrade included",
