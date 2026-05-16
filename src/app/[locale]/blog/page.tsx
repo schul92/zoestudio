@@ -219,8 +219,8 @@ const blogPosts = [
       ko: '이커머스'
     },
     title: {
-      en: 'Shopify for Korean Sellers in the US: 5 Setup Wins [2026]',
-      ko: '미국 한인 셀러를 위한 Shopify 구축 5단계 [2026]'
+      en: 'Shopify Setup for US Korean Sellers — Hangul Fonts, KRW/USD, Naver Feed [2026]',
+      ko: '미국 한인 셀러 Shopify 셋업 — 한글 폰트, 원/달러, 네이버 피드 [2026]'
     },
     excerpt: {
       en: 'Launch a Korean-language Shopify store in the US: payment gateways, hangul fonts, Naver Shopping feed, and KRW/USD pricing — set up in one day.',
@@ -244,7 +244,7 @@ const blogPosts = [
     date: '2026-04-15',
     readTime: 9,
     category: { en: 'Foundations', ko: '기초 가이드' },
-    title: { en: '7 Signs Your Korean Business Loses Sales Without a Website', ko: '한인 비즈니스가 웹사이트 없이 매출을 잃는 7가지 신호' },
+    title: { en: '7 Signs Your Korean Business Is Losing Sales Without a Website [2026]', ko: '웹사이트 없이 한인 비즈니스가 매출 잃는 7가지 신호 [2026]' },
     excerpt: { en: 'Instagram and Naver alone cost Korean-American businesses ~30% of new customers. Here is when a website pays for itself — and when it does not.', ko: '인스타그램과 네이버만으로 운영하면 한인 비즈니스는 신규 고객의 약 30%를 잃습니다. 웹사이트가 비용을 회수하는 시점과 회수하지 못하는 경우를 솔직하게 분석합니다.' },
     image: '/blog/do-i-need-a-website-korean-business.png'
   },

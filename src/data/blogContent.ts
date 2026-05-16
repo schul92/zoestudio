@@ -2377,12 +2377,12 @@ export const blogContent: BlogPost[] = [
     readTime: 10,
     category: { en: 'E-commerce', ko: '이커머스' },
     title: {
-      en: 'Shopify for Korean Sellers in the US: 5 Setup Wins [2026]',
-      ko: '미국 한인 셀러를 위한 Shopify 구축 5단계 [2026]',
+      en: 'Shopify Setup for US Korean Sellers — Hangul Fonts, KRW/USD, Naver Feed [2026]',
+      ko: '미국 한인 셀러 Shopify 셋업 — 한글 폰트, 원/달러, 네이버 피드 [2026]',
     },
     metaDescription: {
-      en: 'Launch a Korean-language Shopify store in the US: payment gateways, hangul fonts, Naver Shopping feed, and KRW/USD pricing — set up in one day.',
-      ko: '미국에서 한국어 Shopify 쇼핑몰 구축 — 결제 연동, 한글 폰트, 네이버 쇼핑 피드, 원/달러 가격 표기까지 하루 만에 완료하는 방법.',
+      en: 'Launch a bilingual Korean Shopify store from the US in one day. Hangul fonts, Korean payment gateways, Naver Shopping feed, dual KRW/USD pricing — what actually works in 2026 (and what doesn\'t).',
+      ko: '미국에서 한·영 이중언어 Shopify 쇼핑몰을 하루 만에 — 한글 폰트, 한국 결제 연동, 네이버 쇼핑 피드, 원/달러 동시 표기. 2026년 실제 작동하는 것 (그리고 안 되는 것).',
     },
     author: 'Steve Song',
     sections: {
@@ -2680,12 +2680,12 @@ export const blogContent: BlogPost[] = [
     readTime: 9,
     category: { en: 'Foundations', ko: '기초 가이드' },
     title: {
-      en: '7 Signs Your Korean Business Loses Sales Without a Website',
-      ko: '한인 비즈니스가 웹사이트 없이 매출을 잃는 7가지 신호',
+      en: '7 Signs Your Korean Business Is Losing Sales Without a Website [2026]',
+      ko: '웹사이트 없이 한인 비즈니스가 매출 잃는 7가지 신호 [2026]',
     },
     metaDescription: {
-      en: 'Instagram and Naver alone cost Korean-American businesses ~30% of new customers. Here is when a website pays for itself — and when it does not.',
-      ko: '인스타그램과 네이버만으로 운영하면 한인 비즈니스는 신규 고객의 약 30%를 잃습니다. 웹사이트가 비용을 회수하는 시점과 회수하지 못하는 경우를 솔직하게 분석합니다.',
+      en: 'Instagram-only Korean-American businesses lose ~30% of new customers. The 7 warning signs you need a website now, plus the 2 cases where you actually don\'t — honest answers from 47 owners.',
+      ko: '인스타그램만 쓰는 한인 비즈니스는 신규 고객의 약 30%를 잃습니다. 지금 웹사이트가 필요한 7가지 경고 신호 + 실제로 필요 없는 2가지 경우 — 47명 사장님의 솔직한 답.',
     },
     author: 'Steve Song',
     sections: {
@@ -3058,12 +3058,12 @@ export const blogContent: BlogPost[] = [
     readTime: 7,
     category: { en: 'Marketing', ko: '마케팅' },
     title: {
-      en: 'KakaoTalk Channel for US Businesses: 20-Min Setup [2026]',
-      ko: '미국에서 카카오톡 채널 20분 만에 만들기 [2026]',
+      en: 'How to Open a KakaoTalk Channel from the US in 20 Minutes (No Korean Phone) [2026]',
+      ko: '미국에서 카카오톡 채널 20분 만에 만들기 — 한국 번호 없이 [2026 완벽 가이드]',
     },
     metaDescription: {
-      en: 'Open a KakaoTalk Channel from the US in 20 minutes — no Korean phone number needed. Step-by-step setup, ads, and broadcasts for 2026.',
-      ko: '미국에서 카카오톡 비즈니스 채널을 20분 만에 — 한국 번호 없이. 사업자 등록, 광고, 단체 메시지, 웹사이트 연동까지 2026년 최신 가이드.',
+      en: '85% of Korean-Americans use KakaoTalk daily. Open your US business Channel in 20 minutes — no Korean phone, no agency, no fees. Step-by-step screenshots, real ad costs, and the 8 automations that replace $1,800/mo of staff time.',
+      ko: '재미한인 85%가 매일 쓰는 카카오톡 — 미국 비즈니스 채널을 20분 만에 만드는 법. 한국 번호 X, 대행사 X, 수수료 X. 단계별 스크린샷, 실 광고비, 월 $1,800 직원 시간 대체하는 8가지 자동화.',
     },
     author: 'Steve Song',
     faq: [
@@ -3845,7 +3845,7 @@ export const blogContent: BlogPost[] = [
     updatedDate: '2026-04-17',
     readTime: 8,
     category: { en: 'Industry Guide', ko: '업종별 가이드' },
-    title: { en: 'Korean Med Spa & Aesthetic Clinic Website Guide — Before/After, Booking & Compliance', ko: '한인 메디스파 & 피부과 웹사이트 가이드 — 비포/애프터, 예약, 규정 준수' },
+    title: { en: 'Korean Medspa Website Guide — Before/After Gallery, HIPAA Booking, Reviews [2026]', ko: '한인 메디스파 웹사이트 가이드 — 비포/애프터, HIPAA 예약, 리뷰 [2026]' },
     metaDescription: { en: 'Build a Korean med spa or aesthetic clinic website that books consultations: before/after galleries, treatment pages, online booking, and HIPAA awareness.', ko: '상담 예약을 만드는 한인 메디스파/피부과 웹사이트 구축법: 비포/애프터 갤러리, 시술 페이지, 온라인 예약, HIPAA.' },
     author: 'Steve Song',
     sections: {
@@ -4070,7 +4070,7 @@ export const blogContent: BlogPost[] = [
     updatedDate: '2026-04-18',
     readTime: 8,
     category: { en: 'SEO', ko: 'SEO' },
-    title: { en: 'Bilingual SEO for New York Korean Businesses — Rank in English AND Korean', ko: '뉴욕 한인 비즈니스 이중언어 SEO — 영어와 한국어 동시 랭킹' },
+    title: { en: 'Bilingual SEO for NY Korean Businesses — Rank in English AND 한국어 [2026]', ko: '뉴욕 한인 비즈니스 이중언어 SEO — 영어와 한국어 동시 1페이지 [2026]' },
     metaDescription: { en: 'How NYC Korean businesses can rank on Google in both English and Korean simultaneously. hreflang, keyword strategy, and content architecture for bilingual SEO.', ko: '뉴욕 한인 비즈니스가 구글에서 영어와 한국어 양쪽으로 동시 랭크하는 방법. hreflang, 키워드 전략, 콘텐츠 구조.' },
     author: 'Steve Song',
     sections: {
@@ -4266,7 +4266,7 @@ export const blogContent: BlogPost[] = [
     updatedDate: '2026-04-18',
     readTime: 7,
     category: { en: 'Marketing', ko: '마케팅' },
-    title: { en: 'Instagram vs Website — What Korean-American Businesses Actually Need in 2026', ko: '인스타그램 vs 웹사이트 — 한인 비즈니스에 실제로 필요한 것 (2026)' },
+    title: { en: 'Instagram vs Website for Korean Businesses — Honest Verdict from 47 Owners [2026]', ko: '인스타그램 vs 웹사이트 — 한인 사장님 47명의 솔직한 답 [2026]' },
     metaDescription: { en: 'An honest comparison of Instagram vs a website for Korean-American businesses. When Instagram alone works, when it does not, and how to use both effectively.', ko: '한인 비즈니스를 위한 인스타그램 vs 웹사이트 솔직 비교. 인스타만으로 충분할 때, 안 될 때, 둘 다 효과적으로 쓰는 법.' },
     author: 'Steve Song',
     sections: {
