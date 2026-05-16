@@ -322,7 +322,7 @@ export default function Page({ params }: { params: { locale: string } }) {
     publisher: {
       '@type': 'Organization',
       name: 'ZOE LUMOS',
-      logo: { '@type': 'ImageObject', url: `${baseUrl}/og-image.png` },
+      logo: { '@type': 'ImageObject', url: `${baseUrl}/api/og?title=ZOE+LUMOSog-image.pngsubtitle=Korean+Web+Design+%26+SEO` },
     },
     mainEntityOfPage: { '@type': 'WebPage', '@id': pageUrl },
     inLanguage: locale === 'ko' ? 'ko-KR' : 'en-US',

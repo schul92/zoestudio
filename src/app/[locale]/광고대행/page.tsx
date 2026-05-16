@@ -43,7 +43,7 @@ export async function generateMetadata({
       locale: locale === 'ko' ? 'ko_KR' : 'en_US',
       type: 'website',
       images: [{
-        url: `${baseUrl}/og-advertising.jpg`,
+        url: `${baseUrl}/api/og?title=Advertisingog-advertising.jpgsubtitle=Google+Ads+for+Korean+Business`,
         width: 1200,
         height: 630,
         alt: locale === 'ko' ? '한인 광고대행 & 소셜미디어 관리' : 'Korean Advertising & Social Media Management',

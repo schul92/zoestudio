@@ -34,7 +34,7 @@ export const structuredData = {
     "url": "https://www.zoelumos.com",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://www.zoelumos.com/og-image.png",
+      "url": "https://www.zoelumos.com/api/og?title=ZOE+LUMOSog-image.pngsubtitle=Korean+Web+Design+%26+SEO",
       "width": 512,
       "height": 512
     },
@@ -95,7 +95,7 @@ export const structuredData = {
     "alternateName": ["ZOE STUDIO LLC", "조이루모스"],
     "description": "American-Korean design studio in Fort Lee, NJ. Editorial web design, SEO, Google Ads, and Shopify e-commerce for Korean-American businesses across the US. Bilingual studio (English · Korean).",
     "slogan": "Websites worth remembering.",
-    "image": "https://www.zoelumos.com/og-image.png",
+    "image": "https://www.zoelumos.com/api/og?title=ZOE+LUMOSog-image.pngsubtitle=Korean+Web+Design+%26+SEO",
     "email": "info@zoelumos.com",
     "url": "https://www.zoelumos.com",
     "parentOrganization": { "@id": "https://www.zoelumos.com/#organization" },

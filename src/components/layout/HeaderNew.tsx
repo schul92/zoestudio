@@ -143,13 +143,19 @@ export default function HeaderNew({ locale = 'en' }: { locale?: string }) {
             <button
               onClick={() => setMenuOpen((v) => !v)}
               aria-label="Menu"
-              className="flex lg:!hidden items-center justify-center w-11 h-11"
+              className={`flex lg:!hidden items-center justify-center w-11 h-11 rounded-full transition-all duration-500 ${
+                menuOpen
+                  ? 'bg-transparent'
+                  : scrolled
+                  ? 'bg-transparent'
+                  : 'bg-ivory/70 backdrop-blur-md ring-1 ring-ink/5'
+              }`}
             >
               <span className="sr-only">Menu</span>
-              <div className="w-7 flex flex-col gap-[6px]">
-                <span className={`h-[1.5px] bg-ink transition-all duration-500 ${menuOpen ? 'rotate-45 translate-y-[7px]' : ''}`} />
+              <div className="w-6 flex flex-col gap-[5px]">
+                <span className={`h-[1.5px] bg-ink transition-all duration-500 ${menuOpen ? 'rotate-45 translate-y-[6.5px]' : ''}`} />
                 <span className={`h-[1.5px] bg-ink transition-all duration-500 ${menuOpen ? 'opacity-0' : ''}`} />
-                <span className={`h-[1.5px] bg-ink transition-all duration-500 ${menuOpen ? '-rotate-45 -translate-y-[7px]' : ''}`} />
+                <span className={`h-[1.5px] bg-ink transition-all duration-500 ${menuOpen ? '-rotate-45 -translate-y-[6.5px]' : ''}`} />
               </div>
             </button>
           </div>

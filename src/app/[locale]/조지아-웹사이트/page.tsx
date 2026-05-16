@@ -40,7 +40,7 @@ export async function generateMetadata({
       locale: locale === 'ko' ? 'ko_KR' : 'en_US',
       type: 'website',
       images: [{
-        url: `${baseUrl}/og-ga-website.jpg`,
+        url: `${baseUrl}/api/og?title=Georgiaog-ga-website.jpgsubtitle=Korean+Web+Design`,
         width: 1200,
         height: 630,
         alt: locale === 'ko' ? '조지아 웹사이트 제작' : 'Georgia Website Design',
