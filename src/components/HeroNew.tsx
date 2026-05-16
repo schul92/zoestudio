@@ -21,11 +21,11 @@ const HangulWordmark = dynamic(() => import('@/components/ui/motion/HangulWordma
 const copy = {
   en: {
     eyebrowLeft: 'Zoe Lumos — Est. New Jersey',
-    eyebrowRight: 'Korean-American design studio',
+    eyebrowRight: 'Shopify Expert · Korean-American Studio',
     subEn: (
       <>
-        A Korean-American studio building <span>considered, quiet,</span> high-performance
-        websites for the brands that care about every detail.
+        A Korean-American <span>Shopify Expert studio</span> building considered, quiet,
+        high-performance stores and websites for the brands that care about every detail.
       </>
     ),
     cta1: 'Start a project',
@@ -34,11 +34,11 @@ const copy = {
   },
   ko: {
     eyebrowLeft: 'Zoe Lumos — 2019, 뉴저지',
-    eyebrowRight: '한인·미국인 디자인 스튜디오',
+    eyebrowRight: 'Shopify Expert · 한인·미국인 스튜디오',
     subEn: (
       <>
-        포트리에서 LA까지 — <span>조용하지만 단단한,</span> 매 디테일이 고려된 한인 ·
-        미국인 디자인 스튜디오.
+        포트리에서 LA까지 — <span>Shopify 전문 한인·미국인 스튜디오.</span> 조용하지만
+        단단한, 매 디테일이 고려된 쇼피파이 스토어와 웹사이트.
       </>
     ),
     cta1: '프로젝트 의뢰',

@@ -12,6 +12,11 @@ import {
   baseUrl,
 } from '@/config/schemas'
 
+const TrustRibbon = dynamic(() => import('@/components/sections/TrustRibbon'), {
+  ssr: true,
+  loading: () => <div className="min-h-[200px] bg-ivory" />
+})
+
 const FloatingDevices = dynamic(() => import('@/components/sections/FloatingDevices'), {
   ssr: true,
   loading: () => <div className="min-h-[400px] bg-ivory" />
@@ -245,6 +250,7 @@ export default function Home({ params }: { params: { locale: string } }) {
       <HeaderWrapper locale={locale} />
       <main className="min-h-screen relative overflow-x-hidden">
         <HeroNew locale={locale} />
+        <TrustRibbon locale={locale} />
         <FloatingDevices locale={locale as 'en' | 'ko'} />
         <Services locale={locale} />
         <SelectedWork locale={locale} sectionNumber="02" />

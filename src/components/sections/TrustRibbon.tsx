@@ -16,19 +16,19 @@ type Stat = {
 
 const stats: Stat[] = [
   {
-    value: '4.9★',
-    label: { en: 'Google rating', ko: '구글 평점' },
-    sub: { en: 'across reviews', ko: '리뷰 평균' },
+    value: 'Shopify',
+    label: { en: 'Expert builds', ko: 'Shopify 전문' },
+    sub: { en: 'rebuild · migrate · scale', ko: '재구축 · 이전 · 확장' },
+  },
+  {
+    value: '5×',
+    label: { en: 'Search visibility', ko: '검색 노출' },
+    sub: { en: 'TJ Flowers · 6 weeks', ko: 'TJ Flowers · 6주' },
   },
   {
     value: '60+',
     label: { en: 'Sites launched', ko: '런칭 사이트' },
     sub: { en: 'since 2019', ko: '2019년부터' },
-  },
-  {
-    value: '12',
-    label: { en: 'US cities served', ko: '미국 도시' },
-    sub: { en: 'NJ · NY · LA · HI · TX', ko: 'NJ · NY · LA · HI · TX' },
   },
   {
     value: 'KO ↔ EN',
