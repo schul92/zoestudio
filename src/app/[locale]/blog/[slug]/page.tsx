@@ -110,7 +110,7 @@ function BlogPostingSchema({
     articleSection: post.category[locale],
     image: {
       '@type': 'ImageObject',
-      url: `${baseUrl}/api/og?title=ZOE+LUMOSog-image.pngsubtitle=Korean+Web+Design+%26+SEO`,
+      url: `${baseUrl}/api/og?title=ZOE+LUMOS&subtitle=Korean+Web+Design+%26+SEO`,
       width: 1200,
       height: 630,
     },

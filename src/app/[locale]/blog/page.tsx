@@ -3,6 +3,29 @@ import HeaderWrapper from '@/components/layout/HeaderWrapper'
 import Footer from '@/components/layout/Footer'
 import BlogListing from '@/components/blog/BlogListing'
 import { blogContent } from '@/data/blogContent'
+import fs from 'fs'
+import path from 'path'
+
+// Build-time check: which blog slugs have a static PNG on disk vs. need
+// the dynamic /api/og fallback. Runs once at SSG time, zero runtime cost.
+const BLOG_IMG_DIR = path.join(process.cwd(), 'public', 'blog')
+const STATIC_BLOG_IMAGES: Set<string> = (() => {
+  try {
+    return new Set(
+      fs.readdirSync(BLOG_IMG_DIR)
+        .filter((f) => /\.(png|jpg|jpeg|webp)$/i.test(f))
+        .map((f) => f.replace(/\.[^.]+$/, ''))
+    )
+  } catch {
+    return new Set<string>()
+  }
+})()
+
+function blogImageUrl(slug: string, title: string): string {
+  if (STATIC_BLOG_IMAGES.has(slug)) return `/blog/${slug}.png`
+  const encodedTitle = encodeURIComponent(title.slice(0, 60))
+  return `/api/og?title=${encodedTitle}&subtitle=Zoe+Lumos+%C2%B7+Korean+Web+%26+SEO`
+}
 
 export async function generateStaticParams() {
   return [
@@ -396,7 +419,9 @@ const postsWithImages = sortedContent.map((p, i) => ({
   category: p.category,
   title: p.title,
   excerpt: p.metaDescription,
-  image: `/blog/${p.slug}.png`,
+  // Static PNG if it exists, dynamic /api/og fallback otherwise.
+  // Falls back automatically for any future post without a generated hero.
+  image: blogImageUrl(p.slug, p.title.en),
 }))
 // Keep `blogPosts` reference alive for the JSON-LD generator below.
 // (Using the auto-derived list ensures schema and rendered list stay in sync.)

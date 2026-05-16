@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
       description: locale === 'ko' ? '플로리다 한인 비즈니스를 위한 최고의 웹사이트 제작 서비스.' : 'Premier website design for FL Korean businesses.',
       url: locale === 'ko' ? `${baseUrl}/ko/플로리다-웹사이트` : `${baseUrl}/fl-website`,
       siteName: 'ZOE LUMOS 조이루모스', locale: locale === 'ko' ? 'ko_KR' : 'en_US', type: 'website',
-      images: [{ url: `${baseUrl}/api/og?title=Floridaog-fl-website.jpgsubtitle=Korean+Web+Design`, width: 1200, height: 630, alt: locale === 'ko' ? '플로리다 웹사이트 제작' : 'Florida Website Design' }],
+      images: [{ url: `${baseUrl}/api/og?title=Florida&subtitle=Korean+Web+Design`, width: 1200, height: 630, alt: locale === 'ko' ? '플로리다 웹사이트 제작' : 'Florida Website Design' }],
     },
     alternates: {
       canonical: locale === 'ko' ? `${baseUrl}/ko/플로리다-웹사이트` : `${baseUrl}/fl-website`,
