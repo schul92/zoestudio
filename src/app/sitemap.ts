@@ -42,6 +42,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/korean-web-design-agencies-nj-compared',
     '/services/kakaotalk-integration',
     '/services/google-business-profile-optimization',
+    '/services/shopify-cost-audit',
     // Korean-American city hub pages
     ...koreanCities.map((c) => `/${c.slug}`),
   ]
