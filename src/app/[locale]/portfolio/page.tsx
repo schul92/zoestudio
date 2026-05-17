@@ -65,6 +65,23 @@ export async function generateMetadata({
 
 const projects = [
   {
+    id: 'migukstory',
+    url: 'https://migukstory.com/',
+    image: '/portfolio/migukstory.jpg',
+    en: {
+      title: 'Miguk Story (미국 스토리)',
+      category: 'Editorial / Publication',
+      description: 'Editorial publication for Korean-Americans — verified guides on immigration, taxes, healthcare, education, retirement, and community news. Clean magazine-style design with bilingual category navigation, fast load times, and a structured editorial workflow.',
+      services: ['Editorial Design', 'CMS Architecture', 'Bilingual SEO', 'Performance Engineering'],
+    },
+    ko: {
+      title: '미국 스토리 (Miguk Story)',
+      category: '에디토리얼 / 퍼블리케이션',
+      description: '재미한인을 위한 에디토리얼 퍼블리케이션 — 이민·비자, 세금·재테크, 건강·보험, 교육·자녀, 은퇴·연금, 한인 커뮤니티 검증 가이드. 매거진 스타일의 깔끔한 디자인 + 이중언어 카테고리 네비게이션 + 빠른 로딩 + 구조화된 편집 워크플로우.',
+      services: ['에디토리얼 디자인', 'CMS 구조 설계', '이중언어 SEO', '성능 최적화'],
+    },
+  },
+  {
     id: 'tj-flowers',
     url: 'https://tjflowersandevents.com/',
     image: '/portfolio/tj-flowers.jpg',
