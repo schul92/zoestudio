@@ -14,9 +14,14 @@ export async function POST(request: Request) {
       )
     }
 
-    // Email configuration
+    // Email configuration. Real owner inboxes (info@zoelumos.com isn't
+    // monitored — was silently losing leads). Force-reroute any incoming
+    // `to` that points there to the real addresses.
+    const OWNER_INBOXES = 'zoestudiollc@gmail.com, steve.b.song92@gmail.com'
+    const incomingTo = typeof to === 'string' ? to : ''
+    const safeTo = incomingTo && !/info@zoelumos\.com/i.test(incomingTo) ? incomingTo : OWNER_INBOXES
     const emailData = {
-      to: to || 'info@zoelumos.com',
+      to: safeTo,
       subject: `New Contact Form Submission from ${name}`,
       html: `
         <h2>New Contact Form Submission</h2>

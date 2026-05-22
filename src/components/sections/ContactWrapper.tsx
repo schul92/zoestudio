@@ -199,7 +199,7 @@ export default function ContactWrapper({
           business: form.business,
           message: `${form.message}\n\nBudget: ${form.budget || 'n/a'}`,
           services: form.scope.join(' | '),
-          to: 'info@zoelumos.com',
+          to: 'zoestudiollc@gmail.com, steve.b.song92@gmail.com',
         }),
       })
       if (!res.ok) throw new Error('bad response')

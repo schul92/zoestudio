@@ -154,7 +154,7 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
             }
             return s.title
           }).join(' | '),
-          to: 'info@zoelumos.com'
+          to: 'zoestudiollc@gmail.com, steve.b.song92@gmail.com'
         }),
       })
 
