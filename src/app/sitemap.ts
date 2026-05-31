@@ -43,6 +43,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/services/kakaotalk-integration',
     '/services/google-business-profile-optimization',
     '/services/shopify-cost-audit',
+    '/compare/best-ecommerce-platform-korean-business-2026',
     // Korean-American city hub pages
     ...koreanCities.map((c) => `/${c.slug}`),
   ]
