@@ -9,30 +9,43 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        ivory: '#FAF7F0',
-        bone: '#F3EEE2',
-        paper: '#FFFFFF',
-        ink: '#141414',
-        graphite: '#2A2A2A',
-        ash: '#6B675F',
-        mute: '#9C958A',
-        hairline: 'rgba(20, 20, 20, 0.08)',
+        // ── Summer 2026 palette ──────────────────────────────────────
+        // Warm peach cream backgrounds, deep terracotta text, sunset
+        // coral primary accent, soft sky teal counterpoint, sunny yellow
+        // highlight. Same token names as before — every component picks
+        // up the new palette automatically.
+        ivory: '#FFF4E8',     // main bg — warm peach cream
+        bone: '#FFE7D3',      // secondary bg — deeper peach
+        paper: '#FFFBF5',     // warmest white card
+        ink: '#3D1F0F',       // deep terracotta (was near-black)
+        graphite: '#6B3D24',  // medium warm brown
+        ash: '#A37C5F',       // warm gray
+        mute: '#C9A78A',      // soft peach-gray
+        hairline: 'rgba(61, 31, 15, 0.10)',
+        // "gold" token now carries the SUNSET CORAL — primary accent
         gold: {
-          DEFAULT: '#B8914A',
-          soft: '#D9BC85',
-          deep: '#8F6F36',
+          DEFAULT: '#FF6B4A',  // sunset coral
+          soft: '#FFB394',     // peach blush
+          deep: '#D54620',     // deep coral
         },
+        // New summer accents — opt-in usage
+        coral: '#FF6B4A',
+        peach: '#FFB394',
+        sun: '#FFD45B',         // sunny yellow highlight
+        teal: '#74C7C7',        // sky teal counterpoint
+        mint: '#A8D8C5',
+        watermelon: '#FF8B7A',
         brand: {
-          50: '#FAF7F0',
-          100: '#F3EEE2',
-          200: '#E6DFCE',
-          300: '#D4CAAF',
-          400: '#B8914A',
-          500: '#9F7D3F',
-          600: '#826634',
-          700: '#141414',
-          800: '#0F0F0F',
-          900: '#0A0A0A',
+          50: '#FFF4E8',
+          100: '#FFE7D3',
+          200: '#FFD4B0',
+          300: '#FFB394',
+          400: '#FF6B4A',
+          500: '#E85A3D',
+          600: '#D54620',
+          700: '#3D1F0F',
+          800: '#2A1408',
+          900: '#1A0C04',
         },
         surface: {
           DEFAULT: '#0a0a0a',

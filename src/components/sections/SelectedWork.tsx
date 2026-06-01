@@ -14,9 +14,23 @@ type Project = {
   disciplines: { en: string[]; ko: string[] }
   image: string
   accent: string
+  url?: string
 }
 
 const projects: Project[] = [
+  {
+    name: 'Miguk Story',
+    industry: { en: 'Editorial publication', ko: '에디토리얼 퍼블리케이션' },
+    location: 'Bilingual · US',
+    year: '2026',
+    disciplines: {
+      en: ['Editorial', 'CMS', 'Bilingual SEO'],
+      ko: ['에디토리얼', 'CMS', '이중언어 SEO'],
+    },
+    image: '/portfolio/migukstory.jpg',
+    accent: '#FFE7D3',
+    url: 'https://migukstory.com/',
+  },
   {
     name: 'TJ Flowers',
     industry: { en: 'Floral studio', ko: '플라워 스튜디오' },

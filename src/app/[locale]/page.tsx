@@ -136,6 +136,15 @@ export default function Home({ params }: { params: { locale: string } }) {
   // Selected Work ItemList
   const worksSchema = selectedWorkItemList([
     {
+      name: 'Miguk Story',
+      url: 'https://migukstory.com/',
+      image: '/portfolio/migukstory.jpg',
+      year: '2026',
+      location: 'Bilingual, US',
+      industry: 'Editorial publication',
+      disciplines: ['Editorial', 'CMS', 'Bilingual SEO'],
+    },
+    {
       name: 'TJ Flowers',
       url: '/portfolio',
       image: '/portfolio/tj-flowers.jpg',
