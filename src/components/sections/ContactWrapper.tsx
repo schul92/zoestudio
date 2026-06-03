@@ -1,6 +1,6 @@
 'use client'
 
-import { useId, useState } from 'react'
+import { useState } from 'react'
 import InView from '@/components/ui/motion/InView'
 import Magnetic from '@/components/ui/motion/Magnetic'
 import Toast, { ToastMessage } from '@/components/ui/motion/Toast'
@@ -10,141 +10,103 @@ type Status = 'idle' | 'loading' | 'success' | 'error'
 const copy = {
   en: {
     eyebrow: 'Inquiries',
-    headline1: 'Tell us what',
-    headline2: 'you are building.',
-    sub: 'We reply within one business day in English or Korean. No templates — every project begins with a conversation.',
-    stepA: 'About you',
-    stepB: 'About the project',
-    stepC: 'Details',
+    headlineLead: 'Start',
+    headlineAccent: 'a conversation.',
+    sub: "We reply within one business day, in English or Korean. No templates — every project begins with a real reply, not an auto-responder.",
     labels: {
       name: 'Your name',
       email: 'Email',
-      business: 'Business or project',
-      phone: 'Phone',
-      message: 'Tell us a little more',
-      budget: 'Approximate budget',
-      scope: 'Scope of interest',
+      message: 'Tell us about your project',
+      scope: 'What you need help with',
     },
     placeholders: {
       name: 'e.g. Yuna Kim',
       email: 'you@company.com',
-      business: 'e.g. Ridgewood Dental · new website',
-      phone: '+1 (201) 555-0134',
-      message:
-        'What are you hoping to build? Any deadlines? A site or brand you love as a reference? A few sentences is plenty.',
+      message: 'A few sentences is plenty — what are you building, any deadlines, a site or brand you love as a reference?',
     },
-    helpers: {
-      name: "We'll address you by name in our reply.",
-      email: 'We reply to this address within one business day.',
-      business: 'Optional. Helps us prepare for our first call.',
-      phone: 'Optional. We prefer email for first contact.',
-      message: 'Anything is useful — rough goals, a rough timeline, a link.',
-      scope: 'Pick one or many. You can always refine later.',
-      budget: 'Rough range helps us shape the right proposal.',
-    },
-    scopes: ['Web design', 'Rebuild / revamp', 'SEO & GEO', 'Shopify', 'Google / Yelp ads', 'Social media', 'Not sure yet'],
-    budgets: ['< $5k', '$5k — $10k', '$10k — $25k', '$25k+'],
+    scopes: [
+      'Shopify build',
+      'Shopify takeover',
+      'Cost audit',
+      'Bilingual SEO',
+      'Web design',
+      'Not sure yet',
+    ],
     send: 'Send inquiry',
     sending: 'Sending…',
-    success: 'Thank you. We will be in touch within a business day.',
     successTitle: 'Inquiry sent',
     successBody: "We've received your message. Expect a reply within one business day.",
-    error: 'Something went wrong. Please try again or email info@zoelumos.com.',
     errorTitle: 'Could not send',
-    errorBody: 'Please try again or email info@zoelumos.com directly.',
-    required: 'required',
-    required_err: 'Please complete your name and email to send.',
+    errorBody: 'Please try again, or email us directly at the address below.',
     requiredTitle: 'Almost there',
-    progress: ['Begin', 'Nicely started', 'Halfway there', 'One more step', 'Ready to send'],
-    whatsNext: {
-      title: 'What happens next',
-      steps: [
-        ['Today', 'We read every message personally and reply within one business day.'],
-        ['Day 2 — 3', 'A 30-minute call to understand your business, audience, and goals.'],
-        ['Week 1', 'A written proposal with scope, timeline, and a fixed investment.'],
-      ] as [string, string][],
-    },
-    contactBlock: {
-      title: 'Or reach us directly',
-      lines: [
-        ['Email', 'info@zoelumos.com'],
-        ['Studio', 'Fort Lee, New Jersey'],
-        ['Hours', 'Mon — Fri · 9–6 ET · KR 대응'],
-      ] as [string, string][],
-    },
+    required_err: 'Please complete your name and email so we can reply.',
     privacy: 'Your information is used only to reply to your inquiry.',
+    altContact: {
+      label: 'Prefer to skip the form?',
+      email: 'zoestudiollc@gmail.com',
+      emailHref: 'mailto:zoestudiollc@gmail.com?subject=Project%20inquiry%20%E2%80%94%20Zoe%20Lumos',
+      kakao: 'KakaoTalk · Korean OK',
+      kakaoHref: 'https://pf.kakao.com/_xhxdxmlX/chat',
+    },
+    nextLabel: 'What happens next',
+    nextSteps: [
+      ['Today', 'A real human reads your message and replies within one business day.'],
+      ['Day 2–3', 'A 30-minute call to understand your business and goals.'],
+      ['Week 1', 'A written proposal with scope, timeline, and a fixed investment.'],
+    ] as [string, string][],
   },
   ko: {
     eyebrow: '상담 신청',
-    headline1: '무엇을 만들고',
-    headline2: '계신가요.',
-    sub: '영업일 기준 1일 이내에 한국어 · 영어로 회신드립니다. 템플릿 없음 — 모든 프로젝트는 대화에서 시작합니다.',
-    stepA: '기본 정보',
-    stepB: '프로젝트',
-    stepC: '자세한 내용',
+    headlineLead: '대화로',
+    headlineAccent: '시작합니다.',
+    sub: '영업일 기준 1일 이내에 한국어 또는 영어로 회신드립니다. 템플릿 답장 X — 실 사람이 직접 읽고 답합니다.',
     labels: {
       name: '이름',
       email: '이메일',
-      business: '비즈니스 · 프로젝트',
-      phone: '연락처',
       message: '프로젝트에 대해 알려주세요',
-      budget: '예상 예산',
-      scope: '관심 분야',
+      scope: '어떤 도움이 필요하신가요',
     },
     placeholders: {
       name: '예: 김유나',
       email: 'you@company.com',
-      business: '예: 리지우드 치과 · 신규 사이트',
-      phone: '010-1234-5678',
-      message:
-        '어떤 것을 만들고 싶으신가요? 일정, 참고하는 사이트나 브랜드가 있으신가요? 몇 줄이면 충분합니다.',
+      message: '몇 줄이면 충분합니다 — 무엇을 만들고 싶으신가요, 일정, 참고하는 사이트나 브랜드?',
     },
-    helpers: {
-      name: '회신 시 호칭을 드릴 때 사용합니다.',
-      email: '영업일 기준 1일 이내 이 주소로 답장드립니다.',
-      business: '선택 · 첫 미팅을 준비하는 데 도움이 됩니다.',
-      phone: '선택 · 첫 연락은 이메일을 선호합니다.',
-      message: '어떤 내용이든 괜찮습니다 — 대략적인 목표, 일정, 참고 링크.',
-      scope: '하나 이상 선택 가능. 나중에 조정 가능합니다.',
-      budget: '대략적인 범위만 알려주셔도 맞춤 제안이 가능합니다.',
-    },
-    scopes: ['웹디자인', '리뉴얼', 'SEO · GEO', 'Shopify', '구글 · 옐프 광고', '소셜미디어', '아직 모르겠습니다'],
-    budgets: ['$5,000 미만', '$5,000 — $10,000', '$10,000 — $25,000', '$25,000 이상'],
-    send: '의뢰 보내기',
-    sending: '보내는 중…',
-    success: '감사합니다. 영업일 1일 이내 회신드립니다.',
-    successTitle: '의뢰가 전송되었습니다',
-    successBody: '메시지를 확인했습니다. 영업일 1일 이내 회신드립니다.',
-    error: '문제가 발생했습니다. 다시 시도하시거나 info@zoelumos.com 으로 메일 주세요.',
+    scopes: [
+      'Shopify 구축',
+      'Shopify 인수',
+      '비용 감사',
+      '이중언어 SEO',
+      '웹디자인',
+      '아직 미정',
+    ],
+    send: '상담 신청 보내기',
+    sending: '전송 중…',
+    successTitle: '상담 신청 완료',
+    successBody: '메시지 수신 완료. 영업일 기준 1일 이내에 회신드립니다.',
     errorTitle: '전송 실패',
-    errorBody: '다시 시도해 주시거나 info@zoelumos.com 으로 직접 메일 주세요.',
-    required: '필수',
-    required_err: '이름과 이메일을 입력해 주세요.',
-    requiredTitle: '거의 다 왔어요',
-    progress: ['시작하기', '잘 하고 계세요', '절반 왔어요', '한 단계 남았어요', '보낼 준비 완료'],
-    whatsNext: {
-      title: '다음 단계',
-      steps: [
-        ['오늘', '모든 메시지를 직접 확인하고 영업일 기준 1일 이내 회신드립니다.'],
-        ['2 — 3일 차', '비즈니스, 고객, 목표를 이해하기 위한 30분 통화.'],
-        ['1주 차', '범위, 일정, 확정 견적이 담긴 제안서를 문서로 발송.'],
-      ] as [string, string][],
+    errorBody: '다시 시도하시거나 아래 이메일로 직접 연락 주세요.',
+    requiredTitle: '거의 다 됐어요',
+    required_err: '회신을 위해 이름과 이메일을 입력해 주세요.',
+    privacy: '입력하신 정보는 상담 회신 목적으로만 사용됩니다.',
+    altContact: {
+      label: '폼이 아니어도 좋습니다',
+      email: 'zoestudiollc@gmail.com',
+      emailHref: 'mailto:zoestudiollc@gmail.com?subject=%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EB%AC%B8%EC%9D%98%20%E2%80%94%20Zoe%20Lumos',
+      kakao: '카카오톡 · 한국어 OK',
+      kakaoHref: 'https://pf.kakao.com/_xhxdxmlX/chat',
     },
-    contactBlock: {
-      title: '직접 연락',
-      lines: [
-        ['이메일', 'info@zoelumos.com'],
-        ['스튜디오', '뉴저지 포트리'],
-        ['시간', '월 — 금 · 9–6 ET · 한국어 상담 상시'],
-      ] as [string, string][],
-    },
-    privacy: '보내주신 정보는 상담 회신에만 사용됩니다.',
+    nextLabel: '다음 단계',
+    nextSteps: [
+      ['오늘', '실 사람이 메시지를 직접 읽고 영업일 1일 이내 답장.'],
+      ['2-3일차', '비즈니스와 목표 이해를 위한 30분 통화.'],
+      ['1주 차', '범위, 일정, 확정 견적 포함 서면 제안서.'],
+    ] as [string, string][],
   },
 }
 
 export default function ContactWrapper({
   locale = 'en',
-  sectionNumber = '06',
+  sectionNumber = '07',
 }: {
   locale?: string
   sectionNumber?: string
@@ -155,10 +117,7 @@ export default function ContactWrapper({
   const [form, setForm] = useState({
     name: '',
     email: '',
-    business: '',
-    phone: '',
     message: '',
-    budget: '',
     scope: [] as string[],
   })
   const [status, setStatus] = useState<Status>('idle')
@@ -172,21 +131,15 @@ export default function ContactWrapper({
     )
   }
 
+  const valid = form.name.trim() && form.email.trim()
+
   const submit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (status === 'loading') return
-
-    // Client-side required check with a toast, not a dead form
-    if (!form.name.trim() || !form.email.trim()) {
-      setToast({
-        id: Date.now(),
-        kind: 'info',
-        title: t.requiredTitle,
-        body: t.required_err,
-      })
+    if (!valid) {
+      setToast({ id: Date.now(), kind: 'info', title: t.requiredTitle, body: t.required_err })
       return
     }
-
     setStatus('loading')
     try {
       const res = await fetch('/api/contact', {
@@ -195,164 +148,115 @@ export default function ContactWrapper({
         body: JSON.stringify({
           name: form.name,
           email: form.email,
-          phone: form.phone,
-          business: form.business,
-          message: `${form.message}\n\nBudget: ${form.budget || 'n/a'}`,
+          message: form.message,
           services: form.scope.join(' | '),
           to: 'zoestudiollc@gmail.com, steve.b.song92@gmail.com',
         }),
       })
       if (!res.ok) throw new Error('bad response')
       setStatus('success')
-      setToast({
-        id: Date.now(),
-        kind: 'success',
-        title: t.successTitle,
-        body: t.successBody,
-      })
-      setForm({ name: '', email: '', business: '', phone: '', message: '', budget: '', scope: [] })
+      setToast({ id: Date.now(), kind: 'success', title: t.successTitle, body: t.successBody })
+      setForm({ name: '', email: '', message: '', scope: [] })
     } catch {
       setStatus('error')
-      setToast({
-        id: Date.now(),
-        kind: 'error',
-        title: t.errorTitle,
-        body: t.errorBody,
-      })
+      setToast({ id: Date.now(), kind: 'error', title: t.errorTitle, body: t.errorBody })
     }
   }
 
-  // progress — 4 key dimensions
-  const steps = [
-    form.name.trim().length > 0,
-    form.email.trim().length > 0,
-    form.scope.length > 0,
-    form.message.trim().length > 0,
-  ]
-  const progress = steps.filter(Boolean).length
-
   return (
-    <section id="contact" className="relative bg-ivory section-pad">
+    <section
+      id="contact"
+      className="relative section-pad overflow-hidden"
+      style={{
+        background: '#FFF4E8',
+      }}
+    >
       <Toast message={toast} onDismiss={() => setToast(null)} />
 
-      <div className="container-edge">
-        {/* Header band */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-14 mb-16 md:mb-20">
-          <div className="md:col-span-6">
-            <InView className="flex items-center gap-3 overline text-ash mb-6 hair-draw pb-4">
-              <span className="section-num not-italic text-ink font-normal">§ {sectionNumber}</span>
-              <span className="h-px w-10 bg-hairline" />
-              <span>{t.eyebrow}</span>
-            </InView>
-            <h2 className="font-display text-display-lg text-ink tracking-luxury">
-              <InView as="span" className="mask-row">
-                <span className="mask-rise block">{t.headline1}</span>
-              </InView>
-              <InView as="span" className="mask-row" delay={150}>
-                <span className="mask-rise block italic font-light text-gold fraunces-soft">
-                  {t.headline2}
-                </span>
-              </InView>
-            </h2>
-            <p className="mt-8 text-body-lg text-graphite leading-[1.7] max-w-md">{t.sub}</p>
-          </div>
+      {/* Soft sun-mesh atmosphere */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background: `
+            radial-gradient(40% 35% at 88% 12%, rgba(255, 212, 91, 0.28) 0%, rgba(255, 212, 91, 0) 60%),
+            radial-gradient(35% 30% at 8% 92%, rgba(255, 107, 74, 0.10) 0%, rgba(255, 107, 74, 0) 65%)
+          `,
+        }}
+      />
 
-          {/* What happens next */}
-          <div className="md:col-span-5 md:col-start-8">
-            <InView className="reveal">
-              <div className="p-8 md:p-10 rounded-[4px] bg-bone hair-y">
-                <p className="overline text-ash mb-6">{t.whatsNext.title}</p>
-                <ol className="space-y-6">
-                  {t.whatsNext.steps.map(([when, desc], i) => (
-                    <li key={when} className="flex gap-5 items-start">
-                      <span className="section-num text-sm text-gold shrink-0 mt-1 w-10">
-                        0{i + 1}
-                      </span>
-                      <div>
-                        <p className="font-display text-lg text-ink italic font-light leading-tight">
-                          {when}
-                        </p>
-                        <p className="mt-1 text-[13px] text-graphite leading-[1.65]">{desc}</p>
-                      </div>
-                    </li>
-                  ))}
-                </ol>
-              </div>
+      <div className="container-edge relative">
+        {/* Header — centered, single statement */}
+        <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16">
+          <InView className="inline-flex items-center gap-3 overline text-ash mb-6">
+            <span className="inline-block w-1.5 h-1.5 rounded-full" style={{ background: '#FF6B4A' }} />
+            <span className="section-num not-italic text-ink font-normal">§ {sectionNumber}</span>
+            <span className="h-px w-8 bg-hairline" />
+            <span>{t.eyebrow}</span>
+          </InView>
+          <h2
+            className="font-display tracking-[-0.02em] leading-[1.0] m-0"
+            style={{
+              color: '#3D1F0F',
+              fontSize: 'clamp(40px, 6vw, 88px)',
+              fontWeight: 400,
+            }}
+          >
+            <InView as="span" className="mask-row">
+              <span className="mask-rise block">{t.headlineLead}</span>
             </InView>
-          </div>
+            <InView as="span" className="mask-row" delay={120}>
+              <span className="mask-rise block italic font-light" style={{ color: '#FF6B4A' }}>
+                {t.headlineAccent}
+              </span>
+            </InView>
+          </h2>
+          <p
+            className="mt-8 mx-auto max-w-xl text-[16px] md:text-[17px] leading-[1.65]"
+            style={{ color: '#6B3D24' }}
+          >
+            {t.sub}
+          </p>
         </div>
 
-        {/* Progress bar */}
-        <div className="flex items-center gap-5 mb-12 md:mb-16">
-          <span className="overline text-ink">
-            {progress}
-            <span className="text-ash">/4</span>
-          </span>
-          <div className="flex-1 flex items-center gap-1">
-            {steps.map((done, i) => (
-              <span
-                key={i}
-                className={`h-[2px] flex-1 rounded-full transition-all duration-700 ${
-                  done ? 'bg-ink' : 'bg-hairline'
-                }`}
-              />
-            ))}
-          </div>
-          <span className="overline text-ash hidden md:inline">{t.progress[progress]}</span>
-        </div>
-
-        <form onSubmit={submit} noValidate>
-          {/* Step A */}
-          <StepPanel letter="A" title={t.stepA} done={steps[0] && steps[1]}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-2">
+        {/* FORM — single card, dominant element, max-w-3xl */}
+        <form onSubmit={submit} noValidate className="max-w-3xl mx-auto">
+          <div
+            className="bg-paper rounded-2xl p-7 md:p-10 shadow-[0_30px_70px_-30px_rgba(61,31,15,0.18),0_8px_20px_-8px_rgba(61,31,15,0.10)] border"
+            style={{ borderColor: 'rgba(61,31,15,0.08)' }}
+          >
+            {/* Name + Email row */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-6">
               <Field
                 label={t.labels.name}
                 placeholder={t.placeholders.name}
-                helper={t.helpers.name}
                 value={form.name}
                 onChange={(v) => setForm({ ...form, name: v })}
-                required
-                requiredLabel={t.required}
                 autoComplete="name"
+                required
               />
               <Field
                 label={t.labels.email}
                 placeholder={t.placeholders.email}
-                helper={t.helpers.email}
                 type="email"
                 value={form.email}
                 onChange={(v) => setForm({ ...form, email: v })}
-                required
-                requiredLabel={t.required}
                 autoComplete="email"
-              />
-            </div>
-          </StepPanel>
-
-          {/* Step B */}
-          <StepPanel letter="B" title={t.stepB} done={form.scope.length > 0}>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-2 mb-10">
-              <Field
-                label={t.labels.business}
-                placeholder={t.placeholders.business}
-                helper={t.helpers.business}
-                value={form.business}
-                onChange={(v) => setForm({ ...form, business: v })}
-                autoComplete="organization"
-              />
-              <Field
-                label={t.labels.phone}
-                placeholder={t.placeholders.phone}
-                helper={t.helpers.phone}
-                type="tel"
-                value={form.phone}
-                onChange={(v) => setForm({ ...form, phone: v })}
-                autoComplete="tel"
+                required
               />
             </div>
 
-            <div className="mb-10">
-              <ChipGroupHeader label={t.labels.scope} helper={t.helpers.scope} count={form.scope.length} />
+            {/* Scope chips — optional but useful */}
+            <div className="mt-7">
+              <label
+                className="block uppercase text-[11px] mb-3"
+                style={{ letterSpacing: '0.18em', color: '#A37C5F' }}
+              >
+                {t.labels.scope}
+                <span className="ml-2 normal-case tracking-normal text-[11px]" style={{ color: 'rgba(163,124,95,0.6)' }}>
+                  {isKo ? '· 선택' : '· optional'}
+                </span>
+              </label>
               <div className="flex flex-wrap gap-2">
                 {t.scopes.map((s) => {
                   const active = form.scope.includes(s)
@@ -361,11 +265,12 @@ export default function ContactWrapper({
                       key={s}
                       type="button"
                       onClick={() => toggleScope(s)}
-                      className={`px-4 py-2 rounded-full text-[13px] transition-all duration-300 border ${
-                        active
-                          ? 'bg-ink text-ivory border-ink'
-                          : 'text-graphite border-hairline hover:border-ink'
-                      }`}
+                      className="px-3.5 py-2 rounded-full text-[13px] transition-all duration-200 border"
+                      style={{
+                        background: active ? '#3D1F0F' : 'transparent',
+                        color: active ? '#FFF4E8' : '#6B3D24',
+                        borderColor: active ? '#3D1F0F' : 'rgba(61,31,15,0.18)',
+                      }}
                     >
                       {active && <span className="mr-1">✓</span>}
                       {s}
@@ -375,59 +280,59 @@ export default function ContactWrapper({
               </div>
             </div>
 
-            <div>
-              <ChipGroupHeader
-                label={t.labels.budget}
-                helper={t.helpers.budget}
-                count={form.budget ? 1 : 0}
+            {/* Message textarea */}
+            <div className="mt-7">
+              <label
+                className="block uppercase text-[11px] mb-3"
+                style={{ letterSpacing: '0.18em', color: '#A37C5F' }}
+              >
+                {t.labels.message}
+              </label>
+              <textarea
+                value={form.message}
+                onChange={(e) => setForm({ ...form, message: e.target.value })}
+                placeholder={t.placeholders.message}
+                rows={5}
+                className="w-full rounded-xl px-4 py-3.5 text-[15px] leading-[1.6] resize-y transition-all duration-200 outline-none focus:ring-2"
+                style={{
+                  background: '#FFF9F1',
+                  border: '1px solid rgba(61,31,15,0.12)',
+                  color: '#3D1F0F',
+                  minHeight: '128px',
+                }}
+                onFocus={(e) => {
+                  e.currentTarget.style.borderColor = '#FF6B4A'
+                  e.currentTarget.style.background = '#FFFFFF'
+                }}
+                onBlur={(e) => {
+                  e.currentTarget.style.borderColor = 'rgba(61,31,15,0.12)'
+                  e.currentTarget.style.background = '#FFF9F1'
+                }}
               />
-              <div className="flex flex-wrap gap-2">
-                {t.budgets.map((b) => {
-                  const active = form.budget === b
-                  return (
-                    <button
-                      key={b}
-                      type="button"
-                      onClick={() => setForm({ ...form, budget: active ? '' : b })}
-                      className={`px-4 py-2 rounded-full text-[13px] transition-all duration-300 border ${
-                        active
-                          ? 'bg-ink text-ivory border-ink'
-                          : 'text-graphite border-hairline hover:border-ink'
-                      }`}
-                    >
-                      {active && <span className="mr-1">✓</span>}
-                      {b}
-                    </button>
-                  )
-                })}
-              </div>
             </div>
-          </StepPanel>
 
-          {/* Step C */}
-          <StepPanel letter="C" title={t.stepC} done={steps[3]}>
-            <TextArea
-              label={t.labels.message}
-              placeholder={t.placeholders.message}
-              helper={t.helpers.message}
-              value={form.message}
-              onChange={(v) => setForm({ ...form, message: v })}
-            />
-          </StepPanel>
-
-          {/* Submit */}
-          <div className="mt-14 pt-10 border-t border-hairline grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-            <p className="md:col-span-7 text-[12px] text-ash leading-relaxed max-w-md">
-              <span className="gold-dot mr-2 align-middle" />
-              {t.privacy}
-            </p>
-            <div className="md:col-span-5 flex justify-start md:justify-end">
-              <Magnetic strength={14}>
+            {/* SEND BUTTON — big, coral, impossible to miss */}
+            <div className="mt-8 flex flex-col-reverse md:flex-row items-start md:items-center justify-between gap-4">
+              <p className="text-[12px] leading-relaxed" style={{ color: '#A37C5F' }}>
+                <span
+                  className="inline-block w-1 h-1 rounded-full mr-2 align-middle"
+                  style={{ background: '#FF6B4A' }}
+                />
+                {t.privacy}
+              </p>
+              <Magnetic strength={16} radius={120}>
                 <button
                   type="submit"
                   data-cursor={isKo ? '보내기' : 'Send'}
-                  className="btn-ink disabled:opacity-50 min-w-[190px] justify-center"
                   disabled={status === 'loading'}
+                  className="inline-flex items-center gap-3 px-8 py-[18px] rounded-full text-[15px] font-medium transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_24px_50px_-16px_rgba(255,107,74,0.55)] disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
+                  style={{
+                    background: valid ? '#FF6B4A' : '#3D1F0F',
+                    color: '#FFF4E8',
+                    boxShadow: valid
+                      ? '0 18px 40px -14px rgba(255,107,74,0.55), inset 0 0 0 1px rgba(255,255,255,0.08)'
+                      : '0 14px 40px -14px rgba(61,31,15,0.45)',
+                  }}
                 >
                   {status === 'loading' ? (
                     <>
@@ -437,7 +342,7 @@ export default function ContactWrapper({
                   ) : (
                     <>
                       {t.send}
-                      <span className="arrow">→</span>
+                      <span aria-hidden>→</span>
                     </>
                   )}
                 </button>
@@ -446,240 +351,145 @@ export default function ContactWrapper({
           </div>
         </form>
 
-        {/* Direct contact */}
-        <div className="mt-24 pt-12 border-t border-hairline grid grid-cols-1 md:grid-cols-12 gap-10">
-          <div className="md:col-span-3">
-            <p className="overline text-ash">{t.contactBlock.title}</p>
+        {/* Alternative contact — email + KakaoTalk pills, prominent */}
+        <div className="mt-12 md:mt-14 max-w-3xl mx-auto">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 justify-center">
+            <span
+              className="text-[12px] uppercase"
+              style={{ letterSpacing: '0.18em', color: '#A37C5F' }}
+            >
+              {t.altContact.label}
+            </span>
+            <div className="flex flex-wrap items-center gap-3">
+              <a
+                href={t.altContact.emailHref}
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] transition-all duration-200 hover:scale-[1.03]"
+                style={{
+                  background: 'rgba(255,255,255,0.7)',
+                  border: '1px solid rgba(61,31,15,0.10)',
+                  color: '#3D1F0F',
+                  backdropFilter: 'blur(8px)',
+                }}
+              >
+                <span aria-hidden style={{ color: '#FF6B4A' }}>✉</span>
+                {t.altContact.email}
+              </a>
+              <a
+                href={t.altContact.kakaoHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] transition-all duration-200 hover:scale-[1.03]"
+                style={{
+                  background: '#FEE500',
+                  border: '1px solid rgba(61,31,15,0.10)',
+                  color: '#3D1F0F',
+                }}
+              >
+                <span aria-hidden>💬</span>
+                {t.altContact.kakao}
+              </a>
+            </div>
           </div>
-          <dl className="md:col-span-9 grid grid-cols-1 md:grid-cols-3 gap-10">
-            {t.contactBlock.lines.map(([k, v]) => (
-              <div key={k}>
-                <dt className="overline text-ash mb-2">{k}</dt>
-                <dd className="font-display text-xl md:text-2xl text-ink italic font-light fraunces-soft">
-                  {v}
-                </dd>
-              </div>
+        </div>
+
+        {/* What happens next — small horizontal row, no longer dominant */}
+        <div className="mt-16 md:mt-20 max-w-4xl mx-auto">
+          <p
+            className="text-center text-[11px] uppercase mb-8"
+            style={{ letterSpacing: '0.22em', color: '#A37C5F' }}
+          >
+            {t.nextLabel}
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+            {t.nextSteps.map(([when, desc], i) => (
+              <InView key={when} delay={i * 80} className="flex flex-col items-start gap-2">
+                <div className="flex items-center gap-3">
+                  <span
+                    className="inline-flex items-center justify-center w-7 h-7 rounded-full text-[11px] font-medium"
+                    style={{
+                      background: 'rgba(255, 107, 74, 0.12)',
+                      color: '#FF6B4A',
+                    }}
+                  >
+                    0{i + 1}
+                  </span>
+                  <span
+                    className="font-display italic text-[18px] md:text-[20px] font-light"
+                    style={{ color: '#3D1F0F' }}
+                  >
+                    {when}
+                  </span>
+                </div>
+                <p className="text-[13px] leading-[1.6]" style={{ color: '#6B3D24' }}>
+                  {desc}
+                </p>
+              </InView>
             ))}
-          </dl>
+          </div>
         </div>
       </div>
     </section>
   )
 }
 
-/* ────────────────────────────────────────────────────────────── */
-
-function StepPanel({
-  letter,
-  title,
-  done,
-  children,
-}: {
-  letter: string
-  title: string
-  done: boolean
-  children: React.ReactNode
-}) {
-  return (
-    <section className="relative mb-20 md:mb-24">
-      <header className="flex items-center gap-4 mb-10">
-        <span
-          className={`relative flex items-center justify-center w-11 h-11 rounded-full border transition-colors duration-500 ${
-            done ? 'bg-ink border-ink text-ivory' : 'border-hairline text-gold'
-          }`}
-          aria-hidden
-        >
-          {done ? (
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
-              <path d="M3 7.5l2.5 2.5L11 4.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          ) : (
-            <span className="section-num italic text-xl leading-none">{letter}</span>
-          )}
-        </span>
-        <span className="h-px flex-1 bg-hairline max-w-[120px]" />
-        <span className="overline text-ink">{title}</span>
-      </header>
-      {children}
-    </section>
-  )
-}
-
-function ChipGroupHeader({
-  label,
-  helper,
-  count,
-}: {
-  label: string
-  helper: string
-  count: number
-}) {
-  return (
-    <div className="flex items-baseline justify-between mb-4 flex-wrap gap-2">
-      <div className="flex items-center gap-3">
-        <label className="overline text-ink">{label}</label>
-        {count > 0 && (
-          <span className="overline text-gold">
-            {count} selected
-          </span>
-        )}
-      </div>
-      <span className="text-[11px] text-ash">{helper}</span>
-    </div>
-  )
-}
-
+// ─── Field — clean labeled input with focus state ────────────────
 function Field({
   label,
   placeholder,
   helper,
-  type = 'text',
   value,
   onChange,
-  required,
-  requiredLabel = 'required',
+  type = 'text',
+  required = false,
   autoComplete,
 }: {
   label: string
   placeholder?: string
   helper?: string
-  type?: string
   value: string
   onChange: (v: string) => void
+  type?: string
   required?: boolean
-  requiredLabel?: string
   autoComplete?: string
 }) {
-  const id = useId()
-  const [focus, setFocus] = useState(false)
-  const filled = value.length > 0
-
   return (
-    <div className="py-4 md:py-5 group relative">
-      <div className="flex items-baseline justify-between mb-3">
-        <label
-          htmlFor={id}
-          className={`overline transition-colors duration-300 ${
-            focus ? 'text-gold' : filled ? 'text-ink' : 'text-ash'
-          }`}
-        >
-          {label}
-        </label>
+    <label className="block">
+      <span
+        className="block uppercase text-[11px] mb-2.5"
+        style={{ letterSpacing: '0.18em', color: '#A37C5F' }}
+      >
+        {label}
         {required && (
-          <span
-            className={`text-[10px] uppercase tracking-[0.16em] transition-colors duration-300 ${
-              filled ? 'text-ink/40' : 'text-gold'
-            }`}
-          >
-            {filled ? '✓' : `* ${requiredLabel}`}
-          </span>
+          <span className="ml-1 align-top" style={{ color: '#FF6B4A' }}>*</span>
         )}
-      </div>
-
-      {/* Input with its own visible container */}
-      <div
-        className={`relative border-b-2 pb-2 transition-colors duration-500 ${
-          focus
-            ? 'border-gold'
-            : filled
-            ? 'border-ink'
-            : 'border-hairline group-hover:border-ash'
-        }`}
-      >
-        <input
-          id={id}
-          name={id}
-          type={type}
-          value={value}
-          required={required}
-          autoComplete={autoComplete}
-          placeholder={placeholder}
-          onFocus={() => setFocus(true)}
-          onBlur={() => setFocus(false)}
-          onChange={(e) => onChange(e.target.value)}
-          className="w-full bg-transparent py-2 text-[18px] md:text-[20px] text-ink placeholder:text-mute/70 placeholder:italic placeholder:font-light focus:outline-none"
-          style={{ fontFamily: 'var(--font-serif), Georgia, serif' }}
-        />
-        {/* Active corner tick */}
-        {focus && (
-          <span
-            aria-hidden
-            className="absolute right-0 -top-1 text-gold text-[10px] tracking-[0.18em] uppercase"
-          >
-            typing
-          </span>
-        )}
-      </div>
-
-      <p
-        className={`mt-2 text-[12px] transition-colors duration-300 ${
-          focus ? 'text-ink/70' : 'text-ash/70'
-        }`}
-      >
-        {helper}
-      </p>
-    </div>
-  )
-}
-
-function TextArea({
-  label,
-  placeholder,
-  helper,
-  value,
-  onChange,
-}: {
-  label: string
-  placeholder?: string
-  helper?: string
-  value: string
-  onChange: (v: string) => void
-}) {
-  const id = useId()
-  const [focus, setFocus] = useState(false)
-  const filled = value.length > 0
-  const chars = value.length
-
-  return (
-    <div className="py-4 group">
-      <div className="flex items-baseline justify-between mb-3">
-        <label
-          htmlFor={id}
-          className={`overline transition-colors duration-300 ${
-            focus ? 'text-gold' : filled ? 'text-ink' : 'text-ash'
-          }`}
-        >
-          {label}
-        </label>
-        <span className="text-[11px] text-ash">
-          {chars > 0 ? `${chars} ${chars === 1 ? 'char' : 'chars'}` : helper}
+      </span>
+      <input
+        type={type}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
+        placeholder={placeholder}
+        required={required}
+        autoComplete={autoComplete}
+        className="w-full rounded-xl px-4 py-3 text-[15px] transition-all duration-200 outline-none"
+        style={{
+          background: '#FFF9F1',
+          border: '1px solid rgba(61,31,15,0.12)',
+          color: '#3D1F0F',
+        }}
+        onFocus={(e) => {
+          e.currentTarget.style.borderColor = '#FF6B4A'
+          e.currentTarget.style.background = '#FFFFFF'
+        }}
+        onBlur={(e) => {
+          e.currentTarget.style.borderColor = 'rgba(61,31,15,0.12)'
+          e.currentTarget.style.background = '#FFF9F1'
+        }}
+      />
+      {helper && (
+        <span className="block mt-1.5 text-[11px]" style={{ color: '#A37C5F' }}>
+          {helper}
         </span>
-      </div>
-      <div
-        className={`border-b-2 pb-2 transition-colors duration-500 ${
-          focus
-            ? 'border-gold'
-            : filled
-            ? 'border-ink'
-            : 'border-hairline group-hover:border-ash'
-        }`}
-      >
-        <textarea
-          id={id}
-          name={id}
-          rows={4}
-          value={value}
-          placeholder={placeholder}
-          onFocus={() => setFocus(true)}
-          onBlur={() => setFocus(false)}
-          onChange={(e) => onChange(e.target.value)}
-          className="w-full bg-transparent py-2 text-[17px] md:text-[18px] text-ink placeholder:text-mute/70 placeholder:italic placeholder:font-light focus:outline-none resize-none leading-[1.7]"
-          style={{ fontFamily: 'var(--font-serif), Georgia, serif' }}
-        />
-      </div>
-      {!filled && (
-        <p className="mt-2 text-[12px] text-ash/70">{helper}</p>
       )}
-    </div>
+    </label>
   )
 }
