@@ -1,42 +1,54 @@
 import { NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
 
+const escapeHtml = (s: string) =>
+  s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
+
 export async function POST(request: Request) {
   try {
     const body = await request.json()
-    const { name, email, phone, business, message, to, services } = body
+    const { name, email, phone, business, message, services } = body
 
-    // Validate required fields
-    if (!name || !email || !message) {
+    // Message is optional — the homepage form allows submitting with just
+    // name + email, and rejecting those was silently dropping leads.
+    if (!name || !email) {
       return NextResponse.json(
         { error: 'Missing required fields' },
         { status: 400 }
       )
     }
+    const safeMessage = typeof message === 'string' && message.trim()
+      ? message.trim()
+      : '(no message provided)'
 
-    // Email configuration. Real owner inboxes (info@zoelumos.com isn't
-    // monitored — was silently losing leads). Force-reroute any incoming
-    // `to` that points there to the real addresses.
+    // Always send to the real owner inboxes. Never honor a client-supplied
+    // `to` (open-relay vector), and info@zoelumos.com isn't monitored.
     const OWNER_INBOXES = 'zoestudiollc@gmail.com, steve.b.song92@gmail.com'
-    const incomingTo = typeof to === 'string' ? to : ''
-    const safeTo = incomingTo && !/info@zoelumos\.com/i.test(incomingTo) ? incomingTo : OWNER_INBOXES
+    const h = {
+      name: escapeHtml(String(name)),
+      email: escapeHtml(String(email)),
+      phone: phone ? escapeHtml(String(phone)) : '',
+      business: business ? escapeHtml(String(business)) : '',
+      services: services ? escapeHtml(String(services)) : '',
+      message: escapeHtml(safeMessage),
+    }
     const emailData = {
-      to: safeTo,
+      to: OWNER_INBOXES,
       subject: `New Contact Form Submission from ${name}`,
       html: `
         <h2>New Contact Form Submission</h2>
-        <p><strong>Name:</strong> ${name}</p>
-        <p><strong>Email:</strong> ${email}</p>
-        ${phone ? `<p><strong>Phone:</strong> ${phone}</p>` : ''}
-        ${business ? `<p><strong>Business:</strong> ${business}</p>` : ''}
-        ${services ? `
+        <p><strong>Name:</strong> ${h.name}</p>
+        <p><strong>Email:</strong> ${h.email}</p>
+        ${h.phone ? `<p><strong>Phone:</strong> ${h.phone}</p>` : ''}
+        ${h.business ? `<p><strong>Business:</strong> ${h.business}</p>` : ''}
+        ${h.services ? `
         <div style="margin: 20px 0; padding: 15px; background: #f5f5f5; border-radius: 5px;">
           <p><strong>Selected Services/Plans:</strong></p>
-          <p style="color: #333; font-size: 14px;">${services}</p>
+          <p style="color: #333; font-size: 14px;">${h.services}</p>
         </div>
         ` : ''}
         <p><strong>Message:</strong></p>
-        <p>${message.replace(/\n/g, '<br>')}</p>
+        <p>${h.message.replace(/\n/g, '<br>')}</p>
         <hr>
         <p><small>This email was sent from the ZOE LUMOS website contact form.</small></p>
       `,
@@ -50,7 +62,7 @@ ${business ? `Business: ${business}` : ''}
 ${services ? `\nSelected Services/Plans: ${services}\n` : ''}
 
 Message:
-${message}
+${safeMessage}
 
 ---
 This email was sent from the ZOE LUMOS website contact form.
@@ -59,11 +71,18 @@ This email was sent from the ZOE LUMOS website contact form.
 
     // Check if email credentials are configured
     if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
-      console.log('Email credentials not configured. Email data:', emailData)
-      // In development without credentials, just return success
+      if (process.env.NODE_ENV !== 'production') {
+        console.log('Email credentials not configured. Email data:', emailData)
+        return NextResponse.json(
+          { message: 'Email sent successfully (dev mode)' },
+          { status: 200 }
+        )
+      }
+      // In production this is an outage, not a success — never fake a 200.
+      console.error('EMAIL_USER/EMAIL_PASS missing in production — lead NOT sent:', emailData.text)
       return NextResponse.json(
-        { message: 'Email sent successfully (dev mode)' },
-        { status: 200 }
+        { error: 'Email service unavailable' },
+        { status: 500 }
       )
     }
 
@@ -75,9 +94,6 @@ This email was sent from the ZOE LUMOS website contact form.
       auth: {
         user: process.env.EMAIL_USER,
         pass: process.env.EMAIL_PASS
-      },
-      tls: {
-        rejectUnauthorized: false
       }
     })
 
@@ -111,11 +127,11 @@ This email was sent from the ZOE LUMOS website contact form.
         html: `
           <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
             <h2 style="color: #333;">Thank you for reaching out!</h2>
-            <p>Hi ${name},</p>
+            <p>Hi ${h.name},</p>
             <p>We've received your message and will get back to you within 24 hours.</p>
             <hr style="border: 1px solid #eee; margin: 20px 0;">
             <h3>Your Message:</h3>
-            <p style="background: #f5f5f5; padding: 15px; border-radius: 5px;">${message.replace(/\n/g, '<br>')}</p>
+            <p style="background: #f5f5f5; padding: 15px; border-radius: 5px;">${h.message.replace(/\n/g, '<br>')}</p>
             <hr style="border: 1px solid #eee; margin: 20px 0;">
             <p style="color: #666; font-size: 14px;">
               Best regards,<br>
@@ -124,7 +140,7 @@ This email was sent from the ZOE LUMOS website contact form.
             </p>
           </div>
         `,
-        text: `Thank you for reaching out!\n\nHi ${name},\n\nWe've received your message and will get back to you within 24 hours.\n\nYour Message:\n${message}\n\nBest regards,\nZOE LUMOS Team\ninfo@zoelumos.com`
+        text: `Thank you for reaching out!\n\nHi ${name},\n\nWe've received your message and will get back to you within 24 hours.\n\nYour Message:\n${safeMessage}\n\nBest regards,\nZOE LUMOS Team\ninfo@zoelumos.com`
       })
       console.log('Confirmation email sent to:', email)
     } catch (confirmError) {

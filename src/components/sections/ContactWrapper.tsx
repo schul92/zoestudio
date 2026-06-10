@@ -4,6 +4,7 @@ import { useState } from 'react'
 import InView from '@/components/ui/motion/InView'
 import Magnetic from '@/components/ui/motion/Magnetic'
 import Toast, { ToastMessage } from '@/components/ui/motion/Toast'
+import { trackEvent } from '@/components/GoogleAnalytics'
 
 type Status = 'idle' | 'loading' | 'success' | 'error'
 
@@ -141,6 +142,7 @@ export default function ContactWrapper({
       return
     }
     setStatus('loading')
+    trackEvent('form_submit_attempt', 'conversion', 'home_contact')
     try {
       const res = await fetch('/api/contact', {
         method: 'POST',
@@ -150,15 +152,16 @@ export default function ContactWrapper({
           email: form.email,
           message: form.message,
           services: form.scope.join(' | '),
-          to: 'zoestudiollc@gmail.com, steve.b.song92@gmail.com',
         }),
       })
       if (!res.ok) throw new Error('bad response')
       setStatus('success')
+      trackEvent('form_submit_success', 'conversion', 'home_contact')
       setToast({ id: Date.now(), kind: 'success', title: t.successTitle, body: t.successBody })
       setForm({ name: '', email: '', message: '', scope: [] })
     } catch {
       setStatus('error')
+      trackEvent('form_submit_error', 'conversion', 'home_contact')
       setToast({ id: Date.now(), kind: 'error', title: t.errorTitle, body: t.errorBody })
     }
   }
