@@ -14,6 +14,7 @@ export default function Footer({ locale = 'en' }: { locale?: string }) {
         [isKo ? '포트폴리오' : 'Work', `${prefix}/portfolio`],
         [isKo ? '블로그' : 'Journal', `${prefix}/blog`],
         [isKo ? '가격' : 'Pricing', `${prefix}/pricing`],
+        [isKo ? '무료 도구' : 'Free tools', `${prefix}/tools`],
       ] as [string, string][],
     },
     {

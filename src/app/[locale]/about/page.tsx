@@ -3,6 +3,7 @@ import HeaderWrapper from '@/components/layout/HeaderWrapper'
 import Footer from '@/components/layout/Footer'
 import AboutClient from './AboutClient'
 import { seoConfig } from '@/config/seo'
+import { SITE_URL } from '@/lib/siteUrl'
 
 export async function generateStaticParams() {
   return [
@@ -17,7 +18,7 @@ export async function generateMetadata({
   params: { locale: string }
 }): Promise<Metadata> {
   const locale = params.locale as 'en' | 'ko'
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
+  const baseUrl = SITE_URL
   
   const metadata = {
     en: {
@@ -226,7 +227,7 @@ const content = {
 export default function AboutPage({ params }: { params: { locale: string } }) {
   const locale = params.locale as 'en' | 'ko'
   const t = content[locale]
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
+  const baseUrl = SITE_URL
 
   const personSchema = {
     '@context': 'https://schema.org',

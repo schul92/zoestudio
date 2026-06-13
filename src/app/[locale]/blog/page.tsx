@@ -5,6 +5,7 @@ import BlogListing from '@/components/blog/BlogListing'
 import { blogContent } from '@/data/blogContent'
 import fs from 'fs'
 import path from 'path'
+import { SITE_URL } from '@/lib/siteUrl'
 
 // Build-time check: which blog slugs have a static PNG on disk vs. need
 // the dynamic /api/og fallback. Runs once at SSG time, zero runtime cost.
@@ -40,7 +41,7 @@ export async function generateMetadata({
   params: { locale: string }
 }): Promise<Metadata> {
   const locale = params.locale as 'en' | 'ko'
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
+  const baseUrl = SITE_URL
 
   const metadata = {
     en: {
@@ -431,7 +432,7 @@ export default function BlogPage({ params }: { params: { locale: string } }) {
   const locale = params.locale as 'en' | 'ko'
   const t = content[locale]
 
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
+  const baseUrl = SITE_URL
   const prefix = locale === 'ko' ? '/ko' : ''
   const crumbs = {
     '@context': 'https://schema.org',

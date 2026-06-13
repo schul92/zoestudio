@@ -4,8 +4,9 @@ import HeaderWrapper from '@/components/layout/HeaderWrapper'
 import Footer from '@/components/layout/Footer'
 import IndustryPage from '@/components/sections/IndustryPage'
 import { industries, industryBySlug } from '@/data/industriesData'
+import { SITE_URL } from '@/lib/siteUrl'
 
-const BASE = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
+const BASE = SITE_URL
 
 export function generateStaticParams() {
   const params: { locale: string; slug: string }[] = []

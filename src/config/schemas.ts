@@ -1,3 +1,4 @@
+import { SITE_URL } from '@/lib/siteUrl'
 /**
  * Schema.org helpers.
  *
@@ -9,7 +10,7 @@
 // We normalize the env var because the Vercel project may have set it
 // to the non-www apex, which 307-redirects to www and creates split
 // canonical signals in every page's JSON-LD + canonical tag.
-const RAW_BASE = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
+const RAW_BASE = SITE_URL
 const BASE = RAW_BASE.replace(/^https?:\/\/zoelumos\.com/, 'https://www.zoelumos.com')
 
 export function baseUrl() {

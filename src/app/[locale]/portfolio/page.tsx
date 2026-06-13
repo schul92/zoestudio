@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import HeaderWrapper from '@/components/layout/HeaderWrapper'
 import Footer from '@/components/layout/Footer'
 import PortfolioClient from './PortfolioClient'
+import { SITE_URL } from '@/lib/siteUrl'
 
 export async function generateStaticParams() {
   return [
@@ -16,7 +17,7 @@ export async function generateMetadata({
   params: { locale: string }
 }): Promise<Metadata> {
   const locale = params.locale as 'en' | 'ko'
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
+  const baseUrl = SITE_URL
 
   const metadata = {
     en: {
@@ -207,7 +208,7 @@ export default function PortfolioPage({ params }: { params: { locale: string } }
     ...project[locale],
   }))
 
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
+  const baseUrl = SITE_URL
   const prefix = locale === 'ko' ? '/ko' : ''
   const crumbs = {
     '@context': 'https://schema.org',

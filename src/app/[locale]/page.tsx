@@ -11,6 +11,7 @@ import {
   reviewSchema,
   baseUrl,
 } from '@/config/schemas'
+import { SITE_URL } from '@/lib/siteUrl'
 
 const TrustRibbon = dynamic(() => import('@/components/sections/TrustRibbon'), {
   ssr: true,
@@ -75,8 +76,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const locale: 'en' | 'ko' = params?.locale === 'ko' ? 'ko' : 'en'
   const seo = seoConfig[locale]
-  const baseUrl = (process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com')
-    .replace(/^https?:\/\/zoelumos\.com/, 'https://www.zoelumos.com')
+  const baseUrl = SITE_URL
 
   return {
     title: seo.title,

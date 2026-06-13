@@ -9,10 +9,10 @@ import Magnetic from '@/components/ui/motion/Magnetic'
 import CountUp from '@/components/ui/motion/CountUp'
 import { industries, industryBySlug } from '@/data/industriesData'
 import { cityMarkets, cityBySlug } from '@/data/cityMarketData'
+import { SITE_URL } from '@/lib/siteUrl'
 
 // Force www host even if Vercel env var is set to non-www apex
-const BASE = (process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com')
-  .replace(/^https?:\/\/zoelumos\.com/, 'https://www.zoelumos.com')
+const BASE = SITE_URL
 
 export function generateStaticParams() {
   const params: { locale: string; slug: string; city: string }[] = []

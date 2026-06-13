@@ -3,11 +3,11 @@ import { blogContent } from '@/data/blogContent'
 import { koreanCities } from '@/data/koreanCities'
 import { industries } from '@/data/industriesData'
 import { cityMarkets } from '@/data/cityMarketData'
+import { SITE_URL } from '@/lib/siteUrl'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // Force www host — Vercel apex 307-redirects to www, so canonicals must be www
-  const baseUrl = (process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com')
-    .replace(/^https?:\/\/zoelumos\.com/, 'https://www.zoelumos.com')
+  const baseUrl = SITE_URL
 
   // Standard pages (English URLs)
   const standardPages = [
@@ -44,6 +44,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/services/google-business-profile-optimization',
     '/services/shopify-cost-audit',
     '/compare/best-ecommerce-platform-korean-business-2026',
+    '/tools',
+    '/tools/website-cost-estimator',
     // Korean-American city hub pages
     ...koreanCities.map((c) => `/${c.slug}`),
   ]

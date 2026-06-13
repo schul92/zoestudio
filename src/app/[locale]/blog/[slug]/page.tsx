@@ -5,6 +5,7 @@ import HeaderWrapper from '@/components/layout/HeaderWrapper'
 import Footer from '@/components/layout/Footer'
 import RelatedCluster from '@/components/blog/RelatedCluster'
 import { blogContent, BlogSection } from '@/data/blogContent'
+import { SITE_URL } from '@/lib/siteUrl'
 
 // ─── Static params: every slug × every locale ────────────────────────────────
 export function generateStaticParams() {
@@ -28,8 +29,7 @@ export async function generateMetadata({
   const post = blogContent.find((p) => p.slug === params.slug)
   if (!post) return {}
 
-  const baseUrl = (process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com')
-    .replace(/^https?:\/\/zoelumos\.com/, 'https://www.zoelumos.com')
+  const baseUrl = SITE_URL
   const prefix = locale === 'ko' ? '/ko' : ''
   const url = `${baseUrl}${prefix}/blog/${post.slug}`
 
@@ -67,8 +67,7 @@ function BlogPostingSchema({
   post: (typeof blogContent)[0]
   locale: 'en' | 'ko'
 }) {
-  const baseUrl = (process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com')
-    .replace(/^https?:\/\/zoelumos\.com/, 'https://www.zoelumos.com')
+  const baseUrl = SITE_URL
   const prefix = locale === 'ko' ? '/ko' : ''
   const schema = {
     '@context': 'https://schema.org',
@@ -402,8 +401,7 @@ export default function BlogPostPage({
       locale === 'ko' ? '무료 상담 받기 →' : 'Get a Free Consultation →',
   }
 
-  const baseUrl = (process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com')
-    .replace(/^https?:\/\/zoelumos\.com/, 'https://www.zoelumos.com')
+  const baseUrl = SITE_URL
   const crumbs = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',

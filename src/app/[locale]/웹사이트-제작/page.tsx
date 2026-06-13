@@ -4,6 +4,7 @@ import Footer from '@/components/layout/Footer'
 import Contact from '@/components/sections/Contact'
 import Link from 'next/link'
 import { Globe, Smartphone, Zap, Shield, CheckCircle, Star, Clock, DollarSign, ArrowRight, MessageCircle } from 'lucide-react'
+import { SITE_URL } from '@/lib/siteUrl'
 
 export async function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'ko' }]
@@ -11,7 +12,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
   const locale = params.locale as 'en' | 'ko'
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
+  const baseUrl = SITE_URL
 
   return {
     title: locale === 'ko'
@@ -41,7 +42,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
 
 export default function WebsiteDesignPage({ params }: { params: { locale: string } }) {
   const locale = params.locale as 'en' | 'ko'
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
+  const baseUrl = SITE_URL
   const isKorean = locale === 'ko'
 
   const serviceSchema = {

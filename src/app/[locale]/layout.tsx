@@ -7,6 +7,7 @@ import GoogleAnalytics from '@/components/GoogleAnalytics'
 import AnalyticsWrapper from '@/components/AnalyticsWrapper'
 import SmoothScroll from '@/components/ui/motion/SmoothScroll'
 import CursorEditorial from '@/components/ui/motion/CursorEditorial'
+import { SITE_URL } from '@/lib/siteUrl'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -53,14 +54,14 @@ export async function generateMetadata({
       address: false,
       telephone: false,
     },
-    metadataBase: new URL((process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com').replace(/^https?:\/\/zoelumos\.com/, 'https://www.zoelumos.com')),
+    metadataBase: new URL(SITE_URL),
     manifest: '/manifest.json',
     category: 'business',
     // Canonical + hreflang are set per-page to avoid layout-level collision.
     openGraph: {
       title: seo.openGraph.title,
       description: seo.openGraph.description,
-      url: `${(process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com').replace(/^https?:\/\/zoelumos\.com/, 'https://www.zoelumos.com')}/${locale}`,
+      url: `${SITE_URL}/${locale}`,
       siteName: seo.openGraph.siteName,
       locale: seo.openGraph.locale,
       type: 'website',

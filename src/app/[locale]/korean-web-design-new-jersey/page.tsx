@@ -4,6 +4,7 @@ import Footer from '@/components/layout/Footer'
 import Contact from '@/components/sections/Contact'
 import Link from 'next/link'
 import { MapPin, Globe, Search, Star, Users, Zap, CheckCircle, Shield, TrendingUp, Award, Clock, DollarSign } from 'lucide-react'
+import { SITE_URL } from '@/lib/siteUrl'
 
 export async function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'ko' }]
@@ -15,7 +16,7 @@ export async function generateMetadata({
   params: { locale: string }
 }): Promise<Metadata> {
   const locale = params.locale as 'en' | 'ko'
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
+  const baseUrl = SITE_URL
 
   if (locale === 'ko') {
     return {
@@ -70,7 +71,7 @@ export async function generateMetadata({
 
 export default function KoreanWebDesignNJPage({ params }: { params: { locale: string } }) {
   const locale = params.locale as 'en' | 'ko'
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
+  const baseUrl = SITE_URL
   const prefix = locale === 'ko' ? '/ko' : ''
 
   const localBusinessSchema = {

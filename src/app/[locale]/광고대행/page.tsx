@@ -7,6 +7,7 @@ import {
   Megaphone, Search, Instagram, Star, Users, CheckCircle, BarChart3,
   Globe, TrendingUp, FileText, MessageCircle, Mail, MapPin, Zap, Target
 } from 'lucide-react'
+import { SITE_URL } from '@/lib/siteUrl'
 
 export async function generateStaticParams() {
   return [
@@ -21,7 +22,7 @@ export async function generateMetadata({
   params: { locale: string }
 }): Promise<Metadata> {
   const locale = params.locale as 'en' | 'ko'
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
+  const baseUrl = SITE_URL
 
   return {
     title: locale === 'ko'
@@ -73,7 +74,7 @@ export async function generateMetadata({
 
 export default function AdvertisingKoreanPage({ params }: { params: { locale: string } }) {
   const locale = params.locale as 'en' | 'ko'
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
+  const baseUrl = SITE_URL
   const isKorean = locale === 'ko'
 
   const organizationSchema = {

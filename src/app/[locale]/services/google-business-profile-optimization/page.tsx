@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import HeaderWrapper from '@/components/layout/HeaderWrapper'
 import Footer from '@/components/layout/Footer'
+import { SITE_URL } from '@/lib/siteUrl'
 
 export async function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'ko' }]
@@ -9,7 +10,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
   const locale = params.locale === 'ko' ? 'ko' : 'en'
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
+  const baseUrl = SITE_URL
   const enUrl = `${baseUrl}/services/google-business-profile-optimization`
   const koUrl = `${baseUrl}/ko/services/google-business-profile-optimization`
 

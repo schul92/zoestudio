@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import KoreanCityPage from '@/components/templates/KoreanCityPage'
 import { koreanCities } from '@/data/koreanCities'
+import { SITE_URL } from '@/lib/siteUrl'
 
 const cityData = koreanCities.find(c => c.slug === 'flushing-korean-web-design')!
 
@@ -10,7 +11,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
   const locale = 'ko' as 'ko'
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
+  const baseUrl = SITE_URL
   const enUrl = `${baseUrl}/flushing-korean-web-design`
   const koUrl = `${baseUrl}/ko/플러싱-웹사이트-제작`
 
@@ -37,6 +38,6 @@ export async function generateMetadata({ params }: { params: { locale: string } 
 
 export default function Page({ params }: { params: { locale: string } }) {
   const locale = 'ko' as 'ko'
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
+  const baseUrl = SITE_URL
   return <KoreanCityPage data={cityData} locale={locale} baseUrl={baseUrl} />
 }

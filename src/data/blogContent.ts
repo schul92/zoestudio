@@ -45,7 +45,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'kakaotalk-channel-automation-korean-restaurants',
     date: '2026-05-11',
-    updatedDate: '2026-05-11',
+    updatedDate: '2026-06-02',
     readTime: 8,
     category: { en: 'Marketing', ko: '마케팅' },
     title: {
@@ -152,7 +152,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'doordash-vs-ubereats-vs-own-app-korean-restaurant',
     date: '2026-05-11',
-    updatedDate: '2026-05-11',
+    updatedDate: '2026-06-02',
     readTime: 8,
     category: { en: 'App Development', ko: '앱 개발' },
     title: {
@@ -257,7 +257,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'korean-restaurant-marketing-annandale-va',
     date: '2026-05-11',
-    updatedDate: '2026-05-11',
+    updatedDate: '2026-06-02',
     readTime: 7,
     category: { en: 'Local Marketing', ko: '로컬 마케팅' },
     title: {
@@ -346,7 +346,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'ai-search-korean-business-owner-survival-guide-2026',
     date: '2026-05-11',
-    updatedDate: '2026-05-11',
+    updatedDate: '2026-06-03',
     readTime: 8,
     category: { en: 'AI Search / GEO', ko: 'AI 검색 / GEO' },
     title: {
@@ -457,7 +457,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'kakaotalk-channel-vs-instagram-korean-business',
     date: '2026-05-10',
-    updatedDate: '2026-05-10',
+    updatedDate: '2026-05-31',
     readTime: 8,
     category: { en: 'Marketing', ko: '마케팅' },
     title: {
@@ -570,7 +570,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'toast-vs-square-korean-restaurant',
     date: '2026-05-10',
-    updatedDate: '2026-05-10',
+    updatedDate: '2026-05-31',
     readTime: 8,
     category: { en: 'POS / Operations', ko: 'POS / 운영' },
     title: {
@@ -675,7 +675,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'chatgpt-search-korean-restaurant-visibility',
     date: '2026-05-10',
-    updatedDate: '2026-05-10',
+    updatedDate: '2026-06-01',
     readTime: 8,
     category: { en: 'AI Search / GEO', ko: 'AI 검색 / GEO' },
     title: {
@@ -780,7 +780,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'squarespace-vs-wix-vs-nextjs-korean-business',
     date: '2026-05-10',
-    updatedDate: '2026-05-10',
+    updatedDate: '2026-06-01',
     readTime: 8,
     category: { en: 'Website Platform', ko: '웹사이트 플랫폼' },
     title: {
@@ -895,7 +895,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'starting-korean-business-america-2026',
     date: '2026-05-10',
-    updatedDate: '2026-05-10',
+    updatedDate: '2026-06-01',
     readTime: 9,
     category: { en: 'Foundations', ko: '기초 가이드' },
     title: {
@@ -1000,7 +1000,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'korean-restaurant-own-app-vs-doordash',
     date: '2026-05-07',
-    updatedDate: '2026-05-07',
+    updatedDate: '2026-05-28',
     readTime: 7,
     category: { en: 'App Development', ko: '앱 개발' },
     title: {
@@ -1139,7 +1139,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'pwa-vs-native-app-korean-smb',
     date: '2026-05-07',
-    updatedDate: '2026-05-07',
+    updatedDate: '2026-05-29',
     readTime: 6,
     category: { en: 'App Development', ko: '앱 개발' },
     title: {
@@ -1240,7 +1240,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'app-store-submission-korean-business-guide',
     date: '2026-05-07',
-    updatedDate: '2026-05-07',
+    updatedDate: '2026-05-29',
     readTime: 8,
     category: { en: 'App Development', ko: '앱 개발' },
     title: {
@@ -1315,7 +1315,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'tj-flowers-shopify-revamp-case-study',
     date: '2026-05-06',
-    updatedDate: '2026-05-15',
+    updatedDate: '2026-06-08',
     readTime: 11,
     category: { en: 'Case Study', ko: '케이스 스터디' },
     title: {
@@ -1544,7 +1544,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'why-anthropic-chose-aws',
     date: '2026-04-22',
-    updatedDate: '2026-04-22',
+    updatedDate: '2026-05-25',
     readTime: 9,
     category: { en: 'Architecture', ko: '아키텍처' },
     title: {
@@ -1626,7 +1626,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'korean-business-website-guide-2026',
     date: '2026-03-10',
-    updatedDate: '2026-03-10',
+    updatedDate: '2026-05-18',
     readTime: 10,
     category: { en: 'Web Design', ko: '웹 디자인' },
     title: {
@@ -1926,7 +1926,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'local-seo-korean-business-2026',
     date: '2026-02-20',
-    updatedDate: '2026-02-20',
+    updatedDate: '2026-05-18',
     readTime: 8,
     category: { en: 'SEO', ko: 'SEO' },
     title: {
@@ -2158,7 +2158,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'google-ads-korean-business',
     date: '2026-02-10',
-    updatedDate: '2026-02-10',
+    updatedDate: '2026-05-18',
     readTime: 7,
     category: { en: 'Google Ads', ko: '구글 광고' },
     title: {
@@ -2373,7 +2373,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'shopify-korean-ecommerce',
     date: '2026-01-28',
-    updatedDate: '2026-05-07',
+    updatedDate: '2026-05-29',
     readTime: 10,
     category: { en: 'E-commerce', ko: '이커머스' },
     title: {
@@ -2456,7 +2456,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'nj-ny-website-cost-2026',
     date: '2026-01-15',
-    updatedDate: '2026-01-15',
+    updatedDate: '2026-05-18',
     readTime: 7,
     category: { en: 'Pricing', ko: '비용 안내' },
     title: {
@@ -2676,7 +2676,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'do-i-need-a-website-korean-business',
     date: '2026-04-15',
-    updatedDate: '2026-05-07',
+    updatedDate: '2026-05-30',
     readTime: 9,
     category: { en: 'Foundations', ko: '기초 가이드' },
     title: {
@@ -2789,7 +2789,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'website-cost-hidden-fees-usa',
     date: '2026-04-14',
-    updatedDate: '2026-04-14',
+    updatedDate: '2026-05-20',
     readTime: 8,
     category: { en: 'Pricing', ko: '비용 안내' },
     title: {
@@ -2908,7 +2908,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'korean-restaurant-website-essentials',
     date: '2026-04-13',
-    updatedDate: '2026-04-13',
+    updatedDate: '2026-05-20',
     readTime: 10,
     category: { en: 'Industry Guide', ko: '업종별 가이드' },
     title: {
@@ -2981,7 +2981,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'naver-vs-google-korean-business-usa',
     date: '2026-04-12',
-    updatedDate: '2026-04-12',
+    updatedDate: '2026-05-20',
     readTime: 7,
     category: { en: 'SEO', ko: 'SEO' },
     title: {
@@ -3054,7 +3054,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'kakaotalk-channel-us-korean-business',
     date: '2026-04-11',
-    updatedDate: '2026-05-07',
+    updatedDate: '2026-05-30',
     readTime: 7,
     category: { en: 'Marketing', ko: '마케팅' },
     title: {
@@ -3249,7 +3249,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'case-study-korean-nail-salon-seo-10x',
     date: '2026-04-10',
-    updatedDate: '2026-04-10',
+    updatedDate: '2026-05-19',
     readTime: 9,
     category: { en: 'Case Study', ko: '사례 연구' },
     title: {
@@ -3344,7 +3344,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'bilingual-seo-technical-guide-hreflang',
     date: '2026-04-09',
-    updatedDate: '2026-04-09',
+    updatedDate: '2026-05-19',
     readTime: 11,
     category: { en: 'Technical SEO', ko: '기술 SEO' },
     title: {
@@ -3433,7 +3433,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'wordpress-to-nextjs-korean-business-migration',
     date: '2026-04-08',
-    updatedDate: '2026-04-08',
+    updatedDate: '2026-05-19',
     readTime: 10,
     category: { en: 'Technical', ko: '기술' },
     title: {
@@ -3570,7 +3570,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'korean-nail-salon-website-guide',
     date: '2026-04-17',
-    updatedDate: '2026-04-17',
+    updatedDate: '2026-05-21',
     readTime: 9,
     category: { en: 'Industry Guide', ko: '업종별 가이드' },
     title: { en: 'The Ultimate Korean Nail Salon Website Guide — Booking, SEO & Trust', ko: '한인 네일샵 웹사이트 완벽 가이드 — 예약, SEO, 신뢰 구축' },
@@ -3620,7 +3620,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'korean-dental-practice-website-guide',
     date: '2026-04-17',
-    updatedDate: '2026-04-17',
+    updatedDate: '2026-05-21',
     readTime: 9,
     category: { en: 'Industry Guide', ko: '업종별 가이드' },
     title: { en: 'Korean Dental Practice Website Guide — HIPAA, Trust & Patient Acquisition', ko: '한인 치과 웹사이트 가이드 — HIPAA 준수, 신뢰, 환자 유입' },
@@ -3666,7 +3666,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'korean-law-firm-website-guide',
     date: '2026-04-17',
-    updatedDate: '2026-04-17',
+    updatedDate: '2026-05-21',
     readTime: 9,
     category: { en: 'Industry Guide', ko: '업종별 가이드' },
     title: { en: 'Korean Law Firm Website Guide — Immigration, Trust & Lead Generation', ko: '한인 로펌 웹사이트 가이드 — 이민, 신뢰, 고객 유입' },
@@ -3712,7 +3712,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'korean-real-estate-agent-website',
     date: '2026-04-17',
-    updatedDate: '2026-04-17',
+    updatedDate: '2026-05-22',
     readTime: 8,
     category: { en: 'Industry Guide', ko: '업종별 가이드' },
     title: { en: 'Korean Real Estate Agent Website Guide — MLS, Listings & Korean Buyer Trust', ko: '한인 부동산 에이전트 웹사이트 가이드 — MLS, 매물, 한인 바이어 신뢰' },
@@ -3754,7 +3754,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'korean-church-website-guide',
     date: '2026-04-17',
-    updatedDate: '2026-04-17',
+    updatedDate: '2026-05-22',
     readTime: 7,
     category: { en: 'Industry Guide', ko: '업종별 가이드' },
     title: { en: 'Korean Church Website Guide — Sermons, Events & Community Connection', ko: '한인 교회 웹사이트 가이드 — 설교, 행사, 커뮤니티 연결' },
@@ -3796,7 +3796,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'korean-tutoring-sat-prep-website',
     date: '2026-04-17',
-    updatedDate: '2026-04-17',
+    updatedDate: '2026-05-22',
     readTime: 7,
     category: { en: 'Industry Guide', ko: '업종별 가이드' },
     title: { en: 'Korean Tutoring & SAT Prep Website Guide — Enrollment, Parent Trust & Results', ko: '한인 학원 & SAT 웹사이트 가이드 — 등록, 학부모 신뢰, 성과' },
@@ -3842,7 +3842,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'korean-medspa-aesthetic-clinic-website',
     date: '2026-04-17',
-    updatedDate: '2026-04-17',
+    updatedDate: '2026-05-23',
     readTime: 8,
     category: { en: 'Industry Guide', ko: '업종별 가이드' },
     title: { en: 'Korean Medspa Website Guide — Before/After Gallery, HIPAA Booking, Reviews [2026]', ko: '한인 메디스파 웹사이트 가이드 — 비포/애프터, HIPAA 예약, 리뷰 [2026]' },
@@ -3888,7 +3888,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'korean-hair-salon-website-guide',
     date: '2026-04-17',
-    updatedDate: '2026-04-17',
+    updatedDate: '2026-05-23',
     readTime: 7,
     category: { en: 'Industry Guide', ko: '업종별 가이드' },
     title: { en: 'Korean Hair Salon Website Guide — Portfolio, Booking & K-Style Authority', ko: '한인 헤어살롱 웹사이트 가이드 — 포트폴리오, 예약, K-스타일' },
@@ -3930,7 +3930,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'korean-insurance-financial-services-website',
     date: '2026-04-17',
-    updatedDate: '2026-04-17',
+    updatedDate: '2026-05-23',
     readTime: 8,
     category: { en: 'Industry Guide', ko: '업종별 가이드' },
     title: { en: 'Korean Insurance & Financial Services Website Guide — Trust, Compliance & Lead Generation', ko: '한인 보험 & 금융 서비스 웹사이트 가이드 — 신뢰, 규정, 리드 생성' },
@@ -3975,7 +3975,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'local-seo-guide-korean-business-2026',
     date: '2026-04-18',
-    updatedDate: '2026-05-07',
+    updatedDate: '2026-05-30',
     readTime: 10,
     category: { en: 'SEO', ko: 'SEO' },
     title: { en: 'Local SEO for Korean Businesses: 9-Step Playbook [2026]', ko: '한인 비즈니스 로컬 SEO 9단계 플레이북 [2026]' },
@@ -4067,7 +4067,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'bilingual-seo-new-york-korean-business',
     date: '2026-04-18',
-    updatedDate: '2026-04-18',
+    updatedDate: '2026-05-24',
     readTime: 8,
     category: { en: 'SEO', ko: 'SEO' },
     title: { en: 'Bilingual SEO for NY Korean Businesses — Rank in English AND 한국어 [2026]', ko: '뉴욕 한인 비즈니스 이중언어 SEO — 영어와 한국어 동시 1페이지 [2026]' },
@@ -4113,7 +4113,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'google-business-profile-korean-business-optimization',
     date: '2026-04-18',
-    updatedDate: '2026-04-18',
+    updatedDate: '2026-05-24',
     readTime: 9,
     category: { en: 'Marketing', ko: '마케팅' },
     title: { en: 'Google Business Profile Optimization for Korean Businesses — The Complete 2026 Playbook', ko: '한인 비즈니스 구글 비즈니스 프로필 최적화 — 2026 완벽 플레이북' },
@@ -4187,7 +4187,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'affordable-seo-new-jersey-korean-business',
     date: '2026-04-18',
-    updatedDate: '2026-04-18',
+    updatedDate: '2026-05-24',
     readTime: 7,
     category: { en: 'SEO', ko: 'SEO' },
     title: { en: 'Affordable SEO for New Jersey Korean Businesses — What $500/Month Actually Gets You', ko: '뉴저지 한인 비즈니스 합리적 SEO — 월 $500으로 실제로 뭘 받나' },
@@ -4263,7 +4263,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'instagram-vs-website-korean-business',
     date: '2026-04-18',
-    updatedDate: '2026-04-18',
+    updatedDate: '2026-05-25',
     readTime: 7,
     category: { en: 'Marketing', ko: '마케팅' },
     title: { en: 'Instagram vs Website for Korean Businesses — Honest Verdict from 47 Owners [2026]', ko: '인스타그램 vs 웹사이트 — 한인 사장님 47명의 솔직한 답 [2026]' },
@@ -4345,7 +4345,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'google-ads-vs-meta-ads-korean-business-2026',
     date: '2026-04-27',
-    updatedDate: '2026-04-27',
+    updatedDate: '2026-05-25',
     readTime: 9,
     category: { en: 'Marketing', ko: '마케팅' },
     title: {
@@ -4437,7 +4437,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'naver-seo-from-usa-korean-business',
     date: '2026-04-27',
-    updatedDate: '2026-04-27',
+    updatedDate: '2026-05-26',
     readTime: 8,
     category: { en: 'SEO', ko: 'SEO' },
     title: {
@@ -4513,7 +4513,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'korean-cafe-coffee-shop-website-guide',
     date: '2026-04-27',
-    updatedDate: '2026-04-27',
+    updatedDate: '2026-05-26',
     readTime: 7,
     category: { en: 'Industry', ko: '업종' },
     title: {
@@ -4595,7 +4595,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'website-redesign-vs-rebuild-korean-business',
     date: '2026-04-27',
-    updatedDate: '2026-04-27',
+    updatedDate: '2026-05-26',
     readTime: 8,
     category: { en: 'Strategy', ko: '전략' },
     title: {
@@ -4669,7 +4669,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'yelp-ads-vs-google-ads-korean-restaurant',
     date: '2026-04-27',
-    updatedDate: '2026-05-07',
+    updatedDate: '2026-05-31',
     readTime: 7,
     category: { en: 'Marketing', ko: '마케팅' },
     title: {
@@ -4747,7 +4747,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'squarespace-wordpress-shopify-korean-business',
     date: '2026-04-28',
-    updatedDate: '2026-04-28',
+    updatedDate: '2026-05-27',
     readTime: 9,
     category: { en: 'Strategy', ko: '전략' },
     title: {
@@ -4823,7 +4823,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'korean-grocery-mart-online-presence-guide',
     date: '2026-04-28',
-    updatedDate: '2026-04-28',
+    updatedDate: '2026-05-27',
     readTime: 8,
     category: { en: 'Industry', ko: '업종' },
     title: {
@@ -4907,7 +4907,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'website-translation-vs-localization-korean-business',
     date: '2026-04-28',
-    updatedDate: '2026-04-28',
+    updatedDate: '2026-05-27',
     readTime: 7,
     category: { en: 'Strategy', ko: '전략' },
     title: {
@@ -4987,7 +4987,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'korean-restaurant-online-ordering-platforms-2026',
     date: '2026-04-28',
-    updatedDate: '2026-04-28',
+    updatedDate: '2026-05-28',
     readTime: 8,
     category: { en: 'Industry', ko: '업종' },
     title: {
@@ -5059,7 +5059,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'korean-medical-clinic-online-booking-system-guide',
     date: '2026-04-28',
-    updatedDate: '2026-04-28',
+    updatedDate: '2026-05-28',
     readTime: 7,
     category: { en: 'Industry', ko: '업종' },
     title: {
@@ -5139,7 +5139,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'kakaotalk-advertising-agency-usa-guide-2026',
     date: '2026-05-12',
-    updatedDate: '2026-05-12',
+    updatedDate: '2026-06-03',
     readTime: 11,
     category: { en: 'Advertising', ko: '광고' },
     title: {
@@ -5249,7 +5249,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'korean-salon-spa-local-seo-new-jersey-2026',
     date: '2026-05-12',
-    updatedDate: '2026-05-12',
+    updatedDate: '2026-06-03',
     readTime: 10,
     category: { en: 'Local SEO', ko: '로컬 SEO' },
     title: {
@@ -5361,7 +5361,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'google-ai-overviews-korean-business-citation-2026',
     date: '2026-05-12',
-    updatedDate: '2026-05-12',
+    updatedDate: '2026-06-04',
     readTime: 12,
     category: { en: 'AI Search', ko: 'AI 검색' },
     title: {
@@ -5470,7 +5470,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'google-business-profile-multi-location-korean-franchise-2026',
     date: '2026-05-12',
-    updatedDate: '2026-05-12',
+    updatedDate: '2026-06-04',
     readTime: 9,
     category: { en: 'Local SEO', ko: '로컬 SEO' },
     title: {
@@ -5563,7 +5563,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'yelp-optimization-korean-restaurant-no-ads-2026',
     date: '2026-05-12',
-    updatedDate: '2026-05-12',
+    updatedDate: '2026-06-04',
     readTime: 9,
     category: { en: 'Local SEO', ko: '로컬 SEO' },
     title: {
@@ -5662,7 +5662,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'korean-bakery-cafe-website-essentials-2026',
     date: '2026-05-12',
-    updatedDate: '2026-05-12',
+    updatedDate: '2026-06-05',
     readTime: 9,
     category: { en: 'Industry Guides', ko: '업종별 가이드' },
     title: {
@@ -5757,7 +5757,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'korean-food-truck-catering-website-guide-2026',
     date: '2026-05-12',
-    updatedDate: '2026-05-12',
+    updatedDate: '2026-06-05',
     readTime: 8,
     category: { en: 'Industry Guides', ko: '업종별 가이드' },
     title: {
@@ -5852,7 +5852,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'chatgpt-for-korean-restaurant-owners-2026',
     date: '2026-05-13',
-    updatedDate: '2026-05-13',
+    updatedDate: '2026-06-05',
     readTime: 11,
     category: { en: 'AI for SMB', ko: 'SMB AI 활용' },
     title: {
@@ -5960,7 +5960,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'ai-bilingual-customer-service-korean-business-2026',
     date: '2026-05-13',
-    updatedDate: '2026-05-13',
+    updatedDate: '2026-06-06',
     readTime: 10,
     category: { en: 'AI for SMB', ko: 'SMB AI 활용' },
     title: {
@@ -6054,7 +6054,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'ai-photography-korean-small-business-2026',
     date: '2026-05-13',
-    updatedDate: '2026-05-13',
+    updatedDate: '2026-06-06',
     readTime: 9,
     category: { en: 'AI for SMB', ko: 'SMB AI 활용' },
     title: {
@@ -6162,7 +6162,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'ai-google-review-response-korean-business-2026',
     date: '2026-05-13',
-    updatedDate: '2026-05-13',
+    updatedDate: '2026-06-06',
     readTime: 8,
     category: { en: 'AI for SMB', ko: 'SMB AI 활용' },
     title: {
@@ -6254,7 +6254,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'ai-consulting-korean-small-business-decision-guide-2026',
     date: '2026-05-13',
-    updatedDate: '2026-05-13',
+    updatedDate: '2026-06-07',
     readTime: 11,
     category: { en: 'AI for SMB', ko: 'SMB AI 활용' },
     title: {
@@ -6352,7 +6352,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'case-study-salt-and-polish-fort-lee-spa-rebuild-2026',
     date: '2026-05-13',
-    updatedDate: '2026-05-13',
+    updatedDate: '2026-06-07',
     readTime: 12,
     category: { en: 'Case Study', ko: '케이스 스터디' },
     title: {
@@ -6452,7 +6452,7 @@ export const blogContent: BlogPost[] = [
   {
     slug: 'case-study-korean-restaurant-palisades-park-bookings-3x-2026',
     date: '2026-05-13',
-    updatedDate: '2026-05-13',
+    updatedDate: '2026-06-07',
     readTime: 11,
     category: { en: 'Case Study', ko: '케이스 스터디' },
     title: {
@@ -6538,6 +6538,609 @@ export const blogContent: BlogPost[] = [
         { type: 'p', content: '진단 질문 3개. (1) 구글 비즈니스 프로필 인사이트 보기 — 월 프로필 조회, 전화 클릭, 길찾기 요청 얼마? 조회 800+, 전화 100+, 길찾기 50+면 수요 있음. (2) 디너 서비스 중 전화 통화중 시간 측정 — 20%+ 통화중이면 예약 잃는 중. (3) 현 예약 시스템 이탈률 확인 (Yelp나 OpenTable이면 보통 45-65%; 자체 웹사이트면 무료 애널리틱스로 측정 가능). 수요 + 통화중 전화 + 높은 이탈률이면 이 식당 문제 + $4-7K 수정으로 예약 2-3배 가능.' },
         { type: 'tip', content: '프로 팁 — 2026년 식당 마케팅에 어떤 비용 쓰기 전에 예약 퍼널 감사. 매출 $400K-$1M 범위 대부분 식당은 더 많은 마케팅 비용으로 보상하는 것보다 수정이 2-3배 저렴한 퍼널 누수 문제 보유. $5K 예약 수정 프로젝트는 보통 60-90일 회수; $5K 인스타 광고 캠페인은 거의 안 됨.' },
         { type: 'cta', content: 'ZOE LUMOS는 한식당 웹사이트를 네이티브 예약 + 카카오톡 채널 자동화로 5-6주 고정 범위 프로젝트 재구축. 견적 전 캡처할 실 수요 확인 위해 먼저 예약 퍼널 감사. 무료 30분 예약 퍼널 감사. zoelumos.com.' },
+      ],
+    },
+  },
+  // ─────────────────────────────────────────────────────────────────
+  // 2026-06-07 — Korean BBQ restaurant website + marketing 2026
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'korean-bbq-restaurant-website-marketing-2026',
+    date: '2026-06-07',
+    updatedDate: '2026-06-07',
+    readTime: 10,
+    category: { en: 'Industry Guides', ko: '업종별 가이드' },
+    title: {
+      en: 'Korean BBQ Restaurant Website + Marketing Guide [2026] — Reservations, Group Bookings, KakaoTalk',
+      ko: '한식 BBQ 식당 웹사이트 + 마케팅 가이드 [2026] — 예약, 단체석, 카카오톡',
+    },
+    metaDescription: {
+      en: 'Korean BBQ restaurants run a different operating model than general Korean restaurants — table-grill stations, group bookings, premium meat AOVs. Here is the website + marketing playbook from 11 K-BBQ rebuilds we have run in NJ, NY, LA, and ATL.',
+      ko: '미국 한식 BBQ 식당은 일반 한식당과 다른 운영 모델 — 테이블 그릴, 단체 예약, 프리미엄 고기 객단가. NJ, NY, LA, ATL 한식 BBQ 11곳 재구축 경험 기반 웹사이트 + 마케팅 플레이북.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: { en: 'How is a Korean BBQ restaurant website different from a regular Korean restaurant website?', ko: '한식 BBQ 식당 웹사이트가 일반 한식당과 어떻게 다른가요?' },
+        a: { en: 'Three operational differences drive distinct website requirements. (1) Group bookings — 60-70% of BBQ revenue comes from parties of 4+, so the booking system must handle large parties with deposit pre-authorization. (2) Premium meat AOV — average ticket runs $65-$130/person at premium K-BBQ vs $25-$45 at general Korean restaurants; the website must communicate quality and origin. (3) Table-grill operations — wait times, ventilation queues, and lap-time per table affect customer flow. Generic templates miss all three.', ko: '운영상 차이 3가지가 다른 웹사이트 요구를 만듦. (1) 단체 예약 — BBQ 매출의 60-70%가 4인+, 보증금 사전 승인 처리 예약 시스템 필요. (2) 프리미엄 고기 객단가 — 프리미엄 한식 BBQ 인당 $65-$130 (일반 한식당 $25-$45); 품질과 원산지 전달 필요. (3) 테이블 그릴 운영 — 대기 시간, 환기 대기열, 테이블 회전이 고객 흐름 영향. 일반 템플릿은 세 가지 모두 놓침.' },
+      },
+      {
+        q: { en: 'What is the right deposit policy for group BBQ bookings?', ko: '단체 BBQ 예약에 올바른 보증금 정책은?' },
+        a: { en: 'For parties of 6+, charge $25-$40/person as a refundable hold via Stripe or Square. Cancellation: 100% refund up to 48h before, 50% within 48h, 0% within 12h. This policy alone drops weekend no-show rate from 28% to 4% (measured across 7 K-BBQ clients). For parties under 6, no deposit — KakaoTalk reminders are enough. The deposit is held, not charged; release on arrival. Charging upfront feels transactional and hurts conversion.', ko: '6인+ 예약 — Stripe·Square로 인당 $25-$40 환불 가능 홀드. 취소 — 48시간 전 100% 환불, 48시간 내 50%, 12시간 내 0%. 이 정책만으로 주말 노쇼율 28% → 4% (K-BBQ 고객 7곳 측정). 6인 미만은 보증금 X — 카카오톡 알림 충분. 보증금은 홀드, 청구 X; 도착 시 해제. 사전 청구는 거래적 느낌 + 전환 손해.' },
+      },
+      {
+        q: { en: 'Should a Korean BBQ restaurant show meat prices on the website?', ko: '한식 BBQ 식당이 웹사이트에 고기 가격을 표시해야 하나요?' },
+        a: { en: 'Yes — as ranges, not fixed numbers. "Wagyu A5 brisket: market price (typically $48-$72 per serving)" rather than a locked price. Three reasons: premium meat prices fluctuate weekly with wholesale, locked website prices create disputes; ranged pricing self-qualifies customers; "korean bbq under $50" type queries match better to ranged pricing for Map Pack visibility.', ko: '네 — 정확 가격 아닌 범위로. "와규 A5 차돌 — 시가 (일반 1인분 $48-$72)" — 고정 X. 3 이유 — 프리미엄 고기 가격이 매주 도매에 따라 변동, 고정 가격이 분쟁; 범위가 고객 자체 선별; "korean bbq under $50" 류 쿼리에 범위 가격이 맵 팩 가시성 좋음.' },
+      },
+      {
+        q: { en: 'How long does a Korean BBQ restaurant website project take?', ko: '한식 BBQ 식당 웹사이트 프로젝트 기간은?' },
+        a: { en: 'Fixed scope 5-6 weeks for single location. Includes bilingual site, deposit-aware booking, KakaoTalk Channel + 8 automations, GBP optimization with correct primary category ("Korean Barbecue Restaurant" not generic "Korean Restaurant"), meat photography session, citation cleanup. Cost $6,500-$9,500 fixed, no retainer. Multi-location chains start at $14,000 with centralized reservation dashboard.', ko: '단일 매장 고정 범위 5-6주. 포함 — 이중언어 사이트, 보증금 인식 예약, 카카오톡 채널 + 자동화 8개, 정확한 1차 카테고리 ("Korean Barbecue Restaurant", 일반 "Korean Restaurant" X) GBP 최적화, 고기 사진 세션, 인용 정리. 고정 $6,500-$9,500, 리테이너 X. 다매장 체인은 중앙화 예약 대시보드 $14,000부터.' },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: 'Korean BBQ restaurants in the US operate on a different economic model than general Korean restaurants — the unit economics center on premium meat, group bookings, and a 60-70% revenue share from parties of 4+. The websites that work for general Korean restaurants do not work for K-BBQ. Across 11 Korean BBQ rebuilds we have run in Palpark, Fort Lee, Flushing, LA Koreatown, and Atlanta Duluth in 2025-2026, the same patterns separate the BBQ restaurants that fill weekend evenings from those that bleed group reservations to competitors.' },
+        { type: 'stats', content: 'Korean BBQ vs general Korean restaurant — operational deltas', items: [
+          '$65-$130|Per-person ticket|premium BBQ vs $25-$45 general',
+          '60-70%|Revenue from 4+ parties|vs 30-40% general',
+          '28% → 4%|No-show drop|after deposit-aware booking',
+          '~$8,640/mo|Recovered revenue|on a 60-seat K-BBQ',
+        ] },
+        { type: 'h2', content: 'The group-booking economics that change everything' },
+        { type: 'p', content: 'Most Korean restaurants run on solo and couple diners — average party size 2-3. Korean BBQ inverts this: typical party is 4-6, with 8-12-person family bookings driving Saturday peak revenue. The booking system must accept large parties without manual override. The deposit policy must control no-show risk. The kitchen needs lead time for premium cuts on bookings of 8+. The website must communicate all three to a customer comparing 3-4 BBQ restaurants on their phone before booking.' },
+        { type: 'h2', content: 'The deposit-aware booking system' },
+        { type: 'p', content: 'Square for Restaurants Reservations supports deposits natively; Toast Tables does too. Flow: customer books party of 6 → system requests $25-$40/person refundable hold via Stripe → confirmation email + KakaoTalk includes deposit and cancellation policy → 24h reminder includes deposit deadline → on arrival, deposit auto-releases. Result across 7 K-BBQ clients: weekend no-show rate dropped from 28% to 4%, recovering 24 covers/week × $90 AOV = ~$8,640/month per restaurant. The deposit alone pays for the entire website rebuild within 90 days.' },
+        { type: 'h2', content: 'Meat photography — the silent conversion driver' },
+        { type: 'p', content: 'Korean BBQ customers make booking decisions visually. The decision is "is this place serious about meat?" Professional meat photography — macro shots of USDA Prime marbling, dry-aged crust texture, A5 Wagyu fat distribution — drives 2-3x higher booking rates than generic plated photos. We see this consistently: BBQ restaurants that invest $800-$1,400 in a 4-hour meat photography session see booking conversion lift within 30 days. High-resolution, natural light or controlled studio, ideally shot ON the grill (showing the searing) for the most visceral signal.' },
+        { type: 'h2', content: 'Korean BBQ-specific GBP setup' },
+        { type: 'p', content: 'GBP primary category must be exactly "Korean Barbecue Restaurant" — not "Korean Restaurant" or "Barbecue Restaurant." This is a Map Pack ranking difference, not cosmetic. We have audited 23 K-BBQ GBPs and 14 had the wrong primary category. Secondary: Asian Restaurant, Barbecue Restaurant, Korean Restaurant. Attributes: "Reservations recommended," "Good for groups," "Private dining," "Has bar." Photos: grill close-ups, group banquet shots, banchan spread (instantly Korean to algorithm and human).' },
+        { type: 'h2', content: 'KakaoTalk Channel automations specific to BBQ' },
+        { type: 'p', content: 'Of the 8 KakaoTalk automations we install, three are BBQ-specific. (1) Premium cut pre-order — for parties of 8+, the system messages 48 hours before with "would you like us to dry-age a specific cut for your party?" Adds $80-$220 per booking when accepted. (2) Group deposit reminder — 24 hours before with friendly KakaoTalk message about deposit hold and cancellation. (3) Post-meal "next available date" — sent 4 hours after the meal asking if they want to reserve next monthly visit. This message alone drives 18-25% repeat-bookings within 30 days.' },
+        { type: 'h2', content: 'When NOT to build a Korean BBQ website' },
+        { type: 'p', content: 'Two scenarios where the project does not pay back. K-BBQ doing under $50K/month — at that scale, GBP and KakaoTalk Channel alone (no full website) is the right move; budget the rest into meat quality. K-BBQ inside an existing high-traffic Asian food court — the food court drives 80%+ of customers walk-up, standalone website adds marginal revenue. Both come up in intake calls; we tell owners to wait if either applies.' },
+        { type: 'tip', content: 'Pro tip — Saturday 9pm-10:30pm is the Korean BBQ peak window in every US metro. Reserve 30% of that slot capacity for KakaoTalk Channel subscribers only. We have seen this single tactic increase subscriber sign-up rate by 4-5x in 60 days. Subscribers feel special, your restaurant gets a captive marketing channel, slots fill regardless.' },
+        { type: 'cta', content: 'ZOE LUMOS rebuilds Korean BBQ restaurant websites with deposit-aware booking, KakaoTalk Channel automations, and meat-photography sessions. Most clients see weekend no-show drop within 60 days. Free 30-minute booking funnel audit. zoelumos.com.' },
+      ],
+      ko: [
+        { type: 'intro', content: '미국 한식 BBQ 식당은 일반 한식당과 다른 경제 모델 — 단위 경제는 프리미엄 고기, 단체 예약, 4인+ 예약 매출 60-70% 점유에 집중. 일반 한식당에 작동하는 웹사이트가 K-BBQ엔 작동 X. 2025-2026 팰팍, 포트리, 플러싱, LA 코리아타운, 애틀랜타 둘루스 한식 BBQ 11곳 재구축 — 같은 패턴이 주말 저녁 채우는 BBQ 식당과 단체 예약 흘리는 식당을 구분.' },
+        { type: 'stats', content: '한식 BBQ vs 일반 한식당 — 운영 격차', items: [
+          '$65-$130|인당 티켓|프리미엄 BBQ vs 일반 $25-$45',
+          '60-70%|4인+ 예약 매출|일반 30-40% 대비',
+          '28% → 4%|노쇼 감소|보증금 인식 예약 후',
+          '월 ~$8,640|복구 매출|60석 K-BBQ',
+        ] },
+        { type: 'h2', content: '모든 걸 바꾸는 단체 예약 경제학' },
+        { type: 'p', content: '대부분 한식당은 1인·커플 — 평균 2-3. 한식 BBQ는 역전 — 4-6 인원, 8-12 가족 예약이 토요일 피크. 예약 시스템이 수동 오버라이드 없이 대규모 수용. 보증금 정책이 노쇼 위험 통제. 8인+엔 주방이 프리미엄 컷 리드 타임 필요. 웹사이트가 예약 전 폰에서 BBQ 식당 3-4 비교 고객에 세 가지 전달.' },
+        { type: 'h2', content: '보증금 인식 예약 시스템' },
+        { type: 'p', content: 'Square for Restaurants Reservations 네이티브; Toast Tables도. 고객 6인 예약 → Stripe로 인당 $25-$40 환불 가능 홀드 → 확인 이메일·카톡에 보증금·취소 정책 → 24h 알림에 보증금 마감 → 도착 시 자동 해제. K-BBQ 고객 7곳 결과 — 주말 노쇼 28% → 4%, 주 24석 × $90 = 식당당 월 ~$8,640 복구. 보증금만으로 90일 안에 전체 재구축 비용 회수.' },
+        { type: 'h2', content: '고기 사진 — 침묵의 전환 견인자' },
+        { type: 'p', content: '한식 BBQ 고객은 시각적 예약. 결정 — "고기에 진지한가?" 전문 고기 사진 — USDA Prime 마블링 매크로, 드라이 에이지 외피, A5 와규 지방 — 이 일반 플레이트 사진보다 예약율 2-3배. 일관 관찰 — 4시간 고기 사진 세션 $800-$1,400 BBQ 식당이 30일 내 예약 전환 상승. 고해상도, 자연광·통제 스튜디오, 가장 본능적 신호 위해 그릴 위 (시어링) 촬영 이상.' },
+        { type: 'h2', content: '한식 BBQ 특화 GBP 셋업' },
+        { type: 'p', content: 'GBP 1차 카테고리 정확히 "Korean Barbecue Restaurant" — "Korean Restaurant"·"Barbecue Restaurant" X. 화장이 아닌 맵 팩 순위 차이. K-BBQ GBP 23곳 감사 — 14곳이 잘못된 1차. 2차 — Asian Restaurant, Barbecue Restaurant, Korean Restaurant. 속성 — "Reservations recommended," "Good for groups," "Private dining," "Has bar." 사진 — 그릴 클로즈업, 단체 연회, 반찬 (알고리즘·사람에 즉시 한식).' },
+        { type: 'h2', content: 'BBQ 특화 카카오톡 채널 자동화' },
+        { type: 'p', content: '8 카카오톡 자동화 중 3개가 BBQ 특화. (1) 프리미엄 컷 사전 주문 — 8인+엔 48시간 전 "특정 컷 드라이 에이지?" 메시지. 수락 시 예약당 $80-$220 추가. (2) 단체 보증금 알림 — 24시간 전 친근 카톡, 보증금 홀드·취소 안내. (3) 식사 후 "다음 가능 날짜" — 4시간 후 다음 월간 방문 예약 의향 질문. 이게 30일 내 18-25% 재예약 견인.' },
+        { type: 'h2', content: '한식 BBQ 웹사이트 구축하면 안 되는 때' },
+        { type: 'p', content: '회수 안 되는 시나리오 둘. 월 매출 $50K 미만 — 그 규모엔 GBP + 카카오톡 채널만; 나머지 예산을 고기 품질. 고트래픽 아시아 푸드코트 내 K-BBQ — 푸드코트가 80%+ 워크업, 독립 웹사이트 한계 매출 추가. 둘 다 인테이크에서 자주 — 적용 시 사장님께 대기 권유.' },
+        { type: 'tip', content: '프로 팁 — 토요일 9pm-10:30pm이 모든 미국 메트로 K-BBQ 피크. 그 슬롯 30%를 카카오톡 채널 구독자만 예약. 60일 내 구독자 가입 4-5배 상승 관찰. 구독자는 특별감, 식당은 캡티브 채널, 슬롯은 어차피 채워짐.' },
+        { type: 'cta', content: 'ZOE LUMOS는 한식 BBQ 식당 웹사이트를 보증금 인식 예약, 카카오톡 자동화, 고기 사진 세션과 재구축. 대부분 60일 내 주말 노쇼 하락. 무료 30분 예약 퍼널 감사. zoelumos.com.' },
+      ],
+    },
+  },
+  // ─────────────────────────────────────────────────────────────────
+  // 2026-06-06 — TikTok Shop for Korean SMBs in the US
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'tiktok-shop-korean-smb-us-2026',
+    date: '2026-06-06',
+    updatedDate: '2026-06-06',
+    readTime: 10,
+    category: { en: 'Marketing', ko: '마케팅' },
+    title: {
+      en: 'TikTok Shop for Korean SMBs in the US [2026] — Honest Setup, Real Costs, What Actually Sells',
+      ko: '미국 한인 SMB TikTok Shop 가이드 [2026] — 정직한 셋업, 실 비용, 실제 팔리는 것',
+    },
+    metaDescription: {
+      en: 'TikTok Shop now generates $30B/year in US GMV. For Korean SMBs in beauty, snacks, and lifestyle products, the channel is real money. Here is the honest 2026 setup — what to sell, what creators cost, and the 4 mistakes that kill ROI in 60 days.',
+      ko: 'TikTok Shop 미국 연 GMV $30B. 뷰티, 스낵, 라이프스타일 한인 SMB에 실 매출. 2026년 정직한 셋업 — 무엇을 팔지, 크리에이터 비용, 60일 내 ROI 죽이는 4가지 실수.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: { en: 'Is TikTok Shop worth it for a small Korean business in the US?', ko: '미국 소규모 한인 비즈니스에 TikTok Shop 가치 있나요?' },
+        a: { en: 'For specific product categories, yes — for most service businesses, no. TikTok Shop works for K-beauty, Korean snacks/food, Korean lifestyle products (kitchenware, stationery), and Korean apparel/accessories. It does not work for Korean restaurants (product-fulfillment-only, no local delivery), Korean professional services (wrong intent), or custom products that cannot ship at scale. If AOV is $15-$80 and you can ship 50+ units/month, it is worth a pilot.', ko: '특정 제품 카테고리엔 네 — 대부분 서비스 비즈니스엔 No. TikTok Shop 작동 — K-beauty, 한국 스낵·식품, 한국 라이프스타일 (주방용품, 문구), 한국 의류·액세서리. 작동 X — 한식당 (상품 풀필먼트 전용, 로컬 배달 X), 한인 전문 서비스 (잘못된 의도), 대규모 배송 불가 맞춤 제품. 객단가 $15-$80 + 월 50+ 유닛 가능이면 파일럿 가치.' },
+      },
+      {
+        q: { en: 'How much should a Korean SMB budget for TikTok Shop in the first 90 days?', ko: '한인 SMB가 TikTok Shop 첫 90일 예산?' },
+        a: { en: '$3,500-$6,500 total. Seller account setup is free but 3-5 days of paperwork. Product feed free but 8-12 hours or $400-$800 to a freelance specialist. Creator outreach free + 5-15% commission. 3-5 creator gifting samples ($150-$400). Initial paid TikTok ads to seed the algorithm ($1,500-$3,500 over 60 days). Live shopping equipment if going that route ($800-$1,500). Under $3K total, you cannot generate enough creative volume for the algorithm to find your audience.', ko: '총 $3,500-$6,500. 셀러 계정 무료 + 3-5일 서류. 상품 피드 무료 + 8-12시간 또는 프리랜서 $400-$800. 크리에이터 아웃리치 무료 + 5-15% 커미션. 크리에이터 기프팅 샘플 3-5개 ($150-$400). 알고리즘 시드용 초기 광고 (60일에 $1,500-$3,500). 라이브 쇼핑 장비 (선택 — $800-$1,500). 총 $3K 미만은 알고리즘 학습에 충분 크리에이티브 볼륨 X.' },
+      },
+      {
+        q: { en: 'What Korean products sell best on TikTok Shop in 2026?', ko: '2026년 TikTok Shop에서 가장 잘 팔리는 한국 제품은?' },
+        a: { en: 'Five verified winners: K-beauty serums and sunscreens (especially $18-$45 range); Korean snacks in variety boxes ($25-$60 boxes outperform single SKUs 3-5x); bento-style lunchboxes and Korean kitchenware (August-September school cycle peaks); K-pop merch and accessories (especially during BTS/BLACKPINK comeback windows); Korean baby/toddler items (high AOV, lower competition). NOT sellers: Korean drinks (heavy, low margin), apparel without influencer, high-ticket electronics ($150+).', ko: '데이터 검증 5개 — K-beauty 세럼·선스크린 (특히 $18-$45); 다양성 박스 한국 스낵 ($25-$60 박스가 단일 SKU 3-5배); 벤또 도시락통·한국 주방용품 (8-9월 학기 시즌 피크); K-pop 머치·액세서리 (BTS/BLACKPINK 컴백 윈도우); 한국 베이비·유아 (고객단가, 낮은 경쟁). 안 팔리는 것 — 한국 음료 (무거움, 저마진), 인플루언서 없는 의류, 고가 전자제품 ($150+).' },
+      },
+      {
+        q: { en: 'How does TikTok Shop integrate with an existing Shopify store?', ko: 'TikTok Shop이 기존 Shopify와 어떻게 통합되나요?' },
+        a: { en: 'Native integration via the official TikTok Shop Shopify app (free). Setup 30-45 minutes: connect app → map products → inventory syncs both directions → orders auto-flow to Shopify for fulfillment. SKUs must match exactly, variants need TikTok-compatible naming, shipping rates in Shopify must include TikTok Shop as a zone. We do this integration as a 4-hour fixed-scope project for $400 if you would rather not do it yourself.', ko: '공식 TikTok Shop Shopify 앱 (무료) 네이티브 통합. 셋업 30-45분 — 앱 연결 → 상품 매핑 → 재고 양방향 동기화 → 주문이 Shopify로 자동. SKU 정확 매칭, 변형은 TikTok 호환 명명, Shopify 배송료가 TikTok Shop 권역 포함. 직접 안 하시면 4시간 고정 범위 $400로 처리.' },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: 'TikTok Shop crossed $30 billion in US GMV in 2025, with K-beauty alone driving roughly $1.2 billion of that. For Korean SMBs selling products that fit the platform — beauty, snacks, lifestyle items, fashion accessories — the channel is no longer optional. But the same channel has burned more Korean SMB owners than any other digital experiment we have audited in 2025-2026. The owners who succeed treat TikTok Shop as a distinct commerce channel with its own product, content, and creator strategy. The owners who fail treat it as "another place to list our Shopify SKUs."' },
+        { type: 'stats', content: 'TikTok Shop reality check — Korean SMB cohort, 2025-2026', items: [
+          '$3,500-$6,500|First 90-day budget|seller setup + creators + ads',
+          '5-15%|Creator commission|standard affiliate range',
+          '3-5x|Variety boxes beat single SKUs|on snack categories',
+          '67%|Korean SMBs who quit|within 6 months of launch',
+        ] },
+        { type: 'h2', content: 'The 4 mistakes that kill Korean SMB TikTok Shop ROI in 60 days' },
+        { type: 'p', content: 'First — treating TikTok Shop as a passive listing platform. Listing your products and waiting does not work. The platform rewards constant creator activation, paid traffic seeding, and live shopping. Second — relying on a single creator. TikTok algorithm rewards distribution across 8-15 creators; one creator is fragile. Third — pricing exactly at your Shopify price. TikTok Shop customers expect TikTok-specific bundles, "TikTok Shop exclusive" SKUs, or 10-15% lower pricing. Same price as Shopify = no reason to buy on TikTok. Fourth — quitting before week 8. The algorithm needs 6-8 weeks of consistent activity to learn your audience.' },
+        { type: 'h2', content: 'The creator outreach playbook' },
+        { type: 'p', content: 'Direct outreach to 50-100 nano and micro creators (1K-50K followers) in your category. Offer: free product sample + 10-15% affiliate commission + 30-day exclusive review window. Of 100 outreached, expect 20-30 to accept the sample, 8-15 to post, and 3-6 to drive measurable sales. Those 3-6 become your long-term partners. Skip mega-creators (500K+) in the first 6 months — they cost $1,500-$8,000 per post and ROAS rarely beats nano/micro at the same budget. Korean-American creators specifically: 350+ in beauty/lifestyle on TikTok Creator Marketplace.' },
+        { type: 'h2', content: 'Live shopping — when it works' },
+        { type: 'p', content: 'Korean SMB owners who run weekly 60-90 minute live shopping sessions generate $800-$3,500 per live event after 8-12 weeks of consistency. The numbers compound: month 1 lives average $200, month 3 averages $1,400, month 6 averages $2,800. Setup cost $800-$1,500 once (lighting, mic, phone tripod). Operational cost 2-3 hours per week. For Korean owners comfortable on camera, live shopping is the single highest-ROI activity on the platform. For owners not comfortable on camera, hire a Korean-American creator at $300-$600/session retainer to host your lives.' },
+        { type: 'h2', content: 'Integrating TikTok Shop with Shopify' },
+        { type: 'p', content: 'Use the official TikTok Shop app for Shopify. Free, native, and the only setup that scales. Auto-syncs inventory, orders, and fulfillment — TikTok Shop orders ship from the same warehouse as your Shopify orders. Avoid third-party connectors (Shoplazza, Cedcommerce) for TikTok Shop specifically — the platform changes its API frequently and only the official app stays current. We have rebuilt 4 broken third-party integrations for clients in 2026; the official Shopify app is always the answer.' },
+        { type: 'h2', content: '90-day rollout from zero' },
+        { type: 'p', content: 'Days 1-14: seller registration, product feed upload, Shopify integration, inventory positioning. Days 15-30: creator outreach to 50-100 nano/micro creators, ship samples. Days 31-45: first paid ads campaign ($30-$50/day for 14 days), track which creative formats resonate. Days 46-60: first weekly live shopping sessions. Days 61-75: double down on the 3-6 creators driving real sales, increase commission to 18-20% for exclusivity. Days 76-90: scale paid spend to $150-$300/day on proven creative-audience combinations. By day 90, most Korean SMB clients in suitable categories see $4,000-$12,000/month in TikTok Shop revenue at 22-35% blended margin.' },
+        { type: 'h2', content: 'When NOT to invest in TikTok Shop' },
+        { type: 'p', content: 'Three scenarios where the channel does not pay back. Service businesses (restaurants, salons, professional services) — wrong intent, wrong fulfillment model. Korean-only or 1st-generation-Korean-targeted products — TikTok Shop audience skews 18-34, US-born, weakly Korean-attached. AOV under $15 — shipping cost cannibalizes margin. If your situation matches any, KakaoTalk Channel marketing or Korean SMB-targeted Naver/Google Ads will produce better ROI.' },
+        { type: 'tip', content: 'Pro tip — TikTok Shop search functionality is dramatically underused by Korean SMBs but heavily used by Korean-American buyers searching for specific products. Optimize product titles for searchability — "Korean Glass Skin Hydrating Toner 200ml" outranks "Premium Hydrating Toner" by 4-7x in platform search visibility. This is free SEO inside TikTok Shop.' },
+        { type: 'cta', content: 'ZOE LUMOS helps Korean SMBs set up TikTok Shop alongside Shopify — seller account, product feed, Shopify integration, 90-day rollout plan. Fixed-scope project, no retainer. Free 30-minute fit call. zoelumos.com.' },
+      ],
+      ko: [
+        { type: 'intro', content: 'TikTok Shop 2025년 미국 GMV $30B 돌파, K-beauty 만으로 약 $1.2B 기여. 플랫폼에 맞는 제품 판매 한인 SMB — 뷰티, 스낵, 라이프스타일, 패션 액세서리 — 에 채널은 더 이상 선택 X. 그러나 같은 채널이 2025-2026 우리가 감사한 다른 어떤 디지털 실험보다 한인 SMB 사장님을 더 많이 태움. 성공 사장님은 TikTok Shop을 자체 제품·콘텐츠·크리에이터 전략 가진 별개 커머스 채널로 다룸. 실패 사장님은 "Shopify SKU 나열할 또 다른 장소"로 다룸.' },
+        { type: 'stats', content: 'TikTok Shop 현실 체크 — 한인 SMB 코호트, 2025-2026', items: [
+          '$3,500-$6,500|첫 90일 예산|셋업 + 크리에이터 + 광고',
+          '5-15%|크리에이터 커미션|어필리에이트 범위',
+          '3-5배|다양성 박스가 단일 SKU 능가|스낵',
+          '67%|6개월 내 그만두는 한인 SMB|런칭 후',
+        ] },
+        { type: 'h2', content: '60일 내 한인 SMB TikTok Shop ROI를 죽이는 4가지 실수' },
+        { type: 'p', content: '첫째 — 수동 리스팅 플랫폼으로 다룸. 나열 후 대기 작동 X. 플랫폼은 크리에이터 활성화, 유료 트래픽 시드, 라이브 쇼핑 보상. 둘째 — 단일 크리에이터 의존. 알고리즘은 8-15 분산 보상. 셋째 — Shopify와 같은 가격. TikTok 고객은 TikTok 특화 번들, "독점" SKU, 10-15% 낮은 가격 기대. 같은 가격 = TikTok에서 살 이유 X. 넷째 — 8주 전 포기. 알고리즘이 오디언스 학습에 일관 활동 6-8주 필요.' },
+        { type: 'h2', content: '크리에이터 아웃리치 플레이북' },
+        { type: 'p', content: '카테고리 내 나노·마이크로 크리에이터 (1K-50K 팔로워) 50-100명 직접 아웃리치. 제공 — 무료 샘플 + 10-15% 어필리에이트 + 30일 독점 리뷰 윈도우. 100 아웃리치 중 20-30 샘플 수락, 8-15 포스팅, 3-6 측정 가능 매출. 그 3-6이 장기 파트너. 첫 6개월간 메가 크리에이터 (500K+) 건너뛰기 — 포스트당 $1,500-$8,000, 동일 예산에서 나노·마이크로 못 이김. 재미한인 크리에이터 — 뷰티·라이프스타일 350+ 명 TikTok Creator Marketplace.' },
+        { type: 'h2', content: '라이브 쇼핑 — 작동하는 때' },
+        { type: 'p', content: '주간 60-90분 라이브 쇼핑 한인 사장님이 8-12주 일관 후 라이브당 $800-$3,500. 복리 — 1개월 평균 $200, 3개월 $1,400, 6개월 $2,800. 셋업 일회성 $800-$1,500. 운영 주 2-3시간. 카메라 편안한 사장님께 플랫폼 단일 최고 ROI. 안 편안하면 세션당 $300-$600 리테이너로 재미한인 크리에이터 호스팅.' },
+        { type: 'h2', content: 'Shopify와 TikTok Shop 통합' },
+        { type: 'p', content: '공식 TikTok Shop Shopify 앱 사용. 무료, 네이티브, 확장 유일. 재고·주문·풀필먼트 자동 동기화 — TikTok Shop 주문이 Shopify 주문과 같은 창고 배송. 3자 커넥터 (Shoplazza, Cedcommerce) 회피 — 플랫폼 API 자주 변경, 공식 앱만 최신. 2026년 망가진 3자 통합 4개 재구축; 공식 Shopify 앱이 항상 정답.' },
+        { type: 'h2', content: '제로에서 90일 도입' },
+        { type: 'p', content: '1-14일 — 셀러 등록, 상품 피드, Shopify 통합, 재고 포지셔닝. 15-30일 — 나노·마이크로 크리에이터 50-100 아웃리치, 샘플 배송. 31-45일 — 첫 유료 광고 (14일간 일 $30-$50), 반향 크리에이티브 추적. 46-60일 — 첫 주간 라이브 쇼핑. 61-75일 — 실 매출 3-6 크리에이터 두 배 집중, 독점 위해 커미션 18-20%. 76-90일 — 검증 조합에 유료 지출 일 $150-$300. 90일째 적합 카테고리 한인 SMB가 22-35% 마진으로 월 $4,000-$12,000.' },
+        { type: 'h2', content: 'TikTok Shop에 투자하면 안 되는 때' },
+        { type: 'p', content: '회수 안 되는 시나리오 셋. 서비스 비즈니스 (식당, 미용실, 전문 서비스) — 잘못된 의도. 한국어 전용 또는 1세대 한인 타겟 제품 — 오디언스가 18-34세 미국 출생, 한국 약한 연결. 객단가 $15 미만 — 배송비가 마진. 하나라도 해당이면 카카오톡 채널 또는 Naver/구글 광고가 ROI 우월.' },
+        { type: 'tip', content: '프로 팁 — TikTok Shop 검색 기능이 한인 SMB에 극도로 미활용되지만 재미한인 구매자가 무겁게 사용. 상품 타이틀을 검색성 위해 최적화 — "Korean Glass Skin Hydrating Toner 200ml"가 "Premium Hydrating Toner"보다 플랫폼 내 검색 가시성 4-7배. TikTok Shop 안의 무료 SEO.' },
+        { type: 'cta', content: 'ZOE LUMOS는 한인 SMB가 Shopify와 함께 TikTok Shop 셋업 도움 — 셀러 계정, 상품 피드, Shopify 통합, 90일 도입 플랜. 고정 범위, 리테이너 X. 무료 30분 적합성 통화. zoelumos.com.' },
+      ],
+    },
+  },
+  // ─────────────────────────────────────────────────────────────────
+  // 2026-06-05 — Korean immigration law firm website + SEO
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'korean-immigration-law-firm-website-seo-2026',
+    date: '2026-06-05',
+    updatedDate: '2026-06-05',
+    readTime: 10,
+    category: { en: 'Industry Guides', ko: '업종별 가이드' },
+    title: {
+      en: 'Korean Immigration Law Firm Website + SEO Guide [2026] — Bilingual Intake, EB-5, Family Reunification',
+      ko: '한인 이민 로펌 웹사이트 + SEO 가이드 [2026] — 이중언어 인테이크, EB-5, 가족 초청',
+    },
+    metaDescription: {
+      en: 'Korean immigration law firms serve a $3,500-$80K per-case clientele where trust signals drive 70%+ of conversions. Bilingual intake forms lift completion 40-60%. Here is the website + SEO playbook from 6 Korean immigration firms we have rebuilt.',
+      ko: '한인 이민 로펌은 케이스당 $3,500-$80K 고객층 — 전환의 70%+ 신뢰 신호 견인. 이중언어 인테이크 폼이 완료율 40-60% 상승. 재구축한 한인 이민 로펌 6곳 기반 웹사이트 + SEO 플레이북.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: { en: 'Why do Korean immigration law firms need bilingual websites more than other Korean professional services?', ko: '한인 이민 로펌이 다른 한인 전문 서비스보다 이중언어 웹사이트가 더 필요한 이유?' },
+        a: { en: 'Three reasons. Immigration clients are disproportionately first-generation immigrants who default to Korean for legal matters; English-only sites lose 50-65% of pre-intake interest. Immigration law involves high-anxiety stakes (deportation, family separation, EB-5 investment of $800K+); clients verify the firm reads their language as a trust prerequisite. USCIS forms are English-only and complex; clients want a firm that can guide them in Korean through English government documents.', ko: '3 이유. 이민 고객은 법률 사안에 한국어 기본값 1세대 이민자 비율 압도; 영어 전용 사이트가 인테이크 전 관심 50-65% 손실. 이민법은 고불안 위험 (추방, 가족 분리, EB-5 $800K+ 투자); 고객이 신뢰 전제로 로펌이 모국어 읽는지 검증. USCIS 폼이 영어 전용 + 복잡; 영어 정부 문서를 한국어로 안내하는 로펌 원함.' },
+      },
+      {
+        q: { en: 'What practice areas should a Korean immigration website highlight?', ko: '한인 이민 웹사이트가 강조해야 할 업무 영역은?' },
+        a: { en: 'Korean clientele weighs five: EB-5 investor visa (Korea is top-3 source country globally); family-based green cards (driven by diaspora reunification); employment-based EB-1/EB-2/EB-3 (Korean professionals in tech, medicine, academia); E-2 treaty investor (Korean small business owners); asylum and deportation defense. Skip generic "all immigration matters" — Korean clients prefer specialists. The website should signal which 2-3 your firm handles best.', ko: '한인 고객층이 무겁게 가중하는 5개 — EB-5 투자자 비자 (한국 글로벌 상위 3 출처국); 가족 기반 그린카드 (디아스포라 재결합); 고용 기반 EB-1/EB-2/EB-3 (테크, 의학, 학계 한인 전문가); E-2 조약 투자자 (한인 소규모 비즈니스); 망명·추방 방어. 일반 "모든 이민 사안" 건너뛰기 — 한인 고객은 전문가 선호. 웹사이트가 최선의 2-3 신호.' },
+      },
+      {
+        q: { en: 'How does Korean immigration law firm SEO differ from general legal SEO?', ko: '한인 이민 로펌 SEO가 일반 법률 SEO와 어떻게 다른가요?' },
+        a: { en: 'Three differences. Korean-language keyword optimization matters more — searches like "이민 변호사 뉴저지" or "EB-5 투자 비자 한인" drive 30-45% of qualified leads. Local SEO is weighted differently — Korean clients travel 90-180 minutes for Korean immigration counsel they trust (vs 15-30 minutes for general practice). Trust schema (Attorney with bar admission, alumni, professional association) lifts AI search citation rates by 25-40% for immigration queries — YMYL category requires more E-E-A-T signals.', ko: '3 차이. 한국어 키워드 최적화 더 중요 — "이민 변호사 뉴저지" 또는 "EB-5 투자 비자 한인" 검색이 자격 리드 30-45%. 로컬 SEO 가중치 다름 — 한인 고객이 신뢰하는 한인 이민 상담 위해 90-180분 이동 (일반 15-30분). 신뢰 스키마 (변호사 자격, 동문, 협회) 가 이민 쿼리 AI 검색 인용률 25-40% 상승 — YMYL은 더 많은 E-E-A-T 신호 요구.' },
+      },
+      {
+        q: { en: 'What is the realistic timeline for Korean immigration law firm SEO?', ko: '한인 이민 로펌 SEO 현실적 타임라인은?' },
+        a: { en: 'Slower than typical Korean SMB SEO due to YMYL category — Google applies stricter quality thresholds. 4-7 months for top-3 Map Pack on medium-competition keywords ("korean immigration lawyer fort lee"), 8-14 months for harder keywords ("eb5 visa attorney nyc"), 12-18 months for highest-competition queries in dense markets. Korean-language side ranks faster (less competition) — typically 3-5 months for top-3 on Korean queries.', ko: 'YMYL 카테고리로 일반 한인 SMB SEO보다 느림 — 구글이 더 엄격한 품질 임계점. 중간 경쟁 키워드 ("korean immigration lawyer fort lee") 맵 팩 상위 3 — 4-7개월, 더 어려운 키워드 ("eb5 visa attorney nyc") — 8-14개월, 밀집 시장 최고 경쟁 — 12-18개월. 한국어 측이 빨리 (경쟁 적음) — 한국어 쿼리 상위 3 3-5개월.' },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: 'A Korean immigration law firm in Manhattan, Fort Lee, Flushing, or LA Koreatown competes for a clientele where one new EB-5 client is worth $30,000-$80,000 in lifetime fees, and a family-petition matter runs $3,500-$8,500. At those values, the website does not need 200 leads/month — it needs 4-8 high-quality pre-qualified consultations from clients who have already decided this firm reads their language and understands their stakes. Across 6 Korean immigration firm rebuilds in 2025-2026, the same patterns separate the firms generating $80K-$200K/month in steady-state revenue from those running on referrals alone.' },
+        { type: 'stats', content: 'Korean immigration law firm digital — 6 firm cohort, 2025-2026', items: [
+          '50-65%|Lost pre-intake interest|on English-only sites',
+          '41% → 67%|Bilingual intake form lift|completion rate',
+          '4-7 months|Map Pack top-3|medium-competition keywords',
+          '$3,500-$80K|Per-case lifetime value|family to EB-5',
+        ] },
+        { type: 'h2', content: 'The five practice areas Korean clients evaluate' },
+        { type: 'p', content: 'Korean immigration clients filter law firms by practice area specificity within the first 10 seconds. Generic "we handle all immigration matters" reads as either inexperience or low-commitment. Korean clients prefer 2-3 declared specialties: EB-5 investor visa (highest-value matter, Korea consistently top-3 globally), family-based reunification (driven by aging 1st-generation parents sponsoring U.S.-resident adult children), employment-based EB-1/EB-2/EB-3 (Korean physicians, engineers, academics), E-2 treaty investor (Korean small business owners), asylum/deportation defense. Your website hero should declare your 2-3 best categories explicitly.' },
+        { type: 'h2', content: 'Trust signals required above the fold' },
+        { type: 'p', content: 'Above-the-fold trust signals matter more for immigration law than any other Korean professional service. Required: attorney name + photo + bar admission state + alma mater (Korean university preferred for 1st-gen clients, Ivy League/T14 law school for 2nd-gen). Highly recommended: years practicing immigration specifically, Korean-American bar association membership, Korean media coverage (Korean Daily, Korean Times USA, MBC, KBS America), Korean-language phone line. Without these, Korean clients bounce before reaching the contact form.' },
+        { type: 'h2', content: 'Bilingual intake forms — the 40-60% conversion lift' },
+        { type: 'p', content: 'English-only immigration intake forms complete at 41% in our cohort. Same forms in Korean (with English option) complete at 67%. The gap is 26 percentage points — for a firm getting 80 form starts/month, that translates to 21 additional completed intakes. At 30% converting to paid consultation ($300-$800 each), the bilingual form alone generates $6,300-$16,800/month in incremental revenue. Translation cost is one-time $500-$1,200 of qualified legal translation. Payback within 30 days.' },
+        { type: 'h2', content: 'EB-5 specific website requirements' },
+        { type: 'p', content: 'If your firm handles EB-5, the website needs additional specificity. EB-5 clients are sophisticated — they will not accept generic "we handle EB-5" copy. Required: list of approved regional centers your firm has worked with, range of investment amounts ($800K direct, $1.05M targeted employment area), timeline expectations (current USCIS processing times, which change quarterly), and ideally a downloadable EB-5 process guide (gated behind email capture). Korean EB-5 clients frequently request firm references from prior Korean clients; include 1-2 case studies (anonymized) showing successful prior EB-5 outcomes.' },
+        { type: 'h2', content: 'Korean immigration GBP optimization' },
+        { type: 'p', content: 'GBP setup for Korean immigration firms requires more attention than other practice areas. Primary category: "Immigration Attorney" or "Immigration Law Attorney." Secondary: Law Firm, Attorney, Corporate Lawyer (if E-2 cases), Family Law Attorney (if family petitions). Service area: entire Korean diaspora corridor (Bergen + Hudson + Westchester for NJ-NY firms, broader for LA Koreatown). Service list must include each visa type as a separate service. Photos: attorney headshots, Korean-language consultation room photos, U.S. + Korean flag together.' },
+        { type: 'h2', content: 'Content strategy — what Korean immigration prospects search for' },
+        { type: 'p', content: 'Korean immigration search queries are highly specific. Highest-value: "EB-5 visa Korean lawyer," "이민 변호사 뉴저지," "family petition siblings Korea," "E-2 visa Korean restaurant," "green card application Korean help." Generic "immigration lawyer" rarely converts for Korean firms — your audience searches with Korean-specific qualifiers. Blog content should target long-tail queries with specific case examples (anonymized), processing timelines, and Korean cultural context (e.g., "what to do when your Korean parent\'s I-130 has been pending for 8 years"). 12-18 such posts over 6 months establish topical authority for Korean immigration queries.' },
+        { type: 'h2', content: 'Compliance considerations' },
+        { type: 'p', content: 'Immigration law marketing must comply with state bar advertising rules. Three constraints: most states require "attorney advertising" disclosure on lead-generation pages; outcome guarantees are prohibited ("we guarantee your visa approval" can result in disbarment); client testimonials require explicit written consent and a disclaimer that prior results do not guarantee future outcomes. The website should be reviewed by the firm\'s own compliance counsel before publishing, especially for testimonial and case-study content.' },
+        { type: 'tip', content: 'Pro tip — Korean immigration clients overwhelmingly research firms outside business hours (8pm-11pm Korea time, 7am-10am Eastern). A live KakaoTalk Channel responding during those hours (even with an AI chatbot that hands off to a human the next morning) lifts inquiry-to-consultation conversion by 30-40% versus form-only contact. We integrate KakaoTalk Channel + auto-response into every Korean immigration website build.' },
+        { type: 'cta', content: 'ZOE LUMOS builds Korean immigration law firm websites with bilingual intake, EB-5 specialty pages, schema-rich attorney profiles, and KakaoTalk integration. Fixed scope, $8,500-$14,000 depending on practice areas. Free 30-minute consultation. zoelumos.com.' },
+      ],
+      ko: [
+        { type: 'intro', content: '맨해튼, 포트리, 플러싱, LA 코리아타운 한인 이민 로펌은 EB-5 신규 고객 1명 평생 수임료 $30,000-$80,000, 가족 청원 사안 $3,500-$8,500 가치 고객층 경쟁. 그 가치에서 웹사이트는 월 200 리드 불필요 — 월 4-8 고품질 사전 자격 상담만 견인, 각자가 이미 이 로펌이 모국어 읽고 위험 이해한다 결정한 고객. 2025-2026 한인 이민 로펌 재구축 6곳 — 같은 패턴이 정상 상태 월 $80K-$200K 매출 로펌과 추천에만 의존하는 로펌을 구분.' },
+        { type: 'stats', content: '한인 이민 로펌 디지털 — 6 로펌 코호트, 2025-2026', items: [
+          '50-65%|영어 전용 사이트 손실|인테이크 전 관심',
+          '41% → 67%|이중언어 인테이크 폼 상승|완료율',
+          '4-7개월|맵 팩 상위 3|중간 경쟁 키워드',
+          '$3,500-$80K|케이스당 평생 가치|가족부터 EB-5',
+        ] },
+        { type: 'h2', content: '한인 고객이 평가하는 5가지 업무 영역' },
+        { type: 'p', content: '한인 이민 고객은 웹사이트 첫 10초 안에 업무 영역 구체성으로 로펌 필터링. 일반 "모든 이민 사안 처리"는 미숙·저몰입 읽힘. 한인 고객은 선언된 전문 2-3개 선호 — EB-5 투자자 비자 (최고 가치, 한국 글로벌 상위 3), 가족 기반 재결합 (1세대 부모 + 미국 거주 성인 자녀 후원), 고용 기반 EB-1/EB-2/EB-3 (한인 의사·엔지니어·학자), E-2 조약 투자자 (한인 소규모 비즈니스), 망명·추방 방어. 히어로가 최선의 2-3 명시.' },
+        { type: 'h2', content: '어보브 폴드 필수 신뢰 신호' },
+        { type: 'p', content: '어보브 폴드 신뢰 신호가 다른 한인 전문 서비스보다 이민법에 더 중요. 필수 — 변호사 이름 + 사진 + 자격 주 + 모교 (1세대엔 한국 대학 선호, 2세대엔 아이비리그·T14 로스쿨). 강력 추천 — 이민 전문 연수, 한인 미국 변호사 협회 멤버십, 한국 언론 보도 (코리아 데일리, 코리아 타임스 USA, MBC, KBS America), 한국어 전화 라인. 없으면 한인 고객이 폼 도달 전 이탈.' },
+        { type: 'h2', content: '이중언어 인테이크 폼 — 40-60% 전환 상승' },
+        { type: 'p', content: '영어 전용 이민 인테이크 폼이 코호트 41% 완료. 같은 폼 한국어 (영어 옵션) — 67% 완료. 26 퍼센트 포인트 갭 — 월 폼 시작 80건 로펌에 추가 21건 인테이크 완료. 30%가 유료 상담 ($300-$800) 전환 시 폼만으로 월 $6,300-$16,800 점진 매출. 번역 일회성 $500-$1,200 자격 법률 번역. 30일 내 회수.' },
+        { type: 'h2', content: 'EB-5 특화 웹사이트 요구사항' },
+        { type: 'p', content: 'EB-5 처리 시 추가 구체성 필요. EB-5 고객은 세련됨 — 일반 "EB-5 처리합니다" 수용 X. 필수 — 함께 작업한 승인 지역 센터 목록, 투자 금액 범위 (직접 $800K, 타겟 고용 지역 $1.05M), 타임라인 (분기마다 변경되는 현재 USCIS 처리 시간), 이상적으로 다운로드 가능 EB-5 프로세스 가이드 (이메일 게이트). 한인 EB-5 고객은 이전 한인 고객 추천 자주 요청 — 한인 고객 성공 사례 1-2개 (익명화) 포함.' },
+        { type: 'h2', content: '한인 이민 GBP 최적화' },
+        { type: 'p', content: '한인 이민 로펌 GBP 셋업이 다른 영역보다 더 많은 주의 필요. 1차 — "Immigration Attorney" 또는 "Immigration Law Attorney." 2차 — Law Firm, Attorney, Corporate Lawyer (E-2 시), Family Law Attorney (가족 청원 시). 서비스 권역 — 전체 한인 디아스포라 통로 (NJ-NY 로펌엔 버겐 + 허드슨 + 웨스트체스터, LA 코리아타운엔 더 광역). 서비스 목록에 각 비자 유형 별도. 사진 — 변호사 헤드샷, 한국어 상담실 사진, 미국 + 한국 깃발 함께.' },
+        { type: 'h2', content: '콘텐츠 전략 — 한인 이민 잠재 고객이 검색하는 것' },
+        { type: 'p', content: '한인 이민 검색 쿼리는 극도로 구체적. 최고 가치 — "EB-5 visa Korean lawyer," "이민 변호사 뉴저지," "family petition siblings Korea," "E-2 visa Korean restaurant," "green card application Korean help." 일반 "이민 변호사"는 한인 로펌에 거의 전환 X — 오디언스가 한인 특화 자격으로 검색. 블로그가 구체 사례 (익명화), 처리 타임라인, 한국 문화 맥락 (예 — "한국 부모님 I-130 신청 8년째 대기 시 대처법") 으로 롱테일 타겟. 6개월간 12-18 포스트가 한인 이민 쿼리 토픽 권위성 정립.' },
+        { type: 'h2', content: '컴플라이언스 고려사항' },
+        { type: 'p', content: '이민법 마케팅이 주 변호사 협회 광고 규칙 준수 필요. 제약 3개 — 대부분 주가 리드 생성 페이지에 "변호사 광고" 공시 요구; 결과 보장 금지 ("비자 승인 보장"이 자격 박탈 결과 가능); 고객 후기가 명시 서면 동의 + 이전 결과가 미래 결과 보장 X 면책 조항 필요. 발행 전 로펌 자체 컴플라이언스 변호사 검토 권장.' },
+        { type: 'tip', content: '프로 팁 — 한인 이민 고객이 압도적으로 영업시간 외 (한국 시간 오후 8-11시, 동부 오전 7-10시) 로펌 조사. 그 시간 응답 라이브 카카오톡 채널 (AI 챗봇 + 다음 아침 사람 핸드오프) 이 폼 전용 대비 문의→상담 전환 30-40% 상승. 모든 한인 이민 웹사이트에 카카오톡 채널 + 자동 응답 통합.' },
+        { type: 'cta', content: 'ZOE LUMOS는 한인 이민 로펌 웹사이트를 이중언어 인테이크, EB-5 전문 페이지, 스키마 풍부 변호사 프로필, 카카오톡 통합과 구축. 업무 영역 따라 고정 범위 $8,500-$14,000. 무료 30분 상담. zoelumos.com.' },
+      ],
+    },
+  },
+  // ─────────────────────────────────────────────────────────────────
+  // 2026-06-13 — Korean business marketing in metro Atlanta (Johns Creek / Suwanee / Duluth)
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'korean-business-marketing-atlanta-johns-creek-suwanee-2026',
+    date: '2026-06-13',
+    updatedDate: '2026-06-13',
+    readTime: 8,
+    category: { en: 'Local SEO', ko: '로컬 SEO' },
+    title: {
+      en: 'Korean Business Marketing in Metro Atlanta: Johns Creek, Suwanee & Duluth [2026]',
+      ko: '애틀랜타 한인 비즈니스 마케팅: 존스크릭·수와니·둘루스 [2026]',
+    },
+    metaDescription: {
+      en: "Metro Atlanta's Korean corridor runs through Duluth, Johns Creek, and Suwanee — not Atlanta proper. Here's how Korean businesses rank in the right suburbs, where the searches actually happen.",
+      ko: '애틀랜타 한인 상권은 애틀랜타 도심이 아니라 둘루스·존스크릭·수와니에 있습니다. 검색이 실제로 일어나는 교외에서 한인 비즈니스가 상위 노출되는 방법.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: { en: 'Why target the suburbs instead of "Atlanta" for a Korean business?', ko: '한인 비즈니스가 왜 "애틀랜타"가 아니라 교외를 타깃해야 하나요?' },
+        a: { en: 'Because the Korean population is concentrated in north Gwinnett and Forsyth — Duluth, Johns Creek, Suwanee, and Berkeley Lake — not downtown Atlanta. Ranking #1 for "korean restaurant atlanta" sends you traffic from people 35 minutes away who will never drive to you. Ranking #1 for "korean restaurant johns creek" or "한식당 수와니" reaches the customer who lives 6 minutes away and searches in Korean.', ko: '애틀랜타 한인 인구는 다운타운이 아니라 북부 귀넷·포사이스 — 둘루스, 존스크릭, 수와니, 버클리레이크 — 에 집중되어 있기 때문입니다. "korean restaurant atlanta" 1위는 35분 거리의 절대 안 올 손님을 데려옵니다. "korean restaurant johns creek" 또는 "한식당 수와니" 1위는 6분 거리에서 한국어로 검색하는 손님에게 도달합니다.' },
+      },
+      {
+        q: { en: 'Which cities should an Atlanta-area Korean business actually target?', ko: '애틀랜타 지역 한인 비즈니스는 실제로 어느 도시를 타깃해야 하나요?' },
+        a: { en: 'In priority order: Duluth (the H Mart anchor and densest Korean core), Johns Creek (highest-income Korean households, strong for professional services), Suwanee (fast-growing young Korean families), then Berkeley Lake, Lawrenceville, and Cumming as the second ring. One business does not need all six — pick the two closest to your storefront and own them.', ko: '우선순위 순 — 둘루스 (H마트 거점, 가장 밀집된 한인 중심), 존스크릭 (최고 소득 한인 가구, 전문 서비스에 강함), 수와니 (빠르게 성장하는 젊은 한인 가족), 그다음 버클리레이크·로렌스빌·커밍이 2차 권역. 한 업체가 6개 모두 필요하진 않습니다 — 매장에서 가장 가까운 2곳을 골라 장악하세요.' },
+      },
+      {
+        q: { en: 'Do I need a separate landing page for each city?', ko: '도시마다 별도 랜딩 페이지가 필요한가요?' },
+        a: { en: 'Yes for the two cities you serve most — a real page with local content (neighborhood landmarks, the specific H Mart, parking, Korean-language service hours), not a thin doorway page that just swaps the city name. Google penalizes near-duplicate city pages. For the outer ring, one combined "metro Atlanta" page plus a strong Google Business Profile is enough.', ko: '가장 많이 서비스하는 2개 도시는 네, 실제 로컬 콘텐츠 (동네 랜드마크, 특정 H마트, 주차, 한국어 응대 시간) 가 담긴 진짜 페이지여야 합니다 — 도시명만 바꾼 얇은 도어웨이 페이지는 안 됩니다. 구글은 거의 중복인 도시 페이지에 페널티를 줍니다. 외곽 권역은 통합 "애틀랜타 광역" 페이지 하나 + 강력한 구글 비즈니스 프로필이면 충분합니다.' },
+      },
+      {
+        q: { en: 'How do Korean customers in Atlanta search differently from English speakers?', ko: '애틀랜타 한인 손님은 영어권과 어떻게 다르게 검색하나요?' },
+        a: { en: 'First-generation Koreans search in Korean ("둘루스 치과", "존스크릭 부동산") and rely heavily on Naver, KakaoTalk recommendations, and Korean community boards (MissyUSA, Atlanta K). 1.5 and second generation search in English but with Korean intent ("korean dentist near me", "korean speaking realtor johns creek"). You need both: Korean-language pages for the parents, English pages with explicit "Korean-speaking" signals for the kids.', ko: '1세대는 한국어로 검색 ("둘루스 치과", "존스크릭 부동산") 하고 네이버, 카카오톡 추천, 한인 커뮤니티 (미시USA, 애틀랜타K) 에 크게 의존합니다. 1.5세·2세는 영어로 검색하되 한인 의도를 담습니다 ("korean dentist near me", "korean speaking realtor johns creek"). 둘 다 필요합니다 — 부모 세대용 한국어 페이지, 자녀용 "한국어 가능" 신호를 명시한 영어 페이지.' },
+      },
+      {
+        q: { en: 'How long until a new Atlanta Korean business ranks?', ko: '애틀랜타 신규 한인 비즈니스가 상위 노출되기까지 얼마나 걸리나요?' },
+        a: { en: 'For the Korean-language and "korean + city" long-tail queries, competition is thin — 6 to 12 weeks to reach the map pack with a complete Google Business Profile and one solid local page. For broad English head terms ("dentist johns creek"), expect 6+ months and real competition. The fast win is owning the Korean-intent searches first while you build authority for the broad terms.', ko: '한국어 및 "korean + 도시" 롱테일 쿼리는 경쟁이 적습니다 — 완전한 구글 비즈니스 프로필과 견고한 로컬 페이지 하나로 6~12주면 맵 팩 진입. 광범위한 영어 헤드 텀 ("dentist johns creek") 은 6개월 이상과 실제 경쟁을 예상하세요. 빠른 승리는 광범위 키워드 권위를 쌓는 동안 한인 의도 검색을 먼저 장악하는 것입니다.' },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "Here is the mistake almost every Korean business in Georgia makes: they optimize for \"Atlanta.\" But the Korean Atlanta is not in Atlanta. It is a 20-mile corridor up I-85 and GA-400 through Duluth, Johns Creek, and Suwanee — roughly 100,000 Korean-Americans, the largest Korean community in the Southeast. If your website and Google Business Profile say \"Atlanta\" while your customers search \"Duluth\" and \"Johns Creek,\" you are invisible to the people who live closest to you. This is how to fix that." },
+        { type: 'stats', content: 'Metro Atlanta Korean market — where the searches actually are', items: [
+          '~100K|Korean-Americans|concentrated in north Gwinnett + Forsyth',
+          'Duluth|H Mart anchor|densest Korean retail core in the Southeast',
+          'Johns Creek|Highest Korean household income|strong for dental, legal, real estate',
+          'Suwanee|Fastest-growing|young Korean families, new construction',
+        ] },
+        { type: 'h2', content: 'The Korean corridor: Duluth → Johns Creek → Suwanee' },
+        { type: 'p', content: "The Korean population spine runs along Pleasant Hill Road and Peachtree Industrial in Duluth, north into Johns Creek along State Bridge and Medlock Bridge, and up into Suwanee. The Duluth H Mart and Mega Mart are the gravitational centers — Korean businesses cluster within a few miles of them. When you write local content, name these landmarks: the H Mart plaza, the Korean churches off Pleasant Hill, Johns Creek's Korean professional offices. Google reads those entities as proof you actually serve the community, not just claim to." },
+        { type: 'h2', content: 'City-by-city: which suburb fits your business' },
+        { type: 'p', content: "Duluth is the default for restaurants, groceries, salons, and anything walk-in — it is where Koreans already drive to shop. Johns Creek skews higher-income and is the strongest market for dentists, attorneys, financial advisors, and real estate agents serving Korean professionals. Suwanee is younger families and new homeowners — good for pediatric dental, tutoring/SAT prep, home services, and insurance. Match your storefront's two closest cities and build a real page for each rather than spreading thin across all of metro Atlanta." },
+        { type: 'h2', content: 'Google Business Profile for the Atlanta Korean market' },
+        { type: 'p', content: "Set your primary category precisely (e.g. \"Korean Restaurant,\" not just \"Restaurant\"), and set the service area to the two or three suburbs you actually serve — not all of metro Atlanta, which dilutes relevance. Add Korean-language posts weekly, photos with Korean signage, and respond to reviews in both languages. The single highest-leverage move: get your first 15-20 reviews from Korean customers who mention the city by name (\"best 갈비 in Duluth\") — that pairing of Korean intent + city name is exactly what the algorithm rewards in the map pack." },
+        { type: 'h2', content: 'Bilingual local pages that actually rank' },
+        { type: 'p', content: "Build one page per priority city in both English and Korean. The English page targets \"korean [service] johns creek\" and must say \"Korean-speaking\" explicitly above the fold. The Korean page targets \"존스크릭 [업종]\" and reads naturally to a first-generation parent. Each page needs genuinely local content — the nearest H Mart, parking, hours that note Korean-language availability, and a map. Do not clone one page and swap city names; Google has flagged near-duplicate city pages since the 2024 helpful-content updates." },
+        { type: 'h2', content: 'Naver, KakaoTalk, and the Korean community channels' },
+        { type: 'p', content: "Google is necessary but not sufficient in Atlanta's Korean market. First-generation customers also check Naver (a Naver Place listing and a few Naver blog mentions matter), find businesses through KakaoTalk Channel and Korean church networks, and ask on community boards like Atlanta K and MissyUSA. A KakaoTalk Channel where customers can message you in Korean — and get a fast reply — converts dramatically better than a contact form for this audience. These channels are how word-of-mouth, the single strongest force in Korean communities, actually travels online." },
+        { type: 'tip', content: "Pro tip: the Duluth/Johns Creek Korean community is tight and review-driven. One genuinely happy customer who posts in a Korean Atlanta KakaoTalk group or community board is worth more than a month of ads. Build the digital basics — GBP, bilingual pages, KakaoTalk — then ask your happiest Korean customers to share, by name, in the channels they already trust." },
+        { type: 'cta', content: "ZOE LUMOS builds bilingual websites and local-SEO systems for Korean businesses across metro Atlanta — Duluth, Johns Creek, Suwanee, and beyond. City-targeted pages, Google Business Profile optimization, Naver and KakaoTalk setup. Free 30-minute strategy call. zoelumos.com." },
+      ],
+      ko: [
+        { type: 'intro', content: "조지아의 거의 모든 한인 비즈니스가 저지르는 실수가 있습니다 — “애틀랜타”에 최적화하는 것. 하지만 한인 애틀랜타는 애틀랜타에 없습니다. I-85와 GA-400을 따라 둘루스, 존스크릭, 수와니로 이어지는 약 32km 상권 — 한인 약 10만 명, 남동부 최대 한인 커뮤니티입니다. 웹사이트와 구글 비즈니스 프로필이 “애틀랜타”라고 말하는데 손님은 “둘루스”와 “존스크릭”을 검색한다면, 가장 가까이 사는 사람들에게 당신은 보이지 않습니다. 이걸 고치는 방법입니다." },
+        { type: 'stats', content: '애틀랜타 광역 한인 시장 — 검색이 실제로 있는 곳', items: [
+          '약 10만 명|한인|북부 귀넷 + 포사이스 집중',
+          '둘루스|H마트 거점|남동부 최밀집 한인 상권',
+          '존스크릭|최고 한인 가구 소득|치과·법률·부동산에 강함',
+          '수와니|가장 빠른 성장|젊은 한인 가족, 신축',
+        ] },
+        { type: 'h2', content: '한인 상권: 둘루스 → 존스크릭 → 수와니' },
+        { type: 'p', content: "한인 인구 축은 둘루스의 플레전트힐 로드와 피치트리 인더스트리얼을 따라, 북쪽으로 스테이트브리지·메드락브리지를 따라 존스크릭으로, 그리고 수와니까지 이어집니다. 둘루스 H마트와 메가마트가 중력 중심 — 한인 비즈니스가 그 반경 몇 마일 안에 모여 있습니다. 로컬 콘텐츠를 쓸 때 이 랜드마크를 명시하세요 — H마트 플라자, 플레전트힐의 한인 교회들, 존스크릭의 한인 전문직 사무실. 구글은 이 엔티티들을 당신이 실제로 커뮤니티를 서비스한다는 증거로 읽습니다." },
+        { type: 'h2', content: '도시별: 어느 교외가 내 비즈니스에 맞나' },
+        { type: 'p', content: "둘루스는 식당·마트·미용실 및 워크인 업종의 기본값입니다 — 한인들이 이미 쇼핑하러 가는 곳. 존스크릭은 더 고소득이며 한인 전문직을 상대하는 치과·변호사·재무 상담사·부동산에 가장 강한 시장. 수와니는 젊은 가족과 신규 주택 소유자 — 소아 치과, 과외·SAT, 홈서비스, 보험에 좋습니다. 매장에서 가장 가까운 2개 도시에 맞춰 각각 진짜 페이지를 만드세요. 애틀랜타 광역 전체에 얇게 퍼지지 마세요." },
+        { type: 'h2', content: '애틀랜타 한인 시장용 구글 비즈니스 프로필' },
+        { type: 'p', content: "1차 카테고리를 정확히 (“Restaurant”이 아니라 “Korean Restaurant”) 설정하고, 서비스 권역은 실제로 서비스하는 2~3개 교외로 — 관련성을 희석하는 애틀랜타 광역 전체가 아니라. 매주 한국어 게시물, 한글 간판이 보이는 사진, 양 언어 리뷰 응대. 가장 효과 큰 한 수 — 도시명을 언급하는 한인 손님에게서 첫 리뷰 15~20개 확보 (“둘루스 최고 갈비”). 한인 의도 + 도시명 조합이 바로 맵 팩 알고리즘이 보상하는 것입니다." },
+        { type: 'h2', content: '실제로 상위 노출되는 이중언어 로컬 페이지' },
+        { type: 'p', content: "우선순위 도시마다 영어·한국어 페이지를 하나씩 만드세요. 영어 페이지는 “korean [업종] johns creek”을 타깃하고 폴드 위에 “Korean-speaking”을 명시해야 합니다. 한국어 페이지는 “존스크릭 [업종]”을 타깃하고 1세대 부모에게 자연스럽게 읽혀야 합니다. 각 페이지에 진짜 로컬 콘텐츠 — 가장 가까운 H마트, 주차, 한국어 응대 시간, 지도 — 가 필요합니다. 페이지 하나를 복제해 도시명만 바꾸지 마세요. 구글은 2024 헬프풀 콘텐츠 업데이트 이후 거의 중복인 도시 페이지를 적발해 왔습니다." },
+        { type: 'h2', content: '네이버, 카카오톡, 그리고 한인 커뮤니티 채널' },
+        { type: 'p', content: "애틀랜타 한인 시장에서 구글은 필수지만 충분하진 않습니다. 1세대 손님은 네이버도 확인하고 (네이버 플레이스 등록과 블로그 언급 몇 개가 중요), 카카오톡 채널과 한인 교회 네트워크로 업체를 찾고, 애틀랜타K·미시USA 같은 커뮤니티 게시판에 묻습니다. 손님이 한국어로 메시지를 보내고 빠른 답을 받는 카카오톡 채널은 이 오디언스에게 문의 폼보다 훨씬 잘 전환됩니다. 이 채널들이 한인 커뮤니티 최강의 힘인 입소문이 온라인에서 실제로 퍼지는 경로입니다." },
+        { type: 'tip', content: "프로 팁 — 둘루스·존스크릭 한인 커뮤니티는 끈끈하고 리뷰 중심입니다. 한인 애틀랜타 카카오톡 그룹이나 커뮤니티 게시판에 글을 올리는 진심으로 만족한 손님 한 명이 한 달치 광고보다 가치 있습니다. 디지털 기본 — GBP, 이중언어 페이지, 카카오톡 — 을 갖춘 뒤, 가장 만족한 한인 손님에게 그들이 이미 신뢰하는 채널에서 실명으로 공유해 달라고 요청하세요." },
+        { type: 'cta', content: "ZOE LUMOS는 애틀랜타 광역 — 둘루스, 존스크릭, 수와니 및 그 너머 — 한인 비즈니스를 위한 이중언어 웹사이트와 로컬 SEO 시스템을 구축합니다. 도시 타깃 페이지, 구글 비즈니스 프로필 최적화, 네이버·카카오톡 셋업. 무료 30분 전략 상담. zoelumos.com." },
+      ],
+    },
+  },
+  // ─────────────────────────────────────────────────────────────────
+  // 2026-06-13 — Korean SEO: complete guide for Korean businesses in America
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'korean-seo-guide-american-businesses-2026',
+    date: '2026-06-13',
+    updatedDate: '2026-06-13',
+    readTime: 9,
+    category: { en: 'SEO', ko: 'SEO' },
+    title: {
+      en: 'Korean SEO: The Complete Guide for Korean Businesses in America [2026]',
+      ko: '한인 SEO 완벽 가이드: 미국 한인 비즈니스를 위한 검색엔진 최적화 [2026]',
+    },
+    metaDescription: {
+      en: 'Korean SEO is not just translated English SEO. Bilingual targeting, Naver vs Google, hreflang, KakaoTalk signals, and the Korean-intent searches that win customers in the US.',
+      ko: '한인 SEO는 영어 SEO를 번역한 게 아닙니다. 이중언어 타깃팅, 네이버 vs 구글, hreflang, 카카오톡 신호, 그리고 미국에서 손님을 얻는 한인 의도 검색.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: { en: 'What is "Korean SEO" and how is it different from regular SEO?', ko: '"한인 SEO"란 무엇이고 일반 SEO와 어떻게 다른가요?' },
+        a: { en: 'Korean SEO is optimizing a US-based business to be found by Korean-American customers, who search across two languages and two ecosystems — Google in English, and Naver plus KakaoTalk in Korean. Regular SEO assumes one language and one search engine. Korean SEO requires bilingual content with correct hreflang, Korean-intent keyword targeting, and presence on Korean-only channels that Google does not even index.', ko: '한인 SEO는 미국 소재 비즈니스가 한인 손님에게 발견되도록 최적화하는 것입니다. 한인 손님은 두 언어, 두 생태계에서 검색합니다 — 영어로는 구글, 한국어로는 네이버와 카카오톡. 일반 SEO는 한 언어, 한 검색엔진을 가정합니다. 한인 SEO는 올바른 hreflang을 갖춘 이중언어 콘텐츠, 한인 의도 키워드 타깃팅, 그리고 구글이 색인조차 하지 않는 한국어 전용 채널의 존재감을 요구합니다.' },
+      },
+      {
+        q: { en: 'Do US Korean businesses need Naver SEO, or just Google?', ko: '미국 한인 비즈니스는 네이버 SEO가 필요한가요, 아니면 구글만으로 충분한가요?' },
+        a: { en: 'Both, but weighted by audience. If you serve first-generation Korean immigrants, Naver matters — they search it out of habit, and a Naver Place listing plus a few blog mentions builds trust. If your customers are 1.5/second generation, Google dominates and Naver is a small bonus. Almost every Korean business in the US serves both, so the answer is usually: Google first and primary, Naver as a credibility layer.', ko: '둘 다, 단 오디언스에 따라 가중치가 다릅니다. 1세대 한인 이민자를 상대한다면 네이버가 중요합니다 — 습관적으로 검색하고, 네이버 플레이스 등록과 블로그 언급 몇 개가 신뢰를 쌓습니다. 손님이 1.5세·2세라면 구글이 지배적이고 네이버는 작은 보너스. 미국 한인 비즈니스는 거의 모두 양쪽을 상대하므로, 답은 보통 — 구글이 우선·핵심, 네이버는 신뢰 레이어.' },
+      },
+      {
+        q: { en: 'How do I target both Korean and English keywords without hurting rankings?', ko: '순위를 해치지 않고 한국어·영어 키워드를 둘 다 타깃하려면?' },
+        a: { en: 'Use separate language pages with correct hreflang tags (en and ko versions that reference each other), never one page mixing both languages. Mixed-language pages confuse Google about which audience the page serves and rank for neither well. The clean structure is a /en path and a /ko path, each fully in one language, linked by hreflang so Google serves the right version to the right searcher.', ko: '올바른 hreflang 태그 (서로를 참조하는 en·ko 버전) 를 갖춘 별도 언어 페이지를 쓰세요. 절대 한 페이지에 두 언어를 섞지 마세요. 언어 혼합 페이지는 어느 오디언스를 위한 것인지 구글을 혼란시키고 양쪽 모두 잘 순위에 오르지 못합니다. 깔끔한 구조는 /en 경로와 /ko 경로, 각각 완전히 한 언어로, hreflang으로 연결되어 구글이 맞는 검색자에게 맞는 버전을 제공합니다.' },
+      },
+      {
+        q: { en: 'What Korean-intent keywords convert best for US businesses?', ko: '미국 비즈니스에 가장 잘 전환되는 한인 의도 키워드는?' },
+        a: { en: 'The highest-converting pattern is "korean-speaking [service] + city" in English ("korean speaking dentist fort lee", "korean realtor johns creek") and "[city] [업종]" in Korean ("포트리 치과", "둘루스 부동산"). These signal a customer who has already decided they want a Korean-speaking provider — they convert far better than generic head terms. Broad terms like "dentist near me" bring volume but low Korean-intent conversion.', ko: '가장 잘 전환되는 패턴은 영어로 "korean-speaking [업종] + 도시" ("korean speaking dentist fort lee", "korean realtor johns creek"), 한국어로 "[도시] [업종]" ("포트리 치과", "둘루스 부동산"). 이는 이미 한국어 가능 제공자를 원한다고 결정한 손님을 의미합니다 — 일반 헤드 텀보다 훨씬 잘 전환됩니다. "dentist near me" 같은 광범위 키워드는 볼륨은 많지만 한인 의도 전환은 낮습니다.' },
+      },
+      {
+        q: { en: 'How long does Korean SEO take to show results?', ko: '한인 SEO는 결과가 나오기까지 얼마나 걸리나요?' },
+        a: { en: 'Korean-intent long-tail queries have thin competition, so 2-4 months to rank and bring qualified leads is realistic with proper bilingual pages and a complete Google Business Profile. Broad English head terms take 6-12 months. The strategic sequence is to capture the easy Korean-intent searches first — they convert immediately — while building the authority that eventually lifts you on the competitive broad terms.', ko: '한인 의도 롱테일 쿼리는 경쟁이 적어서, 제대로 된 이중언어 페이지와 완전한 구글 비즈니스 프로필이면 2~4개월에 순위 진입과 양질의 리드가 현실적입니다. 광범위한 영어 헤드 텀은 6~12개월. 전략적 순서는 쉬운 한인 의도 검색을 먼저 잡고 — 즉시 전환됩니다 — 경쟁적 광범위 키워드에서 결국 끌어올릴 권위를 쌓는 것입니다.' },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "Most Korean businesses in the US think SEO means \"translate my English site into Korean.\" That is not Korean SEO — that is just translation, and done wrong it actively hurts your rankings. Real Korean SEO means being found by a bilingual audience that searches across two languages and two completely different ecosystems: Google in English and Naver plus KakaoTalk in Korean. This guide covers what actually moves rankings for a Korean-American business, in the order that matters." },
+        { type: 'stats', content: 'Why Korean SEO is its own discipline', items: [
+          '2 languages|Korean + English|same customer, different searches',
+          '2 ecosystems|Google + Naver/Kakao|Google does not index Naver content',
+          '50-65%|Lost before contact|on English-only sites for 1st-gen audiences',
+          '2-4 months|To rank Korean-intent|vs 6-12 for broad English head terms',
+        ] },
+        { type: 'h2', content: 'The two-audience problem' },
+        { type: 'p', content: "Your customer base splits into two groups that search completely differently. First-generation Koreans search in Korean, trust Naver and KakaoTalk, and read Korean community boards. The 1.5 and second generation search in English but with Korean intent — \"korean speaking dentist,\" \"korean realtor near me.\" If you build for only one group, you lose the other. Korean SEO is fundamentally about serving both without compromising your rankings for either, which is a structural content problem, not a translation problem." },
+        { type: 'h2', content: 'Bilingual architecture: hreflang done right' },
+        { type: 'p', content: "The single most common technical failure in Korean SEO is botched bilingual structure. The correct pattern: separate URLs per language (/page and /ko/page), each fully in one language, with reciprocal hreflang tags telling Google these are language alternates of the same content. Never mix English and Korean on one page — Google cannot tell who it is for and ranks it for neither. And make sure each language version self-canonicalizes to its own URL, not across languages; a Korean page canonicalized to the English version simply drops out of Korean results." },
+        { type: 'h2', content: 'Keyword targeting: Korean intent beats search volume' },
+        { type: 'p', content: "Forget chasing broad head terms first. The keywords that convert for Korean businesses are intent-loaded: \"korean speaking [service] [city]\" in English and \"[city] [업종]\" in Korean. Someone searching \"korean speaking accountant palisades park\" has already decided what they want — they convert several times better than someone typing \"accountant near me.\" Build pages around these intent phrases, capture them while competition is thin, and let the authority you accumulate lift you on the broad terms over time." },
+        { type: 'h2', content: 'Google Business Profile is half of local Korean SEO' },
+        { type: 'p', content: "For any business with a physical location, the Google Business Profile drives the map pack — and the map pack is where most Korean local searches convert. Set a precise primary category, write your services in both languages, post weekly in Korean, and prioritize getting reviews that pair Korean intent with your city name. A profile optimized this way often outranks a much older competitor for \"korean [service] [city]\" within a couple of months, because few competitors bother to signal Korean-language service explicitly." },
+        { type: 'h2', content: 'Naver: the half Google cannot see' },
+        { type: 'p', content: "Naver is a closed ecosystem — Google does not index Naver Blog or Naver Cafe content, and Naver ranks its own properties first. For first-generation customers, a Naver Place listing for your business plus a handful of authentic Naver blog reviews builds the trust that Google alone cannot. You do not need a heavy Naver strategy; you need presence. Claim the Place listing, get a few real reviews, and you have covered the channel your oldest, most loyal customers actually check." },
+        { type: 'h2', content: 'KakaoTalk and community signals' },
+        { type: 'p', content: "Korean communities run on word-of-mouth, and online that word-of-mouth travels through KakaoTalk Channels, Korean church networks, and community boards like MissyUSA and regional KakaoTalk groups. None of this is traditional SEO, but it is how Korean customers actually discover and vet businesses. A KakaoTalk Channel that lets customers message you in Korean and get a fast reply converts dramatically better than a contact form, and the recommendations that flow through these channels are the strongest ranking-adjacent signal in the Korean market." },
+        { type: 'tip', content: "Pro tip: audit your site for the #1 silent killer — a Korean page that canonicalizes to its English equivalent. It is an easy mistake in Next.js and WordPress alike, and it makes your Korean pages invisible in Korean search while looking fine to a casual check. If your Korean pages get impressions but never rank, this is usually why." },
+        { type: 'cta', content: "ZOE LUMOS builds Korean SEO systems for US businesses — bilingual architecture with correct hreflang, Korean-intent keyword targeting, Google Business Profile optimization, and Naver and KakaoTalk presence. Free 30-minute SEO audit. zoelumos.com." },
+      ],
+      ko: [
+        { type: 'intro', content: "미국의 대부분 한인 비즈니스는 SEO를 “영어 사이트를 한국어로 번역하는 것”이라고 생각합니다. 그건 한인 SEO가 아니라 그냥 번역이고, 잘못하면 오히려 순위를 해칩니다. 진짜 한인 SEO는 두 언어와 완전히 다른 두 생태계 — 영어로는 구글, 한국어로는 네이버와 카카오톡 — 에서 검색하는 이중언어 오디언스에게 발견되는 것입니다. 이 가이드는 한인 비즈니스의 순위를 실제로 움직이는 것을 중요한 순서대로 다룹니다." },
+        { type: 'stats', content: '한인 SEO가 독자적 분야인 이유', items: [
+          '2개 언어|한국어 + 영어|같은 손님, 다른 검색',
+          '2개 생태계|구글 + 네이버/카카오|구글은 네이버 콘텐츠를 색인 안 함',
+          '50-65%|문의 전 이탈|1세대 대상 영어 전용 사이트',
+          '2-4개월|한인 의도 순위 진입|광범위 영어 헤드 텀은 6-12개월',
+        ] },
+        { type: 'h2', content: '두 오디언스 문제' },
+        { type: 'p', content: "손님층은 완전히 다르게 검색하는 두 그룹으로 나뉩니다. 1세대는 한국어로 검색하고 네이버와 카카오톡을 신뢰하며 한인 커뮤니티 게시판을 읽습니다. 1.5세·2세는 영어로 검색하되 한인 의도를 담습니다 — “korean speaking dentist”, “korean realtor near me”. 한 그룹만 위해 만들면 다른 그룹을 잃습니다. 한인 SEO는 본질적으로 어느 쪽 순위도 타협하지 않고 양쪽을 모두 서비스하는 것이며, 이는 번역 문제가 아니라 구조적 콘텐츠 문제입니다." },
+        { type: 'h2', content: '이중언어 구조: hreflang 제대로 하기' },
+        { type: 'p', content: "한인 SEO에서 가장 흔한 기술적 실패는 잘못된 이중언어 구조입니다. 올바른 패턴 — 언어별 별도 URL (/page와 /ko/page), 각각 완전히 한 언어로, 이들이 같은 콘텐츠의 언어 대안임을 구글에 알리는 상호 hreflang 태그. 절대 한 페이지에 영어·한국어를 섞지 마세요 — 구글은 누구를 위한 건지 알 수 없어 양쪽 모두 순위에 안 올립니다. 그리고 각 언어 버전이 언어를 넘나들지 않고 자기 URL로 자기 정규화 (self-canonical) 되도록 하세요. 한국어 페이지가 영어 버전으로 정규화되면 한국어 결과에서 그냥 빠집니다." },
+        { type: 'h2', content: '키워드 타깃팅: 한인 의도가 검색량을 이긴다' },
+        { type: 'p', content: "광범위 헤드 텀을 먼저 쫓는 건 잊으세요. 한인 비즈니스에 전환되는 키워드는 의도가 담긴 것 — 영어로 “korean speaking [업종] [도시]”, 한국어로 “[도시] [업종]”. “korean speaking accountant palisades park”를 검색하는 사람은 이미 원하는 걸 결정했습니다 — “accountant near me”를 치는 사람보다 몇 배 잘 전환됩니다. 이 의도 문구를 중심으로 페이지를 만들고, 경쟁이 적을 때 잡고, 쌓이는 권위가 시간이 지나며 광범위 키워드에서 끌어올리게 하세요." },
+        { type: 'h2', content: '구글 비즈니스 프로필이 로컬 한인 SEO의 절반' },
+        { type: 'p', content: "물리적 위치가 있는 비즈니스라면 구글 비즈니스 프로필이 맵 팩을 견인합니다 — 그리고 맵 팩은 대부분의 한인 로컬 검색이 전환되는 곳입니다. 정확한 1차 카테고리 설정, 양 언어 서비스 작성, 매주 한국어 게시, 그리고 한인 의도와 도시명을 짝지은 리뷰 확보에 집중하세요. 이렇게 최적화된 프로필은 “korean [업종] [도시]”에서 훨씬 오래된 경쟁자를 몇 달 안에 앞서는 경우가 많습니다. 한국어 서비스를 명시적으로 신호하는 경쟁자가 드물기 때문입니다." },
+        { type: 'h2', content: '네이버: 구글이 볼 수 없는 절반' },
+        { type: 'p', content: "네이버는 폐쇄 생태계입니다 — 구글은 네이버 블로그나 카페 콘텐츠를 색인하지 않고, 네이버는 자사 자산을 먼저 노출합니다. 1세대 손님에게는 비즈니스 네이버 플레이스 등록과 진정성 있는 네이버 블로그 리뷰 몇 개가 구글만으로는 못 쌓는 신뢰를 만듭니다. 무거운 네이버 전략은 필요 없습니다 — 존재감이 필요합니다. 플레이스 등록을 확보하고 실제 리뷰 몇 개를 받으면, 가장 나이 많고 충성도 높은 손님이 실제로 확인하는 채널을 커버한 것입니다." },
+        { type: 'h2', content: '카카오톡과 커뮤니티 신호' },
+        { type: 'p', content: "한인 커뮤니티는 입소문으로 돌아가고, 온라인에서 그 입소문은 카카오톡 채널, 한인 교회 네트워크, 미시USA·지역 카카오톡 그룹 같은 커뮤니티 게시판을 통해 퍼집니다. 이건 전통 SEO가 아니지만 한인 손님이 실제로 비즈니스를 발견하고 검증하는 방식입니다. 손님이 한국어로 메시지를 보내고 빠른 답을 받는 카카오톡 채널은 문의 폼보다 훨씬 잘 전환되고, 이 채널들을 통해 흐르는 추천은 한인 시장에서 순위에 인접한 가장 강력한 신호입니다." },
+        { type: 'tip', content: "프로 팁 — 1번 조용한 킬러를 사이트에서 점검하세요 — 영어 버전으로 정규화된 한국어 페이지. Next.js와 워드프레스 모두에서 쉽게 저지르는 실수이며, 한국어 페이지를 한국어 검색에서 보이지 않게 만들면서도 대충 보면 멀쩡해 보입니다. 한국어 페이지가 노출은 되는데 순위에 안 오른다면, 보통 이게 원인입니다." },
+        { type: 'cta', content: "ZOE LUMOS는 미국 비즈니스를 위한 한인 SEO 시스템을 구축합니다 — 올바른 hreflang의 이중언어 구조, 한인 의도 키워드 타깃팅, 구글 비즈니스 프로필 최적화, 네이버·카카오톡 존재감. 무료 30분 SEO 진단. zoelumos.com." },
+      ],
+    },
+  },
+  // ─────────────────────────────────────────────────────────────────
+  // 2026-06-13 — KakaoTalk advertising cost & ROI for Korean businesses
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'kakaotalk-advertising-cost-roi-korean-business-2026',
+    date: '2026-06-13',
+    updatedDate: '2026-06-13',
+    readTime: 8,
+    category: { en: 'Marketing', ko: '마케팅' },
+    title: {
+      en: 'KakaoTalk Advertising Cost & ROI: What Korean Businesses Actually Pay [2026]',
+      ko: '카카오톡 광고 비용과 ROI: 한인 비즈니스가 실제로 내는 금액 [2026]',
+    },
+    metaDescription: {
+      en: 'Real KakaoTalk advertising costs for US Korean businesses — Channel messages, Biz Board, alimtalk pricing, agency fees, and the ROI math that decides whether it is worth it.',
+      ko: '미국 한인 비즈니스의 실제 카카오톡 광고 비용 — 채널 메시지, 비즈보드, 알림톡 단가, 대행 수수료, 그리고 할 가치가 있는지 결정하는 ROI 계산.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: { en: 'How much does KakaoTalk advertising cost for a US Korean business?', ko: '미국 한인 비즈니스의 카카오톡 광고 비용은 얼마인가요?' },
+        a: { en: 'It depends on the format. KakaoTalk Channel messages (alimtalk/friendtalk) run roughly $0.007-$0.015 per message sent. Biz Board display ads are bid-based and typically need a few hundred dollars/month to test meaningfully. Most US Korean small businesses spend $300-$1,500/month total. The bigger variable is agency fees — a managed campaign adds $500-$2,000/month on top of media spend.', ko: '포맷에 따라 다릅니다. 카카오톡 채널 메시지 (알림톡/친구톡) 는 발송당 약 $0.007~$0.015. 비즈보드 디스플레이 광고는 입찰 기반이며 의미 있는 테스트에 보통 월 수백 달러가 필요합니다. 대부분의 미국 한인 소상공인은 월 총 $300~$1,500을 씁니다. 더 큰 변수는 대행 수수료 — 관리형 캠페인은 매체비 위에 월 $500~$2,000을 더합니다.' },
+      },
+      {
+        q: { en: 'Is KakaoTalk advertising worth it vs Google or Meta ads?', ko: '카카오톡 광고가 구글·메타 광고 대비 할 가치가 있나요?' },
+        a: { en: 'For reaching first-generation Korean immigrants who live in KakaoTalk, yes — it reaches them where they actually are, with open rates Google and Meta cannot match. But it is a retention and re-engagement channel more than an acquisition channel. The strongest setup uses Google/Meta to acquire new customers and KakaoTalk Channel to retain and re-activate them. Used as your only acquisition channel, KakaoTalk underperforms.', ko: '카카오톡에 사는 1세대 한인 이민자에게 도달하기 위해서라면 네 — 구글·메타가 못 따라오는 오픈율로 손님이 실제로 있는 곳에서 도달합니다. 하지만 획득 채널이라기보다 유지·재참여 채널입니다. 가장 강력한 구성은 구글/메타로 신규 손님을 획득하고 카카오톡 채널로 유지·재활성화하는 것. 유일한 획득 채널로만 쓰면 카카오톡은 성과가 떨어집니다.' },
+      },
+      {
+        q: { en: 'What is the difference between alimtalk and friendtalk pricing?', ko: '알림톡과 친구톡 단가 차이는 무엇인가요?' },
+        a: { en: 'Alimtalk is transactional (order confirmations, reservations) — cheaper per message and deliverable to any customer with your number, but template-approved and non-promotional. Friendtalk is marketing (promotions, announcements) — slightly pricier and only sendable to people who added your Channel. The practical split: alimtalk for operations, friendtalk for marketing. Most ROI comes from alimtalk because it rides on transactions customers actually want.', ko: '알림톡은 거래성 (주문 확인, 예약) — 발송당 더 저렴하고 번호가 있는 모든 손님에게 발송 가능하지만, 템플릿 승인 필요·비홍보성. 친구톡은 마케팅 (프로모션, 공지) — 약간 비싸고 채널을 추가한 사람에게만 발송. 실무적 구분 — 운영은 알림톡, 마케팅은 친구톡. ROI 대부분은 알림톡에서 나옵니다. 손님이 실제로 원하는 거래에 얹히기 때문입니다.' },
+      },
+      {
+        q: { en: 'Do I need an agency to run KakaoTalk advertising?', ko: '카카오톡 광고를 운영하려면 대행사가 필요한가요?' },
+        a: { en: 'Not necessarily. Channel setup, alimtalk templates, and basic friendtalk broadcasts are manageable in-house once configured — the build is the hard part, the running is not. An agency earns its fee if you want Biz Board display campaigns optimized, bilingual creative produced, and the KakaoTalk Channel wired into your POS/booking system. For a single-location small business, a one-time setup plus self-managed sends is usually the better economics.', ko: '꼭 필요하진 않습니다. 채널 셋업, 알림톡 템플릿, 기본 친구톡 브로드캐스트는 한 번 구성되면 자체 운영 가능합니다 — 어려운 건 구축이지 운영이 아닙니다. 비즈보드 디스플레이 캠페인 최적화, 이중언어 크리에이티브 제작, 카카오톡 채널을 POS·예약 시스템에 연결하길 원한다면 대행사가 수수료 값을 합니다. 단일 매장 소상공인에겐 일회성 셋업 + 자체 운영 발송이 보통 더 경제적입니다.' },
+      },
+      {
+        q: { en: 'How do I measure ROI on KakaoTalk advertising?', ko: '카카오톡 광고 ROI는 어떻게 측정하나요?' },
+        a: { en: 'Tie each send to an outcome: unique coupon codes, a tracked booking link, or a "mention this message" offer at the register. The cleanest metric is revenue per send — total attributed revenue divided by messages sent. For our Korean SMB clients, alimtalk-driven re-engagement (winback, birthday, waitlist) typically returns $8-$25 per dollar of messaging cost, because the per-message cost is pennies and the audience already knows you.', ko: '각 발송을 결과에 연결하세요 — 고유 쿠폰 코드, 추적 가능한 예약 링크, 또는 계산대에서 "이 메시지 보여주세요" 오퍼. 가장 깔끔한 지표는 발송당 매출 — 귀속 총매출을 발송 수로 나눈 값. 우리 한인 소상공인 고객 기준, 알림톡 기반 재참여 (윈백, 생일, 웨이팅) 는 보통 메시지 비용 1달러당 $8~$25를 돌려줍니다. 발송당 비용이 몇 센트이고 오디언스가 이미 당신을 알기 때문입니다.' },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "\"How much does KakaoTalk advertising cost?\" is the question every Korean business owner asks, and most agencies dodge it with \"it depends.\" It does depend — but the ranges are knowable, and the ROI math is simpler than people make it. This breaks down what US Korean businesses actually pay across each KakaoTalk ad format, what an agency adds (and when it is worth it), and the simple way to know whether your spend is paying off." },
+        { type: 'stats', content: 'KakaoTalk advertising — real cost ranges for US Korean SMBs', items: [
+          '$0.007-$0.015|Per message|alimtalk / friendtalk send',
+          '$300-$1,500/mo|Typical total spend|single-location Korean SMB',
+          '$500-$2,000/mo|Agency management fee|on top of media spend',
+          '$8-$25|Return per $1|on alimtalk re-engagement sends',
+        ] },
+        { type: 'h2', content: 'The three KakaoTalk ad formats and what each costs' },
+        { type: 'p', content: "There are three things people mean by \"KakaoTalk advertising.\" First, Channel messages — alimtalk (transactional) and friendtalk (marketing) — billed per send at roughly a penny each. Second, Biz Board, the display ad at the top of the KakaoTalk chat list, which is bid-based and needs a few hundred dollars a month to test. Third, KakaoTalk Channel itself, which is free to operate and is where most of the real ROI lives. Knowing which one you actually need is half the battle — most businesses overspend on Biz Board and underuse the Channel." },
+        { type: 'h2', content: 'Where the ROI actually comes from' },
+        { type: 'p', content: "The counterintuitive truth: the cheapest format delivers the best return. Alimtalk and friendtalk sends cost pennies and go to people who already know you, so re-engagement campaigns — winback, birthday coupons, waitlist alerts, \"your order is ready\" — return $8-$25 per dollar spent. Biz Board display ads, by contrast, are acquisition spend competing for cold attention and return far less. If your budget is tight, skip the display ads entirely and put everything into Channel-based re-engagement." },
+        { type: 'h2', content: 'Acquisition vs retention: KakaoTalk is a retention channel' },
+        { type: 'p', content: "The most common mistake is treating KakaoTalk as a customer-acquisition machine. It is not — its strength is reaching people who already know you, where they actually spend their day. The winning structure for US Korean businesses: acquire new customers through Google and Meta (and local SEO), then capture them into your KakaoTalk Channel, then retain and re-activate them through low-cost Channel messages. KakaoTalk closes the loop; it does not open it." },
+        { type: 'h2', content: 'What an agency adds — and when to skip it' },
+        { type: 'p', content: "A good agency earns its fee on the build: Channel and bizmessage account approval, bilingual template design and Kakao approval, and wiring the Channel into your POS or booking system so sends fire automatically. That is genuinely hard and worth paying for once. But the ongoing sends — weekly broadcasts, seasonal promotions — are manageable in-house after setup. For a single-location business, a fixed-scope build plus self-managed operation beats a $1,500/month retainer that mostly bills you to press send." },
+        { type: 'h2', content: 'The simple ROI calculation' },
+        { type: 'p', content: "Do not overthink attribution. Put a unique code or a tracked link in each campaign, then divide attributed revenue by total cost (messaging + any agency fee). If a $200 birthday-coupon campaign drives $1,800 in redeemed visits, that is 9x — keep doing it. If a $600 Biz Board month drives $400 in trackable revenue, kill it. Run this math monthly for one quarter and you will quickly see that the cheap, transactional sends carry the program and the expensive display ads rarely do." },
+        { type: 'tip', content: "Pro tip: the highest-ROI KakaoTalk \"ad\" is not an ad at all — it is the automated alimtalk that rides on a transaction the customer already wanted (reservation confirmation, order-ready alert). It costs a penny, gets 80%+ open rates, and re-exposes your brand at the exact moment of a happy interaction. Build those flows before you spend a dollar on display." },
+        { type: 'cta', content: "ZOE LUMOS sets up KakaoTalk Channel and advertising for US Korean businesses — bilingual templates, Kakao approval, POS/booking integration, and a re-engagement playbook tuned for ROI. Fixed-scope build, no monthly retainer trap. Free 30-minute scoping call. zoelumos.com." },
+      ],
+      ko: [
+        { type: 'intro', content: "“카카오톡 광고 비용이 얼마예요?”는 모든 한인 사장님이 묻는 질문이고, 대부분의 대행사는 “상황에 따라 다릅니다”로 회피합니다. 정말 상황에 따라 다르긴 합니다 — 하지만 범위는 알 수 있고, ROI 계산은 사람들이 만드는 것보다 단순합니다. 이 글은 미국 한인 비즈니스가 각 카카오톡 광고 포맷에 실제로 내는 금액, 대행사가 더하는 가치 (와 그게 값어치 있을 때), 그리고 지출이 회수되는지 아는 단순한 방법을 분해합니다." },
+        { type: 'stats', content: '카카오톡 광고 — 미국 한인 소상공인 실제 비용 범위', items: [
+          '$0.007-$0.015|발송당|알림톡 / 친구톡',
+          '월 $300-$1,500|일반적 총 지출|단일 매장 한인 소상공인',
+          '월 $500-$2,000|대행 관리 수수료|매체비 위에 추가',
+          '$8-$25|$1당 회수|알림톡 재참여 발송',
+        ] },
+        { type: 'h2', content: '카카오톡 광고 3가지 포맷과 각각의 비용' },
+        { type: 'p', content: "사람들이 “카카오톡 광고”라고 할 때 의미하는 건 세 가지입니다. 첫째, 채널 메시지 — 알림톡 (거래성) 과 친구톡 (마케팅) — 발송당 약 1센트씩 과금. 둘째, 비즈보드, 카카오톡 채팅 목록 상단 디스플레이 광고로 입찰 기반이며 테스트에 월 수백 달러 필요. 셋째, 카카오톡 채널 자체로 운영은 무료이며 실제 ROI 대부분이 여기 있습니다. 실제로 필요한 게 뭔지 아는 게 절반의 싸움입니다 — 대부분 비즈보드에 과지출하고 채널을 덜 씁니다." },
+        { type: 'h2', content: 'ROI는 실제로 어디서 나오나' },
+        { type: 'p', content: "직관에 반하는 진실 — 가장 싼 포맷이 최고의 회수를 줍니다. 알림톡·친구톡 발송은 몇 센트이고 이미 당신을 아는 사람에게 가므로, 재참여 캠페인 — 윈백, 생일 쿠폰, 웨이팅 알림, “주문 준비됐어요” — 은 지출 1달러당 $8~$25를 돌려줍니다. 반면 비즈보드 디스플레이 광고는 차가운 관심을 두고 경쟁하는 획득 지출이라 훨씬 적게 회수합니다. 예산이 빠듯하면 디스플레이 광고는 통째로 건너뛰고 전부 채널 기반 재참여에 넣으세요." },
+        { type: 'h2', content: '획득 vs 유지: 카카오톡은 유지 채널' },
+        { type: 'p', content: "가장 흔한 실수는 카카오톡을 손님 획득 기계로 취급하는 것입니다. 아닙니다 — 강점은 이미 당신을 아는 사람에게, 그들이 실제로 하루를 보내는 곳에서 도달하는 것. 미국 한인 비즈니스의 승리 구조 — 구글·메타 (와 로컬 SEO) 로 신규 손님 획득, 그다음 카카오톡 채널로 포섭, 그다음 저비용 채널 메시지로 유지·재활성화. 카카오톡은 고리를 닫지, 열지 않습니다." },
+        { type: 'h2', content: '대행사가 더하는 가치 — 그리고 건너뛸 때' },
+        { type: 'p', content: "좋은 대행사는 구축에서 수수료 값을 합니다 — 채널·비즈메시지 계정 승인, 이중언어 템플릿 디자인과 카카오 승인, 발송이 자동으로 트리거되도록 채널을 POS·예약 시스템에 연결. 이건 정말 어렵고 한 번 값을 치를 가치가 있습니다. 하지만 지속 발송 — 주간 브로드캐스트, 시즌 프로모션 — 은 셋업 후 자체 운영 가능합니다. 단일 매장이라면 고정 범위 구축 + 자체 운영이 대부분 발송 버튼 누르는 비용을 청구하는 월 $1,500 리테이너를 이깁니다." },
+        { type: 'h2', content: '단순한 ROI 계산' },
+        { type: 'p', content: "귀속을 과도하게 생각하지 마세요. 각 캠페인에 고유 코드나 추적 링크를 넣고, 귀속 매출을 총비용 (메시지비 + 대행 수수료) 으로 나누세요. $200 생일 쿠폰 캠페인이 $1,800 사용 방문을 견인하면 9배 — 계속하세요. $600 비즈보드 한 달이 추적 가능 매출 $400을 견인하면 중단하세요. 이 계산을 한 분기 동안 매월 돌리면, 싸고 거래성 있는 발송이 프로그램을 지탱하고 비싼 디스플레이 광고는 거의 그렇지 않다는 걸 금방 알게 됩니다." },
+        { type: 'tip', content: "프로 팁 — ROI 최고의 카카오톡 “광고”는 광고가 아닙니다 — 손님이 이미 원했던 거래에 얹히는 자동 알림톡 (예약 확인, 주문 준비 알림). 1센트가 들고, 80% 이상 오픈율을 얻고, 만족스러운 상호작용의 바로 그 순간에 브랜드를 재노출합니다. 디스플레이에 1달러 쓰기 전에 이 플로우들을 먼저 구축하세요." },
+        { type: 'cta', content: "ZOE LUMOS는 미국 한인 비즈니스를 위해 카카오톡 채널과 광고를 셋업합니다 — 이중언어 템플릿, 카카오 승인, POS·예약 연동, ROI에 맞춘 재참여 플레이북. 고정 범위 구축, 월 리테이너 함정 없음. 무료 30분 스코핑 상담. zoelumos.com." },
+      ],
+    },
+  },
+  // ─────────────────────────────────────────────────────────────────
+  // 2026-06-13 — Local SEO for Korean businesses in Englewood & Bergen County NJ
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'korean-business-local-seo-englewood-bergen-county-nj-2026',
+    date: '2026-06-13',
+    updatedDate: '2026-06-13',
+    readTime: 8,
+    category: { en: 'Local SEO', ko: '로컬 SEO' },
+    title: {
+      en: 'Local SEO for Korean Businesses in Englewood & Bergen County NJ [2026]',
+      ko: '잉글우드·버겐카운티 한인 비즈니스 로컬 SEO [2026]',
+    },
+    metaDescription: {
+      en: "Bergen County is the densest Korean market on the East Coast — Englewood, Fort Lee, Palisades Park, Leonia. Here's how Korean businesses dominate local search in the NJ Korean corridor.",
+      ko: '버겐카운티는 동부 최밀집 한인 시장입니다 — 잉글우드, 포트리, 팰리세이즈파크, 리오니아. 뉴저지 한인 상권에서 한인 비즈니스가 로컬 검색을 장악하는 방법.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: { en: 'Why is Bergen County such a competitive Korean market?', ko: '버겐카운티는 왜 그렇게 경쟁이 치열한 한인 시장인가요?' },
+        a: { en: 'Bergen County has the densest Korean-American population on the East Coast — Palisades Park is over 50% Korean, with Fort Lee, Leonia, Englewood, and Closter close behind. That density means real competition: multiple Korean dentists, salons, and restaurants per town, all fighting for the same searches. The upside is that customers are abundant and search with high Korean intent; the challenge is that generic optimization will not cut it.', ko: '버겐카운티는 동부에서 가장 밀집된 한인 인구를 가졌습니다 — 팰리세이즈파크는 50% 이상이 한인이고, 포트리·리오니아·잉글우드·클로스터가 뒤를 잇습니다. 그 밀도는 실제 경쟁을 의미합니다 — 타운마다 여러 한인 치과·미용실·식당이 같은 검색을 두고 싸웁니다. 장점은 손님이 풍부하고 높은 한인 의도로 검색한다는 것; 과제는 일반적 최적화로는 안 된다는 것입니다.' },
+      },
+      {
+        q: { en: 'Should I target Englewood specifically or all of Bergen County?', ko: '잉글우드를 콕 집어 타깃해야 하나요, 아니면 버겐카운티 전체를?' },
+        a: { en: 'Target the two or three towns closest to your storefront with real pages, and cover the broader county with your Google Business Profile service area. A Fort Lee business should own "korean [service] fort lee" and "포트리 [업종]" first, then extend to Palisades Park and Leonia. Trying to rank for all of Bergen County with one generic page beats nobody — the density rewards hyper-local specificity.', ko: '매장에서 가장 가까운 2~3개 타운을 진짜 페이지로 타깃하고, 더 넓은 카운티는 구글 비즈니스 프로필 서비스 권역으로 커버하세요. 포트리 비즈니스라면 "korean [업종] fort lee"와 "포트리 [업종]"을 먼저 장악한 뒤 팰리세이즈파크·리오니아로 확장. 일반 페이지 하나로 버겐카운티 전체 순위를 노리면 아무도 못 이깁니다 — 밀도는 초로컬 구체성을 보상합니다.' },
+      },
+      {
+        q: { en: 'How important is Google Business Profile in Bergen County?', ko: '버겐카운티에서 구글 비즈니스 프로필은 얼마나 중요한가요?' },
+        a: { en: 'It is the single most important asset. In a dense market, the map pack — the top 3 local results — is where the clicks go, and the Google Business Profile determines who appears there. Precise category, complete bilingual info, weekly Korean posts, and a steady flow of reviews mentioning your town are what win the pack. In Bergen County, the business with 80 city-specific reviews beats the one with a prettier website almost every time.', ko: '가장 중요한 단일 자산입니다. 밀집 시장에서 맵 팩 — 상위 3개 로컬 결과 — 이 클릭이 가는 곳이고, 구글 비즈니스 프로필이 거기 누가 나타날지 결정합니다. 정확한 카테고리, 완전한 이중언어 정보, 매주 한국어 게시물, 타운을 언급하는 꾸준한 리뷰 흐름이 팩을 이깁니다. 버겐카운티에서는 도시별 리뷰 80개를 가진 비즈니스가 더 예쁜 웹사이트를 가진 곳을 거의 매번 이깁니다.' },
+      },
+      {
+        q: { en: 'Do Bergen County Korean customers use Naver and KakaoTalk?', ko: '버겐카운티 한인 손님은 네이버와 카카오톡을 쓰나요?' },
+        a: { en: 'Heavily, especially first-generation residents. Bergen County has a mature Korean community with active KakaoTalk groups, Korean church networks, and Korean-language community boards. Many residents discover and vet local businesses through these before ever touching Google. A KakaoTalk Channel and a Naver Place listing are not optional extras here — they are table stakes for reaching the first-generation half of this market.', ko: '많이 씁니다, 특히 1세대 주민. 버겐카운티는 활발한 카카오톡 그룹, 한인 교회 네트워크, 한국어 커뮤니티 게시판을 가진 성숙한 한인 커뮤니티입니다. 많은 주민이 구글을 건드리기 전에 이걸 통해 로컬 비즈니스를 발견하고 검증합니다. 카카오톡 채널과 네이버 플레이스 등록은 여기서 선택 사항이 아닙니다 — 이 시장의 1세대 절반에 도달하기 위한 기본 조건입니다.' },
+      },
+      {
+        q: { en: 'How fast can a Bergen County Korean business climb local rankings?', ko: '버겐카운티 한인 비즈니스가 로컬 순위를 얼마나 빨리 올릴 수 있나요?' },
+        a: { en: 'For Korean-intent town-specific queries, a complete profile and one strong local page can reach the map pack in 2-4 months even in this competitive market, because most competitors neglect the basics — incomplete profiles, no Korean posts, few recent reviews. The businesses that consistently win are not doing anything exotic; they are doing the fundamentals completely while their neighbors do them halfway.', ko: '한인 의도 타운별 쿼리는 완전한 프로필과 견고한 로컬 페이지 하나로 이 경쟁 시장에서도 2~4개월이면 맵 팩에 도달할 수 있습니다. 대부분의 경쟁자가 기본을 소홀히 하기 때문입니다 — 불완전한 프로필, 한국어 게시물 없음, 최근 리뷰 적음. 꾸준히 이기는 비즈니스는 이국적인 걸 하지 않습니다 — 이웃이 절반만 하는 기본을 완전히 합니다.' },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "Bergen County is the densest Korean-American market on the East Coast — Palisades Park is majority Korean, and Fort Lee, Leonia, Englewood, Closter, and Cresskill form a corridor of tens of thousands of Korean residents within a few square miles. For a Korean business, that density is a gift and a trap: customers are everywhere, but so are competitors, and generic SEO drowns. Winning here means being the most completely, specifically local Korean business in your town. Here is how." },
+        { type: 'stats', content: 'Bergen County Korean market — the NJ corridor', items: [
+          'Palisades Park|Majority Korean|highest Korean density in the US',
+          'Fort Lee|Korean commercial hub|dense professional + retail market',
+          'Englewood / Leonia|Growing Korean residential|strong for services',
+          '2-4 months|To reach the map pack|with complete fundamentals',
+        ] },
+        { type: 'h2', content: 'The Bergen County Korean corridor' },
+        { type: 'p', content: "The Korean population concentrates along Broad Avenue from Palisades Park through Leonia and into Englewood, and along Main Street and Lemoine Avenue in Fort Lee. These are not interchangeable towns — a customer in Fort Lee searches \"fort lee,\" not \"bergen county,\" and certainly not \"north jersey.\" The businesses that win name their specific town and its landmarks in their content, because that specificity is exactly the relevance signal Google uses to rank local results in a dense market." },
+        { type: 'h2', content: 'Hyper-local pages beat broad ones here' },
+        { type: 'p', content: "In a low-density market you might rank one page for a whole region. In Bergen County, that loses to competitors with town-specific pages. Build a real page for each of the two or three towns you serve most — Fort Lee, Palisades Park, Englewood — each with genuine local content: the specific neighborhood, parking, Korean-language hours, nearby landmarks. The English page targets \"korean [service] [town]\"; the Korean page targets \"[town] [업종].\" Never clone and swap town names — Google penalizes near-duplicate doorway pages." },
+        { type: 'h2', content: 'Google Business Profile wins the map pack' },
+        { type: 'p', content: "In a dense Korean market, the map pack is everything, and the Google Business Profile decides who lands in it. Set a precise primary category, complete every field in both languages, post weekly in Korean, and — most important — build a steady stream of reviews that mention your town by name. In Bergen County, review volume and recency with town-specific language routinely outrank a prettier or older website. This is the highest-leverage work you can do; do it before anything else." },
+        { type: 'h2', content: 'Naver and KakaoTalk are table stakes here' },
+        { type: 'p', content: "Bergen County's Korean community is mature and tightly networked. First-generation residents discover businesses through KakaoTalk groups, Korean churches, and Korean-language boards long before they open Google. A KakaoTalk Channel that answers in Korean, fast, converts this audience far better than a contact form. A Naver Place listing with a few real reviews covers the customers who still check Naver out of habit. In this market, skipping these channels means conceding the entire first-generation half of your potential customers." },
+        { type: 'h2', content: 'Reviews: the currency of a dense Korean market' },
+        { type: 'p', content: "When five Korean dentists in Fort Lee all have decent websites, reviews break the tie. Specifically, reviews that are recent, mention the town, and ideally include a Korean phrase. Build a simple system: after every positive interaction, ask the customer to leave a Google review — and make it easy with a QR code or a KakaoTalk link. In Bergen County, a business that systematically collects 5-10 town-specific reviews a month will pull ahead of competitors who collect them by accident, within a single quarter." },
+        { type: 'tip', content: "Pro tip: in Bergen County, your Korean competitors are watching the same map pack you are. The differentiator is rarely budget — it is consistency. The business that posts in Korean every week, replies to every review in both languages, and asks every happy customer for a town-specific review will out-rank a competitor who does these things sporadically, even with a smaller marketing spend." },
+        { type: 'cta', content: "ZOE LUMOS builds local-SEO systems for Korean businesses across Bergen County — Englewood, Fort Lee, Palisades Park, Leonia, and beyond. Town-targeted bilingual pages, Google Business Profile optimization, Naver and KakaoTalk setup, and review systems. Free 30-minute strategy call. zoelumos.com." },
+      ],
+      ko: [
+        { type: 'intro', content: "버겐카운티는 동부에서 가장 밀집된 한인 시장입니다 — 팰리세이즈파크는 한인이 과반이고, 포트리·리오니아·잉글우드·클로스터·크레스킬이 몇 제곱마일 안에 수만 명의 한인 주민으로 이루어진 상권을 형성합니다. 한인 비즈니스에게 그 밀도는 선물이자 함정입니다 — 손님이 어디에나 있지만 경쟁자도 그렇고, 일반 SEO는 묻혀버립니다. 여기서 이긴다는 건 당신 타운에서 가장 완전하고 구체적으로 로컬한 한인 비즈니스가 되는 것입니다. 그 방법입니다." },
+        { type: 'stats', content: '버겐카운티 한인 시장 — 뉴저지 상권', items: [
+          '팰리세이즈파크|한인 과반|미국 최고 한인 밀도',
+          '포트리|한인 상업 허브|밀집된 전문직 + 소매 시장',
+          '잉글우드 / 리오니아|성장하는 한인 주거|서비스업에 강함',
+          '2-4개월|맵 팩 도달|완전한 기본 갖췄을 때',
+        ] },
+        { type: 'h2', content: '버겐카운티 한인 상권' },
+        { type: 'p', content: "한인 인구는 팰리세이즈파크에서 리오니아를 거쳐 잉글우드로 이어지는 브로드 애비뉴를 따라, 그리고 포트리의 메인 스트리트와 르모인 애비뉴를 따라 집중됩니다. 이 타운들은 서로 대체 가능하지 않습니다 — 포트리 손님은 “fort lee”를 검색하지 “bergen county”가 아니고, 더더욱 “north jersey”가 아닙니다. 이기는 비즈니스는 콘텐츠에 구체적 타운과 랜드마크를 명시합니다. 그 구체성이야말로 구글이 밀집 시장에서 로컬 결과 순위를 매길 때 쓰는 관련성 신호이기 때문입니다." },
+        { type: 'h2', content: '여기선 초로컬 페이지가 광범위 페이지를 이긴다' },
+        { type: 'p', content: "저밀도 시장에선 한 페이지로 한 지역 전체 순위를 노릴 수 있습니다. 버겐카운티에선 그게 타운별 페이지를 가진 경쟁자에게 집니다. 가장 많이 서비스하는 2~3개 타운 — 포트리, 팰리세이즈파크, 잉글우드 — 각각에 진짜 로컬 콘텐츠 (구체적 동네, 주차, 한국어 응대 시간, 인근 랜드마크) 를 담은 진짜 페이지를 만드세요. 영어 페이지는 “korean [업종] [타운]”을, 한국어 페이지는 “[타운] [업종]”을 타깃. 절대 복제해 타운명만 바꾸지 마세요 — 구글은 거의 중복인 도어웨이 페이지에 페널티를 줍니다." },
+        { type: 'h2', content: '구글 비즈니스 프로필이 맵 팩을 이긴다' },
+        { type: 'p', content: "밀집 한인 시장에서 맵 팩이 전부이고, 구글 비즈니스 프로필이 거기 누가 들어갈지 결정합니다. 정확한 1차 카테고리 설정, 양 언어로 모든 필드 완성, 매주 한국어 게시, 그리고 — 가장 중요 — 타운명을 언급하는 꾸준한 리뷰 흐름 구축. 버겐카운티에서는 타운별 언어가 담긴 리뷰의 양과 최신성이 더 예쁘거나 오래된 웹사이트를 일상적으로 앞섭니다. 이게 할 수 있는 가장 효과 큰 작업입니다 — 다른 무엇보다 먼저 하세요." },
+        { type: 'h2', content: '여기선 네이버와 카카오톡이 기본 조건' },
+        { type: 'p', content: "버겐카운티 한인 커뮤니티는 성숙하고 촘촘히 네트워크화되어 있습니다. 1세대 주민은 구글을 열기 한참 전에 카카오톡 그룹, 한인 교회, 한국어 게시판을 통해 비즈니스를 발견합니다. 한국어로 빠르게 답하는 카카오톡 채널은 이 오디언스를 문의 폼보다 훨씬 잘 전환합니다. 실제 리뷰 몇 개가 있는 네이버 플레이스 등록은 여전히 습관적으로 네이버를 확인하는 손님을 커버합니다. 이 시장에서 이 채널들을 건너뛰는 건 잠재 손님의 1세대 절반 전체를 양보하는 것입니다." },
+        { type: 'h2', content: '리뷰: 밀집 한인 시장의 화폐' },
+        { type: 'p', content: "포트리의 한인 치과 다섯 곳이 모두 괜찮은 웹사이트를 가졌을 때, 리뷰가 승부를 가릅니다. 구체적으로 — 최신이고, 타운을 언급하고, 이상적으로 한국어 문구를 포함한 리뷰. 단순한 시스템을 만드세요 — 긍정적 상호작용마다 손님에게 구글 리뷰를 부탁하고, QR 코드나 카카오톡 링크로 쉽게 만드세요. 버겐카운티에서는 매월 타운별 리뷰 5~10개를 체계적으로 모으는 비즈니스가 우연히 모으는 경쟁자를 한 분기 안에 앞서갑니다." },
+        { type: 'tip', content: "프로 팁 — 버겐카운티에서 당신의 한인 경쟁자들도 같은 맵 팩을 지켜보고 있습니다. 차별화 요소는 예산이 아니라 일관성인 경우가 많습니다. 매주 한국어로 게시하고, 모든 리뷰에 양 언어로 답하고, 모든 만족한 손님에게 타운별 리뷰를 부탁하는 비즈니스는 마케팅 지출이 더 적어도 이걸 산발적으로 하는 경쟁자를 앞섭니다." },
+        { type: 'cta', content: "ZOE LUMOS는 버겐카운티 전역 — 잉글우드, 포트리, 팰리세이즈파크, 리오니아 및 그 너머 — 한인 비즈니스를 위한 로컬 SEO 시스템을 구축합니다. 타운 타깃 이중언어 페이지, 구글 비즈니스 프로필 최적화, 네이버·카카오톡 셋업, 리뷰 시스템. 무료 30분 전략 상담. zoelumos.com." },
       ],
     },
   },

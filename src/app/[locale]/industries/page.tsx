@@ -5,8 +5,9 @@ import Footer from '@/components/layout/Footer'
 import InView from '@/components/ui/motion/InView'
 import Magnetic from '@/components/ui/motion/Magnetic'
 import { industries } from '@/data/industriesData'
+import { SITE_URL } from '@/lib/siteUrl'
 
-const BASE = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
+const BASE = SITE_URL
 
 export function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'ko' }]

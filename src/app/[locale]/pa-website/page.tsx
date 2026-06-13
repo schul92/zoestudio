@@ -4,12 +4,13 @@ import Footer from '@/components/layout/Footer'
 import Contact from '@/components/sections/Contact'
 import Link from 'next/link'
 import { Building2, Globe, Search } from 'lucide-react'
+import { SITE_URL } from '@/lib/siteUrl'
 
 export async function generateStaticParams() { return [{ locale: 'en' }, { locale: 'ko' }] }
 
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
   const locale = params.locale as 'en' | 'ko'
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
+  const baseUrl = SITE_URL
   if (locale === 'ko') {
     return {
       title: '펜실베이니아 웹사이트 제작 전문 | 필라델피아 한인 비즈니스 웹개발 | ZOE LUMOS',
@@ -32,7 +33,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
 
 export default function PAWebsitePage({ params }: { params: { locale: string } }) {
   const locale = params.locale as 'en' | 'ko'
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
+  const baseUrl = SITE_URL
   const ko = locale === 'ko'
   const schema = { '@context': 'https://schema.org', '@type': 'ProfessionalService', name: 'ZOE LUMOS - Pennsylvania Website Design', description: ko ? '펜실베이니아 한인 비즈니스를 위한 웹사이트 제작 전문' : 'Website design for Korean-American businesses in Pennsylvania', url: `${baseUrl}/${ko ? 'ko/' : ''}pa-website`, email: 'info@zoelumos.com', areaServed: [{ '@type': 'City', name: 'Philadelphia' }, { '@type': 'City', name: 'King of Prussia' }, { '@type': 'City', name: 'Cheltenham' }, { '@type': 'City', name: 'Upper Darby' }], priceRange: '$1,000-$10,000' }
 

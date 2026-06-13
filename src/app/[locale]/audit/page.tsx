@@ -2,8 +2,9 @@ import type { Metadata } from 'next'
 import HeaderWrapper from '@/components/layout/HeaderWrapper'
 import Footer from '@/components/layout/Footer'
 import AuditClient from './AuditClient'
+import { SITE_URL } from '@/lib/siteUrl'
 
-const BASE = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
+const BASE = SITE_URL
 
 export function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'ko' }]

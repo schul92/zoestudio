@@ -4,12 +4,13 @@ import Footer from '@/components/layout/Footer'
 import Contact from '@/components/sections/Contact'
 import Link from 'next/link'
 import { Building2, Globe, Search } from 'lucide-react'
+import { SITE_URL } from '@/lib/siteUrl'
 
 export async function generateStaticParams() { return [{ locale: 'en' }, { locale: 'ko' }] }
 
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
   const locale = params.locale as 'en' | 'ko'
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
+  const baseUrl = SITE_URL
   if (locale === 'ko') {
     return {
       title: '플로리다 웹사이트 제작 전문 | 마이애미 올랜도 한인 비즈니스 웹개발 | ZOE LUMOS',
@@ -32,7 +33,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
 
 export default function FLWebsitePage({ params }: { params: { locale: string } }) {
   const locale = params.locale as 'en' | 'ko'
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
+  const baseUrl = SITE_URL
   const ko = locale === 'ko'
   const schema = { '@context': 'https://schema.org', '@type': 'ProfessionalService', name: 'ZOE LUMOS - Florida Website Design', description: ko ? '플로리다 한인 비즈니스를 위한 웹사이트 제작 전문' : 'Website design for Korean-American businesses in Florida', url: `${baseUrl}/${ko ? 'ko/' : ''}fl-website`, email: 'info@zoelumos.com', areaServed: [{ '@type': 'City', name: 'Miami' }, { '@type': 'City', name: 'Orlando' }, { '@type': 'City', name: 'Tampa' }, { '@type': 'City', name: 'Jacksonville' }], priceRange: '$1,000-$10,000' }
 

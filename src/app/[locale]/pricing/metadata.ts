@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import { SITE_URL } from '@/lib/siteUrl'
 
 export function generatePricingMetadata(locale: 'en' | 'ko'): Metadata {
   const metadata = {
@@ -14,7 +15,7 @@ export function generatePricingMetadata(locale: 'en' | 'ko'): Metadata {
     }
   }
 
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
+  const baseUrl = SITE_URL
 
   return {
     title: metadata[locale].title,

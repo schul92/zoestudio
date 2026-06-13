@@ -219,4 +219,15 @@ export const POST_TO_PILLAR: Record<string, PillarKey> = {
   // 2026-05-13 — 2 new case studies (analytics showed 3.7x engagement on case studies)
   'case-study-salt-and-polish-fort-lee-spa-rebuild-2026': 'bilingual-seo',
   'case-study-korean-restaurant-palisades-park-bookings-3x-2026': 'restaurant-marketing',
+
+  // backfill — previously unmapped existing posts (restored internal linking)
+  'korean-bbq-restaurant-website-marketing-2026': 'restaurant-marketing',
+  'tiktok-shop-korean-smb-us-2026': 'kakaotalk-marketing',
+  'korean-immigration-law-firm-website-seo-2026': 'professional-services',
+
+  // 2026-06-13 — GSC-gap batch (Atlanta metro, Korean SEO, KakaoTalk ROI, Bergen County)
+  'korean-business-marketing-atlanta-johns-creek-suwanee-2026': 'bilingual-seo',
+  'korean-seo-guide-american-businesses-2026': 'bilingual-seo',
+  'kakaotalk-advertising-cost-roi-korean-business-2026': 'kakaotalk-marketing',
+  'korean-business-local-seo-englewood-bergen-county-nj-2026': 'bilingual-seo',
 }
