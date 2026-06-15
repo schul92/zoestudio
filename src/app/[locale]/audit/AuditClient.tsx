@@ -22,6 +22,7 @@ type Metrics = {
 type AuditResult = {
   url: string
   fetchedAt: number
+  mode?: 'full' | 'lite'
   scores: Scores
   metrics: Metrics
   displays: Record<keyof Metrics, string | null>
@@ -39,7 +40,16 @@ const copy = {
     placeholder: 'https://your-business.com',
     run: 'Audit my site',
     running: 'Auditing…',
-    error: 'Something went wrong. Double-check the URL and try again.',
+    error: 'Something went wrong running the audit. Please try again in a moment.',
+    errorRate:
+      "Google's free audit service is busy right now (rate limit). Give it a minute and try again — or message us and we'll run a full audit for you.",
+    errorTimeout:
+      'The audit took too long — Google was slow to respond. Please try again in a moment.',
+    errorUrl: "That doesn't look like a valid URL. Try the full address, e.g. https://your-business.com",
+    errorUnreachable:
+      "We couldn't reach that site — it may be down, blocking automated checks, or the address is off. Double-check the URL and try again.",
+    liteBanner:
+      "Quick check — Google's full Lighthouse audit was busy, so these are instant heuristic scores from a live technical check (HTTPS, SEO tags, mobile, accessibility, security headers). Run again in a few minutes for full Lighthouse scores, or message us for a complete audit.",
     categories: {
       performance: 'Performance',
       seo: 'SEO',
@@ -73,7 +83,15 @@ const copy = {
     placeholder: 'https://내-비즈니스.com',
     run: '내 사이트 감사하기',
     running: '감사 중…',
-    error: '문제가 발생했습니다. URL을 다시 확인하고 시도해 주세요.',
+    error: '감사 실행 중 문제가 발생했습니다. 잠시 후 다시 시도해 주세요.',
+    errorRate:
+      '구글 무료 감사 서비스가 현재 혼잡합니다(요청 제한). 1분 후 다시 시도하거나, 메시지를 주시면 전체 감사를 직접 돌려드립니다.',
+    errorTimeout: '감사가 너무 오래 걸렸습니다 — 구글 응답이 느렸습니다. 잠시 후 다시 시도해 주세요.',
+    errorUrl: '올바른 URL 형식이 아닙니다. 전체 주소를 입력해 주세요, 예: https://your-business.com',
+    errorUnreachable:
+      '해당 사이트에 접속할 수 없습니다 — 다운되었거나, 자동 점검을 차단하거나, 주소가 잘못되었을 수 있습니다. URL을 확인하고 다시 시도해 주세요.',
+    liteBanner:
+      '빠른 점검 — 구글 전체 Lighthouse 감사가 혼잡하여, 실시간 기술 점검(HTTPS, SEO 태그, 모바일, 접근성, 보안 헤더)으로 즉시 산출한 휴리스틱 점수입니다. 몇 분 후 다시 실행하면 전체 Lighthouse 점수를 받거나, 메시지를 주시면 완전한 감사를 돌려드립니다.',
     categories: {
       performance: '성능',
       seo: 'SEO',
@@ -135,13 +153,27 @@ export default function AuditClient({ locale = 'en' }: { locale?: 'en' | 'ko' })
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ url: url.trim() }),
       })
-      if (!res.ok) throw new Error('audit failed')
+      if (!res.ok) {
+        let code = ''
+        try {
+          const j = await res.json()
+          code = (j?.error || '').toString()
+        } catch {}
+        if (res.status === 429 || code === 'rate-limited') setErr(t.errorRate)
+        else if (res.status === 504 || /timed out/i.test(code)) setErr(t.errorTimeout)
+        else if (code === 'unreachable') setErr(t.errorUnreachable)
+        else if (res.status === 400 || code === 'invalid-url' || code === 'missing-url')
+          setErr(t.errorUrl)
+        else setErr(t.error)
+        setStatus('error')
+        return
+      }
       const data: AuditResult = await res.json()
       setResult(data)
       setStatus('success')
     } catch {
       setStatus('error')
-      setErr(t.error)
+      setErr(t.errorTimeout)
     }
   }
 
@@ -194,7 +226,7 @@ export default function AuditClient({ locale = 'en' }: { locale?: 'en' | 'ko' })
                 <label htmlFor="audit-url" className="sr-only">URL</label>
                 <input
                   id="audit-url"
-                  type="url"
+                  type="text"
                   inputMode="url"
                   autoComplete="url"
                   placeholder={t.placeholder}
@@ -238,6 +270,11 @@ export default function AuditClient({ locale = 'en' }: { locale?: 'en' | 'ko' })
       {status === 'success' && result && (
         <section className="section-pad hair-bottom bg-bone">
           <div className="container-edge">
+            {result.mode === 'lite' && (
+              <div className="mb-8 border-l-2 border-gold pl-4 py-1 text-[13px] text-graphite leading-relaxed max-w-3xl">
+                {t.liteBanner}
+              </div>
+            )}
             <div className="flex items-baseline justify-between flex-wrap gap-3 mb-10">
               <div className="overline text-ash flex items-center gap-3">
                 <span className="section-num not-italic text-ink font-normal">§ 01</span>
