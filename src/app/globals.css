@@ -358,3 +358,16 @@ input, textarea, select, button {
     scroll-behavior: auto !important;
   }
 }
+
+/* Hero loading veil — pure-CSS fade out. Runs on first paint, independent of
+   React hydration, so it never delays LCP (was causing 5.7s LCP on mobile). */
+@keyframes zl-veil-out {
+  0%, 35% { opacity: 1; visibility: visible; }
+  100% { opacity: 0; visibility: hidden; }
+}
+.zl-veil {
+  animation: zl-veil-out 0.7s ease forwards;
+}
+@media (prefers-reduced-motion: reduce) {
+  .zl-veil { animation: none; opacity: 0; visibility: hidden; }
+}

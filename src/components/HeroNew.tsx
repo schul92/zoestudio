@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import Magnetic from '@/components/ui/motion/Magnetic'
 
 const copy = {
@@ -99,12 +99,6 @@ export default function HeroNew({ locale = 'en' }: { locale?: string }) {
     }
   }, [])
 
-  const [veilVisible, setVeilVisible] = useState(true)
-  useEffect(() => {
-    const tm = setTimeout(() => setVeilVisible(false), 320)
-    return () => clearTimeout(tm)
-  }, [])
-
   return (
     <section
       className="zl-hero relative overflow-hidden"
@@ -133,12 +127,10 @@ export default function HeroNew({ locale = 'en' }: { locale?: string }) {
         }}
       />
 
-      {/* Loading veil */}
+      {/* Loading veil — pure CSS fade so it never waits on JS hydration (LCP-safe) */}
       <div
         aria-hidden
-        className={`pointer-events-none fixed inset-0 z-[200] flex items-center justify-center transition-all duration-400 ${
-          veilVisible ? 'opacity-100 visible' : 'opacity-0 invisible'
-        }`}
+        className="zl-veil pointer-events-none fixed inset-0 z-[200] flex items-center justify-center"
         style={{ background: '#FFF4E8' }}
       >
         <div className="flex items-center gap-3 font-display italic text-[22px]" style={{ color: 'var(--zl-ink)' }}>
