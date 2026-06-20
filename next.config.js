@@ -81,11 +81,8 @@ const nextConfig = {
   },
   async rewrites() {
     return [
-      // Serve llms.txt from API route for AI crawlers
-      {
-        source: '/llms.txt',
-        destination: '/api/llms',
-      },
+      // /llms.txt is served by the static public/llms.txt file (single source of
+      // truth, fresh on every deploy). No rewrite needed.
     ]
   },
   async redirects() {
