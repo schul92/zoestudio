@@ -41,6 +41,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/bilingual-seo-new-york',
     '/korean-web-design-agencies-nj-compared',
     '/services/kakaotalk-integration',
+    '/services/kakaotalk-marketing-usa',
     '/services/google-business-profile-optimization',
     '/services/shopify-cost-audit',
     '/compare/best-ecommerce-platform-korean-business-2026',
