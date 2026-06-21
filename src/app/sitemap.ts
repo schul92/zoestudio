@@ -47,6 +47,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/compare/best-ecommerce-platform-korean-business-2026',
     '/tools',
     '/tools/website-cost-estimator',
+    // Content-cluster pillar guides
+    '/bilingual-seo-guide',
+    '/kakaotalk-marketing-guide',
+    '/ai-consulting-korean-business',
+    '/korean-restaurant-marketing-guide',
+    '/korean-beauty-wellness-website-guide',
+    '/website-cost-guide',
+    '/korean-professional-services-website-guide',
     // Korean-American city hub pages
     ...koreanCities.map((c) => `/${c.slug}`),
   ]
