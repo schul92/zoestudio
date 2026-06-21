@@ -7144,4 +7144,95 @@ export const blogContent: BlogPost[] = [
       ],
     },
   },
+  // ─────────────────────────────────────────────────────────────────
+  // 2026-06-21 — Korean-American business by state (cornerstone, links the 50-state network)
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'korean-american-business-by-state-2026',
+    date: '2026-06-21',
+    updatedDate: '2026-06-21',
+    readTime: 9,
+    category: { en: 'Local SEO', ko: '로컬 SEO' },
+    title: {
+      en: 'Korean-American Business by State: Where the Communities Are [2026]',
+      ko: '주별 한인 비즈니스: 한인 커뮤니티는 어디에 있나 [2026]',
+    },
+    metaDescription: {
+      en: 'A state-by-state map of Korean-American communities in 2026 — population, the major Korean commercial corridors, and what it means for getting your business found online in any US state.',
+      ko: '2026년 주별 한인 커뮤니티 지도 — 인구, 주요 한인 상권, 그리고 어느 주에서든 비즈니스를 온라인에서 찾게 만드는 방법.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: { en: 'Which US states have the most Korean-American businesses?', ko: '미국에서 한인 비즈니스가 가장 많은 주는?' },
+        a: { en: 'California leads by far (~571,000 Korean-Americans, anchored by LA Koreatown and Orange County), followed by New York (~146,000), Texas (~129,000), New Jersey (~114,000), and Washington (~105,000). Virginia, Georgia, and Illinois round out the top eight.', ko: '캘리포니아가 압도적 1위(한인 약 57만 명, LA 코리아타운·오렌지카운티 중심)이고, 뉴욕(약 14.6만), 텍사스(약 12.9만), 뉴저지(약 11.4만), 워싱턴(약 10.5만)이 뒤를 잇습니다. 버지니아·조지아·일리노이가 상위 8개를 완성합니다.' },
+      },
+      {
+        q: { en: 'Where is the densest Korean community in the US?', ko: '미국에서 가장 밀집된 한인 커뮤니티는?' },
+        a: { en: 'Palisades Park, New Jersey — its Broad Avenue corridor is roughly 65% Korean, the densest Korean enclave in the Western Hemisphere. For commercial scale, LA Koreatown is the largest, and Manhattan 32nd Street is the iconic East Coast Koreatown.', ko: '뉴저지 팰리세이즈파크 — 브로드 애비뉴 일대가 약 65% 한인으로, 서반구에서 가장 밀집된 한인 거주지입니다. 상업 규모로는 LA 코리아타운이 최대이고, 맨해튼 32가가 동부의 상징적 코리아타운입니다.' },
+      },
+      {
+        q: { en: 'Can a Korean business in a small state still rank online?', ko: '작은 주의 한인 비즈니스도 온라인에서 순위에 오를 수 있나요?' },
+        a: { en: 'Yes — often more easily. In smaller markets (Tennessee, Utah, Nevada, the Carolinas) there is little Korean-language competition, so a well-built bilingual site with local SEO can own the "korean [service] [city]" searches quickly. Low competition is an advantage.', ko: '네 — 오히려 더 쉽습니다. 작은 시장(테네시, 유타, 네바다, 캐롤라이나)은 한국어 경쟁이 적어, 잘 만든 이중언어 사이트와 로컬 SEO로 "korean [업종] [도시]" 검색을 빠르게 장악할 수 있습니다. 낮은 경쟁은 이점입니다.' },
+      },
+      {
+        q: { en: 'Do I need to be in the same city as my web designer?', ko: '웹 디자이너와 같은 도시에 있어야 하나요?' },
+        a: { en: 'No. Zoe Lumos works with Korean-American businesses in all 50 states, fully remote — Zoom video meetings and KakaoTalk, in Korean or English, with a 6-week average timeline.', ko: '아닙니다. ZOE LUMOS는 50개 주 한인 비즈니스와 완전 원격으로 작업합니다 — Zoom 화상 미팅과 카카오톡, 한국어·영어, 6주 평균 납기.' },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "There are about 2 million Korean-Americans in the US, and they are not where most people assume. The market is led by California (~571,000), then New York, Texas, New Jersey, and Washington — but Korean businesses are growing fastest in places without a single Koreatown: the Carolinas, Ohio, Tennessee, Colorado. Here is the 2026 state-by-state map, and what it means for getting your business found online wherever you are." },
+        { type: 'stats', content: 'The four largest Korean markets (Korean-American population, 2026 estimates)', items: [
+          '571K|California|LA Koreatown + Orange County',
+          '146K|New York|Manhattan 32nd St + Flushing',
+          '129K|Texas|Carrollton + Houston Spring Branch',
+          '114K|New Jersey|Palisades Park + Fort Lee',
+        ] },
+        { type: 'h2', content: 'Where Korean-Americans actually live' },
+        { type: 'p', content: "The community concentrates in a handful of states with named commercial corridors. New Jersey's Palisades Park (Broad Avenue) is the densest Korean enclave in the Western Hemisphere at roughly 65% Korean. California's LA Koreatown is the largest by scale, with Orange County as the suburban hub. Virginia's Annandale, Georgia's Duluth, and Washington's Federal Way each anchor a major regional community around an H Mart." },
+        { type: 'h2', content: 'The states growing fastest (and why)' },
+        { type: 'p', content: "The fastest growth is happening away from the historic Koreatowns, driven by industry. North Carolina's Research Triangle and Ohio's Dublin draw Korean tech and auto-supplier families. Alabama (Hyundai's Montgomery plant), South Carolina (BMW near Greenville), and Indiana (Purdue plus auto plants) have communities seeded by manufacturing. Colorado's Aurora even has a city-designated Korea Town on Havana Street. These newer markets have thin Korean-language competition — which is exactly why they are winnable." },
+        { type: 'h2', content: 'The full picture, by tier' },
+        { type: 'ul', content: 'How the 50 states break down by Korean community size:', items: [
+          'Large markets (8): CA, NY, TX, NJ, WA, VA, GA, IL — established Koreatowns, real competition',
+          'Growing communities (13): MD, PA, HI, FL, MI, CO, MA, NC, AZ, OR, MN, OH, NV',
+          'Smaller established (12): AL, TN, MO, IN, CT, WI, UT, SC, IA, OK, KS, KY',
+          'Served remotely (17): AK, ID, LA, NM, NH, AR, NE, DE, ME, RI, MS, ND, MT, WV, SD, VT, WY',
+        ] },
+        { type: 'h2', content: 'What this means for your website' },
+        { type: 'p', content: "Your strategy should match your state's tier. In a large market you are fighting other Korean businesses for the local pack, so reviews, citations, and town-specific pages decide who wins. In a growing or smaller market, you are often the only Korean business optimizing properly — a correct bilingual site with local SEO can take the top spot in months. In a remote-served state, the goal is simply to be the one Korean-American provider that shows up in English and Korean search at all." },
+        { type: 'h2', content: 'Getting found in any state — the same playbook' },
+        { type: 'p', content: "The mechanics do not change by zip code: a bilingual site with correct hreflang, local SEO and a complete Google Business Profile, and GEO so you are cited in ChatGPT, Perplexity, and Google AI answers. We build this for Korean-American businesses in all 50 states, fully remote, with Zoom and KakaoTalk. The state you are in changes the competition, not the playbook." },
+        { type: 'tip', content: "Pro tip: search your own target query — korean [your service] [your city] — in both Google and ChatGPT. If a competitor shows up and you don't, that gap is your entire opportunity. In smaller states, that gap is usually wide open." },
+        { type: 'cta', content: "See your state: Zoe Lumos builds bilingual websites, local SEO, and GEO for Korean-American businesses in all 50 states. Find your state page at zoelumos.com/states, or book a free 30-minute consultation." },
+      ],
+      ko: [
+        { type: 'intro', content: "미국에는 약 200만 명의 한인이 있고, 대부분의 예상과 다른 곳에 있습니다. 시장은 캘리포니아(약 57만)가 이끌고, 뉴욕·텍사스·뉴저지·워싱턴이 뒤를 잇습니다 — 하지만 한인 비즈니스가 가장 빠르게 성장하는 곳은 코리아타운이 하나도 없는 지역입니다 — 캐롤라이나, 오하이오, 테네시, 콜로라도. 2026년 주별 지도와, 어디에 있든 비즈니스를 온라인에서 찾게 만드는 방법을 정리합니다." },
+        { type: 'stats', content: '4대 한인 시장 (한인 인구, 2026 추정)', items: [
+          '57만|캘리포니아|LA 코리아타운 + 오렌지카운티',
+          '14.6만|뉴욕|맨해튼 32가 + 플러싱',
+          '12.9만|텍사스|캐롤턴 + 휴스턴 스프링브랜치',
+          '11.4만|뉴저지|팰리세이즈파크 + 포트리',
+        ] },
+        { type: 'h2', content: '한인은 실제로 어디에 사나' },
+        { type: 'p', content: "커뮤니티는 이름난 상권을 가진 몇몇 주에 집중됩니다. 뉴저지 팰리세이즈파크(브로드 애비뉴)는 약 65% 한인으로 서반구에서 가장 밀집된 한인 거주지입니다. 캘리포니아 LA 코리아타운이 규모로 최대이고, 오렌지카운티가 교외 허브입니다. 버지니아 애난데일, 조지아 둘루스, 워싱턴 페더럴웨이가 각각 H마트를 중심으로 주요 지역 커뮤니티를 받칩니다." },
+        { type: 'h2', content: '가장 빠르게 성장하는 주 (그리고 이유)' },
+        { type: 'p', content: "가장 빠른 성장은 역사적 코리아타운에서 벗어난 곳에서 산업을 따라 일어납니다. 노스캐롤라이나 리서치 트라이앵글과 오하이오 더블린이 한인 테크·자동차 협력사 가족을 끌어들입니다. 앨라배마(현대 몽고메리 공장), 사우스캐롤라이나(그린빌 BMW), 인디애나(퍼듀 + 자동차 공장)는 제조업이 커뮤니티를 형성했습니다. 콜로라도 오로라는 하바나 스트리트에 시가 지정한 코리아 타운까지 있습니다. 이 신생 시장은 한국어 경쟁이 적어 — 바로 그래서 잡을 수 있습니다." },
+        { type: 'h2', content: '티어별 전체 그림' },
+        { type: 'ul', content: '50개 주를 한인 커뮤니티 규모로 나누면:', items: [
+          '대형 시장 (8): CA, NY, TX, NJ, WA, VA, GA, IL — 자리 잡은 코리아타운, 실제 경쟁',
+          '성장 커뮤니티 (13): MD, PA, HI, FL, MI, CO, MA, NC, AZ, OR, MN, OH, NV',
+          '소규모 정착 (12): AL, TN, MO, IN, CT, WI, UT, SC, IA, OK, KS, KY',
+          '원격 서비스 (17): AK, ID, LA, NM, NH, AR, NE, DE, ME, RI, MS, ND, MT, WV, SD, VT, WY',
+        ] },
+        { type: 'h2', content: '내 웹사이트에 주는 의미' },
+        { type: 'p', content: "전략은 주의 티어에 맞춰야 합니다. 대형 시장에서는 맵 팩을 두고 다른 한인 비즈니스와 싸우므로 리뷰·인용·타운별 페이지가 승부를 가립니다. 성장·소규모 시장에서는 제대로 최적화하는 유일한 한인 비즈니스인 경우가 많아 — 올바른 이중언어 사이트와 로컬 SEO로 몇 달 안에 1위를 차지할 수 있습니다. 원격 서비스 주에서는 한국어·영어 검색에 노출되는 유일한 한인 제공자가 되는 것이 목표입니다." },
+        { type: 'h2', content: '어느 주에서든 발견되기 — 같은 플레이북' },
+        { type: 'p', content: "방식은 우편번호로 바뀌지 않습니다 — 올바른 hreflang의 이중언어 사이트, 로컬 SEO와 완전한 구글 비즈니스 프로필, 그리고 ChatGPT·Perplexity·구글 AI 답변에 인용되는 GEO. 우리는 이것을 50개 주 한인 비즈니스를 위해 Zoom과 카카오톡으로 완전 원격 구축합니다. 어느 주에 있느냐는 경쟁을 바꾸지, 플레이북을 바꾸지 않습니다." },
+        { type: 'tip', content: "프로 팁 — 내 타깃 검색어 korean [업종] [도시]를 구글과 ChatGPT 양쪽에서 직접 검색해 보세요. 경쟁자는 나오는데 내가 안 나온다면, 그 격차가 곧 기회입니다. 작은 주에서는 그 격차가 보통 활짝 열려 있습니다." },
+        { type: 'cta', content: "내 주 보기 — ZOE LUMOS는 50개 주 한인 비즈니스를 위한 이중언어 웹사이트, 로컬 SEO, GEO를 구축합니다. zoelumos.com/states에서 내 주 페이지를 찾거나, 무료 30분 상담을 예약하세요." },
+      ],
+    },
+  },
 ]

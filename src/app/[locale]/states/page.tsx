@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import HeaderWrapper from '@/components/layout/HeaderWrapper'
 import Footer from '@/components/layout/Footer'
 import { usStates } from '@/data/usStates'
@@ -84,6 +85,16 @@ export default function StatesIndex({ params }: { params: { locale: string } }) 
               ? 'ZOE LUMOS는 미국 50개 주 어디서나 한인 비즈니스를 위한 한·영 이중언어 웹사이트, 로컬 SEO, AI 검색 최적화(GEO)를 제공합니다. 직접 만나지 않아도 화상 미팅과 카카오톡으로 동일한 품질로 진행합니다. 아래에서 주를 선택하세요.'
               : 'ZOE LUMOS builds bilingual Korean-English websites, local SEO, and AI-search optimization (GEO) for Korean-American businesses in all 50 states — same quality everywhere, via video meetings and KakaoTalk, no in-person required. Pick your state below.'}
           </p>
+          <div className="mt-12 relative aspect-[16/9] w-full max-w-4xl overflow-hidden rounded-[2px] border border-hairline">
+            <Image
+              src="/states/states-hero-nationwide.png"
+              alt={ko ? '새 웹사이트를 보여주는 한인 비즈니스 사장님' : 'A Korean-American business owner showing their new website'}
+              fill
+              priority
+              sizes="(max-width: 1024px) 100vw, 900px"
+              className="object-cover"
+            />
+          </div>
         </section>
 
         {TIERS.map((tier) => {

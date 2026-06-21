@@ -230,4 +230,5 @@ export const POST_TO_PILLAR: Record<string, PillarKey> = {
   'korean-seo-guide-american-businesses-2026': 'bilingual-seo',
   'kakaotalk-advertising-cost-roi-korean-business-2026': 'kakaotalk-marketing',
   'korean-business-local-seo-englewood-bergen-county-nj-2026': 'bilingual-seo',
+  'korean-american-business-by-state-2026': 'bilingual-seo',
 }
