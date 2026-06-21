@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next'
 import { blogContent } from '@/data/blogContent'
 import { koreanCities } from '@/data/koreanCities'
+import { usStates, STATES_WITH_CUSTOM_PAGES } from '@/data/usStates'
 import { industries } from '@/data/industriesData'
 import { cityMarkets } from '@/data/cityMarketData'
 import { SITE_URL } from '@/lib/siteUrl'
@@ -55,6 +56,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/korean-beauty-wellness-website-guide',
     '/website-cost-guide',
     '/korean-professional-services-website-guide',
+    // All-50-states hub + programmatic state pages (38 new; 12 have custom pages above)
+    '/states',
+    ...usStates
+      .filter((s) => !STATES_WITH_CUSTOM_PAGES.includes(s.abbr))
+      .map((s) => `/${s.slug}`),
     // Korean-American city hub pages
     ...koreanCities.map((c) => `/${c.slug}`),
   ]

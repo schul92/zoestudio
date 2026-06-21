@@ -35,6 +35,7 @@ export default function Footer({ locale = 'en' }: { locale?: string }) {
         [isKo ? '뉴욕' : 'New York', isKo ? '/ko/뉴욕-웹사이트' : '/ny-website'],
         [isKo ? 'LA · 캘리포니아' : 'LA · California', isKo ? '/ko/캘리포니아-웹사이트' : '/ca-website'],
         [isKo ? '애틀랜타' : 'Atlanta', isKo ? '/ko/조지아-웹사이트' : '/ga-website'],
+        [isKo ? '50개 주 전체 →' : 'All 50 states →', isKo ? '/ko/states' : '/states'],
       ] as [string, string][],
     },
   ]
