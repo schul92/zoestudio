@@ -6,7 +6,8 @@ import { motion } from 'framer-motion'
 import { useServices } from '@/context/ServiceContext'
 import { trackFormSuccess, trackFormError, trackGAEvent, GA_EVENTS, trackEmailClick, trackButtonClick } from '@/utils/analytics'
 import Modal from '@/components/ui/Modal'
-import { Mail, MapPin, Clock, CheckCircle, XCircle, AlertTriangle, Target } from 'lucide-react'
+import { Mail, MapPin, Clock, CheckCircle, XCircle, AlertTriangle, Target, CalendarCheck } from 'lucide-react'
+import { BOOKING_URL } from '@/lib/booking'
 
 export default function Contact({ locale = 'en' }: { locale?: string }) {
   const { t } = useTranslation(locale)
@@ -647,6 +648,20 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                         <Mail className="w-5 h-5 flex-shrink-0" />
                         <span className="text-sm font-medium">info@zoelumos.com</span>
                       </a>
+                      {BOOKING_URL && (
+                        <a
+                          href={BOOKING_URL}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          onClick={() => trackButtonClick('Book a Call', 'contact-info')}
+                          className="flex items-center gap-3 text-amber-400 hover:text-amber-300 transition-colors font-semibold"
+                        >
+                          <CalendarCheck className="w-5 h-5 flex-shrink-0" />
+                          <span className="text-sm">
+                            {locale === 'ko' ? '무료 30분 통화 예약하기 →' : 'Book a free 30-min call →'}
+                          </span>
+                        </a>
+                      )}
                       <a
                         href="http://pf.kakao.com/_xhxdxmlX/chat"
                         target="_blank"
