@@ -2377,7 +2377,7 @@ export const blogContent: BlogPost[] = [
     readTime: 10,
     category: { en: 'E-commerce', ko: '이커머스' },
     title: {
-      en: 'Shopify Setup for US Korean Sellers — Hangul Fonts, KRW/USD, Naver Feed [2026]',
+      en: 'Shopify Setup for US Korean Sellers (KRW/USD) [2026]',
       ko: '미국 한인 셀러 Shopify 셋업 — 한글 폰트, 원/달러, 네이버 피드 [2026]',
     },
     metaDescription: {
@@ -3715,7 +3715,7 @@ export const blogContent: BlogPost[] = [
     updatedDate: '2026-05-22',
     readTime: 8,
     category: { en: 'Industry Guide', ko: '업종별 가이드' },
-    title: { en: 'Korean Real Estate Agent Website Guide — MLS, Listings & Korean Buyer Trust', ko: '한인 부동산 에이전트 웹사이트 가이드 — MLS, 매물, 한인 바이어 신뢰' },
+    title: { en: 'Korean Real Estate Agent Website Guide [2026]', ko: '한인 부동산 에이전트 웹사이트 가이드 — MLS, 매물, 한인 바이어 신뢰' },
     metaDescription: { en: 'Build a Korean real estate agent website with IDX/MLS integration, bilingual property searches, and trust signals for Korean-American buyers.', ko: 'IDX/MLS 연동, 이중언어 매물 검색, 한인 바이어 신뢰를 갖춘 한인 부동산 에이전트 웹사이트 구축법.' },
     author: 'Steve Song',
     sections: {
@@ -3799,7 +3799,7 @@ export const blogContent: BlogPost[] = [
     updatedDate: '2026-05-22',
     readTime: 7,
     category: { en: 'Industry Guide', ko: '업종별 가이드' },
-    title: { en: 'Korean Tutoring & SAT Prep Website Guide — Enrollment, Parent Trust & Results', ko: '한인 학원 & SAT 웹사이트 가이드 — 등록, 학부모 신뢰, 성과' },
+    title: { en: 'Korean Tutoring & SAT Prep Website Guide [2026]', ko: '한인 학원 & SAT 웹사이트 가이드 — 등록, 학부모 신뢰, 성과' },
     metaDescription: { en: 'Build a Korean tutoring or SAT prep website that parents trust: student results, instructor bios, online enrollment, and parent-facing Korean content.', ko: '학부모가 신뢰하는 한인 학원/SAT 웹사이트 구축법: 학생 성과, 강사 소개, 온라인 등록, 한국어 학부모 콘텐츠.' },
     author: 'Steve Song',
     sections: {
@@ -5365,7 +5365,7 @@ export const blogContent: BlogPost[] = [
     readTime: 12,
     category: { en: 'AI Search', ko: 'AI 검색' },
     title: {
-      en: 'How to Get Your Korean Business Cited in Google AI Overviews & ChatGPT [2026]',
+      en: 'Get Cited in Google AI Overviews & ChatGPT [2026]',
       ko: '한인 비즈니스를 구글 AI Overviews · ChatGPT에 인용시키는 법 [2026]',
     },
     metaDescription: {
@@ -6984,7 +6984,7 @@ export const blogContent: BlogPost[] = [
     readTime: 8,
     category: { en: 'Marketing', ko: '마케팅' },
     title: {
-      en: 'KakaoTalk Advertising Cost & ROI: What Korean Businesses Actually Pay [2026]',
+      en: 'KakaoTalk Advertising Cost & ROI for Businesses [2026]',
       ko: '카카오톡 광고 비용과 ROI: 한인 비즈니스가 실제로 내는 금액 [2026]',
     },
     metaDescription: {
