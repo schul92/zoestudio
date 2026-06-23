@@ -1244,7 +1244,7 @@ export const blogContent: BlogPost[] = [
     readTime: 8,
     category: { en: 'App Development', ko: '앱 개발' },
     title: {
-      en: 'App Store Submission for Korean SMBs: Apple Developer, DUNS, and the Guideline 4.3 Trap',
+      en: 'App Store Submission Guide for Korean Businesses [2026]',
       ko: '한인 사장님을 위한 앱스토어 등록 — Apple Developer·DUNS·Guideline 4.3 함정',
     },
     metaDescription: {
@@ -3058,7 +3058,7 @@ export const blogContent: BlogPost[] = [
     readTime: 7,
     category: { en: 'Marketing', ko: '마케팅' },
     title: {
-      en: 'How to Open a KakaoTalk Channel from the US in 20 Minutes (No Korean Phone) [2026]',
+      en: 'Open a US KakaoTalk Channel in 20 Min — No Korean Phone',
       ko: '미국에서 카카오톡 채널 20분 만에 만들기 — 한국 번호 없이 [2026 완벽 가이드]',
     },
     metaDescription: {
@@ -3348,7 +3348,7 @@ export const blogContent: BlogPost[] = [
     readTime: 11,
     category: { en: 'Technical SEO', ko: '기술 SEO' },
     title: {
-      en: 'The Technical Bilingual SEO Playbook — hreflang, Canonicals, and Language-Aware Architecture',
+      en: 'Technical Bilingual SEO: hreflang & Canonicals [2026]',
       ko: '이중언어 SEO 기술 플레이북 — hreflang, 캐노니컬, 언어 인식 아키텍처',
     },
     metaDescription: {
@@ -3845,7 +3845,7 @@ export const blogContent: BlogPost[] = [
     updatedDate: '2026-05-23',
     readTime: 8,
     category: { en: 'Industry Guide', ko: '업종별 가이드' },
-    title: { en: 'Korean Medspa Website Guide — Before/After Gallery, HIPAA Booking, Reviews [2026]', ko: '한인 메디스파 웹사이트 가이드 — 비포/애프터, HIPAA 예약, 리뷰 [2026]' },
+    title: { en: 'Korean Medspa Website Guide — HIPAA Booking [2026]', ko: '한인 메디스파 웹사이트 가이드 — 비포/애프터, HIPAA 예약, 리뷰 [2026]' },
     metaDescription: { en: 'Build a Korean med spa or aesthetic clinic website that books consultations: before/after galleries, treatment pages, online booking, and HIPAA awareness.', ko: '상담 예약을 만드는 한인 메디스파/피부과 웹사이트 구축법: 비포/애프터 갤러리, 시술 페이지, 온라인 예약, HIPAA.' },
     author: 'Steve Song',
     sections: {
@@ -3933,7 +3933,7 @@ export const blogContent: BlogPost[] = [
     updatedDate: '2026-05-23',
     readTime: 8,
     category: { en: 'Industry Guide', ko: '업종별 가이드' },
-    title: { en: 'Korean Insurance & Financial Services Website Guide — Trust, Compliance & Lead Generation', ko: '한인 보험 & 금융 서비스 웹사이트 가이드 — 신뢰, 규정, 리드 생성' },
+    title: { en: 'Korean Insurance & Financial Website Guide [2026]', ko: '한인 보험 & 금융 서비스 웹사이트 가이드 — 신뢰, 규정, 리드 생성' },
     metaDescription: { en: 'Build a Korean insurance or financial services website that generates qualified leads while meeting compliance standards. Life, auto, business, and financial planning.', ko: '규정을 준수하면서 자격 있는 리드를 생성하는 한인 보험/금융 서비스 웹사이트 구축법.' },
     author: 'Steve Song',
     sections: {
@@ -4116,7 +4116,7 @@ export const blogContent: BlogPost[] = [
     updatedDate: '2026-05-24',
     readTime: 9,
     category: { en: 'Marketing', ko: '마케팅' },
-    title: { en: 'Google Business Profile Optimization for Korean Businesses — The Complete 2026 Playbook', ko: '한인 비즈니스 구글 비즈니스 프로필 최적화 — 2026 완벽 플레이북' },
+    title: { en: 'Google Business Profile Guide for Korean Businesses [2026]', ko: '한인 비즈니스 구글 비즈니스 프로필 최적화 — 2026 완벽 플레이북' },
     metaDescription: { en: 'Step-by-step GBP optimization guide for Korean-American businesses. Photos, posts, reviews, bilingual descriptions, and ranking strategies that work.', ko: '한인 비즈니스 GBP 최적화 단계별 가이드. 사진, 포스트, 리뷰, 이중언어 설명, 실전 랭킹 전략.' },
     author: 'Steve Song',
     sections: {
@@ -4190,7 +4190,7 @@ export const blogContent: BlogPost[] = [
     updatedDate: '2026-05-24',
     readTime: 7,
     category: { en: 'SEO', ko: 'SEO' },
-    title: { en: 'Affordable SEO for New Jersey Korean Businesses — What $500/Month Actually Gets You', ko: '뉴저지 한인 비즈니스 합리적 SEO — 월 $500으로 실제로 뭘 받나' },
+    title: { en: 'Affordable SEO for NJ Korean Businesses [2026]', ko: '뉴저지 한인 비즈니스 합리적 SEO — 월 $500으로 실제로 뭘 받나' },
     metaDescription: { en: 'What affordable SEO actually looks like for NJ Korean businesses in 2026. Real deliverables, realistic timelines, and red flags to avoid in cheap SEO packages.', ko: '2026년 뉴저지 한인 비즈니스의 합리적 SEO란. 실제 산출물, 현실적 일정, 저가 SEO 패키지의 위험 신호.' },
     author: 'Steve Song',
     sections: {
@@ -4266,7 +4266,7 @@ export const blogContent: BlogPost[] = [
     updatedDate: '2026-05-25',
     readTime: 7,
     category: { en: 'Marketing', ko: '마케팅' },
-    title: { en: 'Instagram vs Website for Korean Businesses — Honest Verdict from 47 Owners [2026]', ko: '인스타그램 vs 웹사이트 — 한인 사장님 47명의 솔직한 답 [2026]' },
+    title: { en: 'Instagram vs Website for Korean Businesses [2026]', ko: '인스타그램 vs 웹사이트 — 한인 사장님 47명의 솔직한 답 [2026]' },
     metaDescription: { en: 'An honest comparison of Instagram vs a website for Korean-American businesses. When Instagram alone works, when it does not, and how to use both effectively.', ko: '한인 비즈니스를 위한 인스타그램 vs 웹사이트 솔직 비교. 인스타만으로 충분할 때, 안 될 때, 둘 다 효과적으로 쓰는 법.' },
     author: 'Steve Song',
     sections: {
@@ -4599,7 +4599,7 @@ export const blogContent: BlogPost[] = [
     readTime: 8,
     category: { en: 'Strategy', ko: '전략' },
     title: {
-      en: 'Website Redesign vs Rebuild: Which One Do Korean-American Businesses Actually Need?',
+      en: 'Website Redesign vs Rebuild for Korean Businesses [2026]',
       ko: '리디자인 vs 리빌드 — 한인 비즈니스에 진짜 필요한 건 어느 쪽일까?',
     },
     metaDescription: {
@@ -4911,7 +4911,7 @@ export const blogContent: BlogPost[] = [
     readTime: 7,
     category: { en: 'Strategy', ko: '전략' },
     title: {
-      en: 'Translation vs Localization: Why Your Korean Website Sounds Wrong (And How to Fix It)',
+      en: 'Translation vs Localization for Korean Websites [2026]',
       ko: '번역 vs 현지화 — 왜 한국어 웹사이트가 어색하게 느껴지나, 그리고 고치는 법',
     },
     metaDescription: {
@@ -6551,7 +6551,7 @@ export const blogContent: BlogPost[] = [
     readTime: 10,
     category: { en: 'Industry Guides', ko: '업종별 가이드' },
     title: {
-      en: 'Korean BBQ Restaurant Website + Marketing Guide [2026] — Reservations, Group Bookings, KakaoTalk',
+      en: 'Korean BBQ Restaurant Website & Marketing Guide [2026]',
       ko: '한식 BBQ 식당 웹사이트 + 마케팅 가이드 [2026] — 예약, 단체석, 카카오톡',
     },
     metaDescription: {
@@ -6636,7 +6636,7 @@ export const blogContent: BlogPost[] = [
     readTime: 10,
     category: { en: 'Marketing', ko: '마케팅' },
     title: {
-      en: 'TikTok Shop for Korean SMBs in the US [2026] — Honest Setup, Real Costs, What Actually Sells',
+      en: 'TikTok Shop for Korean Businesses in the US [2026]',
       ko: '미국 한인 SMB TikTok Shop 가이드 [2026] — 정직한 셋업, 실 비용, 실제 팔리는 것',
     },
     metaDescription: {
@@ -6721,7 +6721,7 @@ export const blogContent: BlogPost[] = [
     readTime: 10,
     category: { en: 'Industry Guides', ko: '업종별 가이드' },
     title: {
-      en: 'Korean Immigration Law Firm Website + SEO Guide [2026] — Bilingual Intake, EB-5, Family Reunification',
+      en: 'Korean Immigration Law Firm Website Guide (EB-5) [2026]',
       ko: '한인 이민 로펌 웹사이트 + SEO 가이드 [2026] — 이중언어 인테이크, EB-5, 가족 초청',
     },
     metaDescription: {
@@ -6810,7 +6810,7 @@ export const blogContent: BlogPost[] = [
     readTime: 8,
     category: { en: 'Local SEO', ko: '로컬 SEO' },
     title: {
-      en: 'Korean Business Marketing in Metro Atlanta: Johns Creek, Suwanee & Duluth [2026]',
+      en: 'Korean Business Marketing: Johns Creek & Suwanee GA [2026]',
       ko: '애틀랜타 한인 비즈니스 마케팅: 존스크릭·수와니·둘루스 [2026]',
     },
     metaDescription: {
