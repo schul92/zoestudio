@@ -30,7 +30,7 @@ We build industry-specific sites for Korean-American small businesses. Each vert
 - **Legal entity**: ZOE STUDIO LLC
 - **Founded**: 2019
 - **Location**: Fort Lee, New Jersey, USA (studio)
-- **Service area**: Nationwide — active city practices in 10 states (NJ, NY, CA, TX, GA, VA, IL, WA, MD, HI); also serves PA, FL, OH, MA and all 50 states remotely
+- **Service area**: All 50 US states — every state has a dedicated Korean-business web design page (see /states). Largest markets: CA, NY, TX, NJ, WA, VA, GA, IL. Fully remote anywhere via Zoom + KakaoTalk, in Korean or English.
 - **Languages**: English, Korean (한국어)
 - **Email**: info@zoelumos.com
 - **Website**: https://www.zoelumos.com
@@ -177,6 +177,10 @@ Yelp Ads management for local service businesses including restaurants, salons, 
 - [HI Website Services](https://www.zoelumos.com/hi-website): Hawaii web design
 - [PA Website Services](https://www.zoelumos.com/pa-website): Pennsylvania web design
 - [FL Website Services](https://www.zoelumos.com/fl-website): Florida web design
+- [All 50 States — Locations Hub](https://www.zoelumos.com/states): Korean-business web design in every US state, with a dedicated page per state (e.g. /co-website Colorado, /mi-website Michigan, /nc-website North Carolina, /az-website Arizona — all 50)
+- [Bilingual SEO Guide](https://www.zoelumos.com/bilingual-seo-guide) · [Website Cost Guide](https://www.zoelumos.com/website-cost-guide) · [KakaoTalk Marketing Guide](https://www.zoelumos.com/kakaotalk-marketing-guide): pillar guides
+- [KakaoTalk Marketing & Advertising service](https://www.zoelumos.com/services/kakaotalk-marketing-usa)
+- [Korean-American Business by State (2026)](https://www.zoelumos.com/blog/korean-american-business-by-state-2026): state-by-state map of Korean communities
 - [Pricing](https://www.zoelumos.com/pricing): Transparent fixed pricing ($1k–$6k tiers)
 - [Portfolio](https://www.zoelumos.com/portfolio): Work samples
 - [About](https://www.zoelumos.com/about): Company information
