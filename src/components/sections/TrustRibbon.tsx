@@ -43,6 +43,7 @@ const clientMarks = [
   'Kona Coffee',
   'CareK9',
   'Mochinut',
+  "Vito's Pizza",
 ]
 
 export default function TrustRibbon({ locale = 'en' }: { locale?: string }) {

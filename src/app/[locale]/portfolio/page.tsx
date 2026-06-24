@@ -167,6 +167,23 @@ const projects = [
       services: ['웹사이트 디자인', '다중 매장 설정', '브랜드 통합'],
     },
   },
+  {
+    id: 'vitos-pizza',
+    url: 'https://www.vitospizzaandristorante.com/',
+    image: '/portfolio/vitos-pizza.jpg',
+    en: {
+      title: "Vito's Pizza & Ristorante",
+      category: 'Italian Restaurant / Pizzeria',
+      description: "Website for Vito's Pizza & Ristorante, a family-owned Italian restaurant and NY-style pizzeria in Alpharetta, GA. Bold editorial design with online ordering, catering inquiries, menu showcase, and local SEO — backed by 658+ five-star Google reviews.",
+      services: ['Website Design', 'Online Ordering', 'Local SEO', 'Catering Funnel'],
+    },
+    ko: {
+      title: "Vito's Pizza & Ristorante",
+      category: '이탈리안 레스토랑 / 피자',
+      description: '조지아주 알파레타의 가족 운영 이탈리안 레스토랑 & NY 스타일 피자집 Vito\'s Pizza & Ristorante 웹사이트. 대담한 에디토리얼 디자인 + 온라인 주문 + 케이터링 문의 + 메뉴 소개 + 로컬 SEO. 구글 별 5개 리뷰 658개 이상.',
+      services: ['웹사이트 디자인', '온라인 주문', '로컬 SEO', '케이터링 퍼널'],
+    },
+  },
 ]
 
 const content = {

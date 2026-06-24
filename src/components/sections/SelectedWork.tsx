@@ -91,6 +91,19 @@ const projects: Project[] = [
     image: '/portfolio/mochinut.jpg',
     accent: '#F4E4D4',
   },
+  {
+    name: "Vito's Pizza",
+    industry: { en: 'Italian restaurant', ko: '이탈리안 레스토랑' },
+    location: 'Alpharetta · GA',
+    year: '2026',
+    disciplines: {
+      en: ['Web design', 'Local SEO', 'Online ordering'],
+      ko: ['웹디자인', '로컬 SEO', '온라인 주문'],
+    },
+    image: '/portfolio/vitos-pizza.jpg',
+    accent: '#E9D4B8',
+    url: 'https://www.vitospizzaandristorante.com/',
+  },
 ]
 
 export default function SelectedWork({

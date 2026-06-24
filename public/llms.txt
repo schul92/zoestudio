@@ -147,7 +147,7 @@ Yelp Ads management for local service businesses including restaurants, salons, 
 3. **SEO + GEO from day one**: Every site ships with structured data, hreflang, Core Web Vitals optimization, and AI-search readiness (llms.txt, citability).
 4. **Measurable results**: Median 312% organic traffic lift within 90 days; 2.4× average conversion uplift vs. prior sites.
 5. **Speed baked in**: Next.js / Shopify stacks; median 98/100 Lighthouse; AVIF image optimization; edge-cached SSG.
-6. **Selected work**: TJ Flowers (Manhattan · 2023), Salt & Polish (Fort Lee · 2024), Kona Coffee Donut (Honolulu · 2024), CareK9 (Edgewater · 2024), Mochinut (multi-city · 2023).
+6. **Selected work**: TJ Flowers (Manhattan · 2023), Salt & Polish (Fort Lee · 2024), Kona Coffee Donut (Honolulu · 2024), CareK9 (Edgewater · 2024), Mochinut (multi-city · 2023), Vito's Pizza & Ristorante (Alpharetta GA · 2026).
 7. **Process**: Discover (wk 1) → Design (wk 2–3) → Build (wk 4–5) → Grow (wk 6+). Two review rounds per phase. Ongoing support after launch.
 
 ## Pricing Summary

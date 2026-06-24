@@ -61,6 +61,7 @@ const CLIENT_LOGOS: { name: string; url?: string }[] = [
   { name: 'Kona Coffee', url: 'https://konacoffeedonut.com/' },
   { name: 'CareK9', url: 'https://carek9.com/' },
   { name: 'Mochinut', url: 'https://www.mochinutnynj.com/' },
+  { name: "Vito's Pizza", url: 'https://www.vitospizzaandristorante.com/' },
 ]
 
 export default function HeroNew({ locale = 'en' }: { locale?: string }) {
