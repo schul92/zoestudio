@@ -145,6 +145,15 @@ export default function Home({ params }: { params: { locale: string } }) {
       disciplines: ['Editorial', 'CMS', 'Bilingual SEO'],
     },
     {
+      name: "Vito's Pizza & Ristorante",
+      url: 'https://www.vitospizzaandristorante.com/',
+      image: '/portfolio/vitos-pizza.jpg',
+      year: '2026',
+      location: 'Alpharetta, GA',
+      industry: 'Italian restaurant',
+      disciplines: ['Web design', 'Online ordering', 'Local SEO'],
+    },
+    {
       name: 'TJ Flowers',
       url: '/portfolio',
       image: '/portfolio/tj-flowers.jpg',
