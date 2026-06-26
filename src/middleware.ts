@@ -1,11 +1,25 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
+import { ADMIN_COOKIE, isValidToken } from '@/lib/admin/auth'
 
 const locales = ['en', 'ko']
 
-export function middleware(request: NextRequest) {
+export async function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname
   const hostname = request.nextUrl.hostname
+
+  // Admin dashboard — internal tool, no i18n, cookie-gated.
+  if (pathname === '/admin' || pathname.startsWith('/admin/')) {
+    if (pathname === '/admin/login') return NextResponse.next()
+    const ok = await isValidToken(request.cookies.get(ADMIN_COOKIE)?.value)
+    if (!ok) {
+      const url = request.nextUrl.clone()
+      url.pathname = '/admin/login'
+      url.search = `?next=${encodeURIComponent(pathname)}`
+      return NextResponse.redirect(url)
+    }
+    return NextResponse.next()
+  }
   const isLocalHost =
     hostname === 'localhost' ||
     hostname === '127.0.0.1' ||
