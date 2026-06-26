@@ -86,6 +86,7 @@ export const PILLARS = {
     pillarSlug: 'kakaotalk-channel-us-korean-business',
     posts: [
       'kakaotalk-channel-us-korean-business',
+      'kakaotalk-account-without-korean-phone-2026',
       'kakaotalk-channel-vs-instagram-korean-business',
       'kakaotalk-channel-automation-korean-restaurants',
       'kakaotalk-advertising-agency-usa-guide-2026',
@@ -171,6 +172,7 @@ export const POST_TO_PILLAR: Record<string, PillarKey> = {
 
   // kakaotalk-marketing
   'kakaotalk-channel-us-korean-business': 'kakaotalk-marketing',
+  'kakaotalk-account-without-korean-phone-2026': 'kakaotalk-marketing',
   'instagram-vs-website-korean-business': 'kakaotalk-marketing',
   'google-business-profile-korean-business-optimization': 'kakaotalk-marketing',
   'google-ads-korean-business': 'kakaotalk-marketing',

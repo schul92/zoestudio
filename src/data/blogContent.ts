@@ -40,6 +40,300 @@ export interface BlogPost {
 
 export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
+  // 2026-06-25 — KakaoTalk account without a Korean phone number
+  // Targets the site's #1 impression query: "전화번호 없이 카카오톡 계정 만들기 2026"
+  // ─────────────────────────────────────────────────────────────────
+  {
+  slug: 'kakaotalk-account-without-korean-phone-2026',
+  date: '2026-06-25',
+  updatedDate: '2026-06-25',
+  readTime: 8,
+  author: 'Steve Song',
+  category: { en: 'Guide', ko: '가이드' },
+  title: {
+    en: 'How to Create a KakaoTalk Account Without a Korean Phone Number (2026 Guide)',
+    ko: '전화번호 없이 카카오톡 계정 만들기 2026 — 한국 번호 없이 미국에서 가입하는 법'
+  },
+  metaDescription: {
+    en: 'Create or verify a KakaoTalk account from overseas in 2026 using only a US phone number — no Korean SIM needed. Step-by-step SMS and email verification, common error fixes, and re-verifying an existing account.',
+    ko: '2026년 한국 번호 없이 미국 전화번호만으로 카카오톡 계정을 만들고 인증하는 방법을 단계별로 안내합니다. SMS·이메일 인증, 자주 나는 오류 해결, 기존 계정 재인증까지 한 번에 정리했습니다.'
+  },
+  faq: [
+    {
+      q: {
+        en: 'Can I really sign up for KakaoTalk with a US phone number?',
+        ko: '미국 전화번호로도 정말 카카오톡 가입이 되나요?'
+      },
+      a: {
+        en: 'Yes. In 2026 KakaoTalk verifies any valid mobile number that can receive an SMS, including US numbers. Select the United States (+1) country code, enter your full mobile number, and confirm the code that arrives by text. A Korean number is not required to create a standard personal account.',
+        ko: '네, 됩니다. 2026년 현재 카카오톡은 문자(SMS)를 받을 수 있는 정상적인 휴대폰 번호라면 미국 번호도 인증해 줍니다. 국가 코드를 미국(+1)으로 선택하고 휴대폰 번호 전체를 입력한 뒤, 문자로 온 인증번호만 확인하면 됩니다. 일반 개인 계정을 만드는 데 한국 번호는 필요하지 않습니다.'
+      }
+    },
+    {
+      q: {
+        en: 'What if the SMS verification code never arrives?',
+        ko: 'SMS 인증번호가 끝까지 안 오면 어떻게 하나요?'
+      },
+      a: {
+        en: 'Wait the full 60 seconds before tapping resend, and confirm you chose the +1 country code with no leading zero. Check your carrier\'s spam or blocked-message filter, and make sure you have signal. If three attempts fail, switch to the email or KakaoMail verification path, which does not depend on SMS at all.',
+        ko: '먼저 재전송을 누르기 전에 60초를 꽉 채워 기다리고, 국가 코드를 +1로 골랐는지, 앞에 0을 붙이지 않았는지 확인하세요. 통신사의 스팸·수신 차단 필터도 점검하고 신호가 잡히는지 보세요. 세 번 시도해도 안 오면 SMS가 전혀 필요 없는 이메일 또는 카카오메일 인증 방식으로 바꾸면 됩니다.'
+      }
+    },
+    {
+      q: {
+        en: 'If I switch to a US number, do I lose my old chats?',
+        ko: '미국 번호로 바꾸면 예전 대화 내용이 사라지나요?'
+      },
+      a: {
+        en: 'No, if you re-verify the same existing account rather than creating a new one. Use Change Phone Number inside Settings so your ID, friends, and purchase history carry over. Back up your chats first, because the messages themselves live on your device and a fresh install would not restore them automatically.',
+        ko: '같은 기존 계정을 재인증하는 거라면 사라지지 않습니다. 새로 가입하지 말고 설정 안의 전화번호 변경 기능을 쓰면 아이디, 친구 목록, 구매 내역이 그대로 넘어옵니다. 다만 대화 내용 자체는 기기에 저장되므로, 새로 설치하면 자동 복원되지 않으니 먼저 대화 백업을 꼭 해 두세요.'
+      }
+    },
+    {
+      q: {
+        en: 'Is a Korean phone number ever absolutely required?',
+        ko: '한국 번호가 꼭 필요한 경우도 있나요?'
+      },
+      a: {
+        en: 'For a normal personal account, no. A Korean number is only needed for certain Korea-only services that piggyback on Kakao — domestic banking (KakaoBank), some carrier-linked identity checks, and a few age-verification flows. Everyday chatting, calls, KakaoPay between friends, and channels work fine on a US number.',
+        ko: '일반 개인 계정이라면 필요 없습니다. 한국 번호는 카카오에 연동된 한국 전용 서비스, 즉 카카오뱅크 같은 국내 금융, 일부 통신사 연동 본인확인, 몇몇 연령 인증 절차에서만 요구됩니다. 일상적인 채팅, 통화, 친구 간 카카오페이, 채널 이용은 미국 번호로도 문제없이 됩니다.'
+      }
+    },
+    {
+      q: {
+        en: 'How is this different from a business Channel?',
+        ko: '비즈니스 채널과는 무엇이 다른가요?'
+      },
+      a: {
+        en: 'A personal account is your private profile for chatting with friends. A KakaoTalk Channel is a public business page customers follow to get updates, coupons, and messages — closer to a business Instagram. US owners can run a Channel from a US number, and ZOE LUMOS helps connect it to your website. See our guide on opening a US KakaoTalk Channel.',
+        ko: '개인 계정은 친구와 대화하는 비공개 프로필입니다. 카카오톡 채널은 고객이 팔로우해 소식·쿠폰·메시지를 받는 공개 비즈니스 페이지로, 비즈니스용 인스타그램에 가깝습니다. 미국 사업자도 미국 번호로 채널을 운영할 수 있으며, ZOE LUMOS가 이를 웹사이트와 연결해 드립니다. 미국 카카오톡 채널 개설 가이드를 참고해 주세요.'
+      }
+    }
+  ],
+  howto: {
+    name: {
+      en: 'Verify a KakaoTalk Account With a US Phone Number',
+      ko: '미국 전화번호로 카카오톡 계정 인증하기'
+    },
+    description: {
+      en: 'Set up and verify a personal KakaoTalk account in 2026 using only a US (non-Korean) mobile number.',
+      ko: '2026년 한국 번호 없이 미국 휴대폰 번호만으로 개인 카카오톡 계정을 만들고 인증하는 방법입니다.'
+    },
+    totalTime: 'PT10M',
+    steps: [
+      {
+        name: { en: 'Install and open KakaoTalk', ko: '카카오톡 설치 후 열기' },
+        text: {
+          en: 'Download KakaoTalk from the App Store or Google Play, open it, and tap New Account or Sign Up. Allow notification and SMS permissions when prompted so the verification code can be read.',
+          ko: '앱스토어나 구글플레이에서 카카오톡을 내려받아 실행한 뒤 새 계정 또는 가입하기를 누릅니다. 인증번호를 받을 수 있도록 알림과 문자 권한 요청이 뜨면 허용해 주세요.'
+        }
+      },
+      {
+        name: { en: 'Choose the United States country code', ko: '국가 코드를 미국으로 선택' },
+        text: {
+          en: 'On the phone-number screen, tap the country selector and choose United States (+1). This is the step most people miss — the field often defaults to Korea (+82).',
+          ko: '전화번호 입력 화면에서 국가 선택을 눌러 미국(+1)을 고릅니다. 많은 분들이 놓치는 부분인데, 기본값이 한국(+82)으로 되어 있는 경우가 많습니다.'
+        }
+      },
+      {
+        name: { en: 'Enter your US mobile number', ko: '미국 휴대폰 번호 입력' },
+        text: {
+          en: 'Type your 10-digit US mobile number with no spaces, dashes, or leading zero (for example 2135550147). Landline and VoIP numbers often fail, so use a real cell number.',
+          ko: '미국 휴대폰 번호 10자리를 공백·하이픈·앞자리 0 없이 입력합니다(예: 2135550147). 유선전화나 인터넷 전화 번호는 실패하는 경우가 많으니 실제 휴대폰 번호를 사용하세요.'
+        }
+      },
+      {
+        name: { en: 'Enter the SMS code', ko: 'SMS 인증번호 입력' },
+        text: {
+          en: 'Within about a minute you will receive a text with a 4-to-6 digit code. Enter it before it expires. If nothing arrives in 60 seconds, tap resend once, then try the email path.',
+          ko: '약 1분 안에 4~6자리 인증번호가 문자로 도착합니다. 만료되기 전에 입력하세요. 60초가 지나도 오지 않으면 재전송을 한 번 누르고, 그래도 안 되면 이메일 인증으로 넘어가세요.'
+        }
+      },
+      {
+        name: { en: 'Set your profile and email backup', ko: '프로필과 이메일 백업 설정' },
+        text: {
+          en: 'Create your password, set a display name and profile photo, and register an email as a backup verification method. This lets you recover the account later even if you change numbers.',
+          ko: '비밀번호를 만들고 표시 이름과 프로필 사진을 정한 뒤, 보조 인증 수단으로 이메일을 등록합니다. 이렇게 해 두면 나중에 번호가 바뀌어도 계정을 복구할 수 있습니다.'
+        }
+      }
+    ]
+  },
+  sections: {
+    en: [
+      {
+        type: 'intro',
+        content: 'Moving to the US and suddenly your KakaoTalk says it needs to verify your number again — but your old Korean SIM is gone. It is one of the most common questions Korean immigrants ask in 2026, and the good news is simple: you do not need a Korean phone number to use KakaoTalk. A standard US mobile number works for SMS verification, and there is an email-based backup if the text never arrives. This guide walks through creating a fresh account, re-verifying an existing one on a new US number, fixing the errors people hit most, and where a business Channel fits in.'
+      },
+      {
+        type: 'h2',
+        content: 'Yes, a US phone number works in 2026'
+      },
+      {
+        type: 'p',
+        content: 'KakaoTalk verifies people, not countries. Any mobile number that can receive an SMS — including a regular US carrier number from T-Mobile, Verizon, AT&amp;T, or an MVNO like Mint or US Mobile — can verify a personal account. The single most important detail is the country code: when you reach the phone-number screen, change the selector from Korea (+82) to United States (+1). Skip that and your number is read as a Korean one, which is the number-one reason verification quietly fails.'
+      },
+      {
+        type: 'p',
+        content: 'You enter your 10-digit US number with no leading zero. Korean numbers drop the leading 0 after the country code, and many newcomers carry that habit over and mistype. With +1 selected, just type the area code and number exactly as you would dial it locally.'
+      },
+      {
+        type: 'h2',
+        content: 'The SMS verification path (most people)'
+      },
+      {
+        type: 'p',
+        content: 'For most users, SMS is all you need. After you enter your US number, Kakao sends a short numeric code by text, usually within a minute. Enter it, set a password and profile, and you are in. The full sequence is in the step-by-step card above, but the headline is that nothing here requires a Korean SIM, a VPN, or a Korean address.'
+      },
+      {
+        type: 'tip',
+        content: 'Tip: Use a real cellular number, not a Google Voice, TextNow, or other VoIP line. KakaoTalk increasingly blocks virtual numbers during verification, so a VoIP line that worked years ago may now be rejected. A physical US SIM or eSIM is the most reliable choice.'
+      },
+      {
+        type: 'h2',
+        content: 'When SMS fails: the email and KakaoMail backup'
+      },
+      {
+        type: 'p',
+        content: 'If the code never lands, you are not stuck. KakaoTalk supports email as a secondary verification and recovery method, and you can create a free KakaoMail address during sign-up that acts as a stable anchor for your account. Register an email even when SMS works — it is your lifeline the day you switch carriers, lose a phone, or travel somewhere your US number cannot receive texts.'
+      },
+      {
+        type: 'h2',
+        content: 'Common verification errors and how to fix them'
+      },
+      {
+        type: 'p',
+        content: 'Almost every failed verification traces back to a handful of fixable causes. Work through these before assuming your number is unsupported:'
+      },
+      {
+        type: 'ul',
+        content: 'Most-reported issues and quick fixes:',
+        items: [
+          'Wrong country code — the field defaulted to +82; switch it to United States +1 and re-enter the number.',
+          'Leading zero added — drop the 0; a US number after +1 has no leading zero.',
+          'VoIP or landline number — Google Voice and similar lines are often rejected; use a real cellular number.',
+          'Carrier spam filter — codes from short codes can be silently blocked; check blocked or filtered messages and whitelist the sender.',
+          '"Too many attempts" — wait 30 to 60 minutes before retrying, or switch to email verification instead of hammering resend.',
+          'Old number still attached — if Kakao says the number is already in use, it is likely linked to your previous account; re-verify that account rather than making a new one.'
+        ]
+      },
+      {
+        type: 'h2',
+        content: 'Re-verifying an existing account on a new US number'
+      },
+      {
+        type: 'p',
+        content: 'If you already have a KakaoTalk account from Korea, do not create a second one — you would lose your KakaoTalk ID, friend list, and any KakaoPay or purchase history. Instead, open Settings, find Account and then Change Phone Number, and re-verify with your US number and the +1 code. Your identity, friends, and channels carry over to the new number cleanly.'
+      },
+      {
+        type: 'p',
+        content: 'Before you do this, back up your chats. Messages live on your device, not fully in the cloud, so a reinstall on a new phone will not restore conversation history automatically. Run the in-app chat backup first, then change the number, so nothing important is left behind.'
+      },
+      {
+        type: 'h2',
+        content: 'Personal account vs. business Channel — the next step for owners'
+      },
+      {
+        type: 'p',
+        content: 'Everything above covers a personal account: your private profile for chatting with friends and family. If you run a business serving Korean-American customers, the natural next step is a KakaoTalk Channel — a public page customers follow to receive updates, coupons, reservations, and one-to-one messages, much like a business profile on Instagram. A Channel can be operated from your US number and connected to your website so inquiries flow straight into a place you actually check.'
+      },
+      {
+        type: 'p',
+        content: 'Setting up a Channel, verifying it, and wiring it into your booking or contact forms is a different process from personal sign-up — and that is exactly the part US Korean business owners ask us about most. If that is you, read our guide on opening a US KakaoTalk Channel as your next move.'
+      },
+      {
+        type: 'cta',
+        content: 'Run a US business serving Korean-American customers? ZOE LUMOS helps you turn a personal KakaoTalk account into a verified business Channel and connect it directly to your website, so customer messages and bookings land in one place. We work bilingually in English and Korean from start to finish. Reach out and we will map the fastest path for your shop.'
+      }
+    ],
+    ko: [
+      {
+        type: 'intro',
+        content: '미국으로 이사 왔더니 카카오톡이 갑자기 번호를 다시 인증하라고 하는데, 예전 한국 유심은 이미 없어진 상황. 2026년 한인 이민자분들이 가장 많이 묻는 질문 중 하나입니다. 다행히 답은 간단합니다. 카카오톡을 쓰는 데 한국 번호는 필요하지 않습니다. 일반 미국 휴대폰 번호로 SMS 인증이 되고, 문자가 오지 않을 때를 대비한 이메일 인증도 있습니다. 이 가이드에서는 새 계정 만들기, 기존 계정을 미국 새 번호로 재인증하기, 자주 나는 오류 해결, 그리고 비즈니스 채널이 어디에 들어가는지까지 차근차근 정리해 드립니다.'
+      },
+      {
+        type: 'h2',
+        content: '네, 2026년에는 미국 번호로 됩니다'
+      },
+      {
+        type: 'p',
+        content: '카카오톡은 국가가 아니라 사람을 인증합니다. 문자를 받을 수 있는 휴대폰 번호라면 T-Mobile, Verizon, AT&amp;T, 혹은 Mint나 US Mobile 같은 알뜰폰 번호까지 모두 개인 계정 인증에 쓸 수 있습니다. 가장 중요한 한 가지는 국가 코드입니다. 전화번호 입력 화면이 나오면 선택 항목을 한국(+82)에서 미국(+1)으로 바꿔 주세요. 이걸 놓치면 번호가 한국 번호로 읽혀 인증이 조용히 실패하는데, 이것이 가장 흔한 원인입니다.'
+      },
+      {
+        type: 'p',
+        content: '미국 번호는 앞자리 0 없이 10자리를 그대로 입력합니다. 한국 번호는 국가 코드 뒤에서 앞의 0을 빼는데, 그 습관을 그대로 가져와 잘못 입력하는 분이 많습니다. +1을 선택했다면 지역번호와 번호를 평소 전화 걸 때처럼 그대로 입력하면 됩니다.'
+      },
+      {
+        type: 'h2',
+        content: 'SMS 인증 방식 (대부분의 경우)'
+      },
+      {
+        type: 'p',
+        content: '대부분은 SMS 인증만으로 충분합니다. 미국 번호를 입력하면 카카오가 짧은 숫자 인증번호를 문자로 보내는데, 보통 1분 안에 도착합니다. 그 번호를 입력하고 비밀번호와 프로필을 설정하면 끝입니다. 전체 순서는 위의 단계별 카드에 있지만, 핵심은 이 과정에 한국 유심, VPN, 한국 주소가 전혀 필요 없다는 점입니다.'
+      },
+      {
+        type: 'tip',
+        content: '팁: 구글 보이스, TextNow 같은 인터넷 전화(VoIP) 번호가 아니라 실제 휴대폰 번호를 사용하세요. 카카오톡은 인증 과정에서 가상 번호를 점점 더 많이 차단하고 있어, 예전에 되던 VoIP 번호가 이제는 거부될 수 있습니다. 실물 미국 유심이나 eSIM이 가장 확실합니다.'
+      },
+      {
+        type: 'h2',
+        content: 'SMS가 안 될 때: 이메일·카카오메일 백업'
+      },
+      {
+        type: 'p',
+        content: '인증번호가 끝내 오지 않아도 방법이 막힌 건 아닙니다. 카카오톡은 보조 인증 및 복구 수단으로 이메일을 지원하고, 가입 중에 무료 카카오메일 주소를 만들어 계정의 든든한 기준점으로 삼을 수 있습니다. SMS가 잘 되더라도 이메일은 꼭 등록해 두세요. 통신사를 바꾸거나 휴대폰을 잃어버리거나, 미국 번호로 문자를 못 받는 곳을 여행할 때 생명줄이 되어 줍니다.'
+      },
+      {
+        type: 'h2',
+        content: '자주 나는 인증 오류와 해결법'
+      },
+      {
+        type: 'p',
+        content: '인증 실패는 거의 다 몇 가지 해결 가능한 원인으로 좁혀집니다. 번호가 지원되지 않는다고 단정하기 전에 아래부터 점검해 보세요:'
+      },
+      {
+        type: 'ul',
+        content: '가장 많이 보고되는 문제와 빠른 해결법:',
+        items: [
+          '국가 코드 오류 — 기본값이 +82로 되어 있던 경우, 미국 +1로 바꾸고 번호를 다시 입력하세요.',
+          '앞자리 0을 붙임 — 0을 빼세요. +1 뒤의 미국 번호에는 앞자리 0이 없습니다.',
+          'VoIP·유선 번호 — 구글 보이스 등은 거부되는 경우가 많으니 실제 휴대폰 번호를 쓰세요.',
+          '통신사 스팸 필터 — 단축번호로 온 인증번호가 조용히 차단될 수 있으니 차단·필터된 메시지를 확인하고 발신자를 허용 목록에 추가하세요.',
+          '"시도 횟수 초과" — 재전송을 계속 누르지 말고 30~60분 기다렸다 다시 하거나 이메일 인증으로 바꾸세요.',
+          '이전 번호가 아직 연결됨 — 번호가 이미 사용 중이라고 나오면 예전 계정에 연결되어 있을 가능성이 큽니다. 새로 만들지 말고 그 계정을 재인증하세요.'
+        ]
+      },
+      {
+        type: 'h2',
+        content: '기존 계정을 미국 새 번호로 재인증하기'
+      },
+      {
+        type: 'p',
+        content: '한국에서 쓰던 카카오톡 계정이 이미 있다면 두 번째 계정을 만들지 마세요. 카카오톡 아이디, 친구 목록, 카카오페이나 구매 내역까지 잃게 됩니다. 대신 설정에서 계정 관리, 그다음 전화번호 변경을 찾아 미국 번호와 +1 인증번호로 재인증하세요. 그러면 본인 정보, 친구, 채널이 새 번호로 깔끔하게 넘어갑니다.'
+      },
+      {
+        type: 'p',
+        content: '이걸 하기 전에 대화 내용을 먼저 백업하세요. 메시지는 클라우드가 아니라 기기에 저장되므로, 새 휴대폰에 다시 설치하면 대화 기록이 자동으로 복원되지 않습니다. 앱 안의 대화 백업을 먼저 실행한 뒤 번호를 변경하면 중요한 내용을 잃지 않습니다.'
+      },
+      {
+        type: 'h2',
+        content: '개인 계정 vs 비즈니스 채널 — 사업자를 위한 다음 단계'
+      },
+      {
+        type: 'p',
+        content: '지금까지는 개인 계정, 즉 친구·가족과 대화하는 비공개 프로필 이야기였습니다. 한인 고객을 상대로 사업을 하신다면 자연스러운 다음 단계는 카카오톡 채널입니다. 채널은 고객이 팔로우해 소식, 쿠폰, 예약, 1:1 메시지를 받는 공개 페이지로, 인스타그램의 비즈니스 프로필과 비슷합니다. 채널은 미국 번호로 운영할 수 있고, 웹사이트와 연결하면 문의가 실제로 확인하는 곳으로 곧장 들어옵니다.'
+      },
+      {
+        type: 'p',
+        content: '채널을 만들고 인증하고 예약·문의 양식과 연결하는 과정은 개인 가입과는 다른 절차이며, 바로 이 부분을 미국의 한인 사업자분들이 가장 많이 물어보십니다. 해당되신다면 다음 단계로 미국 카카오톡 채널 개설 가이드를 읽어 보세요.'
+      },
+      {
+        type: 'cta',
+        content: '한인 고객을 상대로 미국에서 사업하고 계신가요? ZOE LUMOS는 개인 카카오톡 계정을 인증된 비즈니스 채널로 전환하고, 이를 웹사이트와 직접 연결해 고객 메시지와 예약이 한곳에 모이도록 도와드립니다. 처음부터 끝까지 영어와 한국어 두 언어로 함께합니다. 연락 주시면 사장님 가게에 가장 빠른 길을 함께 그려 드리겠습니다.'
+      }
+    ]
+  }
+  },
+  // ─────────────────────────────────────────────────────────────────
   // 2026-05-11 — KakaoTalk automation for Korean restaurants
   // ─────────────────────────────────────────────────────────────────
   {
