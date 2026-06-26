@@ -94,8 +94,11 @@ export default function FloatingDevices({ locale = 'en' }: { locale?: 'en' | 'ko
     }
   }, [])
 
-  // Scroll-driven parallax
+  // Scroll-driven parallax — DESKTOP ONLY.
+  // On mobile the cards render flush (no transform), so running a scroll
+  // listener that setState's every frame is pure wasted re-renders (jank).
   useEffect(() => {
+    if (!isDesktop) return
     const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     if (reduced) return
     const section = sectionRef.current
@@ -117,7 +120,7 @@ export default function FloatingDevices({ locale = 'en' }: { locale?: 'en' | 'ko
       cancelAnimationFrame(raf)
       window.removeEventListener('scroll', onScroll)
     }
-  }, [])
+  }, [isDesktop])
 
   return (
     <section

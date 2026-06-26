@@ -26,23 +26,23 @@ const copy = {
     logosLabel: 'Trusted by founders shipping bilingual',
   },
   ko: {
-    eyebrow: 'Shopify Expert · 한인·미국인 스튜디오',
-    h1Lead: '이중언어 Shopify,',
-    h1Accent: '전환되도록 만듭니다.',
+    eyebrow: 'Shopify 전문 · 한인 비즈니스 스튜디오',
+    h1Lead: '한국어·영어 Shopify,',
+    h1Accent: '매출 올리는 스토어.',
     sub: (
       <>
-        <span className="text-coral">한인·미국인 브랜드</span>를 위한 프리미엄 Shopify 스토어 — 기본 이중언어, 빠른 설계, 전환되는 스토어.
+        미국에서 사업하는 <span className="text-coral">한인 브랜드</span>를 위한 프리미엄 Shopify 스토어. 한국어·영어 둘 다 기본, 빠른 속도, 무엇보다 진짜 매출로 이어집니다.
       </>
     ),
-    cta1: '무료 Shopify 감사 받기',
-    cta2: 'TJ Flowers 케이스 스터디 보기',
+    cta1: '무료 Shopify 진단받기',
+    cta2: 'TJ Flowers 성공 사례 보기',
     livePill: '최근 런칭',
     proofBadge: {
       metric: '5배',
       label: '검색 노출 상승',
       sub: 'TJ Flowers · 6주',
     },
-    logosLabel: '이중언어로 런칭한 브랜드들',
+    logosLabel: '한국어·영어로 함께 런칭한 브랜드',
   },
 } as const
 
