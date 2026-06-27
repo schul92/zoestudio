@@ -1,11 +1,11 @@
 export const seoConfig = {
   en: {
-    title: 'Zoe Lumos — Shopify Expert & Korean-American Web Design Studio | Fort Lee NJ',
-    description: 'Shopify Expert + Korean-American web design studio. Shopify rebuilds, SEO, and bilingual websites for Korean-American businesses. Proof: TJ Flowers (Manhattan florist) 5×\'d search visibility in 6 weeks. Fort Lee · NJ · LA · nationwide.',
-    keywords: 'Shopify Expert NJ, Shopify developer Korean, Shopify rebuild agency, Shopify migration Korean business, Korean Shopify expert, Korean web design, Korean American website, bilingual web design agency, Korean business website, Korean SEO agency, NJ web design, NY web design, Fort Lee web design, Bergen County web design, Shopify development, e-commerce website design, local SEO expert, digital marketing agency, Google Ads management, small business SEO NJ, Korean web agency, luxury web design NJ, editorial web design, boutique web design studio, 한인 마케팅 에이전시, Palisades Park marketing, Ridgefield web design, Edgewater web design, low cost SEO New Jersey',
+    title: 'Zoe Lumos — Bilingual Web Design Studio | Fort Lee NJ',
+    description: 'Korean-American web design studio. Bilingual websites, Shopify builds & SEO for Korean-American businesses. TJ Flowers: 5× search visibility in 6 weeks. Fort Lee NJ · serving nationwide.',
+    keywords: 'Korean American web design, bilingual web design agency, Korean web design studio, Korean business website, Korean American website, Shopify Expert NJ, Shopify developer Korean, bilingual SEO, Korean SEO agency, NJ web design, NY web design, Fort Lee web design, Bergen County web design, Shopify development, e-commerce website design, local SEO expert, digital marketing agency, Google Ads management, small business SEO NJ, Korean web agency, editorial web design, boutique web design studio, 한인 마케팅 에이전시, 한인 웹디자인, Korean American web designer, Palisades Park marketing, Ridgefield web design, Edgewater web design',
     openGraph: {
-      title: 'Zoe Lumos — Shopify Expert & Korean-American Web Studio',
-      description: 'Shopify Expert builds + bilingual SEO for Korean-American businesses. TJ Flowers (Manhattan florist) 5×\'d search visibility in 6 weeks. Fort Lee · Manhattan · LA · nationwide.',
+      title: 'Zoe Lumos — Korean-American Web Design & Shopify Studio',
+      description: 'Bilingual web design & Shopify for Korean-American businesses. TJ Flowers: 5× search visibility in 6 weeks. Fort Lee NJ · nationwide.',
       siteName: 'Zoe Lumos',
       locale: 'en_US',
     }
@@ -187,7 +187,7 @@ export const structuredData = {
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": 5,
-      "reviewCount": 6,
+      "reviewCount": 3,
       "bestRating": 5,
       "worstRating": 1
     }

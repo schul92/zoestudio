@@ -2,20 +2,20 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import Magnetic from '@/components/ui/motion/Magnetic'
 
 const copy = {
   en: {
-    eyebrow: 'Shopify Expert · Korean-American Studio',
-    h1Lead: 'Bilingual Shopify,',
+    eyebrow: 'Korean-American Studio · Shopify Expert',
+    h1Lead: 'Bilingual websites,',
     h1Accent: 'built to convert.',
     sub: (
       <>
-        We build premium Shopify stores for <span className="text-coral">Korean-American brands</span> — bilingual by default, fast by design, made to convert.
+        We build premium websites for <span className="text-coral">Korean-American brands</span> — bilingual by default, fast by design, made to convert. Shopify, custom builds, and beyond.
       </>
     ),
-    cta1: 'Get a free Shopify audit',
+    cta1: 'Start your project',
     cta2: 'See TJ Flowers case study',
     livePill: 'Last shipped',
     proofBadge: {
@@ -26,15 +26,15 @@ const copy = {
     logosLabel: 'Trusted by founders shipping bilingual',
   },
   ko: {
-    eyebrow: 'Shopify 전문 · 한인 비즈니스 스튜디오',
-    h1Lead: '한국어·영어 Shopify,',
-    h1Accent: '매출 올리는 스토어.',
+    eyebrow: '한인 비즈니스 스튜디오 · Shopify 전문',
+    h1Lead: '한국어·영어 웹사이트,',
+    h1Accent: '매출로 이어지는 사이트.',
     sub: (
       <>
-        미국에서 사업하는 <span className="text-coral">한인 브랜드</span>를 위한 프리미엄 Shopify 스토어. 한국어·영어 둘 다 기본, 빠른 속도, 무엇보다 진짜 매출로 이어집니다.
+        미국에서 사업하는 <span className="text-coral">한인 브랜드</span>를 위한 프리미엄 웹사이트. 한국어·영어 둘 다 기본, 빠른 속도, Shopify·커스텀 빌드 — 무엇보다 진짜 매출로 이어집니다.
       </>
     ),
-    cta1: '무료 Shopify 진단받기',
+    cta1: '프로젝트 시작하기',
     cta2: 'TJ Flowers 성공 사례 보기',
     livePill: '최근 런칭',
     proofBadge: {
@@ -46,13 +46,9 @@ const copy = {
   },
 } as const
 
-// Compute "X days ago" for the live pill (server-deterministic)
-function daysSinceLastShip(): number {
-  // 2026-05-13 was the last major client launch (Miguk Story)
-  const last = new Date('2026-05-13T00:00:00Z').getTime()
-  const now = new Date('2026-06-01T00:00:00Z').getTime() // pinned to avoid hydration mismatch
-  return Math.max(1, Math.floor((now - last) / (1000 * 60 * 60 * 24)))
-}
+// SSR-safe pinned value (avoids hydration mismatch); client updates via useEffect
+const LAST_SHIP_MS = new Date('2026-05-13T00:00:00Z').getTime()
+const SSR_DAYS = Math.max(1, Math.floor((new Date('2026-06-01T00:00:00Z').getTime() - LAST_SHIP_MS) / 86_400_000))
 
 const CLIENT_LOGOS: { name: string; url?: string }[] = [
   { name: 'TJ Flowers', url: 'https://tjflowersandevents.com/' },
@@ -67,11 +63,16 @@ const CLIENT_LOGOS: { name: string; url?: string }[] = [
 export default function HeroNew({ locale = 'en' }: { locale?: string }) {
   const t = (copy as any)[locale] || copy.en
   const prefix = locale === 'ko' ? '/ko' : ''
-  const days = daysSinceLastShip()
+  const [days, setDays] = useState(SSR_DAYS)
 
   // Subtle cursor parallax on the mockup (desktop only)
   const stageRef = useRef<HTMLDivElement>(null)
   const mockupRef = useRef<HTMLAnchorElement>(null)
+  useEffect(() => {
+    // Update to actual elapsed days on the client after hydration
+    setDays(Math.max(1, Math.floor((Date.now() - LAST_SHIP_MS) / 86_400_000)))
+  }, [])
+
   useEffect(() => {
     const stage = stageRef.current
     if (!stage) return
@@ -188,7 +189,7 @@ export default function HeroNew({ locale = 'en' }: { locale?: string }) {
             <div className="mt-9 flex flex-wrap items-center gap-x-6 gap-y-4">
               <Magnetic strength={22} radius={130}>
                 <Link
-                  href={`${prefix}/services/shopify-cost-audit`}
+                  href={`${prefix}/#contact`}
                   data-cursor={locale === 'ko' ? '시작' : 'Begin'}
                   className="zl-btn-primary inline-flex items-center gap-3 px-7 py-[18px] rounded-full text-[15px] transition-all hover:opacity-95"
                   style={{

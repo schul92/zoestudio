@@ -67,10 +67,10 @@ export async function generateMetadata({
       type: 'website',
       images: [
         {
-          url: `https://www.zoelumos.com/api/og?title=${encodeURIComponent(seo.openGraph.title)}&subtitle=${encodeURIComponent(seo.openGraph.description)}`,
+          url: `https://www.zoelumos.com/api/og?title=${encodeURIComponent(seo.openGraph.title)}&subtitle=${encodeURIComponent(locale === 'ko' ? '뉴저지 · LA · 전국 한인 비즈니스 웹디자인 스튜디오' : 'Korean-American Web Design Studio · Fort Lee NJ')}`,
           width: 1200,
           height: 630,
-          alt: 'ZOE LUMOS - Digital Marketing Services',
+          alt: locale === 'ko' ? 'ZOE LUMOS — 한인 비즈니스 웹디자인 스튜디오' : 'ZOE LUMOS — Korean-American Web Design Studio',
         },
       ],
     },
@@ -78,7 +78,7 @@ export async function generateMetadata({
       card: 'summary_large_image',
       title: seo.openGraph.title,
       description: seo.openGraph.description,
-      images: [`https://www.zoelumos.com/api/og?title=${encodeURIComponent(seo.openGraph.title)}&subtitle=${encodeURIComponent(seo.openGraph.description)}`],
+      images: [`https://www.zoelumos.com/api/og?title=${encodeURIComponent(seo.openGraph.title)}&subtitle=${encodeURIComponent(locale === 'ko' ? '뉴저지 · LA · 전국 한인 비즈니스 웹디자인 스튜디오' : 'Korean-American Web Design Studio · Fort Lee NJ')}`],
       creator: '@zoestudio',
     },
     robots: {

@@ -67,7 +67,7 @@ export default function PricingTeaser({ locale = 'en' }: { locale?: string }) {
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 md:mb-14">
           <div>
             <p className="text-[11px] uppercase tracking-[0.22em] text-[#8a8378] mb-3">
-              {isKo ? '07 — 가격' : '07 — Pricing'}
+              {isKo ? '05 — 가격' : '05 — Pricing'}
             </p>
             <h2 className="font-display text-[clamp(28px,3.6vw,48px)] leading-[1.05] tracking-[-0.02em] text-[#151414] m-0">
               {isKo ? (

@@ -58,6 +58,11 @@ const BlogRail = dynamic(() => import('@/components/sections/BlogRail'), {
   loading: () => <div className="min-h-[600px] bg-ivory" />
 })
 
+const PricingTeaser = dynamic(() => import('@/components/sections/PricingTeaser'), {
+  ssr: true,
+  loading: () => <div className="min-h-[400px] bg-bone" />
+})
+
 const KakaoFloatingButton = dynamic(() => import('@/components/ui/KakaoFloatingButton'), {
   ssr: false
 })
@@ -274,9 +279,10 @@ export default function Home({ params }: { params: { locale: string } }) {
         <SelectedWork locale={locale} sectionNumber="02" />
         <Process locale={locale} sectionNumber="03" />
         <Proof locale={locale} sectionNumber="04" />
-        <BlogRail locale={locale} sectionNumber="05" />
-        <LocationLinks locale={locale} sectionNumber="06" />
-        <ContactWrapper locale={locale} sectionNumber="07" />
+        <PricingTeaser locale={locale} />
+        <ContactWrapper locale={locale} sectionNumber="06" />
+        <BlogRail locale={locale} sectionNumber="07" />
+        <LocationLinks locale={locale} sectionNumber="08" />
       </main>
       <Footer locale={locale} />
       <KakaoFloatingButton />
