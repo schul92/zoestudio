@@ -61,8 +61,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...usStates
       .filter((s) => !STATES_WITH_CUSTOM_PAGES.includes(s.abbr))
       .map((s) => `/${s.slug}`),
-    // Korean-American city hub pages
-    ...koreanCities.map((c) => `/${c.slug}`),
+    // NOTE: Korean-American city hub pages are emitted separately below with
+    // their correct ko-slug hreflang pair — they are intentionally NOT in
+    // standardPages, because the blanket /ko${page} loop would otherwise
+    // create /ko/{english-slug} URLs that self-canonical to /ko/{koSlug}.
   ]
 
   // Korean SEO pages (Korean URLs - high priority for Korean keywords)
@@ -115,6 +117,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
           'ko': `${baseUrl}/ko${page}`,
         }
       }
+    })
+  })
+
+  // Korean-American city hub pages — English URL with correct ko-slug alternate.
+  // (The Korean-slug counterpart /ko/{koSlug} is emitted via koreanSeoPages below.)
+  koreanCities.forEach((c) => {
+    sitemapEntries.push({
+      url: `${baseUrl}/${c.slug}`,
+      alternates: {
+        languages: {
+          'x-default': `${baseUrl}/${c.slug}`,
+          en: `${baseUrl}/${c.slug}`,
+          ko: `${baseUrl}/ko/${c.koSlug}`,
+        },
+      },
     })
   })
 

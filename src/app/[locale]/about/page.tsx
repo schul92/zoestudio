@@ -232,13 +232,13 @@ export default function AboutPage({ params }: { params: { locale: string } }) {
   const personSchema = {
     '@context': 'https://schema.org',
     '@type': 'Person',
-    name: 'Zoe Lumos',
-    jobTitle: 'Founder & Lead Developer',
+    '@id': `${baseUrl}/about#founder`,
+    name: 'Steve Song',
+    jobTitle: 'Founder',
     worksFor: {
-      '@type': 'Organization',
-      name: 'ZOE LUMOS',
-      url: baseUrl,
+      '@id': `${baseUrl}/#organization`,
     },
+    sameAs: ['https://www.linkedin.com/in/stevesong'],
     knowsAbout: ['Web Design', 'SEO', 'Next.js', 'Google Ads', 'Shopify', 'Core Web Vitals', 'Bilingual Websites'],
     url: `${baseUrl}/${locale === 'ko' ? 'ko/' : ''}about`,
     address: {

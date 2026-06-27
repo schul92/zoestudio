@@ -201,7 +201,7 @@ export const structuredData = {
         "name": "How much does website design cost for a small business in New Jersey?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "ZOE LUMOS offers website design packages for small businesses in NJ starting at $1,000 for basic sites, $2,000-$3,500 for standard business websites, and $3,000-$6,000 for Shopify e-commerce stores. All packages include SEO optimization, mobile-responsive design, and bilingual (English/Korean) support. We serve Fort Lee, Palisades Park, Englewood, and North Bergen."
+          "text": "ZOE LUMOS offers website design packages for small businesses in NJ starting at $1,000 for basic sites, $2,000-$3,000 for standard business websites, and $3,000-$6,000 for Shopify e-commerce stores. All packages include SEO optimization, mobile-responsive design, and bilingual (English/Korean) support. We serve Fort Lee, Palisades Park, Englewood, and North Bergen."
         }
       },
       {

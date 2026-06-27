@@ -40,8 +40,8 @@ export async function generateMetadata({
 
   const title =
     locale === 'ko'
-      ? `${city.name.ko} ${industry.name.ko} 웹사이트 제작 — ${city.state.ko} 로컬 SEO | ZOE LUMOS`
-      : `${industry.name.en} Website Design in ${city.fullName.en} — Local SEO | Zoe Lumos`
+      ? `${city.name.ko} ${industry.name.ko} 웹사이트 제작 | ZOE LUMOS`
+      : `${industry.name.en} Web Design — ${city.name.en} | Zoe Lumos`
 
   const description =
     locale === 'ko'

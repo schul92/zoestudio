@@ -32,8 +32,8 @@ export default function KoreanCityPage({ data, locale, baseUrl }: { data: CityDa
     '@id': `${canonicalUrl}#business`,
     name: locale === 'ko' ? `ZOE LUMOS - ${cityKo} 한인 웹디자인` : `ZOE LUMOS - ${cityEn} Korean Web Design`,
     description: locale === 'ko'
-      ? `${cityKo} 한인 비즈니스를 위한 #1 이중언어 웹사이트 제작 에이전시. ${data.hubDescription.ko}`
-      : `#1 bilingual Korean web design agency for Korean-American businesses in ${cityEn}. ${data.hubDescription.en}`,
+      ? `${cityKo} 한인 비즈니스를 위한 이중언어 웹사이트 제작 전문 에이전시. ${data.hubDescription.ko}`
+      : `Bilingual Korean-American web design studio for businesses in ${cityEn}. ${data.hubDescription.en}`,
     url: canonicalUrl,
     email: 'info@zoelumos.com',
     address: { '@type': 'PostalAddress', addressLocality: cityEn, addressRegion: data.region.en, addressCountry: 'US' },
@@ -45,7 +45,6 @@ export default function KoreanCityPage({ data, locale, baseUrl }: { data: CityDa
     ],
     priceRange: '$$',
     openingHours: 'Mo-Fr 09:00-18:00',
-    aggregateRating: { '@type': 'AggregateRating', ratingValue: '5', reviewCount: '24', bestRating: '5' },
     knowsLanguage: ['English', 'Korean', 'ko-KR', 'en-US'],
   }
 
@@ -122,7 +121,7 @@ export default function KoreanCityPage({ data, locale, baseUrl }: { data: CityDa
             <div className={`inline-flex items-center gap-2 ${theme.badge} ${theme.badgeText} px-4 py-2 rounded-full mb-6`}>
               <Award className="w-4 h-4" />
               <span className="font-semibold">
-                {locale === 'ko' ? `${cityKo} #1 한인 웹디자인 에이전시` : `${cityEn}'s #1 Korean Web Design Agency`}
+                {locale === 'ko' ? `${cityKo} 한인 웹디자인 전문` : `${cityEn} Korean Web Design Specialists`}
               </span>
             </div>
 
@@ -258,7 +257,7 @@ export default function KoreanCityPage({ data, locale, baseUrl }: { data: CityDa
         <section className={`py-20 px-4 bg-gradient-to-br ${theme.hero} text-white`}>
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              {locale === 'ko' ? `${cityKo} #1 한인 웹디자인 에이전시` : `${cityEn}'s #1 Korean Web Design Agency`}
+              {locale === 'ko' ? `${cityKo} 한인 비즈니스, 함께 시작하세요` : `Let's build your ${cityEn} business online`}
             </h2>
             <p className="text-xl mb-8 opacity-90">
               {locale === 'ko' ? '오늘 무료 상담을 예약하세요. 100% 한국어 상담.' : `Book your free consultation today. 100% Korean-language support.`}
