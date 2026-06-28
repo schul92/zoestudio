@@ -40,6 +40,3029 @@ export interface BlogPost {
 
 export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
+  // 2026-06-27 — "Why owners fire their web agency" viral pain batch (10 posts)
+  // Targets vendor-switch complaints: ghosting, hostage/ownership, opaque fees,
+  // no traffic, ad-budget waste, flying blind, POS data, outdated/slow, Korean red flags, AI FOMO.
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'do-you-own-your-website-domain-hostage-2026',
+    date: '2026-06-27',
+    updatedDate: '2026-06-27',
+    readTime: 9,
+    category: { en: 'Guide', ko: '가이드' },
+    title: {
+      en: 'Do You Own Your Website? How to Tell If Your Web Developer Is Holding It Hostage (2026)',
+      ko: '내 홈페이지, 진짜 내 것 맞나요? 웹 개발자가 사이트를 인질로 잡고 있는지 확인하는 법 (2026)',
+    },
+    metaDescription: {
+      en: 'Worried a web developer is holding your website hostage? Learn how to tell if you really own your domain, and how to get your domain back from a web designer. A plain-English (and Korean) ownership audit.',
+      ko: '웹 개발자가 내 홈페이지를 인질로 잡고 있는 건 아닐까요? 도메인 소유권을 진짜 가지고 있는지, 그리고 웹 디자이너에게서 도메인을 되찾는 방법까지. 쉬운 영어와 한국어로 풀어드립니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'What do I do if my web developer is holding my website hostage?',
+          ko: '웹 개발자가 제 홈페이지를 인질로 잡고 있으면 어떻게 해야 하나요?',
+        },
+        a: {
+          en: 'First, stay calm and gather evidence. Find every email, invoice, and contract that mentions the domain, hosting, or login access. Then run the 5-question audit in this article to figure out exactly what you control and what they control. If you registered and paid for the domain yourself, you usually have a strong claim to it even if a developer manages it. Politely request a full handoff in writing: registrar transfer code (also called an EPP or auth code), hosting credentials, and the website files. If they refuse, you can often recover the domain through the registrar\'s dispute process or by proving ownership with your payment records. Document everything and avoid threats. Most cases get resolved once you ask clearly and in writing.',
+          ko: '우선 침착하게 증거부터 모으세요. 도메인, 호스팅, 로그인 권한이 언급된 이메일, 인보이스, 계약서를 전부 찾으세요. 그다음 이 글의 5가지 질문 자가진단을 돌려서 내가 무엇을 통제하고 있고 상대가 무엇을 쥐고 있는지 정확히 파악하세요. 도메인을 직접 등록하고 결제한 사람이 본인이라면, 개발자가 관리만 하고 있더라도 소유권 주장이 강한 편입니다. 등록기관 이전 코드(EPP 또는 auth 코드라고도 합니다), 호스팅 로그인 정보, 웹사이트 파일까지 전부 서면으로 정중하게 요청하세요. 거부당하면 등록기관의 분쟁 절차나 결제 기록을 통한 소유권 증명으로 도메인을 되찾을 수 있는 경우가 많습니다. 모든 걸 기록으로 남기고 협박은 피하세요. 대부분은 명확하게 서면으로 요청하면 풀립니다.',
+        },
+      },
+      {
+        q: {
+          en: 'How do I get my domain back from a web designer who registered it for me?',
+          ko: '저 대신 도메인을 등록해 준 웹 디자이너에게서 도메인을 되찾으려면 어떻게 하나요?',
+        },
+        a: {
+          en: 'Ask the designer, in writing, for the registrar name, the account login, and the authorization (EPP) code so you can transfer the domain to your own account. A clean transfer takes a few days. If the domain is in their personal account, request that they either move it to a new account in your name or unlock it and hand you the auth code. If they go quiet or refuse, contact the registrar directly (GoDaddy, Namecheap, Squarespace Domains, and so on) and ask about their ownership-dispute process. Your invoices and payment records are powerful proof. The cleanest long-term fix is to own the registrar account yourself from day one.',
+          ko: '디자이너에게 서면으로 등록기관 이름, 계정 로그인 정보, 그리고 도메인을 내 계정으로 옮길 수 있는 인증(EPP) 코드를 요청하세요. 정상적인 이전은 며칠이면 끝납니다. 도메인이 디자이너 개인 계정에 들어 있다면, 내 이름의 새 계정으로 옮겨 달라고 하거나 잠금을 풀고 auth 코드를 넘겨 달라고 요청하세요. 답이 없거나 거부하면 등록기관(GoDaddy, Namecheap, Squarespace Domains 등)에 직접 연락해서 소유권 분쟁 절차를 문의하세요. 인보이스와 결제 기록이 강력한 증거가 됩니다. 가장 깔끔한 장기 해법은 처음부터 등록기관 계정을 본인이 직접 소유하는 것입니다.',
+        },
+      },
+      {
+        q: {
+          en: 'How do I know if I really own my website and not just rent it?',
+          ko: '제가 홈페이지를 진짜 소유한 건지, 아니면 그냥 빌려 쓰는 건지 어떻게 알 수 있나요?',
+        },
+        a: {
+          en: 'You truly own your website when three things are in your name and under your control: the domain registrar account, the hosting account, and the website files or content. If your developer holds all three and you have no logins, you are effectively renting your own site. Run the 5-question self-audit below. If you cannot answer yes to having admin access and the ability to leave, you do not fully own it yet. Owning a website is not about who built it. It is about who can lock the door.',
+          ko: '홈페이지를 진짜 소유한다는 건 세 가지가 내 이름으로, 내 통제 아래 있을 때입니다. 도메인 등록기관 계정, 호스팅 계정, 그리고 웹사이트 파일이나 콘텐츠죠. 개발자가 이 셋을 다 쥐고 있고 나에게는 로그인 정보가 하나도 없다면, 사실상 내 사이트를 빌려 쓰고 있는 겁니다. 아래의 5가지 자가진단을 돌려 보세요. 관리자 권한이 있고 언제든 떠날 수 있다는 질문에 \'예\'라고 답할 수 없다면 아직 완전히 소유한 게 아닙니다. 홈페이지 소유는 누가 만들었느냐가 아니라 누가 문을 잠글 수 있느냐의 문제입니다.',
+        },
+      },
+      {
+        q: {
+          en: 'Is it normal for an agency to keep my domain and logins?',
+          ko: '에이전시가 제 도메인과 로그인 정보를 가지고 있는 게 정상인가요?',
+        },
+        a: {
+          en: 'It is common, but common is not the same as right. Many agencies manage your domain and hosting for convenience, and that is fine as long as the accounts are registered in your name and you can get the keys whenever you ask. The red flag is when an agency refuses to give you access, registers everything under their own account, or uses your logins as leverage to keep you from leaving. A trustworthy partner manages your assets on your behalf. A hostage situation is when those assets are held over your head. You should always be able to walk out with your domain, your hosting, and your files.',
+          ko: '흔하긴 하지만, 흔하다고 옳은 건 아닙니다. 많은 에이전시가 편의를 위해 도메인과 호스팅을 대신 관리하는데, 계정이 내 이름으로 등록되어 있고 요청하면 언제든 권한을 받을 수 있다면 괜찮습니다. 위험 신호는 에이전시가 접근 권한을 안 주거나, 모든 걸 자기 계정으로 등록해 두거나, 로그인 정보를 떠나지 못하게 하는 협상 카드로 쓸 때입니다. 믿을 만한 파트너는 내 자산을 \'나를 대신해\' 관리합니다. 인질 상황은 그 자산을 내 머리 위에서 흔드는 겁니다. 언제든 도메인, 호스팅, 파일을 들고 나갈 수 있어야 정상입니다.',
+        },
+      },
+      {
+        q: {
+          en: 'Can ZOE LUMOS check my ownership for free?',
+          ko: 'ZOE LUMOS가 제 소유권을 무료로 확인해 줄 수 있나요?',
+        },
+        a: {
+          en: 'Yes. We offer a free ownership check with no obligation. Send us your domain and tell us who currently manages your site, and we will look up the public registrar records and walk you through exactly what you own, what you do not, and how to fix any gaps. There is no pressure to hire us. Even if you stay with your current developer, you will leave the conversation knowing where you stand. We build every ZOE LUMOS client site so that you own your domain, your hosting, and your code from day one.',
+          ko: '네. 부담 없는 무료 소유권 확인을 제공합니다. 도메인과 현재 사이트를 누가 관리하는지 알려 주시면, 공개된 등록기관 기록을 조회해서 무엇이 내 것이고 무엇이 아닌지, 그리고 빈틈을 어떻게 메울지 하나하나 설명해 드립니다. 저희를 고용해야 한다는 압박은 전혀 없습니다. 지금 개발자와 계속 가더라도, 적어도 내 상황이 어떤지는 정확히 알고 가시게 됩니다. ZOE LUMOS는 모든 고객 사이트를 처음부터 도메인, 호스팅, 코드를 고객이 직접 소유하도록 만듭니다.',
+        },
+      },
+    ],
+    howto: {
+      name: {
+        en: 'The 5-Question Website Ownership Self-Audit',
+        ko: '홈페이지 소유권 5가지 질문 자가진단',
+      },
+      description: {
+        en: 'Answer these five questions honestly. Each yes means you control a key piece of your website. Each no is a gap that someone else can hold over you. This is the fastest way to confirm whether you truly own your site or are just renting it.',
+        ko: '이 다섯 가지 질문에 솔직하게 답해 보세요. \'예\'는 홈페이지의 핵심 조각 하나를 내가 통제하고 있다는 뜻이고, \'아니오\'는 누군가가 나를 쥐고 흔들 수 있는 빈틈입니다. 내가 사이트를 진짜 소유했는지, 아니면 그냥 빌려 쓰는지 가장 빠르게 확인하는 방법입니다.',
+      },
+      totalTime: 'PT15M',
+      steps: [
+        {
+          name: {
+            en: '1. Who owns the domain registrar account?',
+            ko: '1. 도메인 등록기관 계정은 누구 소유인가요?',
+          },
+          text: {
+            en: 'Find out which company your domain is registered with (GoDaddy, Namecheap, Squarespace Domains, and so on) and whose name and email are on that account. Log in yourself if you can. If you cannot log in, or the account is under your developer\'s personal email, this is your most important gap. The registrar account is the deed to your address on the internet. Whoever holds it can point your domain anywhere, or let it expire.',
+            ko: '내 도메인이 어느 회사(GoDaddy, Namecheap, Squarespace Domains 등)에 등록되어 있는지, 그리고 그 계정에 누구의 이름과 이메일이 등록되어 있는지 확인하세요. 가능하면 직접 로그인해 보세요. 로그인이 안 되거나 계정이 개발자 개인 이메일로 되어 있다면, 이게 가장 중요한 빈틈입니다. 등록기관 계정은 인터넷 주소의 등기권리증과 같습니다. 이걸 쥔 사람이 도메인을 어디로든 돌릴 수도, 그냥 만료시켜 버릴 수도 있습니다.',
+          },
+        },
+        {
+          name: {
+            en: '2. Who controls the hosting and server?',
+            ko: '2. 호스팅과 서버는 누가 통제하나요?',
+          },
+          text: {
+            en: 'Identify where your website actually lives (the hosting provider or platform such as Vercel, a managed WordPress host, Squarespace, Wix, or a private server). Ask whether the hosting account is in your name and whether you have the login. If your site lives inside someone else\'s account, they can take it offline, change it, or hold your content the moment a relationship sours.',
+            ko: '내 웹사이트가 실제로 어디에 사는지(Vercel, 관리형 워드프레스 호스트, Squarespace, Wix, 또는 개인 서버 같은 호스팅 제공업체나 플랫폼) 파악하세요. 호스팅 계정이 내 이름으로 되어 있는지, 로그인 정보를 가지고 있는지 확인하세요. 사이트가 남의 계정 안에 살고 있다면, 관계가 틀어지는 순간 그 사람이 사이트를 내려 버리거나, 바꾸거나, 콘텐츠를 붙잡아 둘 수 있습니다.',
+          },
+        },
+        {
+          name: {
+            en: '3. Do you have your own admin logins?',
+            ko: '3. 본인 명의의 관리자 로그인이 있나요?',
+          },
+          text: {
+            en: 'Make a list of every system your site touches: the CMS or site builder, the domain registrar, the hosting dashboard, analytics, email, and any payment tools. For each one, confirm you have your own admin-level login, not a password your developer types in for you. Shared or developer-only logins mean you depend on their goodwill for access to your own business.',
+            ko: '내 사이트가 연결된 모든 시스템을 적어 보세요. CMS나 사이트 빌더, 도메인 등록기관, 호스팅 대시보드, 애널리틱스, 이메일, 결제 도구까지요. 각각에 대해 개발자가 대신 입력해 주는 비밀번호가 아니라, 내 명의의 관리자 권한 로그인을 가지고 있는지 확인하세요. 공유 계정이나 개발자 전용 로그인만 있다면, 내 사업에 접근하는 데에도 그 사람의 선의에 기대야 한다는 뜻입니다.',
+          },
+        },
+        {
+          name: {
+            en: '4. Is your site portable or proprietary-locked?',
+            ko: '4. 내 사이트는 이전 가능한가요, 아니면 특정 업체에 묶여 있나요?',
+          },
+          text: {
+            en: 'Ask a simple question: if you switched providers tomorrow, could you take your website with you? Standard, portable setups (your content, your design, exportable files, a common platform) move easily. Proprietary-locked setups (a custom builder only that one developer can edit, or code they refuse to share) trap you. If leaving means rebuilding from scratch, you do not really own the site you paid for.',
+            ko: '간단한 질문을 던져 보세요. 내일 당장 업체를 바꾼다면, 내 웹사이트를 그대로 들고 갈 수 있나요? 표준적이고 이전 가능한 구성(내 콘텐츠, 내 디자인, 내보내기 가능한 파일, 보편적인 플랫폼)은 쉽게 옮겨집니다. 그 개발자만 편집할 수 있는 자체 빌더나, 공유를 거부하는 코드처럼 특정 업체에 묶인 구성은 나를 가둡니다. 떠나는 것이 곧 처음부터 다시 만드는 것이라면, 돈 주고 만든 그 사이트를 진짜로 소유한 게 아닙니다.',
+          },
+        },
+        {
+          name: {
+            en: '5. Can you leave without anyone\'s permission?',
+            ko: '5. 누구의 허락도 없이 떠날 수 있나요?',
+          },
+          text: {
+            en: 'This is the master question. Right now, today, could you move your domain, download your site, and switch developers without needing your current provider to cooperate? If the honest answer is no, you are not the owner. You are a tenant who can be locked out. True ownership means you can walk away cleanly, on your own timeline, and the only thing your developer can do is wish you well.',
+            ko: '이게 핵심 질문입니다. 지금, 오늘 당장, 현재 업체의 협조 없이도 도메인을 옮기고, 사이트를 내려받고, 개발자를 바꿀 수 있나요? 솔직한 답이 \'아니오\'라면, 당신은 소유자가 아닙니다. 언제든 문밖으로 쫓겨날 수 있는 세입자입니다. 진짜 소유권이란 내가 정한 시점에 깔끔하게 떠날 수 있고, 개발자가 할 수 있는 일이라곤 잘 가라고 인사하는 것뿐인 상태를 말합니다.',
+          },
+        },
+      ],
+    },
+    sections: {
+      en: [
+        {
+          type: 'intro',
+          content: 'You paid for a website. You pay every month to keep it running. So why does it feel like it is not actually yours? Maybe you asked your developer for the login and got a vague answer. Maybe your domain renewal goes to someone else\'s email. Maybe a quiet voice in your head keeps asking: do I own my website, or am I just renting my own front door? If that question stings, this guide is for you. We are going to walk through exactly how to tell whether a web developer is holding your website hostage, and what to do about it, in plain language.',
+        },
+        {
+          type: 'h2',
+          content: 'The gut-punch moment: realizing you might not own your website',
+        },
+        {
+          type: 'p',
+          content: 'It usually starts small. You want to update a phone number, swap a photo, or move to a faster team, and suddenly you hit a wall. The developer is slow to respond. The login is never quite handed over. The domain bill comes from an email you do not recognize. And then it lands: the website you have poured money and trust into might not be yours at all.',
+        },
+        {
+          type: 'p',
+          content: 'Let us name what you are feeling, because it is real. This is betrayal. You trusted someone with the digital storefront of your business and now it feels like they hold the keys. It is a violation. Your name, your brand, your customers are sitting inside an account you cannot open. And it is a trap. Every month you keep paying, partly because you are afraid of what happens if you stop. That fear is exactly the leverage a bad actor counts on.',
+        },
+        {
+          type: 'h2',
+          content: 'Renting your own website: the quiet trap nobody warns you about',
+        },
+        {
+          type: 'p',
+          content: 'Here is the line that wakes people up: they own all the code, so I am renting my own website. It sounds dramatic until you check, and far too many owners check and find out it is literally true. The site exists, your customers see it, but the underlying pieces (the domain, the hosting, the code) all live in someone else\'s name. You are paying rent on a house you thought you had bought.',
+        },
+        {
+          type: 'p',
+          content: 'This is not always malicious. Plenty of developers register a domain or set up hosting under their own account just because it was faster on day one, with no bad intent. But intent does not protect you. The structure does. A convenient shortcut on setup day becomes a cage the moment you want to leave, get a better price, or simply hold what is yours. Ownership is not about trust. It is about who can lock the door when trust runs out.',
+        },
+        {
+          type: 'h2',
+          content: 'What owning a website actually means (three keys, not one)',
+        },
+        {
+          type: 'p',
+          content: 'People assume that paying for a website means owning it. Not quite. Real ownership comes down to three separate keys, and you need all three in your name to be safe.',
+        },
+        {
+          type: 'ul',
+          content: 'The three keys of true website ownership:',
+          items: [
+            'Your domain: the registrar account (GoDaddy, Namecheap, Squarespace Domains, and so on) must be in your name, with your login. This is your address on the internet and the single most important key.',
+            'Your hosting: the account where your site physically lives must be yours, so no one can take your site offline or hold your content.',
+            'Your code and content: the actual files, design, and text should be portable and shareable, not locked inside a tool only one person can open.',
+            'Your admin access: real logins, at the admin level, to every system your site touches, not passwords someone types in for you.',
+            'Your freedom to leave: the ability to move all of the above to a new provider without needing anyone\'s permission.',
+          ],
+        },
+        {
+          type: 'tip',
+          content: 'Quick test: if you cannot log in to your domain registrar right now, by yourself, you probably do not fully own your website yet. The registrar account is the deed. Start there.',
+        },
+        {
+          type: 'h2',
+          content: 'Run the 5-question ownership self-audit',
+        },
+        {
+          type: 'p',
+          content: 'You do not need to be technical to find out where you stand. You just need to answer five honest questions. We built a simple self-audit below that takes about fifteen minutes. Each yes means you control a key piece of your site. Each no is a gap someone else can hold over you. Go through all five before you do anything else, because clarity kills panic.',
+        },
+        {
+          type: 'p',
+          content: 'The five questions are simple on purpose: Who owns the domain registrar account? Who controls the hosting and server? Do you have your own admin logins? Is your site portable or proprietary-locked? And the master question, can you leave without anyone\'s permission? If you cannot confidently answer yes to that last one, you are a tenant, not an owner, and it is time to act.',
+        },
+        {
+          type: 'h2',
+          content: 'My web developer is holding my website hostage. Now what?',
+        },
+        {
+          type: 'p',
+          content: 'If the phrase web developer holding my website hostage describes your life right now, take a breath. You have more leverage than you think, and most of these situations resolve without lawyers. The goal is a clean handoff, not a fight.',
+        },
+        {
+          type: 'ul',
+          content: 'Calm, effective steps to take:',
+          items: [
+            'Gather evidence: every invoice, email, and contract that mentions the domain, hosting, or access. Your payment records are powerful proof of ownership.',
+            'Ask in writing: politely request the registrar transfer code (the EPP or auth code), the hosting credentials, and your website files. Keep it professional and dated.',
+            'Go to the source: if your developer goes quiet, contact the domain registrar directly and ask about their ownership-dispute process.',
+            'Avoid threats: stay factual and friendly. Most handoffs happen the moment you ask clearly, in writing, without drama.',
+            'Document everything: save every message. A written trail protects you and speeds up any registrar or platform dispute.',
+          ],
+        },
+        {
+          type: 'h2',
+          content: 'How to get your domain back from a web designer',
+        },
+        {
+          type: 'p',
+          content: 'The most common search behind this fear is how to get my domain back from a web designer, so let us make it concrete. Your domain is the one piece you most need to recover, because everything else (email, your site, your brand) hangs off it. The good news: a domain transfer is a standard, well-defined process.',
+        },
+        {
+          type: 'p',
+          content: 'Ask your designer, in writing, for the registrar name, the account login, and the authorization (EPP) code so you can move the domain into an account you own. A clean transfer usually takes a few days. If the domain is sitting in their personal account, ask them to either move it to a new account in your name or unlock it and hand you the auth code. If they refuse or disappear, contact the registrar directly with your invoices and payment records, and ask about their dispute process. You paid for it, you can usually get it back.',
+        },
+        {
+          type: 'tip',
+          content: 'The best fix is the one you never need: from day one, make sure the domain registrar account is opened in your name and email. Add your developer as a delegate if you want, but you hold the master account. Then no one can ever hold your domain hostage.',
+        },
+        {
+          type: 'h2',
+          content: 'How ZOE LUMOS does it differently: ownership from day one',
+        },
+        {
+          type: 'p',
+          content: 'We will be blunt, because we are allergic to the games that put you in this spot. At ZOE LUMOS, you own everything from day one: your domain in your account, your hosting in your name, your code and content yours to take anywhere. We manage it all for you so you never have to think about servers or renewals, but the keys are always yours. If you ever decide to leave, we hand you everything and wish you the best. No leverage, no hostage situation, no surprise.',
+        },
+        {
+          type: 'p',
+          content: 'That is the whole philosophy: radical transparency builds trust, and trust is the only thing worth building a long relationship on. We serve Korean-owned small businesses across NY, NJ, GA, and the wider US with website redesign and maintenance, security and hosting, Google Ads, SEO, analytics dashboards, POS integration, and practical AI tools, and ownership is the foundation under all of it. You should never have to wonder whether the thing you paid for is actually yours.',
+        },
+        {
+          type: 'cta',
+          content: 'Not sure where you stand? We will check for free. Send us your domain and tell us who manages your site today, and ZOE LUMOS will look up the public records and walk you through exactly what you own, what you do not, and how to close any gaps. No pressure, no obligation, even if you stay with your current developer. And if you build with us, you own your domain, your hosting, and your code from day one. Reach out for your free ownership check. (소유권이 걱정되시나요? ZOE LUMOS가 무료로 확인해 드립니다. 도메인과 현재 관리자를 알려 주시면 공개 기록을 조회해 무엇이 내 것이고 아닌지, 빈틈을 어떻게 메울지 설명해 드립니다. 부담도, 의무도 없습니다. 저희와 함께 만드시면 첫날부터 도메인, 호스팅, 코드를 모두 직접 소유하십니다. 편하게 연락 주세요.)',
+        },
+      ],
+      ko: [
+        {
+          type: 'intro',
+          content: '홈페이지 제작비를 냈습니다. 매달 유지비도 꼬박꼬박 냅니다. 그런데 왜 내 것 같지가 않을까요? 개발자에게 로그인 정보를 물었더니 얼버무리던 기억, 도메인 갱신 알림이 모르는 이메일로 가던 일, 그리고 마음 한구석에서 계속 묻는 목소리. \'이 홈페이지, 진짜 내 거 맞나? 아니면 내 현관문을 빌려 쓰고 있는 건가?\' 그 질문이 뜨끔하다면 이 글은 당신을 위한 겁니다. 웹 개발자가 내 사이트를 인질로 잡고 있는지 어떻게 확인하는지, 그리고 어떻게 대처하는지를 쉬운 말로 하나하나 짚어 드릴게요.',
+        },
+        {
+          type: 'h2',
+          content: '명치를 맞는 순간: 내 홈페이지가 내 것이 아닐 수도 있다는 깨달음',
+        },
+        {
+          type: 'p',
+          content: '보통 사소하게 시작됩니다. 전화번호 하나 바꾸려고, 사진 한 장 교체하려고, 아니면 더 빠른 팀으로 옮기려고 했을 뿐인데 갑자기 벽에 부딪힙니다. 개발자는 답이 느리고, 로그인 정보는 끝내 안 넘어오고, 도메인 청구서는 알지도 못하는 이메일에서 옵니다. 그러다 문득 깨닫습니다. 돈과 신뢰를 쏟아부은 이 홈페이지가, 사실 내 것이 아닐 수도 있다는 걸요.',
+        },
+        {
+          type: 'p',
+          content: '지금 느끼는 감정에 이름을 붙여 봅시다. 진짜 감정이니까요. 이건 배신감입니다. 내 사업의 디지털 매장을 누군가에게 믿고 맡겼는데, 이제 그 사람이 열쇠를 쥔 것 같죠. 침해당한 기분이기도 합니다. 내 이름, 내 브랜드, 내 고객이 내가 열 수도 없는 계정 안에 들어앉아 있으니까요. 그리고 덫에 걸린 느낌입니다. 그만두면 무슨 일이 벌어질까 두려워서 매달 돈을 계속 냅니다. 바로 그 두려움이, 나쁜 상대가 노리는 협상 카드입니다.',
+        },
+        {
+          type: 'h2',
+          content: '내 홈페이지를 빌려 쓰는 일: 아무도 경고해 주지 않는 조용한 덫',
+        },
+        {
+          type: 'p',
+          content: '사람들 정신이 번쩍 드는 한마디가 있습니다. \'코드는 다 그쪽이 가지고 있으니, 나는 내 홈페이지를 빌려 쓰고 있는 거네.\' 과장처럼 들리지만, 막상 확인해 보면 너무 많은 사장님들이 이게 말 그대로 사실이라는 걸 발견합니다. 사이트는 멀쩡히 있고 고객도 보지만, 그 밑을 받치는 조각들(도메인, 호스팅, 코드)이 전부 남의 이름으로 되어 있는 거죠. 분명히 샀다고 생각한 집에 매달 월세를 내고 있던 셈입니다.',
+        },
+        {
+          type: 'p',
+          content: '항상 악의가 있는 건 아닙니다. 많은 개발자가 그저 첫날 일이 빨리 진행되라고 자기 계정으로 도메인을 등록하거나 호스팅을 잡습니다. 나쁜 의도 없이요. 하지만 의도가 나를 지켜 주지는 않습니다. 구조가 지켜 줍니다. 설정하던 날의 편한 지름길이, 내가 떠나려 하거나 더 좋은 조건을 찾거나 그저 내 것을 지키려는 순간 우리가 됩니다. 소유권은 신뢰의 문제가 아닙니다. 신뢰가 바닥났을 때 누가 문을 잠글 수 있느냐의 문제입니다.',
+        },
+        {
+          type: 'h2',
+          content: '홈페이지를 소유한다는 게 진짜 무슨 뜻일까 (열쇠는 하나가 아니라 셋)',
+        },
+        {
+          type: 'p',
+          content: '제작비를 냈으니 당연히 내 것이라고들 생각합니다. 꼭 그렇지가 않아요. 진짜 소유권은 서로 다른 세 개의 열쇠로 갈립니다. 그리고 안전하려면 그 셋이 전부 내 이름으로 있어야 합니다.',
+        },
+        {
+          type: 'ul',
+          content: '진짜 홈페이지 소유의 세 가지 열쇠:',
+          items: [
+            '내 도메인: 등록기관 계정(GoDaddy, Namecheap, Squarespace Domains 등)이 내 이름, 내 로그인으로 되어 있어야 합니다. 인터넷 주소의 등기권리증이자 가장 중요한 열쇠입니다.',
+            '내 호스팅: 사이트가 물리적으로 사는 계정이 내 것이어야, 누구도 사이트를 내리거나 콘텐츠를 붙잡아 둘 수 없습니다.',
+            '내 코드와 콘텐츠: 실제 파일, 디자인, 글이 한 사람만 열 수 있는 도구에 갇히지 않고 이전 가능하고 공유 가능해야 합니다.',
+            '내 관리자 권한: 누가 대신 입력해 주는 비밀번호가 아니라, 사이트가 연결된 모든 시스템에 내 명의의 관리자급 로그인이 있어야 합니다.',
+            '내 떠날 자유: 위의 모든 것을 누구의 허락도 없이 새 업체로 옮길 수 있어야 합니다.',
+          ],
+        },
+        {
+          type: 'tip',
+          content: '간단한 테스트: 지금 당장 혼자서 도메인 등록기관에 로그인할 수 없다면, 아직 내 홈페이지를 완전히 소유한 게 아닐 가능성이 큽니다. 등록기관 계정이 곧 등기권리증입니다. 거기서부터 시작하세요.',
+        },
+        {
+          type: 'h2',
+          content: '5가지 질문으로 소유권 자가진단 돌려 보기',
+        },
+        {
+          type: 'p',
+          content: '기술을 몰라도 내 상황을 알 수 있습니다. 솔직한 다섯 가지 질문에 답하기만 하면 됩니다. 아래에 약 15분이면 끝나는 간단한 자가진단을 만들어 두었어요. \'예\'는 사이트의 핵심 조각 하나를 내가 통제하고 있다는 뜻이고, \'아니오\'는 누군가가 나를 쥐고 흔들 수 있는 빈틈입니다. 다른 걸 하기 전에 다섯 개를 먼저 다 짚어 보세요. 명확함이 공황을 잠재웁니다.',
+        },
+        {
+          type: 'p',
+          content: '다섯 질문은 일부러 단순하게 만들었습니다. 도메인 등록기관 계정은 누구 소유인가? 호스팅과 서버는 누가 통제하는가? 내 명의의 관리자 로그인이 있는가? 사이트는 이전 가능한가, 아니면 특정 업체에 묶여 있는가? 그리고 핵심 질문, 누구의 허락도 없이 떠날 수 있는가? 마지막 질문에 자신 있게 \'예\'라고 답할 수 없다면, 당신은 소유자가 아니라 세입자이고, 지금이 움직일 때입니다.',
+        },
+        {
+          type: 'h2',
+          content: '웹 개발자가 내 홈페이지를 인질로 잡고 있어요. 이제 어쩌죠?',
+        },
+        {
+          type: 'p',
+          content: '지금 내 처지가 딱 \'웹 개발자가 홈페이지를 인질로 잡고 있는\' 상황이라면, 일단 숨 한 번 고르세요. 생각보다 카드는 내 쪽에 더 많고, 이런 상황 대부분은 변호사 없이도 풀립니다. 목표는 싸움이 아니라 깔끔한 인수인계입니다.',
+        },
+        {
+          type: 'ul',
+          content: '침착하고 효과적인 대처 단계:',
+          items: [
+            '증거 모으기: 도메인, 호스팅, 접근 권한이 언급된 인보이스, 이메일, 계약서를 전부 챙기세요. 결제 기록은 강력한 소유권 증거입니다.',
+            '서면으로 요청하기: 등록기관 이전 코드(EPP 또는 auth 코드), 호스팅 로그인 정보, 웹사이트 파일을 정중하게 요청하세요. 날짜를 남기고 프로페셔널하게요.',
+            '근원으로 가기: 개발자가 답이 없으면 도메인 등록기관에 직접 연락해 소유권 분쟁 절차를 물어보세요.',
+            '협박은 금물: 사실 위주로, 차분하고 우호적으로 가세요. 대부분의 인수인계는 명확하게 서면으로 요청하는 순간 이뤄집니다.',
+            '전부 기록하기: 모든 메시지를 저장하세요. 서면 기록은 나를 보호하고 등록기관이나 플랫폼 분쟁도 빠르게 만듭니다.',
+          ],
+        },
+        {
+          type: 'h2',
+          content: '웹 디자이너에게서 도메인을 되찾는 법',
+        },
+        {
+          type: 'p',
+          content: '이 두려움 뒤에 가장 많이 검색되는 말이 \'웹 디자이너에게서 도메인 되찾는 법\'입니다. 그러니 구체적으로 짚어 봅시다. 도메인은 무엇보다 먼저 되찾아야 할 조각입니다. 이메일도, 사이트도, 브랜드도 전부 도메인에 매달려 있으니까요. 다행히 도메인 이전은 표준화된, 명확하게 정해진 절차입니다.',
+        },
+        {
+          type: 'p',
+          content: '디자이너에게 서면으로 등록기관 이름, 계정 로그인 정보, 그리고 도메인을 내 소유 계정으로 옮길 인증(EPP) 코드를 요청하세요. 정상적인 이전은 보통 며칠이면 됩니다. 도메인이 디자이너 개인 계정에 있다면, 내 이름의 새 계정으로 옮겨 달라고 하거나 잠금을 풀고 auth 코드를 넘겨 달라고 하세요. 거부하거나 잠수를 타면, 인보이스와 결제 기록을 들고 등록기관에 직접 연락해 분쟁 절차를 물어보세요. 돈을 낸 사람이 본인이라면 대개 되찾을 수 있습니다.',
+        },
+        {
+          type: 'tip',
+          content: '가장 좋은 해법은 쓸 일이 없는 해법입니다. 첫날부터 도메인 등록기관 계정을 내 이름과 이메일로 여세요. 원하면 개발자를 대리인으로 추가하되, 마스터 계정은 내가 쥐세요. 그러면 누구도 영영 내 도메인을 인질로 잡을 수 없습니다.',
+        },
+        {
+          type: 'h2',
+          content: 'ZOE LUMOS는 이렇게 다릅니다: 첫날부터 소유권은 고객에게',
+        },
+        {
+          type: 'p',
+          content: '솔직하게 말씀드릴게요. 저희는 사람을 이런 처지로 몰아넣는 그런 수법에 질색이거든요. ZOE LUMOS에서는 첫날부터 모든 게 고객 것입니다. 도메인은 고객 계정에, 호스팅은 고객 이름으로, 코드와 콘텐츠는 어디로든 들고 갈 수 있게요. 서버니 갱신이니 신경 쓰지 않으셔도 되게 저희가 전부 관리해 드리지만, 열쇠는 언제나 고객이 쥐고 계십니다. 언젠가 떠나기로 하시면 전부 넘겨 드리고 잘 되시길 빕니다. 협상 카드도, 인질극도, 깜짝 놀랄 일도 없습니다.',
+        },
+        {
+          type: 'p',
+          content: '이게 철학의 전부입니다. 철저한 투명성이 신뢰를 쌓고, 긴 관계는 그 신뢰 위에서만 지을 가치가 있다는 것. 저희는 뉴욕, 뉴저지, 조지아를 비롯한 미국 전역의 한인 소상공인을 위해 홈페이지 리디자인과 유지보수, 보안과 호스팅, 구글 광고, SEO, 애널리틱스 대시보드, POS 연동, 실용적인 AI 도구를 제공하고, 그 모든 것의 토대에 소유권이 있습니다. 돈 주고 만든 것이 정말 내 것인지 단 한 번도 의심할 필요가 없어야 하니까요.',
+        },
+        {
+          type: 'cta',
+          content: '내 상황이 어떤지 잘 모르시겠다면, 무료로 확인해 드립니다. 도메인과 현재 사이트를 누가 관리하는지 알려 주시면, ZOE LUMOS가 공개 기록을 조회해서 무엇이 내 것이고 무엇이 아닌지, 빈틈을 어떻게 메울지 하나하나 설명해 드립니다. 부담도 의무도 없고, 지금 개발자와 계속 가셔도 괜찮습니다. 저희와 함께 만드시면 첫날부터 도메인, 호스팅, 코드를 모두 직접 소유하십니다. 무료 소유권 확인, 편하게 연락 주세요. (Not sure where you stand? ZOE LUMOS offers a free, no-pressure ownership check. Send your domain and we will show you exactly what you own, what you do not, and how to fix any gaps. Build with us and you own your domain, hosting, and code from day one.)',
+        },
+      ],
+    },
+  },
+  {
+    slug: 'web-designer-ghosted-take-back-website-2026',
+    date: '2026-06-27',
+    updatedDate: '2026-06-27',
+    readTime: 9,
+    category: { en: 'Guide', ko: '가이드' },
+    title: {
+      en: 'Your Web Designer Ghosted You? How to Take Back Control of Your Website in 2026',
+      ko: '웹업체 연락두절? 2026년, 내 홈페이지 소유권을 되찾는 방법',
+    },
+    metaDescription: {
+      en: 'Web designer not responding and your site is rotting? Here is exactly what to do when your web designer disappears - recover your domain, logins, and content, and move to a team that actually answers.',
+      ko: '웹업체 연락두절에 홈페이지 관리 안해줌으로 사이트가 방치되고 있나요? 웹업체가 사라졌을 때 도메인, 로그인, 콘텐츠를 되찾고 실제로 응답하는 팀으로 옮기는 구체적인 방법을 알려드립니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'My web designer is not responding at all. What do I do first?',
+          ko: '웹업체가 아예 연락이 안 됩니다. 제일 먼저 뭘 해야 하나요?',
+        },
+        a: {
+          en: 'Before anything else, find out who controls your domain name. Do a public WHOIS lookup and check your email for the original receipt from the registrar (GoDaddy, Namecheap, Google Domains, etc.). Your domain is the one asset you cannot afford to lose, so confirm it is in an account you can access. Everything else - hosting, the actual site files, your content - can be rebuilt, but losing the domain means losing your address on the internet.',
+          ko: '무엇보다 먼저 도메인 소유권이 누구에게 있는지 확인하세요. 공개 WHOIS 조회를 하고, 등록업체(고대디, 네임칩, 가비아, 후이즈 등)에서 받은 최초 영수증 이메일을 찾아보세요. 도메인은 절대 잃어선 안 되는 단 하나의 자산이라, 내가 접근 가능한 계정에 들어 있는지부터 확인해야 합니다. 호스팅, 사이트 파일, 콘텐츠는 다시 만들 수 있지만 도메인을 잃으면 인터넷상의 내 주소 자체를 잃는 겁니다.',
+        },
+      },
+      {
+        q: {
+          en: 'My web developer ghosted me but my site is still up. Is it safe to just leave it?',
+          ko: '웹업체가 잠수를 탔는데 사이트는 아직 떠 있어요. 그냥 둬도 안전한가요?',
+        },
+        a: {
+          en: 'No. A live site with nobody maintaining it is the most dangerous kind. Plugins and frameworks stop getting security patches, certificates can expire, and hosting bills can quietly fail and trigger a shutdown. Industry data suggests the large majority of hacked small-business sites were running outdated software. The site looks fine today, but it is quietly rotting - the goal is to take ownership before something breaks at the worst possible moment.',
+          ko: '아닙니다. 아무도 관리하지 않는 채로 떠 있는 사이트가 가장 위험합니다. 플러그인과 프레임워크는 보안 패치가 끊기고, 인증서가 만료되고, 호스팅 결제가 조용히 실패하면서 사이트가 내려갈 수 있습니다. 업계 자료에 따르면 해킹당한 소상공인 사이트 대다수가 구버전 소프트웨어를 돌리고 있었습니다. 오늘은 멀쩡해 보여도 사이트는 조용히 썩어가고 있습니다. 최악의 순간에 무언가 터지기 전에 소유권부터 가져오는 게 목표입니다.',
+        },
+      },
+      {
+        q: {
+          en: 'What if I do not have any of the logins my designer used?',
+          ko: '웹업체가 쓰던 로그인 정보를 하나도 모르면 어떡하죠?',
+        },
+        a: {
+          en: 'You have more leverage than you think. Most registrars and hosts will restore account access to the person who can prove they own the business and paid the bills - through the billing credit card, a business document, or the original email. Start with password resets on the email address tied to the account. If that email itself was the designer\'s, that is your most urgent recovery, because whoever controls that inbox controls everything downstream.',
+          ko: '생각보다 협상력이 있습니다. 대부분의 등록업체와 호스팅사는 사업자 본인이고 비용을 결제한 사람이라는 걸 증명하면 계정 접근 권한을 복구해 줍니다. 결제 카드, 사업자등록증, 최초 가입 이메일 등으로 증명할 수 있죠. 우선 계정에 연결된 이메일로 비밀번호 재설정을 시도하세요. 만약 그 이메일 자체가 웹업체 것이라면, 그게 가장 급한 복구 대상입니다. 그 받은편지함을 쥔 사람이 그 아래 모든 걸 통제하기 때문입니다.',
+        },
+      },
+      {
+        q: {
+          en: 'Will I have to rebuild my whole website from scratch?',
+          ko: '홈페이지를 처음부터 통째로 다시 만들어야 하나요?',
+        },
+        a: {
+          en: 'Usually not. In most cases your content - text, photos, reviews, menu, business info - can be exported or simply copied off the live site, and a good team can rebuild on a modern, maintainable platform faster than the original was made. Sometimes keeping the existing site and just regaining access is the right call. The honest answer depends on what platform it sits on and whether you can get in, which is exactly the kind of thing we map out for you free before you commit to anything.',
+          ko: '대개는 아닙니다. 대부분의 경우 콘텐츠(텍스트, 사진, 리뷰, 메뉴, 사업 정보)는 내보내거나 떠 있는 사이트에서 그대로 복사할 수 있고, 좋은 팀이라면 처음 만들 때보다 더 빠르게 최신의 관리 가능한 플랫폼으로 재구축할 수 있습니다. 때로는 기존 사이트를 그대로 두고 접근 권한만 되찾는 게 정답일 때도 있죠. 솔직한 답은 어떤 플랫폼에 올라가 있는지, 그리고 접근이 되는지에 따라 달라집니다. 바로 그걸 무엇을 결정하기 전에 무료로 정리해 드립니다.',
+        },
+      },
+      {
+        q: {
+          en: 'How do I avoid getting ghosted by the next web team?',
+          ko: '다음 웹업체한테 또 잠수당하지 않으려면 어떻게 해야 하나요?',
+        },
+        a: {
+          en: 'Demand ownership and transparency up front. Your domain and hosting should be in accounts under your name and email, you should get a written list of every login, and maintenance should be a clear monthly relationship - not a one-time build that gets abandoned. At ZOE LUMOS we put your assets in your name, give you a simple analytics dashboard so you can see your site is alive and working, and we actually pick up the phone in both English and Korean.',
+          ko: '처음부터 소유권과 투명성을 요구하세요. 도메인과 호스팅은 본인 이름과 이메일로 된 계정에 있어야 하고, 모든 로그인 목록을 문서로 받아야 하며, 유지보수는 한 번 만들고 버려지는 작업이 아니라 명확한 월 단위 관계여야 합니다. ZOE LUMOS는 모든 자산을 고객님 명의로 등록하고, 사이트가 살아서 잘 돌아가는지 직접 확인할 수 있는 간단한 분석 대시보드를 드리며, 영어와 한국어 양쪽으로 실제로 전화를 받습니다.',
+        },
+      },
+    ],
+    howto: {
+      name: {
+        en: 'How to Take Back Control of Your Website From an Unresponsive Web Designer',
+        ko: '연락 안 되는 웹업체로부터 내 홈페이지 통제권을 되찾는 방법',
+      },
+      description: {
+        en: 'A practical, step-by-step process to recover your domain, logins, and content when your web designer or agency has gone silent, then move to a team that maintains your site properly.',
+        ko: '웹업체나 에이전시가 잠수를 탔을 때 도메인, 로그인, 콘텐츠를 되찾고 사이트를 제대로 관리해 줄 팀으로 옮기는 실용적인 단계별 절차입니다.',
+      },
+      totalTime: 'P7D',
+      steps: [
+        {
+          name: { en: 'Find your domain registrar', ko: '도메인 등록업체 찾기' },
+          text: {
+            en: 'Run a public WHOIS lookup on your domain and search your email inbox for renewal or purchase receipts. Identify which company (GoDaddy, Namecheap, Cloudflare, Gabia, etc.) actually holds the registration. This is the single most important asset to secure first.',
+            ko: '도메인으로 공개 WHOIS 조회를 돌리고, 이메일에서 갱신 또는 구매 영수증을 검색하세요. 어느 회사(고대디, 네임칩, 클라우드플레어, 가비아 등)가 실제로 도메인을 보유 중인지 확인합니다. 가장 먼저 확보해야 할 단 하나의 핵심 자산입니다.',
+          },
+        },
+        {
+          name: { en: 'Recover registrar and hosting logins', ko: '등록업체와 호스팅 로그인 복구' },
+          text: {
+            en: 'Attempt password resets on the email tied to each account. If you cannot get in, contact the registrar and host directly and prove ownership with your billing card, business documents, or original signup email. Get into both the domain account and the hosting account.',
+            ko: '각 계정에 연결된 이메일로 비밀번호 재설정을 시도하세요. 들어갈 수 없다면 등록업체와 호스팅사에 직접 연락해 결제 카드, 사업자 서류, 최초 가입 이메일로 소유권을 증명하세요. 도메인 계정과 호스팅 계정 둘 다 확보합니다.',
+          },
+        },
+        {
+          name: { en: 'Export and back up your content', ko: '콘텐츠 내보내기 및 백업' },
+          text: {
+            en: 'Save copies of everything that matters - page text, images, your logo, customer reviews, menu or service lists, and contact info. Export from the CMS if you can, or simply copy it from the live site. This guarantees you keep your content no matter what happens to the old site.',
+            ko: '중요한 모든 것을 사본으로 저장하세요. 페이지 텍스트, 이미지, 로고, 고객 리뷰, 메뉴나 서비스 목록, 연락처 정보까지요. 가능하면 CMS에서 내보내고, 안 되면 떠 있는 사이트에서 그대로 복사하세요. 옛 사이트에 무슨 일이 생기든 콘텐츠는 지킬 수 있습니다.',
+          },
+        },
+        {
+          name: { en: 'Lock down access', ko: '접근 권한 잠그기' },
+          text: {
+            en: 'Once you are in, change every password, update the recovery email and phone to ones you control, and turn on two-factor authentication. Remove the old designer\'s access and any unknown users. Now you, and only you, hold the keys.',
+            ko: '접근에 성공하면 모든 비밀번호를 바꾸고, 복구용 이메일과 전화번호를 본인이 통제하는 것으로 변경하고, 2단계 인증을 켜세요. 옛 웹업체의 접근 권한과 알 수 없는 사용자를 모두 제거합니다. 이제 열쇠는 오직 본인만 쥐고 있게 됩니다.',
+          },
+        },
+        {
+          name: { en: 'Document what you have', ko: '보유 자산 문서화' },
+          text: {
+            en: 'Write down every account, login, and where things live - domain, hosting, CMS, email, analytics. This single sheet is what protects you next time and lets any new team move fast without guessing.',
+            ko: '모든 계정, 로그인, 그리고 각 항목이 어디에 있는지(도메인, 호스팅, CMS, 이메일, 분석)를 한 장에 적어두세요. 이 한 장이 다음번에 본인을 지켜주고, 새 팀이 추측 없이 빠르게 움직일 수 있게 해줍니다.',
+          },
+        },
+        {
+          name: { en: 'Move to a responsive, maintained team', ko: '응답 잘하는 관리 팀으로 이전' },
+          text: {
+            en: 'Hand the documented assets to a team that offers ongoing maintenance, security, and a clear point of contact. Confirm everything stays in your name, set up monitoring and an analytics dashboard, and put maintenance on a predictable monthly basis so your site never gets abandoned again.',
+            ko: '문서화한 자산을 지속적인 유지보수, 보안, 명확한 담당 창구를 제공하는 팀에 넘기세요. 모든 자산이 본인 명의로 유지되는지 확인하고, 모니터링과 분석 대시보드를 설정하고, 유지보수를 예측 가능한 월 단위로 두어 사이트가 다시는 방치되지 않게 하세요.',
+          },
+        },
+      ],
+    },
+    sections: {
+      en: [
+        {
+          type: 'intro',
+          content: 'My web guy disappeared and won\'t answer. If you have whispered some version of that sentence to yourself - staring at an unanswered text, an email that bounced, a phone number that just rings - you are not crazy, and you are not alone. You paid someone to build and look after your website, they went quiet, and now your business\'s front door is sitting out there with nobody watching it. This guide is the calm, practical playbook for exactly that moment: what to do when your web designer disappears, how to take back control, and how to make sure it never happens to you again.',
+        },
+        {
+          type: 'h2',
+          content: 'When your web designer is not responding, the feeling is the real problem first',
+        },
+        {
+          type: 'p',
+          content: 'Let us name it honestly, because nobody else will. When a web developer ghosts you, the first thing that hits is not technical - it is the feeling of being abandoned and unsafe. You handed over something important, you trusted a person, and they vanished. On top of that comes the powerlessness: you cannot even log in to update your own hours, your own phone number, your own holiday closure. Your name is on the business, but somehow you do not hold the keys to your own front door. That mix of betrayal and helplessness is normal, and it is exactly why people freeze instead of acting. The good news: almost everything here is recoverable, and the moment you take the first concrete step, the panic starts to drain out.',
+        },
+        {
+          type: 'h2',
+          content: 'An abandoned website does not just sit still - it quietly rots',
+        },
+        {
+          type: 'p',
+          content: 'Here is the part that makes this urgent rather than annoying. A website is not a painting you hang on a wall and forget. It is closer to a storefront that needs the lights kept on and the locks maintained. When nobody is tending it, the software running underneath stops getting security updates, and known holes stay wide open. Studies show the overwhelming majority of compromised small-business sites were running outdated software at the time. Certificates expire and browsers start flashing scary warnings at your customers. A hosting payment fails silently and one morning your site is just gone. None of this announces itself - it rots quietly until the worst possible day, usually right when a big customer is trying to find you.',
+        },
+        {
+          type: 'p',
+          content: 'And there is the slower, daily cost: you cannot update anything. Your summer hours are wrong. Last year\'s promotion is still on the homepage. A typo in your phone number is sending calls to a stranger. Every one of those is a customer lost, and you are powerless to fix it because the one person with access went dark. This is why taking back ownership is not a someday project - it is the thing to start this week.',
+        },
+        {
+          type: 'h2',
+          content: 'What to do when your web designer disappears: secure the one asset you cannot lose',
+        },
+        {
+          type: 'p',
+          content: 'Before you touch anything else, go after your domain name. Your domain is your address on the internet, and unlike the website itself, it is genuinely hard to recover if it slips into the wrong hands or simply expires. The site can be rebuilt in days. A lost domain can mean losing your Google ranking, your email, and years of customers knowing where to find you. So the very first move is to find out who actually controls it and make sure it sits in an account you can reach.',
+        },
+        {
+          type: 'ul',
+          content: 'A fast triage checklist to run today:',
+          items: [
+            'Run a public WHOIS lookup on your domain to see which registrar holds it and when it expires.',
+            'Search your email for words like renewal, receipt, invoice, GoDaddy, Namecheap, and your domain name - the original paper trail is usually there.',
+            'Try a password reset on the email connected to the domain and hosting accounts.',
+            'Check whether the recovery email on those accounts is yours or the designer\'s - that one detail decides how hard recovery will be.',
+            'Make a quick copy of your live site\'s text, photos, and reviews now, while it is still up.',
+          ],
+        },
+        {
+          type: 'tip',
+          content: 'If the recovery email on your accounts is the designer\'s, treat that as the emergency. Whoever controls that inbox can reset everything downstream. Getting your domain and hosting moved onto an email and account you own is the single highest-leverage thing you can do this week.',
+        },
+        {
+          type: 'h2',
+          content: 'Recovering access without the logins your designer used',
+        },
+        {
+          type: 'p',
+          content: 'If you do not have a single password, do not panic - you have more leverage than you think. Registrars and hosting companies deal with this constantly, and their process is built around proving you are the real owner, not around whoever happened to set up the account. The billing credit card, a business registration document, the original signup email, even old invoices can all be used to prove ownership and restore access. It takes some patience and a few support calls, but the system is genuinely on the side of the person who owns the business and paid the bills. You are that person.',
+        },
+        {
+          type: 'p',
+          content: 'Once you are back in, the next move is to lock the doors behind you: change every password, swap the recovery email and phone to ones you control, switch on two-factor authentication, and remove the old designer and any unfamiliar users. The goal is simple and powerful - to go from feeling like a guest on your own website to being the undisputed owner of it. That shift, from powerless to in control, is the whole point of this exercise.',
+        },
+        {
+          type: 'h2',
+          content: 'The honest part: sometimes you keep the site, sometimes you rebuild',
+        },
+        {
+          type: 'p',
+          content: 'We are allergic to BS, so here is the straight version. Once you have control, you do not always need to throw the site away. If it is on a solid, maintainable platform and you can get in, the smart move might be to simply keep it and start maintaining it properly. Other times, the old build is fragile, outdated, or locked into a proprietary system the previous designer used to keep you trapped - and a clean rebuild on a modern platform is faster and cheaper in the long run. There is no honest one-size answer. What matters is that you decide from a position of ownership, with someone laying out the real trade-offs instead of scaring you into the most expensive option.',
+        },
+        {
+          type: 'p',
+          content: 'This is also where good maintenance changes everything. The reason your last experience went sideways is that the relationship ended at launch - the site was built, then abandoned. A site that is actually looked after gets regular security updates, monitoring, backups, and small content changes handled fast. At ZOE LUMOS we also set you up with a simple analytics dashboard so you can glance at it and see your site is alive, getting visitors, and doing its job - no more wondering, no more silence.',
+        },
+        {
+          type: 'tip',
+          content: 'Before you commit to any new team, ask one question: will my domain, hosting, and logins all be in my name and email? If the answer is anything but a clear yes, walk away. Ownership in your name is what makes ghosting impossible to repeat.',
+        },
+        {
+          type: 'cta',
+          content: 'If your web designer went silent and you are staring at a site you cannot get into, take a breath - this is fixable, and you do not have to figure it out alone. At ZOE LUMOS we actually answer, in both English and Korean, and we will sit with you and map the fastest path to take your website back: find your domain, recover your logins, protect your content, and get you back in control. No pressure, no scare tactics, no jargon - just a clear plan. Reach out and tell us what happened, and we will tell you honestly what your options are.',
+        },
+      ],
+      ko: [
+        {
+          type: 'intro',
+          content: '웹업체가 사라졌는데 연락이 안 됩니다. 이 문장을 혼자 중얼거려 본 적이 있다면 - 답장 없는 문자를 들여다보고, 반송된 이메일을 확인하고, 신호만 가는 전화를 붙들고 있었다면 - 당신이 이상한 게 아니고, 혼자 겪는 일도 아닙니다. 돈을 주고 홈페이지를 만들고 관리해 달라고 맡겼는데, 그 사람이 조용해졌고, 이제 내 사업의 정문이 아무도 안 보는 채로 덩그러니 놓여 있는 거죠. 이 글은 바로 그 순간을 위한 차분하고 실용적인 안내서입니다. 웹업체가 사라졌을 때 무엇을 해야 하는지, 어떻게 통제권을 되찾는지, 그리고 다시는 이런 일을 겪지 않으려면 어떻게 해야 하는지를 다룹니다.',
+        },
+        {
+          type: 'h2',
+          content: '웹업체 연락두절, 진짜 먼저 풀어야 할 건 그 감정입니다',
+        },
+        {
+          type: 'p',
+          content: '아무도 솔직히 말 안 해주니 제가 짚어드릴게요. 웹업체가 잠수를 타면 제일 먼저 닥치는 건 기술 문제가 아니라 버려졌다는 느낌, 그리고 불안함입니다. 중요한 걸 넘겼고, 한 사람을 믿었는데, 그가 사라진 거죠. 거기에 무력감이 더해집니다. 내 영업시간, 내 전화번호, 내 휴무 안내조차 직접 로그인해서 바꿀 수가 없으니까요. 사업은 내 이름으로 되어 있는데, 정작 내 정문 열쇠는 내가 못 쥐고 있는 겁니다. 배신감과 막막함이 뒤섞인 이 기분은 지극히 정상이고, 사람들이 행동하지 못하고 얼어붙는 이유도 바로 이것입니다. 다행인 건, 여기 나오는 거의 모든 게 복구 가능하다는 점이고, 첫 번째 구체적인 행동을 떼는 순간 그 공황은 빠져나가기 시작합니다.',
+        },
+        {
+          type: 'h2',
+          content: '방치된 홈페이지는 가만히 있는 게 아니라 조용히 썩어갑니다',
+        },
+        {
+          type: 'p',
+          content: '이게 이 문제를 단순한 짜증이 아니라 시급한 일로 만드는 지점입니다. 홈페이지는 벽에 걸어놓고 잊는 그림이 아닙니다. 오히려 불을 켜두고 자물쇠를 관리해야 하는 가게에 가깝습니다. 아무도 돌보지 않으면 그 아래에서 돌아가는 소프트웨어는 보안 업데이트가 끊기고, 알려진 구멍이 그대로 활짝 열려 있게 됩니다. 자료에 따르면 해킹당한 소상공인 사이트의 압도적 다수가 그 시점에 구버전 소프트웨어를 돌리고 있었습니다. 인증서가 만료되면 브라우저가 고객에게 무시무시한 경고를 띄우기 시작하죠. 호스팅 결제가 조용히 실패하면 어느 날 아침 사이트가 그냥 사라져 있습니다. 이 중 무엇도 미리 알려주지 않습니다. 최악의 날까지 조용히 썩어갈 뿐이고, 그 날은 보통 큰 손님이 나를 찾으려 할 때 딱 맞춰 옵니다.',
+        },
+        {
+          type: 'p',
+          content: '그리고 더 느리지만 매일 쌓이는 비용도 있습니다. 홈페이지 관리 안해줌 상태에서는 아무것도 바꿀 수가 없죠. 여름 영업시간이 틀려 있고, 작년 프로모션이 아직 첫 화면에 걸려 있고, 전화번호 오타 때문에 전화가 엉뚱한 사람에게 갑니다. 이 하나하나가 잃어버린 손님인데, 접근 권한을 쥔 그 한 사람이 잠수를 타서 고칠 수가 없습니다. 그래서 소유권을 되찾는 건 언젠가 할 일이 아니라 이번 주에 시작할 일입니다.',
+        },
+        {
+          type: 'h2',
+          content: '웹업체가 사라졌을 때 할 일: 절대 잃으면 안 되는 자산부터 지키기',
+        },
+        {
+          type: 'p',
+          content: '다른 무엇에 손대기 전에 도메인부터 챙기세요. 도메인은 인터넷상의 내 주소이고, 홈페이지 자체와 달리 엉뚱한 손에 넘어가거나 그냥 만료되면 정말로 되찾기 어렵습니다. 사이트는 며칠이면 다시 만듭니다. 하지만 도메인을 잃으면 구글 검색 순위, 이메일, 그리고 수년간 손님들이 나를 찾던 그 주소까지 통째로 잃을 수 있습니다. 그래서 가장 첫 수는 누가 실제로 도메인을 통제하는지 알아내고, 그게 내가 접근할 수 있는 계정에 들어 있는지 확인하는 것입니다.',
+        },
+        {
+          type: 'ul',
+          content: '오늘 바로 돌려볼 빠른 점검 목록:',
+          items: [
+            '도메인으로 공개 WHOIS 조회를 돌려 어느 등록업체가 보유 중이고 언제 만료되는지 확인하세요.',
+            '이메일에서 갱신, 영수증, 인보이스, 고대디, 네임칩, 가비아, 그리고 내 도메인 이름 같은 단어로 검색하세요. 최초 기록은 대개 거기 있습니다.',
+            '도메인과 호스팅 계정에 연결된 이메일로 비밀번호 재설정을 시도하세요.',
+            '그 계정들의 복구용 이메일이 내 것인지 웹업체 것인지 확인하세요. 이 한 가지가 복구 난이도를 결정합니다.',
+            '사이트가 아직 떠 있을 때, 텍스트와 사진과 리뷰를 지금 바로 복사해 두세요.',
+          ],
+        },
+        {
+          type: 'tip',
+          content: '계정의 복구용 이메일이 웹업체 것이라면 그걸 비상사태로 다루세요. 그 받은편지함을 쥔 사람이 그 아래 모든 걸 재설정할 수 있습니다. 도메인과 호스팅을 내가 소유한 이메일과 계정으로 옮기는 게 이번 주에 할 수 있는 가장 효과 큰 한 가지입니다.',
+        },
+        {
+          type: 'h2',
+          content: '웹업체가 쓰던 로그인 없이 접근 권한 되찾기',
+        },
+        {
+          type: 'p',
+          content: '비밀번호를 단 하나도 모른다 해도 당황하지 마세요. 생각보다 훨씬 협상력이 있습니다. 등록업체와 호스팅사는 이런 상황을 늘 겪고, 그들의 절차는 계정을 누가 만들었느냐가 아니라 진짜 소유자임을 증명하는 데 맞춰져 있습니다. 결제 신용카드, 사업자등록증, 최초 가입 이메일, 심지어 옛 인보이스까지 모두 소유권 증명과 접근 복구에 쓸 수 있습니다. 인내심과 몇 번의 고객센터 통화가 필요하지만, 시스템은 진심으로 사업을 소유하고 비용을 낸 사람 편입니다. 그 사람이 바로 당신입니다.',
+        },
+        {
+          type: 'p',
+          content: '다시 들어가는 데 성공하면, 다음 수는 등 뒤로 문을 잠그는 것입니다. 모든 비밀번호를 바꾸고, 복구용 이메일과 전화를 내가 통제하는 것으로 교체하고, 2단계 인증을 켜고, 옛 웹업체와 낯선 사용자를 전부 제거하세요. 목표는 단순하지만 강력합니다. 내 홈페이지에 손님처럼 얹혀 있던 상태에서, 누구도 부정할 수 없는 주인으로 올라서는 것. 무력함에서 통제권으로 넘어가는 그 전환이 이 모든 작업의 핵심입니다.',
+        },
+        {
+          type: 'h2',
+          content: '솔직한 이야기: 그대로 둘 때도, 새로 만들 때도 있습니다',
+        },
+        {
+          type: 'p',
+          content: '저희는 빈말을 못 견디니 곧이곧대로 말씀드릴게요. 통제권을 되찾았다고 해서 항상 사이트를 버려야 하는 건 아닙니다. 탄탄하고 관리 가능한 플랫폼 위에 있고 접근도 된다면, 그대로 두고 제대로 관리만 시작하는 게 현명한 선택일 수 있습니다. 반면 옛 결과물이 허약하거나 구식이거나, 이전 웹업체가 고객을 묶어두려고 쓰던 폐쇄형 시스템에 갇혀 있다면, 최신 플랫폼으로 깔끔하게 새로 만드는 게 길게 보면 더 빠르고 저렴합니다. 정직하게 말해 하나로 딱 떨어지는 정답은 없습니다. 중요한 건 소유자의 위치에서 결정하는 것, 그리고 누군가 가장 비싼 선택지로 겁주는 대신 진짜 장단점을 펼쳐 보여주는 것입니다.',
+        },
+        {
+          type: 'p',
+          content: '바로 여기서 제대로 된 유지보수가 모든 걸 바꿉니다. 지난번 경험이 어그러진 이유는 관계가 오픈과 동시에 끝났기 때문입니다. 사이트를 만들고 나서 방치한 거죠. 실제로 돌봄을 받는 사이트는 정기 보안 업데이트, 모니터링, 백업을 받고, 작은 콘텐츠 수정도 빠르게 처리됩니다. ZOE LUMOS는 거기에 더해 간단한 분석 대시보드를 설정해 드려서, 한 번 쓱 보면 내 사이트가 살아 있고 방문자가 들어오고 제 역할을 하고 있다는 걸 확인할 수 있게 합니다. 더 이상 궁금해하지 않아도, 더 이상 침묵에 시달리지 않아도 됩니다.',
+        },
+        {
+          type: 'tip',
+          content: '새 팀에 맡기기 전에 딱 하나만 물어보세요. 내 도메인, 호스팅, 로그인이 전부 내 이름과 내 이메일로 되어 있게 해주나요? 명확한 예가 아니라면 돌아서세요. 내 명의로 된 소유권이 바로 잠수 사태를 두 번 다시 못 일어나게 만드는 장치입니다.',
+        },
+        {
+          type: 'cta',
+          content: '웹업체가 조용해졌고 들어가지도 못하는 사이트만 들여다보고 있다면, 일단 숨 한 번 고르세요. 이건 충분히 해결 가능하고, 혼자 끙끙댈 필요도 없습니다. ZOE LUMOS는 영어와 한국어 양쪽으로 실제로 응답합니다. 함께 앉아 내 홈페이지를 되찾는 가장 빠른 길을 정리해 드립니다. 도메인 찾기, 로그인 복구, 콘텐츠 보호, 그리고 통제권을 다시 손에 쥐기까지요. 압박도, 겁주기도, 어려운 용어도 없습니다. 그저 명확한 계획만 드립니다. 무슨 일이 있었는지 편하게 알려주시면, 선택지가 무엇인지 솔직하게 말씀드리겠습니다.',
+        },
+      ],
+    },
+  },
+  {
+    slug: 'korean-business-web-vendor-red-flags-2026',
+    date: '2026-06-27',
+    updatedDate: '2026-06-27',
+    readTime: 9,
+    category: { en: 'Guide', ko: '가이드' },
+    title: {
+      en: 'Korean Business Web Vendor Red Flags (2026): How to Choose a Web Agency Without Getting Burned',
+      ko: '한인 웹업체 사기, 이제 그만 당하세요 (2026): 홈페이지 업체 선택 전 꼭 알아야 할 것',
+    },
+    metaDescription: {
+      en: 'A protective, plain-spoken guide to Korean business web vendor red flags. Learn how to choose a web agency for your Korean business, the 5 ways owners get burned, and the exact questions to ask before you sign.',
+      ko: '한인 사장님이 웹업체에 당하는 진짜 이유. 연락 두절, 불투명한 관리비, cold-call 사기 패키지까지. 홈페이지 업체 선택 전 반드시 확인할 것과 웹사이트 업체 주의사항을 형처럼 솔직하게 정리했습니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'How do I spot Korean business web vendor red flags before I pay?',
+          ko: '계약 전에 한인 웹업체 사기인지 어떻게 알아보나요?',
+        },
+        a: {
+          en: 'The biggest tell is ownership. Ask in writing: do I own the domain and hosting, and will I get admin access? If they get vague, stall, or say they will handle it for you so you do not need to worry, that is the red flag. A real partner is happy to put your name on everything and hand you the keys.',
+          ko: '가장 확실한 신호는 소유권입니다. 계약 전에 글로 물어보세요. 도메인이랑 호스팅 제 명의 맞나요? 관리자 권한 받을 수 있나요? 여기서 말을 흐리거나 사장님은 신경 안 쓰셔도 된다며 얼버무리면 그게 빨간불입니다. 진짜 파트너는 사장님 이름으로 다 등록해 주고 열쇠를 흔쾌히 넘겨줍니다.',
+        },
+      },
+      {
+        q: {
+          en: 'A vendor cold-called me offering a website plus Google Ads plus management all for one cheap price. Is that a scam?',
+          ko: 'cold-call로 홈페이지에 광고에 관리까지 싸게 다 해드린다는데, 사기인가요?',
+        },
+        a: {
+          en: 'Not always a scam, but treat any unsolicited all in one cheap package with caution. The pattern many owners report is heavy upfront promises, a thin template site, and then months of vague monthly fees with no real results. Ask them to itemize exactly what the monthly fee covers and to show you a sample report. If they cannot, walk away.',
+          ko: '무조건 사기는 아니지만, 먼저 전화 와서 다 묶어서 싸게 해드린다는 패키지는 일단 의심하고 보세요. 많은 사장님들이 겪는 패턴은 처음엔 거창하게 약속하고, 막상 받아보면 템플릿 한 장, 그 다음엔 매달 정체불명의 관리비만 빠져나가는 거예요. 관리비에 정확히 뭐가 포함되는지 항목별로 적어달라고 하고, 샘플 리포트 보여달라고 하세요. 못 보여주면 거기서 멈추는 게 맞습니다.',
+        },
+      },
+      {
+        q: {
+          en: 'My current vendor went silent and will not give me my website. What can I do?',
+          ko: '지금 쓰는 업체가 연락이 두절됐고 홈페이지를 안 넘겨줍니다. 어떻게 하죠?',
+        },
+        a: {
+          en: 'First, find out who the domain is actually registered to (a quick WHOIS lookup or your domain registrar account). If it is in your name, you have real leverage and can move hosting elsewhere. If it is in their name, you may need to re-register a domain and rebuild, which is painful but recoverable. Keep every message in writing, and get a second opinion from someone who will explain it in plain Korean.',
+          ko: '먼저 도메인이 누구 명의로 등록돼 있는지 확인하세요 (WHOIS 조회나 도메인 등록 사이트 계정). 사장님 명의면 협상력이 있고 호스팅을 다른 데로 옮길 수 있어요. 업체 명의면 도메인을 새로 등록하고 다시 만들어야 할 수도 있는데, 아프지만 충분히 복구됩니다. 모든 대화는 글로 남기시고, 한국말로 차근차근 설명해 줄 사람한테 2차 소견을 꼭 받아보세요.',
+        },
+      },
+      {
+        q: {
+          en: 'What should be included in a fair monthly maintenance fee?',
+          ko: '적정한 월 관리비에는 보통 뭐가 들어가야 하나요?',
+        },
+        a: {
+          en: 'A fair monthly fee should be itemized: hosting, security and SSL, software and plugin updates, backups, small content edits (with a clear limit), and a monthly report. You should be able to read the invoice and understand every line. If the fee is just one round number labeled management with no breakdown, that is a website vendor red flag.',
+          ko: '제대로 된 월 관리비는 항목이 보여야 합니다. 호스팅, 보안과 SSL, 소프트웨어와 플러그인 업데이트, 백업, 간단한 내용 수정 (횟수 명시), 그리고 월간 리포트. 청구서를 봤을 때 한 줄 한 줄 이해가 돼야 정상이에요. 그냥 관리비 한 덩어리에 동그란 숫자 하나만 찍혀 있고 내역이 없으면, 그게 바로 웹사이트 업체 주의 신호입니다.',
+        },
+      },
+      {
+        q: {
+          en: 'How do I choose a web agency for my Korean business that I can actually trust?',
+          ko: '믿고 맡길 수 있는 홈페이지 업체 선택, 어떻게 하나요?',
+        },
+        a: {
+          en: 'Trust is built on control and proof. Choose an agency that registers everything in your name, gives you admin access, itemizes the monthly fee, hands you a real dashboard or monthly report, and has a written exit and handover process so you are never locked in. If a vendor is comfortable with all five, they are not planning to trap you.',
+          ko: '믿음은 통제권과 증거에서 나옵니다. 모든 걸 사장님 명의로 등록해 주고, 관리자 권한을 주고, 관리비를 항목별로 보여주고, 진짜 대시보드나 월간 리포트를 주고, 나갈 때 인수인계 절차까지 글로 정해 두는 업체를 고르세요. 이 다섯 가지를 편하게 다 해주는 곳이라면, 사장님을 가둬둘 생각이 없는 곳입니다.',
+        },
+      },
+    ],
+    howto: {
+      name: {
+        en: 'Questions to ask BEFORE you sign with a web vendor',
+        ko: '계약 전 반드시 물어볼 것',
+      },
+      description: {
+        en: 'Copy these five questions, send them to any web vendor before you pay a dollar, and read their answers carefully. Honest answers protect you. Vague answers are the warning.',
+        ko: '이 다섯 가지 질문을 그대로 복사해서, 돈을 내기 전에 어느 업체든 보내보세요. 그리고 대답을 잘 들어보세요. 솔직한 대답은 사장님을 지켜주고, 얼버무리는 대답은 경고입니다.',
+      },
+      totalTime: 'PT15M',
+      steps: [
+        {
+          name: { en: 'Ask who owns the domain and hosting', ko: '도메인과 호스팅 명의를 물어보세요' },
+          text: {
+            en: 'Ask directly: will the domain and hosting be registered in my name or my business name? Get the answer in writing. You should own these no matter who builds the site.',
+            ko: '단도직입적으로 물어보세요. 도메인이랑 호스팅, 제 이름이나 상호로 등록되나요? 대답을 꼭 글로 받으세요. 누가 만들든 이건 사장님 소유여야 합니다.',
+          },
+        },
+        {
+          name: { en: 'Ask for admin access', ko: '관리자 권한을 요청하세요' },
+          text: {
+            en: 'Ask: will I get admin login to the website, hosting, and Google accounts? A trustworthy vendor hands you the keys. A vendor who keeps you locked out is keeping leverage over you.',
+            ko: '물어보세요. 홈페이지, 호스팅, 구글 계정에 관리자로 로그인할 수 있게 해주시나요? 믿을 만한 업체는 열쇠를 줍니다. 사장님을 계속 문밖에 세워두는 업체는 사장님을 쥐고 있으려는 거예요.',
+          },
+        },
+        {
+          name: { en: 'Ask for the monthly fee itemized', ko: '관리비 항목을 하나하나 적어달라고 하세요' },
+          text: {
+            en: 'Ask them to break down the monthly fee line by line: hosting, security, updates, backups, edits, reporting. If they cannot or will not itemize it, that is your answer.',
+            ko: '관리비를 한 줄씩 쪼개 달라고 하세요. 호스팅, 보안, 업데이트, 백업, 수정, 리포트. 못 적어주거나 안 적어주면, 그게 답입니다.',
+          },
+        },
+        {
+          name: { en: 'Ask for a monthly report or dashboard', ko: '월간 리포트나 대시보드를 받을 수 있는지 물어보세요' },
+          text: {
+            en: 'Ask: will I get a monthly report or a live dashboard showing visitors, calls, and ad results? You are paying for outcomes, so you deserve to see proof, not just promises.',
+            ko: '물어보세요. 매달 방문자, 전화 문의, 광고 성과를 보여주는 리포트나 실시간 대시보드를 받을 수 있나요? 사장님은 결과에 돈을 내는 거니까, 말이 아니라 증거를 볼 권리가 있습니다.',
+          },
+        },
+        {
+          name: { en: 'Ask about the exit and handover process', ko: '나갈 때 인수인계 절차를 물어보세요' },
+          text: {
+            en: 'Ask: if I ever leave, how do I get everything handed over, and how long does it take? A fair vendor has a clear, written exit process. No lock-in is a sign of confidence.',
+            ko: '물어보세요. 혹시 나중에 그만두면, 모든 걸 어떻게 넘겨받고 얼마나 걸리나요? 정직한 업체는 명확한 인수인계 절차를 글로 가지고 있습니다. 묶어두지 않는다는 건 그만큼 자신 있다는 뜻이에요.',
+          },
+        },
+        {
+          name: { en: 'Get a second opinion before you sign', ko: '서명 전에 2차 소견을 받으세요' },
+          text: {
+            en: 'Before you sign anything, show the proposal to one more person who will read it honestly and in your language. Fifteen minutes of a second opinion can save you months of regret.',
+            ko: '서명하기 전에, 그 제안서를 정직하게 그리고 사장님 언어로 봐줄 사람 한 명한테 더 보여주세요. 15분짜리 2차 소견이 몇 달의 후회를 막아줍니다.',
+          },
+        },
+      ],
+    },
+    sections: {
+      en: [
+        {
+          type: 'intro',
+          content: 'If you run a Korean business in NY, NJ, GA, or anywhere in the States, you have probably heard a story like this at church or over a meal. A fellow owner paid good money for a website, the vendor went quiet a couple months later, and now nobody can even log in to fix the hours. It is not just bad luck. It is a pattern many owners go through. This guide is the honest talk a 형 or 누나 would give you over coffee: the real Korean business web vendor red flags, how to choose a web agency for your Korean business, and the exact questions that keep you in control.',
+        },
+        {
+          type: 'h2',
+          content: 'Why so many Korean owners get burned (and why it is not your fault)',
+        },
+        {
+          type: 'p',
+          content: 'Here is the uncomfortable truth behind most Korean business web vendor red flags: the whole setup is built on you not knowing what you own. You are busy running a restaurant, a salon, a market. You trust the person in front of you because they spoke your language and seemed kind. That trust is a good instinct, but some vendors lean on it. They keep the domain, the hosting, and the logins in their own hands, so the day you have a question, you are stuck. Feeling burned does not mean you were foolish. It means the system was designed so you could not see inside it.',
+        },
+        {
+          type: 'h2',
+          content: '5 ways Korean business owners get burned by web vendors',
+        },
+        {
+          type: 'p',
+          content: 'Almost every painful story comes down to the same handful of patterns. If you recognize even one of these in your current setup, it is worth a closer look.',
+        },
+        {
+          type: 'ul',
+          content: '',
+          items: [
+            'The vendor goes silent in 2 to 3 months. The site launches, the invoice clears, and then the replies get slower and slower until they stop. Your phone number on the site is wrong and nobody will fix it.',
+            'They hold your domain and hosting hostage. Everything is registered in the vendor\'s name, not yours. You cannot move, you cannot leave, and you cannot even prove the website is yours.',
+            'The monthly fee is a black box. You pay a round number every month labeled management or maintenance, with no itemized breakdown of what you are actually getting.',
+            'Cold-call cheap packages that underdeliver. Someone calls out of the blue offering website plus ads plus management all for one low price. The promises are big, the template is thin, and the results never come. Be careful with any unsolicited all in one deal.',
+            'No results, no proof. You never see a report or a dashboard. You have no idea how many people visit, how many call, or whether the ads do anything. You are paying on faith alone.',
+          ],
+        },
+        {
+          type: 'h2',
+          content: 'Red flag #1: ownership you cannot see',
+        },
+        {
+          type: 'p',
+          content: 'This is the one that traps people. Your domain (your web address) and your hosting are the land your business sits on online. If they are registered in the vendor\'s name instead of yours, you do not own your own front door. The fix is simple to ask for and hard for a bad vendor to give: everything in your name, admin access in your hands. A good partner does this without being pushed. If a vendor resists, that resistance is the answer.',
+        },
+        {
+          type: 'h2',
+          content: 'Red flag #2: the opaque monthly fee',
+        },
+        {
+          type: 'p',
+          content: 'A fair monthly fee is not a mystery. It should read like a receipt: hosting, security and SSL, software updates, backups, a set number of small edits, and a monthly report. You should understand every line. When the fee is one round number with no breakdown, you are not buying a service, you are buying silence. Ask for it itemized. The willingness to itemize tells you almost everything about who you are dealing with.',
+        },
+        {
+          type: 'h2',
+          content: 'Red flag #3: the cold-call all in one package',
+        },
+        {
+          type: 'p',
+          content: 'Be especially careful when the vendor finds you. An unsolicited call promising a website, Google Ads, and full management all bundled cheap is one of the most common patterns owners report regretting. It is not always a scam, but the math rarely works. Real ads management, real maintenance, and real reporting cost real time. When it all comes wrapped cheap with big promises, what usually arrives is a thin template and a monthly charge you cannot explain. Slow down and ask for specifics before you sign.',
+        },
+        {
+          type: 'h2',
+          content: 'Red flag #4: no proof you can look at',
+        },
+        {
+          type: 'p',
+          content: 'You are not paying for a pretty page. You are paying for more calls, more orders, more customers walking in. So you deserve to see whether it is working. A trustworthy agency gives you a monthly report or a live dashboard: how many people visited, how many called or clicked, what the ads brought in. If a vendor cannot or will not show you proof, ask yourself what they are hiding. Numbers you can see are the opposite of a scam.',
+        },
+        {
+          type: 'h2',
+          content: 'How to choose a web agency for your Korean business',
+        },
+        {
+          type: 'p',
+          content: 'Choosing well is not about finding the cheapest quote or even the slickest design. It is about control and transparency. The agency you want is the one that puts everything in your name, gives you the logins, itemizes the fee, hands you a real dashboard, and writes down how you would leave if you ever wanted to. Notice that every one of these is about giving you power, not taking it. A vendor who is comfortable handing you control is a vendor who plans to keep you by being good, not by trapping you.',
+        },
+        {
+          type: 'tip',
+          content: 'Tip: before you pay anyone, do a 30-second ownership check. Look up your domain on a WHOIS search and see whose name is on it. If it is not yours, that is the first conversation to have. Owning your domain is the single most protective thing you can do online.',
+        },
+        {
+          type: 'tip',
+          content: 'Tip: keep every promise in writing. A quick text or email that says you own the domain, here is the admin login, here is what the monthly fee covers is worth more than any friendly phone call. Honest vendors are glad to write it down.',
+        },
+        {
+          type: 'cta',
+          content: 'If any of this hit a little too close to home, take a breath, you are not stuck. We are ZOE LUMOS, a Korean-American team that works with Korean owners just like you. We give you full ownership of your domain and hosting, itemized and transparent pricing, and a real dashboard so you always see what your money is doing. No lock-in, no games. If you just want an honest second opinion on your current site or a proposal you were handed, reach out for a free consultation. No pressure, same language, straight talk.',
+        },
+      ],
+      ko: [
+        {
+          type: 'intro',
+          content: '뉴욕, 뉴저지, 조지아, 미국 어디든 한인 사장님이라면 교회나 식사 자리에서 이런 얘기 한 번쯤 들어보셨을 거예요. 어느 사장님이 큰맘 먹고 홈페이지를 맡겼는데, 두어 달 지나니까 업체가 연락이 두절되고, 이제는 영업시간 하나 고치려 해도 아무도 로그인을 못 한다는 얘기요. 이게 그냥 운이 나빠서가 아니에요. 정말 많은 사장님들이 똑같이 겪는 패턴입니다. 이 글은 형이나 누나가 커피 한잔 사주며 해주는 솔직한 이야기예요. 진짜 한인 웹업체 사기 신호가 뭔지, 홈페이지 업체 선택을 어떻게 해야 하는지, 그리고 사장님이 끝까지 주도권을 쥘 수 있는 질문들까지 다 알려드릴게요.',
+        },
+        {
+          type: 'h2',
+          content: '왜 이렇게 많은 한인 사장님이 당할까요 (사장님 잘못이 아닙니다)',
+        },
+        {
+          type: 'p',
+          content: '대부분의 한인 웹업체 사기 뒤에는 불편한 진실이 하나 있어요. 그 구조 자체가 사장님이 뭘 소유하고 있는지 모르게 만들어져 있다는 겁니다. 사장님은 식당, 미용실, 마켓 돌보느라 정신없잖아요. 앞에 앉은 사람이 한국말 하고 사람 좋아 보이니까 믿는 거예요. 그 믿음 자체는 좋은 본능입니다. 그런데 일부 업체는 바로 그 믿음에 기대요. 도메인, 호스팅, 로그인을 자기 손에 다 쥐고 있다가, 사장님이 뭔가 물어보는 순간 꼼짝 못 하게 만드는 거죠. 당했다고 해서 사장님이 어수룩한 게 아니에요. 안이 안 보이게 설계된 시스템이었을 뿐입니다.',
+        },
+        {
+          type: 'h2',
+          content: '한인 사장님이 웹업체에 당하는 5가지',
+        },
+        {
+          type: 'p',
+          content: '가슴 아픈 사연들은 거의 다 똑같은 몇 가지 패턴으로 정리됩니다. 지금 쓰시는 곳에서 이 중 하나라도 짚이신다면, 한 번 자세히 들여다보실 만합니다.',
+        },
+        {
+          type: 'ul',
+          content: '',
+          items: [
+            '업체가 2~3개월 만에 연락 두절됩니다. 사이트 오픈하고, 돈 들어가고 나면 답장이 점점 느려지다가 결국 끊겨요. 사이트에 전화번호가 틀려도 고쳐줄 사람이 없습니다.',
+            '도메인과 호스팅을 안 넘겨주고 인질로 잡습니다. 다 업체 명의로 등록돼 있고 사장님 명의는 아니에요. 옮길 수도, 나갈 수도, 심지어 이 홈페이지가 내 거라고 증명할 수도 없습니다.',
+            '관리비가 깜깜이입니다. 매달 관리비, 유지비라고 동그란 숫자만 빠져나가는데, 정확히 뭘 받고 있는지 항목별 내역이 없어요.',
+            'cold-call로 다 해드린다는 싼 패키지인데 막상 부실합니다. 갑자기 전화 와서 홈페이지에 광고에 관리까지 한 번에 싸게 해드린다고 해요. 약속은 거창한데 받아보면 템플릿 한 장, 결과는 안 옵니다. 먼저 전화 와서 다 묶어주는 거래는 꼭 조심하세요.',
+            '결과를 안 보여줍니다. 리포트도 대시보드도 본 적이 없어요. 방문자가 몇 명인지, 전화가 몇 통 오는지, 광고가 효과가 있는지 전혀 몰라요. 그냥 믿음 하나로 돈만 내고 있는 거죠.',
+          ],
+        },
+        {
+          type: 'h2',
+          content: '빨간불 1번: 보이지 않는 소유권',
+        },
+        {
+          type: 'p',
+          content: '바로 이게 사람을 가둬두는 함정이에요. 도메인(홈페이지 주소)이랑 호스팅은 사장님 가게가 온라인에서 앉아 있는 땅입니다. 이게 사장님 명의가 아니라 업체 명의로 돼 있으면, 내 가게 정문을 내가 소유하지 못한 거예요. 요구하기는 쉬운데 나쁜 업체가 들어주기는 어려운 게 바로 이거예요. 전부 사장님 명의로, 관리자 권한은 사장님 손에. 좋은 파트너는 시키지 않아도 이렇게 해줍니다. 업체가 이걸 꺼린다면, 그 꺼림칙함이 곧 답입니다.',
+        },
+        {
+          type: 'h2',
+          content: '빨간불 2번: 불투명한 관리비',
+        },
+        {
+          type: 'p',
+          content: '제대로 된 관리비는 수수께끼가 아니에요. 영수증처럼 읽혀야 합니다. 호스팅, 보안과 SSL, 소프트웨어 업데이트, 백업, 간단한 수정 몇 회, 그리고 월간 리포트. 한 줄 한 줄 다 이해가 돼야 정상이에요. 관리비가 내역도 없이 동그란 숫자 하나면, 사장님은 서비스를 사는 게 아니라 침묵을 사고 있는 겁니다. 항목별로 적어달라고 하세요. 항목을 적어줄 의향이 있느냐 없느냐가, 상대가 어떤 사람인지 거의 다 말해줍니다.',
+        },
+        {
+          type: 'h2',
+          content: '빨간불 3번: cold-call 패키지 사기 주의',
+        },
+        {
+          type: 'p',
+          content: '업체가 사장님을 먼저 찾아왔을 때 특히 조심하세요. 부탁한 적도 없는데 전화 와서 홈페이지, 구글 광고, 관리까지 다 묶어서 싸게 해준다는 건, 많은 사장님들이 나중에 후회한다고 말하는 가장 흔한 패턴이에요. 무조건 사기는 아니지만, 계산이 잘 안 맞습니다. 진짜 광고 관리, 진짜 유지보수, 진짜 리포트는 진짜 시간이 들어가요. 그게 다 싸게 묶이고 약속만 거창하면, 보통 손에 들어오는 건 부실한 템플릿 하나랑 설명 안 되는 월 청구서입니다. 서명하기 전에 속도를 늦추고, 구체적으로 따져 물어보세요.',
+        },
+        {
+          type: 'h2',
+          content: '빨간불 4번: 눈으로 볼 수 있는 증거가 없다',
+        },
+        {
+          type: 'p',
+          content: '사장님은 예쁜 페이지 하나에 돈 내는 게 아니에요. 전화 한 통 더, 주문 하나 더, 손님 한 분 더 들어오시라고 돈 내는 거잖아요. 그러니까 효과가 있는지 두 눈으로 볼 권리가 있습니다. 믿을 만한 곳은 월간 리포트나 실시간 대시보드를 줍니다. 몇 명이 방문했는지, 몇 명이 전화하고 클릭했는지, 광고가 뭘 가져왔는지요. 업체가 증거를 못 보여주거나 안 보여준다면, 뭘 숨기고 있는 건지 스스로 물어보세요. 눈으로 볼 수 있는 숫자야말로 사기의 정반대입니다.',
+        },
+        {
+          type: 'h2',
+          content: '믿을 수 있는 홈페이지 업체 선택, 이렇게 하세요',
+        },
+        {
+          type: 'p',
+          content: '잘 고른다는 건 제일 싼 견적이나 제일 화려한 디자인을 찾는 게 아니에요. 통제권과 투명성의 문제입니다. 사장님이 원해야 할 업체는, 모든 걸 사장님 명의로 등록해 주고, 로그인을 주고, 관리비를 항목별로 보여주고, 진짜 대시보드를 건네주고, 혹시 나가고 싶을 때 어떻게 넘겨받는지까지 글로 적어두는 곳입니다. 보세요, 이 다섯 가지가 전부 사장님한테 힘을 주는 일이지, 빼앗는 일이 아니에요. 통제권을 흔쾌히 넘겨주는 업체는, 사장님을 가둬서가 아니라 잘해서 붙잡으려는 업체입니다.',
+        },
+        {
+          type: 'tip',
+          content: '팁: 누구한테든 돈 내기 전에 30초짜리 소유권 확인부터 하세요. WHOIS 조회로 사장님 도메인을 검색해서 누구 명의로 돼 있는지 보세요. 사장님 명의가 아니라면, 그게 가장 먼저 해야 할 대화입니다. 내 도메인을 내가 소유하는 것, 이게 온라인에서 할 수 있는 가장 확실한 자기 보호예요.',
+        },
+        {
+          type: 'tip',
+          content: '팁: 모든 약속은 글로 남기세요. 도메인은 사장님 소유다, 관리자 로그인은 이거다, 관리비에는 이게 포함된다, 라고 문자나 이메일로 한 줄 받아두는 게 그 어떤 살가운 전화 통화보다 값집니다. 정직한 업체는 기꺼이 적어줍니다.',
+        },
+        {
+          type: 'cta',
+          content: '혹시 이 글이 너무 내 얘기 같아서 마음이 무거우셨다면, 숨 한번 고르세요. 사장님은 갇혀 있는 게 아닙니다. 저희는 ZOE LUMOS, 사장님 같은 한인 사장님들과 함께 일하는 한인 미국 팀이에요. 도메인과 호스팅을 전부 사장님 소유로 드리고, 관리비는 항목별로 투명하게 보여드리고, 사장님 돈이 무슨 일을 하고 있는지 늘 보이도록 진짜 대시보드를 드립니다. 묶어두기도, 장난도 없어요. 지금 쓰시는 사이트나 어디서 받으신 제안서에 대해 정직한 2차 소견만 듣고 싶으셔도 괜찮습니다. 무료 상담으로 편하게 연락 주세요. 부담 없이, 같은 말로, 솔직하게 말씀드릴게요.',
+        },
+      ],
+    },
+  },
+  {
+    slug: 'website-maintenance-fee-what-it-covers-2026',
+    date: '2026-06-27',
+    updatedDate: '2026-06-27',
+    readTime: 9,
+    category: { en: 'Guide', ko: '가이드' },
+    title: {
+      en: 'What Does a Website Maintenance Fee Actually Cover? (2026)',
+      ko: '홈페이지 관리비, 매달 내는데 도대체 뭘 해주는 걸까요? (2026)',
+    },
+    metaDescription: {
+      en: 'If you are paying monthly for a website doing nothing, here is exactly what a website maintenance fee should cover, a real maintenance plan checklist, and how to audit your website maintenance cost.',
+      ko: '매달 홈페이지 관리비를 내는데 아무것도 안 바뀐다면, 웹사이트 유지보수 비용이 뭘 해주는지, 진짜 관리 플랜에 들어가야 할 항목과 지금 내는 돈을 점검하는 법을 알려드립니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'What does a website maintenance fee cover?',
+          ko: '홈페이지 관리비는 뭘 해주는 비용인가요?',
+        },
+        a: {
+          en: 'A real website maintenance fee should cover security updates and patching, regular backups, uptime monitoring, plugin and framework updates, small content edits, performance checks, and a monthly report you can actually read. If your provider cannot point to those line items, you are likely paying monthly for a website doing nothing.',
+          ko: '진짜 관리비라면 보안 업데이트와 패치, 정기 백업, 가동 상태(업타임) 모니터링, 플러그인과 프레임워크 업데이트, 간단한 콘텐츠 수정, 속도 점검, 그리고 사람이 읽을 수 있는 월간 리포트까지 포함돼야 합니다. 업체가 이 항목들을 보여주지 못한다면, 아무것도 안 해주는 홈페이지에 매달 돈만 내고 있을 가능성이 큽니다.',
+        },
+      },
+      {
+        q: {
+          en: 'I pay every month and nothing changes. Is that normal?',
+          ko: '매달 내는데 아무것도 안 바뀌어요. 원래 이런 건가요?',
+        },
+        a: {
+          en: 'No. Maintenance happening invisibly is fine (patching, backups), but invisible should never mean unprovable. You should be able to ask for a maintenance log and a monthly report. If you cannot get either, the silence is the problem, not your question.',
+          ko: '아니요. 백업이나 패치처럼 눈에 안 보이는 작업이 있는 건 정상이지만, 안 보인다는 게 증명할 수 없다는 뜻이 되면 안 됩니다. 관리 로그와 월간 리포트를 요청하면 받을 수 있어야 합니다. 둘 다 못 받는다면 문제는 당신의 질문이 아니라 그 침묵입니다.',
+        },
+      },
+      {
+        q: {
+          en: 'How much should website maintenance cost?',
+          ko: '웹사이트 유지보수 비용은 얼마가 적당한가요?',
+        },
+        a: {
+          en: 'For a small business site, industry data typically puts ongoing maintenance anywhere from a modest monthly retainer to a few hundred dollars a month, depending on traffic, e-commerce, and how much hands-on editing you need. The number matters less than the deliverables: a fair website maintenance cost is one where you can see the line items you are paying for.',
+          ko: '소상공인 사이트 기준으로 보면, 업계 데이터상 유지보수 비용은 소액 월정액부터 한 달 몇백 달러까지 트래픽, 쇼핑몰 기능, 수정 빈도에 따라 다양합니다. 중요한 건 금액보다 결과물입니다. 공정한 유지보수 비용이란, 내가 내는 돈에 해당하는 항목을 눈으로 확인할 수 있는 비용입니다.',
+        },
+      },
+      {
+        q: {
+          en: 'My contract just says operation and maintenance. Is that enough?',
+          ko: '계약서에 운영 및 유지보수 한 줄만 있는데, 이걸로 충분한가요?',
+        },
+        a: {
+          en: 'One vague line is the most common red flag we see. Operation and maintenance with no itemized scope lets a provider charge you for doing almost nothing. Ask for the scope in writing: what is checked, how often, and what report you receive.',
+          ko: '운영 및 유지보수 한 줄, 이게 저희가 가장 자주 보는 위험 신호입니다. 범위를 명시하지 않은 이 한 줄은 업체가 거의 아무 일도 안 하고도 돈을 받을 수 있게 만듭니다. 무엇을, 얼마나 자주 점검하고, 어떤 리포트를 받는지 서면으로 요청하세요.',
+        },
+      },
+      {
+        q: {
+          en: 'Can I just cancel maintenance and save the money?',
+          ko: '그냥 관리비 끊고 돈 아끼면 안 되나요?',
+        },
+        a: {
+          en: 'You can, but an unmaintained site is a slow-motion risk: outdated plugins get hacked, no backups means a crash can wipe you out, and a down site loses customers silently. The smart move is not cancel, it is replace bad maintenance with transparent maintenance you can verify.',
+          ko: '끊을 수는 있지만, 관리 안 된 사이트는 천천히 터지는 시한폭탄입니다. 오래된 플러그인은 해킹당하고, 백업이 없으면 한 번 다운에 다 날아가고, 사이트가 멈춰도 조용히 손님만 잃습니다. 현명한 선택은 해지가 아니라, 나쁜 관리비를 확인 가능한 투명한 관리로 바꾸는 것입니다.',
+        },
+      },
+    ],
+    howto: {
+      name: {
+        en: 'How to audit your current website maintenance fee in 5 steps',
+        ko: '지금 내는 홈페이지 관리비, 5단계로 점검하는 법',
+      },
+      description: {
+        en: 'A quick self-check to find out whether your monthly maintenance fee is buying real work or just buying silence.',
+        ko: '매달 내는 관리비가 진짜 일을 사는 건지, 아니면 침묵을 사는 건지 빠르게 확인하는 셀프 체크.',
+      },
+      totalTime: 'PT30M',
+      steps: [
+        {
+          name: { en: 'Find what you actually pay', ko: '실제 지출 금액 확인' },
+          text: {
+            en: 'Pull the last 12 months of invoices and add up your total annual maintenance cost. Write down the exact monthly number so it stops being abstract.',
+            ko: '최근 12개월 청구서를 모아 1년 총 관리비를 더해 보세요. 매달 정확히 얼마인지 적어두면 더 이상 막연한 돈이 아니게 됩니다.',
+          },
+        },
+        {
+          name: { en: 'Ask for the maintenance log', ko: '관리 로그 요청' },
+          text: {
+            en: 'Email your provider and ask for a maintenance log for the last 90 days: dates, what was updated, what was backed up. Their answer (or silence) tells you almost everything.',
+            ko: '업체에 메일을 보내 최근 90일 관리 로그를 요청하세요. 날짜, 무엇을 업데이트했는지, 무엇을 백업했는지. 그 답변(또는 침묵)이 거의 모든 걸 말해줍니다.',
+          },
+        },
+        {
+          name: { en: 'Check your backups exist', ko: '백업 존재 여부 확인' },
+          text: {
+            en: 'Ask one direct question: if my site went down today, how fast can you restore it and from when? No clear answer means you may have no real backups.',
+            ko: '한 가지만 직접 물어보세요. 오늘 사이트가 다운되면 언제 시점으로 얼마나 빨리 복구할 수 있나요? 명확한 답이 없다면 사실상 백업이 없을 수 있습니다.',
+          },
+        },
+        {
+          name: { en: 'Test the site yourself', ko: '직접 사이트 점검' },
+          text: {
+            en: 'Open your site on your phone, check load speed, broken links, outdated info, and whether the contact form actually sends. These are the basics maintenance is supposed to catch.',
+            ko: '휴대폰으로 사이트를 열어 로딩 속도, 깨진 링크, 오래된 정보, 문의 폼이 실제로 전송되는지 확인하세요. 이건 관리가 당연히 잡아냈어야 할 기본입니다.',
+          },
+        },
+        {
+          name: { en: 'Compare cost to deliverables', ko: '비용과 결과물 비교' },
+          text: {
+            en: 'Put your annual cost next to the actual deliverables you found. If the list is short and the bill is long, it is time to get a second opinion on what you are paying for.',
+            ko: '1년 비용 옆에 실제로 확인된 결과물을 나란히 놓아 보세요. 결과물 목록은 짧은데 청구서가 길다면, 지금 내는 돈에 대해 다른 의견을 들어볼 때입니다.',
+          },
+        },
+      ],
+    },
+    sections: {
+      en: [
+        {
+          type: 'intro',
+          content: 'You see the charge every month. Same amount, same date, same quiet little line on your bank statement. And every month a small voice asks the same question: what am I actually paying for? Nothing on the site changes. No email. No report. No proof. If you are paying monthly for a website doing nothing, you are not crazy, and you are not alone. You just have never been shown what a website maintenance fee is supposed to cover. Let us fix that today.',
+        },
+        {
+          type: 'h2',
+          content: 'What does a website maintenance fee cover (and what it is hiding)?',
+        },
+        {
+          type: 'p',
+          content: 'Here is the uncomfortable truth: a lot of maintenance work is invisible by design. Security patches, backups, and server updates happen in the background, so nothing looks different on your screen. That part is normal. The problem is when invisible turns into unprovable. A good provider does quiet work and still hands you proof. A bad one does quiet work, no work, or who-knows-what, and counts on you never asking. The fee is the same. The honesty is not.',
+        },
+        {
+          type: 'p',
+          content: 'So the real question is not is something happening. It is can you see it. Maintenance you cannot verify is just a subscription to a feeling, and you are paying for it.',
+        },
+        {
+          type: 'h2',
+          content: 'The vague contract trap: operation and maintenance, one line',
+        },
+        {
+          type: 'p',
+          content: 'Pull up your contract. If the entire scope of your maintenance is a single line that says something like operation and maintenance, you have found the trap. That one phrase can mean forty hours of careful work a month, or it can mean absolutely nothing, and both are technically allowed. Vagueness always favors the person sending the invoice, not the person paying it. The fix is not to fight, it is to ask for the scope in writing.',
+        },
+        {
+          type: 'h2',
+          content: 'What a real monthly maintenance plan should include',
+        },
+        {
+          type: 'p',
+          content: 'Forget the marketing language. A maintenance plan worth paying for is a specific list of work you can check off. Here is the itemized version. If your provider cannot map your fee to most of these, that is your answer.',
+        },
+        {
+          type: 'ul',
+          content: 'A transparent maintenance plan should itemize:',
+          items: [
+            'Security updates and patching: core platform, themes, and plugins kept current so known vulnerabilities are closed before someone exploits them.',
+            'Regular backups you can actually restore: scheduled offsite backups, tested, so a crash or hack is a bad afternoon and not the end of your business.',
+            'Uptime monitoring: automatic checks that alert someone the moment your site goes down, instead of you finding out from an angry customer.',
+            'Plugin and framework updates: ongoing version updates handled carefully so your site stays secure and does not break.',
+            'Content edits and small fixes: a reasonable allowance for hours, prices, photos, and seasonal updates without a fight over every change.',
+            'Performance and a plain-English monthly report: speed and link checks, plus a short report that says what was done this month in words you can understand.',
+          ],
+        },
+        {
+          type: 'tip',
+          content: 'Quick test: ask your provider for a maintenance log from the last 90 days. A real one has dates and actions (updated plugin X on this date, ran backup on that date). If you get a shrug or a sales pitch instead of a log, you just learned exactly what your fee covers.',
+        },
+        {
+          type: 'h2',
+          content: 'How much should website maintenance cost?',
+        },
+        {
+          type: 'p',
+          content: 'Industry data puts small-business maintenance anywhere from a modest monthly retainer to a few hundred dollars a month, depending on traffic, whether you sell online, and how often you need edits. But chasing the cheapest number misses the point. A low fee for nothing is still a waste, and a fair fee with no proof is still a risk. The website maintenance cost that makes sense is the one where every dollar maps to a line item you can see. Transparency is the price you should actually be shopping for.',
+        },
+        {
+          type: 'h2',
+          content: 'The quiet cost of paying for nothing',
+        },
+        {
+          type: 'p',
+          content: 'It is tempting to think a neglected site just sits there, harmless. It does not. Studies on web security consistently show that outdated plugins and missing updates are among the most common ways small business sites get hacked. No backups means one bad day can erase years of work. A site that goes down at noon and stays down until you happen to notice is losing you customers in silence. You are not just paying for nothing. You are paying to feel safe while quietly carrying all the risk yourself.',
+        },
+        {
+          type: 'h2',
+          content: 'How to take back control of your money',
+        },
+        {
+          type: 'p',
+          content: 'You do not need to become a tech expert to fix this. You need to switch from trusting to verifying. Run the five-step audit above: total what you pay, ask for the maintenance log, confirm backups exist, test the site yourself, and compare the cost to the actual deliverables. Thirty minutes of asking the right questions will tell you more than a year of quietly wondering. And if the answers do not add up, you are allowed to expect better, the same way you would for any other bill you pay every single month.',
+        },
+        {
+          type: 'cta',
+          content: 'At ZOE LUMOS we do maintenance the boring, honest way: an itemized maintenance log you can read and a plain-English monthly report so you always know exactly what your fee covers, no jargon, no shrugs. If you are not sure what you are currently paying for, send us your situation and we will give you a free, no-pressure review of your current maintenance. We are a Korean-American team, so reach out in English or Korean, whatever is comfortable. Worst case, you finally get a straight answer.',
+        },
+      ],
+      ko: [
+        {
+          type: 'intro',
+          content: '매달 그 청구 내역이 보입니다. 같은 금액, 같은 날짜, 통장에 찍히는 조용한 한 줄. 그리고 매달 마음속 작은 목소리가 같은 질문을 합니다. 나 지금 도대체 뭐에 돈을 내는 거지? 사이트는 그대로고, 메일도 없고, 리포트도 없고, 증거도 없습니다. 매달 홈페이지 관리비를 내는데 아무것도 안 바뀐다면, 당신이 예민한 게 아닙니다. 그리고 당신만 그런 것도 아닙니다. 그저 홈페이지 관리비가 원래 뭘 해줘야 하는지 아무도 안 보여줬을 뿐입니다. 오늘 그걸 바로잡아 드릴게요.',
+        },
+        {
+          type: 'h2',
+          content: '홈페이지 관리비는 뭘 해주는 돈일까요 (그리고 뭘 숨기고 있을까요)?',
+        },
+        {
+          type: 'p',
+          content: '불편하지만 진실은 이렇습니다. 관리 작업의 상당수는 원래 눈에 안 보입니다. 보안 패치, 백업, 서버 업데이트는 뒤에서 돌아가니까 화면상으로는 아무것도 달라 보이지 않죠. 거기까진 정상입니다. 문제는 안 보이는 게 증명할 수 없는 것으로 바뀔 때입니다. 좋은 업체는 조용히 일하면서도 증거를 내밉니다. 나쁜 업체는 조용히 일하거나, 아예 안 하거나, 뭘 하는지 모를 일을 하면서, 당신이 절대 안 물어보길 바랍니다. 비용은 똑같습니다. 정직함만 다를 뿐이죠.',
+        },
+        {
+          type: 'p',
+          content: '그러니 진짜 질문은 뭔가 돌아가고 있냐가 아닙니다. 그걸 볼 수 있냐입니다. 확인할 수 없는 관리는 그냥 기분에 대한 구독료일 뿐이고, 그 돈을 당신이 내고 있습니다.',
+        },
+        {
+          type: 'h2',
+          content: '애매한 계약서의 함정: 운영 및 유지보수, 딱 한 줄',
+        },
+        {
+          type: 'p',
+          content: '계약서를 한번 꺼내 보세요. 관리 범위가 운영 및 유지보수 같은 딱 한 줄이 전부라면, 함정을 찾으신 겁니다. 그 한 줄은 한 달에 마흔 시간의 꼼꼼한 작업을 뜻할 수도, 말 그대로 아무것도 안 하는 걸 뜻할 수도 있고, 둘 다 기술적으로는 문제가 없습니다. 애매함은 언제나 청구서를 보내는 쪽 편이지, 돈을 내는 쪽 편이 아닙니다. 해법은 싸우는 게 아니라, 범위를 서면으로 요청하는 것입니다.',
+        },
+        {
+          type: 'h2',
+          content: '진짜 월 관리 플랜에 들어가야 할 항목 (웹사이트 유지보수 비용 뭐 해주나)',
+        },
+        {
+          type: 'p',
+          content: '마케팅 문구는 잊으세요. 돈 낼 가치가 있는 관리 플랜은, 하나하나 체크할 수 있는 구체적인 작업 목록입니다. 항목별로 정리해 드릴게요. 업체가 당신이 내는 비용을 이 항목들 대부분에 연결하지 못한다면, 그게 답입니다.',
+        },
+        {
+          type: 'ul',
+          content: '투명한 관리 플랜이라면 이렇게 항목으로 보여줘야 합니다:',
+          items: [
+            '보안 업데이트와 패치: 코어 플랫폼, 테마, 플러그인을 최신으로 유지해 알려진 취약점을 누군가 노리기 전에 막습니다.',
+            '실제로 복구되는 정기 백업: 검증된 외부 백업을 주기적으로 잡아둬서, 다운이나 해킹이 사업의 끝이 아니라 그냥 힘든 오후 한나절로 끝나게 합니다.',
+            '업타임 모니터링: 사이트가 멈추는 순간 자동으로 담당자에게 알림이 가게 해서, 화난 손님 전화로 처음 알게 되는 일을 막습니다.',
+            '플러그인과 프레임워크 업데이트: 버전 업데이트를 조심스럽게 처리해 사이트가 안전하면서도 깨지지 않게 유지합니다.',
+            '콘텐츠 수정과 소소한 작업: 영업시간, 가격, 사진, 시즌 업데이트 정도는 매번 실랑이 없이 처리할 수 있는 합리적인 시간 한도.',
+            '속도 점검과 쉬운 말로 된 월간 리포트: 속도와 링크 점검에 더해, 이번 달에 뭘 했는지 알아들을 수 있는 말로 적힌 짧은 리포트.',
+          ],
+        },
+        {
+          type: 'tip',
+          content: '간단한 테스트: 업체에 최근 90일 관리 로그를 요청해 보세요. 진짜 로그에는 날짜와 작업 내용이 있습니다(몇 일에 플러그인 X 업데이트, 몇 일에 백업 실행). 로그 대신 어깨를 으쓱하거나 영업 멘트가 돌아온다면, 당신의 관리비가 뭘 해주는지 방금 정확히 알게 된 겁니다.',
+        },
+        {
+          type: 'h2',
+          content: '웹사이트 유지보수 비용, 얼마가 적당할까요?',
+        },
+        {
+          type: 'p',
+          content: '업계 데이터를 보면 소상공인 유지보수 비용은 소액 월정액부터 한 달 몇백 달러까지, 트래픽과 온라인 판매 여부, 수정 빈도에 따라 다양합니다. 하지만 무조건 제일 싼 숫자를 쫓으면 핵심을 놓칩니다. 아무것도 안 해주는 싼 비용도 결국 낭비고, 증거 없는 적정 비용도 결국 위험입니다. 말이 되는 유지보수 비용은, 모든 돈이 눈으로 확인 가능한 항목에 연결되는 비용입니다. 정작 쇼핑해야 할 건 가격이 아니라 투명함입니다.',
+        },
+        {
+          type: 'h2',
+          content: '아무것도 안 하는 데 돈 내는 조용한 대가',
+        },
+        {
+          type: 'p',
+          content: '방치된 사이트는 그냥 가만히 있을 뿐 해롭지 않다고 생각하기 쉽습니다. 아닙니다. 웹 보안 연구들은 오래된 플러그인과 누락된 업데이트가 소상공인 사이트 해킹의 가장 흔한 통로 중 하나라고 일관되게 말합니다. 백업이 없으면 단 하루의 사고로 몇 년 작업이 사라집니다. 낮 12시에 멈춘 사이트가 당신이 우연히 알아챌 때까지 멈춰 있으면, 그동안 조용히 손님을 잃습니다. 당신은 그냥 아무것도 아닌 데 돈을 내는 게 아닙니다. 안전한 기분을 사면서, 정작 모든 위험은 조용히 혼자 떠안고 있는 겁니다.',
+        },
+        {
+          type: 'h2',
+          content: '내 돈에 대한 주도권을 되찾는 법',
+        },
+        {
+          type: 'p',
+          content: '이걸 바로잡으려고 기술 전문가가 될 필요는 없습니다. 믿는 모드에서 확인하는 모드로 바꾸기만 하면 됩니다. 위의 5단계 점검을 해보세요. 내가 내는 총액을 더하고, 관리 로그를 요청하고, 백업이 있는지 확인하고, 직접 사이트를 테스트하고, 비용과 실제 결과물을 비교하는 겁니다. 제대로 된 질문 30분이, 조용히 1년 동안 궁금해하는 것보다 더 많은 걸 알려줍니다. 그리고 답이 안 맞아떨어진다면, 더 나은 걸 기대해도 됩니다. 매달 내는 다른 모든 청구서에 그러는 것처럼요.',
+        },
+        {
+          type: 'cta',
+          content: 'ZOE LUMOS는 관리를 지루할 만큼 정직하게 합니다. 읽을 수 있는 항목별 관리 로그와 쉬운 말로 된 월간 리포트로, 당신의 관리비가 정확히 뭘 해주는지 늘 알 수 있게 합니다. 전문 용어도, 얼버무림도 없습니다. 지금 뭘 위해 돈을 내고 있는지 잘 모르겠다면, 상황을 보내주세요. 지금 내는 관리비를 부담 없이 무료로 점검해 드립니다. 저희는 한국계 미국인 팀이라 영어든 한국어든 편한 쪽으로 연락 주시면 됩니다. 최악의 경우라도, 드디어 솔직한 답 하나는 얻고 가실 겁니다.',
+        },
+      ],
+    },
+  },
+  {
+    slug: 'website-no-traffic-not-showing-google-2026',
+    date: '2026-06-27',
+    updatedDate: '2026-06-27',
+    readTime: 9,
+    category: { en: 'SEO', ko: 'SEO' },
+    title: {
+      en: 'My Website Gets No Traffic: Why Doesn\'t My Business Show Up on Google? (2026)',
+      ko: '홈페이지 검색 안됨, 우리 가게가 구글에 안 나와요: 트래픽 0의 진짜 이유 (2026)',
+    },
+    metaDescription: {
+      en: 'You built a website but get zero traffic and nobody finds you on Google. Here is exactly why your website is not ranking, a 6-step self-check, and how to tell if you paid for SEO and got nothing.',
+      ko: '홈페이지는 있는데 트래픽이 0이고 구글에 안 나와요. 검색 노출이 안 되는 진짜 이유, 6단계 셀프 체크, 그리고 SEO 돈만 쓰고 효과 없었는지 구분하는 법까지 정리했습니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'Why doesn\'t my business show up on Google even though I have a website?',
+          ko: '홈페이지가 있는데도 왜 구글에 안 나와요?',
+        },
+        a: {
+          en: 'Having a website and being findable on Google are two different things. Most likely you have no Google Business Profile, no local SEO or page titles telling Google what city you serve, or your pages were never indexed. A pretty site that Google cannot read or place on a map will get zero traffic no matter how nice it looks.',
+          ko: '홈페이지가 있는 것과 구글에서 검색되는 것은 완전히 다른 문제입니다. 대부분은 구글 비즈니스 프로필이 없거나, 어느 도시에서 영업하는지 알려주는 로컬 SEO와 제목 태그가 없거나, 페이지가 아예 색인(indexing)조차 안 된 경우입니다. 구글이 읽지도, 지도에 표시하지도 못하는 사이트는 아무리 예뻐도 트래픽이 0입니다.',
+        },
+      },
+      {
+        q: {
+          en: 'I paid for SEO and got no results. How do I know if I was scammed?',
+          ko: 'SEO에 돈을 썼는데 효과가 없어요. 사기 당한 건지 어떻게 알죠?',
+        },
+        a: {
+          en: 'Ask for three things: a transparent monthly report you can actually read, proof of real ranking movement on keywords that bring customers, and a count of calls, forms, or visits, not vanity numbers like impressions. If they cannot show movement after several months and only send a dashboard full of jargon, that is a red flag. Real SEO shows up as leads, not screenshots.',
+          ko: '세 가지를 요구하세요. 직접 읽을 수 있는 투명한 월간 리포트, 실제로 손님을 데려오는 키워드의 순위 변화 증거, 그리고 노출수 같은 허영 지표가 아니라 전화/문의/방문 같은 실제 숫자입니다. 몇 달이 지나도 순위 변화를 못 보여주고 전문 용어로 가득한 대시보드만 보낸다면 위험 신호입니다. 진짜 SEO는 스크린샷이 아니라 문의로 증명됩니다.',
+        },
+      },
+      {
+        q: {
+          en: 'My website is not ranking at all. How long should SEO take to work?',
+          ko: '홈페이지가 검색 순위에 전혀 안 잡혀요. SEO는 얼마나 걸리나요?',
+        },
+        a: {
+          en: 'Local SEO usually shows early movement in 4 to 12 weeks once your Google Business Profile, page titles, and indexing are fixed. Brand-new sites take longer because Google needs time to trust them. If nothing has moved in six months, the problem is usually the foundation, not patience.',
+          ko: '구글 비즈니스 프로필, 제목 태그, 색인이 제대로 잡히면 로컬 SEO는 보통 4주에서 12주 사이에 초기 변화가 보입니다. 새로 만든 사이트는 구글이 신뢰하는 데 시간이 더 걸립니다. 6개월이 지나도 아무 변화가 없다면 문제는 인내심이 아니라 기초 세팅입니다.',
+        },
+      },
+      {
+        q: {
+          en: 'Do I really need a Google Business Profile if I already have a website?',
+          ko: '홈페이지가 이미 있는데 구글 비즈니스 프로필이 정말 필요한가요?',
+        },
+        a: {
+          en: 'Yes, and for most local Korean small businesses it matters more than the website itself. The map pack, the box with your hours, reviews, and a call button, is what most local customers tap first. No profile means you are invisible in the exact place people search for a business near them.',
+          ko: '네, 그리고 대부분의 로컬 한인 소상공인에게는 홈페이지보다 더 중요합니다. 영업시간, 리뷰, 전화 버튼이 보이는 지도 상단 박스(맵팩)가 동네 손님들이 가장 먼저 누르는 곳입니다. 프로필이 없으면 사람들이 \'근처 가게\'를 검색하는 바로 그 자리에서 우리 가게만 안 보이는 겁니다.',
+        },
+      },
+      {
+        q: {
+          en: 'How can I check if my website is even on Google right now?',
+          ko: '지금 우리 홈페이지가 구글에 올라가 있는지 어떻게 확인하나요?',
+        },
+        a: {
+          en: 'Open Google and search site:yourdomain.com using your real domain. If pages come up, Google has indexed you and the issue is ranking. If nothing comes up, Google does not have your site at all, often because of a noindex tag or a robots block, and that must be fixed before anything else.',
+          ko: '구글에서 site:yourdomain.com 형식으로 실제 도메인을 넣어 검색해 보세요. 페이지가 나오면 구글이 색인은 했고, 문제는 순위입니다. 아무것도 안 나오면 구글에 사이트 자체가 없는 것이고, 보통 noindex 태그나 robots 차단 때문입니다. 이건 다른 무엇보다 먼저 고쳐야 합니다.',
+        },
+      },
+    ],
+    howto: {
+      name: {
+        en: 'The Why Am I Invisible on Google Self-Check (6 Steps)',
+        ko: '\'우리 가게가 왜 구글에 안 나오지\' 6단계 셀프 체크',
+      },
+      description: {
+        en: 'A fast, no-tools self-check any owner can run in 10 minutes to find out why your website gets no traffic and where you are invisible.',
+        ko: '사장님 누구나 10분이면 할 수 있는, 도구 없이 하는 셀프 진단. 홈페이지 트래픽이 0인 이유와 어디서 안 보이는지 바로 찾습니다.',
+      },
+      totalTime: 'PT10M',
+      steps: [
+        {
+          name: { en: 'Search your exact business name', ko: '가게 정확한 이름으로 검색' },
+          text: {
+            en: 'Google your business name exactly. If your own site and Google Business Profile do not show on top, Google barely knows you exist, even to people already looking for you.',
+            ko: '가게 이름을 정확히 그대로 구글에 검색하세요. 본인 홈페이지와 구글 비즈니스 프로필이 맨 위에 안 뜨면, 이미 우리를 찾는 손님에게조차 구글이 우리를 거의 모른다는 뜻입니다.',
+          },
+        },
+        {
+          name: { en: 'Search your service plus your city', ko: '서비스 + 도시 이름으로 검색' },
+          text: {
+            en: 'Search the way a customer would, like korean restaurant Fort Lee or auto repair Palisades Park. If you are nowhere on page one, you have no local SEO and customers are picking the competitor who shows up.',
+            ko: '손님이 검색하듯 \'포트리 한식당\'이나 \'팰리세이즈파크 자동차정비\' 같이 검색해 보세요. 1페이지 어디에도 없다면 로컬 SEO가 없는 것이고, 손님은 검색에 뜨는 경쟁 가게를 고르고 있습니다.',
+          },
+        },
+        {
+          name: { en: 'Check your Google Business Profile', ko: '구글 비즈니스 프로필 확인' },
+          text: {
+            en: 'Look for the map box with hours, reviews, and a call button. If it is missing, unclaimed, or has wrong hours, you are losing the customers who are most ready to walk in or call.',
+            ko: '영업시간, 리뷰, 전화 버튼이 있는 지도 박스가 뜨는지 보세요. 없거나, 소유권 등록이 안 됐거나, 영업시간이 틀렸다면 지금 바로 방문하거나 전화하려는 가장 확실한 손님을 놓치고 있는 겁니다.',
+          },
+        },
+        {
+          name: { en: 'Check if you are indexed with a site: search', ko: 'site: 검색으로 색인 여부 확인' },
+          text: {
+            en: 'Search site:yourdomain.com. Count the pages that appear. Zero results means Google has not indexed your site at all, and no amount of SEO works until that is fixed.',
+            ko: 'site:yourdomain.com 으로 검색해 나오는 페이지 수를 세어 보세요. 결과가 0이면 구글이 사이트를 아예 색인하지 않은 것이고, 이걸 고치기 전엔 어떤 SEO도 소용없습니다.',
+          },
+        },
+        {
+          name: { en: 'Check mobile and speed', ko: '모바일과 속도 확인' },
+          text: {
+            en: 'Open your site on your phone. If it is slow, hard to tap, or text is tiny, both visitors and Google leave. Most local searches happen on phones, so a clumsy mobile site quietly kills your traffic.',
+            ko: '휴대폰으로 사이트를 열어 보세요. 느리거나, 누르기 어렵거나, 글씨가 작으면 방문자도 구글도 떠납니다. 로컬 검색은 대부분 휴대폰에서 일어나기 때문에 불편한 모바일 사이트는 조용히 트래픽을 죽입니다.',
+          },
+        },
+        {
+          name: { en: 'Check for a noindex or robots block', ko: 'noindex 또는 robots 차단 확인' },
+          text: {
+            en: 'Ask your developer or check whether a noindex tag or robots.txt rule is blocking Google. Sites built or paused in staging often ship with this on by accident, making the whole site invisible.',
+            ko: '개발자에게 묻거나 noindex 태그 또는 robots.txt 규칙이 구글을 막고 있는지 확인하세요. 개발 중이거나 테스트 단계에서 만든 사이트는 이 설정이 실수로 켜진 채 배포되어 사이트 전체가 안 보이는 경우가 많습니다.',
+          },
+        },
+      ],
+    },
+    sections: {
+      en: [
+        {
+          type: 'intro',
+          content: 'You did everything right. You hired someone, paid for a website, and it looks clean. But months later the phone is quiet, the contact form is empty, and when you Google your own service nothing comes up. Here is the hard truth most owners feel but nobody says out loud: you are open, but you are invisible. Every day a customer searches for exactly what you sell and chooses the competitor who shows up instead of you. This guide explains, in plain English, why your website gets no traffic, why your business does not show up on Google, and how to tell whether the SEO you paid for is actually working or quietly doing nothing.',
+        },
+        {
+          type: 'h2',
+          content: 'Why my website gets no traffic and my business does not show up on Google',
+        },
+        {
+          type: 'p',
+          content: 'A website is not a billboard on a busy road. It is more like a shop on a street that does not exist until Google decides to put it on the map. Studies of large page samples consistently show that the majority of web pages get little to no traffic from Google, not because the businesses are bad, but because the pages were never set up to be found. Looking good and being findable are two completely separate jobs, and most cheap or rushed sites only do the first one.',
+        },
+        {
+          type: 'h2',
+          content: 'The real reasons a site gets zero traffic',
+        },
+        {
+          type: 'p',
+          content: 'When we audit a quiet website for a local business, the cause is almost never mysterious. It is usually one or more of these, and the good news is every one of them is fixable.',
+        },
+        {
+          type: 'ul',
+          content: 'Here is what is almost always behind it:',
+          items: [
+            'No Google Business Profile: the map box with your hours, reviews, and call button is where most local customers tap first, and you do not have one or it is unclaimed.',
+            'No local SEO or metadata: your page titles never say what you do or which city you serve, so Google has no idea where to rank you.',
+            'Never indexed: Google has not added your pages at all, often because of a leftover noindex tag, so you cannot rank for anything.',
+            'No content: a four-page brochure site gives Google almost nothing to match against the questions customers actually type.',
+            'Slow or not mobile-friendly: the site loads slowly or is painful on a phone, and both customers and Google give up before they see you.',
+            'Built to look pretty, not to be found: it was designed as a digital business card, with zero thought given to search, structure, or local signals.',
+          ],
+        },
+        {
+          type: 'h2',
+          content: 'Your website is not ranking: indexed versus simply invisible',
+        },
+        {
+          type: 'p',
+          content: 'There are two very different problems hiding behind no traffic, and they need opposite fixes. The first is that Google does not have your site at all. The second is that Google has it but ranks it on page five where nobody looks. You can tell which one you have in ten seconds with a site: search, which is step four of the self-check below. If pages show up, you have a ranking problem and need local SEO. If nothing shows up, you have an indexing problem and need that unblocked before anything else matters.',
+        },
+        {
+          type: 'tip',
+          content: 'Run the site:yourdomain.com search right now before you read further. It is the single fastest way to know whether you are fighting for a better rank or completely missing from Google. The answer changes everything about what you fix first.',
+        },
+        {
+          type: 'h2',
+          content: 'I paid for SEO and got no results: how to tell if it is working or a scam',
+        },
+        {
+          type: 'p',
+          content: 'A lot of owners come to us burned. They paid a monthly retainer for a year, got slick reports full of impressions and rankings for keywords nobody searches, and still no calls. That feeling of being scammed is valid, and it has a clear test. Real SEO is measured in three honest things, not in jargon.',
+        },
+        {
+          type: 'ul',
+          content: 'Here is what is almost always behind it:',
+          items: [
+            'Transparent reporting: a monthly summary you can actually understand, not a wall of charts designed to impress and confuse.',
+            'Real ranking movement: progress on keywords that bring paying customers, like your service plus your city, not random terms that look good but mean nothing.',
+            'Leads, not vanity metrics: calls, form fills, direction requests, and visits, because impressions do not pay rent.',
+          ],
+        },
+        {
+          type: 'p',
+          content: 'If your past provider could not show those three things, you were not getting SEO, you were paying for a screensaver. The fix is not to give up on SEO. It is to demand the kind that shows its work.',
+        },
+        {
+          type: 'tip',
+          content: 'Before signing with anyone again, ask one question: can you show me, month by month, the keywords moving and the calls coming in? If the answer is vague or buried in vanity stats, keep your money. Transparency is not a bonus, it is the whole product.',
+        },
+        {
+          type: 'h2',
+          content: 'What actually fixes an invisible website',
+        },
+        {
+          type: 'p',
+          content: 'The order matters. First, make sure Google can index you, because nothing works until it can. Second, claim and fully fill out your Google Business Profile so you appear in the map where local customers look. Third, add real local SEO: titles, descriptions, and city pages that tell Google exactly who you serve and where. Fourth, fix mobile and speed so visitors stay. Fifth, add content that answers what your customers actually ask. Do these in order and the phone starts ringing for a reason you can see, not a mystery you hope for.',
+        },
+        {
+          type: 'h2',
+          content: 'You should be able to SEE it working',
+        },
+        {
+          type: 'p',
+          content: 'The reason past SEO felt like a scam is that you could not see it. You sent money into a black box and got vibes back. That is the part we refuse to repeat. When the work is real, you should be able to watch your rankings climb, your map views grow, and your calls increase in plain language, on a dashboard you can read without a translator or a marketing degree. Visibility you cannot verify is not visibility.',
+        },
+        {
+          type: 'cta',
+          content: 'If you are open but invisible, let us find out why before you spend another dollar. ZOE LUMOS does local SEO and Google Business Profile setup for Korean small businesses across NY, NJ, GA, and the whole US, and we put it on a plain-English dashboard so you can actually SEE it working. We will run a free visibility check on your business, show you exactly where you are missing from Google, and tell you honestly what it takes to fix it, with zero pressure. 사장님, 지금 영업 중인데 손님이 못 찾고 있다면 더 늦기 전에 무료 노출 점검부터 받아보세요. 어디서 안 보이는지, 무엇을 고쳐야 하는지 한국어로 솔직하게 알려드립니다. ZOE LUMOS는 로컬 SEO와 구글 비즈니스 프로필을 세팅하고, 효과가 보이는 \'쉬운 한국어 대시보드\'까지 함께 드립니다. 부담 없이 편하게 연락 주세요.',
+        },
+      ],
+      ko: [
+        {
+          type: 'intro',
+          content: '사장님은 잘못한 게 없습니다. 사람 써서 돈 주고 홈페이지 만들었고, 보기에도 깔끔합니다. 그런데 몇 달이 지나도 전화는 조용하고, 문의 폼은 텅 비어 있고, 본인 서비스를 구글에 검색해도 우리 가게는 안 나옵니다. 많은 사장님이 느끼지만 아무도 입 밖으로 안 꺼내는 불편한 진실은 이겁니다. 우리는 영업 중인데, 손님 눈에는 안 보입니다. 매일 누군가는 우리가 파는 바로 그것을 검색하고, 검색에 뜨는 경쟁 가게를 대신 선택합니다. 이 글에서는 홈페이지 트래픽이 왜 0인지, 왜 구글에 안 나오는지, 그리고 돈 주고 맡긴 SEO가 진짜 효과를 내고 있는지 아니면 조용히 아무것도 안 하고 있는지 구분하는 법을 쉬운 말로 알려드립니다.',
+        },
+        {
+          type: 'h2',
+          content: '홈페이지 검색 안됨, 우리 가게가 왜 구글에 안 나와요',
+        },
+        {
+          type: 'p',
+          content: '홈페이지는 번화가의 대형 간판이 아닙니다. 오히려 구글이 지도에 올려주기 전까지는 존재하지 않는 길 위의 가게에 가깝습니다. 수많은 웹페이지를 분석한 연구들은 일관되게, 대다수의 웹페이지가 구글에서 거의 또는 전혀 트래픽을 못 받는다고 말합니다. 가게가 별로여서가 아니라, 페이지가 애초에 \'검색되도록\' 세팅되지 않았기 때문입니다. 예쁘게 보이는 것과 검색에서 찾아지는 것은 완전히 별개의 작업인데, 싸거나 급하게 만든 사이트는 보통 앞쪽 하나만 합니다.',
+        },
+        {
+          type: 'h2',
+          content: '트래픽이 0이 되는 진짜 이유들',
+        },
+        {
+          type: 'p',
+          content: '조용한 홈페이지를 점검해 보면 원인은 거의 신비롭지 않습니다. 대부분 아래 중 하나 이상이고, 다행인 건 전부 고칠 수 있다는 점입니다.',
+        },
+        {
+          type: 'ul',
+          content: '거의 항상 그 뒤에 있는 원인들입니다:',
+          items: [
+            '구글 비즈니스 프로필 없음: 영업시간, 리뷰, 전화 버튼이 보이는 지도 박스가 동네 손님이 가장 먼저 누르는 곳인데, 그게 아예 없거나 소유권 등록이 안 되어 있습니다.',
+            '로컬 SEO/메타데이터 없음: 페이지 제목에 무슨 일을 하는지, 어느 도시에서 영업하는지가 안 적혀 있어서 구글이 우리를 어디에 올려야 할지 모릅니다.',
+            '색인 자체가 안 됨: 남아 있던 noindex 태그 때문에 구글이 페이지를 아예 추가하지 않아, 어떤 검색어로도 못 뜹니다.',
+            '콘텐츠 없음: 네 페이지짜리 소개용 사이트는 손님이 실제로 입력하는 질문과 맞춰볼 내용이 구글에게 거의 없습니다.',
+            '느리거나 모바일 불편: 로딩이 느리거나 휴대폰에서 보기 힘들어서, 손님도 구글도 우리를 보기 전에 떠납니다.',
+            '검색이 아니라 보여주기용: 디지털 명함으로만 디자인됐고, 검색, 구조, 로컬 신호는 전혀 고려되지 않았습니다.',
+          ],
+        },
+        {
+          type: 'h2',
+          content: '검색 순위에 안 잡혀요: 색인됐지만 안 보이는가, 아예 없는가',
+        },
+        {
+          type: 'p',
+          content: '\'트래픽 0\' 뒤에는 정반대의 해법이 필요한 두 가지 문제가 숨어 있습니다. 첫째는 구글이 사이트 자체를 안 가지고 있는 경우입니다. 둘째는 가지고는 있지만 아무도 안 보는 5페이지에 올려둔 경우입니다. 어느 쪽인지는 아래 셀프 체크 4단계인 site: 검색으로 10초면 알 수 있습니다. 페이지가 뜨면 순위 문제이고 로컬 SEO가 필요합니다. 아무것도 안 뜨면 색인 문제이고, 다른 무엇보다 먼저 그 차단을 풀어야 합니다.',
+        },
+        {
+          type: 'tip',
+          content: '더 읽기 전에 지금 바로 site:yourdomain.com 검색을 해보세요. 더 좋은 순위를 위해 싸우는 중인지, 아니면 구글에서 아예 빠져 있는지 가장 빠르게 아는 방법입니다. 그 답에 따라 무엇을 먼저 고쳐야 하는지가 완전히 달라집니다.',
+        },
+        {
+          type: 'h2',
+          content: 'SEO에 돈만 쓰고 효과 없음: 일하는 중인지 사기인지 구분하기',
+        },
+        {
+          type: 'p',
+          content: '데인 채로 찾아오는 사장님이 정말 많습니다. 1년 동안 월 정액을 냈고, 아무도 검색 안 하는 키워드의 노출수와 순위로 가득한 화려한 리포트는 받았는데, 전화는 여전히 없습니다. 사기 당한 기분, 그거 정당합니다. 그리고 명확한 판별법이 있습니다. 진짜 SEO는 전문 용어가 아니라 세 가지 정직한 지표로 측정됩니다.',
+        },
+        {
+          type: 'ul',
+          content: '거의 항상 그 뒤에 있는 원인들입니다:',
+          items: [
+            '투명한 리포트: 멋져 보이려고 헷갈리게 만든 차트 더미가 아니라, 사장님이 실제로 이해할 수 있는 월간 요약.',
+            '실제 순위 변화: 보기엔 좋지만 의미 없는 단어가 아니라, \'서비스 + 도시\'처럼 돈 내는 손님을 데려오는 키워드의 진전.',
+            '허영 지표가 아닌 문의: 노출수는 월세를 못 내니, 전화, 폼 작성, 길찾기, 방문 같은 실제 결과.',
+          ],
+        },
+        {
+          type: 'p',
+          content: '예전 업체가 이 세 가지를 못 보여줬다면, 사장님은 SEO를 받은 게 아니라 화면보호기 값을 낸 겁니다. 해법은 SEO를 포기하는 게 아닙니다. 자기 일을 증명해 보이는 SEO를 요구하는 겁니다.',
+        },
+        {
+          type: 'tip',
+          content: '누군가와 다시 계약하기 전에 딱 한 가지만 물어보세요. 월별로 어떤 키워드가 올라갔고 전화가 얼마나 들어왔는지 보여줄 수 있나요. 답이 애매하거나 허영 지표 속에 묻혀 있으면 돈을 아끼세요. 투명성은 보너스가 아니라 상품 그 자체입니다.',
+        },
+        {
+          type: 'h2',
+          content: '안 보이는 홈페이지를 진짜로 고치는 순서',
+        },
+        {
+          type: 'p',
+          content: '순서가 중요합니다. 첫째, 구글이 색인할 수 있게 만듭니다. 이게 안 되면 아무것도 작동하지 않습니다. 둘째, 구글 비즈니스 프로필을 등록하고 꽉 채워서 동네 손님이 보는 지도에 뜨게 합니다. 셋째, 제목, 설명, 도시 페이지 같은 진짜 로컬 SEO를 더해 우리가 누구를 어디서 모시는지 구글에 정확히 알립니다. 넷째, 모바일과 속도를 고쳐 방문자를 붙잡습니다. 다섯째, 손님이 실제로 묻는 질문에 답하는 콘텐츠를 더합니다. 이 순서대로 하면, 막연한 기대가 아니라 눈에 보이는 이유로 전화가 울리기 시작합니다.',
+        },
+        {
+          type: 'h2',
+          content: '효과는 \'눈에 보여야\' 합니다',
+        },
+        {
+          type: 'p',
+          content: '예전 SEO가 사기처럼 느껴진 진짜 이유는, 눈에 안 보였기 때문입니다. 깜깜한 상자에 돈을 넣고 분위기만 돌려받았으니까요. 저희가 절대 반복하지 않으려는 부분이 바로 그것입니다. 작업이 진짜라면, 순위가 오르고, 지도 노출이 늘고, 전화가 많아지는 걸 사장님이 직접 볼 수 있어야 합니다. 통역도, 마케팅 학위도 필요 없는 쉬운 한국어 대시보드로요. 확인할 수 없는 노출은 노출이 아닙니다.',
+        },
+        {
+          type: 'cta',
+          content: '영업은 하고 있는데 손님 눈에 안 보인다면, 한 푼 더 쓰기 전에 이유부터 찾아봅시다. ZOE LUMOS는 NY, NJ, GA, 그리고 미국 전역의 한인 소상공인을 위해 로컬 SEO와 구글 비즈니스 프로필을 세팅하고, 효과가 눈에 보이는 쉬운 한국어 대시보드까지 함께 드립니다. 사장님 가게의 무료 노출 점검을 진행해서, 구글에서 어디가 비어 있는지 정확히 보여드리고, 고치는 데 뭐가 필요한지 솔직하게, 부담 없이 알려드립니다. We will run a free visibility check, show you exactly where you are missing from Google, and tell you honestly what it takes to fix it, with zero pressure. 지금 연락 주세요. 늦을수록 손님은 경쟁 가게로 갑니다.',
+        },
+      ],
+    },
+  },
+  {
+    slug: 'google-ads-agency-wasting-budget-signs-2026',
+    date: '2026-06-27',
+    updatedDate: '2026-06-27',
+    readTime: 9,
+    category: { en: 'Google Ads', ko: '구글 광고' },
+    title: {
+      en: 'Is My Google Ads Agency Ripping Me Off? 7 Signs Your Google Ads Is Wasting Money in 2026',
+      ko: '우리 구글 광고 대행사, 혹시 돈만 빼먹는 거 아닐까? 구글 광고 돈낭비 신호 7가지 (2026)',
+    },
+    metaDescription: {
+      en: 'Lots of Google Ads clicks but no conversions? Here are 7 signs your Google Ads is wasting money and your agency is ripping you off, plus a 10-minute self-check to take back control.',
+      ko: '구글 광고 클릭은 많은데 손님은 없다? 구글 광고 돈낭비 신호 7가지와 구글 애즈 효과 없음을 직접 확인하는 10분 셀프 체크. 내 계정, 내 데이터를 다시 내 손에.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'Why am I getting Google Ads clicks but no conversions?',
+          ko: '구글 광고 클릭은 많은데 왜 전화나 주문은 없나요?',
+        },
+        a: {
+          en: 'Google Ads clicks but no conversions usually means one of three things: the clicks are coming from the wrong searches (no negative keywords), conversion tracking is not actually firing so nobody really knows what works, or the landing page does not match what people searched for. Clicks are easy to buy. Customers are not. If your agency only talks about clicks and impressions, that is a red flag.',
+          ko: '클릭은 많은데 전환이 없다면 보통 세 가지 중 하나입니다. 엉뚱한 검색어에서 클릭이 들어오거나(제외 키워드 없음), 전환 추적이 실제로 작동하지 않아 무엇이 효과 있는지 아무도 모르거나, 방문한 페이지가 검색 의도와 안 맞는 경우죠. 클릭은 사기 쉽지만 손님은 그렇지 않습니다. 대행사가 클릭과 노출 얘기만 한다면 그게 바로 경고 신호입니다.',
+        },
+      },
+      {
+        q: {
+          en: 'How do I know if my Google Ads agency is ripping me off?',
+          ko: '우리 구글 광고 대행사가 돈만 빼먹는지 어떻게 알 수 있나요?',
+        },
+        a: {
+          en: 'Ask three questions: Do I have admin access to my own Google Ads account? Is conversion tracking set up and firing? Can you show me leads and sales, not just clicks? If the answer to any of these is no, vague, or makes them defensive, that is a strong sign. A good partner wants you to own your account and see the real numbers.',
+          ko: '세 가지만 물어보세요. 내 구글 광고 계정에 관리자 권한이 있나요? 전환 추적이 설정되어 제대로 작동하나요? 클릭 말고 실제 문의와 매출을 보여줄 수 있나요? 하나라도 아니오, 또는 얼버무리거나 방어적으로 나온다면 강한 신호입니다. 좋은 파트너는 사장님이 계정을 직접 소유하고 진짜 숫자를 보길 원합니다.',
+        },
+      },
+      {
+        q: {
+          en: 'Is it normal for my Google Ads budget to disappear so fast?',
+          ko: '구글 광고 예산이 이렇게 빨리 사라지는 게 정상인가요?',
+        },
+        a: {
+          en: 'Spending fast is not the problem. Spending with nothing to show for it is. Industry studies suggest a large share of search ad budgets is wasted on irrelevant clicks, and over half of small businesses run ads with no conversion tracking at all. So when it feels like the money vanishes with no customers, you are often right. The fix is data, not more budget.',
+          ko: '빨리 쓰는 게 문제가 아닙니다. 쓰고도 남는 게 없는 게 문제죠. 업계 자료에 따르면 검색 광고 예산의 상당 부분이 엉뚱한 클릭에 낭비되고, 소상공인의 절반 이상은 전환 추적 없이 광고를 돌립니다. 그러니 손님도 없이 돈만 사라지는 느낌이 들면 대개 그 느낌이 맞습니다. 해법은 예산을 더 쓰는 게 아니라 데이터입니다.',
+        },
+      },
+      {
+        q: {
+          en: 'What should a good Google Ads report actually show me?',
+          ko: '제대로 된 구글 광고 보고서에는 뭐가 있어야 하나요?',
+        },
+        a: {
+          en: 'It should show leads, calls, form fills, or sales, the cost per each, and which keywords and search terms drove them, in plain language you can understand in two minutes. Impressions and clicks alone are vanity. If you cannot tell from the report whether you made money, the report is built to impress you, not to inform you.',
+          ko: '문의, 전화, 폼 작성, 매출 같은 실제 결과와 그 건당 비용, 그리고 어떤 키워드와 검색어가 그걸 만들었는지가 2분 안에 이해되는 쉬운 말로 담겨야 합니다. 노출과 클릭만 있는 건 보여주기용입니다. 보고서를 봐도 돈을 벌었는지 알 수 없다면, 그 보고서는 알려주려는 게 아니라 잘 보이려고 만든 겁니다.',
+        },
+      },
+      {
+        q: {
+          en: 'Can I switch agencies without losing my Google Ads account and history?',
+          ko: '대행사를 바꾸면 계정과 기록을 잃게 되나요?',
+        },
+        a: {
+          en: 'Not if you own the account. The single most important move is making sure the Google Ads account is registered under your own email with you as admin or owner. Then any agency can be added or removed as a manager without you losing a single day of history, keywords, or learning. If your current agency owns the account instead of you, fixing that is step one.',
+          ko: '계정을 직접 소유하고 있다면 잃지 않습니다. 가장 중요한 건 구글 광고 계정이 사장님 본인 이메일로 등록되어 있고 사장님이 관리자나 소유자인 상태인지 확인하는 겁니다. 그러면 어떤 대행사든 관리자(MCC)로 추가하거나 제거해도 기록, 키워드, 학습 데이터를 하루치도 잃지 않습니다. 지금 대행사가 계정을 소유하고 있다면, 그걸 바로잡는 게 1번 단계입니다.',
+        },
+      },
+    ],
+    howto: {
+      name: {
+        en: '10-Minute Google Ads Waste Self-Check',
+        ko: '10분 구글 광고 돈낭비 셀프 체크',
+      },
+      description: {
+        en: 'A fast, no-jargon walkthrough to see for yourself whether your Google Ads budget is being wasted, even if you have never opened the account.',
+        ko: '계정을 한 번도 열어본 적 없어도, 내 구글 광고 예산이 낭비되고 있는지 직접 눈으로 확인하는 빠르고 쉬운 점검법입니다.',
+      },
+      totalTime: 'PT10M',
+      steps: [
+        {
+          name: {
+            en: 'Get admin access to your own account',
+            ko: '내 계정의 관리자 권한 확보하기',
+          },
+          text: {
+            en: 'Go to ads.google.com and sign in with the email tied to your business. Open Admin, then Access and security, and confirm you are listed as Admin. If you cannot log in or are not admin, that alone is the first sign you do not control your own ad spend.',
+            ko: 'ads.google.com에 들어가 사업체 이메일로 로그인하세요. 관리자 메뉴의 접근 권한 및 보안에서 본인이 관리자로 등록되어 있는지 확인합니다. 로그인이 안 되거나 관리자가 아니라면, 그것 하나만으로도 내 광고비를 내가 통제하지 못한다는 첫 번째 신호입니다.',
+          },
+        },
+        {
+          name: {
+            en: 'Open the Search Terms report and hunt for junk',
+            ko: '검색어 보고서를 열어 낭비 검색어 찾기',
+          },
+          text: {
+            en: 'Go to Campaigns, then Insights and reports, then Search terms. This shows the actual phrases people typed before clicking your ad. Scan for irrelevant ones like jobs, free, diy, or a competitor name. Lots of junk here means you are paying for clicks that will never become customers.',
+            ko: '캠페인 메뉴에서 통계 및 보고서, 검색어 보고서로 들어가세요. 사람들이 광고를 클릭하기 전에 실제로 입력한 단어가 나옵니다. 채용, 무료, 직접, 또는 경쟁사 이름처럼 관련 없는 검색어를 훑어보세요. 이런 쓸데없는 검색어가 많다면, 절대 손님이 되지 않을 클릭에 돈을 쓰고 있는 겁니다.',
+          },
+        },
+        {
+          name: {
+            en: 'Check whether conversion tracking is firing',
+            ko: '전환 추적이 실제로 작동하는지 확인하기',
+          },
+          text: {
+            en: 'Go to Goals, then Conversions, then Summary. You should see active conversion actions (calls, form submits, purchases) with recent activity and a Recording status. If it says No recent conversions, Inactive, or there is nothing there at all, nobody actually knows what your ads produce.',
+            ko: '목표 메뉴에서 전환, 요약으로 들어가세요. 전화, 폼 제출, 구매 같은 전환 액션이 활성 상태로 있고 최근 기록과 기록 중 상태가 보여야 합니다. 최근 전환 없음, 비활성, 또는 아예 아무것도 없다면, 광고가 무엇을 만들어내는지 사실 아무도 모르는 상태입니다.',
+          },
+        },
+        {
+          name: {
+            en: 'Look at the negative keyword list',
+            ko: '제외 키워드 목록 살펴보기',
+          },
+          text: {
+            en: 'In Campaigns, open Audiences, keywords and content, then Search keywords, and find Negative keywords. This is the list of searches you refuse to pay for. If it is empty or has only a handful of entries, your budget is wide open to wasted clicks. A managed account usually has dozens or more.',
+            ko: '캠페인에서 잠재고객, 키워드 및 콘텐츠, 검색 키워드를 연 뒤 제외 키워드를 찾으세요. 돈을 내고 싶지 않은 검색어 목록입니다. 비어 있거나 몇 개밖에 없다면, 예산이 낭비 클릭에 활짝 열려 있는 셈입니다. 제대로 관리되는 계정은 보통 수십 개 이상 있습니다.',
+          },
+        },
+        {
+          name: {
+            en: 'Verify geo and schedule settings',
+            ko: '지역 및 시간 설정 확인하기',
+          },
+          text: {
+            en: 'Open a campaign, then Settings, and check Locations and Ad schedule. Confirm you are only targeting areas you actually serve, and that you are not paying to show ads at 3am when nobody can call. Targeting the whole country when you serve one city is a classic quiet money leak.',
+            ko: '캠페인을 연 뒤 설정에서 위치와 광고 일정을 확인하세요. 실제로 영업하는 지역만 타겟팅하는지, 아무도 전화할 수 없는 새벽 3시에 광고비를 쓰고 있지 않은지 확인합니다. 한 도시만 서비스하면서 전국을 타겟팅하는 건 조용히 돈이 새는 전형적인 사례입니다.',
+          },
+        },
+        {
+          name: {
+            en: 'Write down what you found and get a second opinion',
+            ko: '발견한 내용을 적고 제2의 의견 받기',
+          },
+          text: {
+            en: 'Jot down your answers: Do I own the account? Is tracking firing? How much junk in search terms? Empty negatives? Wrong geo? Even three yeses on the bad side justify a free independent audit. You are not committing to switching, you are just getting the truth.',
+            ko: '답을 적어보세요. 계정을 내가 소유하는가? 추적이 작동하는가? 검색어에 쓸데없는 게 얼마나 많은가? 제외 키워드가 비었는가? 지역 설정이 틀렸는가? 나쁜 쪽으로 세 개만 해당해도 무료 독립 진단을 받을 이유는 충분합니다. 바꾸겠다는 약속이 아니라, 그저 진실을 확인하는 겁니다.',
+          },
+        },
+      ],
+    },
+    sections: {
+      en: [
+        {
+          type: 'intro',
+          content: 'You check the credit card statement and the Google Ads charge is right there again, bigger than last month. Lots of clicks, the agency says. Great impressions. But your phone is not ringing, the door is not opening, and you cannot point to a single new customer the ads brought in. You feel it in your gut: the money is disappearing and you are flying blind. If your Google Ads is wasting money and you have quietly wondered is my Google Ads agency ripping me off, you are not paranoid. You are paying attention. Let us turn that gut feeling into proof you can see for yourself.',
+        },
+        {
+          type: 'h2',
+          content: 'Google Ads clicks but no conversions is the most expensive feeling in small business',
+        },
+        {
+          type: 'p',
+          content: 'Here is the uncomfortable truth. Clicks are easy to buy. Anyone can spend your money and generate clicks and impressions by tomorrow morning. Customers are the hard part, and customers are the only thing that pays your rent. When you have Google Ads clicks but no conversions, it almost never means Google is broken. It means nobody is steering. Industry studies suggest a large share of search ad budgets is wasted on irrelevant clicks, and over half of small businesses run ads with no conversion tracking at all, which means they literally cannot tell a wasted dollar from a winning one.',
+        },
+        {
+          type: 'p',
+          content: 'That is the trap. Without tracking and without account control, you are forced to trust a monthly report full of impressions and clicks, two numbers that always go up and never tell you if you made money. The fear you feel is rational. The good news is that the proof is sitting inside your own account, and you do not need to be a marketer to find it.',
+        },
+        {
+          type: 'h2',
+          content: '7 signs your Google Ads agency is quietly burning your budget',
+        },
+        {
+          type: 'p',
+          content: 'You do not need all seven to be worried. Even two or three of these means your money is leaking, often without anyone doing it on purpose. Read the list slowly and be honest about how many feel familiar.',
+        },
+        {
+          type: 'ul',
+          content: 'The 7 signs:',
+          items: [
+            'No conversion tracking. Nobody can prove a single lead or sale came from the ads, so you are paying on faith.',
+            'No negative keywords. Your ads show for searches you would never pay for, like free, jobs, or a competitor name, and you eat the bill.',
+            'You have no admin access to your own account. The agency owns it, not you, which means you cannot see the data or leave without losing everything.',
+            'They show only impressions and clicks, never leads. The report looks busy and impressive but never answers did this make money.',
+            'Broad match on everything. Keywords are wide open so Google spends your budget on loosely related searches that rarely convert.',
+            'No landing-page work. They send expensive clicks to a slow or generic page and then blame the clicks when nobody calls.',
+            'Vague monthly reports. Lots of charts, lots of jargon, and you still cannot tell in plain English what you got for your spend.',
+          ],
+        },
+        {
+          type: 'h2',
+          content: 'Why this happens (and why it is usually not a cartoon villain)',
+        },
+        {
+          type: 'p',
+          content: 'Most agencies burning your budget are not evil masterminds. They are overloaded, running hundreds of accounts on autopilot, and they have quietly learned that impressions and clicks keep clients calm. As long as the report is full of green arrows, the questions stop. The problem is structural, not always malicious, but the result on your bank account is exactly the same. Your job is not to assign blame. Your job is to take back control of the data so the truth has nowhere to hide.',
+        },
+        {
+          type: 'tip',
+          content: 'The single most powerful question you can ask: Do I own my Google Ads account, with my own email as admin? If the answer is no, fix that before anything else. Whoever owns the account owns your history, your keywords, and your leverage. It should always be you.',
+        },
+        {
+          type: 'h2',
+          content: 'Take back control: run the 10-minute self-check',
+        },
+        {
+          type: 'p',
+          content: 'You do not have to wait for an agency to grade its own homework. In about ten minutes you can log into your own account and see the evidence with your own eyes. The step-by-step self-check below walks you through getting admin access, finding junk searches you paid for, checking whether conversion tracking is even on, reviewing your negative keyword list, and confirming your geo and schedule settings. Nothing technical, just clicking where we tell you and writing down what you see.',
+        },
+        {
+          type: 'p',
+          content: 'When you finish, you will not have a vague worry anymore. You will have a short list of facts. Maybe everything is healthy and you can relax. Maybe you will find an empty negative keyword list, tracking that has not fired in months, and a search terms report full of garbage. Either way, you will finally be the one holding the data instead of the one being managed by it.',
+        },
+        {
+          type: 'tip',
+          content: 'Take screenshots as you go, especially of the Search Terms report and the Conversions summary. They are your evidence, and they make any second opinion ten times faster and more honest.',
+        },
+        {
+          type: 'h2',
+          content: 'You should own your account and see your own numbers. Always.',
+        },
+        {
+          type: 'p',
+          content: 'Strip away the jargon and good Google Ads comes down to three rights that belong to you: you own the account, you can see real leads and sales, and you understand the report without a translator. That is not a premium feature. That is the baseline. Any partner who resists giving you those three things is telling you something important about whose interests come first.',
+        },
+        {
+          type: 'cta',
+          content: 'At ZOE LUMOS we do Google Ads the opposite way. You own your account in full, under your own email, forever. We will run a free independent Google Ads audit of your current account, using the same self-check above plus a deeper expert review, and hand you a plain-English dashboard that shows leads and cost per lead, not vanity clicks. No contract, no pressure, no obligation to switch. If your gut says the money is disappearing, let us check together and tell you the truth. Reach out for your free audit and take back control of your budget. ZOE LUMOS는 구글 광고를 정반대로 합니다. 계정은 100% 사장님 본인 소유로, 본인 이메일로 영원히 유지됩니다. 위 셀프 체크에 전문가 심층 검토를 더한 무료 독립 진단을 해드리고, 보여주기식 클릭이 아니라 실제 문의 수와 문의당 비용이 보이는 쉬운 한국어 대시보드를 드립니다. 계약도, 압박도, 갈아타야 한다는 의무도 없습니다. 돈이 사라지는 느낌이 든다면, 함께 확인하고 진실을 알려드리겠습니다. 무료 진단을 신청하고 광고 예산의 통제권을 다시 가져가세요.',
+        },
+      ],
+      ko: [
+        {
+          type: 'intro',
+          content: '카드 명세서를 보면 구글 광고 청구가 또 떡하니 찍혀 있습니다. 지난달보다 더 큰 금액으로요. 대행사는 클릭이 많다고, 노출이 좋다고 말합니다. 그런데 전화기는 안 울리고, 문은 안 열리고, 광고로 온 새 손님 한 명을 딱 짚어 말할 수가 없습니다. 속에서 느껴지죠. 돈은 사라지는데 나는 깜깜이로 날고 있다고. 구글 광고 돈낭비가 의심되고, 우리 대행사가 혹시 돈만 빼먹는 거 아닐까 조용히 생각해봤다면, 사장님은 예민한 게 아닙니다. 제대로 보고 있는 겁니다. 그 직감을 사장님이 직접 눈으로 확인할 수 있는 증거로 바꿔드리겠습니다.',
+        },
+        {
+          type: 'h2',
+          content: '구글 광고 클릭은 많은데 손님은 없다 - 소상공인에게 가장 비싼 느낌',
+        },
+        {
+          type: 'p',
+          content: '불편한 진실부터 말씀드리죠. 클릭은 사기 쉽습니다. 누구든 사장님 돈을 써서 내일 아침까지 클릭과 노출을 만들어낼 수 있습니다. 어려운 건 손님이고, 월세를 내주는 건 오직 손님뿐입니다. 클릭은 많은데 전환이 없다면, 그건 구글이 고장 난 게 아니라 운전대를 잡은 사람이 없다는 뜻입니다. 업계 자료에 따르면 검색 광고 예산의 상당 부분이 관련 없는 클릭에 낭비되고, 소상공인의 절반 이상은 전환 추적도 없이 광고를 돌립니다. 즉, 낭비된 1달러와 돈 버는 1달러를 구분조차 못 하는 상태인 거죠.',
+        },
+        {
+          type: 'p',
+          content: '바로 이게 함정입니다. 추적도 없고 계정 통제권도 없으면, 노출과 클릭만 가득한 월간 보고서를 믿을 수밖에 없습니다. 그 두 숫자는 항상 올라가기만 하고, 돈을 벌었는지는 절대 말해주지 않죠. 사장님이 느끼는 불안은 합리적입니다. 다행인 건, 그 증거가 바로 사장님 계정 안에 들어 있고, 마케터가 아니어도 찾을 수 있다는 겁니다.',
+        },
+        {
+          type: 'h2',
+          content: '대행사가 조용히 예산을 태우고 있다는 신호 7가지',
+        },
+        {
+          type: 'p',
+          content: '일곱 개가 다 해당돼야 걱정할 일이 아닙니다. 두세 개만 해당돼도 돈이 새고 있다는 뜻이고, 대개는 누가 일부러 그러는 것도 아닙니다. 목록을 천천히 읽으면서 몇 개나 익숙하게 느껴지는지 솔직하게 짚어보세요.',
+        },
+        {
+          type: 'ul',
+          content: '7가지 신호:',
+          items: [
+            '전환 추적이 없다. 광고에서 문의나 매출이 단 한 건이라도 나왔는지 아무도 증명 못 하고, 사장님은 믿음으로만 돈을 냅니다.',
+            '제외 키워드가 없다. 무료, 채용, 경쟁사 이름처럼 절대 돈 낼 일 없는 검색어에도 광고가 뜨고, 그 비용은 사장님이 떠안습니다.',
+            '내 계정에 관리자 권한이 없다. 대행사가 소유하고 사장님은 아니라서, 데이터를 볼 수도 없고 떠나면 전부 잃습니다.',
+            '노출과 클릭만 보여주고 문의는 절대 안 보여준다. 보고서는 바쁘고 그럴듯해 보이지만 돈을 벌었나라는 질문엔 답이 없습니다.',
+            '전부 확장검색(broad match)이다. 키워드가 활짝 열려 있어 구글이 느슨하게 관련된 검색에까지 예산을 쓰고, 그런 클릭은 거의 전환되지 않습니다.',
+            '랜딩 페이지 작업이 없다. 비싼 클릭을 느리거나 평범한 페이지로 보내놓고, 손님이 안 오면 클릭 탓을 합니다.',
+            '두루뭉술한 월간 보고서. 차트도 많고 전문 용어도 많은데, 정작 내 돈으로 뭘 얻었는지 쉬운 말로는 알 수가 없습니다.',
+          ],
+        },
+        {
+          type: 'h2',
+          content: '왜 이런 일이 생길까 (대부분은 악당이 아닙니다)',
+        },
+        {
+          type: 'p',
+          content: '예산을 태우는 대행사 대부분은 악랄한 흑막이 아닙니다. 수백 개 계정을 자동 운전으로 돌리느라 과부하 상태이고, 노출과 클릭만 보여주면 고객이 잠잠해진다는 걸 조용히 학습한 겁니다. 보고서가 초록색 화살표로 가득하면 질문이 멈추니까요. 문제는 구조적인 거지 항상 악의는 아닙니다. 하지만 사장님 통장에 미치는 결과는 똑같습니다. 사장님이 할 일은 누구 탓을 가리는 게 아닙니다. 데이터를 다시 손에 쥐어서 진실이 숨을 곳을 없애는 겁니다.',
+        },
+        {
+          type: 'tip',
+          content: '가장 강력한 한 가지 질문: 내 구글 광고 계정을 내가 소유하고 있고, 내 이메일이 관리자로 등록돼 있나? 답이 아니오라면, 다른 무엇보다 먼저 이것부터 바로잡으세요. 계정을 소유한 사람이 기록도, 키워드도, 협상력도 다 가집니다. 그건 언제나 사장님이어야 합니다.',
+        },
+        {
+          type: 'h2',
+          content: '통제권 되찾기: 10분 셀프 체크 해보기',
+        },
+        {
+          type: 'p',
+          content: '대행사가 자기 숙제를 자기가 채점하길 기다릴 필요 없습니다. 약 10분이면 사장님 본인 계정에 로그인해서 두 눈으로 직접 증거를 볼 수 있습니다. 아래 단계별 셀프 체크는 관리자 권한 확보, 돈 주고 산 낭비 검색어 찾기, 전환 추적이 켜져 있기는 한지 확인, 제외 키워드 목록 점검, 지역과 시간 설정 확인까지 순서대로 안내합니다. 어려운 거 하나도 없습니다. 알려드리는 곳을 클릭하고 보이는 걸 적기만 하면 됩니다.',
+        },
+        {
+          type: 'p',
+          content: '끝내고 나면 막연한 걱정은 사라집니다. 대신 짧은 사실 목록이 손에 남죠. 다 건강해서 안심하게 될 수도 있고, 텅 빈 제외 키워드, 몇 달째 작동 안 한 추적, 쓰레기로 가득한 검색어 보고서를 발견할 수도 있습니다. 어느 쪽이든, 이제 사장님이 데이터에 휘둘리는 사람이 아니라 데이터를 쥔 사람이 됩니다.',
+        },
+        {
+          type: 'tip',
+          content: '진행하면서 화면을 캡처해 두세요. 특히 검색어 보고서와 전환 요약 화면을요. 그게 사장님의 증거이고, 제2의 의견을 받을 때 열 배는 빠르고 정직하게 만들어 줍니다.',
+        },
+        {
+          type: 'h2',
+          content: '계정은 내가 소유하고, 내 숫자는 내가 본다. 언제나.',
+        },
+        {
+          type: 'p',
+          content: '전문 용어를 다 걷어내면, 좋은 구글 광고는 사장님에게 속한 세 가지 권리로 요약됩니다. 계정을 내가 소유한다, 실제 문의와 매출을 내가 본다, 통역사 없이 보고서를 내가 이해한다. 이건 프리미엄 옵션이 아닙니다. 기본값입니다. 이 세 가지를 주기 꺼리는 파트너가 있다면, 누구의 이익이 먼저인지를 스스로 말해주고 있는 셈입니다.',
+        },
+        {
+          type: 'cta',
+          content: 'ZOE LUMOS는 구글 광고를 정반대로 합니다. 계정은 100퍼센트 사장님 본인 소유로, 본인 이메일로 영원히 유지됩니다. 위 셀프 체크에 전문가의 심층 검토를 더한 무료 독립 진단을 해드리고, 보여주기식 클릭이 아니라 실제 문의 수와 문의당 비용이 보이는 쉬운 한국어 대시보드를 드립니다. 계약도, 압박도, 갈아타야 한다는 의무도 전혀 없습니다. 돈이 사라지는 느낌이 든다면, 함께 확인하고 진실을 알려드리겠습니다. 무료 진단을 신청하고 광고 예산의 통제권을 다시 가져가세요. At ZOE LUMOS, you own your account in full, forever, and we will run a free independent Google Ads audit with a plain-English dashboard that shows real leads, not vanity clicks. No contract, no pressure. Reach out for your free audit and take back control of your budget.',
+        },
+      ],
+    },
+  },
+  {
+    slug: 'small-business-marketing-dashboard-flying-blind-2026',
+    date: '2026-06-27',
+    updatedDate: '2026-06-27',
+    readTime: 9,
+    category: { en: 'Analytics', ko: '데이터 분석' },
+    title: {
+      en: 'Flying Blind: How Do I Know If My Website Is Working? (The Small Business Dashboard That Ends the Guessing)',
+      ko: '깜깜이 운영 그만: 내 홈페이지, 진짜 효과 있는 걸까? (추측을 끝내는 사장님 대시보드)',
+    },
+    metaDescription: {
+      en: 'You pay for a website and ads but cannot see a single result. Here is how to set up analytics for small business, track where your leads come from, and build a GA4 dashboard small business owners actually read every Monday.',
+      ko: '홈페이지에 광고비까지 쓰는데 결과는 하나도 안 보이시나요? 소상공인을 위한 방문자 분석 세팅, 리드 출처 추적, 그리고 사장님이 월요일 아침마다 보는 GA4 대시보드 만드는 법을 알려드립니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'How do I know if my website is working?',
+          ko: '내 홈페이지가 실제로 효과가 있는지 어떻게 알 수 있나요?',
+        },
+        a: {
+          en: 'You measure it. A website is working when it brings in visitors who turn into calls, form fills, or walk-ins. Without GA4 installed and conversions defined, you are guessing. Once you set up analytics for small business properly, you can see exactly how many people visited, which pages they read, and how many became leads. If those numbers are flat, the site is not working yet, and now you know what to fix.',
+          ko: '느낌이 아니라 숫자로 확인합니다. 홈페이지가 효과가 있다는 건 방문자가 전화, 문의, 방문으로 이어진다는 뜻입니다. GA4가 제대로 설치되어 있고 전환이 정의되어 있지 않으면 그건 추측일 뿐입니다. 방문자 분석을 제대로 세팅하면 몇 명이 들어왔는지, 어떤 페이지를 봤는지, 몇 명이 문의로 이어졌는지 정확히 보입니다. 그 숫자가 바닥이라면 아직 효과가 없는 것이고, 이제 무엇을 고쳐야 할지 알게 됩니다.',
+        },
+      },
+      {
+        q: {
+          en: 'How do I track where my leads come from?',
+          ko: '내 문의가 어디서 들어오는지 어떻게 추적하나요?',
+        },
+        a: {
+          en: 'GA4 groups your traffic by channel: Google search, Google Ads, social, direct, and referral. When you mark phone clicks and form submits as conversions, GA4 connects each lead back to its source. That tells you whether your paying customers came from the ad you spend $800 a month on or from free Google search. Most owners are shocked to learn one channel they pay for converts almost no one.',
+          ko: 'GA4는 방문 경로를 채널별로 나눠줍니다. 구글 검색, 구글 광고, 소셜, 직접 방문, 추천 링크로요. 전화 클릭과 문의 제출을 전환으로 설정하면 GA4가 각 리드의 출처를 연결해 보여줍니다. 그러면 실제 고객이 매달 80만원 쓰는 광고에서 왔는지, 아니면 무료 구글 검색에서 왔는지 알 수 있습니다. 많은 사장님이 돈 쓰는 채널이 실제로는 거의 전환을 못 만든다는 사실에 놀라십니다.',
+        },
+      },
+      {
+        q: {
+          en: 'What is a GA4 dashboard for a small business?',
+          ko: '소상공인용 GA4 대시보드가 뭔가요?',
+        },
+        a: {
+          en: 'It is one simple screen that shows the handful of numbers that matter: visitors, where they came from, how many became leads, your top pages, and ad spend versus results. You do not need the full GA4 interface, which is overwhelming. A GA4 dashboard small business owners can use is stripped down to a five-minute Monday read, in plain language, on your phone.',
+          ko: '중요한 몇 가지 숫자만 보여주는 한 화면입니다. 방문자 수, 유입 경로, 몇 명이 문의로 이어졌는지, 인기 페이지, 그리고 광고비 대비 결과요. 복잡하고 정신없는 GA4 전체 화면을 다 볼 필요 없습니다. 소상공인이 실제로 쓰는 GA4 대시보드는 월요일 아침 5분이면 휴대폰으로 쉬운 말로 확인할 수 있게 줄여 놓은 화면입니다.',
+        },
+      },
+      {
+        q: {
+          en: 'My agency runs everything. Why can I not see my own numbers?',
+          ko: '대행사가 다 관리하는데 왜 제 숫자를 못 보나요?',
+        },
+        a: {
+          en: 'Because the data lives in their account, not yours. This is more common than it should be. When the agency owns the GA4 property and the ad account, you are renting visibility into your own business. We set up GA4 under your email, give you admin access, and build the dashboard on your login, so the data is yours forever, even if you stop working with us.',
+          ko: '데이터가 사장님 계정이 아니라 대행사 계정에 있기 때문입니다. 생각보다 흔한 일입니다. 대행사가 GA4 속성과 광고 계정을 소유하면, 사장님은 본인 사업의 데이터를 빌려 보는 셈이 됩니다. 저희는 사장님 이메일로 GA4를 설치하고 관리자 권한을 드리고, 사장님 로그인에 대시보드를 만들어 드립니다. 그래서 나중에 저희와 거래를 멈춰도 데이터는 영원히 사장님 것입니다.',
+        },
+      },
+      {
+        q: {
+          en: 'How long does it take to set up analytics for a small business?',
+          ko: '소상공인 분석 세팅에는 얼마나 걸리나요?',
+        },
+        a: {
+          en: 'A clean GA4 install with conversions, Google Ads, and Business Profile connected usually takes a few hours of work and a couple of weeks to collect enough data to be useful. The setup is the easy part. The real value is having someone read it with you each month so the numbers turn into decisions, not just charts you ignore.',
+          ko: '전환 설정, 구글 광고, 비즈니스 프로필 연동까지 깔끔하게 GA4를 설치하는 작업은 보통 몇 시간이면 끝나고, 의미 있는 데이터가 쌓이는 데 2주 정도 걸립니다. 설치 자체는 쉬운 부분입니다. 진짜 가치는 매달 누군가 사장님과 함께 그 숫자를 읽어주어, 차트가 무시당하지 않고 실제 결정으로 바뀌는 데 있습니다.',
+        },
+      },
+    ],
+    howto: {
+      name: {
+        en: 'How to set up your Monday-morning dashboard',
+        ko: '월요일 아침 대시보드 세팅하는 법',
+      },
+      description: {
+        en: 'A five-step setup that takes you from total blindness to a simple screen you can read in five minutes every Monday.',
+        ko: '완전 깜깜이 상태에서, 매주 월요일 5분이면 읽을 수 있는 간단한 화면까지 가는 5단계 세팅입니다.',
+      },
+      totalTime: 'PT3H',
+      steps: [
+        {
+          name: { en: 'Install GA4 properly under your own account', ko: '내 계정으로 GA4 제대로 설치하기' },
+          text: {
+            en: 'Create the GA4 property under your own Google email so you own the data forever. Add the measurement tag to every page of your site and confirm it fires using real-time reports. This is the GA4 install step everyone skips or hands to an agency, and it is why so many owners cannot see their own numbers.',
+            ko: '사장님 본인 구글 이메일로 GA4 속성을 만드세요. 그래야 데이터가 영원히 사장님 것이 됩니다. 측정 태그를 사이트 모든 페이지에 넣고 실시간 보고서로 제대로 작동하는지 확인합니다. 다들 건너뛰거나 대행사에 맡겨버리는 GA4 설치 단계가 바로 이것이고, 많은 사장님이 자기 숫자를 못 보는 이유입니다.',
+          },
+        },
+        {
+          name: { en: 'Define your conversions and lead events', ko: '전환과 리드 이벤트 정의하기' },
+          text: {
+            en: 'Decide what a win looks like: a phone tap, a form submit, a direction click, a reservation. Mark each as a conversion in GA4 so the system counts leads, not just clicks. Without this, GA4 only shows traffic, and traffic without leads tells you nothing about money.',
+            ko: '무엇이 성공인지 정하세요. 전화 터치, 문의 제출, 길찾기 클릭, 예약 같은 것들요. 각각을 GA4에서 전환으로 표시해서, 시스템이 단순 클릭이 아니라 실제 리드를 세도록 합니다. 이 작업이 없으면 GA4는 방문자 수만 보여주고, 리드 없는 방문자 수는 매출에 대해 아무것도 말해주지 않습니다.',
+          },
+        },
+        {
+          name: { en: 'Connect Google Ads and your Business Profile', ko: '구글 광고와 비즈니스 프로필 연동하기' },
+          text: {
+            en: 'Link your Google Ads account so spend and conversions line up in one place, and connect your Google Business Profile so calls and direction requests from the map show up too. Now every dollar of ad spend can be matched against the leads it actually produced.',
+            ko: '구글 광고 계정을 연결해서 광고비와 전환이 한곳에 모이게 하고, 구글 비즈니스 프로필도 연동해서 지도에서 오는 전화와 길찾기 요청까지 보이게 하세요. 이제 광고비 1원 한 푼까지 실제로 만들어낸 리드와 맞춰볼 수 있습니다.',
+          },
+        },
+        {
+          name: { en: 'Build one simple dashboard', ko: '간단한 대시보드 하나 만들기' },
+          text: {
+            en: 'Pull the handful of numbers that matter into a single screen: visitors and their sources, leads, top pages, and ad spend versus leads. Skip the 200 metrics GA4 offers. One clean view beats a report you never open.',
+            ko: '중요한 몇 가지 숫자만 한 화면에 모으세요. 방문자와 유입 경로, 리드, 인기 페이지, 그리고 광고비 대비 리드요. GA4가 제공하는 200개 지표는 무시하세요. 깔끔한 화면 하나가, 한 번도 안 여는 보고서보다 낫습니다.',
+          },
+        },
+        {
+          name: { en: 'Schedule a weekly glance', ko: '주간 점검 시간 정하기' },
+          text: {
+            en: 'Put a recurring five-minute slot on your calendar every Monday morning to check the dashboard. Ask three questions: did leads go up or down, which channel drove them, and is anything I pay for producing nothing? That habit turns data into decisions.',
+            ko: '매주 월요일 아침, 대시보드를 확인할 5분을 캘린더에 반복 일정으로 넣으세요. 세 가지만 물어보면 됩니다. 리드가 올랐나 내렸나, 어느 채널이 만들어냈나, 돈 쓰는데 아무 성과 없는 게 있나. 이 습관이 데이터를 결정으로 바꿔줍니다.',
+          },
+        },
+      ],
+    },
+    sections: {
+      en: [
+        {
+          type: 'intro',
+          content: 'You pay for a website. Maybe you pay for ads on top of that. And every month the invoice comes, the money goes out, and you sit there with one quiet, gnawing question you are almost embarrassed to ask out loud: is any of this actually working? You cannot see your visitors. You cannot see your leads. You cannot see anything. You just hope. If that is you, you are not bad at business. You are flying blind, and nobody handed you the instruments.',
+        },
+        {
+          type: 'h2',
+          content: 'How do I know if my website is working? Right now, you do not, and that is the real problem',
+        },
+        {
+          type: 'p',
+          content: 'Here is the uncomfortable truth: most small business owners genuinely cannot tell whether their marketing works. Studies show the majority of small businesses do not track their results in any meaningful way. So when a website redesign or an ad campaign quietly underperforms, nobody notices for months. The money keeps leaving. The phone does not ring more. And the only feedback you get is the slow, sinking feeling that you might be wasting it.',
+        },
+        {
+          type: 'p',
+          content: 'The fix is not more spending. It is visibility. The moment you can see your numbers, the anxiety changes shape. You stop guessing and start deciding. That is the whole game, and it is closer than you think.',
+        },
+        {
+          type: 'h2',
+          content: 'You cannot fix what you cannot see',
+        },
+        {
+          type: 'p',
+          content: 'Think about how you would never run your register blind. You count the drawer. You know your busy hours. You know which dish sells. But your website and your ads, often the biggest line items after rent and payroll, run in total darkness. You would never accept that anywhere else in your business. Visibility is not a luxury here. It is basic control over your own money.',
+        },
+        {
+          type: 'p',
+          content: 'And the cost of darkness is not neutral. If you cannot see which channel produces customers, you are almost certainly overpaying one that produces none. That is the loss hiding in the blind spot: not just money you are not making, but money you are actively burning on something that does not convert, every single month, without knowing it.',
+        },
+        {
+          type: 'h2',
+          content: 'When the agency owns the data, you are renting your own business',
+        },
+        {
+          type: 'p',
+          content: 'There is a quieter pain underneath the blindness. Sometimes the data exists, but it lives in someone else\'s account. The agency built the site, runs the ads, and holds all the logins. You ask for a report and you get a polished PDF once a quarter that always seems to say things are going great. You cannot click into it. You cannot question it. You are trusting a scoreboard you are not allowed to read.',
+        },
+        {
+          type: 'p',
+          content: 'That is backwards. The data is about your customers, your money, your business. It should live under your email, with you as the owner, no matter who does the work. Anyone who hoards your analytics is, intentionally or not, keeping you dependent. Real partners hand you the keys.',
+        },
+        {
+          type: 'h2',
+          content: 'The handful of numbers every owner should see every Monday',
+        },
+        {
+          type: 'p',
+          content: 'You do not need to become an analyst. GA4 has hundreds of metrics and most of them are noise for a small business. You need a short list you can scan with your coffee before the week starts. These are the only ones that matter:',
+        },
+        {
+          type: 'ul',
+          content: 'The Monday-morning shortlist:',
+          items: [
+            'Visitors and where they came from: how many people showed up, and whether they arrived from Google search, ads, social, or a direct link.',
+            'Leads, calls, and form fills: the real wins, not just traffic. How many people actually reached out this week.',
+            'Top pages: which pages people actually read, so you know what is pulling its weight and what is dead.',
+            'Ad spend versus leads: what you paid this week next to what it produced, side by side, with no spin.',
+            'Which channel drives revenue: of all your sources, the one that turns into paying customers, so you double down on it and cut the rest.',
+          ],
+        },
+        {
+          type: 'tip',
+          content: 'If you only ever look at one line, make it ad spend versus leads. The single most common money leak we find is an owner paying for a channel month after month that produces almost no leads, simply because no one ever put the two numbers next to each other.',
+        },
+        {
+          type: 'h2',
+          content: 'Set up analytics for small business: it is simpler than the dread makes it feel',
+        },
+        {
+          type: 'p',
+          content: 'The dread is worse than the work. To set up analytics for small business you really only need a clean GA4 install, a few conversions defined, your Google Ads and Business Profile connected, and one simple dashboard built on top. That is it. The how-to below walks through the exact steps. None of it requires you to learn GA4 yourself, and once it is done it mostly runs on its own.',
+        },
+        {
+          type: 'p',
+          content: 'The point of all this is not charts. It is certainty. When you can track where your leads come from, you stop arguing with yourself at 11pm about whether the ads are worth it. You look. You know. You decide. That calm is what visibility actually buys you.',
+        },
+        {
+          type: 'tip',
+          content: 'Do not wait for a perfect, all-in-one platform. A basic GA4 dashboard small business owners can read in five minutes beats a fancy enterprise tool you never open. Simple and used beats powerful and ignored, every time.',
+        },
+        {
+          type: 'h2',
+          content: 'From hoping to knowing',
+        },
+        {
+          type: 'p',
+          content: 'The goal was never to make you stare at dashboards. It is to take you from hoping your marketing works to knowing exactly what it does, so every dollar you spend is a decision you made on purpose, with your eyes open. That is control. That is the opposite of flying blind. And it is the difference between a business that drifts and one you actually steer.',
+        },
+        {
+          type: 'cta',
+          content: 'If you cannot see your visitors, your leads, or where your money goes, let us fix that first. ZOE LUMOS will set up GA4 and a simple owner dashboard that YOU own, under your own account, and then read it with you in plain language so the numbers turn into decisions. Reach out for a free analytics setup check, no pressure and no jargon. We will tell you honestly whether your marketing is working, and exactly where it is not.',
+        },
+      ],
+      ko: [
+        {
+          type: 'intro',
+          content: '홈페이지에 돈을 씁니다. 어쩌면 그 위에 광고비까지 더 씁니다. 그리고 매달 청구서가 오고, 돈은 빠져나가고, 사장님은 조용히 속을 갉아먹는 질문 하나를 안고 앉아 계십니다. 입 밖에 내기도 민망한 그 질문이요. 이게 진짜 효과가 있긴 한 걸까? 방문자도 안 보이고, 문의도 안 보이고, 아무것도 안 보입니다. 그냥 잘 되길 바랄 뿐입니다. 이게 사장님 이야기라면, 사장님이 장사를 못하는 게 아닙니다. 계기판 하나 없이 깜깜이로 비행기를 몰고 계신 것뿐입니다.',
+        },
+        {
+          type: 'h2',
+          content: '내 홈페이지가 효과가 있는지 어떻게 알까요? 지금은 모르고, 그게 진짜 문제입니다',
+        },
+        {
+          type: 'p',
+          content: '불편한 진실 하나. 대부분의 소상공인은 자기 마케팅이 효과가 있는지 정말로 모릅니다. 연구에 따르면 다수의 소상공인이 의미 있는 방식으로 결과를 전혀 추적하지 않습니다. 그래서 홈페이지 리뉴얼이나 광고가 조용히 부진해도, 몇 달 동안 아무도 눈치채지 못합니다. 돈은 계속 빠져나가고, 전화는 더 울리지 않고, 사장님이 받는 유일한 신호는 혹시 돈을 버리고 있는 건 아닐까 하는 서서히 가라앉는 불안감뿐입니다.',
+        },
+        {
+          type: 'p',
+          content: '해결책은 돈을 더 쓰는 게 아닙니다. 보이게 만드는 겁니다. 내 숫자를 볼 수 있게 되는 순간, 불안의 모양이 바뀝니다. 추측을 멈추고 결정을 시작하게 됩니다. 그게 전부이고, 생각보다 훨씬 가까이 있습니다.',
+        },
+        {
+          type: 'h2',
+          content: '보이지 않는 건 고칠 수 없습니다',
+        },
+        {
+          type: 'p',
+          content: '계산대를 깜깜이로 운영하는 일은 절대 없으시잖아요. 시재를 세고, 바쁜 시간대를 알고, 어느 메뉴가 잘 나가는지 아십니다. 그런데 홈페이지와 광고는, 임대료와 인건비 다음으로 큰 지출인 경우가 많은데도, 완전히 어둠 속에서 돌아갑니다. 사업의 다른 어떤 부분에서도 절대 받아들이지 않으실 일입니다. 여기서 가시성은 사치가 아닙니다. 내 돈에 대한 기본적인 통제권입니다.',
+        },
+        {
+          type: 'p',
+          content: '그리고 어둠의 대가는 결코 0이 아닙니다. 어느 채널이 고객을 만드는지 보이지 않으면, 거의 틀림없이 아무 고객도 못 만드는 채널에 과하게 돈을 쓰고 계실 겁니다. 사각지대에 숨어 있는 손실이 바로 이겁니다. 못 버는 돈만이 아니라, 전환도 안 되는 데에 매달 적극적으로 태워 없애는 돈, 그것도 모르는 채로요.',
+        },
+        {
+          type: 'h2',
+          content: '대행사가 데이터를 쥐고 있으면, 사장님은 본인 사업을 빌려 쓰는 셈입니다',
+        },
+        {
+          type: 'p',
+          content: '깜깜이 밑에는 더 조용한 아픔이 하나 있습니다. 데이터가 존재하긴 하는데 남의 계정에 있는 경우입니다. 대행사가 사이트를 만들고, 광고를 돌리고, 모든 로그인을 쥐고 있습니다. 보고서를 요청하면 분기에 한 번 잘 만든 PDF가 오는데, 항상 잘 되고 있다고 말하는 것 같습니다. 클릭해서 들어가 볼 수도 없고, 따져 물을 수도 없습니다. 읽는 게 허락되지 않은 점수판을 그냥 믿고 있는 겁니다.',
+        },
+        {
+          type: 'p',
+          content: '이건 거꾸로 된 겁니다. 그 데이터는 사장님의 고객, 사장님의 돈, 사장님의 사업에 관한 것입니다. 누가 작업을 하든, 데이터는 사장님 이메일 아래에, 사장님을 소유자로 두고 있어야 합니다. 사장님의 분석 데이터를 끌어안고 있는 사람은, 의도했든 아니든, 사장님을 계속 의존하게 만드는 겁니다. 진짜 파트너는 열쇠를 손에 쥐여 드립니다.',
+        },
+        {
+          type: 'h2',
+          content: '사장님이 매주 월요일 봐야 할 몇 가지 숫자',
+        },
+        {
+          type: 'p',
+          content: '분석가가 되실 필요는 없습니다. GA4에는 수백 개 지표가 있고, 소상공인에게 그 대부분은 잡음입니다. 한 주가 시작되기 전 커피 한 잔과 함께 훑어볼 수 있는 짧은 목록이면 됩니다. 정말 중요한 건 이것뿐입니다:',
+        },
+        {
+          type: 'ul',
+          content: '월요일 아침 핵심 목록:',
+          items: [
+            '방문자와 유입 경로: 몇 명이 들어왔는지, 그리고 구글 검색에서 왔는지 광고에서 왔는지 소셜인지 직접 링크인지.',
+            '리드, 전화, 문의 제출: 단순 방문이 아니라 진짜 성과. 이번 주에 실제로 몇 명이 연락해 왔는지.',
+            '인기 페이지: 사람들이 실제로 읽은 페이지가 무엇인지. 제 몫을 하는 페이지와 죽어 있는 페이지를 구분하기 위해.',
+            '광고비 대비 리드: 이번 주에 얼마를 썼고 그게 무엇을 만들어냈는지, 포장 없이 나란히.',
+            '매출을 만드는 채널: 모든 유입원 중에서 실제 결제 고객으로 이어지는 단 하나. 거기에 더 집중하고 나머지는 줄이기 위해.',
+          ],
+        },
+        {
+          type: 'tip',
+          content: '딱 한 줄만 보신다면, 광고비 대비 리드를 보세요. 저희가 가장 흔하게 발견하는 돈 새는 구멍은, 리드를 거의 못 만드는 채널에 사장님이 달마다 돈을 쓰고 계신 경우입니다. 단지 그 두 숫자를 나란히 놓아본 사람이 아무도 없었다는 이유로요.',
+        },
+        {
+          type: 'h2',
+          content: '소상공인 분석 세팅: 막막함이 만드는 것보다 훨씬 간단합니다',
+        },
+        {
+          type: 'p',
+          content: '막막함이 실제 작업보다 더 무섭습니다. 소상공인 분석을 세팅하려면 사실 깔끔한 GA4 설치, 전환 몇 개 정의, 구글 광고와 비즈니스 프로필 연동, 그리고 그 위에 간단한 대시보드 하나만 있으면 됩니다. 그게 끝입니다. 아래 단계별 가이드가 정확한 순서를 알려드립니다. 사장님이 직접 GA4를 배우실 필요는 전혀 없고, 한 번 해두면 대부분 알아서 돌아갑니다.',
+        },
+        {
+          type: 'p',
+          content: '이 모든 것의 핵심은 차트가 아닙니다. 확신입니다. 문의가 어디서 들어오는지 추적할 수 있게 되면, 밤 11시에 광고가 값어치를 하는지 혼자 씨름하는 일이 사라집니다. 그냥 봅니다. 알게 됩니다. 결정합니다. 가시성이 진짜로 사장님께 사드리는 건 바로 그 평온함입니다.',
+        },
+        {
+          type: 'tip',
+          content: '완벽한 올인원 플랫폼을 기다리지 마세요. 사장님이 5분이면 읽을 수 있는 기본 GA4 대시보드가, 한 번도 안 여는 고급 기업용 도구보다 낫습니다. 간단하고 실제로 쓰는 것이, 강력하지만 방치되는 것을 언제나 이깁니다.',
+        },
+        {
+          type: 'h2',
+          content: '바라기에서 알기로',
+        },
+        {
+          type: 'p',
+          content: '목표는 사장님을 대시보드 앞에 붙잡아 두는 게 아니었습니다. 마케팅이 잘 되길 바라기만 하던 상태에서, 그게 정확히 무엇을 하는지 아는 상태로 옮겨가는 것입니다. 그래서 쓰는 돈 한 푼 한 푼이 눈을 뜬 채 일부러 내린 결정이 되도록요. 그게 통제입니다. 그게 깜깜이 비행의 반대입니다. 그리고 그게 떠밀려 가는 사업과 사장님이 직접 운전하는 사업의 차이입니다.',
+        },
+        {
+          type: 'cta',
+          content: '방문자도, 문의도, 돈이 어디로 가는지도 안 보이신다면, 그것부터 고치겠습니다. ZOE LUMOS가 GA4와 간단한 사장님 대시보드를 사장님 본인 계정 아래, 사장님 소유로 세팅해 드리고, 그다음 그 숫자를 쉬운 말로 함께 읽어드려서 숫자가 결정으로 바뀌게 해드립니다. 무료 분석 세팅 점검을 신청하세요. 부담도, 어려운 용어도 없습니다. 사장님 마케팅이 효과가 있는지, 그리고 정확히 어디가 안 되고 있는지 솔직하게 말씀드리겠습니다.',
+        },
+      ],
+    },
+  },
+  {
+    slug: 'toast-clover-pos-analytics-goldmine-2026',
+    date: '2026-06-27',
+    updatedDate: '2026-06-27',
+    readTime: 9,
+    category: { en: 'Restaurant', ko: '레스토랑' },
+    title: {
+      en: 'Toast POS Reports Not Useful? You\'re Sitting on a Data Goldmine (Toast/Clover Analytics 2026)',
+      ko: '토스트 POS 분석이 쓸모없다고요? 사장님은 지금 데이터 금광 위에 앉아 계십니다 (토스트/클로버 2026)',
+    },
+    metaDescription: {
+      en: 'Toast POS reports not useful? Learn how to connect Toast online ordering to Google Analytics, track restaurant marketing ROI on Toast and Clover, and build a Clover analytics dashboard that finally shows what drives orders.',
+      ko: '토스트 POS 분석이 답답하셨나요? 토스트 온라인 주문을 구글 애널리틱스에 연결하고, 토스트/클로버 마케팅 ROI를 추적하며, 무엇이 주문을 만드는지 보여주는 식당 매출 분석 대시보드를 만드는 법을 알려드립니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'Why are my Toast POS reports not useful for actual decisions?',
+          ko: '토스트 POS 분석 리포트가 왜 실제 결정에 도움이 안 되나요?',
+        },
+        a: {
+          en: 'Toast and Clover are built to take payments first and report second. Their dashboards show you what happened inside the four walls, but they cannot tell you where a customer came from, which ad they clicked, or whether your Instagram post turned into a real order. The data is technically there, it is just locked in a payments tool that was never designed to answer marketing questions. You unlock it by piping POS and online-ordering events into Google Analytics, where the source of every order becomes visible.',
+          ko: '토스트와 클로버는 결제가 1순위, 리포트는 2순위로 만들어진 도구입니다. 매장 안에서 무슨 일이 있었는지는 보여주지만, 손님이 어디서 왔는지, 어떤 광고를 눌렀는지, 인스타그램 게시물이 실제 주문으로 이어졌는지는 알려주지 못합니다. 데이터는 분명히 있지만, 마케팅 질문에 답하도록 설계되지 않은 결제 도구 안에 갇혀 있을 뿐입니다. POS와 온라인 주문 이벤트를 구글 애널리틱스로 흘려보내면 모든 주문의 출처가 보이기 시작합니다.',
+        },
+      },
+      {
+        q: {
+          en: 'How do I connect Toast online ordering to Google Analytics?',
+          ko: '토스트 온라인 주문을 구글 애널리틱스에 어떻게 연결하나요?',
+        },
+        a: {
+          en: 'The cleanest path is to run your online ordering on your own domain or subdomain (for example order.yourrestaurant.com) so you control the page and can drop in a GA4 tag and Google Tag Manager. From there you fire a purchase event when an order completes, passing the order value and items. Once GA4 sees those purchases, you connect Google Ads and you can finally match ad spend to real orders. We walk through the full setup in the step-by-step guide below.',
+          ko: '가장 깔끔한 방법은 온라인 주문을 사장님 소유의 도메인이나 서브도메인(예: order.yourrestaurant.com)에서 돌리는 것입니다. 그래야 페이지를 직접 통제하면서 GA4 태그와 구글 태그 매니저를 심을 수 있습니다. 그다음 주문이 완료될 때 주문 금액과 메뉴를 담은 purchase 이벤트를 발사합니다. GA4가 이 주문들을 인식하면 구글 광고를 연결해 광고비와 실제 주문을 드디어 맞춰볼 수 있습니다. 아래 단계별 가이드에서 전체 설정을 설명합니다.',
+        },
+      },
+      {
+        q: {
+          en: 'Can I really track restaurant marketing ROI on Toast and Clover?',
+          ko: '정말 토스트와 클로버로 식당 마케팅 ROI를 추적할 수 있나요?',
+        },
+        a: {
+          en: 'Yes, but not from inside Toast or Clover alone. The POS knows the sale happened; it does not know the marketing that caused it. When you route online orders through GA4 and connect Google Ads, every dollar of ad spend gets tied to the orders it produced, so you can see real return on each campaign instead of guessing. For dine-in, you layer in tactics like QR menus, reservation links, and offer codes so even walk-in traffic leaves a trackable trail.',
+          ko: '네, 다만 토스트나 클로버 안에서만으로는 안 됩니다. POS는 판매가 일어난 건 알지만, 그 판매를 만든 마케팅은 모릅니다. 온라인 주문을 GA4로 흘려보내고 구글 광고를 연결하면, 광고비 1달러가 어떤 주문을 만들었는지 연결되어 추측 대신 실제 수익률을 볼 수 있습니다. 매장 식사의 경우 QR 메뉴, 예약 링크, 할인 코드 같은 장치를 더해 워크인 손님까지 추적 가능한 흔적을 남기게 만듭니다.',
+        },
+      },
+      {
+        q: {
+          en: 'What does a good Clover analytics dashboard actually show me?',
+          ko: '제대로 된 클로버 분석 대시보드는 실제로 무엇을 보여주나요?',
+        },
+        a: {
+          en: 'A useful dashboard pulls your POS sales, your online-ordering data, and your ad performance into one screen. At a glance you should see best and worst sellers by daypart, your repeat-customer rate, online versus dine-in mix, average ticket trends, slow-hour patterns, and which marketing channel drove which orders. That is the difference between a cash register that records the past and a dashboard that tells you what to do next week.',
+          ko: '쓸모 있는 대시보드는 POS 매출, 온라인 주문 데이터, 광고 성과를 한 화면에 모읍니다. 한눈에 시간대별 잘 팔리는/안 팔리는 메뉴, 재방문 고객 비율, 온라인 대 매장 식사 비율, 평균 객단가 추이, 한산한 시간대 패턴, 그리고 어떤 마케팅 채널이 어떤 주문을 만들었는지가 보여야 합니다. 이것이 과거를 기록하는 금전등록기와, 다음 주에 무엇을 할지 알려주는 대시보드의 차이입니다.',
+        },
+      },
+      {
+        q: {
+          en: 'Do I need to switch off Toast or Clover to do this?',
+          ko: '이걸 하려면 토스트나 클로버를 끊어야 하나요?',
+        },
+        a: {
+          en: 'No. Keep the POS you already trust for running the restaurant. We are not a Toast or Clover partner and we are not asking you to rip anything out. We simply connect the data your POS and online ordering already produce into Google Analytics and a single dashboard, so the system you are already paying for finally starts paying you back in insight.',
+          ko: '아닙니다. 식당 운영에 이미 믿고 쓰는 POS는 그대로 두세요. 저희는 토스트나 클로버의 공식 파트너가 아니며, 무언가를 뜯어내라고 요구하지도 않습니다. 그저 POS와 온라인 주문이 이미 만들어내는 데이터를 구글 애널리틱스와 하나의 대시보드로 연결할 뿐입니다. 그러면 이미 비용을 내고 있는 시스템이 드디어 통찰력으로 보답하기 시작합니다.',
+        },
+      },
+    ],
+    howto: {
+      name: {
+        en: 'How to connect your POS and online ordering to Google Analytics',
+        ko: 'POS와 온라인 주문을 구글 애널리틱스에 연결하는 방법',
+      },
+      description: {
+        en: 'A practical setup to turn your Toast or Clover orders into trackable, ROI-ready data inside Google Analytics and a single dashboard.',
+        ko: '토스트나 클로버 주문을 구글 애널리틱스와 하나의 대시보드 안에서 추적 가능하고 ROI를 볼 수 있는 데이터로 바꾸는 실전 설정입니다.',
+      },
+      totalTime: 'PT3H',
+      steps: [
+        {
+          name: {
+            en: 'Put online ordering on your own domain or subdomain',
+            ko: '온라인 주문을 내 도메인 또는 서브도메인으로 옮기기',
+          },
+          text: {
+            en: 'Run your online ordering at a URL you control, like order.yourrestaurant.com, instead of a generic third-party link. This is the foundation: if you do not own the page, you cannot reliably measure it. Done right, the customer never feels the difference but every visit becomes trackable.',
+            ko: '일반적인 제3자 링크 대신 사장님이 통제하는 주소(예: order.yourrestaurant.com)에서 온라인 주문을 돌리세요. 이것이 기초입니다. 페이지를 소유하지 못하면 제대로 측정할 수 없습니다. 제대로만 하면 손님은 차이를 못 느끼지만 모든 방문이 추적 가능해집니다.',
+          },
+        },
+        {
+          name: {
+            en: 'Add GA4 and Google Tag Manager',
+            ko: 'GA4와 구글 태그 매니저 심기',
+          },
+          text: {
+            en: 'Create a GA4 property and install Google Tag Manager on your ordering pages. Tag Manager lets you add and change tracking without touching code every time, which keeps the whole thing maintainable as your menu and promos change.',
+            ko: 'GA4 속성을 만들고 주문 페이지에 구글 태그 매니저를 설치하세요. 태그 매니저를 쓰면 매번 코드를 건드리지 않고도 추적을 추가하고 바꿀 수 있어, 메뉴와 프로모션이 바뀌어도 전체 시스템을 유지하기 쉬워집니다.',
+          },
+        },
+        {
+          name: {
+            en: 'Set up purchase and conversion events',
+            ko: '구매 및 전환 이벤트 설정하기',
+          },
+          text: {
+            en: 'Configure a purchase event that fires when an order is completed, passing the order value and the items bought. Mark it as a key conversion in GA4. Now every completed order is a measurable event, not an invisible transaction.',
+            ko: '주문이 완료될 때 발사되는 purchase 이벤트를 설정하고, 주문 금액과 구매한 메뉴를 함께 보내세요. GA4에서 이를 핵심 전환으로 표시하세요. 이제 완료된 모든 주문이 보이지 않는 거래가 아니라 측정 가능한 이벤트가 됩니다.',
+          },
+        },
+        {
+          name: {
+            en: 'Connect Google Ads to GA4',
+            ko: '구글 광고를 GA4에 연결하기',
+          },
+          text: {
+            en: 'Link your Google Ads account to GA4 and import the purchase conversion. This is the moment ad spend and real orders meet, so you can finally see which campaigns and keywords actually produce paying customers instead of just clicks.',
+            ko: '구글 광고 계정을 GA4에 연결하고 purchase 전환을 가져오세요. 광고비와 실제 주문이 만나는 순간이며, 단순 클릭이 아니라 어떤 캠페인과 키워드가 실제로 돈 내는 손님을 만드는지 드디어 볼 수 있습니다.',
+          },
+        },
+        {
+          name: {
+            en: 'Build a simple, single-screen dashboard',
+            ko: '간단한 단일 화면 대시보드 만들기',
+          },
+          text: {
+            en: 'Pull GA4, your online-ordering data, and ad performance into one dashboard you actually check. Keep it to the numbers that change decisions: orders by source, repeat-customer rate, online versus dine-in mix, average ticket, and best sellers by daypart. Simple and used beats fancy and ignored.',
+            ko: 'GA4, 온라인 주문 데이터, 광고 성과를 사장님이 실제로 들여다볼 하나의 대시보드로 모으세요. 결정을 바꾸는 숫자만 담으세요. 출처별 주문, 재방문 고객 비율, 온라인 대 매장 식사 비율, 평균 객단가, 시간대별 인기 메뉴. 화려하지만 안 보는 것보다 단순해도 매일 보는 게 낫습니다.',
+          },
+        },
+        {
+          name: {
+            en: 'Layer in dine-in tracking',
+            ko: '매장 식사 추적 더하기',
+          },
+          text: {
+            en: 'Close the loop on walk-in traffic with QR menus, reservation and waitlist links, and offer codes that route through trackable pages. Combined with your online data, this gives you the closest thing to a complete picture of what marketing drives your full house.',
+            ko: 'QR 메뉴, 예약 및 대기 명단 링크, 추적 가능한 페이지를 거치는 할인 코드로 워크인 손님까지 고리를 닫으세요. 온라인 데이터와 합치면, 어떤 마케팅이 만석을 만드는지에 대한 가장 완전한 그림에 가까워집니다.',
+          },
+        },
+      ],
+    },
+    sections: {
+      en: [
+        {
+          type: 'intro',
+          content: 'You pay thousands of dollars a year for Toast or Clover. It takes the orders, splits the checks, runs the kitchen. And yet, when you ask the one question that matters most, are my ads actually bringing in customers, the answer is a shrug. The reports are full of numbers that feel useful but never tell you what to do next. Here is the hard truth and the good news in one sentence: your POS is quietly collecting a goldmine of data, and almost none of it is reaching your eyes.',
+        },
+        {
+          type: 'h2',
+          content: 'Why your Toast POS reports are not useful (and it is not your fault)',
+        },
+        {
+          type: 'p',
+          content: 'Toast and Clover were built as payment systems first. They are brilliant at processing a card and printing a ticket, and only okay at telling you a story. So you get sales totals and item counts, but you cannot answer the questions that grow a restaurant: where did this customer come from, did my Instagram ad cause this order, are my regulars actually coming back. The information exists somewhere in the system. It is just trapped in a tool that was never meant to be your marketing brain.',
+        },
+        {
+          type: 'h2',
+          content: 'You are sitting on a goldmine you cannot unlock',
+        },
+        {
+          type: 'p',
+          content: 'Industry data suggests most independent restaurant operators use only a small fraction of the data their POS already captures. Read that again. You are already paying to collect it. The orders, the timestamps, the items, the repeat visits, all of it is being recorded every single day and then quietly buried in a dashboard nobody opens. That is not a small inconvenience. That is months of growth decisions being made blind while the answers sit one connection away.',
+        },
+        {
+          type: 'h2',
+          content: 'The data your Toast or Clover already collects but you never see',
+        },
+        {
+          type: 'p',
+          content: 'Here is the part that stings. Every one of these is already in your system right now. You just cannot see it in a way that helps you make money:',
+        },
+        {
+          type: 'ul',
+          content: 'What your POS knows but never tells you:',
+          items: [
+            'Best and worst sellers by daypart, so you stop guessing what to push at lunch versus dinner',
+            'Your true repeat-customer rate, the single best signal of whether your food and service actually keep people coming back',
+            'Online versus dine-in mix, so you know where your business is really shifting',
+            'Which marketing drove which orders, so you stop paying for ads that do nothing',
+            'Average ticket trends over time, so you catch a slow erosion before it becomes a bad quarter',
+            'Slow-hour patterns, so you staff and promote against the dead times instead of bleeding payroll',
+          ],
+        },
+        {
+          type: 'h2',
+          content: 'The real cost of flying blind',
+        },
+        {
+          type: 'p',
+          content: 'When you cannot see what drives orders, every marketing dollar is a coin flip. You boost a post and hope. You run a Google ad and pray. You keep the ad that felt good and kill the one that felt slow, with zero proof either way. Meanwhile a competitor down the street who can see their numbers is doubling down on what works and cutting what does not. Over a year, that gap is not small. That is the difference between a restaurant that compounds and one that just survives.',
+        },
+        {
+          type: 'h2',
+          content: 'How to track restaurant marketing ROI on Toast and Clover',
+        },
+        {
+          type: 'p',
+          content: 'The fix is not a new POS. It is a connection. You route the orders your POS and online ordering already create into Google Analytics, fire a purchase event on every completed order, and link Google Ads so spend gets matched to real sales. Suddenly the question are my ads working stops being a feeling and becomes a number. The full step-by-step is in the guide below, and yes, it is the kind of thing we set up for restaurants every week.',
+        },
+        {
+          type: 'tip',
+          content: 'Start with online ordering on your own subdomain, like order.yourrestaurant.com. If your orders flow through a page you do not control, you will always be guessing. Owning that one page is the single highest-leverage move for finally seeing your data.',
+        },
+        {
+          type: 'h2',
+          content: 'What a real restaurant sales dashboard looks like',
+        },
+        {
+          type: 'p',
+          content: 'Forget twelve tabs of exports. A useful Clover analytics dashboard is one screen you check with your morning coffee: orders by source, repeat-customer rate, online versus dine-in, average ticket, best sellers by daypart, and which channel drove the week. No spreadsheet gymnastics. Just the handful of numbers that tell you what to do this week and what to stop wasting money on.',
+        },
+        {
+          type: 'tip',
+          content: 'A dashboard you actually open beats a perfect report you never read. Keep it simple, put it on your phone, and look at it weekly. The habit is worth more than the fanciest chart.',
+        },
+        {
+          type: 'h2',
+          content: 'You already own the goldmine. Let us hand you the key.',
+        },
+        {
+          type: 'p',
+          content: 'You did the hard part. You opened the restaurant, you built the menu, you earned the regulars, and you are already paying for a POS that captures everything. The only thing missing is the connection that turns all that buried data into decisions. That is the gap we close, no new POS, no rip and replace, just your data finally working for you.',
+        },
+        {
+          type: 'cta',
+          content: 'At ZOE LUMOS we connect your POS, your online ordering, and your ads into one simple dashboard so you finally see what actually drives orders. No pressure and no jargon. Reach out for a free POS-data review and we will show you, with your own numbers, exactly what your Toast or Clover is already collecting and how to put it to work. (ZOE LUMOS 한국어 상담도 환영합니다.)',
+        },
+      ],
+      ko: [
+        {
+          type: 'intro',
+          content: '사장님은 토스트나 클로버에 한 해 수천 달러를 내고 계십니다. 주문을 받고, 계산서를 나누고, 주방을 돌립니다. 그런데 가장 중요한 질문, 내 광고가 정말 손님을 데려오고 있나요라고 물으면 돌아오는 건 어깨 한 번 으쓱입니다. 리포트는 쓸모 있어 보이는 숫자로 가득하지만, 다음에 무엇을 해야 할지는 절대 알려주지 않습니다. 쓴 진실과 좋은 소식을 한 문장으로 말씀드릴게요. 사장님의 POS는 조용히 데이터 금광을 모으고 있는데, 그중 거의 아무것도 사장님 눈에 닿지 못하고 있습니다.',
+        },
+        {
+          type: 'h2',
+          content: '토스트 POS 분석이 쓸모없는 이유 (사장님 잘못이 아닙니다)',
+        },
+        {
+          type: 'p',
+          content: '토스트와 클로버는 애초에 결제 시스템으로 만들어졌습니다. 카드를 긁고 영수증을 뽑는 데는 천재적이지만, 이야기를 들려주는 데는 그저 그렇습니다. 그래서 매출 합계와 메뉴 판매 수는 나오지만, 식당을 키우는 질문에는 답하지 못합니다. 이 손님은 어디서 왔나, 인스타그램 광고가 이 주문을 만들었나, 단골이 정말 다시 오고 있나. 정보는 시스템 어딘가에 분명히 있습니다. 그저 사장님의 마케팅 두뇌가 되도록 만들어지지 않은 도구 안에 갇혀 있을 뿐입니다.',
+        },
+        {
+          type: 'h2',
+          content: '사장님은 못 여는 금광 위에 앉아 계십니다',
+        },
+        {
+          type: 'p',
+          content: '업계 자료에 따르면 대부분의 개인 식당 사장님은 POS가 이미 수집하는 데이터의 아주 일부만 사용합니다. 다시 읽어보세요. 사장님은 그걸 모으는 비용을 이미 내고 있습니다. 주문, 시각, 메뉴, 재방문 기록, 이 모든 게 매일같이 기록되고는 아무도 열지 않는 대시보드 속에 조용히 묻힙니다. 이건 작은 불편이 아닙니다. 답이 연결 하나 거리에 있는데도, 수개월간의 성장 결정을 눈 감고 내리고 있다는 뜻입니다.',
+        },
+        {
+          type: 'h2',
+          content: '토스트나 클로버가 이미 모으지만 사장님은 못 보는 데이터',
+        },
+        {
+          type: 'p',
+          content: '여기가 진짜 아픈 부분입니다. 아래 항목 하나하나가 지금 이 순간 이미 사장님 시스템 안에 있습니다. 다만 돈 버는 데 도움이 되는 방식으로 보이지 않을 뿐입니다.',
+        },
+        {
+          type: 'ul',
+          content: 'POS는 알지만 절대 말해주지 않는 것들:',
+          items: [
+            '시간대별 잘 팔리는/안 팔리는 메뉴 - 점심과 저녁에 무엇을 밀어야 할지 추측을 멈추게 됩니다',
+            '진짜 재방문 고객 비율 - 음식과 서비스가 정말 손님을 다시 부르는지 보여주는 가장 좋은 신호',
+            '온라인 대 매장 식사 비율 - 사장님 사업이 실제로 어디로 이동하는지',
+            '어떤 마케팅이 어떤 주문을 만들었는지 - 아무 효과 없는 광고에 돈 쓰는 걸 멈추게 됩니다',
+            '시간에 따른 평균 객단가 추이 - 나쁜 분기가 되기 전에 서서히 줄어드는 매출을 잡아냅니다',
+            '한산한 시간대 패턴 - 죽은 시간에 인건비를 흘리는 대신 인력 배치와 프로모션을 맞춥니다',
+          ],
+        },
+        {
+          type: 'h2',
+          content: '눈 감고 운영하는 진짜 비용',
+        },
+        {
+          type: 'p',
+          content: '무엇이 주문을 만드는지 못 보면, 모든 마케팅 비용은 동전 던지기입니다. 게시물을 부스팅하고 바랍니다. 구글 광고를 돌리고 기도합니다. 느낌이 좋았던 광고는 남기고 느렸던 광고는 끄는데, 어느 쪽도 증거가 0입니다. 그 사이 길 건너 자기 숫자를 볼 줄 아는 경쟁자는 되는 것에 더 투자하고 안 되는 것을 잘라냅니다. 1년이 쌓이면 그 격차는 작지 않습니다. 복리로 커가는 식당과 그저 버티는 식당의 차이입니다.',
+        },
+        {
+          type: 'h2',
+          content: '토스트와 클로버로 식당 마케팅 ROI를 추적하는 법',
+        },
+        {
+          type: 'p',
+          content: '해법은 새 POS가 아닙니다. 연결입니다. POS와 온라인 주문이 이미 만들어내는 주문을 구글 애널리틱스로 흘려보내고, 완료된 모든 주문에 purchase 이벤트를 발사하고, 구글 광고를 연결해 광고비를 실제 매출과 맞춥니다. 그러면 내 광고가 효과가 있나라는 질문이 더 이상 느낌이 아니라 숫자가 됩니다. 전체 단계는 아래 가이드에 있고, 맞습니다, 저희가 식당들을 위해 매주 설정해 드리는 종류의 일입니다.',
+        },
+        {
+          type: 'tip',
+          content: '온라인 주문을 사장님 소유의 서브도메인(예: order.yourrestaurant.com)에 올리는 것부터 시작하세요. 주문이 사장님이 통제하지 못하는 페이지를 거쳐 흐르면 영원히 추측만 하게 됩니다. 그 한 페이지를 소유하는 것이 데이터를 드디어 보기 위한 가장 강력한 한 수입니다.',
+        },
+        {
+          type: 'h2',
+          content: '진짜 식당 매출 분석 대시보드는 이렇게 생겼습니다',
+        },
+        {
+          type: 'p',
+          content: '수십 개 탭의 내보내기 파일은 잊으세요. 쓸모 있는 클로버 분석 대시보드는 아침 커피와 함께 확인하는 한 화면입니다. 출처별 주문, 재방문 고객 비율, 온라인 대 매장 식사, 평균 객단가, 시간대별 인기 메뉴, 그리고 이번 주를 만든 채널. 스프레드시트 곡예는 없습니다. 이번 주에 무엇을 할지, 어디에 돈 쓰는 걸 멈출지 알려주는 몇 개의 숫자뿐입니다.',
+        },
+        {
+          type: 'tip',
+          content: '실제로 여는 대시보드가 절대 안 읽는 완벽한 리포트보다 낫습니다. 단순하게 만들고, 휴대폰에 올리고, 매주 보세요. 그 습관이 가장 화려한 차트보다 가치 있습니다.',
+        },
+        {
+          type: 'h2',
+          content: '금광은 이미 사장님 것입니다. 열쇠만 건네 드릴게요.',
+        },
+        {
+          type: 'p',
+          content: '어려운 부분은 사장님이 이미 다 하셨습니다. 식당을 열고, 메뉴를 만들고, 단골을 얻고, 모든 걸 수집하는 POS에 이미 비용을 내고 계십니다. 빠진 건 단 하나, 그 묻힌 데이터를 결정으로 바꿔주는 연결뿐입니다. 저희가 메우는 게 바로 그 틈입니다. 새 POS도, 뜯어내고 갈아끼우는 것도 없이, 그저 사장님의 데이터가 드디어 사장님을 위해 일하게 만드는 것입니다.',
+        },
+        {
+          type: 'cta',
+          content: 'ZOE LUMOS는 사장님의 POS, 온라인 주문, 광고를 하나의 간단한 대시보드로 연결해 무엇이 실제로 주문을 만드는지 드디어 볼 수 있게 해드립니다. 부담도, 어려운 용어도 없습니다. 무료 POS 데이터 점검을 신청해 주시면, 사장님 본인의 숫자로 토스트나 클로버가 이미 무엇을 모으고 있는지, 그리고 그걸 어떻게 일하게 만들지 정확히 보여드리겠습니다. (영어 상담도 언제든 환영입니다.)',
+        },
+      ],
+    },
+  },
+  {
+    slug: 'outdated-slow-website-losing-customers-2026',
+    date: '2026-06-27',
+    updatedDate: '2026-06-27',
+    readTime: 9,
+    category: { en: 'Web Design', ko: '웹 디자인' },
+    title: {
+      en: 'My Website Looks Outdated and Too Slow: How a Tired, Sluggish Site Is Quietly Losing You Customers in 2026',
+      ko: '홈페이지가 촌스럽고 느려요: 2026년, 낡고 느린 사이트가 조용히 손님을 빼앗아 가는 이유',
+    },
+    metaDescription: {
+      en: 'If you think my website looks outdated or your website is too slow and losing customers, here is the honest fix. Make your website mobile friendly with a fast website redesign for your small business.',
+      ko: '홈페이지 촌스러움과 홈페이지 느림 모바일 문제 때문에 손님을 놓치고 있나요? 소상공인을 위한 빠르고 모바일 우선의 홈페이지 리뉴얼 솔루션을 정직하게 알려드립니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'Why does it matter that my website looks outdated if the info is still correct?',
+          ko: '정보는 다 맞는데, 홈페이지가 촌스러워 보이는 게 그렇게 중요한가요?',
+        },
+        a: {
+          en: 'Because customers judge your business by your website in seconds. An outdated look quietly says you are out of business, sloppy, or not worth the price. The phone number can be perfect and you still lose the customer before they ever read it.',
+          ko: '손님은 단 몇 초 만에 홈페이지로 당신의 가게를 판단합니다. 촌스러운 디자인은 \'여기 망했나\', \'대충 하나\', \'돈 주기 아깝네\' 같은 인상을 조용히 심어줍니다. 전화번호가 아무리 정확해도, 손님은 그걸 읽기도 전에 떠나버립니다.',
+        },
+      },
+      {
+        q: {
+          en: 'My website is too slow and I think it is losing customers. How slow is too slow?',
+          ko: '홈페이지가 너무 느려서 손님을 놓치는 것 같아요. 어느 정도면 너무 느린 건가요?',
+        },
+        a: {
+          en: 'Studies show a large share of mobile visitors leave if a page takes more than about 3 seconds to load. Most of your traffic is on phones, often on cellular data, so a heavy, slow site bleeds customers and search rankings at the same time. If your home page is not usable in 3 seconds on a phone, it is too slow.',
+          ko: '여러 연구에 따르면 페이지가 약 3초 이상 걸리면 모바일 방문자의 상당수가 그냥 떠납니다. 손님 대부분은 데이터로 핸드폰에서 접속하기 때문에, 무겁고 느린 사이트는 손님과 검색 순위를 동시에 깎아먹습니다. 핸드폰에서 3초 안에 못 쓰면, 그건 너무 느린 겁니다.',
+        },
+      },
+      {
+        q: {
+          en: 'How do I make my website mobile friendly without rebuilding everything?',
+          ko: '전부 다시 만들지 않고도 홈페이지를 모바일 친화적으로 만들 수 있나요?',
+        },
+        a: {
+          en: 'Sometimes. If the foundation is healthy, we can fix tap targets, compress images, and tune speed quickly. But if it was built years ago for desktop first, a clean mobile-first redesign is usually faster and cheaper in the long run than patching a site that fights you. We tell you honestly which path you need after a free check.',
+          ko: '경우에 따라 가능합니다. 기본 구조가 멀쩡하면 버튼 크기, 이미지 압축, 속도 튜닝만으로 빠르게 고칠 수 있습니다. 하지만 몇 년 전 데스크탑 위주로 만든 사이트라면, 억지로 땜질하는 것보다 모바일 우선으로 깔끔하게 새로 만드는 게 결국 더 빠르고 저렴합니다. 무료 점검 후 어느 쪽이 맞는지 솔직하게 알려드립니다.',
+        },
+      },
+      {
+        q: {
+          en: 'How much does a website redesign for a small business cost, and how long does it take?',
+          ko: '소상공인 홈페이지 리뉴얼은 비용이 얼마나 들고, 얼마나 걸리나요?',
+        },
+        a: {
+          en: 'It depends on how many pages you have and whether you need Google Ads, SEO, or analytics wired in. A focused mobile-first redesign for a single-location small business is usually measured in weeks, not months. We scope it up front in plain language so there are no surprises, and we show you before and after proof.',
+          ko: '페이지 수, 그리고 구글 광고나 SEO, 분석 연동이 필요한지에 따라 다릅니다. 단일 매장 소상공인의 모바일 우선 리뉴얼은 보통 몇 달이 아니라 몇 주 단위입니다. 처음부터 쉬운 말로 범위를 정해 깜짝 비용이 없게 하고, 전후 비교 결과물을 직접 보여드립니다.',
+        },
+      },
+      {
+        q: {
+          en: 'I am embarrassed to send people my website link. Is that really a business problem?',
+          ko: '손님한테 홈페이지 링크 보내기가 창피해요. 이게 진짜 사업 문제인가요?',
+        },
+        a: {
+          en: 'Yes, and it is the clearest signal you will ever get. If you hesitate to text a customer your own link, every customer who finds it feels that same hesitation, except they just leave. Your gut already ran the test. The fix is a site you are proud to share.',
+          ko: '네, 그게 가장 확실한 신호입니다. 내 홈페이지 링크를 손님에게 보내기 망설여진다면, 그 링크를 발견한 손님도 똑같이 망설입니다. 다만 손님은 그냥 떠날 뿐이죠. 당신의 직감이 이미 테스트를 끝낸 겁니다. 해답은 \'자랑스럽게 보낼 수 있는 사이트\'입니다.',
+        },
+      },
+    ],
+    howto: {
+      name: {
+        en: 'The 60-second self-test: is your website costing you customers?',
+        ko: '60초 자가진단: 내 홈페이지가 손님을 쫓아내고 있을까?',
+      },
+      description: {
+        en: 'A fast, honest test you can run right now on your own phone to feel what your customers feel.',
+        ko: '지금 바로 내 핸드폰으로 돌려볼 수 있는, 손님의 입장이 되어보는 빠르고 정직한 테스트입니다.',
+      },
+      totalTime: 'PT1M',
+      steps: [
+        {
+          name: { en: 'Open your site on your phone', ko: '핸드폰으로 내 사이트 열기' },
+          text: {
+            en: 'Pull out your phone, turn off WiFi to use cellular like a real customer, and open your own website. No laptop, no cheating.',
+            ko: '핸드폰을 꺼내 와이파이를 끄고 데이터로(진짜 손님처럼) 내 홈페이지를 열어보세요. 노트북도, 봐주기도 없이.',
+          },
+        },
+        {
+          name: { en: 'Time the load', ko: '로딩 시간 재기' },
+          text: {
+            en: 'Count out loud: one-thousand-one, one-thousand-two, one-thousand-three. If your page is not usable by three, you just watched a customer leave.',
+            ko: '소리 내어 세어보세요. 하나, 둘, 셋. 셋을 셀 때까지 못 쓰겠다면, 방금 손님 한 명이 떠나는 걸 본 겁니다.',
+          },
+        },
+        {
+          name: { en: 'Try to tap your phone number', ko: '전화번호 눌러보기' },
+          text: {
+            en: 'With your thumb, tap your phone number to call. If you have to zoom, pinch, or aim carefully, your tap targets are too small and customers give up here.',
+            ko: '엄지손가락으로 전화번호를 눌러 전화를 걸어보세요. 확대하거나 손가락을 조준해야 한다면, 버튼이 너무 작은 겁니다. 손님은 바로 여기서 포기합니다.',
+          },
+        },
+        {
+          name: { en: 'View it next to a competitor', ko: '경쟁업체와 나란히 보기' },
+          text: {
+            en: 'Open a competitor you respect in the next tab. Flip back and forth. Be brutal: whose site would you trust with your money?',
+            ko: '옆 탭에 내가 인정하는 경쟁업체를 열어보세요. 두 탭을 번갈아 보며 냉정하게 판단하세요. 내 돈을 맡긴다면 누구 사이트가 더 믿음직한가요?',
+          },
+        },
+        {
+          name: { en: 'Ask a friend for an honest first impression', ko: '친구에게 솔직한 첫인상 묻기' },
+          text: {
+            en: 'Hand the phone to a friend for five seconds, take it back, and ask: what is this business and do you trust it? Their first reaction is exactly what your customers feel.',
+            ko: '친구에게 핸드폰을 5초만 보여주고 도로 가져온 뒤 물어보세요. \'여기 뭐 하는 가게 같아? 믿음이 가?\' 친구의 첫 반응이 곧 손님의 마음입니다.',
+          },
+        },
+      ],
+    },
+    sections: {
+      en: [
+        {
+          type: 'intro',
+          content: 'You already know. That little flinch you feel when a customer asks for your website, that pause before you text the link, that quiet wish that they would just take the business card instead. That feeling is not in your head. It is data. If you are embarrassed to text a customer your website link, that is the signal, and your customers feel the exact same hesitation, except they do not push through it. They just leave.',
+        },
+        {
+          type: 'h2',
+          content: 'My website looks outdated: why a tired site quietly costs you customers',
+        },
+        {
+          type: 'p',
+          content: 'Nobody calls to tell you your site looks old. Nobody emails to say it loaded too slowly. The loss is invisible, and that is exactly why it is so dangerous. A customer Googles you, lands on a page that looks stuck in 2015, feels a flicker of doubt, and quietly backs out to the competitor below you. You never see it happen. Your phone simply does not ring, and you assume it is a slow week.',
+        },
+        {
+          type: 'p',
+          content: 'Here is the uncomfortable truth: people judge your entire business by your website in a few seconds. A dated design does not just look old. It whispers that maybe you closed, maybe you cut corners, maybe you are not worth the price. You know your food, your service, and your craft are excellent. But the customer who never walks in never finds out.',
+        },
+        {
+          type: 'h2',
+          content: 'Website too slow and losing customers: the 3-second cliff',
+        },
+        {
+          type: 'p',
+          content: 'Looking old is half the problem. The other half is speed. Most of your traffic now comes from phones, often on cellular data while someone is standing on a sidewalk deciding where to eat. Studies show a large share of mobile visitors abandon a page if it takes more than about 3 seconds to load. Three seconds. That is the whole window. A heavy, slow homepage is a door that opens too slowly, and the customer is already gone before it does.',
+        },
+        {
+          type: 'p',
+          content: 'Worse, slow and not-mobile-friendly sites get pushed down in Google rankings too. So a tired site hits you twice: fewer people find you, and the ones who do leave before the page even appears. It is a quiet, compounding leak, and you are paying for it every single day in customers you will never meet.',
+        },
+        {
+          type: 'h2',
+          content: 'The signs your website is quietly costing you customers',
+        },
+        {
+          type: 'p',
+          content: 'You do not need an audit tool to feel these. Read the list honestly. If three or more sound familiar, your site is not neutral. It is actively working against you.',
+        },
+        {
+          type: 'ul',
+          content: 'Watch for these warning signs:',
+          items: [
+            'It looks stuck in 2015: old fonts, tiny clutter, a layout that screams a different decade',
+            'It loads slowly: more than 3 seconds on a phone, and people leave before it appears',
+            'It breaks on phones: text runs off the screen, you have to pinch and zoom to read anything',
+            'Tap targets are tiny: you cannot reliably tap your own phone number or menu with a thumb',
+            'There is no clear call-to-action: a visitor cannot instantly tell how to call, order, or book',
+            'Your competitor looks sharper: their site feels current and trustworthy, and yours feels like the safe-but-sad choice next to it',
+          ],
+        },
+        {
+          type: 'h2',
+          content: 'The embarrassment test you already failed',
+        },
+        {
+          type: 'p',
+          content: 'Forget metrics for a second. Ask yourself one question: would you proudly text your website link to a customer you really want to impress, right now, without explaining or apologizing for it? If you hesitated, you have your answer. That hesitation is your own gut running a conversion test, and it failed. The good news is that the same gut will know instantly when it is fixed, because you will not be able to stop sharing the new one.',
+        },
+        {
+          type: 'tip',
+          content: 'Run the 60-second self-test in this article on your own phone before you spend a dollar anywhere. Feeling the slow load and the tiny tap targets with your own thumb is more convincing than any report. Most owners are quietly shocked by their own homepage when they finally look at it like a customer would.',
+        },
+        {
+          type: 'h2',
+          content: 'Make your website mobile friendly: patch it or rebuild it?',
+        },
+        {
+          type: 'p',
+          content: 'Not every site needs a full teardown. If the foundation is solid, we can often make your website mobile friendly quickly: enlarge tap targets, compress heavy images, add a clear call-to-action, and tune speed so it loads under that 3-second cliff. But if your site was built years ago for desktop first, patching it can cost more than starting clean, because you are fighting old code the whole way. The honest answer depends on what you actually have, and you deserve to hear it straight.',
+        },
+        {
+          type: 'h2',
+          content: 'Website redesign for small business: fast, mobile-first, and proven',
+        },
+        {
+          type: 'p',
+          content: 'This is the part we obsess over. A website redesign for a small business should not take six months or read like a foreign language. We build mobile-first, because that is where your customers actually are, and we treat mobile speed as the whole game, not an afterthought. Big tap targets, a phone number you can hit with your thumb without looking, a call or order button that is impossible to miss, and a page that loads before a customer can change their mind. Then we show you the before and after, side by side, so the difference is undeniable.',
+        },
+        {
+          type: 'tip',
+          content: 'When you compare quotes, ask one question that separates real builders from template-flippers: how fast will my site load on a phone on cellular data? If they cannot answer in plain numbers, keep looking. Speed is not a feature you add later. It is the foundation everything else sits on.',
+        },
+        {
+          type: 'cta',
+          content: 'You have carried that little flinch long enough. Let us turn your website into the link you cannot wait to share. ZOE LUMOS builds fast, mobile-first redesigns for Korean small businesses across NY, NJ, GA, and the rest of the US, with real before-and-after proof. Reach out for a free speed and mobile check, no pressure and no jargon, just an honest look at what your site is costing you and what it could be. // 그 작은 움찔거림, 이제 그만 내려놓으세요. 당신의 홈페이지를 \'얼른 보내고 싶은 링크\'로 바꿔드리겠습니다. ZOE LUMOS는 뉴욕, 뉴저지, 조지아를 비롯한 미국 전역의 한인 소상공인을 위해 빠르고 모바일 우선의 리뉴얼을 만들며, 실제 전후 비교 결과로 증명합니다. 부담 없이, 어려운 말 없이 무료 속도와 모바일 점검부터 받아보세요.',
+        },
+      ],
+      ko: [
+        {
+          type: 'intro',
+          content: '사실 이미 알고 계시죠. 손님이 \'홈페이지 있어요?\'라고 물을 때 살짝 움찔하는 그 느낌, 링크를 보내기 전 잠깐 망설이는 그 순간, \'그냥 명함만 받아 가시지\' 하는 속마음. 그 느낌은 기분 탓이 아닙니다. 데이터입니다. 내 홈페이지 링크를 손님에게 보내기 창피하다면, 그게 바로 신호입니다. 손님도 똑같은 망설임을 느낍니다. 다만 손님은 그 망설임을 이겨내지 않습니다. 그냥 떠납니다.',
+        },
+        {
+          type: 'h2',
+          content: '홈페이지 촌스러움: 낡은 사이트가 조용히 손님을 빼앗는 이유',
+        },
+        {
+          type: 'p',
+          content: '아무도 \'사장님 홈페이지 너무 낡았어요\'라고 전화해주지 않습니다. \'로딩이 너무 느리던데요\'라고 이메일 보내주지도 않습니다. 손실은 눈에 보이지 않고, 그래서 더 위험합니다. 손님이 검색해서 들어왔는데 2015년에 멈춘 듯한 화면을 보고, 잠깐 의심이 스치고, 조용히 뒤로 가서 바로 아래 경쟁업체로 넘어갑니다. 당신은 그 장면을 절대 못 봅니다. 그냥 전화가 안 올 뿐이고, \'이번 주는 좀 한가하네\' 하고 넘어갑니다.',
+        },
+        {
+          type: 'p',
+          content: '불편한 진실은 이겁니다. 사람들은 단 몇 초 만에 홈페이지로 당신의 가게 전체를 판단합니다. 낡은 디자인은 그냥 오래돼 보이는 게 아닙니다. \'여기 망했나\', \'대충 하는 데 아냐\', \'이 돈 주기는 좀\' 하는 속삭임을 심어줍니다. 당신의 음식, 서비스, 실력이 최고라는 건 당신이 압니다. 하지만 문 앞까지 오지 않은 손님은 그걸 영영 알 길이 없습니다.',
+        },
+        {
+          type: 'h2',
+          content: '홈페이지 느림 모바일: 3초의 절벽',
+        },
+        {
+          type: 'p',
+          content: '촌스러움은 문제의 절반일 뿐입니다. 나머지 절반은 속도입니다. 이제 손님 대부분은 핸드폰으로 들어옵니다. 길에 서서 \'어디서 먹지?\' 고민하며 데이터로 접속하는 경우가 많죠. 여러 연구에 따르면 페이지가 약 3초 이상 걸리면 모바일 방문자의 상당수가 그냥 떠납니다. 3초. 그게 주어진 전부입니다. 무겁고 느린 첫 화면은 너무 천천히 열리는 문이고, 그 문이 열리기도 전에 손님은 이미 사라지고 없습니다.',
+        },
+        {
+          type: 'p',
+          content: '더 나쁜 건, 느리고 모바일에 맞지 않는 사이트는 구글 검색 순위에서도 밀린다는 겁니다. 그래서 낡은 사이트는 두 번 때립니다. 찾아오는 사람도 줄고, 어렵게 들어온 사람마저 화면이 뜨기 전에 떠납니다. 조용히, 그리고 점점 커지는 누수입니다. 당신은 매일같이 만나보지도 못한 손님으로 그 비용을 치르고 있습니다.',
+        },
+        {
+          type: 'h2',
+          content: '내 홈페이지가 조용히 손님을 쫓아내고 있다는 신호들',
+        },
+        {
+          type: 'p',
+          content: '진단 도구 없이도 느낄 수 있습니다. 솔직하게 목록을 읽어보세요. 세 개 이상 익숙하다면, 당신의 사이트는 중립이 아닙니다. 적극적으로 당신을 방해하고 있는 겁니다.',
+        },
+        {
+          type: 'ul',
+          content: '이런 경고 신호를 확인하세요:',
+          items: [
+            '2015년에 멈춰 보인다: 옛날 폰트, 빽빽한 잡동사니, 다른 시대를 외치는 레이아웃',
+            '느리게 뜬다: 핸드폰에서 3초 이상 걸리고, 손님은 화면이 보이기도 전에 떠난다',
+            '핸드폰에서 깨진다: 글자가 화면 밖으로 넘치고, 확대해야 겨우 읽힌다',
+            '버튼이 너무 작다: 엄지로 내 전화번호나 메뉴를 제대로 누르기가 어렵다',
+            '명확한 행동 유도가 없다: 어떻게 전화하고 주문하고 예약하는지 한눈에 안 보인다',
+            '경쟁업체가 더 세련됐다: 그 집은 최신이고 믿음직한데, 내 사이트는 그 옆에서 \'안전하지만 초라한\' 선택지처럼 보인다',
+          ],
+        },
+        {
+          type: 'h2',
+          content: '이미 떨어진 \'창피함 테스트\'',
+        },
+        {
+          type: 'p',
+          content: '지표는 잠깐 잊으세요. 한 가지만 자문해보세요. 지금 당장, 꼭 좋은 인상을 주고 싶은 손님에게 내 홈페이지 링크를 변명이나 사과 없이 자랑스럽게 보낼 수 있나요? 망설였다면, 답은 이미 나왔습니다. 그 망설임은 당신의 직감이 직접 돌린 \'전환 테스트\'이고, 결과는 불합격입니다. 다행인 건, 제대로 고쳐지면 그 똑같은 직감이 바로 압니다. 새 링크는 자꾸만 보내고 싶어서 못 참게 되거든요.',
+        },
+        {
+          type: 'tip',
+          content: '어디에 돈을 쓰기 전에, 이 글에 있는 60초 자가진단을 꼭 내 핸드폰으로 직접 해보세요. 느린 로딩과 작은 버튼을 내 엄지로 직접 겪어보는 게 어떤 보고서보다 설득력 있습니다. 손님의 눈으로 처음 내 홈페이지를 보면, 대부분의 사장님이 속으로 깜짝 놀랍니다.',
+        },
+        {
+          type: 'h2',
+          content: '홈페이지를 모바일 친화적으로: 땜질이냐, 새로 짓느냐',
+        },
+        {
+          type: 'p',
+          content: '모든 사이트를 다 부숴야 하는 건 아닙니다. 기본 구조가 튼튼하면, 버튼 키우기, 무거운 이미지 압축, 명확한 행동 유도 추가, 3초 절벽 안으로 들어오게 속도 튜닝까지 빠르게 모바일 친화적으로 만들 수 있습니다. 하지만 몇 년 전 데스크탑 위주로 만든 사이트라면, 땜질이 새로 짓는 것보다 더 비쌀 수 있습니다. 내내 낡은 코드와 싸워야 하니까요. 정직한 답은 지금 당신이 가진 게 무엇이냐에 달려 있고, 당신은 그 답을 솔직하게 들을 자격이 있습니다.',
+        },
+        {
+          type: 'h2',
+          content: '소상공인 홈페이지 리뉴얼: 빠르게, 모바일 우선으로, 증명과 함께',
+        },
+        {
+          type: 'p',
+          content: '바로 이 부분을 저희가 집요하게 파고듭니다. 소상공인 홈페이지 리뉴얼이 6개월씩 걸리거나 외계어처럼 어려워서는 안 됩니다. 저희는 모바일 우선으로 만듭니다. 손님이 실제로 있는 곳이 거기니까요. 그리고 모바일 속도를 부가 기능이 아니라 전부로 다룹니다. 큰 버튼, 안 보고도 엄지로 누르는 전화번호, 절대 못 지나치는 전화 또는 주문 버튼, 그리고 손님이 마음 바꾸기 전에 떠버리는 페이지. 그런 다음 전후를 나란히 보여드립니다. 차이가 부정할 수 없게요.',
+        },
+        {
+          type: 'tip',
+          content: '견적을 비교할 때, 진짜 개발자와 템플릿만 갈아끼우는 사람을 가르는 질문 하나를 던지세요. \'내 사이트가 데이터 켠 핸드폰에서 몇 초 만에 뜨나요?\' 숫자로 명확히 답하지 못하면, 계속 찾아보세요. 속도는 나중에 붙이는 기능이 아닙니다. 나머지 전부가 그 위에 올라타는 토대입니다.',
+        },
+        {
+          type: 'cta',
+          content: '그 작은 움찔거림, 이제 충분히 오래 짊어지셨습니다. 당신의 홈페이지를 \'얼른 보내고 싶어 못 참는 링크\'로 바꿔드리겠습니다. ZOE LUMOS는 뉴욕, 뉴저지, 조지아를 비롯한 미국 전역의 한인 소상공인을 위해 빠르고 모바일 우선의 리뉴얼을 만들고, 실제 전후 비교로 증명합니다. 부담 없이, 어려운 말 없이 무료 속도와 모바일 점검부터 받아보세요. 당신의 사이트가 지금 얼마를 까먹고 있는지, 그리고 어디까지 좋아질 수 있는지 정직하게 보여드리겠습니다. // ZOE LUMOS builds fast, mobile-first redesigns with real before-and-after proof. Reach out for a free speed and mobile check, no pressure and no jargon.',
+        },
+      ],
+    },
+  },
+  {
+    slug: 'ai-tools-korean-small-business-catch-up-2026',
+    date: '2026-06-27',
+    updatedDate: '2026-06-27',
+    readTime: 9,
+    category: { en: 'AI', ko: 'AI 활용' },
+    title: {
+      en: 'AI Tools for Small Business in 2026: A Calm, Tool-by-Tool Guide for Owners Who Feel Behind',
+      ko: '2026 스몰비즈니스 AI 활용: 뒤처진 것 같은 사장님을 위한 차분한 도구별 가이드',
+    },
+    metaDescription: {
+      en: 'Worried you are falling behind on AI? Here are the AI tools for small business 2026 that actually save you hours each week. A calm answer to how can a small business use AI, with real time saved per task.',
+      ko: '나만 AI에 뒤처지는 것 같아 불안하신가요? 매주 실제로 시간을 아껴 주는 2026 스몰비즈니스 AI 활용 도구를 사장님 눈높이로 정리했습니다. 작업별로 아끼는 시간까지 솔직하게 알려드립니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'Am I really falling behind on AI if I have not started yet?',
+          ko: '아직 AI를 안 쓰고 있으면 정말 뒤처진 건가요?',
+        },
+        a: {
+          en: 'No. Studies show a majority of small businesses now use at least one AI tool, but most use it for just one small task like drafting replies. You are not behind because you skipped a wave of complicated software. You can catch up in a single afternoon by setting up one tool well. The owners who feel calmest are not the ones using ten AI tools, they are the ones using one or two that quietly save them hours every week.',
+          ko: '아니요. 여러 조사를 보면 이미 다수의 스몰비즈니스가 AI 도구를 하나 이상 쓰고 있지만, 대부분은 답장 초안 작성 같은 작은 일 하나에만 씁니다. 복잡한 프로그램을 안 배웠다고 뒤처진 게 아닙니다. 도구 하나만 제대로 세팅하면 하루 오후면 충분히 따라잡습니다. 가장 마음 편한 사장님은 AI 도구 열 개를 쓰는 분이 아니라, 한두 개로 매주 조용히 시간을 아끼는 분입니다.',
+        },
+      },
+      {
+        q: {
+          en: 'How can a small business use AI without risking customer data or privacy?',
+          ko: '고객 정보나 개인정보 걱정 없이 스몰비즈니스가 AI를 어떻게 쓸 수 있나요?',
+        },
+        a: {
+          en: 'Use AI for drafting and templates, not for storing sensitive records. Keep customer names, card numbers, and personal details out of the prompt. Choose tools with clear privacy settings and turn off training on your data when the option exists. We set tools up this way for clients by default, so the AI helps write the reply without ever holding the private information.',
+          ko: '민감한 기록을 저장하는 용도가 아니라 초안과 템플릿을 만드는 용도로 쓰면 됩니다. 고객 이름, 카드 번호, 개인 정보는 프롬프트에 넣지 마세요. 개인정보 설정이 명확한 도구를 고르고, 내 데이터로 학습하지 않도록 끄는 옵션이 있으면 꺼 두세요. 저희는 클라이언트 도구를 기본적으로 이렇게 세팅합니다. AI가 답장은 도와주되 개인 정보는 절대 들고 있지 않게요.',
+        },
+      },
+      {
+        q: {
+          en: 'What if the AI makes mistakes or sounds robotic in my replies?',
+          ko: 'AI가 실수하거나 답장이 기계처럼 딱딱하면 어떡하죠?',
+        },
+        a: {
+          en: 'You stay the final editor. AI writes the first draft in seconds and you spend twenty seconds adjusting the tone before it goes out. That is still far faster than writing from scratch. For Korean and English, we tune the tool with your real phrases so the drafts sound like you and your shop, not like a generic robot.',
+          ko: '최종 검토는 항상 사장님이 합니다. AI가 몇 초 만에 초안을 써 주면, 사장님은 보내기 전에 이십 초 정도 말투만 다듬으면 됩니다. 그래도 처음부터 직접 쓰는 것보다 훨씬 빠릅니다. 한국어와 영어 모두, 사장님이 실제로 쓰는 표현으로 도구를 맞춰 두면 초안이 일반적인 기계 말투가 아니라 우리 가게다운 말투로 나옵니다.',
+        },
+      },
+      {
+        q: {
+          en: 'Which AI tools for small business 2026 should I set up first?',
+          ko: '2026 스몰비즈니스 AI 활용, 어떤 도구부터 세팅해야 하나요?',
+        },
+        a: {
+          en: 'Start with the task that drains the most time. For most shops that is replying to messages and reviews. Set up an AI reply helper first, live with it for two weeks, then add a second tool like content drafts or scheduling. One tool at a time keeps the learning curve gentle and lets you actually feel the hours come back.',
+          ko: '가장 시간을 많이 잡아먹는 일부터 시작하세요. 대부분 가게는 메시지와 리뷰 답장이 그렇습니다. AI 답장 도우미부터 세팅하고 이 주 정도 직접 써 본 다음, 콘텐츠 초안이나 예약 같은 두 번째 도구를 더하세요. 한 번에 하나씩 가면 배우는 부담이 적고, 돌아오는 시간을 실제로 느낄 수 있습니다.',
+        },
+      },
+      {
+        q: {
+          en: 'Do I have to become a tech expert to keep these AI tools running?',
+          ko: '이 AI 도구들을 계속 쓰려면 제가 기술 전문가가 되어야 하나요?',
+        },
+        a: {
+          en: 'No. The goal is for you to keep running your business, not babysit software. We set up the right one or two tools for your shop, connect them to what you already use, and leave you simple steps in Korean and English. If something needs adjusting later, you reach out and we handle it. You stay the owner, not the IT department.',
+          ko: '아니요. 목표는 사장님이 소프트웨어를 돌보는 게 아니라 계속 장사에 집중하는 겁니다. 저희가 가게에 맞는 한두 개 도구를 세팅하고, 이미 쓰시는 것들과 연결한 뒤, 한국어와 영어로 간단한 사용법을 남겨드립니다. 나중에 조정이 필요하면 연락만 주세요. 사장님은 IT 담당이 아니라 사장님으로 계시면 됩니다.',
+        },
+      },
+    ],
+    howto: {
+      name: {
+        en: 'How to start with one AI tool this week',
+        ko: '이번 주에 AI 도구 하나로 시작하는 법',
+      },
+      description: {
+        en: 'A gentle five-step starter so you can catch up on AI without overwhelm, one tool at a time.',
+        ko: '부담 없이 한 번에 하나씩, AI를 따라잡는 다섯 단계 시작 가이드입니다.',
+      },
+      totalTime: 'PT1H',
+      steps: [
+        {
+          name: { en: 'Pick your most draining task', ko: '가장 지치는 일 하나 고르기' },
+          text: {
+            en: 'Notice which repeating task you dread most this week, usually replying to messages or reviews. That is your first target.',
+            ko: '이번 주에 가장 하기 싫은 반복 작업이 무엇인지 살펴보세요. 보통 메시지나 리뷰 답장입니다. 그게 첫 번째 목표입니다.',
+          },
+        },
+        {
+          name: { en: 'Choose one tool, not five', ko: '다섯 개 말고 도구 하나만 정하기' },
+          text: {
+            en: 'Match one AI tool to that single task. Ignore everything else for now so the learning curve stays small.',
+            ko: '그 한 가지 작업에 맞는 AI 도구 하나만 정하세요. 나머지는 일단 무시해야 배우는 부담이 작아집니다.',
+          },
+        },
+        {
+          name: { en: 'Set privacy first', ko: '개인정보 설정 먼저' },
+          text: {
+            en: 'Turn off training on your data if the option exists, and keep customer names and card numbers out of every prompt.',
+            ko: '내 데이터로 학습하지 않는 옵션이 있으면 끄고, 고객 이름과 카드 번호는 어떤 프롬프트에도 넣지 마세요.',
+          },
+        },
+        {
+          name: { en: 'Use it for one real week', ko: '진짜로 일주일 써 보기' },
+          text: {
+            en: 'Let the AI write first drafts and you edit before sending. Feel the hours come back before adding anything new.',
+            ko: 'AI에게 초안을 맡기고 사장님은 보내기 전에 다듬으세요. 새 도구를 더하기 전에 돌아오는 시간을 먼저 느껴 보세요.',
+          },
+        },
+        {
+          name: { en: 'Add a second tool, or ask for help', ko: '두 번째 도구를 더하거나 도움 청하기' },
+          text: {
+            en: 'Once the first tool feels natural, add one more or reach out to us to set up the right ones for your shop.',
+            ko: '첫 도구가 익숙해지면 하나만 더하거나, 저희에게 연락해 가게에 맞는 도구를 세팅받으세요.',
+          },
+        },
+      ],
+    },
+    sections: {
+      en: [
+        {
+          type: 'intro',
+          content: 'You keep seeing it. A competitor down the street answers reviews instantly, posts polished photos every day, and somehow never seems short on time. And there is that quiet thought at the back of your mind: am I falling behind on AI? If you have felt that, you are not lazy and you are not too late. You are a busy owner who never got a calm, plain explanation of where to actually start. This guide is that explanation. No hype, no pressure, just a tool-by-tool look at how a small business can use AI to get real hours back each week, and how to do it safely in both Korean and English.',
+        },
+        {
+          type: 'h2',
+          content: 'Why the fear of falling behind on AI is bigger than the real gap',
+        },
+        {
+          type: 'p',
+          content: 'Here is the truth that should lower your heart rate: most of the AI advantage you imagine your competitors have is just one or two simple tools doing repetitive work. Studies show a majority of small businesses now use at least one AI tool, but very few use it for anything fancy. They are not running secret robots. They set up an AI helper for replies or social posts, and that is mostly it. The gap is not years of expertise. It is usually a single afternoon of setup that you have not had time for yet. Falling behind on AI is real for businesses that ignore it for years, but for you it is a Tuesday afternoon of catching up, not a lost decade.',
+        },
+        {
+          type: 'h2',
+          content: 'How can a small business use AI without the overwhelm',
+        },
+        {
+          type: 'p',
+          content: 'The mistake that burns people out is trying to adopt ten tools at once. The calm approach is the opposite: pick the single task that drains you most, point one AI tool at it, and live with that for two weeks before touching anything else. AI for small business works best as a quiet assistant doing first drafts while you stay the final editor. You are not handing over your business. You are handing over the blank-page part, the part that eats your evenings, and keeping the judgment for yourself.',
+        },
+        {
+          type: 'h2',
+          content: '3-5 AI tools that save a small business owner real hours each week',
+        },
+        {
+          type: 'p',
+          content: 'Here are the tools that give back the most time, with an honest estimate of what each one saves a typical shop. Your numbers will vary, but the direction is consistent: these are the repetitive jobs AI handles well, leaving you the human parts.',
+        },
+        {
+          type: 'ul',
+          content: 'Start with the one that matches your biggest time drain:',
+          items: [
+            'AI bilingual customer-service replies: drafts polite answers to common questions in Korean and English in seconds, so you edit instead of write. Saves roughly 3 to 5 hours a week for a shop with steady messages.',
+            'AI Google and Naver review responses: writes a warm, on-brand reply to each review that you approve in a glance. Saves about 1 to 2 hours a week and keeps your rating page looking cared for.',
+            'AI content and social drafts: turns a few words into captions, posts, and promo text in both languages. Saves around 2 to 4 hours a week versus staring at a blank screen.',
+            'AI receipts and bookkeeping help: reads receipts, sorts expenses, and drafts simple summaries so your records are not a shoebox at tax time. Saves roughly 2 to 3 hours a week of sorting and data entry.',
+            'AI scheduling: handles booking requests, reminders, and reschedules so fewer messages land on you after hours. Saves about 1 to 3 hours a week and cuts no-shows.',
+          ],
+        },
+        {
+          type: 'p',
+          content: 'Add those up and a typical owner is looking at five to ten hours back every single week. That is not a productivity slogan. That is an evening with your family, or the breathing room to actually plan instead of just react.',
+        },
+        {
+          type: 'tip',
+          content: 'Do not chase all five. Set up just the top one this week. The hours you feel coming back from a single tool will give you the calm and the proof you need to add the next one. One tool done well beats five tools half-configured.',
+        },
+        {
+          type: 'h2',
+          content: 'The real barriers, named and defused',
+        },
+        {
+          type: 'p',
+          content: 'You are right to be cautious, and the three worries that hold owners back are all manageable. Accuracy: AI writes the first draft, you stay the final editor, so a mistake never reaches a customer without you seeing it. Data security: use AI for drafting, not for storing sensitive records, keep customer names and card numbers out of the prompt, and turn off training on your data when the setting exists. Learning curve: you only ever learn one tool at a time, and the good ones now work in plain language, no code and no jargon. None of these is a reason to stay on the sidelines. Each one just has a simple guardrail.',
+        },
+        {
+          type: 'h2',
+          content: 'Why bilingual setup matters more for your shop',
+        },
+        {
+          type: 'p',
+          content: 'Most AI advice online assumes you serve one language. You do not. A reply that sounds natural in English but stiff in Korean, or the reverse, costs you the warmth your regulars expect. This is exactly where a generic setup falls short and a tuned one shines. When the tool is trained with your real phrases in both languages, the drafts sound like you greeting a neighbor, not like a translation. That bilingual polish is hard to get from a one-size-fits-all app, and it is one of the biggest reasons our clients feel the AI is theirs rather than borrowed.',
+        },
+        {
+          type: 'tip',
+          content: 'Save five of your own best replies, in Korean and English, before you start. Feeding the tool your real voice is the fastest way to make every future draft sound like your shop instead of a robot.',
+        },
+        {
+          type: 'h2',
+          content: 'You do not have to become a tech person to keep up',
+        },
+        {
+          type: 'p',
+          content: 'The quiet fear under all of this is that keeping up with AI means becoming an IT department on top of running your business. It does not. The owners who stay calm are the ones who set up one or two tools well, connect them to what they already use, and then get back to their actual work. The point of AI for a small business is to give you more time as the owner, not to turn you into a software manager. If the setup ever feels like a second job, the setup was wrong, not you.',
+        },
+        {
+          type: 'cta',
+          content: 'If reading this lifted a little of the worry, let us take it the rest of the way. At ZOE LUMOS we set up the right one or two AI tools for YOUR shop, bilingual and privacy-aware, connected to what you already use, so you never have to become a tech expert. No pressure and no big commitment. Reach out for a free AI starter chat, in Korean or English, and we will help you pick the single tool that gives you the most hours back first. You are not behind. You are one calm step away from caught up.',
+        },
+      ],
+      ko: [
+        {
+          type: 'intro',
+          content: '계속 눈에 들어옵니다. 길 건너 경쟁 가게는 리뷰에 바로바로 답하고, 매일 예쁜 사진을 올리고, 이상하게 시간도 늘 여유로워 보이죠. 그리고 마음 한구석에 조용한 생각이 떠오릅니다. 나만 AI에 뒤처지는 거 아닐까? 그런 마음이 드셨다면, 사장님이 게으른 것도 너무 늦은 것도 아닙니다. 그저 어디서부터 시작하면 되는지 차분하고 쉬운 설명을 들어 본 적이 없는, 바쁜 사장님일 뿐입니다. 이 글이 바로 그 설명입니다. 과장도 압박도 없이, 스몰비즈니스가 AI를 어떻게 써서 매주 실제 시간을 되찾는지, 그리고 한국어와 영어 모두 안전하게 쓰는 법을 도구 하나하나 살펴보겠습니다.',
+        },
+        {
+          type: 'h2',
+          content: 'AI 뒤처지지 않기, 두려움이 실제 격차보다 훨씬 큽니다',
+        },
+        {
+          type: 'p',
+          content: '심장 박동을 좀 가라앉혀 줄 진실 하나. 사장님이 상상하는 경쟁자의 AI 우위 대부분은 사실 도구 한두 개가 반복 작업을 대신해 주는 것뿐입니다. 여러 조사를 보면 이미 다수의 스몰비즈니스가 AI 도구를 하나 이상 쓰지만, 대단한 일에 쓰는 곳은 거의 없습니다. 비밀 로봇을 돌리는 게 아니에요. 답장이나 SNS 글에 AI 도우미 하나 세팅해 둔 정도가 전부입니다. 격차는 수년의 전문성이 아닙니다. 보통은 아직 시간이 없어서 못 한 하루 오후의 세팅일 뿐입니다. 몇 년씩 외면한 가게에게는 뒤처짐이 진짜 문제지만, 사장님에게는 잃어버린 십 년이 아니라 따라잡는 화요일 오후 하나면 됩니다.',
+        },
+        {
+          type: 'h2',
+          content: '스몰비즈니스 AI 활용, 부담 없이 시작하는 법',
+        },
+        {
+          type: 'p',
+          content: '사람을 지치게 만드는 실수는 도구 열 개를 한꺼번에 들이려는 겁니다. 차분한 방법은 정반대입니다. 가장 지치게 하는 일 딱 하나를 고르고, AI 도구 하나만 거기에 붙인 다음, 다른 건 건드리지 말고 이 주 동안 그것만 써 보세요. 스몰비즈니스 AI는 초안을 대신 써 주는 조용한 비서로 쓸 때 가장 잘 작동합니다. 최종 검토는 사장님 몫이고요. 가게를 넘기는 게 아닙니다. 저녁 시간을 잡아먹는 빈 화면 채우기만 넘기고, 판단은 사장님이 쥐고 있는 겁니다.',
+        },
+        {
+          type: 'h2',
+          content: '사장님 AI 도구, 매주 실제 시간을 아껴 주는 3~5가지',
+        },
+        {
+          type: 'p',
+          content: '가장 많은 시간을 돌려주는 도구들을 솔직한 절감 시간 추정과 함께 정리했습니다. 가게마다 숫자는 다르겠지만 방향은 같습니다. AI가 잘 처리하는 반복 작업은 넘기고, 사람만 할 수 있는 부분은 사장님이 챙기는 거죠.',
+        },
+        {
+          type: 'ul',
+          content: '가장 시간을 많이 잡아먹는 일과 맞는 것부터 시작하세요:',
+          items: [
+            'AI 이중언어 고객 응대 답장: 자주 묻는 질문에 한국어와 영어로 정중한 답을 몇 초 만에 초안으로 써 줘서, 사장님은 쓰는 대신 다듬기만 하면 됩니다. 메시지가 꾸준한 가게라면 주당 약 3~5시간 절약.',
+            'AI 구글 및 네이버 리뷰 답글: 리뷰마다 따뜻하고 가게다운 답글을 써 줘서 한눈에 확인하고 승인만 하면 됩니다. 주당 약 1~2시간 절약하고, 평점 페이지도 늘 관리받는 느낌으로 유지.',
+            'AI 콘텐츠 및 SNS 초안: 몇 마디 단어를 두 언어로 된 캡션, 게시글, 홍보 문구로 바꿔 줍니다. 빈 화면을 노려보는 것보다 주당 약 2~4시간 절약.',
+            'AI 영수증 및 장부 도움: 영수증을 읽어 지출을 분류하고 간단한 요약 초안까지 만들어 줘서, 세금 낼 때 영수증이 신발 상자에 뒤섞여 있지 않게 합니다. 분류와 입력에서 주당 약 2~3시간 절약.',
+            'AI 예약 관리: 예약 요청, 알림, 일정 변경을 처리해 영업 시간 외에 사장님에게 오는 메시지를 줄여 줍니다. 주당 약 1~3시간 절약하고 노쇼도 감소.',
+          ],
+        },
+        {
+          type: 'p',
+          content: '이걸 다 더하면 보통 사장님은 매주 다섯에서 열 시간을 되찾습니다. 생산성 구호가 아닙니다. 가족과 보내는 저녁 하나이고, 그저 반응만 하는 게 아니라 실제로 계획을 세울 수 있는 숨 쉴 틈입니다.',
+        },
+        {
+          type: 'tip',
+          content: '다섯 개를 다 쫓지 마세요. 이번 주는 가장 위에 있는 하나만 세팅하세요. 도구 하나에서 돌아오는 시간을 직접 느끼면, 다음 것을 더할 차분함과 확신이 생깁니다. 잘 세팅한 도구 하나가 어설프게 설정한 다섯 개를 이깁니다.',
+        },
+        {
+          type: 'h2',
+          content: '진짜 걸림돌들, 이름을 붙이고 풀어 드립니다',
+        },
+        {
+          type: 'p',
+          content: '조심스러운 게 맞습니다. 그리고 사장님을 망설이게 하는 세 가지 걱정은 모두 다룰 수 있습니다. 정확도: AI가 초안을 쓰고 최종 검토는 사장님이 하니, 사장님이 못 본 실수가 고객에게 가는 일은 없습니다. 데이터 보안: 저장이 아니라 초안 작성에 AI를 쓰고, 고객 이름과 카드 번호는 프롬프트에 넣지 말고, 내 데이터로 학습하지 않는 설정이 있으면 꺼 두세요. 학습 곡선: 한 번에 도구 하나만 배우면 되고, 좋은 도구는 이제 코드도 전문 용어도 없이 일상 언어로 작동합니다. 어느 것도 가만히 지켜만 볼 이유가 아닙니다. 각각 간단한 안전장치 하나면 됩니다.',
+        },
+        {
+          type: 'h2',
+          content: '우리 가게에 이중언어 세팅이 더 중요한 이유',
+        },
+        {
+          type: 'p',
+          content: '온라인의 AI 조언 대부분은 한 가지 언어만 쓴다고 가정합니다. 사장님은 아니죠. 영어로는 자연스러운데 한국어로는 딱딱한 답장, 혹은 그 반대는 단골이 기대하는 따뜻함을 깎아먹습니다. 바로 여기서 일반적인 세팅은 부족하고 맞춤 세팅이 빛납니다. 도구를 사장님이 실제로 쓰는 두 언어 표현으로 학습시키면, 초안이 번역기가 아니라 이웃에게 인사하는 사장님 말투로 나옵니다. 이런 이중언어 마무리는 천편일률 앱에서는 얻기 어렵고, 저희 클라이언트들이 이 AI가 빌린 게 아니라 내 것이라고 느끼는 가장 큰 이유 중 하나입니다.',
+        },
+        {
+          type: 'tip',
+          content: '시작하기 전에 사장님의 가장 잘 쓴 답장 다섯 개를 한국어와 영어로 저장해 두세요. 도구에 사장님의 진짜 말투를 먹이는 것이, 앞으로의 모든 초안을 기계가 아니라 우리 가게답게 만드는 가장 빠른 길입니다.',
+        },
+        {
+          type: 'h2',
+          content: '따라잡으려고 기술 전문가가 될 필요는 없습니다',
+        },
+        {
+          type: 'p',
+          content: '이 모든 것 밑에 깔린 조용한 두려움은, AI를 따라잡으려면 장사하면서 IT 담당까지 겸해야 한다는 생각입니다. 그렇지 않습니다. 차분함을 유지하는 사장님은 한두 개 도구를 잘 세팅하고, 이미 쓰는 것들과 연결한 뒤, 다시 본업으로 돌아가는 분들입니다. 스몰비즈니스에게 AI의 핵심은 사장님을 소프트웨어 관리자로 만드는 게 아니라, 사장님으로서의 시간을 더 돌려주는 것입니다. 세팅이 두 번째 직업처럼 느껴진다면, 잘못된 건 사장님이 아니라 그 세팅입니다.',
+        },
+        {
+          type: 'cta',
+          content: '이 글을 읽고 걱정이 조금이라도 가벼워졌다면, 나머지는 저희가 함께 가겠습니다. ZOE LUMOS는 가게에 맞는 한두 개의 AI 도구를, 이중언어로 그리고 개인정보를 챙기며, 이미 쓰시는 것들과 연결해 세팅해 드립니다. 사장님이 기술 전문가가 될 필요는 전혀 없습니다. 압박도 큰 약속도 없습니다. 한국어든 영어든 편하게 무료 AI 시작 상담을 신청하세요. 가장 많은 시간을 돌려줄 도구 하나부터 함께 골라 드리겠습니다. 사장님은 뒤처지지 않았습니다. 따라잡기까지 차분한 한 걸음이면 됩니다.',
+        },
+      ],
+    },
+  },
+  // ─────────────────────────────────────────────────────────────────
   // 2026-06-25 — KakaoTalk account without a Korean phone number
   // Targets the site's #1 impression query: "전화번호 없이 카카오톡 계정 만들기 2026"
   // ─────────────────────────────────────────────────────────────────

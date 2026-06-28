@@ -27,6 +27,7 @@ export const PILLARS = {
       'case-study-korean-nail-salon-seo-10x',
       'tj-flowers-shopify-revamp-case-study',
       'case-study-salt-and-polish-fort-lee-spa-rebuild-2026',
+      'website-no-traffic-not-showing-google-2026',
     ],
   },
   'restaurant-marketing': {
@@ -48,6 +49,7 @@ export const PILLARS = {
       'doordash-vs-ubereats-vs-own-app-korean-restaurant',
       'korean-restaurant-marketing-annandale-va',
       'case-study-korean-restaurant-palisades-park-bookings-3x-2026',
+      'toast-clover-pos-analytics-goldmine-2026',
     ],
   },
   'beauty-wellness': {
@@ -124,6 +126,21 @@ export const PILLARS = {
       'ai-google-review-response-korean-business-2026',
       'google-ai-overviews-korean-business-citation-2026',
       'ai-search-korean-business-owner-survival-guide-2026',
+      'ai-tools-korean-small-business-catch-up-2026',
+    ],
+  },
+  'switching-vendor': {
+    label: { en: 'Switching Your Web Agency — Red Flags & Owner Rights', ko: '웹업체 갈아타기 — 위험신호 & 사장님 권리' },
+    pillarUrl: '/switching-web-agency-guide',
+    pillarSlug: 'do-you-own-your-website-domain-hostage-2026', // strongest trust/ownership post
+    posts: [
+      'do-you-own-your-website-domain-hostage-2026',
+      'web-designer-ghosted-take-back-website-2026',
+      'website-maintenance-fee-what-it-covers-2026',
+      'google-ads-agency-wasting-budget-signs-2026',
+      'small-business-marketing-dashboard-flying-blind-2026',
+      'outdated-slow-website-losing-customers-2026',
+      'korean-business-web-vendor-red-flags-2026',
     ],
   },
 } as const
@@ -236,4 +253,16 @@ export const POST_TO_PILLAR: Record<string, PillarKey> = {
   'korean-web-design-california-2026': 'bilingual-seo',
   'korean-web-design-new-york-2026': 'bilingual-seo',
   'korean-web-design-new-jersey-2026': 'bilingual-seo',
+
+  // 2026-06-27 — "why owners fire their web agency" pain batch (10 posts)
+  'do-you-own-your-website-domain-hostage-2026': 'switching-vendor',
+  'web-designer-ghosted-take-back-website-2026': 'switching-vendor',
+  'website-maintenance-fee-what-it-covers-2026': 'switching-vendor',
+  'google-ads-agency-wasting-budget-signs-2026': 'switching-vendor',
+  'small-business-marketing-dashboard-flying-blind-2026': 'switching-vendor',
+  'outdated-slow-website-losing-customers-2026': 'switching-vendor',
+  'korean-business-web-vendor-red-flags-2026': 'switching-vendor',
+  'website-no-traffic-not-showing-google-2026': 'bilingual-seo',
+  'toast-clover-pos-analytics-goldmine-2026': 'restaurant-marketing',
+  'ai-tools-korean-small-business-catch-up-2026': 'ai-services',
 }
