@@ -96,6 +96,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   standardPages.forEach((page) => {
     sitemapEntries.push({
       url: `${baseUrl}${page}`,
+      lastModified: new Date(),
       alternates: {
         languages: {
           'x-default': `${baseUrl}${page}`,
@@ -110,6 +111,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   standardPages.forEach((page) => {
     sitemapEntries.push({
       url: `${baseUrl}/ko${page}`,
+      lastModified: new Date(),
       alternates: {
         languages: {
           'x-default': `${baseUrl}${page}`,

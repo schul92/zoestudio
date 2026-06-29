@@ -244,11 +244,7 @@ export default function Home({ params }: { params: { locale: string } }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(crumbs) }}
       />
-      {/* FAQPage schema — only on homepage where FAQ content context exists */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData.faqPage) }}
-      />
+      {/* FAQPage schema omitted — Google requires visible FAQ content on the page */}
       {/* Selected Work ItemList */}
       <script
         type="application/ld+json"

@@ -4,13 +4,13 @@ import { SITE_URL } from '@/lib/siteUrl'
 export function generatePricingMetadata(locale: 'en' | 'ko'): Metadata {
   const metadata = {
     en: {
-      title: 'Pricing - Web Design & Development Plans | ZOE LUMOS',
-      description: 'Transparent one-time pricing for Korean-American businesses. Starter $1k · Plus $2–3k · Pro $3–6k (Shopify/e-commerce). Bilingual EN/KO. Fort Lee NJ · serving nationwide.',
+      title: 'Web Design Pricing for Korean-American Businesses | ZOE LUMOS',
+      description: 'Transparent web design pricing for Korean-American businesses. Starter $1,000 · Plus $2,000–$3,000 · Pro $3,000–$6,000. Shopify, bilingual SEO included. Custom plan in 24h. Fort Lee NJ.',
       keywords: 'web design pricing, website development cost, ecommerce pricing, shopify website cost, web design packages, small business website pricing, monthly website maintenance, Fort Lee web design, NYC web development, affordable website plans',
     },
     ko: {
-      title: '가격 - 웹 디자인 및 개발 플랜 | ZOE LUMOS',
-      description: '한인 비즈니스를 위한 투명한 일회성 가격. Starter $1k · Plus $2–3k · Pro $3–6k (Shopify/이커머스). 한·영 동시 제작. 포트리 NJ · 전국 서비스.',
+      title: '한인 웹사이트 제작 가격 | ZOE LUMOS',
+      description: '한인 비즈니스 웹사이트 제작 가격. 스타터 $1,000 · 플러스 $2,000–$3,000 · 프로 $3,000–$6,000. Shopify, 이중언어 SEO 포함. 24시간 내 맞춤 플랜. 포트리 NJ.',
       keywords: '웹디자인 가격, 홈페이지 제작 비용, 이커머스 가격, 쇼피파이 웹사이트 비용, 웹디자인 패키지, 중소기업 홈페이지 가격, 월간 웹사이트 관리, 포트리 웹디자인, NYC 웹개발, 저렴한 웹사이트 플랜',
     }
   }

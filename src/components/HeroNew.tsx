@@ -12,7 +12,7 @@ const copy = {
     h1Accent: 'built to convert.',
     sub: (
       <>
-        We build premium websites for <span className="text-coral">Korean-American brands</span> — bilingual by default, fast by design, made to convert. Shopify, custom builds, and beyond.
+        Premium Shopify stores for <span className="text-coral">Korean-American brands</span> — bilingual by default, fast by design, built to convert. TJ Flowers: $3,114 revenue in 4 weeks post-rebuild.
       </>
     ),
     cta1: 'Start your project',
@@ -20,18 +20,18 @@ const copy = {
     livePill: 'Last shipped',
     proofBadge: {
       metric: '$3,114',
-      label: 'in first 4 weeks',
-      sub: 'TJ Flowers · Shopify revamp',
+      label: 'revenue in 4 weeks',
+      sub: 'TJ Flowers · Shopify rebuild',
     },
     logosLabel: 'Trusted by founders shipping bilingual',
   },
   ko: {
     eyebrow: '한인 비즈니스 스튜디오 · Shopify 전문',
-    h1Lead: '한국어·영어 웹사이트,',
-    h1Accent: '매출로 이어지는 사이트.',
+    h1Lead: '한인 비즈니스 웹사이트,',
+    h1Accent: '매출로 이어집니다.',
     sub: (
       <>
-        미국에서 사업하는 <span className="text-coral">한인 브랜드</span>를 위한 프리미엄 웹사이트. 한국어·영어 둘 다 기본, 빠른 속도, Shopify·커스텀 빌드 — 무엇보다 진짜 매출로 이어집니다.
+        <span className="text-coral">한·영 이중언어</span> 기본, 빠른 속도, Shopify·커스텀 빌드 — 진짜 매출로 이어집니다. TJ Flowers: 리뉴얼 4주 만에 $3,114 매출.
       </>
     ),
     cta1: '프로젝트 시작하기',
@@ -39,8 +39,8 @@ const copy = {
     livePill: '최근 런칭',
     proofBadge: {
       metric: '$3,114',
-      label: '첫 4주 매출',
-      sub: 'TJ Flowers · Shopify 이전',
+      label: '4주 만에 실매출',
+      sub: 'TJ Flowers · Shopify 리뉴얼',
     },
     logosLabel: '한국어·영어로 함께 런칭한 브랜드',
   },
