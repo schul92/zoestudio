@@ -26,8 +26,8 @@ const stats: Stat[] = [
     sub: { en: 'TJ Flowers · 6 weeks', ko: 'TJ Flowers · 6주' },
   },
   {
-    value: '60+',
-    label: { en: 'Sites launched', ko: '런칭 사이트' },
+    value: '150+',
+    label: { en: 'Projects delivered', ko: '완료 프로젝트' },
     sub: { en: 'since 2019', ko: '2019년부터' },
   },
   {

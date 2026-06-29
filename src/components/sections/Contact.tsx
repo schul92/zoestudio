@@ -6,7 +6,7 @@ import { motion } from 'framer-motion'
 import { useServices } from '@/context/ServiceContext'
 import { trackFormSuccess, trackFormError, trackGAEvent, GA_EVENTS, trackEmailClick, trackButtonClick } from '@/utils/analytics'
 import Modal from '@/components/ui/Modal'
-import { Mail, MapPin, Clock, CheckCircle, XCircle, AlertTriangle, Target, CalendarCheck } from 'lucide-react'
+import { Mail, MapPin, Clock, CheckCircle, XCircle, AlertTriangle, CalendarCheck } from 'lucide-react'
 import { BOOKING_URL } from '@/lib/booking'
 
 export default function Contact({ locale = 'en' }: { locale?: string }) {
@@ -281,70 +281,7 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
               </p>
             </div>
 
-            {selectedServices.length === 0 ? (
-              /* No Services Selected - Guide to Select */
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                className="max-w-2xl mx-auto text-center"
-              >
-                <div className="bg-white/[0.03] rounded-3xl p-12 border border-white/[0.08]">
-                  <motion.div
-                    animate={{ scale: [1, 1.1, 1] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                    className="mb-6 text-amber-400"
-                  >
-                    <Target className="w-16 h-16 mx-auto" />
-                  </motion.div>
-
-                  <h3 className="text-2xl font-bold mb-4 text-white">
-                    {locale === 'ko'
-                      ? '먼저 관심있는 서비스를 선택해주세요'
-                      : 'First, Select Services You\'re Interested In'
-                    }
-                  </h3>
-
-                  <p className="text-gray-400 mb-8">
-                    {locale === 'ko'
-                      ? '귀하의 비즈니스에 맞는 서비스를 선택하시면 맞춤형 상담을 제공해드립니다.'
-                      : 'Choose the services that fit your business needs, and we\'ll provide a customized consultation.'
-                    }
-                  </p>
-
-                  <div className="flex flex-col gap-4">
-                    <motion.button
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                      onClick={() => {
-                        trackButtonClick('Select Services', 'contact-section')
-                        scrollToServices()
-                      }}
-                      className="bg-gradient-to-b from-amber-400 to-amber-500 text-black px-8 py-4 rounded-xl font-bold text-lg shadow-glow hover:shadow-glow-lg hover:brightness-110 transition-all duration-300"
-                    >
-                      {locale === 'ko' ? '서비스 선택하러 가기 ↑' : 'Select Services ↑'}
-                    </motion.button>
-
-                    <div className="flex items-center gap-4">
-                      <div className="flex-1 h-px bg-white/[0.08]"></div>
-                      <span className="text-gray-500 text-sm">{locale === 'ko' ? '또는' : 'or'}</span>
-                      <div className="flex-1 h-px bg-white/[0.08]"></div>
-                    </div>
-
-                    <motion.a
-                      href={`${locale === 'ko' ? '/ko' : ''}/pricing`}
-                      onClick={() => trackButtonClick('View Pricing Plans', 'contact-section')}
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                      className="bg-white/[0.03] text-white/90 px-8 py-4 rounded-xl font-bold text-lg border border-white/[0.12] hover:border-white/25 hover:bg-white/[0.06] hover:text-white transition-all duration-300 text-center backdrop-blur-sm"
-                    >
-                      {locale === 'ko' ? '가격 플랜 보기' : 'View Pricing Plans'}
-                    </motion.a>
-                  </div>
-                </div>
-              </motion.div>
-            ) : (
-              /* Services Selected - Show Form */
-              <div className="grid lg:grid-cols-2 gap-12">
+            <div className="grid lg:grid-cols-2 gap-12">
                 {/* Left: Form */}
                 <motion.div
                   initial={{ opacity: 0, x: -50 }}
@@ -352,6 +289,7 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                   className="bg-white/[0.03] p-8 rounded-2xl border border-white/[0.08]"
                 >
                   {/* Selected Services Display */}
+                  {selectedServices.length > 0 && (
                   <motion.div
                     initial={cameFromPricing ? { scale: 0.95, opacity: 0 } : {}}
                     animate={cameFromPricing ? { scale: 1, opacity: 1 } : {}}
@@ -418,6 +356,7 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                       </button>
                     )}
                   </motion.div>
+                  )}
 
                   <h3 className="text-2xl font-bold mb-6 text-white">
                     {locale === 'ko' ? '무료 상담 신청' : 'Request Free Consultation'}
@@ -690,7 +629,6 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                   </div>
                 </motion.div>
               </div>
-            )}
           </div>
       </div>
     </section>

@@ -61,7 +61,7 @@ export async function generateMetadata({
     openGraph: {
       title: seo.openGraph.title,
       description: seo.openGraph.description,
-      url: `${SITE_URL}/${locale}`,
+      url: locale === 'ko' ? `${SITE_URL}/ko` : SITE_URL,
       siteName: seo.openGraph.siteName,
       locale: seo.openGraph.locale,
       type: 'website',
