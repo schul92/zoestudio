@@ -18,6 +18,16 @@ export default function Footer({ locale = 'en' }: { locale?: string }) {
       ] as [string, string][],
     },
     {
+      title: isKo ? '서비스' : 'Services',
+      links: [
+        [isKo ? '웹사이트 제작' : 'Website design', isKo ? '/ko/웹사이트-제작' : '/웹사이트-제작'],
+        [isKo ? '구글 광고대행' : 'Google Ads', isKo ? '/ko/광고대행' : '/광고대행'],
+        [isKo ? 'SEO · 검색 최적화' : 'SEO', isKo ? '/ko/englewood-nj-seo' : '/englewood-nj-seo'],
+        [isKo ? '카카오톡 마케팅' : 'KakaoTalk marketing', isKo ? '/ko/services/kakaotalk-marketing-usa' : '/services/kakaotalk-marketing-usa'],
+        [isKo ? '쇼핑몰 제작' : 'E-commerce build', isKo ? '/ko/쇼핑몰-제작' : '/services/shopify-cost-audit'],
+      ] as [string, string][],
+    },
+    {
       title: isKo ? '업종별 전문성' : 'Industries',
       links: [
         [isKo ? '한식당' : 'Korean restaurants', isKo ? '/ko/industries/한식당-웹사이트' : '/industries/korean-restaurant'],

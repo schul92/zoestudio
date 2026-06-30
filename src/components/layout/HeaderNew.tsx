@@ -79,6 +79,7 @@ export default function HeaderNew({ locale = 'en' }: { locale?: string }) {
 
   const nav = [
     { href: `${prefix}/portfolio`, label: locale === 'ko' ? '작업' : 'Work' },
+    { href: `${prefix}/services`, label: locale === 'ko' ? '서비스' : 'Services' },
     { href: `${prefix}/industries`, label: locale === 'ko' ? '업종' : 'Industries' },
     { href: `${prefix}/tools`, label: locale === 'ko' ? '무료 도구' : 'Free tools' },
     { href: `${prefix}/blog`, label: t.nav.blog },

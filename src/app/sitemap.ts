@@ -41,6 +41,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/edgewater-web-design',
     '/bilingual-seo-new-york',
     '/korean-web-design-agencies-nj-compared',
+    '/services',
     '/services/kakaotalk-integration',
     '/services/kakaotalk-marketing-usa',
     '/services/google-business-profile-optimization',
@@ -73,7 +74,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...koreanCities.map((c) => ({ path: `/${c.koSlug}`, enPath: `/${c.slug}`, priority: 0.95 })),
     { path: '/뉴저지-웹사이트', enPath: '/nj-website', priority: 0.95 },
     { path: '/뉴욕-웹사이트', enPath: '/ny-website', priority: 0.95 },
-    { path: '/웹사이트-제작', enPath: '/nj-website', priority: 0.95 },
+    { path: '/웹사이트-제작', enPath: '/웹사이트-제작', priority: 0.95 },
     { path: '/쇼핑몰-제작', enPath: '/pricing', priority: 0.9 },
     { path: '/포트리-웹디자인', enPath: '/fort-lee-web-design', priority: 0.95 },
     { path: '/캘리포니아-웹사이트', enPath: '/ca-website', priority: 0.95 },
@@ -87,7 +88,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/펜실베이니아-웹사이트', enPath: '/pa-website', priority: 0.95 },
     { path: '/플로리다-웹사이트', enPath: '/fl-website', priority: 0.95 },
     { path: '/팰팍-마케팅', enPath: '/palisades-park-marketing', priority: 0.95 },
-    { path: '/광고대행', enPath: '/pricing', priority: 0.95 },
+    { path: '/광고대행', enPath: '/광고대행', priority: 0.95 },
   ]
 
   const sitemapEntries: MetadataRoute.Sitemap = []

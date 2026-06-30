@@ -36,6 +36,11 @@ export async function generateMetadata({ params }: { params: { locale: string } 
     },
     alternates: {
       canonical: locale === 'ko' ? `${baseUrl}/ko/웹사이트-제작` : `${baseUrl}/웹사이트-제작`,
+      languages: {
+        en: `${baseUrl}/웹사이트-제작`,
+        ko: `${baseUrl}/ko/웹사이트-제작`,
+        'x-default': `${baseUrl}/웹사이트-제작`,
+      },
     },
   }
 }
@@ -117,6 +122,36 @@ export default function WebsiteDesignPage({ params }: { params: { locale: string
             : 'You can get an accurate quote through our free consultation. Starting at $1,000, we provide custom quotes based on your business size and required features. Feel free to reach out anytime.',
         },
       },
+      {
+        '@type': 'Question',
+        name: isKorean ? '미국에서 웹사이트 제작 비용은 얼마인가요?' : 'How much does US website design cost?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: isKorean
+            ? '미국 웹사이트 제작 비용은 보통 소규모 홈페이지 약 $1,000부터, 비즈니스용 $2,000~3,000, 맞춤 제작 $3,500~6,000 수준입니다. 페이지 수, 기능, 이중언어 여부에 따라 달라지며, 무료 상담 후 정확한 견적을 안내드립니다.'
+            : 'US website design typically costs from about $1,000 for a small site, $2,000-3,000 for a business site, and $3,500-6,000 for a custom build. The price depends on page count, features, and bilingual needs, with an exact quote after a free consultation.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: isKorean ? '한인 비즈니스 홈페이지 제작 기간은?' : 'How long does Korean business website development take?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: isKorean
+            ? '한인 비즈니스 홈페이지 제작 기간은 규모에 따라 보통 1~4주입니다. 기본 홈페이지는 1~2주, 비즈니스 홈페이지는 2~3주, 맞춤 제작은 3~4주 정도 소요되며, 한국어와 영어 이중언어로 함께 제작됩니다.'
+            : 'A Korean business website typically takes 1-4 weeks depending on scope: 1-2 weeks for a basic site, 2-3 weeks for a business site, and 3-4 weeks for a custom build, delivered in both Korean and English.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: isKorean ? '엘에이/뉴욕/뉴저지에서도 가능한가요?' : 'Do you serve LA, New York, and New Jersey?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: isKorean
+            ? '네, 엘에이(LA), 뉴욕, 뉴저지를 포함해 미국 전역 어디서나 웹사이트 제작이 가능합니다. 모든 상담과 작업은 온라인으로 진행되어, 미국 어느 지역의 한인 비즈니스든 한국어로 편하게 의뢰하실 수 있습니다.'
+            : 'Yes. We build websites for Korean businesses anywhere in the US, including Los Angeles, New York, and New Jersey. All consultation and work is done online, so you can hire us comfortably in Korean from any US location.',
+        },
+      },
     ],
   }
 
@@ -167,15 +202,15 @@ export default function WebsiteDesignPage({ params }: { params: { locale: string
 
             <h1 className="text-4xl md:text-6xl font-black mb-6 text-gray-900">
               {isKorean ? (
-                <><span className="text-violet-600">웹사이트 제작</span> 전문</>
+                <><span className="text-violet-600">미국 웹사이트 제작</span> · 미국 홈페이지 제작 전문</>
               ) : (
-                <><span className="text-violet-600">Website Design</span> Experts</>
+                <><span className="text-violet-600">US Website Design</span> for Korean Businesses</>
               )}
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 mb-8 max-w-3xl mx-auto">
               {isKorean
-                ? '뉴욕, 뉴저지 한인 비즈니스를 위한 전문 웹사이트 제작. 반응형, SEO 최적화, 빠른 제작.'
-                : 'Professional website design for NY NJ Korean businesses. Responsive, SEO-optimized, fast delivery.'}
+                ? '뉴욕, 뉴저지, 엘에이를 비롯한 미국 전역 한인 비즈니스를 위한 전문 웹사이트 제작. 반응형, SEO 최적화, 빠른 제작.'
+                : 'Professional US website design for Korean-American businesses in NY, NJ, LA, and nationwide. Responsive, SEO-optimized, fast delivery.'}
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Link href={isKorean ? '/ko/pricing' : '/pricing'} className="px-8 py-4 bg-violet-600 text-white rounded-xl font-bold text-lg hover:bg-violet-700 transition-colors shadow-lg">
@@ -184,6 +219,42 @@ export default function WebsiteDesignPage({ params }: { params: { locale: string
               <Link href="#contact" className="px-8 py-4 bg-white text-violet-600 border-2 border-violet-600 rounded-xl font-bold text-lg hover:bg-violet-50 transition-colors">
                 {isKorean ? '무료 상담' : 'Free Consultation'}
               </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* SEO Intro */}
+        <section className="py-16 px-4 bg-white text-gray-900">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-6">
+              {isKorean ? '미국 홈페이지 제작 · 한인 홈페이지 제작 전문 에이전시' : 'Korean Business Website Design in the US'}
+            </h2>
+            <div className="space-y-4 text-lg text-gray-700 leading-relaxed">
+              {isKorean ? (
+                <>
+                  <p>
+                    조이루모스(ZOE LUMOS)는 미국 한인 비즈니스를 위한 <strong>미국 웹사이트 제작</strong> 및 <strong>미국 홈페이지 제작</strong> 전문 에이전시입니다.
+                    뉴욕, 뉴저지, 엘에이는 물론 미국 전역 어디서나 한국어로 편하게 상담받고, 영어와 한국어 이중언어 홈페이지를 제작하실 수 있습니다.
+                  </p>
+                  <p>
+                    레스토랑, 병원, 법률·회계 사무소, 부동산, 미용·뷰티, 교회 등 다양한 업종의 <strong>한인 홈페이지 제작</strong> 경험을 바탕으로,
+                    반응형 디자인과 구글 검색 최적화(SEO)까지 한 번에 해결해 드립니다. 미국 웹사이트 제작 비용이 궁금하시다면 아래 가격 안내를 확인하세요.
+                  </p>
+                </>
+              ) : (
+                <>
+                  <p>
+                    ZOE LUMOS is a US website design agency specializing in <strong>Korean business website design</strong> for Korean-American
+                    companies. Whether you are in New York, New Jersey, Los Angeles, or anywhere across the US, we build fast, bilingual
+                    (English and Korean) websites and you can consult comfortably in Korean.
+                  </p>
+                  <p>
+                    From restaurants and clinics to law and accounting firms, real estate, beauty salons, and churches, our experience in
+                    Korean-American website development covers responsive design and Google SEO in one package. Curious about US website
+                    design pricing? See the pricing section below.
+                  </p>
+                </>
+              )}
             </div>
           </div>
         </section>
@@ -212,8 +283,12 @@ export default function WebsiteDesignPage({ params }: { params: { locale: string
         {/* Pricing Packages */}
         <section className="py-16 px-4 bg-gray-50 text-gray-900">
           <div className="max-w-7xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-4">{isKorean ? '웹사이트 제작 패키지' : 'Website Design Packages'}</h2>
-            <p className="text-center text-gray-600 mb-12">{isKorean ? '비즈니스에 맞는 패키지를 선택하세요' : 'Choose the package that fits your business'}</p>
+            <h2 className="text-3xl font-bold text-center mb-4">{isKorean ? '미국 웹사이트 제작 비용 · 패키지' : 'US Website Design Pricing & Packages'}</h2>
+            <p className="text-center text-gray-600 max-w-2xl mx-auto mb-10">
+              {isKorean
+                ? '미국 웹사이트 제작 비용은 페이지 수와 기능에 따라 달라집니다. 소규모 홈페이지는 약 $1,000부터, 성장하는 비즈니스용은 $2,000~3,000, 맞춤 제작은 $3,500~6,000 수준입니다. 모든 견적은 무료 상담 후 확정됩니다.'
+                : 'US website design cost depends on page count and features. Small sites start around $1,000, growing-business sites run $2,000-3,000, and fully custom builds range $3,500-6,000. Every quote is finalized after a free consultation.'}
+            </p>
 
             <div className="grid md:grid-cols-3 gap-8">
               {packages.map((pkg, idx) => (
@@ -335,9 +410,24 @@ export default function WebsiteDesignPage({ params }: { params: { locale: string
         {/* Related Links */}
         <section className="py-12 px-4 bg-white text-gray-900">
           <div className="max-w-4xl mx-auto text-center">
-            <h3 className="text-lg font-bold mb-4">{isKorean ? '관련 서비스' : 'Related Services'}</h3>
-            <div className="flex flex-wrap justify-center gap-4 mb-8">
-              <Link href={isKorean ? '/ko/쇼핑몰-제작' : '/ecommerce'} className="text-violet-600 hover:underline">{isKorean ? '쇼핑몰 제작' : 'E-commerce'}</Link>
+            <h3 className="text-lg font-bold mb-4">{isKorean ? '지역별 · 관련 서비스' : 'Related & Local Services'}</h3>
+            <div className="flex flex-wrap justify-center gap-3 mb-10">
+              {[
+                { slug: '엘에이-웹사이트-제작', ko: '엘에이 웹사이트 제작', en: 'LA Website Design' },
+                { slug: '뉴욕-웹사이트', ko: '뉴욕 웹사이트 제작', en: 'New York Website' },
+                { slug: '뉴저지-웹사이트', ko: '뉴저지 웹사이트 제작', en: 'New Jersey Website' },
+                { slug: '광고대행', ko: '구글 광고대행', en: 'Google Ads Management' },
+                { slug: 'englewood-nj-seo', ko: 'SEO 검색 최적화', en: 'SEO Services' },
+                { slug: isKorean ? '쇼핑몰-제작' : 'ecommerce', ko: '쇼핑몰 제작', en: 'E-commerce' },
+              ].map((item, idx) => (
+                <Link
+                  key={idx}
+                  href={isKorean ? `/${locale}/${item.slug}` : `/${item.slug}`}
+                  className="px-4 py-2 bg-violet-50 text-violet-700 rounded-lg hover:bg-violet-100 transition-colors text-sm font-medium"
+                >
+                  {isKorean ? item.ko : item.en}
+                </Link>
+              ))}
             </div>
 
             <h3 className="text-lg font-bold mb-4">{isKorean ? '지역별 웹사이트 제작 서비스' : 'Website Services by State'}</h3>

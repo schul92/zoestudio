@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import HeaderWrapper from '@/components/layout/HeaderWrapper'
 import Footer from '@/components/layout/Footer'
 import Contact from '@/components/sections/Contact'
+import PricingTeaser from '@/components/sections/PricingTeaser'
 import Link from 'next/link'
 import {
   Megaphone, Search, Instagram, Star, Users, CheckCircle, BarChart3,
@@ -26,20 +27,20 @@ export async function generateMetadata({
 
   return {
     title: locale === 'ko'
-      ? '한인 광고대행 & 소셜미디어 관리 | 구글 광고, 인스타 광고 전문 | 조이루모스'
-      : 'Korean Advertising Agency & Social Media Management | Google Ads, Instagram Ads | ZOE LUMOS',
+      ? '구글 광고 대행 & 한인 광고대행 | 구글 광고 에이전시, 인스타 광고, 소셜미디어 관리 | 조이루모스'
+      : 'Google Ads Management & Korean Advertising Agency | Google Ads, Instagram Ads, Social Media | ZOE LUMOS',
     description: locale === 'ko'
-      ? '미국 한인 광고대행 전문 조이루모스. 구글 광고, 인스타그램 광고, 소셜미디어 관리, 옐프 광고. 한영 이중언어 광고 캠페인. 소셜미디아 마케팅. 월간 성과 리포트 제공. 무료 상담.'
-      : 'Korean-American advertising agency ZOE LUMOS. Google Ads, Instagram Ads, social media management, Yelp Ads. Bilingual ad campaigns with monthly ROI reports. Free consultation.',
+      ? '구글 광고 대행 & 미국 한인 광고대행 전문 조이루모스. 한인 구글 광고, 구글 광고 에이전시, 인스타그램 광고, 소셜미디어 관리, 옐프 광고. 광고 계정은 고객님이 직접 소유합니다. 한영 이중언어 광고 캠페인, 월간 성과 리포트, 무료 상담.'
+      : 'Google Ads management & Korean-American advertising agency ZOE LUMOS. Korean Google Ads, Instagram Ads, social media management, Yelp Ads. You own your ad account. Bilingual campaigns with monthly ROI reports. Free consultation.',
     keywords: locale === 'ko'
-      ? '광고대행, 소셜미디어 관리, 소셜미디아, 구글 광고, 인스타 광고, 한인 광고대행, 미국 한인 소셜미디어, 인스타그램 광고, 옐프 광고, 한인 마케팅, 소셜미디어 마케팅, 한인 디지털 마케팅, 페이스북 광고, 틱톡 광고'
-      : 'Korean advertising agency, social media management, Google Ads, Instagram Ads, Korean American marketing, Yelp advertising, bilingual ads, digital marketing',
+      ? '구글 광고 대행, 한인 구글 광고, 구글 광고 에이전시, 광고대행, 소셜미디어 관리, 구글 광고, 인스타 광고, 한인 광고대행, 미국 한인 소셜미디어, 인스타그램 광고, 옐프 광고, 한인 마케팅, 소셜미디어 마케팅, 한인 디지털 마케팅, 페이스북 광고, 틱톡 광고'
+      : 'Google Ads agency, Google Ads management, Korean advertising agency, Korean Google Ads, social media management, Instagram Ads, Korean American marketing, Yelp advertising, bilingual ads, digital marketing',
     openGraph: {
       title: locale === 'ko' ? '한인 광고대행 & 소셜미디어 관리 - 조이루모스' : 'Korean Advertising & Social Media Management - ZOE LUMOS',
       description: locale === 'ko'
         ? '구글 광고, 인스타 광고, 소셜미디어 관리 전문. 미국 한인 비즈니스 맞춤 광고 캠페인.'
         : 'Google Ads, Instagram Ads, social media management for Korean-American businesses.',
-      url: locale === 'ko' ? `${baseUrl}/ko/광고대행` : `${baseUrl}/advertising`,
+      url: locale === 'ko' ? `${baseUrl}/ko/광고대행` : `${baseUrl}/광고대행`,
       siteName: 'ZOE LUMOS 조이루모스',
       locale: locale === 'ko' ? 'ko_KR' : 'en_US',
       type: 'website',
@@ -51,10 +52,10 @@ export async function generateMetadata({
       }],
     },
     alternates: {
-      canonical: locale === 'ko' ? `${baseUrl}/ko/광고대행` : `${baseUrl}/advertising`,
+      canonical: locale === 'ko' ? `${baseUrl}/ko/광고대행` : `${baseUrl}/광고대행`,
       languages: {
-        'x-default': `${baseUrl}/advertising`,
-        'en': `${baseUrl}/advertising`,
+        'x-default': `${baseUrl}/광고대행`,
+        'en': `${baseUrl}/광고대행`,
         'ko': `${baseUrl}/ko/광고대행`,
       },
     },
@@ -113,7 +114,7 @@ export default function AdvertisingKoreanPage({ params }: { params: { locale: st
     description: isKorean
       ? '미국 한인 비즈니스를 위한 구글 광고, 인스타그램 광고, 소셜미디어 관리 전문 에이전시.'
       : 'Google Ads, Instagram Ads, and social media management agency for Korean-American businesses.',
-    url: isKorean ? `${baseUrl}/ko/광고대행` : `${baseUrl}/advertising`,
+    url: isKorean ? `${baseUrl}/ko/광고대행` : `${baseUrl}/광고대행`,
     email: 'info@zoelumos.com',
     address: {
       '@type': 'PostalAddress',
@@ -277,6 +278,46 @@ export default function AdvertisingKoreanPage({ params }: { params: { locale: st
             : 'Yes, bilingual Korean-English advertising is one of ZOE LUMOS\'s key strengths. Our team of native Korean and English speakers creates ad copy, images, and videos together. We simultaneously target Korean communities and local American customers. For Google Ads, we optimize Korean and English keywords separately. On Instagram and Facebook, we create separate Korean and English content distributed to matching target audiences.',
         },
       },
+      {
+        '@type': 'Question',
+        name: isKorean ? '구글 광고 대행 비용은 얼마인가요?' : 'How much does Google Ads management cost?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: isKorean
+            ? '조이루모스의 구글 광고 대행 관리 수수료는 2026년 기준 월 $300부터 시작합니다. 이 수수료는 캠페인 셋업, 키워드 리서치, 입찰 관리, 광고 카피 작성, 전환 추적 설정, 월간 성과 리포트를 포함합니다. 실제 광고비(구글에 직접 지불하는 미디어 비용)는 별도이며, 고객님의 예산과 목표에 맞춰 설정합니다. 한인 비즈니스 규모에 따라 맞춤 견적을 제공하며, 무료 상담으로 적정 예산을 함께 설계해 드립니다.'
+            : 'ZOE LUMOS Google Ads management starts at $300/month as of 2026. This fee covers campaign setup, keyword research, bid management, ad copywriting, conversion tracking setup, and monthly performance reports. Actual ad spend (media cost paid directly to Google) is separate and set to your budget and goals. We provide custom quotes based on your business size and design the right budget with you in a free consultation.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: isKorean ? '한인 비즈니스에 구글 광고가 효과 있나요?' : 'Does Google Ads work for Korean-American businesses?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: isKorean
+            ? '네, 구글 광고는 한인 비즈니스에 매우 효과적입니다. 식당, 병원, 변호사, 학원, 부동산 등 지역 기반 한인 비즈니스는 고객이 이미 "근처 한인 변호사", "한인 치과" 같은 검색을 하고 있어 구매 의도가 높은 트래픽을 즉시 확보할 수 있습니다. 조이루모스는 한국어와 영어 키워드를 동시에 최적화하여 한인 커뮤니티와 미국 현지 고객을 모두 타겟팅합니다. 위치 기반 타겟팅으로 광고비 낭비를 줄이고, 전환 추적으로 실제 문의/예약으로 이어지는 광고에 예산을 집중합니다.'
+            : 'Yes, Google Ads is highly effective for Korean-American businesses. Local businesses such as restaurants, clinics, attorneys, academies, and real estate capture high-intent traffic instantly because customers are already searching for things like "Korean attorney near me" or "Korean dentist." ZOE LUMOS optimizes Korean and English keywords at the same time to reach both the Korean community and local American customers. Location-based targeting reduces wasted spend, and conversion tracking focuses budget on ads that actually drive calls and bookings.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: isKorean ? '광고 계정은 누가 소유하나요?' : 'Who owns the ad account?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: isKorean
+            ? '광고 계정은 처음부터 끝까지 고객님이 직접 소유합니다. 조이루모스는 고객님 명의의 구글 광고, 메타(인스타그램/페이스북) 광고 계정을 만들고 관리자 권한으로 운영합니다. 계약이 끝나도 모든 캠페인 데이터, 광고 이력, 픽셀, 전환 데이터는 고객님께 그대로 남습니다. 일부 대행사처럼 자체 계정에 광고를 묶어두어 고객을 인질로 잡는 방식은 절대 사용하지 않습니다. 이것이 조이루모스가 한인 비즈니스에 약속하는 투명성의 핵심입니다.'
+            : 'You own your ad account from start to finish. ZOE LUMOS creates Google Ads and Meta (Instagram/Facebook) accounts under your name and manages them with admin access. When our engagement ends, all campaign data, ad history, pixels, and conversion data stay with you. We never lock your ads inside our own account to hold clients hostage, unlike some agencies. This transparency is core to what we promise Korean-American businesses.',
+        },
+      },
+      {
+        '@type': 'Question',
+        name: isKorean ? '월 최소 광고비는 얼마인가요?' : 'What is the minimum monthly ad budget?',
+        acceptedAnswer: {
+          '@type': 'Answer',
+          text: isKorean
+            ? '구글 광고는 보통 월 $500~$1,000의 미디어 광고비로 시작하기를 권장합니다. 이 정도 예산이면 충분한 데이터를 모아 어떤 키워드와 광고가 실제 문의로 이어지는지 파악하고 캠페인을 최적화할 수 있습니다. 인스타그램/페이스북 광고는 월 $300부터도 시작 가능합니다. 다만 업종, 경쟁 강도, 지역에 따라 적정 광고비가 달라지므로, 무료 상담에서 고객님의 목표 매출과 객단가를 바탕으로 현실적인 최소 광고비를 함께 설계해 드립니다.'
+            : 'For Google Ads we usually recommend starting with $500-$1,000/month in media spend. That budget gathers enough data to learn which keywords and ads actually drive inquiries so the campaign can be optimized. Instagram/Facebook ads can start from as little as $300/month. Because the right budget depends on your industry, competition, and location, we design a realistic minimum together in a free consultation based on your revenue goals and average order value.',
+        },
+      },
     ],
     inLanguage: isKorean ? 'ko' : 'en',
   }
@@ -295,7 +336,7 @@ export default function AdvertisingKoreanPage({ params }: { params: { locale: st
         '@type': 'ListItem',
         position: 2,
         name: isKorean ? '광고대행' : 'Advertising',
-        item: isKorean ? `${baseUrl}/ko/광고대행` : `${baseUrl}/advertising`,
+        item: isKorean ? `${baseUrl}/ko/광고대행` : `${baseUrl}/광고대행`,
       },
     ],
   }
@@ -407,15 +448,15 @@ export default function AdvertisingKoreanPage({ params }: { params: { locale: st
 
               <p className="text-xl md:text-2xl text-gray-700 mb-4 max-w-3xl mx-auto">
                 {isKorean
-                  ? '미국 한인 비즈니스를 위한 전문 광고대행 & 소셜미디어 관리 서비스'
-                  : 'Professional advertising & social media management for Korean-American businesses'
+                  ? '미국 한인 비즈니스를 위한 구글 광고 대행 & 소셜미디어 관리 전문 한인 광고대행'
+                  : 'A Korean advertising agency for Google Ads management & social media, built for Korean-American businesses'
                 }
               </p>
 
               <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
                 {isKorean
-                  ? '구글 광고, 인스타 광고, 소셜미디아 관리까지. 한영 이중언어 캠페인으로 매출을 극대화하세요.'
-                  : 'Google Ads, Instagram Ads, and social media management. Maximize revenue with bilingual campaigns.'
+                  ? '한인 구글 광고부터 인스타 광고, 소셜미디어 관리까지. 한영 이중언어 캠페인으로 매출을 극대화하세요. 광고 계정은 고객님이 직접 소유합니다.'
+                  : 'From Korean Google Ads to Instagram Ads and social media management. Maximize revenue with bilingual campaigns, and you keep ownership of your ad account.'
                 }
               </p>
 
@@ -457,7 +498,7 @@ export default function AdvertisingKoreanPage({ params }: { params: { locale: st
         <section className="py-16 px-4 bg-white text-gray-900">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-4">
-              {isKorean ? '광고대행 & 소셜미디어 서비스' : 'Advertising & Social Media Services'}
+              {isKorean ? '구글 광고 대행 & 소셜미디어 서비스' : 'Google Ads Management & Social Media Services'}
             </h2>
             <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
               {isKorean
@@ -564,6 +605,9 @@ export default function AdvertisingKoreanPage({ params }: { params: { locale: st
           </div>
         </section>
 
+        {/* Pricing Teaser */}
+        <PricingTeaser locale={params.locale} />
+
         {/* FAQ Section */}
         <section className="py-16 px-4 bg-gray-50 text-gray-900">
           <div className="max-w-4xl mx-auto">
@@ -649,6 +693,47 @@ export default function AdvertisingKoreanPage({ params }: { params: { locale: st
               <span className="text-gray-400">|</span>
               <Link href={isKorean ? '/ko/portfolio' : '/portfolio'} className="text-violet-600 hover:underline">
                 {isKorean ? '포트폴리오' : 'Portfolio'}
+              </Link>
+            </div>
+          </div>
+        </section>
+
+        {/* Related Services - cross-links */}
+        <section className="py-12 px-4 bg-white">
+          <div className="max-w-5xl mx-auto text-center">
+            <h3 className="text-lg font-bold mb-6 text-gray-900">
+              {isKorean ? '함께 보면 좋은 서비스' : 'Explore Related Services'}
+            </h3>
+            <div className="grid sm:grid-cols-3 gap-4">
+              <Link
+                href={isKorean ? '/ko/웹사이트-제작' : '/웹사이트-제작'}
+                className="block p-5 rounded-xl border border-gray-200 hover:border-violet-300 hover:bg-violet-50 transition-colors"
+              >
+                <Globe className="w-6 h-6 text-violet-600 mx-auto mb-2" />
+                <span className="font-bold text-gray-900">{isKorean ? '웹사이트 제작' : 'Website Design'}</span>
+                <p className="text-sm text-gray-500 mt-1">
+                  {isKorean ? '광고가 전환되는 랜딩페이지' : 'Landing pages that convert your ads'}
+                </p>
+              </Link>
+              <Link
+                href={isKorean ? '/ko/englewood-nj-seo' : '/englewood-nj-seo'}
+                className="block p-5 rounded-xl border border-gray-200 hover:border-violet-300 hover:bg-violet-50 transition-colors"
+              >
+                <Search className="w-6 h-6 text-violet-600 mx-auto mb-2" />
+                <span className="font-bold text-gray-900">{isKorean ? '한인 SEO' : 'SEO'}</span>
+                <p className="text-sm text-gray-500 mt-1">
+                  {isKorean ? '광고비 없이 검색 상위 노출' : 'Rank organically without ad spend'}
+                </p>
+              </Link>
+              <Link
+                href={isKorean ? '/ko/services/kakaotalk-marketing-usa' : '/services/kakaotalk-marketing-usa'}
+                className="block p-5 rounded-xl border border-gray-200 hover:border-violet-300 hover:bg-violet-50 transition-colors"
+              >
+                <MessageCircle className="w-6 h-6 text-violet-600 mx-auto mb-2" />
+                <span className="font-bold text-gray-900">{isKorean ? '카카오톡 광고' : 'KakaoTalk Marketing'}</span>
+                <p className="text-sm text-gray-500 mt-1">
+                  {isKorean ? '한인 고객에게 직접 도달' : 'Reach Korean customers directly'}
+                </p>
               </Link>
             </div>
           </div>

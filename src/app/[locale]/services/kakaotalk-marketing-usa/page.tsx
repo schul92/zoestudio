@@ -52,12 +52,12 @@ export async function generateMetadata({
 
 const COPY = {
   en: {
-    eyebrow: 'Service · KakaoTalk Marketing & Advertising',
-    h1Lead: 'KakaoTalk marketing',
-    h1Sub: 'that pays for itself.',
+    eyebrow: 'Service · KakaoTalk Advertising Agency & Paid Ad Services',
+    h1Lead: 'KakaoTalk advertising agency',
+    h1Sub: 'marketing that pays for itself.',
     intro:
-      'Zoe Lumos sets up and runs KakaoTalk marketing for Korean-American businesses across the US — Channel, alimtalk/friendtalk automation, Biz Board ads, and bilingual creative. We wire it into your POS or booking system so messages fire automatically, and we tune for ROI: alimtalk re-engagement typically returns $8–$25 for every $1 of messaging cost, because the per-message cost is pennies and the audience already knows you.',
-    whatTitle: 'What we set up',
+      'Zoe Lumos is a bilingual KakaoTalk advertising agency that sets up and runs KakaoTalk paid ad services for Korean-American businesses across the US — Channel marketing, alimtalk/friendtalk automation, Biz Board ads, and bilingual creative. We wire it into your POS or booking system so messages fire automatically, and we tune for ROI: alimtalk re-engagement typically returns $8–$25 for every $1 of messaging cost, because the per-message cost is pennies and the audience already knows you.',
+    whatTitle: 'What our KakaoTalk paid ad services set up',
     whatItems: [
       'KakaoTalk Channel + bizmessage account — registration and Kakao approval handled for you',
       'Alimtalk (transactional) — reservation confirmations, order-ready alerts, waitlist updates, ~80%+ open rate',
@@ -70,8 +70,16 @@ const COPY = {
     qaTitle: 'KakaoTalk advertising — straight answers',
     qa: [
       {
-        q: 'How much does KakaoTalk advertising cost for a US Korean business?',
-        a: 'Channel messages (alimtalk/friendtalk) run roughly $0.007–$0.015 per send. Biz Board display ads are bid-based and need a few hundred dollars/month to test. Most US Korean small businesses spend $300–$1,500/month total. A managed agency campaign adds $500–$2,000/month on top of media spend.',
+        q: 'How much does KakaoTalk advertising cost?',
+        a: 'For a US Korean business, Channel messages (alimtalk/friendtalk) run roughly $0.007–$0.015 per send. Biz Board display ads are bid-based and need a few hundred dollars/month to test. Most US Korean small businesses spend $300–$1,500/month total. A managed KakaoTalk advertising agency campaign adds $500–$2,000/month on top of media spend.',
+      },
+      {
+        q: 'Can a US business run KakaoTalk ads?',
+        a: 'Yes. A US-based business can register a KakaoTalk Channel and bizmessage account and run alimtalk, friendtalk, and Biz Board ads, but the signup and approval flow is Korean-language and assumes a Korean business context. As a KakaoTalk advertising agency we handle the account registration, Kakao approval, and bilingual template submission on your behalf so you do not need a Korean entity or fluent Korean to get live.',
+      },
+      {
+        q: 'What is a KakaoTalk Channel and how is it different from ads?',
+        a: 'A KakaoTalk Channel is your business profile inside KakaoTalk — the owned audience of customers who added you, which you reach for free or for pennies through alimtalk and friendtalk. Ads (Biz Board) are paid placements that put your brand in front of people who are not yet your followers. Channel marketing is retention and re-engagement; ads are acquisition. Most US Korean businesses get the best return by building the Channel first, then layering paid ads on top.',
       },
       {
         q: 'Is KakaoTalk advertising worth it vs Google or Meta ads?',
@@ -86,21 +94,26 @@ const COPY = {
         a: 'Every send carries a unique coupon code or a tracked link, and we divide attributed revenue by total cost. Alimtalk-driven re-engagement (winback, birthday, waitlist) typically returns $8–$25 per dollar of messaging cost because the audience already knows you.',
       },
     ],
-    whyTitle: 'Why Zoe Lumos',
+    whyTitle: 'Why Zoe Lumos for KakaoTalk advertising',
     why: 'We are a fully bilingual (Korean + English) studio in Fort Lee, NJ that builds the whole stack — website, KakaoTalk, and SEO/GEO — so your Channel connects to a site that actually converts. Fixed-scope build, no monthly retainer trap. Read the full breakdown in our guides: the KakaoTalk Channel setup playbook and the KakaoTalk advertising cost & ROI guide.',
     pricing: 'Fixed-scope KakaoTalk setup, then self-managed or light retainer — no lock-in. Free 30-minute scoping call first.',
     links: 'KakaoTalk guides',
+    relatedTitle: 'Related KakaoTalk services & guides',
+    r1: 'Google & social ad management (광고대행) →',
+    r2: 'KakaoTalk Channel website integration →',
+    r3: 'KakaoTalk advertising agency guide (US, 2026) →',
+    r4: 'KakaoTalk Channel for US Korean business →',
     cta: 'Start a KakaoTalk setup',
     g1: 'KakaoTalk Channel setup (20-min) →',
     g2: 'KakaoTalk advertising cost & ROI →',
   },
   ko: {
-    eyebrow: '서비스 · 카카오톡 마케팅·광고',
-    h1Lead: '카카오톡 마케팅,',
+    eyebrow: '서비스 · 카카오톡 광고 대행 · 채널 마케팅',
+    h1Lead: '카카오톡 광고 대행,',
     h1Sub: '본전을 뽑는 방식.',
     intro:
-      'ZOE LUMOS는 미국 전역 한인 비즈니스를 위한 카카오톡 마케팅을 셋업·운영합니다 — 채널, 알림톡/친구톡 자동화, 비즈보드 광고, 이중언어 크리에이티브. POS·예약 시스템에 연결해 메시지가 자동 발송되게 하고, ROI에 맞춰 조율합니다. 알림톡 재참여는 보통 메시지 비용 $1당 $8–$25를 돌려줍니다 — 발송당 비용이 몇 센트이고 오디언스가 이미 당신을 알기 때문입니다.',
-    whatTitle: '셋업 항목',
+      'ZOE LUMOS는 미국 전역 한인 비즈니스를 위한 카카오톡 광고 대행·채널 마케팅을 셋업·운영합니다 — 채널, 알림톡/친구톡 자동화, 비즈보드 광고, 이중언어 크리에이티브. POS·예약 시스템에 연결해 메시지가 자동 발송되게 하고, ROI에 맞춰 조율합니다. 알림톡 재참여는 보통 메시지 비용 $1당 $8–$25를 돌려줍니다 — 발송당 비용이 몇 센트이고 오디언스가 이미 당신을 알기 때문입니다.',
+    whatTitle: '카카오톡 채널 마케팅 셋업 항목',
     whatItems: [
       '카카오톡 채널 + 비즈메시지 계정 — 등록과 카카오 승인 대행',
       '알림톡 (거래성) — 예약 확인, 주문 준비 알림, 웨이팅 업데이트, 오픈율 약 80% 이상',
@@ -113,8 +126,16 @@ const COPY = {
     qaTitle: '카카오톡 광고 — 솔직한 답변',
     qa: [
       {
-        q: '미국 한인 비즈니스의 카카오톡 광고 비용은 얼마인가요?',
-        a: '채널 메시지(알림톡/친구톡)는 발송당 약 $0.007–$0.015. 비즈보드 디스플레이 광고는 입찰 기반으로 테스트에 월 수백 달러 필요. 대부분 미국 한인 소상공인은 월 총 $300–$1,500을 씁니다. 관리형 대행 캠페인은 매체비 위에 월 $500–$2,000 추가.',
+        q: '카카오톡 광고 대행 비용은? (미국 한인 비즈니스 기준)',
+        a: '채널 메시지(알림톡/친구톡)는 발송당 약 $0.007–$0.015. 비즈보드 디스플레이 광고는 입찰 기반으로 테스트에 월 수백 달러 필요. 대부분 미국 한인 소상공인은 월 총 $300–$1,500을 씁니다. 관리형 카카오톡 광고 대행 캠페인은 매체비 위에 월 $500–$2,000 추가.',
+      },
+      {
+        q: '미국 비즈니스도 카카오톡 광고를 집행할 수 있나요?',
+        a: '네. 미국에 있는 비즈니스도 카카오톡 채널·비즈메시지 계정을 등록하고 알림톡·친구톡·비즈보드 광고를 집행할 수 있습니다. 다만 가입과 승인 절차가 한국어 기반이고 한국 사업자 환경을 전제로 합니다. 저희가 카카오톡 광고 대행사로서 계정 등록, 카카오 승인, 이중언어 템플릿 제출을 대신 처리하므로 한국 법인이나 유창한 한국어 없이도 시작할 수 있습니다.',
+      },
+      {
+        q: '카카오톡 채널과 광고는 어떻게 다른가요?',
+        a: '카카오톡 채널은 카카오톡 안의 비즈니스 프로필 — 당신을 추가한 고객이라는 자기 소유 오디언스이며, 알림톡·친구톡으로 무료 또는 몇 센트에 도달합니다. 광고(비즈보드)는 아직 팔로워가 아닌 사람에게 브랜드를 노출하는 유료 지면입니다. 채널 마케팅은 유지·재참여, 광고는 신규 획득. 대부분 미국 한인 비즈니스는 채널을 먼저 키우고 그 위에 유료 광고를 얹을 때 가장 높은 회수를 봅니다.',
       },
       {
         q: '구글·메타 광고 대비 카카오톡 광고가 할 가치가 있나요?',
@@ -129,10 +150,15 @@ const COPY = {
         a: '모든 발송에 고유 쿠폰 코드나 추적 링크를 넣고 귀속 매출을 총비용으로 나눕니다. 알림톡 기반 재참여(윈백, 생일, 웨이팅)는 오디언스가 이미 당신을 알기에 보통 메시지 비용 $1당 $8–$25를 돌려줍니다.',
       },
     ],
-    whyTitle: '왜 ZOE LUMOS인가',
+    whyTitle: '왜 ZOE LUMOS 카카오톡 광고 대행인가',
     why: '저희는 뉴저지 포트리의 완전한 이중언어(한국어 + 영어) 스튜디오로 전체 스택 — 웹사이트, 카카오톡, SEO/GEO — 을 구축합니다. 그래서 채널이 실제로 전환되는 사이트와 연결됩니다. 고정 범위 구축, 월 리테이너 함정 없음. 자세한 내용은 가이드에서 — 카카오톡 채널 셋업 플레이북과 카카오톡 광고 비용·ROI 가이드.',
     pricing: '고정 범위 카카오톡 셋업, 이후 자체 운영 또는 가벼운 리테이너 — 락인 없음. 무료 30분 스코핑 상담 먼저.',
     links: '카카오톡 가이드',
+    relatedTitle: '관련 카카오톡 서비스·가이드',
+    r1: '구글·소셜 광고대행 →',
+    r2: '카카오톡 채널 웹사이트 연동 →',
+    r3: '카카오톡 광고 대행 가이드 (미국, 2026) →',
+    r4: '미국 한인 비즈니스 카카오톡 채널 →',
     cta: '카카오톡 셋업 시작하기',
     g1: '카카오톡 채널 셋업 (20분) →',
     g2: '카카오톡 광고 비용·ROI →',
@@ -237,6 +263,24 @@ export default function Page({ params }: { params: { locale: string } }) {
 
         <section className="container-edge py-12 md:py-16 border-t border-hairline">
           <p className="font-display text-xl md:text-2xl tracking-luxury max-w-3xl leading-[1.4]">{t.pricing}</p>
+        </section>
+
+        <section className="container-edge py-12 md:py-16 border-t border-hairline">
+          <h2 className="font-display text-display-sm tracking-luxury mb-8">{t.relatedTitle}</h2>
+          <div className="grid sm:grid-cols-2 gap-4 max-w-3xl">
+            <Link href={`${prefix}/광고대행`} className="block py-4 border-b border-hairline text-graphite hover:text-gold transition-colors leading-[1.7]">
+              {t.r1}
+            </Link>
+            <Link href={`${prefix}/services/kakaotalk-integration`} className="block py-4 border-b border-hairline text-graphite hover:text-gold transition-colors leading-[1.7]">
+              {t.r2}
+            </Link>
+            <Link href={`${prefix}/blog/kakaotalk-advertising-agency-usa-guide-2026`} className="block py-4 border-b border-hairline text-graphite hover:text-gold transition-colors leading-[1.7]">
+              {t.r3}
+            </Link>
+            <Link href={`${prefix}/blog/kakaotalk-channel-us-korean-business`} className="block py-4 border-b border-hairline text-graphite hover:text-gold transition-colors leading-[1.7]">
+              {t.r4}
+            </Link>
+          </div>
         </section>
 
         <section className="container-edge py-20 md:py-28 border-t border-hairline">
