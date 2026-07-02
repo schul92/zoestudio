@@ -91,6 +91,18 @@ export const trackFormSuccess = (data: {
     submission_time: data.timeToSubmit,
   })
   
+  // GA4 recommended lead event — this is the name marked as a key event in
+  // GA4 (and imported into Google Ads), so it must fire on every successful
+  // contact submission site-wide.
+  if (window.gtag) {
+    window.gtag('event', 'generate_lead', {
+      currency: 'USD',
+      value: Math.max(1, data.services.length),
+      lead_source: 'contact_form',
+      page_path: window.location.pathname,
+    })
+  }
+
   // Also send as a conversion goal
   if (window.gtag) {
     window.gtag('event', 'conversion', {

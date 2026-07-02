@@ -157,6 +157,15 @@ export default function ContactWrapper({
       if (!res.ok) throw new Error('bad response')
       setStatus('success')
       trackEvent('form_submit_success', 'conversion', 'home_contact')
+      // GA4 recommended lead event — the key event counted as a conversion
+      if (typeof window !== 'undefined' && (window as any).gtag) {
+        ;(window as any).gtag('event', 'generate_lead', {
+          currency: 'USD',
+          value: 1,
+          lead_source: 'home_contact',
+          page_path: window.location.pathname,
+        })
+      }
       setToast({ id: Date.now(), kind: 'success', title: t.successTitle, body: t.successBody })
       setForm({ name: '', email: '', message: '', scope: [] })
     } catch {
