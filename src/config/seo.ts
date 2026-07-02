@@ -272,6 +272,7 @@ export const structuredData = {
       "provider": {
         "@id": "https://www.zoelumos.com/#organization"
       },
+      "url": "https://www.zoelumos.com/englewood-nj-seo",
       "areaServed": {
         "@type": "Country",
         "name": "United States"
@@ -308,7 +309,7 @@ export const structuredData = {
       "provider": {
         "@id": "https://www.zoelumos.com/#organization"
       },
-      "url": "https://www.zoelumos.com/portfolio",
+      "url": "https://www.zoelumos.com/웹사이트-제작",
       "areaServed": {
         "@type": "Country",
         "name": "United States"
@@ -352,7 +353,7 @@ export const structuredData = {
       "provider": {
         "@id": "https://www.zoelumos.com/#organization"
       },
-      "url": "https://www.zoelumos.com/pricing",
+      "url": "https://www.zoelumos.com/광고대행",
       "areaServed": {
         "@type": "Country",
         "name": "United States"

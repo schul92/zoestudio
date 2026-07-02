@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import Link from 'next/link'
 import { useTranslation } from '@/hooks/useTranslation'
 import InView from '@/components/ui/motion/InView'
@@ -11,55 +11,68 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
   const prefix = locale === 'ko' ? '/ko' : ''
   const isKo = locale === 'ko'
 
+  // Each discipline deep-links to its service page (homepage link equity);
+  // the section CTA below still routes to #contact for conversion.
   const items = [
     {
       no: '01',
+      href: `${prefix}/쇼핑몰-제작`,
       title: t.services.webDesign.title,
       blurb: t.services.webDesign.description,
       tags: t.services.webDesign.features.slice(0, 4),
     },
     {
       no: '02',
+      href: `${prefix}/services`,
       title: (t.services as any).takeover.title,
       blurb: (t.services as any).takeover.description,
       tags: (t.services as any).takeover.features.slice(0, 4),
     },
     {
       no: '03',
+      href: `${prefix}/services/shopify-cost-audit`,
       title: (t.services as any).costAudit.title,
       blurb: (t.services as any).costAudit.description,
       tags: (t.services as any).costAudit.features.slice(0, 4),
     },
     {
       no: '04',
+      href: `${prefix}/웹사이트-제작`,
       title: t.services.revamp.title,
       blurb: t.services.revamp.description,
       tags: t.services.revamp.features.slice(0, 4),
     },
     {
       no: '05',
+      href: `${prefix}/englewood-nj-seo`,
       title: t.services.seo.title,
       blurb: t.services.seo.description,
       tags: t.services.seo.features.slice(0, 4),
     },
     {
       no: '06',
+      href: `${prefix}/광고대행`,
       title: t.services.googleAds.title,
       blurb: t.services.googleAds.description,
       tags: t.services.googleAds.features.slice(0, 4),
     },
     {
       no: '07',
+      href: `${prefix}/광고대행`,
       title: t.services.socialMedia.title,
       blurb: t.services.socialMedia.description,
       tags: t.services.socialMedia.features.slice(0, 4),
     },
   ]
 
-  // Cursor-following numeral preview
+  // Cursor-following numeral preview.
+  // Hover never touches React state: the numeral is written straight to the
+  // DOM and every row effect is pure CSS (group-hover), so moving between
+  // rows costs zero re-renders. The rAF loop only runs while the pointer is
+  // inside the list.
   const previewRef = useRef<HTMLDivElement>(null)
+  const numRef = useRef<HTMLSpanElement>(null)
   const listRef = useRef<HTMLUListElement>(null)
-  const [hover, setHover] = useState<number | null>(null)
 
   useEffect(() => {
     const list = listRef.current
@@ -69,32 +82,47 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
     if (!fine) return
 
     let raf = 0
+    let running = false
     let x = 0, y = 0, tx = 0, ty = 0
-    const onMove = (e: MouseEvent) => {
-      const r = list.getBoundingClientRect()
-      tx = e.clientX - r.left
-      ty = e.clientY - r.top
-    }
+
     const tick = () => {
       x += (tx - x) * 0.18
       y += (ty - y) * 0.18
       preview.style.transform = `translate3d(${x}px, ${y}px, 0) translate(-50%, -50%)`
       raf = requestAnimationFrame(tick)
     }
-    const onEnter = () => preview.classList.add('on')
+    const onMove = (e: MouseEvent) => {
+      const r = list.getBoundingClientRect()
+      tx = e.clientX - r.left
+      ty = e.clientY - r.top
+    }
+    const onOver = (e: MouseEvent) => {
+      const row = (e.target as HTMLElement).closest?.('[data-no]') as HTMLElement | null
+      if (row && numRef.current) numRef.current.textContent = row.dataset.no || '·'
+    }
+    const onEnter = (e: MouseEvent) => {
+      // Snap to the cursor so the disc doesn't glide in from the last spot.
+      const r = list.getBoundingClientRect()
+      tx = x = e.clientX - r.left
+      ty = y = e.clientY - r.top
+      preview.classList.add('on')
+      if (!running) { running = true; raf = requestAnimationFrame(tick) }
+    }
     const onLeave = () => {
       preview.classList.remove('on')
-      setHover(null)
+      running = false
+      cancelAnimationFrame(raf)
     }
 
-    list.addEventListener('mousemove', onMove)
+    list.addEventListener('mousemove', onMove, { passive: true })
+    list.addEventListener('mouseover', onOver, { passive: true })
     list.addEventListener('mouseenter', onEnter)
     list.addEventListener('mouseleave', onLeave)
-    raf = requestAnimationFrame(tick)
 
     return () => {
       cancelAnimationFrame(raf)
       list.removeEventListener('mousemove', onMove)
+      list.removeEventListener('mouseover', onOver)
       list.removeEventListener('mouseenter', onEnter)
       list.removeEventListener('mouseleave', onLeave)
     }
@@ -126,61 +154,53 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
           </div>
           <div className="md:col-span-6 md:col-start-7 md:pt-16">
             <InView as="p" className="reveal text-body-lg text-graphite leading-[1.7] max-w-xl">
-              <span className="block transition-all duration-1000" style={{}}>
-                {t.services.subtitle}
-              </span>
+              <span className="block">{t.services.subtitle}</span>
             </InView>
           </div>
         </div>
 
         {/* Numbered list */}
-        <ul
-          ref={listRef}
-          className="relative border-t border-hairline"
-          onMouseLeave={() => setHover(null)}
-        >
+        <ul ref={listRef} className="relative border-t border-hairline">
           {/* Cursor-follower numeral disc */}
-          <div ref={previewRef} className="svc-preview" aria-hidden>
-            <span className="font-display italic font-light text-[58px] leading-none">
-              {hover !== null ? items[hover].no : '·'}
+          <div ref={previewRef} className="svc-preview will-change-transform" aria-hidden>
+            <span ref={numRef} className="font-display italic font-light text-[58px] leading-none">
+              ·
             </span>
           </div>
 
-          {items.map((it, i) => (
+          {items.map((it) => (
             <InView
               key={it.no}
               as="li"
               className="reveal border-b border-hairline group"
             >
               <Link
-                href={`${prefix}/#contact`}
+                href={it.href}
                 data-cursor="hide"
-                onMouseEnter={() => setHover(i)}
-                className="grid grid-cols-12 gap-6 md:gap-10 items-start py-10 md:py-14 transition-colors duration-500"
+                data-no={it.no}
+                className="grid grid-cols-12 gap-6 md:gap-10 items-start py-10 md:py-14"
               >
                 <div className="col-span-2 md:col-span-1">
-                  <span
-                    className={`section-num text-2xl md:text-3xl transition-colors duration-500 ${
-                      hover === i ? 'text-gold' : ''
-                    }`}
-                  >
+                  <span className="section-num text-2xl md:text-3xl transition-colors duration-500 group-hover:text-gold">
                     {it.no}
                   </span>
                 </div>
 
                 <div className="col-span-10 md:col-span-6">
-                  <h3
-                    className={`font-display text-[clamp(1.75rem,3.5vw,2.75rem)] leading-[1.05] tracking-luxury transition-colors duration-500 fraunces-soft ${
-                      hover === i ? 'text-gold italic font-light' : 'text-ink'
-                    }`}
-                  >
-                    {it.title}
+                  {/* Two pre-rendered layers crossfade on hover — compositor-only,
+                      no font re-rasterization mid-interaction. */}
+                  <h3 className="relative font-display text-[clamp(1.75rem,3.5vw,2.75rem)] leading-[1.05] tracking-luxury fraunces-soft">
+                    <span className="block text-ink transition-opacity duration-500 group-hover:opacity-0">
+                      {it.title}
+                    </span>
+                    <span
+                      aria-hidden
+                      className="absolute inset-0 block italic font-light text-gold opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                    >
+                      {it.title}
+                    </span>
                   </h3>
-                  <p
-                    className={`mt-5 text-body text-graphite max-w-xl leading-[1.7] transition-all duration-700 ${
-                      hover === i ? 'md:translate-x-1.5' : ''
-                    }`}
-                  >
+                  <p className="mt-5 text-body text-graphite max-w-xl leading-[1.7] transition-transform duration-700 md:group-hover:translate-x-1.5">
                     {it.blurb}
                   </p>
                 </div>
@@ -190,16 +210,10 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
                     {it.tags.map((tag: string, ti: number) => (
                       <li
                         key={tag}
-                        className={`text-[13px] text-ash flex items-center gap-2 transition-all duration-500 ${
-                          hover === i ? 'opacity-100 translate-y-0' : 'opacity-80'
-                        }`}
+                        className="text-[13px] text-ash flex items-center gap-2 opacity-80 transition-opacity duration-500 group-hover:opacity-100"
                         style={{ transitionDelay: `${ti * 40}ms` }}
                       >
-                        <span
-                          className={`w-1 h-1 rounded-full transition-all duration-500 ${
-                            hover === i ? 'bg-gold scale-150' : 'bg-ash/60'
-                          }`}
-                        />
+                        <span className="w-1 h-1 rounded-full bg-ash/60 transition-[background-color,transform] duration-500 group-hover:bg-gold group-hover:scale-150" />
                         {tag}
                       </li>
                     ))}
