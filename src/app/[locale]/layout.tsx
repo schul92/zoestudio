@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next'
+import dynamic from 'next/dynamic'
 import { Inter, Fraunces } from 'next/font/google'
 import '../globals.css'
 import { seoConfig, structuredData } from '@/config/seo'
@@ -8,6 +9,12 @@ import AnalyticsWrapper from '@/components/AnalyticsWrapper'
 import SmoothScroll from '@/components/ui/motion/SmoothScroll'
 import CursorEditorial from '@/components/ui/motion/CursorEditorial'
 import { SITE_URL } from '@/lib/siteUrl'
+
+// Floating KakaoTalk chat — site-wide (blogs and service pages drive most
+// sessions; the button was previously homepage-only).
+const KakaoFloatingButton = dynamic(() => import('@/components/ui/KakaoFloatingButton'), {
+  ssr: false,
+})
 
 const inter = Inter({
   subsets: ['latin'],
@@ -191,6 +198,7 @@ export default function RootLayout({
         <CursorEditorial />
         <ServiceProvider>
           {children}
+          <KakaoFloatingButton />
         </ServiceProvider>
       </body>
     </html>

@@ -63,10 +63,6 @@ const PricingTeaser = dynamic(() => import('@/components/sections/PricingTeaser'
   loading: () => <div className="min-h-[400px] bg-bone" />
 })
 
-const KakaoFloatingButton = dynamic(() => import('@/components/ui/KakaoFloatingButton'), {
-  ssr: false
-})
-
 export function generateStaticParams() {
   return [
     { locale: 'en' },
@@ -281,7 +277,6 @@ export default function Home({ params }: { params: { locale: string } }) {
         <LocationLinks locale={locale} sectionNumber="08" />
       </main>
       <Footer locale={locale} />
-      <KakaoFloatingButton />
     </div>
   )
 }
