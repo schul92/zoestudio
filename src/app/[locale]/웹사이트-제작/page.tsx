@@ -4,6 +4,7 @@ import Footer from '@/components/layout/Footer'
 import Contact from '@/components/sections/Contact'
 import Link from 'next/link'
 import { Globe, Smartphone, Zap, Shield, CheckCircle, Star, Clock, DollarSign, ArrowRight, MessageCircle } from 'lucide-react'
+import { usStates } from '@/data/usStates'
 import { SITE_URL } from '@/lib/siteUrl'
 
 export async function generateStaticParams() {
@@ -54,9 +55,10 @@ export default function WebsiteDesignPage({ params }: { params: { locale: string
     '@context': 'https://schema.org',
     '@type': 'Service',
     name: isKorean ? '웹사이트 제작 서비스' : 'Website Design Service',
-    provider: { '@type': 'Organization', name: 'ZOE LUMOS' },
+    url: isKorean ? `${baseUrl}/ko/웹사이트-제작` : `${baseUrl}/웹사이트-제작`,
+    provider: { '@id': 'https://www.zoelumos.com/#organization' },
     serviceType: 'Website Design',
-    areaServed: ['New York', 'New Jersey'],
+    areaServed: { '@type': 'Country', name: 'United States' },
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
       name: isKorean ? '웹사이트 제작 패키지' : 'Website Design Packages',
@@ -78,7 +80,7 @@ export default function WebsiteDesignPage({ params }: { params: { locale: string
         acceptedAnswer: {
           '@type': 'Answer',
           text: isKorean
-            ? '기본 웹사이트는 $1,000부터, 비즈니스 웹사이트는 $2,000부터, 커스텀 웹사이트는 $3,500부터 시작합니다.'
+            ? '조이루모스(ZOE LUMOS)의 웹사이트 제작 비용은 기본 웹사이트 $1,000부터, 비즈니스 웹사이트 $2,000부터, 커스텀 웹사이트 $3,500부터 시작합니다.'
             : 'Basic websites start at $1,000, business websites at $2,000, and custom websites at $3,500.',
         },
       },
@@ -432,28 +434,17 @@ export default function WebsiteDesignPage({ params }: { params: { locale: string
 
             <h3 className="text-lg font-bold mb-4">{isKorean ? '지역별 웹사이트 제작 서비스' : 'Website Services by State'}</h3>
             <div className="flex flex-wrap justify-center gap-3">
-              {[
-                { ko: '뉴저지', koSlug: '뉴저지-웹사이트', en: 'New Jersey', enSlug: 'nj-website' },
-                { ko: '뉴욕', koSlug: '뉴욕-웹사이트', en: 'New York', enSlug: 'ny-website' },
-                { ko: '캘리포니아', koSlug: '캘리포니아-웹사이트', en: 'California', enSlug: 'ca-website' },
-                { ko: '텍사스', koSlug: '텍사스-웹사이트', en: 'Texas', enSlug: 'tx-website' },
-                { ko: '조지아', koSlug: '조지아-웹사이트', en: 'Georgia', enSlug: 'ga-website' },
-                { ko: '버지니아', koSlug: '버지니아-웹사이트', en: 'Virginia', enSlug: 'va-website' },
-                { ko: '일리노이', koSlug: '일리노이-웹사이트', en: 'Illinois', enSlug: 'il-website' },
-                { ko: '워싱턴', koSlug: '워싱턴-웹사이트', en: 'Washington', enSlug: 'wa-website' },
-                { ko: '메릴랜드', koSlug: '메릴랜드-웹사이트', en: 'Maryland', enSlug: 'md-website' },
-                { ko: '하와이', koSlug: '하와이-웹사이트', en: 'Hawaii', enSlug: 'hi-website' },
-                { ko: '펜실베이니아', koSlug: '펜실베이니아-웹사이트', en: 'Pennsylvania', enSlug: 'pa-website' },
-                { ko: '플로리다', koSlug: '플로리다-웹사이트', en: 'Florida', enSlug: 'fl-website' },
-              ].map((state, idx) => (
-                <Link
-                  key={idx}
-                  href={isKorean ? `/ko/${state.koSlug}` : `/${state.enSlug}`}
-                  className="px-4 py-2 bg-violet-50 text-violet-700 rounded-lg hover:bg-violet-100 transition-colors text-sm font-medium"
-                >
-                  {isKorean ? `${state.ko} 웹사이트 제작` : `${state.en} Website`}
-                </Link>
-              ))}
+              {usStates
+                .filter((s) => s.tier === 'large' || s.tier === 'medium')
+                .map((state) => (
+                  <Link
+                    key={state.abbr}
+                    href={isKorean ? `/ko/${state.koSlug}` : `/${state.slug}`}
+                    className="px-4 py-2 bg-violet-50 text-violet-700 rounded-lg hover:bg-violet-100 transition-colors text-sm font-medium"
+                  >
+                    {isKorean ? `${state.name.ko} 웹사이트 제작` : `${state.name.en} Website`}
+                  </Link>
+                ))}
             </div>
           </div>
         </section>

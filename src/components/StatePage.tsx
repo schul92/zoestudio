@@ -1,8 +1,44 @@
+import type { Metadata } from 'next'
 import Link from 'next/link'
 import HeaderWrapper from '@/components/layout/HeaderWrapper'
 import Footer from '@/components/layout/Footer'
-import type { StateData } from '@/data/usStates'
+import { usStates, type StateData } from '@/data/usStates'
 import { SITE_URL } from '@/lib/siteUrl'
+
+/**
+ * Shared metadata builder for all state pages (English-slug and Korean-slug routes).
+ * KO title leads with the contiguous exact-match phrase "[주명] 웹사이트 제작";
+ * the ko hreflang alternate always points to the Korean-slug URL (/ko/[koSlug]),
+ * en + x-default point to the English-slug URL.
+ */
+export function buildStateMetadata(data: StateData, locale: string): Metadata {
+  const ko = locale === 'ko'
+  const name = ko ? data.name.ko : data.name.en
+  const enUrl = `${SITE_URL}/${data.slug}`
+  const koUrl = encodeURI(`${SITE_URL}/ko/${data.koSlug}`)
+  const url = ko ? koUrl : enUrl
+  const cities = (ko ? data.cities.map((c) => c.ko) : data.cities.map((c) => c.en)).slice(0, 3).join(', ')
+  return {
+    title: ko
+      ? `${data.name.ko} 웹사이트 제작 | ${data.name.ko} 한인 홈페이지 제작 | ZOE LUMOS`
+      : `${data.name.en} Korean Website Design | Bilingual Web Agency | ZOE LUMOS`,
+    description: ko
+      ? `${name} 웹사이트 제작 전문 — 한인 비즈니스를 위한 한·영 이중언어 홈페이지 제작, 로컬 SEO, AI 검색 최적화(GEO). ${cities} 등 ${name} 전역. 원격 가능, 카카오톡 상담.`
+      : `Korean website design in ${name} — bilingual Korean-English sites, local SEO, and AI-search optimization (GEO) for Korean-American businesses. ${cities} and beyond. Remote, KakaoTalk consultations.`,
+    alternates: { canonical: url, languages: { 'x-default': enUrl, en: enUrl, ko: koUrl } },
+    openGraph: {
+      title: ko ? `${name} 웹사이트 제작` : `Korean Web Design in ${name}`,
+      description: ko
+        ? `${name} 한인 비즈니스 이중언어 웹사이트·SEO·GEO.`
+        : `Bilingual websites, SEO & GEO for Korean businesses in ${name}.`,
+      url,
+      siteName: 'ZOE LUMOS',
+      locale: ko ? 'ko_KR' : 'en_US',
+      type: 'website',
+    },
+    robots: { index: true, follow: true },
+  }
+}
 
 /** Per-state FAQ, generated from the state's own data so every page is distinct. */
 function buildFaq(s: StateData, ko: boolean) {
@@ -63,6 +99,11 @@ export default function StatePage({
   const cities = ko ? data.cities.map((c) => c.ko) : data.cities.map((c) => c.en)
   const metro = ko ? data.metro.ko : data.metro.en
   const faq = buildFaq(data, ko)
+  // The KO canonical home is the Korean-slug URL; EN canonical is the English slug.
+  const canonicalUrl = ko ? encodeURI(`${SITE_URL}/ko/${data.koSlug}`) : `${SITE_URL}/${data.slug}`
+  const neighborStates = data.neighbors
+    .map((n) => usStates.find((s) => s.abbr === n))
+    .filter((s): s is StateData => Boolean(s))
 
   const proServiceSchema = {
     '@context': 'https://schema.org',
@@ -86,6 +127,19 @@ export default function StatePage({
       acceptedAnswer: { '@type': 'Answer', text: f.a },
     })),
   }
+  const serviceSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    serviceType: 'Korean website design',
+    name: ko ? `${name} 웹사이트 제작` : `Korean website design in ${data.name.en}`,
+    description: ko
+      ? `${name} 한인 비즈니스를 위한 한·영 이중언어 웹사이트 제작·홈페이지 제작·SEO`
+      : `Bilingual Korean-English website design and SEO for businesses in ${data.name.en}`,
+    areaServed: { '@type': 'State', name: data.name.en },
+    provider: { '@type': 'ProfessionalService', name: 'ZOE LUMOS', url: SITE_URL },
+    url: canonicalUrl,
+    availableLanguage: ['en', 'ko'],
+  }
   const breadcrumb = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -99,6 +153,7 @@ export default function StatePage({
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(proServiceSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
       <HeaderWrapper locale={locale} />
@@ -114,8 +169,11 @@ export default function StatePage({
           </nav>
           <p className="overline text-gold mb-5">{ko ? `${name} · 한인 비즈니스` : `${name} · Korean-American business`}</p>
           <h1 className="font-display text-[clamp(2.25rem,6vw,4.5rem)] leading-[1.05] tracking-luxury text-ink max-w-4xl">
-            {ko ? `${name} 한인 웹사이트 제작` : `Korean Web Design in ${name}`}
+            {ko ? `${name} 웹사이트 제작` : `Korean Web Design in ${name}`}
           </h1>
+          <p className="mt-4 font-display text-[clamp(1.1rem,2.2vw,1.6rem)] tracking-luxury text-graphite max-w-3xl">
+            {ko ? '한인 비즈니스를 위한 이중언어 웹에이전시' : 'The bilingual web agency for Korean-American businesses'}
+          </p>
           <p className="mt-8 max-w-2xl text-body-lg text-graphite leading-[1.7]">
             {ko
               ? `${cities.length ? cities.slice(0, 3).join(', ') + ' 등 ' : ''}${name} 전역 한인 비즈니스를 위한 한·영 이중언어 웹사이트, 로컬 SEO, 그리고 AI 검색 최적화(GEO). 원격으로 동일한 품질을 제공합니다.`
@@ -137,6 +195,9 @@ export default function StatePage({
                 {ko
                   ? `${name} 한인 인구는 약 ${data.koreanPopulation}명으로 추정됩니다. 우리는 1세대 사장님(한국어)과 1.5·2세 고객(영어)을 모두 끌어오는 이중언어 사이트를 만듭니다.`
                   : `${name}'s Korean-American population is estimated around ${data.koreanPopulation}. We build bilingual sites that win both the first-generation owner (Korean) and the 1.5/second-generation customer (English).`}
+              </p>
+              <p className="mt-4 text-graphite leading-[1.7]">
+                {ko ? data.secondParagraph.ko : data.secondParagraph.en}
               </p>
             </div>
             <div className="lg:col-span-5">
@@ -166,10 +227,24 @@ export default function StatePage({
           </div>
         </section>
 
+        {/* Industries — per-state verticals, keyword surface for "[주] 한인 [업종]" */}
+        <section className="container-edge py-12 md:py-16 border-t border-hairline">
+          <h2 className="font-display text-display-sm tracking-luxury mb-8">
+            {ko ? `${name} 한인 업종별 웹사이트` : `Korean business industries we serve in ${name}`}
+          </h2>
+          <ul className="flex flex-wrap gap-3 max-w-4xl">
+            {data.industries.map((ind) => (
+              <li key={ind.en} className="border border-hairline px-4 py-3 text-[14px] text-ink">
+                {ko ? ind.ko : ind.en}
+              </li>
+            ))}
+          </ul>
+        </section>
+
         {/* Pricing table — transparent, and tables boost AI-search citation */}
         <section className="container-edge py-12 md:py-16 border-t border-hairline">
           <h2 className="font-display text-display-sm tracking-luxury mb-8">
-            {ko ? `${name} 한인 웹사이트 가격` : `Korean website pricing in ${name}`}
+            {ko ? `${name} 홈페이지 제작 비용` : `Korean website pricing in ${name}`}
           </h2>
           <div className="overflow-x-auto max-w-3xl">
             <table className="w-full text-left border-collapse">
@@ -208,6 +283,43 @@ export default function StatePage({
                 <p className="text-graphite leading-[1.7]">{f.a}</p>
               </div>
             ))}
+          </div>
+        </section>
+
+        {/* Neighbor states — internal-link mesh across state pages */}
+        {neighborStates.length > 0 && (
+          <section className="container-edge py-12 md:py-16 border-t border-hairline">
+            <h2 className="font-display text-display-sm tracking-luxury mb-8">
+              {ko ? '인근 주 서비스' : 'Nearby states we serve'}
+            </h2>
+            <ul className="flex flex-wrap gap-3">
+              {neighborStates.map((nb) => (
+                <li key={nb.abbr}>
+                  <Link
+                    href={ko ? `/ko/${nb.koSlug}` : `/${nb.slug}`}
+                    className="inline-block border border-hairline px-4 py-3 text-[14px] text-ink hover:border-ink hover:text-gold transition-colors"
+                  >
+                    {ko ? `${nb.name.ko} 웹사이트 제작` : `Korean Web Design in ${nb.name.en}`}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
+
+        {/* Money pages — pass state-page equity to the service pages */}
+        <section className="container-edge py-12 md:py-16 border-t border-hairline">
+          <p className="overline text-ash mb-5">{ko ? '관련 서비스' : 'Related services'}</p>
+          <div className="flex flex-wrap gap-4">
+            <Link href={`${prefix}/웹사이트-제작`} className="inline-flex items-center text-[15px] text-ink underline underline-offset-4 hover:text-gold transition-colors py-1">
+              {ko ? '웹사이트 제작 서비스' : 'Website design service'}
+            </Link>
+            <Link href={`${prefix}/광고대행`} className="inline-flex items-center text-[15px] text-ink underline underline-offset-4 hover:text-gold transition-colors py-1">
+              {ko ? '구글 광고대행' : 'Google Ads management'}
+            </Link>
+            <Link href={`${prefix}/services`} className="inline-flex items-center text-[15px] text-ink underline underline-offset-4 hover:text-gold transition-colors py-1">
+              {ko ? '전체 서비스 보기' : 'All services'}
+            </Link>
           </div>
         </section>
 

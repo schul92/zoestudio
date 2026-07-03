@@ -5,6 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import InView from '@/components/ui/motion/InView'
 import Magnetic from '@/components/ui/motion/Magnetic'
+import { PILLARS, PillarKey } from '@/data/blogClusters'
 
 type BlogPost = {
   id: number
@@ -15,6 +16,7 @@ type BlogPost = {
   title: { en: string; ko: string }
   excerpt: { en: string; ko: string }
   image: string
+  pillarKey?: PillarKey
 }
 
 type Content = {
@@ -39,6 +41,7 @@ export default function BlogListing({
   content: Content
 }) {
   const [activeCategory, setActiveCategory] = useState<string>('all')
+  const [activePillar, setActivePillar] = useState<PillarKey | 'all'>('all')
   const [query, setQuery] = useState('')
   const prefix = locale === 'ko' ? '/ko' : ''
   const isKo = locale === 'ko'
@@ -56,17 +59,25 @@ export default function BlogListing({
     return Array.from(set)
   }, [posts, locale])
 
+  // Pillar keys present in the post list, in PILLARS declaration order.
+  const pillarKeys = useMemo(() => {
+    const present = new Set<PillarKey>()
+    for (const p of posts) if (p.pillarKey) present.add(p.pillarKey)
+    return (Object.keys(PILLARS) as PillarKey[]).filter((k) => present.has(k))
+  }, [posts])
+
   const filtered = useMemo(() => {
     const needle = query.trim().toLowerCase()
     return rest.filter((p) => {
       if (activeCategory !== 'all' && p.category[locale] !== activeCategory) return false
+      if (activePillar !== 'all' && p.pillarKey !== activePillar) return false
       if (needle) {
         const hay = `${p.title[locale]} ${p.excerpt[locale]} ${p.category[locale]}`.toLowerCase()
         if (!hay.includes(needle)) return false
       }
       return true
     })
-  }, [rest, activeCategory, query, locale])
+  }, [rest, activeCategory, activePillar, query, locale])
 
   const formatDate = (d: string) =>
     new Date(d).toLocaleDateString(locale === 'ko' ? 'ko-KR' : 'en-US', {
@@ -230,6 +241,41 @@ export default function BlogListing({
               <span className="absolute right-0 top-1/2 -translate-y-1/2 text-ash pointer-events-none">↵</span>
             </div>
           </div>
+
+          {/* Series (pillar cluster) pills — coexists with category pills + search */}
+          {pillarKeys.length > 0 && (
+            <div className="mt-6 flex items-center gap-5 overflow-x-auto no-scrollbar">
+              <span className="overline text-ash shrink-0 pr-2">{isKo ? '시리즈' : 'Series'}</span>
+              <button
+                onClick={() => setActivePillar('all')}
+                className={`px-4 py-2 rounded-full text-[13px] transition-all duration-300 border whitespace-nowrap ${
+                  activePillar === 'all'
+                    ? 'bg-ink text-ivory border-ink'
+                    : 'text-graphite border-hairline hover:border-ink'
+                }`}
+              >
+                {activePillar === 'all' && <span className="mr-1">✓</span>}
+                {content.all}
+              </button>
+              {pillarKeys.map((key) => {
+                const active = activePillar === key
+                return (
+                  <button
+                    key={key}
+                    onClick={() => setActivePillar(active ? 'all' : key)}
+                    className={`px-4 py-2 rounded-full text-[13px] transition-all duration-300 border whitespace-nowrap ${
+                      active
+                        ? 'bg-ink text-ivory border-ink'
+                        : 'text-graphite border-hairline hover:border-ink'
+                    }`}
+                  >
+                    {active && <span className="mr-1">✓</span>}
+                    {PILLARS[key].label[locale]}
+                  </button>
+                )
+              })}
+            </div>
+          )}
         </div>
       </section>
 

@@ -89,6 +89,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/플로리다-웹사이트', enPath: '/fl-website', priority: 0.95 },
     { path: '/팰팍-마케팅', enPath: '/palisades-park-marketing', priority: 0.95 },
     { path: '/광고대행', enPath: '/광고대행', priority: 0.95 },
+    // Korean-slug URLs for the 38 programmatic state pages ([주명]-웹사이트)
+    ...usStates
+      .filter((s) => !STATES_WITH_CUSTOM_PAGES.includes(s.abbr))
+      .map((s) => ({ path: `/${s.koSlug}`, enPath: `/${s.slug}`, priority: 0.9 })),
   ]
 
   const sitemapEntries: MetadataRoute.Sitemap = []

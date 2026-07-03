@@ -80,6 +80,7 @@ export const structuredData = {
       "name": "United States"
     },
     "sameAs": [
+      "https://maps.google.com/maps?cid=423025541319098436",
       "https://www.facebook.com/zoelumos",
       "https://www.instagram.com/zoelumos",
       "https://www.linkedin.com/company/zoelumos",

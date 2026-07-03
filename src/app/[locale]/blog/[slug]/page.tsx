@@ -1,10 +1,14 @@
+import { Fragment } from 'react'
 import { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import HeaderWrapper from '@/components/layout/HeaderWrapper'
 import Footer from '@/components/layout/Footer'
 import RelatedCluster from '@/components/blog/RelatedCluster'
+import ReadingProgress from '@/components/blog/ReadingProgress'
 import { blogContent, BlogSection } from '@/data/blogContent'
+import { PILLARS, POST_TO_PILLAR } from '@/data/blogClusters'
+import { MONEY_PAGES, DEFAULT_MONEY_PAGE, pillarHubExists, pillarHubHref } from '@/components/blog/pillarLinks'
 import { SITE_URL } from '@/lib/siteUrl'
 
 // ─── Static params: every slug × every locale ────────────────────────────────
@@ -185,8 +189,151 @@ function HowToSchema({
   )
 }
 
+// ─── First-mention auto internal links ────────────────────────────────────────
+// Ordered longest-phrase-first ('SEO' last so 'local SEO' / '로컬 SEO' win).
+// Each keyword links at most once per post; max 3 auto-links per post total.
+const AUTO_LINK_TARGETS: Array<{ term: string; href: string }> = [
+  { term: '웹사이트 제작', href: '/웹사이트-제작' },
+  { term: '홈페이지 제작', href: '/웹사이트-제작' },
+  { term: '구글 광고', href: '/광고대행' },
+  { term: 'Google Ads', href: '/광고대행' },
+  { term: '카카오톡 채널', href: '/kakaotalk-marketing-guide' },
+  { term: 'KakaoTalk Channel', href: '/kakaotalk-marketing-guide' },
+  { term: '로컬 SEO', href: '/englewood-nj-seo' },
+  { term: 'local SEO', href: '/englewood-nj-seo' },
+  { term: 'SEO', href: '/englewood-nj-seo' },
+]
+
+interface AutoLink {
+  before: string
+  text: string
+  href: string
+  after: string
+}
+
+function findTermIndex(content: string, term: string): number {
+  const escaped = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+  // ASCII word boundaries so 'SEO' never matches inside 'Seoul' etc.
+  const re = new RegExp(`(?<![A-Za-z0-9])${escaped}(?![A-Za-z0-9])`, 'i')
+  const m = re.exec(content)
+  return m ? m.index : -1
+}
+
+/**
+ * Pure pre-render pass over a post's sections: for each 'p' section, find the
+ * first not-yet-linked keyword (ordered map above), and record a single split
+ * so the renderer can hyperlink exactly that occurrence. Tracked per post via
+ * a local Set; capped at 3 links per post. Server-side only — no client JS.
+ */
+function computeAutoLinks(sections: BlogSection[], prefix: string): Map<number, AutoLink> {
+  const usedTerms = new Set<string>()
+  const links = new Map<number, AutoLink>()
+  const MAX_LINKS = 3
+  sections.forEach((section, i) => {
+    if (links.size >= MAX_LINKS) return
+    if (section.type !== 'p' || !section.content) return
+    for (const { term, href } of AUTO_LINK_TARGETS) {
+      if (usedTerms.has(term)) continue
+      const idx = findTermIndex(section.content, term)
+      if (idx === -1) continue
+      links.set(i, {
+        before: section.content.slice(0, idx),
+        text: section.content.slice(idx, idx + term.length),
+        href: `${prefix}${href}`,
+        after: section.content.slice(idx + term.length),
+      })
+      usedTerms.add(term)
+      break // at most one auto-link per paragraph
+    }
+  })
+  return links
+}
+
+// ─── Mid-article CTA (slim inline banner) ─────────────────────────────────────
+function MidArticleCta({
+  prefix,
+  locale,
+  moneyHref,
+}: {
+  prefix: string
+  locale: 'en' | 'ko'
+  moneyHref: string
+}) {
+  const isKo = locale === 'ko'
+  return (
+    <aside className="my-10 flex flex-col sm:flex-row sm:items-center justify-between gap-4 px-6 py-5 bg-bone rounded-[2px] border-l-2 border-gold">
+      <p className="font-display italic font-light text-[1.05rem] text-ink leading-[1.5] m-0">
+        {isKo
+          ? '이런 고민, 15분 상담으로 정리해 드립니다'
+          : 'A 15-minute call can sort this out'}
+      </p>
+      <div className="flex items-center gap-5 shrink-0">
+        <Link
+          href={`${prefix}/#contact`}
+          className="text-[13px] font-medium text-ink border-b border-ink pb-0.5 hover:text-gold hover:border-gold transition-colors whitespace-nowrap"
+        >
+          {isKo ? '무료 상담' : 'Free consultation'}
+        </Link>
+        <Link
+          href={moneyHref}
+          className="text-[13px] text-graphite border-b border-hairline pb-0.5 hover:text-ink hover:border-ink transition-colors whitespace-nowrap"
+        >
+          {isKo ? '서비스 보기' : 'See the service'}
+        </Link>
+      </div>
+    </aside>
+  )
+}
+
+// ─── Table of contents (long posts, readTime >= 8) ────────────────────────────
+function TableOfContents({
+  headings,
+  locale,
+}: {
+  headings: Array<{ id: string; text: string }>
+  locale: 'en' | 'ko'
+}) {
+  if (headings.length < 2) return null
+  return (
+    <nav className="my-10 px-7 py-6 bg-bone rounded-[2px] hair-y">
+      <p className="overline text-gold mb-4">
+        {locale === 'ko' ? '목차' : 'Contents'}
+      </p>
+      <ol className="space-y-2.5 list-none m-0 p-0">
+        {headings.map((h, i) => (
+          <li key={h.id} className="flex items-baseline gap-3">
+            <span className="overline text-ash shrink-0 w-6">
+              {String(i + 1).padStart(2, '0')}
+            </span>
+            <a
+              href={`#${h.id}`}
+              className="text-[14px] text-graphite leading-[1.5] hover:text-ink transition-colors"
+            >
+              {h.text}
+            </a>
+          </li>
+        ))}
+      </ol>
+    </nav>
+  )
+}
+
 // ─── Section renderer ─────────────────────────────────────────────────────────
-function RenderSection({ section }: { section: BlogSection }) {
+function RenderSection({
+  section,
+  prefix,
+  locale,
+  moneyHref,
+  autoLink,
+  h2Id,
+}: {
+  section: BlogSection
+  prefix: string
+  locale: 'en' | 'ko'
+  moneyHref: string
+  autoLink?: AutoLink
+  h2Id?: string
+}) {
   switch (section.type) {
     case 'intro':
       return (
@@ -196,14 +343,30 @@ function RenderSection({ section }: { section: BlogSection }) {
       )
     case 'h2':
       return (
-        <h2 className="font-display text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.15] tracking-luxury text-ink mt-16 mb-6 fraunces-soft">
+        <h2
+          id={h2Id}
+          className="font-display text-[clamp(1.75rem,3vw,2.5rem)] leading-[1.15] tracking-luxury text-ink mt-16 mb-6 fraunces-soft scroll-mt-28"
+        >
           {section.content}
         </h2>
       )
     case 'p':
       return (
         <p className="text-[1.0625rem] text-graphite leading-[1.8] mb-6">
-          {section.content}
+          {autoLink ? (
+            <>
+              {autoLink.before}
+              <Link
+                href={autoLink.href}
+                className="text-ink underline decoration-gold/60 decoration-1 underline-offset-4 hover:text-gold transition-colors"
+              >
+                {autoLink.text}
+              </Link>
+              {autoLink.after}
+            </>
+          ) : (
+            section.content
+          )}
         </p>
       )
     case 'ul':
@@ -237,14 +400,23 @@ function RenderSection({ section }: { section: BlogSection }) {
           <p className="font-display italic font-light text-[clamp(1.25rem,2vw,1.6rem)] text-ink leading-[1.5] mb-8 max-w-xl mx-auto">
             {section.content}
           </p>
-          <Link
-            href="/#contact"
-            data-cursor="Begin"
-            className="btn-ink"
-          >
-            Get a free consultation
-            <span className="arrow">→</span>
-          </Link>
+          <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
+            <Link
+              href={`${prefix}/#contact`}
+              data-cursor="Begin"
+              className="btn-ink"
+            >
+              {locale === 'ko' ? '무료 상담 받기' : 'Get a free consultation'}
+              <span className="arrow">→</span>
+            </Link>
+            <Link
+              href={moneyHref}
+              className="inline-flex items-center gap-2 text-[14px] text-ink border-b border-ink/30 hover:border-ink pb-1 transition-colors"
+            >
+              {locale === 'ko' ? '서비스 자세히 보기' : 'Explore the service'}
+              <span aria-hidden>→</span>
+            </Link>
+          </div>
         </aside>
       )
     case 'stats': {
@@ -378,10 +550,57 @@ export default function BlogPostPage({
   const prefix = locale === 'ko' ? '/ko' : ''
   const sections = post.sections[locale]
 
+  // ─── Pillar funnel wiring ───────────────────────────────────────────────────
+  const pillarKey = POST_TO_PILLAR[post.slug]
+  const pillar = pillarKey ? PILLARS[pillarKey] : undefined
+  const hubExists = pillarKey ? pillarHubExists(pillarKey) : false
+  // Money page this cluster funnels to (locale-prefixed at usage sites).
+  const moneyPage = pillarKey ? MONEY_PAGES[pillarKey] : DEFAULT_MONEY_PAGE
+  const moneyHref = `${prefix}${moneyPage}`
+  // Hub link with route-existence guard (falls back to pillar blog post).
+  // Suppressed when the fallback would point at the current post itself.
+  const rawPillarNavHref = pillarKey ? pillarHubHref(pillarKey, prefix) : null
+  const pillarNavHref =
+    rawPillarNavHref === `${prefix}/blog/${post.slug}` ? null : rawPillarNavHref
+
+  // ─── Body enrichment (server-side, computed once per render) ────────────────
+  const autoLinks = computeAutoLinks(sections, prefix)
+  const midCtaIndex = Math.floor(sections.length / 2)
+  const showToc = post.readTime >= 8
+  const tocHeadings = showToc
+    ? sections
+        .map((s, i) => ({ id: `s-${i}`, text: s.content, type: s.type }))
+        .filter((s) => s.type === 'h2')
+        .map(({ id, text }) => ({ id, text }))
+    : []
+  const introIndex = sections.findIndex((s) => s.type === 'intro')
+  const tocAfterIndex = introIndex === -1 ? 0 : introIndex
+
   const formattedDate = new Date(post.date).toLocaleDateString(
     locale === 'ko' ? 'ko-KR' : 'en-US',
     { year: 'numeric', month: 'long', day: 'numeric' }
   )
+
+  // Bottom-CTA headline keyed to the pillar's money page.
+  const CTA_HEADLINES: Record<string, { en: string; ko: string }> = {
+    '/englewood-nj-seo': {
+      en: 'Ready to rank in both languages?',
+      ko: '영어와 한국어, 두 언어로 상위 노출될 준비 되셨나요?',
+    },
+    '/웹사이트-제작': {
+      en: 'Ready for a website that earns its keep?',
+      ko: '제 몫을 하는 웹사이트, 시작해 볼까요?',
+    },
+    '/services/kakaotalk-marketing-usa': {
+      en: 'Ready to reach customers where they chat?',
+      ko: '고객이 매일 쓰는 카카오톡에서 만날 준비 되셨나요?',
+    },
+    '/services': {
+      en: 'Ready to grow your business?',
+      ko: '비즈니스를 성장시킬 준비가 되셨나요?',
+    },
+  }
+  const ctaHeadline = CTA_HEADLINES[moneyPage] || CTA_HEADLINES['/services']
 
   const ui = {
     home: locale === 'ko' ? '홈' : 'Home',
@@ -389,27 +608,38 @@ export default function BlogPostPage({
     backToBlog: locale === 'ko' ? '← 블로그로 돌아가기' : '← Back to Blog',
     minRead: locale === 'ko' ? '분 읽기' : 'min read',
     by: locale === 'ko' ? '작성자' : 'By',
-    ctaTitle:
-      locale === 'ko'
-        ? '비즈니스를 성장시킬 준비가 되셨나요?'
-        : 'Ready to grow your business?',
+    partOf: locale === 'ko' ? '시리즈' : 'Part of',
+    ctaTitle: ctaHeadline[locale],
     ctaDesc:
       locale === 'ko'
         ? 'ZOE LUMOS는 포트리 NJ 소재 한인 디지털 마케팅 에이전시입니다. 웹사이트 제작, 로컬 SEO, 구글 광고를 전문으로 합니다.'
         : 'ZOE LUMOS is a Korean-American digital marketing agency in Fort Lee, NJ, specializing in bilingual websites, local SEO, and Google Ads.',
     ctaButton:
       locale === 'ko' ? '무료 상담 받기 →' : 'Get a Free Consultation →',
+    ctaMoney:
+      locale === 'ko' ? '서비스 자세히 보기' : 'Explore the service',
   }
 
   const baseUrl = SITE_URL
+  // Pillar breadcrumb node only when the hub route actually exists.
+  const includePillarCrumb = Boolean(pillar && hubExists)
+  const crumbItems: Array<{ name: string; item: string }> = [
+    { name: ui.home, item: `${baseUrl}${prefix || ''}` },
+    { name: ui.blog, item: `${baseUrl}${prefix}/blog` },
+  ]
+  if (includePillarCrumb && pillar) {
+    crumbItems.push({ name: pillar.label[locale], item: `${baseUrl}${prefix}${pillar.pillarUrl}` })
+  }
+  crumbItems.push({ name: post.title[locale], item: `${baseUrl}${prefix}/blog/${post.slug}` })
   const crumbs = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
-    itemListElement: [
-      { '@type': 'ListItem', position: 1, name: ui.home, item: `${baseUrl}${prefix || ''}` },
-      { '@type': 'ListItem', position: 2, name: ui.blog, item: `${baseUrl}${prefix}/blog` },
-      { '@type': 'ListItem', position: 3, name: post.title[locale], item: `${baseUrl}${prefix}/blog/${post.slug}` },
-    ],
+    itemListElement: crumbItems.map((c, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      name: c.name,
+      item: c.item,
+    })),
   }
 
   return (
@@ -423,12 +653,15 @@ export default function BlogPostPage({
         dangerouslySetInnerHTML={{ __html: JSON.stringify(crumbs) }}
       />
 
+      {/* Reading progress bar — only worth the JS on longer reads */}
+      {post.readTime >= 6 && <ReadingProgress />}
+
       <main className="min-h-screen bg-ivory text-ink">
         {/* Article header band */}
         <section className="hair-bottom pt-40 md:pt-48 pb-16 md:pb-20">
           <div className="container-edge">
             {/* Breadcrumb */}
-            <nav className="flex items-center gap-2 overline text-ash mb-10">
+            <nav className="flex flex-wrap items-center gap-2 overline text-ash mb-10">
               <Link href={prefix || '/'} className="hover:text-ink transition-colors">
                 {ui.home}
               </Link>
@@ -436,6 +669,17 @@ export default function BlogPostPage({
               <Link href={`${prefix}/blog`} className="hover:text-ink transition-colors">
                 {ui.blog}
               </Link>
+              {includePillarCrumb && pillar && (
+                <>
+                  <span className="opacity-50">/</span>
+                  <Link
+                    href={`${prefix}${pillar.pillarUrl}`}
+                    className="hover:text-ink transition-colors line-clamp-1 max-w-[16rem]"
+                  >
+                    {pillar.label[locale]}
+                  </Link>
+                </>
+              )}
               <span className="opacity-50">/</span>
               <span className="text-ink line-clamp-1 max-w-xs">{post.title[locale]}</span>
             </nav>
@@ -461,6 +705,20 @@ export default function BlogPostPage({
               <h1 className="font-display text-[clamp(2.25rem,6vw,5rem)] leading-[1] tracking-luxury text-ink">
                 {post.title[locale]}
               </h1>
+
+              {/* Part-of pillar line */}
+              {pillar && pillarNavHref && (
+                <p className="mt-6 flex items-center gap-2 text-[13px] text-graphite">
+                  <span className="overline text-ash">{ui.partOf}:</span>
+                  <Link
+                    href={pillarNavHref}
+                    className="inline-flex items-center gap-1.5 text-ink border-b border-ink/30 hover:border-ink hover:text-gold pb-0.5 transition-colors"
+                  >
+                    {pillar.label[locale]}
+                    <span aria-hidden>→</span>
+                  </Link>
+                </p>
+              )}
             </div>
           </div>
         </section>
@@ -502,7 +760,22 @@ export default function BlogPostPage({
                 </aside>
               )}
               {sections.map((section, i) => (
-                <RenderSection key={i} section={section} />
+                <Fragment key={i}>
+                  <RenderSection
+                    section={section}
+                    prefix={prefix}
+                    locale={locale}
+                    moneyHref={moneyHref}
+                    autoLink={autoLinks.get(i)}
+                    h2Id={section.type === 'h2' ? `s-${i}` : undefined}
+                  />
+                  {showToc && i === tocAfterIndex && (
+                    <TableOfContents headings={tocHeadings} locale={locale} />
+                  )}
+                  {i === midCtaIndex && (
+                    <MidArticleCta prefix={prefix} locale={locale} moneyHref={moneyHref} />
+                  )}
+                </Fragment>
               ))}
             </article>
           </div>
@@ -546,7 +819,46 @@ export default function BlogPostPage({
         {/* Related cluster — pillar + 5 sibling posts in same topic */}
         <RelatedCluster currentSlug={post.slug} locale={locale} />
 
-        {/* Bottom CTA — editorial ivory */}
+        {/* Author box — mirrors the BlogPosting schema author, no fake credentials */}
+        <section className="hair-top">
+          <div className="container-edge">
+            <div className="mx-auto max-w-[720px] py-12 md:py-14">
+              <div className="flex items-start gap-5">
+                <span
+                  aria-hidden
+                  className="flex h-14 w-14 shrink-0 items-center justify-center rounded-full bg-bone hair-y font-display italic text-lg text-gold"
+                >
+                  SS
+                </span>
+                <div className="min-w-0">
+                  <p className="overline text-ash mb-1.5">
+                    {locale === 'ko' ? '글쓴이' : 'Written by'}
+                  </p>
+                  <p className="font-display text-[1.15rem] tracking-luxury text-ink m-0">
+                    Steve Song
+                    <span className="ml-3 text-[13px] font-sans not-italic text-graphite">
+                      {locale === 'ko' ? '대표 — ZOE LUMOS' : 'Founder — ZOE LUMOS'}
+                    </span>
+                  </p>
+                  <p className="mt-2 text-[14px] text-graphite leading-[1.7]">
+                    {locale === 'ko'
+                      ? '포트리 NJ에서 한인 비즈니스를 위한 이중언어 웹사이트, 로컬 SEO, 구글 광고를 직접 만들고 운영합니다.'
+                      : 'Builds bilingual websites and runs local SEO and Google Ads for Korean-American businesses from Fort Lee, NJ.'}
+                  </p>
+                  <Link
+                    href={`${prefix}/about`}
+                    className="mt-3 inline-flex items-center gap-2 text-[13px] text-ink border-b border-ink/30 hover:border-ink hover:text-gold pb-0.5 transition-colors"
+                  >
+                    {locale === 'ko' ? '스티브 소개 보기' : 'About Steve'}
+                    <span aria-hidden>→</span>
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Bottom CTA — editorial ivory, headline keyed to the pillar money page */}
         <section className="hair-top hair-bottom bg-bone">
           <div className="container-edge py-20 md:py-28">
             <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-end">
@@ -563,11 +875,19 @@ export default function BlogPostPage({
                   {ui.ctaDesc}
                 </p>
               </div>
-              <div className="md:col-span-4 md:text-right">
+              <div className="md:col-span-4 flex flex-col items-start md:items-end gap-5">
+                <Link
+                  href={moneyHref}
+                  data-cursor={locale === 'ko' ? '보기' : 'View'}
+                  className="btn-ink"
+                >
+                  {ui.ctaMoney}
+                  <span className="arrow">→</span>
+                </Link>
                 <Link
                   href={`${prefix}/#contact`}
                   data-cursor={locale === 'ko' ? '시작' : 'Begin'}
-                  className="btn-ink"
+                  className="inline-flex items-center gap-2 text-[14px] text-ink border-b border-ink/30 hover:border-ink pb-1 transition-colors"
                 >
                   {ui.ctaButton}
                 </Link>

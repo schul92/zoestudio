@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import InView from '@/components/ui/motion/InView'
 import USMap, { cities } from './USMap'
+import { usStates } from '@/data/usStates'
 
 export default function LocationLinks({
   locale = 'en',
@@ -15,68 +16,18 @@ export default function LocationLinks({
   const isKo = locale === 'ko'
   const [active, setActive] = useState<string | null>(null)
 
-  const locations = [
-    {
-      id: 'nj',
-      name: isKo ? '뉴저지' : 'New Jersey',
-      cities: isKo ? '포트리 · 팰팍 · 에디슨' : 'Fort Lee · Palisades Park · Edison',
-      href: isKo ? '/ko/뉴저지-웹사이트' : '/nj-website',
-    },
-    {
-      id: 'ny',
-      name: isKo ? '뉴욕' : 'New York',
-      cities: isKo ? '맨하탄 · 플러싱 · 브루클린' : 'Manhattan · Flushing · Brooklyn',
-      href: isKo ? '/ko/뉴욕-웹사이트' : '/ny-website',
-    },
-    {
-      id: 'ca',
-      name: isKo ? '캘리포니아' : 'California',
-      cities: isKo ? 'LA · 오렌지 카운티 · 샌프란시스코' : 'LA · Orange County · SF',
-      href: isKo ? '/ko/캘리포니아-웹사이트' : '/ca-website',
-    },
-    {
-      id: 'tx',
-      name: isKo ? '텍사스' : 'Texas',
-      cities: isKo ? '달라스 · 휴스턴 · 오스틴' : 'Dallas · Houston · Austin',
-      href: isKo ? '/ko/텍사스-웹사이트' : '/tx-website',
-    },
-    {
-      id: 'ga',
-      name: isKo ? '조지아' : 'Georgia',
-      cities: isKo ? '애틀랜타 · 둘루스 · 수와니' : 'Atlanta · Duluth · Suwanee',
-      href: isKo ? '/ko/조지아-웹사이트' : '/ga-website',
-    },
-    {
-      id: 'va',
-      name: isKo ? '버지니아' : 'Virginia',
-      cities: isKo ? '애난데일 · 센터빌 · 페어팩스' : 'Annandale · Centreville · Fairfax',
-      href: isKo ? '/ko/버지니아-웹사이트' : '/va-website',
-    },
-    {
-      id: 'il',
-      name: isKo ? '일리노이' : 'Illinois',
-      cities: isKo ? '시카고 · 나일스 · 글렌뷰' : 'Chicago · Niles · Glenview',
-      href: isKo ? '/ko/일리노이-웹사이트' : '/il-website',
-    },
-    {
-      id: 'wa',
-      name: isKo ? '워싱턴' : 'Washington',
-      cities: isKo ? '시애틀 · 벨뷰 · 린우드' : 'Seattle · Bellevue · Lynnwood',
-      href: isKo ? '/ko/워싱턴-웹사이트' : '/wa-website',
-    },
-    {
-      id: 'md',
-      name: isKo ? '메릴랜드' : 'Maryland',
-      cities: isKo ? '엘리콧시티 · 게이더스버그 · 록빌' : 'Ellicott City · Gaithersburg · Rockville',
-      href: isKo ? '/ko/메릴랜드-웹사이트' : '/md-website',
-    },
-    {
-      id: 'hi',
-      name: isKo ? '하와이' : 'Hawaii',
-      cities: isKo ? '호놀룰루 · 카일루아' : 'Honolulu · Kailua',
-      href: isKo ? '/ko/하와이-웹사이트' : '/hi-website',
-    },
-  ]
+  // Every large + medium tier state — Korean-slug URLs on the KO locale so the
+  // homepage passes link equity to the exact-match "[주명] 웹사이트 제작" pages.
+  const locations = usStates
+    .filter((s) => s.tier === 'large' || s.tier === 'medium')
+    .map((s) => ({
+      id: s.abbr,
+      name: isKo ? s.name.ko : s.name.en,
+      cities: (isKo ? s.cities.map((c) => c.ko) : s.cities.map((c) => c.en))
+        .slice(0, 3)
+        .join(' · '),
+      href: isKo ? `/ko/${s.koSlug}` : `/${s.slug}`,
+    }))
 
   const cityRoll = [
     'Fort Lee', 'Palisades Park', 'Flushing', 'Manhattan', 'Brooklyn',
@@ -124,7 +75,7 @@ export default function LocationLinks({
             <InView className="reveal">
               <div className="relative">
                 <div className="absolute -top-4 left-0 overline text-ash">
-                  {isKo ? '10개 주 · 150+ 프로젝트' : '10 states · 150+ projects'}
+                  {isKo ? `${locations.length}개 주 · 150+ 프로젝트` : `${locations.length} states · 150+ projects`}
                 </div>
                 <USMap
                   activeId={active}
@@ -162,7 +113,7 @@ export default function LocationLinks({
                           isActive ? 'text-gold' : ''
                         }`}
                       >
-                        0{i + 1}
+                        {String(i + 1).padStart(2, '0')}
                       </span>
                       <div>
                         <div className={`font-display text-[clamp(1.4rem,2.2vw,1.9rem)] tracking-luxury leading-tight fraunces-soft transition-all duration-500 ${
