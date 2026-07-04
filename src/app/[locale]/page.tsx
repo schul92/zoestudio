@@ -8,7 +8,6 @@ import {
   breadcrumbList,
   webPage,
   selectedWorkItemList,
-  reviewSchema,
   baseUrl,
 } from '@/config/schemas'
 import { SITE_URL } from '@/lib/siteUrl'
@@ -201,33 +200,9 @@ export default function Home({ params }: { params: { locale: string } }) {
     },
   ])
 
-  // Review schemas (match Proof.tsx testimonials)
-  const reviews = [
-    reviewSchema({
-      id: 'salt-polish',
-      body:
-        'They understood what our business actually looks like on the ground — not just what the brief said. The site feels like us, and it ranks.',
-      author: 'Sarah K.',
-      role: 'Owner · Fort Lee spa',
-      project: 'Salt & Polish',
-    }),
-    reviewSchema({
-      id: 'kona',
-      body:
-        "Bookings doubled in two months. We stopped worrying about the website and got back to running the café.",
-      author: 'Min Lee',
-      role: 'Co-founder · Honolulu café',
-      project: 'Kona Coffee Donut',
-    }),
-    reviewSchema({
-      id: 'tj-flowers',
-      body:
-        'Korean-first conversations, English-first execution. The only studio that speaks both of our worlds.',
-      author: 'Jeong Seong-ho',
-      role: 'Director · NY floral studio',
-      project: 'TJ Flowers',
-    }),
-  ]
+  // NOTE: testimonial Review schemas removed 2026-07-04 — the quotes were not
+  // verifiable client statements. Re-add only with real, client-approved
+  // reviews (ideally mirrored from the Google Business Profile).
 
   return (
     <div className="relative">
@@ -246,14 +221,6 @@ export default function Home({ params }: { params: { locale: string } }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(worksSchema) }}
       />
-      {/* Reviews */}
-      {reviews.map((r, i) => (
-        <script
-          key={`review-${i}`}
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(r) }}
-        />
-      ))}
       {/* Service schema — render on homepage */}
       {structuredData.services.map((service, i) => (
         <script

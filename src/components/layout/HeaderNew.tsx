@@ -89,7 +89,7 @@ export default function HeaderNew({ locale = 'en' }: { locale?: string }) {
 
   return (
     <header
-      className={`fixed top-0 inset-x-0 z-[100] transition-all duration-700 ${
+      className={`fixed top-0 inset-x-0 z-[100] transition-colors duration-300 ${
         menuOpen
           ? 'bg-ivory'
           : scrolled
@@ -154,19 +154,21 @@ export default function HeaderNew({ locale = 'en' }: { locale?: string }) {
             >
               <span className="sr-only">Menu</span>
               <div className="w-6 flex flex-col gap-[5px]">
-                <span className={`h-[1.5px] bg-ink transition-all duration-500 ${menuOpen ? 'rotate-45 translate-y-[6.5px]' : ''}`} />
-                <span className={`h-[1.5px] bg-ink transition-all duration-500 ${menuOpen ? 'opacity-0' : ''}`} />
-                <span className={`h-[1.5px] bg-ink transition-all duration-500 ${menuOpen ? '-rotate-45 -translate-y-[6.5px]' : ''}`} />
+                <span className={`h-[1.5px] bg-ink transition-transform duration-300 ${menuOpen ? 'rotate-45 translate-y-[6.5px]' : ''}`} />
+                <span className={`h-[1.5px] bg-ink transition-opacity duration-200 ${menuOpen ? 'opacity-0' : ''}`} />
+                <span className={`h-[1.5px] bg-ink transition-transform duration-300 ${menuOpen ? '-rotate-45 -translate-y-[6.5px]' : ''}`} />
               </div>
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile menu */}
+      {/* Mobile menu — opacity/transform only (compositor), short stagger */}
       <div
-        className={`lg:hidden fixed inset-0 top-24 bg-ivory z-[90] transition-all duration-700 ${
-          menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        className={`lg:hidden fixed inset-0 top-24 bg-ivory z-[90] will-change-[opacity,transform] transition-[opacity,transform] duration-300 ease-out ${
+          menuOpen
+            ? 'opacity-100 translate-y-0 pointer-events-auto'
+            : 'opacity-0 -translate-y-2 pointer-events-none'
         }`}
       >
         <div className="container-edge pt-16 pb-10 h-full flex flex-col justify-between">
@@ -175,10 +177,10 @@ export default function HeaderNew({ locale = 'en' }: { locale?: string }) {
               <Link
                 key={l.href}
                 href={l.href}
-                className={`font-display text-4xl md:text-5xl text-ink py-3 border-b border-hairline transition-all duration-700 ${
-                  menuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
+                className={`font-display text-4xl md:text-5xl text-ink py-3 border-b border-hairline transition-[opacity,transform] duration-300 ease-out ${
+                  menuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
                 }`}
-                style={{ transitionDelay: `${150 + i * 80}ms` }}
+                style={{ transitionDelay: menuOpen ? `${40 + i * 40}ms` : '0ms' }}
               >
                 <span className="overline mr-4 text-ash">0{i + 1}</span>
                 {l.label}

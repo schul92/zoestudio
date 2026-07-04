@@ -220,7 +220,8 @@ export default function IndustryPage({
         </div>
       </section>
 
-      {/* ─── CASE STUDY PULL ─────────────────────────────── */}
+      {/* ─── CASE STUDY PULL (only with a real, client-approved quote) ── */}
+      {industry.caseStudy && (
       <section className="hair-bottom section-pad">
         <div className="container-edge">
           <InView className="flex items-center gap-3 overline text-ash mb-10 hair-draw pb-4 max-w-sm">
@@ -276,6 +277,7 @@ export default function IndustryPage({
           </div>
         </div>
       </section>
+      )}
 
       {/* ─── FAQ ─────────────────────────────────────────── */}
       <section className="section-pad hair-bottom bg-bone">

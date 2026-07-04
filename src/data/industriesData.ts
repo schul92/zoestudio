@@ -37,7 +37,8 @@ export type Industry = {
   stats: IndustryStat[]
   problems: IndustryProblem[]
   features: IndustryFeature[]
-  caseStudy: {
+  // Optional — only populate with a REAL, client-approved quote.
+  caseStudy?: {
     project: string
     quote: { en: string; ko: string }
     author: string
@@ -115,16 +116,6 @@ export const industries: Industry[] = [
       { title: { en: 'Yelp + Google review integration', ko: 'Yelp · 구글 리뷰 연동' }, body: { en: 'Auto-pull 5-star reviews onto your homepage. Request-review flow after every online order.', ko: '5점 리뷰를 홈페이지에 자동 노출. 모든 온라인 주문 후 리뷰 요청 플로우 실행.' } },
       { title: { en: 'KakaoTalk + SMS marketing', ko: '카카오톡 · SMS 마케팅' }, body: { en: 'Broadcast to your regulars in Korean or English. Birthday discounts, closure days, new menu drops.', ko: '단골에게 한국어 · 영어 브로드캐스트. 생일 할인, 휴무일 공지, 신메뉴 공개.' } },
     ],
-    caseStudy: {
-      project: 'Kona Coffee Donut',
-      quote: {
-        en: "Bookings doubled in two months. We stopped worrying about the website and got back to running the café.",
-        ko: '2개월 만에 예약이 두 배. 이제 웹사이트 걱정 없이 카페에만 집중합니다.',
-      },
-      author: 'Min Lee',
-      role: { en: 'Co-founder, Honolulu café', ko: '공동대표, 호놀룰루 카페' },
-      image: '/portfolio/kona-coffee.jpg',
-    },
     faqs: [
       {
         q: { en: 'How much does a Korean restaurant website cost?', ko: '한식당 웹사이트 제작 비용은 얼마인가요?' },
@@ -221,16 +212,6 @@ export const industries: Industry[] = [
       { title: { en: 'Staff profiles + personal booking links', ko: '스태프 프로필 · 개인 예약 링크' }, body: { en: 'Each stylist gets a shareable link for their regulars. Rebooking in one tap.', ko: '각 스타일리스트마다 단골용 공유 링크. 원탭 재예약.' } },
       { title: { en: 'Gift cards + packages', ko: '기프트카드 · 패키지' }, body: { en: 'Sell multi-visit packages and gift cards directly. Most salons see 15% revenue lift from packages alone.', ko: '다회권 · 기프트카드 직접 판매. 대부분 매장이 패키지만으로 15% 매출 상승.' } },
     ],
-    caseStudy: {
-      project: 'Salt & Polish',
-      quote: {
-        en: 'They understood what our business actually looks like on the ground — not just what the brief said. The site feels like us, and it ranks.',
-        ko: '브리프가 아니라 실제 우리 매장을 이해해 주셨어요. 사이트가 우리답고, 구글에서도 잘 잡힙니다.',
-      },
-      author: 'Sarah K.',
-      role: { en: 'Owner, Fort Lee spa', ko: '대표, 포트리 스파' },
-      image: '/portfolio/salt-polish.jpg',
-    },
     faqs: [
       {
         q: { en: 'How much does a salon website cost?', ko: '뷰티샵 웹사이트 제작 비용은 얼마인가요?' },
@@ -296,13 +277,6 @@ export const industries: Industry[] = [
       { title: { en: 'Prayer request + counseling form', ko: '기도 제목 · 상담 신청' }, body: { en: 'Private submission routed directly to pastors, never stored publicly.', ko: '공개되지 않고 목회자에게 직접 전달되는 비공개 양식.' } },
       { title: { en: 'Events + small group directory', ko: '행사 · 소그룹 디렉토리' }, body: { en: 'Members find groups by age, day, location. Leaders update their group from their phone.', ko: '성도가 연령 · 요일 · 위치별로 소그룹 탐색. 리더는 휴대폰에서 본인 그룹 업데이트.' } },
     ],
-    caseStudy: {
-      project: 'Regional Korean Church',
-      quote: { en: 'Our new family registrations doubled in the first quarter after launch. The elders can read it, the kids can share it.', ko: '런칭 후 첫 분기에 새가족 등록이 두 배가 되었습니다. 어르신은 읽을 수 있고, 청년들은 공유할 수 있습니다.' },
-      author: '담임목사',
-      role: { en: 'Senior Pastor, NJ church', ko: '담임목사, NJ 교회' },
-      image: '/blog/korean-church-website-guide.png',
-    },
     faqs: [
       { q: { en: 'How much does a church website cost?', ko: '교회 홈페이지 제작 비용은 얼마인가요?' }, a: { en: 'Most Korean church builds fall between $6,000 and $12,000 including bilingual copy, sermon archive setup, online giving, and new-family flow.', ko: '이중언어 카피 · 설교 아카이브 · 온라인 헌금 · 새가족 플로우 포함 $6,000 — $12,000 선.' } },
       { q: { en: 'Do you handle 501(c)(3) tax-deductible giving receipts?', ko: '501(c)(3) 세금 공제 헌금 영수증도 처리되나요?' }, a: { en: 'Yes. We configure Stripe or Tithely so members receive automatic year-end giving statements.', ko: '네. Stripe · Tithely 설정으로 성도들에게 연말 헌금 증명서 자동 발송.' } },
@@ -356,13 +330,6 @@ export const industries: Industry[] = [
       { title: { en: 'Parent portal for grades + attendance', ko: '학부모 포털 · 성적 · 출결' }, body: { en: 'Secure login for parents to view their child\'s progress, attendance, and mock test scores.', ko: '자녀의 학습 진도, 출결, 모의고사 점수를 확인하는 학부모 전용 보안 로그인.' } },
       { title: { en: 'Free assessment + trial class booking', ko: '무료 레벨 테스트 · 체험 수업 예약' }, body: { en: 'Zero-friction trial flow converts 2 — 3× more than "call to schedule" buttons.', ko: '마찰 없는 체험 플로우가 "전화 예약" 버튼 대비 2 — 3배 더 많이 전환.' } },
     ],
-    caseStudy: {
-      project: 'SAT prep hagwon (Bergen County)',
-      quote: { en: 'Summer intensive enrollment filled two weeks earlier than last year. Parents told us they found us on Google before they even called.', ko: '여름 특강 등록이 작년보다 2주 일찍 마감되었습니다. 학부모님들이 전화 전에 구글에서 저희를 찾으셨다고 하셨어요.', },
-      author: '원장',
-      role: { en: 'Director, Bergen County academy', ko: '원장, 버겐카운티 학원' },
-      image: '/blog/korean-tutoring-sat-prep-website.png',
-    },
     faqs: [
       { q: { en: 'How much does an academy website cost?', ko: '학원 웹사이트 제작 비용은 얼마인가요?' }, a: { en: '$7,000 — $14,000 depending on program calendar complexity and whether you need a parent portal. Most SAT-prep hagwons land around $9,000.', ko: '프로그램 캘린더 복잡도와 학부모 포털 유무에 따라 $7,000 — $14,000. 대부분 SAT 학원은 $9,000 선.' } },
       { q: { en: 'Can we show real score improvements without breaking FERPA?', ko: 'FERPA를 지키면서 실제 점수 향상을 보여줄 수 있나요?' }, a: { en: 'Yes. We show anonymized before/after score ranges ("Our top 10 students averaged +230 on SAT") which is fully compliant and more convincing to parents.', ko: '네. 익명화된 전후 점수 범위 표시 ("저희 상위 10명 학생 평균 SAT +230점") — FERPA 준수 + 학부모 설득력 향상.' } },
@@ -416,13 +383,6 @@ export const industries: Industry[] = [
       { title: { en: 'Services × conditions explainers', ko: '진료 서비스 · 질환 안내' }, body: { en: 'Bilingual pages for each service (dental implants, skin care, pediatric wellness) — each ranks in Korean search.', ko: '각 서비스별 이중언어 페이지 (임플란트 · 피부 관리 · 소아 건강) — 한국어 검색에서 각각 상위 노출.' } },
       { title: { en: 'Review aggregation + Google profile sync', ko: '리뷰 통합 · 구글 프로필 동기화' }, body: { en: 'Zocdoc, Google, Healthgrades reviews pulled into your homepage. Review request flow after every visit.', ko: 'Zocdoc · 구글 · Healthgrades 리뷰를 홈페이지 통합 표시. 방문 후 리뷰 요청 플로우 자동 실행.' } },
     ],
-    caseStudy: {
-      project: 'Korean dental practice (Fort Lee)',
-      quote: { en: 'New patient calls tripled. Half of them tell us they found us because our insurance list was the only one they could actually read.', ko: '신규 환자 전화가 3배가 되었습니다. 절반은 "읽을 수 있는 유일한 보험 리스트여서 찾아왔다"고 하셨어요.', },
-      author: 'Dr. Park',
-      role: { en: 'Dentist, Fort Lee practice', ko: '치과 원장, 포트리' },
-      image: '/blog/korean-dental-practice-website-guide.png',
-    },
     faqs: [
       { q: { en: 'Is the website HIPAA compliant?', ko: '웹사이트가 HIPAA를 준수하나요?' }, a: { en: 'Yes. All forms and patient data flow through HIPAA-compliant infrastructure (typically Jotform HIPAA, SimplePractice, or custom encrypted submission with BAA). We sign a Business Associate Agreement.', ko: '네. 모든 양식과 환자 데이터는 HIPAA 준수 인프라(Jotform HIPAA · SimplePractice · 또는 BAA 체결한 맞춤 암호화 시스템)를 통해 처리. BAA(비즈니스 어소시에이트 계약) 체결.' } },
       { q: { en: 'How much does a medical or dental website cost?', ko: '의료 · 치과 웹사이트 비용은 얼마인가요?' }, a: { en: '$8,000 — $15,000 depending on integrations. Standard build includes online booking, HIPAA forms, insurance list, and provider profiles. More for multi-location practices.', ko: '연동 범위에 따라 $8,000 — $15,000. 온라인 예약 · HIPAA 양식 · 보험 리스트 · 의료진 프로필 포함. 다지점일 경우 추가.' } },
@@ -476,13 +436,6 @@ export const industries: Industry[] = [
       { title: { en: 'Instagram Shop + TikTok Shop sync', ko: 'Instagram Shop · TikTok Shop 동기화' }, body: { en: 'Products auto-sync to IG and TikTok for in-app checkout. Huge for K-beauty discovery.', ko: '상품이 IG · TikTok으로 자동 동기화되어 인앱 체크아웃. K-뷰티 디스커버리에 결정적.' } },
       { title: { en: 'Reviews with photo upload', ko: '사진 업로드 가능한 리뷰' }, body: { en: 'Judge.me or Loox with Korean + English review flows. Photo + video reviews boost conversion 40%+.', ko: 'Judge.me · Loox를 한국어 · 영어 리뷰 플로우로 설정. 사진 · 영상 리뷰가 전환율 40%+ 상승시킵니다.' } },
     ],
-    caseStudy: {
-      project: 'Mochinut',
-      quote: { en: 'The rebrand took us from a local hit to multi-city franchise without losing the handmade feel. The Shopify store holds the whole thing together.', ko: '리브랜드가 저희를 로컬 히트에서 다점포 프랜차이즈로 확장시켰습니다 — 수작업의 감각은 그대로. Shopify 스토어가 모든 걸 하나로 묶어줍니다.', },
-      author: 'Mochinut Team',
-      role: { en: 'Franchise HQ, multi-city', ko: '프랜차이즈 본사, 다도시' },
-      image: '/portfolio/mochinut.jpg',
-    },
     faqs: [
       { q: { en: 'How much does a custom Shopify store cost?', ko: '맞춤 Shopify 스토어 비용은 얼마인가요?' }, a: { en: '$10,000 — $25,000 for a custom-themed store with bilingual copy, subscriptions, and IG/TikTok sync. Plus ~$80 — $300/month for Shopify + apps.', ko: '이중언어 카피 · 구독 · IG/TikTok 동기화 포함 맞춤 테마 스토어 $10,000 — $25,000. Shopify + 앱 월 $80 — $300 별도.' } },
       { q: { en: 'Can you migrate from WordPress/WooCommerce?', ko: 'WordPress/WooCommerce에서 이전할 수 있나요?' }, a: { en: 'Yes. Products, customers, orders, reviews, and SEO URLs all migrate cleanly with 301 redirects so your Google rankings transfer.', ko: '네. 상품 · 고객 · 주문 · 리뷰 · SEO URL 모두 301 리다이렉트와 함께 깨끗이 이전 — 구글 랭킹 유지.' } },

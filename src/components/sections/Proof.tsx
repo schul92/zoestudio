@@ -1,45 +1,7 @@
 'use client'
 
-import { useEffect, useState } from 'react'
 import InView from '@/components/ui/motion/InView'
 import CountUp from '@/components/ui/motion/CountUp'
-
-type Quote = {
-  text: { en: string; ko: string }
-  author: string
-  role: { en: string; ko: string }
-  project: string
-}
-
-const quotes: Quote[] = [
-  {
-    text: {
-      en: 'They understood what our business actually looks like on the ground — not just what the brief said. The site feels like us, and it ranks.',
-      ko: '브리프에 적힌 내용이 아니라 실제 우리 비즈니스를 이해해 주셨어요. 사이트가 우리답고, 구글에서도 잘 잡힙니다.',
-    },
-    author: 'Sarah K.',
-    role: { en: 'Owner · Fort Lee spa', ko: '대표 · 포트리 스파' },
-    project: 'Salt & Polish',
-  },
-  {
-    text: {
-      en: "Bookings doubled in two months. We stopped worrying about the website and got back to running the café.",
-      ko: '2개월 만에 예약이 두 배. 이제 웹사이트 걱정 없이 카페에만 집중합니다.',
-    },
-    author: 'Min Lee',
-    role: { en: 'Co-founder · Honolulu café', ko: '공동대표 · 호놀룰루 카페' },
-    project: 'Kona Coffee Purveyors',
-  },
-  {
-    text: {
-      en: 'Korean-first conversations, English-first execution. The only studio that speaks both of our worlds.',
-      ko: '한국어로 대화하고, 영어로 실행합니다. 두 세상을 모두 이해하는 유일한 스튜디오.',
-    },
-    author: '정성호',
-    role: { en: 'Director · NY floral studio', ko: '대표 · 뉴욕 플라워 스튜디오' },
-    project: 'TJ Flowers',
-  },
-]
 
 const metrics = [
   {
@@ -73,16 +35,6 @@ export default function Proof({
   sectionNumber?: string
 }) {
   const isKo = locale === 'ko'
-  const [idx, setIdx] = useState(0)
-
-  useEffect(() => {
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    if (reduced) return
-    const id = setInterval(() => setIdx((i) => (i + 1) % quotes.length), 7000)
-    return () => clearInterval(id)
-  }, [])
-
-  const q = quotes[idx]
 
   return (
     <section className="relative bg-ivory section-pad hair-bottom overflow-hidden">
@@ -118,7 +70,7 @@ export default function Proof({
         </div>
 
         {/* Metric tiles with micro-charts */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10 mb-24 md:mb-32">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
           {metrics.map((m, i) => (
             <InView
               key={m.value + i}
@@ -146,57 +98,7 @@ export default function Proof({
             </InView>
           ))}
         </div>
-
-        {/* Rotating testimonial */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 pt-12 border-t border-hairline">
-          <div className="md:col-span-2 md:pt-2">
-            <span className="font-display italic font-light text-gold text-7xl leading-[0.8]">&ldquo;</span>
-          </div>
-          <div className="md:col-span-8">
-            <blockquote
-              key={idx}
-              className="font-display text-[clamp(1.75rem,3vw,2.75rem)] leading-[1.25] text-ink tracking-luxury fade-in-quote"
-            >
-              {q.text[locale as 'en' | 'ko']}
-            </blockquote>
-            <div className="mt-8 flex items-center gap-4" key={`meta-${idx}`}>
-              <span className="w-12 h-px bg-ink" />
-              <div>
-                <p className="font-display text-lg text-ink italic font-light">
-                  {q.author}
-                </p>
-                <p className="overline text-ash mt-1">
-                  {q.role[locale as 'en' | 'ko']} · {q.project}
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="md:col-span-2 md:pt-2 flex md:flex-col items-start gap-3">
-            {quotes.map((_, i) => (
-              <button
-                key={i}
-                type="button"
-                onClick={() => setIdx(i)}
-                data-cursor="hide"
-                aria-label={`Quote ${i + 1}`}
-                className={`h-px transition-all duration-500 cursor-pointer ${
-                  i === idx ? 'w-16 bg-ink' : 'w-10 bg-hairline hover:bg-ash'
-                }`}
-              />
-            ))}
-          </div>
-        </div>
       </div>
-
-      <style jsx>{`
-        .fade-in-quote {
-          animation: fadeQuote 800ms cubic-bezier(.16,1,.3,1);
-        }
-        @keyframes fadeQuote {
-          from { opacity: 0; transform: translateY(12px); }
-          to   { opacity: 1; transform: translateY(0); }
-        }
-      `}</style>
     </section>
   )
 }

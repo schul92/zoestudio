@@ -394,7 +394,8 @@ export default function CrossoverPage({
           </div>
         </section>
 
-        {/* CASE STUDY */}
+        {/* CASE STUDY (only with a real, client-approved quote) */}
+        {industry.caseStudy && (
         <section className="hair-bottom section-pad">
           <div className="container-edge">
             <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-14 items-center">
@@ -436,6 +437,7 @@ export default function CrossoverPage({
             </div>
           </div>
         </section>
+        )}
 
         {/* LOCAL FAQ */}
         <section className="section-pad hair-bottom bg-bone">
