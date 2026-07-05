@@ -12,6 +12,10 @@ import { SITE_URL } from '@/lib/siteUrl'
 
 // Floating KakaoTalk chat — site-wide (blogs and service pages drive most
 // sessions; the button was previously homepage-only).
+const StickyMobileCTA = dynamic(() => import('@/components/ui/StickyMobileCTA'), {
+  ssr: false,
+})
+
 const KakaoFloatingButton = dynamic(() => import('@/components/ui/KakaoFloatingButton'), {
   ssr: false,
 })
@@ -199,6 +203,7 @@ export default function RootLayout({
         <ServiceProvider>
           {children}
           <KakaoFloatingButton />
+          <StickyMobileCTA locale={locale} />
         </ServiceProvider>
       </body>
     </html>

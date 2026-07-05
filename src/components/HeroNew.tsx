@@ -18,6 +18,7 @@ const copy = {
     cta1: 'Start your project',
     cta2: 'See TJ Flowers case study',
     livePill: 'Last shipped',
+    liveTag: 'Live',
     proofBadge: {
       metric: '$3,114',
       label: 'revenue in 4 weeks',
@@ -37,6 +38,7 @@ const copy = {
     cta1: '프로젝트 시작하기',
     cta2: 'TJ Flowers 성공 사례 보기',
     livePill: '최근 런칭',
+    liveTag: '운영 중',
     proofBadge: {
       metric: '$3,114',
       label: '4주 만에 실매출',
@@ -174,7 +176,17 @@ export default function HeroNew({ locale = 'en' }: { locale?: string }) {
               }}
             >
               <span className="block">{t.h1Lead}</span>
-              <span className="block italic" style={{ color: 'var(--zl-coral)', fontWeight: 300 }}>
+              {/* Oversized type moment — EN only: Hangul falls back to a wider
+                  system face and already sits at the column's overflow boundary
+                  at 6.5vw, so Korean keeps the inherited h1 size. */}
+              <span
+                className="block italic"
+                style={{
+                  color: 'var(--zl-coral)',
+                  fontWeight: 300,
+                  ...(locale === 'ko' ? {} : { fontSize: 'clamp(40px, 8.25vw, 124px)' }),
+                }}
+              >
                 {t.h1Accent}
               </span>
             </h1>
@@ -223,7 +235,7 @@ export default function HeroNew({ locale = 'en' }: { locale?: string }) {
           >
             <a
               ref={mockupRef}
-              href="https://tjflowersandevents.com/"
+              href="https://www.tjflowersandevents.com"
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Visit TJ Flowers — Manhattan florist built by Zoe Lumos"
@@ -235,12 +247,20 @@ export default function HeroNew({ locale = 'en' }: { locale?: string }) {
                   <span className="w-2.5 h-2.5 rounded-full bg-[#FF6058]" />
                   <span className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]" />
                   <span className="w-2.5 h-2.5 rounded-full bg-[#28C940]" />
-                  <span className="ml-3 flex-1 h-[20px] rounded-md bg-white/70 flex items-center px-3 text-[10px] text-graphite tracking-tight truncate">
+                  <span
+                    className="ml-3 flex-1 h-[20px] rounded-full bg-paper border flex items-center gap-1.5 px-3 text-[10px] text-graphite tracking-tight truncate"
+                    style={{ borderColor: 'var(--zl-rule)' }}
+                  >
+                    {/* Padlock — https */}
+                    <svg aria-hidden width="8" height="9" viewBox="0 0 8 9" fill="none" className="shrink-0" style={{ opacity: 0.55 }}>
+                      <rect x="0.5" y="3.5" width="7" height="5" rx="1" stroke="currentColor" strokeWidth="1" />
+                      <path d="M2 3.5V2.5a2 2 0 1 1 4 0v1" stroke="currentColor" strokeWidth="1" />
+                    </svg>
                     tjflowersandevents.com
                   </span>
                 </div>
-                {/* Site screenshot */}
-                <div className="relative w-full" style={{ height: 'calc(100% - 46px)' }}>
+                {/* Site screenshot — slow compositor-only scale drift (CSS keyframe, no JS) */}
+                <div className="zl-shot relative w-full" style={{ height: 'calc(100% - 46px)' }}>
                   <Image
                     src="/hero/tj-flowers-mockup.jpeg"
                     alt="TJ Flowers — Manhattan luxury florist Shopify build by Zoe Lumos"
@@ -279,13 +299,13 @@ export default function HeroNew({ locale = 'en' }: { locale?: string }) {
                 </div>
               </div>
 
-              {/* "Live · TJ Flowers" pill */}
+              {/* LIVE pill — real, operating client site */}
               <span
                 className="absolute -bottom-3 right-6 z-[10] inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-paper border text-[10px] uppercase tracking-[0.18em] shadow-[0_8px_20px_-6px_rgba(61,31,15,0.22)]"
                 style={{ borderColor: 'var(--zl-rule)', color: 'var(--zl-coral)' }}
               >
-                <span className="inline-block w-1.5 h-1.5 rounded-full" style={{ background: 'var(--zl-coral)', animation: 'zl-pulse-soft 1.8s ease-in-out infinite' }} />
-                Live · TJ Flowers
+                <span className="inline-block w-1.5 h-1.5 rounded-full" style={{ background: 'var(--zl-coral)', animation: 'zl-pulse-soft 2.4s ease-in-out infinite' }} />
+                {t.liveTag}
               </span>
             </a>
           </div>
@@ -328,6 +348,21 @@ export default function HeroNew({ locale = 'en' }: { locale?: string }) {
         @keyframes zl-marquee {
           from { transform: translate3d(0, 0, 0); }
           to { transform: translate3d(-50%, 0, 0); }
+        }
+        /* Signature motion — the screenshot breathes: slow scale drift, compositor-only */
+        @keyframes zl-drift {
+          from { transform: scale(1); }
+          to { transform: scale(1.04); }
+        }
+        .zl-shot :global(img) {
+          animation: zl-drift 14s ease-in-out infinite alternate;
+          transform-origin: 50% 25%;
+          will-change: transform;
+        }
+        @media (prefers-reduced-motion: reduce) {
+          .zl-shot :global(img) {
+            animation: none;
+          }
         }
       `}</style>
     </section>

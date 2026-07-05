@@ -7295,8 +7295,8 @@ export const blogContent: BlogPost[] = [
     updatedDate: '2026-05-30',
     readTime: 10,
     category: { en: 'SEO', ko: 'SEO' },
-    title: { en: 'Local SEO for Korean Businesses: 9-Step Playbook [2026]', ko: '한인 비즈니스 로컬 SEO 9단계 플레이북 [2026]' },
-    metaDescription: { en: '9-step local SEO playbook for Korean restaurants, salons, and shops in NJ/NY/LA. Rank in Google Maps, fix duplicate listings, win Korean reviews.', ko: '한인 식당·살롱·소매점을 위한 9단계 로컬 SEO 플레이북. NJ·NY·LA에서 구글 지도 상위 노출, 중복 리스팅 정리, 한국어 리뷰 확보까지.' },
+    title: { en: 'Korean SEO 101: The 9-Step Local SEO Playbook for Korean Businesses (2026)', ko: 'SEO 기초부터 구글지도 1페이지까지 — 한인 비즈니스 로컬 SEO 9단계 (2026)' },
+    metaDescription: { en: 'Korean SEO explained step by step: the 9-step local SEO playbook Korean restaurants, salons, and shops use to rank on Google Maps in NJ/NY/LA/GA — no ads required. Includes duplicate-listing fixes and Korean review scripts.', ko: '광고 없이 구글 지도 상위 노출 — 한인 식당·살롱·소매점이 실제로 쓰는 로컬 SEO 9단계. 중복 리스팅 정리, 한국어 리뷰 스크립트, 90일 실행 순서까지 한 번에.' },
     author: 'Steve Song',
     sections: {
       en: [
@@ -8460,12 +8460,12 @@ export const blogContent: BlogPost[] = [
     readTime: 11,
     category: { en: 'Advertising', ko: '광고' },
     title: {
-      en: 'How to Choose a KakaoTalk Advertising Agency in the USA [2026]',
-      ko: '미국에서 카카오톡 광고 대행사 고르는 법 [2026]',
+      en: 'KakaoTalk Advertising Agency in the USA: Costs, Ad Formats & How to Choose (2026)',
+      ko: '카카오톡 광고 대행사 — 미국 비용, 광고 형식, 고르는 법 (2026)',
     },
     metaDescription: {
-      en: 'A US-based Korean business owner\'s guide to KakaoTalk ads in 2026: every ad format, real CPMs from 11 campaigns, what agencies actually do, and the 7 questions to ask before signing.',
-      ko: '2026 미국 한인 비즈니스 사장님을 위한 카카오톡 광고 가이드 — 광고 형식, 11개 캠페인 실제 CPM, 대행사가 정말 해주는 일, 계약 전 꼭 물어볼 7가지 질문.',
+      en: 'What a KakaoTalk advertising agency actually does for US Korean businesses: every ad format, typical CPM ranges, pricing, and the 7 questions to ask before you sign with anyone.',
+      ko: '미국에서 카카오톡 광고 대행사가 실제로 해주는 일 — 광고 형식별 특징, 통상 CPM·비용 범위, 그리고 어떤 업체든 계약 전 꼭 물어볼 7가지 질문.',
     },
     author: 'Steve Song',
     faq: [

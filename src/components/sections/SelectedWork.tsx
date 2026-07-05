@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, type CSSProperties } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import InView from '@/components/ui/motion/InView'
@@ -174,19 +174,20 @@ export default function SelectedWork({
   return (
     <section
       ref={sectionRef}
-      className="relative bg-ivory hair-bottom section-pad overflow-hidden"
+      className="relative bg-[#171310] section-pad overflow-hidden"
+      style={{ '--hairline': 'rgba(255, 244, 232, 0.14)' } as CSSProperties}
     >
       {/* Header */}
       <div className="container-edge">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 items-end mb-16 md:mb-20">
           <div className="md:col-span-7">
-            <InView className="flex items-center gap-3 overline text-ash mb-5 hair-draw pb-4">
-              <span className="section-num not-italic text-ink font-normal">§ {sectionNumber}</span>
-              <span className="h-px w-10 bg-hairline" />
+            <InView className="flex items-center gap-3 overline text-mute mb-5 hair-draw pb-4">
+              <span className="section-num not-italic text-ivory font-normal">§ {sectionNumber}</span>
+              <span className="h-px w-10 bg-white/15" />
               <span>{isKo ? '작업' : 'Selected Work'}</span>
-              <span className="ml-3 text-ash/60">·  {isKo ? `${projects.length}개 도판` : `${String(projects.length).padStart(2, '0')} plates`}</span>
+              <span className="ml-3 text-mute/70">·  {isKo ? `${projects.length}개 도판` : `${String(projects.length).padStart(2, '0')} plates`}</span>
             </InView>
-            <h2 className="font-display text-display-lg text-ink tracking-luxury">
+            <h2 className="font-display text-display-lg text-ivory tracking-luxury">
               <InView as="span" className="mask-row">
                 <span className="mask-rise block">{isKo ? '한 줄로 읽는' : 'An index'}</span>
               </InView>
@@ -198,7 +199,7 @@ export default function SelectedWork({
             </h2>
           </div>
           <div className="md:col-span-4 md:col-start-9 md:pb-3">
-            <p className="text-body text-graphite leading-[1.7] max-w-md">
+            <p className="text-body text-ivory/75 leading-[1.7] max-w-md">
               {isKo
                 ? '이름 위로 마우스를 올려두세요. 해당 프로젝트가 배경에 나타납니다.'
                 : 'Hover a name to preview the project. Everything else quietly recedes.'}
@@ -215,7 +216,22 @@ export default function SelectedWork({
           className="sw-preview pointer-events-none fixed-safe absolute top-0 left-0 z-10 opacity-0 transition-opacity duration-500"
           style={{ width: 'clamp(340px, 34vw, 520px)', height: 'clamp(240px, 24vw, 360px)' }}
         >
-          <div className="relative w-full h-full rounded-[2px] overflow-hidden shadow-[0_40px_80px_-40px_rgba(20,20,20,0.4)]">
+          {/* Warm halo behind the plate — glows on the dark ground */}
+          <div
+            aria-hidden
+            className="absolute -inset-10"
+            style={{
+              background:
+                'radial-gradient(60% 60% at 50% 50%, rgba(255,179,148,0.16), transparent 70%)',
+            }}
+          />
+          <div
+            className={`relative w-full h-full rounded-[2px] overflow-hidden transition-[transform,box-shadow] duration-300 ${
+              active !== null
+                ? '-translate-y-1 shadow-[0_70px_130px_-40px_rgba(0,0,0,0.9)]'
+                : 'shadow-[0_50px_100px_-40px_rgba(0,0,0,0.75)]'
+            }`}
+          >
             {projects.map((p, i) => (
               <div
                 key={p.name}
@@ -247,12 +263,12 @@ export default function SelectedWork({
 
       {/* The Index */}
       <div className="container-edge">
-        <ul className="relative border-t border-hairline">
+        <ul className="relative border-t border-white/10">
           {projects.map((p, i) => {
             const isActive = active === i
             const isOther = active !== null && active !== i
             return (
-              <InView key={p.name} as="li" className="reveal border-b border-hairline">
+              <InView key={p.name} as="li" className="reveal border-b border-white/10">
                 <Link
                   href={`${prefix}/portfolio`}
                   data-cursor={isKo ? '케이스 보기' : 'View case'}
@@ -260,7 +276,7 @@ export default function SelectedWork({
                   onMouseLeave={() => !isTouch && setActive(null)}
                   onFocus={() => setActive(i)}
                   onBlur={() => setActive(null)}
-                  className={`block py-8 md:py-10 transition-all duration-700 ${
+                  className={`group block py-8 md:py-10 transition-all duration-700 ${
                     isOther ? 'opacity-30' : 'opacity-100'
                   }`}
                 >
@@ -268,7 +284,7 @@ export default function SelectedWork({
                     <div className="col-span-2 md:col-span-1">
                       <span
                         className={`section-num text-xl md:text-2xl transition-colors duration-500 ${
-                          isActive ? 'text-gold' : ''
+                          isActive ? 'text-gold' : 'text-mute/80'
                         }`}
                       >
                         {String(i + 1).padStart(2, '0')}
@@ -277,17 +293,17 @@ export default function SelectedWork({
                     <div className="col-span-10 md:col-span-6">
                       <h3
                         className={`font-display leading-[1] tracking-luxury text-[clamp(2rem,5vw,4.25rem)] fraunces-soft transition-all duration-500 ${
-                          isActive ? 'italic text-gold font-light md:translate-x-3' : 'text-ink font-normal'
+                          isActive ? 'italic text-gold font-light md:translate-x-3' : 'text-ivory font-normal'
                         }`}
                       >
                         {p.name}
                       </h3>
                     </div>
                     <div className="hidden md:block md:col-span-3">
-                      <div className="overline text-ash">
+                      <div className="overline text-mute">
                         {p.industry[locale as 'en' | 'ko'] || p.industry.en}
                       </div>
-                      <div className="mt-1 text-[12px] text-ash/70">
+                      <div className="mt-1 text-[12px] text-ivory/45">
                         {p.year} · {p.location}
                       </div>
                     </div>
@@ -295,7 +311,7 @@ export default function SelectedWork({
                       <span
                         aria-hidden
                         className={`inline-block text-xl transition-all duration-500 ${
-                          isActive ? 'text-gold translate-x-1 -translate-y-1' : 'text-ash'
+                          isActive ? 'text-gold translate-x-1 -translate-y-1' : 'text-ivory/50'
                         }`}
                       >
                         ↗
@@ -305,7 +321,12 @@ export default function SelectedWork({
 
                   {/* Mobile inline image */}
                   {isTouch && (
-                    <div className="mt-6 relative aspect-[5/4] overflow-hidden rounded-[2px] bg-bone">
+                    <div
+                      className="mt-6 relative aspect-[5/4] overflow-hidden rounded-[2px] border border-white/10 transition-[transform,box-shadow] duration-300 group-hover:-translate-y-1 group-hover:shadow-[0_30px_60px_-30px_rgba(0,0,0,0.8)]"
+                      style={{
+                        background: `radial-gradient(85% 85% at 50% 45%, ${p.accent}2E, transparent 72%)`,
+                      }}
+                    >
                       <div className="absolute inset-4 overflow-hidden">
                         <Image src={p.image} alt={p.name} fill sizes="100vw" className="object-cover" />
                       </div>
@@ -321,9 +342,9 @@ export default function SelectedWork({
                     {(p.disciplines[locale as 'en' | 'ko'] || p.disciplines.en).map((d) => (
                       <span
                         key={d}
-                        className="text-[11px] uppercase tracking-[0.18em] text-ash flex items-center gap-2"
+                        className="text-[11px] uppercase tracking-[0.18em] text-mute flex items-center gap-2"
                       >
-                        <span className={`w-1 h-1 rounded-full ${isActive ? 'bg-gold' : 'bg-ash/60'} transition-colors`} />
+                        <span className={`w-1 h-1 rounded-full ${isActive ? 'bg-gold' : 'bg-mute/60'} transition-colors`} />
                         {d}
                       </span>
                     ))}
@@ -337,14 +358,18 @@ export default function SelectedWork({
 
       {/* Footer CTA */}
       <div className="container-edge mt-20 md:mt-28">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 pt-12 border-t border-hairline">
-          <p className="font-display italic text-2xl md:text-3xl text-ink max-w-xl fraunces-soft">
+        <div className="flex flex-col md:flex-row md:items-center justify-between gap-8 pt-12 border-t border-white/10">
+          <p className="font-display italic text-2xl md:text-3xl text-ivory max-w-xl fraunces-soft">
             {isKo
               ? '150개 이상의 프로젝트. 다음은 당신의 차례입니다.'
               : 'A hundred and fifty projects in. Your move.'}
           </p>
           <div className="flex items-center gap-6">
-            <Link href={`${prefix}/portfolio`} data-cursor="view" className="btn-ghost">
+            <Link
+              href={`${prefix}/portfolio`}
+              data-cursor="view"
+              className="inline-flex items-center gap-3 px-1 py-2 text-[13px] font-medium tracking-wide text-ivory border-b border-ivory/40 transition-colors duration-300 hover:text-gold hover:border-gold"
+            >
               {isKo ? '모든 작업' : 'All work'}
               <span aria-hidden>↗</span>
             </Link>
@@ -352,7 +377,7 @@ export default function SelectedWork({
               <Link
                 href={`${prefix}/#contact`}
                 data-cursor={isKo ? '시작' : 'Begin'}
-                className="btn-ink"
+                className="inline-flex items-center gap-3 px-7 py-4 rounded-full text-[13px] font-medium tracking-wide bg-ivory text-[#171310] transition-all duration-500 hover:bg-white hover:-translate-y-px [&_.arrow]:transition-transform [&_.arrow]:duration-500 hover:[&_.arrow]:translate-x-1"
               >
                 {isKo ? '프로젝트 시작' : 'Start yours'}
                 <span className="arrow">→</span>
