@@ -1,5 +1,5 @@
 import { stripe } from '@/lib/billing/stripe'
-import { verifyPayToken } from '@/lib/billing/token'
+import { resolvePaySegment } from '@/lib/billing/resolve'
 import { SITE_URL } from '@/lib/siteUrl'
 
 export const runtime = 'nodejs'
@@ -27,18 +27,32 @@ export async function POST(req: Request) {
   }
 
   const token = typeof body.token === 'string' ? body.token : ''
-  const payload = verifyPayToken(token)
+  // Accepts either a short code or a legacy signed token; both resolve to the
+  // same (customer, price). The amount never comes from the request body.
+  const payload = await resolvePaySegment(token)
   if (!payload) return Response.json({ error: 'invalid_or_expired' }, { status: 400 })
 
   const session = await stripe().checkout.sessions.create({
     mode: 'subscription',
     // Clover-era API: the embedded UI mode is 'embedded_page'.
     ui_mode: 'embedded_page',
-    customer: payload.c,
-    line_items: [{ price: payload.p, quantity: 1 }],
+    customer: payload.customerId,
+    line_items: [{ price: payload.priceId, quantity: 1 }],
+    // ACH first, deliberately: 0.8% capped at $5 versus 2.9% + 30c on cards.
+    // On a $500/mo retainer that is $78/yr instead of $208/yr. Checkout renders
+    // the methods in this order, so the cheaper rail is what the client sees
+    // first. (Link is disabled account-side — it is card-backed and was burying
+    // the bank option behind a full-width wallet button.)
     payment_method_types: ['us_bank_account', 'card'],
+    payment_method_options: {
+      us_bank_account: {
+        // Financial Connections: the client picks their bank and is verified in
+        // seconds, instead of waiting 1-2 days for micro-deposits.
+        verification_method: 'instant',
+      },
+    },
     return_url: `${SITE_URL}/pay/${token}?done={CHECKOUT_SESSION_ID}`,
-    subscription_data: { metadata: { zl_price: payload.p } },
+    subscription_data: { metadata: { zl_price: payload.priceId } },
     saved_payment_method_options: { payment_method_save: 'enabled' },
   })
 

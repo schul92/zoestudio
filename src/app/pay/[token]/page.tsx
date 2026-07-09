@@ -1,4 +1,4 @@
-import { verifyPayToken } from '@/lib/billing/token'
+import { resolvePaySegment } from '@/lib/billing/resolve'
 import { stripe, parseServices, fmtUSD, SERVICES } from '@/lib/billing/stripe'
 import CheckoutEmbed from '@/components/billing/CheckoutEmbed'
 
@@ -99,7 +99,8 @@ export default async function PayPage({
   params: { token: string }
   searchParams: { done?: string }
 }) {
-  const payload = verifyPayToken(params.token)
+  // Accepts a short code or a legacy signed token; both yield (customer, price).
+  const payload = await resolvePaySegment(params.token)
   if (!payload) return <InvalidLink />
 
   // Load the client + price server-side. Any Stripe failure or a deleted
@@ -114,8 +115,8 @@ export default async function PayPage({
   try {
     const s = stripe()
     const [customer, price] = await Promise.all([
-      s.customers.retrieve(payload.c),
-      s.prices.retrieve(payload.p),
+      s.customers.retrieve(payload.customerId),
+      s.prices.retrieve(payload.priceId),
     ])
     if (customer.deleted) return <InvalidLink />
 

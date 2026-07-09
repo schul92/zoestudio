@@ -6,20 +6,23 @@ import {
   isServiceKey,
   type ServiceKey,
 } from '@/lib/billing/stripe'
-import { createPayToken } from '@/lib/billing/token'
+import { newPayCode } from '@/lib/billing/paycode'
 import { authed, unauthorized } from '@/lib/admin/guard'
 import { SITE_URL } from '@/lib/siteUrl'
 
 export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
 
+/** How long a payment link stays usable. Long enough to email, short enough to expire. */
+const PAY_LINK_TTL_SECONDS = 60 * 60 * 24 * 30
+
 /**
  * POST /api/admin/billing/create
  *
  * Provision a client for billing: reuse-or-create the Stripe customer, mint a
  * per-client recurring Price on the single shared retainer Product, and return a
- * signed /pay link. No amount is ever trusted from the client side after this —
- * it is baked into the Price and referenced by a signed token.
+ * short /pay link. No amount is ever trusted from the client side after this —
+ * it is baked into the Price, which the short code resolves to.
  */
 
 const AMOUNT_MIN = 100 // $1.00
@@ -89,6 +92,12 @@ export async function POST(req: Request) {
   const idemBasis = [email, amountCents, interval, services.slice().sort().join(',')].join('|')
   const idempotencyKey = 'price_' + createHash('sha256').update(idemBasis).digest('hex').slice(0, 40)
 
+  // The short code becomes the Price's lookup_key, so /pay/<code> resolves back
+  // to (customer, price) without a database — and reads it back immediately,
+  // which prices.search cannot do. Expiry travels alongside in metadata.
+  const payCode = newPayCode()
+  const payExp = Math.floor(Date.now() / 1000) + PAY_LINK_TTL_SECONDS
+
   const price = await s.prices.create(
     {
       product: product.id,
@@ -96,13 +105,23 @@ export async function POST(req: Request) {
       currency: 'usd',
       recurring: { interval },
       nickname: `${name} - ${fmtUSD(amountCents)}/${interval}`,
-      metadata: { zl_services: services.join(','), zl_client: name },
+      lookup_key: payCode,
+      metadata: {
+        zl_services: services.join(','),
+        zl_client: name,
+        zl_customer: customer.id,
+        zl_pay_exp: String(payExp),
+      },
     },
     { idempotencyKey }
   )
 
+  // If idempotency replayed an earlier Price, reuse the code it already carries
+  // so the two links never diverge.
+  const code = price.lookup_key || payCode
+
   const origin = SITE_URL || new URL(req.url).origin
-  const payUrl = `${origin}/pay/${createPayToken(customer.id, price.id)}`
+  const payUrl = `${origin}/pay/${code}`
 
   return Response.json({ customerId: customer.id, priceId: price.id, payUrl })
 }
