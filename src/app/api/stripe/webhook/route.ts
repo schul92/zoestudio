@@ -3,7 +3,7 @@ import { stripe } from '@/lib/billing/stripe'
 import {
   sendPaymentConfirmation,
   sendPaymentFailed,
-  sendNewSubscriptionAlert,
+  sendNewPaymentAlert,
   sendCancellationAlert,
 } from '@/lib/billing/email'
 
@@ -174,6 +174,7 @@ export async function POST(req: Request) {
       log('checkout.session.completed', {
         session: cs.id,
         customer: idOf(cs.customer),
+        mode: cs.mode,
         subscription: idOf(cs.subscription),
         paymentStatus: cs.payment_status,
       })
@@ -193,14 +194,40 @@ export async function POST(req: Request) {
         }
       }
 
-      // ACH debits land here as 'unpaid' and settle days later; the eventual
-      // invoice.paid is the real confirmation. Announce the signup either way —
-      // this is the owner's "a client just subscribed" signal.
+      // Owner alert only. The CLIENT's confirmation comes from invoice.paid,
+      // which fires for one-time payments too (invoice_creation is on), so
+      // sending here as well would double-email them.
+      //
+      // ACH debits reach this point as 'unpaid' and settle days later; announce
+      // the signup either way — this is the "a client just paid" signal.
       const { email, name } = await client(cs.customer)
-      await sendNewSubscriptionAlert({
+      await sendNewPaymentAlert({
         clientName: name,
         amountCents: cs.amount_total ?? 0,
         email: email ?? cs.customer_details?.email ?? null,
+        kind: cs.mode === 'subscription' ? 'subscription' : 'one_time',
+        pending: cs.payment_status !== 'paid',
+      })
+      break
+    }
+
+    // A one-time ACH debit bounced. There is no invoice yet, so
+    // invoice.payment_failed never fires — this is the only signal.
+    case 'checkout.session.async_payment_failed': {
+      const cs = evt.data.object
+      log('checkout.session.async_payment_failed', {
+        session: cs.id,
+        customer: idOf(cs.customer),
+        amountTotal: cs.amount_total,
+      })
+
+      const { email, name } = await client(cs.customer)
+      await sendPaymentFailed({
+        to: email ?? cs.customer_details?.email ?? null,
+        clientName: name,
+        amountCents: cs.amount_total ?? 0,
+        invoiceUrl: null,
+        attempt: 1,
       })
       break
     }

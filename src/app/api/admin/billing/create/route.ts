@@ -1,11 +1,17 @@
 import {
   stripe,
   retainerProduct,
+  oneTimeProduct,
   fmtUSD,
   isServiceKey,
+  isBillingPeriod,
+  isRecurring,
+  BILLING_PERIODS,
   type ServiceKey,
+  type BillingPeriod,
 } from '@/lib/billing/stripe'
 import { newPayCode } from '@/lib/billing/paycode'
+import { spentPriceIds } from '@/lib/billing/spent'
 import { authed, unauthorized } from '@/lib/admin/guard'
 import { SITE_URL } from '@/lib/siteUrl'
 
@@ -19,9 +25,13 @@ const PAY_LINK_TTL_SECONDS = 60 * 60 * 24 * 30
  * POST /api/admin/billing/create
  *
  * Provision a client for billing: reuse-or-create the Stripe customer, mint a
- * per-client recurring Price on the single shared retainer Product, and return a
- * short /pay link. No amount is ever trusted from the client side after this —
- * it is baked into the Price, which the short code resolves to.
+ * per-client Price on the single shared retainer Product, and return a short
+ * /pay link. No amount is ever trusted from the client side after this — it is
+ * baked into the Price, which the short code resolves to.
+ *
+ * `interval: 'once'` creates a Price with no `recurring`, which is what makes
+ * Checkout run in payment mode. Everything downstream reads the Price, so the
+ * one-time and subscription paths share the same link, page and webhook.
  */
 
 const AMOUNT_MIN = 100 // $1.00
@@ -54,7 +64,7 @@ export async function POST(req: Request) {
   const name = typeof body.name === 'string' ? body.name.trim() : ''
   const email = typeof body.email === 'string' ? body.email.trim() : ''
   const amountCents = body.amountCents
-  const interval: 'month' | 'year' = body.interval === 'year' ? 'year' : 'month'
+  const interval: BillingPeriod = isBillingPeriod(body.interval) ? body.interval : 'month'
 
   if (!name) return bad('name is required')
   if (!email || !EMAIL_RE.test(email)) return bad('a valid email is required')
@@ -84,7 +94,9 @@ export async function POST(req: Request) {
       metadata: { zl_client: name },
     }))
 
-  const product = await retainerProduct()
+  // Checkout shows the Product name to the client, so a one-time build hangs
+  // off its own Product rather than "ZOE LUMOS Monthly Retainer".
+  const product = isRecurring(interval) ? await retainerProduct() : await oneTimeProduct()
   const now = Math.floor(Date.now() / 1000)
   const payExp = now + PAY_LINK_TTL_SECONDS
   const servicesCsv = services.join(',')
@@ -95,28 +107,21 @@ export async function POST(req: Request) {
   // unexpired link already exists for this exact (customer, amount, interval,
   // services), hand it back — refreshed to a full TTL — so the owner can
   // "re-create" a link to resend it and the client always holds ONE live link.
-  const [activePrices, custSubs] = await Promise.all([
+  const [activePrices, spent] = await Promise.all([
     s.prices.list({ product: product.id, active: true, limit: 100 }).autoPagingToArray({ limit: 1000 }),
-    s.subscriptions.list({ customer: customer.id, status: 'all', limit: 100 }),
+    // A price already paid for is a USED link, not a pending one — never hand
+    // it back, even if the webhook never fired to deactivate it.
+    spentPriceIds(customer.id),
   ])
-
-  // A price already carrying a live subscription is a USED link, not a pending
-  // one — never hand it back (the webhook normally deactivates these, but it
-  // may not have fired, or may not be configured yet).
-  const LIVE: readonly string[] = ['active', 'trialing', 'past_due', 'unpaid']
-  const usedPriceIds = new Set(
-    custSubs.data
-      .filter((sub) => LIVE.includes(sub.status))
-      .flatMap((sub) => sub.items.data.map((it) => it.price.id))
-  )
 
   const reusable = activePrices.find(
     (p) =>
       p.lookup_key &&
-      !usedPriceIds.has(p.id) &&
+      !spent.has(p.id) &&
       p.metadata.zl_customer === customer.id &&
       p.unit_amount === amountCents &&
-      p.recurring?.interval === interval &&
+      // A one-time Price has no `recurring` at all.
+      (p.recurring?.interval ?? 'once') === interval &&
       (p.metadata.zl_services ?? '') === servicesCsv &&
       Number(p.metadata.zl_pay_exp ?? 0) > now
   )
@@ -144,8 +149,10 @@ export async function POST(req: Request) {
     product: product.id,
     unit_amount: amountCents,
     currency: 'usd',
-    recurring: { interval },
-    nickname: `${name} - ${fmtUSD(amountCents)}/${interval}`,
+    // Omitting `recurring` is what makes this a one-time Price, and in turn what
+    // makes Checkout run in payment mode rather than subscription mode.
+    ...(isRecurring(interval) ? { recurring: { interval } } : {}),
+    nickname: `${name} - ${fmtUSD(amountCents)} ${BILLING_PERIODS[interval].en}`,
     lookup_key: payCode,
     metadata: {
       zl_services: servicesCsv,

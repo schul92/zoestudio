@@ -1,22 +1,47 @@
+import type Stripe from 'stripe'
 import { stripe } from '@/lib/billing/stripe'
 import { resolvePaySegment } from '@/lib/billing/resolve'
+import { spentPriceIds } from '@/lib/billing/spent'
 import { SITE_URL } from '@/lib/siteUrl'
 
 export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
 
 /**
- * POST /api/checkout   [PUBLIC — but only usable with a valid signed token]
+ * POST /api/checkout   [PUBLIC — but only usable with a valid /pay link]
  *
- * Creates an EMBEDDED Checkout session from a signed /pay token. The customer and
- * price come ONLY from the verified token — never from the request body — so a
- * client cannot alter the amount or bill a different customer.
+ * Creates an EMBEDDED Checkout session from a short pay code (or a legacy signed
+ * token). The customer and price come ONLY from the resolved link — never from
+ * the request body — so a client cannot alter the amount or bill someone else.
  *
- * ACH (us_bank_account) is listed first so it is the default payment method
- * (0.8% capped at $5 vs 2.9% + 30c on cards).
+ * The Price decides the mode: a Price with `recurring` opens a subscription,
+ * one without opens a single payment. One link shape, both products.
  */
 
 type Body = { token?: unknown }
+
+/**
+ * ACH is far cheaper than cards — 0.8% capped at $5 versus 2.9% + 30c, which on
+ * a $500/mo retainer is $78/yr instead of $208/yr.
+ *
+ * This array does NOT control the display order. Stripe: "If multiple payment
+ * methods are passed, Checkout will dynamically reorder them to prioritize the
+ * most relevant payment methods based on the customer's location and other
+ * characteristics." There is no ordering knob for embedded Checkout, so the
+ * /pay page nudges toward the bank option in copy above the form instead.
+ *
+ * (Link is disabled account-side — it is card-backed and was burying the bank
+ * option behind a full-width wallet button.)
+ */
+const PAYMENT_METHOD_TYPES = ['us_bank_account', 'card'] as const
+
+const PAYMENT_METHOD_OPTIONS = {
+  us_bank_account: {
+    // Financial Connections: the client picks their bank and is verified in
+    // seconds, instead of waiting 1-2 days for micro-deposits.
+    verification_method: 'instant',
+  },
+} as const
 
 export async function POST(req: Request) {
   let body: Body
@@ -27,52 +52,49 @@ export async function POST(req: Request) {
   }
 
   const token = typeof body.token === 'string' ? body.token : ''
-  // Accepts either a short code or a legacy signed token; both resolve to the
-  // same (customer, price). The amount never comes from the request body.
   const payload = await resolvePaySegment(token)
   if (!payload) return Response.json({ error: 'invalid_or_expired' }, { status: 400 })
 
-  // A link is single-use: if this (customer, price) pair already carries a live
-  // subscription, refuse to open a second checkout — otherwise a client who
-  // taps a 30-day link twice would be billed twice. `incomplete` is deliberately
-  // NOT blocked: that is the retry path after a failed first payment.
-  const existing = await stripe().subscriptions.list({
-    customer: payload.customerId,
-    price: payload.priceId,
-    status: 'all',
-    limit: 10,
-  })
-  const LIVE: readonly string[] = ['active', 'trialing', 'past_due', 'unpaid']
-  if (existing.data.some((sub) => LIVE.includes(sub.status))) {
-    return Response.json({ error: 'already_subscribed' }, { status: 409 })
+  const s = stripe()
+  const [price, spent] = await Promise.all([
+    s.prices.retrieve(payload.priceId),
+    // A link is single-use. Refuse a second checkout rather than charge twice —
+    // this holds even when the webhook that burns the link never fired.
+    spentPriceIds(payload.customerId),
+  ])
+
+  if (spent.has(payload.priceId)) {
+    return Response.json({ error: 'already_paid' }, { status: 409 })
   }
 
-  const session = await stripe().checkout.sessions.create({
-    mode: 'subscription',
+  const common = {
     // Clover-era API: the embedded UI mode is 'embedded_page'.
     ui_mode: 'embedded_page',
     customer: payload.customerId,
     line_items: [{ price: payload.priceId, quantity: 1 }],
-    // ACH first, deliberately: 0.8% capped at $5 versus 2.9% + 30c on cards.
-    // On a $500/mo retainer that is $78/yr instead of $208/yr. Checkout renders
-    // the methods in this order, so the cheaper rail is what the client sees
-    // first. (Link is disabled account-side — it is card-backed and was burying
-    // the bank option behind a full-width wallet button.)
-    payment_method_types: ['us_bank_account', 'card'],
-    payment_method_options: {
-      us_bank_account: {
-        // Financial Connections: the client picks their bank and is verified in
-        // seconds, instead of waiting 1-2 days for micro-deposits.
-        verification_method: 'instant',
-      },
-    },
+    payment_method_types: [...PAYMENT_METHOD_TYPES],
+    payment_method_options: PAYMENT_METHOD_OPTIONS,
     return_url: `${SITE_URL}/pay/${token}?done={CHECKOUT_SESSION_ID}`,
-    // zl_price on the session lets the webhook deactivate the pay link the
-    // moment this checkout completes, without extra lookups.
+    // zl_price on the session lets the webhook burn the pay link the moment
+    // this checkout completes, and lets spentPriceIds() see one-time payments.
     metadata: { zl_price: payload.priceId },
-    subscription_data: { metadata: { zl_price: payload.priceId } },
-    saved_payment_method_options: { payment_method_save: 'enabled' },
-  })
+  } satisfies Partial<Stripe.Checkout.SessionCreateParams>
+
+  const session = price.recurring
+    ? await s.checkout.sessions.create({
+        ...common,
+        mode: 'subscription',
+        subscription_data: { metadata: { zl_price: payload.priceId } },
+        saved_payment_method_options: { payment_method_save: 'enabled' },
+      })
+    : await s.checkout.sessions.create({
+        ...common,
+        mode: 'payment',
+        // No card is stored for a one-off: there is nothing to charge again.
+        payment_intent_data: { metadata: { zl_price: payload.priceId } },
+        // A one-time payment should produce a receipt the client can keep.
+        invoice_creation: { enabled: true },
+      })
 
   return Response.json({ clientSecret: session.client_secret })
 }

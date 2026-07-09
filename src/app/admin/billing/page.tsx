@@ -2,7 +2,13 @@
 
 import { useState, useCallback } from 'react'
 import { useApi, Kpi, Card, Spinner, ErrorBox } from '@/components/admin/AdminUI'
-import { SERVICES, isServiceKey, type ServiceKey } from '@/lib/billing/services'
+import {
+  SERVICES,
+  isServiceKey,
+  BILLING_PERIODS,
+  type ServiceKey,
+  type BillingPeriod,
+} from '@/lib/billing/services'
 
 // ── Types (mirror GET /api/admin/billing contract) ───────────────────
 // Mirrors Stripe.Subscription.Status — the API forwards it verbatim, so a
@@ -52,6 +58,17 @@ type PendingLink = {
   payUrl: string
   expiresAt: number | string | null
   createdAt: number | string | null
+  remindedAt?: number | string | null
+  reminderCount?: number
+}
+
+type OneTimePayment = {
+  sessionId: string
+  clientName: string
+  clientEmail: string | null
+  amountCents: number
+  status: 'paid' | 'processing'
+  paidAt: number | string | null
 }
 
 type BillingData = {
@@ -61,6 +78,7 @@ type BillingData = {
   counts: { active: number; past_due: number; canceled: number; incomplete: number; trialing: number }
   subscriptions: Subscription[]
   pendingLinks?: PendingLink[]
+  oneTimePayments?: OneTimePayment[]
 }
 
 // ── Small helpers ────────────────────────────────────────────────────
@@ -92,6 +110,12 @@ function daysOverdue(v: number | string | null | undefined): number {
 }
 
 const serviceLabel = (k: string) => (isServiceKey(k) ? SERVICES[k].en : k)
+
+/** "$200/month" for recurring, plain "$1,500 one-time" for a single charge. */
+function priceLabel(amountCents: number, interval: string) {
+  if (interval === 'once') return `${dollars(amountCents)} one-time`
+  return `${dollars(amountCents)}/${interval}`
+}
 
 /** POST a JSON body to an admin endpoint, surfacing the server's error string. */
 async function postAdmin(url: string, body: unknown): Promise<Record<string, unknown>> {
@@ -202,7 +226,7 @@ function AttentionRow({ sub }: { sub: Subscription }) {
             <StatusPill status={sub.status} />
           </div>
           <div className="mt-1 text-xs text-zinc-400">
-            {dollars(sub.amountCents)}/{sub.interval}
+            {priceLabel(sub.amountCents, sub.interval)}
             {overdue > 0 && (
               <span className="ml-2 font-medium text-[#FF6B4A]">
                 {overdue} {overdue === 1 ? 'day' : 'days'} overdue
@@ -313,10 +337,39 @@ function RowActions({
 }
 
 // ── Pending payment link (sent, not yet paid) ────────────────────────
+/** Matches MAX_REMINDERS in lib/billing/reminders. */
+const MAX_REMINDERS = 3
+
+const REMIND_REASON: Record<string, string> = {
+  max_reached: `Already sent ${MAX_REMINDERS} reminders — time to call them.`,
+  no_email: 'This client has no email address on file.',
+  failed: 'Stripe rejected the update; nothing was sent.',
+}
+
 function PendingLinkRow({ link, onRevoked }: { link: PendingLink; onRevoked: () => void }) {
   const [copied, setCopied] = useState(false)
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [reminding, setReminding] = useState(false)
+  const [reminded, setReminded] = useState(false)
+  const [sentCount, setSentCount] = useState(link.reminderCount ?? 0)
+
+  async function remind() {
+    setReminding(true)
+    setError(null)
+    try {
+      const j = await postAdmin('/api/admin/billing/remind', { priceId: link.priceId })
+      if (j.sent) {
+        setReminded(true)
+        setSentCount((n) => n + 1)
+      }
+    } catch (e) {
+      const key = e instanceof Error ? e.message : ''
+      setError(REMIND_REASON[key] ?? `Could not send the reminder (${key || 'unknown error'}).`)
+    } finally {
+      setReminding(false)
+    }
+  }
 
   const copy = useCallback(async () => {
     try {
@@ -366,10 +419,16 @@ function PendingLinkRow({ link, onRevoked }: { link: PendingLink; onRevoked: () 
             </span>
           </div>
           <div className="mt-1 text-xs text-zinc-400">
-            {dollars(link.amountCents)}/{link.interval}
+            {priceLabel(link.amountCents, link.interval)}
             {daysLeft !== null && (
               <span className="ml-2 text-zinc-500">
                 · link expires in {daysLeft} {daysLeft === 1 ? 'day' : 'days'}
+              </span>
+            )}
+            {sentCount > 0 && (
+              <span className="ml-2 text-zinc-500">
+                · {sentCount} reminder{sentCount === 1 ? '' : 's'} sent
+                {link.remindedAt && !reminded ? `, last ${fmtDate(link.remindedAt)}` : ''}
               </span>
             )}
           </div>
@@ -389,6 +448,14 @@ function PendingLinkRow({ link, onRevoked }: { link: PendingLink; onRevoked: () 
             {copied ? 'Copied' : 'Copy link'}
           </button>
           <button
+            onClick={remind}
+            disabled={reminding || reminded || sentCount >= MAX_REMINDERS}
+            title={sentCount >= MAX_REMINDERS ? REMIND_REASON.max_reached : 'Email this client their payment link now'}
+            className="rounded-lg border border-sky-500/30 px-3 py-1.5 text-xs text-sky-300 transition-colors hover:bg-sky-500/10 disabled:opacity-40"
+          >
+            {reminding ? 'Sending…' : reminded ? 'Reminder sent' : 'Send reminder'}
+          </button>
+          <button
             onClick={revoke}
             disabled={busy}
             className="rounded-lg border border-red-500/30 px-3 py-1.5 text-xs text-red-300 transition-colors hover:bg-red-500/10 disabled:opacity-50"
@@ -404,12 +471,56 @@ function PendingLinkRow({ link, onRevoked }: { link: PendingLink; onRevoked: () 
   )
 }
 
+// ── Completed one-time payments ──────────────────────────────────────
+function OneTimeTable({ payments }: { payments: OneTimePayment[] }) {
+  return (
+    <div className="overflow-x-auto">
+      <table className="w-full text-sm">
+        <thead>
+          <tr className="border-b border-white/10 text-left text-[11px] uppercase tracking-wider text-zinc-500">
+            <th className="pb-2 font-medium">Client</th>
+            <th className="pb-2 font-medium">Amount</th>
+            <th className="pb-2 font-medium">Date</th>
+            <th className="pb-2 font-medium">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          {payments.map((p) => (
+            <tr key={p.sessionId} className="border-b border-white/5 text-zinc-300 hover:bg-white/[0.02]">
+              <td className="py-3 pr-3">
+                <div className="font-medium text-zinc-100">{p.clientName}</div>
+                <div className="text-xs text-zinc-500">{p.clientEmail}</div>
+              </td>
+              <td className="py-3 pr-3 tabular-nums">{dollars(p.amountCents)}</td>
+              <td className="py-3 pr-3 text-zinc-400">{fmtDate(p.paidAt)}</td>
+              <td className="py-3 pr-3">
+                {p.status === 'paid' ? (
+                  <span className="inline-flex items-center rounded-full border border-emerald-500/30 bg-emerald-500/15 px-2 py-0.5 text-[11px] font-medium text-emerald-300">
+                    Paid
+                  </span>
+                ) : (
+                  <span
+                    className="inline-flex items-center rounded-full border border-amber-500/30 bg-amber-500/15 px-2 py-0.5 text-[11px] font-medium text-amber-300"
+                    title="ACH debit in flight — settles in 2-4 business days"
+                  >
+                    Processing
+                  </span>
+                )}
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  )
+}
+
 // ── New subscription form ────────────────────────────────────────────
 function NewClientForm() {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [amount, setAmount] = useState('')
-  const [interval, setInterval] = useState<'month' | 'year'>('month')
+  const [interval, setInterval] = useState<BillingPeriod>('month')
   const [services, setServices] = useState<ServiceKey[]>([])
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -490,11 +601,19 @@ function NewClientForm() {
           />
         </label>
         <label className="block">
-          <span className="mb-1 block text-[11px] uppercase tracking-wider text-zinc-500">Billing interval</span>
-          <select className={inputCls} value={interval} onChange={(e) => setInterval(e.target.value as 'month' | 'year')}>
-            <option value="month">Monthly</option>
-            <option value="year">Yearly</option>
+          <span className="mb-1 block text-[11px] uppercase tracking-wider text-zinc-500">Billing period</span>
+          <select className={inputCls} value={interval} onChange={(e) => setInterval(e.target.value as BillingPeriod)}>
+            {(Object.keys(BILLING_PERIODS) as BillingPeriod[]).map((k) => (
+              <option key={k} value={k}>
+                {BILLING_PERIODS[k].en}
+              </option>
+            ))}
           </select>
+          {interval === 'once' && (
+            <span className="mt-1 block text-[11px] text-zinc-500">
+              Charged a single time — no subscription is created.
+            </span>
+          )}
         </label>
       </div>
 
@@ -572,6 +691,7 @@ export default function BillingPage() {
   const attention = subs.filter((s) => ATTENTION.includes(s.status) || s.delinquent)
   const counts = data.counts ?? { active: 0, past_due: 0, canceled: 0, incomplete: 0, trialing: 0 }
   const pending = (data.pendingLinks ?? []).filter((l) => !revokedIds.includes(l.priceId))
+  const oneTime = data.oneTimePayments ?? []
   const isCanceling = (s: Subscription) => cancelOverrides[s.id] ?? s.cancelAtPeriodEnd
 
   // Recompute the ending-MRR note against this session's local cancels so the
@@ -623,7 +743,8 @@ export default function BillingPage() {
       {pending.length > 0 && (
         <Card title="Awaiting payment">
           <p className="mb-4 -mt-1 text-xs text-zinc-500">
-            Payment links sent but not yet paid. Copy to resend, or revoke to kill the link instantly.
+            Payment links sent but not yet paid. A reminder goes out automatically after 3 days, then weekly, up to{' '}
+            {MAX_REMINDERS} times — or send one now.
           </p>
           <div className="space-y-3">
             {pending.map((l) => (
@@ -699,7 +820,16 @@ export default function BillingPage() {
         )}
       </Card>
 
-      <Card title="New client subscription">
+      {oneTime.length > 0 && (
+        <Card title="One-time payments">
+          <p className="mb-4 -mt-1 text-xs text-zinc-500">
+            Single charges — builds, migrations, one-off work. These create no subscription and do not count toward MRR.
+          </p>
+          <OneTimeTable payments={oneTime} />
+        </Card>
+      )}
+
+      <Card title="New client subscription or one-time charge">
         <NewClientForm />
       </Card>
     </div>

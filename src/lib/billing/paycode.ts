@@ -41,13 +41,21 @@ export type ResolvedPayCode = { customerId: string; priceId: string }
 /**
  * Look a code up in Stripe. Returns null for unknown, revoked, or expired
  * codes — callers must not distinguish these to the client.
+ *
+ * `allowSpent` keeps a revoked/burned Price resolvable. Only the post-payment
+ * return screen passes it: paying burns the link, so the client would otherwise
+ * bounce off "expired link" on the very redirect that follows their payment.
+ * It never bypasses expiry, and callers that could take money must not set it.
  */
-export async function resolvePayCode(code: string): Promise<ResolvedPayCode | null> {
+export async function resolvePayCode(
+  code: string,
+  opts: { allowSpent?: boolean } = {}
+): Promise<ResolvedPayCode | null> {
   if (!PAYCODE_RE.test(code)) return null
 
   const { data } = await stripe().prices.list({
     lookup_keys: [code],
-    active: true,
+    ...(opts.allowSpent ? {} : { active: true }),
     limit: 1,
   })
 

@@ -1,0 +1,95 @@
+- generic [active] [ref=e1]:
+  - main [ref=e2]:
+    - generic [ref=e3]: ZOE LUMOS
+    - generic [ref=e5]:
+      - generic [ref=e6]:
+        - paragraph [ref=e7]: 1회 결제 / One-time payment
+        - heading "One Time Build Client" [level=1] [ref=e8]
+        - generic [ref=e9]: $1,500
+      - generic [ref=e11]:
+        - heading "포함된 서비스 / What's included" [level=2] [ref=e12]
+        - list [ref=e13]:
+          - listitem [ref=e14]:
+            - generic [ref=e15]: ✓
+            - generic [ref=e16]:
+              - generic [ref=e17]: 웹사이트 호스팅
+              - generic [ref=e18]: Website hosting
+          - listitem [ref=e19]:
+            - generic [ref=e20]: ✓
+            - generic [ref=e21]:
+              - generic [ref=e22]: 로컬 SEO · 구글 비즈니스 프로필
+              - generic [ref=e23]: Local SEO & Google Business Profile
+      - generic [ref=e24]:
+        - generic [ref=e25]:
+          - generic: 결제 화면을 불러오는 중… / Loading…
+          - iframe [ref=e28]:
+            - generic [ref=f2e7]:
+              - generic [ref=f2e8]: Test Mode
+              - generic [ref=f2e18]:
+                - heading "ZOE LUMOS Monthly Retainer" [level=2] [ref=f2e19]
+                - generic [ref=f2e23]:
+                  - generic [ref=f2e24]: $1,500.00
+                  - generic [ref=f2e27]: Monthly retainer — scope and amount are set per client.
+              - generic [ref=f2e35]:
+                - main [ref=f2e36]:
+                  - generic:
+                    - generic:
+                      - generic:
+                        - generic:
+                          - iframe [ref=f2e42]:
+                            
+                          - generic [ref=f2e43]:
+                            - separator [ref=f2e44]
+                            - paragraph [ref=f2e45]: Or
+                  - generic [ref=f2e49]:
+                    - generic [ref=f2e50]:
+                      - generic [ref=f2e57]:
+                        - generic [ref=f2e58]: Email
+                        - generic [ref=f2e59]: onetime@example.com
+                      - heading "Payment method" [level=2] [ref=f2e63]
+                    - list [ref=f2e65]:
+                      - listitem [ref=f2e70]:
+                        - generic [ref=f2e79]:
+                          - generic [ref=f2e83]:
+                            - radio "Card" [ref=f2e84]
+                            - generic [ref=f2e86]: Card
+                            - generic:
+                              - generic:
+                                - generic:
+                                  - img "Visa"
+                              - generic:
+                                - generic:
+                                  - img "MasterCard"
+                              - generic:
+                                - generic:
+                                  - img "American Express"
+                              - generic:
+                                - img "Discover"
+                                - img "JCB"
+                                - img "Diners Club"
+                                - img "UnionPay"
+                          - generic:
+                            - button "Pay with card"
+                      - listitem [ref=f2e91]:
+                        - generic [ref=f2e100]:
+                          - generic [ref=f2e104]:
+                            - radio "US bank account" [ref=f2e105]
+                            - generic [ref=f2e107]: US bank account
+                          - generic:
+                            - button "US bank account"
+                    - button "Pay" [ref=f2e112] [cursor=pointer]:
+                      - generic:
+                        - generic [ref=f2e114]: Pay
+                        - generic [ref=f2e115]: Processing
+                - contentinfo [ref=f2e128]:
+                  - link [ref=f2e130] [cursor=pointer]:
+                    - /url: https://stripe.com
+                    - generic [ref=f2e131]:
+                      - text: Powered by
+                      - img "Stripe" [ref=f2e133]
+                  - link "Terms" [ref=f2e136] [cursor=pointer]:
+                    - /url: https://stripe.com/legal/end-users
+                  - link "Privacy" [ref=f2e137] [cursor=pointer]:
+                    - /url: https://stripe.com/privacy
+        - paragraph [ref=e29]: 결제는 Stripe가 안전하게 처리하며, 카드 정보는 저희 서버에 저장되지 않습니다.Payments are processed securely by Stripe; we never store your card details.
+  - alert [ref=e30]

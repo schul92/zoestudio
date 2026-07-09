@@ -138,6 +138,52 @@ export async function sendPaymentFailed(args: {
 }
 
 /**
+ * Nudge a client who was sent a pay link but never used it. Deliberately soft:
+ * the most common reason a small-business owner hasn't paid is that the message
+ * scrolled off their phone, not that they refuse to.
+ */
+export async function sendPaymentReminder(args: {
+  to: string
+  clientName: string
+  amountCents: number
+  payUrl: string
+  interval: 'month' | 'year' | 'once'
+  daysLeft: number
+}) {
+  const { to, clientName, amountCents, payUrl, interval, daysLeft } = args
+  const amount = fmtUSD(amountCents)
+  const name = escapeHtml(clientName)
+  const per = interval === 'once' ? '' : interval === 'year' ? ' / 년' : ' / 월'
+  const expiry =
+    daysLeft <= 7
+      ? `<p style="color:#c0392b;font-size:13px">이 링크는 <strong>${daysLeft}일 후</strong> 만료됩니다.</p>`
+      : ''
+
+  await send({
+    to,
+    subject: `결제 안내 — ${amount}${per} / A friendly reminder from ZOE LUMOS`,
+    text: `${clientName}님, 아직 결제가 확인되지 않았습니다. ${amount}${per}\n\n결제하기: ${payUrl}`,
+    html: shell(`
+      <h1 style="font-size:22px;font-weight:600;margin:18px 0 6px">결제 안내</h1>
+      <p style="color:#777;margin:0 0 22px">A friendly reminder</p>
+      <p style="line-height:1.8">
+        <strong>${name}</strong> 님,<br>
+        아직 결제가 완료되지 않아 안내드립니다.<br>
+        <strong style="color:#b48a43;font-size:20px">${amount}</strong>${per}
+      </p>
+      ${expiry}
+      <p style="margin:24px 0">
+        <a href="${payUrl}" style="background:#151414;color:#fff;padding:12px 20px;border-radius:8px;text-decoration:none;font-size:14px">결제하기 / Pay now</a>
+      </p>
+      <p style="color:#999;font-size:13px">
+        이미 결제하셨다면 이 메일은 무시해 주세요.<br>
+        <span>If you've already paid, please disregard this message.</span>
+      </p>
+    `),
+  })
+}
+
+/**
  * Sent to us when a subscription is scheduled to stop renewing. Churn is the
  * one event we must never learn about from a bank statement.
  */
@@ -169,22 +215,36 @@ export async function sendCancellationAlert(args: {
   })
 }
 
-/** Sent to us when a client first subscribes. */
-export async function sendNewSubscriptionAlert(args: {
+/**
+ * Sent to us when a client completes checkout — a new subscription, or a
+ * one-time payment. `pending` means the money has not landed yet: an ACH debit
+ * clears the checkout screen days before it clears the bank.
+ */
+export async function sendNewPaymentAlert(args: {
   clientName: string
   amountCents: number
   email: string | null
+  kind: 'subscription' | 'one_time'
+  pending: boolean
 }) {
-  const { clientName, amountCents, email } = args
+  const { clientName, amountCents, email, kind, pending } = args
+  const isSub = kind === 'subscription'
+  const heading = isSub ? '신규 구독' : '1회 결제'
+  const suffix = isSub ? ' / 월' : ' (1회)'
+  const status = pending
+    ? '<p style="background:#fff3cd;color:#7a5b00;padding:10px 12px;border-radius:6px;font-size:13px">은행 이체(ACH) 처리 중 — 2~4 영업일 후 입금됩니다.</p>'
+    : ''
+
   await send({
     to: OWNER_INBOXES,
-    subject: `[ZOE 신규구독] ${clientName} — ${fmtUSD(amountCents)}/월`,
-    text: `${clientName} subscribed at ${fmtUSD(amountCents)}/month. ${email ?? ''}`,
+    subject: `[ZOE ${isSub ? '신규구독' : '1회결제'}] ${clientName} — ${fmtUSD(amountCents)}${isSub ? '/월' : ''}${pending ? ' (처리중)' : ''}`,
+    text: `${clientName} — ${fmtUSD(amountCents)} ${kind}${pending ? ' (pending ACH)' : ''}. ${email ?? ''}`,
     html: shell(`
-      <h1 style="font-size:20px;font-weight:600;margin:18px 0 6px">신규 구독</h1>
+      ${status}
+      <h1 style="font-size:20px;font-weight:600;margin:18px 0 6px">${heading}</h1>
       <p style="line-height:1.8">
         <strong>${escapeHtml(clientName)}</strong><br>
-        <span style="color:#b48a43;font-size:20px">${fmtUSD(amountCents)}</span> / 월<br>
+        <span style="color:#b48a43;font-size:20px">${fmtUSD(amountCents)}</span>${suffix}<br>
         ${email ? `<span style="color:#777">${escapeHtml(email)}</span>` : ''}
       </p>
     `),
