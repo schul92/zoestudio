@@ -137,6 +137,38 @@ export async function sendPaymentFailed(args: {
   })
 }
 
+/**
+ * Sent to us when a subscription is scheduled to stop renewing. Churn is the
+ * one event we must never learn about from a bank statement.
+ */
+export async function sendCancellationAlert(args: {
+  clientName: string
+  amountCents: number
+  email: string | null
+  endsAt: number | null
+}) {
+  const { clientName, amountCents, email, endsAt } = args
+  const ends = endsAt
+    ? new Date(endsAt * 1000).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
+    : '기간 종료일 미정'
+
+  await send({
+    to: OWNER_INBOXES,
+    subject: `[ZOE 구독취소] ${clientName} — ${fmtUSD(amountCents)}/월 (${ends} 종료)`,
+    text: `${clientName} scheduled cancellation. ${fmtUSD(amountCents)}/month ends ${ends}. ${email ?? ''}`,
+    html: shell(`
+      <h1 style="font-size:20px;font-weight:600;margin:18px 0 6px">구독 취소 예정</h1>
+      <p style="line-height:1.8">
+        <strong>${escapeHtml(clientName)}</strong><br>
+        <span style="color:#c0392b;font-size:20px">${fmtUSD(amountCents)}</span> / 월<br>
+        <strong>${ends}</strong> 까지 서비스 유지 후 종료됩니다.<br>
+        ${email ? `<span style="color:#777">${escapeHtml(email)}</span>` : ''}
+      </p>
+      <p style="color:#999;font-size:13px">종료일 전에는 /admin/billing 에서 "Undo cancel" 로 되돌릴 수 있습니다.</p>
+    `),
+  })
+}
+
 /** Sent to us when a client first subscribes. */
 export async function sendNewSubscriptionAlert(args: {
   clientName: string

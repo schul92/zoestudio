@@ -43,6 +43,8 @@ type SubscriptionRow = {
   defaultPaymentMethod: PaymentMethodKind
   delinquent: boolean
   createdAt: number
+  /** Scheduled to end: still active and serving, but will not renew. */
+  cancelAtPeriodEnd: boolean
 }
 
 type Counts = {
@@ -97,6 +99,10 @@ export async function GET() {
     .autoPagingToArray({ limit: 1000 })
 
   let mrrCents = 0
+  // Portion of MRR that is scheduled to stop renewing. Counted inside mrrCents
+  // (the subscription is still active and still serving this period), but
+  // surfaced separately so "MRR $700" never hides "$200 of that ends this month".
+  let endingMrrCents = 0
   const counts: Counts = { active: 0, past_due: 0, canceled: 0, incomplete: 0, trialing: 0 }
   // Price ids already attached to a subscription — used to tell "link sent but
   // never paid" apart from "paid" below.
@@ -175,7 +181,9 @@ export async function GET() {
         break
     }
     if (sub.status === 'active' || sub.status === 'trialing') {
-      mrrCents += monthlyCents(amountCents, interval)
+      const monthly = monthlyCents(amountCents, interval)
+      mrrCents += monthly
+      if (sub.cancel_at_period_end) endingMrrCents += monthly
     }
 
     return {
@@ -192,6 +200,7 @@ export async function GET() {
       defaultPaymentMethod,
       delinquent,
       createdAt: sub.created,
+      cancelAtPeriodEnd: sub.cancel_at_period_end,
     }
   })
 
@@ -234,6 +243,7 @@ export async function GET() {
   return Response.json({
     testMode: isTestMode(),
     mrrCents,
+    endingMrrCents,
     counts,
     subscriptions,
     pendingLinks,

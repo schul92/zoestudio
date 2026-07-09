@@ -4,6 +4,7 @@ import {
   sendPaymentConfirmation,
   sendPaymentFailed,
   sendNewSubscriptionAlert,
+  sendCancellationAlert,
 } from '@/lib/billing/email'
 
 export const runtime = 'nodejs'
@@ -145,6 +146,26 @@ export async function POST(req: Request) {
         status: sub.status,
         cancelAtPeriodEnd: String(sub.cancel_at_period_end),
       })
+
+      // This event fires on any change (price, payment method, period roll), so
+      // alert only on the false -> true transition. previous_attributes carries
+      // ONLY the fields that changed, which is exactly the signal we want:
+      // an undo (true -> false) leaves previous = true and is skipped.
+      const previous = evt.data.previous_attributes as
+        | { cancel_at_period_end?: boolean }
+        | undefined
+      const justScheduledToCancel =
+        sub.cancel_at_period_end === true && previous?.cancel_at_period_end === false
+
+      if (justScheduledToCancel) {
+        const { email, name } = await client(sub.customer)
+        await sendCancellationAlert({
+          clientName: name,
+          amountCents: sub.items.data[0]?.price.unit_amount ?? 0,
+          email,
+          endsAt: sub.items.data[0]?.current_period_end ?? null,
+        })
+      }
       break
     }
 
