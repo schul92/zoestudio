@@ -1,6 +1,6 @@
 import 'server-only'
 import Stripe from 'stripe'
-import { RETAINER_PRODUCT_NAME } from './services'
+import { RETAINER_PRODUCT_NAME, ONE_TIME_PRODUCT_NAME } from './services'
 
 /**
  * Server-side Stripe client. Stripe is the source of truth for all billing —
@@ -36,17 +36,40 @@ export const isTestMode = (): boolean =>
 
 /** Find (or lazily create) the single retainer Product. */
 export async function retainerProduct(): Promise<Stripe.Product> {
+  return findOrCreateProduct('retainer', {
+    name: RETAINER_PRODUCT_NAME,
+    description: 'Monthly retainer — scope and amount are set per client.',
+  })
+}
+
+/**
+ * Find (or lazily create) the Product one-time Prices hang off. Separate from
+ * the retainer Product because Checkout renders the Product's name to the
+ * client: a $1,500 site build must not say "Monthly Retainer".
+ */
+export async function oneTimeProduct(): Promise<Stripe.Product> {
+  return findOrCreateProduct('one_time', {
+    name: ONE_TIME_PRODUCT_NAME,
+    description: 'One-time payment — scope and amount are agreed per project.',
+  })
+}
+
+/** Both Products, for callers that must scan every pay link we ever minted. */
+export async function billingProducts(): Promise<Stripe.Product[]> {
+  return Promise.all([retainerProduct(), oneTimeProduct()])
+}
+
+async function findOrCreateProduct(
+  kind: 'retainer' | 'one_time',
+  fields: { name: string; description: string }
+): Promise<Stripe.Product> {
   const s = stripe()
   const existing = await s.products.search({
-    query: `active:'true' AND metadata['zl_kind']:'retainer'`,
+    query: `active:'true' AND metadata['zl_kind']:'${kind}'`,
     limit: 1,
   })
   if (existing.data[0]) return existing.data[0]
-  return s.products.create({
-    name: RETAINER_PRODUCT_NAME,
-    description: 'Monthly retainer — scope and amount are set per client.',
-    metadata: { zl_kind: 'retainer' },
-  })
+  return s.products.create({ ...fields, metadata: { zl_kind: kind } })
 }
 
 // Convenience re-exports so server callers keep one import site.
@@ -56,5 +79,10 @@ export {
   parseServices,
   fmtUSD,
   RETAINER_PRODUCT_NAME,
+  ONE_TIME_PRODUCT_NAME,
+  BILLING_PERIODS,
+  isBillingPeriod,
+  isRecurring,
   type ServiceKey,
+  type BillingPeriod,
 } from './services'

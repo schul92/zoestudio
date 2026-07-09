@@ -34,7 +34,7 @@ function Fallback({ children }: { children: React.ReactNode }) {
 }
 
 export default function CheckoutEmbed({ token }: { token: string }) {
-  const [failed, setFailed] = useState<'error' | 'already_subscribed' | null>(null)
+  const [failed, setFailed] = useState<'error' | 'already_paid' | null>(null)
 
   const fetchClientSecret = useCallback(
     () =>
@@ -50,10 +50,10 @@ export default function CheckoutEmbed({ token }: { token: string }) {
         })
         .catch((e: unknown) => {
           // Swap to an on-brand message instead of Stripe's raw error. The
-          // already-subscribed case (paid in another tab, then refreshed here)
-          // gets its own copy — it is good news, not an error.
+          // already-paid case (paid in another tab, then refreshed here) gets
+          // its own copy — it is good news, not an error.
           const msg = e instanceof Error ? e.message : ''
-          setFailed(msg === 'already_subscribed' ? 'already_subscribed' : 'error')
+          setFailed(msg === 'already_paid' ? 'already_paid' : 'error')
           throw e instanceof Error ? e : new Error('checkout_failed')
         }),
     [token]
@@ -71,12 +71,12 @@ export default function CheckoutEmbed({ token }: { token: string }) {
   }
 
   // The link was already used — most likely paid moments ago in another tab.
-  if (failed === 'already_subscribed') {
+  if (failed === 'already_paid') {
     return (
       <Fallback>
-        이미 구독이 완료되어 추가 결제가 필요하지 않습니다.
+        이미 결제가 완료되어 추가 결제가 필요하지 않습니다.
         <br />
-        <span className="text-mute">You&apos;re already subscribed — no further payment is needed.</span>
+        <span className="text-mute">This has already been paid — no further payment is needed.</span>
       </Fallback>
     )
   }

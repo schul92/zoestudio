@@ -1,5 +1,12 @@
 import type Stripe from 'stripe'
-import { stripe, isTestMode, parseServices, retainerProduct, type ServiceKey } from '@/lib/billing/stripe'
+import {
+  stripe,
+  isTestMode,
+  parseServices,
+  billingProducts,
+  type ServiceKey,
+  type BillingPeriod,
+} from '@/lib/billing/stripe'
 import { authed, unauthorized } from '@/lib/admin/guard'
 import { SITE_URL } from '@/lib/siteUrl'
 
@@ -55,16 +62,32 @@ type Counts = {
   trialing: number
 }
 
-/** A payment link that was created but has not been paid (no subscription yet). */
+/** A payment link that was created but has not been paid yet. */
 type PendingLink = {
   priceId: string
   clientName: string
+  clientEmail: string | null
   amountCents: number
-  interval: Interval
+  interval: BillingPeriod
   services: ServiceKey[]
   payUrl: string
   expiresAt: number
   createdAt: number
+  /** Reminder history, kept on the Price metadata — see lib/billing/reminders. */
+  remindedAt: number | null
+  reminderCount: number
+}
+
+/** A completed one-time payment. These leave no subscription behind, so without
+ *  this the money would never appear on the dashboard. */
+type OneTimePayment = {
+  sessionId: string
+  clientName: string
+  clientEmail: string | null
+  amountCents: number
+  /** 'paid' once the money landed; ACH sits at 'processing' for a few days. */
+  status: 'paid' | 'processing'
+  paidAt: number
 }
 
 /** Normalize any recurring interval to a monthly-equivalent amount for MRR. */
@@ -204,16 +227,54 @@ export async function GET() {
     }
   })
 
-  // Pending links: active Prices on the retainer Product that carry a pay code
-  // (lookup_key) but have no subscription yet. The webhook deactivates a Price
-  // once its checkout completes, and we ALSO cross-check against live
-  // subscriptions here, so this stays correct even if a webhook was missed.
+  // Every completed checkout, so we can (a) surface one-time payments, which
+  // leave no subscription behind, and (b) tell a spent pay link from a pending
+  // one even when the webhook that burns links never fired.
   let pendingLinks: PendingLink[] = []
+  let oneTimePayments: OneTimePayment[] = []
   try {
-    const product = await retainerProduct()
-    const prices = await s.prices
-      .list({ product: product.id, active: true, limit: 100 })
-      .autoPagingToArray({ limit: 1000 })
+    const [products, sessions] = await Promise.all([
+      billingProducts(),
+      s.checkout.sessions.list({ limit: 100, expand: ['data.customer'] }).autoPagingToArray({ limit: 1000 }),
+    ])
+
+    const completed = sessions.filter((cs) => cs.status === 'complete')
+    const spentPrices = new Set(
+      completed.map((cs) => cs.metadata?.zl_price).filter((id): id is string => Boolean(id))
+    )
+
+    const nameOf = (cs: Stripe.Checkout.Session) => {
+      const cust = cs.customer
+      if (cust && typeof cust !== 'string' && !cust.deleted) return cust.name || cust.email || '—'
+      return cs.customer_details?.name || cs.customer_details?.email || '—'
+    }
+    const emailOf = (cs: Stripe.Checkout.Session) => {
+      const cust = cs.customer
+      if (cust && typeof cust !== 'string' && !cust.deleted && cust.email) return cust.email
+      return cs.customer_details?.email ?? null
+    }
+
+    oneTimePayments = completed
+      .filter((cs) => cs.mode === 'payment')
+      .map((cs) => ({
+        sessionId: cs.id,
+        clientName: nameOf(cs),
+        clientEmail: emailOf(cs),
+        amountCents: cs.amount_total ?? 0,
+        // ACH clears the checkout screen days before it clears the bank.
+        status: cs.payment_status === 'paid' ? ('paid' as const) : ('processing' as const),
+        paidAt: cs.created,
+      }))
+      .sort((a, b) => b.paidAt - a.paidAt)
+
+    const productIds = new Set(products.map((p) => p.id))
+    const prices = (
+      await Promise.all(
+        products.map((product) =>
+          s.prices.list({ product: product.id, active: true, limit: 100 }).autoPagingToArray({ limit: 1000 })
+        )
+      )
+    ).flat()
 
     const now = Math.floor(Date.now() / 1000)
     pendingLinks = prices
@@ -221,23 +282,30 @@ export async function GET() {
         (p) =>
           p.lookup_key &&
           p.metadata.zl_customer &&
+          typeof p.product === 'string' &&
+          productIds.has(p.product) &&
           Number(p.metadata.zl_pay_exp ?? 0) > now &&
-          !subscribedPriceIds.has(p.id)
+          !subscribedPriceIds.has(p.id) &&
+          !spentPrices.has(p.id)
       )
       .map((p) => ({
         priceId: p.id,
         clientName: p.metadata.zl_client || '—',
+        clientEmail: null,
         amountCents: p.unit_amount ?? 0,
-        interval: (p.recurring?.interval ?? 'month') as Interval,
+        // A Price with no `recurring` is a one-time charge.
+        interval: (p.recurring?.interval ?? 'once') as BillingPeriod,
         services: parseServices(p.metadata.zl_services),
         payUrl: `${SITE_URL}/pay/${p.lookup_key}`,
         expiresAt: Number(p.metadata.zl_pay_exp),
         createdAt: p.created,
+        remindedAt: Number(p.metadata.zl_reminded_at ?? 0) || null,
+        reminderCount: Number(p.metadata.zl_reminder_count ?? 0),
       }))
       .sort((a, b) => b.createdAt - a.createdAt)
   } catch (err) {
-    // A pending-links failure must not take down the whole dashboard.
-    console.error('[admin.billing] pending links failed:', err instanceof Error ? err.message : err)
+    // A links/payments failure must not take down the whole dashboard.
+    console.error('[admin.billing] links or one-time payments failed:', err instanceof Error ? err.message : err)
   }
 
   return Response.json({
@@ -247,5 +315,6 @@ export async function GET() {
     counts,
     subscriptions,
     pendingLinks,
+    oneTimePayments,
   })
 }

@@ -34,5 +34,29 @@ export const parseServices = (csv?: string | null): ServiceKey[] =>
 export const fmtUSD = (cents: number): string =>
   `$${(cents / 100).toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 2 })}`
 
-/** One Product covers every client; the amount lives on a per-client Price. */
+/**
+ * Two Products cover every client; the amount lives on a per-client Price.
+ * Checkout shows the Product's name and description to the client, so a
+ * one-time build must not be sold to them as a "Monthly Retainer".
+ */
 export const RETAINER_PRODUCT_NAME = 'ZOE LUMOS Monthly Retainer'
+export const ONE_TIME_PRODUCT_NAME = 'ZOE LUMOS Project & Services'
+
+/**
+ * How a client is charged. `once` is a single payment (a new build, a migration,
+ * a one-off fix) — it creates a Stripe Price with no `recurring`, which in turn
+ * makes Checkout run in `payment` mode instead of `subscription` mode.
+ */
+export const BILLING_PERIODS = {
+  month: { en: 'Monthly', ko: '매월', suffixKo: '/월', suffixEn: '/mo' },
+  year: { en: 'Yearly', ko: '매년', suffixKo: '/년', suffixEn: '/yr' },
+  once: { en: 'One-time', ko: '1회 결제', suffixKo: '', suffixEn: '' },
+} as const
+
+export type BillingPeriod = keyof typeof BILLING_PERIODS
+
+export const isBillingPeriod = (v: unknown): v is BillingPeriod =>
+  typeof v === 'string' && v in BILLING_PERIODS
+
+/** Recurring intervals only — `once` has no Stripe `recurring` object. */
+export const isRecurring = (p: BillingPeriod): p is 'month' | 'year' => p !== 'once'

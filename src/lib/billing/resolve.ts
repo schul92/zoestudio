@@ -12,7 +12,10 @@ import { resolvePayCode, PAYCODE_RE, type ResolvedPayCode } from './paycode'
  * Returns null for anything invalid or expired — callers must never tell the
  * client which of the two it was.
  */
-export async function resolvePaySegment(segment: string): Promise<ResolvedPayCode | null> {
+export async function resolvePaySegment(
+  segment: string,
+  opts: { allowSpent?: boolean } = {}
+): Promise<ResolvedPayCode | null> {
   if (!segment) return null
 
   // Signed tokens always contain a '.' separating body and signature; short
@@ -22,7 +25,7 @@ export async function resolvePaySegment(segment: string): Promise<ResolvedPayCod
     return payload ? { customerId: payload.c, priceId: payload.p } : null
   }
 
-  if (PAYCODE_RE.test(segment)) return resolvePayCode(segment)
+  if (PAYCODE_RE.test(segment)) return resolvePayCode(segment, opts)
 
   return null
 }
