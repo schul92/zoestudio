@@ -82,7 +82,8 @@ export default function EnglewoodSEO({ params }: { params: { locale: string } })
       : 'Small business SEO agency in Englewood, NJ serving Bergen County. Local SEO, WordPress SEO, and bilingual English & Korean SEO.',
     url: canonical,
     image: `${SITE_URL}/og-image.png`,
-    telephone: '+1-201-555-0100',
+    // No telephone: we take inquiries by email and KakaoTalk only.
+    email: 'info@zoelumos.com',
     priceRange: '$$',
     serviceType: 'Search Engine Optimization (SEO)',
     address: {

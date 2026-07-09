@@ -387,8 +387,13 @@ export default function WebsiteDesignPage({ params }: { params: { locale: string
               <Link href="#contact" className="px-8 py-4 bg-white text-violet-700 rounded-xl font-bold text-lg hover:bg-gray-100 transition-colors shadow-lg inline-flex items-center gap-2">
                 {isKorean ? '문의하기' : 'Contact Us'} <ArrowRight className="w-5 h-5" />
               </Link>
-              <a href="tel:+12017174745" className="px-8 py-4 bg-transparent text-white border-2 border-white rounded-xl font-bold text-lg hover:bg-white/10 transition-colors inline-flex items-center gap-2">
-                {isKorean ? '전화 문의: (201) 717-4745' : 'Call: (201) 717-4745'}
+              <a
+                href="http://pf.kakao.com/_xhxdxmlX/chat"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-8 py-4 bg-transparent text-white border-2 border-white rounded-xl font-bold text-lg hover:bg-white/10 transition-colors inline-flex items-center gap-2"
+              >
+                {isKorean ? '카카오톡 상담' : 'Chat on KakaoTalk'}
               </a>
             </div>
           </div>
