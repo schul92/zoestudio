@@ -25,6 +25,13 @@ export async function middleware(request: NextRequest) {
     }
     return NextResponse.next()
   }
+
+  // Client payment pages are their own bilingual route (Korean-first) and must
+  // not be locale-rewritten — /pay/<token> would become /en/pay/<token> and 404.
+  if (pathname === '/pay' || pathname.startsWith('/pay/')) {
+    return NextResponse.next()
+  }
+
   const isLocalHost =
     hostname === 'localhost' ||
     hostname === '127.0.0.1' ||

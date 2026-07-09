@@ -9,6 +9,7 @@ const TABS = [
   { href: '/admin/ads', label: 'Google Ads' },
   { href: '/admin/gsc', label: 'Search Console' },
   { href: '/admin/ga4', label: 'Analytics (GA4)' },
+  { href: '/admin/billing', label: 'Billing' },
 ]
 
 export default function Nav() {
