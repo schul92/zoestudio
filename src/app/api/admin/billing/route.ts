@@ -1,6 +1,7 @@
 import type Stripe from 'stripe'
-import { stripe, isTestMode, parseServices, type ServiceKey } from '@/lib/billing/stripe'
+import { stripe, isTestMode, parseServices, retainerProduct, type ServiceKey } from '@/lib/billing/stripe'
 import { authed, unauthorized } from '@/lib/admin/guard'
+import { SITE_URL } from '@/lib/siteUrl'
 
 export const runtime = 'nodejs'
 export const dynamic = 'force-dynamic'
@@ -11,6 +12,10 @@ export const dynamic = 'force-dynamic'
  * Live billing dashboard payload. Stripe is the single source of truth — we read
  * every subscription (all statuses) on each request, exactly like the rest of the
  * admin dashboard reads GA4 / Search Console / Google Ads live. No local database.
+ *
+ * Also surfaces "pending" payment links: a client we sent a link to but who has
+ * not paid yet has NO subscription, so without this they would be invisible on
+ * the dashboard entirely.
  */
 
 type Interval = 'day' | 'week' | 'month' | 'year'
@@ -48,6 +53,18 @@ type Counts = {
   trialing: number
 }
 
+/** A payment link that was created but has not been paid (no subscription yet). */
+type PendingLink = {
+  priceId: string
+  clientName: string
+  amountCents: number
+  interval: Interval
+  services: ServiceKey[]
+  payUrl: string
+  expiresAt: number
+  createdAt: number
+}
+
 /** Normalize any recurring interval to a monthly-equivalent amount for MRR. */
 function monthlyCents(amountCents: number, interval: Interval): number {
   switch (interval) {
@@ -66,20 +83,31 @@ function monthlyCents(amountCents: number, interval: Interval): number {
 export async function GET() {
   if (!(await authed())) return unauthorized()
 
-  const list = await stripe().subscriptions.list({
-    status: 'all',
-    limit: 100,
-    expand: ['data.customer', 'data.default_payment_method', 'data.latest_invoice'],
-  })
+  const s = stripe()
+
+  // Auto-paginate: a plain list({limit: 100}) silently truncates the dashboard
+  // (and understates MRR) once we pass 100 subscriptions. 1000 is a safety cap,
+  // not a target — at ~$200/client that would be $200k+ MRR.
+  const allSubs = await s.subscriptions
+    .list({
+      status: 'all',
+      limit: 100,
+      expand: ['data.customer', 'data.default_payment_method', 'data.latest_invoice'],
+    })
+    .autoPagingToArray({ limit: 1000 })
 
   let mrrCents = 0
   const counts: Counts = { active: 0, past_due: 0, canceled: 0, incomplete: 0, trialing: 0 }
+  // Price ids already attached to a subscription — used to tell "link sent but
+  // never paid" apart from "paid" below.
+  const subscribedPriceIds = new Set<string>()
 
-  const subscriptions: SubscriptionRow[] = list.data.map((sub) => {
+  const subscriptions: SubscriptionRow[] = allSubs.map((sub) => {
     // The primary (and, for our retainer model, only) line item carries the price
     // and — in this API version — the current period window.
     const item = sub.items.data[0]
     const price = item?.price
+    if (price?.id) subscribedPriceIds.add(price.id)
     const amountCents = price?.unit_amount ?? 0
     const interval: Interval = price?.recurring?.interval ?? 'month'
     const services = parseServices(price?.metadata?.zl_services)
@@ -167,10 +195,47 @@ export async function GET() {
     }
   })
 
+  // Pending links: active Prices on the retainer Product that carry a pay code
+  // (lookup_key) but have no subscription yet. The webhook deactivates a Price
+  // once its checkout completes, and we ALSO cross-check against live
+  // subscriptions here, so this stays correct even if a webhook was missed.
+  let pendingLinks: PendingLink[] = []
+  try {
+    const product = await retainerProduct()
+    const prices = await s.prices
+      .list({ product: product.id, active: true, limit: 100 })
+      .autoPagingToArray({ limit: 1000 })
+
+    const now = Math.floor(Date.now() / 1000)
+    pendingLinks = prices
+      .filter(
+        (p) =>
+          p.lookup_key &&
+          p.metadata.zl_customer &&
+          Number(p.metadata.zl_pay_exp ?? 0) > now &&
+          !subscribedPriceIds.has(p.id)
+      )
+      .map((p) => ({
+        priceId: p.id,
+        clientName: p.metadata.zl_client || '—',
+        amountCents: p.unit_amount ?? 0,
+        interval: (p.recurring?.interval ?? 'month') as Interval,
+        services: parseServices(p.metadata.zl_services),
+        payUrl: `${SITE_URL}/pay/${p.lookup_key}`,
+        expiresAt: Number(p.metadata.zl_pay_exp),
+        createdAt: p.created,
+      }))
+      .sort((a, b) => b.createdAt - a.createdAt)
+  } catch (err) {
+    // A pending-links failure must not take down the whole dashboard.
+    console.error('[admin.billing] pending links failed:', err instanceof Error ? err.message : err)
+  }
+
   return Response.json({
     testMode: isTestMode(),
     mrrCents,
     counts,
     subscriptions,
+    pendingLinks,
   })
 }

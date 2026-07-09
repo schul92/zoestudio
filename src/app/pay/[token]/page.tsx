@@ -63,8 +63,10 @@ function InvalidLink() {
   )
 }
 
-// ── Success (return_url ?done=<session_id>) ──────────────────────────
-function Success({ name }: { name: string }) {
+// ── Success / processing (return_url ?done=<session_id>) ─────────────
+// `processing` is the ACH path: checkout is complete but the bank transfer
+// settles over a few days — saying "완료" there would be a lie.
+function Success({ name, processing }: { name: string; processing: boolean }) {
   return (
     <Shell>
       <div className="rounded-2xl border border-hairline bg-paper p-8 text-center">
@@ -72,13 +74,56 @@ function Success({ name }: { name: string }) {
           ✓
         </div>
         <h1 className="mt-5 font-display text-2xl text-ink">
-          결제가 완료되었습니다
-          <span className="mt-1 block text-base font-normal text-ash">Payment complete</span>
+          {processing ? '결제가 접수되었습니다' : '결제가 완료되었습니다'}
+          <span className="mt-1 block text-base font-normal text-ash">
+            {processing ? 'Payment initiated' : 'Payment complete'}
+          </span>
         </h1>
         <p className="mt-4 text-sm leading-relaxed text-graphite">
-          {name}님, 결제해 주셔서 감사합니다. 영수증을 이메일로 보내드렸습니다.
+          {processing ? (
+            <>
+              {name}님, 감사합니다. 은행 이체는 처리에 2–4 영업일이 걸리며, 완료되면 이메일로 알려드립니다.
+              <br />
+              <span className="text-ash">
+                Thank you — bank transfers take 2–4 business days to settle. We&apos;ll email you a confirmation.
+              </span>
+            </>
+          ) : (
+            <>
+              {name}님, 결제해 주셔서 감사합니다. 영수증을 이메일로 보내드렸습니다.
+              <br />
+              <span className="text-ash">Thank you — a receipt has been emailed to you.</span>
+            </>
+          )}
+        </p>
+        <p className="mt-6 text-xs text-mute">
+          문의: <a href={`mailto:${MAIL}`} className="text-gold underline underline-offset-2">{MAIL}</a>
+          {' · '}
+          <a href={KAKAO_URL} target="_blank" rel="noopener noreferrer" className="text-gold underline underline-offset-2">
+            KakaoTalk
+          </a>
+        </p>
+      </div>
+    </Shell>
+  )
+}
+
+// ── Already subscribed — the link was already used ────────────────────
+function AlreadyPaid({ name }: { name: string }) {
+  return (
+    <Shell>
+      <div className="rounded-2xl border border-hairline bg-paper p-8 text-center">
+        <div className="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-gold/15 text-2xl text-gold">
+          ✓
+        </div>
+        <h1 className="mt-5 font-display text-2xl text-ink">
+          이미 구독이 완료되었습니다
+          <span className="mt-1 block text-base font-normal text-ash">You&apos;re already subscribed</span>
+        </h1>
+        <p className="mt-4 text-sm leading-relaxed text-graphite">
+          {name}님의 정기 결제는 이미 등록되어 있어 추가 결제가 필요하지 않습니다.
           <br />
-          <span className="text-ash">Thank you — a receipt has been emailed to you.</span>
+          <span className="text-ash">Your subscription is active — no further payment is needed.</span>
         </p>
         <p className="mt-6 text-xs text-mute">
           문의: <a href={`mailto:${MAIL}`} className="text-gold underline underline-offset-2">{MAIL}</a>
@@ -111,14 +156,24 @@ export default async function PayPage({
   let intervalKo = '/월'
   let intervalEn = '/mo'
   let services: ReturnType<typeof parseServices> = []
+  let alreadySubscribed = false
 
   try {
     const s = stripe()
-    const [customer, price] = await Promise.all([
+    const [customer, price, existing] = await Promise.all([
       s.customers.retrieve(payload.customerId),
       s.prices.retrieve(payload.priceId),
+      s.subscriptions.list({
+        customer: payload.customerId,
+        price: payload.priceId,
+        status: 'all',
+        limit: 10,
+      }),
     ])
     if (customer.deleted) return <InvalidLink />
+    // A revoked link (price deactivated) must die here too — legacy signed
+    // tokens skip the lookup-key resolver, so this is their revocation check.
+    if (!price.active && !searchParams.done) return <InvalidLink />
 
     name = customer.name || customer.email || 'Valued client'
     amountLabel = fmtUSD(price.unit_amount ?? 0)
@@ -127,12 +182,34 @@ export default async function PayPage({
       intervalEn = '/yr'
     }
     services = parseServices(typeof price.metadata?.zl_services === 'string' ? price.metadata.zl_services : null)
+
+    // Same rule as /api/checkout: a live subscription on this (customer, price)
+    // means the link was already used. `incomplete` stays payable — that is the
+    // retry path after a failed first attempt.
+    const LIVE: readonly string[] = ['active', 'trialing', 'past_due', 'unpaid']
+    alreadySubscribed = existing.data.some((sub) => LIVE.includes(sub.status))
   } catch {
     return <InvalidLink />
   }
 
-  // Post-payment return: show success, do not render checkout again.
-  if (searchParams.done) return <Success name={name} />
+  // Post-payment return. Verify the session id with Stripe instead of trusting
+  // the query string — ?done=anything must not fabricate a success screen.
+  if (searchParams.done) {
+    try {
+      const session = await stripe().checkout.sessions.retrieve(searchParams.done)
+      const sessionCustomer =
+        typeof session.customer === 'string' ? session.customer : (session.customer?.id ?? null)
+      if (session.status === 'complete' && sessionCustomer === payload.customerId) {
+        // Cards settle instantly (payment_status 'paid'); ACH returns 'unpaid'
+        // while the debit is in flight.
+        return <Success name={name} processing={session.payment_status !== 'paid'} />
+      }
+    } catch {
+      /* unknown session id — fall through to the states below */
+    }
+  }
+
+  if (alreadySubscribed) return <AlreadyPaid name={name} />
 
   return (
     <Shell>

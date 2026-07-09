@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useCallback } from 'react'
 import { useApi, Kpi, Card, Spinner, ErrorBox } from '@/components/admin/AdminUI'
 import { SERVICES, isServiceKey, type ServiceKey } from '@/lib/billing/services'
 
@@ -42,11 +42,23 @@ type Subscription = {
   createdAt: number | string | null
 }
 
+type PendingLink = {
+  priceId: string
+  clientName: string
+  amountCents: number
+  interval: string
+  services: string[]
+  payUrl: string
+  expiresAt: number | string | null
+  createdAt: number | string | null
+}
+
 type BillingData = {
   testMode: boolean
   mrrCents: number
   counts: { active: number; past_due: number; canceled: number; incomplete: number; trialing: number }
   subscriptions: Subscription[]
+  pendingLinks?: PendingLink[]
 }
 
 // ── Small helpers ────────────────────────────────────────────────────
@@ -202,6 +214,98 @@ function AttentionRow({ sub }: { sub: Subscription }) {
   )
 }
 
+// ── Pending payment link (sent, not yet paid) ────────────────────────
+function PendingLinkRow({ link, onRevoked }: { link: PendingLink; onRevoked: () => void }) {
+  const [copied, setCopied] = useState(false)
+  const [busy, setBusy] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+
+  const copy = useCallback(async () => {
+    try {
+      await navigator.clipboard.writeText(link.payUrl)
+      setCopied(true)
+      setTimeout(() => setCopied(false), 1500)
+    } catch {
+      /* clipboard blocked */
+    }
+  }, [link.payUrl])
+
+  async function revoke() {
+    if (!window.confirm(`Revoke the payment link for "${link.clientName}"? The link stops working immediately.`)) return
+    setBusy(true)
+    setError(null)
+    try {
+      const res = await fetch('/api/admin/billing/revoke', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        credentials: 'include',
+        body: JSON.stringify({ priceId: link.priceId }),
+      })
+      if (!res.ok) {
+        const j = await res.json().catch(() => ({}))
+        setError(j.error || `Could not revoke (HTTP ${res.status}).`)
+        return
+      }
+      onRevoked()
+    } catch (e) {
+      setError(e instanceof Error ? e.message : 'Could not revoke the link.')
+    } finally {
+      setBusy(false)
+    }
+  }
+
+  const expires = toDate(link.expiresAt)
+  const daysLeft = expires ? Math.max(0, Math.ceil((expires.getTime() - Date.now()) / 86_400_000)) : null
+
+  return (
+    <div className="rounded-lg border border-sky-500/20 bg-sky-500/[0.05] p-4">
+      <div className="flex flex-wrap items-center justify-between gap-3">
+        <div className="min-w-0">
+          <div className="flex items-center gap-2">
+            <span className="truncate font-medium text-zinc-100">{link.clientName}</span>
+            <span className="inline-flex items-center rounded-full border border-sky-500/30 bg-sky-500/15 px-2 py-0.5 text-[11px] font-medium text-sky-300">
+              awaiting payment
+            </span>
+          </div>
+          <div className="mt-1 text-xs text-zinc-400">
+            {dollars(link.amountCents)}/{link.interval}
+            {daysLeft !== null && (
+              <span className="ml-2 text-zinc-500">
+                · link expires in {daysLeft} {daysLeft === 1 ? 'day' : 'days'}
+              </span>
+            )}
+          </div>
+          {link.services.length > 0 && (
+            <div className="mt-2 flex max-w-[24rem] flex-wrap gap-1">
+              {link.services.map((k) => (
+                <Chip key={k}>{serviceLabel(k)}</Chip>
+              ))}
+            </div>
+          )}
+        </div>
+        <div className="flex flex-shrink-0 items-center gap-2">
+          <button
+            onClick={copy}
+            className="rounded-lg border border-white/15 px-3 py-1.5 text-xs text-zinc-200 transition-colors hover:border-white/30 hover:bg-white/5"
+          >
+            {copied ? 'Copied' : 'Copy link'}
+          </button>
+          <button
+            onClick={revoke}
+            disabled={busy}
+            className="rounded-lg border border-red-500/30 px-3 py-1.5 text-xs text-red-300 transition-colors hover:bg-red-500/10 disabled:opacity-50"
+          >
+            {busy ? 'Revoking…' : 'Revoke'}
+          </button>
+        </div>
+      </div>
+      {error && (
+        <div className="mt-3 rounded-md border border-amber-500/30 bg-amber-500/10 px-3 py-2 text-xs text-amber-300">{error}</div>
+      )}
+    </div>
+  )
+}
+
 // ── New subscription form ────────────────────────────────────────────
 function NewClientForm() {
   const [name, setName] = useState('')
@@ -351,6 +455,9 @@ function NewClientForm() {
 // ── Page ─────────────────────────────────────────────────────────────
 export default function BillingPage() {
   const { data, loading, error } = useApi<BillingData>('/api/admin/billing')
+  // Links revoked this session — hidden optimistically instead of refetching
+  // the whole dashboard payload.
+  const [revokedIds, setRevokedIds] = useState<string[]>([])
 
   if (loading) return <Spinner label="Loading billing…" />
   if (error) return <ErrorBox message={error} />
@@ -363,6 +470,7 @@ export default function BillingPage() {
   const ATTENTION: readonly string[] = ['past_due', 'incomplete', 'incomplete_expired', 'unpaid']
   const attention = subs.filter((s) => ATTENTION.includes(s.status) || s.delinquent)
   const counts = data.counts ?? { active: 0, past_due: 0, canceled: 0, incomplete: 0, trialing: 0 }
+  const pending = (data.pendingLinks ?? []).filter((l) => !revokedIds.includes(l.priceId))
 
   return (
     <div className="space-y-6">
@@ -393,6 +501,19 @@ export default function BillingPage() {
           <div className="space-y-3">
             {attention.map((s) => (
               <AttentionRow key={s.id} sub={s} />
+            ))}
+          </div>
+        </Card>
+      )}
+
+      {pending.length > 0 && (
+        <Card title="Awaiting payment">
+          <p className="mb-4 -mt-1 text-xs text-zinc-500">
+            Payment links sent but not yet paid. Copy to resend, or revoke to kill the link instantly.
+          </p>
+          <div className="space-y-3">
+            {pending.map((l) => (
+              <PendingLinkRow key={l.priceId} link={l} onRevoked={() => setRevokedIds((ids) => [...ids, l.priceId])} />
             ))}
           </div>
         </Card>

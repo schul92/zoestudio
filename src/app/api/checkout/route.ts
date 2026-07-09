@@ -32,6 +32,21 @@ export async function POST(req: Request) {
   const payload = await resolvePaySegment(token)
   if (!payload) return Response.json({ error: 'invalid_or_expired' }, { status: 400 })
 
+  // A link is single-use: if this (customer, price) pair already carries a live
+  // subscription, refuse to open a second checkout — otherwise a client who
+  // taps a 30-day link twice would be billed twice. `incomplete` is deliberately
+  // NOT blocked: that is the retry path after a failed first payment.
+  const existing = await stripe().subscriptions.list({
+    customer: payload.customerId,
+    price: payload.priceId,
+    status: 'all',
+    limit: 10,
+  })
+  const LIVE: readonly string[] = ['active', 'trialing', 'past_due', 'unpaid']
+  if (existing.data.some((sub) => LIVE.includes(sub.status))) {
+    return Response.json({ error: 'already_subscribed' }, { status: 409 })
+  }
+
   const session = await stripe().checkout.sessions.create({
     mode: 'subscription',
     // Clover-era API: the embedded UI mode is 'embedded_page'.
@@ -52,6 +67,9 @@ export async function POST(req: Request) {
       },
     },
     return_url: `${SITE_URL}/pay/${token}?done={CHECKOUT_SESSION_ID}`,
+    // zl_price on the session lets the webhook deactivate the pay link the
+    // moment this checkout completes, without extra lookups.
+    metadata: { zl_price: payload.priceId },
     subscription_data: { metadata: { zl_price: payload.priceId } },
     saved_payment_method_options: { payment_method_save: 'enabled' },
   })

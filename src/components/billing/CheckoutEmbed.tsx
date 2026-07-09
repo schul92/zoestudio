@@ -34,7 +34,7 @@ function Fallback({ children }: { children: React.ReactNode }) {
 }
 
 export default function CheckoutEmbed({ token }: { token: string }) {
-  const [failed, setFailed] = useState(false)
+  const [failed, setFailed] = useState<'error' | 'already_subscribed' | null>(null)
 
   const fetchClientSecret = useCallback(
     () =>
@@ -49,8 +49,11 @@ export default function CheckoutEmbed({ token }: { token: string }) {
           return d.clientSecret
         })
         .catch((e: unknown) => {
-          // Swap to an on-brand message instead of Stripe's raw error.
-          setFailed(true)
+          // Swap to an on-brand message instead of Stripe's raw error. The
+          // already-subscribed case (paid in another tab, then refreshed here)
+          // gets its own copy — it is good news, not an error.
+          const msg = e instanceof Error ? e.message : ''
+          setFailed(msg === 'already_subscribed' ? 'already_subscribed' : 'error')
           throw e instanceof Error ? e : new Error('checkout_failed')
         }),
     [token]
@@ -63,6 +66,17 @@ export default function CheckoutEmbed({ token }: { token: string }) {
         결제 시스템을 불러올 수 없습니다. 잠시 후 다시 시도해 주세요.
         <br />
         <span className="text-mute">Payment is temporarily unavailable. Please try again shortly.</span>
+      </Fallback>
+    )
+  }
+
+  // The link was already used — most likely paid moments ago in another tab.
+  if (failed === 'already_subscribed') {
+    return (
+      <Fallback>
+        이미 구독이 완료되어 추가 결제가 필요하지 않습니다.
+        <br />
+        <span className="text-mute">You&apos;re already subscribed — no further payment is needed.</span>
       </Fallback>
     )
   }

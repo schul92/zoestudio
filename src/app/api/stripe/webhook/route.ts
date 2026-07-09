@@ -157,6 +157,21 @@ export async function POST(req: Request) {
         paymentStatus: cs.payment_status,
       })
 
+      // The pay link is single-use: deactivate its Price so /pay/<code> stops
+      // resolving. Existing subscriptions (including this one) keep renewing on
+      // an inactive Price — Stripe only blocks NEW checkouts against it.
+      const priceId = cs.metadata?.zl_price
+      if (priceId) {
+        try {
+          await stripe().prices.update(priceId, { active: false })
+        } catch (err) {
+          console.warn(
+            `[stripe.webhook] could not deactivate ${priceId}:`,
+            err instanceof Error ? err.message : err
+          )
+        }
+      }
+
       // ACH debits land here as 'unpaid' and settle days later; the eventual
       // invoice.paid is the real confirmation. Announce the signup either way —
       // this is the owner's "a client just subscribed" signal.
