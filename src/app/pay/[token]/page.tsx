@@ -250,6 +250,24 @@ export default async function PayPage({
             <br />
             <span>Payments are processed securely by Stripe; we never store your card details.</span>
           </p>
+          {/* The Stripe portal has cancellation disabled on purpose, so say
+              plainly how to cancel rather than letting a client hunt for it. */}
+          <p className="mt-2 text-xs leading-relaxed text-mute">
+            해지는 언제든 가능합니다.{' '}
+            <a href={KAKAO_URL} target="_blank" rel="noopener noreferrer" className="text-gold underline underline-offset-2">
+              카카오톡
+            </a>
+            {' 또는 '}
+            <a href={`mailto:${MAIL}`} className="text-gold underline underline-offset-2">
+              {MAIL}
+            </a>
+            로 알려주시면 결제하신 기간까지 서비스가 유지된 뒤 종료되며, 추가 청구는 없습니다.
+            <br />
+            <span>
+              Cancel any time — message us and your service runs through the period you already paid for, with no
+              further charges.
+            </span>
+          </p>
         </section>
       </div>
     </Shell>

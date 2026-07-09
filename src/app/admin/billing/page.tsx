@@ -40,6 +40,7 @@ type Subscription = {
   defaultPaymentMethod: 'us_bank_account' | 'card' | null
   delinquent: boolean
   createdAt: number | string | null
+  cancelAtPeriodEnd: boolean
 }
 
 type PendingLink = {
@@ -56,6 +57,7 @@ type PendingLink = {
 type BillingData = {
   testMode: boolean
   mrrCents: number
+  endingMrrCents?: number
   counts: { active: number; past_due: number; canceled: number; incomplete: number; trialing: number }
   subscriptions: Subscription[]
   pendingLinks?: PendingLink[]
@@ -91,6 +93,45 @@ function daysOverdue(v: number | string | null | undefined): number {
 
 const serviceLabel = (k: string) => (isServiceKey(k) ? SERVICES[k].en : k)
 
+/** POST a JSON body to an admin endpoint, surfacing the server's error string. */
+async function postAdmin(url: string, body: unknown): Promise<Record<string, unknown>> {
+  const res = await fetch(url, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    credentials: 'include',
+    body: JSON.stringify(body),
+  })
+  const json = await res.json().catch(() => ({}))
+  if (!res.ok) throw new Error((json as { error?: string }).error || `HTTP ${res.status}`)
+  return json as Record<string, unknown>
+}
+
+/**
+ * Open the Stripe customer portal for a client. The portal lets them update a
+ * card and pull invoices; cancelling is deliberately NOT enabled there, so a
+ * client who wants out has to reach us first.
+ */
+function usePortal() {
+  const [busy, setBusy] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+
+  const open = useCallback(async (customerId: string) => {
+    setBusy(true)
+    setError(null)
+    try {
+      const j = await postAdmin('/api/admin/billing/portal', { customerId })
+      if (typeof j.url !== 'string') throw new Error('Could not open the customer portal.')
+      window.open(j.url, '_blank', 'noopener,noreferrer')
+    } catch (e) {
+      setError(e instanceof Error ? e.message : 'Could not open the customer portal.')
+    } finally {
+      setBusy(false)
+    }
+  }, [])
+
+  return { open, busy, error }
+}
+
 // ── Status pill ──────────────────────────────────────────────────────
 const PILL: Record<SubStatus, string> = {
   active: 'bg-emerald-500/15 text-emerald-300 border-emerald-500/30',
@@ -103,7 +144,16 @@ const PILL: Record<SubStatus, string> = {
   paused: 'bg-zinc-500/15 text-zinc-400 border-zinc-500/30',
 }
 
-function StatusPill({ status }: { status: SubStatus }) {
+function StatusPill({ status, canceling }: { status: SubStatus; canceling?: boolean }) {
+  // A subscription scheduled to stop still reports `active`. Showing that alone
+  // would hide the churn — say "canceling" instead.
+  if (canceling && (status === 'active' || status === 'trialing')) {
+    return (
+      <span className="inline-flex items-center rounded-full border border-amber-500/30 bg-amber-500/15 px-2 py-0.5 text-[11px] font-medium text-amber-300">
+        Canceling
+      </span>
+    )
+  }
   const label = status.replace(/_/g, ' ')
   const style =
     status === 'past_due' || status === 'unpaid' ? { backgroundColor: '#FF6B4A' } : undefined
@@ -140,32 +190,8 @@ function Chip({ children }: { children: React.ReactNode }) {
 
 // ── Needs-attention row (past due / delinquent) ──────────────────────
 function AttentionRow({ sub }: { sub: Subscription }) {
-  const [portalError, setPortalError] = useState<string | null>(null)
-  const [busy, setBusy] = useState(false)
+  const portal = usePortal()
   const overdue = daysOverdue(sub.latestInvoice?.dueDate)
-
-  async function manage() {
-    setBusy(true)
-    setPortalError(null)
-    try {
-      const res = await fetch('/api/admin/billing/portal', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        credentials: 'include',
-        body: JSON.stringify({ customerId: sub.customerId }),
-      })
-      const j = await res.json().catch(() => ({}))
-      if (!res.ok || !j.url) {
-        setPortalError(j.error || `Could not open the customer portal (HTTP ${res.status}).`)
-        return
-      }
-      window.open(j.url, '_blank', 'noopener,noreferrer')
-    } catch (e) {
-      setPortalError(e instanceof Error ? e.message : 'Could not open the customer portal.')
-    } finally {
-      setBusy(false)
-    }
-  }
 
   return (
     <div className="rounded-lg border border-[#FF6B4A]/25 bg-[#FF6B4A]/[0.06] p-4">
@@ -197,18 +223,90 @@ function AttentionRow({ sub }: { sub: Subscription }) {
             </a>
           )}
           <button
-            onClick={manage}
-            disabled={busy}
+            onClick={() => portal.open(sub.customerId)}
+            disabled={portal.busy}
             className="rounded-lg bg-[#FF6B4A] px-3 py-1.5 text-xs font-medium text-white transition-opacity hover:opacity-90 disabled:opacity-50"
           >
-            {busy ? 'Opening…' : 'Manage / update card'}
+            {portal.busy ? 'Opening…' : 'Manage / update card'}
           </button>
         </div>
       </div>
-      {portalError && (
+      {portal.error && (
         <div className="mt-3 rounded-md border border-amber-500/30 bg-amber-500/10 px-3 py-2 text-xs text-amber-300">
-          {portalError}
+          {portal.error}
         </div>
+      )}
+    </div>
+  )
+}
+
+// ── Per-subscription actions (manage card, cancel / undo cancel) ─────
+const ENDED: readonly string[] = ['canceled', 'incomplete_expired']
+
+function RowActions({
+  sub,
+  canceling,
+  onCancelChange,
+}: {
+  sub: Subscription
+  canceling: boolean
+  onCancelChange: (next: boolean) => void
+}) {
+  const portal = usePortal()
+  const [busy, setBusy] = useState(false)
+  const [error, setError] = useState<string | null>(null)
+
+  const ended = ENDED.includes(sub.status)
+
+  async function setCancel(next: boolean) {
+    const who = sub.customerName || sub.customerEmail || 'this client'
+    if (next && !window.confirm(`Stop renewing ${who}'s subscription?\n\nThey keep the service through the period they already paid for. No further charges after that. You can undo this any time before it ends.`)) {
+      return
+    }
+    setBusy(true)
+    setError(null)
+    try {
+      await postAdmin('/api/admin/billing/cancel', { subscriptionId: sub.id, resume: !next })
+      onCancelChange(next)
+    } catch (e) {
+      setError(e instanceof Error ? e.message : 'Could not update the subscription.')
+    } finally {
+      setBusy(false)
+    }
+  }
+
+  if (ended) return <span className="text-xs text-zinc-600">—</span>
+
+  return (
+    <div className="flex flex-col items-start gap-1">
+      <div className="flex items-center gap-2">
+        <button
+          onClick={() => portal.open(sub.customerId)}
+          disabled={portal.busy}
+          className="rounded-lg border border-white/15 px-2.5 py-1 text-xs text-zinc-200 transition-colors hover:border-white/30 hover:bg-white/5 disabled:opacity-50"
+        >
+          {portal.busy ? 'Opening…' : 'Manage'}
+        </button>
+        {canceling ? (
+          <button
+            onClick={() => setCancel(false)}
+            disabled={busy}
+            className="rounded-lg border border-emerald-500/30 px-2.5 py-1 text-xs text-emerald-300 transition-colors hover:bg-emerald-500/10 disabled:opacity-50"
+          >
+            {busy ? 'Resuming…' : 'Undo cancel'}
+          </button>
+        ) : (
+          <button
+            onClick={() => setCancel(true)}
+            disabled={busy}
+            className="rounded-lg border border-red-500/30 px-2.5 py-1 text-xs text-red-300 transition-colors hover:bg-red-500/10 disabled:opacity-50"
+          >
+            {busy ? 'Canceling…' : 'Cancel'}
+          </button>
+        )}
+      </div>
+      {(error || portal.error) && (
+        <span className="text-[11px] text-amber-300">{error || portal.error}</span>
       )}
     </div>
   )
@@ -458,6 +556,9 @@ export default function BillingPage() {
   // Links revoked this session — hidden optimistically instead of refetching
   // the whole dashboard payload.
   const [revokedIds, setRevokedIds] = useState<string[]>([])
+  // Subscriptions cancelled / resumed this session, keyed by id. Same reason:
+  // useApi has no refetch, and the server round-trip already succeeded.
+  const [cancelOverrides, setCancelOverrides] = useState<Record<string, boolean>>({})
 
   if (loading) return <Spinner label="Loading billing…" />
   if (error) return <ErrorBox message={error} />
@@ -471,6 +572,13 @@ export default function BillingPage() {
   const attention = subs.filter((s) => ATTENTION.includes(s.status) || s.delinquent)
   const counts = data.counts ?? { active: 0, past_due: 0, canceled: 0, incomplete: 0, trialing: 0 }
   const pending = (data.pendingLinks ?? []).filter((l) => !revokedIds.includes(l.priceId))
+  const isCanceling = (s: Subscription) => cancelOverrides[s.id] ?? s.cancelAtPeriodEnd
+
+  // Recompute the ending-MRR note against this session's local cancels so the
+  // KPI does not contradict the row the operator just clicked.
+  const endingMrr = subs
+    .filter((s) => (s.status === 'active' || s.status === 'trialing') && isCanceling(s))
+    .reduce((sum, s) => sum + (s.interval === 'year' ? Math.round(s.amountCents / 12) : s.amountCents), 0)
 
   return (
     <div className="space-y-6">
@@ -489,7 +597,13 @@ export default function BillingPage() {
       )}
 
       <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
-        <Kpi label="MRR" value={data.mrrCents / 100} format="money" sub="Monthly recurring" />
+        <Kpi
+          label="MRR"
+          value={data.mrrCents / 100}
+          format="money"
+          sub={endingMrr > 0 ? `${dollars(endingMrr)} ending soon` : 'Monthly recurring'}
+          accent={endingMrr > 0 ? '#F59E0B' : undefined}
+        />
         <Kpi label="Active" value={counts.active} sub="Subscriptions" />
         <Kpi label="Past due" value={counts.past_due} accent={counts.past_due > 0 ? '#FF6B4A' : undefined} sub="Needs attention" />
         <Kpi label="Canceled" value={counts.canceled} sub="Ended" />
@@ -539,29 +653,46 @@ export default function BillingPage() {
                   <th className="pb-2 font-medium">Payment</th>
                   <th className="pb-2 font-medium">Next charge</th>
                   <th className="pb-2 font-medium">Status</th>
+                  <th className="pb-2 font-medium">Actions</th>
                 </tr>
               </thead>
               <tbody>
-                {subs.map((s) => (
-                  <tr key={s.id} className="border-b border-white/5 align-top text-zinc-300 hover:bg-white/[0.02]">
-                    <td className="py-3 pr-3">
-                      <div className="font-medium text-zinc-100">{s.customerName || '—'}</div>
-                      <div className="text-xs text-zinc-500">{s.customerEmail}</div>
-                    </td>
-                    <td className="py-3 pr-3 tabular-nums">
-                      {dollars(s.amountCents)}
-                      <span className="text-zinc-600">/{s.interval}</span>
-                    </td>
-                    <td className="py-3 pr-3">
-                      <div className="flex max-w-[16rem] flex-wrap gap-1">
-                        {s.services.length ? s.services.map((k) => <Chip key={k}>{serviceLabel(k)}</Chip>) : <span className="text-xs text-zinc-600">—</span>}
-                      </div>
-                    </td>
-                    <td className="py-3 pr-3"><PayMethod method={s.defaultPaymentMethod} /></td>
-                    <td className="py-3 pr-3 text-zinc-400">{fmtDate(s.currentPeriodEnd)}</td>
-                    <td className="py-3 pr-3"><StatusPill status={s.status} /></td>
-                  </tr>
-                ))}
+                {subs.map((s) => {
+                  const canceling = isCanceling(s)
+                  return (
+                    <tr key={s.id} className="border-b border-white/5 align-top text-zinc-300 hover:bg-white/[0.02]">
+                      <td className="py-3 pr-3">
+                        <div className="font-medium text-zinc-100">{s.customerName || '—'}</div>
+                        <div className="text-xs text-zinc-500">{s.customerEmail}</div>
+                      </td>
+                      <td className="py-3 pr-3 tabular-nums">
+                        {dollars(s.amountCents)}
+                        <span className="text-zinc-600">/{s.interval}</span>
+                      </td>
+                      <td className="py-3 pr-3">
+                        <div className="flex max-w-[16rem] flex-wrap gap-1">
+                          {s.services.length ? s.services.map((k) => <Chip key={k}>{serviceLabel(k)}</Chip>) : <span className="text-xs text-zinc-600">—</span>}
+                        </div>
+                      </td>
+                      <td className="py-3 pr-3"><PayMethod method={s.defaultPaymentMethod} /></td>
+                      <td className="py-3 pr-3 text-zinc-400">
+                        {canceling ? (
+                          <span className="text-amber-300/80">Ends {fmtDate(s.currentPeriodEnd)}</span>
+                        ) : (
+                          fmtDate(s.currentPeriodEnd)
+                        )}
+                      </td>
+                      <td className="py-3 pr-3"><StatusPill status={s.status} canceling={canceling} /></td>
+                      <td className="py-3 pr-3">
+                        <RowActions
+                          sub={s}
+                          canceling={canceling}
+                          onCancelChange={(next) => setCancelOverrides((m) => ({ ...m, [s.id]: next }))}
+                        />
+                      </td>
+                    </tr>
+                  )
+                })}
               </tbody>
             </table>
           </div>
