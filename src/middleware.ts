@@ -1,18 +1,23 @@
 import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
-import { ADMIN_COOKIE, isValidToken } from '@/lib/admin/auth'
+import NextAuth from 'next-auth'
+import { authConfig, isAllowed } from '@/auth.config'
 
 const locales = ['en', 'ko']
+
+// Edge-safe Auth.js instance (no DB adapter, JWT sessions).
+const { auth } = NextAuth(authConfig)
 
 export async function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname
   const hostname = request.nextUrl.hostname
 
-  // Admin dashboard — internal tool, no i18n, cookie-gated.
+  // Admin dashboard — internal tool, no i18n. Gated by Google sign-in with an
+  // explicit email allowlist (see auth.config.ts). Fails closed.
   if (pathname === '/admin' || pathname.startsWith('/admin/')) {
     if (pathname === '/admin/login') return NextResponse.next()
-    const ok = await isValidToken(request.cookies.get(ADMIN_COOKIE)?.value)
-    if (!ok) {
+    const session = await auth()
+    if (!isAllowed(session?.user?.email)) {
       const url = request.nextUrl.clone()
       url.pathname = '/admin/login'
       url.search = `?next=${encodeURIComponent(pathname)}`

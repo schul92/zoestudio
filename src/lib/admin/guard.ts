@@ -1,10 +1,11 @@
 // Node-only auth guard for /api/admin/* route handlers.
-// (Kept separate from auth.ts so the edge middleware never imports next/headers.)
-import { cookies } from 'next/headers'
-import { ADMIN_COOKIE, isValidToken } from './auth'
+// Access requires a Google sign-in whose email is on ADMIN_ALLOWED_EMAILS.
+import { auth } from '@/auth'
+import { isAllowed } from '@/auth.config'
 
 export async function authed(): Promise<boolean> {
-  return isValidToken(cookies().get(ADMIN_COOKIE)?.value)
+  const session = await auth()
+  return isAllowed(session?.user?.email)
 }
 
 export function unauthorized() {

@@ -1,7 +1,8 @@
 'use client'
 
 import Link from 'next/link'
-import { usePathname, useRouter } from 'next/navigation'
+import { usePathname } from 'next/navigation'
+import { signOut } from 'next-auth/react'
 
 const TABS = [
   { href: '/admin', label: 'Overview' },
@@ -12,14 +13,11 @@ const TABS = [
 
 export default function Nav() {
   const pathname = usePathname()
-  const router = useRouter()
 
   if (pathname === '/admin/login') return null
 
   async function logout() {
-    await fetch('/api/admin/login', { method: 'DELETE' })
-    router.push('/admin/login')
-    router.refresh()
+    await signOut({ redirectTo: '/admin/login' })
   }
 
   return (
