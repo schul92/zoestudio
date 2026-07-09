@@ -6,6 +6,9 @@
  * landing cold: rating, volume, geography, language.
  */
 
+import { useRef } from 'react'
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
 import InView from '@/components/ui/motion/InView'
 
 type Stat = {
@@ -46,6 +49,81 @@ const clientMarks = [
   "Vito's Pizza",
 ]
 
+/**
+ * Seamless infinite logo marquee (Square-style, in our warm palette).
+ * The list is duplicated once; a single tween drives the track to
+ * xPercent -50, so the second copy sits exactly where the first began —
+ * looping with no visible seam. Pauses on hover; static + wrapped when
+ * the reader prefers reduced motion.
+ */
+function ClientMarquee() {
+  const trackRef = useRef<HTMLUListElement | null>(null)
+  const tweenRef = useRef<gsap.core.Tween | null>(null)
+
+  useGSAP(
+    () => {
+      const track = trackRef.current
+      if (!track) return
+
+      const mm = gsap.matchMedia()
+      mm.add('(prefers-reduced-motion: no-preference)', () => {
+        tweenRef.current = gsap.to(track, {
+          xPercent: -50,
+          repeat: -1,
+          ease: 'none',
+          duration: 30,
+        })
+        return () => tweenRef.current?.kill()
+      })
+    },
+    { scope: trackRef }
+  )
+
+  const items = [...clientMarks, ...clientMarks]
+
+  return (
+    <div
+      className="relative overflow-hidden"
+      style={{
+        WebkitMaskImage:
+          'linear-gradient(to right, transparent, black 8%, black 92%, transparent)',
+        maskImage:
+          'linear-gradient(to right, transparent, black 8%, black 92%, transparent)',
+      }}
+      onMouseEnter={() => tweenRef.current?.pause()}
+      onMouseLeave={() => tweenRef.current?.resume()}
+    >
+      {/* motion track — duplicated list, animated to xPercent -50 */}
+      <ul
+        ref={trackRef}
+        aria-hidden="true"
+        className="motion-reduce:hidden flex w-max items-center gap-x-10 md:gap-x-14 pr-10 md:pr-14 will-change-transform"
+      >
+        {items.map((m, i) => (
+          <li
+            key={`${m}-${i}`}
+            className="font-display italic text-[15px] md:text-[17px] whitespace-nowrap text-[#3a3836]/[0.55] transition-colors duration-300 hover:text-gold"
+          >
+            {m}
+          </li>
+        ))}
+      </ul>
+
+      {/* reduced-motion fallback — static wrapped row, no animation */}
+      <ul className="hidden motion-reduce:flex flex-wrap gap-x-6 md:gap-x-10 gap-y-3 items-center">
+        {clientMarks.map((m) => (
+          <li
+            key={m}
+            className="font-display italic text-[15px] md:text-[17px] text-[#3a3836]/[0.55]"
+          >
+            {m}
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
 export default function TrustRibbon({ locale = 'en' }: { locale?: string }) {
   const isKo = locale === 'ko'
 
@@ -81,16 +159,7 @@ export default function TrustRibbon({ locale = 'en' }: { locale?: string }) {
           <p className="text-[11px] uppercase tracking-[0.22em] text-[#8a8378] mb-5">
             {isKo ? '함께한 브랜드' : 'Selected clients'}
           </p>
-          <ul className="flex flex-wrap gap-x-6 md:gap-x-10 gap-y-3 items-center">
-            {clientMarks.map((m) => (
-              <li
-                key={m}
-                className="font-display italic text-[15px] md:text-[17px] text-[#3a3836]"
-              >
-                {m}
-              </li>
-            ))}
-          </ul>
+          <ClientMarquee />
         </div>
       </div>
     </section>

@@ -16,29 +16,39 @@ export default function SmoothScroll() {
     const saveData = conn?.saveData === true
     if (reduced || coarsePointer || smallScreen || saveData) return
 
-    let rafId = 0
     let lenis: any = null
     let cancelled = false
+    let tick: ((time: number) => void) | null = null
+    let onLenisScroll: (() => void) | null = null
 
     // Defer Lenis import until after first paint so it never blocks LCP.
     const start = () => {
       if (cancelled) return
-      import('lenis').then(({ default: Lenis }) => {
-        if (cancelled) return
-        lenis = new Lenis({
-          duration: 1.15,
-          easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-          wheelMultiplier: 1,
-          touchMultiplier: 1.4,
-          smoothWheel: true,
-          syncTouch: false,
-        })
-        const raf = (time: number) => {
-          lenis.raf(time)
-          rafId = requestAnimationFrame(raf)
+      Promise.all([import('lenis'), import('gsap'), import('gsap/ScrollTrigger')]).then(
+        ([{ default: Lenis }, { gsap }, { ScrollTrigger }]) => {
+          if (cancelled) return
+          gsap.registerPlugin(ScrollTrigger)
+
+          lenis = new Lenis({
+            duration: 1.15,
+            easing: (t: number) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+            wheelMultiplier: 1,
+            touchMultiplier: 1.4,
+            smoothWheel: true,
+            syncTouch: false,
+          })
+
+          // Lenis hijacks scroll, so ScrollTrigger never sees it. Feed it every
+          // Lenis frame, and let GSAP's ticker (not a second RAF loop) drive
+          // Lenis — otherwise pinned/scrubbed sections lag a frame behind.
+          onLenisScroll = () => ScrollTrigger.update()
+          lenis.on('scroll', onLenisScroll)
+          tick = (time: number) => lenis.raf(time * 1000)
+          gsap.ticker.add(tick)
+          gsap.ticker.lagSmoothing(0)
+          ScrollTrigger.refresh()
         }
-        rafId = requestAnimationFrame(raf)
-      })
+      )
     }
 
     if ('requestIdleCallback' in window) {
@@ -49,7 +59,8 @@ export default function SmoothScroll() {
 
     return () => {
       cancelled = true
-      cancelAnimationFrame(rafId)
+      if (tick) import('gsap').then(({ gsap }) => gsap.ticker.remove(tick!))
+      if (lenis && onLenisScroll) lenis.off('scroll', onLenisScroll)
       lenis?.destroy()
     }
   }, [])

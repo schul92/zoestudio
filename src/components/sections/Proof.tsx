@@ -2,6 +2,7 @@
 
 import InView from '@/components/ui/motion/InView'
 import CountUp from '@/components/ui/motion/CountUp'
+import ScrubText from '@/components/ui/motion/ScrubText'
 
 const metrics = [
   {
@@ -59,13 +60,12 @@ export default function Proof({
             </h2>
           </div>
           <div className="md:col-span-6 md:col-start-7 md:pt-16">
-            <InView as="p" className="reveal text-body-lg text-graphite leading-[1.7] max-w-xl">
-              <span>
-                {isKo
-                  ? '아름다운 디자인은 시작일 뿐. 우리의 작업은 검색에서 발견되고, 방문자를 고객으로 전환하는 사이트를 만들어냅니다.'
-                  : 'Beautiful design is a beginning. Our engagements deliver sites that get found in search and turn visitors into customers.'}
-              </span>
-            </InView>
+            {/* Scroll-scrubbed statement: words light up as the reader arrives. */}
+            <ScrubText className="text-body-lg text-graphite leading-[1.7] max-w-xl">
+              {isKo
+                ? '아름다운 디자인은 시작일 뿐. 우리의 작업은 검색에서 발견되고, 방문자를 고객으로 전환하는 사이트를 만들어냅니다.'
+                : 'Beautiful design is a beginning. Our engagements deliver sites that get found in search and turn visitors into customers.'}
+            </ScrubText>
           </div>
         </div>
 
