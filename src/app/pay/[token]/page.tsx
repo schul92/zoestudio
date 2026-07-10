@@ -166,13 +166,14 @@ export default async function PayPage({
 }) {
   // Accepts a short code or a legacy signed token; both yield (customer, price).
   //
-  // Paying BURNS the link (the webhook deactivates its Price), and Stripe then
-  // redirects the client straight back here with ?done. So the return trip must
-  // be allowed to resolve a spent link, or the client would land on "expired"
-  // one second after paying. Only this read path may do so — /api/checkout,
-  // which can take money, always resolves strictly.
+  // Paying BURNS the link (the webhook deactivates its Price). This page must
+  // still resolve a burned link, for two reasons: Stripe redirects the client
+  // straight back here with ?done a second after they pay, and a client who
+  // later reopens the link deserves "you already paid", not "invalid link".
+  // Only this read path may resolve a spent link — /api/checkout, which can
+  // take money, always resolves strictly. Expiry is enforced either way.
   const returning = Boolean(searchParams.done)
-  const payload = await resolvePaySegment(params.token, { allowSpent: returning })
+  const payload = await resolvePaySegment(params.token, { allowSpent: true })
   if (!payload) return <InvalidLink />
 
   // Load the client + price server-side. Any Stripe failure or a deleted
@@ -196,9 +197,18 @@ export default async function PayPage({
       spentPriceIds(payload.customerId),
     ])
     if (customer.deleted) return <InvalidLink />
-    // A revoked link (price deactivated) must die here too — legacy signed
-    // tokens skip the lookup-key resolver, so this is their revocation check.
-    if (!price.active && !returning) return <InvalidLink />
+
+    // Same rule as /api/checkout: money already taken on this Price means the
+    // link was used. `incomplete` subscriptions stay payable — that is the
+    // retry path after a failed first attempt, and spentPriceIds() excludes it.
+    const paid = spent.has(payload.priceId)
+
+    // An inactive Price means one of two very different things. Paying burns
+    // the link, so a client returning to a link they paid must be told they
+    // already paid. A link we revoked by hand was never paid, and is invalid.
+    // (Legacy signed tokens skip the lookup-key resolver, so this is also
+    // where their revocation is enforced.)
+    if (!price.active && !paid && !returning) return <InvalidLink />
 
     name = customer.name || customer.email || 'Valued client'
     amountLabel = fmtUSD(price.unit_amount ?? 0)
@@ -217,11 +227,7 @@ export default async function PayPage({
     }
 
     services = parseServices(typeof price.metadata?.zl_services === 'string' ? price.metadata.zl_services : null)
-
-    // Same rule as /api/checkout: money already taken on this Price means the
-    // link was used. `incomplete` subscriptions stay payable — that is the
-    // retry path after a failed first attempt, and spentPriceIds() excludes it.
-    alreadyPaid = spent.has(payload.priceId)
+    alreadyPaid = paid
   } catch {
     return <InvalidLink />
   }
