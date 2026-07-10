@@ -59,17 +59,47 @@ export async function billingProducts(): Promise<Stripe.Product[]> {
   return Promise.all([retainerProduct(), oneTimeProduct()])
 }
 
+/**
+ * Look the Product up, create it the first time.
+ *
+ * Deliberately NOT products.search: that index runs seconds-to-minutes behind
+ * (measured ~22s on this account), so a burst of dashboard loads each saw "no
+ * product" and each created one — we ended up with three copies of the one-time
+ * Product in live mode. products.list is read-after-write consistent, and the
+ * idempotency key collapses genuinely concurrent creates onto one object.
+ *
+ * We only ever have two Products, so listing them is cheap. Oldest wins, so a
+ * stray duplicate never flips which Product new Prices attach to.
+ */
 async function findOrCreateProduct(
   kind: 'retainer' | 'one_time',
   fields: { name: string; description: string }
 ): Promise<Stripe.Product> {
   const s = stripe()
-  const existing = await s.products.search({
-    query: `active:'true' AND metadata['zl_kind']:'${kind}'`,
-    limit: 1,
-  })
-  if (existing.data[0]) return existing.data[0]
-  return s.products.create({ ...fields, metadata: { zl_kind: kind } })
+
+  const find = async (): Promise<Stripe.Product | undefined> => {
+    const products = await s.products.list({ active: true, limit: 100 }).autoPagingToArray({ limit: 500 })
+    return products.filter((p) => p.metadata.zl_kind === kind).sort((a, b) => a.created - b.created)[0]
+  }
+
+  const existing = await find()
+  if (existing) return existing
+
+  try {
+    return await s.products.create(
+      { ...fields, metadata: { zl_kind: kind } },
+      { idempotencyKey: `zl_product_${kind}` }
+    )
+  } catch (err) {
+    // Another request holding the same idempotency key is mid-flight. It is
+    // creating the Product we want, so wait for it rather than racing it into a
+    // duplicate. Any other error is real and must surface.
+    if (!(err instanceof Stripe.errors.StripeIdempotencyError)) throw err
+    await new Promise((r) => setTimeout(r, 1500))
+    const created = await find()
+    if (!created) throw err
+    return created
+  }
 }
 
 // Convenience re-exports so server callers keep one import site.
