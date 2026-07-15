@@ -67,7 +67,8 @@ type OneTimePayment = {
   clientName: string
   clientEmail: string | null
   amountCents: number
-  status: 'paid' | 'processing'
+  status: 'paid' | 'processing' | 'refunded'
+  netCents?: number
   paidAt: number | string | null
 }
 
@@ -79,6 +80,8 @@ type BillingData = {
   subscriptions: Subscription[]
   pendingLinks?: PendingLink[]
   oneTimePayments?: OneTimePayment[]
+  oneTimeReceivedCents?: number
+  oneTimeProcessingCents?: number
 }
 
 // ── Small helpers ────────────────────────────────────────────────────
@@ -491,12 +494,22 @@ function OneTimeTable({ payments }: { payments: OneTimePayment[] }) {
                 <div className="font-medium text-zinc-100">{p.clientName}</div>
                 <div className="text-xs text-zinc-500">{p.clientEmail}</div>
               </td>
-              <td className="py-3 pr-3 tabular-nums">{dollars(p.amountCents)}</td>
+              <td className="py-3 pr-3 tabular-nums">
+                {p.status === 'refunded' ? (
+                  <span className="text-zinc-500 line-through">{dollars(p.amountCents)}</span>
+                ) : (
+                  dollars(p.amountCents)
+                )}
+              </td>
               <td className="py-3 pr-3 text-zinc-400">{fmtDate(p.paidAt)}</td>
               <td className="py-3 pr-3">
                 {p.status === 'paid' ? (
                   <span className="inline-flex items-center rounded-full border border-emerald-500/30 bg-emerald-500/15 px-2 py-0.5 text-[11px] font-medium text-emerald-300">
                     Paid
+                  </span>
+                ) : p.status === 'refunded' ? (
+                  <span className="inline-flex items-center rounded-full border border-zinc-500/30 bg-zinc-500/15 px-2 py-0.5 text-[11px] font-medium text-zinc-400">
+                    Refunded
                   </span>
                 ) : (
                   <span
@@ -716,13 +729,24 @@ export default function BillingPage() {
         </div>
       )}
 
-      <div className="grid grid-cols-2 gap-4 lg:grid-cols-4">
+      <div className="grid grid-cols-2 gap-4 lg:grid-cols-5">
         <Kpi
           label="MRR"
           value={data.mrrCents / 100}
           format="money"
           sub={endingMrr > 0 ? `${dollars(endingMrr)} ending soon` : 'Monthly recurring'}
           accent={endingMrr > 0 ? '#F59E0B' : undefined}
+        />
+        <Kpi
+          label="One-time received"
+          value={(data.oneTimeReceivedCents ?? 0) / 100}
+          format="money"
+          sub={
+            (data.oneTimeProcessingCents ?? 0) > 0
+              ? `${dollars(data.oneTimeProcessingCents ?? 0)} processing`
+              : 'Net of refunds'
+          }
+          accent={(data.oneTimeProcessingCents ?? 0) > 0 ? '#F59E0B' : undefined}
         />
         <Kpi label="Active" value={counts.active} sub="Subscriptions" />
         <Kpi label="Past due" value={counts.past_due} accent={counts.past_due > 0 ? '#FF6B4A' : undefined} sub="Needs attention" />

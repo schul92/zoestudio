@@ -32,6 +32,11 @@ export async function middleware(request: NextRequest) {
     return NextResponse.next()
   }
 
+  // Square booking prototype — same deal as /pay: bilingual single route.
+  if (pathname === '/book-demo' || pathname.startsWith('/book-demo/')) {
+    return NextResponse.next()
+  }
+
   const isLocalHost =
     hostname === 'localhost' ||
     hostname === '127.0.0.1' ||

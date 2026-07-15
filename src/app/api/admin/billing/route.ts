@@ -85,8 +85,11 @@ type OneTimePayment = {
   clientName: string
   clientEmail: string | null
   amountCents: number
-  /** 'paid' once the money landed; ACH sits at 'processing' for a few days. */
-  status: 'paid' | 'processing'
+  /** 'paid' once the money landed; ACH sits at 'processing' for a few days;
+   *  'refunded' when we gave the whole charge back. */
+  status: 'paid' | 'processing' | 'refunded'
+  /** What we actually kept: amount minus any refunds. */
+  netCents: number
   paidAt: number
 }
 
@@ -232,11 +235,25 @@ export async function GET() {
   // one even when the webhook that burns links never fired.
   let pendingLinks: PendingLink[] = []
   let oneTimePayments: OneTimePayment[] = []
+  // Money actually kept from one-time work (paid, net of refunds) and money
+  // still in flight (ACH debits that cleared checkout but not the bank).
+  let oneTimeReceivedCents = 0
+  let oneTimeProcessingCents = 0
   try {
-    const [products, sessions] = await Promise.all([
+    const [products, sessions, charges] = await Promise.all([
       billingProducts(),
       s.checkout.sessions.list({ limit: 100, expand: ['data.customer'] }).autoPagingToArray({ limit: 1000 }),
+      // Sessions never learn about refunds — the charge ledger does. Keyed by
+      // PaymentIntent so each one-time session can find its refund state.
+      s.charges.list({ limit: 100 }).autoPagingToArray({ limit: 1000 }),
     ])
+
+    const refundedByIntent = new Map<string, number>()
+    for (const ch of charges) {
+      const pi = typeof ch.payment_intent === 'string' ? ch.payment_intent : ch.payment_intent?.id
+      if (!pi || !ch.amount_refunded) continue
+      refundedByIntent.set(pi, (refundedByIntent.get(pi) ?? 0) + ch.amount_refunded)
+    }
 
     const completed = sessions.filter((cs) => cs.status === 'complete')
     const spentPrices = new Set(
@@ -256,15 +273,31 @@ export async function GET() {
 
     oneTimePayments = completed
       .filter((cs) => cs.mode === 'payment')
-      .map((cs) => ({
-        sessionId: cs.id,
-        clientName: nameOf(cs),
-        clientEmail: emailOf(cs),
-        amountCents: cs.amount_total ?? 0,
-        // ACH clears the checkout screen days before it clears the bank.
-        status: cs.payment_status === 'paid' ? ('paid' as const) : ('processing' as const),
-        paidAt: cs.created,
-      }))
+      .map((cs) => {
+        const amount = cs.amount_total ?? 0
+        const pi = typeof cs.payment_intent === 'string' ? cs.payment_intent : cs.payment_intent?.id
+        const refunded = pi ? (refundedByIntent.get(pi) ?? 0) : 0
+        const net = Math.max(0, amount - refunded)
+        // ACH clears the checkout screen days before it clears the bank; a
+        // fully refunded charge kept us nothing regardless of how it settled.
+        const status =
+          refunded >= amount && amount > 0
+            ? ('refunded' as const)
+            : cs.payment_status === 'paid'
+              ? ('paid' as const)
+              : ('processing' as const)
+        if (status === 'paid') oneTimeReceivedCents += net
+        if (status === 'processing') oneTimeProcessingCents += amount
+        return {
+          sessionId: cs.id,
+          clientName: nameOf(cs),
+          clientEmail: emailOf(cs),
+          amountCents: amount,
+          status,
+          netCents: net,
+          paidAt: cs.created,
+        }
+      })
       .sort((a, b) => b.paidAt - a.paidAt)
 
     const productIds = new Set(products.map((p) => p.id))
@@ -316,5 +349,7 @@ export async function GET() {
     subscriptions,
     pendingLinks,
     oneTimePayments,
+    oneTimeReceivedCents,
+    oneTimeProcessingCents,
   })
 }
