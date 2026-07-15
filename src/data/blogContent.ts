@@ -46,7 +46,7 @@ export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: 'do-you-own-your-website-domain-hostage-2026',
-    date: '2026-06-27',
+    date: '2026-06-24',
     updatedDate: '2026-06-27',
     readTime: 9,
     category: { en: 'Guide', ko: '가이드' },
@@ -411,7 +411,7 @@ export const blogContent: BlogPost[] = [
   },
   {
     slug: 'web-designer-ghosted-take-back-website-2026',
-    date: '2026-06-27',
+    date: '2026-06-25',
     updatedDate: '2026-06-27',
     readTime: 9,
     category: { en: 'Guide', ko: '가이드' },
@@ -993,7 +993,7 @@ export const blogContent: BlogPost[] = [
   },
   {
     slug: 'website-maintenance-fee-what-it-covers-2026',
-    date: '2026-06-27',
+    date: '2026-06-28',
     updatedDate: '2026-06-27',
     readTime: 9,
     category: { en: 'Guide', ko: '가이드' },
@@ -1267,7 +1267,7 @@ export const blogContent: BlogPost[] = [
   },
   {
     slug: 'website-no-traffic-not-showing-google-2026',
-    date: '2026-06-27',
+    date: '2026-06-30',
     updatedDate: '2026-06-27',
     readTime: 9,
     category: { en: 'SEO', ko: 'SEO' },
@@ -1574,7 +1574,7 @@ export const blogContent: BlogPost[] = [
   },
   {
     slug: 'google-ads-agency-wasting-budget-signs-2026',
-    date: '2026-06-27',
+    date: '2026-07-01',
     updatedDate: '2026-06-27',
     readTime: 9,
     category: { en: 'Google Ads', ko: '구글 광고' },
@@ -1875,7 +1875,7 @@ export const blogContent: BlogPost[] = [
   },
   {
     slug: 'small-business-marketing-dashboard-flying-blind-2026',
-    date: '2026-06-27',
+    date: '2026-07-02',
     updatedDate: '2026-06-27',
     readTime: 9,
     category: { en: 'Analytics', ko: '데이터 분석' },
@@ -2179,7 +2179,7 @@ export const blogContent: BlogPost[] = [
   },
   {
     slug: 'toast-clover-pos-analytics-goldmine-2026',
-    date: '2026-06-27',
+    date: '2026-07-04',
     updatedDate: '2026-06-27',
     readTime: 9,
     category: { en: 'Restaurant', ko: '레스토랑' },
@@ -2494,7 +2494,7 @@ export const blogContent: BlogPost[] = [
   },
   {
     slug: 'outdated-slow-website-losing-customers-2026',
-    date: '2026-06-27',
+    date: '2026-07-05',
     updatedDate: '2026-06-27',
     readTime: 9,
     category: { en: 'Web Design', ko: '웹 디자인' },
@@ -2784,7 +2784,7 @@ export const blogContent: BlogPost[] = [
   },
   {
     slug: 'ai-tools-korean-small-business-catch-up-2026',
-    date: '2026-06-27',
+    date: '2026-07-07',
     updatedDate: '2026-06-27',
     readTime: 9,
     category: { en: 'AI', ko: 'AI 활용' },
@@ -3068,7 +3068,7 @@ export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
   slug: 'kakaotalk-account-without-korean-phone-2026',
-  date: '2026-06-25',
+  date: '2026-06-23',
   updatedDate: '2026-06-25',
   readTime: 8,
   author: 'Steve Song',
@@ -3361,7 +3361,7 @@ export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: 'kakaotalk-channel-automation-korean-restaurants',
-    date: '2026-05-11',
+    date: '2026-05-13',
     updatedDate: '2026-06-02',
     readTime: 8,
     category: { en: 'Marketing', ko: '마케팅' },
@@ -3468,7 +3468,7 @@ export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: 'doordash-vs-ubereats-vs-own-app-korean-restaurant',
-    date: '2026-05-11',
+    date: '2026-05-14',
     updatedDate: '2026-06-02',
     readTime: 8,
     category: { en: 'App Development', ko: '앱 개발' },
@@ -3573,7 +3573,7 @@ export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: 'korean-restaurant-marketing-annandale-va',
-    date: '2026-05-11',
+    date: '2026-05-16',
     updatedDate: '2026-06-02',
     readTime: 7,
     category: { en: 'Local Marketing', ko: '로컬 마케팅' },
@@ -3662,7 +3662,7 @@ export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: 'ai-search-korean-business-owner-survival-guide-2026',
-    date: '2026-05-11',
+    date: '2026-05-17',
     updatedDate: '2026-06-03',
     readTime: 8,
     category: { en: 'AI Search / GEO', ko: 'AI 검색 / GEO' },
@@ -3773,7 +3773,7 @@ export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: 'kakaotalk-channel-vs-instagram-korean-business',
-    date: '2026-05-10',
+    date: '2026-05-06',
     updatedDate: '2026-05-31',
     readTime: 8,
     category: { en: 'Marketing', ko: '마케팅' },
@@ -3886,7 +3886,7 @@ export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: 'toast-vs-square-korean-restaurant',
-    date: '2026-05-10',
+    date: '2026-05-07',
     updatedDate: '2026-05-31',
     readTime: 8,
     category: { en: 'POS / Operations', ko: 'POS / 운영' },
@@ -3991,7 +3991,7 @@ export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: 'chatgpt-search-korean-restaurant-visibility',
-    date: '2026-05-10',
+    date: '2026-05-09',
     updatedDate: '2026-06-01',
     readTime: 8,
     category: { en: 'AI Search / GEO', ko: 'AI 검색 / GEO' },
@@ -4211,7 +4211,7 @@ export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: 'starting-korean-business-america-2026',
-    date: '2026-05-10',
+    date: '2026-05-12',
     updatedDate: '2026-06-01',
     readTime: 9,
     category: { en: 'Foundations', ko: '기초 가이드' },
@@ -4316,7 +4316,7 @@ export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: 'korean-restaurant-own-app-vs-doordash',
-    date: '2026-05-07',
+    date: '2026-05-02',
     updatedDate: '2026-05-28',
     readTime: 7,
     category: { en: 'App Development', ko: '앱 개발' },
@@ -4455,7 +4455,7 @@ export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: 'pwa-vs-native-app-korean-smb',
-    date: '2026-05-07',
+    date: '2026-05-03',
     updatedDate: '2026-05-29',
     readTime: 6,
     category: { en: 'App Development', ko: '앱 개발' },
@@ -4556,7 +4556,7 @@ export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: 'app-store-submission-korean-business-guide',
-    date: '2026-05-07',
+    date: '2026-05-05',
     updatedDate: '2026-05-29',
     readTime: 8,
     category: { en: 'App Development', ko: '앱 개발' },
@@ -4631,7 +4631,7 @@ export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: 'tj-flowers-shopify-revamp-case-study',
-    date: '2026-05-06',
+    date: '2026-04-30',
     updatedDate: '2026-06-08',
     readTime: 11,
     category: { en: 'Case Study', ko: '케이스 스터디' },
@@ -4860,7 +4860,7 @@ export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: 'why-anthropic-chose-aws',
-    date: '2026-04-22',
+    date: '2026-04-15',
     updatedDate: '2026-05-25',
     readTime: 9,
     category: { en: 'Architecture', ko: '아키텍처' },
@@ -4942,7 +4942,7 @@ export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: 'korean-business-website-guide-2026',
-    date: '2026-03-10',
+    date: '2026-03-14',
     updatedDate: '2026-05-18',
     readTime: 10,
     category: { en: 'Web Design', ko: '웹 디자인' },
@@ -5242,7 +5242,7 @@ export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: 'local-seo-korean-business-2026',
-    date: '2026-02-20',
+    date: '2026-03-12',
     updatedDate: '2026-05-18',
     readTime: 8,
     category: { en: 'SEO', ko: 'SEO' },
@@ -5474,7 +5474,7 @@ export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: 'google-ads-korean-business',
-    date: '2026-02-10',
+    date: '2026-03-11',
     updatedDate: '2026-05-18',
     readTime: 7,
     category: { en: 'Google Ads', ko: '구글 광고' },
@@ -5689,7 +5689,7 @@ export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: 'shopify-korean-ecommerce',
-    date: '2026-01-28',
+    date: '2026-03-10',
     updatedDate: '2026-05-29',
     readTime: 10,
     category: { en: 'E-commerce', ko: '이커머스' },
@@ -5772,7 +5772,7 @@ export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: 'nj-ny-website-cost-2026',
-    date: '2026-01-15',
+    date: '2026-03-08',
     updatedDate: '2026-05-18',
     readTime: 7,
     category: { en: 'Pricing', ko: '비용 안내' },
@@ -5992,7 +5992,7 @@ export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: 'do-i-need-a-website-korean-business',
-    date: '2026-04-15',
+    date: '2026-03-25',
     updatedDate: '2026-05-30',
     readTime: 9,
     category: { en: 'Foundations', ko: '기초 가이드' },
@@ -6105,7 +6105,7 @@ export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: 'website-cost-hidden-fees-usa',
-    date: '2026-04-14',
+    date: '2026-03-24',
     updatedDate: '2026-05-20',
     readTime: 8,
     category: { en: 'Pricing', ko: '비용 안내' },
@@ -6224,7 +6224,7 @@ export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: 'korean-restaurant-website-essentials',
-    date: '2026-04-13',
+    date: '2026-03-22',
     updatedDate: '2026-05-20',
     readTime: 10,
     category: { en: 'Industry Guide', ko: '업종별 가이드' },
@@ -6297,7 +6297,7 @@ export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: 'naver-vs-google-korean-business-usa',
-    date: '2026-04-12',
+    date: '2026-03-21',
     updatedDate: '2026-05-20',
     readTime: 7,
     category: { en: 'SEO', ko: 'SEO' },
@@ -6370,7 +6370,7 @@ export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: 'kakaotalk-channel-us-korean-business',
-    date: '2026-04-11',
+    date: '2026-03-19',
     updatedDate: '2026-05-30',
     readTime: 7,
     category: { en: 'Marketing', ko: '마케팅' },
@@ -6565,7 +6565,7 @@ export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: 'case-study-korean-nail-salon-seo-10x',
-    date: '2026-04-10',
+    date: '2026-03-18',
     updatedDate: '2026-05-19',
     readTime: 9,
     category: { en: 'Case Study', ko: '사례 연구' },
@@ -6660,7 +6660,7 @@ export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: 'bilingual-seo-technical-guide-hreflang',
-    date: '2026-04-09',
+    date: '2026-03-17',
     updatedDate: '2026-05-19',
     readTime: 11,
     category: { en: 'Technical SEO', ko: '기술 SEO' },
@@ -6749,7 +6749,7 @@ export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: 'wordpress-to-nextjs-korean-business-migration',
-    date: '2026-04-08',
+    date: '2026-03-15',
     updatedDate: '2026-05-19',
     readTime: 10,
     category: { en: 'Technical', ko: '기술' },
@@ -6886,7 +6886,7 @@ export const blogContent: BlogPost[] = [
   // ═══════════════════════════════════════════════════════════════════
   {
     slug: 'korean-nail-salon-website-guide',
-    date: '2026-04-17',
+    date: '2026-03-26',
     updatedDate: '2026-05-21',
     readTime: 9,
     category: { en: 'Industry Guide', ko: '업종별 가이드' },
@@ -6936,7 +6936,7 @@ export const blogContent: BlogPost[] = [
   },
   {
     slug: 'korean-dental-practice-website-guide',
-    date: '2026-04-17',
+    date: '2026-03-28',
     updatedDate: '2026-05-21',
     readTime: 9,
     category: { en: 'Industry Guide', ko: '업종별 가이드' },
@@ -6982,7 +6982,7 @@ export const blogContent: BlogPost[] = [
   },
   {
     slug: 'korean-law-firm-website-guide',
-    date: '2026-04-17',
+    date: '2026-03-29',
     updatedDate: '2026-05-21',
     readTime: 9,
     category: { en: 'Industry Guide', ko: '업종별 가이드' },
@@ -7028,7 +7028,7 @@ export const blogContent: BlogPost[] = [
   },
   {
     slug: 'korean-real-estate-agent-website',
-    date: '2026-04-17',
+    date: '2026-03-31',
     updatedDate: '2026-05-22',
     readTime: 8,
     category: { en: 'Industry Guide', ko: '업종별 가이드' },
@@ -7070,7 +7070,7 @@ export const blogContent: BlogPost[] = [
   },
   {
     slug: 'korean-church-website-guide',
-    date: '2026-04-17',
+    date: '2026-04-01',
     updatedDate: '2026-05-22',
     readTime: 7,
     category: { en: 'Industry Guide', ko: '업종별 가이드' },
@@ -7112,7 +7112,7 @@ export const blogContent: BlogPost[] = [
   },
   {
     slug: 'korean-tutoring-sat-prep-website',
-    date: '2026-04-17',
+    date: '2026-04-02',
     updatedDate: '2026-05-22',
     readTime: 7,
     category: { en: 'Industry Guide', ko: '업종별 가이드' },
@@ -7158,7 +7158,7 @@ export const blogContent: BlogPost[] = [
   },
   {
     slug: 'korean-medspa-aesthetic-clinic-website',
-    date: '2026-04-17',
+    date: '2026-04-04',
     updatedDate: '2026-05-23',
     readTime: 8,
     category: { en: 'Industry Guide', ko: '업종별 가이드' },
@@ -7204,7 +7204,7 @@ export const blogContent: BlogPost[] = [
   },
   {
     slug: 'korean-hair-salon-website-guide',
-    date: '2026-04-17',
+    date: '2026-04-05',
     updatedDate: '2026-05-23',
     readTime: 7,
     category: { en: 'Industry Guide', ko: '업종별 가이드' },
@@ -7246,7 +7246,7 @@ export const blogContent: BlogPost[] = [
   },
   {
     slug: 'korean-insurance-financial-services-website',
-    date: '2026-04-17',
+    date: '2026-04-07',
     updatedDate: '2026-05-23',
     readTime: 8,
     category: { en: 'Industry Guide', ko: '업종별 가이드' },
@@ -7291,7 +7291,7 @@ export const blogContent: BlogPost[] = [
   // ═══════════════════════════════════════════════════════════════════
   {
     slug: 'local-seo-guide-korean-business-2026',
-    date: '2026-04-18',
+    date: '2026-04-08',
     updatedDate: '2026-05-30',
     readTime: 10,
     category: { en: 'SEO', ko: 'SEO' },
@@ -7383,7 +7383,7 @@ export const blogContent: BlogPost[] = [
   },
   {
     slug: 'bilingual-seo-new-york-korean-business',
-    date: '2026-04-18',
+    date: '2026-04-09',
     updatedDate: '2026-05-24',
     readTime: 8,
     category: { en: 'SEO', ko: 'SEO' },
@@ -7429,7 +7429,7 @@ export const blogContent: BlogPost[] = [
   },
   {
     slug: 'google-business-profile-korean-business-optimization',
-    date: '2026-04-18',
+    date: '2026-04-11',
     updatedDate: '2026-05-24',
     readTime: 9,
     category: { en: 'Marketing', ko: '마케팅' },
@@ -7503,7 +7503,7 @@ export const blogContent: BlogPost[] = [
   },
   {
     slug: 'affordable-seo-new-jersey-korean-business',
-    date: '2026-04-18',
+    date: '2026-04-12',
     updatedDate: '2026-05-24',
     readTime: 7,
     category: { en: 'SEO', ko: 'SEO' },
@@ -7579,7 +7579,7 @@ export const blogContent: BlogPost[] = [
   },
   {
     slug: 'instagram-vs-website-korean-business',
-    date: '2026-04-18',
+    date: '2026-04-14',
     updatedDate: '2026-05-25',
     readTime: 7,
     category: { en: 'Marketing', ko: '마케팅' },
@@ -7661,7 +7661,7 @@ export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: 'google-ads-vs-meta-ads-korean-business-2026',
-    date: '2026-04-27',
+    date: '2026-04-16',
     updatedDate: '2026-05-25',
     readTime: 9,
     category: { en: 'Marketing', ko: '마케팅' },
@@ -7753,7 +7753,7 @@ export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: 'naver-seo-from-usa-korean-business',
-    date: '2026-04-27',
+    date: '2026-04-18',
     updatedDate: '2026-05-26',
     readTime: 8,
     category: { en: 'SEO', ko: 'SEO' },
@@ -7829,7 +7829,7 @@ export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: 'korean-cafe-coffee-shop-website-guide',
-    date: '2026-04-27',
+    date: '2026-04-19',
     updatedDate: '2026-05-26',
     readTime: 7,
     category: { en: 'Industry', ko: '업종' },
@@ -7911,7 +7911,7 @@ export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: 'website-redesign-vs-rebuild-korean-business',
-    date: '2026-04-27',
+    date: '2026-04-21',
     updatedDate: '2026-05-26',
     readTime: 8,
     category: { en: 'Strategy', ko: '전략' },
@@ -7985,7 +7985,7 @@ export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: 'yelp-ads-vs-google-ads-korean-restaurant',
-    date: '2026-04-27',
+    date: '2026-04-22',
     updatedDate: '2026-05-31',
     readTime: 7,
     category: { en: 'Marketing', ko: '마케팅' },
@@ -8063,7 +8063,7 @@ export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: 'squarespace-wordpress-shopify-korean-business',
-    date: '2026-04-28',
+    date: '2026-04-23',
     updatedDate: '2026-05-27',
     readTime: 9,
     category: { en: 'Strategy', ko: '전략' },
@@ -8139,7 +8139,7 @@ export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: 'korean-grocery-mart-online-presence-guide',
-    date: '2026-04-28',
+    date: '2026-04-25',
     updatedDate: '2026-05-27',
     readTime: 8,
     category: { en: 'Industry', ko: '업종' },
@@ -8223,7 +8223,7 @@ export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: 'website-translation-vs-localization-korean-business',
-    date: '2026-04-28',
+    date: '2026-04-26',
     updatedDate: '2026-05-27',
     readTime: 7,
     category: { en: 'Strategy', ko: '전략' },
@@ -8375,7 +8375,7 @@ export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: 'korean-medical-clinic-online-booking-system-guide',
-    date: '2026-04-28',
+    date: '2026-04-29',
     updatedDate: '2026-05-28',
     readTime: 7,
     category: { en: 'Industry', ko: '업종' },
@@ -8455,7 +8455,7 @@ export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: 'kakaotalk-advertising-agency-usa-guide-2026',
-    date: '2026-05-12',
+    date: '2026-05-19',
     updatedDate: '2026-06-03',
     readTime: 11,
     category: { en: 'Advertising', ko: '광고' },
@@ -8565,7 +8565,7 @@ export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: 'korean-salon-spa-local-seo-new-jersey-2026',
-    date: '2026-05-12',
+    date: '2026-05-20',
     updatedDate: '2026-06-03',
     readTime: 10,
     category: { en: 'Local SEO', ko: '로컬 SEO' },
@@ -8677,7 +8677,7 @@ export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: 'google-ai-overviews-korean-business-citation-2026',
-    date: '2026-05-12',
+    date: '2026-05-21',
     updatedDate: '2026-06-04',
     readTime: 12,
     category: { en: 'AI Search', ko: 'AI 검색' },
@@ -8786,7 +8786,7 @@ export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: 'google-business-profile-multi-location-korean-franchise-2026',
-    date: '2026-05-12',
+    date: '2026-05-23',
     updatedDate: '2026-06-04',
     readTime: 9,
     category: { en: 'Local SEO', ko: '로컬 SEO' },
@@ -8879,7 +8879,7 @@ export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: 'yelp-optimization-korean-restaurant-no-ads-2026',
-    date: '2026-05-12',
+    date: '2026-05-24',
     updatedDate: '2026-06-04',
     readTime: 9,
     category: { en: 'Local SEO', ko: '로컬 SEO' },
@@ -8978,7 +8978,7 @@ export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: 'korean-bakery-cafe-website-essentials-2026',
-    date: '2026-05-12',
+    date: '2026-05-26',
     updatedDate: '2026-06-05',
     readTime: 9,
     category: { en: 'Industry Guides', ko: '업종별 가이드' },
@@ -9073,7 +9073,7 @@ export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: 'korean-food-truck-catering-website-guide-2026',
-    date: '2026-05-12',
+    date: '2026-05-27',
     updatedDate: '2026-06-05',
     readTime: 8,
     category: { en: 'Industry Guides', ko: '업종별 가이드' },
@@ -9168,7 +9168,7 @@ export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: 'chatgpt-for-korean-restaurant-owners-2026',
-    date: '2026-05-13',
+    date: '2026-05-28',
     updatedDate: '2026-06-05',
     readTime: 11,
     category: { en: 'AI for SMB', ko: 'SMB AI 활용' },
@@ -9276,7 +9276,7 @@ export const blogContent: BlogPost[] = [
   },
   {
     slug: 'ai-bilingual-customer-service-korean-business-2026',
-    date: '2026-05-13',
+    date: '2026-05-30',
     updatedDate: '2026-06-06',
     readTime: 10,
     category: { en: 'AI for SMB', ko: 'SMB AI 활용' },
@@ -9370,7 +9370,7 @@ export const blogContent: BlogPost[] = [
   },
   {
     slug: 'ai-photography-korean-small-business-2026',
-    date: '2026-05-13',
+    date: '2026-05-31',
     updatedDate: '2026-06-06',
     readTime: 9,
     category: { en: 'AI for SMB', ko: 'SMB AI 활용' },
@@ -9478,7 +9478,7 @@ export const blogContent: BlogPost[] = [
   },
   {
     slug: 'ai-google-review-response-korean-business-2026',
-    date: '2026-05-13',
+    date: '2026-06-02',
     updatedDate: '2026-06-06',
     readTime: 8,
     category: { en: 'AI for SMB', ko: 'SMB AI 활용' },
@@ -9570,7 +9570,7 @@ export const blogContent: BlogPost[] = [
   },
   {
     slug: 'ai-consulting-korean-small-business-decision-guide-2026',
-    date: '2026-05-13',
+    date: '2026-06-03',
     updatedDate: '2026-06-07',
     readTime: 11,
     category: { en: 'AI for SMB', ko: 'SMB AI 활용' },
@@ -9668,7 +9668,7 @@ export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: 'case-study-salt-and-polish-fort-lee-spa-rebuild-2026',
-    date: '2026-05-13',
+    date: '2026-06-04',
     updatedDate: '2026-06-07',
     readTime: 12,
     category: { en: 'Case Study', ko: '케이스 스터디' },
@@ -9768,7 +9768,7 @@ export const blogContent: BlogPost[] = [
   },
   {
     slug: 'case-study-korean-restaurant-palisades-park-bookings-3x-2026',
-    date: '2026-05-13',
+    date: '2026-06-06',
     updatedDate: '2026-06-07',
     readTime: 11,
     category: { en: 'Case Study', ko: '케이스 스터디' },
@@ -9863,7 +9863,7 @@ export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: 'korean-bbq-restaurant-website-marketing-2026',
-    date: '2026-06-07',
+    date: '2026-06-10',
     updatedDate: '2026-06-07',
     readTime: 10,
     category: { en: 'Industry Guides', ko: '업종별 가이드' },
@@ -9948,7 +9948,7 @@ export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: 'tiktok-shop-korean-smb-us-2026',
-    date: '2026-06-06',
+    date: '2026-06-09',
     updatedDate: '2026-06-06',
     readTime: 10,
     category: { en: 'Marketing', ko: '마케팅' },
@@ -10033,7 +10033,7 @@ export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: 'korean-immigration-law-firm-website-seo-2026',
-    date: '2026-06-05',
+    date: '2026-06-07',
     updatedDate: '2026-06-05',
     readTime: 10,
     category: { en: 'Industry Guides', ko: '업종별 가이드' },
@@ -10122,7 +10122,7 @@ export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: 'korean-business-marketing-atlanta-johns-creek-suwanee-2026',
-    date: '2026-06-13',
+    date: '2026-06-11',
     updatedDate: '2026-06-13',
     readTime: 8,
     category: { en: 'Local SEO', ko: '로컬 SEO' },
@@ -10296,7 +10296,7 @@ export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: 'kakaotalk-advertising-cost-roi-korean-business-2026',
-    date: '2026-06-13',
+    date: '2026-06-14',
     updatedDate: '2026-06-13',
     readTime: 8,
     category: { en: 'Marketing', ko: '마케팅' },
@@ -10381,7 +10381,7 @@ export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: 'korean-business-local-seo-englewood-bergen-county-nj-2026',
-    date: '2026-06-13',
+    date: '2026-06-16',
     updatedDate: '2026-06-13',
     readTime: 8,
     category: { en: 'Local SEO', ko: '로컬 SEO' },
@@ -10466,7 +10466,7 @@ export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: 'korean-american-business-by-state-2026',
-    date: '2026-06-21',
+    date: '2026-06-17',
     updatedDate: '2026-06-21',
     readTime: 9,
     category: { en: 'Local SEO', ko: '로컬 SEO' },
@@ -10557,7 +10557,7 @@ export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: 'korean-web-design-california-2026',
-    date: '2026-06-23',
+    date: '2026-06-18',
     updatedDate: '2026-06-23',
     readTime: 8,
     category: { en: 'Local SEO', ko: '로컬 SEO' },
@@ -10619,7 +10619,7 @@ export const blogContent: BlogPost[] = [
   },
   {
     slug: 'korean-web-design-new-york-2026',
-    date: '2026-06-23',
+    date: '2026-06-20',
     updatedDate: '2026-06-23',
     readTime: 7,
     category: { en: 'Local SEO', ko: '로컬 SEO' },
@@ -10681,7 +10681,7 @@ export const blogContent: BlogPost[] = [
   },
   {
     slug: 'korean-web-design-new-jersey-2026',
-    date: '2026-06-23',
+    date: '2026-06-21',
     updatedDate: '2026-06-23',
     readTime: 7,
     category: { en: 'Local SEO', ko: '로컬 SEO' },
@@ -10749,7 +10749,7 @@ export const blogContent: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   {
     slug: 'shopify-korean-product-sellers-why-start-2026',
-    date: '2026-07-15',
+    date: '2026-07-08',
     updatedDate: '2026-07-15',
     readTime: 9,
     category: { en: 'E-commerce', ko: '이커머스' },
@@ -10849,7 +10849,7 @@ export const blogContent: BlogPost[] = [
   },
   {
     slug: 'b2b-company-website-korean-business-credibility-2026',
-    date: '2026-07-15',
+    date: '2026-07-09',
     updatedDate: '2026-07-15',
     readTime: 8,
     category: { en: 'Strategy', ko: '전략' },
@@ -10947,7 +10947,7 @@ export const blogContent: BlogPost[] = [
   },
   {
     slug: 'why-start-website-right-first-time-lock-in-2026',
-    date: '2026-07-15',
+    date: '2026-07-11',
     updatedDate: '2026-07-15',
     readTime: 8,
     category: { en: 'Foundations', ko: '기초 가이드' },
@@ -11043,7 +11043,7 @@ export const blogContent: BlogPost[] = [
   },
   {
     slug: 'buy-domain-in-your-own-name-korean-business-2026',
-    date: '2026-07-15',
+    date: '2026-07-12',
     updatedDate: '2026-07-15',
     readTime: 8,
     category: { en: 'Guide', ko: '가이드' },
@@ -11137,7 +11137,7 @@ export const blogContent: BlogPost[] = [
   },
   {
     slug: 'florist-online-ordering-korean-flower-shop-2026',
-    date: '2026-07-15',
+    date: '2026-07-14',
     updatedDate: '2026-07-15',
     readTime: 9,
     category: { en: 'Industry Guide', ko: '업종별 가이드' },
