@@ -11233,4 +11233,112 @@ export const blogContent: BlogPost[] = [
       ],
     },
   },
+  // ─────────────────────────────────────────────────────────────────
+  // 2026-07-15 — flagship case study: Vito's Pizza & Ristorante (Alpharetta GA)
+  // Website = revenue path, broken Google Ads conversions, owner dashboard,
+  // dashboard → catering opportunity → focused strategy → visible uplift.
+  // Client revenue figures intentionally kept qualitative (never publish $ numbers).
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'website-drives-revenue-pizza-catering-case-study-2026',
+    date: '2026-07-15',
+    updatedDate: '2026-07-15',
+    readTime: 11,
+    category: { en: 'Case Study', ko: '케이스 스터디' },
+    title: {
+      en: "Case Study — A Website Is a Revenue Machine, Not a Brochure: How a Pizza Restaurant's Catering Orders Started Climbing (2026)",
+      ko: '케이스 스터디 — 웹사이트는 브로셔가 아니라 매출 기계입니다: 어느 피자 가게의 케이터링 주문이 늘어난 실제 과정 (2026)',
+    },
+    metaDescription: {
+      en: "Vito's Pizza & Ristorante in Alpharetta, GA was running Google Ads that counted menu-page views as 'conversions' — so Google optimized for window shoppers. We rebuilt conversion tracking around real orders and calls, gave the owner a live website dashboard, spotted an underexploited catering path in the data, and catering inquiries visibly climbed. The full chain: website → revenue.",
+      ko: '조지아 알파레타의 Vito\'s Pizza & Ristorante는 메뉴 페이지 조회를 \'전환\'으로 세는 구글 광고를 돌리고 있었습니다 — 구글은 구경꾼에게 최적화하고 있었죠. 저희는 실제 주문·전화 기준으로 구글 광고 전환 추적을 재구축하고, 사장님 전용 웹사이트 대시보드를 만들고, 데이터에서 저평가된 케이터링 경로를 발견해 집중 공략했습니다. 케이터링 문의가 눈에 띄게 늘었습니다. 웹사이트가 매출로 이어지는 전체 사슬을 공개합니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'Why is my restaurant running Google Ads but revenue is not moving?',
+          ko: '구글 광고를 돌리는데 왜 식당 매출은 안 움직이나요?',
+        },
+        a: {
+          en: "The most common reason is that your campaign is optimizing for the wrong definition of success: if 'conversion' is set to something like a menu-page view or a site visit, Google's algorithm dutifully finds more people who look at menus — not more people who order. Google Ads spends your budget chasing whatever event you tell it counts as a win, so a miswired conversion setting silently redirects the entire campaign toward window shoppers. The fix is to rebuild conversion tracking around real money events — completed online orders, phone calls from the site, catering inquiry clicks — and let the algorithm re-learn who your actual customers are. We found exactly this problem in a live campaign at Vito's Pizza in Alpharetta: the account looked healthy ('conversions' were plentiful and cheap) while actual orders stayed flat, because every menu look was being counted as a success.",
+          ko: '가장 흔한 원인은 캠페인이 잘못된 \'성공의 정의\'에 최적화되고 있어서입니다. 전환이 메뉴 페이지 조회나 단순 방문으로 잡혀 있으면, 구글 알고리즘은 명령대로 메뉴를 구경할 사람을 더 찾아옵니다 — 주문할 사람이 아니라요. 구글 광고는 사장님이 \'승리\'라고 알려준 이벤트를 쫓는 데 예산을 쓰기 때문에, 전환 설정이 하나 잘못 물려 있으면 캠페인 전체가 조용히 구경꾼 쪽으로 방향을 틉니다. 해결책은 진짜 돈이 되는 이벤트 — 완료된 온라인 주문, 사이트에서 걸려온 전화, 케이터링 문의 클릭 — 기준으로 전환 추적을 재구축하고 알고리즘이 진짜 손님을 다시 학습하게 하는 것입니다. 저희는 알파레타 Vito\'s Pizza의 실제 운영 중인 캠페인에서 정확히 이 문제를 발견했습니다. 계정은 건강해 보였지만(\'전환\'은 많고 쌌지만) 실제 주문은 제자리였습니다 — 메뉴 구경 하나하나가 성공으로 집계되고 있었으니까요.',
+        },
+      },
+      {
+        q: {
+          en: 'What is a website dashboard for a small business, and do I need one?',
+          ko: '스몰비즈니스 웹사이트 대시보드가 뭐고, 저한테도 필요한가요?',
+        },
+        a: {
+          en: "A website dashboard is a single private page where an owner sees, in about 30 seconds, what their website actually did yesterday: how many people visited, how many ordered or called, and which path brought the money — ads, Google search, or regulars coming directly. You need one because without it you cannot tell whether your website (and the vendor you pay to run it) is working or idle; you are limited to whatever summary your agency chooses to send you. It also changes the power dynamic: with a dashboard, you check reality yourself instead of asking someone and trusting the answer. Every business we manage at ZOE LUMOS gets a dedicated live dashboard as standard — at Vito's Pizza it is how the owner reviews yesterday's business each morning, and it is how we spotted the catering opportunity that became their growth focus.",
+          ko: '웹사이트 대시보드는 사장님이 30초 안에 어제 웹사이트가 실제로 한 일을 확인하는 전용 페이지입니다. 몇 명이 방문했고, 몇 명이 주문하거나 전화했고, 돈이 어느 길로 들어왔는지 — 광고인지, 구글 검색인지, 단골의 직접 방문인지요. 대시보드가 필요한 이유는 그것 없이는 웹사이트가(그리고 그걸 관리하라고 돈을 주는 업체가) 일하는지 노는지 알 방법이 없기 때문입니다. 업체가 보내주기로 선택한 요약본이 사장님이 아는 전부가 되죠. 힘의 관계도 달라집니다. 대시보드가 있으면 누군가에게 물어보고 그 답을 믿는 대신, 사장님이 직접 현실을 확인합니다. ZOE LUMOS는 관리하는 모든 클라이언트에게 전용 라이브 대시보드를 기본으로 만들어 드립니다 — Vito\'s Pizza 사장님이 매일 아침 어제 장사를 확인하는 방법이 바로 이것이고, 성장의 축이 된 케이터링 기회를 발견한 것도 이 대시보드였습니다.',
+        },
+      },
+      {
+        q: {
+          en: 'How do I start catering marketing for my restaurant?',
+          ko: '우리 식당 케이터링 마케팅은 어떻게 시작하나요?',
+        },
+        a: {
+          en: "Start by checking your own data before spending anything: if your website already gets clicks on a catering page or catering button, that is unmet demand telling you where to aim. Then make the catering path unmissable — a dedicated catering page with real photos of your trays, a simple inquiry form (name, date, headcount), a visible button on the homepage and menu pages, and a Google Business Profile that mentions catering. Finally, point your existing traffic at it: if you run Google Ads, make the catering inquiry a tracked conversion so the campaign learns to find office managers and event planners, not just dinner customers. This exact sequence — data first, path second, traffic third — is what we ran at Vito's Pizza in Alpharetta, and catering inquiries climbed visibly within weeks. Catering is usually a restaurant's highest-ticket order; it deserves its own funnel, not a line at the bottom of the menu.",
+          ko: '돈을 쓰기 전에 먼저 내 데이터부터 확인하세요. 웹사이트에서 케이터링 페이지나 케이터링 버튼이 이미 클릭되고 있다면, 그건 조준할 곳을 알려주는 미충족 수요입니다. 그다음 케이터링 경로를 못 보고 지나칠 수 없게 만드세요 — 실제 트레이 사진이 들어간 전용 케이터링 페이지, 간단한 문의 폼(이름, 날짜, 인원), 홈과 메뉴 페이지의 눈에 띄는 버튼, 그리고 케이터링을 언급하는 구글 비즈니스 프로필. 마지막으로 기존 트래픽을 그쪽으로 겨누세요. 구글 광고를 돌린다면 케이터링 문의를 추적되는 전환으로 잡아서, 캠페인이 저녁 손님만이 아니라 회사 총무와 행사 담당자를 찾도록 학습시키는 겁니다. 데이터 먼저, 경로 다음, 트래픽 마지막 — 저희가 알파레타 Vito\'s Pizza에서 실행한 순서가 정확히 이것이고, 몇 주 안에 케이터링 문의가 눈에 띄게 늘었습니다. 케이터링은 대개 식당에서 객단가가 가장 높은 주문입니다. 메뉴판 맨 아래 한 줄이 아니라, 전용 퍼널을 가질 자격이 있습니다.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "Vito's Pizza & Ristorante in Alpharetta, Georgia does what a good pizzeria should: dough made right, a dining room that smells like garlic and oregano, regulars who order 'the usual.' The kitchen runs on Toast POS. And when the owner signed with us recently, he believed — like most restaurant owners — that his website was a digital business card and his Google Ads were 'doing something.' Within the first week we found the truth: his ad campaign had been quietly optimizing for people who LOOK at menus, not people who order. This is the story of how we rewired one restaurant's website from brochure to revenue machine — and how the data led us straight to a catering business that had been sitting there the whole time." },
+        { type: 'h2', content: 'A website is not a brochure. It is three roads that money travels.' },
+        { type: 'p', content: "Here is the mental model we wish every owner had. Customers reach a restaurant's revenue through exactly three roads. Road one: paid — someone sees your Google Ad, clicks to the website, and orders or calls. Road two: organic — someone searches 'pizza near me' or finds you on Google Maps, lands on the site, and converts. Road three: direct — a regular who already loves you goes straight to your online ordering (for Vito's, straight into Toast). Every dollar of online revenue takes one of these three roads. Which means every road has toll booths where money quietly leaks: an ad pointing at the wrong goal, a site Google doesn't trust, an ordering link buried three taps deep. You cannot fix a leak you cannot see — and a brochure-thinking website hides all three roads behind one pretty homepage." },
+        { type: 'h2', content: "The silent leak: Google Ads that counted window shoppers as wins" },
+        { type: 'p', content: "Vito's came to us with Google Ads already running. The account looked busy — clicks, impressions, and a healthy pile of 'conversions.' Then we opened the conversion settings and found the problem that defines this entire case study: the campaign was counting menu-page views as conversions. Think about what that instructs the algorithm to do. Google Ads is a machine that finds more of whatever you call success. Told that 'looked at the menu' equals success, it had spent months getting very, very good at finding people who look at menus — browsers, price-checkers, the idly curious — while actual orders, calls, and catering inquiries were nowhere in its definition of winning. The budget wasn't stolen. It was obediently spent on the wrong target." },
+        { type: 'p', content: "The fix is unglamorous and decisive: we tore out the vanity events and rebuilt conversion tracking around real money. Completed online orders. Phone calls placed from the website. Clicks into the catering inquiry path. Once the campaign's compass pointed at revenue instead of curiosity, the algorithm began re-learning who Vito's actual customers are — the family ordering Friday pizzas, the office manager pricing trays for twenty — and bidding for them instead of for window shoppers." },
+        { type: 'ul', content: "What counts as a REAL conversion for a restaurant (and what never should):", items: [
+          'Real: a completed online order — money in the register, the only metric that cannot lie.',
+          'Real: a phone call started from the website — for many restaurants, still where big orders happen.',
+          'Real: a catering inquiry — a form submitted or the catering contact path clicked; highest ticket value in the building.',
+          'Real (supporting): directions requested by someone about to drive over.',
+          "Never: page views, menu looks, time on site, 'engaged sessions' — if it can happen without anyone spending a dollar, it must not be what your ad budget optimizes for.",
+        ] },
+        { type: 'h2', content: "The owner dashboard: yesterday's business in 30 seconds" },
+        { type: 'p', content: "Fixing the ads solved the leak. The next problem is the one almost every owner lives with and few name: flying blind. Before working with us, if the owner of Vito's wanted to know whether the website did anything yesterday, his options were to ask someone and wait, or to squint at Google Analytics — a tool built for analysts, not for a man with a lunch rush. So we built him a live owner dashboard: one private page showing yesterday's visitors, orders, and — most importantly — which of the three roads the money took: ads, Google search, or regulars going direct to Toast. He checks it with coffee, in about thirty seconds, without asking anyone. We build this dashboard for every client we manage, because we think the industry's don't-worry-about-the-numbers habit is exactly backwards: the owner should see everything, first." },
+        { type: 'screenshot', content: '/blog/vitos-dashboard-inline-2026.png', items: ['One private page, thirty seconds: visitors, orders, and which road the money took — ads, search, or direct.'] },
+        { type: 'h2', content: 'Then the data did what data does: it pointed at catering' },
+        { type: 'p', content: "A few weeks of honest numbers, and a pattern surfaced that nobody had been positioned to see before: the catering path was getting meaningful clicks — real people, checking whether Vito's caters — while almost nothing on the site or in the marketing was inviting them in. Catering is the quiet giant of restaurant economics: one inquiry can be worth an entire evening of dine-in covers, ordered days in advance, often by a business that will reorder every quarter. The dashboard was showing unmet demand. So we did the obvious, rare thing: we followed it. Catering became the strategic focus — the path was made unmissable, the inquiry became a first-class tracked conversion the rebuilt ads could hunt for, and the campaign started learning to find event planners and office managers, not just Friday-night families." },
+        { type: 'p', content: "The result, in the honest terms we are willing to publish about a client's private business: catering inquiries and orders climbed visibly and stayed up. We do not publish clients' revenue figures or order counts — those numbers belong to Vito's, not to our marketing. But the causal chain is the point of this case study, and it is fully public: honest conversion tracking → an owner dashboard → a data-revealed opportunity → focused strategy → more of the highest-ticket orders in the building. Not one link in that chain was luck." },
+        { type: 'screenshot', content: '/blog/vitos-catering-inline-2026.png', items: ['Catering: the highest-ticket order in the building, hiding in plain sight in the click data.'] },
+        { type: 'h2', content: '"Does my website have a dashboard?" — the question to ask your vendor this week' },
+        { type: 'p', content: "If you take one action from this article, take this one: message whoever manages your website and ads, and ask two questions. One — 'What exactly is counted as a conversion in my Google Ads?' If the answer includes page views, or the answer takes days, you may be funding window shoppers, as Vito's unknowingly was. Two — 'Where is my dashboard?' Not a monthly PDF of screenshots. A live page, yours, showing yesterday's visitors, orders, and revenue paths. A vendor doing honest work will love these questions, because honest work looks better under a light. A vendor who bristles has told you something important. And while you are checking things: confirm your domain is registered in YOUR name, not the vendor's — our guide on buying your domain in your own name walks through why that ten-minute check prevents the ugliest dispute in this industry." },
+        { type: 'tip', content: "A dashboard is also a lie detector you never have to confront anyone with. When an agency says 'the ads did great this month,' an owner with a dashboard simply looks. Numbers you can check yourself keep every relationship honest — which is exactly why we hand them to our clients instead of hoarding them." },
+        { type: 'cta', content: "Want to know what your website actually did yesterday? ZOE LUMOS builds revenue-first restaurant websites with honest Google Ads conversion tracking and a live owner dashboard — every managed client gets one, standard. Free consultation in English or Korean: email info@zoelumos.com or message us on KakaoTalk. (내 웹사이트가 어제 뭘 했는지 30초 만에 보고 싶으신가요? ZOE LUMOS는 정직한 구글 광고 전환 추적과 사장님 전용 라이브 대시보드를 갖춘 매출 중심 웹사이트를 만듭니다. 무료 상담: info@zoelumos.com 또는 카카오톡.)" },
+      ],
+      ko: [
+        { type: 'intro', content: "조지아 알파레타의 Vito's Pizza & Ristorante는 좋은 피자집이 해야 할 일을 다 하는 가게입니다. 제대로 치대는 도우, 마늘과 오레가노 냄새가 밴 홀, '늘 먹던 걸로'를 외치는 단골들. 주방은 Toast POS로 돌아갑니다. 그리고 최근 저희와 계약할 때, 사장님은 대부분의 식당 사장님들처럼 믿고 있었습니다. 웹사이트는 디지털 명함이고, 구글 광고는 '뭔가 하고 있겠지'라고요. 첫 주에 저희가 찾아낸 진실은 이랬습니다. 광고 캠페인이 몇 달째, 주문하는 사람이 아니라 메뉴를 '구경'하는 사람에게 조용히 최적화되고 있었습니다. 이 글은 한 식당의 웹사이트를 브로셔에서 매출 기계로 다시 배선한 과정, 그리고 그 데이터가 처음부터 거기 있던 케이터링 사업으로 우리를 곧장 데려간 이야기입니다." },
+        { type: 'h2', content: '웹사이트는 브로셔가 아닙니다. 돈이 지나다니는 세 갈래 길입니다' },
+        { type: 'p', content: "모든 사장님이 가졌으면 하는 사고방식이 있습니다. 손님은 정확히 세 갈래 길로 식당 매출에 도착합니다. 첫째 길, 광고: 구글 광고를 보고 → 웹사이트를 클릭해서 → 주문하거나 전화합니다. 둘째 길, 검색: 'pizza near me'를 검색하거나 구글 지도에서 발견하고 → 사이트에 들어와 → 주문으로 이어집니다. 셋째 길, 직접: 이미 우리 가게를 좋아하는 단골이 온라인 주문으로 직행합니다(Vito's의 경우 Toast로 바로). 온라인 매출 1달러 1달러가 전부 이 세 길 중 하나를 지나옵니다. 그 말은, 길마다 돈이 조용히 새는 톨게이트가 있다는 뜻입니다. 엉뚱한 목표를 겨눈 광고, 구글이 신뢰하지 않는 사이트, 세 번을 눌러야 나오는 주문 링크. 보이지 않는 누수는 고칠 수 없습니다 — 그리고 '브로셔'로 생각하는 웹사이트는 예쁜 홈 화면 뒤에 이 세 길을 전부 숨겨 버립니다." },
+        { type: 'h2', content: '조용한 누수: 구경꾼을 승리로 세고 있던 구글 광고' },
+        { type: 'p', content: "Vito's는 구글 광고를 이미 돌리는 상태로 저희에게 왔습니다. 계정은 바빠 보였습니다 — 클릭, 노출, 그리고 두둑한 '전환' 더미까지. 그런데 전환 설정을 열어 보니, 이 케이스 스터디 전체를 규정하는 문제가 있었습니다. 캠페인이 메뉴 페이지 조회를 전환으로 세고 있었던 겁니다. 이게 알고리즘에게 어떤 명령인지 생각해 보세요. 구글 광고는 사장님이 '성공'이라고 부르는 것을 더 많이 찾아오는 기계입니다. '메뉴를 봤다 = 성공'이라고 배운 기계는 몇 달에 걸쳐 메뉴 구경꾼을 찾는 데 아주, 아주 능숙해져 있었습니다 — 둘러보는 사람, 가격만 확인하는 사람, 심심한 사람. 그동안 실제 주문, 전화, 케이터링 문의는 이 기계의 '승리의 정의' 어디에도 없었습니다. 예산을 도둑맞은 게 아닙니다. 잘못된 과녁에 성실하게 쓰이고 있었던 겁니다." },
+        { type: 'p', content: "해결책은 화려하지 않고 단호합니다. 허영 지표를 뜯어내고, 진짜 돈을 기준으로 전환 추적을 재구축했습니다. 완료된 온라인 주문. 웹사이트에서 걸려온 전화. 케이터링 문의 경로 클릭. 캠페인의 나침반이 호기심이 아니라 매출을 가리키기 시작하자, 알고리즘은 Vito's의 진짜 손님이 누구인지 다시 학습하기 시작했습니다 — 금요일 저녁 피자를 시키는 가족, 스무 명분 트레이 견적을 알아보는 회사 총무 — 구경꾼이 아니라 이들을 위해 입찰하게 된 거죠." },
+        { type: 'ul', content: '식당의 \'진짜 전환\'으로 세도 되는 것 (그리고 절대 세면 안 되는 것):', items: [
+          '진짜: 완료된 온라인 주문 — 금전등록기에 돈이 들어온, 거짓말이 불가능한 유일한 지표.',
+          '진짜: 웹사이트에서 시작된 전화 — 많은 식당에서 큰 주문은 여전히 전화로 옵니다.',
+          '진짜: 케이터링 문의 — 제출된 폼 또는 케이터링 연락 경로 클릭. 가게에서 객단가가 가장 높은 주문입니다.',
+          '진짜(보조): 길찾기 요청 — 지금 차를 몰고 오려는 사람의 신호.',
+          "절대 금지: 페이지 조회, 메뉴 구경, 체류 시간, '참여 세션' — 아무도 1달러도 안 쓰고 일어날 수 있는 일이라면, 광고 예산이 최적화할 대상이 되어선 안 됩니다.",
+        ] },
+        { type: 'h2', content: '사장님 대시보드: 어제 장사를 30초 만에' },
+        { type: 'p', content: "광고를 고치면 누수는 막힙니다. 다음 문제는 거의 모든 사장님이 겪으면서도 이름 붙이지 못하는 것, '깜깜이 운영'입니다. 저희와 일하기 전, Vito's 사장님이 어제 웹사이트가 뭘 했는지 알고 싶으면 선택지는 둘이었습니다. 누군가에게 물어보고 기다리거나, 구글 애널리틱스를 노려보거나 — 점심 러시를 뛰는 사장님이 아니라 분석가를 위해 만들어진 도구를요. 그래서 저희는 라이브 사장님 대시보드를 만들었습니다. 어제의 방문자, 주문, 그리고 가장 중요한 것 — 돈이 세 갈래 길 중 어디로 들어왔는지(광고인지, 구글 검색인지, Toast로 직행한 단골인지)를 보여주는 전용 페이지 하나. 사장님은 아침 커피와 함께, 약 30초 만에, 아무에게도 묻지 않고 확인합니다. 저희는 관리하는 모든 클라이언트에게 이 대시보드를 만들어 드립니다. '숫자는 저희가 알아서 볼게요'라는 이 업계의 관행이 정확히 거꾸로 됐다고 생각하기 때문입니다. 사장님이 모든 걸, 가장 먼저 봐야 합니다." },
+        { type: 'screenshot', content: '/blog/vitos-dashboard-inline-2026.png', items: ['전용 페이지 하나, 30초: 방문자, 주문, 그리고 돈이 들어온 길 — 광고, 검색, 직접 방문.'] },
+        { type: 'h2', content: '그러자 데이터가 데이터의 일을 했습니다: 케이터링을 가리킨 것' },
+        { type: 'p', content: "정직한 숫자가 몇 주 쌓이자, 이전에는 아무도 볼 위치에 있지 않던 패턴이 떠올랐습니다. 케이터링 경로에 의미 있는 클릭이 꾸준히 찍히고 있었던 겁니다 — Vito's가 케이터링을 하는지 확인하러 온 진짜 사람들이요. 그런데 사이트에도 마케팅에도 이들을 맞아들이는 장치가 거의 없었습니다. 케이터링은 식당 경제학의 조용한 거인입니다. 문의 한 건이 홀 저녁 장사 전체와 맞먹을 수 있고, 며칠 전에 예약되며, 분기마다 재주문하는 회사 고객인 경우도 많습니다. 대시보드가 미충족 수요를 보여주고 있었습니다. 그래서 저희는 당연하지만 드문 일을 했습니다. 그 데이터를 따라간 겁니다. 케이터링이 전략의 중심이 됐습니다 — 경로를 못 보고 지나칠 수 없게 만들고, 케이터링 문의를 재구축된 광고가 사냥할 수 있는 일급 전환으로 승격시키고, 캠페인이 금요일 저녁 가족만이 아니라 행사 담당자와 회사 총무를 찾도록 학습시켰습니다." },
+        { type: 'p', content: "결과는, 클라이언트의 사적인 장부에 대해 저희가 공개할 수 있는 정직한 표현으로 이렇습니다. 케이터링 문의와 주문이 눈에 띄게 늘었고, 그 수준이 유지되고 있습니다. 저희는 클라이언트의 매출 액수나 주문 건수를 공개하지 않습니다 — 그 숫자는 저희 마케팅이 아니라 Vito's의 것이니까요. 하지만 이 케이스 스터디의 핵심은 인과 사슬이고, 그건 전부 공개할 수 있습니다. 정직한 전환 추적 → 사장님 대시보드 → 데이터가 드러낸 기회 → 집중 전략 → 가게에서 가장 객단가 높은 주문의 증가. 이 사슬의 어느 고리도 운이 아니었습니다." },
+        { type: 'screenshot', content: '/blog/vitos-catering-inline-2026.png', items: ['케이터링: 클릭 데이터 속에 뻔히 보이게 숨어 있던, 가게에서 가장 객단가 높은 주문.'] },
+        { type: 'h2', content: '"혹시 제 웹사이트 대시보드가 있나요?" — 이번 주에 업체에 물어볼 질문' },
+        { type: 'p', content: "이 글에서 단 하나의 행동만 가져가신다면, 이걸 가져가세요. 지금 웹사이트와 광고를 관리하는 업체에 메시지를 보내 두 가지를 물어보는 겁니다. 하나 — '제 구글 광고에서 정확히 뭐가 전환으로 집계되고 있나요?' 대답에 페이지 조회가 들어 있거나, 대답이 오는 데 며칠이 걸린다면, Vito's가 모르고 그랬듯 사장님도 구경꾼에게 돈을 대고 있을 수 있습니다. 둘 — '제 대시보드는 어디 있나요?' 스크린샷 붙인 월간 PDF 말고요. 어제의 방문자, 주문, 매출 경로가 보이는, 사장님 소유의 라이브 페이지요. 정직하게 일하는 업체는 이 질문을 반깁니다. 정직한 일은 조명 아래서 더 좋아 보이니까요. 발끈하는 업체는 방금 중요한 사실을 알려준 겁니다. 그리고 확인하는 김에 하나 더: 도메인이 업체가 아니라 사장님 명의로 등록돼 있는지 확인하세요 — 왜 그 10분짜리 확인이 이 업계에서 가장 추한 분쟁을 예방하는지는 저희의 '도메인은 반드시 사장님 명의로' 가이드에 전부 담겨 있습니다." },
+        { type: 'tip', content: "대시보드는 누구와도 얼굴 붉히지 않아도 되는 거짓말 탐지기이기도 합니다. 업체가 '이번 달 광고 성과 좋았어요'라고 말할 때, 대시보드가 있는 사장님은 그냥 봅니다. 스스로 확인할 수 있는 숫자가 모든 관계를 정직하게 유지해 줍니다 — 저희가 숫자를 움켜쥐는 대신 클라이언트에게 건네드리는 이유가 정확히 그것입니다." },
+        { type: 'cta', content: "내 웹사이트가 어제 뭘 했는지 30초 만에 보고 싶으신가요? ZOE LUMOS는 정직한 구글 광고 전환 추적과 사장님 전용 라이브 대시보드를 갖춘 매출 중심 식당 웹사이트를 만듭니다 — 관리 클라이언트 전원에게 대시보드는 기본입니다. 한국어/영어 무료 상담: info@zoelumos.com 이메일 또는 카카오톡으로 편하게 문의하세요. (Want to know what your website actually did yesterday? ZOE LUMOS builds revenue-first restaurant websites with honest Google Ads conversion tracking and a live owner dashboard — standard for every managed client. Free consultation: info@zoelumos.com or KakaoTalk.)" },
+      ],
+    },
+  },
 ]

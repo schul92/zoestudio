@@ -51,6 +51,7 @@ export const PILLARS = {
       'korean-restaurant-marketing-annandale-va',
       'case-study-korean-restaurant-palisades-park-bookings-3x-2026',
       'toast-clover-pos-analytics-goldmine-2026',
+      'website-drives-revenue-pizza-catering-case-study-2026',
     ],
   },
   'beauty-wellness': {
@@ -277,4 +278,7 @@ export const POST_TO_PILLAR: Record<string, PillarKey> = {
   'why-start-website-right-first-time-lock-in-2026': 'switching-vendor',
   'buy-domain-in-your-own-name-korean-business-2026': 'switching-vendor',
   'florist-online-ordering-korean-flower-shop-2026': 'bilingual-seo',
+
+  // 2026-07-15 — flagship case study (Vito's Pizza, Alpharetta GA)
+  'website-drives-revenue-pizza-catering-case-study-2026': 'restaurant-marketing',
 }
