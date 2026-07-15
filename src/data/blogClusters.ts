@@ -28,6 +28,7 @@ export const PILLARS = {
       'tj-flowers-shopify-revamp-case-study',
       'case-study-salt-and-polish-fort-lee-spa-rebuild-2026',
       'website-no-traffic-not-showing-google-2026',
+      'florist-online-ordering-korean-flower-shop-2026',
     ],
   },
   'restaurant-marketing': {
@@ -80,6 +81,8 @@ export const PILLARS = {
       'app-store-submission-korean-business-guide',
       'korean-business-website-guide-2026',
       'why-anthropic-chose-aws',
+      'shopify-korean-product-sellers-why-start-2026',
+      'b2b-company-website-korean-business-credibility-2026',
     ],
   },
   'kakaotalk-marketing': {
@@ -141,6 +144,8 @@ export const PILLARS = {
       'small-business-marketing-dashboard-flying-blind-2026',
       'outdated-slow-website-losing-customers-2026',
       'korean-business-web-vendor-red-flags-2026',
+      'why-start-website-right-first-time-lock-in-2026',
+      'buy-domain-in-your-own-name-korean-business-2026',
     ],
   },
 } as const
@@ -265,4 +270,11 @@ export const POST_TO_PILLAR: Record<string, PillarKey> = {
   'website-no-traffic-not-showing-google-2026': 'bilingual-seo',
   'toast-clover-pos-analytics-goldmine-2026': 'restaurant-marketing',
   'ai-tools-korean-small-business-catch-up-2026': 'ai-services',
+
+  // 2026-07-15 — "새로 시작하는 한인 사장님" market-entry batch (5 posts)
+  'shopify-korean-product-sellers-why-start-2026': 'website-cost',
+  'b2b-company-website-korean-business-credibility-2026': 'website-cost',
+  'why-start-website-right-first-time-lock-in-2026': 'switching-vendor',
+  'buy-domain-in-your-own-name-korean-business-2026': 'switching-vendor',
+  'florist-online-ordering-korean-flower-shop-2026': 'bilingual-seo',
 }
