@@ -3,7 +3,10 @@
 // Only imported by /api/admin route handlers (server runtime).
 
 const TOKEN_URI = 'https://oauth2.googleapis.com/token'
-const GADS_VERSION = 'v21'
+// v21 sunsets 2026-08-05 (Google deprecation email). v24 is the latest GA
+// release (2026-04-22). None of our GAQL fields were renamed/removed in
+// v22–v24. Migration guide: https://developers.google.com/google-ads/api/docs/upgrade
+const GADS_VERSION = 'v24'
 
 let cached: { token: string; exp: number } | null = null
 
