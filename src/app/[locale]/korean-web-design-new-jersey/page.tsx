@@ -276,14 +276,14 @@ export default function KoreanWebDesignNJPage({ params }: { params: { locale: st
                 { icon: TrendingUp, color: 'text-purple-600', title: '카카오톡 + 네이버 지도', desc: '카카오톡 채널 연동, 네이버 지도 등록, 한인 플랫폼 마케팅. 한인 고객 필수.', price: '포함' },
                 { icon: DollarSign, color: 'text-rose-600', title: '쇼핑몰 제작', desc: 'Shopify / WooCommerce 한영 쇼핑몰. 한국 결제 연동 (KG이니시스, 페이코), 국제 배송.', price: '$3,000부터' },
                 { icon: Clock, color: 'text-orange-600', title: '온라인 예약 시스템', desc: '한식당, 미용실, 네일샵, 병원, 학원을 위한 이중언어 예약 시스템. SMS/카카오 알림.', price: '$800부터' },
-                { icon: Shield, color: 'text-indigo-600', title: '유지보수 & 호스팅', desc: '빠른 호스팅, SSL, 백업, 월간 SEO 리포트, 한국어 기술 지원. 모든 것 포함.', price: '월 $99부터' },
+                { icon: Shield, color: 'text-indigo-600', title: '유지보수 & 호스팅', desc: '빠른 호스팅, SSL, 보안·백업, 모니터링부터 시작. 플랜에 따라 콘텐츠 수정, 월간 리포트, SEO 관리까지. 한국어 기술 지원.', price: '월 $49부터' },
               ] : [
                 { icon: Globe, color: 'text-blue-600', title: 'Bilingual Websites', desc: 'Perfectly optimized for both Korean and English. Auto language switching, hreflang tags, separate SEO per language.', price: 'From $1,000' },
                 { icon: Search, color: 'text-green-600', title: 'Google + Naver SEO', desc: 'Rank on both US Google and Korean Naver. Win Korean-speaking + English-speaking customers simultaneously.', price: 'From $500/mo' },
                 { icon: TrendingUp, color: 'text-purple-600', title: 'KakaoTalk + Naver Maps', desc: 'KakaoTalk Channel integration, Naver Map listings, Korean platform marketing. Essential for Korean customers.', price: 'Included' },
                 { icon: DollarSign, color: 'text-rose-600', title: 'E-commerce Stores', desc: 'Shopify / WooCommerce bilingual stores. Korean payment gateways (KG Inicis, PayCo), international shipping.', price: 'From $3,000' },
                 { icon: Clock, color: 'text-orange-600', title: 'Online Booking Systems', desc: 'Bilingual booking for restaurants, salons, nail spas, clinics, tutoring. SMS/KakaoTalk notifications.', price: 'From $800' },
-                { icon: Shield, color: 'text-indigo-600', title: 'Maintenance & Hosting', desc: 'Fast hosting, SSL, backups, monthly SEO reports, Korean-language tech support. All included.', price: 'From $99/mo' },
+                { icon: Shield, color: 'text-indigo-600', title: 'Maintenance & Hosting', desc: 'Starts with fast hosting, SSL, security & backups, and monitoring. Higher plans add content edits, monthly reports, and SEO care. Korean-language tech support.', price: 'From $49/mo' },
               ]).map(({ icon: Icon, color, title, desc, price }) => (
                 <div key={title} className="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-shadow">
                   <Icon className={`w-10 h-10 ${color} mb-4`} />

@@ -10,6 +10,8 @@ type PageBand = 's' | 'm' | 'l' | 'xl'
 type Feature = 'bilingual' | 'ecommerce' | 'booking' | 'kakaotalk' | 'cms' | 'seo' | 'custom'
 type Timeline = 'standard' | 'rush'
 
+type MonthlyPlan = { name: string; price: string; desc: string; recommended?: boolean }
+
 const copy = {
   en: {
     eyebrow: 'Free cost estimator',
@@ -51,13 +53,35 @@ const copy = {
     estimateNote: 'One-time build, USD · varies by project scope',
     recommended: 'Matching tier',
     tiers: { hobby: 'Hobby', plus: 'Plus', pro: 'Pro', custom: 'Enterprise / Custom' },
+    monthlyHeading: 'Monthly care plans',
+    monthlyFrom: 'From $49/mo',
+    monthlyFraming: 'Commit to 12 months and your website build setup fee is waived.',
     monthlyBadge: 'Recommended',
-    monthlyTitle: 'Monthly Care Package',
-    monthlyPrice: 'From $200/mo',
-    monthlyRange: '$200–500/mo depending on scope',
-    monthlyIncludes: 'Website + hosting + maintenance + SEO',
-    monthlyNote:
-      'Skip the big upfront cost — we build, host, maintain, and grow your site for one monthly fee.',
+    monthlyPlans: [
+      {
+        name: 'Basic',
+        price: '$49/mo',
+        desc: 'Hosting + SSL + security & backups + monitoring. No content edits — $75/hr or upgrade when needed.',
+      },
+      {
+        name: 'Care',
+        price: '$89/mo',
+        desc: 'Everything in Basic + 30 min of content edits/mo + monthly report.',
+      },
+      {
+        name: 'Grow',
+        price: '$199/mo',
+        recommended: true,
+        desc: 'Everything in Care + 2 hrs of edits/mo + GA4 analytics report + SEO monitoring + Google Business Profile management.',
+      },
+      {
+        name: 'Scale',
+        price: '$499/mo',
+        desc: 'Everything in Grow + 4 content pieces/mo (blog or social) + local SEO + review management + quarterly strategy session.',
+      },
+    ] as MonthlyPlan[],
+    monthlyAddons: 'Add-ons: Google Ads management +$150~/mo · booking system care +$50/mo · extra edits $75/hr',
+    monthlyNote: 'Prices vary by scope — final quote confirmed in a free consult.',
     monthlyCta: 'Start with a free consult',
     ctaTitle: 'Want this quote in writing?',
     ctaBody:
@@ -108,13 +132,35 @@ const copy = {
     estimateNote: '일회성 제작, USD · 프로젝트 범위에 따라 변동',
     recommended: '해당 패키지',
     tiers: { hobby: 'Hobby', plus: 'Plus', pro: 'Pro', custom: 'Enterprise / 맞춤' },
+    monthlyHeading: '월 관리 플랜',
+    monthlyFrom: '월 $49부터',
+    monthlyFraming: '12개월 약정 시 웹사이트 제작 셋업비 면제.',
     monthlyBadge: '추천',
-    monthlyTitle: '월 관리 패키지',
-    monthlyPrice: '월 $200~',
-    monthlyRange: '규모에 따라 월 $200–500',
-    monthlyIncludes: '웹사이트 + 호스팅 + 유지보수 + SEO',
-    monthlyNote:
-      '큰 초기 비용 없이 시작하세요 — 제작·호스팅·유지보수·SEO를 하나의 월 요금으로.',
+    monthlyPlans: [
+      {
+        name: 'Basic',
+        price: '월 $49',
+        desc: '호스팅 + SSL + 보안·백업 + 모니터링. 콘텐츠 수정 없음 — 필요 시 $75/시간 또는 상위 플랜.',
+      },
+      {
+        name: 'Care',
+        price: '월 $89',
+        desc: 'Basic 전부 + 월 30분 콘텐츠 수정 + 월간 리포트.',
+      },
+      {
+        name: 'Grow',
+        price: '월 $199',
+        recommended: true,
+        desc: 'Care 전부 + 월 2시간 수정 + GA4 분석 리포트 + SEO 모니터링 + 구글 비즈니스 프로필 관리.',
+      },
+      {
+        name: 'Scale',
+        price: '월 $499',
+        desc: 'Grow 전부 + 콘텐츠 제작 월 4회(블로그 또는 소셜) + 로컬 SEO + 리뷰 관리 + 분기 전략 상담.',
+      },
+    ] as MonthlyPlan[],
+    monthlyAddons: '애드온: 구글 광고 운영 +$150~/월 · 예약 시스템 관리 +$50/월 · 추가 수정 $75/시간',
+    monthlyNote: '가격은 범위·스코프에 따라 다르며, 최종 견적은 무료 상담에서 확정됩니다.',
     monthlyCta: '무료 상담으로 시작',
     ctaTitle: '이 견적을 서면으로 받아보시겠어요?',
     ctaBody:
@@ -269,18 +315,46 @@ export default function EstimatorClient({ locale = 'en' }: { locale?: 'en' | 'ko
                     <p className="font-display text-2xl tracking-luxury text-ink">{tier}</p>
                   </div>
 
-                  {/* Monthly care package — the recommended path */}
-                  <div className="mt-8 border border-gold bg-gold/[0.06] p-6 relative">
-                    <span className="absolute -top-3 left-5 bg-gold text-ivory text-[11px] tracking-[0.12em] uppercase px-3 py-1">
-                      {t.monthlyBadge}
-                    </span>
-                    <p className="font-display text-xl tracking-luxury text-ink mt-1">{t.monthlyTitle}</p>
-                    <p className="font-display text-[clamp(1.75rem,4vw,2.25rem)] leading-[1.1] text-gold mt-2 tabular-nums">
-                      {t.monthlyPrice}
-                    </p>
-                    <p className="text-[12px] text-ash mt-1">{t.monthlyRange}</p>
-                    <p className="text-[13px] text-ink font-medium mt-4">{t.monthlyIncludes}</p>
-                    <p className="text-[13px] text-graphite leading-relaxed mt-2">{t.monthlyNote}</p>
+                  {/* Monthly care plans — 4 tiers, Grow recommended */}
+                  <div className="mt-8 pt-6 border-t border-hairline">
+                    <div className="flex items-baseline justify-between gap-3">
+                      <p className="overline text-ash">{t.monthlyHeading}</p>
+                      <p className="font-display text-lg tracking-luxury text-gold tabular-nums">{t.monthlyFrom}</p>
+                    </div>
+                    <p className="text-[12px] text-graphite mt-2">{t.monthlyFraming}</p>
+
+                    <div className="mt-4 space-y-2.5">
+                      {t.monthlyPlans.map((plan) => (
+                        <div
+                          key={plan.name}
+                          className={`relative border p-4 ${
+                            plan.recommended ? 'border-gold bg-gold/[0.06]' : 'border-hairline bg-ivory'
+                          }`}
+                        >
+                          {plan.recommended && (
+                            <span className="absolute -top-2.5 right-4 bg-gold text-ivory text-[10px] tracking-[0.12em] uppercase px-2.5 py-0.5">
+                              {t.monthlyBadge}
+                            </span>
+                          )}
+                          <div className="flex items-baseline justify-between gap-3">
+                            <p className={`text-[14px] font-medium ${plan.recommended ? 'text-ink' : 'text-ink'}`}>
+                              {plan.name}
+                            </p>
+                            <p
+                              className={`font-display text-lg tracking-luxury tabular-nums ${
+                                plan.recommended ? 'text-gold' : 'text-ink'
+                              }`}
+                            >
+                              {plan.price}
+                            </p>
+                          </div>
+                          <p className="text-[12px] text-graphite leading-relaxed mt-1.5">{plan.desc}</p>
+                        </div>
+                      ))}
+                    </div>
+
+                    <p className="text-[11px] text-ash leading-relaxed mt-3">{t.monthlyAddons}</p>
+                    <p className="text-[11px] text-ash leading-relaxed mt-1.5">{t.monthlyNote}</p>
                     <Link
                       href={quoteHref}
                       data-cursor={isKo ? '상담' : 'Consult'}
