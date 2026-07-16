@@ -135,8 +135,8 @@ const tiers = [
       ko: '$3,000 - $6,000 일회성'
     },
     requiresSubscription: {
-      en: 'Requires Pro care ($399/mo) or higher',
-      ko: 'Pro 케어($399/월) 이상 필요'
+      en: 'Grow care ($199/mo) or higher recommended',
+      ko: 'Grow 케어(월 $199) 이상 권장'
     },
     features: {
       en: [
@@ -150,8 +150,7 @@ const tiers = [
         'Dynamic pricing calculators',
         'Contact form with email integration',
         'Accessibility compliant (WCAG)',
-        'Core Web Vitals optimized',
-        'Monthly maintenance (4hr)'
+        'Core Web Vitals optimized'
       ],
       ko: [
         'Plus의 모든 기능',
@@ -164,8 +163,7 @@ const tiers = [
         '동적 가격 계산기',
         '이메일 통합 문의 양식',
         '접근성 준수 (WCAG)',
-        'Core Web Vitals 최적화',
-        '월간 유지보수 (4시간)'
+        'Core Web Vitals 최적화'
       ]
     },
     notIncluded: {
@@ -388,6 +386,11 @@ export default function PricingServer({ locale, content: t }: PricingServerProps
                 ? 'Keep your website running smoothly with our monthly care plans. Get updates, support, and peace of mind.'
                 : '월간 관리 플랜으로 웹사이트를 원활하게 운영하세요. 업데이트, 지원, 안심을 제공합니다.'}
             </p>
+            <p className="text-sm text-green-300 font-medium mb-3">
+              {locale === 'en'
+                ? 'Commit to 12 months and your website build setup fee is waived.'
+                : '12개월 약정 시 웹사이트 제작 셋업비 면제.'}
+            </p>
             <p className="text-sm text-indigo-400 font-medium">
               {locale === 'en'
                 ? '💡 Tip: You can select this first! We\'ll guide you to choose a website tier next.'
@@ -396,98 +399,147 @@ export default function PricingServer({ locale, content: t }: PricingServerProps
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {/* Starter - $99/mo */}
+            {/* Basic - $49/mo */}
             <div className="bg-[#1a1a1a] rounded-xl p-6 shadow-lg border border-gray-700">
               <div className="mb-6">
-                <h3 className="text-xl font-bold text-white mb-2">Starter</h3>
+                <h3 className="text-xl font-bold text-white mb-2">Basic</h3>
                 <div className="flex items-baseline mb-3">
-                  <PriceReveal price="$99" suffix={`/${locale === 'en' ? 'month' : '월'}`} locale={locale} />
+                  <PriceReveal price="$49" suffix={`/${locale === 'en' ? 'month' : '월'}`} locale={locale} />
                 </div>
                 <p className="text-sm text-gray-400">
-                  {locale === 'en' ? 'Essential maintenance' : '필수 유지보수'}
+                  {locale === 'en' ? 'Hosting & protection only' : '호스팅 · 보안만'}
                 </p>
               </div>
               <ul className="space-y-2 mb-6">
                 <li className="flex items-start">
                   <Check className="w-4 h-4 text-green-400 mr-2 mt-0.5 flex-shrink-0" />
                   <span className="text-sm text-gray-300">
-                    {locale === 'en' ? 'Hosting included' : '호스팅 포함'}
+                    {locale === 'en' ? 'Hosting + SSL' : '호스팅 + SSL'}
                   </span>
                 </li>
                 <li className="flex items-start">
                   <Check className="w-4 h-4 text-green-400 mr-2 mt-0.5 flex-shrink-0" />
                   <span className="text-sm text-gray-300">
-                    {locale === 'en' ? 'Daily backups' : '일일 백업'}
+                    {locale === 'en' ? 'Security & backups' : '보안 · 백업'}
                   </span>
                 </li>
                 <li className="flex items-start">
                   <Check className="w-4 h-4 text-green-400 mr-2 mt-0.5 flex-shrink-0" />
                   <span className="text-sm text-gray-300">
-                    {locale === 'en' ? 'Security monitoring' : '보안 모니터링'}
+                    {locale === 'en' ? 'Uptime monitoring' : '모니터링'}
                   </span>
                 </li>
                 <li className="flex items-start">
-                  <Check className="w-4 h-4 text-green-400 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="text-sm text-gray-300">
-                    {locale === 'en' ? '30 min updates/mo' : '월 30분 업데이트'}
+                  <X className="w-4 h-4 text-gray-500 mr-2 mt-0.5 flex-shrink-0" />
+                  <span className="text-sm text-gray-500">
+                    {locale === 'en'
+                      ? 'No content edits — $75/hr or upgrade'
+                      : '콘텐츠 수정 없음 — $75/시간 또는 상위 플랜'}
                   </span>
                 </li>
               </ul>
               <button
-                data-subscription="starter"
-                data-subscription-name="Starter"
-                data-subscription-price="$99/mo"
+                data-subscription="basic"
+                data-subscription-name="Basic"
+                data-subscription-price="$49/mo"
                 className="w-full py-2 px-4 bg-gray-700 text-white rounded-lg font-semibold hover:bg-gray-600 transition-colors subscription-button"
               >
                 {locale === 'en' ? 'Select' : '선택'}
               </button>
             </div>
 
-            {/* Growth - $199/mo */}
-            <div className="bg-[#1a1a1a] rounded-xl p-6 shadow-lg border-2 border-indigo-500 relative">
-              <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                <span className="bg-indigo-500 text-white px-3 py-1 rounded-full text-xs font-bold">
-                  {locale === 'en' ? 'POPULAR' : '인기'}
-                </span>
-              </div>
+            {/* Care - $89/mo */}
+            <div className="bg-[#1a1a1a] rounded-xl p-6 shadow-lg border border-gray-700">
               <div className="mb-6">
-                <h3 className="text-xl font-bold text-white mb-2">Growth</h3>
+                <h3 className="text-xl font-bold text-white mb-2">Care</h3>
                 <div className="flex items-baseline mb-3">
-                  <PriceReveal price="$199" suffix={`/${locale === 'en' ? 'month' : '월'}`} locale={locale} />
+                  <PriceReveal price="$89" suffix={`/${locale === 'en' ? 'month' : '월'}`} locale={locale} />
                 </div>
                 <p className="text-sm text-gray-400">
-                  {locale === 'en' ? 'For growing sites' : '성장하는 사이트용'}
+                  {locale === 'en' ? 'Maintenance + small edits' : '유지보수 + 소규모 수정'}
                 </p>
               </div>
               <ul className="space-y-2 mb-6">
                 <li className="flex items-start">
                   <Check className="w-4 h-4 text-green-400 mr-2 mt-0.5 flex-shrink-0" />
                   <span className="text-sm text-gray-300">
-                    {locale === 'en' ? 'Everything in Starter' : 'Starter의 모든 기능'}
+                    {locale === 'en' ? 'Everything in Basic' : 'Basic의 모든 기능'}
                   </span>
                 </li>
                 <li className="flex items-start">
                   <Check className="w-4 h-4 text-green-400 mr-2 mt-0.5 flex-shrink-0" />
                   <span className="text-sm text-gray-300">
-                    {locale === 'en' ? '1 hour updates/mo' : '월 1시간 업데이트'}
+                    {locale === 'en' ? '30 min content edits/mo' : '월 30분 콘텐츠 수정'}
                   </span>
                 </li>
                 <li className="flex items-start">
                   <Check className="w-4 h-4 text-green-400 mr-2 mt-0.5 flex-shrink-0" />
                   <span className="text-sm text-gray-300">
-                    {locale === 'en' ? 'Content updates' : '콘텐츠 업데이트'}
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="w-4 h-4 text-green-400 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="text-sm text-gray-300">
-                    {locale === 'en' ? 'Performance reports' : '성능 보고서'}
+                    {locale === 'en' ? 'Monthly report' : '월간 리포트'}
                   </span>
                 </li>
               </ul>
               <button
-                data-subscription="growth"
-                data-subscription-name="Growth"
+                data-subscription="care"
+                data-subscription-name="Care"
+                data-subscription-price="$89/mo"
+                className="w-full py-2 px-4 bg-gray-700 text-white rounded-lg font-semibold hover:bg-gray-600 transition-colors subscription-button"
+              >
+                {locale === 'en' ? 'Select' : '선택'}
+              </button>
+            </div>
+
+            {/* Grow - $199/mo (recommended) */}
+            <div className="bg-[#1a1a1a] rounded-xl p-6 shadow-lg border-2 border-indigo-500 relative">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                <span className="bg-indigo-500 text-white px-3 py-1 rounded-full text-xs font-bold">
+                  {locale === 'en' ? 'RECOMMENDED' : '추천'}
+                </span>
+              </div>
+              <div className="mb-6">
+                <h3 className="text-xl font-bold text-white mb-2">Grow</h3>
+                <div className="flex items-baseline mb-3">
+                  <PriceReveal price="$199" suffix={`/${locale === 'en' ? 'month' : '월'}`} locale={locale} />
+                </div>
+                <p className="text-sm text-gray-400">
+                  {locale === 'en' ? 'For sites that need to grow' : '성장이 필요한 사이트용'}
+                </p>
+              </div>
+              <ul className="space-y-2 mb-6">
+                <li className="flex items-start">
+                  <Check className="w-4 h-4 text-green-400 mr-2 mt-0.5 flex-shrink-0" />
+                  <span className="text-sm text-gray-300">
+                    {locale === 'en' ? 'Everything in Care' : 'Care의 모든 기능'}
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="w-4 h-4 text-green-400 mr-2 mt-0.5 flex-shrink-0" />
+                  <span className="text-sm text-gray-300">
+                    {locale === 'en' ? '2 hrs content edits/mo' : '월 2시간 수정'}
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="w-4 h-4 text-green-400 mr-2 mt-0.5 flex-shrink-0" />
+                  <span className="text-sm text-gray-300">
+                    {locale === 'en' ? 'GA4 analytics report' : 'GA4 분석 리포트'}
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="w-4 h-4 text-green-400 mr-2 mt-0.5 flex-shrink-0" />
+                  <span className="text-sm text-gray-300">
+                    {locale === 'en' ? 'SEO monitoring' : 'SEO 모니터링'}
+                  </span>
+                </li>
+                <li className="flex items-start">
+                  <Check className="w-4 h-4 text-green-400 mr-2 mt-0.5 flex-shrink-0" />
+                  <span className="text-sm text-gray-300">
+                    {locale === 'en' ? 'Google Business Profile management' : '구글 비즈니스 프로필 관리'}
+                  </span>
+                </li>
+              </ul>
+              <button
+                data-subscription="grow"
+                data-subscription-name="Grow"
                 data-subscription-price="$199/mo"
                 className="w-full py-2 px-4 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 transition-colors subscription-button"
               >
@@ -495,105 +547,70 @@ export default function PricingServer({ locale, content: t }: PricingServerProps
               </button>
             </div>
 
-            {/* Pro - $399/mo */}
-            <div className="bg-[#1a1a1a] rounded-xl p-6 shadow-lg border border-gray-700">
-              <div className="mb-6">
-                <h3 className="text-xl font-bold text-white mb-2">Pro</h3>
-                <div className="flex items-baseline mb-3">
-                  <PriceReveal price="$399" suffix={`/${locale === 'en' ? 'month' : '월'}`} locale={locale} />
-                </div>
-                <p className="text-sm text-gray-400">
-                  {locale === 'en' ? 'Professional support' : '전문 지원'}
-                </p>
-              </div>
-              <ul className="space-y-2 mb-6">
-                <li className="flex items-start">
-                  <Check className="w-4 h-4 text-green-400 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="text-sm text-gray-300">
-                    {locale === 'en' ? 'Everything in Growth' : 'Growth의 모든 기능'}
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="w-4 h-4 text-green-400 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="text-sm text-gray-300">
-                    {locale === 'en' ? '4 hours updates/mo' : '월 4시간 업데이트'}
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="w-4 h-4 text-green-400 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="text-sm text-gray-300">
-                    {locale === 'en' ? 'E-commerce support' : '이커머스 지원'}
-                  </span>
-                </li>
-                <li className="flex items-start">
-                  <Check className="w-4 h-4 text-green-400 mr-2 mt-0.5 flex-shrink-0" />
-                  <span className="text-sm text-gray-300">
-                    {locale === 'en' ? 'Priority support' : '우선 지원'}
-                  </span>
-                </li>
-              </ul>
-              <button
-                data-subscription="pro"
-                data-subscription-name="Pro"
-                data-subscription-price="$399/mo"
-                className="w-full py-2 px-4 bg-white text-gray-900 rounded-lg font-semibold hover:bg-gray-100 transition-colors subscription-button"
-              >
-                {locale === 'en' ? 'Select' : '선택'}
-              </button>
-            </div>
-
-            {/* Scale - $799/mo */}
+            {/* Scale - $499/mo */}
             <div className="bg-[#1a1a1a] rounded-xl p-6 shadow-lg border border-purple-500 relative">
               <div className="absolute -top-3 left-1/2 -translate-x-1/2">
                 <span className="bg-purple-500 text-white px-3 py-1 rounded-full text-xs font-bold">
-                  {locale === 'en' ? 'ENTERPRISE' : '엔터프라이즈'}
+                  {locale === 'en' ? 'FULL SERVICE' : '풀 서비스'}
                 </span>
               </div>
               <div className="mb-6">
                 <h3 className="text-xl font-bold text-white mb-2">Scale</h3>
                 <div className="flex items-baseline mb-3">
-                  <PriceReveal price="$799" suffix={`/${locale === 'en' ? 'month' : '월'}`} locale={locale} />
+                  <PriceReveal price="$499" suffix={`/${locale === 'en' ? 'month' : '월'}`} locale={locale} />
                 </div>
                 <p className="text-sm text-gray-400">
-                  {locale === 'en' ? 'Full-service solution' : '풀 서비스 솔루션'}
+                  {locale === 'en' ? 'Content + local SEO engine' : '콘텐츠 + 로컬 SEO 엔진'}
                 </p>
               </div>
               <ul className="space-y-2 mb-6">
                 <li className="flex items-start">
                   <Check className="w-4 h-4 text-green-400 mr-2 mt-0.5 flex-shrink-0" />
                   <span className="text-sm text-gray-300">
-                    {locale === 'en' ? 'Everything in Pro' : 'Pro의 모든 기능'}
+                    {locale === 'en' ? 'Everything in Grow' : 'Grow의 모든 기능'}
                   </span>
                 </li>
                 <li className="flex items-start">
                   <Check className="w-4 h-4 text-green-400 mr-2 mt-0.5 flex-shrink-0" />
                   <span className="text-sm text-gray-300">
-                    {locale === 'en' ? 'Unlimited updates' : '무제한 업데이트'}
+                    {locale === 'en' ? '4 content pieces/mo (blog or social)' : '콘텐츠 제작 월 4회 (블로그·소셜)'}
                   </span>
                 </li>
                 <li className="flex items-start">
                   <Check className="w-4 h-4 text-green-400 mr-2 mt-0.5 flex-shrink-0" />
                   <span className="text-sm text-gray-300">
-                    {locale === 'en' ? 'Dedicated manager' : '전담 매니저'}
+                    {locale === 'en' ? 'Local SEO + review management' : '로컬 SEO + 리뷰 관리'}
                   </span>
                 </li>
                 <li className="flex items-start">
                   <Check className="w-4 h-4 text-green-400 mr-2 mt-0.5 flex-shrink-0" />
                   <span className="text-sm text-gray-300">
-                    {locale === 'en' ? '24/7 support' : '24/7 지원'}
+                    {locale === 'en' ? 'Quarterly strategy session' : '분기 전략 상담'}
                   </span>
                 </li>
               </ul>
               <button
                 data-subscription="scale"
                 data-subscription-name="Scale"
-                data-subscription-price="$799/mo"
+                data-subscription-price="$499/mo"
                 className="w-full py-2 px-4 bg-purple-600 text-white rounded-lg font-semibold hover:bg-purple-700 transition-colors subscription-button"
               >
                 {locale === 'en' ? 'Select' : '선택'}
               </button>
             </div>
           </div>
+
+          {/* Add-ons */}
+          <p className="mt-6 text-center text-sm text-gray-400">
+            {locale === 'en'
+              ? 'Add-ons: Google Ads management +$150~/mo · booking system care +$50/mo · extra edits $75/hr'
+              : '애드온: 구글 광고 운영 +$150~/월 · 예약 시스템 관리 +$50/월 · 추가 수정 $75/시간'}
+          </p>
+          <p className="mt-2 text-center text-xs text-gray-500">
+            {locale === 'en'
+              ? 'Prices vary by scope — final quote confirmed in a free consultation.'
+              : '가격은 범위·스코프에 따라 다르며, 최종 견적은 무료 상담에서 확정됩니다.'}
+          </p>
 
           {/* Why Subscribe CTA */}
           <div className="mt-12 text-center bg-[#1a1a1a] rounded-2xl p-8 shadow-lg border border-gray-700">

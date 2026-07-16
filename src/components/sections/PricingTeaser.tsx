@@ -362,6 +362,38 @@ export default function PricingTeaser({ locale = 'en' }: { locale?: string }) {
             </InView>
           ))}
         </ul>
+
+        {/* Monthly care plans — entry framing */}
+        <InView>
+          <div className="mt-4 md:mt-6 rounded-2xl border border-black/[0.08] bg-white/60 p-6 md:p-7 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+            <div>
+              <p className="text-[12px] uppercase tracking-[0.22em] text-[#8a8378] mb-2">
+                {isKo ? '월 관리 플랜' : 'Monthly care plans'}
+              </p>
+              <p className="text-[15px] text-[#151414] m-0">
+                <span className="font-display italic font-light text-[#b48a43] text-[clamp(20px,2vw,26px)] leading-none tracking-[-0.01em] mr-2 align-middle">
+                  {isKo ? '월 $49부터' : 'From $49/mo'}
+                </span>
+                <span className="text-[#3a3836]">
+                  {isKo
+                    ? 'Basic $49 · Care $89 · Grow $199 (추천) · Scale $499'
+                    : 'Basic $49 · Care $89 · Grow $199 (recommended) · Scale $499'}
+                </span>
+              </p>
+              <p className="text-[13px] text-[#8a8378] mt-2 mb-0">
+                {isKo
+                  ? '12개월 약정 시 웹사이트 제작 셋업비 면제 · 최종 견적은 무료 상담에서'
+                  : '12-month commitment waives the build setup fee · final quote in a free consult'}
+              </p>
+            </div>
+            <Link
+              href={`${prefix}/contact`}
+              className="inline-flex items-center justify-center min-h-[44px] px-6 rounded-full border border-black/[0.2] text-[#151414] text-[14px] transition-colors hover:border-black/[0.5] shrink-0 self-start md:self-center"
+            >
+              {isKo ? '무료 상담으로 시작' : 'Start with a free consult'}
+            </Link>
+          </div>
+        </InView>
       </div>
     </section>
   )
