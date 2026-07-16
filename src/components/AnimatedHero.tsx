@@ -3,6 +3,7 @@
 import { useEffect, useState, useRef } from 'react'
 import Link from 'next/link'
 import { useTranslation } from '@/hooks/useTranslation'
+import { trackKakaoClick } from '@/utils/analytics'
 
 export default function AnimatedHero({ locale = 'en' }: { locale?: string }) {
   const { t } = useTranslation(locale)
@@ -108,6 +109,7 @@ export default function AnimatedHero({ locale = 'en' }: { locale?: string }) {
             href="http://pf.kakao.com/_xhxdxmlX/chat"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackKakaoClick('hero')}
             className="group inline-flex items-center justify-center gap-2 rounded-xl border border-[#FEE500]/30 bg-[#FEE500]/10 px-8 py-4 text-sm font-semibold text-[#FEE500] transition-all duration-300 hover:bg-[#FEE500]/20 hover:border-[#FEE500]/50 active:scale-[0.97]"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

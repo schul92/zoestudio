@@ -4,7 +4,7 @@ import { useTranslation } from '@/hooks/useTranslation'
 import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import { useServices } from '@/context/ServiceContext'
-import { trackFormSuccess, trackFormError, trackGAEvent, GA_EVENTS, trackEmailClick, trackButtonClick } from '@/utils/analytics'
+import { trackFormSuccess, trackFormError, trackGAEvent, GA_EVENTS, trackEmailClick, trackButtonClick, trackKakaoClick } from '@/utils/analytics'
 import Modal from '@/components/ui/Modal'
 import { Mail, MapPin, Clock, CheckCircle, XCircle, AlertTriangle, CalendarCheck } from 'lucide-react'
 import { BOOKING_URL } from '@/lib/booking'
@@ -605,7 +605,7 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                         href="http://pf.kakao.com/_xhxdxmlX/chat"
                         target="_blank"
                         rel="noopener noreferrer"
-                        onClick={() => trackButtonClick('KakaoTalk Chat', 'contact-info')}
+                        onClick={() => trackKakaoClick('contact_info')}
                         className="flex items-center gap-3 text-gray-300 hover:text-[#FEE500] transition-colors"
                       >
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="flex-shrink-0">
