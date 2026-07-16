@@ -48,9 +48,17 @@ const copy = {
       rush: { label: 'Rush', note: 'Expedited (+25%)' },
     },
     resultEyebrow: 'Your estimate',
-    estimateNote: 'One-time build, USD',
-    recommended: 'Recommended package',
+    estimateNote: 'One-time build, USD · varies by project scope',
+    recommended: 'Matching tier',
     tiers: { hobby: 'Hobby', plus: 'Plus', pro: 'Pro', custom: 'Enterprise / Custom' },
+    monthlyBadge: 'Recommended',
+    monthlyTitle: 'Monthly Care Package',
+    monthlyPrice: 'From $200/mo',
+    monthlyRange: '$200–500/mo depending on scope',
+    monthlyIncludes: 'Website + hosting + maintenance + SEO',
+    monthlyNote:
+      'Skip the big upfront cost — we build, host, maintain, and grow your site for one monthly fee.',
+    monthlyCta: 'Start with a free consult',
     ctaTitle: 'Want this quote in writing?',
     ctaBody:
       "Send us your selections and we'll come back with a fixed, itemized quote — and a free 30-minute call to pressure-test the scope. No obligation.",
@@ -97,9 +105,17 @@ const copy = {
       rush: { label: '급행', note: '단축 (+25%)' },
     },
     resultEyebrow: '예상 견적',
-    estimateNote: '일회성 제작, USD',
-    recommended: '추천 패키지',
+    estimateNote: '일회성 제작, USD · 프로젝트 범위에 따라 변동',
+    recommended: '해당 패키지',
     tiers: { hobby: 'Hobby', plus: 'Plus', pro: 'Pro', custom: 'Enterprise / 맞춤' },
+    monthlyBadge: '추천',
+    monthlyTitle: '월 관리 패키지',
+    monthlyPrice: '월 $200~',
+    monthlyRange: '규모에 따라 월 $200–500',
+    monthlyIncludes: '웹사이트 + 호스팅 + 유지보수 + SEO',
+    monthlyNote:
+      '큰 초기 비용 없이 시작하세요 — 제작·호스팅·유지보수·SEO를 하나의 월 요금으로.',
+    monthlyCta: '무료 상담으로 시작',
     ctaTitle: '이 견적을 서면으로 받아보시겠어요?',
     ctaBody:
       '선택하신 내용을 보내주시면 고정·항목별 견적과 함께 범위를 점검하는 무료 30분 상담을 드립니다. 부담 없음.',
@@ -111,10 +127,10 @@ const copy = {
   },
 }
 
-const BASE: Record<ProjectType, number> = { new: 1000, redesign: 1400, ecommerce: 2800, landing: 700 }
-const PAGES: Record<PageBand, number> = { s: 0, m: 700, l: 1800, xl: 3500 }
+const BASE: Record<ProjectType, number> = { new: 600, redesign: 750, ecommerce: 1400, landing: 400 }
+const PAGES: Record<PageBand, number> = { s: 0, m: 250, l: 700, xl: 1400 }
 const FEAT: Record<Feature, number> = {
-  bilingual: 600, ecommerce: 1500, booking: 800, kakaotalk: 500, cms: 700, seo: 800, custom: 1200,
+  bilingual: 200, ecommerce: 600, booking: 300, kakaotalk: 150, cms: 250, seo: 250, custom: 400,
 }
 
 const round50 = (n: number) => Math.round(n / 50) * 50
@@ -144,10 +160,10 @@ export default function EstimatorClient({ locale = 'en' }: { locale?: 'en' | 'ko
       subtotal += FEAT[f]
     })
     if (time === 'rush') subtotal *= 1.25
-    const lo = round50(subtotal * 0.9)
-    const hi = round50(subtotal * 1.18)
+    const lo = round50(subtotal * 0.85)
+    const hi = round50(subtotal * 1.15)
     const tierKey: keyof typeof t.tiers =
-      hi <= 1500 ? 'hobby' : hi <= 3000 ? 'plus' : hi <= 6500 ? 'pro' : 'custom'
+      hi <= 800 ? 'hobby' : hi <= 1600 ? 'plus' : hi <= 3200 ? 'pro' : 'custom'
     return { low: lo, high: hi, tier: t.tiers[tierKey] }
   }, [type, band, feats, time, t])
 
@@ -250,7 +266,29 @@ export default function EstimatorClient({ locale = 'en' }: { locale?: 'en' | 'ko
 
                   <div className="mt-8 pt-6 border-t border-hairline">
                     <p className="overline text-ash mb-2">{t.recommended}</p>
-                    <p className="font-display text-2xl tracking-luxury text-gold">{tier}</p>
+                    <p className="font-display text-2xl tracking-luxury text-ink">{tier}</p>
+                  </div>
+
+                  {/* Monthly care package — the recommended path */}
+                  <div className="mt-8 border border-gold bg-gold/[0.06] p-6 relative">
+                    <span className="absolute -top-3 left-5 bg-gold text-ivory text-[11px] tracking-[0.12em] uppercase px-3 py-1">
+                      {t.monthlyBadge}
+                    </span>
+                    <p className="font-display text-xl tracking-luxury text-ink mt-1">{t.monthlyTitle}</p>
+                    <p className="font-display text-[clamp(1.75rem,4vw,2.25rem)] leading-[1.1] text-gold mt-2 tabular-nums">
+                      {t.monthlyPrice}
+                    </p>
+                    <p className="text-[12px] text-ash mt-1">{t.monthlyRange}</p>
+                    <p className="text-[13px] text-ink font-medium mt-4">{t.monthlyIncludes}</p>
+                    <p className="text-[13px] text-graphite leading-relaxed mt-2">{t.monthlyNote}</p>
+                    <Link
+                      href={quoteHref}
+                      data-cursor={isKo ? '상담' : 'Consult'}
+                      className="btn-ink w-full justify-center mt-5"
+                    >
+                      {t.monthlyCta}
+                      <span className="arrow">→</span>
+                    </Link>
                   </div>
 
                   <div className="mt-6 pt-6 border-t border-hairline">
