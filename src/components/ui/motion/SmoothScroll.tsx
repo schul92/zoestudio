@@ -6,6 +6,36 @@ export default function SmoothScroll() {
   useEffect(() => {
     if (typeof window === 'undefined') return
 
+    // Landing on /#contact must actually arrive at #contact. The browser's
+    // native hash jump happens against the pre-hydration layout; ScrollTrigger
+    // then inserts pin spacers that change every offset below the hero, and on
+    // desktop Lenis takes over scrolling — so the native jump lands nowhere.
+    // Re-jump once the real layout exists, unless the user has already scrolled.
+    let userScrolled = false
+    const markScrolled = () => {
+      userScrolled = true
+    }
+    window.addEventListener('wheel', markScrolled, { once: true, passive: true })
+    window.addEventListener('touchstart', markScrolled, { once: true, passive: true })
+
+    const scrollToHash = (viaLenis?: any) => {
+      if (userScrolled || !window.location.hash) return
+      let el: Element | null = null
+      try {
+        el = document.getElementById(decodeURIComponent(window.location.hash.slice(1)))
+      } catch {
+        return
+      }
+      if (!el) return
+      if (viaLenis) viaLenis.scrollTo(el, { immediate: true, force: true })
+      else el.scrollIntoView()
+    }
+
+    // Non-Lenis devices (mobile/tablet): jump after the full load settles.
+    const onLoad = () => setTimeout(() => scrollToHash(), 60)
+    if (document.readyState === 'complete') onLoad()
+    else window.addEventListener('load', onLoad, { once: true })
+
     // Skip on touch devices, reduced-motion, save-data, and small screens.
     // Smooth scroll on mobile is a perf cost with no UX upside — Lenis ships
     // ~7KB and runs a RAF loop that drains battery.
@@ -47,6 +77,9 @@ export default function SmoothScroll() {
           gsap.ticker.add(tick)
           gsap.ticker.lagSmoothing(0)
           ScrollTrigger.refresh()
+          // Desktop: layout is now final and Lenis owns scrolling — re-run the
+          // hash jump through Lenis so it is not immediately overridden.
+          scrollToHash(lenis)
         }
       )
     }
@@ -59,6 +92,9 @@ export default function SmoothScroll() {
 
     return () => {
       cancelled = true
+      window.removeEventListener('wheel', markScrolled)
+      window.removeEventListener('touchstart', markScrolled)
+      window.removeEventListener('load', onLoad)
       if (tick) import('gsap').then(({ gsap }) => gsap.ticker.remove(tick!))
       if (lenis && onLenisScroll) lenis.off('scroll', onLenisScroll)
       lenis?.destroy()
