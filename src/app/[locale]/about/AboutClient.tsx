@@ -308,7 +308,7 @@ export default function AboutClient({ t, locale }: { t: any, locale: string }) {
                 <div className="flex items-center gap-4 flex-wrap">
                   <span className="text-amber-400 font-semibold text-sm">✦ {t.founder.promoLabel}</span>
                   <a
-                    href={`${prefix}/#contact`}
+                    href={`${prefix}/contact`}
                     className="bg-amber-400 text-black px-6 py-3 rounded-full font-bold text-sm hover:bg-amber-300 hover:scale-105 transition-all"
                   >
                     {t.founder.promoButton}
@@ -374,7 +374,7 @@ export default function AboutClient({ t, locale }: { t: any, locale: string }) {
             viewport={{ once: true }}
           >
             <a
-              href={`${prefix}/#contact`}
+              href={`${prefix}/contact`}
               className="inline-block bg-amber-400 text-black px-10 py-5 text-lg font-bold rounded-full hover:bg-amber-300 hover:scale-110 transition-all shadow-2xl"
             >
               {t.cta.button}

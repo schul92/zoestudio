@@ -160,7 +160,7 @@ export default function EstimatorClient({ locale = 'en' }: { locale?: 'en' | 'ko
     t.times[time].label,
   ].join(' · ')
 
-  const quoteHref = `${prefix}/#contact`
+  const quoteHref = `${prefix}/contact`
 
   return (
     <main className="bg-ivory text-ink min-h-screen overflow-x-hidden">

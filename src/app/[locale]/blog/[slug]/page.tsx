@@ -269,7 +269,7 @@ function MidArticleCta({
       </p>
       <div className="flex items-center gap-5 shrink-0">
         <Link
-          href={`${prefix}/#contact`}
+          href={`${prefix}/contact`}
           className="text-[13px] font-medium text-ink border-b border-ink pb-0.5 hover:text-gold hover:border-gold transition-colors whitespace-nowrap"
         >
           {isKo ? '무료 상담' : 'Free consultation'}
@@ -402,7 +402,7 @@ function RenderSection({
           </p>
           <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-4">
             <Link
-              href={`${prefix}/#contact`}
+              href={`${prefix}/contact`}
               data-cursor="Begin"
               className="btn-ink"
             >
@@ -885,7 +885,7 @@ export default function BlogPostPage({
                   <span className="arrow">→</span>
                 </Link>
                 <Link
-                  href={`${prefix}/#contact`}
+                  href={`${prefix}/contact`}
                   data-cursor={locale === 'ko' ? '시작' : 'Begin'}
                   className="inline-flex items-center gap-2 text-[14px] text-ink border-b border-ink/30 hover:border-ink pb-1 transition-colors"
                 >

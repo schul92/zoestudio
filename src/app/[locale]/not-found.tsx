@@ -53,7 +53,7 @@ export default function NotFound({
             {isKorean ? '홈으로 돌아가기' : 'Go to Homepage'}
           </Link>
           <Link
-            href={`/${locale}#contact`}
+            href={`/${locale}/contact`}
             className="px-6 py-3 bg-white text-black border-2 border-black rounded-lg font-semibold hover:bg-gray-50 transition-colors"
           >
             {isKorean ? '문의하기' : 'Contact Us'}

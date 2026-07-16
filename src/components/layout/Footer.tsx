@@ -66,7 +66,7 @@ export default function Footer({ locale = 'en' }: { locale?: string }) {
 
           <Magnetic strength={14}>
             <Link
-              href={`${prefix}/#contact`}
+              href={`${prefix}/contact`}
               data-cursor={isKo ? '시작' : 'Begin'}
               className="btn-ink shrink-0"
             >

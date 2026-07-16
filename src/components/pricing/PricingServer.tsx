@@ -674,7 +674,7 @@ export default function PricingServer({ locale, content: t }: PricingServerProps
                 : '찾으시는 내용이 없으신가요?'}
             </p>
             <a
-              href={`${locale === 'ko' ? '/ko' : '/'}#contact`}
+              href={`${locale === 'ko' ? '/ko' : ''}/contact`}
               className="inline-flex items-center justify-center px-6 py-3 bg-transparent text-indigo-400 border-2 border-indigo-500 rounded-lg font-semibold hover:bg-indigo-500/10 transition-colors"
             >
               {locale === 'en' ? 'Contact Support' : '지원팀 문의'}

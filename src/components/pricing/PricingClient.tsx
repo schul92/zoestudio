@@ -100,7 +100,7 @@ export default function PricingClient({ locale }: PricingClientProps) {
         if (tierId === 'enterprise') {
           // For enterprise, go directly to contact
           setTimeout(() => {
-            window.location.href = `${locale === 'ko' ? '/ko' : '/'}#contact`
+            window.location.href = `${locale === 'ko' ? '/ko' : ''}/contact`
           }, 500)
         } else {
           // Scroll to subscription section
@@ -256,7 +256,7 @@ export default function PricingClient({ locale }: PricingClientProps) {
     sessionStorage.setItem('pricingComplete', 'true')
     
     // Navigate to contact form
-    window.location.href = `${locale === 'ko' ? '/ko' : '/'}#contact`
+    window.location.href = `${locale === 'ko' ? '/ko' : ''}/contact`
   }
 
   return (

@@ -364,7 +364,7 @@ export default function AuditClient({ locale = 'en' }: { locale?: 'en' | 'ko' })
             <div className="md:col-span-4 md:text-right">
               <Magnetic strength={14}>
                 <Link
-                  href={`${prefix}/#contact`}
+                  href={`${prefix}/contact`}
                   data-cursor={isKo ? '시작' : 'Begin'}
                   className="btn-ink"
                 >

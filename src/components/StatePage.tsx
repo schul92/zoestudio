@@ -180,7 +180,7 @@ export default function StatePage({
               : `Bilingual Korean-English websites, local SEO, and AI-search optimization (GEO) for Korean-American businesses across ${name}${cities.length ? ` — ${cities.slice(0, 3).join(', ')}, and beyond` : ''}. Same quality, fully remote.`}
           </p>
           <div className="mt-9 flex flex-wrap gap-4">
-            <Link href={`${prefix}/#contact`} className="btn-ink">{ko ? '무료 상담' : 'Free consultation'}<span className="arrow">→</span></Link>
+            <Link href={`${prefix}/contact`} className="btn-ink">{ko ? '무료 상담' : 'Free consultation'}<span className="arrow">→</span></Link>
             <Link href={`${prefix}/pricing`} className="inline-flex items-center text-[15px] text-ink underline underline-offset-4 hover:text-gold transition-colors py-2">{ko ? '가격 보기' : 'See pricing'}</Link>
           </div>
         </section>
@@ -328,7 +328,7 @@ export default function StatePage({
           <p className="font-display italic font-light text-[clamp(1.35rem,2.5vw,2rem)] text-ink leading-[1.4] max-w-2xl mb-8">
             {ko ? `${name}에서 눈에 띄는 웹사이트를 만들 준비가 되셨나요?` : `Ready to be the Korean business ${name} finds first?`}
           </p>
-          <Link href={`${prefix}/#contact`} className="btn-ink">{ko ? '상담 시작하기' : 'Start a conversation'}<span className="arrow">→</span></Link>
+          <Link href={`${prefix}/contact`} className="btn-ink">{ko ? '상담 시작하기' : 'Start a conversation'}<span className="arrow">→</span></Link>
         </section>
       </main>
       <Footer locale={locale} />

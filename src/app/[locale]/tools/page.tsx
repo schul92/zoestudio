@@ -182,7 +182,7 @@ export default function ToolsPage({ params }: { params: { locale: string } }) {
               <InView as="p" className="reveal text-body-lg text-graphite leading-[1.7] mb-8">
                 <span>{t.ctaBody}</span>
               </InView>
-              <Link href={`${prefix}/#contact`} data-cursor={isKo ? '상담' : 'Talk'} className="btn-ink">
+              <Link href={`${prefix}/contact`} data-cursor={isKo ? '상담' : 'Talk'} className="btn-ink">
                 {t.ctaBtn}
                 <span className="arrow">→</span>
               </Link>

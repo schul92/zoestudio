@@ -103,7 +103,7 @@ export default function Header({ locale = 'en' }: { locale?: string }) {
                 <span className="relative z-10 transition-colors duration-300 text-white">{t.nav.blog}</span>
                 <span className={`absolute bottom-0 left-4 right-4 h-0.5 bg-amber-400 transition-transform duration-300 ease-out ${isBlogPage ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`} />
               </Link>
-              <Link href={`${prefix}/#contact`} className="relative group py-2 px-4 min-w-[80px] text-center" data-hover="true" data-hover-text="">
+              <Link href={`${prefix}/contact`} className="relative group py-2 px-4 min-w-[80px] text-center" data-hover="true" data-hover-text="">
                 <span className="relative z-10 transition-colors duration-300 text-white">{t.nav.contact}</span>
                 <span className="absolute bottom-0 left-4 right-4 h-0.5 bg-amber-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 ease-out" />
               </Link>
@@ -187,7 +187,7 @@ export default function Header({ locale = 'en' }: { locale?: string }) {
             {t.nav.blog}
           </Link>
           <Link
-            href={`${prefix}/#contact`}
+            href={`${prefix}/contact`}
             onClick={() => setMobileMenuOpen(false)}
             className="block py-3 px-4 text-white hover:bg-white/10 rounded-lg transition-colors text-lg font-medium"
           >

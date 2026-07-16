@@ -39,7 +39,7 @@ export default function HeaderRedesign({ locale = 'en' }: { locale?: string }) {
     { href: `${prefix}/portfolio`, label: t.nav.portfolio, active: isActive('/portfolio') },
     { href: `${prefix}/pricing`, label: t.nav.pricing, active: isActive('/pricing') },
     { href: `${prefix}/blog`, label: t.nav.blog, active: isActive('/blog') },
-    { href: `${prefix}/#contact`, label: t.nav.contact, active: false },
+    { href: `${prefix}/contact`, label: t.nav.contact, active: false },
   ]
 
   const scrolledClass = mounted && hasScrolled
@@ -90,7 +90,7 @@ export default function HeaderRedesign({ locale = 'en' }: { locale?: string }) {
 
             {/* Desktop CTA */}
             <Link
-              href={`${prefix}/#contact`}
+              href={`${prefix}/contact`}
               className="hidden lg:inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold text-white bg-brand-charcoal rounded-full hover:bg-brand-graphite transition-all duration-300 hover:shadow-elevated"
             >
               {locale === 'ko' ? '무료 상담' : 'Get Started'}
@@ -150,7 +150,7 @@ export default function HeaderRedesign({ locale = 'en' }: { locale?: string }) {
           {/* Mobile CTA */}
           <div className="pt-4 mt-4 border-t border-brand-cream">
             <Link
-              href={`${prefix}/#contact`}
+              href={`${prefix}/contact`}
               onClick={() => setMobileMenuOpen(false)}
               className="block w-full text-center py-3.5 px-6 text-white bg-brand-charcoal rounded-full font-semibold text-lg hover:bg-brand-graphite transition-colors"
             >

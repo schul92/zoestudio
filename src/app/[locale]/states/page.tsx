@@ -125,7 +125,7 @@ export default function StatesIndex({ params }: { params: { locale: string } }) 
           <p className="font-display italic font-light text-[clamp(1.35rem,2.5vw,2rem)] text-ink leading-[1.4] max-w-2xl mb-8">
             {ko ? '내 주가 안 보여도 괜찮습니다 — 50개 주 모두 원격으로 서비스합니다.' : "Don't see your state listed? We serve all 50, fully remote."}
           </p>
-          <Link href={`${prefix}/#contact`} className="btn-ink">{ko ? '상담 시작하기' : 'Start a conversation'}<span className="arrow">→</span></Link>
+          <Link href={`${prefix}/contact`} className="btn-ink">{ko ? '상담 시작하기' : 'Start a conversation'}<span className="arrow">→</span></Link>
         </section>
       </main>
       <Footer locale={locale} />
