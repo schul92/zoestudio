@@ -137,8 +137,8 @@ export default function NYWebsiteKoreanPage({ params }: { params: { locale: stri
         acceptedAnswer: {
           '@type': 'Answer',
           text: isKorean
-            ? 'ZOE LUMOS(조이루모스)의 뉴욕 웹사이트 제작 비용은 프로젝트 유형에 따라 다릅니다. 2026년 1월 기준, 기본 비즈니스 웹사이트는 $1,000-$2,500 (5페이지 기준, 모바일 반응형 포함), Shopify 이커머스 쇼핑몰은 $3,000-$6,000 (상품 등록 50개 포함, 결제 시스템 연동)입니다. 모든 가격에는 기본 SEO, SSL 인증서, 1년 호스팅이 포함됩니다. 맨하탄 K-Town, 플러싱, 퀸즈, 브루클린 등 뉴욕 전 지역 동일 가격이 적용됩니다.'
-            : 'ZOE LUMOS website design pricing in New York varies by project type. As of January 2026, basic business websites cost $1,000-$2,500 (5 pages, mobile responsive), and Shopify e-commerce stores cost $3,000-$6,000 (50 products included, payment integration). All prices include basic SEO, SSL certificate, and 1-year hosting. Same pricing applies across Manhattan K-Town, Flushing, Queens, and Brooklyn.',
+            ? 'ZOE LUMOS(조이루모스)의 뉴욕 웹사이트 제작 비용은 프로젝트 유형에 따라 다릅니다. 2026년 1월 기준, 기본 웹사이트는 $500-$800 (5페이지 기준, 모바일 반응형 포함), 일반 비즈니스 웹사이트는 $1,100-$1,500, Shopify 이커머스 쇼핑몰은 $1,800-$2,400 (결제 시스템 연동 포함)입니다. 모든 가격에는 기본 SEO, SSL 인증서, 1년 호스팅이 포함됩니다. 맨하탄 K-Town, 플러싱, 퀸즈, 브루클린 등 뉴욕 전 지역 동일 가격이 적용됩니다.'
+            : 'ZOE LUMOS website design pricing in New York varies by project type. As of January 2026, basic websites cost $500-$800 (5 pages, mobile responsive), standard business websites $1,100-$1,500, and Shopify e-commerce stores $1,800-$2,400 (payment integration included). All prices include basic SEO, SSL certificate, and 1-year hosting. Same pricing applies across Manhattan K-Town, Flushing, Queens, and Brooklyn.',
         },
       },
       {
@@ -217,13 +217,13 @@ export default function NYWebsiteKoreanPage({ params }: { params: { locale: stri
       icon: <Globe className="w-8 h-8" />,
       title: isKorean ? '비즈니스 웹사이트' : 'Business Website',
       desc: isKorean ? '전문적인 회사 소개 사이트' : 'Professional company website',
-      price: '$1,000~',
+      price: '$500~',
     },
     {
       icon: <Building2 className="w-8 h-8" />,
       title: isKorean ? '이커머스 쇼핑몰' : 'E-commerce Store',
       desc: isKorean ? 'Shopify 기반 온라인 스토어' : 'Shopify-based online store',
-      price: '$3,000~',
+      price: '$1,800~',
     },
     {
       icon: <Search className="w-8 h-8" />,

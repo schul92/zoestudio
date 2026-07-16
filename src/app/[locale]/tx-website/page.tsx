@@ -45,7 +45,7 @@ export default function TXWebsitePage({ params }: { params: { locale: string } }
     description: ko ? '텍사스 한인 비즈니스를 위한 웹사이트 제작 전문' : 'Website design for Korean-American businesses in Texas',
     url: `${baseUrl}/${ko ? 'ko/' : ''}tx-website`, email: 'info@zoelumos.com',
     areaServed: [{ '@type': 'City', name: 'Dallas' }, { '@type': 'City', name: 'Carrollton' }, { '@type': 'City', name: 'Houston' }, { '@type': 'City', name: 'Plano' }],
-    priceRange: '$1,000-$10,000',
+    priceRange: '$500-$2,400',
   }
 
   return (

@@ -227,7 +227,7 @@ const COPY = {
       },
       {
         q: 'How much does a Korean-American business website actually cost in 2026?',
-        a: 'Honest ranges based on our pricing and audited competitor invoices: simple bilingual service site $1,500–$4,000, restaurant or café with menu schema and online ordering $3,500–$7,000, multi-location or e-commerce $7,000–$20,000+. Anyone quoting under $1,000 is selling you a template; anyone quoting over $30,000 for a 5-page service site is overcharging.',
+        a: 'Two honest reference points. Market ranges from audited competitor invoices: simple bilingual service site $1,500–$4,000, restaurant or café with menu schema and online ordering $3,500–$7,000, multi-location or e-commerce $7,000–$20,000+. Our own published tiers run leaner: basic $500–$800, standard $1,100–$1,500, store/e-commerce $1,800–$2,400 — full list at zoelumos.com/pricing. Anyone quoting over $30,000 for a 5-page service site is overcharging.',
       },
       {
         q: 'Are Korean-language URLs (e.g., /웹사이트-제작) actually worth using?',
@@ -288,7 +288,7 @@ const COPY = {
       },
       {
         q: '2026년 미주 한인 비즈니스 웹사이트 실제 비용은?',
-        a: '저희 가격과 감사한 경쟁사 인보이스 기준 솔직한 범위: 단순 이중언어 서비스 사이트 $1,500–$4,000, 메뉴 스키마·온라인 주문 식당/카페 $3,500–$7,000, 멀티 로케이션·이커머스 $7,000–$20,000+. $1,000 이하 견적은 템플릿 판매, 5페이지 서비스 사이트에 $30,000 넘는 견적은 과청구.',
+        a: '솔직한 기준 두 가지. 감사한 경쟁사 인보이스 기준 시장 범위: 단순 이중언어 서비스 사이트 $1,500–$4,000, 메뉴 스키마·온라인 주문 식당/카페 $3,500–$7,000, 멀티 로케이션·이커머스 $7,000–$20,000+. 저희 공개 가격표는 더 가볍습니다: 기본 $500–$800, 일반 $1,100–$1,500, 스토어(이커머스) $1,800–$2,400 — 전체 가격은 zoelumos.com/pricing. 5페이지 서비스 사이트에 $30,000 넘는 견적은 과청구.',
       },
       {
         q: '한글 URL(/웹사이트-제작 등)이 정말 의미 있나요?',

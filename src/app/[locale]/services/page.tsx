@@ -4,6 +4,7 @@ import HeaderWrapper from '@/components/layout/HeaderWrapper'
 import Footer from '@/components/layout/Footer'
 import Contact from '@/components/sections/Contact'
 import PricingTeaser from '@/components/sections/PricingTeaser'
+import GuaranteeStrip from '@/components/sections/GuaranteeStrip'
 import { SITE_URL } from '@/lib/siteUrl'
 
 export async function generateStaticParams() {
@@ -180,6 +181,11 @@ export default function ServicesHub({ params }: { params: { locale: string } }) 
         </section>
 
         <PricingTeaser locale={params.locale} />
+
+        {/* True-facts guarantee strip */}
+        <section className="container-edge pt-16">
+          <GuaranteeStrip locale={params.locale} variant="compact" />
+        </section>
 
         {/* CTA */}
         <section className="container-edge py-20 text-center">

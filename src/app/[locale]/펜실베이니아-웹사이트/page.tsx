@@ -88,8 +88,8 @@ export default function PAWebsiteKoreanPage({ params }: { params: { locale: stri
       {
         '@type': 'Question', name: isKorean ? '펜실베이니아 웹사이트 제작 비용은 얼마인가요?' : 'How much does website design cost in Pennsylvania?',
         acceptedAnswer: { '@type': 'Answer', text: isKorean
-          ? 'ZOE LUMOS의 펜실베이니아 웹사이트 제작 비용은 기본 비즈니스 웹사이트 $1,000-$2,500, Shopify 이커머스 쇼핑몰 $3,000-$6,000입니다. 필라델피아, 킹오브프러시아 등 펜실베이니아 전 지역 동일 가격입니다. 화상 미팅으로 무료 상담이 가능합니다.'
-          : 'ZOE LUMOS website design in Pennsylvania: basic business websites $1,000-$2,500, Shopify e-commerce $3,000-$6,000. Same pricing across Philadelphia and King of Prussia. Free consultation via video call.' },
+          ? 'ZOE LUMOS의 펜실베이니아 웹사이트 제작 비용은 기본 웹사이트 $500-$800, 일반 비즈니스 웹사이트 $1,100-$1,500, Shopify 이커머스 쇼핑몰 $1,800-$2,400입니다. 필라델피아, 킹오브프러시아 등 펜실베이니아 전 지역 동일 가격입니다. 화상 미팅으로 무료 상담이 가능합니다.'
+          : 'ZOE LUMOS website design in Pennsylvania: basic websites $500-$800, standard business websites $1,100-$1,500, Shopify e-commerce $1,800-$2,400. Same pricing across Philadelphia and King of Prussia. Free consultation via video call.' },
       },
       {
         '@type': 'Question', name: isKorean ? '필라델피아에서 한국어 웹사이트 제작이 가능한가요?' : 'Can you create Korean websites in Philadelphia?',
@@ -137,8 +137,8 @@ export default function PAWebsiteKoreanPage({ params }: { params: { locale: stri
   ]
 
   const services = [
-    { icon: <Globe className="w-8 h-8" />, title: isKorean ? '비즈니스 웹사이트' : 'Business Website', desc: isKorean ? '전문적인 회사 소개 사이트' : 'Professional company website', price: '$1,000~' },
-    { icon: <Building2 className="w-8 h-8" />, title: isKorean ? '이커머스 쇼핑몰' : 'E-commerce Store', desc: isKorean ? 'Shopify 기반 온라인 스토어' : 'Shopify-based online store', price: '$3,000~' },
+    { icon: <Globe className="w-8 h-8" />, title: isKorean ? '비즈니스 웹사이트' : 'Business Website', desc: isKorean ? '전문적인 회사 소개 사이트' : 'Professional company website', price: '$500~' },
+    { icon: <Building2 className="w-8 h-8" />, title: isKorean ? '이커머스 쇼핑몰' : 'E-commerce Store', desc: isKorean ? 'Shopify 기반 온라인 스토어' : 'Shopify-based online store', price: '$1,800~' },
     { icon: <Search className="w-8 h-8" />, title: isKorean ? '펜실베이니아 SEO' : 'PA SEO', desc: isKorean ? '구글 상위 노출 최적화' : 'Google ranking optimization', price: '$500/mo~' },
     { icon: <Zap className="w-8 h-8" />, title: isKorean ? '구글 광고' : 'Google Ads', desc: isKorean ? 'PPC 광고 관리' : 'PPC advertising management', price: '$300/mo~' },
   ]

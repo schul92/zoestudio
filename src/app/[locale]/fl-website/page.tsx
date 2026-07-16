@@ -35,7 +35,7 @@ export default function FLWebsitePage({ params }: { params: { locale: string } }
   const locale = params.locale as 'en' | 'ko'
   const baseUrl = SITE_URL
   const ko = locale === 'ko'
-  const schema = { '@context': 'https://schema.org', '@type': 'ProfessionalService', name: 'ZOE LUMOS - Florida Website Design', description: ko ? '플로리다 한인 비즈니스를 위한 웹사이트 제작 전문' : 'Website design for Korean-American businesses in Florida', url: `${baseUrl}/${ko ? 'ko/' : ''}fl-website`, email: 'info@zoelumos.com', areaServed: [{ '@type': 'City', name: 'Miami' }, { '@type': 'City', name: 'Orlando' }, { '@type': 'City', name: 'Tampa' }, { '@type': 'City', name: 'Jacksonville' }], priceRange: '$1,000-$10,000' }
+  const schema = { '@context': 'https://schema.org', '@type': 'ProfessionalService', name: 'ZOE LUMOS - Florida Website Design', description: ko ? '플로리다 한인 비즈니스를 위한 웹사이트 제작 전문' : 'Website design for Korean-American businesses in Florida', url: `${baseUrl}/${ko ? 'ko/' : ''}fl-website`, email: 'info@zoelumos.com', areaServed: [{ '@type': 'City', name: 'Miami' }, { '@type': 'City', name: 'Orlando' }, { '@type': 'City', name: 'Tampa' }, { '@type': 'City', name: 'Jacksonville' }], priceRange: '$500-$2,400' }
 
   return (
     <>

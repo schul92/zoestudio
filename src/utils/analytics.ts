@@ -221,6 +221,20 @@ export const trackKakaoClick = (location: string) => {
   }
 }
 
+// Track lead-magnet email submissions (e.g. the KakaoTalk checklist) — fires
+// the same GA4 `generate_lead` key event as the contact form, with its own
+// lead_source so magnet leads are separable in reports.
+export const trackChecklistLead = (leadSource: string) => {
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('event', 'generate_lead', {
+      currency: 'USD',
+      value: 1,
+      lead_source: leadSource,
+      page_path: window.location.pathname,
+    })
+  }
+}
+
 // Track email clicks
 export const trackEmailClick = (email: string) => {
   trackGAEvent('email_click', {

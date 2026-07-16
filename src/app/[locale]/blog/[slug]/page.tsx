@@ -6,6 +6,7 @@ import HeaderWrapper from '@/components/layout/HeaderWrapper'
 import Footer from '@/components/layout/Footer'
 import RelatedCluster from '@/components/blog/RelatedCluster'
 import ReadingProgress from '@/components/blog/ReadingProgress'
+import KakaoChecklistMagnet from '@/components/blog/KakaoChecklistMagnet'
 import { blogContent, BlogSection } from '@/data/blogContent'
 import { PILLARS, POST_TO_PILLAR } from '@/data/blogClusters'
 import { MONEY_PAGES, DEFAULT_MONEY_PAGE, pillarHubExists, pillarHubHref } from '@/components/blog/pillarLinks'
@@ -188,6 +189,12 @@ function HowToSchema({
     />
   )
 }
+
+// ─── Lead magnet: posts that surface the KakaoTalk setup checklist ────────────
+const KAKAO_MAGNET_SLUGS = new Set([
+  'kakaotalk-account-without-korean-phone-2026',
+  'kakaotalk-channel-us-korean-business',
+])
 
 // ─── First-mention auto internal links ────────────────────────────────────────
 // Ordered longest-phrase-first ('SEO' last so 'local SEO' / '로컬 SEO' win).
@@ -771,6 +778,9 @@ export default function BlogPostPage({
                   />
                   {showToc && i === tocAfterIndex && (
                     <TableOfContents headings={tocHeadings} locale={locale} />
+                  )}
+                  {KAKAO_MAGNET_SLUGS.has(post.slug) && i === tocAfterIndex && (
+                    <KakaoChecklistMagnet locale={locale} />
                   )}
                   {i === midCtaIndex && (
                     <MidArticleCta prefix={prefix} locale={locale} moneyHref={moneyHref} />

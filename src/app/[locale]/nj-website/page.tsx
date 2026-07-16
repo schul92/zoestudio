@@ -136,7 +136,7 @@ export default function NJWebsitePage({ params }: { params: { locale: string } }
         name: '뉴저지에서 웹사이트 제작 비용은 얼마인가요?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: '뉴저지 웹사이트 제작 비용은 $1,000부터 시작합니다. 소규모 비즈니스는 $1,000-$3,000, 이커머스는 $3,000-$6,000 수준입니다. 포트리, 팰팍, 에디슨 전 지역 동일 가격입니다.'
+          text: '뉴저지 웹사이트 제작 비용은 $500부터 시작합니다. 기본 $500-$800, 일반 $1,100-$1,500, 스토어(이커머스)는 $1,800-$2,400 수준입니다. 포트리, 팰팍, 에디슨 전 지역 동일 가격입니다.'
         }
       },
       {
@@ -161,7 +161,7 @@ export default function NJWebsitePage({ params }: { params: { locale: string } }
         name: 'How much does website design cost in New Jersey?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Website design in New Jersey starts at $1,000. Small business websites range from $1,000-$3,000, while e-commerce sites are $3,000-$6,000. Same pricing across Fort Lee, Palisades Park, and Edison.'
+          text: 'Website design in New Jersey starts at $500. Basic sites run $500-$800, standard sites $1,100-$1,500, and store/e-commerce builds $1,800-$2,400. Same pricing across Fort Lee, Palisades Park, and Edison.'
         }
       },
       {

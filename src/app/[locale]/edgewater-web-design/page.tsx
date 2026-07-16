@@ -76,10 +76,10 @@ export default function EdgewaterWebDesignPage({ params }: { params: { locale: s
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: locale === 'ko' ? [
-      { '@type': 'Question', name: '에지워터에서 웹사이트 제작 비용은?', acceptedAnswer: { '@type': 'Answer', text: '에지워터 웹사이트 제작은 $1,000부터 시작합니다. 무료 상담 후 정확한 견적을 드립니다.' } },
+      { '@type': 'Question', name: '에지워터에서 웹사이트 제작 비용은?', acceptedAnswer: { '@type': 'Answer', text: '에지워터 웹사이트 제작은 $500부터 시작합니다. 무료 상담 후 정확한 견적을 드립니다.' } },
       { '@type': 'Question', name: '에지워터 한인 비즈니스 전문 서비스가 있나요?', acceptedAnswer: { '@type': 'Answer', text: '네, 에지워터와 주변 포트리, 팰팍 한인 비즈니스를 위한 이중언어 웹사이트, 한국어 SEO, 커뮤니티 마케팅을 제공합니다.' } },
     ] : [
-      { '@type': 'Question', name: 'How much does web design cost in Edgewater?', acceptedAnswer: { '@type': 'Answer', text: 'Edgewater web design starts at $1,000. Free consultation to get an exact quote.' } },
+      { '@type': 'Question', name: 'How much does web design cost in Edgewater?', acceptedAnswer: { '@type': 'Answer', text: 'Edgewater web design starts at $500. Free consultation to get an exact quote.' } },
       { '@type': 'Question', name: 'Do you work with Korean businesses near Mitsuwa?', acceptedAnswer: { '@type': 'Answer', text: 'Yes! We work with many Korean and Japanese businesses near Mitsuwa Marketplace in Edgewater. Bilingual websites, local SEO, and community marketing.' } },
     ]
   }

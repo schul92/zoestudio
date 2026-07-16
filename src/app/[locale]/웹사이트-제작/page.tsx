@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import HeaderWrapper from '@/components/layout/HeaderWrapper'
 import Footer from '@/components/layout/Footer'
 import Contact from '@/components/sections/Contact'
+import GuaranteeStrip from '@/components/sections/GuaranteeStrip'
 import Link from 'next/link'
 import { Globe, Smartphone, Zap, Shield, CheckCircle, Star, Clock, DollarSign, ArrowRight, MessageCircle } from 'lucide-react'
 import { usStates } from '@/data/usStates'
@@ -20,8 +21,8 @@ export async function generateMetadata({ params }: { params: { locale: string } 
       ? '미국 웹사이트 제작 | 미국 홈페이지 제작 전문 | 한인 웹디자인 에이전시 | ZOE LUMOS'
       : 'US Website Design for Korean Businesses | Professional Web Agency | ZOE LUMOS',
     description: locale === 'ko'
-      ? '미국 웹사이트 제작 전문 에이전시 ZOE LUMOS. 미국 한인 비즈니스를 위한 이중언어 홈페이지 제작, SEO 최적화, 구글 광고. NJ, NY, LA, 전국 서비스. $1,000부터. 무료 상담.'
-      : 'Professional US website design for Korean-American businesses. Bilingual websites, SEO, Google Ads. Serving NJ, NY, LA, and nationwide. From $1,000. Free consultation.',
+      ? '미국 웹사이트 제작 전문 에이전시 ZOE LUMOS. 미국 한인 비즈니스를 위한 이중언어 홈페이지 제작, SEO 최적화, 구글 광고. NJ, NY, LA, 전국 서비스. $500부터. 무료 상담.'
+      : 'Professional US website design for Korean-American businesses. Bilingual websites, SEO, Google Ads. Serving NJ, NY, LA, and nationwide. From $500. Free consultation.',
     keywords: locale === 'ko'
       ? '미국 웹사이트 제작, 미국 홈페이지 제작, 미국 웹사이트 만들기, 한인 웹사이트 제작, 미국 웹디자인, 한인 홈페이지, 뉴욕 웹사이트 제작, 뉴저지 웹사이트 제작, 엘에이 웹사이트 제작, 미국 웹사이트 제작 비용, 미국 홈페이지 제작 비용, 이중언어 웹사이트'
       : 'US website design, Korean American web design, bilingual website, Korean web agency, NY web design, NJ web design, LA web design, Korean business website, SEO website',
@@ -63,9 +64,9 @@ export default function WebsiteDesignPage({ params }: { params: { locale: string
       '@type': 'OfferCatalog',
       name: isKorean ? '웹사이트 제작 패키지' : 'Website Design Packages',
       itemListElement: [
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Basic Website' }, price: '1000', priceCurrency: 'USD' },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Business Website' }, price: '2000', priceCurrency: 'USD' },
-        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Custom Website' }, price: '3500', priceCurrency: 'USD' },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Basic Website' }, price: '500', priceCurrency: 'USD' },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Standard Website' }, price: '1100', priceCurrency: 'USD' },
+        { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Store / E-commerce Website' }, price: '1800', priceCurrency: 'USD' },
       ],
     },
   }
@@ -80,8 +81,8 @@ export default function WebsiteDesignPage({ params }: { params: { locale: string
         acceptedAnswer: {
           '@type': 'Answer',
           text: isKorean
-            ? '조이루모스(ZOE LUMOS)의 웹사이트 제작 비용은 기본 웹사이트 $1,000부터, 비즈니스 웹사이트 $2,000부터, 커스텀 웹사이트 $3,500부터 시작합니다.'
-            : 'Basic websites start at $1,000, business websites at $2,000, and custom websites at $3,500.',
+            ? '조이루모스(ZOE LUMOS)의 웹사이트 제작 비용은 기본 웹사이트 $500–$800, 일반 웹사이트 $1,100–$1,500, 스토어(이커머스) $1,800–$2,400입니다. 월 관리 플랜을 12개월 약정하면 제작 셋업비가 면제됩니다.'
+            : 'Basic websites run $500-$800, standard websites $1,100-$1,500, and store/e-commerce builds $1,800-$2,400. A 12-month monthly care-plan commitment waives the build setup fee.',
         },
       },
       {
@@ -110,8 +111,8 @@ export default function WebsiteDesignPage({ params }: { params: { locale: string
         acceptedAnswer: {
           '@type': 'Answer',
           text: isKorean
-            ? '웹사이트 제작 문의는 전화, 이메일, 또는 홈페이지 문의 폼을 통해 가능합니다. 무료 상담을 통해 프로젝트 범위, 일정, 견적을 안내드립니다. 지금 바로 문의하시면 24시간 이내에 답변드립니다.'
-            : 'You can inquire via phone, email, or our website contact form. We offer a free consultation to discuss project scope, timeline, and pricing. Contact us now and we will respond within 24 hours.',
+            ? '웹사이트 제작 문의는 이메일(info@zoelumos.com), 카카오톡 채널, 또는 홈페이지 문의 폼을 통해 가능합니다. 무료 상담을 통해 프로젝트 범위, 일정, 견적을 안내드립니다. 지금 바로 문의하시면 영업일 기준 24시간 이내에 답변드립니다.'
+            : 'You can inquire via email (info@zoelumos.com), KakaoTalk, or our website contact form. We offer a free consultation to discuss project scope, timeline, and pricing. Contact us now and we will respond within one business day.',
         },
       },
       {
@@ -120,8 +121,8 @@ export default function WebsiteDesignPage({ params }: { params: { locale: string
         acceptedAnswer: {
           '@type': 'Answer',
           text: isKorean
-            ? '웹사이트 제작 비용 문의는 무료 상담을 통해 정확한 견적을 받으실 수 있습니다. 기본 $1,000부터 시작하며, 비즈니스 규모와 필요한 기능에 따라 맞춤 견적을 제공합니다. 부담 없이 문의해주세요.'
-            : 'You can get an accurate quote through our free consultation. Starting at $1,000, we provide custom quotes based on your business size and required features. Feel free to reach out anytime.',
+            ? '웹사이트 제작 비용 문의는 무료 상담을 통해 정확한 견적을 받으실 수 있습니다. 기본 $500부터 시작하며, 비즈니스 규모와 필요한 기능에 따라 맞춤 견적을 제공합니다. 부담 없이 문의해주세요.'
+            : 'You can get an accurate quote through our free consultation. Starting at $500, we provide custom quotes based on your business size and required features. Feel free to reach out anytime.',
         },
       },
       {
@@ -130,8 +131,8 @@ export default function WebsiteDesignPage({ params }: { params: { locale: string
         acceptedAnswer: {
           '@type': 'Answer',
           text: isKorean
-            ? '미국 웹사이트 제작 비용은 보통 소규모 홈페이지 약 $1,000부터, 비즈니스용 $2,000~3,000, 맞춤 제작 $3,500~6,000 수준입니다. 페이지 수, 기능, 이중언어 여부에 따라 달라지며, 무료 상담 후 정확한 견적을 안내드립니다.'
-            : 'US website design typically costs from about $1,000 for a small site, $2,000-3,000 for a business site, and $3,500-6,000 for a custom build. The price depends on page count, features, and bilingual needs, with an exact quote after a free consultation.',
+            ? '조이루모스의 미국 웹사이트 제작 비용은 소규모 홈페이지 $500~800, 일반 비즈니스용 $1,100~1,500, 스토어(이커머스) $1,800~2,400입니다. 페이지 수, 기능, 이중언어 여부에 따라 달라지며, 무료 상담 후 정확한 견적을 안내드립니다.'
+            : 'ZOE LUMOS US website builds cost $500-800 for a small site, $1,100-1,500 for a standard business site, and $1,800-2,400 for a store/e-commerce build. The price depends on page count, features, and bilingual needs, with an exact quote after a free consultation.',
         },
       },
       {
@@ -159,29 +160,29 @@ export default function WebsiteDesignPage({ params }: { params: { locale: string
 
   const packages = [
     {
-      name: isKorean ? '베이직' : 'Basic',
-      price: '$1,000',
+      name: isKorean ? '기본' : 'Basic',
+      price: '$500–800',
       desc: isKorean ? '소규모 비즈니스용' : 'For small businesses',
       features: isKorean
-        ? ['5페이지 이하', '반응형 디자인', '기본 SEO', '연락처 폼', '1개월 무료 유지보수']
-        : ['Up to 5 pages', 'Responsive design', 'Basic SEO', 'Contact form', '1 month free support'],
+        ? ['5페이지 이하', '반응형 디자인', '기본 SEO', '연락처 폼', '단계별 수정 2회']
+        : ['Up to 5 pages', 'Responsive design', 'Basic SEO', 'Contact form', '2 revision rounds per phase'],
     },
     {
-      name: isKorean ? '비즈니스' : 'Business',
-      price: '$2,000',
+      name: isKorean ? '일반' : 'Standard',
+      price: '$1,100–1,500',
       desc: isKorean ? '성장하는 비즈니스용' : 'For growing businesses',
       popular: true,
       features: isKorean
-        ? ['10페이지 이하', '커스텀 디자인', '고급 SEO', '블로그 기능', '이중언어 지원', '3개월 무료 유지보수']
-        : ['Up to 10 pages', 'Custom design', 'Advanced SEO', 'Blog functionality', 'Bilingual support', '3 months free support'],
+        ? ['6–15페이지', '커스텀 디자인', '고급 SEO', '블로그 기능', '이중언어 지원', '단계별 수정 2회']
+        : ['6–15 pages', 'Custom design', 'Advanced SEO', 'Blog functionality', 'Bilingual support', '2 revision rounds per phase'],
     },
     {
-      name: isKorean ? '커스텀' : 'Custom',
-      price: '$3,500+',
-      desc: isKorean ? '맞춤 솔루션' : 'Tailored solutions',
+      name: isKorean ? '스토어' : 'Store',
+      price: '$1,800–2,400',
+      desc: isKorean ? 'Shopify · 이커머스' : 'Shopify · e-commerce',
       features: isKorean
-        ? ['무제한 페이지', '완전 맞춤 디자인', '프리미엄 SEO', '고급 기능', 'API 연동', '6개월 무료 유지보수']
-        : ['Unlimited pages', 'Fully custom design', 'Premium SEO', 'Advanced features', 'API integrations', '6 months free support'],
+        ? ['상품 · 결제 연동', '주문 · 예약 기능', '커스텀 디자인', '이중언어 지원', '프리미엄 SEO', '단계별 수정 2회']
+        : ['Products & checkout', 'Ordering or booking', 'Custom design', 'Bilingual support', 'Premium SEO', '2 revision rounds per phase'],
     },
   ]
 
@@ -288,8 +289,8 @@ export default function WebsiteDesignPage({ params }: { params: { locale: string
             <h2 className="text-3xl font-bold text-center mb-4">{isKorean ? '미국 웹사이트 제작 비용 · 패키지' : 'US Website Design Pricing & Packages'}</h2>
             <p className="text-center text-gray-600 max-w-2xl mx-auto mb-10">
               {isKorean
-                ? '미국 웹사이트 제작 비용은 페이지 수와 기능에 따라 달라집니다. 소규모 홈페이지는 약 $1,000부터, 성장하는 비즈니스용은 $2,000~3,000, 맞춤 제작은 $3,500~6,000 수준입니다. 모든 견적은 무료 상담 후 확정됩니다.'
-                : 'US website design cost depends on page count and features. Small sites start around $1,000, growing-business sites run $2,000-3,000, and fully custom builds range $3,500-6,000. Every quote is finalized after a free consultation.'}
+                ? '미국 웹사이트 제작 비용은 페이지 수와 기능에 따라 달라집니다. 기본 홈페이지 $500~800, 일반 비즈니스용 $1,100~1,500, 스토어(이커머스) $1,800~2,400입니다. 월 관리 플랜 12개월 약정 시 셋업비가 면제되며, 모든 견적은 무료 상담 후 확정됩니다.'
+                : 'US website design cost depends on page count and features. Basic sites run $500-800, standard business sites $1,100-1,500, and store/e-commerce builds $1,800-2,400. A 12-month care-plan commitment waives the setup fee, and every quote is finalized after a free consultation.'}
             </p>
 
             <div className="grid md:grid-cols-3 gap-8">
@@ -371,6 +372,13 @@ export default function WebsiteDesignPage({ params }: { params: { locale: string
             </div>
           </section>
         )}
+
+        {/* True-facts guarantee strip */}
+        <section className="py-10 px-4 bg-white">
+          <div className="max-w-4xl mx-auto">
+            <GuaranteeStrip locale={locale} variant="compact" />
+          </div>
+        </section>
 
         {/* 문의하기 CTA */}
         <section className="py-16 px-4 bg-gradient-to-r from-violet-600 to-purple-700 text-white">

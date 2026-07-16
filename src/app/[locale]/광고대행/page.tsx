@@ -3,6 +3,7 @@ import HeaderWrapper from '@/components/layout/HeaderWrapper'
 import Footer from '@/components/layout/Footer'
 import Contact from '@/components/sections/Contact'
 import PricingTeaser from '@/components/sections/PricingTeaser'
+import GuaranteeStrip from '@/components/sections/GuaranteeStrip'
 import Link from 'next/link'
 import {
   Megaphone, Search, Instagram, Star, Users, CheckCircle, BarChart3,
@@ -607,6 +608,13 @@ export default function AdvertisingKoreanPage({ params }: { params: { locale: st
 
         {/* Pricing Teaser */}
         <PricingTeaser locale={params.locale} />
+
+        {/* True-facts guarantee strip */}
+        <section className="py-10 px-4 bg-white">
+          <div className="max-w-4xl mx-auto">
+            <GuaranteeStrip locale={params.locale} variant="compact" />
+          </div>
+        </section>
 
         {/* FAQ Section */}
         <section className="py-16 px-4 bg-gray-50 text-gray-900">
