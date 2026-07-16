@@ -190,7 +190,7 @@ export default function IndustriesIndex({ params }: { params: { locale: string }
               <div className="md:col-span-4 md:text-right">
                 <Magnetic strength={14}>
                   <Link
-                    href={`${prefix}/#contact`}
+                    href={`${prefix}/contact`}
                     data-cursor={isKo ? '시작' : 'Begin'}
                     className="btn-ink"
                   >

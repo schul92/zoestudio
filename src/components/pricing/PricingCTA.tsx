@@ -46,7 +46,7 @@ export default function PricingCTA({ tierId, tierName, locale, isEnterprise = fa
     if (isEnterprise) {
       // For Enterprise, go directly to contact
       setTimeout(() => {
-        window.location.href = `${locale === 'ko' ? '/ko' : '/'}#contact`
+        window.location.href = `${locale === 'ko' ? '/ko' : ''}/contact`
       }, 500)
     } else {
       // For other tiers, show subscription selection
@@ -80,7 +80,7 @@ export default function PricingCTA({ tierId, tierName, locale, isEnterprise = fa
   }
 
   const handleContinue = () => {
-    window.location.href = `${locale === 'ko' ? '/ko' : '/'}#contact`
+    window.location.href = `${locale === 'ko' ? '/ko' : ''}/contact`
   }
 
   return (

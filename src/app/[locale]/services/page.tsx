@@ -191,7 +191,7 @@ export default function ServicesHub({ params }: { params: { locale: string } }) 
               ? '지금 연락주시면 비즈니스에 맞는 가장 빠른 길을 한국어로 함께 정리해 드립니다.'
               : 'Reach out and we will map the fastest path for your business — in English or Korean.'}
           </p>
-          <Link href={`${p}/#contact`} className="btn-ink">
+          <Link href={`${p}/contact`} className="btn-ink">
             {isKo ? '무료 상담 신청' : 'Get a free consultation'}
             <span className="arrow">→</span>
           </Link>

@@ -183,7 +183,7 @@ export default function PillarPage({
               ? '한인 비즈니스를 위한 이중언어 웹사이트·SEO·GEO. 무료 30분 상담으로 시작하세요.'
               : 'Bilingual websites, SEO, and GEO for Korean-American businesses. Start with a free 30-minute consultation.'}
           </p>
-          <Link href={`${prefix}/#contact`} className="btn-ink">
+          <Link href={`${prefix}/contact`} className="btn-ink">
             {isKo ? '상담 시작하기' : 'Start a conversation'}
             <span className="arrow">→</span>
           </Link>

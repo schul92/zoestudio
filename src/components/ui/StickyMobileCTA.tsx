@@ -83,7 +83,7 @@ export default function StickyMobileCTA({ locale = 'en' }: { locale?: string }) 
           {isKo ? '카톡 상담' : 'KakaoTalk'}
         </a>
         <Link
-          href={`${prefix}/#contact`}
+          href={`${prefix}/contact`}
           onClick={() => track('quote')}
           tabIndex={show ? 0 : -1}
           className="flex items-center justify-center gap-2 bg-ink py-4 text-[15px] font-semibold text-ivory active:opacity-90"

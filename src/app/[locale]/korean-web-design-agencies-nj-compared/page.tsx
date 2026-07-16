@@ -492,7 +492,7 @@ export default function Page({ params }: { params: { locale: string } }) {
           <h2 className="font-display text-display-md md:text-display-lg tracking-luxury mb-6">{t.cta}</h2>
           <p className="text-body-lg text-graphite max-w-2xl mb-10 leading-[1.7]">{t.ctaSub}</p>
           <Link
-            href={`${prefix}/#contact`}
+            href={`${prefix}/contact`}
             className="inline-flex items-center gap-3 px-8 py-5 rounded-full bg-ink text-ivory text-[16px]"
           >
             {t.cta} <span aria-hidden>→</span>

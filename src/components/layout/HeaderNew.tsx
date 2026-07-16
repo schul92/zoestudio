@@ -131,7 +131,7 @@ export default function HeaderNew({ locale = 'en' }: { locale?: string }) {
             </Link>
 
             <Link
-              href={`${prefix}/#contact`}
+              href={`${prefix}/contact`}
               className="hidden md:inline-flex items-center gap-2 text-[15px] font-medium text-ink"
             >
               <span className="relative">
@@ -191,7 +191,7 @@ export default function HeaderNew({ locale = 'en' }: { locale?: string }) {
             <Link href={otherLocaleHref} className="overline text-ink">
               {locale === 'ko' ? 'English' : '한국어'}
             </Link>
-            <Link href={`${prefix}/#contact`} className="btn-ink">
+            <Link href={`${prefix}/contact`} className="btn-ink">
               {locale === 'ko' ? '프로젝트 의뢰' : 'Start a project'}
               <span className="arrow">→</span>
             </Link>

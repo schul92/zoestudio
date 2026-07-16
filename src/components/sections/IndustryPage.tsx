@@ -71,7 +71,7 @@ export default function IndustryPage({
           <div className="mt-12 md:mt-16 flex flex-col sm:flex-row flex-wrap items-start sm:items-center gap-5">
             <Magnetic strength={14}>
               <Link
-                href={`${prefix}/#contact`}
+                href={`${prefix}/contact`}
                 data-cursor={isKo ? '시작' : 'Begin'}
                 className="btn-ink"
               >
@@ -348,7 +348,7 @@ export default function IndustryPage({
             <div className="md:col-span-4 md:text-right flex flex-col sm:flex-row md:flex-col md:items-end gap-4">
               <Magnetic strength={14}>
                 <Link
-                  href={`${prefix}/#contact`}
+                  href={`${prefix}/contact`}
                   data-cursor={isKo ? '시작' : 'Begin'}
                   className="btn-ink"
                 >

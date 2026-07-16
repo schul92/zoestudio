@@ -330,7 +330,7 @@ export default function ReviewsPage({ params }: { params: { locale: string } }) 
             <h2 className="text-2xl md:text-3xl font-bold mb-4">{t.cta.title}</h2>
             <p className="text-gray-300 mb-8">{t.cta.subtitle}</p>
             <Link
-              href={`${prefix}#contact`}
+              href={`${prefix}/contact`}
               className="inline-block bg-white text-black font-semibold px-8 py-4 rounded-full hover:bg-gray-100 transition-colors"
             >
               {t.cta.button}

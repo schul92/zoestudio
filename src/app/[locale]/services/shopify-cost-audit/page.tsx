@@ -319,7 +319,7 @@ export default function Page({ params }: { params: { locale: string } }) {
         {/* CTA */}
         <section className="container-edge py-20 md:py-28 border-t border-hairline">
           <Link
-            href={`${prefix}/#contact`}
+            href={`${prefix}/contact`}
             className="inline-flex items-center gap-3 px-8 py-5 rounded-full bg-ink text-ivory text-[16px]"
           >
             {t.cta} <span aria-hidden>→</span>
