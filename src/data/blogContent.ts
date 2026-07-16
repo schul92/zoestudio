@@ -3240,6 +3240,10 @@ export const blogContent: BlogPost[] = [
         ]
       },
       {
+        type: 'cta',
+        content: 'Getting your personal KakaoTalk working is step one — putting it to work for your business is where the payoff is. If you run a business serving Korean-American customers in the US, ZOE LUMOS connects KakaoTalk, your website, and your booking flow so every inquiry lands in one place you actually check. The consultation is free, in English or Korean, by email or right on KakaoTalk.'
+      },
+      {
         type: 'h2',
         content: 'Re-verifying an existing account on a new US number'
       },
@@ -3324,6 +3328,10 @@ export const blogContent: BlogPost[] = [
           '"시도 횟수 초과" — 재전송을 계속 누르지 말고 30~60분 기다렸다 다시 하거나 이메일 인증으로 바꾸세요.',
           '이전 번호가 아직 연결됨 — 번호가 이미 사용 중이라고 나오면 예전 계정에 연결되어 있을 가능성이 큽니다. 새로 만들지 말고 그 계정을 재인증하세요.'
         ]
+      },
+      {
+        type: 'cta',
+        content: '개인 계정 세팅은 첫걸음일 뿐입니다. 미국에서 한인 비즈니스를 운영하고 계신다면, 카카오톡을 손님이 실제로 문의하고 예약하는 창구로 바꿀 수 있습니다. ZOE LUMOS가 카카오톡 채널과 웹사이트, 예약 흐름을 하나로 연결해 드립니다. 무료 상담은 이메일이나 카카오톡으로, 한국어로 편하게 시작하세요.'
       },
       {
         type: 'h2',
@@ -6508,6 +6516,7 @@ export const blogContent: BlogPost[] = [
         { type: 'h2', content: 'Using Channel for marketing' },
         { type: 'p', content: 'Once you have followers (we aim for 200+ in the first 6 months for a local business), the broadcast message feature becomes incredibly powerful. You can send announcements to ALL followers at once — menu specials, seasonal promotions, new service launches, holiday hours, event invitations. Open rates for KakaoTalk business messages are typically 70%+ — dramatically higher than email (20%) or SMS (40%). One well-timed "이번주 토요일 한정 — 김치전 50% 할인!" message can drive significant same-day traffic to a Korean restaurant.' },
         { type: 'tip', content: 'Pro Tip: Use KakaoTalk Channel messages sparingly. A healthy cadence is 1–2 broadcast messages per week maximum. Spamming followers is the fastest way to lose them — and Koreans are especially unforgiving of marketing spam in their primary communication app.' },
+        { type: 'cta', content: 'You do not have to wire any of this up alone. ZOE LUMOS builds bilingual websites for Korean-owned businesses across the US with KakaoTalk Channel integration included — chat button, contact page placement, and automated flows. Start with a free consultation, by email or KakaoTalk, in English or Korean, and we will tell you exactly what your setup needs.' },
         { type: 'h2', content: 'Combining KakaoTalk with your review and referral strategy' },
         { type: 'p', content: 'After a customer completes a transaction (dinner, appointment, service), send a follow-up KakaoTalk message thanking them and asking for a Google review — include a direct link. Response rates for KakaoTalk-based review requests are 3–5x higher than email or text for Korean-American customers. For referral programs, offer a discount code redeemable only through a KakaoTalk message to your Channel. This makes the Channel feel like a loyalty benefit and keeps customers engaged.' },
         { type: 'h2', content: 'Common mistakes to avoid' },
@@ -6545,6 +6554,7 @@ export const blogContent: BlogPost[] = [
         { type: 'h2', content: '마케팅에 활용하기' },
         { type: 'p', content: '팔로워가 쌓이면(로컬 비즈니스라면 6개월 내 200+ 목표) 브로드캐스트 메시지 기능이 엄청나게 강력해집니다. 전체 팔로워에게 한 번에 공지 발송 가능 — 메뉴 스페셜, 시즌 프로모션, 신규 서비스, 공휴일 영업시간, 이벤트 초대. 카카오톡 비즈니스 메시지 오픈율은 보통 70%+ — 이메일(20%)이나 SMS(40%)보다 훨씬 높습니다. 타이밍 좋은 "이번주 토요일 한정 — 김치전 50% 할인!" 메시지 하나가 한식당에 당일 대규모 유입을 만들 수 있습니다.' },
         { type: 'tip', content: '팁: 카카오톡 채널 메시지는 절제해서 사용하세요. 건강한 빈도는 주 1~2회 브로드캐스트 최대. 팔로워에게 스팸 보내는 건 빠른 이탈 지름길 — 한국인은 특히 주 소통 앱에서의 마케팅 스팸에 관대하지 않습니다.' },
+        { type: 'cta', content: '이걸 혼자 다 연결하실 필요는 없습니다. ZOE LUMOS는 미국에서 한인 비즈니스를 운영하시는 사장님들을 위해 카카오톡 채널 연동이 기본 포함된 이중언어 웹사이트를 만듭니다 — 채팅 버튼, 문의 페이지 배치, 자동 응대 흐름까지. 이메일이나 카카오톡으로 무료 상담을 신청하시면 지금 세팅에 무엇이 필요한지 바로 알려드립니다.' },
         { type: 'h2', content: '리뷰/추천 전략과 결합' },
         { type: 'p', content: '고객이 거래(식사, 예약, 서비스) 완료 후 감사와 함께 구글 리뷰 요청 후속 카카오톡 메시지 발송 — 직접 링크 포함. 카카오톡 기반 리뷰 요청 응답률은 한인 고객에서 이메일/문자 대비 3~5배 높습니다. 추천 프로그램은 채널 메시지로만 사용 가능한 할인 코드 제공. 이렇게 하면 채널이 충성도 혜택처럼 느껴지고 고객 관계가 유지됩니다.' },
         { type: 'h2', content: '흔한 실수' },

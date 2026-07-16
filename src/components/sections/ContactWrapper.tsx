@@ -5,6 +5,7 @@ import InView from '@/components/ui/motion/InView'
 import Magnetic from '@/components/ui/motion/Magnetic'
 import Toast, { ToastMessage } from '@/components/ui/motion/Toast'
 import { trackEvent } from '@/components/GoogleAnalytics'
+import { trackKakaoClick } from '@/utils/analytics'
 
 type Status = 'idle' | 'loading' | 'success' | 'error'
 
@@ -390,6 +391,7 @@ export default function ContactWrapper({
                 href={t.altContact.kakaoHref}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackKakaoClick('contact_section')}
                 className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] transition-all duration-200 hover:scale-[1.03]"
                 style={{
                   background: '#FEE500',

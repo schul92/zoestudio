@@ -7,6 +7,7 @@ import { useTranslation } from '@/hooks/useTranslation'
 import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 import { InstagramNavHover, InstagramMobileLink } from '@/components/ui/InstagramHover'
+import { trackKakaoClick } from '@/utils/analytics'
 
 export default function Header({ locale = 'en' }: { locale?: string }) {
   const { t } = useTranslation(locale)
@@ -199,7 +200,10 @@ export default function Header({ locale = 'en' }: { locale?: string }) {
             href="http://pf.kakao.com/_xhxdxmlX/chat"
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => setMobileMenuOpen(false)}
+            onClick={() => {
+              trackKakaoClick('header_mobile_menu')
+              setMobileMenuOpen(false)
+            }}
             className="flex items-center gap-3 py-3 px-4 text-[#FEE500] hover:bg-[#FEE500]/10 rounded-lg transition-colors text-lg font-medium"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none">

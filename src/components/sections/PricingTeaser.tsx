@@ -192,6 +192,13 @@ function Estimator({ isKo, prefix }: { isKo: boolean; prefix: string }) {
               href={KAKAO_CHAT_URL}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() =>
+                track('kakao_click', {
+                  link_location: 'pricing_teaser',
+                  lead_source: 'kakao_chat',
+                  page_path: window.location.pathname,
+                })
+              }
               className="inline-flex items-center justify-center min-h-[44px] px-6 rounded-full bg-[#151414] text-[#f2ece2] text-[14px] transition-colors hover:bg-[#2c2a28]"
             >
               {isKo ? '카톡으로 정확한 견적 받기' : 'Get an exact quote on KakaoTalk'}

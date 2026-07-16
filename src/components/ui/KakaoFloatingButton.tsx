@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { useServices } from '@/context/ServiceContext'
+import { trackKakaoClick } from '@/utils/analytics'
 
 const KAKAO_CHAT_URL = 'http://pf.kakao.com/_xhxdxmlX/chat'
 
@@ -25,6 +26,7 @@ export default function KakaoFloatingButton() {
       href={KAKAO_CHAT_URL}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => trackKakaoClick('floating_button')}
       aria-label="Chat on KakaoTalk"
       className={`fixed right-4 sm:right-6 bottom-6 z-50 hidden lg:flex items-center gap-2 rounded-full bg-[#FEE500] px-4 py-3 text-[#3C1E1E] shadow-lg transition-all duration-500 hover:scale-105 hover:shadow-xl active:scale-95 ${
         visible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'

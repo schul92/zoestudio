@@ -209,6 +209,18 @@ export const trackPhoneClick = (phoneNumber: string) => {
   })
 }
 
+// Track KakaoTalk chat link clicks (secondary lead channel alongside the
+// contact form — surfaced in GA4 as `kakao_click`)
+export const trackKakaoClick = (location: string) => {
+  if (typeof window !== 'undefined' && window.gtag) {
+    window.gtag('event', 'kakao_click', {
+      link_location: location,
+      lead_source: 'kakao_chat',
+      page_path: window.location.pathname,
+    })
+  }
+}
+
 // Track email clicks
 export const trackEmailClick = (email: string) => {
   trackGAEvent('email_click', {
