@@ -124,7 +124,7 @@ export default function FortLeeWebDesignPage({ params }: { params: { locale: str
         name: '포트리에서 웹사이트 제작 비용은 얼마인가요?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: '포트리 지역 웹사이트 제작은 $1,000부터 시작합니다. 소규모 비즈니스 $1,000-$3,000, 이커머스 $3,000-$6,000. 포트리 현지 사무실에서 무료 상담 가능합니다.'
+          text: '포트리 지역 웹사이트 제작은 $500부터 시작합니다. 기본 $500-$800, 일반 $1,100-$1,500, 이커머스 $1,800-$2,400. 포트리 현지 사무실에서 무료 상담 가능합니다.'
         }
       },
       {
@@ -149,7 +149,7 @@ export default function FortLeeWebDesignPage({ params }: { params: { locale: str
         name: 'How much does web design cost in Fort Lee, NJ?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Fort Lee web design starts at $1,000. Small business sites $1,000-$3,000, e-commerce $3,000-$6,000. Free consultation at our Fort Lee office.'
+          text: 'Fort Lee web design starts at $500. Basic sites $500-$800, standard $1,100-$1,500, e-commerce $1,800-$2,400. Free consultation at our Fort Lee office.'
         }
       },
       {

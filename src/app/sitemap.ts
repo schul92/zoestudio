@@ -50,6 +50,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/compare/best-ecommerce-platform-korean-business-2026',
     '/tools',
     '/tools/website-cost-estimator',
+    '/kakao-checklist',
     // Content-cluster pillar guides
     '/bilingual-seo-guide',
     '/kakaotalk-marketing-guide',

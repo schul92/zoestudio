@@ -35,7 +35,7 @@ export default function MDWebsitePage({ params }: { params: { locale: string } }
   const locale = params.locale as 'en' | 'ko'
   const baseUrl = SITE_URL
   const ko = locale === 'ko'
-  const schema = { '@context': 'https://schema.org', '@type': 'ProfessionalService', name: 'ZOE LUMOS - Maryland Website Design', description: ko ? '메릴랜드 한인 비즈니스를 위한 웹사이트 제작 전문' : 'Website design for Korean-American businesses in Maryland', url: `${baseUrl}/${ko ? 'ko/' : ''}md-website`, email: 'info@zoelumos.com', areaServed: [{ '@type': 'City', name: 'Ellicott City' }, { '@type': 'City', name: 'Columbia' }, { '@type': 'City', name: 'Gaithersburg' }, { '@type': 'City', name: 'Rockville' }], priceRange: '$1,000-$10,000' }
+  const schema = { '@context': 'https://schema.org', '@type': 'ProfessionalService', name: 'ZOE LUMOS - Maryland Website Design', description: ko ? '메릴랜드 한인 비즈니스를 위한 웹사이트 제작 전문' : 'Website design for Korean-American businesses in Maryland', url: `${baseUrl}/${ko ? 'ko/' : ''}md-website`, email: 'info@zoelumos.com', areaServed: [{ '@type': 'City', name: 'Ellicott City' }, { '@type': 'City', name: 'Columbia' }, { '@type': 'City', name: 'Gaithersburg' }, { '@type': 'City', name: 'Rockville' }], priceRange: '$500-$2,400' }
 
   return (
     <>

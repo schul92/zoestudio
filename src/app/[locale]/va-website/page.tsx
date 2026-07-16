@@ -35,7 +35,7 @@ export default function VAWebsitePage({ params }: { params: { locale: string } }
   const locale = params.locale as 'en' | 'ko'
   const baseUrl = SITE_URL
   const ko = locale === 'ko'
-  const schema = { '@context': 'https://schema.org', '@type': 'ProfessionalService', name: 'ZOE LUMOS - Virginia Website Design', description: ko ? '버지니아 한인 비즈니스를 위한 웹사이트 제작 전문' : 'Website design for Korean-American businesses in Virginia', url: `${baseUrl}/${ko ? 'ko/' : ''}va-website`, email: 'info@zoelumos.com', areaServed: [{ '@type': 'City', name: 'Annandale' }, { '@type': 'City', name: 'Centreville' }, { '@type': 'City', name: 'Fairfax' }, { '@type': 'City', name: 'Chantilly' }], priceRange: '$1,000-$10,000' }
+  const schema = { '@context': 'https://schema.org', '@type': 'ProfessionalService', name: 'ZOE LUMOS - Virginia Website Design', description: ko ? '버지니아 한인 비즈니스를 위한 웹사이트 제작 전문' : 'Website design for Korean-American businesses in Virginia', url: `${baseUrl}/${ko ? 'ko/' : ''}va-website`, email: 'info@zoelumos.com', areaServed: [{ '@type': 'City', name: 'Annandale' }, { '@type': 'City', name: 'Centreville' }, { '@type': 'City', name: 'Fairfax' }, { '@type': 'City', name: 'Chantilly' }], priceRange: '$500-$2,400' }
 
   return (
     <>

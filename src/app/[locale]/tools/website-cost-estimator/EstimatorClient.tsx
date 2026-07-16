@@ -52,7 +52,7 @@ const copy = {
     resultEyebrow: 'Your estimate',
     estimateNote: 'One-time build, USD · varies by project scope',
     recommended: 'Matching tier',
-    tiers: { hobby: 'Hobby', plus: 'Plus', pro: 'Pro', custom: 'Enterprise / Custom' },
+    tiers: { basic: 'Basic ($500–800)', standard: 'Standard ($1,100–1,500)', store: 'Store ($1,800–2,400)', custom: 'Custom quote' },
     monthlyHeading: 'Monthly care plans',
     monthlyFrom: 'From $49/mo',
     monthlyFraming: 'Commit to 12 months and your website build setup fee is waived.',
@@ -131,7 +131,7 @@ const copy = {
     resultEyebrow: '예상 견적',
     estimateNote: '일회성 제작, USD · 프로젝트 범위에 따라 변동',
     recommended: '해당 패키지',
-    tiers: { hobby: 'Hobby', plus: 'Plus', pro: 'Pro', custom: 'Enterprise / 맞춤' },
+    tiers: { basic: '기본 ($500–800)', standard: '일반 ($1,100–1,500)', store: '스토어 ($1,800–2,400)', custom: '맞춤 견적' },
     monthlyHeading: '월 관리 플랜',
     monthlyFrom: '월 $49부터',
     monthlyFraming: '12개월 약정 시 웹사이트 제작 셋업비 면제.',
@@ -209,7 +209,7 @@ export default function EstimatorClient({ locale = 'en' }: { locale?: 'en' | 'ko
     const lo = round50(subtotal * 0.85)
     const hi = round50(subtotal * 1.15)
     const tierKey: keyof typeof t.tiers =
-      hi <= 800 ? 'hobby' : hi <= 1600 ? 'plus' : hi <= 3200 ? 'pro' : 'custom'
+      hi <= 800 ? 'basic' : hi <= 1600 ? 'standard' : hi <= 2600 ? 'store' : 'custom'
     return { low: lo, high: hi, tier: t.tiers[tierKey] }
   }, [type, band, feats, time, t])
 

@@ -135,7 +135,7 @@ export default function NYWebsitePage({ params }: { params: { locale: string } }
         name: 'Flushing',
       }
     ],
-    priceRange: '$1,000-$10,000',
+    priceRange: '$500-$2,400',
     paymentAccepted: 'Cash, Credit Card, Bank Transfer',
     openingHours: 'Mo-Fr 09:00-18:00',
     geo: {
@@ -158,7 +158,7 @@ export default function NYWebsitePage({ params }: { params: { locale: string } }
         name: '뉴욕에서 웹사이트 제작 비용은 얼마인가요?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: '뉴욕 웹사이트 제작 비용은 $1,000부터 시작합니다. 소규모 비즈니스는 $1,000-$3,000, 이커머스는 $3,000-$6,000 수준입니다. 맨하탄, 브루클린, 퀸즈 전 지역 동일 가격입니다.'
+          text: '뉴욕 웹사이트 제작 비용은 $500부터 시작합니다. 기본 $500-$800, 일반 $1,100-$1,500, 스토어(이커머스)는 $1,800-$2,400 수준입니다. 맨하탄, 브루클린, 퀸즈 전 지역 동일 가격입니다.'
         }
       },
       {
@@ -183,7 +183,7 @@ export default function NYWebsitePage({ params }: { params: { locale: string } }
         name: 'How much does website design cost in New York?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Website design in New York starts at $1,000. Small business websites range from $1,000-$3,000, while e-commerce sites are $3,000-$6,000. Same pricing across Manhattan, Brooklyn, and Queens.'
+          text: 'Website design in New York starts at $500. Basic sites run $500-$800, standard sites $1,100-$1,500, and store/e-commerce builds $1,800-$2,400. Same pricing across Manhattan, Brooklyn, and Queens.'
         }
       },
       {

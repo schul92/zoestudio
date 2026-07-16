@@ -186,8 +186,8 @@ export default function TXWebsiteKoreanPage({ params }: { params: { locale: stri
         acceptedAnswer: {
           '@type': 'Answer',
           text: isKorean
-            ? 'ZOE LUMOS의 텍사스 웹사이트 제작 비용은 기본 비즈니스 웹사이트 $1,000-$2,500, Shopify 이커머스 쇼핑몰 $3,000-$6,000입니다. 달라스, 휴스턴, 캐롤턴 등 텍사스 전 지역 동일 가격이 적용됩니다. 화상 미팅을 통해 무료 상담이 가능합니다.'
-            : 'ZOE LUMOS website design pricing in Texas: basic business websites $1,000-$2,500, Shopify e-commerce stores $3,000-$6,000. Same pricing across Dallas, Houston, and Carrollton. Free consultation via video call.',
+            ? 'ZOE LUMOS의 텍사스 웹사이트 제작 비용은 기본 웹사이트 $500-$800, 일반 비즈니스 웹사이트 $1,100-$1,500, Shopify 이커머스 쇼핑몰 $1,800-$2,400입니다. 달라스, 휴스턴, 캐롤턴 등 텍사스 전 지역 동일 가격이 적용됩니다. 화상 미팅을 통해 무료 상담이 가능합니다.'
+            : 'ZOE LUMOS website design pricing in Texas: basic websites $500-$800, standard business websites $1,100-$1,500, Shopify e-commerce stores $1,800-$2,400. Same pricing across Dallas, Houston, and Carrollton. Free consultation via video call.',
         },
       },
       {
@@ -267,13 +267,13 @@ export default function TXWebsiteKoreanPage({ params }: { params: { locale: stri
       icon: <Globe className="w-8 h-8" />,
       title: isKorean ? '비즈니스 웹사이트' : 'Business Website',
       desc: isKorean ? '전문적인 회사 소개 사이트' : 'Professional company website',
-      price: '$1,000~',
+      price: '$500~',
     },
     {
       icon: <Building2 className="w-8 h-8" />,
       title: isKorean ? '이커머스 쇼핑몰' : 'E-commerce Store',
       desc: isKorean ? 'Shopify 기반 온라인 스토어' : 'Shopify-based online store',
-      price: '$3,000~',
+      price: '$1,800~',
     },
     {
       icon: <Search className="w-8 h-8" />,

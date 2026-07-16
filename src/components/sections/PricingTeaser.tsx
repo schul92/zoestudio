@@ -52,9 +52,9 @@ const estimatorSteps: EstimatorStep[] = [
     id: 'type',
     label: { en: 'Type', ko: '사이트 유형' },
     options: [
-      { value: 'website', label: { en: 'Website', ko: '홈페이지' }, price: [1000, 2500], weeks: [2, 3] },
-      { value: 'shopify', label: { en: 'Shopify store', ko: 'Shopify 쇼핑몰' }, price: [3000, 6000], weeks: [4, 6] },
-      { value: 'revamp', label: { en: 'Revamp', ko: '리뉴얼' }, price: [1500, 4000], weeks: [3, 5] },
+      { value: 'website', label: { en: 'Website', ko: '홈페이지' }, price: [500, 800], weeks: [2, 3] },
+      { value: 'shopify', label: { en: 'Shopify store', ko: 'Shopify 쇼핑몰' }, price: [1800, 2400], weeks: [4, 6] },
+      { value: 'revamp', label: { en: 'Revamp', ko: '리뉴얼' }, price: [700, 1500], weeks: [3, 5] },
     ],
   },
   {
@@ -62,15 +62,15 @@ const estimatorSteps: EstimatorStep[] = [
     label: { en: 'Size', ko: '규모' },
     options: [
       { value: 'small', label: { en: 'Up to 5 pages', ko: '5페이지 이하' }, price: [0, 0], weeks: [0, 0] },
-      { value: 'medium', label: { en: '5–10 pages', ko: '5–10페이지' }, price: [500, 800], weeks: [1, 1] },
-      { value: 'large', label: { en: '10+ / commerce', ko: '10+ · 커머스' }, price: [1000, 1500], weeks: [2, 2] },
+      { value: 'medium', label: { en: '5–10 pages', ko: '5–10페이지' }, price: [600, 700], weeks: [1, 1] },
+      { value: 'large', label: { en: '10+ / commerce', ko: '10+ · 커머스' }, price: [1000, 1400], weeks: [2, 2] },
     ],
   },
   {
     id: 'bilingual',
     label: { en: 'Language', ko: '이중언어' },
     options: [
-      { value: 'both', label: { en: 'KO + EN both', ko: '한·영 둘 다' }, price: [300, 800], weeks: [0, 0] },
+      { value: 'both', label: { en: 'KO + EN both', ko: '한·영 둘 다' }, price: [200, 400], weeks: [0, 0] },
       { value: 'one', label: { en: 'One language', ko: '한 언어만' }, price: [0, 0], weeks: [0, 0] },
     ],
   },
@@ -235,19 +235,19 @@ type Tier = {
 
 const tiers: Tier[] = [
   {
-    id: 'hobby',
-    label: { en: 'Starter', ko: '스타터' },
-    price: '$1k',
-    forWho: { en: '1–3 page launch', ko: '1–3페이지 런칭' },
+    id: 'basic',
+    label: { en: 'Basic', ko: '기본' },
+    price: '$500–800',
+    forWho: { en: 'Up to 5 pages, quick launch', ko: '5페이지 이하 · 빠른 런칭' },
     bullets: {
-      en: ['Mobile responsive', 'Basic SEO + form', 'Hosting included'],
-      ko: ['모바일 반응형', '기본 SEO · 문의 폼', '호스팅 포함'],
+      en: ['Mobile responsive', 'Basic SEO + form', '2 revision rounds per phase'],
+      ko: ['모바일 반응형', '기본 SEO · 문의 폼', '단계별 수정 2회'],
     },
   },
   {
-    id: 'plus',
-    label: { en: 'Plus', ko: '플러스' },
-    price: '$2k–3k',
+    id: 'standard',
+    label: { en: 'Standard', ko: '일반' },
+    price: '$1,100–1,500',
     forWho: { en: 'Most small businesses', ko: '대부분의 스몰비즈니스' },
     bullets: {
       en: ['Custom design', 'Bilingual EN ↔ KO', 'Local SEO + GBP'],
@@ -256,13 +256,13 @@ const tiers: Tier[] = [
     popular: true,
   },
   {
-    id: 'pro',
-    label: { en: 'Pro', ko: '프로' },
-    price: '$3k–6k',
-    forWho: { en: 'Restaurants, multi-location, e-com', ko: '식당 · 다지점 · 이커머스' },
+    id: 'store',
+    label: { en: 'Store', ko: '스토어' },
+    price: '$1,800–2,400',
+    forWho: { en: 'Shopify, booking, e-commerce', ko: '쇼핑몰 · 예약 · 이커머스' },
     bullets: {
-      en: ['Shopify or Next.js', 'Booking / ordering', 'Advanced analytics'],
-      ko: ['Shopify · Next.js', '예약 · 주문', '고급 분석'],
+      en: ['Shopify or Next.js', 'Booking / ordering', 'Products & checkout'],
+      ko: ['Shopify · Next.js', '예약 · 주문', '상품 · 결제 연동'],
     },
   },
 ]

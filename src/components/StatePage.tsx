@@ -58,7 +58,7 @@ function buildFaq(s: StateData, ko: boolean) {
         },
         {
           q: `${name} 한인 비즈니스 웹사이트 비용은 얼마인가요?`,
-          a: `고정·투명 가격 — 스타터 $1,000, 플러스 $2,000–$3,000(대부분의 소상공인), 프로 $3,000–$6,000. SEO는 월 $500부터. 전체 가격: ${SITE_URL}/ko/pricing`,
+          a: `고정·투명 가격 — 기본 $500–$800, 일반 $1,100–$1,500(대부분의 소상공인), 스토어 $1,800–$2,400. 월 관리 플랜은 $49부터, SEO는 월 $500부터. 전체 가격: ${SITE_URL}/ko/pricing`,
         },
         {
           q: `${name}에서 직접 만나지 않고도 작업할 수 있나요?`,
@@ -76,7 +76,7 @@ function buildFaq(s: StateData, ko: boolean) {
         },
         {
           q: `How much does a Korean business website in ${name} cost?`,
-          a: `Fixed, transparent pricing — Starter $1,000, Plus $2,000–$3,000 (most small businesses), Pro $3,000–$6,000. SEO retainers start at $500/month. Full pricing: ${SITE_URL}/pricing`,
+          a: `Fixed, transparent pricing — Basic $500–$800, Standard $1,100–$1,500 (most small businesses), Store $1,800–$2,400. Monthly care plans from $49/mo; SEO retainers from $500/month. Full pricing: ${SITE_URL}/pricing`,
         },
         {
           q: `Can you work with ${name} businesses without meeting in person?`,
@@ -115,7 +115,7 @@ export default function StatePage({
     url: pageUrl,
     email: 'info@zoelumos.com',
     areaServed: { '@type': 'State', name: data.name.en },
-    priceRange: '$1,000-$10,000',
+    priceRange: '$500-$2,400',
     availableLanguage: ['en', 'ko'],
   }
   const faqSchema = {
@@ -257,9 +257,9 @@ export default function StatePage({
               </thead>
               <tbody className="text-graphite">
                 {[
-                  ['Starter', '$1,000', ko ? '소개형 사이트' : 'Brochure sites'],
-                  ['Plus', '$2,000–$3,000', ko ? '대부분의 소상공인' : 'Most small businesses'],
-                  ['Pro', '$3,000–$6,000', ko ? '식당·예약·다페이지' : 'Restaurants, booking, multi-page'],
+                  [ko ? '기본' : 'Basic', '$500–$800', ko ? '소개형 사이트' : 'Brochure sites'],
+                  [ko ? '일반' : 'Standard', '$1,100–$1,500', ko ? '대부분의 소상공인' : 'Most small businesses'],
+                  [ko ? '스토어' : 'Store', '$1,800–$2,400', ko ? '쇼핑몰·예약·이커머스' : 'Shopify, booking, e-commerce'],
                   [ko ? '월 SEO' : 'SEO / mo', '$500+', ko ? '검색·AI 노출 성장' : 'Grow search + AI visibility'],
                 ].map(([pkg, price, best]) => (
                   <tr key={pkg} className="border-b border-hairline">

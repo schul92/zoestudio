@@ -124,7 +124,7 @@ export default function PalisadesParkMarketingPage({ params }: { params: { local
         name: '팰리세이즈파크에서 웹사이트 제작 비용은 얼마인가요?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: '팰팍 지역 웹사이트 제작은 $1,000부터 시작합니다. 소규모 비즈니스 $1,000-$3,000, 이커머스/쇼핑몰 $3,000-$6,000. 무료 상담 후 정확한 견적을 드립니다.'
+          text: '팰팍 지역 웹사이트 제작은 $500부터 시작합니다. 기본 $500-$800, 일반 $1,100-$1,500, 이커머스/쇼핑몰 $1,800-$2,400. 무료 상담 후 정확한 견적을 드립니다.'
         }
       },
       {
@@ -157,7 +157,7 @@ export default function PalisadesParkMarketingPage({ params }: { params: { local
         name: 'How much does website design cost in Palisades Park, NJ?',
         acceptedAnswer: {
           '@type': 'Answer',
-          text: 'Palisades Park website design starts at $1,000. Small business sites $1,000-$3,000, e-commerce $3,000-$6,000. Free consultation to get an exact quote.'
+          text: 'Palisades Park website design starts at $500. Basic sites $500-$800, standard $1,100-$1,500, e-commerce $1,800-$2,400. Free consultation to get an exact quote.'
         }
       },
       {

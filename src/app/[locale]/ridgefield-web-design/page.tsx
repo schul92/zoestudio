@@ -78,10 +78,10 @@ export default function RidgefieldWebDesignPage({ params }: { params: { locale: 
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: locale === 'ko' ? [
-      { '@type': 'Question', name: '리지필드에서 웹사이트 제작 비용은?', acceptedAnswer: { '@type': 'Answer', text: '리지필드 웹사이트 제작은 $1,000부터 시작합니다. 무료 상담 후 정확한 견적을 드립니다.' } },
+      { '@type': 'Question', name: '리지필드에서 웹사이트 제작 비용은?', acceptedAnswer: { '@type': 'Answer', text: '리지필드 웹사이트 제작은 $500부터 시작합니다. 무료 상담 후 정확한 견적을 드립니다.' } },
       { '@type': 'Question', name: '리지필드 한인 비즈니스 전문 서비스가 있나요?', acceptedAnswer: { '@type': 'Answer', text: '네, 리지필드와 주변 팰팍, 포트리 한인 비즈니스를 위한 이중언어 웹사이트, 한국어 SEO, 커뮤니티 마케팅 등을 제공합니다.' } },
     ] : [
-      { '@type': 'Question', name: 'How much does web design cost in Ridgefield?', acceptedAnswer: { '@type': 'Answer', text: 'Ridgefield web design starts at $1,000. Free consultation to get an exact quote.' } },
+      { '@type': 'Question', name: 'How much does web design cost in Ridgefield?', acceptedAnswer: { '@type': 'Answer', text: 'Ridgefield web design starts at $500. Free consultation to get an exact quote.' } },
       { '@type': 'Question', name: 'Do you specialize in Korean businesses?', acceptedAnswer: { '@type': 'Answer', text: 'Yes, we specialize in Korean-American businesses in Ridgefield, Palisades Park, and Fort Lee. Bilingual websites, Korean SEO, and community marketing.' } },
     ]
   }

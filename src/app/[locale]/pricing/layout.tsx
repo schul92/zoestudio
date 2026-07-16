@@ -17,14 +17,14 @@ export async function generateMetadata({
 
   const meta = {
     en: {
-      title: 'Pricing — Transparent Website & Shopify Plans | Zoe Lumos',
+      title: 'Pricing — Transparent Website & Care Plans | Zoe Lumos',
       description:
-        'Transparent web design pricing for Korean-American businesses: Starter $1k, Plus $2k–$3k, Pro $3k–$6k. Bilingual builds, SEO & Shopify. No quote wall — free estimate.',
+        'Transparent pricing for Korean-American businesses: monthly care plans from $49/mo (Basic $49 · Care $89 · Grow $199 · Scale $499) and one-time builds $500–$2,400. 12-month commitment waives the setup fee.',
     },
     ko: {
-      title: '가격 — 투명한 웹사이트·Shopify 제작 비용 | ZOE LUMOS',
+      title: '가격 — 투명한 웹사이트 제작·관리 비용 | ZOE LUMOS',
       description:
-        '한인 비즈니스를 위한 투명한 웹사이트 제작 가격. 스타터 $1k, 플러스 $2k–$3k, 프로 $3k–$6k. 한·영 이중언어, SEO, Shopify. 견적 장벽 없이 무료 견적.',
+        '한인 비즈니스를 위한 투명한 가격표. 월 관리 플랜 $49부터 (Basic $49 · Care $89 · Grow $199 · Scale $499), 일회성 제작 $500–$2,400. 12개월 약정 시 셋업비 면제.',
     },
   }[locale]
 

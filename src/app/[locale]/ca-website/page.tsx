@@ -46,7 +46,7 @@ export default function CAWebsitePage({ params }: { params: { locale: string } }
     description: ko ? '캘리포니아 한인 비즈니스를 위한 웹사이트 제작 전문' : 'Website design for Korean-American businesses in California',
     url: `${baseUrl}/${ko ? 'ko/' : ''}ca-website`, email: 'info@zoelumos.com',
     areaServed: [{ '@type': 'City', name: 'Los Angeles' }, { '@type': 'City', name: 'Fullerton' }, { '@type': 'City', name: 'Irvine' }, { '@type': 'City', name: 'Garden Grove' }],
-    priceRange: '$1,000-$10,000',
+    priceRange: '$500-$2,400',
   }
 
   return (

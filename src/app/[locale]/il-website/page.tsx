@@ -35,7 +35,7 @@ export default function ILWebsitePage({ params }: { params: { locale: string } }
   const locale = params.locale as 'en' | 'ko'
   const baseUrl = SITE_URL
   const ko = locale === 'ko'
-  const schema = { '@context': 'https://schema.org', '@type': 'ProfessionalService', name: 'ZOE LUMOS - Illinois Website Design', description: ko ? '일리노이 한인 비즈니스를 위한 웹사이트 제작 전문' : 'Website design for Korean-American businesses in Illinois', url: `${baseUrl}/${ko ? 'ko/' : ''}il-website`, email: 'info@zoelumos.com', areaServed: [{ '@type': 'City', name: 'Chicago' }, { '@type': 'City', name: 'Glenview' }, { '@type': 'City', name: 'Niles' }, { '@type': 'City', name: 'Mount Prospect' }], priceRange: '$1,000-$10,000' }
+  const schema = { '@context': 'https://schema.org', '@type': 'ProfessionalService', name: 'ZOE LUMOS - Illinois Website Design', description: ko ? '일리노이 한인 비즈니스를 위한 웹사이트 제작 전문' : 'Website design for Korean-American businesses in Illinois', url: `${baseUrl}/${ko ? 'ko/' : ''}il-website`, email: 'info@zoelumos.com', areaServed: [{ '@type': 'City', name: 'Chicago' }, { '@type': 'City', name: 'Glenview' }, { '@type': 'City', name: 'Niles' }, { '@type': 'City', name: 'Mount Prospect' }], priceRange: '$500-$2,400' }
 
   return (
     <>

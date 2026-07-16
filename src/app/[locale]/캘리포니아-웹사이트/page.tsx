@@ -187,8 +187,8 @@ export default function CAWebsiteKoreanPage({ params }: { params: { locale: stri
         acceptedAnswer: {
           '@type': 'Answer',
           text: isKorean
-            ? 'ZOE LUMOS(조이루모스)의 캘리포니아 웹사이트 제작 비용은 프로젝트 유형에 따라 다릅니다. 기본 비즈니스 웹사이트는 $1,000-$2,500, Shopify 이커머스 쇼핑몰은 $3,000-$6,000입니다. LA 코리아타운, 오렌지카운티, 샌프란시스코 등 캘리포니아 전 지역 동일 가격이 적용됩니다. 화상 미팅 또는 카카오톡을 통해 무료 상담이 가능합니다.'
-            : 'ZOE LUMOS website design pricing in California varies by project type. Basic business websites cost $1,000-$2,500, and Shopify e-commerce stores cost $3,000-$6,000. Same pricing applies across LA Koreatown, Orange County, and San Francisco. Free consultation available via video call or KakaoTalk.',
+            ? 'ZOE LUMOS(조이루모스)의 캘리포니아 웹사이트 제작 비용은 프로젝트 유형에 따라 다릅니다. 기본 웹사이트는 $500-$800, 일반 비즈니스 웹사이트는 $1,100-$1,500, Shopify 이커머스 쇼핑몰은 $1,800-$2,400입니다. LA 코리아타운, 오렌지카운티, 샌프란시스코 등 캘리포니아 전 지역 동일 가격이 적용됩니다. 화상 미팅 또는 카카오톡을 통해 무료 상담이 가능합니다.'
+            : 'ZOE LUMOS website design pricing in California varies by project type. Basic websites cost $500-$800, standard business websites $1,100-$1,500, and Shopify e-commerce stores $1,800-$2,400. Same pricing applies across LA Koreatown, Orange County, and San Francisco. Free consultation available via video call or KakaoTalk.',
         },
       },
       {
@@ -268,13 +268,13 @@ export default function CAWebsiteKoreanPage({ params }: { params: { locale: stri
       icon: <Globe className="w-8 h-8" />,
       title: isKorean ? '비즈니스 웹사이트' : 'Business Website',
       desc: isKorean ? '전문적인 회사 소개 사이트' : 'Professional company website',
-      price: '$1,000~',
+      price: '$500~',
     },
     {
       icon: <Building2 className="w-8 h-8" />,
       title: isKorean ? '이커머스 쇼핑몰' : 'E-commerce Store',
       desc: isKorean ? 'Shopify 기반 온라인 스토어' : 'Shopify-based online store',
-      price: '$3,000~',
+      price: '$1,800~',
     },
     {
       icon: <Search className="w-8 h-8" />,

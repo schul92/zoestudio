@@ -49,13 +49,13 @@ export default function KoreanCityPage({ data, locale, baseUrl }: { data: CityDa
   }
 
   const faqs = locale === 'ko' ? [
-    { q: `${cityKo}에서 한인 웹사이트 제작 비용은 얼마인가요?`, a: `${cityKo} 지역 한인 비즈니스 웹사이트는 $1,000부터 시작합니다. 소규모 비즈니스 $1,000-$3,000, 이커머스 $3,000-$6,000, 커스텀 $6,000+. 무료 상담 및 투명한 견적.` },
+    { q: `${cityKo}에서 한인 웹사이트 제작 비용은 얼마인가요?`, a: `${cityKo} 지역 한인 비즈니스 웹사이트는 $500부터 시작합니다. 기본 $500-$800, 일반 $1,100-$1,500, 스토어(이커머스) $1,800-$2,400. 무료 상담 및 투명한 견적.` },
     { q: `${cityKo} 어느 지역까지 서비스하나요?`, a: `${data.neighborhoods.map(n => n.ko).join(', ')} 등 ${data.region.ko} 전역에서 서비스합니다. 원격 상담 및 화상 회의 지원.` },
     { q: `한국어로 상담 가능한가요?`, a: `네, 100% 한국어 상담 가능합니다. 카카오톡, 전화, 이메일, 화상통화 모두 지원. 한국어와 영어 모두 네이티브 수준.` },
     { q: `${cityKo} 한인 비즈니스에 특화된 기능이 있나요?`, a: `카카오톡 채널 연동, 네이버 지도 등록, 한국어 SEO, 이중언어 예약 시스템, ${cityEn} 지역 한인 커뮤니티 마케팅 모두 포함됩니다.` },
     { q: `기존 웹사이트 리뉴얼 가능한가요?`, a: `네, WordPress, Wix, Squarespace, GoDaddy 등 어떤 플랫폼에서도 고속 Next.js 사이트로 마이그레이션 가능. SEO 순위 보존, URL 리다이렉트 책임집니다.` },
   ] : [
-    { q: `How much does Korean web design cost in ${cityEn}?`, a: `Korean business websites in ${cityEn} start at $1,000. Small business $1,000-$3,000, e-commerce $3,000-$6,000, custom $6,000+. Free consultation and transparent pricing.` },
+    { q: `How much does Korean web design cost in ${cityEn}?`, a: `Korean business websites in ${cityEn} start at $500. Basic $500-$800, standard $1,100-$1,500, store/e-commerce $1,800-$2,400. Free consultation and transparent pricing.` },
     { q: `What ${cityEn} areas do you serve?`, a: `We serve ${data.neighborhoods.map(n => n.en).join(', ')} and all of ${data.region.en}. Remote consultation and video meetings available.` },
     { q: `Do you offer Korean-language support?`, a: `Yes — 100% Korean-language consultation available via KakaoTalk, phone, email, and video. Native-level Korean and English support.` },
     { q: `What features are specific to ${cityEn} Korean businesses?`, a: `KakaoTalk Channel integration, Naver Map listings, Korean SEO, bilingual booking systems, and ${cityEn}-specific Korean community marketing all included.` },

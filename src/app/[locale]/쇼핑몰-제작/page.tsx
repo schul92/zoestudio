@@ -66,8 +66,8 @@ export default function EcommercePage({ params }: { params: { locale: string } }
         acceptedAnswer: {
           '@type': 'Answer',
           text: isKorean
-            ? 'Shopify 기반 쇼핑몰은 $3,000부터, 커스텀 이커머스는 $5,000부터 시작합니다. 상품 수, 기능에 따라 달라집니다.'
-            : 'Shopify stores start at $3,000, custom e-commerce at $5,000. Price varies by product count and features.',
+            ? 'Shopify 기반 쇼핑몰은 $1,800-$2,400입니다. 대규모·커스텀 이커머스(ERP/POS 연동, 멀티벤더 등)는 맞춤 견적으로 진행하며, 월 관리 플랜 12개월 약정 시 제작 셋업비가 면제됩니다.'
+            : 'Shopify stores run $1,800-$2,400. Larger custom e-commerce builds (ERP/POS integration, multi-vendor, etc.) are quoted individually, and a 12-month monthly care-plan commitment waives the build setup fee.',
         },
       },
       {
@@ -95,29 +95,29 @@ export default function EcommercePage({ params }: { params: { locale: string } }
 
   const packages = [
     {
-      name: isKorean ? 'Shopify 스타터' : 'Shopify Starter',
-      price: '$3,000',
-      desc: isKorean ? '소규모 온라인 스토어' : 'Small online store',
-      features: isKorean
-        ? ['50개 상품', 'Shopify 테마 커스텀', '결제 시스템 연동', '기본 SEO', '1개월 교육']
-        : ['50 products', 'Shopify theme customization', 'Payment integration', 'Basic SEO', '1 month training'],
-    },
-    {
-      name: isKorean ? 'Shopify 프로' : 'Shopify Pro',
-      price: '$5,000',
-      desc: isKorean ? '성장하는 이커머스' : 'Growing e-commerce',
+      name: isKorean ? 'Shopify 스토어' : 'Shopify Store',
+      price: '$1,800–2,400',
+      desc: isKorean ? '온라인 스토어 제작' : 'Online store build',
       popular: true,
       features: isKorean
-        ? ['200개 상품', '커스텀 테마 디자인', '고급 결제 옵션', '재고 관리 시스템', '배송 연동', '3개월 지원']
-        : ['200 products', 'Custom theme design', 'Advanced payments', 'Inventory management', 'Shipping integration', '3 months support'],
+        ? ['Shopify 테마 커스텀', '상품 · 결제 시스템 연동', '주문 · 예약 기능', '기본 SEO', '단계별 수정 2회']
+        : ['Shopify theme customization', 'Products & payment integration', 'Ordering or booking', 'Basic SEO', '2 revision rounds per phase'],
+    },
+    {
+      name: isKorean ? '스토어 + 관리 플랜' : 'Store + Care Plan',
+      price: isKorean ? '월 $199부터' : 'From $199/mo',
+      desc: isKorean ? '제작 + 지속 성장 관리' : 'Build + ongoing growth',
+      features: isKorean
+        ? ['12개월 약정 시 제작 셋업비 면제', 'Grow 플랜: 월 2시간 수정', 'GA4 리포트 + SEO 모니터링', '구글 비즈니스 프로필 관리', '언제든 해지 가능']
+        : ['12-month commitment waives the build setup fee', 'Grow plan: 2 hrs edits/mo', 'GA4 report + SEO monitoring', 'Google Business Profile management', 'Cancel anytime'],
     },
     {
       name: isKorean ? '커스텀 이커머스' : 'Custom E-commerce',
-      price: '$8,000+',
+      price: isKorean ? '맞춤 견적' : 'Custom quote',
       desc: isKorean ? '완전 맞춤 솔루션' : 'Fully custom solution',
       features: isKorean
-        ? ['무제한 상품', '완전 맞춤 개발', 'ERP/POS 연동', '멀티벤더 지원', 'API 개발', '6개월 지원']
-        : ['Unlimited products', 'Fully custom development', 'ERP/POS integration', 'Multi-vendor support', 'API development', '6 months support'],
+        ? ['무제한 상품', '완전 맞춤 개발', 'ERP/POS 연동', '멀티벤더 지원', 'API 개발']
+        : ['Unlimited products', 'Fully custom development', 'ERP/POS integration', 'Multi-vendor support', 'API development'],
     },
   ]
 

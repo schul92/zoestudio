@@ -162,8 +162,8 @@ export default function VAWebsiteKoreanPage({ params }: { params: { locale: stri
         acceptedAnswer: {
           '@type': 'Answer',
           text: isKorean
-            ? 'ZOE LUMOS의 버지니아 웹사이트 제작 비용은 기본 비즈니스 웹사이트 $1,000-$2,500, Shopify 이커머스 쇼핑몰 $3,000-$6,000입니다. 애난데일, 센터빌, 페어팩스 등 북버지니아 전 지역 동일 가격입니다. 화상 미팅 또는 카카오톡으로 무료 상담이 가능합니다.'
-            : 'ZOE LUMOS website design in Virginia: basic business websites $1,000-$2,500, Shopify e-commerce stores $3,000-$6,000. Same pricing across Annandale, Centreville, and Fairfax. Free consultation via video call or KakaoTalk.',
+            ? 'ZOE LUMOS의 버지니아 웹사이트 제작 비용은 기본 웹사이트 $500-$800, 일반 비즈니스 웹사이트 $1,100-$1,500, Shopify 이커머스 쇼핑몰 $1,800-$2,400입니다. 애난데일, 센터빌, 페어팩스 등 북버지니아 전 지역 동일 가격입니다. 화상 미팅 또는 카카오톡으로 무료 상담이 가능합니다.'
+            : 'ZOE LUMOS website design in Virginia: basic websites $500-$800, standard business websites $1,100-$1,500, Shopify e-commerce stores $1,800-$2,400. Same pricing across Annandale, Centreville, and Fairfax. Free consultation via video call or KakaoTalk.',
         },
       },
       {
@@ -229,8 +229,8 @@ export default function VAWebsiteKoreanPage({ params }: { params: { locale: stri
   ]
 
   const services = [
-    { icon: <Globe className="w-8 h-8" />, title: isKorean ? '비즈니스 웹사이트' : 'Business Website', desc: isKorean ? '전문적인 회사 소개 사이트' : 'Professional company website', price: '$1,000~' },
-    { icon: <Building2 className="w-8 h-8" />, title: isKorean ? '이커머스 쇼핑몰' : 'E-commerce Store', desc: isKorean ? 'Shopify 기반 온라인 스토어' : 'Shopify-based online store', price: '$3,000~' },
+    { icon: <Globe className="w-8 h-8" />, title: isKorean ? '비즈니스 웹사이트' : 'Business Website', desc: isKorean ? '전문적인 회사 소개 사이트' : 'Professional company website', price: '$500~' },
+    { icon: <Building2 className="w-8 h-8" />, title: isKorean ? '이커머스 쇼핑몰' : 'E-commerce Store', desc: isKorean ? 'Shopify 기반 온라인 스토어' : 'Shopify-based online store', price: '$1,800~' },
     { icon: <Search className="w-8 h-8" />, title: isKorean ? '버지니아 SEO' : 'VA SEO', desc: isKorean ? '구글 상위 노출 최적화' : 'Google ranking optimization', price: '$500/mo~' },
     { icon: <Zap className="w-8 h-8" />, title: isKorean ? '구글 광고' : 'Google Ads', desc: isKorean ? 'PPC 광고 관리' : 'PPC advertising management', price: '$300/mo~' },
   ]

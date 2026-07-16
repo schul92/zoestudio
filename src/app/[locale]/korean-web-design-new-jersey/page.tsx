@@ -121,7 +121,7 @@ export default function KoreanWebDesignNJPage({ params }: { params: { locale: st
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: locale === 'ko' ? [
-      { '@type': 'Question', name: '뉴저지에서 한인 웹디자인 비용은 얼마인가요?', acceptedAnswer: { '@type': 'Answer', text: '뉴저지 한인 웹사이트 제작 비용은 스타터 플랜 $1,000부터 시작합니다. 소규모 비즈니스 $1,000-$3,000, 이커머스 쇼핑몰 $3,000-$6,000, 커스텀 엔터프라이즈 $6,000 이상. 한국어 상담 및 무료 견적 제공.' } },
+      { '@type': 'Question', name: '뉴저지에서 한인 웹디자인 비용은 얼마인가요?', acceptedAnswer: { '@type': 'Answer', text: '뉴저지 한인 웹사이트 제작 비용은 기본 플랜 $500부터 시작합니다. 기본 $500-$800, 일반 $1,100-$1,500, 이커머스 쇼핑몰(스토어) $1,800-$2,400. 한국어 상담 및 무료 견적 제공.' } },
       { '@type': 'Question', name: '왜 한인 비즈니스에 특화된 웹디자인이 필요한가요?', acceptedAnswer: { '@type': 'Answer', text: '한인 비즈니스는 한국 고객과 미국 주류 고객을 동시에 공략해야 합니다. 일반 웹디자인 업체는 한국어 SEO, 카카오톡 연동, 네이버 지도 등록, 한인 커뮤니티 마케팅 등을 제대로 다루지 못합니다. ZOE LUMOS는 양쪽 모두를 전문적으로 처리합니다.' } },
       { '@type': 'Question', name: '포트리, 팰팍 외에 어디서 서비스하나요?', acceptedAnswer: { '@type': 'Answer', text: '뉴저지 전역에서 서비스합니다. 버겐카운티 (포트리, 팰리세이즈파크, 잉글우드, 리지필드, 에지워터, 리오니아, 클리프사이드파크), 허드슨카운티 (저지시티, 노스버겐), 에섹스카운티, 그리고 뉴욕 플러싱, 롱아일랜드, 맨하탄까지 원격 및 대면 상담 가능합니다.' } },
       { '@type': 'Question', name: '한국어 SEO와 영어 SEO를 동시에 할 수 있나요?', acceptedAnswer: { '@type': 'Answer', text: '네, 가능합니다. 이중언어 웹사이트는 hreflang 태그, 별도 URL 구조, 각 언어별 키워드 리서치, Google 및 Naver 색인 관리를 통해 양쪽 모두 최적화됩니다. 실제로 저희 고객들은 영어 "korean restaurant nj"와 한국어 "뉴저지 한식당" 양쪽에서 상위 노출됩니다.' } },
@@ -129,7 +129,7 @@ export default function KoreanWebDesignNJPage({ params }: { params: { locale: st
       { '@type': 'Question', name: 'KakaoTalk(카카오톡) 채널을 웹사이트에 연동할 수 있나요?', acceptedAnswer: { '@type': 'Answer', text: '네, 저희는 카카오톡 채널 연동, KakaoTalk 상담 버튼, 카카오맵 임베드를 표준으로 제공합니다. 미국 한인 고객들이 가장 선호하는 소통 채널이므로 모든 한인 비즈니스 웹사이트에 포함됩니다.' } },
       { '@type': 'Question', name: '기존 웹사이트를 리뉴얼할 수 있나요?', acceptedAnswer: { '@type': 'Answer', text: '네, 기존 웹사이트 리뉴얼 전문입니다. WordPress, Wix, Squarespace, GoDaddy 등 어떤 플랫폼에서든 Next.js 기반 고속 모던 웹사이트로 마이그레이션합니다. SEO 순위 유지, URL 리다이렉트, 기존 콘텐츠 보존 모두 책임집니다.' } },
     ] : [
-      { '@type': 'Question', name: 'How much does Korean web design cost in New Jersey?', acceptedAnswer: { '@type': 'Answer', text: 'Korean web design in New Jersey starts at $1,000 for our Starter plan. Small business sites range $1,000-$3,000, e-commerce $3,000-$6,000, custom enterprise projects $6,000+. Free consultation and transparent pricing with no hidden fees.' } },
+      { '@type': 'Question', name: 'How much does Korean web design cost in New Jersey?', acceptedAnswer: { '@type': 'Answer', text: 'Korean web design in New Jersey starts at $500 for our Basic plan. Basic sites run $500-$800, standard sites $1,100-$1,500, and store/e-commerce builds $1,800-$2,400. Free consultation and transparent pricing with no hidden fees.' } },
       { '@type': 'Question', name: 'Why do Korean-American businesses need specialized web design?', acceptedAnswer: { '@type': 'Answer', text: 'Korean-American businesses need to serve both Korean-speaking and English-speaking customers. Generic web design agencies miss critical elements: Korean SEO, KakaoTalk integration, Naver map listings, bilingual content strategy, and Korean community marketing. ZOE LUMOS handles both markets natively.' } },
       { '@type': 'Question', name: 'Which NJ cities do you serve for Korean web design?', acceptedAnswer: { '@type': 'Answer', text: 'We serve all of New Jersey. Primary coverage includes Bergen County (Fort Lee, Palisades Park, Englewood, Ridgefield, Edgewater, Leonia, Cliffside Park, Teaneck), Hudson County (Jersey City, North Bergen), Essex County, plus NYC (Flushing, Long Island, Manhattan) via remote and in-person consultation.' } },
       { '@type': 'Question', name: 'Can you do Korean and English SEO on the same site?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. Our bilingual sites use proper hreflang tags, separate URL structures (/en and /ko), language-specific keyword research, and dual indexing on both Google and Naver. Our clients rank for both English terms like "korean restaurant nj" and Korean terms like "뉴저지 한식당" simultaneously.' } },
@@ -271,17 +271,17 @@ export default function KoreanWebDesignNJPage({ params }: { params: { locale: st
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {(locale === 'ko' ? [
-                { icon: Globe, color: 'text-blue-600', title: '이중언어 웹사이트', desc: '한국어와 영어 양쪽에 완벽 최적화. 자동 언어 전환, hreflang 태그, 각 언어 개별 SEO.', price: '$1,000부터' },
+                { icon: Globe, color: 'text-blue-600', title: '이중언어 웹사이트', desc: '한국어와 영어 양쪽에 완벽 최적화. 자동 언어 전환, hreflang 태그, 각 언어 개별 SEO.', price: '$500부터' },
                 { icon: Search, color: 'text-green-600', title: '구글 + 네이버 SEO', desc: '미국 구글과 한국 네이버 양쪽에서 상위 노출. 한인 고객 + 현지 고객 동시 공략.', price: '월 $500부터' },
                 { icon: TrendingUp, color: 'text-purple-600', title: '카카오톡 + 네이버 지도', desc: '카카오톡 채널 연동, 네이버 지도 등록, 한인 플랫폼 마케팅. 한인 고객 필수.', price: '포함' },
-                { icon: DollarSign, color: 'text-rose-600', title: '쇼핑몰 제작', desc: 'Shopify / WooCommerce 한영 쇼핑몰. 한국 결제 연동 (KG이니시스, 페이코), 국제 배송.', price: '$3,000부터' },
+                { icon: DollarSign, color: 'text-rose-600', title: '쇼핑몰 제작', desc: 'Shopify / WooCommerce 한영 쇼핑몰. 한국 결제 연동 (KG이니시스, 페이코), 국제 배송.', price: '$1,800부터' },
                 { icon: Clock, color: 'text-orange-600', title: '온라인 예약 시스템', desc: '한식당, 미용실, 네일샵, 병원, 학원을 위한 이중언어 예약 시스템. SMS/카카오 알림.', price: '$800부터' },
                 { icon: Shield, color: 'text-indigo-600', title: '유지보수 & 호스팅', desc: '빠른 호스팅, SSL, 보안·백업, 모니터링부터 시작. 플랜에 따라 콘텐츠 수정, 월간 리포트, SEO 관리까지. 한국어 기술 지원.', price: '월 $49부터' },
               ] : [
-                { icon: Globe, color: 'text-blue-600', title: 'Bilingual Websites', desc: 'Perfectly optimized for both Korean and English. Auto language switching, hreflang tags, separate SEO per language.', price: 'From $1,000' },
+                { icon: Globe, color: 'text-blue-600', title: 'Bilingual Websites', desc: 'Perfectly optimized for both Korean and English. Auto language switching, hreflang tags, separate SEO per language.', price: 'From $500' },
                 { icon: Search, color: 'text-green-600', title: 'Google + Naver SEO', desc: 'Rank on both US Google and Korean Naver. Win Korean-speaking + English-speaking customers simultaneously.', price: 'From $500/mo' },
                 { icon: TrendingUp, color: 'text-purple-600', title: 'KakaoTalk + Naver Maps', desc: 'KakaoTalk Channel integration, Naver Map listings, Korean platform marketing. Essential for Korean customers.', price: 'Included' },
-                { icon: DollarSign, color: 'text-rose-600', title: 'E-commerce Stores', desc: 'Shopify / WooCommerce bilingual stores. Korean payment gateways (KG Inicis, PayCo), international shipping.', price: 'From $3,000' },
+                { icon: DollarSign, color: 'text-rose-600', title: 'E-commerce Stores', desc: 'Shopify / WooCommerce bilingual stores. Korean payment gateways (KG Inicis, PayCo), international shipping.', price: 'From $1,800' },
                 { icon: Clock, color: 'text-orange-600', title: 'Online Booking Systems', desc: 'Bilingual booking for restaurants, salons, nail spas, clinics, tutoring. SMS/KakaoTalk notifications.', price: 'From $800' },
                 { icon: Shield, color: 'text-indigo-600', title: 'Maintenance & Hosting', desc: 'Starts with fast hosting, SSL, security & backups, and monitoring. Higher plans add content edits, monthly reports, and SEO care. Korean-language tech support.', price: 'From $49/mo' },
               ]).map(({ icon: Icon, color, title, desc, price }) => (

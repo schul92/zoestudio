@@ -35,7 +35,7 @@ export default function WAWebsitePage({ params }: { params: { locale: string } }
   const locale = params.locale as 'en' | 'ko'
   const baseUrl = SITE_URL
   const ko = locale === 'ko'
-  const schema = { '@context': 'https://schema.org', '@type': 'ProfessionalService', name: 'ZOE LUMOS - Washington Website Design', description: ko ? '워싱턴주 한인 비즈니스를 위한 웹사이트 제작 전문' : 'Website design for Korean-American businesses in Washington', url: `${baseUrl}/${ko ? 'ko/' : ''}wa-website`, email: 'info@zoelumos.com', areaServed: [{ '@type': 'City', name: 'Seattle' }, { '@type': 'City', name: 'Federal Way' }, { '@type': 'City', name: 'Bellevue' }, { '@type': 'City', name: 'Tacoma' }], priceRange: '$1,000-$10,000' }
+  const schema = { '@context': 'https://schema.org', '@type': 'ProfessionalService', name: 'ZOE LUMOS - Washington Website Design', description: ko ? '워싱턴주 한인 비즈니스를 위한 웹사이트 제작 전문' : 'Website design for Korean-American businesses in Washington', url: `${baseUrl}/${ko ? 'ko/' : ''}wa-website`, email: 'info@zoelumos.com', areaServed: [{ '@type': 'City', name: 'Seattle' }, { '@type': 'City', name: 'Federal Way' }, { '@type': 'City', name: 'Bellevue' }, { '@type': 'City', name: 'Tacoma' }], priceRange: '$500-$2,400' }
 
   return (
     <>
