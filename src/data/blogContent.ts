@@ -11352,6 +11352,237 @@ export const blogContent: BlogPost[] = [
     },
   },
   // ─────────────────────────────────────────────────────────────────
+  // 2026-07-16 — F&B rotation: Chicago-metro Korean restaurants — connecting
+  // online ordering + Toast/Clover POS + review management into one system.
+  // City rotation: Chicago (Albany Park / Niles / Glenview / Schaumburg),
+  // an angle no existing post covers (Annandale VA and Atlanta already done).
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'korean-restaurant-chicago-online-ordering-pos-reviews-2026',
+    date: '2026-07-16',
+    updatedDate: '2026-07-16',
+    readTime: 10,
+    category: { en: 'Restaurant', ko: '레스토랑' },
+    title: {
+      en: 'Korean Restaurants in Chicago: Wire Online Ordering, Your Toast/Clover POS, and Reviews Into One System (2026)',
+      ko: '시카고 한인 식당 사장님 — 온라인 주문 · Toast/Clover POS · 리뷰 관리를 하나의 시스템으로 연결하세요 (2026)',
+    },
+    metaDescription: {
+      en: 'Korean restaurants in Albany Park, Niles, Glenview, and Schaumburg often run three disconnected systems: delivery apps taking orders, a Toast or Clover POS nobody looks at, and Google reviews nobody answers. Here is how to wire direct online ordering into your POS, keep customer data in your hands, and turn review management into a weekly routine instead of a crisis.',
+      ko: '올버니 파크, 나일스, 글렌뷰, 샴버그의 한인 식당들은 서로 연결되지 않은 세 개의 시스템을 따로 돌리는 경우가 많습니다 — 주문을 가져가는 배달 앱, 아무도 들여다보지 않는 Toast/Clover POS, 답글 없이 쌓이는 구글 리뷰. 직접 주문을 POS에 연결하고, 고객 데이터를 사장님 손에 남기고, 리뷰 관리를 위기 대응이 아닌 주간 루틴으로 만드는 방법을 정리했습니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'What is the best online ordering setup for a Korean restaurant in Chicago?',
+          ko: '시카고 한인 식당에 가장 좋은 온라인 주문 구성은 무엇인가요?',
+        },
+        a: {
+          en: "The best setup is a direct ordering channel — your own website or your POS vendor's ordering page (Toast Online Ordering, Clover Online Ordering) — promoted as the primary way to order, with delivery marketplaces kept as a discovery channel rather than your main pipeline. Direct orders flow straight into your Toast or Clover POS and print to the kitchen like any other ticket, you keep the customer's name and contact information for remarketing, and you avoid paying marketplace commission on customers who already know you. The practical rule: let DoorDash and Uber Eats introduce you to new customers, but move regulars to direct ordering with a QR code at the register, an 'Order' link on your Google Business Profile that points to your own page, and a small pickup discount that direct ordering makes affordable because no commission is coming out of it.",
+          ko: '가장 좋은 구성은 직접 주문 채널 — 자체 웹사이트 또는 POS 업체의 주문 페이지(Toast Online Ordering, Clover Online Ordering) — 를 메인 주문 경로로 밀고, 배달 마켓플레이스는 주력 파이프라인이 아니라 신규 고객 발굴 채널로 두는 것입니다. 직접 주문은 Toast/Clover POS로 바로 들어가 다른 주문과 똑같이 주방에 티켓으로 출력되고, 고객 이름과 연락처가 사장님에게 남아 재방문 마케팅에 쓸 수 있고, 이미 우리 가게를 아는 고객에게까지 마켓플레이스 수수료를 낼 필요가 없습니다. 실전 규칙은 이렇습니다 — 도어대시와 우버이츠는 새 손님을 소개받는 용도로 쓰고, 단골은 계산대의 QR 코드, 자체 페이지로 연결한 구글 비즈니스 프로필의 "주문" 링크, 그리고 수수료가 안 나가니 가능한 소소한 픽업 할인으로 직접 주문으로 옮기세요.',
+        },
+      },
+      {
+        q: {
+          en: 'Do delivery apps or my own ordering page work better with a Toast or Clover POS?',
+          ko: '배달 앱과 자체 주문 페이지 중 어느 쪽이 Toast/Clover POS와 더 잘 맞나요?',
+        },
+        a: {
+          en: "Your own ordering page integrates more cleanly, because Toast and Clover both ship first-party online ordering that reads the same menu your POS already uses — change a price or 86 an item once, and it updates everywhere. Marketplace orders can also be injected into both POS systems through integrations, which beats retyping orders from a tablet, but the menu on the marketplace side is still a separate copy you must maintain, the customer relationship belongs to the platform, and each order carries the platform's fees. So the answer has two layers: yes, connect the delivery apps to your POS so staff stop transcribing tickets by hand — and at the same time, stand up the first-party ordering channel, because it is the only one where the menu, the order flow, and the customer data all live in one system you control.",
+          ko: '자체 주문 페이지 쪽이 더 깔끔하게 통합됩니다. Toast와 Clover 모두 POS가 이미 쓰는 메뉴를 그대로 읽어오는 자사 온라인 주문 기능을 제공하기 때문에, 가격을 바꾸거나 품절 처리를 한 번만 하면 모든 곳에 반영됩니다. 마켓플레이스 주문도 연동을 통해 두 POS에 자동으로 넣을 수 있고 — 태블릿을 보고 주문을 다시 입력하는 것보단 훨씬 낫습니다 — 하지만 마켓플레이스 쪽 메뉴는 여전히 따로 관리해야 하는 별도 사본이고, 고객 관계는 플랫폼 소유이며, 주문마다 플랫폼 수수료가 붙습니다. 그래서 답은 두 겹입니다. 배달 앱은 POS에 연동해서 직원이 티켓을 손으로 옮겨 적는 일부터 없애고 — 동시에 자사 주문 채널을 세우세요. 메뉴, 주문 흐름, 고객 데이터가 전부 사장님이 통제하는 하나의 시스템에 사는 채널은 그것뿐입니다.',
+        },
+      },
+      {
+        q: {
+          en: 'How do I get more Google reviews for my restaurant without breaking the rules?',
+          ko: '규정을 어기지 않고 식당 구글 리뷰를 늘리려면 어떻게 해야 하나요?',
+        },
+        a: {
+          en: "Ask every happy customer, make it effortless, and never pay or trade for it. Google explicitly allows asking customers for reviews but prohibits offering money, discounts, or free items in exchange, and prohibits review gating (only steering happy customers toward the form). The compliant system: a short review link or QR code at the register and on the receipt, a polite ask at the moment the customer is happiest — picking up an order they came back for, finishing a meal they complimented — and a reply to every review, positive or negative, within the week. One caution for restaurant owners specifically: Yelp is stricter than Google and discourages even asking for reviews, so on Yelp the play is a complete, photo-rich profile and fast responses rather than solicitation. Bilingual replies matter too — answering a Korean-language review in Korean and an English one in English signals to both audiences that the owner is actually listening.",
+          ko: '만족한 손님 모두에게 부탁하고, 남기기 쉽게 만들고, 절대 대가를 주지 않는 것입니다. 구글은 고객에게 리뷰를 요청하는 것 자체는 명시적으로 허용하지만, 돈·할인·서비스 제공을 대가로 거는 것과 리뷰 게이팅(만족한 고객만 골라 리뷰 폼으로 보내는 것)은 금지합니다. 규정을 지키는 시스템은 이렇습니다 — 계산대와 영수증에 짧은 리뷰 링크나 QR 코드, 손님이 가장 만족한 순간(재방문 픽업, 맛있다고 말해준 식사 끝)에 정중한 한마디 부탁, 그리고 좋든 나쁘든 모든 리뷰에 일주일 안에 답글. 식당 사장님이 특히 조심할 것 하나 — Yelp는 구글보다 엄격해서 리뷰 요청 자체를 지양하라고 합니다. Yelp에서는 요청 대신 사진이 풍부한 완성된 프로필과 빠른 응대가 정답입니다. 이중언어 답글도 중요합니다 — 한국어 리뷰엔 한국어로, 영어 리뷰엔 영어로 답하면 두 고객층 모두에게 사장님이 실제로 듣고 있다는 신호가 됩니다.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "Chicago has one of the strongest Korean food scenes in the Midwest — from the old Albany Park corridor on the North Side out to the suburbs where the community actually lives now: Niles, Glenview, Morton Grove, Schaumburg, the blocks around the H Mart and Super H Mart stores. Walk into a good Korean restaurant in any of these neighborhoods on a Saturday and the dining room is full. Then look at how the same restaurant runs online, and you usually find three systems that never talk to each other: delivery apps quietly taking a cut of every order, a Toast or Clover POS that nobody opens except to close out the night, and a Google Business Profile where reviews — Korean and English — pile up unanswered. None of these is broken on its own. The money leaks out of the gaps between them." },
+        { type: 'h2', content: 'The three disconnected systems problem' },
+        { type: 'p', content: "Most Korean restaurant owners we talk to did each of these setups at a different time, for a different reason. The DoorDash tablet arrived during the pandemic. The Toast or Clover terminal came from a payments rep. The Google listing was claimed years ago, maybe by a nephew. Each decision was reasonable — but the result is a business where the ordering channel, the kitchen system, and the reputation channel are owned by three different companies, and the restaurant owns none of the connective tissue." },
+        { type: 'ul', content: 'What the disconnection actually costs, in practice:', items: [
+          'Marketplace commissions on regulars — delivery platforms charge meaningful per-order fees (published tiers commonly run into double-digit percentages), and the painful part is paying them on customers who already know your restaurant and would happily have ordered from you directly.',
+          "Customer data you never see — when orders come through a marketplace, the platform holds the customer's name, contact, and order history. You cannot text a regular about a slow Tuesday special, because you do not know who your regulars are.",
+          'Menus drifting apart — the DoorDash menu, the in-store menu, and the POS menu each get edited separately, so prices and sold-out items disagree, and every mismatch turns into a refund, a bad review, or both.',
+          'Orders retyped by hand — where the marketplace tablet is not integrated with the POS, a staff member transcribes each ticket during the rush, which is exactly when transcription errors happen.',
+          "Reviews as an afterthought — unanswered reviews read as an empty dining room reads. And in a bilingual market like Chicago's Northwest suburbs, an unanswered Korean-language review tells an entire community segment that nobody on the other side is listening.",
+        ] },
+        { type: 'h2', content: 'Step one: make your POS the single source of truth' },
+        { type: 'p', content: "Toast and Clover are both good systems, and if you already run one of them, the cheapest upgrade available is using what you already pay for. Both platforms offer first-party online ordering that reads directly from the POS menu: one menu, edited in one place, serving the dining room, the ordering page, and the kitchen printer at once. Both also support integrations that inject marketplace orders straight into the POS, ending the retyping. This is not a rip-and-replace project — it is configuration work on top of hardware already sitting on your counter." },
+        { type: 'ul', content: 'The order of operations we recommend:', items: [
+          'Turn on your POS vendor\'s online ordering (Toast Online Ordering or Clover Online Ordering) so direct orders exist as a channel at all, flowing into the same kitchen workflow as everything else.',
+          'Connect the delivery marketplaces to the POS through integration, so every channel prints to the kitchen the same way and menu updates propagate from one place.',
+          "Point your Google Business Profile 'Order' action, your Instagram bio link, and a QR code at the register to your direct ordering page — not to a marketplace.",
+          'Give regulars a small, sustainable reason to switch — a pickup discount or a loyalty perk you can afford precisely because no commission is coming out of the direct order.',
+          "Once direct ordering runs, look at the data your POS has been collecting all along — busiest hours, best-margin items, reorder patterns. Our guide on Toast and Clover analytics covers how to turn that into decisions.",
+        ] },
+        { type: 'tip', content: "Check one thing today: search your restaurant's name on Google and look at where the 'Order online' button actually sends people. For many Korean restaurants it points to a third-party marketplace — meaning Google is routing even your loyal, searched-you-by-name customers through a commissioned channel. Repointing that button to your own ordering page is a ten-minute fix inside Google Business Profile." },
+        { type: 'h2', content: 'Step two: review management as a weekly routine, not a crisis response' },
+        { type: 'p', content: "Reviews decide restaurant discovery in Chicago's suburbs, where a family in Glenview choosing between three Korean BBQ options sees star ratings before anything else. The mistake is treating reviews as something you deal with when a bad one lands. The fix is a boring, reliable routine: a standing thirty-minute block each week to reply to every new review — in the language it was written in — thank the good ones specifically, and answer the bad ones calmly with what changed. Never pay for reviews, never offer discounts for them, and never filter who gets asked; Google prohibits all three, and enforcement actions can wipe a profile's reviews entirely. On Yelp, where even asking is discouraged, invest in the profile itself — complete hours, real photos of the food people actually order, and fast owner responses." },
+        { type: 'h2', content: 'The Chicago-specific layer: be findable in both languages' },
+        { type: 'p', content: "Chicago-area Korean restaurants serve two search audiences: English-language diners searching 'korean bbq near me' or 'best korean food Schaumburg,' and Korean-speaking customers searching '시카고 한인 식당' or '글렌뷰 맛집.' Most restaurant websites and Google profiles serve only one of the two. A bilingual site — with the neighborhood names your customers actually use, hours, parking notes, and the direct ordering link — plus a Google Business Profile with photos, Korean and English descriptions, and answered reviews in both languages, covers both audiences with one build. That combination is still rare enough in the Chicago market to be a real competitive edge, and it is the same playbook we detailed for other metros in our Annandale, VA restaurant marketing guide — the mechanics transfer." },
+        { type: 'cta', content: "Running a Korean restaurant in Chicagoland and tired of three systems that don't talk to each other? ZOE LUMOS builds bilingual restaurant websites with direct online ordering wired into Toast and Clover, plus Google Business Profile and review management set up as a routine you can actually keep. Free consultation in English or Korean: email info@zoelumos.com or message us on KakaoTalk (http://pf.kakao.com/_xhxdxmlX/chat)." },
+      ],
+      ko: [
+        { type: 'intro', content: '시카고는 미 중서부에서 가장 탄탄한 한인 외식 상권을 가진 도시입니다 — 노스사이드의 오래된 올버니 파크 코리아타운부터, 지금 실제로 커뮤니티가 사는 교외까지: 나일스, 글렌뷰, 모튼 그로브, 샴버그, 그리고 H Mart · Super H Mart 주변 블록들. 이 동네 어디든 토요일에 괜찮은 한식당에 들어가 보면 홀은 가득 차 있습니다. 그런데 같은 식당이 온라인에서 어떻게 돌아가는지 보면, 서로 한 번도 대화한 적 없는 세 개의 시스템이 발견됩니다 — 주문마다 조용히 수수료를 떼 가는 배달 앱, 마감 정산 때 말고는 아무도 열어보지 않는 Toast/Clover POS, 그리고 한국어·영어 리뷰가 답글 없이 쌓여가는 구글 비즈니스 프로필. 셋 중 어느 하나도 그 자체로 고장 난 건 아닙니다. 돈은 그 사이의 틈새로 샙니다.' },
+        { type: 'h2', content: '서로 연결되지 않은 세 시스템의 문제' },
+        { type: 'p', content: '저희가 만나는 한인 식당 사장님 대부분은 이 세 가지 세팅을 각각 다른 시기에, 다른 이유로 하셨습니다. 도어대시 태블릿은 팬데믹 때 들어왔고, Toast나 Clover 단말기는 결제 영업사원이 들고 왔고, 구글 리스팅은 몇 년 전에 — 어쩌면 조카가 — 등록해 뒀습니다. 각각의 결정은 합리적이었습니다. 하지만 그 결과, 주문 채널·주방 시스템·평판 채널을 서로 다른 세 회사가 소유하고, 정작 식당은 그 연결 고리를 하나도 소유하지 못한 사업이 됐습니다.' },
+        { type: 'ul', content: '이 단절이 실제로 만들어내는 비용:', items: [
+          '단골에게까지 나가는 마켓플레이스 수수료 — 배달 플랫폼은 주문당 상당한 수수료를 받습니다(공개된 요율 구간이 흔히 두 자릿수 퍼센트까지 올라갑니다). 아픈 지점은, 이미 우리 가게를 알고 기꺼이 직접 주문했을 손님에게까지 그 수수료를 내고 있다는 것입니다.',
+          '한 번도 보지 못하는 고객 데이터 — 마켓플레이스로 주문이 들어오면 손님의 이름, 연락처, 주문 이력은 플랫폼이 가집니다. 한가한 화요일 스페셜을 단골에게 문자로 알릴 수 없습니다. 누가 단골인지 모르니까요.',
+          '따로 노는 메뉴들 — 도어대시 메뉴, 매장 메뉴, POS 메뉴가 각각 따로 수정되다 보니 가격과 품절 항목이 어긋나고, 어긋날 때마다 환불이나 나쁜 리뷰, 혹은 둘 다로 돌아옵니다.',
+          '손으로 다시 입력하는 주문 — 마켓플레이스 태블릿이 POS와 연동돼 있지 않으면 직원이 바쁜 러시 시간에 티켓을 일일이 옮겨 적습니다. 입력 실수는 정확히 그때 일어납니다.',
+          '뒷전이 된 리뷰 — 답글 없는 리뷰는 텅 빈 홀처럼 읽힙니다. 시카고 북서 교외 같은 이중언어 상권에서, 답글 없는 한국어 리뷰는 커뮤니티 전체에게 "저쪽에서 아무도 듣고 있지 않다"고 말하는 것과 같습니다.',
+        ] },
+        { type: 'h2', content: '1단계 — POS를 단일 기준점(source of truth)으로 만드세요' },
+        { type: 'p', content: 'Toast와 Clover는 둘 다 좋은 시스템이고, 이미 둘 중 하나를 쓰고 계시다면 가장 저렴한 업그레이드는 이미 돈 내고 있는 기능을 켜는 것입니다. 두 플랫폼 모두 POS 메뉴를 그대로 읽어오는 자사 온라인 주문을 제공합니다 — 메뉴 하나를 한 곳에서만 수정하면 홀, 주문 페이지, 주방 프린터에 동시에 반영됩니다. 마켓플레이스 주문을 POS로 바로 넣어주는 연동도 지원해서, 옮겨 적기를 끝낼 수 있습니다. 이건 다 뜯어내고 새로 까는 프로젝트가 아니라, 이미 카운터에 놓여 있는 장비 위에 설정을 얹는 작업입니다.' },
+        { type: 'ul', content: '저희가 권하는 작업 순서:', items: [
+          'POS 업체의 온라인 주문(Toast Online Ordering 또는 Clover Online Ordering)을 켜서, 직접 주문이라는 채널부터 존재하게 만드세요. 주문은 다른 모든 주문과 같은 주방 워크플로로 흘러갑니다.',
+          '배달 마켓플레이스를 연동으로 POS에 연결해서, 모든 채널이 같은 방식으로 주방에 출력되고 메뉴 수정이 한 곳에서 전파되게 하세요.',
+          "구글 비즈니스 프로필의 '주문' 버튼, 인스타그램 바이오 링크, 계산대 QR 코드를 마켓플레이스가 아니라 자체 주문 페이지로 향하게 하세요.",
+          '단골이 갈아탈 만한 작고 지속 가능한 이유를 주세요 — 직접 주문엔 수수료가 안 나가니 그만큼 감당 가능한 픽업 할인이나 적립 혜택으로요.',
+          '직접 주문이 돌아가기 시작하면, POS가 그동안 쌓아온 데이터 — 가장 바쁜 시간대, 마진 좋은 메뉴, 재주문 패턴 — 를 들여다보세요. Toast/Clover 데이터 활용법은 저희 POS 분석 가이드에 정리돼 있습니다.',
+        ] },
+        { type: 'tip', content: "오늘 딱 하나만 확인해 보세요. 구글에 우리 식당 이름을 검색하고 '온라인 주문' 버튼이 실제로 어디로 보내는지 보는 겁니다. 많은 한인 식당에서 이 버튼이 제3자 마켓플레이스로 연결돼 있습니다 — 이름까지 검색해서 찾아온 충성 고객마저 구글이 수수료 채널로 흘려보내고 있다는 뜻입니다. 이 버튼을 자체 주문 페이지로 바꾸는 건 구글 비즈니스 프로필 안에서 10분이면 되는 수정입니다." },
+        { type: 'h2', content: '2단계 — 리뷰 관리는 위기 대응이 아니라 주간 루틴으로' },
+        { type: 'p', content: "시카고 교외에서 식당 발견은 리뷰가 결정합니다. 글렌뷰의 한 가족이 코리안 바비큐 세 곳 중 하나를 고를 때 가장 먼저 보는 건 별점이니까요. 흔한 실수는 리뷰를 '나쁜 게 하나 떴을 때 처리하는 일'로 취급하는 것입니다. 해법은 지루할 만큼 꾸준한 루틴입니다 — 매주 30분을 고정해 두고 새 리뷰 전부에, 쓰인 언어 그대로 답글을 답니다. 좋은 리뷰엔 구체적으로 감사하고, 나쁜 리뷰엔 무엇을 바꿨는지 차분하게 답합니다. 리뷰에 돈을 내거나, 할인을 걸거나, 만족한 손님만 골라 부탁하는 일은 절대 하지 마세요 — 셋 다 구글이 금지하는 행위이고, 적발 시 프로필의 리뷰가 통째로 날아갈 수 있습니다. 요청 자체를 지양하라고 하는 Yelp에서는 프로필 그 자체에 투자하세요 — 정확한 영업시간, 손님들이 실제로 시키는 메뉴의 진짜 사진, 그리고 빠른 사장님 답글." },
+        { type: 'h2', content: '시카고에서만 더해지는 한 겹 — 두 언어 모두에서 검색되기' },
+        { type: 'p', content: "시카고 지역 한인 식당은 두 개의 검색 고객층을 상대합니다. 'korean bbq near me'나 'best korean food Schaumburg'를 검색하는 영어권 손님, 그리고 '시카고 한인 식당', '글렌뷰 맛집'을 검색하는 한국어권 손님. 대부분의 식당 웹사이트와 구글 프로필은 이 중 한쪽만 상대합니다. 손님들이 실제로 쓰는 동네 이름과 영업시간, 주차 안내, 직접 주문 링크를 담은 이중언어 사이트 — 그리고 사진과 한/영 설명, 두 언어 모두의 리뷰 답글이 있는 구글 비즈니스 프로필 — 이 조합이면 한 번의 구축으로 두 고객층을 모두 커버합니다. 이 조합은 시카고 상권에서 아직 드물어서 그 자체로 실질적인 경쟁 우위가 되고, 저희가 버지니아 애넌데일 식당 마케팅 가이드에서 정리한 것과 같은 플레이북입니다 — 방법론은 도시가 달라져도 그대로 통합니다." },
+        { type: 'cta', content: '시카고랜드에서 한인 식당을 운영하시면서, 서로 대화하지 않는 세 개의 시스템에 지치셨나요? ZOE LUMOS는 Toast/Clover에 직접 연결되는 온라인 주문을 갖춘 이중언어 식당 웹사이트를 만들고, 구글 비즈니스 프로필과 리뷰 관리를 실제로 지킬 수 있는 루틴으로 세팅해 드립니다. 한국어/영어 무료 상담: info@zoelumos.com 이메일 또는 카카오톡(http://pf.kakao.com/_xhxdxmlX/chat)으로 편하게 문의하세요.' },
+      ],
+    },
+  },
+  // ─────────────────────────────────────────────────────────────────
+  // 2026-07-17 — 애플리케이션 개발 rotation: how to commission a custom web app
+  // or iOS App Store app (앱 개발 의뢰 / 한인 앱 개발 query keywords).
+  // Naturally states ZOE LUMOS is a registered Apple App Store developer.
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'korean-app-development-hire-guide-2026',
+    date: '2026-07-17',
+    updatedDate: '2026-07-17',
+    readTime: 10,
+    category: { en: 'App Development', ko: '앱 개발' },
+    title: {
+      en: 'Hiring an App Developer in 2026: A Korean-American Business Guide to Custom Web Apps and iOS App Store Apps',
+      ko: '앱 개발 의뢰, 어디서부터 시작할까 — 한인 비즈니스를 위한 커스텀 웹앱 · iOS 앱스토어 앱 개발 가이드 (2026)',
+    },
+    metaDescription: {
+      en: "When off-the-shelf tools stop fitting, Korean-American business owners start asking how to commission a custom web app or an iOS App Store app — and most guides skip the parts that matter: what to prepare before asking for a quote, how the build actually runs from discovery to App Store review, and which ownership questions protect you. A practical hiring guide from a registered Apple App Store developer.",
+      ko: '기성 툴이 더는 사업에 맞지 않을 때, 한인 사장님들은 커스텀 웹앱이나 iOS 앱스토어 앱 개발 의뢰를 알아보기 시작합니다 — 그런데 대부분의 가이드는 정작 중요한 부분을 건너뜁니다. 견적 요청 전에 준비할 것, 기획부터 앱스토어 심사까지 실제 진행 과정, 그리고 사장님을 지켜주는 소유권 질문들. Apple 앱스토어 등록 개발사가 쓴 실전 의뢰 가이드입니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'How much does it cost to hire someone to build an app for a small business?',
+          ko: '소규모 사업체 앱 개발 의뢰 비용은 얼마나 드나요?',
+        },
+        a: {
+          en: "Cost tracks scope more than anything else, and the honest ranges are wide: a focused custom web app — one core workflow like bookings, ordering, or an internal tool, done well — commonly lands in the low-to-mid four figures, while a full native iOS app with App Store distribution, push notifications, and payments typically runs into five figures once design, development, testing, and review are counted. Recurring costs exist too: Apple's Developer Program is $99/year, and any app needs hosting and maintenance. The most useful cost advice is not a number but a sequence — define the one workflow that must work on day one, get that built and shipped, and treat everything else as a later phase. Owners who commission 'everything at once' pay the most and ship the slowest; our PWA-versus-native guide covers how to tell which tier your idea actually needs.",
+          ko: '비용은 무엇보다 범위(스코프)를 따라갑니다. 정직한 범위는 넓습니다 — 예약, 주문, 내부 업무 도구처럼 핵심 워크플로 하나에 집중한 커스텀 웹앱은 잘 만들어도 보통 수천 달러대에서 시작하고, 앱스토어 배포·푸시 알림·결제까지 갖춘 정식 네이티브 iOS 앱은 디자인·개발·테스트·심사까지 합치면 통상 1만 달러대로 올라갑니다. 반복 비용도 있습니다 — Apple 개발자 프로그램 연 $99, 그리고 어떤 앱이든 호스팅과 유지보수가 필요합니다. 가장 유용한 비용 조언은 숫자가 아니라 순서입니다 — 첫날부터 반드시 돌아가야 하는 워크플로 하나를 정의하고, 그것부터 만들어 출시한 뒤, 나머지는 다음 단계로 미루세요. "한 번에 전부"를 의뢰하는 사장님이 가장 많이 내고 가장 늦게 출시합니다. 내 아이디어가 어느 단계면 충분한지는 저희 PWA vs 네이티브 가이드에 정리돼 있습니다.',
+        },
+      },
+      {
+        q: {
+          en: 'Can a Korean-American small business publish its own app on the Apple App Store?',
+          ko: '한인 소규모 사업체도 자체 앱을 애플 앱스토어에 올릴 수 있나요?',
+        },
+        a: {
+          en: "Yes — any business can publish on the App Store by enrolling in the Apple Developer Program ($99/year); an LLC or corporation enrolls as an organization, which requires a D-U-N-S number, or you can work with an agency that is already a registered App Store developer and handles enrollment, provisioning, and review submission for you. Two things owners consistently underestimate: first, App Review is a real gate — Apple's Guideline 4.3 rejects cookie-cutter template apps, which is why cheap 'app builder' products often never make it to the store; second, ownership matters — the app should ship under a Developer account your business controls (or with a written agreement guaranteeing transfer), so that if you ever change vendors, your app, its reviews, and its users move with you. We walk through the full enrollment mechanics in our App Store submission guide.",
+          ko: '네 — Apple 개발자 프로그램(연 $99)에 가입하면 어떤 사업체든 앱스토어에 앱을 올릴 수 있습니다. LLC나 법인은 조직 계정으로 가입하며 D-U-N-S 번호가 필요하고, 또는 이미 앱스토어에 등록된 개발사와 일하면서 가입·프로비저닝·심사 제출을 맡길 수도 있습니다. 사장님들이 꾸준히 과소평가하는 두 가지 — 첫째, 앱 심사는 실제 관문입니다. Apple의 가이드라인 4.3은 틀에 찍어낸 템플릿 앱을 거절하고, 저가 "앱 빌더" 제품이 스토어에 못 올라가는 이유가 바로 이것입니다. 둘째, 소유권이 중요합니다. 앱은 사업체가 통제하는 개발자 계정으로 출시되어야 하고(또는 이전을 보장하는 서면 계약과 함께), 그래야 업체를 바꾸더라도 앱과 리뷰와 사용자가 사장님을 따라옵니다. 가입 절차 전체는 저희 앱스토어 등록 가이드에 정리돼 있습니다.',
+        },
+      },
+      {
+        q: {
+          en: 'Should I commission a web app or a native iOS app first?',
+          ko: '웹앱과 네이티브 iOS 앱 중 무엇부터 의뢰해야 하나요?',
+        },
+        a: {
+          en: "Start with a web app unless your idea specifically depends on what only a native app provides. A custom web app runs in every browser on every device, needs no store review, updates instantly, and costs meaningfully less — which makes it the right first version for booking systems, ordering pages, customer portals, and internal tools. A native iOS app earns its extra cost when you need reliable push notifications to re-engage customers, App Store presence as a trust and discovery channel, offline use, or deeper device integration. The good news is these are phases, not rivals: a well-architected web app shares its backend — accounts, data, payments — with a later native app, so building web-first does not throw work away. What to avoid is the reverse order: paying for a native app to validate an idea a web app could have tested for less.",
+          ko: '아이디어가 네이티브 앱만 제공하는 기능에 정확히 의존하는 게 아니라면, 웹앱부터 시작하세요. 커스텀 웹앱은 모든 기기의 모든 브라우저에서 돌아가고, 스토어 심사가 필요 없고, 즉시 업데이트되고, 비용도 의미 있게 낮습니다 — 예약 시스템, 주문 페이지, 고객 포털, 내부 업무 도구의 첫 버전으로 딱 맞는 이유입니다. 네이티브 iOS 앱이 추가 비용값을 하는 경우는 고객을 다시 불러오는 확실한 푸시 알림, 신뢰·발견 채널로서의 앱스토어 존재감, 오프라인 사용, 더 깊은 기기 연동이 필요할 때입니다. 좋은 소식은 이 둘이 경쟁 관계가 아니라 단계라는 것입니다 — 제대로 설계된 웹앱은 계정·데이터·결제 백엔드를 나중의 네이티브 앱과 공유하므로, 웹 먼저 만든 작업이 버려지지 않습니다. 피해야 할 것은 반대 순서입니다 — 웹앱으로 더 싸게 검증할 수 있었던 아이디어를 네이티브 앱 비용을 들여 검증하는 것.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "There is a moment in a growing business when the off-the-shelf tools stop fitting. The booking platform charges per appointment and still cannot handle your deposit policy. The ordering system cannot do the combo logic your menu needs. The spreadsheet that runs your inventory has become a second job. That is usually when a Korean-American business owner first types '앱 개발 의뢰' or 'app developer near me' into a search bar — and lands in a market that is genuinely hard to evaluate from the outside: quotes that differ by 10x for what sounds like the same thing, agencies that vanish after launch, and templates dressed up as custom work. We build custom web apps and native iOS apps as a registered Apple App Store developer, and this guide is the walkthrough we wish every owner had before their first conversation with any developer — including us." },
+        { type: 'h2', content: 'What owners actually commission (it is rarely "an app" in the abstract)' },
+        { type: 'p', content: "Almost nobody needs 'an app.' They need one specific workflow to stop hurting. The useful first step is naming that workflow precisely, because it determines the entire cost and technology conversation that follows." },
+        { type: 'ul', content: 'The requests we see most often from Korean-American businesses:', items: [
+          'Booking and scheduling with real business rules — deposits, no-show policies, staff-specific services, bilingual confirmations — that generic booking platforms cannot express.',
+          'Direct ordering for restaurants and shops — a branded ordering flow the business owns, instead of renting one from a marketplace that keeps the customer data.',
+          'Customer portals — order history, membership status, documents, loyalty points — for businesses whose customers currently get all of this over KakaoTalk messages and phone calls.',
+          'Internal operations tools — inventory, delivery routing, staff scheduling, quote generation — replacing the spreadsheet that one person maintains and everyone fears.',
+          'A native iOS app on the App Store — usually as a second phase, when push notifications, store presence, or offline use start justifying the added investment.',
+        ] },
+        { type: 'h2', content: 'Before you ask for a quote: the one-page brief' },
+        { type: 'p', content: "The single highest-leverage thing an owner can do costs nothing: write one page before contacting anyone. Developers quote high when requirements are vague — uncertainty gets priced in. A clear one-pager gets you comparable quotes and marks you as a client who knows what they want." },
+        { type: 'ul', content: 'What the one-page brief should answer:', items: [
+          'Who uses it — customers, staff, or both? Roughly how many people on day one?',
+          'The one workflow that must work at launch — described as a story: "a customer picks a service, chooses a time, pays a deposit, and we both get a confirmation."',
+          'What it must connect to — your POS, payment processor, Google Calendar, KakaoTalk channel, an existing website?',
+          'Languages — Korean, English, or both, and which one your staff will use day to day.',
+          'A budget range and a hard deadline if one exists — sharing a range is not weakness; it lets an honest developer tell you immediately what fits inside it.',
+        ] },
+        { type: 'h2', content: 'How a build actually runs, from first call to the App Store' },
+        { type: 'p', content: "A serious engagement follows a recognizable arc. Discovery first: a real conversation about the workflow, followed by a written scope that both sides sign — if a developer quotes a fixed price before understanding your business, that price protects them, not you. Then design: screens you can react to before code is written, because moving a button in a design file is cheap and moving it in a finished app is not. Then the build itself, with something clickable in your hands early and regularly — weekly or biweekly check-ins, not a silent disappearance until 'it is done.' For an iOS app, the last mile is Apple's world: a beta on your own phone via TestFlight, then App Store review. As a registered App Store developer we handle that stage routinely — provisioning, privacy labels, review guidelines, the rejection-and-resubmit dance when Apple pushes back — and it is genuinely the stage where first-time solo efforts most often stall. After launch, the app needs an owner on the technical side: dependency updates, OS releases, small fixes. Ask how maintenance works before you sign, not after." },
+        { type: 'tip', content: "Three ownership questions to ask any developer before signing, in writing: Is the code delivered in a repository my business controls? Is the app published under a Developer account my business owns, or transferable to one? And do I keep full access to my own database and user data if we part ways? A good developer answers all three without flinching. Hesitation on any of them is the answer." },
+        { type: 'h2', content: 'Red flags in the hiring process' },
+        { type: 'ul', content: 'Patterns that reliably precede a bad outcome:', items: [
+          'A detailed fixed quote within hours of your first message — nobody scoped anything; the number is a hook, and the change orders come later.',
+          "A 'custom app' that is a white-labeled template — Apple's Guideline 4.3 explicitly rejects cookie-cutter apps, and even when they slip through, they cannot express the business rules that made you want custom software in the first place.",
+          'No maintenance story — an app is not a one-time purchase; a developer with no answer for "who fixes it in month six" is planning to be gone by month six.',
+          'Accounts created in the vendor\'s name — the Apple Developer account, the domain, the database. This is the app-world version of the domain-hostage problem we have written about, and it hurts more here because App Store history and users cannot be rebuilt from scratch.',
+          'No bilingual capability when your business is bilingual — if the developer cannot review the Korean copy in your own app, your staff and customers will find the mistakes for them.',
+        ] },
+        { type: 'cta', content: "Have a workflow that off-the-shelf tools cannot handle? ZOE LUMOS designs and builds custom web apps and native iOS apps for Korean-American businesses — as a registered Apple App Store developer, we take projects from a one-page idea through App Store review to ongoing maintenance, in Korean and English. Free consultation: email info@zoelumos.com or message us on KakaoTalk (http://pf.kakao.com/_xhxdxmlX/chat)." },
+      ],
+      ko: [
+        { type: 'intro', content: "성장하는 사업에는 기성 툴이 더는 맞지 않게 되는 순간이 옵니다. 예약 플랫폼은 예약 건당 수수료를 떼 가면서도 우리 가게의 예약금 정책은 처리하지 못합니다. 주문 시스템은 우리 메뉴에 필요한 콤보 구성을 소화하지 못합니다. 재고를 관리하던 스프레드시트는 어느새 두 번째 직업이 됐습니다. 보통 그 시점에 한인 사장님들이 처음으로 검색창에 '앱 개발 의뢰'나 '한인 앱 개발'을 입력합니다 — 그리고 밖에서는 도무지 평가하기 어려운 시장을 만나게 됩니다. 같은 이야기처럼 들리는 일에 10배씩 차이 나는 견적, 출시 후 사라지는 업체, 커스텀으로 포장된 템플릿. 저희는 Apple 앱스토어 등록 개발사로서 커스텀 웹앱과 네이티브 iOS 앱을 만듭니다. 이 가이드는 어떤 개발자와든 — 저희를 포함해서 — 첫 미팅을 하기 전에 모든 사장님이 알고 계셨으면 하는 안내서입니다." },
+        { type: 'h2', content: "사장님들이 실제로 의뢰하는 것 (막연한 '앱'인 경우는 거의 없습니다)" },
+        { type: 'p', content: "'앱'이 필요한 사람은 거의 없습니다. 아픈 워크플로 하나가 멈추길 바라는 것이죠. 유용한 첫걸음은 그 워크플로를 정확하게 이름 붙이는 것입니다 — 이후의 비용과 기술 논의 전체가 거기서 결정되니까요." },
+        { type: 'ul', content: '한인 비즈니스에서 가장 자주 받는 의뢰들:', items: [
+          '실제 영업 규칙이 들어간 예약 · 스케줄링 — 예약금, 노쇼 정책, 직원별 서비스, 이중언어 확인 메시지 — 범용 예약 플랫폼으로는 표현이 안 되는 것들.',
+          '식당 · 매장의 직접 주문 — 고객 데이터를 가져가는 마켓플레이스에서 빌려 쓰는 게 아니라, 사업체가 소유하는 브랜드 주문 플로우.',
+          '고객 포털 — 주문 이력, 멤버십 상태, 서류, 적립 포인트 — 지금은 전부 카카오톡 메시지와 전화로 처리되고 있는 것들.',
+          '내부 운영 도구 — 재고, 배송 동선, 직원 스케줄, 견적서 생성 — 한 사람만 만질 줄 알고 모두가 두려워하는 그 스프레드시트를 대체하는 것.',
+          '앱스토어에 올라가는 네이티브 iOS 앱 — 보통은 2단계로, 푸시 알림 · 스토어 존재감 · 오프라인 사용이 추가 투자를 정당화하기 시작할 때.',
+        ] },
+        { type: 'h2', content: '견적 요청 전에 — 한 페이지 기획서' },
+        { type: 'p', content: '사장님이 할 수 있는 가장 레버리지 높은 일은 돈이 한 푼도 안 듭니다. 누구에게든 연락하기 전에 한 페이지를 쓰는 것입니다. 요구사항이 모호하면 개발자는 견적을 높게 부릅니다 — 불확실성이 가격에 얹히니까요. 명확한 한 페이지는 비교 가능한 견적을 받게 해주고, 원하는 걸 아는 클라이언트라는 신호가 됩니다.' },
+        { type: 'ul', content: '한 페이지 기획서가 답해야 할 것들:', items: [
+          '누가 쓰는가 — 고객, 직원, 아니면 둘 다? 첫날 기준 대략 몇 명?',
+          '출시 시점에 반드시 돌아가야 하는 워크플로 하나 — 이야기처럼 서술하세요: "고객이 서비스를 고르고, 시간을 선택하고, 예약금을 결제하면, 양쪽 모두 확인을 받는다."',
+          '무엇과 연결되어야 하는가 — POS, 결제 프로세서, 구글 캘린더, 카카오톡 채널, 기존 웹사이트?',
+          '언어 — 한국어, 영어, 아니면 둘 다. 그리고 직원들이 매일 쓰는 언어는 어느 쪽인지.',
+          '예산 범위와, 있다면 확정 데드라인 — 범위를 공유하는 건 약점이 아닙니다. 정직한 개발자가 그 안에서 무엇이 가능한지 즉시 말해줄 수 있게 해줍니다.',
+        ] },
+        { type: 'h2', content: '첫 통화부터 앱스토어까지 — 실제 진행 과정' },
+        { type: 'p', content: "제대로 된 프로젝트는 알아볼 수 있는 궤적을 따라갑니다. 먼저 디스커버리 — 워크플로에 대한 진짜 대화, 그리고 양측이 서명하는 서면 스코프. 사업을 이해하기도 전에 확정가를 부르는 개발자가 있다면, 그 가격은 사장님이 아니라 그들을 보호하는 가격입니다. 다음은 디자인 — 코드를 쓰기 전에 사장님이 반응할 수 있는 화면들. 디자인 파일에서 버튼을 옮기는 건 싸지만 완성된 앱에서 옮기는 건 싸지 않으니까요. 그다음 개발 — 초기부터, 그리고 정기적으로 직접 클릭해볼 수 있는 결과물과 함께. 매주 또는 격주 체크인이지, '다 되면 연락드릴게요' 후의 침묵이 아닙니다. iOS 앱이라면 마지막 구간은 Apple의 영역입니다 — TestFlight로 사장님 폰에 베타를 설치하고, 앱스토어 심사를 받습니다. 저희는 앱스토어 등록 개발사로서 이 단계를 일상적으로 처리합니다 — 프로비저닝, 개인정보 라벨, 심사 가이드라인, Apple이 반려했을 때의 수정-재제출 과정까지. 처음 혼자 도전하는 분들이 가장 자주 멈추는 지점이 바로 여기입니다. 출시 후에도 앱에는 기술 쪽 주인이 필요합니다 — 의존성 업데이트, OS 릴리즈 대응, 자잘한 수정. 유지보수가 어떻게 돌아가는지는 서명 후가 아니라 서명 전에 물어보세요." },
+        { type: 'tip', content: '서명 전에 어떤 개발자에게든 서면으로 물어볼 소유권 질문 세 가지 — 코드는 우리 사업체가 통제하는 저장소로 전달되는가? 앱은 우리 사업체 소유의 개발자 계정으로 출시되는가, 아니면 이전 가능한가? 그리고 결별하게 되면 우리 데이터베이스와 사용자 데이터에 대한 전체 접근 권한을 내가 유지하는가? 좋은 개발자는 세 질문 모두에 망설임 없이 답합니다. 어느 하나에서라도 머뭇거린다면, 그게 답입니다.' },
+        { type: 'h2', content: '의뢰 과정에서의 위험 신호' },
+        { type: 'ul', content: '나쁜 결말에 앞서 반복적으로 나타나는 패턴들:', items: [
+          '첫 메시지 몇 시간 만에 도착하는 상세한 확정 견적 — 아무도 스코프를 파악하지 않았다는 뜻입니다. 그 숫자는 미끼이고, 추가 비용 청구는 나중에 옵니다.',
+          "화이트라벨 템플릿을 '커스텀 앱'으로 파는 것 — Apple 가이드라인 4.3은 틀에 찍어낸 앱을 명시적으로 거절하고, 설령 통과하더라도 애초에 커스텀 소프트웨어를 원하게 만든 그 영업 규칙들을 템플릿은 표현하지 못합니다.",
+          "유지보수 이야기가 없음 — 앱은 일회성 구매가 아닙니다. '여섯 달 뒤에 누가 고치나요'에 답이 없는 개발자는 여섯 달 뒤에 없을 계획인 것입니다.",
+          '업체 명의로 만들어지는 계정들 — Apple 개발자 계정, 도메인, 데이터베이스. 저희가 여러 번 다룬 도메인 인질 문제의 앱 버전인데, 여기선 더 아픕니다. 앱스토어 이력과 사용자는 처음부터 다시 쌓을 수 없으니까요.',
+          '이중언어 사업체인데 이중언어 역량이 없는 개발자 — 개발자가 내 앱 속 한국어 문구를 검수하지 못하면, 그 오타는 직원과 손님이 대신 찾아주게 됩니다.',
+        ] },
+        { type: 'cta', content: '기성 툴로는 감당이 안 되는 워크플로가 있으신가요? ZOE LUMOS는 한인 비즈니스를 위한 커스텀 웹앱과 네이티브 iOS 앱을 설계하고 만듭니다 — Apple 앱스토어 등록 개발사로서, 한 페이지 아이디어부터 앱스토어 심사, 지속적인 유지보수까지 한국어와 영어로 함께합니다. 무료 상담: info@zoelumos.com 이메일 또는 카카오톡(http://pf.kakao.com/_xhxdxmlX/chat)으로 편하게 문의하세요.' },
+      ],
+    },
+  },
+  // ─────────────────────────────────────────────────────────────────
   // 2026-07-18 — AWS cloud infrastructure consulting for growing Korean-American
   // wholesale/trading businesses. Shows ZOE LUMOS operates beyond "website shop"
   // into enterprise-grade cloud architecture, security, and networking.
