@@ -84,6 +84,7 @@ export const PILLARS = {
       'why-anthropic-chose-aws',
       'shopify-korean-product-sellers-why-start-2026',
       'b2b-company-website-korean-business-credibility-2026',
+      'aws-cloud-consulting-korean-business-dallas-2026',
     ],
   },
   'kakaotalk-marketing': {
@@ -281,4 +282,7 @@ export const POST_TO_PILLAR: Record<string, PillarKey> = {
 
   // 2026-07-15 — flagship case study (Vito's Pizza, Alpharetta GA)
   'website-drives-revenue-pizza-catering-case-study-2026': 'restaurant-marketing',
+
+  // 2026-07-18 — AWS cloud infrastructure consulting (Dallas–Fort Worth, TX)
+  'aws-cloud-consulting-korean-business-dallas-2026': 'website-cost',
 }

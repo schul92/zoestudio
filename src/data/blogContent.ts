@@ -11351,4 +11351,120 @@ export const blogContent: BlogPost[] = [
       ],
     },
   },
+  // ─────────────────────────────────────────────────────────────────
+  // 2026-07-18 — AWS cloud infrastructure consulting for growing Korean-American
+  // wholesale/trading businesses. Shows ZOE LUMOS operates beyond "website shop"
+  // into enterprise-grade cloud architecture, security, and networking.
+  // Audience rotation: Dallas–Fort Worth, TX (not NJ/NY-only).
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'aws-cloud-consulting-korean-business-dallas-2026',
+    date: '2026-07-18',
+    updatedDate: '2026-07-18',
+    readTime: 10,
+    category: { en: 'Cloud & Infrastructure', ko: '클라우드 · 인프라' },
+    title: {
+      en: 'AWS Cloud Consulting for Korean-American Businesses: When Company Data Outgrows the Office PC (Dallas–Fort Worth Guide, 2026)',
+      ko: 'AWS 클라우드 컨설팅, 우리 회사도 필요할까 — 사무실 PC로는 부족해지는 순간 (댈러스·포트워스 한인 기업 가이드 2026)',
+    },
+    metaDescription: {
+      en: 'Growing Korean-American wholesale, trading, and manufacturing companies in Dallas–Fort Worth often keep company data on one office PC and a shared Google Drive long after the business has outgrown it. Here is what AWS cloud consulting actually covers — VPC networking, IAM access control, backup and disaster recovery, secure remote access — and how to know when your business needs it.',
+      ko: '댈러스·포트워스의 한인 무역·도매·제조 기업은 회사가 이미 그 단계를 넘어섰는데도 사무실 PC 한 대와 공용 구글 드라이브에 데이터를 두는 경우가 많습니다. AWS 클라우드 컨설팅이 실제로 다루는 영역 — VPC 네트워크 설계, IAM 접근 권한 관리, 백업 · 재해 복구, 여러 사무실 · 창고 간 안전한 원격 접속 — 과 우리 회사에 필요한 시점을 판단하는 법을 정리했습니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'Does a small Korean-American business really need AWS, or is regular website hosting enough?',
+          ko: '작은 한인 사업체도 AWS가 정말 필요한가요, 아니면 일반 웹사이트 호스팅이면 충분한가요?',
+        },
+        a: {
+          en: "Website hosting and company-wide data infrastructure are two different problems, and most small businesses only need the first one — until they don't. A restaurant or salon website answers 'can customers find and reach us,' and standard hosting (Vercel, Shopify, etc.) handles that fine. AWS becomes relevant when the question changes to 'where does our company's actual data and systems live' — inventory records shared across a warehouse and an office, financial documents multiple employees touch, a database an ordering or booking system depends on, or a need for secure remote access across more than one location. The signal is usually growth: a second location, an outgrown spreadsheet, a former employee whose access was never revoked, or an e-commerce arm that crashes during a sale. If your business is still one person and one storefront, you likely do not need AWS yet. If you are coordinating inventory, staff, and sensitive records across more than one place, it is worth a real conversation.",
+          ko: '웹사이트 호스팅과 회사 전체의 데이터·시스템 인프라는 서로 다른 문제이고, 대부분의 소규모 사업체는 처음엔 앞의 것만 있으면 됩니다 — 사업이 커지기 전까지는요. 식당이나 살롱 웹사이트는 "손님이 우리를 찾고 연락할 수 있는가"에 답하는 것이고, 일반 호스팅(Vercel, Shopify 등)으로 충분합니다. AWS가 필요해지는 시점은 질문이 바뀔 때입니다 — "우리 회사의 실제 데이터와 시스템은 어디에 있는가." 창고와 사무실이 공유하는 재고 기록, 여러 직원이 만지는 재무 문서, 주문·예약 시스템이 의존하는 데이터베이스, 두 곳 이상의 지점을 안전하게 연결해야 하는 필요 등이죠. 보통 신호는 성장입니다 — 두 번째 지점이 생겼거나, 스프레드시트로는 감당이 안 되거나, 퇴사한 직원의 접근 권한이 그대로 남아 있거나, 세일 기간에 이커머스 사이트가 다운되거나. 아직 1인 사업체에 매장 하나라면 AWS는 필요 없을 가능성이 높습니다. 여러 장소에서 재고 · 직원 · 민감한 기록을 조율하고 계신다면, 진지하게 대화해볼 가치가 있습니다.',
+        },
+      },
+      {
+        q: {
+          en: 'How much does AWS cloud consulting cost, and is it more expensive than what we already pay?',
+          ko: 'AWS 클라우드 컨설팅은 비용이 얼마나 들고, 지금 쓰는 것보다 더 비싼가요?',
+        },
+        a: {
+          en: "AWS itself is pay-as-you-go — you are billed only for the compute, storage, and data transfer you actually use, with no upfront hardware purchase, which for most small and mid-size businesses lands well below the cost of buying and maintaining physical servers. A typical small business setup (a managed database, backup storage, secure VPN access, and modest compute) often runs in the low hundreds of dollars per month in AWS usage, scaling up or down with the business — nothing like a server room's fixed cost. The separate cost is the consulting and setup work itself — architecture design, migration, and ongoing management — which is a one-time or retainer engagement, not part of your AWS bill. Compared to hiring a full-time in-house IT person or absorbing the cost of a data breach or a day of downtime during your busiest sale, most owners find the math favors moving sooner rather than later.",
+          ko: 'AWS 자체는 사용한 만큼만 내는 종량제입니다 — 실제로 쓴 컴퓨팅·저장공간·데이터 전송량만큼만 청구되고, 하드웨어를 미리 사둘 필요가 없어서, 대부분의 중소기업에게는 물리 서버를 구매·유지보수하는 비용보다 훨씬 낮게 나옵니다. 전형적인 소규모 설정(관리형 데이터베이스, 백업 저장소, 안전한 VPN 접속, 소규모 컴퓨팅)은 보통 월 AWS 사용료가 수백 달러 수준에서 시작하고, 사업 규모에 따라 오르내립니다 — 서버실처럼 고정비가 아니라요. 별도의 비용은 컨설팅·설정 작업 자체입니다 — 아키텍처 설계, 마이그레이션, 지속 관리 — 이건 AWS 청구서와 별개로 일회성 또는 월정액 계약입니다. 정직원 IT 담당자를 채용하거나, 세일 기간 하루 다운타임이나 데이터 유출 비용을 감당하는 것과 비교하면, 대부분의 사장님들은 더 일찍 옮기는 쪽이 계산상 유리하다는 결론에 도달합니다.',
+        },
+      },
+      {
+        q: {
+          en: 'How long does AWS migration take, and will our business have downtime?',
+          ko: 'AWS 마이그레이션은 얼마나 걸리고, 그동안 사업이 멈추나요?',
+        },
+        a: {
+          en: "A well-run migration is done in phases specifically to avoid downtime, not in one risky weekend cutover — the new AWS environment is built and tested in parallel with your existing systems, then traffic and data are moved over piece by piece once each piece is verified working. Timeline depends on scope: securing a single database with backups might take one to two weeks, while a full migration covering networking, multiple offices, and an e-commerce platform typically runs four to eight weeks. Your team keeps using the current systems throughout most of that window; the actual cutover for any single piece is scheduled during low-traffic hours and is typically minutes, not hours. The two things to insist on from any provider before you begin: a written rollback plan for every phase, and a live test of the backup and recovery process — not just a promise that backups exist.",
+          ko: '제대로 진행하는 마이그레이션은 다운타임을 피하려고 일부러 단계적으로 진행하는 것이지, 위험한 주말 몰아치기 전환이 아닙니다 — 기존 시스템을 그대로 둔 채 새 AWS 환경을 병렬로 구축·테스트하고, 각 부분이 정상 작동함을 확인한 뒤 트래픽과 데이터를 조각조각 옮깁니다. 소요 기간은 범위에 따라 다릅니다. 데이터베이스 하나를 백업까지 안전하게 옮기는 정도라면 1~2주, 네트워킹·여러 사무실·이커머스 플랫폼까지 포함하는 전체 마이그레이션이라면 보통 4~8주가 걸립니다. 그 기간 대부분 동안 직원들은 기존 시스템을 그대로 사용합니다. 실제 전환 작업은 트래픽이 적은 시간대에 예약되고, 조각 하나당 보통 몇 시간이 아니라 몇 분입니다. 시작 전에 어느 업체에든 반드시 요구해야 할 두 가지 — 단계마다 문서화된 롤백 계획, 그리고 "백업이 있다"는 약속이 아니라 실제로 복구가 되는지 살아있는 테스트입니다.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "We see the same pattern often among growing Korean-American wholesale and trading companies around Dallas–Fort Worth, Texas — importers, distributors, small manufacturers who started with one owner, one laptop, and a folder of invoices, and did everything right to get to fifteen or thirty employees, two locations, and a growing online storefront. What did not grow with the business is where the company's actual data lives. It is still one office PC, a shared personal Google Drive, and whatever the last employee who set up the ordering system remembers about how it works. That gap — between how big the business has become and how casually its data and systems are still run — is exactly where AWS cloud consulting starts." },
+        { type: 'h2', content: "The quiet risk behind 'the website looks fine'" },
+        { type: 'p', content: "Most Korean-American business owners already understand website basics — a fast site, good SEO, mobile-friendly design. Fewer have ever been asked a harder question: if the office PC that holds your customer list, supplier contracts, and order history died tomorrow, or if a former employee's login still worked six months after they left, what would actually happen? For a wholesale or trading business, that is not a hypothetical edge case — it is daily exposure. Financial records, customer PII, and supplier agreements often sit on individual laptops or a personal cloud account with no access log, no automatic backup, and no plan for what happens when a device is lost, stolen, or simply stops working." },
+        { type: 'ul', content: "The risks we see most often in growing wholesale, trading, and manufacturing businesses:", items: [
+          "No real backup — files live on one machine or a personal Drive account; a stolen laptop, a ransomware click, or a hard drive failure means the data is simply gone.",
+          "Access that never gets revoked — a former employee or an old contractor still has a working login to shared files, an ordering system, or a supplier portal months after they left.",
+          "No separation between office and warehouse networks — one flat network means a single compromised device can reach financial systems, inventory, and everything else.",
+          "E-commerce that cannot handle a good day — an online storefront on shared or basic hosting slows down or goes down exactly when a promotion or seasonal sale sends real traffic.",
+          "No disaster recovery plan — if the office internet, a server, or a laptop fails during a busy week, there is no documented way to get back up quickly, so it becomes improvisation under pressure.",
+        ] },
+        { type: 'h2', content: 'What AWS cloud consulting actually covers' },
+        { type: 'p', content: "AWS is Amazon's cloud infrastructure platform — the same foundation used by companies from single-location retailers to Fortune 500s, rented by the hour instead of bought as hardware. 'AWS consulting' is not one service; it is a set of architecture decisions matched to how your specific business actually operates. Here is what that looks like in practice for the kind of client we work with." },
+        { type: 'ul', content: 'Concrete pieces of an AWS setup, and the problem each one solves:', items: [
+          "VPC (Virtual Private Cloud) design — a private, isolated network for your company so your ordering system, financial data, and public website are not all sitting on the same exposed network.",
+          "IAM (Identity and Access Management) — every employee gets exactly the access they need and nothing more; when someone leaves, their access is revoked in one place, immediately, instead of hunting down every shared login.",
+          "S3 storage with automated backup and versioning — company documents, invoices, and records are backed up automatically on a schedule, with old versions recoverable if a file is corrupted, overwritten, or encrypted by ransomware.",
+          "RDS (managed database) — your ordering, inventory, or booking system runs on a database that is patched, backed up, and monitored automatically, instead of living on one office PC nobody wants to touch.",
+          "Site-to-Site or Client VPN — office, warehouse, and remote staff connect to company systems over an encrypted tunnel, not an open internet connection or a consumer VPN app.",
+          "CloudFront (CDN) and auto-scaling — an e-commerce site or ordering platform that automatically handles a traffic spike during Chuseok, Black Friday, or a marketing push, instead of slowing to a crawl.",
+          "Security groups and a web application firewall — network-level rules that block unauthorized access attempts before they ever reach your systems.",
+          "Cost optimization — Reserved Instances or Savings Plans for predictable workloads, so you are not paying on-demand prices for infrastructure that runs every single day.",
+        ] },
+        { type: 'h2', content: 'Why a bilingual, local partner matters here more than usual' },
+        { type: 'p', content: "Cloud architecture work is technical enough that most Korean-American business owners reasonably outsource all of it — the question is to whom. A large generic MSP (managed service provider) will happily take the contract, but documentation, support tickets, and security policy explanations arrive in English, on their schedule, assuming a familiarity with US enterprise IT norms that a first- or 1.5-generation owner running a family business often has not had reason to build. The stakes are also different from a website project: this is your financial records, your customer data, and your operational continuity. Getting an honest, plain answer to 'wait, why does this cost what it does' or 'what exactly happens if we get hit with ransomware' matters more here than almost anywhere else in the business — which is exactly why we treat this the same way we treat everything else at Zoe Lumos: in Korean or English, by the same person from audit through to ongoing management, reachable on KakaoTalk when something feels off." },
+        { type: 'tip', content: "One free audit question worth asking yourself this week: if you typed the name of a departed employee into your company's shared drive or ordering system right now, would their account still work? If you are not sure, that alone is worth a conversation — access control is usually the cheapest, fastest fix in this entire list." },
+        { type: 'h2', content: 'How a migration actually runs' },
+        { type: 'p', content: "We start with an audit, not a sales pitch — where does data actually live today, who can access what, what would break first if something failed, and what is the business actually trying to protect against (a ransomware attack, a lost laptop, a traffic spike, a compliance requirement from a supplier or partner). From there we design the AWS architecture around your specific risk, not a generic template, and migrate in phases: the new environment is built and tested alongside your existing systems, then pieces move over one at a time — starting with backup and access control, since those close the most dangerous gaps fastest, and finishing with anything customer-facing like an e-commerce platform. Your team keeps working on current systems through most of that window. Once migrated, the engagement does not end — monitoring, patching, and security review continue as an ongoing service, the same way we manage websites for our long-term clients." },
+        { type: 'cta', content: "Not sure whether your business has outgrown 'one office PC and a shared Drive'? ZOE LUMOS designs and manages AWS cloud infrastructure — networking, security, backup, and disaster recovery — for growing Korean-American businesses across the US, alongside our web and app development work. Free consultation in English or Korean: email info@zoelumos.com or message us on KakaoTalk (http://pf.kakao.com/_xhxdxmlX/chat)." },
+      ],
+      ko: [
+        { type: 'intro', content: '텍사스 댈러스·포트워스 지역에서 성장 중인 한인 무역·도매 회사들에서 자주 보는 패턴이 있습니다 — 수입업체, 유통업체, 소규모 제조업체들이 사장님 한 명, 노트북 한 대, 인보이스 폴더 하나로 시작해서, 옳은 결정들을 쌓아 직원 15~30명, 지점 두 곳, 성장하는 온라인 스토어로 커왔습니다. 그런데 사업과 함께 자라지 못한 것이 하나 있습니다 — 회사의 실제 데이터가 있는 곳입니다. 여전히 사무실 PC 한 대, 공유하는 개인 구글 드라이브, 그리고 주문 시스템을 마지막으로 설정한 직원이 기억하는 방식이 전부입니다. 사업이 커진 크기와, 그 데이터·시스템이 여전히 다뤄지는 방식 사이의 그 간극 — 바로 그 지점에서 AWS 클라우드 컨설팅이 시작됩니다.' },
+        { type: 'h2', content: "'웹사이트는 멀쩡한데' 뒤에 숨은 조용한 리스크" },
+        { type: 'p', content: '대부분의 한인 사장님들은 이미 웹사이트 기본기 — 빠른 속도, 좋은 SEO, 모바일 대응 — 은 알고 계십니다. 하지만 이런 더 어려운 질문을 받아본 분은 많지 않습니다. 고객 목록, 공급사 계약, 주문 이력이 담긴 사무실 PC가 내일 고장 난다면, 또는 6개월 전 퇴사한 직원의 로그인이 아직도 작동한다면 — 실제로 무슨 일이 벌어질까요? 무역·도매 회사에게 이건 가정이 아니라 매일의 노출입니다. 재무 기록, 고객 개인정보, 공급사 계약서가 흔히 개별 노트북이나 접근 기록도 없고 자동 백업도 없고 기기를 잃어버리거나 도난당하거나 그냥 고장 났을 때의 계획도 없는 개인 클라우드 계정에 놓여 있습니다.' },
+        { type: 'ul', content: '성장 중인 무역·도매·제조 기업에서 가장 자주 보는 위험들:', items: [
+          '진짜 백업이 없음 — 파일이 PC 한 대나 개인 드라이브 계정에만 있어서, 노트북 도난이나 랜섬웨어 클릭, 하드디스크 고장 한 번이면 데이터가 그냥 사라집니다.',
+          '회수되지 않는 접근 권한 — 퇴사한 직원이나 예전 협력업체가 몇 달이 지나도 공유 파일, 주문 시스템, 공급사 포털에 여전히 로그인할 수 있습니다.',
+          '사무실과 창고 네트워크가 분리되지 않음 — 하나의 평평한 네트워크는 감염된 기기 하나가 재무 시스템, 재고, 그 밖의 모든 것에 닿을 수 있다는 뜻입니다.',
+          '좋은 날을 감당 못 하는 이커머스 — 공유 호스팅이나 기본 호스팅 위의 온라인 스토어가 하필 프로모션이나 시즌 세일로 진짜 트래픽이 몰릴 때 느려지거나 멈춥니다.',
+          '재해 복구 계획 부재 — 바쁜 주에 사무실 인터넷, 서버, 노트북 중 하나가 고장 나면 빠르게 복구할 문서화된 방법이 없어서, 압박 속 즉흥 대응이 돼버립니다.',
+        ] },
+        { type: 'h2', content: 'AWS 클라우드 컨설팅이 실제로 다루는 영역' },
+        { type: 'p', content: 'AWS는 아마존의 클라우드 인프라 플랫폼입니다 — 매장 하나짜리 리테일러부터 포춘 500 기업까지 쓰는 것과 같은 기반을, 하드웨어를 사는 대신 시간 단위로 빌려 쓰는 방식입니다. "AWS 컨설팅"은 하나의 서비스가 아니라, 사장님 회사가 실제로 운영되는 방식에 맞춘 일련의 아키텍처 결정입니다. 저희와 일하는 클라이언트에게 이게 실제로 어떤 모습인지 정리했습니다.' },
+        { type: 'ul', content: 'AWS 구성의 구체적인 요소들과, 각각이 해결하는 문제:', items: [
+          'VPC(가상 사설 네트워크) 설계 — 회사 전용의 격리된 네트워크. 주문 시스템, 재무 데이터, 공개 웹사이트가 전부 같은 노출된 네트워크에 있지 않게 합니다.',
+          'IAM(접근 권한 관리) — 직원마다 딱 필요한 만큼의 접근 권한만 부여. 누군가 퇴사하면 흩어진 로그인을 일일이 찾을 필요 없이 한 곳에서 즉시 접근을 차단합니다.',
+          'S3 저장소 + 자동 백업 · 버전 관리 — 회사 문서, 인보이스, 기록이 일정에 따라 자동으로 백업되고, 파일이 손상되거나 덮어써지거나 랜섬웨어에 암호화돼도 이전 버전으로 복구할 수 있습니다.',
+          'RDS(관리형 데이터베이스) — 주문·재고·예약 시스템이, 아무도 손대고 싶어하지 않는 사무실 PC 한 대가 아니라 자동으로 패치·백업·모니터링되는 데이터베이스 위에서 돌아갑니다.',
+          'Site-to-Site 또는 Client VPN — 사무실, 창고, 원격 직원이 열려 있는 일반 인터넷이나 소비자용 VPN 앱이 아니라 암호화된 터널로 회사 시스템에 접속합니다.',
+          'CloudFront(CDN)와 오토스케일링 — 추석, 블랙프라이데이, 마케팅 프로모션 때 트래픽이 몰려도 느려지지 않고 이커머스 사이트나 주문 플랫폼이 자동으로 감당합니다.',
+          '보안 그룹과 웹 애플리케이션 방화벽 — 무단 접근 시도가 시스템에 닿기도 전에 네트워크 단에서 차단하는 규칙들.',
+          '비용 최적화 — 예측 가능한 워크로드에는 예약 인스턴스나 Savings Plans를 적용해, 매일 돌아가는 인프라에 온디맨드 가격을 계속 내지 않도록 합니다.',
+        ] },
+        { type: 'h2', content: '이 영역에서 이중언어 로컬 파트너가 특히 중요한 이유' },
+        { type: 'p', content: '클라우드 아키텍처 작업은 충분히 전문적이라 대부분의 한인 사장님들이 합리적으로 외주를 주는 영역입니다 — 문제는 누구에게 맡기느냐입니다. 큰 일반 MSP(관리형 서비스 업체)도 기꺼이 계약을 받겠지만, 문서와 지원 티켓, 보안 정책 설명이 영어로, 그들의 일정대로, 그리고 미국 엔터프라이즈 IT 관행에 익숙하다는 전제 하에 옵니다 — 1세대나 1.5세대로 가족 사업을 운영하는 사장님이 굳이 쌓을 이유가 없었던 익숙함이죠. 웹사이트 프로젝트와도 판돈이 다릅니다. 이건 사장님의 재무 기록, 고객 데이터, 운영 연속성이니까요. "잠깐, 이게 왜 이 비용인가요"나 "랜섬웨어에 걸리면 정확히 무슨 일이 벌어지나요" 같은 질문에 솔직하고 명확한 답을 듣는 것이 사업의 다른 어떤 영역보다 중요합니다 — 그래서 저희는 이 영역도 Zoe Lumos의 다른 모든 일과 똑같이 다룹니다. 한국어든 영어든, 감사부터 지속 관리까지 같은 담당자가, 뭔가 이상하면 카카오톡으로 바로 연락 가능하게.' },
+        { type: 'tip', content: '이번 주에 스스로 물어볼 무료 감사 질문 하나 — 지금 회사 공유 드라이브나 주문 시스템에 퇴사한 직원의 이름을 검색해서 로그인을 시도하면, 아직도 작동할까요? 확신이 안 서신다면, 그것만으로도 대화해볼 가치가 있습니다. 접근 권한 관리는 보통 이 목록 전체에서 가장 저렴하고 가장 빠른 해결책이니까요.' },
+        { type: 'h2', content: '마이그레이션은 실제로 어떻게 진행되나' },
+        { type: 'p', content: '저희는 영업 제안이 아니라 감사(audit)로 시작합니다 — 데이터가 지금 실제로 어디에 있는지, 누가 무엇에 접근할 수 있는지, 뭔가 고장 나면 제일 먼저 무엇이 깨지는지, 그리고 사업이 실제로 막고 싶은 게 무엇인지(랜섬웨어 공격, 노트북 분실, 트래픽 급증, 공급사·파트너가 요구하는 컴플라이언스) 파악합니다. 여기서부터 일반 템플릿이 아니라 사장님 회사의 구체적인 리스크에 맞춘 AWS 아키텍처를 설계하고, 단계적으로 마이그레이션합니다. 기존 시스템은 그대로 둔 채 새 환경을 병행 구축·테스트하고, 조각을 하나씩 옮깁니다 — 가장 위험한 구멍을 가장 빨리 막아주는 백업과 접근 권한 관리부터 시작해서, 이커머스 플랫폼처럼 고객과 맞닿는 부분으로 마무리합니다. 그 기간 대부분 동안 직원들은 기존 시스템으로 계속 일합니다. 마이그레이션이 끝났다고 관계도 끝나는 게 아닙니다 — 모니터링, 패치, 보안 점검이 지속 서비스로 이어집니다. 저희가 장기 클라이언트의 웹사이트를 관리하는 방식과 똑같습니다.' },
+        { type: 'cta', content: "우리 회사가 '사무실 PC 한 대와 공유 드라이브' 단계를 이미 넘어섰는지 확실치 않으신가요? ZOE LUMOS는 웹·앱 개발과 함께, 미국 전역의 성장하는 한인 기업을 위해 AWS 클라우드 인프라 — 네트워킹, 보안, 백업, 재해 복구 — 를 설계하고 관리합니다. 한국어/영어 무료 상담: info@zoelumos.com 이메일 또는 카카오톡(http://pf.kakao.com/_xhxdxmlX/chat)으로 편하게 문의하세요." },
+      ],
+    },
+  },
 ]
