@@ -73,6 +73,6 @@ export const config = {
     // public/llms.txt file (single source of truth, fresh on every deploy).
     // .txt exclusion is critical — IndexNow verification key file lives at
     // /<key>.txt and middleware was 404ing it via locale rewrite.
-    '/((?!_next|api|favicon.ico|manifest.json|site.webmanifest|robots.txt|sitemap.xml|.*\\.png|.*\\.jpg|.*\\.jpeg|.*\\.gif|.*\\.svg|.*\\.ico|.*\\.webp|.*\\.mp4|.*\\.webm|.*\\.ogg|.*\\.html|.*\\.txt).*)',
+    '/((?!_next|api|favicon.ico|manifest.json|site.webmanifest|robots.txt|sitemap.xml|.*\\.png|.*\\.jpg|.*\\.jpeg|.*\\.gif|.*\\.svg|.*\\.ico|.*\\.webp|.*\\.mp4|.*\\.webm|.*\\.ogg|.*\\.html|.*\\.txt|.*\\.md).*)',
   ],
 }
