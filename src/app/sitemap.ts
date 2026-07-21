@@ -51,6 +51,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/tools',
     '/tools/website-cost-estimator',
     '/kakao-checklist',
+    '/website-pricing-guide',
     // Content-cluster pillar guides
     '/bilingual-seo-guide',
     '/kakaotalk-marketing-guide',
