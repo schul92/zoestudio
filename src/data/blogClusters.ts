@@ -64,6 +64,7 @@ export const PILLARS = {
       'korean-nail-salon-website-guide',
       'korean-hair-salon-website-guide',
       'korean-salon-spa-local-seo-new-jersey-2026',
+      'pilates-fitness-studio-booking-noshow-seattle-2026',
     ],
   },
   'website-cost': {
@@ -291,4 +292,7 @@ export const POST_TO_PILLAR: Record<string, PillarKey> = {
   // 2026-07-16/17 backfill — Chicago F&B ordering/POS/reviews + app development hiring guide
   'korean-restaurant-chicago-online-ordering-pos-reviews-2026': 'restaurant-marketing',
   'korean-app-development-hire-guide-2026': 'website-cost',
+
+  // 2026-07-21 — Pilates/fitness studio booking + no-show prevention (Seattle, WA)
+  'pilates-fitness-studio-booking-noshow-seattle-2026': 'beauty-wellness',
 }
