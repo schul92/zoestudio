@@ -11,8 +11,13 @@ const path = require('path')
 const { execSync } = require('child_process')
 
 function repoRoot() {
-  const common = execSync('git rev-parse --git-common-dir', { encoding: 'utf8' }).trim()
-  return path.resolve(common, '..')
+  // Resolve from this file's location, not process.cwd() — these helpers get
+  // required from scratch scripts run out of arbitrary directories.
+  const common = execSync('git rev-parse --git-common-dir', {
+    encoding: 'utf8',
+    cwd: __dirname,
+  }).trim()
+  return path.resolve(__dirname, common, '..')
 }
 
 const CONFIG_DIR = path.join(repoRoot(), '.config')
