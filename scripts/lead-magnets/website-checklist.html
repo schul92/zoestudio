@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>사장님 웹사이트 10가지 체크리스트 — ZOE LUMOS</title>
+<style>
+  :root {
+    --gold: #b48a43;
+    --ivory: #faf7f0;
+    --ink: #1f1c16;
+    --ink-soft: #55503f;
+    --line: #e5ddc9;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { background: #fff; }
+  body {
+    font-family: "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Helvetica Neue", sans-serif;
+    color: var(--ink);
+    font-size: 10.5pt;
+    line-height: 1.5;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  @page { size: letter; margin: 0; }
+  .page {
+    width: 8.5in;
+    height: 10.95in;
+    overflow: hidden;
+    padding: 0.55in 0.7in 0.5in;
+    position: relative;
+    background: linear-gradient(to bottom, rgba(250,247,240,0.95), rgba(255,255,255,1) 3.2in);
+  }
+  .page + .page { page-break-before: always; }
+
+  .letterhead {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-bottom: 10pt;
+    border-bottom: 2.5pt solid var(--gold);
+  }
+  .wordmark {
+    font-family: "Didot", "Times New Roman", serif;
+    font-size: 17pt;
+    letter-spacing: 0.32em;
+    font-weight: 500;
+  }
+  .wordmark .lumos { color: var(--gold); }
+  .head-right { font-size: 7.5pt; letter-spacing: 0.3em; color: var(--ink-soft); text-transform: uppercase; }
+
+  .title-block { margin-top: 20pt; }
+  .kicker { font-size: 8.5pt; letter-spacing: 0.3em; color: var(--gold); font-weight: 700; text-transform: uppercase; }
+  h1 { font-size: 21pt; font-weight: 800; margin-top: 6pt; letter-spacing: 0.01em; }
+  .subtitle { font-size: 10pt; color: var(--ink-soft); margin-top: 6pt; }
+
+  .check-item {
+    display: flex;
+    gap: 10pt;
+    align-items: flex-start;
+    border-bottom: 1px solid var(--line);
+    padding: 8.5pt 2pt;
+  }
+  .check-box {
+    width: 12pt; height: 12pt;
+    border: 1.3pt solid var(--ink-soft);
+    border-radius: 2pt;
+    margin-top: 2pt;
+    flex-shrink: 0;
+    background: #fff;
+  }
+  .num { color: var(--gold); font-weight: 800; margin-right: 3pt; }
+  .check-item b { font-size: 10.5pt; }
+  .check-item .why { font-size: 8.8pt; color: var(--ink-soft); margin-top: 1.5pt; }
+
+  .score-box {
+    border: 1px solid var(--line);
+    background: var(--ivory);
+    border-radius: 4pt;
+    padding: 10pt 14pt;
+    margin-top: 12pt;
+    font-size: 9.5pt;
+  }
+  .score-box b { color: var(--gold); }
+
+  .footer {
+    position: absolute;
+    bottom: 0.42in; left: 0.7in; right: 0.7in;
+    display: flex;
+    justify-content: space-between;
+    font-size: 7.8pt;
+    color: var(--ink-soft);
+    border-top: 1px solid var(--line);
+    padding-top: 6pt;
+  }
+  .footer b { color: var(--gold); font-weight: 700; }
+</style>
+</head>
+<body>
+
+<!-- ═══════════ PAGE 1 — KOREAN ═══════════ -->
+<div class="page">
+  <div class="letterhead">
+    <div class="wordmark">ZOE <span class="lumos">LUMOS</span></div>
+    <div class="head-right">Free Checklist · 2026</div>
+  </div>
+
+  <div class="title-block">
+    <div class="kicker">5분 자가진단</div>
+    <h1>사장님 웹사이트 10가지 체크리스트</h1>
+    <div class="subtitle">지금 휴대폰으로 사장님 웹사이트를 열어 놓고, 하나씩 체크해 보세요. 손님이 보는 그대로 보입니다.</div>
+  </div>
+
+  <div style="margin-top: 10pt;">
+    <div class="check-item"><div class="check-box"></div><div><b><span class="num">1</span>휴대폰에서 3초 안에 열린다</b><div class="why">손님 대부분은 모바일입니다. 3초를 넘기면 절반 이상이 그냥 나갑니다.</div></div></div>
+    <div class="check-item"><div class="check-box"></div><div><b><span class="num">2</span>영업시간·주소·메뉴(가격)가 최신이다</b><div class="why">틀린 영업시간은 나쁜 리뷰의 1등 원인입니다.</div></div></div>
+    <div class="check-item"><div class="check-box"></div><div><b><span class="num">3</span>주소창에 자물쇠(https)가 보인다</b><div class="why">보안 인증(SSL)이 없으면 브라우저가 "안전하지 않음"을 띄우고, 구글 순위에도 불리합니다.</div></div></div>
+    <div class="check-item"><div class="check-box"></div><div><b><span class="num">4</span>구글에 가게 이름을 검색하면 웹사이트가 나온다</b><div class="why">구글 비즈니스 프로필과 웹사이트가 연결되어 있어야 지도·리뷰·사이트가 한 세트로 뜹니다.</div></div></div>
+    <div class="check-item"><div class="check-box"></div><div><b><span class="num">5</span>전화 없이도 예약/주문/문의가 가능하다</b><div class="why">전화를 꺼리는 젊은 손님과 영어/한국어가 불편한 손님 모두를 잡으려면 버튼이 필요합니다.</div></div></div>
+    <div class="check-item"><div class="check-box"></div><div><b><span class="num">6</span>한국어·영어 손님 모두 읽을 수 있다</b><div class="why">한인 손님과 미국 손님을 둘 다 받는 가게라면, 사이트도 두 언어여야 합니다.</div></div></div>
+    <div class="check-item"><div class="check-box"></div><div><b><span class="num">7</span>리뷰 남기기 링크가 있다</b><div class="why">만족한 손님에게 구글 리뷰 직링크를 주면 리뷰가 몇 배로 쌓입니다.</div></div></div>
+    <div class="check-item"><div class="check-box"></div><div><b><span class="num">8</span>방문자 수를 확인할 수 있다 (GA4)</b><div class="why">몇 명이 들어와서 뭘 보는지 모르면, 마케팅에 쓰는 돈이 효과가 있는지도 알 수 없습니다.</div></div></div>
+    <div class="check-item"><div class="check-box"></div><div><b><span class="num">9</span>도메인과 호스팅이 사장님 명의다</b><div class="why">제작 업체 명의라면, 관계가 틀어질 때 사이트를 통째로 잃을 수 있습니다.</div></div></div>
+    <div class="check-item"><div class="check-box"></div><div><b><span class="num">10</span>최근 6개월 안에 내용이 업데이트됐다</b><div class="why">몇 년째 그대로인 사이트는 손님에게도, 구글에게도 "영업 안 하는 가게"로 보입니다.</div></div></div>
+  </div>
+
+  <div class="score-box">
+    <b>채점:</b> 8~10개 — 훌륭합니다. 유지만 잘 하세요. · 5~7개 — 손님을 놓치고 있습니다. 빠진 것부터 하나씩. ·
+    0~4개 — 웹사이트가 일을 안 하고 있습니다. 무료 진단(<b>zoelumos.com/audit</b>)부터 받아보세요.
+  </div>
+
+  <div class="footer">
+    <span><b>ZOE LUMOS</b> · 한인 비즈니스 전문 웹 에이전시 · info@zoelumos.com · 카카오톡 pf.kakao.com/_xhxdxmlX</span>
+    <span>한국어 1/2</span>
+  </div>
+</div>
+
+<!-- ═══════════ PAGE 2 — ENGLISH ═══════════ -->
+<div class="page">
+  <div class="letterhead">
+    <div class="wordmark">ZOE <span class="lumos">LUMOS</span></div>
+    <div class="head-right">Free Checklist · 2026</div>
+  </div>
+
+  <div class="title-block">
+    <div class="kicker">5-Minute Self-Check</div>
+    <h1>The 10-Point Website Checklist<br>for Business Owners</h1>
+    <div class="subtitle">Open your website on your phone right now and check each item — you'll see exactly what your customers see.</div>
+  </div>
+
+  <div style="margin-top: 10pt;">
+    <div class="check-item"><div class="check-box"></div><div><b><span class="num">1</span>It loads in under 3 seconds on a phone</b><div class="why">Most customers are on mobile. Past 3 seconds, more than half simply leave.</div></div></div>
+    <div class="check-item"><div class="check-box"></div><div><b><span class="num">2</span>Hours, address, and menu (prices) are current</b><div class="why">Wrong hours are the #1 cause of bad reviews.</div></div></div>
+    <div class="check-item"><div class="check-box"></div><div><b><span class="num">3</span>The address bar shows a padlock (https)</b><div class="why">Without SSL, browsers flag your site "Not secure" — and Google ranks it lower.</div></div></div>
+    <div class="check-item"><div class="check-box"></div><div><b><span class="num">4</span>Googling your business name shows your website</b><div class="why">Your Google Business Profile and website must be linked so Maps, reviews, and site appear as one set.</div></div></div>
+    <div class="check-item"><div class="check-box"></div><div><b><span class="num">5</span>Customers can book/order/ask without calling</b><div class="why">Buttons capture both younger customers who avoid phone calls and customers more comfortable in another language.</div></div></div>
+    <div class="check-item"><div class="check-box"></div><div><b><span class="num">6</span>Both Korean and English speakers can read it</b><div class="why">If you serve both Korean and American customers, your site needs both languages.</div></div></div>
+    <div class="check-item"><div class="check-box"></div><div><b><span class="num">7</span>There's a leave-a-review link</b><div class="why">Handing happy customers a direct Google-review link multiplies your reviews.</div></div></div>
+    <div class="check-item"><div class="check-box"></div><div><b><span class="num">8</span>You can see your visitor numbers (GA4)</b><div class="why">If you don't know who visits and what they look at, you can't know if your marketing dollars work.</div></div></div>
+    <div class="check-item"><div class="check-box"></div><div><b><span class="num">9</span>The domain and hosting are in YOUR name</b><div class="why">If they're in your vendor's name, a falling-out can cost you the entire site.</div></div></div>
+    <div class="check-item"><div class="check-box"></div><div><b><span class="num">10</span>Content was updated within the last 6 months</b><div class="why">A site unchanged for years looks closed — to customers and to Google.</div></div></div>
+  </div>
+
+  <div class="score-box">
+    <b>Score:</b> 8–10 — excellent, just maintain it. · 5–7 — you're losing customers; fix the gaps one by one. ·
+    0–4 — your website isn't doing its job. Start with a free audit at <b>zoelumos.com/audit</b>.
+  </div>
+
+  <div class="footer">
+    <span><b>ZOE LUMOS</b> · Web agency for Korean-American businesses · info@zoelumos.com · KakaoTalk pf.kakao.com/_xhxdxmlX</span>
+    <span>English 2/2</span>
+  </div>
+</div>
+
+</body>
+</html>

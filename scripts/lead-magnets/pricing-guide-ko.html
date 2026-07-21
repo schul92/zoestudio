@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>2026 스몰비즈니스 웹사이트 가격 가이드 — ZOE LUMOS</title>
+<style>
+  :root {
+    --gold: #b48a43;
+    --gold-soft: #c9a86a;
+    --ivory: #faf7f0;
+    --ink: #1f1c16;
+    --ink-soft: #55503f;
+    --line: #e5ddc9;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { background: #fff; }
+  body {
+    font-family: "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", sans-serif;
+    color: var(--ink);
+    font-size: 10.5pt;
+    line-height: 1.55;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  @page { size: letter; margin: 0; }
+  .page {
+    width: 8.5in;
+    height: 10.95in;
+    overflow: hidden;
+    padding: 0.55in 0.7in 0.5in;
+    position: relative;
+    background: linear-gradient(to bottom, rgba(250,247,240,0.95), rgba(255,255,255,1) 3.2in);
+  }
+  .page + .page { page-break-before: always; }
+
+  .letterhead {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-bottom: 10pt;
+    border-bottom: 2.5pt solid var(--gold);
+  }
+  .wordmark {
+    font-family: "Didot", "Times New Roman", serif;
+    font-size: 17pt;
+    letter-spacing: 0.32em;
+    font-weight: 500;
+  }
+  .wordmark .lumos { color: var(--gold); }
+  .head-right {
+    font-size: 7.5pt;
+    letter-spacing: 0.3em;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    text-align: right;
+  }
+
+  .section { margin-top: 16pt; }
+  .section-title {
+    font-size: 12pt;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    gap: 8pt;
+    margin-bottom: 8pt;
+  }
+  .section-title::before { content: ""; width: 14pt; height: 2.5pt; background: var(--gold); }
+  p.lead { font-size: 10pt; color: var(--ink-soft); margin-bottom: 8pt; }
+
+  table { width: 100%; border-collapse: collapse; }
+  th {
+    background: var(--ink);
+    color: #fff;
+    font-size: 8.5pt;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    padding: 6pt 9pt;
+    text-align: left;
+  }
+  td {
+    padding: 6.5pt 9pt;
+    border-bottom: 1px solid var(--line);
+    vertical-align: top;
+    font-size: 9.5pt;
+  }
+  td.em { font-weight: 700; white-space: nowrap; }
+  td .sub { font-size: 8.5pt; color: var(--ink-soft); margin-top: 2pt; }
+  .price { color: var(--gold); font-weight: 800; white-space: nowrap; }
+
+  .box {
+    border: 1px solid var(--line);
+    background: var(--ivory);
+    border-radius: 4pt;
+    padding: 11pt 14pt;
+    margin-top: 10pt;
+  }
+  .box-title { font-size: 9pt; font-weight: 700; letter-spacing: 0.16em; color: var(--gold); margin-bottom: 5pt; }
+  ul.dots { list-style: none; }
+  ul.dots li { padding-left: 12pt; position: relative; margin-top: 3pt; font-size: 9.5pt; }
+  ul.dots li::before { content: "·"; color: var(--gold); font-weight: 800; position: absolute; left: 2pt; }
+
+  .check-item {
+    display: flex;
+    gap: 9pt;
+    align-items: flex-start;
+    border-bottom: 1px solid var(--line);
+    padding: 7.5pt 2pt;
+  }
+  .check-box {
+    width: 11pt; height: 11pt;
+    border: 1.2pt solid var(--ink-soft);
+    border-radius: 2pt;
+    margin-top: 2pt;
+    flex-shrink: 0;
+    background: #fff;
+  }
+  .check-item b { font-size: 10pt; }
+  .check-item .why { font-size: 8.8pt; color: var(--ink-soft); margin-top: 1pt; }
+
+  .footer {
+    position: absolute;
+    bottom: 0.42in; left: 0.7in; right: 0.7in;
+    display: flex;
+    justify-content: space-between;
+    font-size: 7.8pt;
+    color: var(--ink-soft);
+    border-top: 1px solid var(--line);
+    padding-top: 6pt;
+  }
+  .footer b { color: var(--gold); font-weight: 700; }
+
+  /* cover */
+  .cover { display: flex; flex-direction: column; }
+  .cover-mid { margin-top: 1.5in; }
+  .cover-kicker { font-size: 9pt; letter-spacing: 0.34em; color: var(--gold); font-weight: 700; text-transform: uppercase; }
+  .cover-title { font-size: 30pt; font-weight: 800; line-height: 1.25; margin-top: 12pt; letter-spacing: 0.02em; }
+  .cover-sub { font-size: 12pt; color: var(--ink-soft); margin-top: 14pt; line-height: 1.6; }
+  .cover-list { margin-top: 26pt; }
+  .cover-list li { font-size: 10.5pt; margin-top: 6pt; }
+</style>
+</head>
+<body>
+
+<!-- ═══════════ PAGE 1 — COVER ═══════════ -->
+<div class="page cover">
+  <div class="letterhead">
+    <div class="wordmark">ZOE <span class="lumos">LUMOS</span></div>
+    <div class="head-right">Free Guide · 2026</div>
+  </div>
+  <div class="cover-mid">
+    <div class="cover-kicker">미국 한인 사장님을 위한</div>
+    <div class="cover-title">2026 스몰비즈니스<br>웹사이트 가격 가이드</div>
+    <div class="cover-sub">
+      웹사이트 견적, 왜 어디는 $500이고 어디는 $10,000일까요?<br>
+      시장 시세부터 숨은 비용, 계약 전 확인할 7가지 질문까지 —<br>
+      바가지 쓰지 않도록 한 권에 정리했습니다.
+    </div>
+    <div class="box cover-list" style="max-width: 5.6in;">
+      <div class="box-title">이 가이드에 담긴 내용</div>
+      <ul class="dots">
+        <li>웹사이트 견적이 천차만별인 진짜 이유 3가지</li>
+        <li>2026년 미국 웹사이트 제작 시장 시세표</li>
+        <li>견적서에 잘 안 보이는 숨은 비용 목록</li>
+        <li>계약서에 서명하기 전 반드시 물어볼 7가지 질문</li>
+        <li>ZOE LUMOS 공개 가격표 (전 항목 투명 공개)</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer">
+    <span><b>ZOE LUMOS</b> · Fort Lee, NJ · 미국 전역 원격 서비스 · 한국어/영어</span>
+    <span>zoelumos.com · info@zoelumos.com</span>
+  </div>
+</div>
+
+<!-- ═══════════ PAGE 2 — WHY PRICES VARY ═══════════ -->
+<div class="page">
+  <div class="letterhead">
+    <div class="wordmark">ZOE <span class="lumos">LUMOS</span></div>
+    <div class="head-right">Website Pricing Guide · 2026</div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">웹사이트 견적이 천차만별인 이유</div>
+    <p class="lead">같은 "웹사이트 하나"라도 견적이 20배까지 차이 나는 것은 아래 세 가지가 다르기 때문입니다. 견적을 비교할 때는 가격이 아니라 이 세 가지를 먼저 비교하세요.</p>
+
+    <table>
+      <tr><th style="width:22%">요인</th><th>무엇이 달라지나</th></tr>
+      <tr>
+        <td class="em">① 범위와 기능</td>
+        <td>페이지 수, 예약/주문 기능, 쇼핑몰(결제), 이중언어 지원, 콘텐츠 작성을 누가 하는지.
+          <div class="sub">"5페이지 소개형"과 "결제되는 쇼핑몰"은 전혀 다른 공사입니다.</div></td>
+      </tr>
+      <tr>
+        <td class="em">② 제작 방식</td>
+        <td>템플릿에 끼워 넣는지, 사장님 업종에 맞춰 새로 설계하는지. 모바일 최적화와 로딩 속도가 여기서 갈립니다.
+          <div class="sub">손님 대부분은 휴대폰으로 봅니다 — 모바일이 느리면 없는 것과 같습니다.</div></td>
+      </tr>
+      <tr>
+        <td class="em">③ 완성 후 관리</td>
+        <td>호스팅, 보안, 백업, 수정 요청을 누가 얼마에 해주는지. 총비용의 절반은 만들고 난 뒤에 발생합니다.
+          <div class="sub">"만들고 끝" 업체는 싸 보여도, 수정 한 번에 시간당 요금이 붙기 시작합니다.</div></td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <div class="section-title">견적서에 잘 안 보이는 숨은 비용</div>
+    <div class="box" style="margin-top: 4pt;">
+      <ul class="dots">
+        <li><b>도메인</b> — 연 $12~20 안팎. 반드시 <b>사장님 명의</b>로 등록되어야 합니다.</li>
+        <li><b>호스팅</b> — 월 $10~50. 업체 명의로 되어 있으면 나중에 사이트를 "인질"로 잡힐 수 있습니다.</li>
+        <li><b>SSL 보안 인증서</b> — 요즘은 무료가 표준입니다. 별도 청구하면 의심하세요.</li>
+        <li><b>유료 플러그인/테마 라이선스</b> — 연 $50~300. 누가 갱신 비용을 내는지 확인하세요.</li>
+        <li><b>수정 요금</b> — 계약에 포함된 수정 횟수와, 초과 시 시간당 요금을 서면으로 받으세요.</li>
+        <li><b>사진/콘텐츠</b> — 메뉴판, 가격, 사진을 누가 준비하고 입력하는지에 따라 일정과 비용이 달라집니다.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">가장 흔한 실수 한 가지</div>
+    <p class="lead" style="margin-bottom:0;">
+      가장 싼 견적을 고르는 것보다 위험한 것은 <b>소유권을 확인하지 않는 것</b>입니다. 도메인·호스팅·코드가 업체 명의면,
+      관계가 틀어졌을 때 사이트·구글 순위·리뷰 링크를 통째로 잃을 수 있습니다. 어떤 업체와 계약하든
+      "도메인과 코드는 100% 제 소유인가요? 언제든 가져갈 수 있나요?"를 서면으로 확인하세요.
+    </p>
+  </div>
+
+  <div class="footer">
+    <span><b>ZOE LUMOS</b> · 2026 웹사이트 가격 가이드</span>
+    <span>2 / 6</span>
+  </div>
+</div>
+
+<!-- ═══════════ PAGE 3 — MARKET RATES ═══════════ -->
+<div class="page">
+  <div class="letterhead">
+    <div class="wordmark">ZOE <span class="lumos">LUMOS</span></div>
+    <div class="head-right">Website Pricing Guide · 2026</div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">2026년 미국 시장 시세표</div>
+    <p class="lead">미국 스몰비즈니스 기준의 일반적인 범위입니다. 지역·업체에 따라 차이가 있지만, 이 범위를 크게 벗어나는 견적은 이유를 물어보셔야 합니다.</p>
+
+    <table>
+      <tr><th style="width:24%">제작 방식</th><th style="width:24%">일반적 비용</th><th>장단점</th></tr>
+      <tr>
+        <td class="em">DIY 빌더<br><span style="font-weight:400;font-size:8.5pt;">(Wix · Squarespace · GoDaddy)</span></td>
+        <td class="price">월 $16~50<br><span style="color:var(--ink-soft);font-weight:400;font-size:8.5pt;">+ 사장님의 시간</span></td>
+        <td>가장 저렴하지만 직접 만들고 직접 관리해야 합니다. 한/영 이중언어, 지역 SEO, 속도 최적화가 어렵고, 월 구독료는 계속 나갑니다.</td>
+      </tr>
+      <tr>
+        <td class="em">프리랜서</td>
+        <td class="price">$500 ~ $3,000</td>
+        <td>가격 대비 품질 편차가 가장 큽니다. 완성 후 연락이 끊기는 경우가 흔해, 유지관리 계획을 반드시 확인해야 합니다.</td>
+      </tr>
+      <tr>
+        <td class="em">소형 에이전시</td>
+        <td class="price">$2,000 ~ $10,000</td>
+        <td>설계·디자인·관리까지 책임지는 구조. 다만 한인 비즈니스의 한/영 콘텐츠와 카카오톡 등 한인 채널을 이해하는 곳은 드뭅니다.</td>
+      </tr>
+      <tr>
+        <td class="em">대형 에이전시</td>
+        <td class="price">$10,000+</td>
+        <td>브랜드 전략까지 포함한 프로젝트형. 스몰비즈니스에는 과한 경우가 대부분입니다.</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <div class="section-title">업종별로 실제 필요한 것</div>
+    <table>
+      <tr><th style="width:26%">업종</th><th>꼭 필요한 기능</th></tr>
+      <tr><td class="em">식당 · 카페</td><td>모바일 메뉴, 구글 지도/리뷰 연동, 온라인 주문 또는 예약, 사진 중심 디자인</td></tr>
+      <tr><td class="em">네일 · 미용 · 스파</td><td>온라인 예약(노쇼 방지 정책 포함), 서비스 가격표, 리뷰 유도 링크</td></tr>
+      <tr><td class="em">세탁 · 수리 · 서비스업</td><td>영업시간·위치·가격 안내, 문의 폼, "지금 전화 대신 문자/카톡" 버튼</td></tr>
+      <tr><td class="em">도매 · B2B</td><td>제품 카탈로그, 견적 요청 폼, 회사 소개(신뢰), 영문 페이지</td></tr>
+      <tr><td class="em">쇼핑몰 (D2C)</td><td>결제·배송 연동(Shopify 등), 상품 관리, 이메일 마케팅 연결</td></tr>
+    </table>
+    <p class="lead" style="margin-top:8pt; font-size:9pt;">
+      비교 팁: 견적을 받을 때 "우리 업종에서 뭐가 제일 중요하냐"를 물어보세요. 위 표와 비슷한 답이 나오지 않으면, 그 업체는 사장님 업종을 모르는 것입니다.
+    </p>
+  </div>
+
+  <div class="footer">
+    <span><b>ZOE LUMOS</b> · 2026 웹사이트 가격 가이드</span>
+    <span>3 / 6</span>
+  </div>
+</div>
+
+<!-- ═══════════ PAGE 4 — OUR TRANSPARENT PRICING ═══════════ -->
+<div class="page">
+  <div class="letterhead">
+    <div class="wordmark">ZOE <span class="lumos">LUMOS</span></div>
+    <div class="head-right">Website Pricing Guide · 2026</div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">ZOE LUMOS 공개 가격표</div>
+    <p class="lead">비교 기준으로 쓰시라고 저희 가격을 전부 공개합니다. 이 니치에서 가격을 공개하는 업체는 거의 없습니다 — 공개하지 못하는 이유를 물어보세요.</p>
+
+    <table>
+      <tr><th style="width:20%">일회성 제작</th><th style="width:22%">가격</th><th>범위</th></tr>
+      <tr><td class="em">Basic</td><td class="price">$500 ~ $800</td><td>최대 5페이지 · 모바일 최적화 · 기본 SEO · 문의 폼 (1~2주)</td></tr>
+      <tr><td class="em">Standard</td><td class="price">$1,100 ~ $1,500</td><td>6~15페이지 · 맞춤 디자인 · <b>한/영 이중언어</b> · 지역 SEO (2~3주)</td></tr>
+      <tr><td class="em">Store</td><td class="price">$1,800 ~ $2,400</td><td>Shopify/쇼핑몰 · 상품·결제 · 주문 또는 예약 (2~4주)</td></tr>
+      <tr><td class="em">Custom</td><td class="price">별도 견적</td><td>웹 애플리케이션 · 다지점 · 복잡한 연동</td></tr>
+    </table>
+
+    <table style="margin-top: 12pt;">
+      <tr><th style="width:20%">월 관리 플랜</th><th style="width:22%">가격</th><th>포함 내용</th></tr>
+      <tr><td class="em">Basic</td><td class="price">$49/월</td><td>호스팅+SSL · 보안·백업 · 모니터링 (수정 없음)</td></tr>
+      <tr><td class="em">Care</td><td class="price">$89/월</td><td>Basic + 월 30분 수정 + 월간 리포트</td></tr>
+      <tr><td class="em">Grow</td><td class="price">$199/월</td><td>Care + 월 2시간 수정 + GA4 리포트 + SEO 모니터링 + 구글 비즈니스 프로필 관리</td></tr>
+      <tr><td class="em">Scale</td><td class="price">$499/월</td><td>Grow + 월 4건 콘텐츠 + 지역 SEO + 리뷰 관리 + 분기 전략 미팅</td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <div class="box" style="margin-top:2pt;">
+      <div class="box-title">모든 프로젝트 기본 보장</div>
+      <ul class="dots">
+        <li>단계마다 <b>수정 2회</b> 기본 포함</li>
+        <li>도메인·호스팅·코드 <b>100% 사장님 소유</b> — 언제든 이전 가능</li>
+        <li>월 플랜은 <b>언제든 해지</b> — 결제한 달까지 서비스 유지, 추가 청구 없음</li>
+        <li>영업일 기준 <b>1일 내 답변</b> (이메일 · 카카오톡)</li>
+        <li>월 관리 플랜 12개월 약정 시 <b>제작비(셋업비) 면제</b></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span><b>ZOE LUMOS</b> · 2026 웹사이트 가격 가이드</span>
+    <span>4 / 6</span>
+  </div>
+</div>
+
+<!-- ═══════════ PAGE 5 — 7 QUESTIONS ═══════════ -->
+<div class="page">
+  <div class="letterhead">
+    <div class="wordmark">ZOE <span class="lumos">LUMOS</span></div>
+    <div class="head-right">Website Pricing Guide · 2026</div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">계약 전 반드시 물어볼 7가지 질문</div>
+    <p class="lead">어느 업체와 계약하시든 — 저희가 아니어도 — 이 7가지는 서면 답변을 받아두세요.</p>
+
+    <div class="check-item"><div class="check-box"></div><div><b>1. 도메인과 코드는 100% 제 소유인가요?</b><div class="why">업체 명의라면 계약 종료 시 사이트를 잃을 수 있습니다. 가장 중요한 질문입니다.</div></div></div>
+    <div class="check-item"><div class="check-box"></div><div><b>2. 수정은 몇 회까지 포함이고, 초과하면 얼마인가요?</b><div class="why">"무제한 수정"은 대부분 과장입니다. 횟수와 시간당 요금을 숫자로 받으세요.</div></div></div>
+    <div class="check-item"><div class="check-box"></div><div><b>3. 완성 후 매달 나가는 돈은 전부 얼마인가요?</b><div class="why">호스팅 + 도메인 + 라이선스 + 관리비를 합친 "월 총비용"으로 물어보세요.</div></div></div>
+    <div class="check-item"><div class="check-box"></div><div><b>4. 휴대폰에서 3초 안에 열리나요?</b><div class="why">손님 대부분이 모바일입니다. 기존 작업물을 휴대폰으로 직접 열어보세요.</div></div></div>
+    <div class="check-item"><div class="check-box"></div><div><b>5. 구글에 검색되게 하는 기본 작업(SEO)이 포함인가요?</b><div class="why">제목·설명·지도 연동·속도 같은 기본 SEO가 빠져 있으면 "예쁜 전단지"일 뿐입니다.</div></div></div>
+    <div class="check-item"><div class="check-box"></div><div><b>6. 한국어/영어 두 언어를 제대로 지원하나요?</b><div class="why">번역기 붙이기와 이중언어 설계는 다릅니다. 한인+미국 손님을 둘 다 잡으려면 후자가 필요합니다.</div></div></div>
+    <div class="check-item"><div class="check-box"></div><div><b>7. 완성 후 문제가 생기면 누가, 얼마나 빨리 고쳐주나요?</b><div class="why">응답 시간(예: 영업일 1일)과 관리 계약 조건을 확인하세요.</div></div></div>
+  </div>
+
+  <div class="section">
+    <div class="box">
+      <div class="box-title">이런 곳은 피하세요</div>
+      <ul class="dots">
+        <li>가격표를 절대 공개하지 않고 "상담 후 견적"만 고집하는 곳</li>
+        <li>도메인·호스팅을 자기 명의로 등록하겠다는 곳</li>
+        <li>계약서 없이 카톡/구두로만 진행하자는 곳</li>
+        <li>"구글 1등 보장" 같은 보장 못 할 약속을 하는 곳</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span><b>ZOE LUMOS</b> · 2026 웹사이트 가격 가이드</span>
+    <span>5 / 6</span>
+  </div>
+</div>
+
+<!-- ═══════════ PAGE 6 — NEXT STEPS ═══════════ -->
+<div class="page">
+  <div class="letterhead">
+    <div class="wordmark">ZOE <span class="lumos">LUMOS</span></div>
+    <div class="head-right">Website Pricing Guide · 2026</div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">다음 단계</div>
+    <p class="lead">이 가이드로 어떤 업체든 공정하게 비교하실 수 있습니다. 저희와 이야기해 보고 싶으시다면:</p>
+
+    <table>
+      <tr><th style="width:30%">무료 도구</th><th>주소</th></tr>
+      <tr><td class="em">1분 견적 계산기</td><td>업종·페이지 수만 고르면 예상 견적이 바로 나옵니다.<div class="sub">zoelumos.com/tools/website-cost-estimator</div></td></tr>
+      <tr><td class="em">웹사이트 무료 진단</td><td>지금 사이트의 속도·SEO 상태를 무료로 확인해 드립니다.<div class="sub">zoelumos.com/audit</div></td></tr>
+      <tr><td class="em">공개 가격표 (최신)</td><td>이 가이드의 가격표는 항상 웹에서 최신으로 유지됩니다.<div class="sub">zoelumos.com/pricing</div></td></tr>
+    </table>
+  </div>
+
+  <div class="section">
+    <div class="section-title">ZOE LUMOS는 이런 팀입니다</div>
+    <ul class="dots">
+      <li>뉴저지 Fort Lee 기반, <b>미국 전역 50개 주</b> 원격 서비스</li>
+      <li>한국어·영어 <b>완전 이중언어</b> — 상담부터 사이트까지</li>
+      <li>식당·네일·세탁·도매 등 <b>한인 비즈니스 전문</b></li>
+      <li>웹사이트 + 구글 지도/리뷰 + 카카오톡 채널 + 예약/주문까지 한 번에</li>
+      <li>AWS 클라우드 설계, iOS 앱 개발까지 가능한 개발팀</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="box" style="text-align:center; padding: 16pt;">
+      <div class="box-title" style="margin-bottom:8pt;">무료 상담 (부담 없이, 한국어로)</div>
+      <div style="font-size: 12pt; font-weight: 700;">info@zoelumos.com</div>
+      <div style="font-size: 10pt; margin-top: 5pt;">카카오톡: <b style="color:var(--gold);">pf.kakao.com/_xhxdxmlX</b></div>
+      <div style="font-size: 8.5pt; color: var(--ink-soft); margin-top: 8pt;">
+        견적은 무료이며, 상담했다고 계약 의무가 생기지 않습니다.<br>
+        최종 견적은 무료 상담 후 서면으로 확정됩니다.
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <span><b>ZOE LUMOS</b> · ZOE STUDIO LLC · zoelumos.com</span>
+    <span>6 / 6 · © 2026</span>
+  </div>
+</div>
+
+</body>
+</html>
