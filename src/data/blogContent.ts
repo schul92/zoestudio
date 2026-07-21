@@ -11698,4 +11698,98 @@ export const blogContent: BlogPost[] = [
       ],
     },
   },
+  {
+    slug: 'b2b-wholesale-quote-leads-seo-los-angeles-korean-2026',
+    date: '2026-07-19',
+    updatedDate: '2026-07-19',
+    readTime: 8,
+    category: { en: 'Lead Generation', ko: '리드 생성' },
+    title: {
+      en: 'Where Do RFQs Actually Come From Now? A Search-Lead Guide for LA Korean Wholesale Companies (2026)',
+      ko: 'LA 한인 도매업체, 견적 요청은 이제 어디서 오나 — 검색 리드 가이드 (2026)',
+    },
+    metaDescription: {
+      en: 'Los Angeles Korean-American wholesale, import, and manufacturing companies built their business on trade shows and referrals — but American buyers now Google suppliers before ever visiting a showroom. Here is how to turn wholesale category pages into a steady stream of RFQ (quote request) leads.',
+      ko: 'LA 한인 도매·수입·제조 기업은 전시회와 소개로 사업을 키웠지만, 요즘 미국 바이어들은 쇼룸을 방문하기 전에 먼저 구글로 공급업체를 검색합니다. 도매 카테고리 페이지를 꾸준한 견적 요청(RFQ) 리드로 바꾸는 방법을 정리했습니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'Do American buyers really Google wholesale suppliers, or do they still mostly come from trade shows and referrals?',
+          ko: '미국 바이어들이 정말 도매 공급업체를 구글에서 검색하나요, 아니면 아직도 전시회나 소개가 대부분인가요?',
+        },
+        a: {
+          en: "Both channels are real, but the balance has shifted. Trade shows and referrals still open doors, especially for a first order with an established buyer. But a growing share of new RFQs — particularly from buyers who are not already plugged into the Korean-American wholesale network, and from younger procurement staff who default to searching before calling anyone — start with a Google search for something like 'wholesale K-beauty distributor Los Angeles' or 'hair accessories manufacturer USA.' If your only presence online is a Facebook page or nothing at all, you are invisible to that entire search-first buyer segment, no matter how strong your booth was at the last trade show.",
+          ko: '둘 다 실재합니다만, 비중이 바뀌었습니다. 전시회와 소개는 여전히 문을 열어주고, 특히 기존 바이어와의 첫 주문에는 효과적입니다. 하지만 새로 들어오는 견적 요청 중 점점 더 큰 비중이 — 특히 한인 도매 네트워크에 아직 연결되지 않은 바이어, 전화보다 검색을 먼저 하는 젊은 구매 담당자에게서 — "wholesale K-beauty distributor Los Angeles"나 "hair accessories manufacturer USA" 같은 구글 검색으로 시작됩니다. 온라인 존재감이 페이스북 페이지 하나뿐이거나 아예 없다면, 지난 전시회 부스가 아무리 좋았어도 이 검색 우선 바이어 그룹 전체에게 투명인간입니다.',
+        },
+      },
+      {
+        q: {
+          en: 'What should we put on our website first if we want more quote requests, not just visitors?',
+          ko: '방문자가 아니라 실제 견적 요청을 늘리고 싶다면 웹사이트에 뭐부터 넣어야 하나요?',
+        },
+        a: {
+          en: "Two things matter more than anything else: dedicated pages per product category (not one page listing everything), and a request-a-quote form that is easier to fill out than sending an email. A buyer searching for 'silicone phone case wholesale' should land on a page just about that category — with photos, MOQ, and material options — not your homepage. And once they are convinced, the form should ask only what you need for a first response (product interest, quantity range, destination, contact) rather than a long intake form that reads like a loan application. Every extra field costs you a percentage of buyers who almost filled it out.",
+          ko: '두 가지가 가장 중요합니다. 제품 카테고리별 전용 페이지(전부 한 페이지에 나열하지 않기)와, 이메일 보내는 것보다 쉬운 견적 요청 폼입니다. "silicone phone case wholesale"을 검색한 바이어는 홈페이지가 아니라 딱 그 카테고리만 다루는 페이지 — 사진, MOQ, 소재 옵션 포함 — 로 들어와야 합니다. 그리고 설득이 됐다면, 폼은 첫 답변에 필요한 것만 물어야 합니다(관심 제품, 대략 수량, 배송지, 연락처) — 대출 신청서처럼 긴 접수 양식이 아니라요. 필드 하나가 늘 때마다 거의 다 채우려던 바이어의 일정 비율이 이탈합니다.',
+        },
+      },
+      {
+        q: {
+          en: 'We already have a PDF catalog we email to buyers — isn\'t that enough?',
+          ko: '이미 바이어들에게 이메일로 보내는 PDF 카탈로그가 있는데, 그걸로 충분하지 않나요?',
+        },
+        a: {
+          en: "A PDF catalog is useful once a buyer already has your email address — but it does nothing to help a new buyer find you in the first place. Google generally does not index the contents of a PDF the way it indexes a real webpage, so a catalog sitting on your server, or worse, only sent as an attachment, is invisible to search entirely. The fix is not to abandon the catalog — keep it for buyers who want an offline reference — but to also publish the same product categories as real, crawlable web pages with their own titles and descriptions. The PDF closes a deal that has already started. The web page is what starts it.",
+          ko: 'PDF 카탈로그는 바이어가 이미 사장님 이메일 주소를 알고 있을 때는 유용하지만, 새 바이어가 애초에 사장님을 찾는 데는 전혀 도움이 안 됩니다. 구글은 보통 PDF 안의 내용을 진짜 웹페이지처럼 색인하지 않기 때문에, 서버에 올려둔 카탈로그, 더 나아가 첨부파일로만 보내는 카탈로그는 검색에서 완전히 보이지 않습니다. 해법은 카탈로그를 버리는 게 아니라 — 오프라인 참고용으로 원하는 바이어를 위해 그대로 두시고 — 같은 제품 카테고리를 각자의 제목과 설명이 있는, 크롤링 가능한 진짜 웹페이지로도 함께 발행하는 것입니다. PDF는 이미 시작된 거래를 마무리 짓고, 웹페이지는 그 거래를 시작시킵니다.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "Talk to Korean-American wholesale and import company owners in the LA Fashion District, Koreatown, or the Gardena/Torrance industrial corridor, and most will tell you the same origin story: the business grew through trade shows, a handful of loyal buyers, and word of mouth inside a tight Korean-American supplier network. That playbook built real companies. But it has a blind spot that is easy to miss because it does not show up as a complaint — it shows up as silence. Buyers who are not already inside that network, and who default to Googling a category before calling anyone, never reach out at all, because there is nothing for them to find." },
+        { type: 'h2', content: 'The referral pipeline is real — and it has a ceiling' },
+        { type: 'p', content: "There is nothing wrong with a business built on relationships; it is the fastest way to close a first order and the cheapest way to keep a good buyer for years. The problem is what that pipeline structurally cannot do: it cannot reach a buyer you have never met, at a company that has never worked with a Korean-American supplier, who is sitting at a desk in Ohio or Texas typing a product category into Google because their current vendor just fell through. That buyer exists in real numbers every single day. Whether they ever find you depends entirely on whether your product categories show up when they search — not on how good your last trade show booth was." },
+        { type: 'h2', content: 'What a buyer actually types into Google' },
+        { type: 'p', content: "Buyers rarely search your company name — they do not know it yet. They search the thing they need, in the language procurement people actually use. Understanding that vocabulary is most of the work." },
+        { type: 'ul', content: 'Common search patterns behind B2B quote requests — the phrases a page needs to actually answer, not just mention:', items: [
+          '"[product category] wholesale supplier USA" — e.g. "silicone phone case wholesale supplier USA," "K-beauty wholesale distributor."',
+          '"[product] manufacturer Los Angeles" or "[product] importer California" — buyers who specifically want a US-based, faster-shipping source.',
+          '"bulk [product] no minimum" or "[product] low MOQ" — smaller buyers testing a category before committing.',
+          '"[brand or product type] private label supplier" — buyers who want to put their own label on your product.',
+          '"[product category] trade show alternative" or simply the product name with "wholesale" attached — buyers researching between shows, not during one.',
+        ] },
+        { type: 'h2', content: 'The page structure that turns a search into an RFQ' },
+        { type: 'p', content: "A homepage that says 'we import quality products from Korea' answers none of these searches and ranks for none of them. What ranks — and converts — is one page per product category, written the way a buyer thinks: what it is, what it is made of, available sizes or variants, MOQ, typical lead time, and real photos from your own warehouse or showroom rather than manufacturer stock images every competitor is also using. Each category page needs its own title and description built around the exact phrase a buyer would search, not a generic 'Products' label buried in a PDF." },
+        { type: 'tip', content: "The single highest-leverage fix for most wholesale sites we look at is the request-a-quote form itself. A generic 'Contact Us' form loses buyers who are comparing five suppliers in one sitting and will not write a paragraph for each. A short quote form embedded directly on every category page — product, quantity range, destination, email — turns a five-minute research visit into a lead instead of a bounce." },
+        { type: 'h2', content: 'Google Business Profile still matters for a showroom, not just a storefront' },
+        { type: 'p', content: "Owners often assume a Google Business Profile is for restaurants and salons, not wholesale companies — but if you have a showroom or warehouse buyers can visit, a claimed, accurate profile with your real address, hours, and photos does double duty: it reassures a buyer doing the same 'does this company actually exist' check that B2B buyers everywhere run before replying to a quote, and it can surface in local map results when a buyer searches '[category] wholesale near me' while traveling through LA for other sourcing." },
+        { type: 'h2', content: 'The PDF catalog trap' },
+        { type: 'p', content: "Almost every LA Korean wholesale company we talk to already has a polished PDF catalog, and understandably assumes that covers the 'online' requirement. It does not, and the gap is specific: PDFs generally are not indexed and ranked by Google the way a real web page is, so a catalog sitting on your site — or only ever sent as an email attachment — is invisible to the exact search behavior described above. Keep the PDF; buyers who already found you often want it for offline reference. But publish the same categories as real, crawlable pages too, or the PDF is doing zero work to bring in new buyers." },
+        { type: 'cta', content: "ZOE LUMOS builds bilingual B2B and wholesale websites for Korean-American import, trading, and manufacturing companies across LA, Atlanta, Dallas, and nationwide — category pages built around real buyer search terms, quote-request forms that actually convert, and domain email, all registered in YOUR name. Free consultation in Korean or English: email info@zoelumos.com or reach us on KakaoTalk." },
+      ],
+      ko: [
+        { type: 'intro', content: "LA 패션 디스트릭트, 코리아타운, 가디나·토랜스 산업 지구의 한인 도매·수입 회사 사장님들께 여쭤보면 대부분 비슷한 창업 스토리를 들려주십니다. 전시회, 몇몇 충성 바이어, 끈끈한 한인 공급업체 네트워크 안의 입소문으로 사업을 키웠다고요. 이 방식은 진짜 회사를 만들어냈습니다. 하지만 놓치기 쉬운 사각지대가 있는데, 이건 불만으로 드러나지 않고 침묵으로 드러납니다. 그 네트워크 안에 아직 없고, 아무한테나 전화하기 전에 카테고리부터 구글링하는 바이어들은 아예 연락을 안 합니다 — 검색해도 나올 게 없으니까요." },
+        { type: 'h2', content: '소개 파이프라인은 진짜입니다 — 하지만 한계가 있습니다' },
+        { type: 'p', content: "관계로 쌓은 사업에는 아무 문제가 없습니다. 첫 주문을 성사시키는 가장 빠른 방법이고, 좋은 바이어를 몇 년씩 붙잡아 두는 가장 저렴한 방법이니까요. 문제는 그 파이프라인이 구조적으로 할 수 없는 일입니다 — 한 번도 만난 적 없는 바이어, 한인 공급업체와 거래해 본 적 없는 회사, 오하이오나 텍사스 사무실에서 지금 쓰던 벤더가 방금 문제가 생겨서 제품 카테고리를 구글에 치고 있는 사람에게는 닿지 못합니다. 그런 바이어는 매일 실제 숫자로 존재합니다. 그들이 사장님을 찾느냐는 지난 전시회 부스가 얼마나 좋았느냐가 아니라, 제품 카테고리가 검색에 뜨느냐에 전적으로 달려 있습니다." },
+        { type: 'h2', content: '바이어가 실제로 구글에 치는 검색어' },
+        { type: 'p', content: "바이어는 회사 이름을 검색하는 경우가 드뭅니다 — 아직 모르니까요. 필요한 걸 검색합니다. 구매 담당자들이 실제로 쓰는 표현으로요. 이 어휘를 이해하는 게 작업의 대부분입니다." },
+        { type: 'ul', content: 'B2B 견적 요청 뒤에 있는 흔한 검색 패턴 — 페이지가 단순히 언급만 하지 않고 실제로 답해야 하는 문구들:', items: [
+          '"[제품 카테고리] wholesale supplier USA" — 예: "실리콘 폰케이스 도매 공급업체 미국", "K-뷰티 도매 유통업체".',
+          '"[제품] manufacturer Los Angeles" 또는 "[제품] importer California" — 미국 내 소재, 더 빠른 배송을 원하는 바이어들.',
+          '"bulk [제품] no minimum" 또는 "[제품] low MOQ" — 카테고리를 시도해 보려는 소규모 바이어들.',
+          '"[브랜드 또는 제품 유형] private label supplier" — 자기 라벨을 붙이고 싶어하는 바이어들.',
+          '"[제품 카테고리] trade show alternative", 또는 그냥 제품명 뒤에 "wholesale"만 붙인 검색 — 전시회 도중이 아니라 사이사이에 리서치하는 바이어들.',
+        ] },
+        { type: 'h2', content: '검색을 견적 요청으로 바꾸는 페이지 구조' },
+        { type: 'p', content: "'한국에서 좋은 제품을 수입합니다'라고 말하는 홈페이지는 이 검색어들 어느 것에도 답하지 못하고 어느 것에서도 순위에 안 잡힙니다. 순위에 잡히고 — 전환도 되는 — 것은 바이어의 사고 방식대로 쓴 제품 카테고리별 전용 페이지입니다. 무엇인지, 무엇으로 만들었는지, 사이즈나 옵션, MOQ, 통상 리드타임, 그리고 경쟁사 모두가 쓰는 제조사 스톡 이미지가 아니라 실제 창고나 쇼룸에서 찍은 진짜 사진. 각 카테고리 페이지는 PDF 안에 묻힌 일반적인 '제품' 라벨이 아니라, 바이어가 검색할 만한 정확한 문구를 중심으로 만든 자기만의 제목과 설명이 필요합니다." },
+        { type: 'tip', content: "저희가 살펴보는 도매 사이트 대부분에서 효과가 가장 큰 개선점은 견적 요청 폼 그 자체입니다. 일반적인 '문의하기' 폼은 한 번에 다섯 개 공급업체를 비교하며 각각에 문단을 써줄 여유가 없는 바이어를 놓칩니다. 모든 카테고리 페이지에 직접 넣은 짧은 견적 폼 — 제품, 대략 수량, 배송지, 이메일 — 은 5분짜리 리서치 방문을 이탈이 아니라 리드로 바꿉니다." },
+        { type: 'h2', content: '구글 비즈니스 프로필, 매장이 아니라 쇼룸에도 여전히 중요합니다' },
+        { type: 'p', content: "사장님들은 구글 비즈니스 프로필이 식당이나 살롱용이지 도매 회사용은 아니라고 생각하는 경우가 많습니다. 하지만 바이어가 방문할 수 있는 쇼룸이나 창고가 있다면, 실제 주소·영업시간·사진이 들어간 정확하고 인증된 프로필은 두 가지 일을 합니다. 견적에 답하기 전 어디서나 B2B 바이어가 하는 '이 회사가 정말 존재하는가' 확인을 안심시켜 주고, 소싱차 LA에 온 바이어가 '[카테고리] wholesale near me'를 검색할 때 지도 결과에도 뜰 수 있습니다." },
+        { type: 'h2', content: 'PDF 카탈로그의 함정' },
+        { type: 'p', content: "저희가 만나는 LA 한인 도매 회사 거의 전부가 이미 잘 만든 PDF 카탈로그를 갖고 있고, 당연히 그게 '온라인' 요건을 충족한다고 생각하십니다. 아닙니다. 그 격차는 구체적입니다. PDF는 보통 진짜 웹페이지처럼 구글에 색인되고 순위가 매겨지지 않기 때문에, 사이트에 올려두거나 이메일 첨부로만 보내는 카탈로그는 앞서 말한 검색 행동에서 완전히 보이지 않습니다. PDF는 그대로 두세요 — 이미 사장님을 찾은 바이어는 오프라인 참고용으로 원하는 경우가 많으니까요. 하지만 같은 카테고리를 크롤링 가능한 진짜 페이지로도 함께 발행하지 않으면, 그 PDF는 새 바이어를 데려오는 일을 전혀 못 합니다." },
+        { type: 'cta', content: "ZOE LUMOS는 LA, 애틀랜타, 댈러스를 비롯한 미국 전역의 한인 수입·무역·제조 기업을 위한 이중언어 B2B·도매 웹사이트를 만듭니다 — 실제 바이어 검색어를 중심으로 한 카테고리 페이지, 실제로 전환되는 견적 요청 폼, 그리고 도메인 이메일까지 전부 사장님 명의로 등록합니다. 한국어/영어 무료 상담: info@zoelumos.com 이메일 또는 카카오톡으로 편하게 문의하세요." },
+      ],
+    },
+  },
 ]
