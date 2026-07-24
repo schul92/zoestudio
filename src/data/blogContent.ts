@@ -11698,4 +11698,114 @@ export const blogContent: BlogPost[] = [
       ],
     },
   },
+
+  // ─────────────────────────────────────────────────────────────────
+  // 2026-07-24 — AWS network security for multi-location F&B/retail (Atlanta metro)
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'aws-network-security-multi-location-korean-restaurant-atlanta-2026',
+    date: '2026-07-24',
+    updatedDate: '2026-07-24',
+    readTime: 10,
+    category: { en: 'Cloud & Infrastructure', ko: '클라우드 · 인프라' },
+    title: {
+      en: 'AWS Network Security for Multi-Location Korean Restaurants & Markets: Connecting Your Stores Safely (Atlanta Metro Guide, 2026)',
+      ko: '여러 지점 한인 식당·마트, POS 네트워크 보안 어떻게 하나요 — AWS로 매장 간 안전하게 연결하기 (애틀랜타 권역 가이드 2026)',
+    },
+    metaDescription: {
+      en: 'Korean-American restaurant and market owners in the Atlanta metro (Duluth, Suwanee, Johns Creek, Alpharetta) who open a second or third location often connect stores with consumer routers and shared logins. Here is what proper AWS network architecture covers — PCI DSS-aligned POS segmentation, site-to-site VPN between locations, centralized access control, and real-time inventory sync — and how a security consulting engagement actually runs.',
+      ko: '애틀랜타 권역(둘루스, 스와니, 존스크릭, 알파레타)에서 두 번째, 세 번째 지점을 여는 한인 식당·마트 사장님들은 흔히 가정용 공유기와 공용 로그인으로 매장들을 연결합니다. AWS 네트워크 아키텍처가 실제로 다루는 영역 — PCI DSS 기준에 맞춘 POS 네트워크 분리, 매장 간 사이트투사이트 VPN, 중앙 접근 권한 관리, 실시간 재고 동기화 — 와 보안 컨설팅이 실제로 어떻게 진행되는지 정리했습니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'Does a small Korean restaurant or market chain really need PCI DSS compliance, or is that just for big retailers?',
+          ko: '작은 한인 식당·마트 체인도 PCI DSS 컴플라이언스가 정말 필요한가요, 아니면 대형 리테일러만 해당되나요?',
+        },
+        a: {
+          en: "Yes — PCI DSS (Payment Card Industry Data Security Standard) applies to any business that accepts card payments, regardless of size, and your card processor (Toast, Square, Clover, your bank's merchant services) already requires you to attest to it every year, usually through a self-assessment questionnaire you may not remember signing. The real question is not whether it applies to you but how exposed you are — a single flat network where the POS terminal, the office Wi-Fi, and the guest Wi-Fi are all the same network is a common finding that fails a real assessment and is also a real breach risk, because anyone on that shared network can potentially reach card-transaction traffic. Segmenting the POS network from everything else is the single biggest fix, and it is exactly what AWS-based site-to-site VPN and network segmentation are built to solve.",
+          ko: '네, PCI DSS(카드 산업 데이터 보안 표준)는 규모와 관계없이 카드 결제를 받는 모든 사업체에 적용되고, 카드 결제 업체(Toast, Square, Clover, 은행 가맹점 서비스)는 이미 매년 이를 확인하도록 요구하고 있습니다 — 보통 본인도 모르게 서명했을 자가진단 설문지 형태로요. 진짜 질문은 "해당되느냐"가 아니라 "얼마나 노출돼 있느냐"입니다. POS 단말기, 사무실 와이파이, 손님용 와이파이가 전부 같은 네트워크에 있는 하나의 평평한 네트워크 — 이건 실제 심사에서 자주 걸리는 항목이자, 그 공유 네트워크에 있는 누구든 카드 결제 트래픽에 접근할 수 있다는 실질적인 침해 위험이기도 합니다. POS 네트워크를 나머지와 분리하는 것이 가장 큰 단일 해결책이고, 이게 바로 AWS 기반 사이트투사이트 VPN과 네트워크 분리가 해결하는 문제입니다.',
+        },
+      },
+      {
+        q: {
+          en: 'We just have two locations right now. Is it too early to think about this kind of network setup?',
+          ko: '아직 지점이 두 개뿐인데, 이런 네트워크 구성을 고민하기엔 너무 이른가요?',
+        },
+        a: {
+          en: 'Two locations is usually exactly when this starts to matter, because it is the point where "the manager at store two texts store one for today\'s numbers" stops working and owners want real-time sales and inventory visibility across both. It is also the point where access control gets messy fastest — one shared POS login, one shared Wi-Fi password passed between two staffs, and no way to tell which location a suspicious transaction came from. Setting up proper network segmentation and centralized access control with two locations is meaningfully cheaper and faster than doing it after location five, when there are more staff logins to migrate, more POS terminals to touch, and more risk in the cutover. Most owners we talk to wait until a scare (a lost tablet, a staff member who should not have had access) forces the conversation; doing it proactively at location two avoids that.',
+          ko: '보통 지점이 두 개가 되는 시점이 정확히 이게 중요해지는 때입니다. "2호점 매니저가 오늘 매출을 1호점에 문자로 알려주는" 방식이 더 이상 안 통하고, 사장님이 두 매장의 매출·재고를 실시간으로 보고 싶어지는 시점이니까요. 또한 접근 권한 관리가 가장 빠르게 엉망이 되는 시점이기도 합니다 — 공용 POS 로그인 하나, 두 매장 직원이 돌려쓰는 와이파이 비밀번호 하나, 그리고 수상한 거래가 어느 지점에서 발생했는지 구분할 방법이 없는 상태죠. 지점 두 개일 때 제대로 된 네트워크 분리와 중앙 접근 권한 관리를 구축하는 것이, 5호점까지 늘어난 뒤에 하는 것보다 훨씬 저렴하고 빠릅니다. 그때는 옮겨야 할 직원 로그인도, 손대야 할 POS 단말기도, 전환 과정의 리스크도 훨씬 많아지니까요. 많은 사장님들이 놀라는 일(태블릿 분실, 접근하면 안 될 직원의 접근 등)이 터진 뒤에야 이 대화를 시작하시는데, 2호점 단계에서 미리 해두면 그런 일을 피할 수 있습니다.',
+        },
+      },
+      {
+        q: {
+          en: 'How much does this kind of multi-location network security setup cost, and how long does it take?',
+          ko: '이런 다지점 네트워크 보안 구성은 비용이 얼마나 들고, 얼마나 걸리나요?',
+        },
+        a: {
+          en: "AWS usage itself is pay-as-you-go — a VPN gateway connecting two to three locations plus centralized logging and access management typically runs in the low hundreds of dollars per month, scaling with the number of sites and transaction volume, not a fixed hardware cost. The separate cost is the setup engagement (network design, VPN configuration at each location, POS segmentation, staff access migration), which for a two-to-three-location F&B or retail business we typically scope as a two-to-four week project, done in phases so no single location loses connectivity or has to close. The first phase — separating the POS network from guest Wi-Fi and office devices at each store — usually happens in the first week and closes the most dangerous gap immediately, with VPN and centralized monitoring layered on after.",
+          ko: 'AWS 사용료 자체는 종량제입니다 — 지점 2~3곳을 연결하는 VPN 게이트웨이에 중앙 로깅·접근 관리를 더해도 보통 월 수백 달러 수준에서 시작하고, 고정 하드웨어 비용이 아니라 지점 수와 거래량에 따라 오르내립니다. 별도의 비용은 구축 작업(네트워크 설계, 지점별 VPN 설정, POS 분리, 직원 접근 권한 이전) 자체이고, 지점 2~3개의 F&B·리테일 사업이라면 보통 2~4주짜리 프로젝트로 잡습니다 — 어느 지점도 연결이 끊기거나 문을 닫을 필요 없이 단계적으로 진행합니다. 첫 단계 — 각 매장에서 POS 네트워크를 손님용 와이파이·사무실 기기와 분리하는 작업 — 은 보통 첫 주에 끝나고, 가장 위험한 구멍을 즉시 막아줍니다. VPN과 중앙 모니터링은 그 위에 이어서 쌓습니다.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "A pattern we see often among Korean-American restaurant and market owners expanding across the Atlanta metro — Duluth, Suwanee, Johns Creek, Alpharetta — is opening a second or third location and connecting it to the first the same way you would set up Wi-Fi at home: a consumer router, a shared password texted to the new manager, and a POS terminal plugged into the same network as everything else. It works, until the day it does not — a card-payment issue during a PCI review, a former employee's login still active at a store they never worked at, or simply no way to see today's sales across all three locations without three phone calls. That is where AWS network architecture starts, and for a food or retail business handling card payments across multiple sites, it is not optional infrastructure — it is the plumbing your card processor already assumes you have." },
+        { type: 'h2', content: "What a flat, unsegmented network actually risks" },
+        { type: 'p', content: "Most owners think about security as 'did we get hacked' — a dramatic, rare event. The more common risk is quieter: a network with no boundaries, where a compromised guest-Wi-Fi device, an old staff phone still connected from six months ago, or a vendor's laptop plugged in for an install can all technically reach the same network segment as your POS terminal and card-transaction traffic. Multiply that across three locations run by three different managers, each making their own IT decisions with whatever router came in the box, and you have three different levels of exposure with no one able to see any of them from one place." },
+        { type: 'ul', content: 'What we most often find when we audit a growing multi-location F&B or retail business:', items: [
+          "One flat network per store — POS terminal, back-office computer, and guest Wi-Fi all on the same network, so a compromised device anywhere on it can reach card-payment traffic.",
+          "A single shared POS or Wi-Fi login passed between staff by text message, with no record of who logged in from where or when.",
+          "No connection between locations at all — each store's sales and inventory data lives in its own island, and 'today's numbers across all locations' means three phone calls or three separate app logins.",
+          "Former employees and former locations (a closed pop-up, a seasonal stand) with access that was never revoked, because there was no central place to revoke it from.",
+          "No log of who accessed what, when — so if a card-transaction dispute or a data question comes up, there is no record to check.",
+        ] },
+        { type: 'h2', content: 'What a proper multi-location AWS setup actually covers' },
+        { type: 'p', content: "This is not about replacing your POS system — Toast, Clover, and Square all already handle the payment processing itself securely on their end. The gap AWS network architecture closes is everything around it: how your locations connect to each other, who can access what, and where your business data — sales history, inventory counts, staff records — actually lives and is backed up." },
+        { type: 'ul', content: 'The concrete pieces, and the problem each one solves:', items: [
+          "Site-to-site VPN between locations — each store connects to a central, encrypted tunnel instead of the open internet, so sales and inventory data moves between locations without ever crossing an unsecured connection.",
+          "Network segmentation at each location — the POS terminal sits on its own isolated network segment, separate from guest Wi-Fi, back-office computers, and any vendor devices, so a compromised device on one segment cannot reach card-transaction traffic on another.",
+          "Centralized IAM (Identity and Access Management) — one place to grant and revoke access across all locations, so when a manager moves stores or an employee leaves, their access is cut everywhere at once instead of hunting down logins store by store.",
+          "Real-time data sync via a managed database (RDS) — sales and inventory figures from every location roll up to one dashboard the owner can actually check from a phone, instead of three separate POS app logins.",
+          "Centralized backup and logging (S3 + CloudTrail) — sales records, inventory history, and access logs are backed up automatically and stored where they can be reviewed if a card dispute, an inventory discrepancy, or a security question ever comes up.",
+          "A web application firewall and security groups at the network edge — automated rules that block unauthorized access attempts at each location before they can reach store systems.",
+        ] },
+        { type: 'tip', content: "A free five-minute check worth doing this week: at each of your locations, is the POS terminal on the same Wi-Fi network as the guest Wi-Fi or the back-office computer? If the honest answer is yes at even one location, that alone is the highest-priority item on this whole list — segmenting that single network is usually the fastest, cheapest fix, and it closes the most dangerous gap first." },
+        { type: 'h2', content: 'Why this matters more for a Korean-American-owned multi-location business specifically' },
+        { type: 'p', content: "This kind of network and compliance work is technical enough that most owners reasonably hire someone else to handle it — the question is who, and in what language. A large generic MSP (managed service provider) will take the contract, but the PCI attestation paperwork, the security policy explanations, and the support calls arrive in English, on their schedule, assuming familiarity with US IT and compliance norms that a first- or 1.5-generation owner running a family restaurant or market group often has not had reason to build. This is also higher-stakes than a website project — it touches card-payment data and every location's daily revenue. Getting a straight answer, in Korean or English, to 'wait, does this actually apply to us' or 'what happens to our data if a store closes' matters. We handle this the same way we handle everything else at Zoe Lumos — one person, from the initial audit through ongoing management, reachable on KakaoTalk if something looks off at 11pm on a Friday." },
+        { type: 'h2', content: 'How an engagement actually runs' },
+        { type: 'p', content: "We start by mapping what exists today at each location — not assuming, walking through each store's actual network, POS setup, and who has access to what. From there we design the architecture around your specific footprint (number of locations, POS vendor, whether you are opening more stores this year) rather than a generic template, and roll it out location by location so no single store loses connectivity: POS network segmentation first at each site since it closes the most dangerous gap fastest, then the VPN connecting locations, then centralized access control and the real-time dashboard. Staff keep working on current systems throughout — a cutover at any one location typically happens during a slow hour and takes minutes, not a day. After rollout, monitoring and access review continue as an ongoing service, the same PCI attestation season after season, without you having to remember which of three POS logins is still active." },
+        { type: 'cta', content: "Running two or more locations and not sure how connected — or exposed — your POS network actually is? ZOE LUMOS designs and manages AWS network security for growing Korean-American restaurant and retail businesses across the US, alongside our web and app development work. Free consultation in English or Korean: email info@zoelumos.com or message us on KakaoTalk (http://pf.kakao.com/_xhxdxmlX/chat)." },
+      ],
+      ko: [
+        { type: 'intro', content: '애틀랜타 권역 — 둘루스, 스와니, 존스크릭, 알파레타 — 에서 확장 중인 한인 식당·마트 사장님들에게서 자주 보는 패턴이 있습니다. 두 번째, 세 번째 지점을 열면서, 집에서 와이파이 설정하듯 첫 지점과 연결합니다. 가정용 공유기, 새 매니저에게 문자로 알려준 공용 비밀번호, 그리고 나머지 모든 것과 같은 네트워크에 꽂힌 POS 단말기. 문제가 터지기 전까진 잘 돌아갑니다 — PCI 심사 중 카드 결제 관련 문제, 한 번도 일한 적 없는 매장에서 여전히 살아있는 퇴사 직원의 로그인, 또는 전화 세 통 없이는 세 지점의 오늘 매출을 볼 방법이 없다는 사실. 바로 이 지점에서 AWS 네트워크 아키텍처가 시작됩니다. 여러 지점에서 카드 결제를 받는 식당·리테일 사업체에게 이건 선택 인프라가 아니라, 카드 결제 업체가 이미 있다고 전제하는 배관입니다.' },
+        { type: 'h2', content: '분리되지 않은 평평한 네트워크가 실제로 안고 있는 위험' },
+        { type: 'p', content: '대부분의 사장님들은 보안을 "해킹당했는가" — 극적이고 드문 사건으로 생각합니다. 더 흔한 위험은 조용합니다. 경계가 없는 네트워크에서는, 감염된 손님용 와이파이 기기, 6개월 전부터 여전히 연결된 옛 직원 폰, 설치를 위해 잠깐 꽂은 업체 노트북까지 전부 기술적으로 POS 단말기 및 카드 결제 트래픽과 같은 네트워크 구간에 닿을 수 있습니다. 이걸 각자 다른 매니저가 운영하고, 상자에 들어있던 공유기로 각자 알아서 IT 결정을 내리는 세 지점에 곱하면, 한 곳에서 확인할 수도 없는 서로 다른 세 가지 노출 수준이 만들어집니다.' },
+        { type: 'ul', content: '성장 중인 다지점 F&B·리테일 사업체를 감사할 때 가장 자주 발견하는 것들:', items: [
+          '매장당 하나의 평평한 네트워크 — POS 단말기, 백오피스 컴퓨터, 손님용 와이파이가 전부 같은 네트워크에 있어서, 그 안의 감염된 기기 하나가 카드 결제 트래픽에 닿을 수 있습니다.',
+          '문자로 돌려쓰는 하나의 공용 POS·와이파이 로그인 — 누가 언제 어디서 로그인했는지 기록이 없습니다.',
+          '지점 간 연결이 전혀 없음 — 각 매장의 매출·재고 데이터가 각자의 섬에 있어서, "전 지점 오늘 매출"을 확인하려면 전화 세 통이나 앱 로그인 세 번이 필요합니다.',
+          '회수되지 않은 퇴사 직원과 없어진 지점(문 닫은 팝업, 시즌 매대)의 접근 권한 — 중앙에서 회수할 곳이 없었기 때문입니다.',
+          '누가 무엇에 언제 접근했는지 기록이 없음 — 카드 거래 분쟁이나 데이터 관련 질문이 생겨도 확인할 기록이 없습니다.',
+        ] },
+        { type: 'h2', content: '제대로 된 다지점 AWS 구성이 실제로 다루는 영역' },
+        { type: 'p', content: '이건 POS 시스템을 교체하는 게 아닙니다 — Toast, Clover, Square 모두 이미 결제 처리 자체는 자기 쪽에서 안전하게 처리하고 있습니다. AWS 네트워크 아키텍처가 메꾸는 빈틈은 그 주변 전부입니다 — 지점들이 서로 어떻게 연결되는지, 누가 무엇에 접근할 수 있는지, 그리고 사업 데이터(매출 이력, 재고 수량, 직원 기록)가 실제로 어디에 있고 어떻게 백업되는지.' },
+        { type: 'ul', content: '구체적인 구성 요소들과, 각각이 해결하는 문제:', items: [
+          '지점 간 사이트투사이트 VPN — 각 매장이 열려 있는 인터넷 대신 중앙의 암호화된 터널로 연결돼서, 매출·재고 데이터가 지점 사이를 이동할 때 절대 비보안 연결을 거치지 않습니다.',
+          '매장별 네트워크 분리 — POS 단말기가 손님용 와이파이, 백오피스 컴퓨터, 업체 기기와 분리된 독립 네트워크 구간에 있어서, 한 구간의 감염된 기기가 다른 구간의 카드 결제 트래픽에 닿지 못합니다.',
+          '중앙 IAM(접근 권한 관리) — 모든 지점의 접근 권한을 부여·회수하는 곳이 한 곳뿐이라서, 매니저가 매장을 옮기거나 직원이 퇴사하면 매장별로 로그인을 일일이 찾을 필요 없이 전체 접근이 동시에 차단됩니다.',
+          '관리형 데이터베이스(RDS)를 통한 실시간 데이터 동기화 — 모든 지점의 매출·재고 수치가 하나의 대시보드로 모여서, 사장님이 POS 앱 세 개에 각각 로그인하지 않고 폰으로 바로 확인할 수 있습니다.',
+          '중앙 백업·로그(S3 + CloudTrail) — 매출 기록, 재고 이력, 접근 로그가 자동으로 백업되고, 카드 거래 분쟁이나 재고 불일치, 보안 관련 질문이 생기면 언제든 확인할 수 있는 곳에 저장됩니다.',
+          '네트워크 경계의 웹 애플리케이션 방화벽과 보안 그룹 — 무단 접근 시도가 매장 시스템에 닿기 전에 각 지점에서 자동으로 차단하는 규칙들.',
+        ] },
+        { type: 'tip', content: '이번 주에 5분이면 되는 무료 점검 하나 — 각 지점에서 POS 단말기가 손님용 와이파이나 백오피스 컴퓨터와 같은 네트워크에 있나요? 단 한 곳이라도 솔직한 답이 "그렇다"라면, 그것만으로 이 목록 전체에서 가장 우선순위가 높은 항목입니다. 그 네트워크 하나를 분리하는 게 보통 가장 빠르고 저렴한 해결책이고, 가장 위험한 구멍을 먼저 막아줍니다.' },
+        { type: 'h2', content: '한인 소유 다지점 사업체에게 특히 이게 더 중요한 이유' },
+        { type: 'p', content: '이런 네트워크·컴플라이언스 작업은 충분히 전문적이라 대부분의 사장님들이 합리적으로 다른 사람에게 맡기는 영역입니다 — 문제는 누구에게, 어떤 언어로 맡기느냐입니다. 큰 일반 MSP도 기꺼이 계약을 받겠지만, PCI 확인 서류와 보안 정책 설명, 지원 전화가 영어로, 그들의 일정대로, 미국 IT·컴플라이언스 관행에 익숙하다는 전제 하에 옵니다 — 1세대나 1.5세대로 가족 식당·마트 그룹을 운영하는 사장님이 굳이 쌓을 이유가 없었던 익숙함이죠. 이건 웹사이트 프로젝트보다도 판돈이 큽니다 — 카드 결제 데이터와 매일의 매출이 걸려 있으니까요. "잠깐, 이게 우리한테 정말 해당되나요"나 "매장 하나가 문을 닫으면 그 데이터는 어떻게 되나요" 같은 질문에 한국어든 영어든 명확한 답을 듣는 것이 중요합니다. 저희는 이 영역도 Zoe Lumos의 다른 모든 일과 똑같이 다룹니다 — 초기 감사부터 지속 관리까지 한 사람이, 금요일 밤 11시에 뭔가 이상해 보이면 카카오톡으로 바로 연락 가능하게.' },
+        { type: 'h2', content: '실제 진행은 어떻게 이뤄지나' },
+        { type: 'p', content: '저희는 지금 각 지점에 무엇이 있는지 파악하는 것부터 시작합니다 — 짐작이 아니라, 매장별 실제 네트워크, POS 구성, 누가 무엇에 접근하는지 직접 확인합니다. 여기서부터 일반 템플릿이 아니라 사장님 사업의 구체적인 형태(지점 수, POS 업체, 올해 추가로 지점을 여실 계획인지)에 맞춘 아키텍처를 설계하고, 어느 매장도 연결이 끊기지 않도록 지점별로 순차 적용합니다 — 가장 위험한 구멍을 가장 빨리 막아주는 매장별 POS 네트워크 분리부터 시작해서, 지점을 잇는 VPN, 그다음 중앙 접근 권한 관리와 실시간 대시보드 순입니다. 그 기간 내내 직원들은 기존 시스템으로 계속 일합니다 — 지점 하나당 전환 작업은 보통 한산한 시간대에 이뤄지고 하루가 아니라 몇 분입니다. 적용이 끝난 뒤에도 모니터링과 접근 권한 점검이 지속 서비스로 이어집니다 — 세 개의 POS 로그인 중 어떤 게 아직 살아있는지 기억할 필요 없이, 시즌마다 같은 PCI 확인을 반복합니다.' },
+        { type: 'cta', content: "두 개 이상의 지점을 운영 중이신데 POS 네트워크가 얼마나 연결돼 있는지 — 혹은 얼마나 노출돼 있는지 — 확신이 안 서시나요? ZOE LUMOS는 웹·앱 개발과 함께, 미국 전역의 성장하는 한인 식당·리테일 사업체를 위해 AWS 네트워크 보안을 설계하고 관리합니다. 한국어/영어 무료 상담: info@zoelumos.com 이메일 또는 카카오톡(http://pf.kakao.com/_xhxdxmlX/chat)으로 편하게 문의하세요." },
+      ],
+    },
+  },
 ]
