@@ -11698,4 +11698,119 @@ export const blogContent: BlogPost[] = [
       ],
     },
   },
+
+  // ─────────────────────────────────────────────────────────────────
+  // 2026-07-25 — Custom internal operations app (staff scheduling +
+  // inventory) for multi-location Korean-American businesses (Houston, TX)
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'custom-internal-operations-app-korean-business-houston-2026',
+    date: '2026-07-25',
+    updatedDate: '2026-07-25',
+    readTime: 9,
+    category: { en: 'App Development', ko: '앱 개발' },
+    title: {
+      en: 'Staff Schedule in a Group Text, Inventory in a Notebook: When a Custom Internal App Pays for Itself (Houston Guide, 2026)',
+      ko: '직원 스케줄은 단톡방, 재고는 공책 — 커스텀 내부 운영 앱이 필요해지는 순간 (휴스턴 한인 기업 가이드 2026)',
+    },
+    metaDescription: {
+      en: 'Korean-American grocery, restaurant, and retail groups in Houston running two or more locations often coordinate staff schedules over group text and count inventory on paper. Here is when a custom internal web or iOS app — not a customer-facing website — actually pays for itself, and how one gets built by a registered Apple App Store developer.',
+      ko: '휴스턴에서 두 개 이상의 지점을 운영하는 한인 마트·식당·리테일 그룹은 흔히 직원 스케줄을 단톡방으로 조율하고 재고는 공책에 적습니다. 고객용 웹사이트가 아니라 커스텀 내부 운영 앱 — 웹앱이든 iOS 앱이든 — 이 실제로 돈값을 하는 시점과, Apple 앱스토어 등록 개발사가 그걸 어떻게 만드는지 정리했습니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'How do we know if our business actually needs a custom internal app instead of just using spreadsheets and group chat?',
+          ko: '우리 사업체에 스프레드시트와 단톡방 대신 정말 커스텀 내부 앱이 필요한지 어떻게 판단하나요?',
+        },
+        a: {
+          en: "The clearest signal is not size, it is coordination pain across more than one place at the same time — two or more locations, or one location with enough staff that the schedule needs real rules (who is certified for what, who cannot work back-to-back closing-opening shifts, who already hit overtime). If a manager can still keep the whole picture in their head and a shared spreadsheet, you likely do not need a custom app yet, and a good off-the-shelf tool is the right answer. The tipping point is usually when the same information has to live correctly in more than one place at once — this week's schedule, today's inventory count, which employee has access to which register — and a text thread or paper log cannot keep those in sync, so someone ends up re-entering or re-explaining the same thing twice a day.",
+          ko: '가장 뚜렷한 신호는 사업 규모가 아니라, 동시에 여러 곳에서 벌어지는 조율의 고통입니다 — 지점이 두 곳 이상이거나, 지점 하나라도 직원 수가 많아서 스케줄에 실제 규칙(누가 어떤 업무 자격이 있는지, 마감-오픈을 연속으로 못 하는 사람이 누군지, 누가 이미 초과근무를 채웠는지)이 필요한 경우입니다. 매니저가 여전히 전체 그림을 머릿속과 공유 스프레드시트로 감당할 수 있다면 아직 커스텀 앱은 필요 없고, 좋은 기성 도구가 정답입니다. 전환점은 보통 같은 정보가 동시에 여러 곳에 정확히 존재해야 할 때 옵니다 — 이번 주 스케줄, 오늘 재고 수량, 어느 직원이 어느 계산대 권한이 있는지 — 그리고 단톡방이나 종이 장부로는 이걸 동기화할 수 없어서, 결국 누군가 하루에 두 번씩 같은 걸 다시 입력하거나 다시 설명하게 됩니다.',
+        },
+      },
+      {
+        q: {
+          en: 'Should we just use an off-the-shelf tool like Homebase, 7shifts, or Toast Team instead of building something custom?',
+          ko: 'Homebase, 7shifts, Toast Team 같은 기성 도구를 그냥 쓰는 게 커스텀보다 낫지 않나요?',
+        },
+        a: {
+          en: "For most single-location businesses and even many two-location ones, yes — these tools are built by companies that do nothing else, they are cheaper than custom development, and reinventing scheduling or time-tracking from scratch is rarely worth it. Custom becomes worth considering when your actual workflow does not fit their model: a restaurant group that also runs a small commissary kitchen supplying three locations, a market chain where inventory needs to reconcile against a POS system the off-the-shelf tool does not integrate with, or a business where staff, inventory, and customer-facing ordering all need to share one login and one dataset instead of living in three separate apps nobody fully syncs. The honest first step is not deciding custom versus off-the-shelf in the abstract — it is listing your actual daily workflow and checking, line by line, whether an existing tool covers it before paying for something built from zero.",
+          ko: '대부분의 단일 지점 사업체, 그리고 지점 두 곳 정도까지도 네, 이런 도구를 쓰는 게 맞습니다 — 이런 도구를 만드는 회사는 그것만 전문으로 하고, 커스텀 개발보다 저렴하며, 스케줄링이나 근태관리를 처음부터 다시 만드는 건 거의 가치가 없습니다. 커스텀을 고려할 만한 시점은 실제 업무 흐름이 그 도구의 모델과 안 맞을 때입니다 — 지점 세 곳에 공급하는 작은 커미서리 주방도 함께 운영하는 식당 그룹, 기성 도구와 연동이 안 되는 POS 시스템에 재고를 맞춰야 하는 마트 체인, 또는 직원·재고·고객 주문이 서로 동기화 안 되는 세 개의 앱이 아니라 하나의 로그인과 하나의 데이터셋을 공유해야 하는 사업. 정직한 첫 단계는 추상적으로 커스텀이냐 기성이냐를 정하는 게 아니라, 실제 하루 업무 흐름을 목록으로 적어보고 기존 도구가 그걸 항목별로 커버하는지 확인한 뒤에 처음부터 만드는 데 돈을 쓰는 것입니다.',
+        },
+      },
+      {
+        q: {
+          en: 'Does an internal staff app need to go through the Apple App Store, and how does that process work?',
+          ko: '내부 직원용 앱도 애플 앱스토어를 거쳐야 하나요, 그 절차는 어떻게 되나요?',
+        },
+        a: {
+          en: "Not necessarily — an internal tool used only by your own staff can often be a web app that works in any phone browser (no store review, no install friction, updates instantly for everyone), which is usually the faster and cheaper starting point. If you want a true native iOS app on staff phones — for offline reliability at a warehouse with weak signal, camera-based barcode scanning, or push notifications for shift changes — Apple offers two paths: publish it privately through Apple Business Manager's custom app distribution, which skips public App Store listing and review entirely and is the more common choice for staff-only tools, or, if you also want a public-facing companion app for customers, go through standard App Store review under a Developer account your business controls. We are a registered Apple App Store developer and handle either path, including the D-U-N-S number and organization enrollment a business account requires.",
+          ko: '꼭 그렇지는 않습니다 — 사장님 직원만 쓰는 내부 도구라면 스토어 심사도 없고 설치 부담도 없고 모두에게 즉시 업데이트되는, 어떤 폰 브라우저에서도 돌아가는 웹앱으로 만드는 경우가 많고, 보통 이게 더 빠르고 저렴한 출발점입니다. 직원 폰에 진짜 네이티브 iOS 앱을 원하신다면 — 신호가 약한 창고에서도 오프라인으로 안정적이거나, 카메라로 바코드 스캔이 필요하거나, 근무 변경 푸시 알림이 필요한 경우 — 애플은 두 가지 경로를 제공합니다. Apple Business Manager의 커스텀 앱 배포를 통해 비공개로 발행해서 공개 앱스토어 등록과 심사를 아예 건너뛰는 방법(직원 전용 도구에 더 흔히 쓰임), 또는 고객용 공개 동반 앱도 함께 원하신다면 사업체가 관리하는 개발자 계정으로 정식 앱스토어 심사를 받는 방법입니다. 저희는 등록된 Apple 앱스토어 개발사로서 두 경로 모두 처리하며, 법인 계정에 필요한 D-U-N-S 번호와 조직 가입 절차도 함께 진행합니다.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "A pattern we run into often among Korean-American grocery, restaurant, and retail groups expanding across Houston — Spring Branch, Katy, Sugar Land, the Bellaire/Chinatown corridor — is a business that has genuinely outgrown one location but is still coordinating everything the way a single storefront would: this week's shift schedule lives in a KakaoTalk group chat, inventory counts get written in a notebook at each store and photographed for the owner, and 'who is working Saturday' turns into a scroll-back-through-messages argument at least once a month. None of this was a bad decision when the business had one location and five employees. It becomes the actual bottleneck once there are two or three locations, and it is exactly the kind of problem a website cannot fix — because a website faces customers, and this is entirely internal." },
+        { type: 'h2', content: "What running operations on text threads and paper actually costs you" },
+        { type: 'p', content: "The cost rarely shows up as a single dramatic failure — it shows up as small friction, repeated daily, that owners stop noticing because it has always been this way. A manager texts the schedule as a photo of a handwritten grid, and half the staff screenshot an outdated version by Thursday. An inventory count on paper at one store cannot be compared against another store's count without someone manually retyping both into a spreadsheet, so nobody actually sees where shrinkage or waste is happening until the P&L shows it weeks later. A shift-swap request goes into a group chat with twelve other conversations and gets missed, and the manager finds out at 4:55pm that nobody is covering the 5pm shift." },
+        { type: 'ul', content: 'What we see most often when a growing Korean-American business audits its own internal operations:', items: [
+          "Scheduling lives in a group chat or a shared photo of a handwritten grid, with no single source of truth for who is actually working which shift at which location.",
+          "Inventory counts are recorded on paper per location, with no way to compare counts across stores without manual re-entry — so shrinkage and waste are invisible until they show up in the numbers weeks later.",
+          "Shift-swap and time-off requests get buried in a group chat alongside unrelated conversations, and the person who needs to approve them sees it too late.",
+          "No record of who has access to what — a register, a walk-in cooler key code, a POS override — so revoking access when someone leaves means guessing what they actually had.",
+          "Every new location means re-explaining the same informal system to a new manager instead of onboarding them into something documented and consistent.",
+        ] },
+        { type: 'h2', content: "What a custom internal operations app actually replaces" },
+        { type: 'p', content: "This is not about a customer-facing app or a public website — it is software your own staff and managers use, built around the specific way your business actually runs rather than a generic template. The goal is one place where the information that currently lives in five different text threads and notebooks lives correctly, once, and stays in sync." },
+        { type: 'ul', content: 'The concrete pieces, and the problem each one solves:', items: [
+          "Staff scheduling with real rules built in — who is certified for what station, who cannot be scheduled for back-to-back closing-opening shifts, automatic overtime flags — instead of a manager tracking those rules from memory.",
+          "Shift-swap requests that route to a manager for one-tap approval, with the schedule updating instantly for everyone instead of a photo getting re-shared in a group chat.",
+          "Inventory counts entered by location, on a phone or tablet, with photo or barcode entry, rolling up into one dashboard the owner can check across every store without a single phone call.",
+          "Task checklists per shift (opening, closing, health-code items) that a manager can see were actually completed, with a timestamp, instead of trusting that they were.",
+          "Centralized access control — one place to see who has a key code, register access, or POS override, so revoking access when someone leaves is one action instead of a guessing game.",
+          "Push notifications for schedule changes, low-inventory alerts, or an unfilled shift, so the manager is not the single point of failure discovering problems by accident.",
+        ] },
+        { type: 'h2', content: "Off-the-shelf tools are the right answer more often than not" },
+        { type: 'p', content: "Before recommending custom development to a client, we usually try to talk them out of it — genuinely. Homebase, 7shifts, Toast Team, and similar tools are built by companies that do nothing but scheduling and time-tracking, they are inexpensive, and for a single location or even two locations running a fairly standard operation, they are almost always the right first answer. Custom becomes worth the investment specifically when your actual workflow does not fit their model — a restaurant group also running a shared commissary kitchen supplying three locations, a market chain whose inventory needs to reconcile against a POS system the off-the-shelf tool cannot integrate with, or a business where staff scheduling, inventory, and customer-facing ordering all need to share one login and one dataset instead of living in three apps that never quite sync. The honest exercise is listing your actual daily workflow, line by line, and checking whether an existing tool covers it before paying to build something from zero." },
+        { type: 'tip', content: "A useful test before committing to custom: for one week, write down every time a manager has to re-enter the same piece of information in a second place, or re-explain something because a text thread buried it. If that list is short, an off-the-shelf tool will serve you well. If it is long and repeats across locations, that list is effectively the feature spec for the custom app you actually need." },
+        { type: 'h2', content: "Web app or native iOS app — and where the Apple App Store actually comes in" },
+        { type: 'p', content: "For an internal staff tool, we usually start with a web app — it works in any phone's browser with no install, updates instantly for every employee the moment something changes, and costs meaningfully less to build and maintain than a native app. It becomes worth going native when the job genuinely needs what only a native app reliably provides: offline reliability at a warehouse or cooler with weak signal, camera-based barcode or receipt scanning, or push notifications that need to work even when the app is closed. For a staff-only tool, that native app does not need to go through public App Store review at all — Apple Business Manager supports private custom app distribution straight to your organization's devices, skipping the public listing entirely. If a business also wants a public-facing companion app — a loyalty app for customers, for instance — that goes through standard App Store review under a Developer account the business controls. We are a registered Apple App Store developer and handle both paths, including the D-U-N-S number and organization enrollment a business Developer account requires." },
+        { type: 'h2', content: "How a build like this actually runs" },
+        { type: 'p', content: "We start by shadowing the actual workflow, not designing from a wish list — sitting with a manager through a real opening shift, a real inventory count, a real schedule conflict, to see exactly where the current system breaks. From there we scope the smallest version that fixes the most painful piece first, usually scheduling or inventory since those compound daily, and ship that before adding the rest — a business running on group chats today should not wait four months for a complete system when the scheduling piece alone can be live in a few weeks. Staff keep using the current process until each piece is tested and ready, and training a manager to use a purpose-built tool for their actual workflow is typically faster than the onboarding they currently do for a new hire on the informal system. Once live, we keep supporting it the same way we support every client — bilingual, one point of contact, reachable on KakaoTalk." },
+        { type: 'cta', content: "Running two or more locations out of group chats and paper counts? ZOE LUMOS builds custom internal operations apps — staff scheduling, inventory, and access control — for growing Korean-American businesses across the US, and we are a registered Apple App Store developer for teams that need a native app. Free consultation in English or Korean: email info@zoelumos.com or message us on KakaoTalk (http://pf.kakao.com/_xhxdxmlX/chat)." },
+      ],
+      ko: [
+        { type: 'intro', content: '휴스턴 — 스프링 브랜치, 케이티, 슈가랜드, 벨레어·차이나타운 상권 — 에서 확장 중인 한인 마트·식당·리테일 그룹에서 자주 보는 패턴이 있습니다. 사업은 분명히 매장 하나 규모를 넘어섰는데, 여전히 매장 하나였을 때 하던 방식 그대로 모든 걸 조율합니다. 이번 주 근무 스케줄은 카카오톡 단톡방에 있고, 재고 수량은 각 매장에서 공책에 적어 사진 찍어 사장님께 보내고, "이번 주 토요일 누가 일하나요"는 한 달에 한 번은 메시지를 한참 거슬러 올라가며 벌어지는 실랑이가 됩니다. 매장 하나에 직원 다섯 명이던 시절엔 이게 잘못된 선택이 아니었습니다. 지점이 두세 곳이 되면 진짜 병목이 되는데, 이건 웹사이트로는 고칠 수 없는 종류의 문제입니다 — 웹사이트는 고객을 향하고, 이건 전적으로 내부의 일이니까요.' },
+        { type: 'h2', content: "단톡방과 공책으로 운영하는 게 실제로 어떤 비용을 만드는가" },
+        { type: 'p', content: '이 비용은 극적인 사고 하나로 드러나는 경우가 드뭅니다 — 매일 반복되는 작은 마찰로 나타나고, 항상 이래왔다는 이유로 사장님도 더는 알아채지 못하게 됩니다. 매니저가 손으로 그린 스케줄표 사진을 문자로 보내면, 목요일쯤엔 절반의 직원이 이미 낡은 버전을 캡처해서 갖고 있습니다. 한 매장의 종이 재고 수량은 다른 매장 수량과 비교하려면 누군가 둘 다 스프레드시트에 직접 다시 입력해야 해서, 재고 손실이나 낭비가 어디서 생기는지 몇 주 뒤 손익계산서에 나타날 때까지 아무도 못 봅니다. 근무 교대 요청이 다른 열두 개 대화와 섞인 단톡방에 묻혀서 놓치고, 매니저는 오후 4시 55분이 돼서야 5시 근무를 아무도 안 채웠다는 걸 알게 됩니다.' },
+        { type: 'ul', content: '성장 중인 한인 사업체가 스스로 내부 운영을 감사할 때 가장 자주 발견하는 것들:', items: [
+          '스케줄이 단톡방이나 손으로 그린 스케줄표 사진으로 관리돼서, 어느 지점에서 누가 실제로 어느 근무를 하는지에 대한 단일 기준이 없음.',
+          '재고 수량이 매장별로 종이에 기록되어, 수동 재입력 없이는 매장 간 비교가 불가능 — 그래서 재고 손실과 낭비가 몇 주 뒤 숫자로 드러날 때까지 보이지 않음.',
+          '근무 교대·휴무 요청이 관련 없는 대화와 함께 단톡방에 묻혀서, 승인해야 할 사람이 너무 늦게 확인함.',
+          '누가 무엇에 접근 권한이 있는지 — 계산대, 워크인 냉장고 비밀번호, POS 오버라이드 — 기록이 없어서, 직원이 퇴사할 때 실제로 무엇에 접근했는지 추측해야 함.',
+          '새 지점이 생길 때마다 문서화되고 일관된 시스템으로 온보딩하는 대신, 같은 비공식 시스템을 새 매니저에게 매번 다시 설명해야 함.',
+        ] },
+        { type: 'h2', content: '커스텀 내부 운영 앱이 실제로 대체하는 것' },
+        { type: 'p', content: '이건 고객용 앱이나 공개 웹사이트 이야기가 아닙니다 — 사장님의 직원과 매니저가 쓰는 소프트웨어이고, 일반 템플릿이 아니라 사업이 실제로 운영되는 구체적인 방식을 중심으로 만들어집니다. 목표는 지금 다섯 개의 서로 다른 단톡방과 공책에 흩어져 있는 정보가 한 곳에 정확히, 한 번만 존재하고 계속 동기화되는 것입니다.' },
+        { type: 'ul', content: '구체적인 구성 요소들과, 각각이 해결하는 문제:', items: [
+          '실제 규칙이 내장된 직원 스케줄링 — 누가 어느 스테이션 자격이 있는지, 마감-오픈 연속 근무 금지, 자동 초과근무 경고 — 매니저가 이 규칙들을 머릿속으로 추적하는 대신.',
+          '매니저에게 원탭 승인으로 라우팅되는 근무 교대 요청 — 스케줄이 모두에게 즉시 업데이트되고, 단톡방에서 사진이 다시 공유되는 일이 없음.',
+          '매장별로 폰이나 태블릿에서 사진·바코드로 입력하는 재고 수량 — 사장님이 전화 한 통 없이 전 매장을 한 대시보드에서 확인 가능.',
+          '근무별 업무 체크리스트(오픈, 마감, 위생 항목) — 매니저가 실제로 완료됐는지 타임스탬프로 확인 가능, 그냥 믿는 게 아니라.',
+          '중앙 접근 권한 관리 — 누가 비밀번호, 계산대 접근, POS 오버라이드 권한이 있는지 한 곳에서 확인, 직원 퇴사 시 접근 차단이 추측이 아니라 클릭 한 번.',
+          '스케줄 변경, 재고 부족, 미채용 근무에 대한 푸시 알림 — 매니저가 문제를 우연히 발견하는 유일한 안전핀이 되지 않도록.',
+        ] },
+        { type: 'h2', content: '기성 도구가 더 나은 답일 때가 더 많습니다' },
+        { type: 'p', content: '클라이언트에게 커스텀 개발을 권하기 전, 저희는 보통 진심으로 말리려고 합니다. Homebase, 7shifts, Toast Team 같은 도구는 스케줄링과 근태관리만 전문으로 하는 회사가 만들고, 저렴하며, 지점 하나 또는 꽤 표준적으로 운영되는 지점 두 곳 정도라면 거의 항상 옳은 첫 답입니다. 커스텀이 투자할 가치가 생기는 시점은 정확히 사장님의 실제 업무 흐름이 그 도구의 모델과 안 맞을 때입니다 — 지점 세 곳에 공급하는 공용 커미서리 주방도 함께 운영하는 식당 그룹, 기성 도구와 연동이 안 되는 POS 시스템에 재고를 맞춰야 하는 마트 체인, 또는 직원 스케줄·재고·고객 주문이 서로 동기화 안 되는 세 개의 앱이 아니라 하나의 로그인과 하나의 데이터셋을 공유해야 하는 사업입니다. 정직한 방법은 실제 하루 업무 흐름을 항목별로 적어보고, 처음부터 만드는 데 돈을 쓰기 전에 기존 도구가 그걸 커버하는지 확인하는 것입니다.' },
+        { type: 'tip', content: '커스텀에 앞서 해볼 만한 테스트 — 일주일 동안 매니저가 같은 정보를 다른 곳에 다시 입력하거나, 단톡방에 묻혀서 뭔가를 다시 설명해야 했던 순간을 모두 적어보세요. 그 목록이 짧다면 기성 도구로 충분합니다. 목록이 길고 여러 지점에서 반복된다면, 그 목록이 사실상 사장님께 필요한 커스텀 앱의 기능 명세입니다.' },
+        { type: 'h2', content: '웹앱이냐 네이티브 iOS 앱이냐 — 그리고 애플 앱스토어가 실제로 등장하는 지점' },
+        { type: 'p', content: '내부 직원용 도구라면 저희는 보통 웹앱으로 시작합니다 — 설치 없이 어떤 폰 브라우저에서도 작동하고, 뭔가 바뀌면 모든 직원에게 즉시 업데이트되며, 네이티브 앱보다 만들고 유지하는 비용이 확실히 적습니다. 네이티브로 갈 가치가 생기는 건 업무가 네이티브 앱만이 안정적으로 제공하는 것을 정말로 필요로 할 때입니다 — 신호가 약한 창고나 냉장고에서의 오프라인 안정성, 카메라 기반 바코드·영수증 스캔, 앱이 닫혀 있어도 작동해야 하는 푸시 알림. 직원 전용 도구라면 그 네이티브 앱이 공개 앱스토어 심사를 거칠 필요가 전혀 없습니다 — Apple Business Manager는 조직 기기로 바로 비공개 배포하는 커스텀 앱 배포를 지원해서 공개 등록 자체를 건너뜁니다. 사업체가 고객용 공개 동반 앱(예: 고객용 로열티 앱)도 함께 원한다면, 그건 사업체가 관리하는 개발자 계정으로 정식 앱스토어 심사를 거칩니다. 저희는 등록된 Apple 앱스토어 개발사로서 두 경로 모두 처리하며, 법인 개발자 계정에 필요한 D-U-N-S 번호와 조직 가입 절차도 함께 진행합니다.' },
+        { type: 'h2', content: '이런 개발은 실제로 어떻게 진행되나' },
+        { type: 'p', content: '저희는 희망 목록을 보고 설계하는 대신 실제 업무 흐름을 따라다니는 것부터 시작합니다 — 매니저와 함께 실제 오픈 근무, 실제 재고 조사, 실제 스케줄 충돌을 겪으며 지금 시스템이 정확히 어디서 무너지는지 확인합니다. 여기서부터 가장 아픈 부분부터 고치는 가장 작은 버전을 정하고 — 보통 스케줄링이나 재고입니다, 매일 누적되니까요 — 나머지를 추가하기 전에 그것부터 출시합니다. 오늘 단톡방으로 돌아가는 사업이 스케줄링 하나만으로도 몇 주 안에 라이브가 될 수 있는데 완전한 시스템을 4개월씩 기다릴 필요는 없습니다. 각 부분이 테스트되고 준비될 때까지 직원들은 기존 방식을 계속 쓰고, 목적에 맞게 만들어진 도구를 매니저에게 교육하는 건 보통 지금 비공식 시스템으로 신입을 온보딩하는 것보다 빠릅니다. 출시 후에도 저희는 다른 모든 클라이언트와 똑같은 방식으로 계속 지원합니다 — 이중언어, 한 명의 담당자, 카카오톡으로 바로 연락 가능하게.' },
+        { type: 'cta', content: '두 개 이상의 지점을 단톡방과 종이 재고로 운영하고 계신가요? ZOE LUMOS는 미국 전역의 성장하는 한인 사업체를 위해 직원 스케줄링, 재고, 접근 권한 관리를 담은 커스텀 내부 운영 앱을 만듭니다. 네이티브 앱이 필요한 팀을 위한 등록된 Apple 앱스토어 개발사이기도 합니다. 한국어/영어 무료 상담: info@zoelumos.com 이메일 또는 카카오톡(http://pf.kakao.com/_xhxdxmlX/chat)으로 편하게 문의하세요.' },
+      ],
+    },
+  },
 ]
