@@ -11698,4 +11698,99 @@ export const blogContent: BlogPost[] = [
       ],
     },
   },
+  // 2026-07-26 — B2B/wholesale RFQ lead management (Georgia auto-supplier corridor)
+  {
+    slug: 'b2b-quote-lead-management-korean-business-georgia-2026',
+    date: '2026-07-26',
+    updatedDate: '2026-07-26',
+    readTime: 8,
+    category: { en: 'B2B & Wholesale', ko: 'B2B · 도매' },
+    title: {
+      en: 'Your Website Gets Quote Requests — So Why Do Half of Them Go Nowhere? (Georgia Korean B2B Guide, 2026)',
+      ko: '견적 요청은 들어오는데 절반은 왜 계약으로 안 이어질까 — 조지아 한인 무역·도매 기업 가이드 (2026)',
+    },
+    metaDescription: {
+      en: 'Korean-American wholesale, trading, and parts-supply companies near the Kia Georgia and Hyundai Metaplant corridor often have a website that brings in quote requests — but no system to track, route, or answer them fast. Here is how RFQ leads actually get lost, and how to stop it.',
+      ko: '조지아 기아·현대 메타플랜트 협력사 벨트의 한인 무역·도매·부품 공급 기업은 웹사이트로 견적 요청은 들어오는데, 그걸 추적·배정·빠르게 답하는 시스템이 없는 경우가 많습니다. 견적 리드가 실제로 어디서 새는지, 어떻게 막는지 정리했습니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'Is a "Request a Quote" form really different from a normal contact form?',
+          ko: '"견적 요청" 폼이 일반 "문의하기" 폼과 정말 다른가요?',
+        },
+        a: {
+          en: 'Yes — a generic contact form collects a name and a message; an RFQ form collects the specific fields a buyer needs to get a real quote back fast: product or spec (with a file upload for drawings), quantity or MOQ, target price range, needed-by date, shipping terms, and company details. A message that just says "please send pricing" forces you to email back and forth before you can even start pricing it, and every round trip is a chance the buyer moves to a competitor who asked better questions up front. The form itself is doing quoting work, not just intake work.',
+          ko: '네, 다릅니다. 일반 문의 폼은 이름과 메시지만 받지만, 견적 요청(RFQ) 폼은 실제로 견적을 낼 수 있는 구체적인 항목 — 제품·스펙(도면 첨부 가능), 수량·최소주문량, 희망 단가 범위, 필요 납기, 선적 조건, 회사 정보 — 을 받습니다. "가격 좀 보내주세요" 정도의 메시지만 오면 견적을 시작하기도 전에 이메일을 몇 번 주고받아야 하고, 그 왕복 한 번 한 번이 바이어가 더 정확하게 질문한 경쟁사로 넘어갈 기회가 됩니다. 폼 자체가 단순 접수가 아니라 견적 작업의 일부를 대신하는 셈입니다.',
+        },
+      },
+      {
+        q: {
+          en: 'How fast do we actually need to respond to a quote request?',
+          ko: '견적 요청에 실제로 얼마나 빨리 답장해야 하나요?',
+        },
+        a: {
+          en: 'Send an automatic acknowledgment within minutes and a real, priced response within 24 to 48 hours whenever possible — American purchasing managers routinely send the same RFQ to several suppliers at once, and the supplier who responds first with a complete, professional quote usually gets the first real conversation, even before price is compared. A slow or missing response does not just delay the deal; it signals operational risk to a buyer who has never worked with you before, and they quietly move on without telling you why.',
+          ko: '자동 접수 확인 메일은 몇 분 안에, 실제 가격이 담긴 답변은 가능하면 24~48시간 안에 보내야 합니다. 미국 구매 담당자는 같은 견적 요청을 여러 공급사에 동시에 보내는 경우가 많고, 완성도 있는 견적을 먼저 보낸 공급사가 가격 비교 전에 이미 첫 대화 상대가 됩니다. 답장이 느리거나 없으면 거래가 늦어지는 것을 넘어, 한 번도 거래한 적 없는 바이어에게는 그 자체가 운영 리스크 신호로 읽히고, 이유도 알려주지 않은 채 조용히 다음 공급사로 넘어갑니다.',
+        },
+      },
+      {
+        q: {
+          en: 'We are a small company — do we need to buy a CRM to track quote leads?',
+          ko: '작은 회사인데, 견적 리드를 추적하려면 유료 CRM을 사야 하나요?',
+        },
+        a: {
+          en: 'No — you can start free. A shared Google Sheet that every RFQ form submission logs into automatically (product, quantity, date, status, who is handling it) is enough for most companies under roughly 20-30 quotes a month, as long as someone actually owns updating it. Free CRM tiers (HubSpot Free, Zoho Bigin) add reminders and a visual pipeline once volume grows past what a spreadsheet can track cleanly. The tool matters far less than the habit: every quote request logged the moment it arrives, with one person responsible for it, and nothing living only in someone\'s personal inbox.',
+          ko: '아니요, 무료로 시작할 수 있습니다. 견적 요청 폼이 제출될 때마다 자동으로 기록되는 공유 구글 시트(제품, 수량, 날짜, 진행 상태, 담당자)만으로도 월 20~30건 정도까지는 충분합니다. 단, 누군가 그 시트를 실제로 관리해야 합니다. 물량이 스프레드시트로 감당 안 될 정도로 늘어나면 HubSpot Free, Zoho Bigin 같은 무료 CRM으로 리마인더와 파이프라인 뷰를 더하면 됩니다. 도구보다 중요한 건 습관입니다 — 견적 요청이 들어오는 즉시 기록되고, 담당자가 정해져 있고, 개인 이메일함에만 머물지 않는 것.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "You built the website. Quote requests actually come in now — a form submission here, a \"please send pricing\" email there. On paper that sounds like a win. But ask yourself honestly: where does each one go the moment it arrives, who is responsible for answering it, and how would you know if one sat unanswered for a week? For a lot of Korean-American wholesale, trading, and parts-supply companies, the honest answer is that it lands in one person's personal Gmail among two hundred other emails, with no tracking, no deadline, and no record of what happened to it. The website did its job. What happens after the click is where the deal is actually won or lost." },
+        { type: 'h2', content: 'Why this pattern shows up so often around Georgia\'s auto-supplier corridor' },
+        { type: 'p', content: "Georgia has become one of the fastest-growing hubs for Korean-American manufacturing and parts-supply businesses in the country, anchored by Kia Georgia in West Point and the newer Hyundai Metaplant America in Bryan County near Savannah. Both plants pull a web of Korean-owned Tier 2 and Tier 3 suppliers, packaging companies, logistics firms, and trading companies into the surrounding area — Atlanta, LaGrange, Savannah, and the towns in between. Many of these companies grew from a founder working the phone and a fax machine into a real operation with a real website in just a few years. The website caught up. The process for what happens after someone fills it out often did not." },
+        { type: 'h2', content: 'What actually happens after someone clicks "submit"' },
+        { type: 'p', content: "Walk through the typical path of an RFQ at a growing wholesale or supply company. A buyer fills out a contact form or emails a spec sheet. It lands in the owner's or a single sales employee's personal inbox, mixed in with supplier invoices, shipping notices, and internal chat. If that person is traveling, at a trade show, or simply buried that week, the request sits — sometimes for days — with no automatic acknowledgment telling the buyer it was even received. Nobody logs which channel it came from, so there is no way to know later which marketing or outreach actually produces quotes. And if that employee leaves the company, whatever quotes they were tracking in their head or their inbox often leave with them." },
+        { type: 'ul', content: 'Signs your RFQ process is quietly leaking deals:', items: [
+          'No dedicated inbox or routing — quote requests land in one person\'s personal email, mixed with everything else they receive.',
+          'No automatic acknowledgment — the buyer has no confirmation their request was received, so silence reads as "ignored," not "busy."',
+          'No source tracking — you cannot tell which trade show, Google search, or referral actually generated the request, so you cannot double down on what works.',
+          'No response-time standard — some requests get answered same-day, others sit for a week, with no one accountable for the gap.',
+          'No record after the fact — if the deal does not close, there is no note on why, so the same objection gets rediscovered from scratch next time.',
+        ] },
+        { type: 'h2', content: 'What a real RFQ form should actually ask' },
+        { type: 'p', content: "A generic \"Contact Us\" form is not built for quoting — it collects a name and a vague message that forces a back-and-forth before pricing can even start. A proper request-a-quote form does part of the quoting work up front: product or part number with a file upload for drawings or spec sheets, quantity or MOQ, target unit price range if the buyer has one, needed-by date, shipping terms (FOB, EXW, delivered), and company name, country, and website so you can do a quick credibility check on the buyer too — B2B trust runs both directions." },
+        { type: 'tip', content: "The moment a form is submitted, an automatic email should go out confirming receipt and setting a real expectation — \"We've received your request and will respond with pricing within 1 business day.\" This single email costs nothing to set up and does more to keep a buyer from quietly emailing your competitor than almost anything else on this list." },
+        { type: 'h2', content: 'Making sure the lead does not disappear after that first email' },
+        { type: 'p', content: "Acknowledgment buys you time; it does not close the deal. The request still needs somewhere to live besides a person's memory. For most small and mid-size companies, that does not require an expensive system — a shared Google Sheet that every form submission logs into automatically, with columns for product, quantity, date received, status, and assigned owner, is enough as long as one person is responsible for keeping it current. As volume grows, a free CRM tier (HubSpot Free, Zoho Bigin) adds reminders and a visual pipeline so a quote never quietly ages past a week with nobody noticing. The point is not the software — it is that every request is logged the second it arrives, assigned to a person, and visible to more than one set of eyes." },
+        { type: 'h2', content: 'Why response speed decides more deals than price alone' },
+        { type: 'p', content: "American purchasing managers rarely send an RFQ to one supplier. The same spec sheet usually goes out to three or four companies at once, and the first one to come back with a complete, professional, correctly priced quote typically becomes the benchmark every other quote gets compared against — sometimes winning the deal before price negotiation even starts. A slower but cheaper quote that arrives after the buyer has already mentally committed to someone else is fighting an uphill battle. For a company that already does excellent work and offers fair pricing, tightening the response process is often the single highest-leverage fix available — and it costs far less than winning the same business on price alone." },
+        { type: 'cta', content: "ZOE LUMOS builds request-a-quote forms, lead routing, and simple CRM setups for Korean-American wholesale, trading, and manufacturing companies across the US — so the leads your website already earns stop disappearing into someone's inbox. Free consultation in Korean or English: email info@zoelumos.com or reach us on KakaoTalk (http://pf.kakao.com/_xhxdxmlX/chat)." },
+      ],
+      ko: [
+        { type: 'intro', content: "웹사이트는 만드셨습니다. 견적 요청도 실제로 들어옵니다 — 폼 제출 하나, \"가격 좀 보내주세요\" 이메일 하나. 종이 위에서 보면 성공처럼 보입니다. 하지만 솔직하게 자문해 보세요. 그 요청이 들어오는 순간 어디로 가나요? 누가 답할 책임이 있나요? 하나가 일주일째 답 없이 방치돼도 사장님이 알 방법이 있나요? 많은 한인 무역·도매·부품 공급 기업의 솔직한 답은, 그게 담당자 한 명의 개인 지메일에 다른 이메일 200통과 섞여 들어간다는 겁니다. 추적도, 마감도, 이후 처리 기록도 없이요. 웹사이트는 제 몫을 했습니다. 클릭 이후에 무슨 일이 일어나는지가 실제로 계약이 성사되거나 새는 지점입니다." },
+        { type: 'h2', content: '왜 조지아 자동차 부품 협력사 벨트에서 이 패턴이 유독 자주 보이나' },
+        { type: 'p', content: "조지아는 미국에서 한인 제조·부품 공급 비즈니스가 가장 빠르게 성장하는 지역 중 하나가 됐습니다. 웨스트포인트의 기아 조지아 공장과, 서배너 인근 브라이언 카운티에 새로 들어선 현대 메타플랜트 아메리카가 그 중심입니다. 두 공장 모두 한인이 운영하는 2차·3차 협력사, 포장 업체, 물류 회사, 무역 회사들을 애틀랜타부터 라그레인지, 서배너, 그 사이 소도시들까지 끌어들이고 있습니다. 이런 회사들 상당수가 몇 년 사이 창업자 한 명이 전화기와 팩스로 돌리던 곳에서 제대로 된 웹사이트를 갖춘 실제 사업체로 커왔습니다. 웹사이트는 따라잡았습니다. 그런데 사람이 그걸 작성한 뒤 벌어지는 일에 대한 프로세스는 대개 따라잡지 못했습니다." },
+        { type: 'h2', content: '“제출” 버튼을 누른 뒤 실제로 무슨 일이 일어나나' },
+        { type: 'p', content: "성장 중인 무역·공급 회사에서 견적 요청이 지나가는 전형적인 경로를 따라가 보겠습니다. 바이어가 문의 폼을 작성하거나 스펙 시트를 이메일로 보냅니다. 그게 사장님이나 영업 직원 한 명의 개인 이메일함에, 공급사 인보이스와 배송 알림, 사내 채팅과 뒤섞여 들어갑니다. 그 사람이 출장 중이거나 전시회에 있거나 그 주에 그냥 바쁘면, 요청은 며칠씩 방치됩니다 — 접수됐다는 자동 확인조차 바이어에게 안 갑니다. 어느 채널에서 왔는지 아무도 기록하지 않으니, 나중에 어떤 마케팅이나 영업 활동이 실제로 견적으로 이어지는지 알 방법이 없습니다. 그리고 그 직원이 퇴사하면, 머릿속이나 이메일함에만 있던 견적 진행 상황도 함께 사라집니다." },
+        { type: 'ul', content: '견적 프로세스가 조용히 계약을 새게 하고 있다는 신호:', items: [
+          '전용 접수함이나 배정 절차 없음 — 견적 요청이 담당자 한 명의 개인 이메일에, 다른 모든 것과 뒤섞여 들어옵니다.',
+          '자동 접수 확인 없음 — 바이어는 요청이 접수됐는지조차 확인받지 못해, 침묵을 "바쁘다"가 아니라 "무시당했다"로 읽습니다.',
+          '출처 추적 없음 — 어느 전시회, 구글 검색, 소개로 요청이 왔는지 알 수 없어서, 뭐가 효과 있는지 파악해 거기에 집중할 수 없습니다.',
+          '응답 시간 기준 없음 — 어떤 요청은 당일 답이 가고 어떤 요청은 일주일씩 방치되는데, 그 차이에 책임지는 사람이 없습니다.',
+          '사후 기록 없음 — 계약이 안 됐을 때 왜 안 됐는지 메모가 없어서, 다음에 똑같은 반대 이유를 처음부터 다시 겪습니다.',
+        ] },
+        { type: 'h2', content: '제대로 된 견적 요청 폼은 무엇을 물어야 하나' },
+        { type: 'p', content: "일반 \"문의하기\" 폼은 견적용으로 설계된 게 아닙니다 — 이름과 막연한 메시지만 받아서, 가격 산정을 시작하기도 전에 이메일을 몇 번 주고받게 만듭니다. 제대로 된 견적 요청 폼은 견적 작업의 일부를 미리 처리합니다. 제품 또는 부품 번호(도면·스펙 시트 첨부 가능), 수량 또는 최소주문량, 있다면 희망 단가 범위, 필요 납기, 선적 조건(FOB, EXW, 배송 포함 등), 그리고 회사명·국가·웹사이트 — 사장님도 바이어를 빠르게 검증할 수 있게요. B2B 신뢰는 양방향입니다." },
+        { type: 'tip', content: "폼이 제출되는 순간 자동으로 이메일이 나가야 합니다. 접수를 확인하고 현실적인 기대치를 알려주는 내용으로요 — \"요청을 접수했으며, 영업일 1일 내 가격을 회신드립니다.\" 이 이메일 하나는 설정 비용이 거의 안 들면서, 바이어가 조용히 경쟁사에 이메일을 보내는 것을 막는 데 이 목록에서 가장 큰 역할을 합니다." },
+        { type: 'h2', content: '첫 이메일 이후 리드가 사라지지 않게 만들기' },
+        { type: 'p', content: "접수 확인은 시간을 벌어줄 뿐, 계약을 성사시키지는 않습니다. 요청은 여전히 사람의 기억이 아닌 어딘가에 남아 있어야 합니다. 대부분의 중소 규모 회사에게는 비싼 시스템이 필요 없습니다 — 폼 제출이 자동으로 기록되는 공유 구글 시트만으로 충분합니다. 제품, 수량, 접수일, 진행 상태, 담당자 열을 두고, 한 사람이 그걸 최신 상태로 유지할 책임을 지면 됩니다. 물량이 늘어나면 무료 CRM(HubSpot Free, Zoho Bigin)이 리마인더와 시각적 파이프라인을 더해줘서, 견적 하나가 아무도 모르게 일주일씩 방치되는 일이 없어집니다. 중요한 건 소프트웨어가 아니라, 요청이 들어오는 즉시 기록되고, 담당자가 정해지고, 한 사람 눈에만 보이지 않는 것입니다." },
+        { type: 'h2', content: '왜 가격보다 응답 속도가 더 많은 계약을 결정하나' },
+        { type: 'p', content: "미국 구매 담당자는 견적 요청을 공급사 한 곳에만 보내는 경우가 거의 없습니다. 같은 스펙 시트가 보통 서너 회사에 동시에 나가고, 완성도 있고 정확한 가격의 견적을 가장 먼저 보낸 회사가 다른 모든 견적의 비교 기준이 되는 경우가 많습니다 — 가격 협상이 시작되기도 전에 이미 사실상 계약을 따내는 경우도 있습니다. 바이어가 이미 마음속으로 다른 곳을 정한 뒤에 도착하는, 더 느리지만 더 싼 견적은 불리한 싸움을 하는 셈입니다. 이미 실력도 좋고 가격도 합리적인 회사라면, 응답 프로세스를 다잡는 것이 가장 레버리지 높은 개선일 때가 많습니다 — 그리고 가격만으로 같은 계약을 따내는 것보다 훨씬 비용이 적게 듭니다." },
+        { type: 'cta', content: "ZOE LUMOS는 미국 전역의 한인 무역·도매·제조 기업을 위해 견적 요청 폼, 리드 배정 시스템, 간단한 CRM 설정까지 만들어 드립니다 — 웹사이트가 이미 벌어들이는 리드가 누군가의 이메일함 속으로 사라지지 않도록요. 한국어/영어 무료 상담: info@zoelumos.com 이메일 또는 카카오톡(http://pf.kakao.com/_xhxdxmlX/chat)으로 편하게 문의하세요." },
+      ],
+    },
+  },
 ]
