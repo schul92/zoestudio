@@ -119,6 +119,7 @@ export const PILLARS = {
       'korean-tutoring-sat-prep-website',
       'korean-church-website-guide',
       'starting-korean-business-america-2026',
+      'korean-sat-academy-booking-noshow-irvine-2026',
     ],
   },
   'ai-services': {
@@ -291,4 +292,7 @@ export const POST_TO_PILLAR: Record<string, PillarKey> = {
   // 2026-07-16/17 backfill — Chicago F&B ordering/POS/reviews + app development hiring guide
   'korean-restaurant-chicago-online-ordering-pos-reviews-2026': 'restaurant-marketing',
   'korean-app-development-hire-guide-2026': 'website-cost',
+
+  // 2026-07-27 — SAT/academy trial-class booking + no-show deposit + Google Maps (Irvine/OC, CA)
+  'korean-sat-academy-booking-noshow-irvine-2026': 'professional-services',
 }

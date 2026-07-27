@@ -11698,4 +11698,119 @@ export const blogContent: BlogPost[] = [
       ],
     },
   },
+
+  // ─────────────────────────────────────────────────────────────────
+  // 2026-07-27 — Trial-class booking + no-show deposit + Google Maps
+  // for Korean SAT/academy (학원) businesses in Irvine & Orange County, CA
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'korean-sat-academy-booking-noshow-irvine-2026',
+    date: '2026-07-27',
+    updatedDate: '2026-07-27',
+    readTime: 8,
+    category: { en: 'Industry Guide', ko: '업종별 가이드' },
+    title: {
+      en: 'Your Trial Class Has 8 Seats and a Waitlist — So Why Are Two Seats Empty? (Irvine & Orange County Korean Academy Guide, 2026)',
+      ko: '체험 수업 정원은 8명, 대기자도 있는데 왜 두 자리가 빕니다 — 어바인·오렌지카운티 한인 학원 예약 가이드 (2026)',
+    },
+    metaDescription: {
+      en: 'Korean-American SAT prep, math, and English academies around Irvine, Fullerton, and greater Orange County lose real enrollment every week to no-show trial classes booked by phone or KakaoTalk, with no way to fill the empty seat from a waitlist. Here is how a deposit-based booking system and a real waitlist fix it, and what actually belongs on your Google Business Profile.',
+      ko: '어바인, 풀러턴을 비롯한 오렌지카운티 한인 SAT·수학·영어 학원은 전화나 카카오톡으로 예약받는 체험 수업에서 노쇼가 나도 대기자로 그 자리를 채울 방법이 없어 매주 실제 등록 기회를 놓칩니다. 보증금 기반 예약 시스템과 실시간 대기자 명단이 어떻게 이걸 해결하는지, 그리고 구글 비즈니스 프로필에 실제로 뭐가 들어가야 하는지 정리했습니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'Is it really okay to charge a deposit for a "free" trial class?',
+          ko: '"무료" 체험 수업에 보증금을 받아도 정말 괜찮은가요?',
+        },
+        a: {
+          en: 'Yes, and most established academies already do a version of this once they have been burned enough times. The trial itself can stay free or heavily discounted — the deposit is not really a price, it is a filter and a seat-holding mechanism. A small refundable-on-attendance deposit ($10-$25 is common) costs a serious parent nothing, since they get it back or it applies to enrollment, but it removes the casual "let me hold three spots at three academies and decide later" bookings that create phantom full classes while your actual waitlist goes unfilled. Academies that switch from free-no-deposit to refundable-deposit booking typically see their trial no-show rate drop sharply within the first month, simply because a parent who has money on the line treats the appointment as real.',
+          ko: '네, 이미 여러 번 데인 자리 잡힌 학원들은 이미 어떤 형태로든 이렇게 하고 있습니다. 체험 수업 자체는 무료이거나 크게 할인된 채로 둬도 됩니다 — 보증금은 사실 가격이 아니라 필터이자 자리 확보 장치입니다. 참석하면 환불되는 소액 보증금($10~25 정도가 흔합니다)은 진지한 학부모에게는 부담이 없습니다 — 어차피 돌려받거나 등록비로 전환되니까요. 하지만 "일단 학원 세 곳에 자리 잡아두고 나중에 정하자" 식의 가벼운 예약을 걸러내서, 실제로는 대기자가 채우지 못한 채 겉으로만 꽉 찬 것처럼 보이는 클래스를 없애줍니다. 무보증금 무료 예약에서 환불형 보증금 예약으로 바꾼 학원들은 대개 첫 달 안에 체험 수업 노쇼율이 크게 떨어지는 것을 봅니다 — 돈이 걸려 있으면 학부모가 그 약속을 진짜로 여기기 때문입니다.',
+        },
+      },
+      {
+        q: {
+          en: 'What should our Google Business Profile actually say to rank for searches like "Irvine SAT academy"?',
+          ko: '"어바인 SAT 학원" 같은 검색에서 상위 노출되려면 구글 비즈니스 프로필에 실제로 뭘 넣어야 하나요?',
+        },
+        a: {
+          en: 'Three things matter far more than most academies realize: the correct primary category (Tutoring Service, Test Preparation, or Educational Consultant — not the generic "School," which competes against public schools you cannot outrank), a complete list of the specific subjects and grade levels you teach written in both English and Korean, and a steady stream of recent reviews from parents, since Google weights how recently reviews arrived almost as much as the star average. A family that just moved to Irvine or Fullanton for the school district is actively comparing academies within days of arriving, and an outdated profile with three-year-old reviews and no photos reads as "maybe closed" even when you are thriving.',
+          ko: '대부분의 학원이 잘 모르는 세 가지가 훨씬 중요합니다. 정확한 주 업종(단순 "학교"가 아니라 Tutoring Service, Test Preparation, Educational Consultant — "학교"로 등록하면 이길 수 없는 공립학교들과 경쟁하게 됩니다), 실제로 가르치는 과목과 학년을 영어·한국어 둘 다로 구체적으로 나열한 목록, 그리고 최근 학부모 리뷰가 꾸준히 쌓이는 것입니다. 구글은 별점 평균만큼이나 리뷰가 얼마나 최근에 달렸는지도 중요하게 봅니다. 학군 때문에 어바인이나 풀러턴으로 막 이사 온 가족은 도착하고 며칠 안에 학원들을 적극적으로 비교하는데, 3년 전 리뷰만 있고 사진도 없는 프로필은 사장님 학원이 잘되고 있어도 "혹시 문 닫았나?"로 읽힙니다.',
+        },
+      },
+      {
+        q: {
+          en: 'Do we need expensive scheduling software, or can a simple tool handle trial-class bookings?',
+          ko: '비싼 예약 소프트웨어가 필요한가요, 아니면 간단한 도구로도 체험 수업 예약을 처리할 수 있나요?',
+        },
+        a: {
+          en: 'A single academy with a handful of trial slots per week can run comfortably on an inexpensive scheduling tool (Acuity, Calendly, Square Appointments) that supports capacity limits, a waitlist, and a deposit or card-on-file at booking — you do not need an enterprise LMS to fix this specific problem. It becomes worth a more custom setup once you are running multiple subjects, multiple instructors, and multiple locations (common for academies with an Irvine campus and a second location in Fullerton or Cerritos) and need one dashboard showing live capacity and waitlist status across all of them instead of checking each instructor\'s personal calendar. Start with the off-the-shelf tool; only build custom once the off-the-shelf version genuinely cannot keep up.',
+          ko: '주당 체험 수업 슬롯이 몇 개 안 되는 단일 학원이라면 정원 제한, 대기자 명단, 예약 시 보증금·카드 등록을 지원하는 저렴한 예약 도구(Acuity, Calendly, Square Appointments)만으로도 충분히 돌아갑니다 — 이 문제 하나를 해결하려고 기업용 LMS까지는 필요 없습니다. 여러 과목, 여러 강사, 여러 지점(어바인 본원 + 풀러턴이나 세리토스 분원 같은 구조의 학원에 흔합니다)을 운영하면서 강사 개인 캘린더를 일일이 확인하는 대신 모든 지점의 실시간 정원과 대기자 상태를 한 대시보드에서 보고 싶어질 때가 커스텀 구축을 고려할 시점입니다. 일단 기성 도구로 시작하고, 그게 정말로 감당이 안 될 때만 커스텀으로 넘어가세요.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "Drive down Culver or Barranca in Irvine on a weekday afternoon and you will pass a dozen Korean academies within a few blocks — SAT prep, math, English writing, AP subjects, elementary enrichment — the density that has made Irvine and neighboring Fullerton, Cerritos, and Buena Park one of the largest Korean-American academy corridors in the country. Talk to the owners and a familiar frustration comes up fast: the free trial class is supposed to be the front door to enrollment, but between phone tag, KakaoTalk group chats, and a paper sign-in sheet, a class with 8 seats and a real waitlist somehow still runs with two empty chairs — and the family who wanted one of those seats never got a callback." },
+        { type: 'h2', content: "Why phone and KakaoTalk booking quietly loses seats" },
+        { type: 'p', content: "A trial class is not like a restaurant table — it has a hard, small capacity, often 6 to 10 students, and it only runs once or twice a week per subject and level. When booking happens through a front-desk phone line or a director's personal KakaoTalk, there is no live count anyone but that one person can see. A parent calls Tuesday and is told 'yes, we have room,' a second parent calls Wednesday and is told the same thing by a different staff member, and by Thursday the class is double-booked with no way to know until families show up. The opposite problem happens just as often: a class looks full on the sign-up sheet because two of those names never intended to actually come, so a genuinely interested family on the waitlist is told 'sorry, we're full' for a seat that sits empty an hour later." },
+        { type: 'ul', content: "Signs your trial-class booking is quietly costing you enrollments:", items: [
+          "No single source of truth for how many seats are actually open in a given class — it lives in a notebook, a phone log, or one director's memory.",
+          "No deposit or commitment at booking, so casual 'let me hold a spot just in case' reservations occupy seats that a serious family would have filled.",
+          "No waitlist that anyone actually checks — when a seat opens from a no-show, it just sits empty instead of a text going out to the next family in line.",
+          "Confirmation happens by a phone call or a text from whoever remembers to send it, so some families get a reminder and others do not.",
+          "No record of which trial classes actually convert to enrollment, so you cannot tell whether a marketing push is bringing families who show up and stay.",
+        ] },
+        { type: 'h2', content: "What a deposit-based booking system actually changes" },
+        { type: 'p', content: "The fix is not complicated, and it does not require abandoning the free trial as a concept. A booking page — embedded on your website, not a separate app families have to download — shows the real, live number of open seats per class, takes a small refundable-on-attendance deposit (or a card on file charged only for a no-show), and sends an automatic confirmation and a reminder 24 hours before. The deposit does the quiet work of filtering: a parent who is genuinely comparing your academy against two others will happily hold a $15 refundable deposit; a parent who was going to no-show anyway usually will not bother, which means the seat count you see on the booking page is the seat count that will actually show up." },
+        { type: 'tip', content: "A useful gut check: pull your last month of trial-class sign-ups and count how many names never actually walked in. If that number is higher than one or two per class, your booking system — not your marketing — is the leak, and it is the cheaper of the two problems to fix." },
+        { type: 'h2', content: "The waitlist is where the real recovery happens" },
+        { type: 'p', content: "A live waitlist is the other half of this, and it is the part academies skip most often even after fixing the booking form itself. When a deposit-holder cancels or no-shows past your cutoff, the system should automatically text the next family on the waitlist rather than leaving that job to whoever happens to check the sign-up sheet next. For a popular SAT prep slot with a real waitlist, this alone can turn a chronically half-empty trial schedule into one that runs close to full capacity — the demand was already there; it just needed a way to reach the seat before the class started instead of after it ended." },
+        { type: 'h2', content: "Google Maps: where a family new to Irvine actually starts looking" },
+        { type: 'p', content: "Korean-American families move to Irvine and greater Orange County specifically for the school district, and one of their first searches once the moving boxes are unpacked is some version of '어바인 SAT 학원' or 'Fullerton math tutoring Korean.' That family has no loyalty yet and no referral to go on — the search results are the entire decision. Winning that moment takes a complete, actively maintained Google Business Profile, not just a listing that was claimed once in 2019 and forgotten." },
+        { type: 'ul', content: "What an academy's Google Business Profile needs to actually compete in Irvine/OC search results:", items: [
+          "The correct primary category — Tutoring Service, Test Preparation, or Educational Consultant, not the generic 'School,' which puts you in the same bucket as public schools you will never outrank.",
+          "Specific subjects and grade levels listed in the business description, in both English and Korean, matching the exact phrases a parent would search.",
+          "Current photos of the actual classroom, instructors, and results boards — not stock photography, which Korean parents recognize and discount immediately.",
+          "A steady stream of recent reviews, since Google weights recency of reviews nearly as heavily as the average rating.",
+          "A 'Book a Trial Class' link that goes directly into your live booking system, not just a phone number a busy parent has to remember to call back.",
+        ] },
+        { type: 'p', content: "The last point matters more than owners expect: Google increasingly tracks which business listings actually convert a search into a completed action, and rewards those listings in future rankings. A profile that sends the click straight into a working, capacity-aware booking flow does more for your long-term visibility than a slightly better photo ever will." },
+        { type: 'h2', content: "This works the same way outside Orange County" },
+        { type: 'p', content: "Irvine and Fullerton happen to have one of the densest concentrations of Korean-American academies in the country, but the same booking-and-visibility gap shows up identically in every academy corridor — Bergen County NJ, the Buford Highway corridor outside Atlanta, Bellevue near Seattle, the western suburbs of Chicago. Wherever Korean parents are actively comparing three or four academies within the same few days, the academy whose trial class is easy to book, reliably confirmed, and visible on Google when the search happens is the one that fills its seats first." },
+        { type: 'cta', content: "Running a SAT prep, math, or English academy in Irvine, Fullerton, or greater Orange County and tired of empty trial-class seats next to a full waitlist? ZOE LUMOS builds bilingual academy websites with live capacity booking, deposit-protected trial classes, and Google Business Profile setup that actually converts searches into enrolled families. Free consultation in Korean or English: email info@zoelumos.com or message us on KakaoTalk (http://pf.kakao.com/_xhxdxmlX/chat)." },
+      ],
+      ko: [
+        { type: 'intro', content: "평일 오후 어바인의 컬버(Culver)나 배랑카(Barranca) 도로를 달려보면 몇 블록 안에 SAT 준비, 수학, 영어 작문, AP 과목, 초등 심화까지 십여 개의 한인 학원을 지나치게 됩니다 — 어바인과 인근 풀러턴, 세리토스, 부에나파크를 미국에서 가장 밀집된 한인 학원 상권 중 하나로 만든 그 밀도입니다. 원장님들과 이야기해 보면 익숙한 답답함이 금방 나옵니다. 무료 체험 수업이 등록으로 가는 정문 역할을 해야 하는데, 전화 핑퐁과 카카오톡 단체방, 종이 출석부 사이에서, 정원 8명에 실제 대기자까지 있는 클래스가 어쩐지 두 자리를 비운 채 진행되고 — 그 자리를 원했던 가정은 결국 콜백을 받지 못합니다." },
+        { type: 'h2', content: "전화·카카오톡 예약이 조용히 자리를 잃는 이유" },
+        { type: 'p', content: "체험 수업은 식당 테이블과 다릅니다 — 정원이 확실하고 작습니다, 보통 6~10명이고, 과목·레벨별로 주 1~2회만 열립니다. 예약이 프런트 전화나 원장님 개인 카카오톡으로 이뤄지면, 그 한 사람 말고는 아무도 실시간 정원을 볼 수 없습니다. 학부모가 화요일에 전화해서 \"네, 자리 있어요\"라는 답을 듣고, 수요일에 다른 학부모가 다른 직원에게서 똑같은 답을 듣고, 목요일이 되면 가족들이 실제로 도착할 때까지 아무도 모른 채 클래스가 이중 예약돼 있습니다. 그 반대 문제도 똑같이 자주 일어납니다 — 신청 명단상으로는 클래스가 꽉 찬 것처럼 보이지만 그중 두 명은 애초에 올 생각이 없었고, 그래서 진짜 관심 있는 대기자 가족은 \"죄송해요, 자리 없어요\"라는 말을 듣지만 그 자리는 한 시간 뒤 비어 있습니다." },
+        { type: 'ul', content: "체험 수업 예약이 조용히 등록 기회를 갉아먹고 있다는 신호:", items: [
+          "특정 클래스에 실제로 몇 자리가 남았는지에 대한 단일 기준이 없음 — 공책, 전화 기록, 혹은 원장님 한 사람의 기억에 있음.",
+          "예약 시 보증금이나 약속 장치가 없어서, \"일단 자리만 잡아 두자\" 식의 가벼운 예약이 진지한 가족이 채웠을 자리를 차지함.",
+          "아무도 실제로 확인하지 않는 대기자 명단 — 노쇼로 자리가 나도 다음 가족에게 문자가 가는 대신 그냥 빈 채로 남음.",
+          "확인 연락이 누가 기억하느냐에 따라 전화나 문자로 들쭉날쭉하게 이뤄져서, 어떤 가족은 리마인더를 받고 어떤 가족은 못 받음.",
+          "어떤 체험 수업이 실제 등록으로 이어지는지 기록이 없어서, 마케팅이 실제로 오고 남는 가족을 데려오는지 판단할 수 없음.",
+        ] },
+        { type: 'h2', content: "보증금 기반 예약 시스템이 실제로 바꾸는 것" },
+        { type: 'p', content: "해법은 복잡하지 않고, 무료 체험이라는 개념 자체를 버릴 필요도 없습니다. 웹사이트에 심는 예약 페이지 — 가족이 따로 앱을 다운로드하게 만드는 게 아니라 — 가 클래스별로 실제 실시간 남은 자리 수를 보여주고, 참석하면 환불되는 소액 보증금(또는 노쇼 시에만 청구되는 등록 카드)을 받고, 자동 확인과 24시간 전 리마인더를 보냅니다. 보증금은 조용히 필터 역할을 합니다 — 정말로 우리 학원을 다른 두 곳과 비교 중인 학부모는 환불되는 $15 보증금을 기꺼이 겁니다. 반면 어차피 노쇼할 생각이었던 학부모는 대개 그 수고를 안 합니다. 그 말은 예약 페이지에 보이는 자리 수가 실제로 나타날 자리 수와 같아진다는 뜻입니다." },
+        { type: 'tip', content: "해볼 만한 현실 점검 — 지난 한 달 체험 수업 신청 명단을 뽑아서 실제로 안 온 이름이 몇 명인지 세어 보세요. 클래스당 한두 명보다 많다면, 새고 있는 건 마케팅이 아니라 예약 시스템이고, 둘 중 고치기 더 저렴한 쪽입니다." },
+        { type: 'h2', content: "진짜 회복은 대기자 명단에서 일어난다" },
+        { type: 'p', content: "실시간 대기자 명단은 이 문제의 나머지 절반이고, 예약 폼 자체를 고친 뒤에도 학원들이 가장 자주 건너뛰는 부분입니다. 보증금을 건 사람이 컷오프 시간 이후 취소하거나 노쇼하면, 다음에 신청 명단을 우연히 확인하는 사람에게 맡기는 대신 시스템이 자동으로 대기자 명단의 다음 가족에게 문자를 보내야 합니다. 실제 대기자가 있는 인기 SAT 준비 시간대라면, 이것만으로도 만성적으로 절반쯤 비어 있던 체험 수업 일정을 거의 정원에 가깝게 채울 수 있습니다 — 수요는 이미 있었고, 클래스가 끝난 뒤가 아니라 시작되기 전에 그 자리에 닿을 방법만 없었을 뿐입니다." },
+        { type: 'h2', content: "구글 지도: 어바인에 새로 온 가족이 실제로 검색을 시작하는 곳" },
+        { type: 'p', content: "한인 가족들은 학군 때문에 특별히 어바인과 오렌지카운티로 이사 옵니다. 이사 짐을 풀고 나서 가장 먼저 하는 검색 중 하나가 \"어바인 SAT 학원\" 같은 검색어입니다. 그 가족은 아직 단골도 없고 소개받은 곳도 없습니다 — 검색 결과가 곧 결정 전부입니다. 그 순간을 이기려면 2019년에 한 번 클레임하고 잊어버린 리스팅이 아니라, 완성되고 실제로 관리되는 구글 비즈니스 프로필이 필요합니다." },
+        { type: 'ul', content: "어바인·OC 검색에서 실제로 경쟁하려면 학원 구글 비즈니스 프로필에 필요한 것:", items: [
+          "정확한 주 업종 — Tutoring Service, Test Preparation, 또는 Educational Consultant. 일반적인 \"School\"로 등록하면 절대 이길 수 없는 공립학교들과 같은 카테고리에 묶입니다.",
+          "구체적인 과목과 학년을 영어·한국어 둘 다로, 학부모가 실제로 검색할 문구와 일치하게 사업 설명에 기재.",
+          "실제 교실, 강사, 성과 게시판의 최신 사진 — 한인 학부모가 바로 알아채고 신뢰를 낮추는 스톡 사진이 아니라.",
+          "꾸준히 쌓이는 최근 리뷰 — 구글은 별점 평균만큼이나 리뷰의 최신성을 중요하게 봅니다.",
+          "전화번호 하나가 아니라 실시간 예약 시스템으로 바로 연결되는 \"체험 수업 예약\" 링크 — 바쁜 학부모가 나중에 다시 걸겠다고 기억할 필요가 없게.",
+        ] },
+        { type: 'p', content: "마지막 항목이 생각보다 중요합니다. 구글은 어떤 업체 리스팅이 검색을 실제 완료된 행동으로 전환시키는지 점점 더 추적하고, 그런 리스팅을 향후 노출 순위에서 우대합니다. 클릭이 정원까지 반영된 실제로 작동하는 예약 흐름으로 바로 이어지는 프로필은, 사진을 살짝 더 좋게 바꾸는 것보다 장기 노출에 훨씬 더 큰 도움이 됩니다." },
+        { type: 'h2', content: "오렌지카운티 밖에서도 똑같이 작동합니다" },
+        { type: 'p', content: "어바인과 풀러턴은 미국에서 가장 밀집된 한인 학원 상권 중 하나일 뿐, 같은 예약·가시성 격차는 다른 모든 학원 상권에서도 똑같이 나타납니다 — 뉴저지 버겐카운티, 애틀랜타 외곽 뷰포드 하이웨이 상권, 시애틀 인근 벨뷰, 시카고 서부 교외. 한인 학부모가 며칠 사이에 서너 곳의 학원을 적극적으로 비교하는 곳이라면 어디든, 체험 수업 예약이 쉽고 확실하게 확인되고 검색했을 때 구글에 보이는 학원이 자리를 가장 먼저 채웁니다." },
+        { type: 'cta', content: "어바인, 풀러턴, 혹은 오렌지카운티 전역에서 SAT·수학·영어 학원을 운영하시면서, 대기자는 있는데 체험 수업 자리는 비는 상황에 지치셨나요? ZOE LUMOS는 실시간 정원 예약, 보증금으로 노쇼를 막는 체험 수업, 그리고 검색을 실제 등록 가족으로 바꾸는 구글 비즈니스 프로필 설정까지 갖춘 이중언어 학원 웹사이트를 만듭니다. 한국어/영어 무료 상담: info@zoelumos.com 이메일 또는 카카오톡(http://pf.kakao.com/_xhxdxmlX/chat)으로 편하게 문의하세요." },
+      ],
+    },
+  },
 ]
