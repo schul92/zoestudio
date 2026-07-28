@@ -11698,4 +11698,95 @@ export const blogContent: BlogPost[] = [
       ],
     },
   },
+  // ─────────────────────────────────────────────────────────────────
+  // 2026-07-28 — B2B lead generation for LA/SoCal Korean wholesale & trading companies
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'korean-wholesale-trading-rfq-leads-los-angeles-2026',
+    date: '2026-07-28',
+    updatedDate: '2026-07-28',
+    readTime: 8,
+    category: { en: 'B2B & Wholesale', ko: 'B2B · 도매' },
+    title: {
+      en: 'Los Angeles Korean Wholesale & Trading Companies: Where Do Your RFQ Leads Actually Come From? (2026)',
+      ko: '로스앤젤레스 한인 도매·무역회사, 견적(RFQ) 리드는 대체 어디서 오나요? (2026)',
+    },
+    metaDescription: {
+      en: 'LA Fashion District and Koreatown wholesale, trading, and import companies: relationships still matter, but a growing share of B2B buyers now find suppliers through Google, Alibaba, and Thomasnet before they ever call. Here is how to capture those RFQ leads.',
+      ko: 'LA 패션 디스트릭트와 코리아타운의 한인 도매·무역·수입 업체를 위한 가이드. 관계 영업은 여전히 중요하지만, 점점 더 많은 바이어가 전화하기 전에 구글, Alibaba, Thomasnet에서 공급업체를 찾습니다. 그 견적(RFQ) 리드를 붙잡는 방법을 알려드립니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'How do Korean-American wholesalers in Los Angeles get more RFQ (quote request) leads online?',
+          ko: '로스앤젤레스 한인 도매업체가 온라인에서 견적요청(RFQ) 리드를 더 받으려면 어떻게 해야 하나요?',
+        },
+        a: {
+          en: 'Start with three things that require no ad budget: register a Google Business Profile as a wholesaler/distributor with your real service area, claim a profile on at least one major B2B directory (Alibaba, Global Sources, or Thomasnet) that links back to your own website, and put your product catalog behind a short RFQ form instead of only emailing it on request. Together these put your company in front of buyers who are actively searching for a supplier like you, not just the ones who already have your number. Most LA-area trading companies we talk to have none of these three set up, which means every one of those searches is currently finding a competitor instead.',
+          ko: '광고비 없이 시작할 수 있는 세 가지가 있습니다 — 실제 서비스 지역을 설정한 도매업체/유통업체로 구글 비즈니스 프로필을 등록하고, 내 웹사이트로 링크가 걸리는 주요 B2B 디렉토리(Alibaba, Global Sources, Thomasnet 등) 중 최소 하나에 프로필을 등록하고, 제품 카탈로그를 요청받을 때만 이메일로 보내지 말고 짧은 RFQ 폼 뒤에 배치하는 것입니다. 이 세 가지를 갖추면 이미 사장님 연락처를 아는 사람뿐 아니라 지금 이 순간 공급업체를 검색하고 있는 바이어 앞에도 회사가 나타납니다. 저희가 만나 본 LA 지역 무역회사 대부분은 이 세 가지 중 하나도 갖춰져 있지 않았고, 그 말은 그 검색들이 지금 이 순간 경쟁사를 찾아내고 있다는 뜻입니다.',
+        },
+      },
+      {
+        q: {
+          en: 'I am already listed on Alibaba or Thomasnet — why do I also need my own website?',
+          ko: '이미 Alibaba나 Thomasnet에 등록돼 있는데, 왜 제 웹사이트도 따로 필요한가요?',
+        },
+        a: {
+          en: "Because directory listings are rented space you do not control, while your own website is the one place a buyer's final due diligence always lands. A directory profile gets you discovered, but it also puts you next to dozens of competing suppliers on the same page, caps how much you can say, and can be taken down, changed, or made a paid-tier feature at the platform's discretion. Your own website is what a buyer checks right before sending a purchase order — it is where the warehouse photos, certifications, and full product range live with nothing else competing for attention. The winning setup uses directories for discovery and your own domain for the final trust check, with the directory profile linking back to your site so both work together instead of one replacing the other.",
+          ko: '디렉토리 등록은 사장님이 통제할 수 없는 임대 공간이지만, 사장님 소유의 웹사이트는 바이어가 최종 실사를 할 때 반드시 도착하는 곳이기 때문입니다. 디렉토리 프로필은 발견되는 데는 도움이 되지만, 같은 페이지에 수십 개의 경쟁 공급사와 나란히 놓이고, 담을 수 있는 정보량도 제한적이며, 플랫폼 마음대로 내려가거나 바뀌거나 유료 등급 기능으로 바뀔 수도 있습니다. 사장님의 웹사이트는 바이어가 발주서를 보내기 직전에 확인하는 곳입니다 — 창고 사진, 인증서, 전체 제품 라인업이 다른 경쟁사와 섞이지 않고 온전히 놓여 있는 곳이죠. 가장 좋은 조합은 디렉토리로 발견되고 내 도메인으로 최종 신뢰를 확인시키는 것이며, 디렉토리 프로필이 내 사이트로 링크를 걸어 주면 두 채널이 서로를 대체하지 않고 함께 작동합니다.',
+        },
+      },
+      {
+        q: {
+          en: 'Should I put my catalog PDF behind a form, or just let anyone download it?',
+          ko: '카탈로그 PDF는 폼 뒤에 숨겨야 하나요, 아니면 누구나 다운로드하게 둬야 하나요?',
+        },
+        a: {
+          en: 'Use both, on different pages, for different jobs. Keep a short, public product overview page crawlable by Google with no form — that page is what search engines index and what casual researchers skim, and gating it entirely would hurt your SEO and lose curious visitors who are not ready to fill out a form yet. But put your full detailed catalog, pricing tiers, or spec sheets behind a short four-field RFQ form (company, product interest, quantity range, email), because a person willing to fill that out has already self-identified as a real buyer worth following up with. The mistake is picking only one: an all-public catalog captures zero leads, and an all-gated catalog gets zero organic search traffic.',
+          ko: '둘 다 쓰되, 서로 다른 페이지에서 서로 다른 역할을 맡기세요. 짧고 공개된 제품 개요 페이지는 폼 없이 구글이 색인할 수 있게 그대로 두세요 — 검색엔진이 색인하는 것도, 가볍게 둘러보는 방문자가 훑어보는 것도 이 페이지입니다. 전부 폼 뒤에 숨기면 SEO에도 나쁘고, 아직 폼을 채울 준비가 안 된 궁금한 방문자도 놓칩니다. 하지만 상세 카탈로그 전체, 가격 등급, 스펙 시트는 4개 항목짜리 짧은 RFQ 폼(회사명, 관심 제품, 수량 범위, 이메일) 뒤에 두세요. 그걸 채울 의향이 있는 사람은 이미 후속 연락을 할 가치가 있는 진짜 바이어라고 스스로 증명한 것이니까요. 흔한 실수는 둘 중 하나만 고르는 것입니다 — 전부 공개하면 리드가 0명이고, 전부 가둬 버리면 자연 검색 유입이 0입니다.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "Ask a Korean-American wholesaler in the LA Fashion District, in Koreatown, or out in the Vernon and City of Commerce garment warehouses how they get new accounts, and most say the same thing: trade shows, family, referrals. That was true for twenty years. It is not the whole story anymore. A growing share of B2B buyers — especially the ones outside your existing network — now start with a Google search, a marketplace listing, or a supplier directory before they ever pick up the phone. If your company only shows up when someone already knows your name, you are invisible to exactly the buyers who could grow the business past what relationships alone can reach. This article is about where those inbound RFQs (requests for quote) actually come from, and how to put your company in front of them." },
+        { type: 'h2', content: 'Where B2B buyers actually start looking' },
+        { type: 'p', content: "A purchasing manager sourcing a new supplier for accessories, packaging, beauty products, or apparel components rarely opens a phone book. She searches. The query is usually specific and unglamorous: 'wholesale phone case supplier Los Angeles,' 'OEM skincare packaging manufacturer USA,' 'private label sunglasses distributor California.' She also checks B2B marketplaces and directories — Alibaba, Global Sources, Thomasnet, ImportGenius — because those platforms pre-filter for companies that at least look real. Every one of these paths can lead to your company. Almost none of them lead anywhere if your only online presence is a consumer-facing listing meant for walk-in retail, or no listing at all." },
+        { type: 'h2', content: 'The three lead sources most LA trading companies are leaving empty' },
+        { type: 'ul', content: 'Three channels that generate real inbound RFQs, largely untouched by relationship-only sellers:', items: [
+          'Google Business Profile listed correctly as a wholesaler/distributor with a service area (not just a storefront pin), so it shows for "wholesale [product] near me" searches across the counties you actually ship to.',
+          'A claimed, filled-out profile on at least one major B2B directory (Alibaba, Global Sources, Thomasnet, or a niche-specific one for your category) that links back to your own domain — the backlink also helps your own site rank.',
+          'A LinkedIn company page with your actual product categories listed, which is where buyers doing final due diligence go to check that a real company, with real employees, is behind the email they received.',
+        ] },
+        { type: 'h2', content: 'Your catalog PDF is a lead magnet, not a brochure' },
+        { type: 'p', content: "Most trading companies already have a product catalog PDF sitting somewhere — a Dropbox link they email when someone finally asks. Sitting there, it produces nothing. Placed behind a short form on your website (company name, what you are sourcing, quantity range, email), it becomes one of the highest-converting pages most B2B sites have, because the person filling it out has already self-identified as a real buyer with a real need. Keep the form to four fields. A ten-field form built for your CRM's convenience will lose you the buyer who is also filling out three competitors' forms in the same afternoon." },
+        { type: 'h2', content: 'The RFQ form is doing double duty — treat it that way' },
+        { type: 'p', content: "Every RFQ that lands should route to a monitored inbox (not a general info@ address buried under newsletter signups) and get an acknowledgment within the same business day, even if it is just 'received, quote by Thursday.' Buyers sourcing from multiple suppliers eliminate the slow responders first, often before comparing a single price. If your form submissions currently land in someone's personal inbox and get answered whenever they notice, that delay is costing you quotes you never even know you lost." },
+        { type: 'tip', content: "Free 20-minute audit: search your top three product categories plus your city on Google right now, in a private/incognito browser window. If your company does not appear on page one, that is not a ranking problem to fix someday — it is quotes going to a competitor today." },
+        { type: 'h2', content: 'What this does not replace' },
+        { type: 'p', content: "None of this replaces trade shows, referrals, or the relationships that built the business. It adds a channel that runs 24/7 without a plane ticket, and it captures the buyers who would never have found you through your existing network — the ones searching from Texas, Georgia, or Illinois who have no reason to know your company exists yet. The strongest trading companies we work with treat digital lead generation as a second sales rep who never sleeps, not a replacement for the first one." },
+        { type: 'cta', content: "ZOE LUMOS builds bilingual wholesale and trading company websites with RFQ lead capture, directory-ready product pages, and Google Business Profile setup for Korean-American B2B companies across the US. Free consultation in Korean or English: email info@zoelumos.com or message us on KakaoTalk. (로스앤젤레스를 비롯한 미국 전역의 한인 도매·무역 기업을 위해 RFQ 리드 수집, 디렉토리용 제품 페이지, 구글 비즈니스 프로필 설정까지 포함한 이중언어 웹사이트를 만듭니다. 한국어/영어 무료 상담: info@zoelumos.com 또는 카카오톡으로 편하게 문의하세요.)" },
+      ],
+      ko: [
+        { type: 'intro', content: 'LA 패션 디스트릭트나 코리아타운, 버논·시티오브커머스의 의류 창고에서 일하는 한인 도매업체 사장님께 신규 거래처를 어떻게 뚫냐고 물으면 대부분 같은 대답을 하십니다. 무역박람회, 가족, 소개. 지난 20년간은 맞는 말이었습니다. 하지만 이제 이야기의 전부는 아닙니다. B2B 바이어의 상당수 — 특히 사장님의 기존 네트워크 밖에 있는 바이어일수록 — 이제는 전화를 걸기 전에 구글 검색, 마켓플레이스 리스팅, 공급업체 디렉토리부터 확인합니다. 회사가 이미 이름을 아는 사람 앞에만 나타난다면, 관계만으로는 도달할 수 없는 바로 그 바이어들에게는 투명인간인 셈입니다. 이 글은 그 인바운드 RFQ(견적요청)가 실제로 어디서 오는지, 그리고 그 앞에 회사를 어떻게 세울지에 관한 이야기입니다.' },
+        { type: 'h2', content: 'B2B 바이어가 실제로 검색을 시작하는 곳' },
+        { type: 'p', content: '액세서리, 패키징, 뷰티 제품, 의류 부자재의 신규 공급업체를 찾는 구매 담당자는 전화번호부를 열지 않습니다. 검색합니다. 검색어는 보통 구체적이고 화려하지 않습니다. "wholesale phone case supplier Los Angeles", "OEM skincare packaging manufacturer USA", "private label sunglasses distributor California" 같은 식이죠. Alibaba, Global Sources, Thomasnet, ImportGenius 같은 B2B 마켓플레이스와 디렉토리도 확인합니다. 이런 플랫폼은 최소한 실체가 있어 보이는 회사만 걸러 주기 때문입니다. 이 모든 경로가 사장님 회사로 이어질 수 있습니다. 하지만 온라인상의 존재감이 소매 손님용 리스팅뿐이거나 아예 없다면, 이 경로들은 어디로도 이어지지 않습니다.' },
+        { type: 'h2', content: 'LA 무역회사 대부분이 비워 두고 있는 세 가지 리드 소스' },
+        { type: 'ul', content: '관계 영업만 하는 경쟁사는 거의 손대지 않은, 실제 인바운드 RFQ를 만드는 세 채널:', items: [
+          '단순 매장 핀이 아니라 실제 서비스 지역을 설정한 도매업체/유통업체로 정확히 등록된 구글 비즈니스 프로필 — 실제로 배송하는 카운티 전역에서 "[제품] 도매 근처" 검색에 노출됩니다.',
+          '내 도메인으로 링크가 걸리는 주요 B2B 디렉토리(Alibaba, Global Sources, Thomasnet, 혹은 업종별 전문 디렉토리) 중 최소 하나의 신청·작성이 완료된 프로필 — 이 백링크는 내 사이트 자체의 검색 순위에도 도움이 됩니다.',
+          '실제 제품 카테고리가 정리된 링크드인 회사 페이지 — 바이어가 최종 실사 단계에서 받은 이메일 뒤에 진짜 회사와 진짜 직원이 있는지 확인하러 오는 곳입니다.',
+        ] },
+        { type: 'h2', content: '카탈로그 PDF는 브로슈어가 아니라 리드 마그넷입니다' },
+        { type: 'p', content: '대부분의 무역회사는 이미 어딘가에 제품 카탈로그 PDF를 가지고 있습니다 — 누가 요청하면 그제서야 이메일로 보내는 드롭박스 링크죠. 그 상태로는 아무것도 만들어 내지 못합니다. 웹사이트에서 짧은 폼(회사명, 소싱하려는 품목, 수량 범위, 이메일) 뒤에 배치하면, 대부분의 B2B 사이트에서 가장 전환율 높은 페이지 중 하나가 됩니다. 그걸 채우는 사람은 이미 실제 니즈가 있는 진짜 바이어라고 스스로 증명한 것이니까요. 폼은 4개 항목으로 유지하세요. 사장님 CRM의 편의를 위해 만든 10개 항목짜리 폼은, 같은 날 오후에 경쟁사 세 곳의 폼도 같이 채우고 있는 그 바이어를 놓치게 만듭니다.' },
+        { type: 'h2', content: 'RFQ 폼은 두 가지 역할을 동시에 합니다 — 그렇게 다루세요' },
+        { type: 'p', content: '들어오는 모든 RFQ는 뉴스레터 구독 신청 사이에 묻혀 있는 일반 info@ 주소가 아니라 실제로 모니터링되는 받은편지함으로 가야 하고, "받았습니다, 목요일까지 견적 드리겠습니다" 정도라도 같은 영업일 안에 응답이 나가야 합니다. 여러 공급업체에서 동시에 소싱하는 바이어는 가격 하나 비교해 보기도 전에, 느리게 응답하는 곳부터 먼저 걸러 냅니다. 지금 폼 제출이 누군가의 개인 메일함에 떨어져서 눈에 띌 때마다 답장하는 방식이라면, 그 지연이 사장님이 잃어버린 줄도 모르는 견적 기회를 계속 갉아먹고 있는 것입니다.' },
+        { type: 'tip', content: '무료 20분 자가진단: 지금 바로 시크릿(비공개) 브라우저 창에서 사장님의 대표 제품 카테고리 세 개와 도시 이름을 구글에 검색해 보세요. 첫 페이지에 회사가 안 나온다면, 그건 언젠가 고쳐야 할 순위 문제가 아니라 오늘 이 순간 경쟁사로 넘어가고 있는 견적입니다.' },
+        { type: 'h2', content: '이게 대체하지 못하는 것' },
+        { type: 'p', content: '이 중 어느 것도 무역박람회나 소개, 사업을 여기까지 키운 관계를 대체하지 않습니다. 비행기표 없이 24시간 돌아가는 채널 하나를 더하는 것이고, 기존 네트워크로는 절대 만날 수 없었던 바이어 — 텍사스, 조지아, 일리노이에서 검색하는, 아직 사장님 회사의 존재조차 모르는 바이어 — 를 붙잡는 일입니다. 저희와 함께 일하는 가장 강한 무역회사들은 디지털 리드 제너레이션을 기존 영업 담당자를 대체하는 게 아니라, 절대 잠들지 않는 두 번째 영업 담당자로 다룹니다.' },
+        { type: 'cta', content: 'ZOE LUMOS는 한인 B2B 기업을 위해 RFQ 리드 수집, 디렉토리용 제품 페이지, 구글 비즈니스 프로필 설정까지 포함한 이중언어 도매·무역회사 웹사이트를 만듭니다. 로스앤젤레스를 비롯해 미국 전역에서 서비스합니다. 한국어/영어 무료 상담: info@zoelumos.com 이메일 또는 카카오톡으로 편하게 문의하세요. (ZOE LUMOS builds bilingual wholesale and trading company websites with RFQ lead capture, directory-ready product pages, and Google Business Profile setup for Korean-American B2B companies across the US, including Los Angeles. Free consultation: info@zoelumos.com or KakaoTalk.)' },
+      ],
+    },
+  },
 ]
