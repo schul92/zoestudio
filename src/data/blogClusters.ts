@@ -87,7 +87,7 @@ export const PILLARS = {
       'b2b-company-website-korean-business-credibility-2026',
       'aws-cloud-consulting-korean-business-dallas-2026',
       'korean-app-development-hire-guide-2026',
-      'korean-wholesale-trading-rfq-leads-los-angeles-2026',
+      'korean-ecommerce-payments-sales-tax-nexus-bay-area-2026',
     ],
   },
   'kakaotalk-marketing': {
@@ -293,6 +293,6 @@ export const POST_TO_PILLAR: Record<string, PillarKey> = {
   'korean-restaurant-chicago-online-ordering-pos-reviews-2026': 'restaurant-marketing',
   'korean-app-development-hire-guide-2026': 'website-cost',
 
-  // 2026-07-28 — B2B lead generation for LA/SoCal Korean wholesale & trading companies
-  'korean-wholesale-trading-rfq-leads-los-angeles-2026': 'website-cost',
+  // 2026-07-28 — E-commerce payments & sales tax nexus for Bay Area Korean sellers
+  'korean-ecommerce-payments-sales-tax-nexus-bay-area-2026': 'website-cost',
 }
