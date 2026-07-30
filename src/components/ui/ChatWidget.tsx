@@ -5,10 +5,16 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 /**
  * Site chatbot widget. Talks to /api/chat, which streams plain text back.
  *
- * Positioning notes — three floating elements share the bottom-right corner:
- *   - KakaoFloatingButton: bottom-6 right-4, z-50, lg-and-up only
- *   - StickyMobileCTA:     full-width bottom bar, z-[80], below lg
- * So this sits above Kakao on desktop and above the CTA bar on mobile.
+ * Positioning notes. The site's z-index stack, highest first:
+ *   - HeroNew intro veil    z-[200]  pointer-events-none, animates to opacity 0
+ *   - Header (all variants) z-[100]  fixed top-0
+ *   - Mobile nav panel      z-[95]
+ *   - Mobile nav overlay    z-[90]
+ *   - StickyMobileCTA       z-[80]   full-width bottom bar, below lg
+ *   - KakaoFloatingButton   z-50     bottom-6 left-4, lg-and-up only
+ * The launcher sits at z-[90] (nothing overlaps the bottom corners), but the
+ * open panel must clear the z-[100] header — at z-[90] the header painted
+ * straight through the panel's own title row. Hence z-[120] on the panel.
  *
  * State lives only in this component — no persistence. A reload starts fresh,
  * which is the right default for a support widget on a marketing site.
@@ -20,6 +26,20 @@ const GREETING_KO =
   '안녕하세요. 조이루모스입니다. 웹사이트 제작, 가격, 진행 방식 등 궁금한 점을 물어보세요.'
 const GREETING_EN =
   "Hi — this is ZOE LUMOS. Ask me about websites, pricing, or how we work."
+
+// Starter questions. These also give the fullscreen mobile sheet something to
+// show — a greeting alone on a 900px-tall panel reads as a broken screen. All
+// three are answerable from chatKnowledge.ts, so none of them dead-ends.
+const STARTERS_KO = [
+  '제작 비용이 얼마나 드나요?',
+  '기간은 얼마나 걸리나요?',
+  '기존 사이트도 작업 가능한가요?',
+]
+const STARTERS_EN = [
+  'How much does a website cost?',
+  'How long does a build take?',
+  'Can you work on my existing site?',
+]
 
 export default function ChatWidget({ locale = 'en' }: { locale?: string }) {
   const isKo = locale === 'ko'
@@ -71,7 +91,12 @@ export default function ChatWidget({ locale = 'en' }: { locale?: string }) {
     if (!vv) return
     const apply = () => {
       const el = panelRef.current
-      if (el) el.style.setProperty('--chat-vvh', `${vv.height}px`)
+      if (!el) return
+      el.style.setProperty('--chat-vvh', `${vv.height}px`)
+      // iOS can scroll the visual viewport down out from under a top-0 fixed
+      // element; offsetTop puts the panel back in view. Other browsers keep
+      // this at 0, so the property is a no-op there.
+      el.style.setProperty('--chat-vvtop', `${vv.offsetTop}px`)
     }
     apply()
     vv.addEventListener('resize', apply)
@@ -95,8 +120,10 @@ export default function ChatWidget({ locale = 'en' }: { locale?: string }) {
   // Cancel any in-flight stream on unmount.
   useEffect(() => () => abortRef.current?.abort(), [])
 
-  const send = useCallback(async () => {
-    const text = input.trim()
+  // `override` lets a starter chip send its own text without round-tripping
+  // through the textarea (which would need a second render before send saw it).
+  const send = useCallback(async (override?: string) => {
+    const text = (override ?? input).trim()
     if (!text || streaming) return
 
     setError(null)
@@ -224,15 +251,22 @@ export default function ChatWidget({ locale = 'en' }: { locale?: string }) {
           aria-modal="false"
           aria-label={isKo ? '조이루모스 문의 채팅' : 'ZOE LUMOS chat'}
           /*
-           * Mobile: a near-fullscreen sheet pinned to the bottom. The earlier
-           * floating card left 96px of dead space under it and squeezed the
-           * transcript to ~355px on a 667px screen — over half the screen unused.
-           * Height comes from --chat-vvh (visual viewport, so the keyboard
-           * shrinks it) and falls back to dvh, which — unlike vh — excludes
-           * mobile browser chrome.
+           * Mobile: a true fullscreen takeover. It used to be bottom-pinned at
+           * `100dvh - 3rem`, which started 48px down the screen and ran straight
+           * under the 112px fixed header — the header won on z-index and painted
+           * over this panel's title row. Full-bleed at z-[120] removes both the
+           * overlap and the sliver of page peeking above.
+           *
+           * Anchored to the top with an explicit height (over-constrained
+           * top+bottom+height, so `bottom` is ignored): when the on-screen
+           * keyboard opens, --chat-vvh shrinks and the panel's bottom edge — and
+           * with it the composer — rises to meet the keyboard. --chat-vvtop
+           * covers iOS scrolling the visual viewport out from under a fixed
+           * top-0 element. Both fall back to dvh/0, which excludes browser chrome.
+           *
            * Desktop (lg+): back to a floating card, right for a pointer UI.
            */
-          className="fixed inset-x-0 bottom-0 z-[90] flex h-[calc(var(--chat-vvh,100dvh)-3rem)] flex-col overflow-hidden border-t border-[#e4ddd0] bg-white shadow-2xl lg:inset-x-auto lg:bottom-6 lg:right-6 lg:h-[560px] lg:max-h-[calc(100dvh-6rem)] lg:w-[380px] lg:rounded-2xl lg:border"
+          className="fixed inset-0 top-[var(--chat-vvtop,0px)] z-[120] flex h-[var(--chat-vvh,100dvh)] flex-col overflow-hidden bg-white shadow-2xl lg:inset-x-auto lg:bottom-6 lg:right-6 lg:top-auto lg:h-[560px] lg:max-h-[calc(100dvh-6rem)] lg:w-[380px] lg:rounded-2xl lg:border lg:border-[#e4ddd0]"
           style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
         >
           {/* Header */}
@@ -276,6 +310,22 @@ export default function ChatWidget({ locale = 'en' }: { locale?: string }) {
           >
             <Bubble role="assistant">{greeting}</Bubble>
 
+            {messages.length === 0 && (
+              <div className="flex flex-wrap gap-2 pt-1">
+                {(isKo ? STARTERS_KO : STARTERS_EN).map((q) => (
+                  <button
+                    key={q}
+                    type="button"
+                    onClick={() => send(q)}
+                    className="rounded-full border border-[#ddd4c4] bg-white px-3 py-2 text-left text-[13px] leading-snug text-[#4a443b] transition-colors hover:border-[#b48a43] hover:text-[#1f1c16] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#b48a43]"
+                    style={{ touchAction: 'manipulation' }}
+                  >
+                    {q}
+                  </button>
+                ))}
+              </div>
+            )}
+
             {messages.map((m, i) => (
               <Bubble key={i} role={m.role}>
                 {m.content || (streaming && i === messages.length - 1 ? <Dots /> : '')}
@@ -312,7 +362,9 @@ export default function ChatWidget({ locale = 'en' }: { locale?: string }) {
               />
               <button
                 type="button"
-                onClick={send}
+                // Wrapped, not passed by reference: onClick would hand the
+                // MouseEvent to send()'s `override` parameter.
+                onClick={() => send()}
                 disabled={streaming || !input.trim()}
                 aria-label={isKo ? '보내기' : 'Send'}
                 className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-[#b48a43] text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#b48a43] lg:h-10 lg:w-10"
