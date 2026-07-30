@@ -170,36 +170,47 @@ export default function ChatWidget({ locale = 'en' }: { locale?: string }) {
 
   return (
     <>
-      {/* Launcher — sits above the Kakao button on desktop, above the CTA bar on mobile */}
+      {/*
+        Launcher — the primary action on the page, so it gets the right corner,
+        the highest contrast on an ivory background, and a label at lg+ where
+        there's room. Kakao moved to bottom-left and stays available as the
+        human-contact fallback.
+
+        Mobile keeps a circle (a pill would crowd the StickyMobileCTA bar) and
+        sits above that bar; desktop drops to bottom-6 now that Kakao vacated it.
+      */}
       {!open && (
         <button
           type="button"
           onClick={() => setOpen(true)}
           aria-label={isKo ? '문의 채팅 열기' : 'Open chat'}
-          /*
-           * Vertical offset clears whichever element owns the bottom edge:
-           * below lg that's StickyMobileCTA (56px + safe area), at lg+ it's
-           * KakaoFloatingButton (bottom-6, ~48px tall).
-           */
-          className="fixed right-4 sm:right-6 z-[90] flex h-14 w-14 items-center justify-center rounded-full bg-[#1f1c16] text-white shadow-lg transition-transform duration-300 hover:scale-105 active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#b48a43]"
-          style={{
-            bottom: 'calc(4.5rem + env(safe-area-inset-bottom))',
-            touchAction: 'manipulation',
-          }}
+          className="group fixed right-4 bottom-[calc(4.5rem+env(safe-area-inset-bottom))] z-[90] flex h-14 w-14 items-center justify-center gap-2 rounded-full bg-[#1f1c16] text-white shadow-xl ring-1 ring-[#b48a43]/40 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:ring-[#b48a43] active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#b48a43] sm:right-6 lg:bottom-6 lg:h-14 lg:w-auto lg:px-6"
+          style={{ touchAction: 'manipulation' }}
         >
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.8"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            aria-hidden="true"
-          >
-            <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
-          </svg>
+          <span className="relative flex shrink-0 items-center justify-center">
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.8"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+            </svg>
+            {/* Live dot: signals "answers now", and is the only motion here.
+                motion-reduce drops the ping for vestibular sensitivity. */}
+            <span className="absolute -right-1.5 -top-1.5 flex h-2.5 w-2.5">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#b48a43] opacity-60 motion-reduce:animate-none" />
+              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#b48a43]" />
+            </span>
+          </span>
+          <span className="hidden whitespace-nowrap text-[15px] font-bold lg:inline">
+            {isKo ? 'AI 상담 · 바로 답변' : 'Ask AI · instant reply'}
+          </span>
         </button>
       )}
 
@@ -221,7 +232,7 @@ export default function ChatWidget({ locale = 'en' }: { locale?: string }) {
            * mobile browser chrome.
            * Desktop (lg+): back to a floating card, right for a pointer UI.
            */
-          className="fixed inset-x-0 bottom-0 z-[90] flex h-[calc(var(--chat-vvh,100dvh)-3rem)] flex-col overflow-hidden border-t border-[#e4ddd0] bg-white shadow-2xl lg:inset-x-auto lg:bottom-24 lg:right-6 lg:h-[560px] lg:max-h-[calc(100dvh-9rem)] lg:w-[380px] lg:rounded-2xl lg:border"
+          className="fixed inset-x-0 bottom-0 z-[90] flex h-[calc(var(--chat-vvh,100dvh)-3rem)] flex-col overflow-hidden border-t border-[#e4ddd0] bg-white shadow-2xl lg:inset-x-auto lg:bottom-6 lg:right-6 lg:h-[560px] lg:max-h-[calc(100dvh-6rem)] lg:w-[380px] lg:rounded-2xl lg:border"
           style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
         >
           {/* Header */}
