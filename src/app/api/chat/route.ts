@@ -91,8 +91,13 @@ export async function POST(request: Request) {
     const stream = client.messages.stream({
       model: CHAT_MODEL,
       max_tokens: MAX_TOKENS,
-      // cache_control on the system prompt: the knowledge base is identical on
-      // every request, so from the second call on it bills at ~10% of input rate.
+      // cache_control on the system prompt. NOTE: this is currently a no-op —
+      // Haiku 4.5 only caches prefixes of 4096+ tokens and ours is ~2.2K, so
+      // nothing is written and nothing is read (silently, by design in the API).
+      // Left in deliberately: padding the knowledge base to reach the threshold
+      // would cost more than it saves (~0.4c per conversation at this size), but
+      // if CHAT_MODEL moves to a larger model — Opus 5 caches from 512 tokens,
+      // Sonnet 5 from 1024 — caching starts working with no code change.
       system: [
         {
           type: 'text',

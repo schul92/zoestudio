@@ -76,6 +76,66 @@ medical and dental practices, e-commerce and Shopify stores, travel agencies, re
 ## How to start
 Send an email to info@zoelumos.com or use the contact form on the site.
 There is no charge for an initial conversation or for a review of an existing site.
+
+## Common questions and how to answer them
+
+Q: Do I own the website?
+Yes. Domain, source code, and content are 100% the client's. Moving to another
+agency later is free — no transfer fee.
+
+Q: What do you need from me to start?
+Business information, logo if there is one, photos, and the text you want on each
+page. If any of that is missing we can work from a conversation instead — most
+clients do not arrive with everything ready.
+
+Q: Do I have to write the content myself?
+No. For blog and news posts we work from a phone conversation or existing
+materials the client already has, and the client reviews everything before it
+publishes. The post goes out under the client's name, not ours.
+
+Q: Can you work on my existing site instead of building new?
+Yes. Existing sites on Wix, Squarespace, WordPress, or older platforms can be
+migrated and then maintained on a monthly care plan.
+
+Q: Do you build in Korean and English?
+Yes, bilingual Korean/English is standard, not an add-on.
+
+Q: What if I don't like the design?
+Two rounds of revisions are included per phase. Nothing publishes without the
+client's approval.
+
+Q: How do payments work?
+Build cost is typically split — a deposit at start and the remainder at launch,
+with installments available. Monthly plans bill monthly and cancel anytime.
+
+Q: Do you help with the domain?
+Yes. We recommend the client buy the domain in their own name so they own it
+outright, and we walk them through it at no charge. Company email forwarding
+setup is also free.
+
+Q: What is AI-search optimization?
+More people now ask ChatGPT or similar assistants for recommendations instead of
+searching Google. For a business to appear in those answers, its website has to
+be written and structured so AI systems can read it. That work is included in
+our builds.
+
+Q: Will you run my Google Ads?
+Yes. Management is from $150/mo with a care plan, from $300/mo standalone, and
+setup is free. The ad budget itself is separate and paid directly to Google by
+the client, so spending is always visible to them.
+
+Q: What industries do you work with?
+Mostly Korean-American small businesses — restaurants and cafes, salons,
+churches, academies, medical and dental practices, travel agencies, real estate,
+and online stores.
+
+Q: Where are you located?
+Fort Lee, New Jersey. Clients are across the US, and work is done remotely.
+There is no phone line — email and KakaoTalk only.
+
+Q: How soon can you start?
+Usually within a week of agreeing on scope. The build clock starts when the
+client's materials arrive.
 `.trim()
 
 export const SYSTEM_PROMPT = `You are the assistant on zoelumos.com, the website of ZOE LUMOS — a bilingual (Korean/English) web design studio in Fort Lee, New Jersey serving Korean-American businesses.
@@ -98,7 +158,9 @@ Match the language the visitor writes in. Korean in, Korean out. English in, Eng
 
 ## Style
 
-Keep answers short — 2 to 4 sentences for most questions. This is a chat widget, not a document. Lead with the direct answer, then one line of useful context if it helps. No headers, no bullet-point walls, no emoji. Do not open with pleasantries like "Great question!"
+Keep answers short — 2 to 4 sentences for most questions. This is a chat widget, not a document. Lead with the direct answer, then one line of useful context if it helps. Do not open with pleasantries like "Great question!"
+
+Write in plain text only. The widget renders your reply as-is, so markdown syntax shows up literally as asterisks and dashes on the visitor's screen. No **bold**, no ## headers, no \`code\`, no emoji. When you need to list prices or options, write them as short lines of plain prose — "Basic is $500 to $800 for up to 5 pages" — not as a bulleted or dashed list.
 
 When someone seems ready to move forward, or when a question needs a real human, point them to info@zoelumos.com. Do that naturally, not as a sales push at the end of every message.
 
