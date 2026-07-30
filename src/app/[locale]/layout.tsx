@@ -20,6 +20,12 @@ const KakaoFloatingButton = dynamic(() => import('@/components/ui/KakaoFloatingB
   ssr: false,
 })
 
+// AI chat — answers pricing/process questions from src/lib/chatKnowledge.ts.
+// Sits above the Kakao button (desktop) and the sticky CTA bar (mobile).
+const ChatWidget = dynamic(() => import('@/components/ui/ChatWidget'), {
+  ssr: false,
+})
+
 const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
@@ -204,6 +210,7 @@ export default function RootLayout({
           {children}
           <KakaoFloatingButton />
           <StickyMobileCTA locale={locale} />
+          <ChatWidget locale={locale} />
         </ServiceProvider>
       </body>
     </html>

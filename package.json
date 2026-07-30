@@ -12,6 +12,7 @@
     "build:prod": "NODE_ENV=production next build"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.115.0",
     "@gsap/react": "^2.1.2",
     "@react-three/drei": "^9.122.0",
     "@react-three/fiber": "^8.18.0",
