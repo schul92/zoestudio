@@ -11698,4 +11698,98 @@ export const blogContent: BlogPost[] = [
       ],
     },
   },
+  {
+    slug: 'korea-sourcing-customs-duties-ecommerce-los-angeles-2026',
+    date: '2026-07-30',
+    updatedDate: '2026-07-30',
+    readTime: 10,
+    category: { en: 'E-commerce', ko: '이커머스' },
+    title: {
+      en: 'Importing From Korea to Resell in the US: Customs, Duties, and Multi-State Sales Tax for LA Korean-American Sellers (2026)',
+      ko: '한국에서 수입해 미국에서 재판매하기 — LA 한인 셀러를 위한 관세·통관·주(州)별 판매세 가이드 (2026)',
+    },
+    metaDescription: {
+      en: 'Korean-American sellers around Los Angeles source K-beauty, snacks, and giftware directly from Korea and resell on Shopify, Amazon, and TikTok Shop — but customs classification, duty, and multi-state sales tax are usually an afterthought until a shipment gets held or a tax notice arrives. Here is what importer of record, HS codes, KORUS FTA, and economic nexus actually mean for your business.',
+      ko: 'LA 지역 한인 셀러들은 K-뷰티·한국 식품·선물용품을 한국에서 직접 소싱해 Shopify·아마존·틱톡샵으로 재판매합니다. 하지만 통관 분류, 관세, 주별 판매세는 보통 화물이 묶이거나 세금 고지서가 날아올 때까지 뒷전으로 밀려 있죠. Importer of Record, HS코드, 한미 FTA, economic nexus가 사장님 사업에 실제로 무엇을 의미하는지 정리했습니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'How much duty will I owe when I import products from Korea to resell?',
+          ko: '한국에서 소싱한 제품을 수입할 때 관세는 얼마나 나오나요?',
+        },
+        a: {
+          en: "There is no single flat 'Korea import rate' — duty depends on the HS (Harmonized System) code assigned to each specific product, the declared value of the shipment, and the country of origin of the materials, not just where it shipped from. Two nearly identical products (a cotton tote bag vs. a synthetic-blend one) can carry different duty rates because they are classified differently. Many goods that genuinely originate in Korea can qualify for reduced or zero duty under the US-Korea Free Trade Agreement (KORUS FTA), but only with a proper Certificate of Origin and correct rules-of-origin documentation from your Korean supplier — it does not apply automatically just because the invoice says 'Made in Korea.' The safe move is to have a licensed customs broker classify each SKU correctly before you scale volume, rather than guessing or copying a rate a friend quoted for a different product.",
+          ko: '"한국 수입은 관세 몇 퍼센트"라는 하나의 답은 없습니다. 관세는 제품마다 부여되는 HS(품목분류) 코드, 신고 가격, 그리고 원자재의 원산지(단순히 어디서 배가 출발했는지가 아니라)에 따라 달라집니다. 거의 똑같아 보이는 제품(면 토트백 vs 합성섬유 혼방 백)도 분류가 다르면 관세율이 달라질 수 있습니다. 실제로 한국에서 원산지 요건을 충족하는 제품은 한미 FTA(KORUS FTA)로 관세가 낮아지거나 면제될 수 있지만, 이건 인보이스에 "Made in Korea"라고 적혀 있다고 자동 적용되는 게 아니라 한국 공급사가 제공하는 정식 원산지증명서(Certificate of Origin)와 원산지 기준 서류가 있어야 합니다. 안전한 방법은 물량을 키우기 전에 라이선스를 가진 관세사(customs broker)에게 SKU마다 정확히 분류를 받는 것이지, 친구가 다른 제품으로 들었던 세율을 그대로 갖다 쓰는 게 아닙니다.',
+        },
+      },
+      {
+        q: {
+          en: 'What is an "Importer of Record," and why does it matter for a small business?',
+          ko: '"Importer of Record"가 뭐고, 소규모 사업체에 왜 중요한가요?',
+        },
+        a: {
+          en: "The Importer of Record (IOR) is the person or business legally responsible to US Customs and Border Protection for a shipment — accurate value declarations, correct HS classification, and payment of any duty owed. If you are a Korean-American small business owner arranging shipments under your own name or business EIN, you are the Importer of Record, and you are personally and legally liable for penalties if the value is misdeclared or the product is misclassified — even if a shipping agent or freight forwarder in Korea filled out the actual paperwork. This is different from an informal personal package, where the sender or courier absorbs more of the process; once you are importing commercial quantities to resell, the liability sits with you. Working with a licensed customs broker and a freight forwarder who clearly states whether your agreement is DDP (they handle duty) or DDU (you handle duty) closes the most common gap.",
+          ko: 'Importer of Record(수입자)는 미국 세관국경보호청(CBP)에 대해 화물의 신고 가격 정확성, HS 코드 분류, 관세 납부에 대해 법적 책임을 지는 사람 또는 사업체입니다. 한인 사장님이 본인 명의나 사업자 EIN으로 화물을 들여온다면, 사장님이 바로 그 Importer of Record이고, 신고 가격이 잘못됐거나 품목분류가 틀렸을 때 벌금에 대해 개인적·법적으로 책임을 집니다 — 실제 서류를 한국의 배송 대행이나 포워더가 작성했더라도요. 개인 소포와는 다릅니다. 개인 소포는 발송인이나 택배사가 처리 부담을 더 지지만, 재판매 목적의 상업적 물량을 수입하는 순간부터 책임은 사장님에게 있습니다. 라이선스를 가진 관세사, 그리고 계약이 DDP(공급사가 관세 부담)인지 DDU(사장님이 관세 부담)인지 명확히 밝히는 포워더와 일하면 가장 흔한 구멍을 막을 수 있습니다.',
+        },
+      },
+      {
+        q: {
+          en: 'If I sell across all 50 states from Los Angeles, do I owe sales tax in every state?',
+          ko: 'LA에서 미국 전역에 판매하면 모든 주에 판매세를 내야 하나요?',
+        },
+        a: {
+          en: "Potentially yes, even without a warehouse or employee in that state — this is called economic nexus, established by the 2018 Supreme Court decision South Dakota v. Wayfair, and every state with a sales tax has now adopted some version of it. The most common pattern (originating from South Dakota's own law) is triggering nexus once you exceed roughly $100,000 in sales or 200 transactions in a state within a year, but the exact revenue threshold, transaction count, and measurement period vary by state, so treat that as a general shape, not a rule for every state. Tracking this by hand across dozens of states is not realistic for a small seller — this is exactly what tools like Shopify Tax, Avalara, or TaxJar are built to monitor automatically, flagging when you are approaching a new state's threshold so you can register before you owe back tax and penalties, not after.",
+          ko: '네, 해당 주에 창고나 직원이 없어도 그럴 수 있습니다. 이걸 economic nexus(경제적 연계)라고 하는데, 2018년 미국 연방대법원의 South Dakota v. Wayfair 판결로 확립됐고, 판매세를 걷는 모든 주가 지금은 어떤 형태로든 이 규정을 채택하고 있습니다. 가장 흔한 패턴(사우스다코타 자체 법에서 유래)은 한 주에서 연간 매출 약 $100,000 또는 거래 200건을 넘으면 넥서스가 발생하는 것이지만, 정확한 매출 기준·거래 건수·측정 기간은 주마다 다르므로 이건 일반적인 형태이지 모든 주에 적용되는 규칙은 아닙니다. 수십 개 주를 손으로 추적하는 건 소규모 셀러에게 현실적이지 않습니다 — Shopify Tax, Avalara, TaxJar 같은 도구가 정확히 이걸 자동으로 감시하도록 만들어졌고, 새로운 주의 기준에 가까워지면 미리 알려 줘서 세금 체납과 벌금이 쌓이기 전에 등록할 수 있게 해 줍니다.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "We see a specific pattern often among Korean-American sellers around Los Angeles and the South Bay — K-beauty, Korean snacks and instant food, giftware, and small-batch fashion sourced directly from a manufacturer or distributor in Korea, then resold across the US on Shopify, Amazon, and increasingly TikTok Shop. The sourcing relationships are strong, often built over years and sometimes over family connections back home. What tends to get treated as an afterthought is everything that happens between a factory in Korea and a customer's doorstep in Ohio: customs classification, who is legally on the hook for duty, and whether you owe sales tax in a state you have never shipped from. Most sellers only learn the real answer when a shipment gets held at the port, or a state tax notice shows up two years after the fact." },
+        { type: 'h2', content: 'Why the customs bill is never what you expected' },
+        { type: 'p', content: "New importers assume there is one 'Korea rate' they can ask a friend about and apply to their own shipment. There is not. US Customs assigns duty based on the HS (Harmonized System) code of the specific product — a 10-digit classification that determines the rate — plus the declared value of the goods and the origin of the materials used to make them, not simply the country the box shipped from. A cosmetic serum, a printed tote bag, and a ceramic mug can each fall under entirely different HS chapters even if they came in the same container from the same supplier. Guessing a classification, or reusing whatever code a forwarder used 'last time' for a different product, is how sellers end up with an unexpected bill, a held shipment, or in worse cases a penalty for misclassification." },
+        { type: 'ul', content: 'The mistakes we see most often among new Korea-to-US importers:', items: [
+          "Guessing the HS code instead of getting each SKU properly classified, because a nearly-identical product a friend imports uses a different code entirely.",
+          "Assuming 'Made in Korea' on the invoice automatically qualifies for reduced KORUS FTA duty, without the actual Certificate of Origin paperwork customs requires to prove it.",
+          "Under-declaring the invoice value to lower duty — this is customs fraud, not a gray area, and carries real risk of seizure and penalty, not just a bigger bill later.",
+          "Never clarifying with a Korean supplier or freight forwarder whether the shipping agreement is DDP (they prepay duty) or DDU (you owe it on arrival) — and finding out only when a courier demands payment before delivery.",
+          "Treating commercial resale shipments the same as a personal package from a courier service — once you are importing to resell at volume, informal-entry assumptions from smaller personal orders no longer apply.",
+        ] },
+        { type: 'h2', content: "Importer of Record: the liability sits with you, not your Korean supplier" },
+        { type: 'p', content: "The Importer of Record is whoever is legally accountable to US Customs and Border Protection for a given shipment — for the accuracy of the declared value, the correctness of the HS classification, and payment of any duty owed. If shipments arrive under your name or your business's EIN, that is you, regardless of who in Korea filled out the actual export paperwork. This matters because the penalties for misdeclared value or misclassification attach to the importer, not to a shipping agent overseas who is outside US jurisdiction. A licensed, bonded customs broker on the US side — distinct from whoever handles the Korea-side shipping — exists specifically to catch classification errors before they become your legal problem, and is worth the fee well before you are importing at meaningful volume." },
+        { type: 'h2', content: 'The legitimate way to lower duty: KORUS FTA, done properly' },
+        { type: 'p', content: "The US-Korea Free Trade Agreement (KORUS FTA) genuinely reduces or eliminates duty on many goods that originate in Korea — this is real and worth using. The catch is 'originate' has a specific legal meaning (rules of origin) that is not satisfied just because final assembly happened in Korea; a product built substantially from third-country materials may not qualify even if the label says Korea. Claiming the preferential rate requires a proper Certificate of Origin and supporting documentation from your supplier, filed correctly at the time of entry — not added retroactively after the fact. Ask your Korean manufacturer directly whether they can provide KORUS-compliant origin documentation before you count on the savings in your pricing." },
+        { type: 'h2', content: 'The other half: sales tax across states you have never shipped from' },
+        { type: 'p', content: "Selling nationally from an LA warehouse means a second, unrelated compliance question: economic nexus. Since the 2018 Supreme Court decision South Dakota v. Wayfair, states can require you to collect and remit sales tax once your sales into that state cross a threshold — commonly around $100,000 in revenue or 200 transactions a year, though the exact number and measurement period differ state by state. You do not need a warehouse, an employee, or even a single prior sale in a state to trigger this; pure online volume is enough. Manually tracking this across dozens of states is not realistic past a certain order volume, which is exactly the gap that Shopify Tax, Avalara, and TaxJar are built to close — they monitor your nexus exposure state by state and flag registration deadlines before back taxes and penalties accumulate." },
+        { type: 'tip', content: "A five-minute audit worth running this week: pull the customs paperwork for your last three shipments from Korea and check whether each one actually lists a specific HS code and a declared value that matches what was really shipped — not just a generic shipping label from a Korean courier. If you cannot find that paperwork, that gap is worth closing before your next container, not after." },
+        { type: 'h2', content: 'Why a bilingual partner who understands both sides matters here' },
+        { type: 'p', content: "This is a case where the two halves of your business speak different languages, literally and otherwise. The sourcing conversation — negotiating price, confirming a manufacturer can produce KORUS-compliant origin paperwork, resolving a shipping delay — happens in Korean, with a Korean supplier or forwarder. The compliance conversation — a customs broker's classification questions, a state's nexus registration notice, a Shopify Tax configuration decision — happens in English, on US business terms. Most Korean-American sellers end up as the only translator between the two sides, catching gaps only when something breaks. We build the e-commerce side of this pipeline — the Shopify or multi-channel store, tax and nexus setup, fulfillment integrations — and work directly with you in Korean or English, so the customs and compliance side has one less handoff to get lost in." },
+        { type: 'cta', content: "Sourcing from Korea and selling across the US? ZOE LUMOS builds the e-commerce side of that pipeline for Korean-American sellers — Shopify and multi-channel stores, sales tax and nexus setup, and fulfillment integrations that work with your actual import flow. We are not customs brokers or tax attorneys, and always recommend a licensed broker or CPA for classification and filing — but we make sure your store, tax setup, and inventory systems are built correctly from day one. Free consultation in Korean or English: email info@zoelumos.com or message us on KakaoTalk (http://pf.kakao.com/_xhxdxmlX/chat)." },
+      ],
+      ko: [
+        { type: 'intro', content: 'LA와 사우스베이 지역 한인 셀러들에게서 자주 보는 패턴이 있습니다. K-뷰티, 한국 과자와 즉석식품, 선물용품, 소량 생산 패션을 한국의 제조사나 총판에서 직접 소싱해, Shopify·아마존·그리고 요즘은 틱톡샵으로 미국 전역에 재판매하는 방식입니다. 소싱 관계는 탄탄합니다. 보통 몇 년에 걸쳐, 때로는 한국에 있는 가족 인맥을 통해 쌓아 온 것들이니까요. 뒷전으로 밀리기 쉬운 건 한국 공장에서 오하이오주 고객 현관까지 사이에 일어나는 모든 일입니다. 통관 분류, 관세를 법적으로 누가 책임지는지, 그리고 한 번도 배송해 본 적 없는 주에 판매세를 내야 하는지. 대부분의 셀러는 화물이 항구에서 묶이거나, 2년 뒤 주 세무당국의 고지서가 날아온 다음에야 진짜 답을 알게 됩니다.' },
+        { type: 'h2', content: '관세 고지서가 항상 예상과 다르게 나오는 이유' },
+        { type: 'p', content: '새로 수입을 시작하는 분들은 친구에게 물어볼 수 있는 하나의 "한국 관세율"이 있어서 그걸 내 화물에도 그대로 적용하면 된다고 생각합니다. 그런 건 없습니다. 미국 세관은 특정 제품의 HS(품목분류) 코드 — 관세율을 결정하는 10자리 분류 — 와 신고 가격, 그리고 원자재의 원산지에 따라 관세를 매깁니다. 단순히 박스가 어느 나라에서 출발했는지가 아니라요. 화장품 세럼, 프린트된 토트백, 도자기 머그컵은 같은 컨테이너로 같은 공급사에게서 왔더라도 완전히 다른 HS 챕터에 속할 수 있습니다. 분류를 대충 추측하거나, 포워더가 "지난번에 쓰던" 다른 제품용 코드를 재사용하는 것이 예상치 못한 청구서, 화물 억류, 심하면 오분류 벌금으로 이어지는 이유입니다.' },
+        { type: 'ul', content: '한국→미국 수입을 새로 시작하는 셀러들에게서 가장 자주 보는 실수:', items: [
+          'HS 코드를 SKU마다 정확히 분류받는 대신 추측하는 것 — 친구가 수입하는 거의 똑같아 보이는 제품이 완전히 다른 코드를 쓰는 경우도 있습니다.',
+          '인보이스에 "Made in Korea"라고 적혀 있으면 한미 FTA(KORUS) 관세 감면이 자동 적용된다고 생각하는 것 — 실제로는 세관이 요구하는 정식 원산지증명서가 있어야 증명됩니다.',
+          '관세를 낮추려고 인보이스 가격을 낮춰 신고하는 것 — 이건 회색지대가 아니라 관세 사기이며, 나중에 청구서가 커지는 정도가 아니라 화물 압류와 벌금의 실질적 위험이 있습니다.',
+          '한국 공급사나 포워더와 배송 계약이 DDP(공급사가 관세 선납)인지 DDU(도착 시 사장님이 관세 부담)인지 미리 확인하지 않아서, 택배사가 배송 전에 관세를 요구할 때 처음 알게 되는 것.',
+          '상업적 재판매 화물을 택배 서비스의 개인 소포와 똑같이 취급하는 것 — 물량을 갖춰 재판매용으로 수입하는 순간, 소량 개인 주문에 적용되던 간이 통관의 가정은 더 이상 통하지 않습니다.',
+        ] },
+        { type: 'h2', content: 'Importer of Record: 책임은 한국 공급사가 아니라 사장님에게 있습니다' },
+        { type: 'p', content: 'Importer of Record는 특정 화물에 대해 미국 세관국경보호청(CBP)에 법적으로 책임을 지는 사람입니다 — 신고 가격의 정확성, HS 분류의 정확성, 그리고 관세 납부에 대해서요. 화물이 사장님 이름이나 사업자 EIN으로 들어온다면, 한국에서 실제 수출 서류를 누가 작성했든 그 책임자는 바로 사장님입니다. 이게 중요한 이유는, 신고 가격 오류나 오분류에 대한 벌금이 미국 관할권 밖에 있는 한국 배송 대행이 아니라 수입자에게 붙기 때문입니다. 한국 쪽 배송을 처리하는 사람과는 별개로, 미국 쪽에 라이선스를 가진 본드 관세사(bonded customs broker)를 두는 이유가 바로 이겁니다 — 분류 오류가 사장님의 법적 문제가 되기 전에 잡아내기 위해서죠. 의미 있는 물량으로 수입하기 전에 갖춰 둘 가치가 충분한 비용입니다.' },
+        { type: 'h2', content: '합법적으로 관세를 낮추는 방법: 제대로 하는 한미 FTA' },
+        { type: 'p', content: '한미 FTA(KORUS FTA)는 한국에서 원산지 요건을 충족하는 많은 제품의 관세를 실제로 낮추거나 없애 줍니다 — 이건 진짜이고 활용할 가치가 있습니다. 함정은 "원산지"가 법적으로 구체적인 의미(원산지 규정)를 가진다는 점입니다. 단순히 최종 조립이 한국에서 이뤄졌다고 충족되는 게 아니라, 제3국 원자재로 상당 부분 만들어진 제품이라면 라벨에 한국산이라고 적혀 있어도 자격이 안 될 수 있습니다. 우대 관세율을 신청하려면 정식 원산지증명서와 뒷받침 서류를 통관 시점에 정확히 제출해야 하며, 나중에 소급해서 추가하는 게 아닙니다. 가격 계산에 이 절감분을 미리 반영하기 전에, 한국 제조사에게 KORUS 기준을 충족하는 원산지 서류를 제공할 수 있는지 직접 확인하세요.' },
+        { type: 'h2', content: '나머지 절반: 한 번도 배송해 본 적 없는 주의 판매세' },
+        { type: 'p', content: 'LA 창고에서 전국에 판매한다는 건 전혀 다른 두 번째 컴플라이언스 문제를 뜻합니다 — economic nexus(경제적 연계)입니다. 2018년 연방대법원의 South Dakota v. Wayfair 판결 이후, 어떤 주로의 판매가 일정 기준을 넘으면 그 주는 판매세 징수·납부를 요구할 수 있습니다. 흔한 기준은 연간 매출 약 $100,000 또는 거래 200건이지만, 정확한 숫자와 측정 기간은 주마다 다릅니다. 그 주에 창고도, 직원도, 심지어 이전 판매 실적이 하나도 없어도 순수 온라인 판매량만으로 넥서스가 발생할 수 있습니다. 일정 주문량을 넘어서면 이걸 수십 개 주에 걸쳐 손으로 추적하는 건 현실적이지 않습니다. 바로 이 지점을 메우려고 Shopify Tax, Avalara, TaxJar 같은 도구가 만들어졌습니다 — 주별로 넥서스 노출을 감시하고, 체납 세금과 벌금이 쌓이기 전에 등록 기한을 알려 줍니다.' },
+        { type: 'tip', content: '이번 주에 5분이면 해 볼 수 있는 점검: 최근 한국발 화물 세 건의 통관 서류를 꺼내서, 한국 택배사의 일반 배송 라벨이 아니라 실제로 구체적인 HS 코드와 실제 선적 내용에 맞는 신고 가격이 적혀 있는지 확인해 보세요. 그 서류를 못 찾겠다면, 다음 컨테이너가 오기 전에 메워야 할 구멍입니다.' },
+        { type: 'h2', content: '양쪽을 다 이해하는 이중언어 파트너가 여기서 중요한 이유' },
+        { type: 'p', content: '이 사업은 말 그대로도, 그 외의 의미로도 두 부분이 서로 다른 언어를 씁니다. 소싱 대화 — 가격 협상, 제조사가 KORUS 기준 원산지 서류를 만들 수 있는지 확인, 배송 지연 해결 — 는 한국 공급사나 포워더와 한국어로 이뤄집니다. 컴플라이언스 대화 — 관세사의 분류 질문, 어느 주의 넥서스 등록 통지, Shopify Tax 설정 — 는 미국 비즈니스 방식으로 영어로 이뤄집니다. 대부분의 한인 셀러가 결국 이 둘 사이의 유일한 통역사가 되고, 뭔가 터졌을 때야 그 사이의 틈을 발견합니다. 저희는 이 파이프라인의 이커머스 쪽 — Shopify나 멀티채널 스토어, 세금·넥서스 설정, 풀필먼트 연동 — 을 만들고, 한국어든 영어든 사장님과 직접 소통합니다. 관세와 컴플라이언스 쪽에서 한 단계라도 놓칠 여지를 줄이기 위해서죠.' },
+        { type: 'cta', content: '한국에서 소싱해 미국 전역에 판매하고 계신가요? ZOE LUMOS는 한인 셀러를 위해 이 파이프라인의 이커머스 쪽 — Shopify·멀티채널 스토어, 판매세·넥서스 설정, 실제 수입 흐름에 맞는 풀필먼트 연동 — 을 만듭니다. 저희는 관세사나 세무 변호사가 아니며, 분류와 신고는 항상 라이선스를 가진 관세사나 회계사(CPA)와 함께하시길 권합니다 — 다만 스토어, 세금 설정, 재고 시스템만큼은 첫날부터 제대로 만들어 드립니다. 한국어/영어 무료 상담: info@zoelumos.com 이메일 또는 카카오톡(http://pf.kakao.com/_xhxdxmlX/chat)으로 편하게 문의하세요.' },
+      ],
+    },
+  },
 ]
