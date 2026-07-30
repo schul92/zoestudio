@@ -32,6 +32,7 @@ export default function ChatWidget({ locale = 'en' }: { locale?: string }) {
   const scrollRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLTextAreaElement>(null)
   const abortRef = useRef<AbortController | null>(null)
+  const panelRef = useRef<HTMLDivElement>(null)
 
   const greeting = isKo ? GREETING_KO : GREETING_EN
 
@@ -41,8 +42,44 @@ export default function ChatWidget({ locale = 'en' }: { locale?: string }) {
     if (el) el.scrollTop = el.scrollHeight
   }, [messages, streaming])
 
+  // Focus the composer on desktop only. On mobile, autofocus yanks the
+  // on-screen keyboard up before the visitor has read the greeting.
   useEffect(() => {
-    if (open) inputRef.current?.focus()
+    if (!open) return
+    if (window.matchMedia('(min-width: 1024px)').matches) inputRef.current?.focus()
+  }, [open])
+
+  // Lock background scroll while the sheet is open. Without this, scrolling
+  // past the end of the transcript scrolls the page behind it on mobile.
+  useEffect(() => {
+    if (!open) return
+    const { overflow, touchAction } = document.body.style
+    document.body.style.overflow = 'hidden'
+    document.body.style.touchAction = 'none'
+    return () => {
+      document.body.style.overflow = overflow
+      document.body.style.touchAction = touchAction
+    }
+  }, [open])
+
+  // Track the visual viewport so the sheet shrinks when the on-screen keyboard
+  // opens. Without this the composer sits behind the keyboard: the panel is
+  // positioned against the layout viewport, which the keyboard does not resize.
+  useEffect(() => {
+    if (!open) return
+    const vv = window.visualViewport
+    if (!vv) return
+    const apply = () => {
+      const el = panelRef.current
+      if (el) el.style.setProperty('--chat-vvh', `${vv.height}px`)
+    }
+    apply()
+    vv.addEventListener('resize', apply)
+    vv.addEventListener('scroll', apply)
+    return () => {
+      vv.removeEventListener('resize', apply)
+      vv.removeEventListener('scroll', apply)
+    }
   }, [open])
 
   // Esc closes the panel.
@@ -139,7 +176,16 @@ export default function ChatWidget({ locale = 'en' }: { locale?: string }) {
           type="button"
           onClick={() => setOpen(true)}
           aria-label={isKo ? '문의 채팅 열기' : 'Open chat'}
-          className="fixed right-4 sm:right-6 bottom-24 lg:bottom-24 z-[90] flex h-14 w-14 items-center justify-center rounded-full bg-[#1f1c16] text-white shadow-lg transition-transform duration-300 hover:scale-105 active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#b48a43]"
+          /*
+           * Vertical offset clears whichever element owns the bottom edge:
+           * below lg that's StickyMobileCTA (56px + safe area), at lg+ it's
+           * KakaoFloatingButton (bottom-6, ~48px tall).
+           */
+          className="fixed right-4 sm:right-6 z-[90] flex h-14 w-14 items-center justify-center rounded-full bg-[#1f1c16] text-white shadow-lg transition-transform duration-300 hover:scale-105 active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#b48a43]"
+          style={{
+            bottom: 'calc(4.5rem + env(safe-area-inset-bottom))',
+            touchAction: 'manipulation',
+          }}
         >
           <svg
             width="24"
@@ -160,11 +206,23 @@ export default function ChatWidget({ locale = 'en' }: { locale?: string }) {
       {/* Panel */}
       {open && (
         <div
+          ref={panelRef}
           role="dialog"
+          // Not aria-modal: focus is not trapped, so claiming modality would
+          // mislead screen readers about what is reachable behind the sheet.
           aria-modal="false"
           aria-label={isKo ? '조이루모스 문의 채팅' : 'ZOE LUMOS chat'}
-          className="fixed right-4 sm:right-6 bottom-24 lg:bottom-24 z-[90] flex w-[calc(100vw-2rem)] max-w-[380px] flex-col overflow-hidden rounded-2xl border border-[#e4ddd0] bg-white shadow-2xl"
-          style={{ height: 'min(560px, calc(100vh - 10rem))' }}
+          /*
+           * Mobile: a near-fullscreen sheet pinned to the bottom. The earlier
+           * floating card left 96px of dead space under it and squeezed the
+           * transcript to ~355px on a 667px screen — over half the screen unused.
+           * Height comes from --chat-vvh (visual viewport, so the keyboard
+           * shrinks it) and falls back to dvh, which — unlike vh — excludes
+           * mobile browser chrome.
+           * Desktop (lg+): back to a floating card, right for a pointer UI.
+           */
+          className="fixed inset-x-0 bottom-0 z-[90] flex h-[calc(var(--chat-vvh,100dvh)-3rem)] flex-col overflow-hidden border-t border-[#e4ddd0] bg-white shadow-2xl lg:inset-x-auto lg:bottom-24 lg:right-6 lg:h-[560px] lg:max-h-[calc(100dvh-9rem)] lg:w-[380px] lg:rounded-2xl lg:border"
+          style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
         >
           {/* Header */}
           <div className="flex items-center justify-between border-b border-[#e4ddd0] bg-[#faf7f1] px-4 py-3">
@@ -180,11 +238,13 @@ export default function ChatWidget({ locale = 'en' }: { locale?: string }) {
               type="button"
               onClick={() => setOpen(false)}
               aria-label={isKo ? '닫기' : 'Close'}
-              className="rounded p-1.5 text-[#6b6459] transition-colors hover:bg-[#efe9dd] hover:text-[#1f1c16] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#b48a43]"
+              // 44px touch target on mobile (WCAG 2.5.8), tighter on desktop.
+              className="-mr-2 flex h-11 w-11 items-center justify-center rounded text-[#6b6459] transition-colors hover:bg-[#efe9dd] hover:text-[#1f1c16] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#b48a43] lg:-mr-1 lg:h-8 lg:w-8"
+              style={{ touchAction: 'manipulation' }}
             >
               <svg
-                width="18"
-                height="18"
+                width="20"
+                height="20"
                 viewBox="0 0 24 24"
                 fill="none"
                 stroke="currentColor"
@@ -231,14 +291,21 @@ export default function ChatWidget({ locale = 'en' }: { locale?: string }) {
                 placeholder={
                   isKo ? '궁금한 점을 입력해 주세요' : 'Ask a question…'
                 }
-                className="max-h-28 min-h-[40px] flex-1 resize-none rounded-lg border border-[#ddd4c4] bg-white px-3 py-2 text-[14px] text-[#1f1c16] placeholder:text-[#9a9284] focus:border-[#b48a43] focus:outline-none"
+                /*
+                 * text-base (16px) is load-bearing, not styling: iOS Safari
+                 * auto-zooms the whole page when a focused input is under 16px,
+                 * and never zooms back out. lg: drops to 14px where that
+                 * behavior doesn't exist.
+                 */
+                className="max-h-28 min-h-[44px] flex-1 resize-none rounded-lg border border-[#ddd4c4] bg-white px-3 py-2.5 text-base text-[#1f1c16] placeholder:text-[#9a9284] focus:border-[#b48a43] focus:outline-none lg:min-h-[40px] lg:py-2 lg:text-[14px]"
               />
               <button
                 type="button"
                 onClick={send}
                 disabled={streaming || !input.trim()}
                 aria-label={isKo ? '보내기' : 'Send'}
-                className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-[#b48a43] text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#b48a43]"
+                className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-[#b48a43] text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#b48a43] lg:h-10 lg:w-10"
+                style={{ touchAction: 'manipulation' }}
               >
                 <svg
                   width="18"
