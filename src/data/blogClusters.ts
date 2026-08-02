@@ -53,6 +53,7 @@ export const PILLARS = {
       'toast-clover-pos-analytics-goldmine-2026',
       'website-drives-revenue-pizza-catering-case-study-2026',
       'korean-restaurant-chicago-online-ordering-pos-reviews-2026',
+      'korean-restaurant-catering-denver-aurora-2026',
     ],
   },
   'beauty-wellness': {
@@ -291,4 +292,7 @@ export const POST_TO_PILLAR: Record<string, PillarKey> = {
   // 2026-07-16/17 backfill — Chicago F&B ordering/POS/reviews + app development hiring guide
   'korean-restaurant-chicago-online-ordering-pos-reviews-2026': 'restaurant-marketing',
   'korean-app-development-hire-guide-2026': 'website-cost',
+
+  // 2026-08-02 — F&B catering as a distinct system (Denver–Aurora, CO)
+  'korean-restaurant-catering-denver-aurora-2026': 'restaurant-marketing',
 }

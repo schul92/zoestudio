@@ -11698,4 +11698,109 @@ export const blogContent: BlogPost[] = [
       ],
     },
   },
+  // ─────────────────────────────────────────────────────────────────
+  // 2026-08-02 — F&B rotation: catering as a distinct system inside a
+  // Korean restaurant (deposits, inquiry forms, POS wiring), Denver–Aurora
+  // Colorado angle (Aurora's Havana Street Korea Town).
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'korean-restaurant-catering-denver-aurora-2026',
+    date: '2026-08-02',
+    updatedDate: '2026-08-02',
+    readTime: 9,
+    category: { en: 'Restaurant', ko: '레스토랑' },
+    title: {
+      en: 'Korean Restaurant Catering in Denver–Aurora: Get Off Text-Message Quotes and Onto a Real Booking System (2026)',
+      ko: '덴버·오로라 한인 식당 케이터링 — 문자 메시지 견적에서 진짜 예약 시스템으로 (2026)',
+    },
+    metaDescription: {
+      en: "Korean restaurants near Aurora's Havana Street Korea Town often run catering entirely through phone calls and text threads — no deposit, no online menu, no calendar. Here is how to build a catering page, collect deposits online, and wire confirmed orders into your Toast, Clover, or Square POS.",
+      ko: '오로라 하바나 스트리트 코리아타운 인근 한인 식당들은 케이터링을 대부분 전화와 문자로만 처리합니다 — 예약금도, 온라인 메뉴도, 캘린더도 없이요. 케이터링 전용 페이지를 만들고, 온라인으로 예약금을 받고, 확정된 주문을 Toast·Clover·Square POS에 연결하는 방법을 정리했습니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'How should a Korean restaurant in Denver or Aurora take catering orders online instead of over text?',
+          ko: '덴버·오로라 한인 식당이 문자 대신 온라인으로 케이터링 주문을 받으려면 어떻게 해야 하나요?',
+        },
+        a: {
+          en: "Three pieces solve most of it: a dedicated catering page with a menu and per-person pricing tiers, an online inquiry form that captures the event date, headcount, and contact info the moment someone asks (instead of a scattered text thread), and a card deposit collected before the booking is confirmed. This does not require expensive software — a simple page on your existing website plus a form that emails you the details, paired with a Square or Stripe invoice link for the deposit, covers most Korean restaurants' catering volume. The goal is that a corporate office manager planning a 40-person lunch can find your catering menu on Google, see pricing without calling, and submit a request in two minutes instead of playing phone tag with the kitchen during a Friday dinner rush.",
+          ko: '핵심은 세 가지입니다 — 메뉴와 인원별 가격이 적힌 전용 케이터링 페이지, 문의가 들어오는 순간 행사 날짜·인원·연락처를 바로 받는 온라인 문의 폼(뒤죽박죽 문자 스레드 대신), 그리고 예약을 확정하기 전에 카드로 받는 예약금입니다. 비싼 소프트웨어가 필요한 게 아닙니다. 기존 웹사이트에 페이지 하나 추가하고 상세 내용을 이메일로 보내주는 폼, 그리고 예약금용 Square나 Stripe 인보이스 링크만 있으면 대부분의 한인 식당 케이터링 물량은 충분히 감당됩니다. 목표는 40인분 점심을 준비하는 회사 담당자가 구글에서 케이터링 메뉴를 찾아 전화 없이 가격을 보고, 금요일 저녁 러시 중에 주방과 전화 술래잡기를 하는 대신 2분 안에 요청서를 제출할 수 있게 만드는 것입니다.',
+        },
+      },
+      {
+        q: {
+          en: 'Which POS — Toast, Clover, or Square — handles catering best for a Korean restaurant?',
+          ko: 'Toast, Clover, Square 중 케이터링에 가장 적합한 POS는 무엇인가요?',
+        },
+        a: {
+          en: "Square generally gets a catering operation running fastest for a small-to-mid-size Korean restaurant, because Square Invoices (deposit collection, partial payments, due dates) and Square Online catering order forms come built in without extra apps. Toast has a stronger dedicated catering and off-premise ordering module, but it is aimed at higher-volume operations and usually requires the higher-tier Toast plan to unlock. Clover can handle catering, but only through third-party marketplace apps layered on top, which means more setup and another monthly fee. None of the three replaces the need for a real deposit and a calendar — whichever POS you run, the catering inquiry and deposit should happen on your own website first, then the confirmed order gets entered into the POS as a scheduled ticket so the kitchen prep list and the accounting stay in one place.",
+          ko: '작거나 중간 규모의 한인 식당이라면 대체로 Square가 가장 빠르게 케이터링을 돌아가게 만듭니다. Square Invoices(예약금 수납, 분할 결제, 마감일 설정)와 Square Online 케이터링 주문 폼이 별도 앱 없이 기본으로 들어 있기 때문입니다. Toast는 케이터링·오프프레미스 주문 전용 모듈이 더 강력하지만 물량이 많은 매장을 겨냥하고 있고 보통 상위 요금제에서만 열립니다. Clover도 케이터링을 처리할 수 있지만 서드파티 마켓플레이스 앱을 얹어야만 가능해서 설정이 더 복잡하고 월 비용도 추가됩니다. 셋 중 무엇을 쓰든 실제 예약금과 캘린더의 필요성을 대신해 주진 않습니다 — 어떤 POS를 쓰든 케이터링 문의와 예약금은 먼저 자체 웹사이트에서 처리하고, 확정된 주문만 예약된 티켓으로 POS에 입력해서 주방 준비 목록과 회계가 한곳에 남게 하세요.',
+        },
+      },
+      {
+        q: {
+          en: 'How much of a catering deposit should a Korean restaurant collect, and when?',
+          ko: '케이터링 예약금은 보통 얼마나, 언제 받아야 하나요?',
+        },
+        a: {
+          en: "The common industry practice is a 20-50% deposit charged at the time of booking, with the deposit stated as non-refundable inside a set window before the event (commonly 3-7 days), and the remaining balance due on the day of pickup or delivery. The exact percentage and cancellation window are a business decision every restaurant should set for itself based on order size and how far out the kitchen commits to buying ingredients — but the principle that matters most is collecting something upfront, in writing, before blocking kitchen capacity for a 50-person order. Restaurants that confirm catering with only a verbal or text agreement are the ones who eat the cost when a client cancels the morning of the event.",
+          ko: '업계에서 흔히 쓰는 관행은 예약 시점에 20~50%의 예약금을 받고, 행사 며칠 전(보통 3~7일)부터는 환불 불가로 명시하며, 나머지 잔금은 픽업·배송 당일에 받는 방식입니다. 정확한 비율과 취소 가능 기간은 주문 규모와 주방이 재료를 얼마나 미리 확정해서 구매하는지에 따라 각 식당이 스스로 정할 사업적 결정입니다 — 하지만 가장 중요한 원칙은 50인분 주문을 위해 주방 캐파를 막아두기 전에 서면으로 무언가를 먼저 받아둔다는 것입니다. 구두나 문자 약속만으로 케이터링을 확정하는 식당이 행사 당일 아침 취소를 당했을 때 그 손실을 고스란히 떠안게 됩니다.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "Aurora, Colorado has a city-designated Korea Town along Havana Street — restaurants, grocery stores, and church communities that have grown steadily as Denver-metro's Korean-American population has expanded beyond the coasts. Walk into any of the well-known Korean restaurants along that corridor on a weeknight and you will see the dining room doing fine. Ask the owner how they handle a 60-person office lunch order for a company out in the Denver Tech Center, and the answer is usually the same: someone's cell phone, a text thread with a headcount that changed twice, and a handshake on price. Daily online ordering gets attention because delivery apps forced the issue. Catering — often the single highest-margin, highest-ticket order a Korean restaurant takes all month — is still running on 2005 technology at most places." },
+        { type: 'h2', content: 'Catering is a different business hiding inside your restaurant' },
+        { type: 'p', content: "A dinner order and a catering order look similar on a receipt but behave completely differently. A dinner order is same-day, small, and low-risk if it falls through. A catering order is booked weeks ahead, ties up significant kitchen capacity and ingredient purchasing, and represents real financial exposure if the client cancels or the headcount is wrong. Treating both the same way — a phone number and a good memory — works until it does not, and it usually breaks on your busiest, highest-value orders." },
+        { type: 'ul', content: 'What running catering without a real system actually costs:', items: [
+          "Lost inquiries — a potential client calls once, gets voicemail during dinner rush, and books the restaurant down the street that answered a web form instead.",
+          "No deposit, no protection — a 50-person order gets confirmed on a phone call, ingredients get bought, and the client cancels the morning of with no financial consequence to them.",
+          "Headcount and menu details lost in a text thread — 'can we do 45 instead of 40' and 'no shellfish for two people' get buried between other messages and never make it to the kitchen.",
+          "Invisible to search — someone searching '한식 케이터링 덴버' or 'Korean catering Aurora CO' finds a competitor with an actual catering page and never learns your restaurant does catering at all.",
+          "Corporate clients need paperwork you cannot produce fast — an office manager booking a company lunch usually wants a proper invoice or a W-9 on file, not a cash handshake, and a slow response loses the booking to whoever answers first.",
+        ] },
+        { type: 'h2', content: 'Wiring catering into what you already have' },
+        { type: 'p', content: "None of this requires replacing your POS or building custom software. It requires putting three pieces in front of the client before the phone call: a catering menu with clear per-person or per-tray pricing, a short inquiry form that captures event date, headcount, and contact details the moment someone is interested, and a deposit link (Square Invoices or a simple Stripe payment link) that confirms the booking only once payment clears. Once a booking is confirmed, it goes into the POS as a scheduled catering ticket — Square, Toast, and Clover all support this in different ways — so the kitchen prep list, the accounting, and the calendar all draw from the same source instead of a manager's memory." },
+        { type: 'ul', content: 'The order of operations we recommend:', items: [
+          'Publish a catering page with real pricing tiers (per person, per tray, minimum order size) — vagueness ("call for pricing") loses corporate clients who are comparing three vendors in one afternoon.',
+          'Add an inquiry form that requires event date, headcount, and contact info before submission, emailed straight to whoever manages catering — not a general contact form that goes into a shared inbox nobody checks daily.',
+          'Send a deposit invoice (20-50% is standard) as soon as details are confirmed, and treat the booking as tentative until it is paid.',
+          'Enter the confirmed order into your POS as a scheduled ticket so kitchen staff see it on the same prep sheet as everything else, with enough lead time to order ingredients.',
+          "Keep a simple shared calendar (even a Google Calendar) blocking off large catering commitments, so the kitchen never double-books its capacity on the same afternoon.",
+        ] },
+        { type: 'tip', content: "Search \"한식 케이터링 덴버\" and \"Korean catering Aurora\" on Google this week and see who shows up. Most Korean restaurants along Havana Street do catering but have no page that says so — meaning a company or church group searching for exactly what you offer cannot find you at all. A single well-priced catering page is often the fastest SEO win available to a Korean restaurant that already does the work." },
+        { type: 'h2', content: 'Reviews for catering clients need a different ask' },
+        { type: 'p', content: "A catering client is not a walk-in diner — they are often an office manager, an event planner, or a church committee member who books once but whose review carries real weight with other corporate and community buyers researching the same decision. A short, specific thank-you message after a catering event — sent by email once the invoice is settled — asking for a Google review works far better than hoping a one-time client remembers to leave one on their own. The same rule applies here as anywhere else: ask sincerely, never offer a discount in exchange, and reply to every review that comes in, since a future office manager comparing caterers reads those replies as closely as the stars." },
+        { type: 'cta', content: "Running catering out of a text thread for your Korean restaurant near Denver or Aurora? ZOE LUMOS builds bilingual restaurant websites with a real catering page, an inquiry form, deposit collection, and orders wired into your Toast, Clover, or Square POS. Free consultation in English or Korean: email info@zoelumos.com or message us on KakaoTalk (http://pf.kakao.com/_xhxdxmlX/chat)." },
+      ],
+      ko: [
+        { type: 'intro', content: '콜로라도 오로라에는 하바나 스트리트를 따라 시(市)가 공식 지정한 코리아타운이 있습니다 — 덴버 메트로 지역의 한인 인구가 양쪽 해안 밖으로 확장되면서 꾸준히 자라온 식당, 마트, 교회 커뮤니티들이죠. 그 거리에 있는 유명 한식당 아무 곳이나 평일 저녁에 들어가 보면 홀은 잘 돌아가고 있습니다. 그런데 사장님께 덴버 테크 센터의 어느 회사에서 들어온 60인분 점심 케이터링 주문을 어떻게 처리하시냐고 물어보면 대답은 보통 똑같습니다 — 개인 휴대폰, 인원수가 두 번 바뀐 문자 스레드, 그리고 가격은 구두 약속. 매일의 온라인 주문은 배달 앱이 판을 흔들어 놓은 덕에 다들 신경 씁니다. 하지만 케이터링 — 흔히 한인 식당이 한 달 동안 받는 주문 중 마진도, 객단가도 가장 높은 주문 — 은 여전히 대부분의 매장에서 2005년 기술로 돌아갑니다.' },
+        { type: 'h2', content: '케이터링은 식당 안에 숨어 있는 전혀 다른 사업입니다' },
+        { type: 'p', content: '저녁 식사 주문과 케이터링 주문은 영수증에서는 비슷해 보이지만 완전히 다르게 움직입니다. 저녁 주문은 당일이고, 규모가 작고, 취소돼도 리스크가 낮습니다. 케이터링 주문은 몇 주 전에 예약되고, 상당한 주방 캐파와 식재료 구매를 묶어 두며, 고객이 취소하거나 인원수가 틀리면 실제 재무적 손실로 이어집니다. 둘을 똑같이 — 전화번호 하나와 좋은 기억력으로 — 다루는 방식은 통할 때까진 통하다가, 보통 가장 바쁘고 가장 값비싼 주문에서 무너집니다.' },
+        { type: 'ul', content: '진짜 시스템 없이 케이터링을 운영할 때 실제로 드는 비용:', items: [
+          '놓치는 문의 — 잠재 고객이 한 번 전화했다가 저녁 러시 중이라 음성사서함으로 넘어가면, 대신 웹 폼으로 바로 응답한 옆 동네 식당을 예약해 버립니다.',
+          '예약금도, 보호장치도 없음 — 50인분 주문이 전화 한 통으로 확정되고 재료까지 구매했는데, 고객이 행사 당일 아침 아무 손해 없이 취소해 버립니다.',
+          '문자 스레드에 묻히는 인원수·메뉴 디테일 — "40명 대신 45명으로 될까요"와 "두 분은 조개류 빼주세요" 같은 내용이 다른 메시지 사이에 묻혀 주방까지 전달되지 않습니다.',
+          '검색에서 보이지 않음 — "한식 케이터링 덴버"나 "Korean catering Aurora CO"를 검색한 사람이 실제 케이터링 페이지를 갖춘 경쟁 업체를 찾고, 우리 식당이 케이터링을 한다는 사실조차 알지 못합니다.',
+          '기업 고객이 원하는 서류를 빠르게 못 냄 — 회사 점심을 예약하는 담당자는 보통 현금 악수가 아니라 제대로 된 인보이스나 W-9 서류를 원하고, 응답이 느리면 먼저 답한 곳에 예약을 빼앗깁니다.',
+        ] },
+        { type: 'h2', content: '이미 갖고 있는 시스템에 케이터링을 연결하기' },
+        { type: 'p', content: 'POS를 교체하거나 커스텀 소프트웨어를 만들 필요는 없습니다. 필요한 건 고객이 전화하기 전에 마주치는 세 가지입니다 — 1인당 또는 트레이당 가격이 명확한 케이터링 메뉴, 관심을 보이는 순간 행사 날짜·인원·연락처를 받는 짧은 문의 폼, 그리고 결제가 완료돼야 예약이 확정되는 예약금 링크(Square Invoices나 간단한 Stripe 결제 링크). 예약이 확정되면 예약된 케이터링 티켓으로 POS에 입력합니다 — Square, Toast, Clover 모두 방식은 다르지만 이를 지원합니다 — 그러면 주방 준비 목록, 회계, 캘린더가 매니저의 기억이 아니라 하나의 출처에서 나옵니다.' },
+        { type: 'ul', content: '저희가 권하는 작업 순서:', items: [
+          '실제 가격 구간(1인당, 트레이당, 최소 주문 규모)이 적힌 케이터링 페이지를 공개하세요 — "가격은 전화 문의"처럼 모호하면 한 오후에 업체 세 곳을 비교하는 기업 고객을 잃습니다.',
+          '제출 전에 행사 날짜·인원·연락처를 필수로 받는 문의 폼을 추가하고, 케이터링 담당자에게 바로 이메일이 가게 하세요 — 아무도 매일 확인하지 않는 공용 받은편지함으로 가는 일반 문의 폼 말고요.',
+          '세부 사항이 확정되는 즉시 예약금 인보이스(보통 20~50%)를 보내고, 결제되기 전까지는 예약을 잠정으로 취급하세요.',
+          '확정된 주문을 예약된 티켓으로 POS에 입력해서, 주방 직원이 다른 모든 주문과 같은 준비 시트에서 보고 재료 주문에 필요한 리드타임을 확보하게 하세요.',
+          '간단한 공유 캘린더(구글 캘린더도 충분합니다)로 대형 케이터링 예약을 막아 두어, 주방이 같은 날 오후에 캐파를 이중으로 예약하지 않게 하세요.',
+        ] },
+        { type: 'tip', content: '이번 주에 구글에서 "한식 케이터링 덴버"와 "Korean catering Aurora"를 검색해서 누가 나오는지 확인해 보세요. 하바나 스트리트의 많은 한식당이 케이터링을 하지만 그렇다고 알리는 페이지가 없습니다 — 즉 딱 그 서비스를 검색하는 회사나 교회 모임이 사장님 식당을 아예 찾지 못한다는 뜻입니다. 이미 하고 있는 일을 알리는 케이터링 페이지 하나가, 한인 식당에게 가장 빠른 SEO 성과인 경우가 많습니다.' },
+        { type: 'h2', content: '케이터링 고객의 리뷰는 다르게 부탁해야 합니다' },
+        { type: 'p', content: '케이터링 고객은 단골 손님이 아닙니다 — 대부분 한 번 예약하는 회사 담당자, 이벤트 플래너, 교회 위원회 멤버지만, 그 리뷰는 같은 결정을 알아보는 다른 기업·커뮤니티 구매자들에게 실제로 무게 있게 읽힙니다. 인보이스 정산이 끝난 뒤 이메일로 보내는 짧고 구체적인 감사 메시지에 구글 리뷰를 부탁하는 편이, 한 번 예약한 고객이 알아서 리뷰를 남기길 바라는 것보다 훨씬 잘 통합니다. 여기서도 원칙은 똑같습니다 — 진심으로 부탁하고, 대가로 할인을 걸지 말고, 들어오는 모든 리뷰에 답글을 다세요. 케이터링 업체를 비교하는 미래의 담당자는 별점만큼이나 그 답글도 꼼꼼히 읽습니다.' },
+        { type: 'cta', content: '덴버·오로라 인근에서 한식당을 운영하시면서 케이터링을 여전히 문자 스레드로 돌리고 계신가요? ZOE LUMOS는 실제 케이터링 페이지, 문의 폼, 예약금 결제, 그리고 Toast·Clover·Square POS까지 연결된 이중언어 식당 웹사이트를 만들어 드립니다. 한국어/영어 무료 상담: info@zoelumos.com 이메일 또는 카카오톡(http://pf.kakao.com/_xhxdxmlX/chat)으로 편하게 문의하세요.' },
+      ],
+    },
+  },
 ]
