@@ -11698,4 +11698,101 @@ export const blogContent: BlogPost[] = [
       ],
     },
   },
+  // ─────────────────────────────────────────────────────────────────
+  // 2026-08-03 — B2B wholesale/trading RFQ lead generation (Seattle / WA)
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'b2b-wholesale-website-rfq-leads-seattle-korean-business-2026',
+    date: '2026-08-03',
+    updatedDate: '2026-08-03',
+    readTime: 9,
+    category: { en: 'B2B Marketing', ko: 'B2B 마케팅' },
+    title: {
+      en: 'Your Company Has a Website — So Why Do Zero Quote Requests Come From It? (Seattle Korean Wholesale & Trading Guide, 2026)',
+      ko: '회사 웹사이트는 있는데 견적 문의가 하나도 안 들어오는 이유 (시애틀 한인 도매·무역 기업 가이드, 2026)',
+    },
+    metaDescription: {
+      en: 'Seattle-area Korean-American wholesale, import/export, and manufacturing companies often have a website that nobody who is actually shopping for a supplier ever finds. Here is how American buyers actually search for suppliers, and what turns a brochure site into an RFQ lead source.',
+      ko: '시애틀 지역 한인 도매·수출입·제조 기업은 웹사이트가 있어도, 실제로 공급사를 찾고 있는 미국 바이어에게는 발견되지 않는 경우가 많습니다. 미국 바이어가 실제로 공급사를 검색하는 방식과, 회사 소개 사이트를 견적(RFQ) 리드 소스로 바꾸는 방법을 정리했습니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'We have a website already — why are we getting zero quote requests from it?',
+          ko: '이미 웹사이트가 있는데 왜 견적 문의가 하나도 안 들어오나요?',
+        },
+        a: {
+          en: "The most common reason is that the site was built to be found by people who already know your company name, not by buyers who are typing a product category and a location into Google looking for someone they have never heard of. If your pages do not use the words a buyer actually searches — 'Korean cosmetics distributor Seattle,' 'frozen seafood wholesale Pacific Northwest,' 'electronics component supplier Tacoma' — you will not rank for that search no matter how nice the site looks. The second most common reason is that the only way to reach you is a generic 'Contact Us' email link, which buyers treat as a dead end compared to a structured quote-request form on a competitor's site. Both are fixable without rebuilding the whole site.",
+          ko: '가장 흔한 이유는 사이트가 이미 회사 이름을 아는 사람이 찾아오도록 만들어졌지, 제품 카테고리와 지역을 구글에 검색해서 들어 본 적 없는 회사를 찾는 바이어를 위해 만들어지지 않았기 때문입니다. 페이지에 바이어가 실제로 검색하는 단어 — "시애틀 한국 화장품 유통사", "퍼시픽 노스웨스트 냉동 수산물 도매", "타코마 전자부품 공급사" — 가 없으면 사이트가 아무리 예뻐도 그 검색에 노출되지 않습니다. 두 번째로 흔한 이유는 연락 방법이 일반적인 "문의하기" 이메일 링크뿐이라는 겁니다. 바이어는 이걸 경쟁사의 구조화된 견적 요청 폼과 비교했을 때 막다른 길로 여깁니다. 둘 다 사이트를 전면 재구축하지 않고도 고칠 수 있는 문제입니다.',
+        },
+      },
+      {
+        q: {
+          en: 'Does it actually matter that our company is based near Seattle / the Port of Seattle-Tacoma?',
+          ko: '우리 회사가 시애틀 · 시애틀-타코마 항구 근처에 있다는 게 실제로 중요한가요?',
+        },
+        a: {
+          en: "Yes, for two separate reasons. First, buyers sourcing from Asia-Pacific specifically search for suppliers near West Coast ports because it directly affects their shipping cost and lead time — a company near the Port of Seattle-Tacoma has a real, factual advantage over one in the Midwest for a Korea-to-US import route, and buyers search for that advantage by name ('supplier near Seattle port,' 'Pacific Northwest importer'). If your website never mentions your location in that context, you are hiding a genuine selling point. Second, Google ranks location-specific pages higher for location-specific searches — a generic national page competes with every supplier in the country, while a page built around Seattle / Pacific Northwest sourcing competes with a much smaller, winnable set.",
+          ko: '네, 두 가지 이유로 중요합니다. 첫째, 아시아·태평양 지역에서 소싱하는 바이어는 서해안 항구 근처 공급사를 특별히 찾는데, 이게 배송 비용과 리드타임에 직접 영향을 주기 때문입니다. 시애틀-타코마 항구 근처 회사는 한국→미국 수입 경로에서 중서부 회사 대비 실질적이고 사실적인 우위가 있고, 바이어들은 그 우위를 정확히 그 단어로 검색합니다("시애틀 항구 근처 공급사", "퍼시픽 노스웨스트 수입업체"). 웹사이트가 이 맥락에서 위치를 전혀 언급하지 않는다면, 진짜 판매 포인트를 숨기고 있는 겁니다. 둘째, 구글은 지역 특화 검색에 지역 특화 페이지를 더 상위에 노출시킵니다 — 일반적인 전국 페이지는 미국 전체 공급사와 경쟁하지만, 시애틀·퍼시픽 노스웨스트 소싱을 중심으로 만든 페이지는 훨씬 작고 이길 수 있는 경쟁군과 경쟁합니다.',
+        },
+      },
+      {
+        q: {
+          en: 'What is the single highest-impact change to make first?',
+          ko: '가장 먼저 해야 할, 가장 효과가 큰 변화 하나는 무엇인가요?',
+        },
+        a: {
+          en: 'Replace the generic contact page with a short, structured Request a Quote form asking for product/category, quantity or volume, and timeline — nothing more — and route it to reply within 24 hours. Buyers routinely send the same RFQ to five or six suppliers at once and award the deal to whoever responds first with a credible answer, so a form that is easy to fill out and gets a fast reply consistently outperforms a beautiful site with only a Gmail-style contact link. Everything else — capability pages, certifications, location content — increases how often the right buyer arrives at that form in the first place; the form itself decides how many of them actually convert into a conversation.',
+          ko: '일반 연락처 페이지를, 제품/카테고리·수량 또는 물량·희망 일정만 묻는 짧고 구조화된 "견적 요청" 폼으로 바꾸고, 24시간 내 회신되도록 운영하세요. 바이어는 흔히 같은 견적 요청을 대여섯 개 공급사에 동시에 보내고, 가장 먼저 신뢰할 만한 답을 준 곳에 거래를 줍니다. 그래서 채우기 쉽고 빠르게 답장 오는 폼이, 이메일 링크 하나뿐인 아름다운 사이트보다 꾸준히 더 많은 리드를 만듭니다. 나머지 — 역량 페이지, 인증, 지역 콘텐츠 — 는 맞는 바이어가 애초에 그 폼까지 도달하는 빈도를 높이는 역할이고, 실제 대화로 전환되는 비율을 결정하는 건 폼 자체입니다.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "We hear a specific complaint from Korean-American wholesale, import/export, and light-manufacturing owners around Seattle and the Pacific Northwest more than any other: 'We spent real money on a website, it looks professional, and we still get zero quote requests through it — every deal still comes from a trade show or someone's cousin.' The website is not broken in the way most owners assume. It usually loads fine and looks fine. It is simply invisible to the one audience it was supposed to reach: an American buyer, sitting at a desk, typing a product category and a region into Google because they need a new supplier and have never heard of your company yet." },
+        { type: 'h2', content: 'How an American buyer actually finds a new supplier' },
+        { type: 'p', content: "A purchasing manager who needs a new vendor rarely starts with a referral — referrals cover the suppliers they already trust. For a new category, or a second source to reduce risk, the process is almost always the same: search a product category plus a region ('Korean skincare distributor Pacific Northwest,' 'frozen seafood importer Seattle,' 'electronics component supplier Washington state'), open the first several results, and within seconds check three things — does this company look real, do they clearly handle what I need, and is there an easy way to ask for pricing. Companies that do not show up in that first search do not lose on price or quality. They lose because they were never in the running." },
+        { type: 'ul', content: 'What separates a website a buyer finds from one they never see:', items: [
+          "Pages written in the buyer's search language — product/category names and the region, not just your company name and a generic 'About Us.'",
+          "A dedicated Capabilities or Products page per major category, so each one can rank on its own instead of competing with the others on one crowded page.",
+          "Location content that names your actual metro area and, where relevant, port or logistics access — buyers searching 'near Seattle' or 'Pacific Northwest' are searching for exactly that.",
+          "Certifications, licenses, and MOQ/lead-time info stated plainly, since that is what a buyer scans for in the first ten seconds on a new site.",
+          "A structured way to request a quote, not a mailto: link buried in a footer.",
+        ] },
+        { type: 'h2', content: 'The RFQ form is the highest-leverage single page on the site' },
+        { type: 'p', content: "Here is the part most brochure-style B2B sites get backwards: a generic 'Contact Us' page that opens an email client is a worse conversion path than a short form, even though it feels simpler to build. Buyers requesting quotes are almost always doing it in parallel — the same RFQ goes to five or six suppliers found in the same search session, and the deal frequently goes to whichever company responds first with a specific, credible answer. A form that asks for exactly three things — product/category, quantity or volume, and timeline — removes friction, gets you structured information instead of a vague email, and can trigger an immediate 'we received this, expect a reply within 24 hours' confirmation that a plain mailto link never will. The form does not need to be complicated. It needs to exist, and it needs a fast, real person behind it." },
+        { type: 'h2', content: 'Why Seattle and Pacific Northwest location content is a real advantage, not filler' },
+        { type: 'p', content: "For any Korean-American company importing from or exporting to Korea and the broader Asia-Pacific region, proximity to the Port of Seattle-Tacoma is not a vanity detail — it is a genuine, factual logistics advantage over a competitor based inland, and American buyers sourcing on the West Coast actively search for it. A website that never states 'based near the Port of Seattle-Tacoma, serving the Pacific Northwest' or names King County, Lynnwood, Federal Way, or Tacoma is leaving a real selling point unclaimed. It also has a direct SEO effect: a page built around 'Pacific Northwest' or 'Seattle' sourcing competes with a much smaller set of companies than a generic national page does, which means it is realistically rankable instead of buried under national suppliers with much larger marketing budgets." },
+        { type: 'tip', content: "A quick gut check: search your own product category plus 'Seattle' or 'Pacific Northwest' the way a buyer would. If your company does not appear anywhere on the first page, that page — not your homepage — is the one costing you quote requests you never even knew you lost." },
+        { type: 'h2', content: 'The credibility layer still matters — it just is not the whole job' },
+        { type: 'p', content: "None of this replaces the basics: a domain email instead of a free Gmail address, real photos of your warehouse or facility instead of stock imagery, and an accurate company history. Those elements are what convince a buyer who already found you to trust you. But they are a different job from getting found in the first place, and a lot of B2B websites optimize entirely for the trust layer while leaving the discovery layer empty — which is exactly why a professional-looking site can still generate zero inbound RFQs. Both layers need to work together: discoverable enough to appear in the search, credible enough to earn the reply once you do." },
+        { type: 'h2', content: 'What we actually build for wholesale and trading clients' },
+        { type: 'p', content: "For Korean-American wholesale, import/export, and light-manufacturing companies, the rebuild is usually smaller than owners expect: category-specific capability pages written around real buyer search terms, one clear location/logistics page that states your Pacific Northwest or Seattle advantage plainly, a short structured RFQ form with fast-reply routing, and domain email so the follow-up looks as credible as the site did. None of it requires an online store or a large content operation — it requires the site to speak the language a buyer is already typing into Google, and to make replying to a quote request the easiest possible next step." },
+        { type: 'cta', content: "ZOE LUMOS builds bilingual websites for Korean-American wholesale, import/export, and B2B companies across the US — including Seattle and the Pacific Northwest — designed to generate real RFQ leads, not just look professional. Free consultation in Korean or English: email info@zoelumos.com or message us on KakaoTalk (http://pf.kakao.com/_xhxdxmlX/chat)." },
+      ],
+      ko: [
+        { type: 'intro', content: "시애틀과 퍼시픽 노스웨스트 지역의 한인 도매·수출입·소규모 제조업 사장님들께 다른 어떤 불만보다 자주 듣는 말이 있습니다. '웹사이트에 진짜 돈 들여서 만들었고 프로페셔널해 보이는데, 여전히 견적 문의는 하나도 안 들어와요 — 계약은 다 무역 박람회나 지인 소개로만 나와요.' 대부분의 사장님이 생각하는 방식으로 웹사이트가 고장 난 게 아닙니다. 로딩도 잘 되고 보기에도 괜찮습니다. 문제는 이 사이트가 원래 닿아야 할 단 한 명의 대상 — 새 공급사가 필요해서 제품 카테고리와 지역을 구글에 치고 있는, 아직 우리 회사 이름을 들어본 적 없는 미국 바이어 — 에게는 아예 보이지 않는다는 겁니다." },
+        { type: 'h2', content: '미국 바이어가 실제로 새 공급사를 찾는 방법' },
+        { type: 'p', content: '새 벤더가 필요한 구매 담당자는 추천에서 시작하는 경우가 거의 없습니다 — 추천은 이미 신뢰하는 공급사에만 적용되니까요. 새 카테고리를 위해서든, 리스크 분산을 위한 2차 소싱처를 위해서든, 과정은 거의 항상 똑같습니다. 제품 카테고리 + 지역을 검색합니다("퍼시픽 노스웨스트 한국 스킨케어 유통사", "시애틀 냉동 수산물 수입업체", "워싱턴주 전자부품 공급사"). 상위 몇 개 결과를 열고, 몇 초 안에 세 가지를 확인합니다 — 이 회사가 진짜로 존재하는가, 내가 필요한 걸 명확히 다루는가, 가격을 물어볼 쉬운 방법이 있는가. 이 첫 검색에 안 나오는 회사는 가격이나 품질에서 지는 게 아닙니다. 애초에 경쟁 대상에 오르지도 못한 겁니다.' },
+        { type: 'ul', content: '바이어가 찾아내는 웹사이트와, 아예 보지도 못하는 웹사이트의 차이:', items: [
+          '바이어의 검색 언어로 쓰인 페이지 — 회사 이름과 뭉뚱그린 "회사 소개"가 아니라, 제품/카테고리 이름과 지역.',
+          '주요 카테고리마다 별도의 역량/제품 페이지 — 하나의 붐비는 페이지에서 서로 경쟁하지 않고 각각 독립적으로 순위를 노릴 수 있게.',
+          '실제 광역권을 명시하고, 해당된다면 항구·물류 접근성까지 언급하는 지역 콘텐츠 — "시애틀 근처"나 "퍼시픽 노스웨스트"를 검색하는 바이어는 정확히 그걸 찾고 있는 겁니다.',
+          '인증, 라이선스, MOQ·리드타임 정보를 명확히 명시 — 새 사이트에서 바이어가 첫 10초 안에 훑어보는 정보가 바로 이겁니다.',
+          '푸터에 묻힌 mailto 링크가 아니라, 구조화된 견적 요청 방법.',
+        ] },
+        { type: 'h2', content: '사이트에서 가장 효과가 큰 단 한 페이지: RFQ 폼' },
+        { type: 'p', content: '대부분의 회사 소개형 B2B 사이트가 거꾸로 하는 부분이 여기입니다. 이메일 클라이언트를 여는 일반적인 "문의하기" 페이지는, 만들기는 더 간단해 보여도 짧은 폼보다 전환율이 낮습니다. 견적을 요청하는 바이어는 거의 항상 병렬로 움직입니다 — 같은 검색 세션에서 찾은 대여섯 개 공급사에 똑같은 RFQ를 동시에 보내고, 거래는 흔히 가장 먼저 구체적이고 신뢰할 만한 답을 준 회사에 돌아갑니다. 제품/카테고리, 수량 또는 물량, 희망 일정 딱 세 가지만 묻는 폼은 마찰을 없애고, 애매한 이메일 대신 구조화된 정보를 받게 해주며, "접수됐고 24시간 내 회신드립니다" 같은 즉시 확인 메시지를 띄울 수 있습니다 — 일반 mailto 링크로는 절대 못 하는 일이죠. 폼이 복잡할 필요는 없습니다. 존재해야 하고, 그 뒤에 빠르게 응답하는 실제 사람이 있어야 합니다.' },
+        { type: 'h2', content: '시애틀·퍼시픽 노스웨스트 지역 콘텐츠가 채우기용이 아니라 진짜 무기인 이유' },
+        { type: 'p', content: '한국과 아시아·태평양 지역을 상대로 수출입하는 한인 기업에게 시애틀-타코마 항구와의 근접성은 겉치레가 아니라 진짜 사실에 기반한 물류 우위이고, 서해안에서 소싱하는 미국 바이어들은 그걸 적극적으로 검색합니다. 웹사이트에 "시애틀-타코마 항구 근처, 퍼시픽 노스웨스트 서비스"라거나 킹 카운티, 린우드, 페더럴 웨이, 타코마 같은 지명을 한 번도 언급하지 않는다면, 진짜 판매 포인트를 아무도 못 보게 방치하고 있는 겁니다. SEO 효과도 직접적입니다. "퍼시픽 노스웨스트"나 "시애틀" 소싱을 중심으로 만든 페이지는 일반적인 전국 페이지보다 훨씬 작은 경쟁군과 겨루기 때문에, 마케팅 예산이 훨씬 큰 전국 단위 공급사들 밑에 묻히지 않고 현실적으로 순위권에 들 수 있습니다.' },
+        { type: 'tip', content: '빠른 점검: 바이어가 하듯이 사장님 회사의 제품 카테고리 + "시애틀" 또는 "퍼시픽 노스웨스트"를 직접 검색해 보세요. 첫 페이지 어디에도 안 나온다면, 홈페이지가 아니라 바로 그 페이지가 사장님이 있는지도 몰랐던 견적 문의를 놓치게 하는 원인입니다.' },
+        { type: 'h2', content: '신용 요소도 여전히 중요합니다 — 다만 그게 전부는 아닙니다' },
+        { type: 'p', content: '이 모든 게 기본기를 대체하진 않습니다 — 무료 Gmail 대신 도메인 이메일, 스톡 이미지 대신 창고나 사업장의 진짜 사진, 정확한 회사 연혁. 이런 요소들은 사장님을 이미 찾아낸 바이어가 신뢰하도록 설득하는 역할을 합니다. 하지만 그건 애초에 발견되는 것과는 다른 일이고, 많은 B2B 웹사이트가 신뢰 레이어에만 전부 투자하고 발견 레이어는 비워둡니다 — 프로페셔널해 보이는 사이트가 인바운드 RFQ를 하나도 못 만드는 이유가 바로 이겁니다. 두 레이어가 함께 작동해야 합니다. 검색에 나타날 만큼 발견 가능하고, 나타났을 때 답장을 받을 만큼 신뢰할 수 있어야 합니다.' },
+        { type: 'h2', content: '저희가 도매·무역 클라이언트에게 실제로 만들어드리는 것' },
+        { type: 'p', content: '한인 도매·수출입·소규모 제조 기업의 경우, 재작업 범위는 사장님들이 예상하는 것보다 보통 작습니다. 실제 바이어 검색어를 중심으로 쓴 카테고리별 역량 페이지, 퍼시픽 노스웨스트나 시애틀 우위를 명확히 명시한 지역·물류 페이지 하나, 빠른 회신 체계가 딸린 짧고 구조화된 RFQ 폼, 그리고 후속 연락도 사이트만큼 신뢰감 있게 보이도록 하는 도메인 이메일. 온라인 쇼핑몰이나 대규모 콘텐츠 운영이 필요한 게 아닙니다 — 바이어가 이미 구글에 치고 있는 언어로 사이트가 말하게 하고, 견적 문의에 답장하는 게 가장 쉬운 다음 단계가 되게 만들면 됩니다.' },
+        { type: 'cta', content: "ZOE LUMOS는 시애틀·퍼시픽 노스웨스트를 포함해 미국 전역의 한인 도매·수출입·B2B 기업을 위한 이중언어 웹사이트를 만듭니다 — 그저 프로페셔널해 보이는 게 아니라 실제 RFQ 리드를 만들어내도록 설계합니다. 한국어/영어 무료 상담: info@zoelumos.com 이메일 또는 카카오톡(http://pf.kakao.com/_xhxdxmlX/chat)으로 편하게 문의하세요." },
+      ],
+    },
+  },
 ]
