@@ -11698,4 +11698,92 @@ export const blogContent: BlogPost[] = [
       ],
     },
   },
+  {
+    slug: 'b2b-wholesale-trading-rfq-leads-seattle-2026',
+    date: '2026-08-04',
+    updatedDate: '2026-08-04',
+    readTime: 9,
+    category: { en: 'B2B & Trade', ko: 'B2B · 무역' },
+    title: {
+      en: 'Your B2B Website Gets Visitors But No Quote Requests? Here Is Why (Seattle–Tacoma Korean Trading Companies, 2026)',
+      ko: '한인 무역·도매 회사 웹사이트, 방문자는 있는데 견적 문의가 없다면 (시애틀·타코마 가이드 2026)',
+    },
+    metaDescription: {
+      en: 'Seattle–Tacoma Korean-American import, distribution, and manufacturing companies often have a working website that quietly fails to generate RFQs. Here is the difference between a company site that gets looked up and one that gets quote requests — form design, spec sheets, and response-time habits that actually move buyers to click submit.',
+      ko: '시애틀·타코마 지역 한인 수입·유통·제조 기업은 웹사이트가 있어도 견적 요청(RFQ)으로 이어지지 않는 경우가 많습니다. 조회만 되는 회사 사이트와 실제로 견적 문의를 받는 사이트의 차이 — 바이어가 제출 버튼을 누르게 만드는 폼 설계, 스펙 시트, 응답 속도 습관을 정리했습니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'We already have a company website. Why are we still not getting RFQs?',
+          ko: '이미 회사 웹사이트가 있는데 왜 견적 요청(RFQ)이 안 들어오나요?',
+        },
+        a: {
+          en: "Almost always it is because the site was built to be looked up, not to be acted on — it answers 'does this company exist' but never asks the visitor to do anything. Buyers who reach a page with only a phone number and a generic 'Contact Us' link close the tab and move to the next supplier in their search results, because filling out an email from scratch takes more effort than clicking a form. The fix is not more traffic. It is giving the buyer who already arrived an easy, specific, low-friction way to submit a request — a quote form with the right fields, visible on every product and category page, not buried on one contact page.",
+          ko: '거의 항상 사이트가 "조회당하는 용도"로만 만들어져 있고 "행동을 요청하는 용도"가 아니기 때문입니다. 전화번호 하나와 일반적인 "문의하기" 링크만 있는 페이지에 도착한 바이어는 탭을 닫고 검색 결과의 다음 공급사로 넘어갑니다 — 이메일을 처음부터 쓰는 것보다 폼 하나 클릭하는 게 훨씬 쉬우니까요. 해결책은 트래픽을 더 늘리는 게 아닙니다. 이미 도착한 바이어에게 쉽고 구체적이고 마찰 없는 요청 제출 방법을 주는 것입니다 — 연락처 페이지 한 곳에 숨겨둔 게 아니라, 모든 제품·카테고리 페이지에 보이는, 적절한 필드를 갖춘 견적 폼이요.',
+        },
+      },
+      {
+        q: {
+          en: 'Does Google Business Profile matter for a B2B company that does not serve walk-in customers?',
+          ko: '매장 손님을 안 받는 B2B 회사도 구글 비즈니스 프로필이 필요한가요?',
+        },
+        a: {
+          en: "Yes, though the reason is different from a retail store. A B2B Google Business Profile is not for foot traffic — it is a second, independent confirmation that the company is real, verified by Google, at a real address, which is exactly what a cautious buyer or bank is checking for. It also appears when a buyer searches a specific product plus region — 'stainless steel fittings distributor Seattle,' 'Korean cosmetics wholesale Tacoma' — which is a search behavior real purchasing managers use before writing an email. Filled out fully, with the correct category, service area, and photos of the actual warehouse or office, it costs nothing and quietly does verification and local-search work at the same time.",
+          ko: '네, 다만 이유는 소매점과 다릅니다. B2B 구글 비즈니스 프로필은 방문 손님을 위한 게 아니라, 회사가 실제로 존재하고 구글이 검증한 진짜 주소에 있다는 두 번째 독립적인 확인 장치입니다. 신중한 바이어나 은행이 정확히 확인하려는 그 부분이죠. 또한 바이어가 제품명과 지역을 함께 검색할 때 — "스테인리스 피팅 유통 시애틀", "한국 화장품 도매 타코마" — 노출됩니다. 실제 구매 담당자들이 이메일을 쓰기 전에 하는 검색 행동입니다. 정확한 카테고리, 서비스 지역, 실제 창고·사무실 사진까지 채워서 완성해두면 비용은 들지 않으면서 신원 검증과 로컬 검색 노출을 동시에 해결합니다.',
+        },
+      },
+      {
+        q: {
+          en: 'How fast do we need to respond to a quote request to not lose the buyer?',
+          ko: '견적 요청에 얼마나 빨리 답해야 바이어를 놓치지 않나요?',
+        },
+        a: {
+          en: 'Purchasing managers routinely send the same RFQ to three to five suppliers at once and move forward with whoever replies first with a credible answer — speed itself functions as a quality signal, since a supplier who answers within hours reads as organized and in stock, while one who answers in four days reads as understaffed or out of inventory, regardless of the actual truth. A realistic target is an acknowledgment within one business day (even a short "received, quote by Thursday" email) and a full quote within two to three business days for standard items. If your team genuinely cannot hit that consistently, an autoresponder confirming receipt and setting an honest expectation still beats silence, because silence is the one response that reliably loses the deal.',
+          ko: '구매 담당자는 흔히 같은 견적 요청을 공급사 서너 곳에 동시에 보내고, 신뢰할 만한 답을 가장 먼저 준 곳과 이야기를 진행합니다. 응답 속도 자체가 품질 신호로 작동합니다 — 몇 시간 안에 답하는 공급사는 체계적이고 재고가 있는 것처럼 보이고, 나흘 걸려 답하는 공급사는 실제 사정과 무관하게 인력이 부족하거나 재고가 없는 것처럼 보입니다. 현실적인 목표는 영업일 기준 하루 안에 접수 확인(짧게 "접수했습니다, 목요일까지 견적 드리겠습니다" 정도도 충분)을 보내고, 표준 품목이라면 2~3영업일 내에 정식 견적을 완료하는 것입니다. 팀이 그 속도를 꾸준히 맞추기 어렵다면, 접수를 확인하고 솔직한 예상 일정을 알려주는 자동응답이라도 침묵보다 낫습니다. 침묵은 거래를 확실하게 잃는 유일한 응답이기 때문입니다.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "We hear a specific complaint from Korean-American import, distribution, and manufacturing companies around Seattle–Tacoma more than almost any other: 'We have a website. People find us. We still barely get any quote requests.' It is a real and confusing problem, because it does not look like the classic 'no website' failure — the site loads, the company shows up in search, buyers visit. The traffic is there. What is missing is the bridge between a visitor reading your page and that visitor actually submitting a request. That bridge is not traffic. It is a handful of specific, fixable design and process decisions, and most sites are quietly missing all of them at once." },
+        { type: 'h2', content: 'A company site and a lead-generating site are not the same build' },
+        { type: 'p', content: "A brochure-style credibility site — the kind built to reassure a buyer that a company physically exists — and a site built to convert that same visitor into a submitted RFQ are two different jobs, even though they can live on the same domain. The credibility job is done once a visitor believes you are real. The lead-generation job starts exactly there and asks: now that they believe us, what is the easiest possible next step we can hand them? Most Korean-American trading and wholesale sites we review nail the first job and never build the second — a solid About page and product photos, then a single generic Contact page with a mailto link, which is the digital equivalent of a business card with no request form attached." },
+        { type: 'h2', content: 'What buyers actually need before they click submit' },
+        { type: 'ul', content: 'The specific elements that turn a page visit into a submitted quote request:', items: [
+          "A quote/RFQ form on every product or category page — not just one central contact page — with fields matched to how your buyers actually order: product or SKU, quantity range, target ship date, destination, and a note field, not a generic 'message' box.",
+          "Downloadable spec sheets or a catalog PDF per product category, so an engineer or buyer can forward exact specifications internally without a phone call — this is often the single most requested item on a B2B site and the most commonly missing one.",
+          "MOQ (minimum order quantity), lead time ranges, and whether samples are available, stated plainly — buyers screen out suppliers who make them ask for basic terms that should be public.",
+          "Certifications, compliance marks, and factory or facility photos placed near the form itself, not only on the About page — the reassurance needs to be visible at the exact moment the buyer is deciding whether to submit.",
+          "A stated response-time commitment next to the form ('We respond to quote requests within one business day') — a specific promise reduces the hesitation of 'will anyone actually read this.'",
+        ] },
+        { type: 'h2', content: 'Local + product search is how buyers actually find suppliers now' },
+        { type: 'p', content: "A meaningful share of new-supplier discovery in the Seattle–Tacoma corridor now starts as a search combining a product category with a region — 'industrial hardware distributor Tacoma,' 'Korean food ingredients wholesale Seattle,' 'packaging supplier Puget Sound' — rather than a trade-show business card. That search behavior rewards two things a lot of B2B sites skip: a fully completed Google Business Profile with the correct category and service area, and product/category pages with real, specific text rather than a single vague 'Products' page listing a logo grid. A page titled generically 'Products' with no further text ranks nowhere; a page titled 'Industrial Fasteners & Fittings Distributor — Seattle, WA' with real specifications ranks for exactly the searches your actual buyers run." },
+        { type: 'tip', content: "Pull up your own site on a phone and time how many taps it takes to reach a form where you can type a product name and quantity and hit submit. If the honest answer is 'you can't, you'd have to email us,' that gap — not your traffic — is almost certainly where your quote requests are dying." },
+        { type: 'h2', content: 'The response-speed habit that decides who wins the deal' },
+        { type: 'p', content: "A well-built form gets a buyer to submit. What happens in the following hours decides whether that submission turns into revenue. Purchasing managers frequently send one RFQ to several suppliers at once and move forward with the first credible reply — so a form that works perfectly but sits unanswered for four days is functionally the same as no form at all. This is a process fix as much as a website fix: an autoresponder confirming receipt immediately, a shared inbox so a request never sits unseen in one person's folder, and an internal target for first response — even a short acknowledgment — within one business day." },
+        { type: 'cta', content: "ZOE LUMOS builds bilingual websites for Korean-American wholesale, import, and manufacturing companies that are designed to generate RFQs, not just look credible — quote forms, spec pages, and Google Business Profile setup included, everything registered in your name. Free consultation in Korean or English: email info@zoelumos.com or reach us on KakaoTalk (http://pf.kakao.com/_xhxdxmlX/chat)." },
+      ],
+      ko: [
+        { type: 'intro', content: "시애틀·타코마 지역의 한인 수입·유통·제조 기업들에게서 거의 가장 자주 듣는 불만이 있습니다. '웹사이트 있어요. 사람들이 찾아와요. 그런데 견적 요청은 거의 안 들어와요.' 이건 진짜 문제이면서도 헷갈리는 문제입니다. 왜냐하면 흔한 '웹사이트가 없다' 실패와는 다르게 보이기 때문이죠 — 사이트는 잘 뜨고, 검색에도 나오고, 바이어도 방문합니다. 트래픽은 있습니다. 없는 건 방문자가 페이지를 읽는 것과 실제로 요청을 제출하는 것 사이의 다리입니다. 그 다리는 트래픽이 아닙니다. 몇 가지 구체적이고 고칠 수 있는 디자인·프로세스 결정이고, 대부분의 사이트는 그 전부를 조용히 놓치고 있습니다." },
+        { type: 'h2', content: '회사 소개 사이트와 리드를 만드는 사이트는 같은 작업이 아닙니다' },
+        { type: 'p', content: "바이어에게 '이 회사가 실제로 존재한다'를 안심시키는 브로셔형 신용 사이트와, 그 방문자를 실제 RFQ 제출로 전환시키는 사이트는 같은 도메인 위에 있어도 서로 다른 작업입니다. 신용 확보 작업은 방문자가 사장님 회사가 진짜라고 믿는 순간 끝납니다. 리드 창출 작업은 바로 거기서 시작해서 묻습니다 — '이제 우리를 믿는다면, 우리가 건넬 수 있는 가장 쉬운 다음 단계는 뭘까?' 저희가 검토한 대부분의 한인 무역·도매 사이트는 첫 번째 작업은 잘 해내고 두 번째는 아예 안 만듭니다 — 탄탄한 회사 소개와 제품 사진, 그리고 mailto 링크 하나뿐인 단일 일반 연락처 페이지. 요청 폼이 없는 명함의 디지털 버전인 셈입니다." },
+        { type: 'h2', content: '바이어가 제출 버튼을 누르기 전에 실제로 필요한 것' },
+        { type: 'ul', content: '페이지 방문을 실제 견적 요청 제출로 바꾸는 구체적인 요소들:', items: [
+          '연락처 페이지 한 곳이 아니라 모든 제품·카테고리 페이지에 있는 견적/RFQ 폼 — 필드도 바이어가 실제로 주문하는 방식에 맞춰야 합니다. 제품명 또는 SKU, 수량 범위, 희망 출하일, 도착지, 그리고 일반 "메시지" 칸이 아닌 메모 칸.',
+          '제품 카테고리별 다운로드 가능한 스펙 시트나 카탈로그 PDF — 엔지니어나 바이어가 통화 없이 내부적으로 정확한 규격을 전달할 수 있게 합니다. B2B 사이트에서 가장 많이 요청되면서도 가장 흔히 빠져 있는 항목입니다.',
+          'MOQ(최소 주문 수량), 리드타임 범위, 샘플 제공 여부를 명확히 표시 — 바이어들은 공개돼야 할 기본 조건을 물어봐야 하는 공급사를 걸러냅니다.',
+          '인증, 규격 마크, 공장·시설 사진을 회사 소개 페이지뿐 아니라 폼 바로 근처에도 배치 — 바이어가 제출을 결정하는 바로 그 순간에 안심 요소가 보여야 합니다.',
+          '폼 옆에 명시된 응답 시간 약속("영업일 기준 1일 이내 견적 요청에 답변드립니다") — 구체적인 약속은 "이거 누가 읽기는 하나"라는 망설임을 줄여줍니다.',
+        ] },
+        { type: 'h2', content: '요즘 바이어들이 공급사를 찾는 방식은 로컬 + 제품 검색입니다' },
+        { type: 'p', content: '시애틀·타코마 권역에서 신규 공급사 발굴의 상당 부분은 이제 전시회 명함이 아니라 제품 카테고리와 지역을 결합한 검색으로 시작됩니다 — "산업용 하드웨어 유통 타코마", "한국 식자재 도매 시애틀", "패키징 공급사 퓨젓사운드" 같은 식으로요. 이 검색 행동은 많은 B2B 사이트가 놓치는 두 가지를 보상합니다. 정확한 카테고리와 서비스 지역까지 완성된 구글 비즈니스 프로필, 그리고 로고만 나열한 모호한 "제품" 페이지 하나가 아니라 실제 구체적인 텍스트가 있는 제품·카테고리 페이지입니다. 별다른 설명 없이 그냥 "제품"이라고만 된 페이지는 어디에도 노출되지 않습니다. 실제 규격이 담긴 "산업용 파스너·피팅 유통업체 — 시애틀, WA" 페이지는 사장님의 실제 바이어들이 검색하는 바로 그 검색어에 노출됩니다.' },
+        { type: 'tip', content: '사장님 사이트를 휴대폰으로 직접 열어서, 제품명과 수량을 입력하고 제출할 수 있는 폼까지 몇 번 탭해야 도달하는지 재보세요. 솔직한 답이 "안 돼요, 이메일을 따로 보내야 해요"라면, 그 공백이 — 트래픽이 아니라 — 사장님의 견적 요청이 사라지는 지점일 가능성이 매우 높습니다.' },
+        { type: 'h2', content: '누가 거래를 따내는지 결정하는 응답 속도 습관' },
+        { type: 'p', content: '잘 만든 폼은 바이어가 제출하게 만듭니다. 그다음 몇 시간 동안 무슨 일이 일어나느냐가 그 제출이 매출로 이어지는지를 결정합니다. 구매 담당자는 흔히 같은 RFQ를 여러 공급사에 동시에 보내고, 신뢰할 만한 답을 가장 먼저 준 곳과 진행합니다. 완벽하게 작동하는 폼이라도 나흘 동안 답이 없으면 폼이 없는 것과 실질적으로 같습니다. 이건 웹사이트만큼이나 프로세스의 문제입니다 — 접수 즉시 확인해주는 자동응답, 요청이 한 사람의 메일함에 묻히지 않게 하는 공유 수신함, 그리고 첫 응답(짧은 접수 확인이라도)을 영업일 기준 1일 이내로 두는 내부 목표.' },
+        { type: 'cta', content: 'ZOE LUMOS는 한인 도매·수입·제조 기업을 위해 신용만 주는 게 아니라 실제로 견적 요청(RFQ)을 만들어내도록 설계된 이중언어 웹사이트를 만듭니다 — 견적 폼, 스펙 페이지, 구글 비즈니스 프로필 설정까지, 전부 사장님 명의로 등록됩니다. 한국어/영어 무료 상담: info@zoelumos.com 이메일 또는 카카오톡(http://pf.kakao.com/_xhxdxmlX/chat)으로 편하게 문의하세요.' },
+      ],
+    },
+  },
 ]
