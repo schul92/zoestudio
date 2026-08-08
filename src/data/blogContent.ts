@@ -11698,4 +11698,114 @@ export const blogContent: BlogPost[] = [
       ],
     },
   },
+  // ─────────────────────────────────────────────────────────────────
+  // 2026-08-08 — B2B/wholesale RFQ lead-generation angle (Seattle–Kent, WA)
+  // Distinct from b2b-company-website-korean-business-credibility-2026:
+  // that post argues the site matters even without sales; this one covers
+  // turning an existing credibility site into an actual quote-request engine.
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'b2b-wholesale-rfq-quote-leads-seattle-korean-business-2026',
+    date: '2026-08-08',
+    updatedDate: '2026-08-08',
+    readTime: 9,
+    category: { en: 'B2B / Wholesale', ko: 'B2B · 도매' },
+    title: {
+      en: 'Why Your Seattle Wholesale Company Gets Website Visitors but No Quote Requests (2026)',
+      ko: '시애틀 한인 도매·무역 회사, 웹사이트에 방문자는 있는데 견적 요청이 안 오는 이유 (2026)',
+    },
+    metaDescription: {
+      en: 'Kent, Tukwila, and Seattle-area Korean-American wholesale and import companies often have a website that ranks and gets visits, yet the "Request a Quote" form stays empty. Here is how to turn a credibility site into an actual RFQ lead engine — the form, the catalog, the pricing signals, and the follow-up.',
+      ko: '켄트·터퀼라·시애틀 지역 한인 도매·무역 회사는 웹사이트가 검색에도 걸리고 방문자도 있는데 "견적 요청" 폼은 비어 있는 경우가 많습니다. 신용 확인용 사이트를 실제 견적 리드(RFQ)가 들어오는 엔진으로 바꾸는 법 — 폼 설계, 카탈로그, 가격 신호, 후속 대응까지 정리했습니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'Do B2B buyers really submit a quote request through a website, or do they just call or email directly?',
+          ko: 'B2B 바이어들이 정말 웹사이트로 견적을 요청하나요, 아니면 그냥 전화나 이메일로 직접 연락하나요?',
+        },
+        a: {
+          en: "Increasingly through the website form first, especially for a buyer who does not already have a relationship with your company. A procurement manager sourcing a new supplier typically finds several candidates in one search session and works through them in the same way: check the website for legitimacy, then submit a quote request to two or three at once and compare who responds fastest and most completely. Calling cold is rare for a first contact — it puts the buyer on the spot and gives them no paper trail to compare against other quotes. A clear, specific RFQ form is what lets your company get included in that first comparison round at all. Once a real relationship exists, yes, buyers switch to phone and email — but the form is usually how the relationship starts.",
+          ko: '점점 더 웹사이트 폼으로 먼저 요청하는 추세입니다. 특히 아직 사장님 회사와 거래 이력이 없는 바이어라면 더 그렇습니다. 새 공급사를 찾는 구매 담당자는 보통 한 번의 검색 세션에서 후보 몇 곳을 찾아 같은 방식으로 처리합니다 — 웹사이트로 실체를 확인한 뒤, 두세 곳에 동시에 견적을 요청하고 누가 가장 빠르고 완전하게 답하는지 비교합니다. 첫 접촉으로 전화를 거는 경우는 드뭅니다. 바이어를 그 자리에서 곤란하게 만들고, 다른 견적과 비교할 기록도 안 남기 때문입니다. 명확하고 구체적인 RFQ(견적 요청) 폼이 있어야 애초에 그 첫 비교 라운드에 사장님 회사가 포함됩니다. 실제 거래 관계가 생기면 그때부터는 전화·이메일로 넘어가지만, 관계가 시작되는 지점은 대부분 그 폼입니다.',
+        },
+      },
+      {
+        q: {
+          en: "What is the difference between a website RFQ form and just listing our company on Alibaba or a trade directory?",
+          ko: '웹사이트 RFQ 폼과 알리바바나 무역 디렉토리에 회사를 등록하는 것은 뭐가 다른가요?',
+        },
+        a: {
+          en: "A directory listing puts you inside someone else's marketplace, competing on the same page against every other supplier the platform shows for that search — and the platform, not you, owns the buyer relationship and often takes a commission or charges for placement. Your own website's RFQ form does the opposite: a buyer who lands there found you specifically, through your SEO, a referral, or a trade show follow-up, and the entire page is about your company alone, with no competitor's listing one click away. The two are not mutually exclusive — many of our clients keep an Alibaba or ThomasNet listing for discovery and use their own website as where the actual quote conversation and trust-building happens once a buyer clicks through. The website is the asset you own permanently; the directory listing is rented shelf space.",
+          ko: '디렉토리 등록은 다른 사람의 마켓플레이스 안에 들어가는 것이라, 같은 검색 결과 페이지에서 플랫폼이 보여주는 다른 모든 공급사와 나란히 경쟁합니다 — 그리고 그 바이어 관계는 사장님이 아니라 플랫폼이 소유하며, 보통 수수료를 떼거나 노출 비용을 청구합니다. 반면 사장님 회사 웹사이트의 RFQ 폼은 정반대입니다. 그 페이지에 도착한 바이어는 SEO나 소개, 전시회 후속 연락 등으로 사장님 회사를 특정해서 찾아온 것이고, 페이지 전체가 오직 사장님 회사에 관한 것이며 클릭 한 번 거리에 경쟁사 목록이 없습니다. 둘은 상호 배타적이지 않습니다 — 저희 클라이언트 중 많은 곳이 알리바바나 ThomasNet 등록은 발견 채널로 유지하면서, 바이어가 클릭해서 들어온 뒤 실제 견적 대화와 신뢰 구축은 자사 웹사이트에서 하도록 합니다. 웹사이트는 사장님이 영구히 소유하는 자산이고, 디렉토리 등록은 임대한 진열대입니다.',
+        },
+      },
+      {
+        q: {
+          en: 'How fast do we need to respond to a quote request that comes in through the website?',
+          ko: '웹사이트로 들어온 견적 요청에는 얼마나 빨리 답해야 하나요?',
+        },
+        a: {
+          en: "Within the same business day, and ideally within a few hours — because you are almost never the only supplier that buyer contacted. If your form submission triggers only a generic 'thank you, we received your message' with no promised timeline, and your team responds three or four days later, the buyer has typically already moved forward with whoever answered first with real numbers. The fix is two-layered: an automatic acknowledgment email the moment the form is submitted, sent from your @yourcompany.com address, that confirms receipt and states a specific response window ('we typically quote within one business day'); and an internal process — even a simple shared inbox rule — that makes sure no RFQ sits unread over a weekend or while the one person who checks the general inquiry email is out. Losing a quote request to slow response is one of the most common and most fixable leaks in this entire process.",
+          ko: '같은 영업일 안에, 이상적으로는 몇 시간 안에 답해야 합니다. 그 바이어가 사장님 회사에만 문의했을 가능성은 거의 없기 때문입니다. 폼을 제출했을 때 구체적인 응답 시점 안내 없이 "메시지가 접수되었습니다" 같은 형식적 답장만 가고, 실제 담당자 답변이 3~4일 뒤에 온다면, 그 사이 바이어는 이미 먼저 구체적인 숫자로 답한 다른 공급사와 이야기를 진행했을 가능성이 큽니다. 해결책은 두 단계입니다. 첫째, 폼 제출 즉시 회사 도메인(@회사명.com) 주소로 자동 발송되는 확인 메일 — 접수를 확인하고 "보통 1영업일 내 견적 발송" 같은 구체적인 응답 시점을 명시합니다. 둘째, 내부 프로세스 — 단순히 공유 받은편지함 규칙만이라도 — 주말 동안이나 담당자 한 명이 자리를 비운 사이 RFQ가 그냥 안 읽힌 채 방치되지 않도록 합니다. 느린 응답 때문에 견적 요청을 놓치는 것은 이 전체 과정에서 가장 흔하면서도 가장 고치기 쉬운 누수입니다.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "We hear a specific version of this complaint from Korean-American wholesale and import company owners around Kent, Tukwila, and the greater Seattle area: 'We spent money on a website, it even shows up when people search for us, but the quote request form is basically empty. We get more real leads from a trade show than from the site.' The website is not broken, and it is not invisible — Google Analytics shows real visitors. The problem is almost always a gap between 'a buyer found us' and 'a buyer submitted an actual quote request,' and that gap is fixable, page by page." },
+        { type: 'h2', content: "Your site passed the credibility check — so why is the form still empty?" },
+        { type: 'p', content: "Most wholesale and trading companies eventually build what we'd call a credibility site: a home page, an About page with company history, a Products page, a Contact page. It answers the buyer's first question — does this company actually exist — and that matters enormously. But passing the credibility check and generating an actual quote request are two different jobs, and a huge number of otherwise solid B2B sites stop at the first one. The buyer gets comfortable enough to trust the company, then hits a generic 'Contact Us' page with a subject-line dropdown meant for customer service, not procurement, and quietly leaves to check the next supplier's site instead." },
+        { type: 'ul', content: 'The most common reasons a legitimate, well-trafficked B2B site still gets no quote requests:', items: [
+          "No dedicated 'Request a Quote' page — buyers land on a generic contact form built for customer complaints, not sourcing inquiries, and it does not ask for the information a procurement manager expects to provide.",
+          "No visible pricing signal at all — not exact prices, but MOQ ranges, tiered pricing, or 'starting at' language that lets a buyer self-qualify before spending time on a quote request.",
+          "Product or spec sheets that don't exist as downloadable PDFs — a serious buyer wants something to forward internally to their own team before they commit to a conversation.",
+          "No certifications, compliance info, or capacity numbers (FDA registration, ISO, monthly production volume) visible near the products a buyer is actually evaluating.",
+          "Product pages that don't match how buyers actually search — a page titled 'Our Products' ranks for almost nothing; a page built around the specific product category and 'wholesale' or 'bulk supplier' ranks for what a procurement manager actually types into Google.",
+        ] },
+        { type: 'h2', content: 'What an RFQ-ready page actually needs' },
+        { type: 'p', content: "None of this requires an e-commerce build-out or online checkout — wholesale buyers do not expect to check out online. What they expect is a page built specifically around requesting a quote, not a repurposed contact form." },
+        { type: 'ul', content: 'The concrete pieces that turn a visit into a submitted RFQ:', items: [
+          "A structured quote request form — product or category, target quantity, intended use, timeline, and company info, instead of one open text box. It signals you are set up to handle real procurement, and it gives your team what it needs to respond with actual numbers instead of a follow-up question that adds another delay.",
+          "A downloadable spec sheet or catalog PDF — no email gate required for a basic catalog; gate the more detailed spec sheets behind a short form only if you want the contact info in exchange.",
+          "Visible MOQ and pricing-tier ranges — 'Standard orders start at X units' or 'Pricing varies by volume, typical range is $X–$Y' lets a buyer self-qualify in seconds instead of guessing whether you're even in their budget range before reaching out.",
+          "A stated response-time promise near the form itself — 'Quotes are typically sent within one business day' directly addresses the buyer's real fear, which is sending a request into a void and never hearing back.",
+          "Real photos of your warehouse, inventory, and production or packing process — the single most persuasive trust signal on a wholesale site, and one competitor directory listings almost never have.",
+        ] },
+        { type: 'h2', content: 'Getting found by the search terms buyers actually use' },
+        { type: 'p', content: "A generic 'Products' page with a photo grid ranks for almost nothing useful. Procurement managers search in specific, almost formulaic patterns: '[product category] wholesale supplier USA,' 'bulk [product] importer Pacific Northwest,' '[product] manufacturer Seattle.' Building a dedicated page for each real product category — not a single catch-all page — with that exact kind of language in the heading and body text is what actually shows up for those searches. If part of your business is sourcing from Korea for US buyers, a page addressing that directly ('Korean-sourced [category], imported and warehoused in Washington') captures a buyer specifically looking for that combination, which is a search nobody's generic overseas competitor page is optimized for." },
+        { type: 'h2', content: 'The follow-up problem: the RFQ arrives, then what?' },
+        { type: 'p', content: "A form that generates a submission is only half the system. We regularly see companies where a real RFQ came in, sat in a general inbox for four or five days because the one person who checks it was traveling, and by the time a reply went out the buyer had already sourced elsewhere. The fix is not complicated: an automated acknowledgment email the moment the form submits, sent from a real @yourcompany.com address, stating a specific response window — and a simple internal rule that no submission goes more than one business day without at least a human reply, even if the full quote takes longer to prepare. A professional domain email matters here too, for the same deliverability reason it matters on outbound quotes — a reply from a free Gmail address gets treated with more suspicion by a buyer's own spam filter and by the buyer themselves." },
+        { type: 'tip', content: "Quick audit for this week: submit your own website's quote request form as if you were a stranger. Time how long it takes to get any human response. If you don't know the answer, that is very likely costing you real quote requests right now." },
+        { type: 'cta', content: "ZOE LUMOS builds bilingual B2B websites for Korean-American wholesale, import, and manufacturing companies across the US — structured RFQ pages, downloadable catalogs, and follow-up systems that turn visits into actual quote requests, with everything registered in YOUR name. Free consultation in Korean or English: email info@zoelumos.com or reach us on KakaoTalk (http://pf.kakao.com/_xhxdxmlX/chat)." },
+      ],
+      ko: [
+        { type: 'intro', content: '켄트, 터퀼라, 시애틀 광역권 한인 도매·수입 회사 사장님들에게서 자주 듣는 구체적인 불만이 있습니다. "웹사이트에 돈을 썼고, 검색하면 회사도 나오는데, 견적 요청 폼은 거의 비어 있어요. 사이트보다 전시회에서 진짜 리드를 더 많이 받아요." 웹사이트가 고장 난 것도, 안 보이는 것도 아닙니다. Google Analytics를 보면 실제 방문자가 있습니다. 문제는 거의 항상 "바이어가 우리를 찾았다"와 "바이어가 실제 견적을 요청했다" 사이의 간극이고, 이 간극은 페이지 단위로 고칠 수 있습니다.' },
+        { type: 'h2', content: '신용 확인은 통과했는데, 왜 여전히 폼은 비어 있을까' },
+        { type: 'p', content: '대부분의 도매·무역 회사는 결국 저희가 "신용 확인용 사이트"라고 부르는 걸 만듭니다 — 홈, 회사 연혁이 있는 소개 페이지, 제품 페이지, 연락처 페이지. 이건 바이어의 첫 질문 — 이 회사가 실제로 존재하는가 — 에 답하고, 그건 매우 중요합니다. 하지만 신용 확인을 통과하는 것과 실제 견적 요청을 받아내는 것은 서로 다른 일이고, 그 자체로는 탄탄한 B2B 사이트 상당수가 딱 첫 번째 단계에서 멈춰 섭니다. 바이어는 회사를 신뢰할 만큼 편안해진 뒤, 구매 문의가 아니라 고객 서비스용으로 만들어진 드롭다운이 달린 일반 "문의하기" 페이지를 만나고, 조용히 떠나 다음 공급사 사이트를 확인합니다.' },
+        { type: 'ul', content: '방문자도 있고 정당한 회사인데도 견적 요청이 안 오는 가장 흔한 이유들:', items: [
+          '전용 "견적 요청" 페이지가 없음 — 바이어는 소싱 문의가 아니라 고객 불만용으로 만들어진 일반 문의 폼을 만나고, 구매 담당자가 당연히 제공할 것으로 기대하는 정보를 묻지 않습니다.',
+          '가격에 대한 신호가 전혀 없음 — 정확한 가격이 아니라 최소주문수량(MOQ) 범위, 단계별 가격, "얼마부터 시작" 같은 표현만 있어도 바이어가 견적을 요청하기 전에 스스로 예산 적합성을 판단할 수 있습니다.',
+          '다운로드 가능한 제품·스펙 시트 PDF가 없음 — 진지한 바이어는 대화를 결정하기 전에 사내 팀에 전달할 뭔가가 필요합니다.',
+          '바이어가 실제로 검토 중인 제품 근처에 인증·컴플라이언스 정보·생산 규모(FDA 등록, ISO, 월 생산량 등)가 보이지 않음.',
+          '바이어가 실제로 검색하는 방식과 맞지 않는 제품 페이지 — "우리 제품" 같은 제목의 페이지는 거의 아무것도 검색되지 않고, 구체적인 제품 카테고리와 "도매" 또는 "대량 공급"이 들어간 페이지가 구매 담당자가 실제로 구글에 입력하는 검색어에 걸립니다.',
+        ] },
+        { type: 'h2', content: 'RFQ가 실제로 들어오는 페이지에 필요한 것' },
+        { type: 'p', content: '이커머스 결제 시스템을 구축할 필요는 없습니다 — 도매 바이어는 온라인 결제를 기대하지 않습니다. 그들이 기대하는 건 재활용된 문의 폼이 아니라, 견적 요청을 위해 특별히 설계된 페이지입니다.' },
+        { type: 'ul', content: '방문을 실제 RFQ 제출로 바꾸는 구체적인 요소들:', items: [
+          '구조화된 견적 요청 폼 — 하나의 빈 텍스트 상자 대신 제품·카테고리, 희망 수량, 용도, 일정, 회사 정보를 묻습니다. 진짜 구매 프로세스를 다룰 준비가 되어 있다는 신호가 되고, 담당팀이 추가 질문으로 시간을 끌지 않고 실제 숫자로 답할 수 있게 해줍니다.',
+          '다운로드 가능한 스펙 시트·카탈로그 PDF — 기본 카탈로그는 이메일 없이 바로 받게 하고, 더 상세한 스펙 시트만 연락처 정보를 받는 대가로 짧은 폼 뒤에 두는 정도면 충분합니다.',
+          '눈에 보이는 MOQ·가격 단계 범위 — "기본 주문은 X개부터" 또는 "물량에 따라 다르며 보통 $X~$Y 범위" 같은 표현이면, 바이어가 연락하기도 전에 사장님 회사가 예산에 맞는지 몇 초 만에 스스로 판단합니다.',
+          '폼 바로 옆에 명시된 응답 시간 약속 — "견적은 보통 1영업일 내 발송됩니다"는 바이어의 진짜 두려움 — 요청을 보냈는데 아무 답도 없이 사라지는 것 — 을 직접 해소해 줍니다.',
+          '창고, 재고, 생산·포장 과정의 실제 사진 — 도매 사이트에서 가장 설득력 있는 단 하나의 신뢰 신호이며, 경쟁사 디렉토리 등록에는 거의 없는 것입니다.',
+        ] },
+        { type: 'h2', content: '바이어가 실제로 쓰는 검색어로 발견되기' },
+        { type: 'p', content: '사진 그리드만 있는 일반 "제품" 페이지는 쓸모 있는 검색어로 거의 걸리지 않습니다. 구매 담당자들은 거의 정형화된 패턴으로 검색합니다. "[제품 카테고리] wholesale supplier USA", "bulk [제품] importer Pacific Northwest", "[제품] manufacturer Seattle" 같은 식으로요. 하나의 뭉뚱그린 페이지가 아니라 실제 제품 카테고리마다 전용 페이지를 만들고, 그 안에 이런 정확한 표현을 제목과 본문에 넣는 것이 실제로 그 검색에 걸리게 만드는 방법입니다. 사업의 일부가 한국에서 소싱해 미국 바이어에게 공급하는 것이라면, 그걸 직접 다루는 페이지("한국에서 소싱한 [카테고리], 워싱턴에서 수입·보관")가 바로 그 조합을 찾는 바이어를 잡아냅니다 — 어떤 해외 경쟁사의 일반 페이지도 이 검색어에는 최적화돼 있지 않습니다.' },
+        { type: 'h2', content: '후속 대응 문제: RFQ가 들어온 다음엔 어떻게 되나' },
+        { type: 'p', content: '제출을 만들어내는 폼은 시스템의 절반일 뿐입니다. 실제 RFQ가 들어왔는데, 그걸 확인하는 담당자 한 명이 출장 중이라 일반 받은편지함에 4~5일 방치되고, 답장이 나갈 때쯤엔 바이어가 이미 다른 곳에서 소싱을 마친 경우를 저희는 자주 봅니다. 해결책은 복잡하지 않습니다. 폼이 제출되는 즉시 실제 @회사명.com 주소로 발송되는 자동 확인 메일 — 구체적인 응답 시점을 명시합니다 — 그리고 전체 견적서 준비에 시간이 더 걸리더라도 최소한 사람의 답장만큼은 1영업일을 넘기지 않는다는 간단한 내부 규칙입니다. 전문적인 도메인 이메일도 여기서 중요합니다. 발신 견적서에서 중요한 이유와 똑같습니다 — 무료 Gmail 주소로 온 답장은 바이어의 스팸 필터에서도, 바이어 본인에게도 더 의심스럽게 취급됩니다.' },
+        { type: 'tip', content: '이번 주 빠른 점검: 낯선 사람인 척 사장님 회사 웹사이트의 견적 요청 폼을 직접 제출해 보세요. 사람이 답할 때까지 걸리는 시간을 재보세요. 그 답을 모르신다면, 지금 이 순간에도 실제 견적 요청을 놓치고 있을 가능성이 큽니다.' },
+        { type: 'cta', content: 'ZOE LUMOS는 미국 전역의 한인 도매·수입·제조 기업을 위한 이중언어 B2B 웹사이트를 만듭니다 — 구조화된 RFQ 페이지, 다운로드 가능한 카탈로그, 그리고 방문을 실제 견적 요청으로 바꾸는 후속 대응 시스템까지, 전부 사장님 명의로 등록합니다. 한국어/영어 무료 상담: info@zoelumos.com 이메일 또는 카카오톡(http://pf.kakao.com/_xhxdxmlX/chat)으로 편하게 문의하세요.' },
+      ],
+    },
+  },
 ]
