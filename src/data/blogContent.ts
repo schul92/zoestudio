@@ -11698,4 +11698,121 @@ export const blogContent: BlogPost[] = [
       ],
     },
   },
+  // 2026-08-11 — E-commerce cluster: Korea sourcing → US resale (LA–Orange County)
+  {
+    slug: 'korea-sourcing-us-ecommerce-customs-tax-fulfillment-2026',
+    date: '2026-08-11',
+    updatedDate: '2026-08-11',
+    readTime: 10,
+    category: { en: 'E-commerce', ko: '이커머스' },
+    title: {
+      en: 'Sourcing From Korea, Selling in the US: Customs, Sales Tax & Fulfillment for Korean-American Sellers (LA–Orange County Guide, 2026)',
+      ko: '한국에서 소싱해서 미국에서 팔 때 — 관세·판매세·풀필먼트 완벽 정리 (LA·오렌지카운티 한인 셀러 가이드 2026)',
+    },
+    metaDescription: {
+      en: 'K-beauty, Korean snacks, fashion — Korean-American sellers across LA and Orange County who source product from Korea to resell in the US face three problems most Shopify guides skip: customs and de minimis rules, multi-state sales tax nexus, and choosing between 3PL and Amazon FBA. Here is the honest breakdown.',
+      ko: 'K-뷰티, 한국 식품, 패션 — 한국에서 물건을 소싱해서 미국에서 되파는 LA·오렌지카운티 한인 사장님들이 대부분의 Shopify 가이드에서 빠뜨리는 세 가지 문제: 관세·통관, 여러 주 판매세 넥서스, 3PL vs 아마존 FBA 풀필먼트 선택. 솔직하게 정리했습니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'Do I have to pay customs duty on a small shipment of product I import from Korea to resell?',
+          ko: '한국에서 소량으로 수입해서 되파는 제품도 관세를 내야 하나요?',
+        },
+        a: {
+          en: "Whether you owe duty depends on the shipment's value and product category, not just whether it 'feels small' — low-value shipments are often allowed to clear under a 'de minimis' exemption with reduced paperwork and no duty, but the exact dollar threshold and which countries and products qualify has changed multiple times in the past two years and continues to be adjusted at the federal level, so do not assume last year's rule still applies. Anything above the current threshold requires a formal or informal customs entry, usually filed by a licensed customs broker, and needs a correct HTS classification code. Duty aside, cosmetics and food products carry separate FDA compliance requirements (facility registration, product listing, and English-language labeling) that apply regardless of the shipment's value. The safest move for a repeat importer is an ongoing relationship with a licensed customs broker rather than treating each shipment as a one-off question.",
+          ko: '관세를 내야 하는지는 "소량처럼 느껴지는지"가 아니라 화물의 금액과 품목에 달려 있습니다 — 저가 화물은 보통 "데 미니미스" 면제를 통해 서류가 간소화되고 관세도 면제되지만, 정확한 금액 기준과 적용 국가·품목은 지난 2년 사이 여러 차례 바뀌었고 연방 차원에서 계속 조정되고 있으므로 작년 기준이 지금도 그대로일 거라고 가정하면 안 됩니다. 현재 기준을 넘는 화물은 정식 또는 약식 통관 절차가 필요하며(보통 정식 관세사가 처리), 정확한 HTS 품목분류 코드가 있어야 합니다. 관세 여부와 별개로, 화장품과 식품은 화물 금액과 무관하게 FDA의 별도 규정(시설 등록, 제품 등재, 영문 라벨링)을 따라야 합니다. 반복적으로 수입하는 셀러에게 가장 안전한 방법은 화물마다 매번 새로 알아보는 게 아니라 정식 관세사와 지속적인 관계를 맺는 것입니다.',
+        },
+      },
+      {
+        q: {
+          en: 'Which states do I need to collect and pay sales tax in if I sell products online?',
+          ko: '온라인으로 물건을 팔면 어느 주에 판매세를 걷고 납부해야 하나요?',
+        },
+        a: {
+          en: "Even with zero physical stores, once your sales or transaction count in a given state crosses that state's 'economic nexus' threshold, you have a legal obligation to register, collect, and remit sales tax there — a principle in effect in most states since the Supreme Court's 2018 Wayfair decision, though the exact threshold varies by state. Sales through a marketplace like Amazon are usually handled automatically under that state's 'marketplace facilitator' law, but direct sales through your own Shopify site or website remain your responsibility. There is a second, less obvious trigger: if a 3PL or Amazon FBA warehouse is storing your inventory in a given state, that alone can create nexus there even with no direct sales in that state. Automation tools like Shopify Tax, Avalara, or TaxJar exist specifically so you do not have to track this state by state by hand.",
+          ko: '물리적 매장이 하나도 없어도, 어떤 주에서 매출액이나 거래 건수가 그 주의 "경제적 넥서스" 기준을 넘으면 그 주에 판매세를 등록·징수·납부할 법적 의무가 생깁니다 — 이는 2018년 연방대법원 Wayfair 판결 이후 대부분의 주에서 시행 중인 원칙이며, 정확한 기준 금액은 주마다 다릅니다. 아마존 같은 마켓플레이스를 통한 판매는 대부분 "마켓플레이스 촉진자" 법에 따라 마켓플레이스가 대신 세금을 징수하지만, 자체 Shopify나 웹사이트를 통한 직접 판매는 여전히 사장님의 책임입니다. 여기에 덜 알려진 트리거가 하나 더 있습니다 — 3PL이나 아마존 FBA 창고가 특정 주에서 사장님의 재고를 보관하고 있다면, 그 주에서의 매출이 없어도 그 창고 위치만으로 넥서스가 생길 수 있습니다. Shopify Tax, Avalara, TaxJar 같은 자동화 도구를 쓰면 이걸 주마다 손으로 추적하지 않아도 됩니다.',
+        },
+      },
+      {
+        q: {
+          en: 'Should I use a 3PL or Amazon FBA to fulfill my orders?',
+          ko: '주문 배송은 3PL과 아마존 FBA 중 어느 쪽으로 해야 하나요?',
+        },
+        a: {
+          en: 'The right answer depends on where your revenue actually comes from — if most of your sales are already on Amazon, FBA solves the Prime badge and Amazon\'s logistics network in one step, at the cost of higher per-unit fees and less control over packaging, branding, and customer data. If you run your own Shopify store alongside other channels, a 3PL generally gives you more control over branding, data, and cost, and can fulfill Amazon, Shopify, and wholesale orders from the same inventory pool. Most sellers who grow past a certain size end up running both — FBA for Amazon orders, a 3PL for everything else. Running your own warehouse is usually premature until volume is large and predictable enough to justify the fixed cost.',
+          ko: '정답은 판매 채널 구성에 달려 있습니다 — 매출 대부분이 아마존에서 나온다면 FBA가 Prime 배지와 아마존의 물류망을 한 번에 해결해주지만 유닛당 수수료가 더 높고 포장·브랜딩·고객 데이터에 대한 통제권이 줄어듭니다. 자체 Shopify 스토어와 여러 채널을 함께 운영한다면 3PL이 브랜딩·데이터·비용 통제 면에서 대체로 더 유리하고, 같은 재고 풀에서 아마존·Shopify·도매 주문을 동시에 처리할 수도 있습니다. 사업이 커지는 셀러 대부분은 결국 두 가지를 병행합니다 — 아마존 주문은 FBA로, 나머지 채널은 3PL로. 자체 창고를 직접 운영하는 건 물량이 충분히 크고 예측 가능해질 때까지는 대부분 시기상조입니다.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "Walk through the wholesale and import corridors around LA Koreatown, Vernon, or the Korean business parks in Orange County and you will find dozens of small operations that started the same way: a founder brought in a container, or a few pallets, of K-beauty, Korean snacks, or fashion from Korea, listed it on Shopify or Amazon, and started selling. Building the website is usually the easy part. What actually trips sellers up as they scale past the first year is everything upstream and downstream of the site — customs and import compliance, sales tax obligations that appear in states they have never set foot in, and the decision of who actually holds and ships the inventory. We get pulled into these conversations constantly when we build or rebuild e-commerce storefronts for Korean-American product sellers, so here is the honest breakdown of what actually needs to be in place." },
+        { type: 'h2', content: 'Why This Hits LA–Orange County Sellers First' },
+        { type: 'p', content: "Southern California is the largest single point of entry for goods shipped from Korea to the US — the Ports of Los Angeles and Long Beach together handle a large share of trans-Pacific container traffic, and LA Koreatown and the Korean business corridors in Orange County (Buena Park, Garden Grove, Fullerton, Irvine) sit close enough to that supply chain that starting an import-and-resell business feels like the obvious next step for a lot of owners already running a Korean grocery, gift shop, or beauty supply store. The volume that flows through this specific market means Korean-American sellers here hit customs, multi-state tax, and fulfillment complexity earlier and harder than a seller in a market without that supply chain proximity." },
+        { type: 'h2', content: "Customs and Import Compliance: Why 'It's a Small Shipment' Is Not a Safe Assumption" },
+        { type: 'p', content: "Every shipment that enters the US, regardless of size, is a formal import event with US Customs and Border Protection (CBP). Low-value shipments are often allowed to clear with reduced paperwork and no duty under a 'de minimis' exemption — but the dollar threshold for that exemption, and which countries and product categories it applies to, has changed multiple times over the past two years and continues to be adjusted at the federal level. Do not build a business model around a specific de minimis number without confirming the current rule with a licensed customs broker; what applied to your last shipment may not apply to your next one. Beyond the duty question, cosmetics and food products carry their own separate compliance layer that has nothing to do with shipment value." },
+        { type: 'ul', content: 'What repeat importers actually need in place:', items: [
+          'HTS (Harmonized Tariff Schedule) classification — every product needs a correct code; misclassifying it, even by accident, can mean back duties, penalties, or a held shipment.',
+          'Formal vs. informal entry — above certain values or for certain product categories, a formal customs entry (usually handled by a licensed customs broker) is required, not just a simple declaration.',
+          'FDA cosmetic requirements — under the Modernization of Cosmetics Regulation Act (MoCRA), facilities that manufacture or process cosmetics sold in the US, including many K-beauty product lines, must register with the FDA and list their products; importers share responsibility for confirming this before selling the product here.',
+          'FDA food requirements — Korean snacks and packaged food need FDA food facility registration on the supply side, prior notice before each shipment arrives, and English-language labeling with a compliant Nutrition Facts panel and allergen disclosures, not just a sticker over the Korean label.',
+          'A customs broker relationship, not a one-off filing — sellers who import repeatedly are far better served by an ongoing relationship with a licensed broker than by treating each shipment as a one-time problem.',
+        ] },
+        { type: 'h2', content: 'Multi-State Sales Tax: Nexus Follows Both Sales and Warehouses' },
+        { type: 'p', content: "Since the Supreme Court's 2018 Wayfair decision, states no longer require a physical location to tax you — crossing a state's 'economic nexus' threshold (commonly a set dollar amount or number of transactions in that state within a year, though exact thresholds vary by state) creates a legal obligation to register, collect, and remit sales tax there, even if you have never set foot in it. Selling through Amazon or another marketplace changes some of this math, because most states' 'marketplace facilitator' laws require the marketplace itself to collect and remit tax on your behalf on those sales — but any sales you make direct through your own Shopify or website storefront are still your responsibility. There is a second, less obvious trigger worth knowing: storing inventory in a third-party warehouse (a 3PL, or Amazon FBA) inside a state can by itself create physical nexus in that state, regardless of your sales volume there." },
+        { type: 'ul', content: 'The four things worth checking before this becomes a problem:', items: [
+          'Marketplace sales (Amazon, Etsy) — tax is usually collected automatically under marketplace facilitator laws; confirm it, do not assume it.',
+          'Direct sales through your own site — you are responsible for registering, collecting, and remitting in every state where you cross nexus.',
+          'Warehouse location — a 3PL or Amazon FBA warehouse holding your inventory can create nexus in that state even with zero direct sales there.',
+          'Automation tools — Shopify Tax, Avalara, and TaxJar can calculate, and in some cases file, multi-state sales tax automatically; manually tracking this across a growing number of states is not realistic past a certain size.',
+        ] },
+        { type: 'h2', content: 'Fulfillment: 3PL vs. Amazon FBA vs. Running Your Own Warehouse' },
+        { type: 'p', content: "There is no universally correct answer here — it depends on where your sales actually come from. A seller whose revenue is mostly on Amazon benefits from FBA's Prime badge and Amazon's logistics network, at the cost of higher per-unit fees and less control over packaging, branding, and customer data. A seller building a direct-to-customer brand through their own Shopify store, especially one selling on multiple channels at once, usually gets more flexibility and lower long-term cost from a third-party logistics (3PL) provider, which can also fulfill Amazon, Shopify, and wholesale orders from the same inventory pool. Running your own warehouse only makes sense once volume is high and predictable enough that the fixed cost of space, staff, and systems is clearly cheaper than paying a 3PL or FBA per order — most sellers are not there yet when they think they are." },
+        { type: 'ul', content: 'How the three options actually compare:', items: [
+          'Amazon FBA — best when most of your revenue is already on Amazon; simplest to start, least flexible, most expensive per unit at moderate volume.',
+          'Third-party logistics (3PL) — best for multi-channel sellers (Shopify plus Amazon plus wholesale); more setup work up front, more control, and usually lower blended cost as volume grows.',
+          'Self-fulfillment — only makes sense at meaningful, predictable volume, and requires real inventory and warehouse management systems, not a spreadsheet.',
+        ] },
+        { type: 'tip', content: "One thing worth checking this week regardless of your stage: log into your Shopify or Amazon Seller Central account and pull up where your inventory has physically been stored in the last 12 months. If a 3PL or FBA moved your stock into a state you are not registered to collect tax in, that gap is worth closing before it becomes a bigger problem at tax time." },
+        { type: 'h2', content: 'Paying Korean Suppliers, and Why the Website Has to Tie All of This Together' },
+        { type: 'p', content: "Most sellers underestimate how much the payment side costs them separately from tariffs and tax: a standard international wire transfer to a Korean supplier can carry a poor exchange rate and hidden fees on both ends, and services built for this specific flow — Wise, Airwallex, and similar platforms — generally offer a more transparent rate and lower total cost for recurring KRW payments than a traditional bank wire. On the customer-facing side, Shopify Payments or Stripe handles US card processing, but none of this — customs data, tax collection by state, inventory location, supplier payments — connects on its own. The storefront, the fulfillment integration, and the tax automation app all have to talk to each other correctly, or you end up finding out about a compliance gap from a state tax notice instead of from your own dashboard. This is the part of e-commerce that is invisible from the outside, and it is exactly where we spend most of our time when we build or rebuild a store for a Korean-American import seller — wiring the Shopify (or custom) storefront to the 3PL or FBA API, connecting a tax automation app correctly across every state you have nexus in, and setting up inventory and order data that a non-technical owner can actually read without calling a developer every time." },
+        { type: 'cta', content: "Importing from Korea and selling in the US, and not sure your current site actually connects your fulfillment, tax, and inventory the way it should? ZOE LUMOS builds and rebuilds e-commerce storefronts — Shopify and custom — for Korean-American sellers across the US, with the 3PL, FBA, and multi-state tax integrations wired in correctly from the start. Free consultation in English or Korean: email info@zoelumos.com or message us on KakaoTalk (http://pf.kakao.com/_xhxdxmlX/chat)." },
+      ],
+      ko: [
+        { type: 'intro', content: 'LA 코리아타운, 버논(Vernon), 혹은 오렌지카운티의 한인 도매 상권을 걷다 보면 비슷한 방식으로 시작한 사업체를 수십 개 만나게 됩니다 — 사장님이 한국에서 컨테이너 하나, 혹은 파레트 몇 개 분량의 K-뷰티, 한국 식품, 패션 제품을 들여와 Shopify나 아마존에 올려서 팔기 시작한 겁니다. 웹사이트를 만드는 부분은 보통 제일 쉬운 단계입니다. 사업이 첫 해를 넘어 커지면서 진짜 발목을 잡는 건 웹사이트 앞뒤에 있는 것들 — 관세·통관 규정, 발 한 번 디딘 적 없는 주(州)에서 갑자기 생기는 판매세 의무, 그리고 재고를 실제로 누가 보관하고 배송할지에 대한 결정입니다. 한인 사장님들의 이커머스 스토어를 새로 만들거나 다시 구축할 때 이런 대화에 계속 끌려 들어가게 돼서, 실제로 무엇을 갖춰야 하는지 솔직하게 정리했습니다.' },
+        { type: 'h2', content: '왜 LA·오렌지카운티 셀러들이 이 문제를 가장 먼저, 가장 세게 만나는가' },
+        { type: 'p', content: '남가주는 한국에서 미국으로 들어오는 화물의 최대 단일 관문입니다 — LA항과 롱비치항을 합치면 태평양을 건너는 컨테이너 물동량의 상당 부분을 처리하고, LA 코리아타운과 오렌지카운티의 한인 상권(부에나파크, 가든그로브, 풀러턴, 어바인)은 그 공급망과 물리적으로 가까이 있어서, 이미 한인 마켓·선물가게·뷰티 서플라이를 운영 중인 사장님들에게 "한국에서 물건을 들여와 되팔기"가 당연한 다음 단계처럼 느껴집니다. 이 특정 시장을 통과하는 물동량 때문에, 이 지역 한인 셀러들은 다른 지역의 셀러보다 관세·다주 판매세·풀필먼트 복잡성을 더 일찍, 더 세게 맞닥뜨립니다.' },
+        { type: 'h2', content: '관세와 통관 — "소량이니까 괜찮겠지"가 안전하지 않은 이유' },
+        { type: 'p', content: '미국에 들어오는 모든 화물은 규모와 상관없이 미국 관세국경보호청(CBP)에 대한 공식 수입 절차입니다. 저가 화물은 보통 "데 미니미스" 면제를 통해 서류 절차가 간소화되고 관세도 면제되지만, 이 면제의 금액 기준과 적용 국가·품목은 지난 2년 사이 여러 차례 바뀌었고 연방 차원에서 지금도 계속 조정되고 있습니다. 지난 화물에 적용됐던 기준이 다음 화물에는 적용되지 않을 수 있으니, 특정 데 미니미스 금액을 사업 모델의 전제로 삼기 전에 반드시 정식 관세사(customs broker)에게 현재 규정을 확인하세요. 관세 여부와 별개로, 화장품과 식품은 화물 금액과 무관하게 별도의 규제 층을 하나 더 갖고 있습니다.' },
+        { type: 'ul', content: '반복 수입 셀러가 실제로 갖춰야 할 것들:', items: [
+          'HTS(품목분류) 코드 — 모든 제품에 정확한 코드가 필요합니다. 실수로라도 잘못 분류하면 추가 관세, 벌금, 화물 억류로 이어질 수 있습니다.',
+          '정식 통관 vs 약식 통관 — 특정 금액 이상이거나 특정 품목이면 단순 신고가 아니라 (보통 정식 관세사가 처리하는) 정식 통관 절차가 필요합니다.',
+          'FDA 화장품 규정 — MoCRA(화장품현대화법) 시행에 따라, 많은 K-뷰티 제품 라인을 포함해 미국에서 판매되는 화장품을 제조·가공하는 시설은 FDA에 등록하고 제품을 등재해야 합니다. 수입업자도 판매 전 이 확인 책임을 함께 집니다.',
+          'FDA 식품 규정 — 한국 과자·가공식품은 공급망 쪽에서 FDA 식품시설 등록, 화물 도착 전 사전신고(prior notice), 그리고 한글 라벨 위에 스티커를 붙이는 정도가 아니라 규정에 맞는 영양성분표와 알레르기 표시가 포함된 영문 라벨링이 필요합니다.',
+          '일회성 신고가 아니라 관세사와의 지속적 관계 — 반복적으로 수입하는 셀러라면, 화물마다 매번 새로 문제를 푸는 것보다 정식 관세사와 지속적인 관계를 맺는 편이 훨씬 낫습니다.',
+        ] },
+        { type: 'h2', content: '다주 판매세 — 넥서스는 매출뿐 아니라 창고에서도 생긴다' },
+        { type: 'p', content: '2018년 연방대법원의 Wayfair 판결 이후, 주(州)가 세금을 매기기 위해 더 이상 물리적 매장을 요구하지 않습니다 — 어떤 주의 "경제적 넥서스" 기준(주마다 다르지만 보통 연간 매출액이나 거래 건수로 정의됨)을 넘으면, 그 주에 발을 디딘 적이 없어도 등록·징수·납부 의무가 법적으로 생깁니다. 아마존 같은 마켓플레이스를 통한 판매는 계산이 조금 달라집니다 — 대부분 주의 "마켓플레이스 촉진자" 법에 따라 마켓플레이스 자체가 해당 판매분의 세금을 대신 징수·납부하기 때문입니다. 하지만 자체 Shopify나 웹사이트를 통한 직접 판매는 여전히 사장님의 책임입니다. 덜 알려진 두 번째 트리거도 알아둘 가치가 있습니다 — 어떤 주 안의 3PL이나 아마존 FBA 창고에 재고를 보관하는 것만으로도, 그 주에서의 매출과 무관하게 그 주에서 물리적 넥서스가 생길 수 있습니다.' },
+        { type: 'ul', content: '문제가 되기 전에 확인해볼 네 가지:', items: [
+          '마켓플레이스 판매(아마존, Etsy) — 보통 마켓플레이스 촉진자 법에 따라 자동으로 세금이 징수됩니다. 가정하지 말고 반드시 확인하세요.',
+          '자체 사이트를 통한 직접 판매 — 넥서스를 넘는 모든 주에서 등록·징수·납부할 책임이 사장님에게 있습니다.',
+          '창고 위치 — 3PL이나 아마존 FBA 창고가 재고를 보관 중인 주는, 그 주에서의 직접 매출이 0이어도 넥서스가 생길 수 있습니다.',
+          '자동화 도구 — Shopify Tax, Avalara, TaxJar 같은 도구가 다주 판매세를 계산하고 경우에 따라 신고까지 자동화해줍니다. 일정 규모를 넘으면 이걸 손으로 추적하는 건 현실적이지 않습니다.',
+        ] },
+        { type: 'h2', content: '풀필먼트: 3PL vs 아마존 FBA vs 자체 창고' },
+        { type: 'p', content: '여기엔 정답이 하나로 정해져 있지 않습니다 — 매출이 실제로 어디서 나오는지에 달려 있습니다. 매출 대부분이 아마존에서 나오는 셀러는 FBA의 Prime 배지와 아마존 물류망의 이점을 누리는 대신, 유닛당 수수료가 높고 포장·브랜딩·고객 데이터에 대한 통제권이 줄어듭니다. 자체 Shopify 스토어로 D2C 브랜드를 키우는 셀러, 특히 여러 채널을 동시에 운영하는 셀러는 보통 3PL(제3자 물류)에서 더 큰 유연성과 장기적으로 더 낮은 비용을 얻습니다. 3PL은 같은 재고 풀에서 아마존·Shopify·도매 주문을 동시에 처리할 수도 있습니다. 자체 창고 운영은 물량이 충분히 크고 예측 가능해서 공간·인력·시스템의 고정비가 3PL이나 FBA에 건당 지불하는 것보다 명백히 저렴해질 때만 의미가 있습니다 — 대부분의 셀러는 스스로 생각하는 것보다 아직 그 단계가 아닙니다.' },
+        { type: 'ul', content: '세 가지 선택지의 실제 비교:', items: [
+          '아마존 FBA — 매출 대부분이 이미 아마존에서 나온다면 최선. 시작은 가장 간단하지만 유연성이 가장 낮고, 중간 물량대에서는 유닛당 비용이 가장 높습니다.',
+          '3PL(제3자 물류) — Shopify + 아마존 + 도매를 함께 운영하는 멀티채널 셀러에게 유리. 초기 설정은 더 필요하지만 통제권이 크고, 물량이 늘수록 보통 혼합 비용이 더 낮습니다.',
+          '자체 풀필먼트 — 의미 있고 예측 가능한 물량일 때만 타당하며, 스프레드시트가 아니라 진짜 재고·창고 관리 시스템이 필요합니다.',
+        ] },
+        { type: 'tip', content: '단계와 무관하게 이번 주에 확인해볼 만한 것 하나 — Shopify나 아마존 셀러 센트럴에 로그인해서 지난 12개월간 재고가 물리적으로 어느 주에 보관됐는지 확인해보세요. 3PL이나 FBA가 사장님 재고를 판매세 등록이 안 된 주로 옮겨놨다면, 세금 신고 시즌에 더 큰 문제가 되기 전에 지금 그 간극을 메우는 게 좋습니다.' },
+        { type: 'h2', content: '한국 공급업체 결제, 그리고 이 모든 걸 하나로 묶어줘야 하는 웹사이트' },
+        { type: 'p', content: '많은 셀러가 관세·세금과 별개로 결제 쪽에서 새는 비용을 과소평가합니다 — 한국 공급업체로 보내는 일반 국제 송금은 양쪽에서 불리한 환율과 숨은 수수료가 붙는 경우가 많고, 이런 흐름 전용으로 만들어진 서비스들(Wise, Airwallex 등)이 반복되는 원화 결제에서 보통 더 투명한 환율과 더 낮은 총비용을 제공합니다. 고객을 상대하는 쪽에서는 Shopify Payments나 Stripe가 미국 카드 결제를 처리하지만, 관세 데이터·주별 세금 징수·재고 위치·공급업체 결제 이 모든 것이 저절로 연결되지는 않습니다. 스토어프론트, 풀필먼트 연동, 세금 자동화 앱이 서로 정확하게 통신해야 하며, 그렇지 않으면 자체 대시보드가 아니라 주 정부의 세금 통지서를 보고서야 문제를 알게 됩니다. 이게 바로 겉으로는 보이지 않는 이커머스의 진짜 부분이고, 한인 수입 셀러를 위해 스토어를 새로 만들거나 다시 구축할 때 저희가 가장 많은 시간을 쓰는 지점입니다 — Shopify(또는 커스텀) 스토어프론트를 3PL이나 FBA API에 정확히 연결하고, 넥서스가 있는 모든 주에 대해 세금 자동화 앱을 제대로 붙이고, 개발자를 매번 부르지 않아도 비전문가 사장님이 직접 읽을 수 있는 재고·주문 데이터를 세팅하는 일입니다.' },
+        { type: 'cta', content: '한국에서 소싱해서 미국에서 팔고 계신데, 지금 사이트가 풀필먼트·세금·재고를 제대로 연결하고 있는지 확신이 안 서시나요? ZOE LUMOS는 미국 전역의 한인 셀러를 위해 Shopify와 커스텀 이커머스 스토어를 새로 만들거나 다시 구축하며, 3PL·FBA·다주 판매세 연동을 처음부터 제대로 심어 드립니다. 한국어/영어 무료 상담: info@zoelumos.com 이메일 또는 카카오톡(http://pf.kakao.com/_xhxdxmlX/chat)으로 문의하세요.' },
+      ],
+    },
+  },
 ]
