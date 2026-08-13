@@ -11698,4 +11698,114 @@ export const blogContent: BlogPost[] = [
       ],
     },
   },
+
+  // 2026-08-13 — AWS/CMMC compliance consulting for Korean-American govcon IT subcontractors (Northern Virginia)
+  {
+    slug: 'aws-cmmc-security-korean-government-contractor-virginia-2026',
+    date: '2026-08-13',
+    updatedDate: '2026-08-13',
+    readTime: 10,
+    category: { en: 'Cloud & Infrastructure', ko: '클라우드 · 인프라' },
+    title: {
+      en: 'Your DoD Subcontract Renewal Now Depends on CMMC — Is Your Company\'s AWS Setup Ready? (Northern Virginia Guide, 2026)',
+      ko: '국방부 하도급 갱신, 이제 CMMC가 좌우합니다 — 우리 회사 AWS는 준비됐을까요 (버지니아 북부 한인 기업 가이드 2026)',
+    },
+    metaDescription: {
+      en: 'Korean-American IT staffing and government-contracting subcontractors around Annandale, Centreville, and Chantilly, Virginia increasingly need CMMC 2.0 and NIST SP 800-171 compliance to keep DoD subcontracts — and many are still running on a commercial setup that was never built for Controlled Unclassified Information. Here is what CMMC-ready AWS architecture actually requires and how to tell if your company needs it.',
+      ko: '버지니아 북부 애나데일·센터빌·챈틸리 일대의 한인 IT·정부계약 하도급업체는 국방부 하도급을 유지하려면 점점 더 CMMC 2.0과 NIST SP 800-171 준수가 필요해지고 있습니다. 하지만 여전히 CUI(통제 비분류 정보)를 염두에 두지 않고 만들어진 일반 환경에서 운영하는 곳이 많습니다. CMMC 준수 AWS 아키텍처에 실제로 무엇이 필요한지, 우리 회사가 해당되는지 판단하는 법을 정리했습니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'Does a small Korean-American IT staffing or subcontracting company really need CMMC compliance, or is that only for large defense primes?',
+          ko: '작은 한인 IT 인력공급·하도급 업체도 CMMC 준수가 정말 필요한가요, 아니면 대형 국방 원청 업체만 해당되나요?',
+        },
+        a: {
+          en: "Size does not exempt you — CMMC (Cybersecurity Maturity Model Certification) applies anywhere in the DoD supply chain that a contract clause flows down to, and prime contractors are now required to pass that requirement on to every subcontractor and sub-subcontractor who touches Federal Contract Information (FCI) or Controlled Unclassified Information (CUI), regardless of company size. A five-person Korean-American IT staffing firm placing engineers on a DoD help-desk contract, or a small firm doing systems integration work as a second-tier sub, is just as in scope as a thousand-person prime. The level required (Level 1 self-assessment for FCI-only, Level 2 for CUI, often requiring third-party certification) depends on what data you actually handle — but 'we're too small to matter' is exactly the assumption that gets a subcontract non-renewed when the prime's own audit asks for your certification and you do not have one.",
+          ko: '규모가 면제 사유가 되지 않습니다. CMMC(사이버보안 성숙도 모델 인증)는 계약 조항이 흘러 내려가는 국방부 공급망 어디에나 적용되고, 원청 업체는 이제 FCI(연방계약정보)나 CUI(통제 비분류 정보)를 다루는 모든 하도급·재하도급 업체에게 회사 규모와 상관없이 이 요구사항을 전달해야 합니다. 국방부 헬프데스크 계약에 엔지니어를 파견하는 5인 규모 한인 IT 인력공급 업체나, 2차 하도급으로 시스템 통합 작업을 하는 작은 회사도 직원 천 명짜리 원청 업체와 똑같이 대상입니다. 요구되는 레벨(FCI만 다루면 Level 1 자가진단, CUI를 다루면 3자 인증이 필요한 경우가 많은 Level 2)은 실제로 다루는 데이터에 따라 다르지만, "우리는 너무 작아서 상관없다"는 바로 그 가정이, 원청 업체가 자체 감사에서 인증서를 요구했을 때 없어서 하도급이 갱신되지 않게 만드는 원인입니다.',
+        },
+      },
+      {
+        q: {
+          en: 'Do we need AWS GovCloud specifically, or can we use regular commercial AWS?',
+          ko: 'AWS GovCloud를 꼭 써야 하나요, 아니면 일반 상업용 AWS로도 괜찮나요?',
+        },
+        a: {
+          en: "It depends on what you actually store, not on being a government contractor in general. Federal Contract Information alone can often be secured on commercial AWS with the right controls — encryption, access logging, network segmentation. Controlled Unclassified Information is the trigger for AWS GovCloud (US): DFARS 252.204-7012 requires CUI to be stored and processed in an environment that meets FedRAMP Moderate equivalent controls, with data residency and personnel-screening requirements commercial AWS regions do not meet. In practice this means the first real question in any engagement is a data-classification exercise — what you actually handle, contract by contract — before anyone recommends GovCloud, standard AWS, or a hybrid, because moving everything to GovCloud by default when most of your workload is FCI or unrestricted data means paying more for infrastructure you do not need.",
+          ko: '이건 정부 계약을 한다는 사실 자체가 아니라, 실제로 무엇을 저장하느냐에 달려 있습니다. FCI(연방계약정보)만이라면 암호화, 접근 로깅, 네트워크 분리 같은 적절한 통제를 갖춘 일반 상업용 AWS로도 충분한 경우가 많습니다. AWS GovCloud(US)가 필요해지는 기준은 CUI(통제 비분류 정보)입니다 — DFARS 252.204-7012 조항은 CUI를 FedRAMP Moderate 수준의 통제를 충족하는 환경에 저장·처리하도록 요구하는데, 일반 상업용 AWS 리전은 데이터 소재지나 인력 심사 요건을 충족하지 못합니다. 실무적으로는, 어떤 컨설팅을 시작하든 첫 번째 진짜 질문은 데이터 분류 작업입니다 — 계약별로 실제로 무엇을 다루는지 먼저 파악한 뒤에야 GovCloud, 일반 AWS, 혹은 혼합 구성 중 무엇을 권할지 결정할 수 있습니다. 워크로드 대부분이 FCI이거나 제한 없는 데이터인데 기본값으로 전부 GovCloud로 옮기면, 필요 없는 인프라에 더 많은 비용을 내는 셈이 됩니다.',
+        },
+      },
+      {
+        q: {
+          en: 'How long does it take, and how much does it cost, to get a small subcontracting company CMMC-ready?',
+          ko: '작은 하도급 업체가 CMMC 준수 상태를 갖추는 데 얼마나 걸리고, 비용은 얼마나 드나요?',
+        },
+        a: {
+          en: "For a small subcontractor doing a gap assessment against NIST SP 800-171 and remediating what is found, a realistic timeline runs two to six months depending on how far your current setup is from compliant — a company already on a reasonably modern cloud setup with basic access controls closes gaps faster than one still running on local servers and shared logins. Cost has two separate parts: the assessment and remediation engagement itself (a one-time or phased project), and your ongoing AWS usage, which for a small subcontractor's workload is typically a modest monthly cost scaled to usage, not a large fixed infrastructure bill. Weigh that against the alternative, which is not a fine — it is simply not being eligible for subcontract renewal or new task orders once a prime's own compliance review catches up with yours, which for a company whose revenue depends on DoD subcontracts is a harder cost to absorb than the remediation itself.",
+          ko: 'NIST SP 800-171 기준으로 갭 평가를 하고 발견된 문제를 개선하는 작은 하도급 업체라면, 현실적인 기간은 현재 상태가 준수 기준에서 얼마나 떨어져 있는지에 따라 2~6개월입니다 — 이미 어느 정도 현대적인 클라우드 환경에 기본적인 접근 통제를 갖춘 회사는 여전히 로컬 서버와 공용 로그인으로 운영하는 회사보다 빠르게 격차를 좁힙니다. 비용은 두 부분으로 나뉩니다. 평가·개선 작업 자체(일회성 또는 단계별 프로젝트)와, 지속되는 AWS 사용료인데, 작은 하도급 업체의 워크로드라면 보통 사용량에 비례한 적당한 월 비용이지 큰 고정 인프라 비용이 아닙니다. 이걸 대안과 비교해 보세요. 대안은 벌금이 아닙니다 — 원청 업체의 자체 컴플라이언스 심사가 사장님 회사를 따라잡는 순간, 하도급 갱신이나 신규 태스크 오더 자격 자체가 없어지는 것입니다. 매출이 국방부 하도급에 달린 회사에게는 개선 작업 자체보다 훨씬 감당하기 어려운 비용입니다.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "Around Annandale, Centreville, and Chantilly, Virginia — a corridor with one of the largest concentrations of Korean-American-owned IT staffing, systems integration, and professional services firms in the country — a specific business model has quietly powered a lot of family wealth: win a subcontract under a large defense prime or federal systems integrator, place skilled engineers or provide a service, and renew year after year on the strength of good work and a good relationship. That model still works. What has changed underneath it is that 'good work' is no longer sufficient by itself. Every prime contractor is now required to flow down cybersecurity requirements to its subcontractors, and a growing number of them are actually checking — which means a subcontractor's own IT setup, not just its people, has become part of what gets evaluated at renewal time." },
+        { type: 'h2', content: "What changed: CMMC is no longer a large-prime problem" },
+        { type: 'p', content: "The Cybersecurity Maturity Model Certification (CMMC) program exists because the DoD found, repeatedly, that sensitive information was leaking through the weakest link in a long subcontractor chain, not through the prime itself. The fix was to push the requirement down: any company handling Federal Contract Information needs baseline safeguards (CMMC Level 1, self-assessed), and any company handling Controlled Unclassified Information needs a more rigorous set of controls aligned to NIST SP 800-171 (CMMC Level 2, often requiring third-party assessment). For a small Korean-American subcontractor, the practical effect shows up quietly — a prime's annual vendor questionnaire suddenly asks for a System Security Plan you do not have, or a new task order requires an attestation your current setup cannot support. Nobody tells you the subcontract did not renew because of this. It just does not renew, and the reason sits buried in a compliance review you were never part of." },
+        { type: 'h2', content: 'What we typically find when we look at a subcontractor\'s actual setup' },
+        { type: 'ul', content: 'Common gaps between what CMMC/NIST SP 800-171 requires and how a growing subcontractor is actually running today:', items: [
+          "No documented System Security Plan (SSP) or Plan of Action & Milestones (POA&M) — the two documents every assessment starts with, often nonexistent because nobody was ever asked for them before.",
+          "CUI mixed with everything else — contract deliverables, emails, and general company files sitting in the same shared drive or inbox as data that actually requires controlled handling.",
+          "No multi-factor authentication enforced company-wide, or MFA on some systems but not the ones actually touching contract data.",
+          "Access that outlives the assignment — an engineer rotated off a contract eight months ago whose access to that contract's shared resources was never revoked.",
+          "No real incident response plan — if a laptop is lost or a phishing email is clicked, there is no documented, rehearsed process, which is itself a specific control assessors check for.",
+        ] },
+        { type: 'h2', content: 'What a CMMC-ready AWS architecture actually includes' },
+        { type: 'p', content: "This is not about buying a certification — no vendor, including us, sells you a CMMC certificate. What a properly designed AWS environment does is put the technical controls in place that a System Security Plan documents and a Certified Third-Party Assessor Organization (C3PAO) verifies, for Level 2 engagements that require it." },
+        { type: 'ul', content: 'Concrete pieces of a compliance-aligned AWS setup, and the control each one supports:', items: [
+          "Data classification and boundary design — CUI, FCI, and unrestricted company data are identified and separated first, before any infrastructure decision, since this determines whether GovCloud is actually required or commercial AWS with proper controls is sufficient.",
+          "AWS GovCloud (US) for CUI workloads — meets the FedRAMP Moderate-equivalent baseline and data residency requirements DFARS 252.204-7012 calls for when CUI is genuinely in scope.",
+          "IAM with mandatory MFA and least-privilege access — every user's access is scoped to exactly what their current contract role requires, reviewed on a schedule, and revoked immediately when a role or assignment ends.",
+          "Encryption at rest and in transit (KMS-managed keys) — a specific, checkable control under NIST SP 800-171, not a general best practice left to chance.",
+          "CloudTrail logging and centralized monitoring — an auditable record of who accessed what and when, which is both a required control and what makes an incident response plan actually executable instead of theoretical.",
+          "Documented System Security Plan and POA&M — the AWS architecture is only half the requirement; the written documentation describing it, kept current, is what an assessor actually reviews first.",
+        ] },
+        { type: 'tip', content: "A five-minute gut check worth running this week: if a prime contractor emailed asking for your company's System Security Plan today, could you produce one? If the honest answer is no, that alone tells you where to start — documentation gaps show up in every assessment, even when the underlying technical controls are mostly fine." },
+        { type: 'h2', content: 'Why this needs a partner fluent in both the compliance language and yours' },
+        { type: 'p', content: "CMMC and NIST SP 800-171 work is dense enough that most subcontractors reasonably bring in outside help — the question is whether that help can also explain, in Korean when needed, why a specific control matters to a business owner who did not build a career in federal compliance. A large compliance-only consultancy will hand you a control matrix and a bill; what a small Korean-American-owned firm in Annandale or Centreville often actually needs is someone who can sit down, explain in plain terms what CUI means for the specific contract you are on, and build the AWS environment and documentation together rather than handing over a report and disappearing. We treat this the same way we treat every engagement — one point of contact, in Korean or English, from the initial data-classification conversation through ongoing monitoring, reachable on KakaoTalk." },
+        { type: 'h2', content: 'How an engagement actually runs' },
+        { type: 'p', content: "We start with a data-classification and gap assessment — walking through your actual contracts to determine what data you handle (FCI, CUI, or neither), then mapping your current environment against NIST SP 800-171 to identify what is already in place versus missing. From there we design the architecture around your actual scope rather than defaulting to the most expensive option, and remediate in phases: access control and MFA first, since those close the highest-risk gaps fastest and require no data migration, then encryption and logging, then GovCloud migration for CUI workloads if your classification work shows it is required, finishing with the System Security Plan and POA&M documentation an assessor will actually read. Your team keeps working throughout — this is staged remediation, not a weekend cutover. Once in place, monitoring, access review, and documentation updates continue as an ongoing service, since CMMC compliance is an annual affirmation, not a one-time project." },
+        { type: 'cta', content: "Not sure whether your subcontracts put you in CMMC scope, or whether your current setup would survive a prime's compliance review? ZOE LUMOS designs and manages CMMC-aligned AWS infrastructure — data classification, access control, encryption, and documentation — for Korean-American IT staffing and government-contracting subcontractors across the US, alongside our web and app development work. Free consultation in English or Korean: email info@zoelumos.com or message us on KakaoTalk (http://pf.kakao.com/_xhxdxmlX/chat)." },
+      ],
+      ko: [
+        { type: 'intro', content: '버지니아주 애나데일, 센터빌, 챈틸리 일대 — 미국에서 한인 소유 IT 인력공급·시스템 통합·전문 서비스 업체가 가장 밀집된 지역 중 하나입니다 — 에는 조용히 많은 가족 자산을 일궈온 특정 비즈니스 모델이 있습니다. 대형 국방 원청이나 연방 시스템 통합업체 아래 하도급을 따내고, 숙련된 엔지니어를 파견하거나 서비스를 제공하며, 좋은 실적과 좋은 관계를 바탕으로 매년 갱신하는 모델입니다. 그 모델은 여전히 통합니다. 그런데 그 밑에서 바뀐 것이 있습니다 — 이제 "일을 잘하는 것"만으로는 충분하지 않다는 점입니다. 모든 원청 업체는 이제 사이버보안 요구사항을 하도급 업체에게 전달해야 하고, 점점 더 많은 원청이 실제로 이를 확인하고 있습니다. 즉, 하도급 업체의 사람뿐 아니라 IT 환경 자체가 갱신 심사의 대상이 되었다는 뜻입니다.' },
+        { type: 'h2', content: '무엇이 바뀌었나: CMMC는 더 이상 대형 원청만의 문제가 아닙니다' },
+        { type: 'p', content: '사이버보안 성숙도 모델 인증(CMMC) 프로그램이 생긴 이유는, 국방부가 반복적으로 민감 정보가 원청 자체가 아니라 길게 이어진 하도급 체인의 가장 약한 고리를 통해 새어나가는 걸 발견했기 때문입니다. 해법은 요구사항을 아래로 내려보내는 것이었습니다 — FCI(연방계약정보)를 다루는 모든 회사는 기본 보호조치(자가진단하는 CMMC Level 1)가 필요하고, CUI(통제 비분류 정보)를 다루는 모든 회사는 NIST SP 800-171에 맞춘 더 엄격한 통제(제3자 평가가 필요한 경우가 많은 CMMC Level 2)가 필요합니다. 작은 한인 하도급 업체에게 이 변화는 조용히 나타납니다 — 원청의 연례 벤더 설문지가 갑자기 없는 시스템 보안 계획서(SSP)를 요구하거나, 새 태스크 오더가 지금 환경으로는 감당할 수 없는 확인서를 요구합니다. 이것 때문에 하도급이 갱신되지 않았다고 아무도 말해주지 않습니다. 그냥 갱신이 안 되고, 그 이유는 사장님이 참여한 적 없는 컴플라이언스 심사 안에 묻혀 있습니다.' },
+        { type: 'h2', content: '실제 하도급 업체 환경을 들여다보면 흔히 발견되는 것들' },
+        { type: 'ul', content: 'CMMC·NIST SP 800-171이 요구하는 것과 성장 중인 하도급 업체가 실제로 운영하는 방식 사이의 흔한 격차:', items: [
+          '문서화된 시스템 보안 계획서(SSP)나 조치 계획 및 이정표(POA&M)가 없음 — 모든 평가가 시작되는 이 두 문서가, 지금까지 아무도 요구한 적이 없어서 아예 존재하지 않는 경우가 많습니다.',
+          'CUI가 다른 모든 것과 섞여 있음 — 계약 결과물, 이메일, 일반 회사 파일이 실제로 통제된 방식으로 다뤄야 하는 데이터와 같은 공유 드라이브나 편지함에 있습니다.',
+          '전사적으로 다단계 인증(MFA)이 강제되지 않거나, 일부 시스템에는 있지만 정작 계약 데이터를 다루는 시스템에는 없습니다.',
+          '배정이 끝난 뒤에도 남아 있는 접근 권한 — 8개월 전에 그 계약에서 빠진 엔지니어가 그 계약의 공유 자료에 대한 접근 권한을 여전히 회수당하지 않았습니다.',
+          '실질적인 사고 대응 계획이 없음 — 노트북을 잃어버리거나 피싱 이메일을 클릭했을 때 문서화되고 리허설된 절차가 없는데, 이것 자체가 평가자들이 확인하는 구체적인 통제 항목입니다.',
+        ] },
+        { type: 'h2', content: 'CMMC 준수 AWS 아키텍처에 실제로 포함되는 것' },
+        { type: 'p', content: '이건 인증서를 사는 게 아닙니다 — 저희를 포함해 어떤 업체도 CMMC 인증서를 판매하지 않습니다. 제대로 설계된 AWS 환경이 하는 일은, 시스템 보안 계획서가 문서화하고 Level 2 평가가 필요한 경우 공인 제3자 평가 기관(C3PAO)이 검증하는 기술적 통제를 실제로 갖추는 것입니다.' },
+        { type: 'ul', content: '컴플라이언스에 맞춘 AWS 구성의 구체적인 요소들과, 각각이 뒷받침하는 통제:', items: [
+          '데이터 분류와 경계 설계 — 어떤 인프라 결정을 내리기 전에 CUI, FCI, 제한 없는 회사 데이터를 먼저 식별하고 분리합니다. GovCloud가 정말 필요한지, 적절한 통제를 갖춘 상업용 AWS로 충분한지가 여기서 결정됩니다.',
+          'CUI 워크로드를 위한 AWS GovCloud(US) — CUI가 실제로 대상에 포함될 때 DFARS 252.204-7012가 요구하는 FedRAMP Moderate 수준의 기준과 데이터 소재지 요건을 충족합니다.',
+          '필수 MFA와 최소 권한 원칙이 적용된 IAM — 모든 사용자의 접근 권한이 현재 맡은 계약 역할에 정확히 필요한 만큼으로 제한되고, 일정에 따라 검토되며, 역할이나 배정이 끝나면 즉시 회수됩니다.',
+          '저장·전송 시 암호화(KMS 관리형 키) — NIST SP 800-171 하에서 구체적으로 확인 가능한 통제 항목이지, 대충 넘어가는 일반적인 모범 사례가 아닙니다.',
+          'CloudTrail 로깅과 중앙 모니터링 — 누가 무엇에 언제 접근했는지 감사 가능한 기록이며, 필수 통제이자 사고 대응 계획을 실제로 실행 가능하게 만드는 요소입니다.',
+          '문서화된 시스템 보안 계획서와 POA&M — AWS 아키텍처는 요구사항의 절반일 뿐입니다. 그걸 설명하고 최신 상태로 유지하는 문서가, 평가자가 실제로 가장 먼저 검토하는 것입니다.',
+        ] },
+        { type: 'tip', content: '이번 주에 5분이면 되는 자가 점검 하나 — 오늘 원청 업체가 이메일로 우리 회사의 시스템 보안 계획서를 요구한다면, 지금 바로 낼 수 있으신가요? 솔직한 답이 "아니오"라면, 그것만으로도 어디서부터 시작해야 할지 알 수 있습니다. 기술적 통제 자체는 대체로 괜찮은 경우에도, 문서화 격차는 거의 모든 평가에서 발견됩니다.' },
+        { type: 'h2', content: '컴플라이언스 언어와 사장님의 언어를 둘 다 하는 파트너가 필요한 이유' },
+        { type: 'p', content: 'CMMC와 NIST SP 800-171 작업은 충분히 복잡해서 대부분의 하도급 업체가 합리적으로 외부 도움을 받습니다 — 문제는 그 도움이, 연방 컴플라이언스로 커리어를 쌓지 않은 사업주에게 특정 통제가 왜 중요한지 필요할 때 한국어로도 설명해줄 수 있느냐입니다. 큰 컴플라이언스 전문 업체는 통제 매트릭스와 청구서를 건네줄 뿐입니다. 애나데일이나 센터빌의 작은 한인 소유 업체에게 실제로 필요한 건, 마주 앉아서 지금 하고 있는 특정 계약에 CUI가 무엇을 의미하는지 쉬운 말로 설명해주고, 보고서만 던지고 사라지는 게 아니라 AWS 환경과 문서를 함께 만들어가는 사람인 경우가 많습니다. 저희는 이 일도 다른 모든 프로젝트와 똑같이 다룹니다 — 초기 데이터 분류 대화부터 지속 모니터링까지 한 명의 담당자가, 한국어든 영어든, 카카오톡으로 바로 연락 가능하게.' },
+        { type: 'h2', content: '실제 진행은 어떻게 이뤄지나' },
+        { type: 'p', content: '저희는 데이터 분류와 갭 평가로 시작합니다 — 실제 계약들을 하나씩 살펴보며 어떤 데이터를 다루는지(FCI, CUI, 혹은 둘 다 아닌지) 파악한 뒤, 현재 환경을 NIST SP 800-171과 대조해 이미 갖춰진 것과 부족한 것을 가려냅니다. 여기서부터 가장 비싼 옵션을 기본값으로 삼는 대신 실제 대상 범위에 맞춰 아키텍처를 설계하고, 단계적으로 개선합니다 — 가장 위험한 격차를 가장 빨리 막아주고 데이터 이전이 필요 없는 접근 권한 관리와 MFA부터 시작해서, 암호화와 로깅으로 이어지고, 데이터 분류 결과 필요하다고 나오면 CUI 워크로드의 GovCloud 이전으로, 마지막으로 평가자가 실제로 읽게 될 시스템 보안 계획서와 POA&M 문서 작업으로 마무리합니다. 그 기간 내내 팀은 계속 일합니다 — 이건 주말 몰아치기 전환이 아니라 단계적 개선입니다. 구축이 끝나면 모니터링, 접근 권한 검토, 문서 갱신이 지속 서비스로 이어집니다. CMMC 준수는 일회성 프로젝트가 아니라 매년 다시 확인해야 하는 것이니까요.' },
+        { type: 'cta', content: '우리 회사가 하도급 계약 때문에 CMMC 대상 범위에 들어가는지, 지금 환경이 원청의 컴플라이언스 심사를 통과할 수 있는지 확신이 안 서시나요? ZOE LUMOS는 웹·앱 개발과 함께, 미국 전역의 한인 IT 인력공급·정부계약 하도급 업체를 위해 CMMC에 맞춘 AWS 인프라 — 데이터 분류, 접근 권한 관리, 암호화, 문서화 — 를 설계하고 관리합니다. 한국어/영어 무료 상담: info@zoelumos.com 이메일 또는 카카오톡(http://pf.kakao.com/_xhxdxmlX/chat)으로 편하게 문의하세요.' },
+      ],
+    },
+  },
 ]
