@@ -53,6 +53,12 @@ const LEAD_TOKEN = '[[CONTACT_FORM]]'
 const displayText = (s: string) =>
   s.replaceAll(LEAD_TOKEN, '').replace(/\[\[[A-Z_[\]]*$/, '').trimEnd()
 
+// Deterministic backstop for the model's token: if the visitor's own message
+// shows contact/quote intent, the form opens whether or not the model
+// remembered rule 8. A missed lead costs more than a slightly eager form.
+const CONTACT_INTENT =
+  /contact|reach you|get in touch|talk to|human|quote|estimate|pricing for|연락|문의|상담|견적|사람이랑|시작하고|진행하고/i
+
 export default function ChatWidget({ locale = 'en' }: { locale?: string }) {
   const isKo = locale === 'ko'
   const [open, setOpen] = useState(false)
@@ -199,6 +205,9 @@ export default function ChatWidget({ locale = 'en' }: { locale?: string }) {
       if (acc.includes(LEAD_TOKEN) && !leadSent) {
         setLeadOpen(true)
         trackGAEvent('chat_lead_form_shown', { category: 'chat', label: 'model_token' })
+      } else if (!leadSent && CONTACT_INTENT.test(text)) {
+        setLeadOpen(true)
+        trackGAEvent('chat_lead_form_shown', { category: 'chat', label: 'intent_backstop' })
       }
     } catch (err) {
       if ((err as Error)?.name !== 'AbortError') {
