@@ -1,6 +1,7 @@
 'use client'
 
 import { useCallback, useEffect, useRef, useState } from 'react'
+import { trackGAEvent } from '@/utils/analytics'
 
 /**
  * Site chatbot widget. Talks to /api/chat, which streams plain text back.
@@ -29,17 +30,28 @@ const GREETING_EN =
 
 // Starter questions. These also give the fullscreen mobile sheet something to
 // show — a greeting alone on a 900px-tall panel reads as a broken screen. All
-// three are answerable from chatKnowledge.ts, so none of them dead-ends.
+// are answerable from chatKnowledge.ts, so none of them dead-ends.
 const STARTERS_KO = [
   '제작 비용이 얼마나 드나요?',
   '기간은 얼마나 걸리나요?',
-  '기존 사이트도 작업 가능한가요?',
+  '이런 AI 챗봇, 우리 가게에도 달 수 있나요?',
 ]
 const STARTERS_EN = [
   'How much does a website cost?',
   'How long does a build take?',
-  'Can you work on my existing site?',
+  'Can I get this AI chat on my site?',
 ]
+
+// The model appends this token (system-prompt rule 8) when the visitor should
+// be offered the in-chat contact form. Stripped from display and from the
+// history we send back; its only job is flipping the form open.
+const LEAD_TOKEN = '[[CONTACT_FORM]]'
+
+// Remove the token — and any partially-streamed tail of it — for display.
+// Mid-stream the last chunk can end with "[[CONTA", which would flash as
+// literal text without the second pattern.
+const displayText = (s: string) =>
+  s.replaceAll(LEAD_TOKEN, '').replace(/\[\[[A-Z_[\]]*$/, '').trimEnd()
 
 export default function ChatWidget({ locale = 'en' }: { locale?: string }) {
   const isKo = locale === 'ko'
@@ -48,6 +60,10 @@ export default function ChatWidget({ locale = 'en' }: { locale?: string }) {
   const [messages, setMessages] = useState<Msg[]>([])
   const [streaming, setStreaming] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  // Lead form: opened by the model's LEAD_TOKEN or the footer's "상담 연결"
+  // button; once sent it stays closed for the session.
+  const [leadOpen, setLeadOpen] = useState(false)
+  const [leadSent, setLeadSent] = useState(false)
 
   const scrollRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLTextAreaElement>(null)
@@ -60,7 +76,7 @@ export default function ChatWidget({ locale = 'en' }: { locale?: string }) {
   useEffect(() => {
     const el = scrollRef.current
     if (el) el.scrollTop = el.scrollHeight
-  }, [messages, streaming])
+  }, [messages, streaming, leadOpen, leadSent])
 
   // Focus the composer on desktop only. On mobile, autofocus yanks the
   // on-screen keyboard up before the visitor has read the greeting.
@@ -139,7 +155,11 @@ export default function ChatWidget({ locale = 'en' }: { locale?: string }) {
       const res = await fetch('/api/chat', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ messages: next }),
+        // The lead token is a UI signal, not conversation content — feeding it
+        // back teaches the model to imitate it in the wrong places.
+        body: JSON.stringify({
+          messages: next.map((m) => ({ ...m, content: displayText(m.content) || m.content })),
+        }),
         signal: controller.signal,
       })
 
@@ -161,10 +181,12 @@ export default function ChatWidget({ locale = 'en' }: { locale?: string }) {
       setMessages((m) => [...m, { role: 'assistant', content: '' }])
       const reader = res.body.getReader()
       const decoder = new TextDecoder()
+      let acc = ''
       for (;;) {
         const { done, value } = await reader.read()
         if (done) break
         const chunk = decoder.decode(value, { stream: true })
+        acc += chunk
         setMessages((m) => {
           const copy = [...m]
           const last = copy[copy.length - 1]
@@ -173,6 +195,10 @@ export default function ChatWidget({ locale = 'en' }: { locale?: string }) {
           }
           return copy
         })
+      }
+      if (acc.includes(LEAD_TOKEN) && !leadSent) {
+        setLeadOpen(true)
+        trackGAEvent('chat_lead_form_shown', { category: 'chat', label: 'model_token' })
       }
     } catch (err) {
       if ((err as Error)?.name !== 'AbortError') {
@@ -328,9 +354,29 @@ export default function ChatWidget({ locale = 'en' }: { locale?: string }) {
 
             {messages.map((m, i) => (
               <Bubble key={i} role={m.role}>
-                {m.content || (streaming && i === messages.length - 1 ? <Dots /> : '')}
+                {displayText(m.content) ||
+                  (streaming && i === messages.length - 1 ? <Dots /> : '')}
               </Bubble>
             ))}
+
+            {leadOpen && !leadSent && !streaming && (
+              <LeadForm
+                isKo={isKo}
+                messages={messages}
+                onDone={() => {
+                  setLeadSent(true)
+                  setLeadOpen(false)
+                }}
+              />
+            )}
+
+            {leadSent && (
+              <Bubble role="assistant">
+                {isKo
+                  ? '접수되었습니다. 1영업일 안에 이메일로 회신드리겠습니다. 그동안 다른 질문도 편하게 물어보세요.'
+                  : "Got it — Steve will reply by email within one business day. Feel free to keep asking questions here in the meantime."}
+              </Bubble>
+            )}
 
             {error && (
               <p className="rounded-lg bg-[#fbe9e7] px-3 py-2 text-[12.5px] leading-relaxed text-[#a8231c]">
@@ -338,6 +384,28 @@ export default function ChatWidget({ locale = 'en' }: { locale?: string }) {
               </p>
             )}
           </div>
+
+          {/* Self-promo: this widget IS the product. One quiet line; tapping it
+              asks the bot about it, which answers and (rule 8) opens the form. */}
+          {!leadOpen && !leadSent && (
+            <button
+              type="button"
+              onClick={() =>
+                send(
+                  isKo
+                    ? '이런 AI 챗봇, 우리 가게 웹사이트에도 달 수 있나요? 구독 안내해 주세요.'
+                    : 'Can I get this AI chat on my own website? How does the subscription work?'
+                )
+              }
+              disabled={streaming}
+              className="border-t border-[#e4ddd0] bg-[#faf7f1] px-4 py-2 text-left text-[11.5px] leading-snug text-[#6b6459] transition-colors hover:text-[#1f1c16] disabled:opacity-60"
+              style={{ touchAction: 'manipulation' }}
+            >
+              {isKo
+                ? '✨ 이 AI 챗봇, 사장님 웹사이트에도 달 수 있습니다 — 구독형 · 자세히 물어보기'
+                : '✨ This AI chat is available for your website too — subscription · ask me'}
+            </button>
+          )}
 
           {/* Composer */}
           <div className="border-t border-[#e4ddd0] bg-white px-3 py-3">
@@ -388,13 +456,157 @@ export default function ChatWidget({ locale = 'en' }: { locale?: string }) {
             </div>
             <p className="mt-2 text-[10.5px] leading-snug text-[#9a9284]">
               {isKo
-                ? 'AI 답변입니다. 정확한 상담은 info@zoelumos.com 으로 문의해 주세요.'
-                : 'AI-generated. For anything specific, email info@zoelumos.com.'}
+                ? 'AI 답변입니다. 정확한 상담은 '
+                : 'AI-generated. For anything specific, '}
+              <button
+                type="button"
+                onClick={() => {
+                  if (!leadSent) {
+                    setLeadOpen(true)
+                    trackGAEvent('chat_lead_form_shown', { category: 'chat', label: 'footer_button' })
+                  }
+                }}
+                className="font-semibold text-[#b48a43] underline underline-offset-2 hover:text-[#8f6c30]"
+                style={{ touchAction: 'manipulation' }}
+              >
+                {isKo ? '상담 연결' : 'leave your contact info'}
+              </button>
+              {isKo ? ' 버튼으로 연락처를 남겨주세요.' : ' and Steve will reply.'}
             </p>
           </div>
         </div>
       )}
     </>
+  )
+}
+
+/**
+ * In-chat contact form. Reuses /api/contact (nodemailer → owner inboxes), so
+ * chat leads land in the same place as the site's contact form — with the
+ * conversation transcript attached, which is the context a reply needs.
+ */
+function LeadForm({
+  isKo,
+  messages,
+  onDone,
+}: {
+  isKo: boolean
+  messages: Msg[]
+  onDone: () => void
+}) {
+  const lastQuestion =
+    [...messages].reverse().find((m) => m.role === 'user')?.content ?? ''
+  const [name, setName] = useState('')
+  const [email, setEmail] = useState('')
+  const [website, setWebsite] = useState('')
+  const [question, setQuestion] = useState(lastQuestion)
+  const [sending, setSending] = useState(false)
+  const [failed, setFailed] = useState(false)
+
+  const submit = async () => {
+    if (sending || !name.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) return
+    setSending(true)
+    setFailed(false)
+
+    // Last 12 turns, capped — enough context to reply without shipping a novel.
+    const transcript = messages
+      .slice(-12)
+      .map((m) => `${m.role === 'user' ? (isKo ? '방문자' : 'Visitor') : 'AI'}: ${displayText(m.content)}`)
+      .join('\n')
+      .slice(0, 2500)
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: name.trim(),
+          email: email.trim(),
+          business: website.trim() || undefined,
+          services: 'AI chat lead (site widget)',
+          message: `${question.trim() || '(no question)'}\n\n--- chat transcript ---\n${transcript}`,
+        }),
+      })
+      if (!res.ok) throw new Error(String(res.status))
+      trackGAEvent('chat_lead_submit', {
+        category: 'chat',
+        label: 'success',
+        form_type: 'chat_widget',
+        message_length: question.length,
+      })
+      onDone()
+    } catch {
+      setFailed(true)
+      trackGAEvent('chat_lead_submit', { category: 'chat', label: 'error', form_type: 'chat_widget' })
+    } finally {
+      setSending(false)
+    }
+  }
+
+  const field =
+    'w-full rounded-lg border border-[#ddd4c4] bg-white px-3 py-2 text-base text-[#1f1c16] placeholder:text-[#9a9284] focus:border-[#b48a43] focus:outline-none lg:text-[13.5px]'
+
+  return (
+    <div className="rounded-2xl border border-[#e0cfa8] bg-[#fdfaf3] p-3.5">
+      <p className="text-[13px] font-semibold text-[#1f1c16]">
+        {isKo ? '연락처를 남겨주세요' : 'Leave your contact info'}
+      </p>
+      <p className="mt-0.5 text-[11.5px] leading-snug text-[#6b6459]">
+        {isKo
+          ? '지금까지의 대화와 함께 Steve에게 바로 전달됩니다 · 1영업일 내 회신'
+          : 'Sent straight to Steve with this conversation · reply within 1 business day'}
+      </p>
+      <div className="mt-2.5 space-y-2">
+        <input
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+          placeholder={isKo ? '이름 *' : 'Name *'}
+          maxLength={80}
+          className={field}
+        />
+        <input
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+          type="email"
+          placeholder={isKo ? '이메일 *' : 'Email *'}
+          maxLength={120}
+          className={field}
+        />
+        <input
+          value={website}
+          onChange={(e) => setWebsite(e.target.value)}
+          placeholder={isKo ? '웹사이트 또는 업종 (선택)' : 'Website or business type (optional)'}
+          maxLength={120}
+          className={field}
+        />
+        <textarea
+          value={question}
+          onChange={(e) => setQuestion(e.target.value)}
+          rows={2}
+          maxLength={1000}
+          placeholder={isKo ? '문의 내용' : 'Your question'}
+          className={`${field} resize-none`}
+        />
+      </div>
+      {failed && (
+        <p className="mt-2 text-[11.5px] text-[#a8231c]">
+          {isKo
+            ? '전송에 실패했습니다. 잠시 후 다시 시도하시거나 info@zoelumos.com 으로 보내주세요.'
+            : 'Failed to send. Please try again or email info@zoelumos.com.'}
+        </p>
+      )}
+      <button
+        type="button"
+        onClick={submit}
+        disabled={sending || !name.trim() || !email.trim()}
+        className="mt-2.5 w-full rounded-lg bg-[#b48a43] py-2.5 text-[14px] font-bold text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40"
+        style={{ touchAction: 'manipulation' }}
+      >
+        {sending
+          ? isKo ? '전송 중…' : 'Sending…'
+          : isKo ? '보내기' : 'Send'}
+      </button>
+    </div>
   )
 }
 

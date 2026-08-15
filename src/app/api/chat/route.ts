@@ -31,6 +31,32 @@ function rateLimited(ip: string): boolean {
   return recent.length > MAX_PER_WINDOW
 }
 
+// Owner-mandated budget guard. Worst case per message on Haiku is ~$0.006
+// (≈3K in + 600 out), so the daily cap bounds spend at ~$1.50/day (~$45/mo)
+// even if every message maxes out; the per-IP day cap stops any one visitor
+// from eating the whole allowance. Same in-memory/no-DB tradeoff as above:
+// per-instance and reset on cold start, so the real ceiling is a bit higher —
+// a cost fuse, not accounting. When either cap trips, visitors get a
+// courteous handoff to email/KakaoTalk instead of an error.
+const DAILY_MESSAGE_CAP = 250
+const DAILY_IP_CAP = 40
+let dayStamp = ''
+let dayCount = 0
+const dayByIp = new Map<string, number>()
+
+function overBudget(ip: string): boolean {
+  const today = new Date().toISOString().slice(0, 10)
+  if (today !== dayStamp) {
+    dayStamp = today
+    dayCount = 0
+    dayByIp.clear()
+  }
+  const ipCount = (dayByIp.get(ip) ?? 0) + 1
+  dayByIp.set(ip, ipCount)
+  dayCount += 1
+  return dayCount > DAILY_MESSAGE_CAP || ipCount > DAILY_IP_CAP
+}
+
 type Turn = { role: 'user' | 'assistant'; content: string }
 
 function validate(messages: unknown): Turn[] | null {
@@ -70,6 +96,16 @@ export async function POST(request: Request) {
   if (rateLimited(ip)) {
     return Response.json(
       { error: 'Too many messages. Please wait a moment.' },
+      { status: 429 }
+    )
+  }
+
+  if (overBudget(ip)) {
+    return Response.json(
+      {
+        error:
+          '오늘 상담량이 많아 AI 응답을 잠시 쉬어갑니다. info@zoelumos.com 또는 카카오톡으로 문의해 주세요. / The assistant is resting for today — please email info@zoelumos.com.',
+      },
       { status: 429 }
     )
   }
