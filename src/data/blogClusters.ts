@@ -87,6 +87,7 @@ export const PILLARS = {
       'b2b-company-website-korean-business-credibility-2026',
       'aws-cloud-consulting-korean-business-dallas-2026',
       'korean-app-development-hire-guide-2026',
+      'aws-hipaa-cloud-korean-medical-dental-atlanta-2026',
     ],
   },
   'kakaotalk-marketing': {
@@ -291,4 +292,7 @@ export const POST_TO_PILLAR: Record<string, PillarKey> = {
   // 2026-07-16/17 backfill — Chicago F&B ordering/POS/reviews + app development hiring guide
   'korean-restaurant-chicago-online-ordering-pos-reviews-2026': 'restaurant-marketing',
   'korean-app-development-hire-guide-2026': 'website-cost',
+
+  // 2026-08-16 — HIPAA-compliant AWS infrastructure for Korean medical/dental practices (Atlanta-Duluth)
+  'aws-hipaa-cloud-korean-medical-dental-atlanta-2026': 'website-cost',
 }
