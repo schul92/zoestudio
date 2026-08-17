@@ -11698,4 +11698,129 @@ export const blogContent: BlogPost[] = [
       ],
     },
   },
+  // ─────────────────────────────────────────────────────────────────
+  // 2026-08-17 — F&B rotation: online ordering + POS + catering + review
+  // management for Korean restaurants/bakeries/cafes, Houston (Spring Branch
+  // / Long Point Rd corridor) angle to keep the metro rotation moving.
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'korean-restaurant-houston-pos-catering-reviews-2026',
+    date: '2026-08-17',
+    updatedDate: '2026-08-17',
+    readTime: 10,
+    category: { en: 'Restaurant', ko: '레스토랑' },
+    title: {
+      en: 'Korean Restaurants & Bakeries in Houston: Wire Online Ordering, Your POS, and Catering Into One System (2026)',
+      ko: '휴스턴 한인 식당·베이커리 사장님 — 온라인 주문 · POS · 케이터링 · 리뷰 관리를 하나의 시스템으로 (2026)',
+    },
+    metaDescription: {
+      en: 'Korean restaurants and bakeries along the Long Point Road corridor in Spring Branch, and the newer wave opening toward Katy and Sugar Land, often run four disconnected systems: delivery apps taking the orders, a POS nobody analyzes, catering requests scattered across text messages, and Google reviews nobody answers. Here is how to wire direct ordering into your Square, Toast, or Clover POS, turn catering into a real system with deposits and lead time, and make review management a routine instead of a crisis.',
+      ko: '스프링 브랜치의 롱 포인트 로드(Long Point Rd) 상권과, 케이티·슈가랜드 쪽으로 새로 넓어지는 한인 식당·베이커리들은 서로 연결되지 않은 네 개의 시스템을 따로 돌리는 경우가 많습니다 — 주문을 가져가는 배달 앱, 분석해본 적 없는 POS, 문자 메시지에 흩어진 케이터링 요청, 답글 없이 쌓이는 구글 리뷰. 직접 주문을 Square·Toast·Clover POS에 연결하고, 케이터링을 예치금과 리드타임을 갖춘 진짜 시스템으로 만들고, 리뷰 관리를 위기 대응이 아닌 루틴으로 만드는 방법을 정리했습니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'Square, Toast, or Clover — which POS fits a Korean restaurant or bakery in Houston best?',
+          ko: '휴스턴 한인 식당·베이커리에는 Square, Toast, Clover 중 어떤 POS가 맞나요?',
+        },
+        a: {
+          en: "Square usually fits smaller bakeries, cafes, and counter-service spots best because its hardware and monthly costs are lower and its online ordering, catering invoicing, and loyalty tools live in the same free-to-start dashboard — a good match for a bakery doing $8k–$25k a month that does not need a dedicated table-management system. Toast is built specifically for full-service restaurants and is worth its higher monthly cost once you are running a dining room with servers, course timing, and kitchen display screens — Korean BBQ and full-service spots get more out of it than a counter bakery would. Clover sits in between: solid hardware, works for both quick-service and full-service, and is often the system already on your counter because a payments processor bundled it in. The practical rule for Houston specifically: if you are choosing fresh, match the tool to how you actually serve — counter and bakery orders lean Square, full table service leans Toast, and if you already have Clover from a processor deal, upgrade it rather than replace it, since all three now support direct online ordering that reads from the same menu as your register.",
+          ko: '보통 소형 베이커리, 카페, 카운터 서비스 매장에는 Square가 가장 잘 맞습니다. 하드웨어와 월 비용이 더 낮고, 온라인 주문·케이터링 인보이스·적립 기능이 무료로 시작하는 같은 대시보드 안에 있어서, 별도의 테이블 관리 시스템이 필요 없는 월 매출 8천~2만 5천 달러대 베이커리에 적합합니다. Toast는 정통 홀서빙 레스토랑을 위해 만들어진 시스템이라 서버·코스 타이밍·주방 디스플레이 화면을 운영하는 홀이 있다면 더 높은 월 비용을 낼 가치가 있습니다 — 카운터 베이커리보다 한식 바비큐나 정통 홀서빙 매장이 더 많이 활용하게 됩니다. Clover는 그 중간입니다. 하드웨어가 탄탄하고 퀵서비스·풀서비스 양쪽에서 다 쓸 수 있으며, 결제 대행사가 번들로 끼워줘서 이미 카운터에 놓여 있는 경우가 많습니다. 휴스턴 기준 실전 규칙은 이렇습니다 — 처음부터 고른다면 실제 서비스 방식에 맞추세요. 카운터·베이커리 주문은 Square 쪽, 정식 홀서빙은 Toast 쪽이 유리하고, 결제 대행사 거래로 이미 Clover가 있다면 교체보다 업그레이드가 낫습니다. 셋 다 지금은 계산대와 같은 메뉴를 읽어오는 자사 온라인 주문을 지원하니까요.',
+        },
+      },
+      {
+        q: {
+          en: 'How do I set up an online catering ordering system so orders stop getting lost in texts and DMs?',
+          ko: '문자와 DM에 흩어져서 놓치는 케이터링 주문을, 온라인 시스템으로 어떻게 정리하나요?',
+        },
+        a: {
+          en: 'Move catering off your personal phone and onto a structured form with three fixed rules: a published per-person price tier by package size, a minimum lead time (48–72 hours is standard, longer for weekend graduation or doljanchi orders), and a deposit collected online at booking through your POS\'s invoicing feature (Square Invoices, Toast, or Clover all support this) before the date is confirmed. The form should ask for event date, headcount, and pickup or delivery in one pass, and the moment a deposit clears, the date gets blocked on a shared calendar everyone in the kitchen can see — not a note on a sticky pad. This does two things a text thread cannot: it stops the kitchen from double-booking two large orders on the same Saturday, and it stops the common failure pattern where a customer texts a request, nobody confirms it in writing, and the order either gets forgotten or made without a deposit that later gets disputed. The form takes under a day to build on top of a POS website you already have; the discipline of always requiring it, even for a longtime regular, is what actually makes it work.',
+          ko: '케이터링을 개인 휴대폰에서 빼내어, 세 가지 고정 규칙을 갖춘 구조화된 폼으로 옮기세요 — 패키지 규모별로 공개된 인당 가격표, 최소 리드타임(기본 48~72시간, 졸업 시즌 주말이나 돌잔치 주문은 더 길게), 그리고 날짜가 확정되기 전 POS의 인보이스 기능(Square Invoices, Toast, Clover 모두 지원)으로 예약 시점에 온라인으로 받는 예치금. 폼은 행사 날짜·인원수·픽업 또는 배달 여부를 한 번에 받아야 하고, 예치금이 처리되는 순간 주방 전체가 볼 수 있는 공유 캘린더에 그 날짜가 블록 처리돼야 합니다 — 포스트잇 메모가 아니라요. 이렇게 하면 문자 스레드로는 안 되는 두 가지가 해결됩니다. 주방이 같은 토요일에 큰 주문 두 개를 겹쳐 받는 일이 없어지고, 손님이 문자로 요청했는데 아무도 서면으로 확정하지 않아 주문이 잊히거나 예치금 없이 만들어져 나중에 분쟁이 되는 흔한 실패 패턴이 사라집니다. 이미 있는 POS 웹사이트 위에 폼을 만드는 데는 하루도 안 걸립니다 — 오래된 단골에게도 예외 없이 이 절차를 지키는 원칙이야말로 실제로 작동하게 만드는 부분입니다.',
+        },
+      },
+      {
+        q: {
+          en: 'How do I get more Google reviews for my restaurant or bakery without breaking the rules?',
+          ko: '규정을 어기지 않고 식당·베이커리 구글 리뷰를 늘리려면 어떻게 해야 하나요?',
+        },
+        a: {
+          en: "Ask every satisfied customer, make leaving one effortless, and never pay, discount, or filter for it. Google explicitly permits asking customers for reviews but prohibits offering money, discounts, or free items in exchange, and prohibits review gating — steering only your happiest customers toward the review link. The compliant system: a short review link or QR code at the register or on the pickup bag, a polite ask at the moment satisfaction is highest, and a reply to every review, positive or negative, within the week, in the language it was written in. Yelp is stricter than Google and discourages even asking, so on Yelp the play is a complete profile with real food photos and fast owner responses rather than solicitation. For a bilingual market like Houston's Korean community, replying in Korean to a Korean-language review and in English to an English one signals to both audiences that someone is actually reading — and a Google Business Profile with unanswered Korean reviews reads, to a Korean-speaking searcher, exactly like an empty dining room.",
+          ko: '만족한 손님 모두에게 부탁하고, 남기기 쉽게 만들고, 절대 대가를 주거나 골라서 부탁하지 않는 것입니다. 구글은 고객에게 리뷰를 요청하는 것 자체는 명시적으로 허용하지만, 돈·할인·서비스 제공을 대가로 거는 것과 리뷰 게이팅(가장 만족한 손님만 골라 리뷰 링크로 보내는 것)은 금지합니다. 규정을 지키는 시스템은 이렇습니다 — 계산대나 픽업 봉투에 짧은 리뷰 링크나 QR 코드, 만족도가 가장 높은 순간에 정중한 한마디 부탁, 그리고 좋든 나쁘든 모든 리뷰에 일주일 안에 쓰인 언어 그대로 답글. Yelp는 구글보다 엄격해서 요청 자체를 지양하라고 하니, Yelp에서는 부탁 대신 진짜 음식 사진이 있는 완성된 프로필과 빠른 사장님 답글이 정답입니다. 휴스턴 한인 커뮤니티처럼 이중언어 시장에서는 한국어 리뷰엔 한국어로, 영어 리뷰엔 영어로 답하는 것이 두 고객층 모두에게 "누군가 실제로 읽고 있다"는 신호가 됩니다 — 답글 없는 한국어 리뷰가 쌓인 구글 비즈니스 프로필은, 한국어로 검색하는 손님에게는 텅 빈 홀과 똑같이 읽힙니다.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "Houston's Korean food scene has grown quietly but steadily along the Long Point Road corridor in Spring Branch — the H Mart anchor, the strip malls around it, and a newer wave of bakeries, cafes, and BBQ spots opening as the community spreads west toward Katy and south toward Sugar Land. Walk into a good spot on a Saturday and there is a line. Look at how the same business runs online, though, and a familiar pattern shows up: delivery apps quietly taking a cut of every order, a POS that opens once a night to close out the register and nothing more, catering requests scattered across text threads and Instagram DMs with no system behind them, and a Google Business Profile where reviews — Korean and English — pile up unanswered. None of this shows up from the dining room. It shows up in the register tape and the catering calendar nobody is keeping." },
+        { type: 'h2', content: 'The four systems that never talk to each other' },
+        { type: 'p', content: "Most Korean restaurant and bakery owners we talk to built each of these pieces at a different time for a different reason. The delivery tablet arrived because a rep dropped one off. The POS came bundled with a payments deal. Catering started as a favor for a regular customer and just kept being handled by phone. The Google listing was claimed years ago by whoever happened to set it up. Each decision made sense on its own — but the result is a business where ordering, the kitchen system, catering, and reputation are each owned separately, and the owner owns none of the connective tissue between them." },
+        { type: 'ul', content: 'What the disconnection actually costs, in practice:', items: [
+          'Marketplace commissions on regulars — delivery platforms charge meaningful per-order fees, and the painful part is paying them on customers who already know your bakery or restaurant and would gladly order direct.',
+          "Catering that lives in a text thread — a request comes in by DM, nobody confirms it in writing, no deposit is collected, and either the order gets forgotten or it gets made and the customer disputes the price afterward.",
+          'Double-booked weekends — without a shared calendar tied to a confirmed deposit, two large catering orders can land on the same Saturday and the kitchen finds out the hard way.',
+          'Customer data you never see — orders through a marketplace mean the platform holds the name, contact, and order history, so you cannot text a regular about a slow Tuesday or a new seasonal item.',
+          "Reviews as an afterthought — an unanswered Google review reads like an empty dining room, and in a bilingual market, an unanswered Korean-language review tells an entire community segment nobody is listening.",
+        ] },
+        { type: 'h2', content: 'Step one: pick your POS and make it own online ordering' },
+        { type: 'p', content: "Square, Toast, and Clover all now ship first-party online ordering that reads directly from the same menu your register uses — change a price or 86 an item once, and it updates everywhere. Square tends to fit smaller bakeries and counter-service spots best because of its lower cost and built-in invoicing; Toast is worth its higher price for a full-service BBQ restaurant running table service; Clover works for either and is often what a payments processor already put on the counter. Whichever you run, the fix is the same: stop treating online ordering as a separate project and turn on what your POS already offers." },
+        { type: 'ul', content: 'The order of operations we recommend:', items: [
+          "Turn on your POS vendor's online ordering so a direct channel exists at all, flowing into the same kitchen workflow as everything else.",
+          'Connect delivery marketplaces to the POS through integration where available, so staff stop retyping tickets from a tablet during the rush.',
+          "Point your Google Business Profile 'Order' action, Instagram bio link, and a QR code at the register or pickup bag to your direct ordering page — not to a marketplace.",
+          'Give regulars a small, sustainable reason to switch — a pickup discount you can afford precisely because no commission is coming out of the direct order.',
+        ] },
+        { type: 'tip', content: "Check one thing today: search your business name on Google and see where the 'Order online' button actually sends people. For many Korean restaurants and bakeries it points to a third-party marketplace — meaning Google is routing even customers who searched you by name through a commissioned channel. Repointing that button is a ten-minute fix inside Google Business Profile." },
+        { type: 'h2', content: 'Step two: turn catering into a system, not a text thread' },
+        { type: 'p', content: "Catering is often the highest-margin work a Korean restaurant or bakery does — graduation parties, doljanchi (첫돌) celebrations, church and office events — and it is also the part most likely to run entirely on the owner's or a manager's personal phone. That works until two large orders land on the same weekend, or a request gets confirmed verbally and then forgotten during a busy dinner rush. The fix is a structured online catering form with three fixed rules." },
+        { type: 'ul', content: 'What the catering system needs to include:', items: [
+          'A published per-person price tier by package size, so the customer sees the number before they ever call or message.',
+          'A minimum lead time — 48 to 72 hours is standard, longer around graduation season (May–June) and weekend doljanchi bookings when demand spikes.',
+          "A deposit collected online at booking through your POS's invoicing feature, before the date counts as confirmed.",
+          'A shared calendar the whole kitchen can see, blocked the moment a deposit clears — not a note on a sticky pad by the register.',
+        ] },
+        { type: 'p', content: "None of this requires new software if you already run Square, Toast, or Clover — all three support invoicing that can double as a deposit collection tool. The form itself takes under a day to build on top of a website you already have. The part that actually makes it work is discipline: requiring the form and deposit even for a longtime regular, so 'I'll just text you' stops being how catering gets booked." },
+        { type: 'h2', content: 'Step three: review management as a weekly routine' },
+        { type: 'p', content: "Reviews decide discovery for Korean food in Houston the same way they do everywhere else — a family in Katy choosing between three Korean BBQ options sees star ratings before anything else. The fix is a boring, reliable routine rather than crisis response: a standing thirty-minute block each week to reply to every new review in the language it was written in, thank the good ones specifically, and answer the bad ones calmly with what changed. Never pay for reviews, never discount for them, and never filter who gets asked — Google prohibits all three and enforcement can wipe a profile's reviews entirely. On Yelp, where even asking is discouraged, invest in the profile itself: complete hours, real photos of what people actually order, and fast owner responses." },
+        { type: 'h2', content: 'The Houston-specific layer: be findable in both languages, in both directions of growth' },
+        { type: 'p', content: "Houston's Korean food audience searches two ways: English speakers looking for 'korean bbq near me' or 'best korean bakery Katy,' and Korean speakers searching '휴스턴 한인 식당' or '케이티 한식당.' Most restaurant websites and Google profiles serve only one. A bilingual site — with the neighborhood names customers actually use, hours, parking notes, and the direct ordering and catering links — plus a Google Business Profile with photos and answered reviews in both languages, covers both audiences with one build. As the community spreads from Spring Branch toward Katy and Sugar Land, that combination matters even more, because new residents in those suburbs are searching for a Korean spot before they know which one is closest." },
+        { type: 'cta', content: "Running a Korean restaurant or bakery in Houston and tired of ordering, POS, catering, and reviews living in four different places? ZOE LUMOS builds bilingual restaurant and bakery websites with direct online ordering wired into Square, Toast, or Clover, a structured catering system with deposits built in, and Google Business Profile and review management set up as a routine you can actually keep. Free consultation in English or Korean: email info@zoelumos.com or message us on KakaoTalk (http://pf.kakao.com/_xhxdxmlX/chat)." },
+      ],
+      ko: [
+        { type: 'intro', content: '휴스턴의 한인 외식 상권은 스프링 브랜치의 롱 포인트 로드(Long Point Rd) 상권을 중심으로 조용하지만 꾸준히 커왔습니다 — H Mart를 앵커로, 그 주변 상가들, 그리고 커뮤니티가 서쪽 케이티(Katy)와 남쪽 슈가랜드(Sugar Land)로 퍼지면서 새로 문을 여는 베이커리·카페·바비큐 매장들까지요. 토요일에 괜찮은 매장에 들어가 보면 줄이 서 있습니다. 그런데 같은 매장이 온라인에서 어떻게 돌아가는지 보면 익숙한 패턴이 나타납니다 — 주문마다 조용히 수수료를 떼 가는 배달 앱, 밤에 정산할 때 딱 한 번만 열어보는 POS, 문자 스레드와 인스타그램 DM에 흩어진 채 시스템 없이 처리되는 케이터링 요청, 한국어·영어 리뷰가 답글 없이 쌓여가는 구글 비즈니스 프로필. 이 중 어느 것도 홀에서는 보이지 않습니다. 정산 테이프와, 아무도 관리하지 않는 케이터링 일정표에서 드러납니다.' },
+        { type: 'h2', content: '서로 대화하지 않는 네 개의 시스템' },
+        { type: 'p', content: '저희가 만나는 한인 식당·베이커리 사장님 대부분은 이 조각들을 각각 다른 시기에, 다른 이유로 만드셨습니다. 배달 태블릿은 영업사원이 놓고 갔고, POS는 결제 대행 계약에 묶여 딸려 왔고, 케이터링은 단골 손님을 위한 호의로 시작해서 계속 전화로 처리돼 왔고, 구글 리스팅은 몇 년 전 누군가 등록해 둔 그대로입니다. 각각의 결정은 그 자체로는 합리적이었습니다 — 하지만 그 결과, 주문·주방 시스템·케이터링·평판을 각각 다른 곳이 소유하고, 정작 사장님은 그 사이를 잇는 연결 고리를 하나도 소유하지 못한 사업이 됐습니다.' },
+        { type: 'ul', content: '이 단절이 실제로 만들어내는 비용:', items: [
+          '단골에게까지 나가는 마켓플레이스 수수료 — 배달 플랫폼은 주문당 상당한 수수료를 받습니다. 아픈 지점은, 이미 우리 베이커리나 식당을 알고 기꺼이 직접 주문했을 손님에게까지 그 수수료를 내고 있다는 것입니다.',
+          '문자 스레드 속에 사는 케이터링 — DM으로 요청이 들어오는데 아무도 서면으로 확정하지 않고 예치금도 받지 않아서, 주문이 잊히거나 만들어진 뒤 가격을 두고 손님과 분쟁이 생깁니다.',
+          '겹쳐버린 주말 — 확정된 예치금과 연결된 공유 캘린더가 없으면 같은 토요일에 큰 케이터링 주문 두 개가 겹칠 수 있고, 주방은 당일에야 그 사실을 알게 됩니다.',
+          '한 번도 보지 못하는 고객 데이터 — 마켓플레이스로 들어온 주문은 이름·연락처·주문 이력을 플랫폼이 가져서, 한가한 화요일이나 새 시즌 메뉴를 단골에게 문자로 알릴 수 없습니다.',
+          '뒷전이 된 리뷰 — 답글 없는 구글 리뷰는 텅 빈 홀처럼 읽히고, 이중언어 상권에서는 답글 없는 한국어 리뷰가 커뮤니티 전체에게 "아무도 듣고 있지 않다"고 말합니다.',
+        ] },
+        { type: 'h2', content: '1단계 — POS를 정하고, 온라인 주문을 그 위에서 돌리세요' },
+        { type: 'p', content: 'Square, Toast, Clover 모두 이제 계산대가 쓰는 것과 같은 메뉴를 그대로 읽어오는 자사 온라인 주문을 제공합니다 — 가격을 바꾸거나 품절 처리를 한 번만 하면 모든 곳에 반영됩니다. Square는 비용이 낮고 인보이스 기능이 내장돼 있어 소형 베이커리와 카운터 서비스 매장에 잘 맞고, Toast는 홀서빙을 운영하는 정통 바비큐 식당이라면 더 높은 비용을 낼 가치가 있으며, Clover는 둘 다에서 쓸 수 있고 결제 대행사가 이미 카운터에 놓고 간 경우가 많습니다. 어느 쪽을 쓰든 해법은 같습니다 — 온라인 주문을 별도 프로젝트로 취급하지 말고, POS가 이미 제공하는 기능부터 켜세요.' },
+        { type: 'ul', content: '저희가 권하는 작업 순서:', items: [
+          'POS 업체의 온라인 주문을 켜서 직접 주문 채널부터 존재하게 만드세요. 주문은 다른 모든 주문과 같은 주방 워크플로로 흘러갑니다.',
+          '연동이 가능하다면 배달 마켓플레이스를 POS에 연결해서, 러시 시간에 직원이 태블릿을 보고 티켓을 다시 입력하는 일을 없애세요.',
+          "구글 비즈니스 프로필의 '주문' 버튼, 인스타그램 바이오 링크, 계산대나 픽업 봉투의 QR 코드를 마켓플레이스가 아니라 자체 주문 페이지로 향하게 하세요.",
+          '단골이 갈아탈 만한 작고 지속 가능한 이유를 주세요 — 직접 주문엔 수수료가 안 나가니 그만큼 감당 가능한 픽업 할인으로요.',
+        ] },
+        { type: 'tip', content: "오늘 딱 하나만 확인해 보세요. 구글에 우리 가게 이름을 검색하고 '온라인 주문' 버튼이 실제로 어디로 보내는지 보는 겁니다. 많은 한인 식당·베이커리에서 이 버튼이 제3자 마켓플레이스로 연결돼 있습니다 — 이름까지 검색해서 찾아온 손님마저 구글이 수수료 채널로 흘려보내고 있다는 뜻입니다. 이 버튼을 바꾸는 건 구글 비즈니스 프로필 안에서 10분이면 되는 수정입니다." },
+        { type: 'h2', content: '2단계 — 케이터링을 문자 스레드가 아니라 시스템으로 만드세요' },
+        { type: 'p', content: '케이터링은 한인 식당·베이커리가 하는 일 중 마진이 가장 좋은 경우가 많습니다 — 졸업 파티, 돌잔치, 교회·회사 행사 — 그리고 동시에 사장님이나 매니저의 개인 휴대폰 하나로 전부 처리될 가능성이 가장 높은 부분이기도 합니다. 큰 주문 두 개가 같은 주말에 겹치거나, 구두로 확정한 요청이 바쁜 저녁 러시 중에 잊히기 전까지는 그럭저럭 돌아갑니다. 해법은 세 가지 고정 규칙을 갖춘 구조화된 온라인 케이터링 폼입니다.' },
+        { type: 'ul', content: '케이터링 시스템에 들어가야 할 것:', items: [
+          '패키지 규모별로 공개된 인당 가격표 — 손님이 전화나 메시지를 보내기 전에 숫자를 먼저 봅니다.',
+          '최소 리드타임 — 기본 48~72시간, 수요가 몰리는 졸업 시즌(5~6월)과 주말 돌잔치 예약은 더 길게.',
+          '날짜가 확정으로 인정되기 전, POS의 인보이스 기능으로 예약 시점에 온라인으로 받는 예치금.',
+          '예치금이 처리되는 순간 블록 처리되는, 주방 전체가 볼 수 있는 공유 캘린더 — 계산대 옆 포스트잇 메모가 아니라요.',
+        ] },
+        { type: 'p', content: '이미 Square, Toast, Clover 중 하나를 쓰고 계시다면 새 소프트웨어가 필요 없습니다 — 셋 다 예치금 수집 도구로도 쓸 수 있는 인보이스 기능을 지원합니다. 폼 자체는 이미 있는 웹사이트 위에 하루도 안 돼 만들 수 있습니다. 실제로 작동하게 만드는 부분은 규율입니다 — 오래된 단골에게도 예외 없이 폼과 예치금을 요구해서, "그냥 문자로 할게요"가 케이터링을 예약하는 방법이 되지 않게 하는 것입니다.' },
+        { type: 'h2', content: '3단계 — 리뷰 관리는 위기 대응이 아니라 주간 루틴으로' },
+        { type: 'p', content: '휴스턴의 한식 발견도 다른 어디서나와 마찬가지로 리뷰가 결정합니다 — 케이티의 한 가족이 코리안 바비큐 세 곳 중 하나를 고를 때 가장 먼저 보는 건 별점이니까요. 해법은 위기 대응이 아니라 지루할 만큼 꾸준한 루틴입니다 — 매주 30분을 고정해 두고 새 리뷰 전부에 쓰인 언어 그대로 답글을 답니다. 좋은 리뷰엔 구체적으로 감사하고, 나쁜 리뷰엔 무엇을 바꿨는지 차분하게 답합니다. 리뷰에 돈을 내거나, 할인을 걸거나, 만족한 손님만 골라 부탁하는 일은 절대 하지 마세요 — 셋 다 구글이 금지하는 행위이고, 적발 시 프로필의 리뷰가 통째로 날아갈 수 있습니다. 요청 자체를 지양하라고 하는 Yelp에서는 프로필 그 자체에 투자하세요 — 정확한 영업시간, 손님들이 실제로 시키는 메뉴의 진짜 사진, 그리고 빠른 사장님 답글.' },
+        { type: 'h2', content: '휴스턴에서만 더해지는 한 겹 — 두 언어, 그리고 커뮤니티가 넓어지는 두 방향 모두에서 검색되기' },
+        { type: 'p', content: "휴스턴의 한식 고객층은 두 가지 방식으로 검색합니다. 'korean bbq near me'나 'best korean bakery Katy'를 검색하는 영어권 손님, 그리고 '휴스턴 한인 식당'이나 '케이티 한식당'을 검색하는 한국어권 손님. 대부분의 식당 웹사이트와 구글 프로필은 이 중 한쪽만 상대합니다. 손님들이 실제로 쓰는 동네 이름과 영업시간, 주차 안내, 직접 주문·케이터링 링크를 담은 이중언어 사이트 — 그리고 사진과 두 언어 모두의 답글이 있는 구글 비즈니스 프로필 — 이 조합이면 한 번의 구축으로 두 고객층을 모두 커버합니다. 커뮤니티가 스프링 브랜치에서 케이티와 슈가랜드로 퍼져 나가는 지금, 이 조합은 더 중요해집니다 — 그 교외에 새로 정착한 주민들은 어느 매장이 가장 가까운지 알기도 전에 이미 한식당을 검색하고 있으니까요." },
+        { type: 'cta', content: '휴스턴에서 한인 식당·베이커리를 운영하시면서, 주문·POS·케이터링·리뷰가 네 개의 다른 곳에서 따로 돌아가는 데 지치셨나요? ZOE LUMOS는 Square·Toast·Clover에 직접 연결되는 온라인 주문을 갖춘 이중언어 식당·베이커리 웹사이트를 만들고, 예치금이 내장된 구조화된 케이터링 시스템, 그리고 실제로 지킬 수 있는 루틴으로 세팅된 구글 비즈니스 프로필·리뷰 관리를 제공합니다. 한국어/영어 무료 상담: info@zoelumos.com 이메일 또는 카카오톡(http://pf.kakao.com/_xhxdxmlX/chat)으로 편하게 문의하세요.' },
+      ],
+    },
+  },
 ]
