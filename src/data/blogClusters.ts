@@ -53,6 +53,8 @@ export const PILLARS = {
       'toast-clover-pos-analytics-goldmine-2026',
       'website-drives-revenue-pizza-catering-case-study-2026',
       'korean-restaurant-chicago-online-ordering-pos-reviews-2026',
+      'korean-restaurant-catering-denver-aurora-2026',
+      'korean-restaurant-houston-pos-catering-reviews-2026',
     ],
   },
   'beauty-wellness': {
@@ -64,6 +66,7 @@ export const PILLARS = {
       'korean-nail-salon-website-guide',
       'korean-hair-salon-website-guide',
       'korean-salon-spa-local-seo-new-jersey-2026',
+      'pilates-fitness-studio-booking-noshow-seattle-2026',
     ],
   },
   'website-cost': {
@@ -87,6 +90,18 @@ export const PILLARS = {
       'b2b-company-website-korean-business-credibility-2026',
       'aws-cloud-consulting-korean-business-dallas-2026',
       'korean-app-development-hire-guide-2026',
+      'b2b-wholesale-quote-leads-seo-los-angeles-korean-2026',
+      'korean-import-customs-fda-ecommerce-seattle-2026',
+      'aws-network-security-multi-location-korean-restaurant-atlanta-2026',
+      'custom-internal-operations-app-korean-business-houston-2026',
+      'korean-ecommerce-payments-sales-tax-nexus-bay-area-2026',
+      'aws-cloud-consulting-korean-multi-location-business-seattle-2026',
+      'b2b-manufacturing-supplier-website-rfq-leads-georgia-2026',
+      'ecommerce-fulfillment-3pl-vs-amazon-fba-korean-sellers-2026',
+      'korea-sourcing-us-ecommerce-customs-tax-fulfillment-2026',
+      'aws-cmmc-security-korean-government-contractor-virginia-2026',
+      'korean-beauty-fitness-membership-app-charlotte-2026',
+      'aws-hipaa-cloud-korean-medical-dental-atlanta-2026',
     ],
   },
   'kakaotalk-marketing': {
@@ -119,6 +134,7 @@ export const PILLARS = {
       'korean-tutoring-sat-prep-website',
       'korean-church-website-guide',
       'starting-korean-business-america-2026',
+      'korean-sat-academy-booking-noshow-irvine-2026',
     ],
   },
   'ai-services': {
@@ -291,4 +307,53 @@ export const POST_TO_PILLAR: Record<string, PillarKey> = {
   // 2026-07-16/17 backfill — Chicago F&B ordering/POS/reviews + app development hiring guide
   'korean-restaurant-chicago-online-ordering-pos-reviews-2026': 'restaurant-marketing',
   'korean-app-development-hire-guide-2026': 'website-cost',
+
+  // 2026-07-19 — B2B wholesale RFQ/search-lead generation (LA Fashion District)
+  'b2b-wholesale-quote-leads-seo-los-angeles-korean-2026': 'website-cost',
+
+  // 2026-07-20 — Korea-to-US import customs/duty/FDA guide for product sellers (Seattle)
+  'korean-import-customs-fda-ecommerce-seattle-2026': 'website-cost',
+
+  // 2026-07-21 — Pilates/fitness studio booking + no-show prevention (Seattle, WA)
+  'pilates-fitness-studio-booking-noshow-seattle-2026': 'beauty-wellness',
+
+  // 2026-07-24 — AWS network security for multi-location F&B/retail (Atlanta metro)
+  'aws-network-security-multi-location-korean-restaurant-atlanta-2026': 'website-cost',
+
+  // 2026-07-25 — custom internal operations app (staff scheduling + inventory), Houston TX
+  'custom-internal-operations-app-korean-business-houston-2026': 'website-cost',
+
+  // 2026-07-27 — SAT/academy trial-class booking + no-show deposit + Google Maps (Irvine/OC, CA)
+  'korean-sat-academy-booking-noshow-irvine-2026': 'professional-services',
+
+  // 2026-07-28 — E-commerce payments & sales tax nexus for Bay Area Korean sellers
+  'korean-ecommerce-payments-sales-tax-nexus-bay-area-2026': 'website-cost',
+
+  // 2026-08-01 — AWS cloud infrastructure consulting, multi-location angle (Seattle–Bellevue, WA)
+  'aws-cloud-consulting-korean-multi-location-business-seattle-2026': 'website-cost',
+
+  // 2026-08-02 — F&B catering as a distinct system (Denver–Aurora, CO)
+  'korean-restaurant-catering-denver-aurora-2026': 'restaurant-marketing',
+
+  // 2026-08-06 — B2B manufacturing/auto-parts RFQ lead capture (Georgia automotive corridor)
+  'b2b-manufacturing-supplier-website-rfq-leads-georgia-2026': 'website-cost',
+
+  // 2026-08-07 — fulfillment decision guide (3PL vs Amazon FBA vs self-fulfillment)
+  'ecommerce-fulfillment-3pl-vs-amazon-fba-korean-sellers-2026': 'website-cost',
+
+  // 2026-08-11 — Korea sourcing → US resale (customs, multi-state tax, 3PL/FBA fulfillment)
+  'korea-sourcing-us-ecommerce-customs-tax-fulfillment-2026': 'website-cost',
+
+  // 2026-08-13 — AWS/CMMC compliance for Korean-American govcon IT subcontractors (Northern Virginia)
+  'aws-cmmc-security-korean-government-contractor-virginia-2026': 'website-cost',
+
+  // 2026-08-15 — membership/loyalty app for multi-location Korean-American
+  // beauty & fitness businesses (Charlotte, NC)
+  'korean-beauty-fitness-membership-app-charlotte-2026': 'website-cost',
+
+  // 2026-08-16 — HIPAA-compliant AWS infrastructure for Korean medical/dental practices (Atlanta-Duluth)
+  'aws-hipaa-cloud-korean-medical-dental-atlanta-2026': 'website-cost',
+
+  // 2026-08-17 — Houston F&B: online ordering, POS (Square/Toast/Clover), catering, reviews
+  'korean-restaurant-houston-pos-catering-reviews-2026': 'restaurant-marketing',
 }
