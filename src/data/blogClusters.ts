@@ -135,6 +135,7 @@ export const PILLARS = {
       'korean-church-website-guide',
       'starting-korean-business-america-2026',
       'korean-sat-academy-booking-noshow-irvine-2026',
+      'korean-real-estate-agent-showing-booking-noshow-austin-2026',
     ],
   },
   'ai-services': {
@@ -356,4 +357,8 @@ export const POST_TO_PILLAR: Record<string, PillarKey> = {
 
   // 2026-08-17 — Houston F&B: online ordering, POS (Square/Toast/Clover), catering, reviews
   'korean-restaurant-houston-pos-catering-reviews-2026': 'restaurant-marketing',
+
+  // 2026-08-18 — real estate showing scheduling + no-show prevention + Google Maps
+  // (Austin metro, tied to Samsung Taylor semiconductor relocation wave)
+  'korean-real-estate-agent-showing-booking-noshow-austin-2026': 'professional-services',
 }

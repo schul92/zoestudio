@@ -13428,4 +13428,110 @@ export const blogContent: BlogPost[] = [
       ],
     },
   },
+
+  // ─────────────────────────────────────────────────────────────────
+  // 2026-08-18 — Real estate showing scheduling + no-show prevention +
+  // Google Maps optimization for Korean-American agents, tied to the
+  // Samsung Taylor semiconductor relocation wave (Austin metro, TX)
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'korean-real-estate-agent-showing-booking-noshow-austin-2026',
+    date: '2026-08-18',
+    updatedDate: '2026-08-18',
+    readTime: 9,
+    category: { en: 'Industry Guide', ko: '업종별 가이드' },
+    title: {
+      en: 'Korean-American Real Estate Agents in Austin: Fix Showing No-Shows With Real Booking, Not a Text Thread (2026)',
+      ko: '오스틴 한인 부동산 에이전트 쇼잉 예약 가이드 — 노쇼 방지와 구글 지도 최적화 (2026)',
+    },
+    metaDescription: {
+      en: "Korean-American real estate agents across the Austin metro — Round Rock, Cedar Park, Pflugerville, Georgetown, Taylor — are still booking showings by text as Samsung's Taylor semiconductor complex pulls in a wave of Korean-speaking relocation buyers. Here is how self-service showing scheduling, automated confirmations, and Google Business Profile optimization stop wasted drive time and lost showings.",
+      ko: '삼성 테일러 반도체 공장이 이끄는 한인 이주 물결 속에서도, 오스틴 광역권(라운드록·시더파크·플러거빌·조지타운·테일러) 한인 부동산 에이전트들은 여전히 문자로 쇼잉을 잡습니다. 셀프서비스 쇼잉 예약, 자동 확인·리마인더, 구글 비즈니스 프로필 최적화가 낭비되는 이동 시간과 놓치는 쇼잉을 어떻게 막는지 정리했습니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'Does a Korean-American real estate agent in Austin really need showing-scheduling software, or is texting buyers enough?',
+          ko: '오스틴 한인 부동산 에이전트도 정말 쇼잉 예약 소프트웨어가 필요한가요, 문자로 충분하지 않나요?',
+        },
+        a: {
+          en: "Texting works for a single showing, but it breaks down the moment you have more than two or three scheduled the same day, which is the normal load for any working agent. Real showings carry constraints a text thread cannot track: many Austin-metro listings run lockbox access through ShowingTime or a similar MLS-linked system that only opens during a confirmed window, a second buyer's agent can book the same slot on the same listing without either of you knowing, and the Austin metro is wide enough that a no-show costs 30-40 minutes of drive time each way between Round Rock, Georgetown, and Taylor, not just a missed appointment. Scheduling software that plugs into your MLS gives every party — you, the buyer, the listing agent — the same live calendar instead of three different guesses.",
+          ko: '문자는 쇼잉이 하나일 땐 통합니다. 하지만 같은 날 두세 건 이상 잡히는 순간 무너지기 시작하는데, 이건 현역 에이전트라면 흔한 일정량입니다. 실제 쇼잉에는 문자 스레드로는 관리할 수 없는 제약이 있습니다 — 오스틴 광역권의 많은 매물은 ShowingTime 같은 MLS 연동 시스템으로 락박스 접근을 관리하고, 확정된 시간대에만 열립니다. 다른 바이어 에이전트가 같은 매물의 같은 시간대를 아무도 모르게 이중 예약할 수도 있습니다. 오스틴 광역권은 라운드록·조지타운·테일러 사이를 오가는 데만 편도 30~40분이 걸릴 만큼 넓어서, 노쇼 하나가 단순히 약속 하나를 놓치는 게 아니라 왕복 이동 시간 전체를 날리는 일이 됩니다. MLS와 연동된 예약 소프트웨어는 사장님·바이어·리스팅 에이전트 모두에게 각자 다른 추측이 아니라 하나의 실시간 캘린더를 보여줍니다.',
+        },
+      },
+      {
+        q: {
+          en: 'How do I actually cut down on buyers not showing up to a scheduled showing?',
+          ko: '예약된 쇼잉에 바이어가 안 나타나는 노쇼를 실제로 어떻게 줄이나요?',
+        },
+        a: {
+          en: "Require a confirmation step before the showing is locked in, and automate the reminder so it never depends on you remembering to send one. In practice that means: a booking form that asks whether the buyer is working with a lender and has a pre-approval letter (screens out early-stage lookers who are more likely to flake), an automated text or email confirmation the moment the slot is booked, and a second automated reminder 24 hours and again 2 hours before the showing, with a one-tap reschedule or cancel link so a genuine conflict becomes a clean reschedule instead of a silent no-show. This is standard behavior in ShowingTime, Aryeo, and the scheduling tools built into kvCORE and Follow Up Boss — the software sends the reminders, so enforcement never turns into an awkward phone call from you.",
+          ko: '쇼잉이 확정되기 전에 확인 단계를 요구하고, 리마인더를 자동화해서 사장님이 직접 문자를 보내는 걸 기억하지 않아도 되게 만드세요. 실제로는 이런 식입니다 — 예약 폼에서 대출 상담을 진행 중인지, 사전 승인서(pre-approval letter)가 있는지 물어봐서 아직 둘러보는 단계라 노쇼 가능성이 높은 초기 문의자를 걸러내고, 예약이 잡히는 순간 자동 문자·이메일로 확인을 보내고, 쇼잉 24시간 전과 2시간 전에 다시 자동 리마인더를 보내되 원터치로 일정 변경·취소가 가능한 링크를 넣어서 진짜 일정 충돌이 조용한 노쇼가 아니라 깔끔한 일정 변경으로 처리되게 하는 겁니다. ShowingTime, Aryeo, 그리고 kvCORE·Follow Up Boss에 내장된 예약 도구들이 기본으로 이 기능을 지원합니다 — 소프트웨어가 리마인더를 보내니, 이 정책을 지키는 일이 사장님이 직접 거는 어색한 전화가 되지 않습니다.',
+        },
+      },
+      {
+        q: {
+          en: "What does a Google Business Profile need to actually rank for '오스틴 한인 부동산' or 'Korean real estate agent Round Rock' searches?",
+          ko: "'오스틴 한인 부동산'이나 'Korean real estate agent Round Rock' 검색에서 상위 노출되려면 구글 비즈니스 프로필에 뭐가 필요한가요?",
+        },
+        a: {
+          en: "It needs the correct primary category (Real estate agency or Real estate agent, not a generic business category), a service area that lists every township you actually cover — Round Rock, Cedar Park, Pflugerville, Georgetown, and Taylor by name, not just 'Austin' — and a steady stream of recent reviews, since Google weighs how recent and frequent reviews are as much as the star average. Beyond the profile, Google increasingly favors listings whose website converts the click into an action: a 'Schedule a showing' or 'Book a consultation' button linked straight into your scheduling platform outranks a phone-number-only listing over time, because Google can measure which businesses turn a search into a completed visit and quietly rewards them in future rankings.",
+          ko: '정확한 주 업종(일반 비즈니스가 아니라 부동산 중개업소 또는 부동산 에이전트)과, 실제로 커버하는 모든 타운을 이름으로 명시한 서비스 지역이 필요합니다 — 그냥 "오스틴"이 아니라 라운드록·시더파크·플러거빌·조지타운·테일러를 각각 적어야 합니다. 그리고 꾸준히 쌓이는 최신 리뷰도 필요합니다. 구글은 별점 평균만큼이나 리뷰가 얼마나 최근에, 얼마나 자주 달리는지를 중요하게 봅니다. 프로필 자체를 넘어서, 구글은 클릭을 실제 행동으로 바꾸는 웹사이트를 가진 업체를 점점 더 우대합니다 — 전화번호 하나만 있는 리스팅보다, 예약 플랫폼으로 바로 연결되는 "쇼잉 예약" 또는 "상담 예약" 버튼이 있는 리스팅이 시간이 지날수록 더 높이 노출됩니다. 구글은 어떤 업체가 검색을 실제 방문으로 완성시키는지 측정하고, 향후 순위에서 조용히 그런 업체를 밀어주기 때문입니다.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "Saturday afternoon, six showings across Round Rock and Cedar Park, spaced forty-five minutes apart on purpose. Two buyers who confirmed by text the night before never answer \"still good for 2pm?\" — you drive out anyway because the seller's lockbox code only opens during the window you already requested, and nobody's there. That's ninety minutes and half a tank of gas gone on a Saturday, while a text from a different buyer asking about the 3pm slot sits unread until you're back in the car. Austin's Korean-American community is growing fast right now: Samsung's semiconductor complex in Taylor, about thirty minutes northeast of downtown, is pulling in a steady wave of Korean-speaking engineers and families relocating from Korea, California, and Georgia into Round Rock, Pflugerville, Georgetown, and Taylor itself. That means more buyers looking for a Korean-speaking agent than most agents can currently serve well — and the bottleneck usually isn't lead volume. It's a scheduling system built entirely on text messages that can't show anyone who's actually confirmed." },
+        { type: 'h2', content: 'Where text-based showing scheduling breaks down' },
+        { type: 'p', content: "A nail salon or restaurant no-show costs you one chair or one table for an hour. A real estate showing no-show costs you a round trip across a metro where townships are thirty to forty minutes apart, plus it can strand you at a property whose lockbox is locked because the showing was never confirmed through the MLS-linked system the seller's agent actually checks. Text and DM scheduling has no way to show a second buyer's agent that a slot on the same listing is already taken, no way to confirm a buyer actually has financing lined up before you drive out, and no shared calendar the seller's side can trust — which means every showing you book by text is a small bet that nobody else double-booked it and the buyer on the other end is actually coming." },
+        { type: 'ul', content: 'What the disconnect actually costs, in practice:', items: [
+          "Wasted drive time on no-shows — Round Rock to Georgetown or Taylor is 30-40 minutes one way, so an unconfirmed no-show can cost the better part of an afternoon, not just an hour.",
+          "Double-booked slots — two buyer's agents text the listing agent within minutes of each other, and without a shared calendar, both show up for the same window.",
+          "Lockbox friction — many Austin-metro MLS listings tie access codes to a confirmed showing in ShowingTime or a similar system, so a text-only confirmation can mean standing at a locked door.",
+          "Buyers who give up mid-thread — a relocating family juggling multiple agents while still in Korea or California picks whichever agent replies with a live booking link instead of a slow back-and-forth text conversation.",
+        ] },
+        { type: 'h2', content: 'What real showing-scheduling software actually does' },
+        { type: 'p', content: "ShowingTime (built into many Central Texas MLS systems), Aryeo, and the scheduling tools inside kvCORE and Follow Up Boss all do three things a text thread cannot: they show a live, shared calendar so a second agent can't accidentally book an already-taken slot, they tie lockbox access to a confirmed showing so you're never standing at a door that won't open, and they send automated confirmation and reminder messages — at booking, 24 hours out, and again 2 hours out — with a one-tap reschedule link, so a genuine conflict becomes a clean reschedule instead of a silent no-show. None of this requires becoming a tech-heavy brokerage. It requires connecting a scheduling tool your MLS already supports to a bilingual website buyers actually trust." },
+        { type: 'ul', content: "What a Korean-American agent's site and booking setup actually needs:", items: [
+          "A 'Schedule a showing' button on every listing, linked straight into your scheduling platform — not a phone number a relocating buyer overseas has to call across time zones.",
+          "A quick pre-screen on the booking form — financing status and, ideally, a pre-approval letter — before a showing slot locks in.",
+          "Automated confirmation and reminder texts in Korean and English, since a relocating family may prefer either language depending on who's driving to the showing.",
+          "Buyer consultation booking separate from property showings, for the earlier-stage relocation buyers still deciding which townships fit their commute to Taylor or Round Rock.",
+          "An open-house RSVP form that feeds the same calendar, so weekend open houses don't turn into the same unconfirmed-headcount guesswork as private showings.",
+          "Saved-search alerts tied to the townships you actually serve, so a buyer stays on your site instead of Zillow once they've booked their first showing with you.",
+        ] },
+        { type: 'tip', content: "Audit this once this month: pull your last 30 days of scheduled showings and count the no-shows, then multiply by your average round-trip drive time across the metro. Most agents are surprised the number lands closer to a full missed workday than a rounding error — usually the moment a scheduling system stops feeling optional." },
+        { type: 'h2', content: "Google Maps: where 'Austin Korean real estate agent' searches actually start" },
+        { type: 'p', content: "A family relocating for the Samsung Taylor complex, searching '오스틴 한인 부동산' or 'Korean real estate agent Round Rock' before they've even landed in Texas, has no existing relationship with any agent — that search is the moment they decide who to call. Winning it takes the correct primary category (Real estate agency, not a generic listing), a service area naming every township you cover by name — Round Rock, Cedar Park, Pflugerville, Georgetown, Taylor — rather than just 'Austin,' and a steady stream of recent reviews. Pair that with a website that can catch the click: current listings, a visible showing-request button, and a buyer consultation booking link instead of a phone number that's awkward to call from Korea before a relocation date is even set." },
+        { type: 'cta', content: "Serving Korean-American buyers and sellers across the Austin metro and losing showings to an unconfirmed text thread? ZOE LUMOS builds bilingual real estate agent websites with live showing-request scheduling, automated confirmations and reminders, and Google Business Profile setup that actually converts a relocation search into a booked consultation. We are also a registered Apple App Store developer, for agents who eventually want their own client-facing app. Free consultation in Korean or English: email info@zoelumos.com or message us on KakaoTalk (http://pf.kakao.com/_xhxdxmlX/chat)." },
+      ],
+      ko: [
+        { type: 'intro', content: '토요일 오후, 라운드록과 시더파크를 오가는 쇼잉 여섯 건이 45분 간격으로 잡혀 있습니다. 전날 밤 문자로 확인했던 바이어 두 명은 "2시 그대로 괜찮으세요?"에 끝내 답하지 않았지만, 셀러의 락박스 코드가 이미 요청해 둔 시간대에만 열리기 때문에 어쨌든 차를 몰고 갑니다. 아무도 없습니다. 토요일 오후 90분과 기름 반 탱크가 그렇게 사라지는 동안, 3시 시간대를 물어보는 다른 바이어의 문자는 차로 돌아올 때까지 읽지 못한 채 쌓입니다. 지금 오스틴의 한인 커뮤니티는 빠르게 커지고 있습니다 — 다운타운에서 북동쪽으로 약 30분 거리인 테일러(Taylor)의 삼성 반도체 공장이, 한국·캘리포니아·조지아에서 라운드록·플러거빌·조지타운·테일러로 이주하는 한국어권 엔지니어와 가족들의 꾸준한 물결을 만들어내고 있습니다. 즉 한국어 가능한 에이전트를 찾는 바이어는 대부분의 에이전트가 지금 제대로 감당할 수 있는 것보다 많다는 뜻입니다 — 그리고 병목은 보통 리드 부족이 아닙니다. 누가 실제로 확정했는지 아무도 볼 수 없는, 전부 문자로만 돌아가는 예약 시스템입니다.' },
+        { type: 'h2', content: '문자 쇼잉 예약이 무너지는 지점' },
+        { type: 'p', content: '네일샵이나 식당의 노쇼는 한 시간짜리 의자나 테이블 하나를 잃는 걸로 끝납니다. 부동산 쇼잉 노쇼는 타운 사이가 30~40분씩 떨어진 광역권을 왕복한 시간을 날리는 데다, MLS 연동 시스템(셀러 측 에이전트가 실제로 확인하는 시스템)을 통해 확정되지 않은 쇼잉이라 락박스가 잠긴 채 발이 묶이는 상황까지 만들 수 있습니다. 문자·DM 예약으로는 같은 매물의 같은 시간대를 다른 바이어 에이전트가 이미 잡았는지 보여줄 방법이 없고, 차를 몰고 가기 전에 바이어가 실제로 대출 준비가 됐는지 확인할 방법도 없고, 셀러 측이 신뢰할 수 있는 공유 캘린더도 없습니다 — 즉 문자로 잡는 쇼잉 하나하나가 "누구도 이중 예약하지 않았고 상대편이 진짜 온다"는 작은 도박이 됩니다.' },
+        { type: 'ul', content: '이 단절이 실제로 만들어내는 비용:', items: [
+          '노쇼로 낭비되는 이동 시간 — 라운드록에서 조지타운이나 테일러까지 편도 30~40분이라, 확인 안 된 노쇼 하나가 한 시간이 아니라 오후 시간 대부분을 날립니다.',
+          '이중 예약된 시간대 — 두 바이어 에이전트가 몇 분 간격으로 리스팅 에이전트에게 문자를 보내면, 공유 캘린더가 없는 이상 둘 다 같은 시간대에 나타납니다.',
+          '락박스 마찰 — 오스틴 광역권의 많은 MLS 매물은 접근 코드를 ShowingTime 같은 시스템의 확정된 쇼잉에 묶어두므로, 문자로만 확인된 예약은 잠긴 문 앞에 서 있는 결과로 이어질 수 있습니다.',
+          '스레드 도중 포기하는 바이어 — 한국이나 캘리포니아에 아직 있으면서 여러 에이전트를 동시에 접촉하는 이주 가족은, 느린 문자 대화보다 실시간 예약 링크로 답하는 에이전트를 선택합니다.',
+        ] },
+        { type: 'h2', content: '실제 쇼잉 예약 소프트웨어가 하는 일' },
+        { type: 'p', content: '센트럴 텍사스의 많은 MLS 시스템에 내장된 ShowingTime, Aryeo, 그리고 kvCORE·Follow Up Boss에 내장된 예약 도구들은 문자 대화방이 못 하는 세 가지를 합니다. 실시간 공유 캘린더를 보여줘서 다른 에이전트가 이미 잡힌 시간대를 실수로 예약하지 못하게 하고, 락박스 접근을 확정된 쇼잉에 묶어서 사장님이 열리지 않는 문 앞에 서는 일이 없게 하고, 예약 시점·24시간 전·2시간 전에 원터치 일정 변경 링크가 담긴 자동 확인·리마인더 메시지를 보냅니다 — 그래서 진짜 일정 충돌이 조용한 노쇼가 아니라 깔끔한 일정 변경으로 처리됩니다. 이 중 어느 것도 대형 IT 중심 브로커리지가 되자는 얘기가 아닙니다. MLS가 이미 지원하는 예약 도구를, 바이어가 실제로 신뢰하는 이중언어 웹사이트에 연결하는 일입니다.' },
+        { type: 'ul', content: '한인 에이전트의 사이트와 예약 세팅에 실제로 필요한 것:', items: [
+          '모든 매물 페이지에 예약 플랫폼으로 바로 연결되는 "쇼잉 예약" 버튼 — 아직 해외에 있는 이주 바이어가 시차를 넘어 걸어야 하는 전화번호가 아니라요.',
+          '쇼잉 시간대가 확정되기 전, 예약 폼에서 대출 진행 상황과 가능하면 사전 승인서를 간단히 확인하는 절차.',
+          '한국어·영어 자동 확인·리마인더 문자 — 이주 가족은 누가 쇼잉에 운전해 가느냐에 따라 선호 언어가 다를 수 있습니다.',
+          '매물 쇼잉과 별도의 바이어 상담 예약 — 테일러나 라운드록 통근에 어느 타운이 맞는지 아직 고민 중인 초기 단계 이주 바이어를 위해.',
+          '같은 캘린더에 연결되는 오픈하우스 RSVP 폼 — 주말 오픈하우스가 개별 쇼잉과 똑같이 인원수 추측 게임이 되지 않도록.',
+          '실제로 커버하는 타운에 연결된 저장 검색 알림 — 첫 쇼잉을 예약한 뒤에도 바이어가 Zillow가 아니라 사장님 사이트에 남아 있도록.',
+        ] },
+        { type: 'tip', content: '이번 달에 한 번 확인해 보세요. 최근 30일간 예약된 쇼잉을 뽑아 노쇼 건수를 세고, 광역권 왕복 평균 이동 시간을 곱해 보세요. 대부분의 에이전트는 그 숫자가 반올림 오차가 아니라 하루 통째로 날아간 것에 가깝다는 사실에 놀랍니다 — 보통 그 순간부터 예약 시스템이 선택 사항처럼 느껴지지 않게 됩니다.' },
+        { type: 'h2', content: "구글 지도 — '오스틴 한인 부동산' 검색이 실제로 시작되는 순간" },
+        { type: 'p', content: '삼성 테일러 공장 때문에 이주하는 가족이 텍사스에 도착하기도 전에 \'오스틴 한인 부동산\'이나 \'Korean real estate agent Round Rock\'을 검색할 땐 아직 어느 에이전트와도 관계가 없습니다 — 그 검색 자체가 누구에게 연락할지 결정하는 순간입니다. 이걸 이기려면 정확한 주 업종(일반 리스팅이 아니라 부동산 중개업소)과, "오스틴"이 아니라 라운드록·시더파크·플러거빌·조지타운·테일러를 이름으로 명시한 서비스 지역, 그리고 꾸준히 쌓이는 최신 리뷰가 필요합니다. 여기에 그 클릭을 받아낼 웹사이트를 더하세요 — 최신 매물, 눈에 보이는 쇼잉 요청 버튼, 그리고 이주 날짜도 정해지지 않은 상태에서 한국에서 걸기 애매한 전화번호 대신 바이어 상담 예약 링크요.' },
+        { type: 'cta', content: '오스틴 광역권에서 한인 바이어·셀러를 상대하시면서, 확인되지 않은 문자 스레드 때문에 쇼잉을 놓치고 계신가요? ZOE LUMOS는 실시간 쇼잉 예약, 자동 확인·리마인더, 그리고 이주 검색을 실제 상담 예약으로 전환하는 구글 비즈니스 프로필 세팅을 갖춘 이중언어 부동산 에이전트 웹사이트를 만들어 드립니다. 저희는 등록된 Apple App Store 개발사이기도 해서, 나중에 고객용 앱을 원하시는 에이전트에게도 대응 가능합니다. 한국어/영어 무료 상담: info@zoelumos.com 이메일 또는 카카오톡(http://pf.kakao.com/_xhxdxmlX/chat)으로 편하게 문의하세요.' },
+      ],
+    },
+  },
 ]
