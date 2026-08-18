@@ -4,6 +4,8 @@ import Magnetic from '@/components/ui/motion/Magnetic'
 export default function Footer({ locale = 'en' }: { locale?: string }) {
   const isKo = locale === 'ko'
   const prefix = isKo ? '/ko' : ''
+  // Baked at build time (static page) — a Jan 1 viewer on a Dec build would
+  // hydration-mismatch, so the node below carries suppressHydrationWarning.
   const year = new Date().getFullYear()
 
   const cols = [
@@ -140,7 +142,7 @@ export default function Footer({ locale = 'en' }: { locale?: string }) {
 
         {/* Legal row */}
         <div className="pt-10 border-t border-hairline flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-          <p className="text-[12px] text-ash">
+          <p className="text-[12px] text-ash" suppressHydrationWarning>
             © {year} Zoe Lumos Studio, LLC · {isKo ? '모든 권리 보유' : 'All rights reserved'}
           </p>
           <div className="flex items-center gap-6 text-[12px] text-ash">

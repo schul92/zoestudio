@@ -135,6 +135,10 @@ export default function BlogRail({
       year: 'numeric',
       month: 'short',
       day: 'numeric',
+      // Date-only strings parse as UTC midnight; without a pinned zone the
+      // server (UTC) and any US browser format different calendar days, which
+      // hydration-mismatches every card (React #425/#422).
+      timeZone: 'UTC',
     })
 
   return (
