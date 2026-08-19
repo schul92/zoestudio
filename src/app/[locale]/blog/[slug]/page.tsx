@@ -206,6 +206,10 @@ const AUTO_LINK_TARGETS: Array<{ term: string; href: string }> = [
   { term: 'Google Ads', href: '/광고대행' },
   { term: '카카오톡 채널', href: '/kakaotalk-marketing-guide' },
   { term: 'KakaoTalk Channel', href: '/kakaotalk-marketing-guide' },
+  // Bergen County terms first: they are the exact queries the Englewood page
+  // already ranks for (position ~13), so the internal anchor text should match.
+  { term: '버겐카운티 SEO', href: '/englewood-nj-seo' },
+  { term: 'Bergen County SEO', href: '/englewood-nj-seo' },
   { term: '로컬 SEO', href: '/englewood-nj-seo' },
   { term: 'local SEO', href: '/englewood-nj-seo' },
   { term: 'SEO', href: '/englewood-nj-seo' },
