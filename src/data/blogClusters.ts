@@ -102,6 +102,7 @@ export const PILLARS = {
       'aws-cmmc-security-korean-government-contractor-virginia-2026',
       'korean-beauty-fitness-membership-app-charlotte-2026',
       'aws-hipaa-cloud-korean-medical-dental-atlanta-2026',
+      'korean-grocery-market-ios-app-loyalty-ordering-san-diego-2026',
     ],
   },
   'kakaotalk-marketing': {
@@ -356,4 +357,8 @@ export const POST_TO_PILLAR: Record<string, PillarKey> = {
 
   // 2026-08-17 — Houston F&B: online ordering, POS (Square/Toast/Clover), catering, reviews
   'korean-restaurant-houston-pos-catering-reviews-2026': 'restaurant-marketing',
+
+  // 2026-08-19 — native iOS ordering + loyalty app for a Korean grocery/specialty
+  // market vs. PWA/web-only, plus Apple Developer account ownership (San Diego, CA)
+  'korean-grocery-market-ios-app-loyalty-ordering-san-diego-2026': 'website-cost',
 }

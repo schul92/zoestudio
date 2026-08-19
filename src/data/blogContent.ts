@@ -13428,4 +13428,112 @@ export const blogContent: BlogPost[] = [
       ],
     },
   },
+  // ─────────────────────────────────────────────────────────────────
+  // 2026-08-19 — Native iOS ordering + loyalty app for a Korean grocery
+  // / specialty market, vs. PWA/web-only (Mira Mesa Koreatown, San Diego, CA)
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'korean-grocery-market-ios-app-loyalty-ordering-san-diego-2026',
+    date: '2026-08-19',
+    updatedDate: '2026-08-19',
+    readTime: 9,
+    category: { en: 'App Development', ko: '앱 개발' },
+    title: {
+      en: 'Your Weekly Sale Flyer Is a PDF Nobody Opens — Put It In an App Instead (San Diego Korean Market Guide, 2026)',
+      ko: '매주 세일 전단지가 아무도 안 여는 PDF라면 — 앱에 넣으세요 (샌디에이고 한인 마켓 가이드, 2026)',
+    },
+    metaDescription: {
+      en: 'Korean grocery and specialty markets around Mira Mesa and Convoy Street in San Diego still push weekly sale flyers as a PDF or Instagram post that most customers never see. Here is why a real iPhone app — not just a mobile-friendly website — is what actually gets a sale notification and a digital stamp card in front of shoppers, and how Apple App Store approval works when you hire someone to build it.',
+      ko: '샌디에이고 미라메사·콘보이 스트리트 일대의 한인 마트·전문 식료품점은 여전히 매주 세일 전단지를 PDF나 인스타그램 게시물로 올리지만, 대부분의 손님은 그걸 못 봅니다. 실제로 세일 알림과 디지털 스탬프 적립카드를 손님 눈앞에 띄우는 건 모바일 친화적 웹사이트가 아니라 진짜 아이폰 앱인 이유, 그리고 외주 개발사에 맡길 때 앱스토어 승인이 실제로 어떻게 진행되는지 정리했습니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'Do we really need a native app, or would a mobile-friendly website with the same features work just as well?',
+          ko: '정말 네이티브 앱이 필요한가요, 아니면 같은 기능을 갖춘 모바일 친화적 웹사이트로도 충분하지 않나요?',
+        },
+        a: {
+          en: "It depends on what you actually need the feature to do. A well-built mobile website (or PWA) handles browsing, ordering, and store info perfectly well, and costs less to build and maintain. What it cannot reliably do on iPhone is push notifications the way a native app can — Apple has historically restricted true push notifications for web apps added to the home screen, and even where limited support exists, most shoppers never go through the extra step of \"adding to home screen\" in the first place. If the core feature you want is \"a sale notification actually reaches the customer's lock screen\" or \"a loyalty stamp scans reliably at checkout,\" that specifically pushes you toward a native app in the Apple App Store. If you mainly need a place people browse and order from, a mobile website is the cheaper, faster answer and a native app is not worth it yet.",
+          ko: '실제로 그 기능이 뭘 해야 하는지에 달려 있습니다. 잘 만든 모바일 웹사이트(또는 PWA)는 둘러보기, 주문, 매장 정보 확인 정도는 충분히 잘 처리하고, 구축·유지 비용도 더 저렴합니다. 다만 아이폰에서 확실하게 못 하는 게 네이티브 앱처럼 안정적인 푸시 알림입니다 — Apple은 홈 화면에 추가한 웹앱의 진짜 푸시 알림을 오랫동안 제한해 왔고, 제한적으로 지원되는 경우에도 애초에 대부분의 손님은 "홈 화면에 추가"라는 추가 단계를 거치지 않습니다. 원하는 핵심 기능이 "세일 알림이 손님의 잠금 화면까지 실제로 도착한다"거나 "적립 스탬프가 계산대에서 안정적으로 스캔된다"라면, 그건 구체적으로 Apple App Store의 네이티브 앱 쪽으로 기울게 만드는 요인입니다. 주로 둘러보고 주문하는 곳이 필요하다면 모바일 웹사이트가 더 저렴하고 빠른 답이고, 아직 네이티브 앱까지는 필요 없습니다.',
+        },
+      },
+      {
+        q: {
+          en: 'If we hire an outside developer to build our app, whose Apple Developer account does it get published under?',
+          ko: '외주 개발사에 앱 개발을 맡기면, 앱은 누구의 Apple Developer 계정으로 게시되나요?',
+        },
+        a: {
+          en: "It should be published under your own business's Apple Developer account, not the agency's — this is the single most important ownership question to settle before development starts, and it is exactly the same issue as owning your own domain name instead of one registered in your web designer's name. Apple's Developer Program costs $99/year and is registered directly to your business (as an Organization, using your D-U-N-S number), and a competent development partner submits the finished app to your account rather than their own. If an agency insists on publishing under their own account 'to make it easier,' that is a red flag identical to an agency that registers your domain in its own name — it means switching developers later requires transferring the whole app listing, reviews, and ranking history instead of just handing over a project.",
+          ko: '외주사가 아니라 사장님 사업체 명의의 Apple Developer 계정으로 게시되어야 합니다 — 이건 개발을 시작하기 전에 정리해야 할 가장 중요한 소유권 문제이고, 웹디자이너 명의가 아니라 사장님 명의로 도메인을 등록하는 것과 정확히 같은 문제입니다. Apple Developer Program은 연 $99이고 사업체(Organization, D-U-N-S 번호 사용)로 직접 등록되며, 제대로 된 개발 파트너라면 완성된 앱을 자사 계정이 아니라 사장님 계정으로 제출합니다. 만약 외주사가 "편의를 위해" 자사 계정으로 게시하겠다고 고집한다면, 이는 사장님 명의가 아니라 자사 명의로 도메인을 등록하는 업체와 똑같은 위험 신호입니다 — 나중에 개발사를 바꾸려면 프로젝트만 넘겨받는 게 아니라 앱 리스팅 전체와 리뷰, 랭킹 이력까지 이전해야 한다는 뜻이니까요.',
+        },
+      },
+      {
+        q: {
+          en: 'How long does Apple App Store review and approval actually take once the app is submitted?',
+          ko: '앱을 제출한 뒤 실제로 Apple App Store 심사·승인까지 얼마나 걸리나요?',
+        },
+        a: {
+          en: "Apple's own published figures show roughly 90% of app submissions are reviewed within 24 hours, though a first-time submission from a new developer account or an app with in-app purchases, location tracking, or notifications typically takes a closer look and can run several days. The most common cause of delay is not review speed but rejection on the first pass — usually for an incomplete metadata field, a broken account-deletion flow, or a screenshot that does not match the actual app — each of which sends you back to the queue after a fix. Budgeting one to two weeks from final build to live App Store listing, including one round of revisions, is realistic for a first submission; updates to an already-approved app typically clear much faster.",
+          ko: 'Apple이 공개한 자체 수치로는 제출된 앱의 약 90%가 24시간 안에 심사됩니다. 다만 새 개발자 계정에서의 첫 제출이거나 인앱결제·위치 추적·알림 기능이 있는 앱은 보통 더 꼼꼼히 검토되어 며칠 더 걸릴 수 있습니다. 지연의 가장 흔한 원인은 심사 속도 자체가 아니라 1차 심사에서의 반려입니다 — 보통 메타데이터 항목 누락, 계정 삭제 흐름 오류, 실제 앱과 안 맞는 스크린샷 때문이고, 반려되면 수정 후 다시 대기열에 들어가야 합니다. 최종 빌드부터 실제 앱스토어 게시까지, 수정 한 차례를 포함해 1~2주 정도를 예산으로 잡는 게 첫 제출에는 현실적입니다. 이미 승인된 앱의 업데이트는 보통 훨씬 빨리 통과됩니다.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "Walk into most Korean grocery and specialty markets around Mira Mesa or Convoy Street in San Diego on a Saturday and the weekly sale sign is right there on the door — cabbage, short rib, frozen mandu, all clearly marked down. Check the market's Instagram or website and the same flyer usually exists as a photo or a PDF, posted once and buried within a day under everything else in a customer's feed. The shopper who would have driven an extra fifteen minutes for the short rib sale never saw it, because there was never a reliable way to put that flyer directly in front of them without them remembering to go looking for it." },
+        { type: 'h2', content: "Why a website (even a good one) cannot solve this by itself" },
+        { type: 'p', content: "A well-built website is genuinely useful here — hours, directions, a running list of what is on sale, maybe even a click-and-collect order form for banchan or a party tray. What it structurally cannot do on an iPhone is reach a customer who is not already looking at it. A website only works when someone opens a browser and navigates to it; it has no way to tap someone on the shoulder mid-week and say 'the short rib you always buy is 30% off today.' That gap — reaching a customer proactively, not just being findable when they look — is exactly what a native app closes, because Apple's push notification system lets an app land directly on a customer's lock screen the moment a sale goes live, no browser, no search, no remembering." },
+        { type: 'ul', content: "What a website alone structurally cannot do, that a native app can:", items: [
+          "Send a real push notification the moment a sale starts, landing on the lock screen without the customer opening anything.",
+          "Hold a digital loyalty stamp card that scans reliably at checkout via a barcode or QR code built into the app, instead of a paper card that gets lost in a wallet.",
+          "Live on the home screen with the market's own icon, so the market stays top-of-mind between visits the way a paper flyer taped to the fridge used to.",
+          "Work with a barcode scanner at checkout the way a physical loyalty card does, without a cashier having to search for the customer's account by phone number.",
+          "Show a curbside or click-and-collect order status update as a notification, instead of the customer refreshing a webpage to check if their order is ready.",
+        ] },
+        { type: 'h2', content: "The Apple Developer account: the ownership question to settle first" },
+        { type: 'p', content: "Before any development starts, settle who owns the App Store listing — it should be your business's own Apple Developer account (an Organization account using your D-U-N-S number, $99/year), not the agency's. This is the exact same trap as a website built on a domain registered in a web designer's name: it works fine until you want to switch developers or the agency disappears, and then the entire app — reviews, install history, ranking — is stuck under someone else's account. A competent developer sets up your account first and submits under it from day one." },
+        { type: 'tip', content: "A quick gut check before hiring anyone to build your app: ask directly, \"Whose Apple Developer account will this be published under?\" A confident, immediate answer of \"yours\" is the sign of a developer who has done this correctly before. Hesitation, or an answer involving \"our agency account, it's easier,\" is the same red flag as a web designer who wants to register your domain in their own name." },
+        { type: 'h2', content: "What actually goes into a grocery/specialty market app" },
+        { type: 'p', content: "The useful version of this is not a bloated shopping-cart app trying to replicate a full e-commerce site. For most Korean grocery and specialty markets, three features cover almost all of the value: push notifications for weekly sales and restocks (frozen mandu, fresh banchan, seasonal produce), a digital stamp or points-based loyalty card that scans at checkout, and a simple click-and-collect order form for party trays, banchan sets, or holiday pre-orders with a status notification when the order is ready. Everything else — hours, directions, the full product catalog — can stay on the website, linked from inside the app rather than rebuilt twice." },
+        { type: 'ul', content: "A realistic feature scope for a first version:", items: [
+          "Push notifications, segmented if possible (weekly sale vs. restock alert vs. holiday pre-order deadline), so customers are not trained to ignore all of them.",
+          "A digital loyalty card with a scannable barcode/QR code and a visible stamp or points count, replacing the paper card.",
+          "Click-and-collect ordering for a limited, high-margin menu — party trays, banchan sets, holiday items — not a full duplicate of the in-store inventory.",
+          "Bilingual content throughout, since a meaningful share of shoppers read the Korean version of a sale notification and skip past the English one.",
+          "An App Store listing with Korean-language screenshots and description, since App Store search itself is a discovery channel for '샌디에이고 한인마트' searches.",
+        ] },
+        { type: 'h2', content: "This works the same way for any Korean specialty retailer, not just groceries" },
+        { type: 'p', content: "Mira Mesa and Convoy Street happen to have one of the more established Korean grocery and specialty-retail clusters on the West Coast, but the same push-notification-and-loyalty gap shows up for any Korean-American retailer with regular repeat customers and a weekly or seasonal promotion cycle — a bakery, a specialty butcher, a Korean beauty/cosmetics shop, a party-supply store around Chuseok and Lunar New Year. Anywhere a business has something worth telling a repeat customer about on a specific day, and currently relies on a flyer or an Instagram post that customer may never see, the same app closes that gap." },
+        { type: 'cta', content: "Running a Korean grocery, specialty market, or retail shop in San Diego and tired of your weekly sale flyer disappearing into everyone's feed? ZOE LUMOS is a registered Apple App Store developer and builds bilingual iOS apps with real push notifications, digital loyalty cards, and click-and-collect ordering — published under your own Apple Developer account from day one, not ours. Free consultation in Korean or English: email info@zoelumos.com or message us on KakaoTalk (http://pf.kakao.com/_xhxdxmlX/chat)." },
+      ],
+      ko: [
+        { type: 'intro', content: "토요일에 샌디에이고 미라메사나 콘보이 스트리트 일대의 한인 마트·전문 식료품점에 들어가 보면 이번 주 세일 안내판이 문 앞에 딱 붙어 있습니다 — 배추, 갈비, 냉동 만두까지 할인가가 또렷이 표시돼 있습니다. 그 마트의 인스타그램이나 웹사이트를 확인해 보면 같은 전단지가 사진이나 PDF로 올라와 있긴 한데, 한 번 게시되고 나면 손님 피드의 다른 게시물들 사이에 하루 만에 묻힙니다. 갈비 세일 때문에 15분 더 운전해서라도 올 손님은 그걸 본 적이 없습니다 — 손님이 스스로 찾아보지 않아도 그 전단지를 눈앞에 확실히 띄울 방법이 애초에 없었기 때문입니다." },
+        { type: 'h2', content: "왜 (아무리 잘 만든) 웹사이트만으로는 이 문제를 풀 수 없나" },
+        { type: 'p', content: "잘 만든 웹사이트는 여기서도 분명 쓸모가 있습니다 — 영업시간, 오시는 길, 현재 세일 목록, 심지어 반찬이나 파티 트레이 클릭앤콜렉트 주문 폼까지도요. 다만 아이폰에서 구조적으로 못 하는 게 하나 있습니다 — 이미 그걸 보고 있지 않은 손님에게 먼저 다가가는 것. 웹사이트는 누군가 브라우저를 열고 그 주소로 들어와야만 작동합니다. 주중에 손님 어깨를 톡톡 치며 \"항상 사가시던 갈비, 오늘 30% 할인이에요\"라고 말할 방법이 없습니다. 그 격차 — 그냥 찾아볼 때 발견되는 게 아니라 먼저 다가가는 것 — 를 정확히 메워주는 게 네이티브 앱입니다. Apple의 푸시 알림 시스템 덕분에 세일이 시작되는 순간 앱이 브라우저도, 검색도, 기억도 필요 없이 손님의 잠금 화면에 바로 도착할 수 있으니까요." },
+        { type: 'ul', content: "웹사이트만으로는 구조적으로 못 하지만 네이티브 앱은 할 수 있는 것:", items: [
+          "세일이 시작되는 순간 손님이 아무것도 열지 않아도 잠금 화면에 도착하는 진짜 푸시 알림.",
+          "지갑 속에서 잃어버리는 종이 카드 대신, 앱에 내장된 바코드·QR코드로 계산대에서 안정적으로 스캔되는 디지털 적립 스탬프카드.",
+          "냉장고에 붙여둔 전단지처럼, 마트 고유 아이콘으로 홈 화면에 자리 잡아 방문 사이사이에도 마트를 계속 떠올리게 함.",
+          "직원이 손님의 전화번호로 일일이 계정을 찾을 필요 없이, 실제 적립카드처럼 계산대 바코드 스캐너와 바로 연동.",
+          "주문 상태를 확인하려고 웹페이지를 계속 새로고침하는 대신, 커브사이드·클릭앤콜렉트 주문 상태를 알림으로 바로 전달.",
+        ] },
+        { type: 'h2', content: "Apple Developer 계정 — 가장 먼저 정리해야 할 소유권 문제" },
+        { type: 'p', content: "개발이 시작되기 전에, 앱스토어 리스팅을 누가 소유하는지부터 정리하세요 — 외주사 계정이 아니라 사장님 사업체 명의의 Apple Developer 계정(D-U-N-S 번호를 쓰는 Organization 계정, 연 $99)이어야 합니다. 이건 웹디자이너 명의로 등록된 도메인 위에 지어진 웹사이트와 정확히 같은 함정입니다 — 개발사를 바꾸고 싶어지거나 그 업체가 사라지기 전까지는 별문제 없이 돌아가지만, 그 순간 앱 전체 — 리뷰, 설치 이력, 랭킹 — 가 남의 계정에 묶여버립니다. 제대로 된 개발사라면 사장님 계정을 먼저 세팅하고 처음부터 그 계정으로 제출합니다." },
+        { type: 'tip', content: "누구에게든 앱 개발을 맡기기 전 빠른 현실 점검 — \"이 앱은 누구의 Apple Developer 계정으로 게시되나요?\"라고 직접 물어보세요. \"사장님 계정으로요\"라고 자신 있게 바로 답한다면 이런 작업을 제대로 해본 개발사라는 신호입니다. 머뭇거리거나 \"저희 에이전시 계정이 편해요\"라는 답이 나온다면, 자기 명의로 도메인을 등록하고 싶어 하는 웹디자이너와 똑같은 위험 신호입니다." },
+        { type: 'h2', content: "마트·전문 식료품점 앱에 실제로 들어가야 하는 것" },
+        { type: 'p', content: "여기서 쓸모 있는 버전은 완전한 이커머스 사이트를 통째로 복제하려는 비대한 쇼핑카트 앱이 아닙니다. 대부분의 한인 마트·전문 식료품점에는 세 가지 기능이 가치의 거의 전부를 차지합니다 — 주간 세일과 재입고(냉동 만두, 신선 반찬, 제철 농산물) 푸시 알림, 계산대에서 스캔되는 디지털 스탬프·포인트 적립카드, 그리고 파티 트레이·반찬 세트·명절 사전주문을 위한 간단한 클릭앤콜렉트 주문 폼과 준비 완료 알림. 나머지 — 영업시간, 오시는 길, 전체 상품 카탈로그 — 는 웹사이트에 그대로 두고, 두 번 만드는 대신 앱 안에서 링크로 연결하면 됩니다." },
+        { type: 'ul', content: "1차 버전에 현실적인 기능 범위:", items: [
+          "가능하면 세분화된 푸시 알림(주간 세일 vs 재입고 알림 vs 명절 사전주문 마감) — 그래야 손님이 알림을 전부 무시하도록 학습되지 않습니다.",
+          "스캔 가능한 바코드·QR코드와 눈에 보이는 스탬프·포인트 카운트를 갖춘 디지털 적립카드로 종이 카드를 대체.",
+          "매장 전체 재고를 그대로 복제하는 게 아니라, 마진 좋은 한정 메뉴(파티 트레이, 반찬 세트, 명절 상품) 중심의 클릭앤콜렉트 주문.",
+          "전체 이중언어 콘텐츠 — 상당수 손님은 세일 알림을 한국어 버전으로 읽고 영어 버전은 건너뜁니다.",
+          "한국어 스크린샷과 설명이 담긴 앱스토어 리스팅 — 앱스토어 검색 자체도 '샌디에이고 한인마트' 같은 검색의 발견 채널이니까요.",
+        ] },
+        { type: 'h2', content: "마트뿐 아니라 어떤 한인 전문 소매업에도 똑같이 적용됩니다" },
+        { type: 'p', content: "미라메사와 콘보이 스트리트는 서부 해안에서 가장 자리 잡은 한인 마트·전문 소매 상권 중 하나일 뿐, 같은 푸시 알림·적립 격차는 단골이 꾸준히 있고 주간·시즌별 프로모션 주기가 있는 어떤 한인 소매업에도 똑같이 나타납니다 — 베이커리, 정육 전문점, 한국 뷰티·화장품 매장, 추석·설 명절용품점까지. 특정 날짜에 단골 손님에게 알려줄 가치가 있는 소식이 있는데 지금은 전단지나 인스타그램 게시물에만 의존하고 있어서 손님이 그걸 못 볼 수도 있는 곳이라면 어디든, 같은 앱이 그 격차를 메웁니다." },
+        { type: 'cta', content: "샌디에이고에서 한인 마트, 전문 식료품점, 소매점을 운영하시면서 매주 세일 전단지가 손님 피드 속으로 사라지는 데 지치셨나요? ZOE LUMOS는 등록된 Apple App Store 개발사로서, 진짜 푸시 알림과 디지털 적립카드, 클릭앤콜렉트 주문을 갖춘 이중언어 iOS 앱을 만듭니다 — 저희 계정이 아니라 처음부터 사장님의 Apple Developer 계정으로 게시합니다. 한국어/영어 무료 상담: info@zoelumos.com 이메일 또는 카카오톡(http://pf.kakao.com/_xhxdxmlX/chat)으로 편하게 문의하세요." },
+      ],
+    },
+  },
 ]
