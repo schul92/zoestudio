@@ -84,8 +84,8 @@ export default function ServicesHub({ params }: { params: { locale: string } }) 
     },
     {
       href: isKo ? '/ko/englewood-nj-seo' : '/englewood-nj-seo',
-      kicker: isKo ? '로컬 SEO · 검색 최적화' : 'Local SEO',
-      title: isKo ? 'SEO & 구글 검색 상위 노출' : 'SEO that gets you found on Google',
+      kicker: isKo ? '버겐카운티 SEO · 로컬 검색' : 'Bergen County SEO',
+      title: isKo ? '버겐카운티 SEO 업체 — 구글 검색 상위 노출' : 'SEO company in Bergen County, NJ',
       body: isKo
         ? '로컬 SEO, 구글 비즈니스 프로필, 이중언어(한·영) 최적화. 잉글우드·버겐카운티·뉴욕 한인 비즈니스 검색 노출 전문.'
         : 'Local SEO, Google Business Profile, and bilingual (Korean + English) optimization for Englewood, Bergen County, and NY Korean businesses.',
