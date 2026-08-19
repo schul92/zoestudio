@@ -309,10 +309,10 @@ export default function KoreanWebDesignNJPage({ params }: { params: { locale: st
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               {[
                 { en: 'Fort Lee', ko: '포트리', slug: 'fort-lee-web-design', population: '37,000+', korean: '35%' },
-                { en: 'Palisades Park', ko: '팰리세이즈파크', slug: 'palisades-park-web-design', population: '21,000+', korean: '52%' },
+                { en: 'Palisades Park', ko: '팰리세이즈파크', slug: 'palisades-park-marketing', population: '21,000+', korean: '52%' },
                 { en: 'Englewood', ko: '잉글우드', slug: 'englewood-nj-seo', population: '29,000+', korean: '8%' },
                 { en: 'Edgewater', ko: '에지워터', slug: 'edgewater-web-design', population: '15,000+', korean: '12%' },
-                { en: 'Leonia', ko: '리오니아', slug: 'leonia-web-design', population: '9,000+', korean: '25%' },
+                { en: 'Leonia', ko: '리오니아', slug: 'englewood-nj-seo', population: '9,000+', korean: '25%' },
                 { en: 'Cliffside Park', ko: '클리프사이드파크', slug: 'cliffside-park-web-design', population: '24,000+', korean: '14%' },
                 { en: 'Ridgefield', ko: '리지필드', slug: 'ridgefield-web-design', population: '12,000+', korean: '22%' },
                 { en: 'Teaneck', ko: '티넥', slug: 'fort-lee-web-design', population: '41,000+', korean: '5%' },
