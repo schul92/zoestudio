@@ -2,7 +2,7 @@ export const seoConfig = {
   en: {
     title: 'ZOE LUMOS — Shopify Expert & Korean-American Web Design | Fort Lee NJ',
     description: 'Korean-American web design studio. Bilingual websites, Shopify builds & SEO for Korean-American businesses. TJ Flowers: $3,114 revenue in 4 weeks post-rebuild. Fort Lee NJ · serving nationwide.',
-    keywords: 'Shopify Expert NJ, Shopify developer Korean, Korean American web design, bilingual web design agency, Korean web design studio, Korean business website, Korean American website, bilingual SEO, Korean SEO agency, NJ web design, NY web design, Fort Lee web design, Bergen County web design, Shopify development, e-commerce website design, local SEO expert, digital marketing agency, Google Ads management, small business SEO NJ, Korean web agency, editorial web design, boutique web design studio, 한인 마케팅 에이전시, 한인 웹디자인, Korean American web designer, Palisades Park marketing, Ridgefield web design, Edgewater web design',
+    keywords: 'Shopify Expert NJ, Shopify developer Korean, Korean American web design, bilingual web design agency, Korean web design studio, Korean business website, Korean American website, bilingual SEO, Korean SEO agency, NJ web design, NY web design, Fort Lee web design, Bergen County web design, Shopify development, e-commerce website design, local SEO expert, digital marketing agency, Google Ads management, small business SEO NJ, Korean web agency, editorial web design, boutique web design studio, 한인 마케팅 에이전시, 한인 웹디자인, Korean American web designer, Palisades Park marketing, Ridgefield web design, Edgewater web design, Cliffside Park web design, Fairview NJ web design, Hackensack web design, Leonia web design, Tenafly web design, Teaneck web design, Korean restaurant website NJ, Korean spa website NJ, Korean nail salon website, Korean hair salon website, Korean grocery store website, bilingual website Korean English NJ, Korean American small business website, Fort Lee Korean marketing agency, Palisades Park Korean business SEO, Bergen County Korean marketing agency, Korean business Google Ads, Google My Business Korean business, Instagram marketing Korean business NJ, affordable web design Bergen County, how to get more customers for Korean restaurant NJ',
     openGraph: {
       title: 'Zoe Lumos — Shopify Expert & Korean-American Web Design Studio',
       description: 'Bilingual web design & Shopify for Korean-American businesses. TJ Flowers: $3,114 revenue in 4 weeks post-Shopify rebuild. Fort Lee NJ · nationwide.',
@@ -13,7 +13,7 @@ export const seoConfig = {
   ko: {
     title: 'Shopify 전문 한인 웹디자인 스튜디오 ZOE LUMOS | 뉴저지 · LA · 전국',
     description: 'Shopify Expert + 한인·미국인 웹디자인 스튜디오. Shopify 재구축, SEO, 한·영 이중언어 웹사이트. 증거 — TJ Flowers 리뉴얼 4주 만에 $3,114 매출. 포트리 · 뉴저지 · LA · 전국.',
-    keywords: '미국 한인 웹사이트, 한인 웹사이트 제작, 한인 홈페이지 제작, 뉴저지 웹사이트, 뉴저지 웹사이트 제작, 뉴욕 웹사이트, 뉴욕 웹사이트 제작, 캘리포니아 웹사이트 제작, LA 한인 웹사이트, 텍사스 웹사이트 제작, 달라스 한인 웹사이트, 조지아 웹사이트 제작, 애틀랜타 한인 웹사이트, 버지니아 웹사이트 제작, 일리노이 웹사이트, 시카고 한인 웹사이트, 워싱턴 웹사이트, 시애틀 한인 웹사이트, 하와이 웹사이트, 플로리다 웹사이트, NJ 웹사이트, NY 웹사이트, 포트리 웹사이트, 팰팍 웹사이트, 플러싱 웹사이트, 한인 쇼핑몰 제작, 쇼피파이, 구글광고, 옐프광고, 한인 SEO, 검색엔진최적화, 미주 한인 비즈니스, 디지털 마케팅, 웹디자인',
+    keywords: '미국 한인 웹사이트, 한인 웹사이트 제작, 한인 홈페이지 제작, 뉴저지 웹사이트, 뉴저지 웹사이트 제작, 뉴욕 웹사이트, 뉴욕 웹사이트 제작, 캘리포니아 웹사이트 제작, LA 한인 웹사이트, 텍사스 웹사이트 제작, 달라스 한인 웹사이트, 조지아 웹사이트 제작, 애틀랜타 한인 웹사이트, 버지니아 웹사이트 제작, 일리노이 웹사이트, 시카고 한인 웹사이트, 워싱턴 웹사이트, 시애틀 한인 웹사이트, 하와이 웹사이트, 플로리다 웹사이트, NJ 웹사이트, NY 웹사이트, 포트리 웹사이트, 팰팍 웹사이트, 플러싱 웹사이트, 한인 쇼핑몰 제작, 쇼피파이, 구글광고, 옐프광고, 한인 SEO, 검색엔진최적화, 미주 한인 비즈니스, 디지털 마케팅, 웹디자인, 클리프사이드파크 웹사이트 제작, 페어뷰 웹사이트, 해켄색 웹사이트 제작, 레오니아 웹사이트, 테나플라이 웹사이트, 한인 식당 웹사이트, 한인 스파 웹사이트, 한인 네일샵 웹사이트, 한인 부동산 웹사이트, 한인 세탁소 홈페이지, 한인 비즈니스 홈페이지, 구글 마이비즈니스 최적화, 한인 비즈니스 구글 등록, 인스타그램 마케팅 한인 비즈니스, 한국어 웹사이트 제작 비용',
     openGraph: {
       title: '오래도록 기억되는 웹사이트 | ZOE LUMOS',
       description: '미국 전역 한인 비즈니스를 위한 에디토리얼 웹디자인 스튜디오. TJ Flowers 4주 $3,114 매출. NJ · NY · CA · TX · GA · VA 등. 웹사이트 제작, SEO, Shopify, 구글광고.',
@@ -170,6 +170,26 @@ export const structuredData = {
         "containedInPlace": { "@type": "State", "name": "New Jersey" }
       },
       {
+        "@type": "City",
+        "name": "Fairview",
+        "containedInPlace": { "@type": "State", "name": "New Jersey" }
+      },
+      {
+        "@type": "City",
+        "name": "Hackensack",
+        "containedInPlace": { "@type": "State", "name": "New Jersey" }
+      },
+      {
+        "@type": "City",
+        "name": "Leonia",
+        "containedInPlace": { "@type": "State", "name": "New Jersey" }
+      },
+      {
+        "@type": "City",
+        "name": "Tenafly",
+        "containedInPlace": { "@type": "State", "name": "New Jersey" }
+      },
+      {
         "@type": "AdministrativeArea",
         "name": "Bergen County",
         "containedInPlace": { "@type": "State", "name": "New Jersey" }
@@ -226,7 +246,7 @@ export const structuredData = {
         "name": "What areas do you serve in New Jersey and New York?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "We serve Korean-American businesses throughout NJ (Fort Lee, Palisades Park, Englewood, North Bergen, Edison, Ridgewood, Cliffside Park) and NY (Manhattan, Flushing, Bayside, Brooklyn). We also serve clients nationwide in CA, TX, GA, VA, IL, and more. We offer both in-person consultations and remote services."
+          "text": "We serve Korean-American businesses throughout NJ (Fort Lee, Palisades Park, Englewood, North Bergen, Edison, Ridgewood, Cliffside Park, Fairview, Hackensack, Leonia, Tenafly, Edgewater, Ridgefield) and NY (Manhattan, Flushing, Bayside, Brooklyn). We also serve clients nationwide in CA, TX, GA, VA, IL, and more. We offer both in-person consultations and remote services."
         }
       },
       {
@@ -259,6 +279,38 @@ export const structuredData = {
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "GEO(생성형 엔진 최적화)는 Google AI Overviews, ChatGPT, Perplexity 등 AI 기반 검색에 콘텐츠를 최적화합니다. 기존 SEO가 구글 검색 순위에 집중한다면, GEO는 고객이 AI 어시스턴트를 사용할 때 비즈니스가 노출되도록 합니다. ZOE LUMOS는 SEO와 GEO를 모두 포함하여 서비스합니다."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why choose a bilingual marketing agency over a general web design company?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Korean-American businesses need an agency that understands both cultures. ZOE LUMOS builds bilingual websites optimized for English and Korean search, manages Google Ads in both languages, and provides support in Korean. Unlike general agencies, we know the Korean-American market in Bergen County and NYC first-hand."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "한인 식당 온라인 마케팅은 어떻게 하나요?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "ZOE LUMOS는 한인 식당을 위한 온라인 마케팅을 제공합니다. 구글 비즈니스 프로필 최적화, 옐프 관리, 인스타그램 마케팅, 메뉴 웹사이트 제작, 온라인 주문 시스템 연동까지 한 번에 도와드립니다. 포트리, 팰리세이즈파크 한인 식당 마케팅 전문."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Do you help Korean businesses with Instagram and social media marketing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. ZOE LUMOS offers social media management for Korean-American businesses, including Instagram, Facebook, and KakaoTalk Channel. We create bilingual content in Korean and English, manage the posting schedule, and run paid social campaigns that drive customers to your door."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can you optimize my Google Business Profile for Korean searches?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. Google Business Profile optimization is one of the highest-leverage local SEO moves for a Korean-American business. We set up and optimize your profile with bilingual descriptions, photos, posts, and Q&As so you show up in local map searches in Fort Lee, Palisades Park, and the wider Bergen County area — in Korean as well as English."
         }
       }
     ]

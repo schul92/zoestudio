@@ -316,6 +316,8 @@ export default function KoreanWebDesignNJPage({ params }: { params: { locale: st
                 { en: 'Cliffside Park', ko: '클리프사이드파크', slug: 'cliffside-park-web-design', population: '24,000+', korean: '14%' },
                 { en: 'Ridgefield', ko: '리지필드', slug: 'ridgefield-web-design', population: '12,000+', korean: '22%' },
                 { en: 'Teaneck', ko: '티넥', slug: 'fort-lee-web-design', population: '41,000+', korean: '5%' },
+                { en: 'Hackensack', ko: '해켄색', slug: 'hackensack-web-design', population: '46,000+', korean: '4%' },
+                { en: 'Fairview', ko: '페어뷰', slug: 'fairview-nj-web-design', population: '15,000+', korean: '6%' },
               ].map((city) => (
                 <Link key={city.en} href={`${prefix}/${city.slug}`} className="p-6 rounded-lg border-2 border-gray-200 hover:border-rose-500 hover:shadow-md transition-all">
                   <p className="font-bold text-lg text-gray-900">{locale === 'ko' ? city.ko : city.en}</p>
