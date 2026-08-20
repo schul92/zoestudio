@@ -102,6 +102,7 @@ export const PILLARS = {
       'aws-cmmc-security-korean-government-contractor-virginia-2026',
       'korean-beauty-fitness-membership-app-charlotte-2026',
       'aws-hipaa-cloud-korean-medical-dental-atlanta-2026',
+      'b2b-trading-export-website-rfq-leads-miami-korean-2026',
     ],
   },
   'kakaotalk-marketing': {
@@ -358,4 +359,8 @@ export const POST_TO_PILLAR: Record<string, PillarKey> = {
 
   // 2026-08-17 — Houston F&B: online ordering, POS (Square/Toast/Clover), catering, reviews
   'korean-restaurant-houston-pos-catering-reviews-2026': 'restaurant-marketing',
+
+  // 2026-08-20 — B2B trading/export companies in Miami-Doral selling into Latin
+  // America through PortMiami: English-first site trust + RFQ lead capture
+  'b2b-trading-export-website-rfq-leads-miami-korean-2026': 'website-cost',
 }
