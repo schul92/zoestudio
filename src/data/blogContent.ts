@@ -13429,6 +13429,117 @@ export const blogContent: BlogPost[] = [
     },
   },
   // ─────────────────────────────────────────────────────────────────
+  // 2026-08-20 — B2B trading/export companies in Miami-Doral selling
+  // into Latin America through PortMiami: website trust, domain email,
+  // and RFQ lead capture for an international (not just Korean) buyer.
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'b2b-trading-export-website-rfq-leads-miami-korean-2026',
+    date: '2026-08-20',
+    updatedDate: '2026-08-20',
+    readTime: 9,
+    category: { en: 'Lead Generation', ko: '리드 생성' },
+    title: {
+      en: 'Miami Korean Trading Companies: A B2B Website That Convinces a Buyer in Bogotá, Not Just Fort Lee (2026)',
+      ko: '마이애미 한인 무역회사 웹사이트 제작 — 설득해야 할 상대는 포트리가 아니라 보고타의 바이어입니다 (2026)',
+    },
+    metaDescription: {
+      en: 'Korean trading and export companies in Doral and around PortMiami sell mostly to Latin American buyers, not other Korean businesses — yet most still run a Korean-only site or none at all. Here is how to build an English-first B2B website with RFQ lead capture that a purchasing manager in Bogotá, Panama City, or São Paulo will actually trust.',
+      ko: '도랄(Doral)과 포트마이애미 인근의 한인 무역·수출 회사는 실제로는 한인이 아니라 중남미 바이어에게 판매하는데도, 여전히 한국어 사이트만 있거나 아예 없는 경우가 많습니다. 보고타·파나마시티·상파울루의 구매 담당자가 실제로 신뢰할 영어 우선 B2B 웹사이트와 견적(RFQ) 리드 수집 시스템을 만드는 법을 정리했습니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'Do Latin American buyers really check an English-language website before replying to a Miami trading company?',
+          ko: '중남미 바이어들이 정말 영어 웹사이트부터 확인하고 나서 마이애미 무역회사에 답장하나요?',
+        },
+        a: {
+          en: "Yes, and for international wire transfers the check is more careful than a domestic one, not less. A purchasing manager in Bogotá or São Paulo who has never met you in person is being asked to send a deposit across a border to a company she cannot walk into — so before she replies, she checks whether the company has a real English (or Spanish) website, an address that matches the invoice, product photos that look like your actual inventory rather than stock images, and any export certifications relevant to her country. If your only web presence is a Korean-language page built for Fort Lee customers, an international buyer often cannot even confirm what you sell, let alone that you are legitimate. The check takes her two minutes; failing it costs you a reply you will never know you lost.",
+          ko: '네, 그리고 국경을 넘는 송금이 걸린 문제라 국내 거래보다 오히려 더 꼼꼼하게 확인합니다. 한 번도 만난 적 없는 보고타나 상파울루의 구매 담당자는 직접 찾아갈 수 없는 회사에 예치금을 국경 너머로 보내야 하는 입장이라, 답장하기 전에 제대로 된 영어(또는 스페인어) 웹사이트가 있는지, 주소가 인보이스와 일치하는지, 제품 사진이 스톡 이미지가 아니라 실제 재고처럼 보이는지, 본인 국가와 관련된 수출 인증이 있는지를 확인합니다. 웹상의 존재감이 포트리 고객을 위해 만든 한국어 페이지뿐이라면, 해외 바이어는 무엇을 파는 회사인지조차 확인하지 못하는 경우가 많고, 신뢰는 그다음 문제입니다. 확인은 2분이면 끝나지만, 통과하지 못하면 사장님은 놓친 답장이 있었는지조차 알 길이 없습니다.',
+        },
+      },
+      {
+        q: {
+          en: 'What should an RFQ (request for quote) form include to actually convert international searches into leads?',
+          ko: '해외 검색을 실제 리드로 전환하려면 견적요청(RFQ) 폼에 무엇을 넣어야 하나요?',
+        },
+        a: {
+          en: "A working RFQ form needs six fields, no more: company name and country, product or HS code category, quantity or order volume, preferred Incoterm (FOB, CIF, EXW — buyers who already know this term are your best leads), a message box, and a business email, not a personal one. Route every submission to a shared inbox that gets checked daily, and reply within 24 hours even if only to say a full quote is coming — international buyers routing quotes to five suppliers at once give the reply that comes fastest and clearest a real edge. Skip fields like 'how did you hear about us' that add friction without adding qualification; the Incoterm and quantity fields alone tell you within seconds whether the lead is a serious importer or a one-off inquiry.",
+          ko: '작동하는 RFQ 폼은 딱 여섯 항목이면 됩니다. 회사명과 국가, 제품 또는 HS 코드 카테고리, 수량·주문 규모, 선호 인코텀즈(FOB, CIF, EXW — 이 용어를 이미 아는 바이어가 가장 좋은 리드입니다), 메시지 입력란, 그리고 개인 메일이 아닌 업무용 이메일. 모든 제출 건을 매일 확인하는 공유 받은편지함으로 보내고, 완전한 견적서가 준비되지 않았더라도 24시간 안에 회신부터 하세요 — 해외 바이어는 보통 여러 공급사에 동시에 견적을 요청하는데, 가장 빠르고 명확하게 답하는 곳이 실제로 유리합니다. "어떻게 저희를 알게 되셨나요" 같은 항목은 자격 검증에 도움 없이 이탈만 늘리니 빼세요. 인코텀즈와 수량 항목만으로도 이 리드가 진지한 수입업자인지 단발성 문의인지 몇 초 안에 파악됩니다.',
+        },
+      },
+      {
+        q: {
+          en: 'Does a Miami-based Korean trading company need separate Korean, English, and Spanish versions of the site?',
+          ko: '마이애미의 한인 무역회사는 한국어·영어·스페인어 사이트를 각각 다 따로 만들어야 하나요?',
+        },
+        a: {
+          en: "Not three full builds — prioritize by who is actually reading. If your buyers are overwhelmingly Latin American importers, English is the mandatory primary language because it is the working language of Latin American B2B trade even more often than Spanish, and a clean, professional English site with clear product categories, certifications, and an RFQ form covers most of that audience on its own. A Spanish landing page for your top product lines is worth adding once volume justifies it, since a buyer in Colombia or Mexico who can read a spec sheet in Spanish converts faster than one working through English. Korean stays relevant for supplier relationships back in Korea and for the Korean-American business community in Doral, so it belongs as a secondary language, not the primary one your export business is built around.",
+          ko: '세 개를 전부 처음부터 만들 필요는 없습니다. 실제로 누가 읽는지에 맞춰 우선순위를 정하세요. 바이어 대부분이 중남미 수입업자라면 영어가 필수 1순위 언어입니다. 중남미 B2B 무역에서는 스페인어보다도 영어가 실무 언어로 더 자주 쓰이기 때문에, 제품 카테고리·인증·RFQ 폼이 명확한 깔끔한 영어 사이트 하나만으로도 이 고객층 대부분을 커버합니다. 주력 제품 라인의 스페인어 랜딩 페이지는 물량이 그만큼 늘었을 때 추가할 가치가 있습니다 — 콜롬비아나 멕시코 바이어는 스페인어로 스펙시트를 읽을 수 있으면 영어로 씨름할 때보다 전환이 빠르니까요. 한국어는 한국 공급처와의 관계, 그리고 도랄 한인 비즈니스 커뮤니티를 위해 여전히 의미가 있으니 부차적 언어로 남겨두면 됩니다 — 수출 사업의 축이 되는 1순위 언어가 아니라요.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "Doral and the areas around PortMiami have quietly become one of the largest hubs of Korean-American trading and export companies in the country — not because they sell to other Koreans, but because Miami is the shortest logistics route from Korea into Latin America. A container that clears PortMiami can reach Bogotá, Panama City, or São Paulo faster and cheaper than one routed through the West Coast. And yet walk through the Korean business directories in Doral and a familiar pattern shows up: a Korean-only website built for a Fort Lee-style local audience, or no real website at all — just a Naver blog and a stack of business cards handed out at trade shows. The buyer who actually needs to be convinced, the purchasing manager in Bogotá who found you through a Google search or an industry directory, never sees anything built for her." },
+        { type: 'h2', content: 'Your real audience is not Korean — it is an international buyer who has never met you' },
+        { type: 'p', content: "This is the single biggest blind spot in Miami's Korean trading sector. A restaurant or nail salon in Fort Lee builds a bilingual English/Korean site because both languages describe the same local customer. A Doral trading company selling electronics components, packaged food, or industrial parts into Colombia, Panama, Mexico, and Brazil has a completely different problem: the buyer speaks Spanish or Portuguese day to day, but does business — RFQs, spec sheets, contracts — in English, and has almost certainly never heard of your company outside of a Google search or a B2B directory listing. A Korean-only site does not just fail to reach her. It actively signals that this company is not really set up to export." },
+        { type: 'h2', content: 'What an international buyer actually checks before she wires a deposit' },
+        { type: 'ul', content: 'The two-minute due-diligence pass every serious buyer runs:', items: [
+          'A real English site with product categories or an HS code list — not a single vague "Products" page with no detail.',
+          'An address that matches your invoice and export documents, plus a phone or email that responds within your stated business hours.',
+          'Real photos of your warehouse, product line, or facility — buyers can tell stock photography apart from an actual operation just as fast as anyone else.',
+          'Any certifications relevant to her market: FDA registration for food and cosmetics, CE marking, ISO certifications, or country-specific import requirements you already meet.',
+          'Clarity on Incoterms and MOQ (minimum order quantity) stated up front, so she is not guessing whether your company even does business her size.',
+        ] },
+        { type: 'h2', content: 'The @yourcompany.com problem gets sharper across a border' },
+        { type: 'p', content: "The domain-email issue that matters for any B2B company matters even more here, because international wire transfers carry more fraud risk than a domestic check, and buyers know it. A quote from ventas@kimtradingusa.com reads as an established exporter; the same quote from a Gmail or Naver address reads as an unverifiable stranger asking for a wire transfer — which, in international trade, is close to the exact profile of a scam email. Beyond perception, corporate spam and fraud filters at banks and large importers score free-mail senders far more aggressively on cross-border transactions specifically. A domain email costs a few dollars a month once you own the domain, and it is the difference between your quote landing in an inbox or a junk folder before anyone even reads the price." },
+        { type: 'tip', content: "Check whether your Google Business Profile and website list a real, physical Doral or Miami address that matches your export paperwork exactly — down to the suite number. International buyers and banks alike cross-reference that address against public trade records, and a mismatch, even an honest clerical one, is often read as a red flag rather than a mistake." },
+        { type: 'h2', content: 'Build the RFQ form to filter for serious buyers, not just collect emails' },
+        { type: 'p', content: "Most Korean trading company websites, when they have a contact form at all, ask for a name and a message — which produces a flood of vague inquiries and no way to tell a serious importer from someone browsing. A proper RFQ (request for quote) form does the opposite: it asks for exactly the information a real buyer already has ready — company name and country, product category or HS code, order quantity, and preferred Incoterm — and routes every submission to an inbox someone checks daily. The fields themselves do the qualifying. A submission with a specific HS code and a stated container quantity is worth a same-day call; a submission with none of that detail can go into a slower follow-up queue." },
+        { type: 'ul', content: 'What separates a lead-generating RFQ form from a decorative contact form:', items: [
+          'Company name and country — tells you instantly whether this is a serious Latin American import operation or a one-off inquiry.',
+          'Product category or HS code — replaces a back-and-forth email just to find out what they actually want.',
+          'Quantity or order volume — the single strongest signal of how serious the buyer is.',
+          'Preferred Incoterm (FOB, CIF, EXW) — a buyer who already knows this term has done this before and converts faster.',
+          'A business email field, with a note that free-mail addresses may see slower response, gently pushing serious buyers to identify themselves.',
+        ] },
+        { type: 'h2', content: 'PortMiami is the advantage — say so on the site' },
+        { type: 'p', content: "Most Korean export businesses treat their logistics route as an internal operational detail rather than a selling point, but for a Latin American buyer comparing suppliers, transit time and shipping cost from the US East Coast versus the West Coast is a real decision factor. A site that states plainly which port you ship from, typical transit times to major Latin American ports, and any Free Trade Zone or bonded warehouse advantages Doral offers is doing the buyer's comparison shopping for her — and a buyer who does not have to ask replies faster than one who does." },
+        { type: 'cta', content: "Running a trading, export, or manufacturing business out of Doral or Miami and selling mostly into Latin America? ZOE LUMOS builds English-first B2B websites for Korean-American exporters — real product pages, domain email setup, and an RFQ form built to filter serious buyers from browsers, everything registered in your name. Free consultation in English or Korean: email info@zoelumos.com or message us on KakaoTalk (http://pf.kakao.com/_xhxdxmlX/chat)." },
+      ],
+      ko: [
+        { type: 'intro', content: '도랄(Doral)과 포트마이애미 인근은 미국 내에서도 손꼽히는 한인 무역·수출 회사 밀집 지역으로 조용히 성장해 왔습니다 — 다른 한인에게 판매해서가 아니라, 마이애미가 한국에서 중남미로 가는 가장 짧은 물류 경로이기 때문입니다. 포트마이애미를 통과한 컨테이너는 서부 항구를 거치는 것보다 더 빠르고 저렴하게 보고타·파나마시티·상파울루에 도착합니다. 그런데 도랄의 한인 비즈니스 디렉토리를 훑어보면 익숙한 패턴이 보입니다 — 포트리 같은 지역 고객용으로 만든 한국어 전용 사이트, 또는 제대로 된 웹사이트 없이 네이버 블로그와 무역 박람회에서 나눠준 명함 뭉치뿐인 경우입니다. 정작 설득해야 할 바이어 — 구글 검색이나 업계 디렉토리로 회사를 찾은 보고타의 구매 담당자 — 를 위해 만들어진 건 아무것도 없습니다.' },
+        { type: 'h2', content: '진짜 고객은 한인이 아니라, 한 번도 만난 적 없는 해외 바이어입니다' },
+        { type: 'p', content: '이것이 마이애미 한인 무역업계에서 가장 큰 사각지대입니다. 포트리의 식당이나 네일샵은 영어·한국어 이중언어 사이트를 만듭니다. 두 언어가 같은 동네 고객을 설명하기 때문이죠. 반면 콜롬비아·파나마·멕시코·브라질에 전자부품, 포장식품, 산업 부품을 파는 도랄의 무역회사는 완전히 다른 문제를 안고 있습니다. 바이어는 평소 스페인어나 포르투갈어를 쓰지만, RFQ·스펙시트·계약 같은 실무는 영어로 진행하고, 구글 검색이나 B2B 디렉토리 리스팅 밖에서 이 회사에 대해 들어본 적이 거의 없습니다. 한국어 전용 사이트는 이 바이어에게 도달하지 못하는 정도가 아니라, "이 회사는 수출 체계가 제대로 안 잡혀 있다"는 신호를 적극적으로 보내는 셈입니다.' },
+        { type: 'h2', content: '예치금을 보내기 전, 해외 바이어가 실제로 확인하는 것들' },
+        { type: 'ul', content: '진지한 바이어라면 누구나 거치는 2분짜리 실사 절차:', items: [
+          '제품 카테고리나 HS 코드 목록이 있는 진짜 영어 사이트 — 디테일 없는 "제품" 페이지 하나로는 부족합니다.',
+          '인보이스·수출 서류와 일치하는 주소, 그리고 공지된 영업시간 안에 응답하는 전화나 이메일.',
+          '창고·제품 라인·시설의 실제 사진 — 바이어들도 다른 누구 못지않게 스톡 사진과 실제 운영 사진을 빠르게 구분합니다.',
+          '해당 시장에 관련된 인증 — 식품·화장품이라면 FDA 등록, CE 마킹, ISO 인증, 또는 이미 충족하고 있는 국가별 수입 요건.',
+          '인코텀즈와 MOQ(최소주문수량)를 미리 명시 — 바이어가 "이 회사가 우리 규모 거래도 하나?"를 추측하지 않게 합니다.',
+        ] },
+        { type: 'h2', content: '국경을 넘으면 @회사명.com 문제가 더 날카로워집니다' },
+        { type: 'p', content: '모든 B2B 회사에 중요한 도메인 이메일 문제는 여기서 더 중요해집니다. 국제 송금은 국내 거래보다 사기 리스크가 크고, 바이어들도 그걸 알고 있기 때문입니다. ventas@kimtradingusa.com에서 온 견적은 자리 잡은 수출업체로 읽히지만, 같은 견적이 Gmail이나 네이버 주소에서 오면 검증 안 되는 낯선 사람이 송금을 요청하는 것처럼 읽힙니다 — 국제 무역에서는 이게 사기 메일의 전형적인 프로필과 거의 겹칩니다. 인식 문제를 넘어, 은행과 대형 수입업체의 기업 스팸·사기 필터는 국경 간 거래에서 특히 무료 메일 발신자를 더 가혹하게 점수 매깁니다. 도메인을 소유한 뒤 업무용 이메일은 월 몇 달러면 충분하고, 이 차이가 사장님의 견적서가 받은편지함에 도착하느냐 아무도 가격을 보기도 전에 스팸함으로 가느냐를 가릅니다.' },
+        { type: 'tip', content: '구글 비즈니스 프로필과 웹사이트에 적힌 주소가 도랄이나 마이애미의 실제 물리적 주소이고, 수출 서류와 스위트 번호까지 정확히 일치하는지 확인하세요. 해외 바이어와 은행 모두 그 주소를 공개 무역 기록과 대조하는데, 단순한 사무 착오라도 실수가 아니라 위험 신호로 읽히는 경우가 많습니다.' },
+        { type: 'h2', content: 'RFQ 폼은 이메일 수집이 아니라 진지한 바이어를 걸러내도록 만드세요' },
+        { type: 'p', content: '대부분의 한인 무역회사 웹사이트는 문의 폼이 있어도 이름과 메시지만 받습니다. 그 결과 막연한 문의만 쏟아지고, 진지한 수입업자와 그냥 둘러보는 사람을 구분할 방법이 없습니다. 제대로 된 RFQ(견적요청) 폼은 반대로 작동합니다. 진짜 바이어라면 이미 준비돼 있는 정보 — 회사명과 국가, 제품 카테고리 또는 HS 코드, 주문 수량, 선호 인코텀즈 — 를 요청하고, 모든 제출 건을 매일 확인하는 받은편지함으로 보냅니다. 항목 자체가 자격을 걸러줍니다. 구체적인 HS 코드와 컨테이너 수량이 적힌 문의는 당일 전화할 가치가 있고, 그런 디테일이 없는 문의는 느린 후속 처리 대기열로 넘기면 됩니다.' },
+        { type: 'ul', content: '장식용 문의 폼과 리드를 만드는 RFQ 폼의 차이:', items: [
+          '회사명과 국가 — 진지한 중남미 수입업체인지 단발성 문의인지 즉시 파악됩니다.',
+          '제품 카테고리 또는 HS 코드 — "무엇을 원하시나요"를 확인하려는 이메일 왕복을 없애줍니다.',
+          '수량·주문 규모 — 바이어의 진지함을 보여주는 가장 강력한 신호입니다.',
+          '선호 인코텀즈(FOB, CIF, EXW) — 이 용어를 이미 아는 바이어는 이런 거래 경험이 있다는 뜻이고 전환도 빠릅니다.',
+          '업무용 이메일 입력란과 함께, 무료 메일 주소는 응답이 늦어질 수 있다는 안내 — 진지한 바이어가 스스로 신원을 드러내도록 부드럽게 유도합니다.',
+        ] },
+        { type: 'h2', content: '포트마이애미는 강점입니다 — 사이트에 직접 밝히세요' },
+        { type: 'p', content: '대부분의 한인 수출업체는 물류 경로를 내부 운영 디테일로만 취급하지만, 공급사를 비교하는 중남미 바이어에게는 미국 동부 항구 대 서부 항구의 운송 시간과 비용이 실제 의사결정 요인입니다. 어느 항구에서 출항하는지, 주요 중남미 항구까지 통상 운송 시간이 얼마나 되는지, 도랄이 제공하는 자유무역지대나 보세창고 혜택이 있는지를 사이트에 명확히 밝히면, 바이어가 직접 비교해야 할 수고를 대신 덜어주는 셈입니다 — 물어볼 필요가 없는 바이어가 물어봐야 하는 바이어보다 빨리 회신합니다.' },
+        { type: 'cta', content: '도랄이나 마이애미에서 무역·수출·제조업을 운영하시면서 주로 중남미에 판매하고 계신가요? ZOE LUMOS는 한인 수출업체를 위한 영어 우선 B2B 웹사이트를 만듭니다 — 실제 제품 페이지, 도메인 이메일 설정, 그리고 진지한 바이어와 단순 방문자를 걸러내는 RFQ 폼까지, 전부 사장님 명의로 등록해 드립니다. 한국어/영어 무료 상담: info@zoelumos.com 이메일 또는 카카오톡(http://pf.kakao.com/_xhxdxmlX/chat)으로 편하게 문의하세요.' },
+      ],
+    },
+  },
+  // ─────────────────────────────────────────────────────────────────
   // Backfilled from the March 2026 SEO batch (PR #37) — multi-platform
   // social strategy. Distinct from `instagram-vs-website-korean-business`
   // (a comparison) and `kakaotalk-channel-vs-instagram-korean-business`.
