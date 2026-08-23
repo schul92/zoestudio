@@ -13521,4 +13521,96 @@ export const blogContent: BlogPost[] = [
       ],
     },
   },
+  // ─────────────────────────────────────────────────────────────────
+  // 2026-08-23 — C2C/services topic: real estate agent showing-booking
+  // system + no-show prevention + Google Business Profile, distinct from
+  // the general korean-real-estate-agent-website guide (site essentials).
+  // Audience rotation: San Diego, CA (Convoy District) — not previously covered.
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'korean-real-estate-agent-showing-booking-san-diego-2026',
+    date: '2026-08-23',
+    updatedDate: '2026-08-23',
+    readTime: 9,
+    category: { en: 'Real Estate', ko: '부동산' },
+    title: {
+      en: 'Every No-Show Showing Costs More Than Gas: A Booking System for San Diego Korean-American Real Estate Agents (2026 Guide)',
+      ko: '샌디에고 한인 부동산 에이전트 웹사이트 제작 — 매물 쇼잉 노쇼를 막는 예약 시스템 가이드 (2026)',
+    },
+    metaDescription: {
+      en: 'Korean-American real estate agents around San Diego\'s Convoy District, Kearny Mesa, and Mira Mesa still book showings by text message, which makes no-shows and double-bookings almost impossible to catch until you are standing at an empty house. Here is what an actual showing-booking system and a bilingual Google presence need to include.',
+      ko: '샌디에고 콘보이 지구, 커니메사, 미라메사 일대 한인 부동산 에이전트들도 여전히 문자로 쇼잉을 잡는 경우가 많은데, 이 방식으로는 노쇼와 중복 예약을 매물 앞에 서기 전까지 알아챌 방법이 거의 없습니다. 실제로 필요한 쇼잉 예약 시스템과 이중언어 구글 노출 전략을 정리했습니다.',
+    },
+    author: 'ZOE LUMOS Team',
+    faq: [
+      {
+        q: {
+          en: 'Do I really need a booking system, or is texting clients to schedule showings good enough?',
+          ko: '부동산 에이전트도 예약 시스템이 정말 필요한가요, 그냥 문자로 쇼잉 스케줄을 잡으면 안 되나요?',
+        },
+        a: {
+          en: 'Texting works fine until you are juggling more than two or three active buyers at once, which is exactly the point where a Korean-American agent in a market like San Diego typically starts losing time to it. A text thread has no record of who else is scheduled at the same address that hour, no automatic reminder the morning of, and no way to require a pre-approval letter or ID before you hand someone lockbox access — so double-bookings and no-shows only surface when you are standing at the property. A booking system fixes this by putting every showing on one calendar visible to you and your team, sending an automatic confirmation and reminder text, and collecting basic screening information before the appointment is even confirmed. Below two or three active listings a text thread can genuinely still work; past that, the manual system is what is quietly costing you the gas, the missed calls from other clients, and the two hours you could have spent on a buyer who actually showed.',
+          ko: '활성 바이어가 두세 명을 넘어가기 전까지는 문자로도 충분히 돌아갑니다 — 그런데 샌디에고 같은 시장의 한인 에이전트라면 바로 그 지점에서 시간을 잃기 시작합니다. 문자 스레드에는 같은 시간 같은 주소에 다른 누가 잡혀 있는지 기록이 없고, 당일 아침 자동 리마인더도 없고, 락박스 접근 권한을 주기 전에 사전승인서(pre-approval letter)나 신분증을 요구할 방법도 없습니다. 그래서 중복 예약과 노쇼는 매물 앞에 서고 나서야 드러납니다. 예약 시스템은 이걸 하나의 캘린더로 통합해 사장님과 팀 전체가 보게 하고, 자동 확인 문자와 리마인더를 보내고, 예약이 확정되기 전에 기본적인 스크리닝 정보를 먼저 받아두는 방식으로 해결합니다. 활성 매물이 두세 건 이하라면 문자 스레드로도 실제로 괜찮을 수 있습니다. 그 선을 넘으면, 수작업 시스템이 조용히 갉아먹는 건 기름값과 다른 고객의 놓친 전화, 그리고 실제로 나타난 바이어에게 썼을 수 있었던 두 시간입니다.',
+        },
+      },
+      {
+        q: {
+          en: 'I already have a Zillow and Realtor.com profile — why would I need my own website too?',
+          ko: 'Zillow, Realtor.com 프로필이 이미 있는데 왜 따로 제 웹사이트가 필요한가요?',
+        },
+        a: {
+          en: 'A Zillow or Realtor.com profile puts you in front of buyers already searching those platforms in English, but it cannot be built or laid out around the specific way Korean-speaking clients search — and on most listing platforms, your brokerage\'s branding sits above yours and can even route a lead to a different agent through their "Premier Agent" style placement. Your own bilingual site is the one property you fully control: you decide whether it opens in Korean or English, you can write neighborhood pages in Korean for Convoy District, Kearny Mesa, and Mira Mesa buyers searching "샌디에고 한인 부동산" or "콘보이 집 매매," and every lead form and showing request routes straight to you, not through a portal that may show the buyer a competing agent\'s ad first. Zillow and Realtor.com stay valuable as top-of-funnel discovery; your own site is where a Korean-speaking buyer decides to actually trust and call you.',
+          ko: 'Zillow나 Realtor.com 프로필은 영어로 이미 그 플랫폼에서 검색하는 바이어 앞에 사장님을 노출시켜 주지만, 한국어를 쓰는 고객이 실제로 검색하는 방식에 맞춰 만들거나 배치할 수는 없습니다. 게다가 대부분의 리스팅 플랫폼에서는 소속 브로커리지 브랜드가 사장님 이름보다 위에 표시되고, "프리미어 에이전트" 같은 배치 방식 때문에 리드가 다른 에이전트에게 넘어가기도 합니다. 사장님만의 이중언어 웹사이트는 완전히 사장님이 통제하는 유일한 자산입니다 — 한국어로 열지 영어로 열지도 사장님이 정하고, "샌디에고 한인 부동산", "콘보이 집 매매"를 검색하는 콘보이 지구·커니메사·미라메사 바이어를 위해 한국어 동네 페이지를 직접 쓸 수 있고, 모든 리드 폼과 쇼잉 요청이 다른 에이전트 광고를 먼저 보여줄 수도 있는 포털을 거치지 않고 사장님에게 바로 옵니다. Zillow와 Realtor.com은 초기 발견 단계에서 여전히 가치가 있습니다. 한국어를 쓰는 바이어가 실제로 사장님을 신뢰하고 전화를 거는 곳은 사장님만의 웹사이트입니다.',
+        },
+      },
+      {
+        q: {
+          en: 'Can an individual real estate agent set up their own Google Business Profile, or does that belong to the brokerage?',
+          ko: '부동산 에이전트 개인도 구글 비즈니스 프로필을 만들 수 있나요, 아니면 브로커리지 소유인가요?',
+        },
+        a: {
+          en: 'Yes — Google allows an individual real estate agent to run their own Google Business Profile listed as a "Real estate agent," separate from your brokerage\'s own profile, as long as the category and business name accurately reflect that you are an individual agent rather than the brokerage itself. This matters because it gives you a second, independent presence in Google Maps and local search results under your own name, where you control the photos, Korean-language posts, and review responses — and it is what actually surfaces when someone searches "근처 한인 부동산 에이전트" from their phone standing in Convoy District. Your brokerage profile still matters for brand trust, but it cannot show up specifically for your name, your listings, or a Korean-language search the way your own profile can.',
+          ko: '가능합니다. 구글은 브로커리지가 아니라 개인이 실제로 에이전트로 활동한다는 것이 카테고리와 업체명에 정확히 반영되는 한, 부동산 에이전트 개인이 "부동산 중개인(Real estate agent)" 카테고리로 브로커리지 프로필과는 별도의 구글 비즈니스 프로필을 운영하도록 허용합니다. 이게 중요한 이유는, 구글 지도와 지역 검색 결과에 사장님 이름으로 된 독립적인 두 번째 노출 창구가 생기고, 사진·한국어 게시물·리뷰 답글을 사장님이 직접 통제할 수 있기 때문입니다 — 그리고 이게 바로 누군가 콘보이 지구에서 휴대폰으로 "근처 한인 부동산 에이전트"를 검색했을 때 실제로 뜨는 프로필입니다. 브로커리지 프로필도 브랜드 신뢰도 면에서는 여전히 중요하지만, 사장님 이름이나 사장님의 매물, 한국어 검색에 대해서는 사장님 개인 프로필처럼 뜰 수 없습니다.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: 'Around San Diego\'s Convoy District, Kearny Mesa, and Mira Mesa — the center of gravity for the county\'s Korean-American community — a lot of successful real estate agents are still running their entire showing schedule out of a text thread. It works, mostly, right up until a Saturday when three showings land within an hour of each other, one buyer no-shows without warning, and the agent finds out only after driving across town and standing alone in front of a locked door. Unlike a restaurant no-show, which costs an empty table, a real estate no-show costs the drive, the coordination with the listing agent or seller, and often a same-day slot that could have gone to a buyer who was actually ready to write an offer.' },
+        { type: 'h2', content: 'Why a showing no-show costs more for a real estate agent than almost any other business' },
+        { type: 'p', content: 'A nail salon or restaurant that gets a no-show loses one appointment slot at one location. A real estate agent who gets a no-show has usually already coordinated lockbox access or a listing agent meet-up, driven to the property — sometimes 20-30 minutes each way across San Diego traffic — and blocked out time that could have gone to a second or third showing that same afternoon. Multiply that by a handful of no-shows a month, and the real cost is not just wasted gas — it is the buyers who never got a callback because the agent was standing at an empty house instead of on the phone with them.' },
+        { type: 'h2', content: 'A 3-step system that actually catches no-shows before they happen' },
+        { type: 'ul', content: 'Building this in the right order matters more than building it all at once:', items: [
+          'Online showing request form, not a phone call or text: the buyer picks a property and time slot from your actual availability, and the form captures their name, phone, and whether they are pre-approved or working with a lender — information a text thread almost never captures cleanly.',
+          'Automatic confirmation and day-of reminder: a confirmation text or email the moment the showing is booked, plus a reminder the morning of. This single step catches most no-shows before they happen, because most no-shows are forgetfulness, not bad intent.',
+          'A screening step before lockbox access on vacant or high-value listings: requiring a pre-approval letter, a working relationship with a lender, or ID verification before confirming access protects both the seller\'s property and your own time from unqualified or non-serious inquiries.',
+        ] },
+        { type: 'p', content: 'None of this requires new software if you already run on a CRM like Follow Up Boss or kvCORE — most support an embeddable booking widget. What it requires is building the request form directly into your own bilingual website, not routing buyers through a generic scheduling link that has no context about which property or which language they need.' },
+        { type: 'h2', content: 'Why Google Maps and your Google Business Profile matter more in real estate than in most industries' },
+        { type: 'p', content: 'House hunting is a hyper-local search behavior — buyers search from their phone while sitting in a neighborhood, comparing agents and listings in real time. A Korean-speaking buyer newly relocated to Kearny Mesa or Mira Mesa is far more likely to search "샌디에고 한인 부동산" or "콘보이 근처 부동산 에이전트" than to browse Zillow\'s full agent directory. Your own Google Business Profile, listed correctly as an individual real estate agent, is what actually surfaces for that search — with your photo, your recent listings, and reviews from past Korean-speaking clients answering in Korean.' },
+        { type: 'tip', content: 'A five-minute check worth running this week: search "한인 부동산 [your neighborhood]" from your own phone in an incognito browser. If your name does not appear on the first page, that is lost business going to whichever agent — Korean-speaking or not — does show up first.' },
+        { type: 'h2', content: 'The one-page site that beats a portfolio site every time' },
+        { type: 'p', content: 'Agents often over-build their own site into a full portfolio with dozens of past listings, when what actually converts a Korean-speaking lead is much simpler: a homepage that opens correctly in Korean for a Korean-language search and in English for an English one, current listings with a working showing-request button on each, a short neighborhood guide in Korean for the areas you actually work — Convoy District, Kearny Mesa, Mira Mesa, Clairemont — and one clear way to reach you that is not a generic contact form buried three clicks deep.' },
+        { type: 'cta', content: 'Tired of running your showing schedule out of a text thread and losing leads to whichever agent shows up first in a Korean-language Google search? ZOE LUMOS builds bilingual real estate agent websites with an integrated showing-booking system, lead screening, and Google Business Profile setup for Korean-American agents across the US. Free consultation in Korean or English: email info@zoelumos.com or message us on KakaoTalk (http://pf.kakao.com/_xhxdxmlX/chat).' },
+      ],
+      ko: [
+        { type: 'intro', content: '샌디에고 콘보이 지구, 커니메사, 미라메사 일대 — 샌디에고 카운티 한인 커뮤니티의 중심지입니다 — 에서도 잘나가는 부동산 에이전트 상당수가 여전히 쇼잉 스케줄 전체를 문자 하나로 돌립니다. 대부분은 문제없이 돌아갑니다. 토요일에 쇼잉 세 건이 한 시간 안에 몰리고, 바이어 한 명이 아무 말도 없이 노쇼하고, 에이전트가 그 사실을 알게 되는 건 시내를 가로질러 운전해 도착해서 잠긴 문 앞에 혼자 서 있고 난 뒤라는 걸 알게 되기 전까지는요. 식당 노쇼는 빈 테이블 하나를 잃는 것이지만, 부동산 노쇼는 이동 시간, 리스팅 에이전트나 매도인과의 조율, 그리고 종종 실제로 오퍼를 쓸 준비가 된 다른 바이어에게 갔을 수도 있었던 그날의 시간대까지 잃는 것입니다.' },
+        { type: 'h2', content: '왜 부동산 에이전트에게 쇼잉 노쇼가 다른 어떤 업종보다 더 비싼가' },
+        { type: 'p', content: '네일샵이나 식당에서 노쇼가 나면 한 매장의 예약 슬롯 하나를 잃습니다. 부동산 에이전트가 노쇼를 겪을 때는 이미 락박스 접근이나 리스팅 에이전트와의 미팅을 조율해뒀고, 샌디에고 교통 상황에 따라 편도 20-30분씩 걸려 매물까지 운전해 갔고, 같은 날 오후에 두 번째, 세 번째 쇼잉으로 갈 수 있었던 시간을 이미 막아둔 상태입니다. 한 달에 노쇼 몇 건만 곱해봐도, 진짜 비용은 낭비된 기름값만이 아닙니다 — 에이전트가 빈 집 앞에 서 있는 동안 전화를 못 받아서 콜백 한 번 받지 못한 바이어들입니다.' },
+        { type: 'h2', content: '노쇼가 벌어지기 전에 잡아내는 3단계 시스템' },
+        { type: 'ul', content: '한꺼번에 만드는 것보다 순서가 더 중요합니다:', items: [
+          '전화나 문자가 아니라 온라인 쇼잉 요청 폼: 바이어가 실제 가능한 시간대 중에서 매물과 시간을 직접 고르고, 이름·전화번호·사전승인 여부나 대출 진행 상황을 폼이 받아둡니다 — 문자 스레드로는 거의 깔끔하게 잡히지 않는 정보입니다.',
+          '자동 확인과 당일 리마인더: 쇼잉이 예약되는 순간 확인 문자나 이메일을 보내고, 당일 아침 리마인더를 한 번 더 보냅니다. 대부분의 노쇼는 악의가 아니라 깜빡함이기 때문에, 이 한 단계만으로도 대부분의 노쇼를 예방할 수 있습니다.',
+          '빈집이나 고가 매물의 락박스 접근 전 스크리닝 단계: 접근을 확정하기 전에 사전승인서, 대출 담당자와의 관계, 또는 신분증 확인을 요구하면 매도인의 재산과 사장님의 시간을 자격 미달이거나 진지하지 않은 문의로부터 함께 보호합니다.',
+        ] },
+        { type: 'p', content: 'Follow Up Boss나 kvCORE 같은 CRM을 이미 쓰고 계시다면 새 소프트웨어가 필요 없습니다 — 대부분 임베드 가능한 예약 위젯을 지원합니다. 필요한 건, 바이어가 어떤 매물과 어떤 언어를 원하는지 아무 맥락도 없는 범용 스케줄링 링크가 아니라, 요청 폼을 사장님의 이중언어 웹사이트 안에 직접 만들어 넣는 것입니다.' },
+        { type: 'h2', content: '구글 지도와 구글 비즈니스 프로필이 부동산에서 유독 더 중요한 이유' },
+        { type: 'p', content: '집을 구하는 건 초지역적인 검색 행동입니다 — 바이어는 동네에 실제로 앉아서 휴대폰으로 에이전트와 매물을 실시간으로 비교합니다. 커니메사나 미라메사로 새로 이사 온 한국어권 바이어는 Zillow의 전체 에이전트 디렉토리를 뒤지기보다 "샌디에고 한인 부동산"이나 "콘보이 근처 부동산 에이전트"를 검색할 가능성이 훨씬 높습니다. 개인 부동산 중개인으로 정확히 등록된 사장님의 구글 비즈니스 프로필이 바로 그 검색에서 실제로 뜨는 것입니다 — 사장님의 사진, 최근 매물, 그리고 한국어로 답변된 이전 한국어권 고객들의 리뷰와 함께요.' },
+        { type: 'tip', content: '이번 주에 5분이면 되는 점검 — 시크릿 브라우저로 휴대폰에서 직접 "한인 부동산 [사장님 동네]"를 검색해 보세요. 첫 페이지에 사장님 이름이 안 뜬다면, 그건 한국어를 하든 안 하든 먼저 뜨는 다른 에이전트에게 넘어가고 있는 사업입니다.' },
+        { type: 'h2', content: '포트폴리오 사이트보다 원페이지 사이트가 항상 더 잘 통하는 이유' },
+        { type: 'p', content: '에이전트들은 종종 과거 매물 수십 건을 담은 풀 포트폴리오 사이트로 과하게 만드는데, 실제로 한국어권 리드를 전환시키는 건 훨씬 단순합니다 — 한국어 검색이면 한국어로, 영어 검색이면 영어로 정확히 열리는 홈페이지, 각 매물마다 실제로 작동하는 쇼잉 요청 버튼, 실제로 활동하는 지역인 콘보이 지구·커니메사·미라메사·클레어몬트에 대한 한국어 동네 가이드, 그리고 클릭 세 번 들어가야 나오는 범용 문의 폼이 아니라 사장님에게 바로 닿는 명확한 연락 방법 하나입니다.' },
+        { type: 'cta', content: '쇼잉 스케줄을 여전히 문자 하나로 돌리시면서, 한국어 구글 검색에서 먼저 뜨는 다른 에이전트에게 리드를 뺏기고 계신가요? ZOE LUMOS는 미국 전역의 한인 부동산 에이전트를 위해 쇼잉 예약 시스템과 리드 스크리닝, 구글 비즈니스 프로필 세팅까지 통합한 이중언어 웹사이트를 만듭니다. 한국어/영어 무료 상담: info@zoelumos.com 이메일 또는 카카오톡(http://pf.kakao.com/_xhxdxmlX/chat)으로 편하게 문의하세요.' },
+      ],
+    },
+  },
 ]
