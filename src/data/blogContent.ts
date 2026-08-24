@@ -13521,4 +13521,105 @@ export const blogContent: BlogPost[] = [
       ],
     },
   },
+  // ─────────────────────────────────────────────────────────────────
+  // 2026-08-24 — B2B rotation (least-covered pillar: only 3 prior posts).
+  // Distinct angle from the existing B2B trio — credibility/domain email
+  // (b2b-company-website-korean-business-credibility-2026), search-lead
+  // gen (b2b-wholesale-quote-leads-seo-los-angeles-korean-2026), and RFQ
+  // form/intake mechanics (b2b-manufacturing-supplier-website-rfq-leads-
+  // georgia-2026): this one covers pre-quote trade-transparency pages
+  // (MOQ, sample policy, Incoterms, lead time) for a new metro — Miami,
+  // FL, a genuine US gateway to Latin America/Caribbean trade (PortMiami,
+  // MIA air cargo, Doral trade district) not yet used in the rotation.
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'korean-trading-company-miami-export-trust-2026',
+    date: '2026-08-24',
+    updatedDate: '2026-08-24',
+    readTime: 9,
+    category: { en: 'Trade & Export', ko: '무역·수출입' },
+    title: {
+      en: "What a Buyer Checks Before the First Email: A Trust Guide for Korean Trading Companies in Miami (2026)",
+      ko: '바이어가 첫 이메일을 보내기 전에 확인하는 것들 — 마이애미 한인 무역회사를 위한 신뢰 가이드 (2026)',
+    },
+    metaDescription: {
+      en: "Korean-American trading and import-export companies around Miami-Dade sell into a buyer pool that cannot walk into your warehouse — US retailers, Latin American distributors, and Caribbean importers who vet a supplier online before ever writing an email. Here is why publishing your MOQ, sample policy, Incoterms, and lead time turns that vetting into a quote request instead of a closed tab.",
+      ko: '마이애미-데이드 일대 한인 무역·수출입 기업들은 창고에 직접 들를 수 없는 바이어들을 상대합니다 — 이메일을 보내기 전에 온라인에서 먼저 검증하는 미국 리테일러, 중남미 유통업체, 카리브해 수입업체들이죠. MOQ, 샘플 정책, 인코텀즈, 리드타임을 웹사이트에 공개하는 것이 왜 그 검증을 견적 요청으로 바꾸는지 정리했습니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'Should a trading company publish MOQ (minimum order quantity) and pricing tiers publicly, or keep them for direct inquiry only?',
+          ko: '무역회사가 MOQ(최소주문수량)와 가격 구간을 웹사이트에 공개해야 하나요, 아니면 직접 문의로만 받아야 하나요?',
+        },
+        a: {
+          en: "Publish a MOQ range and general pricing tiers even if the exact number varies by product and season, because a buyer who cannot find this information within two minutes usually assumes the supplier is too small, too informal, or not worth the back-and-forth, and moves to a competitor who made it visible. You do not need to post an exact quote — a stated range ('MOQ typically 500–2,000 units depending on SKU, volume pricing available above 5,000') filters out mismatched inquiries before they reach your inbox and signals to a serious buyer that they are looking at an operation used to structured B2B orders, not a hobby importer. The final number still gets negotiated by email or call; publishing the range is what gets that email sent in the first place.",
+          ko: '정확한 숫자는 제품과 시즌마다 달라지더라도 MOQ 범위와 일반 가격 구간은 공개하세요. 2분 안에 이 정보를 찾을 수 없는 바이어는 보통 공급사가 너무 작거나, 체계가 없거나, 주고받을 가치가 없다고 판단하고 그 정보를 공개한 경쟁사로 넘어갑니다. 정확한 견적까지 올릴 필요는 없습니다 — "MOQ는 SKU에 따라 보통 500~2,000개, 5,000개 이상은 물량 할인 가능" 같은 범위 표기만으로도 안 맞는 문의를 미리 걸러내고, 진지한 바이어에게 구조화된 B2B 주문에 익숙한 업체라는 신호를 줍니다. 최종 숫자는 결국 이메일이나 전화로 협상하지만, 그 이메일을 애초에 보내게 만드는 건 공개된 범위입니다.',
+        },
+      },
+      {
+        q: {
+          en: 'Do we need to explain Incoterms (FOB, CIF, EXW) on our website, or is that something buyers already know?',
+          ko: '웹사이트에 인코텀즈(FOB, CIF, EXW)를 설명해야 하나요, 아니면 바이어들이 이미 다 아는 내용인가요?',
+        },
+        a: {
+          en: "Experienced import/export buyers know Incoterms cold, but a growing share of your inbound leads are US retailers or newer distributors who do not — for them, seeing 'FOB Busan' or 'CIF Miami' with no context reads as a wall, not information, and an unclear shipping term is a common reason a promising inquiry quietly dies before a quote is even requested. State plainly which terms you offer and what each means in one sentence (FOB: you handle shipping and insurance to the port, CIF: we cover shipping and insurance to your port, EXW: you arrange pickup from our facility), and let the buyer self-select instead of guessing. Buyers who already know Incoterms skim past the explanation in two seconds; buyers who do not just found the reason to keep reading instead of closing the tab.",
+          ko: '경험 많은 수입·수출 바이어는 인코텀즈를 이미 잘 알지만, 최근 들어오는 문의 중 점점 더 많은 비중이 잘 모르는 미국 리테일러나 신생 유통업체입니다. 이들에게 설명 없이 "FOB 부산"이나 "CIF 마이애미"만 적혀 있으면 정보가 아니라 장벽으로 읽히고, 불명확한 배송 조건은 유망한 문의가 견적 요청까지 가지 못하고 조용히 사라지는 흔한 이유입니다. 어떤 조건을 제공하는지, 각각 무슨 뜻인지 한 문장으로 명확히 적으세요(FOB: 항구까지 배송·보험은 바이어 부담, CIF: 도착항까지 배송·보험을 저희가 부담, EXW: 저희 창고에서 바이어가 직접 픽업 준비). 바이어가 추측하지 않고 스스로 맞는 조건을 고르게 하는 겁니다. 인코텀즈를 이미 아는 바이어는 설명을 2초 만에 훑고 지나가지만, 모르는 바이어는 그 설명 덕분에 탭을 닫지 않고 계속 읽게 됩니다.',
+        },
+      },
+      {
+        q: {
+          en: "Why does Miami matter specifically for a Korean-American trading company's website, beyond just being where the office is?",
+          ko: '마이애미라는 위치가 한인 무역회사 웹사이트에 사무실 소재지 이상으로 왜 중요한가요?',
+        },
+        a: {
+          en: "Miami-Dade functions as the main US gateway to Latin American and Caribbean trade — PortMiami and Miami International Airport's cargo operations move a large share of US trade with the region, and the Doral area near MIA has grown into a dense trade and logistics district for exactly that reason. A Korean-American trading or import-export company based here is not competing only for US domestic buyers; a meaningful share of realistic inquiries come from distributors in Colombia, Panama, the Dominican Republic, and other regional markets who found the company through a US-based search or a Miami trade directory, expecting the seller to already understand re-export logistics through the region. A website that only speaks to a US buyer misses that segment; one that states clearly which regions the company ships to and re-exports through, in English as the working language of that trade, captures leads a Georgia or LA-based competitor's site is not positioned to catch.",
+          ko: '마이애미-데이드는 미국이 중남미·카리브해와 교역하는 주요 관문 역할을 합니다 — 포트마이애미(PortMiami)와 마이애미 국제공항(MIA)의 화물 물류가 이 지역과의 미국 교역 상당 부분을 처리하고, MIA 인근 도랄(Doral) 지역이 바로 그 이유로 밀집된 무역·물류 지구로 성장했습니다. 이곳에 기반한 한인 무역·수출입 회사는 미국 내수 바이어만 상대하는 게 아닙니다 — 실질적인 문의 중 상당수가 콜롬비아, 파나마, 도미니카공화국 등 인근 시장의 유통업체에서 오는데, 이들은 미국 기반 검색이나 마이애미 무역 디렉토리를 통해 회사를 찾았고, 판매자가 이 지역을 통한 재수출 물류를 이미 이해하고 있으리라 기대합니다. 미국 바이어만 상대하는 웹사이트는 이 세그먼트를 놓치지만, 어느 지역으로 배송·재수출하는지 이 교역의 실무 언어인 영어로 명확히 밝힌 사이트는 조지아나 LA 기반 경쟁사 사이트가 잡지 못하는 리드를 잡아냅니다.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "Ask a Korean-American trading or import-export company in Miami-Dade how business really gets done, and the honest answer is still relationships — a buyer met at a trade show, a referral from a supplier in Korea, a distributor who has ordered for years and just calls when they need more. That world has not disappeared. But it no longer describes where a growing share of new inquiries start. A US retailer researching a new SKU, or a distributor in Bogotá or Santo Domingo looking for a supplier who ships through Miami, now finds companies the same way anyone finds anything — a Google search, a trade directory listing, a LinkedIn company page — and does two minutes of due diligence before ever writing an email. If that search turns up nothing, or a page with no specifics, the inquiry that would have become a quote request simply never gets sent." },
+        { type: 'h2', content: 'What a buyer is actually checking before they write' },
+        { type: 'p', content: "A buyer doing pre-email diligence on an unfamiliar trading company is not browsing for inspiration — they are answering a short, practical checklist: does this company have a real, working minimum order quantity I can meet? Do they offer samples, and on what terms? Which shipping terms (Incoterms) do they actually support? How long does a typical order take from confirmation to arrival? Do they handle the customs and documentation side, or does that fall on the buyer? A generic 'we are a trusted trading company serving the USA' homepage answers none of these, and a buyer who cannot find the answers in two minutes assumes the company either does not know its own numbers or is not set up for a structured order — and quietly moves to whichever supplier's site answered the checklist directly." },
+        { type: 'ul', content: 'What a trade-transparency page actually needs to state:', items: [
+          "A MOQ range by product category, even if the exact figure varies by SKU or season — a stated range beats no number at all.",
+          "A clear sample policy — do you offer samples, do they cost anything, how long does a sample take to arrive.",
+          "Which Incoterms you support (FOB, CIF, EXW, DDP), explained in one plain sentence each rather than assumed knowledge.",
+          "Typical lead time from order confirmation to shipment, and separately, typical transit time to major destination regions.",
+          "Whether you handle customs documentation and HS code classification, or the buyer needs their own broker.",
+          "Real photos of inventory, warehouse, or product lines — not stock photography — since a buyer checking legitimacy is looking for evidence the company physically operates.",
+        ] },
+        { type: 'tip', content: "If you publish only one thing this month, publish the MOQ range. It is the single fact a mismatched buyer needs to self-disqualify before wasting your time, and the single fact a matched buyer needs to justify writing the first email instead of closing the tab." },
+        { type: 'h2', content: 'Why Miami is not just where the office happens to be' },
+        { type: 'p', content: "Miami-Dade's role in US trade is not incidental — PortMiami and Miami International Airport's cargo operations handle a large share of US trade flow with Latin America and the Caribbean, and the Doral corridor near the airport has grown specifically because logistics, freight forwarding, and trading companies cluster where the cargo actually moves. A Korean-American trading company based here sits inside that flow, whether the website says so or not. The inquiries worth capturing are not only US retailers — a real and growing share come from distributors in Colombia, Panama, the Dominican Republic, and other regional markets searching for a US-based supplier who already understands shipping and re-export logistics through South Florida, because that supplier saves them a step their competitor's supplier does not." },
+        { type: 'p', content: "None of this requires a Spanish-language site to capture — the working language of US-based international trade correspondence is almost always English, with Korean serving the separate, equally important role of clear communication back to a Korea-based supplier or headquarters. What it requires is a website, in English, that states plainly which regions the company ships to and re-exports through, rather than leaving a distributor in Bogotá to guess whether Miami is even in scope." },
+        { type: 'h2', content: 'What happens after the quote request — the part that actually converts' },
+        { type: 'p', content: "Publishing MOQ, sample policy, and Incoterms gets the inquiry sent. What turns that inquiry into a first order is what happens in the days after: a real person responding with the requested information within a business day rather than a week, a sample that actually ships when promised, and a formal quote or proforma invoice that looks like it came from an established company rather than a personal email with a price typed into the body. None of this needs to be expensive or elaborate — it needs to be consistent, because a buyer weighing two similar suppliers on price will often choose the one whose process felt organized over the one who was five percent cheaper but slow to respond." },
+        { type: 'cta', content: "ZOE LUMOS builds bilingual, trade-ready websites for Korean-American trading, import-export, and wholesale companies across the US — MOQ and Incoterms pages, sample-request workflows, quote intake, and a company presence that passes a buyer's two-minute due-diligence check the first time. Free consultation in English or Korean: email info@zoelumos.com or reach us on KakaoTalk (http://pf.kakao.com/_xhxdxmlX/chat)." },
+      ],
+      ko: [
+        { type: 'intro', content: '마이애미-데이드 한인 무역·수출입 회사에 실제로 사업이 어떻게 이뤄지는지 물어보면, 솔직한 답은 여전히 관계입니다 — 전시회에서 만난 바이어, 한국 공급사의 소개, 몇 년째 주문해 온 유통업체가 필요할 때 그냥 전화하는 관계요. 그 세계는 사라지지 않았습니다. 하지만 새로 들어오는 문의 중 점점 더 많은 비중이 시작되는 지점은 더 이상 그곳이 아닙니다. 새 SKU를 조사 중인 미국 리테일러나, 마이애미를 통해 배송받을 공급사를 찾는 보고타·산토도밍고의 유통업체는 이제 누구나 뭔가를 찾을 때와 똑같은 방식으로 회사를 찾습니다 — 구글 검색, 무역 디렉토리 등록, 링크드인 회사 페이지 — 그리고 이메일을 쓰기 전에 2분짜리 실사를 합니다. 그 검색에서 아무것도 안 나오거나, 구체적인 정보 없는 페이지만 나오면, 견적 요청이 됐을 문의는 그냥 보내지지 않습니다.' },
+        { type: 'h2', content: '바이어가 이메일 쓰기 전에 실제로 확인하는 것' },
+        { type: 'p', content: '낯선 무역회사를 이메일 이전 단계에서 실사하는 바이어는 영감을 얻으려고 둘러보는 게 아닙니다 — 짧고 실용적인 체크리스트에 답을 찾는 중입니다. 이 회사가 내가 맞출 수 있는 실제 최소주문수량(MOQ)을 갖고 있나? 샘플을 제공하나, 조건은 무엇인가? 어떤 배송 조건(인코텀즈)을 실제로 지원하나? 주문 확정부터 도착까지 보통 얼마나 걸리나? 통관·서류 작업을 이 회사가 처리하나, 아니면 바이어가 직접 해야 하나? "미국 전역을 서비스하는 신뢰받는 무역회사입니다" 같은 일반적인 홈페이지는 이 중 무엇에도 답하지 않고, 2분 안에 답을 찾지 못한 바이어는 회사가 자기 숫자를 모르거나 구조화된 주문을 받을 준비가 안 됐다고 판단해 체크리스트에 직접 답해준 다른 공급사로 조용히 넘어갑니다.' },
+        { type: 'ul', content: '무역 투명성 페이지가 실제로 밝혀야 할 것:', items: [
+          'SKU나 시즌에 따라 정확한 숫자는 달라지더라도, 제품 카테고리별 MOQ 범위 — 숫자가 아예 없는 것보다 범위라도 있는 게 낫습니다.',
+          '명확한 샘플 정책 — 샘플을 제공하는지, 비용이 드는지, 도착까지 얼마나 걸리는지.',
+          '어떤 인코텀즈(FOB, CIF, EXW, DDP)를 지원하는지, 이미 알고 있다고 가정하지 말고 각각 한 문장으로 쉽게 설명.',
+          '주문 확정부터 출고까지 걸리는 일반적인 리드타임, 그리고 별도로 주요 도착 지역까지의 일반적인 운송 기간.',
+          '통관 서류와 HS 코드 분류를 회사가 처리하는지, 아니면 바이어가 자체 관세사를 써야 하는지.',
+          '재고, 창고, 제품 라인의 실제 사진 — 스톡 사진이 아니라요. 실재 여부를 확인하는 바이어는 회사가 실제로 운영 중이라는 증거를 찾고 있습니다.',
+        ] },
+        { type: 'tip', content: '이번 달에 딱 하나만 공개한다면 MOQ 범위를 공개하세요. 맞지 않는 바이어가 시간을 낭비하기 전에 스스로 걸러내는 데 필요한 단 하나의 정보이자, 맞는 바이어가 탭을 닫는 대신 첫 이메일을 쓸 근거로 삼는 단 하나의 정보입니다.' },
+        { type: 'h2', content: '마이애미가 그저 사무실 소재지가 아닌 이유' },
+        { type: 'p', content: '마이애미-데이드가 미국 교역에서 하는 역할은 우연이 아닙니다 — 포트마이애미와 마이애미 국제공항(MIA)의 화물 물류는 중남미·카리브해와의 미국 교역 흐름 상당 부분을 처리하고, 공항 인근 도랄(Doral) 지구는 물류·화물 운송·무역회사들이 실제로 화물이 움직이는 곳에 모이면서 그 이유로 성장했습니다. 여기 기반한 한인 무역회사는 웹사이트에 그렇게 적혀 있든 없든 이미 그 흐름 안에 있습니다. 잡을 가치가 있는 문의는 미국 리테일러만이 아닙니다 — 실질적이고 점점 커지는 비중이 콜롬비아, 파나마, 도미니카공화국 등 인근 시장 유통업체에서 오는데, 이들은 남플로리다를 통한 배송·재수출 물류를 이미 이해하는 미국 기반 공급사를 찾고 있습니다. 그런 공급사가 경쟁사보다 한 단계를 덜어주기 때문입니다.' },
+        { type: 'p', content: '이걸 잡는 데 스페인어 사이트가 필요한 건 아닙니다 — 미국 기반 국제 무역 소통의 실무 언어는 거의 항상 영어이고, 한국어는 한국 공급사나 본사와의 명확한 소통이라는 별도의, 똑같이 중요한 역할을 합니다. 필요한 건 어느 지역으로 배송·재수출하는지를 영어로 명확히 밝힌 웹사이트입니다 — 보고타의 유통업체가 마이애미가 서비스 범위에 들어가는지조차 추측하게 놔두지 않는 것이죠.' },
+        { type: 'h2', content: '견적 요청 이후 — 실제로 전환을 만드는 부분' },
+        { type: 'p', content: 'MOQ, 샘플 정책, 인코텀즈를 공개하면 문의가 옵니다. 그 문의를 첫 주문으로 바꾸는 건 그 이후 며칠 동안 벌어지는 일입니다 — 일주일이 아니라 영업일 하루 안에 요청한 정보로 실제 사람이 답하는 것, 약속한 대로 실제로 발송되는 샘플, 본문에 가격만 타이핑한 개인 이메일이 아니라 자리 잡은 회사에서 나온 것처럼 보이는 정식 견적서나 프로포마 인보이스. 이 중 어느 것도 비싸거나 복잡할 필요는 없습니다 — 일관성만 있으면 됩니다. 비슷한 두 공급사를 가격으로 저울질하는 바이어는 5% 더 싸지만 응답이 느린 곳보다, 과정이 체계적으로 느껴진 곳을 선택하는 경우가 많기 때문입니다.' },
+        { type: 'cta', content: 'ZOE LUMOS는 미국 전역의 한인 무역·수출입·도매 기업을 위한 이중언어 무역 웹사이트를 만듭니다 — MOQ·인코텀즈 페이지, 샘플 요청 워크플로, 견적 접수, 그리고 바이어의 2분짜리 실사를 첫 번째로 통과하는 회사 존재감까지요. 한국어/영어 무료 상담: info@zoelumos.com 이메일 또는 카카오톡(http://pf.kakao.com/_xhxdxmlX/chat)으로 편하게 문의하세요.' },
+      ],
+    },
+  },
 ]
