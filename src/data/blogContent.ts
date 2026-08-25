@@ -13521,4 +13521,125 @@ export const blogContent: BlogPost[] = [
       ],
     },
   },
+  // ─────────────────────────────────────────────────────────────────
+  // 2026-08-25 — C2C/beauty service booking + no-show prevention +
+  // Google Maps, San Diego's Convoy District (least-recent topic in
+  // rotation; new metro area, no prior San Diego post).
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'korean-nail-beauty-salon-booking-noshow-san-diego-2026',
+    date: '2026-08-25',
+    updatedDate: '2026-08-25',
+    readTime: 10,
+    category: { en: 'Industry Guide', ko: '업종별 가이드' },
+    title: {
+      en: 'Korean Nail & Beauty Studios in San Diego\'s Convoy District: A Booking System That Actually Stops No-Shows (2026)',
+      ko: '샌디에고 콘보이(Convoy) 한인 네일샵·뷰티샵 — 노쇼를 실제로 막는 온라인 예약 시스템 만들기 (2026)',
+    },
+    metaDescription: {
+      en: 'Korean nail and beauty studio owners along San Diego\'s Convoy Street corridor often run bookings entirely through text and Instagram DMs — which means no shared calendar, no deposit, and a no-show problem nobody has a real policy for. Here is how to move onto real booking software, enforce a no-show fee that customers respect, and win the Google Maps 3-pack for Convoy District searches.',
+      ko: '샌디에고 콘보이 스트리트 상권의 한인 네일샵·뷰티샵은 예약을 문자와 인스타그램 DM으로만 처리하는 경우가 많습니다 — 공유 캘린더도 없고, 예치금도 없고, 노쇼에 대한 진짜 정책도 없다는 뜻입니다. 실제 예약 소프트웨어로 옮기고, 손님이 존중하는 노쇼 수수료 정책을 세우고, 콘보이 지역 검색에서 구글 지도 3팩에 노출되는 방법을 정리했습니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'Vagaro, Booksy, Square Appointments, or GlossGenius — which booking platform fits a Korean nail or beauty studio best?',
+          ko: 'Vagaro, Booksy, Square Appointments, GlossGenius 중 한인 네일샵·뷰티샵에는 어떤 예약 플랫폼이 맞나요?',
+        },
+        a: {
+          en: 'Vagaro tends to fit multi-service studios best — nail, lash, and hair under one roof — because it handles a mixed service menu with different chair times cleanly and its marketplace listing brings in some walk-up discovery. Booksy leans toward single-technician and small-team nail or lash studios and has strong deposit and no-show-fee tools built directly into the booking flow, which matters most for exactly the problem this guide is solving. Square Appointments is the simplest and cheapest option if you already run Square for retail or payments, since booking, checkout, and card-on-file live in one dashboard — a good fit for a smaller studio that does not need marketplace discovery. GlossGenius is popular with independent nail techs and solo beauty professionals for its polish and ease of setup but has a narrower feature set for multi-chair studios. The practical rule: if no-shows are the main pain, prioritize whichever platform makes card-on-file and an enforced deposit the default at booking, not an optional add-on — that is Booksy or Vagaro for most Convoy District studios.',
+          ko: '여러 서비스를 함께 운영하는 스튜디오 — 네일·속눈썹·헤어를 한 곳에서 — 라면 보통 Vagaro가 가장 잘 맞습니다. 서비스마다 다른 소요 시간을 깔끔하게 처리하고, 자체 마켓플레이스 리스팅 덕분에 워크인 유입도 어느 정도 생기기 때문입니다. Booksy는 1인 또는 소규모 팀이 운영하는 네일·속눈썹 샵에 더 잘 맞고, 예치금·노쇼 수수료 기능이 예약 흐름 안에 강력하게 내장돼 있어서 이 가이드가 다루는 문제에 특히 유리합니다. Square Appointments는 이미 소매나 결제에 Square를 쓰고 있다면 가장 단순하고 저렴한 선택입니다 — 예약, 결제, 카드 등록이 하나의 대시보드 안에 있어서 마켓플레이스 유입이 굳이 필요 없는 소형 샵에 적합합니다. GlossGenius는 세련된 화면과 쉬운 설정 덕분에 독립 네일테크·1인 뷰티 전문가들에게 인기가 많지만, 여러 체어를 운영하는 스튜디오에는 기능이 다소 좁습니다. 실전 기준은 이렇습니다 — 노쇼가 가장 큰 골칫거리라면, 카드 등록과 예치금 강제가 옵션이 아니라 예약의 기본값인 플랫폼을 우선하세요. 콘보이 지역 대부분의 스튜디오에는 Booksy나 Vagaro가 그 답입니다.',
+        },
+      },
+      {
+        q: {
+          en: 'How do I set up a no-show fee or deposit policy that customers will actually respect?',
+          ko: '손님이 실제로 존중하는 노쇼 수수료·예치금 정책을 어떻게 세워야 하나요?',
+        },
+        a: {
+          en: 'Publish the policy in plain terms wherever booking happens — on the booking page itself and in the confirmation text — require a card on file or a small deposit at the time of booking for any service over a set length (say, 60 minutes or more), and charge the fee automatically through your booking platform only after a clearly defined grace window (most Convoy District studios use a 24-hour cancellation cutoff and a 15-minute late arrival grace). The part that actually makes a policy work is consistency, not the size of the fee: enforcing it every time, including for regulars, is what trains the whole client base rather than singling anyone out. It also helps to frame the fee as protecting the technician\'s time rather than punishing the customer — most clients accept a modest, clearly disclosed fee once they understand a missed appointment is an hour of paid chair time nobody else could book. Waiving it once as a goodwill gesture for a genuine emergency is fine; waiving it automatically defeats the purpose.',
+          ko: '예약이 이뤄지는 모든 곳 — 예약 페이지 자체와 예약 확정 문자 — 에 정책을 평이한 말로 명시하고, 일정 시간 이상(예: 60분 이상)의 서비스는 예약 시점에 카드 등록이나 소액 예치금을 요구하며, 명확하게 정한 유예 기간이 지난 뒤에만 예약 플랫폼을 통해 자동으로 수수료를 청구하세요(콘보이 지역 대부분의 스튜디오는 24시간 전 취소 기준과 15분 지각 유예를 씁니다). 정책이 실제로 작동하게 만드는 건 수수료 액수가 아니라 일관성입니다 — 단골에게도 예외 없이 적용해야 특정 손님만 겨냥한 게 아니라 전체 고객층을 길들이는 효과가 생깁니다. 수수료를 손님을 벌주는 게 아니라 테크니션의 시간을 지키는 장치로 설명하는 것도 도움이 됩니다 — 놓친 예약이 다른 누구도 예약하지 못한 유급 체어 한 시간이라는 걸 이해하면, 대부분의 손님은 명확히 고지된 적당한 수수료를 받아들입니다. 진짜 비상 상황에 한 번 정도 호의로 면제해 주는 건 괜찮지만, 자동으로 매번 면제한다면 정책을 세운 의미가 없어집니다.',
+        },
+      },
+      {
+        q: {
+          en: 'How do I get my nail or beauty salon in San Diego\'s Convoy District to show up in the Google Maps 3-pack?',
+          ko: '샌디에고 콘보이 지역 네일샵·뷰티샵이 구글 지도 3팩에 뜨려면 어떻게 해야 하나요?',
+        },
+        a: {
+          en: 'Claim and fully complete your Google Business Profile with the exact category match (Nail Salon, Beauty Salon, or both if you offer mixed services), a service list that mirrors your actual menu, and a steady stream of real photos of finished work and the studio itself, then point the profile\'s "Book" button at your real booking page instead of a phone number so Google can treat it as a bookable listing. Consistency matters as much as completeness: your name, address, and phone must match exactly across your website, Yelp, and Instagram, since mismatches quietly hurt local ranking. Reply to every review — Korean and English — since an active profile with recent replies signals relevance to Google\'s ranking system, and encourage happy clients to mention the specific service and neighborhood in their review text ("gel set near Convoy" or "콘보이 젤네일"), which helps the profile surface for exactly those searches. Because Convoy competes with nearby Kearny Mesa, Clairemont, and Mira Mesa listings, a profile that is fully filled out and actively maintained consistently outranks one that is merely claimed.',
+          ko: '구글 비즈니스 프로필을 등록하고 완전히 채우세요 — 정확한 카테고리(네일샵, 뷰티샵, 혼합 서비스라면 둘 다)를 맞추고, 실제 메뉴와 일치하는 서비스 목록을 넣고, 완성된 시술 사진과 매장 사진을 꾸준히 올리세요. 그리고 프로필의 "예약" 버튼을 전화번호가 아니라 실제 예약 페이지로 연결해서 구글이 예약 가능한 리스팅으로 인식하게 하세요. 완성도만큼 일관성도 중요합니다 — 웹사이트, Yelp, 인스타그램 전체에서 상호명·주소·전화번호가 정확히 일치해야 합니다. 불일치는 조용히 로컬 순위를 깎아먹습니다. 한국어·영어 모든 리뷰에 답글을 다세요 — 최근 답글이 있는 활성 프로필은 구글의 랭킹 시스템에 관련성 신호를 줍니다. 만족한 손님에게 리뷰에 구체적인 서비스와 동네를 언급해 달라고 부탁하세요("콘보이 근처 젤네일" 또는 "콘보이 젤네일") — 그래야 바로 그런 검색어에서 프로필이 노출됩니다. 콘보이는 인근 케니 메사(Kearny Mesa), 클레어몬트(Clairemont), 미라 메사(Mira Mesa) 리스팅과 경쟁하기 때문에, 완전히 채워지고 꾸준히 관리되는 프로필이 등록만 해 둔 프로필을 꾸준히 앞섭니다.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "San Diego's Convoy District — the strip along Convoy Street and Genesee Avenue anchored by H Mart and Assi Market, with a dense run of Korean restaurants, cafes, and beauty studios in between — is one of the most walkable Korean business corridors on the West Coast. Nail and beauty studios there do steady walk-in and repeat-client traffic, but look at how most of them actually take appointments and a familiar pattern shows up: bookings taken over text and Instagram DM, no shared calendar the whole staff can see, and a no-show problem nobody has a real policy for. A tech blocked out for a full color set on a Saturday who simply does not show up costs real money twice over — the chair sat empty, and a customer who would have gladly taken that slot got turned away days earlier. None of that shows up on the salon floor. It shows up in the empty chair and the technician standing around with nothing to do." },
+        { type: 'h2', content: 'Why DM and text booking quietly bleeds revenue' },
+        { type: 'p', content: "Text and DM booking feels personal and low-friction, which is exactly why so many Convoy District studios still run on it. The problem is structural, not personal: a phone thread cannot show live capacity, so double-booking two clients into the same chair at 2pm on a Saturday is easy to do by accident and hard to catch until both people show up. Nothing about a DM enforces a deposit, so a client can request a 90-minute appointment, never confirm, and never show — with zero consequence and zero record. And because the conversation lives in a personal phone rather than a system, there is no reminder sent automatically, no waitlist that gets notified the moment a slot opens, and no data the owner can use to see which days or services are hardest hit." },
+        { type: 'ul', content: 'What the disconnection actually costs, in practice:', items: [
+          'Double-booked chairs — without a shared, real-time calendar, two clients can land in the same time slot and the studio only finds out when both walk in.',
+          'No-shows with zero consequence — a DM request that is never confirmed or backed by a deposit costs a full appointment slot and nobody is accountable for it.',
+          'Lost waitlist revenue — when a slot opens from a cancellation, there is no system to instantly notify the next client who wanted that exact time.',
+          'No pattern visibility — without booking data, an owner cannot see which days, technicians, or services carry the worst no-show rate, so the problem never gets fixed, only complained about.',
+        ] },
+        { type: 'h2', content: 'Step one: move onto real booking software built for the chair, not the calendar' },
+        { type: 'p', content: 'Vagaro, Booksy, Square Appointments, and GlossGenius all now handle the core of this well: a live calendar the whole staff can see, service-specific time blocks so a gel refill and a full acrylic set do not eat the same slot, and — critically — a deposit or card-on-file requirement built into the booking flow itself rather than bolted on. Which one fits depends on how the studio actually runs: Vagaro suits a multi-service studio doing nail, lash, and hair under one roof; Booksy leans toward single-technician and small-team nail studios with strong no-show tools; Square Appointments is the simplest option for a studio already running Square for retail; GlossGenius is popular with independent techs for its polish and simplicity. Whichever platform fits, the fix is the same: stop treating booking as a phone conversation and turn on what the software already offers.' },
+        { type: 'ul', content: 'What to turn on once you pick a platform:', items: [
+          'Card-on-file or a deposit required at booking for any service over roughly 60 minutes, not left as optional.',
+          'Service-specific time blocks that match real chair time — a gel refill and a full acrylic set should never book into the same-length slot.',
+          'Automatic reminder texts at 24 hours and again at 2 hours before the appointment, which alone eliminates a large share of accidental no-shows.',
+          'A waitlist that auto-notifies the next client the instant a cancellation opens a slot, so a canceled appointment does not just sit empty.',
+        ] },
+        { type: 'tip', content: "Check one thing today: open your Google Business Profile and tap the \"Book\" button the way a customer would. If it dials your phone number instead of opening a real booking page, you are losing every customer who searches outside business hours or would rather not call. Pointing that button at your actual booking link is a ten-minute fix." },
+        { type: 'h2', content: 'Step two: enforce a no-show policy that customers actually respect' },
+        { type: 'p', content: "A no-show policy only works if it is published clearly and enforced consistently — the size of the fee matters far less than whether it applies every time, to every client, including regulars. Most Convoy District studios that make this stick use a 24-hour cancellation cutoff, a short grace window for late arrivals (10–15 minutes is standard), and a modest fee charged automatically through the booking platform rather than collected awkwardly in person. Framing helps: a no-show fee protects the technician's paid time, not a punishment aimed at the client, and most clients accept a clearly disclosed policy once it is explained that way. A one-time goodwill waiver for a genuine emergency is fine. Waiving it automatically, or only for clients who complain, quietly trains everyone that the policy is optional — which is exactly the DM-era problem this is meant to fix." },
+        { type: 'ul', content: 'What a policy that sticks includes:', items: [
+          'A clearly published cutoff — 24 hours is standard — stated on the booking page and repeated in the confirmation text.',
+          'A short, defined grace window for late arrivals, so the line between "late" and "no-show" is not a judgment call in the moment.',
+          'Automatic fee collection through the booking platform\'s card-on-file, not an in-person conversation that puts the front desk in an awkward spot.',
+          'Consistent enforcement across every client, including longtime regulars — the exception is what breaks the policy, not the fee itself.',
+        ] },
+        { type: 'h2', content: "Step three: win the Google Maps 3-pack for Convoy District searches" },
+        { type: 'p', content: '"Nail salon near me" and "nail salon Convoy" are exactly the kind of ready-to-book local searches where the Google Maps 3-pack decides who gets the call before a website is even opened. Winning it starts with a fully completed Google Business Profile: the correct category (Nail Salon, Beauty Salon, or both), a service list that mirrors the real menu, and a steady stream of real photos rather than stock images. Name, address, and phone number need to match exactly across the website, Yelp, and Instagram — small mismatches quietly cost ranking. Replying to every review, in the language it was written in, signals an active business to Google\'s ranking system, and clients mentioning the neighborhood by name in their review text helps the profile surface for exactly those geo-specific searches.' },
+        { type: 'h2', content: 'The San Diego-specific layer: bilingual, and competing across a spread-out map' },
+        { type: 'p', content: "Convoy District customers search two ways: English speakers looking for \"nail salon Convoy San Diego\" or \"lash extensions Kearny Mesa,\" and Korean speakers searching \"샌디에고 콘보이 네일샵\" or \"콘보이 속눈썹.\" Most studio websites and Google profiles serve only one. A bilingual booking page — with the neighborhood names customers actually use, hours, parking notes, and a direct link into your booking software — plus a Google Business Profile answered in both languages, covers both audiences with one build. Because Convoy sits close to Kearny Mesa, Clairemont, and Mira Mesa, all of which have their own nail and beauty studios competing for the same searches, that bilingual coverage is what actually separates a studio that gets found from one that gets scrolled past." },
+        { type: 'cta', content: "Running a Korean nail or beauty studio in San Diego and tired of no-shows eating into chair time? ZOE LUMOS builds bilingual booking-first websites for nail and beauty studios with deposit-enabled scheduling wired into Vagaro, Booksy, Square Appointments, or GlossGenius, a no-show policy set up to actually hold, and Google Business Profile optimization built for Convoy District search. Free consultation in English or Korean: email info@zoelumos.com or message us on KakaoTalk (http://pf.kakao.com/_xhxdxmlX/chat)." },
+      ],
+      ko: [
+        { type: 'intro', content: '샌디에고 콘보이(Convoy) 지역 — H Mart와 Assi Market을 중심으로 콘보이 스트리트와 제네시 애비뉴를 따라 한인 식당·카페·뷰티샵이 촘촘히 이어지는 상권 — 은 서부에서 가장 걸어서 다니기 좋은 한인 상권 중 하나입니다. 이곳 네일샵·뷰티샵은 워크인과 단골 방문이 꾸준한 편이지만, 실제로 예약을 어떻게 받고 있는지 보면 익숙한 패턴이 나타납니다 — 문자와 인스타그램 DM으로 받는 예약, 직원 전체가 볼 수 있는 공유 캘린더 부재, 그리고 아무도 진짜 정책을 세우지 않은 노쇼 문제. 토요일 풀 컬러 세트로 잡아둔 테크니션 자리에 손님이 그냥 나타나지 않으면 손해는 두 배입니다 — 체어는 비었고, 며칠 전 그 시간을 흔쾌히 예약했을 다른 손님은 이미 돌려보낸 뒤니까요. 이 중 어느 것도 매장 안에서는 보이지 않습니다. 빈 체어와 할 일 없이 서 있는 테크니션에게서 드러날 뿐입니다.' },
+        { type: 'h2', content: 'DM·문자 예약이 조용히 매출을 갉아먹는 이유' },
+        { type: 'p', content: '문자·DM 예약은 친근하고 부담 없이 느껴져서, 콘보이 지역의 많은 스튜디오가 여전히 이 방식을 쓰고 있습니다. 문제는 개인의 실수가 아니라 구조 자체에 있습니다 — 폰 대화창은 실시간 정원을 보여줄 수 없어서, 토요일 오후 2시 같은 체어에 손님 두 명을 실수로 겹쳐 예약하기 쉽고, 두 사람이 다 나타나기 전까지는 알아채기도 어렵습니다. DM은 예치금을 강제할 방법이 없어서, 손님이 90분짜리 예약을 요청해 놓고 확정도 안 하고 나타나지도 않아도 아무 대가가 없고 기록도 남지 않습니다. 그리고 대화가 개인 휴대폰 안에 살고 있어서 자동 리마인더도, 자리가 나는 순간 알림을 받는 대기자 명단도, 어떤 요일이나 서비스가 노쇼에 가장 취약한지 알려주는 데이터도 사장님에게는 없습니다.' },
+        { type: 'ul', content: '이 단절이 실제로 만들어내는 비용:', items: [
+          '겹쳐버린 체어 — 실시간 공유 캘린더가 없으면 같은 시간대에 손님 두 명이 잡힐 수 있고, 둘 다 매장에 나타나야 비로소 알게 됩니다.',
+          '대가 없는 노쇼 — 확정도 예치금도 없는 DM 요청은 예약 한 자리를 통째로 날려도 아무도 책임지지 않습니다.',
+          '놓치는 대기자 매출 — 취소로 자리가 나도, 정확히 그 시간을 원했던 다음 손님에게 즉시 알려줄 시스템이 없습니다.',
+          '패턴이 안 보임 — 예약 데이터가 없으면 어떤 요일·테크니션·서비스에서 노쇼가 가장 심한지 알 수 없어서, 문제는 해결되지 않고 불평만 쌓입니다.',
+        ] },
+        { type: 'h2', content: '1단계 — 캘린더가 아니라 체어를 위해 만들어진 진짜 예약 소프트웨어로 옮기세요' },
+        { type: 'p', content: 'Vagaro, Booksy, Square Appointments, GlossGenius 모두 이제 핵심을 잘 처리합니다 — 직원 전체가 볼 수 있는 실시간 캘린더, 젤 리필과 풀 아크릴 세트가 같은 자리를 두고 겹치지 않게 하는 서비스별 시간 블록, 그리고 결정적으로 예약 흐름 자체에 내장된 예치금·카드 등록 요구입니다. 어떤 플랫폼이 맞는지는 스튜디오가 실제로 어떻게 운영되는지에 달려 있습니다 — 네일·속눈썹·헤어를 한 곳에서 하는 스튜디오라면 Vagaro, 노쇼 방지 기능이 강한 1인·소규모 네일샵이라면 Booksy, 이미 소매에 Square를 쓰고 있다면 가장 단순한 Square Appointments, 세련된 화면과 간편함을 원하는 독립 테크니션이라면 GlossGenius가 인기입니다. 어떤 플랫폼을 고르든 해법은 같습니다 — 예약을 통화로 취급하는 걸 멈추고, 소프트웨어가 이미 제공하는 기능부터 켜세요.' },
+        { type: 'ul', content: '플랫폼을 고른 뒤 반드시 켜야 할 것:', items: [
+          '약 60분 이상 서비스는 예약 시점에 카드 등록이나 예치금을 옵션이 아니라 필수로.',
+          '실제 체어 시간에 맞는 서비스별 시간 블록 — 젤 리필과 풀 아크릴 세트가 같은 길이의 자리를 두고 겹쳐서는 안 됩니다.',
+          '예약 24시간 전, 그리고 2시간 전 자동 리마인더 문자 — 이것만으로도 실수로 인한 노쇼의 상당 부분이 사라집니다.',
+          '취소로 자리가 나는 즉시 다음 대기 손님에게 자동으로 알려주는 대기자 명단 — 취소된 예약이 그냥 비어 있지 않게 됩니다.',
+        ] },
+        { type: 'tip', content: '오늘 딱 하나만 확인해 보세요. 구글 비즈니스 프로필을 열고 손님이 하듯 "예약" 버튼을 눌러 보세요. 실제 예약 페이지가 아니라 전화 연결로 이어진다면, 영업시간 외에 검색하거나 전화를 꺼리는 손님을 전부 놓치고 있는 겁니다. 이 버튼을 실제 예약 링크로 바꾸는 건 10분이면 되는 수정입니다.' },
+        { type: 'h2', content: '2단계 — 손님이 실제로 존중하는 노쇼 정책을 세우세요' },
+        { type: 'p', content: '노쇼 정책은 명확히 공지되고 일관되게 적용될 때만 작동합니다 — 수수료 액수보다, 단골을 포함해 모든 손님에게 예외 없이 적용되는지가 훨씬 중요합니다. 이걸 정착시킨 콘보이 지역 스튜디오 대부분은 24시간 전 취소 기준, 짧은 지각 유예(보통 10~15분), 그리고 대면으로 어색하게 받는 대신 예약 플랫폼을 통해 자동으로 청구되는 적당한 수수료를 씁니다. 설명 방식도 중요합니다 — 노쇼 수수료는 손님을 벌주는 게 아니라 테크니션의 유급 시간을 지키는 장치이고, 이렇게 설명하면 명확히 고지된 정책을 대부분의 손님이 받아들입니다. 진짜 비상 상황에 한 번 정도 호의로 면제해 주는 건 괜찮습니다. 하지만 자동으로 면제하거나 불평하는 손님에게만 면제해 주면, 정책이 선택 사항이라는 걸 조용히 학습시키는 셈입니다 — 이 정책이 애초에 고치려던 DM 시대의 문제와 똑같은 결과입니다.' },
+        { type: 'ul', content: '정착하는 정책에 들어가야 할 것:', items: [
+          '예약 페이지에 명시되고 확정 문자에도 반복되는, 명확히 공지된 취소 기준 — 24시간 전이 표준입니다.',
+          '"지각"과 "노쇼"의 경계가 그 순간의 판단이 되지 않도록 짧고 명확한 지각 유예 시간.',
+          '프론트 데스크를 곤란하게 만드는 대면 대화가 아니라, 예약 플랫폼의 등록 카드로 자동 청구.',
+          '오래된 단골을 포함해 모든 손님에게 일관되게 적용 — 예외가 정책을 무너뜨리는 것이지, 수수료 자체가 아닙니다.',
+        ] },
+        { type: 'h2', content: '3단계 — 콘보이 지역 검색에서 구글 지도 3팩을 잡으세요' },
+        { type: 'p', content: '"nail salon near me"나 "nail salon Convoy" 같은 검색은 웹사이트를 열어보기도 전에 구글 지도 3팩이 누가 전화를 받을지 결정해 버리는, 바로 그런 즉시 예약 의도의 검색입니다. 이걸 잡는 첫걸음은 완전히 채워진 구글 비즈니스 프로필입니다 — 정확한 카테고리(네일샵, 뷰티샵, 혹은 둘 다), 실제 메뉴와 일치하는 서비스 목록, 그리고 스톡 이미지가 아닌 실제 사진의 꾸준한 업로드. 상호명·주소·전화번호는 웹사이트, Yelp, 인스타그램 전체에서 정확히 일치해야 합니다 — 작은 불일치도 조용히 순위를 깎아먹습니다. 쓰인 언어 그대로 모든 리뷰에 답글을 다는 것은 구글의 랭킹 시스템에 활성 비즈니스라는 신호를 주고, 손님이 리뷰 본문에 동네 이름을 직접 언급하면 정확히 그런 지역 검색에서 프로필이 노출되는 데 도움이 됩니다.' },
+        { type: 'h2', content: '샌디에고에서만 더해지는 한 겹 — 이중언어, 그리고 흩어진 지도 위의 경쟁' },
+        { type: 'p', content: '콘보이 지역 고객층은 두 가지 방식으로 검색합니다. "nail salon Convoy San Diego"나 "lash extensions Kearny Mesa"를 검색하는 영어권 손님, 그리고 "샌디에고 콘보이 네일샵"이나 "콘보이 속눈썹"을 검색하는 한국어권 손님. 대부분의 스튜디오 웹사이트와 구글 프로필은 이 중 한쪽만 상대합니다. 손님들이 실제로 쓰는 동네 이름과 영업시간, 주차 안내, 예약 소프트웨어로 바로 연결되는 링크를 담은 이중언어 예약 페이지 — 그리고 두 언어 모두 답글이 달린 구글 비즈니스 프로필 — 이 조합이면 한 번의 구축으로 두 고객층을 모두 커버합니다. 콘보이는 케니 메사, 클레어몬트, 미라 메사와 가까이 붙어 있고 그곳에도 같은 검색을 두고 경쟁하는 네일샵·뷰티샵이 있기 때문에, 이 이중언어 커버리지야말로 검색되는 매장과 그냥 스크롤되어 지나가는 매장을 가르는 진짜 차이입니다.' },
+        { type: 'cta', content: '샌디에고에서 한인 네일샵·뷰티샵을 운영하시면서, 노쇼로 체어 시간이 새는 데 지치셨나요? ZOE LUMOS는 Vagaro·Booksy·Square Appointments·GlossGenius에 예치금 예약이 연결된 이중언어 예약 중심 웹사이트를 만들고, 실제로 지켜지는 노쇼 정책 세팅, 콘보이 지역 검색에 맞춘 구글 비즈니스 프로필 최적화까지 함께 제공합니다. 한국어/영어 무료 상담: info@zoelumos.com 이메일 또는 카카오톡(http://pf.kakao.com/_xhxdxmlX/chat)으로 편하게 문의하세요.' },
+      ],
+    },
+  },
 ]
