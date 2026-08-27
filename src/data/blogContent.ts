@@ -13521,4 +13521,106 @@ export const blogContent: BlogPost[] = [
       ],
     },
   },
+
+  // ─────────────────────────────────────────────────────────────────
+  // 2026-08-27 — Nail salon online booking + no-show deposits + Google Maps (Las Vegas, NV)
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'nail-salon-booking-noshow-las-vegas-2026',
+    date: '2026-08-27',
+    updatedDate: '2026-08-27',
+    readTime: 9,
+    category: { en: 'Industry Guide', ko: '업종별 가이드' },
+    title: {
+      en: 'Nail Salon Booking for Korean-American Owners in Las Vegas: Stop Losing Chairs to No-Shows (2026)',
+      ko: '라스베가스 한인 네일샵 예약 시스템 가이드 — 노쇼 방지와 구글 지도 최적화 (2026)',
+    },
+    metaDescription: {
+      en: 'Korean-American nail salon owners in Las Vegas: phone and walk-in-only booking cannot show real chair availability, which means empty stations from no-shows and a Google Maps listing invisible to new residents. How online booking with a deposit, a real waitlist, and Google Business Profile optimization change the math.',
+      ko: '라스베가스 한인 네일샵 사장님: 전화·워크인 위주 예약은 실제 자리 상황을 보여줄 수 없어서, 노쇼로 인한 빈 의자와 신규 주민에게 안 보이는 구글 지도 리스팅이 남습니다. 온라인 예약, 보증금 정책, 실시간 대기자 명단, 구글 비즈니스 프로필 최적화가 계산을 어떻게 바꾸는지 알려드립니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'Does a small nail salon really need online booking, or are walk-ins and phone calls enough?',
+          ko: '소규모 네일샵도 정말 온라인 예약이 필요한가요, 워크인과 전화만으로는 부족한가요?',
+        },
+        a: {
+          en: "Walk-ins and phone calls work fine for a slow Tuesday, but they break down exactly when the money is on the table: Friday afternoon and Saturday, when every chair is booked back to back and a tech cannot both do a full set and answer the phone to say whether there is room. Online booking does not replace walk-ins — it runs alongside them, showing a real-time picture of which techs have an opening in the next hour so the front desk stops guessing and stops either turning away a customer who could have been seated or double-booking a slot two different callers were both told was open.",
+          ko: '워크인과 전화 예약은 한가한 화요일엔 별문제 없지만, 정작 돈이 몰리는 순간에 무너집니다 — 금요일 오후와 토요일, 모든 자리가 꽉 차서 테크가 풀세트 시술을 하면서 동시에 전화 받고 자리 있는지 확인해 줄 수 없을 때입니다. 온라인 예약은 워크인을 없애자는 게 아니라 함께 돌아가면서, 앞으로 한 시간 안에 어느 테크가 비는지 실시간으로 보여줘서 프런트가 추측을 멈추고, 자리가 있었는데 손님을 돌려보내거나 서로 다른 두 사람에게 같은 시간대가 비었다고 말해버리는 이중 예약을 막아줍니다.',
+        },
+      },
+      {
+        q: {
+          en: 'How does a no-show or late-cancellation deposit actually get enforced without an awkward conversation at the front desk?',
+          ko: '노쇼·늦은 취소 보증금을 프런트에서 어색한 대화 없이 어떻게 실제로 부과하나요?',
+        },
+        a: {
+          en: 'The enforcement happens automatically at the moment of booking, not face to face, which is exactly why owners who switch to it keep it. A card on file becomes a condition of reserving a chair for a full set, gel, or any service over a set dollar amount; if the client no-shows or cancels inside your cutoff window (commonly 2-4 hours), the system charges the fee itself and the client sees an automated text and receipt, not a lecture from your staff. That single design choice — software enforces the policy instead of a person — is what makes owners comfortable actually having a no-show policy instead of quietly eating the loss to avoid confrontation.',
+          ko: '부과는 대면이 아니라 예약 시점에 시스템이 자동으로 처리하고, 바로 그게 이 방식으로 바꾼 사장님들이 계속 유지하는 이유입니다. 풀세트, 젤, 혹은 일정 금액 이상 서비스는 카드 등록이 자리 예약의 조건이 되고, 컷오프 시간(보통 2~4시간 전) 안에 노쇼하거나 취소하면 시스템이 알아서 수수료를 청구합니다 — 손님은 직원의 잔소리가 아니라 자동 문자와 영수증을 받습니다. 사람이 아니라 소프트웨어가 정책을 집행한다는 이 설계 하나가, 사장님들이 어색한 대화를 피하려고 손실을 조용히 감수하는 대신 실제로 노쇼 정책을 운영하게 만드는 이유입니다.',
+        },
+      },
+      {
+        q: {
+          en: 'What should a nail salon\'s Google Business Profile actually include to rank for searches like "Las Vegas 네일샵" or "nail salon near me"?',
+          ko: '"라스베가스 네일샵"이나 "nail salon near me" 검색에서 상위 노출되려면 구글 비즈니스 프로필에 실제로 뭘 넣어야 하나요?',
+        },
+        a: {
+          en: 'Three things matter more than most salons realize: the correct primary category (Nail Salon, not the generic "Beauty Salon" that buries you under every spa and hair salon nearby), current photos of the actual space and recent work rather than stock nail-art images, and a steady stream of recent reviews, since Google weighs how recently a review arrived nearly as much as the star average. Beyond the profile, Google increasingly favors listings whose website converts the click into an actual visit — a visible price list and a "Book Now" button that goes straight into your booking system, not just a phone number a tourist or new resident scrolling on their phone has no intention of calling.',
+          ko: '대부분의 네일샵이 잘 모르는 세 가지가 훨씬 중요합니다. 정확한 주 업종(주변 스파·헤어샵에 묻히는 막연한 "Beauty Salon"이 아니라 "Nail Salon"), 스톡 네일아트 사진이 아니라 실제 매장과 최근 작업물 사진, 그리고 꾸준히 쌓이는 최신 리뷰입니다 — 구글은 별점 평균만큼이나 리뷰가 얼마나 최근인지도 중요하게 봅니다. 프로필 자체를 넘어, 구글은 클릭을 실제 방문으로 바꾸는 웹사이트를 점점 더 우대합니다 — 전화번호 하나가 아니라 눈에 보이는 가격표와 예약 시스템으로 바로 연결되는 "지금 예약" 버튼이 있어야 한다는 뜻입니다.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "Saturday, 1pm, a Korean-owned nail salon just off the Strip. Every chair booked, a line at the door, and the front desk phone ringing with three callers asking if there's room — while two of the names already on today's book never show, and the walk-in who would have happily taken that chair has already left for the salon next door. Las Vegas has one of the largest concentrations of Korean-American-owned nail salons in the country, serving both a steady local base and a constant flow of tourists searching on their phones in real time. If a phone line and a paper book are still running your front desk, this article is for you. A real booking system is not about becoming a big spa chain. It is about not losing chairs you already could have filled, to a phone that can only talk to one caller at a time." },
+        { type: 'h2', content: "The problem with phone- and walk-in-only booking: nobody can see the chairs" },
+        { type: 'p', content: "A nail salon runs on a number that changes every few minutes — how many chairs and techs are actually open for the next appointment. A phone line has no way to show that number to the next caller. So the front desk either tells someone 'sorry, we're full' for a chair that opens up ten minutes later, or promises two different callers the same 2:15 slot because two staff members answered thirty minutes apart. Both mistakes cost the same thing: a customer who would have kept coming back decides your salon is a hassle to book, and drives to whichever nail salon nearby has a website she can book from her phone in thirty seconds." },
+        { type: 'h2', content: "No-shows sting harder in a nail salon than most service businesses realize" },
+        { type: 'p', content: "A no-show at a salon with ten chairs and four techs on a busy Saturday is not a rounding error — it is a full or gel set, often $50-$100+ with tip, sitting empty for an hour that could have gone to a walk-in or a waitlisted customer. Unlike a restaurant table that can be reseated within minutes, a nail appointment slot that goes unfilled is revenue that cannot be recovered later that day, because the tech's hour is gone whether or not anyone sat in the chair. Owners who actually track this for a month are usually surprised the total is closer to a week of one tech's commission than a shrug-worthy inconvenience." },
+        { type: 'h2', content: "What real online booking and no-show enforcement actually look like" },
+        { type: 'p', content: "Booking platforms built for nail and beauty (Vagaro, Boulevard, Fresha, GlossGenius, and similar) do three things a phone line cannot: show live chair and tech availability so customers book into a real, current opening instead of a guess, hold a card on file so a no-show or late cancellation can be charged automatically for full sets and larger services, and run a waitlist that texts the next customer in line the moment a slot opens, often filling it within minutes. None of this requires becoming a tech company or losing the walk-in culture that drives a lot of nail salon business — it means giving the customers who prefer to plan ahead a real way to do it, while walk-ins still fill whatever is genuinely open." },
+        { type: 'h2', content: 'Google Maps: where "nail salon near me" searches actually start' },
+        { type: 'p', content: "Someone new to a Las Vegas neighborhood, or a tourist off the Strip searching '라스베가스 네일샵' or 'nail salon near me,' has zero loyalty yet — that search is the entire decision. Winning it takes a complete Google Business Profile (correct category, real photos of the space and recent work, and a steady stream of reviews) paired with a website that can actually catch the click: a visible price list, current hours, and a 'Book Now' button that goes straight into your booking system instead of a phone number a browsing tourist has no intention of calling before ever walking in. Google also tracks which listings convert searches into visits, and quietly favors the ones that do in future rankings." },
+        { type: 'ul', content: "What a nail salon website and booking setup actually needs:", items: [
+          "Live availability embedded from your booking platform, not a phone number that only one person can answer at a time",
+          "A clear, current price list for full sets, gel, dip, and add-ons — 'call for pricing' loses the browsing tourist comparing three salons on their phone",
+          "One-click booking for a specific tech, since many nail clients are loyal to one person, not just the salon",
+          "A no-show and late-cancellation policy stated clearly, in Korean and English, before someone ever books a full set",
+          "Recent photos of actual work and the actual space, refreshed regularly — not stock nail-art photos that could be any salon",
+          "A simple online gift card purchase option, which converts well around holidays and for tourists buying for someone back home",
+        ] },
+        { type: 'p', content: "Skip the enterprise spa-chain features you will never use — multi-region franchise dashboards, complex loyalty-point ecosystems, corporate retail catalogs. A nail salon's booking needs are specific: live chair availability, a waitlist, an enforced no-show deposit, and a schedule that is actually current. We've built exactly this kind of focused booking site for Korean-owned salons, and the pattern holds — fewer features, correctly implemented, beat a bloated platform the front desk never fully learns to use." },
+        { type: 'tip', content: "Pull your last 30 days of no-shows and late cancellations and multiply by your average full-set ticket. Most owners are surprised the number lands closer to a tech's weekly take-home than a rounding error — which is usually the moment a deposit policy stops feeling optional." },
+        { type: 'h2', content: "Balancing walk-ins with online booking, without alienating either group" },
+        { type: 'p', content: "The concern we hear most from nail salon owners is losing the walk-in energy that fills slow hours. The fix is not choosing one over the other — it's blocking a portion of each day's chairs for walk-ins only (commonly the first hour or two of opening, when walk-in traffic is highest) and opening the rest to online booking. Customers who plan ahead get a guaranteed chair; walk-ins still have a real shot at being seated without an appointment. Both groups end up better served than under a system where nobody, including the front desk, actually knows what's open until someone asks." },
+        { type: 'cta', content: "Run a Korean-owned nail salon in the Las Vegas area and losing chairs to a phone line that can only talk to one caller at a time? ZOE LUMOS builds bilingual salon websites with live booking, no-show-protected deposits, and Google Business Profile optimization — and you own the domain and the site from day one. We are also a registered Apple App Store developer, for salons that eventually want their own booking app. Free consultation in Korean or English: email info@zoelumos.com or message us on KakaoTalk (http://pf.kakao.com/_xhxdxmlX/chat)." },
+      ],
+      ko: [
+        { type: 'intro', content: "토요일 오후 1시, 스트립 인근의 한인 네일샵. 모든 자리가 꽉 찼고 문 앞엔 대기줄이 있는데, 프런트 전화는 자리 있냐고 묻는 손님 세 명과 계속 통화 중입니다. 그 사이 오늘 예약 명단에 있던 두 명은 결국 안 왔고, 그 자리에 앉았을 워크인 손님은 이미 옆 가게로 발길을 돌린 뒤입니다. 라스베가스는 미국에서 한인 소유 네일샵이 가장 밀집한 지역 중 하나로, 꾸준한 단골층과 실시간으로 스마트폰 검색하는 관광객 유입이 동시에 몰립니다. 아직 전화와 종이 예약장으로 프런트를 돌리고 계신다면, 이 글은 사장님을 위한 글입니다. 진짜 예약 시스템은 대형 스파 체인이 되자는 얘기가 아닙니다. 한 번에 한 명하고만 통화할 수 있는 전화 때문에, 채울 수 있었던 자리를 놓치지 말자는 얘기입니다." },
+        { type: 'h2', content: "전화·워크인 위주 예약의 문제: 아무도 자리 상황을 볼 수 없다" },
+        { type: 'p', content: "네일샵은 몇 분 단위로 바뀌는 숫자로 돌아갑니다 — 지금 실제로 몇 자리, 몇 명의 테크가 다음 예약을 받을 수 있는지요. 전화 한 대로는 그 숫자를 다음 전화 건 손님에게 보여줄 방법이 없습니다. 그래서 10분 뒤면 빌 자리를 두고 '죄송합니다, 다 찼어요'라고 하거나, 직원 두 명이 30분 간격으로 전화를 받으면서 같은 2시 15분 자리를 서로 다른 손님에게 약속해버립니다. 두 실수 모두 결과는 같습니다 — 계속 다닐 수 있었던 손님이 '여기 예약은 번거롭다'고 느끼고, 스마트폰으로 30초 만에 예약 가능한 근처 네일샵으로 갑니다." },
+        { type: 'h2', content: "네일샵에서 노쇼가 생각보다 더 아픈 이유" },
+        { type: 'p', content: "테크 4명, 의자 10개인 바쁜 토요일의 노쇼는 사소한 오차가 아닙니다 — 풀세트나 젤 세트, 팁 포함 흔히 $50~$100 이상이 워크인이나 대기자에게 갔을 수도 있는 한 시간 동안 그대로 비게 됩니다. 몇 분 안에 다시 손님을 앉힐 수 있는 식당 테이블과 달리, 채워지지 않은 네일 예약 시간은 그날 다시 회복할 수 없는 매출입니다 — 손님이 앉았든 안 앉았든 테크의 그 시간은 이미 지나갔으니까요. 실제로 한 달간 이걸 추적해 본 사장님들은 대개 그 총액이 대수롭지 않은 수준이 아니라 테크 한 명의 주급에 가깝다는 사실에 놀랍니다." },
+        { type: 'h2', content: "진짜 온라인 예약 + 노쇼 방지가 실제로 하는 일" },
+        { type: 'p', content: "Vagaro, Boulevard, Fresha, GlossGenius 같은 네일·뷰티 전용 예약 플랫폼은 전화 한 대가 못 하는 세 가지를 합니다. 실시간 자리·테크 가용성을 보여줘서 손님이 추측이 아니라 실제 빈 시간에 예약하게 하고, 카드를 미리 등록해 둬서 풀세트나 큰 시술의 노쇼·늦은 취소에 자동으로 수수료를 부과하고, 자리가 나는 순간 대기자 명단의 다음 손님에게 문자를 보내는 시스템으로 빈자리를 몇 분 안에 채웁니다. 이 중 어느 것도 IT 회사가 되거나 네일샵 매출을 이끄는 워크인 문화를 포기하자는 얘기가 아닙니다 — 미리 계획하고 싶은 손님에게 진짜 예약 방법을 주면서, 워크인은 그대로 실제 빈자리를 채우게 하는 것입니다." },
+        { type: 'h2', content: '구글 지도: "네일샵 근처" 검색이 실제로 시작되는 곳' },
+        { type: 'p', content: "라스베가스 동네에 새로 이사 온 사람이나, 스트립에서 나와 '라스베가스 네일샵'이나 'nail salon near me'를 검색하는 관광객에게는 아직 단골이 없습니다 — 그 검색 자체가 결정 전부입니다. 이걸 이기려면 완성된 구글 비즈니스 프로필(정확한 업종, 실제 매장과 최근 작업물 사진, 꾸준한 리뷰)과 그 클릭을 받아낼 웹사이트가 함께 필요합니다 — 눈에 보이는 가격표, 현재 영업시간, 그리고 전화번호가 아니라 예약 시스템으로 바로 연결되는 '지금 예약' 버튼이요. 발걸음 옮기기 전에 전화 걸 생각이 없는 관광객이라면 더더욱 그렇습니다. 구글은 또한 어떤 리스팅이 검색을 실제 방문으로 바꾸는지 지켜보고, 향후 노출 순위에서 조용히 그런 곳을 밀어줍니다." },
+        { type: 'ul', content: "네일샵 웹사이트와 예약 세팅에 실제로 필요한 것:", items: [
+          "예약 플랫폼과 실시간으로 연동된 가용 시간 — 한 번에 한 사람만 받을 수 있는 전화번호 말고",
+          "풀세트, 젤, 딥파우더, 추가 옵션까지 명확하고 최신인 가격표 — '가격 문의 전화'는 스마트폰으로 세 군데 비교 중인 관광객을 놓치게 만듭니다",
+          "특정 테크 지정 원클릭 예약 — 많은 네일 손님은 매장이 아니라 특정 테크에게 단골입니다",
+          "노쇼·늦은 취소 정책을 한국어·영어로, 풀세트 예약 전에 분명히 안내",
+          "정기적으로 업데이트되는 실제 작업물·매장 사진 — 어느 가게든 될 법한 스톡 네일아트 사진 말고",
+          "간편한 온라인 기프트카드 구매 옵션 — 명절 시즌과 한국에 계신 가족·지인 선물용 관광객 구매에서 전환이 잘 됩니다",
+        ] },
+        { type: 'p', content: "절대 쓰지 않을 대형 스파 체인 기능은 건너뛰세요 — 다지역 프랜차이즈 대시보드, 복잡한 포인트 적립 생태계, 기업용 리테일 카탈로그. 네일샵의 예약 니즈는 구체적입니다: 실시간 자리 가용성, 대기자 명단, 강제되는 노쇼 보증금, 그리고 실제로 최신인 일정. 저희는 한인 네일샵을 위해 정확히 이런 집중된 예약 사이트를 만들어 왔고, 패턴은 늘 같습니다 — 기능은 적어도 제대로 구현된 것이, 프런트가 끝내 다 못 배우는 비대한 플랫폼보다 낫습니다." },
+        { type: 'tip', content: "최근 30일간의 노쇼·늦은 취소 건수에 평균 풀세트 단가를 곱해 보세요. 대부분의 사장님은 그 숫자가 반올림 오차가 아니라 테크 한 명의 주급에 가깝다는 사실에 놀랍니다 — 보통 그 순간부터 보증금 정책이 선택 사항처럼 느껴지지 않게 됩니다." },
+        { type: 'h2', content: "워크인과 온라인 예약, 어느 한쪽도 버리지 않고 균형 잡기" },
+        { type: 'p', content: "네일샵 사장님들이 가장 걱정하는 부분은 한가한 시간을 채워주는 워크인 에너지를 잃는 것입니다. 해법은 둘 중 하나를 고르는 게 아니라, 하루 중 일부 자리(보통 워크인이 가장 많이 몰리는 오픈 후 한두 시간)는 워크인 전용으로 남겨두고 나머지를 온라인 예약에 여는 것입니다. 미리 계획하는 손님은 확실한 자리를 보장받고, 워크인 손님도 예약 없이 앉을 진짜 기회를 여전히 갖습니다. 결과적으로 프런트조차 누가 물어보기 전까진 뭐가 비었는지 모르는 시스템보다, 양쪽 모두가 더 잘 대접받게 됩니다." },
+        { type: 'cta', content: "라스베가스 지역에서 한인 네일샵을 운영하시면서 한 번에 한 명만 받는 전화 때문에 자리를 잃고 계신가요? ZOE LUMOS는 실시간 예약, 노쇼 방지 보증금, 구글 비즈니스 프로필 최적화를 갖춘 이중언어 살롱 웹사이트를 만들어 드립니다 — 도메인과 사이트는 첫날부터 사장님 소유입니다. 저희는 등록된 Apple App Store 개발사이기도 해서, 나중에 살롱 전용 예약 앱을 원하시면 그것도 가능합니다. 한국어/영어 무료 상담: info@zoelumos.com 이메일 또는 카카오톡(http://pf.kakao.com/_xhxdxmlX/chat)으로 편하게 문의하세요." },
+      ],
+    },
+  },
 ]
