@@ -13521,4 +13521,100 @@ export const blogContent: BlogPost[] = [
       ],
     },
   },
+  // ─────────────────────────────────────────────────────────────────
+  // 2026-08-29 — B2B trade/wholesale credibility for Korean-American
+  // import-export and trading companies, Miami/South Florida angle
+  // (LatAm trade gateway). Fills the B2B pillar gap — only 3 dedicated
+  // B2B posts existed before this one, none covering Florida.
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'b2b-trade-export-website-korean-business-miami-2026',
+    date: '2026-08-29',
+    updatedDate: '2026-08-29',
+    readTime: 9,
+    category: { en: 'Strategy', ko: '전략' },
+    title: {
+      en: "A Buyer Who Will Never Meet You Decides in 10 Seconds: A Trust Checklist for Miami's Korean-American Trading Companies (2026)",
+      ko: '한 번도 만난 적 없는 바이어가 10초 만에 판단합니다 — 마이애미 한인 무역·도매 회사를 위한 웹사이트 신뢰 체크리스트 (2026)',
+    },
+    metaDescription: {
+      en: "A Latin American importer or a domestic wholesale buyer researching your company will never call the number on a site that looks unfinished or runs on a personal Gmail address. Here is the trust checklist Korean-American trading and wholesale companies around Miami need before a buyer ever requests a quote.",
+      ko: '라틴아메리카 수입업체든 미국 내 도매 바이어든, 사이트가 허술하거나 개인 지메일 주소만 있는 회사에는 전화를 걸지 않습니다. 마이애미 한인 무역·도매 회사가 바이어의 첫 견적 문의를 받기 전에 갖춰야 할 웹사이트 신뢰 체크리스트를 정리했습니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'Why does a trading company need a @company.com email instead of Gmail or Naver Mail?',
+          ko: '왜 무역회사는 지메일이나 네이버 메일 대신 회사 도메인(@회사명.com) 이메일이 필요한가요?',
+        },
+        a: {
+          en: "A domain email matters because a first-time buyer — especially one overseas who cannot walk into your office to check you out — reads a personal Gmail or Naver address as a signal that the company may not be established or may not last long enough to honor a purchase order, which is exactly the risk international buyers screen hardest for. A @yourcompany.com address costs a few dollars a month through Google Workspace or Microsoft 365, matches the domain on your website and invoices, and quietly answers the 'is this a real, ongoing business' question before a buyer ever has to ask it. It also improves deliverability — cold outreach and quote replies from a branded domain are far less likely to land in spam than the same message from a free consumer email provider.",
+          ko: '도메인 이메일이 중요한 이유는, 처음 거래하는 바이어 — 특히 사무실에 직접 찾아와 확인할 수 없는 해외 바이어 — 에게 개인 지메일이나 네이버 주소가 "이 회사가 자리를 제대로 잡았는지, 발주서를 끝까지 이행할 만큼 오래갈지" 의심하게 만드는 신호로 읽히기 때문입니다. 이건 해외 바이어가 가장 까다롭게 걸러내는 위험 요소이기도 합니다. @회사명.com 주소는 구글 워크스페이스나 마이크로소프트 365로 월 몇 달러면 만들 수 있고, 웹사이트·인보이스의 도메인과 일치하며, 바이어가 굳이 묻기 전에 "이게 진짜 살아있는 회사인가"라는 질문에 조용히 답해줍니다. 발송률(deliverability)도 좋아집니다 — 브랜드 도메인에서 보낸 콜드 메일이나 견적 회신은 무료 개인 이메일보다 스팸함에 들어갈 확률이 훨씬 낮습니다.',
+        },
+      },
+      {
+        q: {
+          en: 'Is a professional-looking website enough to win trust from a new overseas buyer, or is something else needed?',
+          ko: '웹사이트만 그럴듯하게 만들면 새로운 해외 바이어의 신뢰를 얻을 수 있나요, 아니면 다른 것도 필요한가요?',
+        },
+        a: {
+          en: "Design alone is not enough — a buyer doing due diligence on an unfamiliar supplier looks past how the site looks and checks for specific, verifiable facts: a real physical address (not just a P.O. box), a business registration or EIN, years in operation, the product categories and brands you actually carry, and Incoterms or shipping regions you cover. A polished site with none of that reads as marketing; a plain site with all of that reads as a real company. The strongest combination is both — clean design that presents verifiable company facts clearly, plus a structured quote-request form so the buyer's first inquiry arrives complete instead of a one-line 'interested, please advise.'",
+          ko: '디자인만으로는 부족합니다. 낯선 공급업체를 실사(due diligence)하는 바이어는 사이트가 얼마나 예쁜지가 아니라 검증 가능한 구체적 사실을 찾습니다 — 실제 물리적 주소(사서함이 아닌), 사업자 등록번호나 EIN, 운영 연차, 실제로 취급하는 제품 카테고리와 브랜드, 그리고 커버하는 인코텀즈(Incoterms)나 배송 지역까지요. 이런 정보 없이 디자인만 화려하면 광고처럼 보이고, 디자인이 수수해도 이 정보가 다 있으면 진짜 회사처럼 보입니다. 가장 강한 조합은 둘 다입니다 — 검증 가능한 회사 정보를 깔끔하게 보여주는 디자인에, 구조화된 견적 요청 폼까지 있으면 바이어의 첫 문의가 "관심 있어요" 한 줄이 아니라 완성된 정보로 들어옵니다.',
+        },
+      },
+      {
+        q: {
+          en: 'Does publishing shipping regions, Incoterms, or free trade zone details actually help a Miami-based trading company get more inquiries?',
+          ko: '배송 지역, 인코텀즈, 자유무역지대(FTZ) 정보를 웹사이트에 공개하는 게 마이애미 무역회사에 실제로 문의를 늘려주나요?',
+        },
+        a: {
+          en: "Yes — a buyer researching suppliers filters by exactly this kind of operational detail before they ever reach out, so publishing it removes friction rather than giving away anything sensitive. Naming the regions you ship to (for a Miami company, that often means Latin America and the Caribbean specifically, given the port and airport access), which Incoterms you quote under (FOB, CIF, EXW), and whether you operate through a Foreign-Trade Zone tells a buyer within seconds whether you can even serve their route — before they waste a message finding out you cannot. Suppliers who leave this vague get inquiries from buyers who are the wrong fit and never hear from the buyers who were the right fit, because those buyers simply moved to a competitor whose site answered the question upfront.",
+          ko: '네, 도움이 됩니다. 공급업체를 조사하는 바이어는 연락하기도 전에 바로 이런 운영 세부사항으로 필터링을 하기 때문에, 이를 공개하는 건 민감 정보를 노출하는 게 아니라 오히려 마찰을 줄여주는 일입니다. 어느 지역으로 배송하는지(마이애미 회사라면 항구와 공항 접근성 덕분에 특히 라틴아메리카와 카리브해 지역이 되는 경우가 많습니다), 어떤 인코텀즈(FOB, CIF, EXW)로 견적을 내는지, 자유무역지대(FTZ)를 통해 운영하는지를 밝히면 바이어는 몇 초 만에 자신의 루트를 감당할 수 있는 업체인지 판단할 수 있습니다 — 메시지를 보내고 나서야 안 된다는 걸 알게 되는 낭비 없이요. 이 정보를 애매하게 남겨두는 공급업체는 맞지 않는 바이어의 문의만 받고, 정작 맞는 바이어에게서는 연락을 못 받습니다. 그 바이어는 그냥 처음부터 답을 알려준 경쟁사 사이트로 넘어가 버리기 때문입니다.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "A wholesale buyer in Bogotá, a retail chain's purchasing manager in Charlotte, or an import broker working the Port of Miami all do the same thing before they ever pick up the phone: they open your website. For a Korean-American trading, wholesale, or import-export company, that visit often happens before any referral, any trade-show conversation, and any relationship-building call — and it is over in seconds. A buyer who cannot find a real address, sees a Gmail address as the only contact method, or hits a homepage with no clear product categories does not email to ask follow-up questions. They just close the tab and check the next supplier on their list. None of this shows up as a complaint. It shows up as inquiries that quietly never arrive." },
+        { type: 'h2', content: "Why a personal email address and a thin homepage cost you deals you never see" },
+        { type: 'p', content: "The failure here is invisible by design. A buyer vetting an unfamiliar supplier is not being rude by skipping you — they are protecting their own company from wiring a deposit to an outfit that might not exist in six months, which is a real and common risk in international trade. A personal Gmail or Naver address, a site with stock photos and no company registration details, or a contact page with only a form and no address reads as exactly that risk. The buyer does not tell you this. They simply move on, and the RFQ that could have been yours goes to whichever competitor's site answered the credibility question in the first ten seconds." },
+        { type: 'h2', content: 'What actually builds trust with a buyer who cannot meet you in person' },
+        { type: 'ul', content: 'The specific, verifiable elements that replace a face-to-face meeting for a new buyer:', items: [
+          "A company email on your own domain (@yourcompany.com), not a free consumer email provider — matched across your site, invoices, and quote replies.",
+          "A real physical address and, where relevant, warehouse or office photos — not just a form with no location shown.",
+          "Business registration, EIN, or import/export license details buyers can independently verify.",
+          "A clear product catalog or category list with brands, HS codes, or specifications a buyer can screen before contacting you.",
+          "Shipping regions, Incoterms (FOB, CIF, EXW), and typical lead times stated plainly, not left to a phone call to explain.",
+          "A structured quote-request form — quantity, target price, destination, timeline — so the first inquiry arrives complete instead of a vague one-liner.",
+        ] },
+        { type: 'tip', content: "If you do only one thing this month, move off a free consumer email address. It is the cheapest fix on this list, it takes under an hour to set up through Google Workspace or Microsoft 365, and it is the single detail most likely to make a skeptical first-time buyer decide you are worth a reply." },
+        { type: 'h2', content: 'Where buyers actually find you, and what each one checks first' },
+        { type: 'p', content: "A buyer arriving from a Google search is usually unfamiliar with your company and does the full credibility check before ever opening a contact form. A buyer referred through a trade directory or a U.S. Commercial Service introduction has partial trust already but still expects your site to confirm the specifics — product lines, regions served, certifications — before requesting a formal quote. A returning buyer or long-term relationship contact mostly just wants a fast, working way to reach the right person, so a broken contact page or an outdated product list costs you there too, just in a different way. A site built only for the buyers you already know quietly turns away every buyer you have not met yet." },
+        { type: 'h2', content: "A note for Miami's Korean-American trading and wholesale companies" },
+        { type: 'p', content: "South Florida's position as the primary US gateway to Latin America and the Caribbean — anchored by PortMiami, Miami International Airport's cargo capacity, and the region's Foreign-Trade Zones — puts Korean-American import-export and wholesale companies here in a genuinely strong spot, serving both domestic buyers and a steady flow of Latin American importers who specifically search for US-based suppliers with Miami logistics access. That advantage only converts into inquiries if a buyer researching suppliers online can actually confirm it from your site — the regions you ship to, the terms you quote under, and a way to reach a real company rather than a form that disappears into silence. For a growing trading company here, a bilingual site that states these facts plainly, in English for outbound buyers and Korean for supplier and community communication, is no longer optional polish. It is what turns a cold visit into a quote request." },
+        { type: 'cta', content: "ZOE LUMOS builds bilingual, trust-ready websites for Korean-American trading, wholesale, and import-export companies across the US — verified company details, structured quote forms, domain email setup, and everything registered in your name. Free consultation in Korean or English: email info@zoelumos.com or reach us on KakaoTalk (http://pf.kakao.com/_xhxdxmlX/chat)." },
+      ],
+      ko: [
+        { type: 'intro', content: '보고타의 도매 바이어든, 샬럿의 리테일 체인 구매 담당자든, 마이애미 항구를 거치는 수입 브로커든, 전화를 걸기 전에 다들 똑같은 행동을 합니다 — 사장님 회사 웹사이트를 엽니다. 한인 무역·도매·수출입 회사에게 이 방문은 소개나 전시회 대화, 관계를 쌓는 통화보다 먼저 일어나는 경우가 많고, 몇 초 안에 끝나 버립니다. 실제 주소를 찾을 수 없거나, 연락 수단이 지메일 주소 하나뿐이거나, 홈페이지에 취급 제품 카테고리조차 명확하지 않으면 바이어는 후속 질문을 위해 이메일을 보내지 않습니다. 그냥 탭을 닫고 목록의 다음 공급업체를 확인할 뿐입니다. 이건 어떤 불만으로도 드러나지 않습니다. 그저 문의가 조용히 한 번도 도착하지 않는 것으로만 나타납니다.' },
+        { type: 'h2', content: '개인 이메일과 부실한 홈페이지가 보이지 않게 놓치는 거래들' },
+        { type: 'p', content: '이 실패는 설계상 눈에 보이지 않습니다. 낯선 공급업체를 실사하는 바이어가 사장님을 무시하는 게 아닙니다 — 6개월 뒤에 없어질지도 모르는 업체에 계약금을 송금하는 위험으로부터 자신의 회사를 지키려는 것이고, 이는 국제 무역에서 실제로 흔한 위험입니다. 지메일이나 네이버 개인 이메일, 스톡 사진과 사업자 정보 없는 사이트, 주소 하나 없이 폼만 있는 문의 페이지는 정확히 그 위험 신호로 읽힙니다. 바이어는 이걸 말해주지 않습니다. 그냥 다음으로 넘어가고, 사장님이 받을 수도 있었던 RFQ는 10초 안에 신뢰 질문에 답해준 경쟁사 사이트로 넘어갑니다.' },
+        { type: 'h2', content: '직접 만날 수 없는 바이어에게 실제로 신뢰를 주는 것' },
+        { type: 'ul', content: '처음 만나는 바이어에게 대면 미팅을 대신해주는 구체적이고 검증 가능한 요소들:', items: [
+          '무료 개인 이메일이 아니라 회사 도메인 이메일(@회사명.com) — 웹사이트, 인보이스, 견적 회신 전체에 걸쳐 일치하게.',
+          '실제 물리적 주소, 가능하다면 창고나 사무실 사진 — 위치 표시 없는 폼 하나만 있는 게 아니라.',
+          '바이어가 스스로 확인할 수 있는 사업자 등록, EIN, 수출입 라이선스 정보.',
+          '브랜드, HS 코드, 스펙을 포함한 명확한 제품 카탈로그나 카테고리 목록 — 연락하기 전에 바이어가 먼저 걸러볼 수 있도록.',
+          '전화 통화로 설명하지 않아도 되도록 명시된 배송 지역, 인코텀즈(FOB, CIF, EXW), 일반적인 리드타임.',
+          '수량, 목표 단가, 목적지, 일정까지 담는 구조화된 견적 요청 폼 — 첫 문의가 애매한 한 줄이 아니라 완성된 정보로 들어오도록.',
+        ] },
+        { type: 'tip', content: '이번 달에 딱 하나만 하신다면, 무료 개인 이메일부터 벗어나세요. 이 목록에서 가장 저렴한 해결책이고, 구글 워크스페이스나 마이크로소프트 365로 한 시간도 안 걸려 세팅할 수 있으며, 처음 거래하는 의심 많은 바이어가 "답장할 만한 회사구나"라고 판단하게 만드는 가장 결정적인 디테일입니다.' },
+        { type: 'h2', content: '바이어가 실제로 어디서 찾아오고, 각각 무엇을 먼저 확인하는지' },
+        { type: 'p', content: '구글 검색으로 들어온 바이어는 보통 회사를 처음 알게 된 상태라, 문의 폼을 열어보기도 전에 전체 신뢰도 검증부터 합니다. 무역 디렉토리나 미 상무부 US Commercial Service 소개를 통해 온 바이어는 어느 정도 신뢰는 확보된 상태지만, 정식 견적을 요청하기 전에 제품 라인, 서비스 지역, 인증 같은 구체적 정보를 사이트에서 재확인하려 합니다. 기존 거래처나 오래된 관계의 바이어는 대부분 그냥 담당자에게 빠르고 확실하게 연락할 방법만 원하기 때문에, 고장난 문의 페이지나 오래된 제품 목록은 여기서도 손해를 끼칩니다 — 다만 방식이 다를 뿐입니다. 이미 알고 있는 바이어만을 위해 만들어진 사이트는 아직 만나지 못한 모든 바이어를 조용히 돌려보냅니다.' },
+        { type: 'h2', content: '마이애미 한인 무역·도매 회사를 위한 참고' },
+        { type: 'p', content: '남플로리다는 마이애미 항구(PortMiami), 마이애미 국제공항의 화물 처리 능력, 그리고 지역의 자유무역지대(FTZ)를 기반으로 미국에서 라틴아메리카·카리브해로 향하는 대표 관문 역할을 합니다. 이 지리적 위치 덕분에 이곳 한인 수출입·도매 회사들은 실제로 유리한 자리에 있습니다 — 미국 내 바이어뿐 아니라, 마이애미 물류 접근성을 갖춘 미국 기반 공급업체를 특정해서 찾는 라틴아메리카 수입업체들의 꾸준한 문의까지 받을 수 있는 위치니까요. 다만 이 강점이 실제 문의로 이어지려면, 온라인으로 공급업체를 조사하는 바이어가 사장님 사이트에서 그걸 직접 확인할 수 있어야 합니다 — 어디로 배송하는지, 어떤 조건으로 견적을 내는지, 그리고 침묵 속으로 사라지는 폼이 아니라 진짜 회사에 닿을 수 있는 방법까지요. 이곳에서 성장하는 무역회사에게, 해외 바이어를 위한 영어와 공급망·커뮤니티 소통을 위한 한국어로 이 사실들을 명확히 밝히는 이중언어 사이트는 더 이상 있으면 좋은 옵션이 아닙니다. 그게 바로 낯선 방문을 견적 요청으로 바꾸는 지점입니다.' },
+        { type: 'cta', content: '마이애미를 비롯한 미국 전역의 한인 무역·도매·수출입 회사를 위한 신뢰 기반 이중언어 웹사이트, ZOE LUMOS가 만듭니다 — 검증된 회사 정보, 구조화된 견적 폼, 도메인 이메일 세팅까지, 전부 사장님 명의로 등록합니다. 한국어/영어 무료 상담: info@zoelumos.com 이메일 또는 카카오톡(http://pf.kakao.com/_xhxdxmlX/chat)으로 문의하세요.' },
+      ],
+    },
+  },
 ]

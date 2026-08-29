@@ -88,6 +88,7 @@ export const PILLARS = {
       'why-anthropic-chose-aws',
       'shopify-korean-product-sellers-why-start-2026',
       'b2b-company-website-korean-business-credibility-2026',
+      'b2b-trade-export-website-korean-business-miami-2026',
       'aws-cloud-consulting-korean-business-dallas-2026',
       'korean-app-development-hire-guide-2026',
       'b2b-wholesale-quote-leads-seo-los-angeles-korean-2026',
@@ -358,4 +359,8 @@ export const POST_TO_PILLAR: Record<string, PillarKey> = {
 
   // 2026-08-17 — Houston F&B: online ordering, POS (Square/Toast/Clover), catering, reviews
   'korean-restaurant-houston-pos-catering-reviews-2026': 'restaurant-marketing',
+
+  // 2026-08-29 — B2B trade/wholesale credibility checklist for Korean-American
+  // import-export and trading companies (Miami/South Florida — LatAm gateway)
+  'b2b-trade-export-website-korean-business-miami-2026': 'website-cost',
 }
