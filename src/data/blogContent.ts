@@ -13521,4 +13521,116 @@ export const blogContent: BlogPost[] = [
       ],
     },
   },
+  // ─────────────────────────────────────────────────────────────────
+  // 2026-08-30 — Room-based booking app (BBQ tables + karaoke rooms)
+  // for tourist-driven Korean businesses in Las Vegas (Spring Mountain Rd)
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'korean-bbq-karaoke-booking-app-las-vegas-2026',
+    date: '2026-08-30',
+    updatedDate: '2026-08-30',
+    readTime: 9,
+    category: { en: 'App Development', ko: '앱 개발' },
+    title: {
+      en: "A Tourist Books Your Karaoke Room From a Hotel Bed at 11pm — Does Your Booking System Even Answer? (Las Vegas Korean BBQ & Karaoke App Guide, 2026)",
+      ko: '관광객이 밤 11시 호텔 침대에서 노래방 룸을 예약하려는데, 예약 시스템이 응답이나 할까요? (라스베가스 한인 고깃집·노래방 앱 가이드, 2026)',
+    },
+    metaDescription: {
+      en: "Korean BBQ and karaoke businesses along Las Vegas's Spring Mountain Road corridor lose real bookings every week to tourists who search from a hotel room at night and can't get an instant confirmation. Here is when a custom reservation app — web first, native iOS later — actually solves it, built by a registered Apple App Store developer.",
+      ko: '라스베가스 스프링마운틴로드 한인 고깃집·노래방은 밤에 호텔 방에서 검색하는 관광객이 즉시 확인을 받지 못해 매주 실제 예약을 놓칩니다. 커스텀 예약 앱 — 웹앱 먼저, 네이티브 iOS 앱은 그다음 — 이 언제 실제로 이 문제를 해결하는지, 등록된 Apple 앱스토어 개발사가 어떻게 만드는지 정리했습니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: "Wouldn't a booking tool like OpenTable, Resy, or Tock be enough — why would we need a custom app?",
+          ko: 'OpenTable, Resy, Tock 같은 기성 예약 도구로 충분하지 않나요, 왜 커스텀 앱이 필요한가요?',
+        },
+        a: {
+          en: "For a straightforward BBQ table reservation, general tools like OpenTable, Resy, or Tock work reasonably well and are usually the right starting point. Where they fall short is anything with room-level structure that a restaurant-table reservation model was never built for — a private karaoke room booked by group size and hourly block rather than a table for a fixed party, a BBQ table that needs a grill-type or seating preference noted, or a combined visit where a tourist wants to book dinner and a karaoke room back-to-back in one flow. Most general booking platforms treat every reservation as an interchangeable table for a fixed window; they were not built to hold six karaoke rooms of different sizes with per-hour pricing, or to let a manager see BBQ tables and karaoke rooms on one shared calendar the night a large tour group calls in. That mismatch is usually the actual signal that it's worth building or customizing something that fits the business, rather than bending the business to fit the tool.",
+          ko: '일반적인 고깃집 테이블 예약이라면 OpenTable, Resy, Tock 같은 기성 도구로도 충분히 괜찮고, 대부분 그게 맞는 출발점입니다. 다만 룸 단위 구조를 가진 예약은 얘기가 다릅니다 — 정원과 시간 단위로 예약되는 프라이빗 노래방 룸, 특정 그릴 타입이나 좌석을 요청해야 하는 고깃집 테이블, 또는 관광객이 저녁 식사와 노래방 룸을 연달아 한 번에 예약하고 싶어 하는 경우처럼요. 대부분의 일반 예약 플랫폼은 모든 예약을 정해진 시간 동안의 동일한 테이블로 취급합니다 — 크기가 제각각인 노래방 룸 여섯 개를 시간당 요금으로 관리하거나, 단체 투어팀이 전화한 밤에 매니저가 고깃집 테이블과 노래방 룸을 한 캘린더에서 같이 보게 만들도록 설계되지 않았습니다. 그 불일치가 보통 사업에 맞는 도구를 만들거나 커스터마이징할 가치가 있다는 실제 신호입니다.',
+        },
+      },
+      {
+        q: {
+          en: 'Should this be a native iOS app, or is a mobile booking page on our website enough?',
+          ko: '네이티브 iOS 앱이어야 하나요, 아니면 웹사이트 모바일 예약 페이지로 충분한가요?',
+        },
+        a: {
+          en: "A mobile-friendly booking page on your website is usually enough to start, and for most Korean BBQ and karaoke businesses in Las Vegas it should be the first thing built, since a tourist searching from a hotel room at 11pm is going to tap a Google or Yelp result straight into a browser, not search the App Store for a restaurant they've never heard of. A native iOS app earns its place later, once you have a returning base worth building loyalty around — locals who visit monthly, or a karaoke chain running its own points or membership program — because a native app can send a push notification for a same-week discount or hold that customer's preferred room and grill type from a past visit. Building the native app is also the point where App Store review and a business Developer account actually come into play; we are a registered Apple App Store developer and handle both paths, so a business isn't forced to guess which one it needs before it has the traffic to justify it.",
+          ko: '웹사이트에 있는 모바일 친화적인 예약 페이지만으로도 시작하기엔 충분하고, 라스베가스의 대부분 한인 고깃집·노래방 업체라면 이게 먼저 만들어야 할 것입니다. 밤 11시에 호텔 방에서 검색하는 관광객은 한 번도 들어본 적 없는 식당을 위해 앱스토어를 뒤지는 게 아니라 구글이나 옐프 검색 결과를 눌러 바로 브라우저로 들어오기 때문입니다. 네이티브 iOS 앱은 그 뒤, 충성도를 쌓을 만한 재방문 고객층 — 매달 오는 로컬 손님, 또는 자체 포인트·멤버십 프로그램을 운영하는 노래방 체인 — 이 생겼을 때 가치가 생깁니다. 네이티브 앱은 이번 주 할인 푸시 알림을 보내거나, 지난 방문 때 선호했던 룸과 그릴 타입을 기억해둘 수 있기 때문입니다. 네이티브 앱을 만드는 시점이 바로 앱스토어 심사와 법인 개발자 계정이 실제로 등장하는 지점이기도 합니다. 저희는 등록된 Apple 앱스토어 개발사로서 두 경로 모두 처리하기 때문에, 그 트래픽이 뒷받침되기 전에 어느 쪽이 필요한지 미리 추측할 필요가 없습니다.',
+        },
+      },
+      {
+        q: {
+          en: 'How does one system handle English-speaking tourists and Korean-speaking locals without confusing either group?',
+          ko: '영어를 쓰는 관광객과 한국어를 쓰는 로컬 손님을 한 시스템에서 어떻게 헷갈리지 않게 처리하나요?',
+        },
+        a: {
+          en: "The system handles both by detecting language rather than forcing a choice, and by keeping the underlying reservation data identical regardless of which language booked it — a tourist booking in English and a local booking in Korean land in the exact same manager dashboard and the same live room calendar, so nothing gets double-booked because it came in through a different language. In practice this means the booking page defaults to English for a Las Vegas Strip-adjacent audience but switches instantly to Korean for a local Naver or Korean-language Google search, deposit and cancellation policies are written in plain terms in both languages since a tourist unfamiliar with Korean BBQ etiquette needs the same clarity a local regular already has, and confirmation texts go out in whichever language the booking was made in rather than a generic template. The one place this needs real care is timing — a tourist booking a Las Vegas karaoke room from their home country the week before their trip needs the confirmation and reminder times shown and sent in Las Vegas local time, not their home time zone, or they show up on the wrong day.",
+          ko: '이 시스템은 언어를 선택하게 만드는 대신 자동으로 감지해서 처리하고, 어느 언어로 예약했든 예약 데이터 자체는 완전히 동일하게 유지합니다 — 영어로 예약한 관광객과 한국어로 예약한 로컬 손님이 정확히 같은 매니저 대시보드와 같은 실시간 룸 캘린더에 들어오기 때문에, 언어가 다르다는 이유로 이중 예약이 생기지 않습니다. 실제로는 예약 페이지가 라스베가스 스트립 인근 관광객에게는 기본 영어로 뜨지만 네이버나 한국어 구글 검색으로 들어온 로컬 손님에게는 즉시 한국어로 전환되고, 보증금·취소 정책은 한식 고깃집 에티켓에 익숙하지 않은 관광객도 로컬 단골만큼 명확히 이해할 수 있게 두 언어 모두 쉬운 표현으로 쓰이며, 확인 문자는 일반 템플릿이 아니라 예약할 때 쓴 언어 그대로 나갑니다. 실제로 신경 써야 할 부분은 시간대입니다 — 여행 일주일 전 본국에서 라스베가스 노래방 룸을 예약하는 관광객에게는 확인·리마인더 시각이 본인 시간대가 아니라 라스베가스 현지 시간으로 표시되고 발송되어야, 엉뚱한 날짜에 나타나는 일이 없습니다.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "Drive down Spring Mountain Road in Las Vegas on a Friday night and the Korean BBQ and karaoke corridor is packed — locals who moved out from California for the lower cost of living, tour groups bused in from a Strip hotel, and a steady trickle of Korean tourists who picked tonight's spot from a hotel room the evening before. That last group is where most Korean BBQ and karaoke businesses in Las Vegas quietly lose bookings without ever knowing it: a tourist searches at 11pm, finds a Google listing, and either gets no answer on a restaurant line that closed with the kitchen an hour ago, or sends a text to a personal number with no idea if anyone actually saw it. By the time a manager calls back the next morning, that group has already booked somewhere else — or worse, shows up at a competitor down the street." },
+        { type: 'h2', content: "Why a tourist-driven corridor loses bookings differently than a hometown restaurant" },
+        { type: 'p', content: "A restaurant in a purely local market can survive on phone reservations because regulars call during business hours and are patient enough to wait for a callback. A tourist corridor runs on a different clock entirely — the search happens whenever the group finishes tomorrow's dinner plans, which is just as often 11pm as it is 2pm, and a tourist with no loyalty to your business yet will not wait past the first unanswered call. Karaoke makes this sharper still, since a private room is not an interchangeable table — a group of eight needs a room that actually fits eight, at a specific hour, and \"we'll call you back\" is not an answer anyone on a five-day trip has time for." },
+        { type: 'ul', content: 'Signs a Las Vegas Korean BBQ or karaoke business is losing tourist bookings it never sees:', items: [
+          "Reservation requests come in by phone or text after close, with no confirmation until staff is back the next morning — by which point the group has already booked elsewhere.",
+          "Karaoke rooms are tracked on a whiteboard or a staff group chat, with no live view of which specific room, at which size and price, is actually open at a given hour.",
+          "A tourist calling from an international or unfamiliar number sometimes can't get through at all, and has no app or booking page to fall back on.",
+          "A first-time tourist booking a $300-400 group karaoke night gets the same informal handling as a walk-in for two, with nothing distinguishing or protecting the bigger booking.",
+          "No deposit or confirmation step exists for large karaoke group bookings, so a no-show on an 8-10 person room — the most expensive kind of empty space in the building — costs far more than a missed two-top ever would.",
+        ] },
+        { type: 'h2', content: "What a booking system built for this exact business actually does" },
+        { type: 'p', content: "The fix is not a generic restaurant reservation widget — it's a system built around the fact that this business has two different kinds of bookable space (BBQ tables and karaoke rooms, each with their own capacity and hourly logic) and two different kinds of customer (a local regular who already trusts you, and a tourist deciding in the next thirty seconds whether to trust you at all)." },
+        { type: 'ul', content: 'The concrete pieces, and the problem each one solves:', items: [
+          "A live calendar showing exactly which BBQ tables and which karaoke rooms — by size and hourly rate — are open at a given hour, so staff and the booking page always show the same real picture.",
+          "Instant confirmation the second a booking is submitted, with no wait for a callback — the single biggest factor in whether an 11pm hotel-room search turns into a booking or a bounce to a competitor.",
+          "A deposit or card-on-file requirement for karaoke bookings above a set group size, protecting against the most expensive kind of no-show.",
+          "Automatic language detection — a visitor arriving from an English-language search sees an English booking flow, one arriving from a Korean search sees Korean, with both writing to the exact same calendar so nothing double-books across languages.",
+          "Confirmation and reminder texts sent in Las Vegas local time no matter where the guest is booking from, so a group booking a week ahead from Korea doesn't show up on the wrong day.",
+        ] },
+        { type: 'h2', content: "Off-the-shelf tools are still the right place to start" },
+        { type: 'p', content: "Before recommending a custom build, we usually try to talk a client out of it — a straightforward BBQ table reservation is well served by tools like OpenTable, Resy, or Square Appointments, which are inexpensive and built by companies that do nothing else. Custom becomes worth it specifically when the business has room-level structure those tools were never designed for — multiple karaoke rooms of different sizes billed hourly, a combined BBQ-and-karaoke visit booked in one flow, or tourist volume high enough that a missed 11pm booking is a real, repeated cost rather than an occasional annoyance." },
+        { type: 'tip', content: "A useful gut check: for two weeks, have staff note every reservation inquiry that came in after close or went unanswered on the first try. If that list is short, your current phone-and-text process is fine. If it's long — and karaoke rooms are usually where it's longest — that list is effectively the feature spec for the booking system you actually need." },
+        { type: 'h2', content: "Web app first, native iOS app when it earns its place" },
+        { type: 'p', content: "A mobile-friendly booking page on your website should be the first thing built, not a native app — a tourist searching from a hotel room at 11pm is going to tap a Google or Yelp result straight into a browser, not search the App Store for a Korean BBQ spot they've never heard of. A native iOS app earns its place once there's a returning base worth building loyalty around — local regulars who visit monthly, or a karaoke chain running its own points program — because only a native app can push a same-week discount notification or remember a customer's preferred room and grill type from a past visit. Building that native app is also where App Store review and a business Developer account actually come into play; we are a registered Apple App Store developer and handle that process, including the D-U-N-S number and organization enrollment a business account requires, so a business doesn't have to guess which path it needs before the traffic justifies it." },
+        { type: 'h2', content: "How a build like this actually runs" },
+        { type: 'p', content: "We start by shadowing an actual Friday or Saturday night — watching how a karaoke room actually gets assigned, where a phone reservation actually breaks down, what a manager does when two groups call at once — rather than designing from a wish list. From there we ship the smallest piece that fixes the most expensive leak first, usually the live room calendar and instant confirmation, since that's what turns an 11pm search into a booking instead of a bounce. The native app, if it's justified at all, comes after the booking system is proven and there's a loyalty program worth building around. Once live, we support it the same way we support every client — bilingual, one point of contact, reachable on KakaoTalk." },
+        { type: 'cta', content: "Running a Korean BBQ or karaoke business along Spring Mountain Road or anywhere in the Las Vegas metro and losing bookings you never see happen? ZOE LUMOS builds bilingual booking systems for room-based businesses — live calendars, deposit-protected group bookings, and native iOS apps when a business is ready for one — and we are a registered Apple App Store developer. Free consultation in English or Korean: email info@zoelumos.com or message us on KakaoTalk (http://pf.kakao.com/_xhxdxmlX/chat)." },
+      ],
+      ko: [
+        { type: 'intro', content: '금요일 밤 라스베가스 스프링마운틴로드를 달려보면 한인 고깃집·노래방 상권은 발 디딜 틈이 없습니다 — 생활비 때문에 캘리포니아에서 넘어온 로컬 손님들, 스트립 호텔에서 버스로 실려 온 투어 그룹, 그리고 전날 저녁 호텔 방에서 오늘 밤 갈 곳을 고른 한국인 관광객들이 꾸준히 섞입니다. 문제는 이 마지막 그룹입니다 — 대부분의 라스베가스 한인 고깃집·노래방은 이 예약을 놓치고 있다는 사실조차 모른 채 조용히 잃고 있습니다. 관광객이 밤 11시에 검색해서 구글 리스팅을 찾았는데, 한 시간 전 주방과 함께 닫힌 식당 전화는 받지 않거나, 개인 번호로 문자를 보내도 누가 봤는지 알 길이 없습니다. 다음 날 아침 매니저가 다시 전화를 걸 때쯤이면 그 그룹은 이미 다른 곳을 예약했거나, 더 나쁘게는 바로 옆 경쟁 업체에 가 있습니다.' },
+        { type: 'h2', content: '관광객 중심 상권이 로컬 식당과 다르게 예약을 잃는 이유' },
+        { type: 'p', content: '순수 로컬 시장의 식당은 전화 예약만으로도 버틸 수 있습니다. 단골들이 영업시간에 전화하고, 콜백을 기다릴 만큼 인내심도 있으니까요. 하지만 관광 상권은 완전히 다른 시계로 돌아갑니다 — 검색은 그룹이 내일 저녁 계획을 마무리하는 순간 일어나는데, 그게 오후 2시일 수도 밤 11시일 수도 있고, 아직 사장님 업체에 아무 애착도 없는 관광객은 전화 한 번 안 받으면 더 기다리지 않습니다. 노래방은 이 문제를 더 뚜렷하게 만듭니다 — 프라이빗 룸은 서로 바꿔 쓸 수 있는 테이블이 아니라서, 8명 그룹은 실제로 8명이 들어가는 룸이 특정 시간에 필요하고, 5일짜리 여행 중인 사람에게 "다시 전화드릴게요"는 답이 될 수 없습니다.' },
+        { type: 'ul', content: '라스베가스 한인 고깃집·노래방이 보지도 못한 채 관광객 예약을 놓치고 있다는 신호:', items: [
+          '마감 이후 전화나 문자로 예약 문의가 들어오지만 다음 날 아침 직원이 출근할 때까지 확인이 안 돼서, 그때쯤이면 그룹이 이미 다른 곳을 예약함.',
+          '노래방 룸이 화이트보드나 직원 단톡방으로 관리돼서, 특정 시간에 어떤 룸이 어떤 크기·가격으로 실제로 비어 있는지 실시간으로 아무도 못 봄.',
+          '해외 번호나 낯선 번호로 거는 관광객 전화가 아예 연결이 안 될 때가 있는데, 대신 쓸 앱이나 예약 페이지가 없음.',
+          '$300~400짜리 단체 노래방 예약을 하는 첫 방문 관광객도 2인 워크인과 똑같이 비공식적으로 처리돼서, 더 큰 예약을 구분하거나 보호할 방법이 없음.',
+          '8~10명 룸의 단체 노래방 예약에 대한 보증금이나 확인 절차가 없어서, 매장에서 가장 비싼 종류의 빈 공간인 노쇼가 2인 테이블 노쇼보다 훨씬 큰 손실을 만듦.',
+        ] },
+        { type: 'h2', content: '이 사업 모델에 맞춰 만든 예약 시스템이 실제로 하는 일' },
+        { type: 'p', content: '해법은 일반적인 식당 예약 위젯이 아닙니다 — 이 사업은 예약 가능한 공간이 두 종류(각자 정원과 시간당 로직이 다른 고깃집 테이블과 노래방 룸)이고, 고객도 두 종류(이미 신뢰가 쌓인 로컬 단골과, 앞으로 30초 안에 사장님을 신뢰할지 말지 결정하는 관광객)라는 사실을 중심으로 만들어져야 합니다.' },
+        { type: 'ul', content: '구체적인 구성 요소들과, 각각이 해결하는 문제:', items: [
+          '특정 시간에 어떤 고깃집 테이블과 어떤 노래방 룸이 — 크기와 시간당 요금까지 — 실제로 비어 있는지 보여주는 실시간 캘린더로, 직원과 예약 페이지가 항상 같은 실제 그림을 봄.',
+          '예약이 접수되는 순간 즉시 오는 확인 — 콜백을 기다릴 필요가 없음, 이것이 밤 11시 호텔 방 검색이 예약으로 이어지느냐 경쟁사로 튕겨나가느냐를 가르는 가장 큰 요인.',
+          '일정 인원 이상 노래방 예약에는 보증금이나 카드 등록을 요구해서, 가장 비싼 종류의 노쇼를 막음.',
+          '자동 언어 감지 — 영어 검색으로 들어온 방문자에게는 영어 예약 흐름을, 한국어 검색으로 들어온 방문자에게는 한국어 흐름을 보여주되, 둘 다 같은 캘린더에 기록돼서 언어가 다르다고 이중 예약이 생기지 않음.',
+          '손님이 어디서 예약하든 확인·리마인더 문자는 라스베가스 현지 시간 기준으로 발송돼서, 한국에서 일주일 전에 예약한 그룹이 엉뚱한 날짜에 나타나는 일이 없음.',
+        ] },
+        { type: 'h2', content: '기성 도구가 여전히 옳은 출발점입니다' },
+        { type: 'p', content: '커스텀 구축을 권하기 전, 저희는 보통 클라이언트를 말리려고 합니다 — 단순한 고깃집 테이블 예약이라면 OpenTable, Resy, Square Appointments 같은 도구로 충분히 잘 처리되고, 저렴하며, 그것만 전문으로 하는 회사가 만듭니다. 커스텀이 가치가 생기는 건 정확히 이런 도구가 설계되지 않은 룸 단위 구조를 사업이 갖고 있을 때입니다 — 크기가 제각각이고 시간당 과금되는 여러 노래방 룸, 고깃집과 노래방을 한 번에 예약하는 결합 방문, 또는 밤 11시 예약을 놓치는 게 가끔의 성가심이 아니라 실제로 반복되는 손실이 될 만큼 관광객 유입이 많은 경우입니다.' },
+        { type: 'tip', content: '해볼 만한 현실 점검 — 2주 동안 직원들에게 마감 이후 들어왔거나 첫 시도에 응답 못 한 예약 문의를 전부 기록하게 하세요. 목록이 짧다면 지금의 전화·문자 방식으로 충분합니다. 목록이 길다면 — 보통 노래방 쪽이 가장 깁니다 — 그 목록이 사실상 사장님께 필요한 예약 시스템의 기능 명세입니다.' },
+        { type: 'h2', content: '웹앱을 먼저, 네이티브 iOS 앱은 가치가 생겼을 때' },
+        { type: 'p', content: '네이티브 앱이 아니라 웹사이트의 모바일 친화적인 예약 페이지가 먼저 만들어져야 합니다 — 밤 11시 호텔 방에서 검색하는 관광객은 한 번도 들어본 적 없는 한인 고깃집을 위해 앱스토어를 뒤지는 게 아니라 구글이나 옐프 검색 결과를 눌러 바로 브라우저로 들어옵니다. 네이티브 iOS 앱은 그 뒤, 충성도를 쌓을 만한 재방문 고객층 — 매달 오는 로컬 단골, 또는 자체 포인트 프로그램을 운영하는 노래방 체인 — 이 생겼을 때 가치가 생깁니다. 네이티브 앱만이 이번 주 할인 푸시 알림을 보내거나 지난 방문 때 선호했던 룸과 그릴 타입을 기억할 수 있기 때문입니다. 그 네이티브 앱을 만드는 시점이 바로 앱스토어 심사와 법인 개발자 계정이 실제로 등장하는 지점입니다. 저희는 등록된 Apple 앱스토어 개발사로서 그 절차를 처리하며, 법인 계정에 필요한 D-U-N-S 번호와 조직 가입까지 함께 진행하기 때문에, 트래픽이 뒷받침되기 전에 어느 경로가 필요한지 미리 추측할 필요가 없습니다.' },
+        { type: 'h2', content: '이런 개발은 실제로 어떻게 진행되나' },
+        { type: 'p', content: '저희는 희망 목록을 보고 설계하는 대신 실제 금요일이나 토요일 밤을 따라다니는 것부터 시작합니다 — 노래방 룸이 실제로 어떻게 배정되는지, 전화 예약이 실제로 어디서 무너지는지, 두 그룹이 동시에 전화했을 때 매니저가 무엇을 하는지 지켜봅니다. 여기서부터 가장 비싼 누수부터 고치는 가장 작은 버전을 먼저 출시합니다 — 보통 실시간 룸 캘린더와 즉시 확인입니다, 이게 바로 밤 11시 검색을 예약으로 바꾸느냐 경쟁사로 튕겨내느냐를 가르니까요. 네이티브 앱은, 정말 필요하다면, 예약 시스템이 검증되고 그 위에 지을 만한 로열티 프로그램이 생긴 뒤에 옵니다. 출시 후에도 저희는 다른 모든 클라이언트와 똑같은 방식으로 지원합니다 — 이중언어, 한 명의 담당자, 카카오톡으로 바로 연락 가능하게.' },
+        { type: 'cta', content: '스프링마운틴로드나 라스베가스 메트로 어디에서든 한인 고깃집·노래방을 운영하시면서, 보지도 못한 채 예약을 놓치고 계신가요? ZOE LUMOS는 룸 기반 사업을 위한 이중언어 예약 시스템 — 실시간 캘린더, 보증금으로 보호되는 단체 예약, 그리고 준비가 되면 네이티브 iOS 앱까지 — 을 만듭니다. 등록된 Apple 앱스토어 개발사이기도 합니다. 한국어/영어 무료 상담: info@zoelumos.com 이메일 또는 카카오톡(http://pf.kakao.com/_xhxdxmlX/chat)으로 편하게 문의하세요.' },
+      ],
+    },
+  },
 ]
