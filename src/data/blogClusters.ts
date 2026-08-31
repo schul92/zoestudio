@@ -67,6 +67,7 @@ export const PILLARS = {
       'korean-hair-salon-website-guide',
       'korean-salon-spa-local-seo-new-jersey-2026',
       'pilates-fitness-studio-booking-noshow-seattle-2026',
+      'korean-nail-salon-booking-noshow-las-vegas-2026',
     ],
   },
   'website-cost': {
@@ -358,4 +359,7 @@ export const POST_TO_PILLAR: Record<string, PillarKey> = {
 
   // 2026-08-17 — Houston F&B: online ordering, POS (Square/Toast/Clover), catering, reviews
   'korean-restaurant-houston-pos-catering-reviews-2026': 'restaurant-marketing',
+
+  // 2026-08-31 — Nail salon booking + no-show prevention + Google Maps (Las Vegas, NV)
+  'korean-nail-salon-booking-noshow-las-vegas-2026': 'beauty-wellness',
 }
