@@ -13521,4 +13521,101 @@ export const blogContent: BlogPost[] = [
       ],
     },
   },
+  // ─────────────────────────────────────────────────────────────────
+  // 2026-09-02 — B2B trust/credibility angle distinct from the prior
+  // RFQ-form-focused B2B posts (LA wholesale, Georgia manufacturing):
+  // domain email + company website as the first filter a buyer applies,
+  // before an RFQ form is ever reached. Audience rotation: Austin–Taylor,
+  // TX semiconductor-supply-chain corridor (not NJ/NY).
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'b2b-trading-company-domain-email-credibility-austin-2026',
+    date: '2026-09-02',
+    updatedDate: '2026-09-02',
+    readTime: 8,
+    category: { en: 'B2B & Trade', ko: 'B2B · 무역' },
+    title: {
+      en: "Your Gmail Address Is Costing You RFQs: Website & Email Credibility for Korean Trading Companies Near Austin's Semiconductor Corridor (2026)",
+      ko: '지메일 주소 하나가 견적을 놓치고 있습니다 — 오스틴 반도체 벨트 한인 무역·협력사를 위한 웹사이트·이메일 신뢰 가이드 (2026)',
+    },
+    metaDescription: {
+      en: 'Korean-American trading and supply companies moving into the Austin-Taylor, Texas semiconductor corridor often still quote from a Gmail or Naver address and a one-page site. Here is why that costs RFQs before a buyer ever emails back, and what a credible B2B web presence actually needs.',
+      ko: '오스틴·테일러 텍사스 반도체 벨트로 들어오는 한인 무역·협력사들이 여전히 지메일이나 네이버 주소, 한 페이지짜리 사이트로 견적을 보내는 경우가 많습니다. 바이어가 답장을 보내기도 전에 왜 그것 때문에 견적을 놓치는지, 그리고 신뢰받는 B2B 웹 존재감에 실제로 무엇이 필요한지 정리했습니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'Does the email address we quote from really affect whether a buyer trusts us?',
+          ko: '견적을 보내는 이메일 주소가 정말 바이어의 신뢰에 영향을 미치나요?',
+        },
+        a: {
+          en: "Yes — a free email address (Gmail, Naver, Hanmail) is one of the fastest signals a buyer uses to screen out a supplier before ever replying, because a company that has not registered mail on its own domain reads as informal, temporary, or too new to trust with a real purchase order. Buyers doing first-time vetting, especially procurement teams at larger OEMs or Tier-1 contractors, routinely check whether a quote came from name@yourcompany.com or name@gmail.com as a fast proxy for legitimacy, alongside whether the company has a real website at all. Switching to a domain email does not guarantee a deal, but sending from a free address can quietly remove you from consideration before your price or capability is ever compared.",
+          ko: '네, 영향을 미칩니다. 무료 이메일 주소(지메일, 네이버, 한메일)는 바이어가 답장하기도 전에 공급업체를 걸러내는 데 쓰는 가장 빠른 신호 중 하나입니다. 자기 회사 도메인으로 메일을 등록하지 않은 회사는 임시적이거나, 격식이 없거나, 정식 발주를 맡기기엔 아직 너무 신생처럼 읽히기 때문입니다. 처음 거래를 검토하는 바이어, 특히 대형 OEM이나 1차 협력사의 구매팀은 견적이 name@회사도메인.com에서 왔는지 name@gmail.com에서 왔는지를, 회사가 제대로 된 웹사이트를 가지고 있는지와 함께, 신뢰도를 빠르게 가늠하는 잣대로 습관적으로 확인합니다. 도메인 이메일로 바꾼다고 계약이 보장되진 않지만, 무료 주소로 보내면 가격이나 역량을 비교받기도 전에 조용히 후보에서 빠질 수 있습니다.',
+        },
+      },
+      {
+        q: {
+          en: 'How hard is it to set up a proper @ourcompany.com email, and what does it cost?',
+          ko: '제대로 된 @회사도메인.com 이메일을 만드는 게 얼마나 어렵고, 비용은 얼마나 드나요?',
+        },
+        a: {
+          en: "It is a same-day setup, not a project. Once you own your domain, Google Workspace or Microsoft 365 runs about $6-$12 per user per month and lets you create name@yourcompany.com in minutes, keep the same Gmail or Outlook interface your staff already knows, and forward or migrate existing mail so nothing is lost. The only real prerequisite is owning the domain itself — registered in the company's name, not a developer's or a relative's — which costs roughly $12-$20 a year. For a trading or supply company that sends quotes daily, this is one of the cheapest credibility upgrades available: under $150 a year to stop losing RFQs to a signal that has nothing to do with your actual pricing or lead time.",
+          ko: '당일에 끝나는 세팅이지, 큰 프로젝트가 아닙니다. 도메인만 소유하고 있으면, Google Workspace나 Microsoft 365를 사용자당 월 6~12달러 정도로 몇 분 만에 name@회사도메인.com을 만들 수 있고, 직원들이 이미 쓰던 지메일·아웃룩 화면을 그대로 쓰며, 기존 메일을 전달하거나 옮겨서 아무것도 잃지 않습니다. 진짜 필요한 건 도메인 자체를 소유하는 것뿐입니다 — 개발자나 친척 이름이 아니라 회사 명의로 등록해야 하며, 비용은 연 12~20달러 수준입니다. 매일 견적을 보내는 무역·협력사라면, 이건 가장 저렴한 신뢰도 업그레이드 중 하나입니다 — 연 150달러도 안 되는 돈으로, 실제 가격이나 납기와는 무관한 신호 때문에 견적을 놓치는 일을 막을 수 있습니다.',
+        },
+      },
+      {
+        q: {
+          en: 'We already get business through referrals and existing relationships — do we really need a real website too?',
+          ko: '이미 소개와 기존 거래처로 사업이 돌아가고 있는데, 진짜 웹사이트까지 꼭 필요한가요?',
+        },
+        a: {
+          en: "Referrals will keep working for the buyers who already know you, but they do nothing for the growing share of new business — especially from OEMs and Tier-1 contractors building out new US facilities, like the supplier expansion around Samsung's Taylor, Texas semiconductor investment — who now vet an unfamiliar supplier online before ever picking up the phone. A real website does not replace your referral network; it catches the buyers your referral network cannot reach, because they Google a category, check whether a company looks established and certified, and only then decide whether to request a quote at all. Skipping it does not stop new business from coming in through relationships, but it does cap how much new business from strangers can ever reach you in the first place.",
+          ko: '이미 사장님을 아는 바이어에게는 소개가 계속 효과가 있겠지만, 새로 들어오는 사업 — 특히 텍사스 테일러의 삼성 반도체 투자 주변으로 확장하는 OEM·1차 협력사처럼 낯선 공급업체를 전화하기 전에 온라인으로 먼저 검증하는 바이어 — 에는 아무 도움이 되지 않습니다. 제대로 된 웹사이트는 소개 네트워크를 대체하는 게 아니라, 소개 네트워크가 닿지 못하는 바이어를 잡아냅니다. 이런 바이어들은 카테고리를 구글에 검색해서 회사가 자리 잡혀 있고 인증을 갖췄는지 먼저 확인한 다음에야 견적을 요청할지 결정하기 때문입니다. 웹사이트가 없다고 관계를 통한 신규 거래가 끊기는 건 아니지만, 낯선 바이어를 통한 신규 거래가 애초에 사장님께 닿을 수 있는 양 자체는 제한됩니다.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "Samsung's roughly $17 billion semiconductor fab under construction in Taylor, Texas, just northeast of Austin, has pulled a wave of Korean-American trading, parts, and equipment-supply companies into the area — some relocating outright, others opening a satellite office to be close to the buyers. Talk to the owners and the business itself is often solid: real inventory, real relationships back in Korea, real capability. But look at how many of them still quote from a free Gmail or Naver address and point buyers to a single-page site with a logo and a phone number, and a quieter problem shows up. Before a purchasing manager ever reads your price or your lead time, they have already formed an opinion about whether your company is real enough to trust with an order — and that opinion gets made in about two minutes, based on signals that have nothing to do with the quality of what you supply." },
+        { type: 'h2', content: 'The signal a buyer reads before your price ever matters' },
+        { type: 'p', content: "Large OEMs and Tier-1 contractors building out new US operations run supplier vetting the way a hiring manager screens resumes: fast, pattern-based, and mostly about ruling companies out rather than in. A quote arriving from name@gmail.com instead of name@yourcompany.com is read the same way a resume with a typo is read — not disqualifying by itself, but a small, free signal that something about the company is not quite buttoned up. Pair that with a website that is one page long, or no website at all beyond a business card, and a buyer who has three other suppliers to compare will quietly move on rather than ask you to prove yourself. You never see this filtering happen. There is no rejection email. The RFQ simply never arrives." },
+        { type: 'h2', content: 'What a buyer actually checks in the first two minutes' },
+        { type: 'ul', content: 'Before requesting a quote, a purchasing team doing first-time vetting typically looks for:', items: [
+          "An email domain that matches the company name — a mismatch between the sender's address and the company on the quote is one of the fastest red flags in B2B procurement.",
+          'A real company name, address, and years-in-business, not just a phone number and a logo — buyers checking a new supplier expect to find who they actually are.',
+          'A capability or industries-served page — what you supply, to whom, and at what scale, so the buyer can judge fit before ever writing an email.',
+          'Certifications relevant to the buyer\'s industry (ISO 9001, IATF 16949, or the equivalent for your category) published where they can actually be found.',
+          'Real photos of product, inventory, or facility — stock photography reads as a company that has something to hide, even when nothing is actually wrong.',
+          'A clear way to request a quote that does not require guessing an email address from a website footer.',
+        ] },
+        { type: 'tip', content: "If you can only fix one thing this month, fix the email domain. It is the cheapest item on this list, it takes under a day, and it is the signal that shows up on every single quote you send — not just the ones from buyers who happen to visit your website first." },
+        { type: 'h2', content: 'Setting up @yourcompany.com the right way' },
+        { type: 'p', content: "The order matters. First, make sure the domain itself is registered in the company's name — not a relative's, not a former employee's, not a web developer's account — because email service and website hosting both depend on who controls that registration. From there, Google Workspace or Microsoft 365 turns on name@yourcompany.com for every employee in about the same time it takes to fill out a form, using the same Gmail or Outlook screens your staff already knows how to use. Existing customer and supplier relationships do not need to be re-announced — forward the old address to the new one during the transition, and update the signature block on new quotes going forward." },
+        { type: 'h2', content: "Why this matters right now around Taylor's semiconductor corridor" },
+        { type: 'p', content: "The Austin-Taylor semiconductor buildout is drawing Korean-American trading, parts, and equipment-supply companies at a pace that is creating real competition for the same buyers — which means a new supplier's window to make a strong first impression online is shorter than it would be in a slower-growing market. A Tier-1 contractor's procurement team evaluating three unfamiliar Korean-American suppliers in the same week will move fastest on the one that looks the most established at a glance, and a domain email plus a real capability page is one of the lowest-cost ways to be that one. This is not about outspending competitors on marketing. It is about not losing quote opportunities to a company with a worse product but a more credible-looking inbox." },
+        { type: 'cta', content: "ZOE LUMOS builds bilingual, credibility-first websites for Korean-American trading, supply, and manufacturing companies across the US — company-name domain email setup, capability and certification pages, and a structured way for buyers to request a quote, all registered in your name. Free consultation in Korean or English: email info@zoelumos.com or reach us on KakaoTalk (http://pf.kakao.com/_xhxdxmlX/chat)." },
+      ],
+      ko: [
+        { type: 'intro', content: '오스틴 바로 북동쪽 테일러(Taylor), 텍사스에 짓고 있는 삼성의 약 170억 달러 규모 반도체 공장이 한인 무역·부품·설비 공급업체들을 이 지역으로 끌어들이고 있습니다 — 아예 이전하는 곳도 있고, 바이어와 가까이 있으려고 위성 사무소를 여는 곳도 있습니다. 사장님들과 이야기해 보면 사업 자체는 탄탄한 경우가 많습니다. 실제 재고, 한국에서 쌓아온 진짜 관계, 실제 역량까지요. 하지만 그중 얼마나 많은 곳이 여전히 무료 지메일이나 네이버 주소로 견적을 보내고, 로고와 전화번호만 있는 한 페이지짜리 사이트로 바이어를 안내하는지 보면 조용한 문제가 드러납니다. 구매 담당자는 사장님의 가격이나 납기를 읽기도 전에, 이 회사가 발주를 맡길 만큼 진짜인지에 대한 인상을 이미 형성합니다 — 그 판단은 약 2분 안에, 공급하는 제품의 품질과는 아무 상관 없는 신호들로 내려집니다.' },
+        { type: 'h2', content: '가격보다 먼저 읽히는 신호' },
+        { type: 'p', content: '미국에 새 사업장을 짓는 대형 OEM과 1차 협력사들은 공급업체 검증을 채용 담당자가 이력서를 훑듯이 합니다 — 빠르고, 패턴 기반이고, 대부분 골라내기보다는 걸러내기 위한 것입니다. name@yourcompany.com이 아니라 name@gmail.com에서 온 견적은 오타 있는 이력서처럼 읽힙니다 — 그 자체로 탈락 사유는 아니지만, 회사가 뭔가 제대로 정돈되지 않았다는 작고 공짜인 신호입니다. 여기에 한 페이지짜리 사이트, 혹은 명함 수준을 넘지 않는 웹 존재감까지 더해지면, 비교할 다른 공급업체가 셋 더 있는 바이어는 증명해 보라고 요청하는 대신 조용히 다음으로 넘어갑니다. 이 걸러내기는 절대 눈에 보이지 않습니다. 거절 이메일도 없습니다. RFQ가 그냥 애초에 오지 않을 뿐입니다.' },
+        { type: 'h2', content: '바이어가 처음 2분 안에 실제로 확인하는 것' },
+        { type: 'ul', content: '견적을 요청하기 전, 처음 거래를 검토하는 구매팀이 보통 찾는 것:', items: [
+          '회사명과 일치하는 이메일 도메인 — 보낸 사람 주소와 견적서상 회사가 일치하지 않는 것은 B2B 구매에서 가장 빠른 위험 신호 중 하나입니다.',
+          '전화번호와 로고뿐 아니라 실제 회사명, 주소, 업력 — 새 공급업체를 확인하는 바이어는 이 회사가 실제로 누구인지 찾을 수 있길 기대합니다.',
+          '역량·취급 산업군 페이지 — 무엇을, 누구에게, 어떤 규모로 공급하는지. 이메일을 쓰기도 전에 적합성을 판단할 수 있게 해줍니다.',
+          '바이어의 산업에 맞는 인증(ISO 9001, IATF 16949, 또는 해당 카테고리의 동등 인증)이 찾을 수 있는 곳에 실제로 게시돼 있는지.',
+          '제품·재고·공장의 실제 사진 — 스톡 사진은 실제로 문제가 없어도 뭔가 숨기는 회사처럼 읽힙니다.',
+          '웹사이트 하단에서 이메일 주소를 추측할 필요 없이 견적을 요청할 수 있는 명확한 경로.',
+        ] },
+        { type: 'tip', content: '이번 달에 딱 하나만 고칠 수 있다면 이메일 도메인부터 고치세요. 이 목록에서 가장 저렴하고, 하루도 안 걸리며, 웹사이트를 먼저 들른 바이어뿐 아니라 사장님이 보내는 모든 견적서에 매번 나타나는 신호이기 때문입니다.' },
+        { type: 'h2', content: '@회사도메인.com을 제대로 세팅하는 순서' },
+        { type: 'p', content: '순서가 중요합니다. 먼저 도메인 자체가 회사 명의로 등록돼 있는지 확인하세요 — 친척도, 전 직원도, 웹 개발자의 계정도 아닌 회사 명의로요. 이메일 서비스와 웹사이트 호스팅 모두 그 등록을 누가 통제하느냐에 달려 있기 때문입니다. 그다음, Google Workspace나 Microsoft 365는 폼 하나 작성하는 정도의 시간이면 전 직원에게 name@회사도메인.com을 켜주고, 직원들이 이미 쓰는 지메일·아웃룩 화면을 그대로 씁니다. 기존 고객·거래처와의 관계를 다시 알릴 필요는 없습니다 — 전환 기간 동안 기존 주소를 새 주소로 전달 설정해 두고, 앞으로 나가는 견적서의 서명란부터 바꾸시면 됩니다.' },
+        { type: 'h2', content: '지금 테일러 반도체 벨트에서 이게 중요한 이유' },
+        { type: 'p', content: '오스틴·테일러 반도체 확장은 같은 바이어를 두고 경쟁하는 한인 무역·부품·설비 공급업체를 빠르게 끌어들이고 있습니다 — 그만큼 새로 들어온 공급업체가 온라인에서 좋은 첫인상을 남길 수 있는 시간이, 성장이 더딘 시장보다 짧다는 뜻입니다. 낯선 한인 공급업체 세 곳을 같은 주에 검토하는 1차 협력사 구매팀은 언뜻 봐도 가장 자리 잡혀 보이는 곳부터 가장 빠르게 움직입니다. 도메인 이메일과 제대로 된 역량 페이지는 그 "가장 자리 잡힌 곳"이 되는 가장 저렴한 방법 중 하나입니다. 마케팅에 경쟁사보다 더 많이 쓰라는 이야기가 아닙니다. 제품은 더 못하지만 받은편지함이 더 신뢰할 만해 보이는 회사에게 견적 기회를 놓치지 않는 것에 관한 이야기입니다.' },
+        { type: 'cta', content: 'ZOE LUMOS는 미국 전역의 한인 무역·공급·제조업체를 위한 이중언어, 신뢰 우선 웹사이트를 만듭니다 — 회사 명의 도메인 이메일 세팅, 역량·인증 페이지, 바이어가 견적을 요청할 수 있는 구조화된 경로까지, 전부 사장님 명의로 등록됩니다. 한국어/영어 무료 상담: info@zoelumos.com 이메일 또는 카카오톡(http://pf.kakao.com/_xhxdxmlX/chat)으로 편하게 문의하세요.' },
+      ],
+    },
+  },
 ]
