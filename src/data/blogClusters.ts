@@ -97,6 +97,7 @@ export const PILLARS = {
       'korean-ecommerce-payments-sales-tax-nexus-bay-area-2026',
       'aws-cloud-consulting-korean-multi-location-business-seattle-2026',
       'b2b-manufacturing-supplier-website-rfq-leads-georgia-2026',
+      'korean-beauty-supply-wholesale-b2b-website-memphis-2026',
       'ecommerce-fulfillment-3pl-vs-amazon-fba-korean-sellers-2026',
       'korea-sourcing-us-ecommerce-customs-tax-fulfillment-2026',
       'aws-cmmc-security-korean-government-contractor-virginia-2026',
@@ -358,4 +359,8 @@ export const POST_TO_PILLAR: Record<string, PillarKey> = {
 
   // 2026-08-17 — Houston F&B: online ordering, POS (Square/Toast/Clover), catering, reviews
   'korean-restaurant-houston-pos-catering-reviews-2026': 'restaurant-marketing',
+
+  // 2026-09-03 — B2B trust infrastructure (domain email + wholesale account/credit
+  // application forms) for Korean beauty supply distributors (Memphis, TN)
+  'korean-beauty-supply-wholesale-b2b-website-memphis-2026': 'website-cost',
 }
