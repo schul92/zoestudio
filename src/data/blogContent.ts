@@ -13521,4 +13521,101 @@ export const blogContent: BlogPost[] = [
       ],
     },
   },
+  // ─────────────────────────────────────────────────────────────────
+  // 2026-09-04 — Nail & beauty salon booking + no-show prevention +
+  // Google Maps optimization, with a Las Vegas group-booking angle
+  // (bachelorette parties, prom, quinceañera groups) — C2C/service rotation
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'korean-nail-beauty-salon-booking-noshow-las-vegas-2026',
+    date: '2026-09-04',
+    updatedDate: '2026-09-04',
+    readTime: 9,
+    category: { en: 'Industry Guide', ko: '업종별 가이드' },
+    title: {
+      en: 'Nail & Beauty Salon Booking for Korean-American Owners: Stop Losing Chairs to No-Shows (Las Vegas, 2026)',
+      ko: '라스베가스 한인 네일·뷰티샵 예약 시스템 가이드 — 노쇼 방지와 구글 지도 최적화 (2026)',
+    },
+    metaDescription: {
+      en: 'Korean-American nail and beauty salon owners in the Las Vegas valley: text and DM booking cannot show which chairs are actually open, and a single no-show bachelorette party can wipe out an entire Saturday. How real booking software, an enforced deposit policy, and Google Maps optimization change the math for both locals and Strip visitors.',
+      ko: '라스베가스 밸리 한인 네일·뷰티샵 사장님: 문자·DM 예약은 실제로 어느 체어가 비어 있는지 보여줄 수 없고, 노쇼 하나 나온 브라이덜 파티가 토요일 하루를 통째로 날려버릴 수 있습니다. 실제 예약 소프트웨어, 강제되는 예약금 정책, 구글 지도 최적화가 로컬 손님과 스트립 방문객 모두에게 계산을 어떻게 바꾸는지 알려드립니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'Does a small nail or beauty salon really need booking software, or are texts and Instagram DMs enough?',
+          ko: '작은 네일·뷰티샵도 정말 예약 소프트웨어가 필요한가요, 문자나 인스타그램 DM으로 충분하지 않나요?',
+        },
+        a: {
+          en: "Texts and DMs work only as long as one person can hold the whole day's schedule in their head, and that breaks the moment you have more than two or three techs working chairs at the same time. Booking software (Vagaro, Boulevard, Fresha, GlossGenius) shows every tech's real-time availability to the customer directly, so a walk-in search on Google or Instagram converts into a confirmed slot without a phone call your front desk has to answer mid-service. The bigger reason it matters in a market like Las Vegas specifically is group bookings — a five-person bachelorette party or a ten-person prom group needs to see and hold five or ten chairs at once, which a single shared phone number simply cannot manage without double-booking someone.",
+          ko: '문자와 DM은 한 사람이 하루 전체 스케줄을 머릿속에 담아둘 수 있을 때까지만 통합니다. 체어에서 동시에 일하는 테크니션이 두세 명을 넘어가는 순간 이 방식은 무너집니다. 예약 소프트웨어(Vagaro, Boulevard, Fresha, GlossGenius)는 각 테크니션의 실시간 예약 가능 여부를 고객에게 직접 보여주기 때문에, 구글이나 인스타그램 검색이 프런트 직원이 시술 중에 받아야 하는 전화 없이 확정 예약으로 바로 이어집니다. 특히 라스베가스 같은 시장에서 더 중요한 이유는 단체 예약입니다 — 5인 브라이덜 파티나 10인 프롬 그룹은 5개, 10개 체어를 동시에 보고 잡아야 하는데, 공용 전화번호 하나로는 누군가와 겹치지 않게 이걸 관리할 수 없습니다.',
+        },
+      },
+      {
+        q: {
+          en: 'How do I enforce a deposit or no-show fee for group bookings without scaring customers away?',
+          ko: '단체 예약에 예약금이나 노쇼 수수료를 부과하면서도 손님이 떨어져 나가지 않게 하려면 어떻게 하나요?',
+        },
+        a: {
+          en: "The enforcement has to happen automatically at the moment of booking, not as a conversation, and it has to scale with group size. A common structure that works: no deposit for a single-service booking, but a fixed per-person deposit that gets collected online the moment a group of three or more books, non-refundable inside a 24-48 hour cancellation window. Booking platforms charge this card on file automatically, so customers see a clear policy stated once, upfront, in the confirmation text — never a phone call demanding money after the fact. Salons that add this specifically for parties (bachelorette groups, prom, quinceañera) rather than every walk-in find that regular single-chair customers barely notice the change, while the policy quietly protects the exact bookings that used to blow up a whole Saturday.",
+          ko: '집행은 대화가 아니라 예약하는 바로 그 순간 자동으로 이뤄져야 하고, 그룹 규모에 따라 커져야 합니다. 실제로 효과가 있는 구조는 이렇습니다 — 1인 단일 시술 예약엔 예약금이 없지만, 3인 이상 그룹이 예약하는 순간 인당 고정 예약금이 온라인으로 결제되고, 24~48시간 취소 기한 안에는 환불이 안 됩니다. 예약 플랫폼이 등록된 카드로 이 금액을 자동 청구하기 때문에, 손님은 확정 문자에 명확한 정책을 한 번, 사전에 안내받을 뿐 나중에 전화로 돈을 요구받는 일이 없습니다. 모든 워크인이 아니라 파티(브라이덜 그룹, 프롬, 킨세아녜라)에만 이 정책을 붙인 샵들은, 기존 1인 단골 손님은 변화를 거의 눈치채지 못하는 반면 정작 토요일 하루를 통째로 날려버리던 그 예약 유형만 조용히 보호된다는 걸 확인합니다.',
+        },
+      },
+      {
+        q: {
+          en: "What should a Las Vegas nail or beauty salon's Google Business Profile actually include to rank for both local and visitor searches?",
+          ko: '라스베가스 네일·뷰티샵 구글 비즈니스 프로필에는 로컬 손님과 방문객 검색 모두를 잡으려면 실제로 뭐가 들어가야 하나요?',
+        },
+        a: {
+          en: "It needs the correct primary category (nail salon, day spa, or hair salon — not a generic 'beauty salon' catch-all), current photos of the actual space and recent work, a steady stream of reviews in both English and Korean, and — specific to Las Vegas — a clear note in the business description about whether you take walk-ins, since a huge share of searches near the Strip and the resort corridor come from visitors who need a slot today, not next week. A local search from Summerlin or Henderson behaves differently: those searchers are comparing regulars' salons on price and loyalty programs, so a visible service menu and a 'book now' button matter more there than same-day availability. The website has to serve both intents from one Google listing, because Google cannot tell a tourist from a local before they click.",
+          ko: '정확한 주 업종(단순 뭉뚱그린 \'뷰티샵\'이 아니라 네일샵, 데이스파, 헤어살롱 중 정확한 것), 실제 매장과 최근 시술 사진, 영어·한국어 양쪽으로 꾸준히 쌓이는 리뷰가 필요합니다 — 그리고 라스베가스만의 특징으로, 워크인을 받는지 여부를 비즈니스 설명에 명확히 적어야 합니다. 스트립과 리조트 상권 근처 검색의 상당수는 다음 주가 아니라 오늘 당장 자리가 필요한 방문객에게서 나오기 때문입니다. 서머린이나 헨더슨에서의 로컬 검색은 다르게 움직입니다 — 그쪽 검색자는 가격과 적립 프로그램으로 단골 삼을 샵을 비교하는 중이라, 당일 예약 가능 여부보다 눈에 보이는 시술 메뉴와 \'지금 예약\' 버튼이 더 중요합니다. 구글은 클릭하기 전까지 관광객과 로컬을 구분할 수 없기 때문에, 웹사이트 하나가 이 두 가지 의도를 모두 감당해야 합니다.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "Saturday, 11am. A five-chair bachelorette party booked two weeks ago by DM. Ten minutes before the appointment, one text: \"so sorry, running late, might not make it 😭\" — and then nothing. The chairs sit open for the length of a full-set appointment, the walk-in you turned away that morning is gone, and the loss doesn't show up anywhere except an afternoon that felt slower than it should have. Las Vegas nail and beauty salons live this scenario more than almost anywhere else, because the valley's business runs on two very different customers at once: locals building a routine relationship with one tech, and visitors booking a group appointment around a wedding, prom, or a weekend trip. If this feels familiar, this article is for you." },
+        { type: 'h2', content: "Why DM and phone booking break faster in Las Vegas than almost anywhere" },
+        { type: 'p', content: "Most nail and beauty salons start with a shared phone number and an appointment book, and that works fine for single walk-ins. It stops working the moment group bookings enter the picture, and Las Vegas generates more of them than a typical market — bachelorette parties, prom groups, quinceañeras, and wedding parties all want five to twelve chairs at once, often booked from out of state, days or weeks before anyone sets foot in the salon. A phone-and-notebook system has no way to hold five specific chairs at a specific hour while also taking calls for single appointments, so double-bookings and dropped group reservations happen constantly — and unlike a single missed nail appointment, a blown group booking is the kind of story that gets told to an entire wedding party." },
+        { type: 'h2', content: "A no-show costs a nail salon differently than most other businesses" },
+        { type: 'p', content: "A no-show at a hair salon costs one stylist an open hour. A no-show on a five-chair group booking costs five techs an open hour at the same time — on a Saturday, your highest-revenue hour of the week. Unlike a restaurant table, a nail chair has a hard ceiling on service time, so an empty chair from a no-show cannot be recovered later in the day the way a restaurant can reseat a table. Salon owners who actually run this math — five chairs, one hour, your average group ticket — usually find the number is not a rounding error. It is closer to a full day's revenue for one tech, lost to a single text that said 'running late.'" },
+        { type: 'h2', content: "What real booking and deposit enforcement actually look like" },
+        { type: 'p', content: "Salon-specific booking platforms — Vagaro, Boulevard, Fresha, and GlossGenius all cover this — do three things a shared phone number cannot: show live chair-by-chair and tech-by-tech availability so a customer books into a real open slot instead of guessing, hold a card on file so a group deposit or a no-show fee is charged automatically instead of chased down after the fact, and send automated confirmation and reminder texts in both English and Korean so nobody 'forgot' the appointment existed. None of this requires becoming a tech company. It requires a booking platform built for salons, a deposit rule scaled to group size, and a bilingual website that makes the whole thing easy to find in the first place." },
+        { type: 'ul', content: "What a Las Vegas nail or beauty salon's website and booking setup actually needs:", items: [
+          "Live, tech-by-tech booking embedded from your platform, showing today's real openings instead of 'call for availability'",
+          "A clear same-day walk-in policy stated up front, since a large share of Strip-adjacent searches come from visitors who need a slot today",
+          "A group and party booking flow with a per-person deposit that scales automatically at three or more chairs",
+          "A visible service menu with prices, because a visitor comparing three salons on their phone will skip the one that says 'pricing varies'",
+          "A no-show and cancellation policy stated in plain Korean and English before anyone ever books",
+          "Photos of the actual space and recent work, refreshed regularly — a five-year-old interior photo is an easy thing for a comparing customer to notice",
+        ] },
+        { type: 'tip', content: "Pull your last 90 days of group bookings and count how many showed up short-handed or not at all. Salons that run this audit for the first time are often surprised the number lands in the double digits — and that a per-person deposit on just those bookings, not on regular single-chair customers, is enough to fix most of the loss without touching the walk-in business at all." },
+        { type: 'h2', content: 'Google Maps: the same listing has to win two different searches' },
+        { type: 'p', content: "A visitor near the Strip searching \"nail salon near me\" at 9pm on a Friday and a Summerlin local searching \"라스베가스 네일샵\" or \"summerlin nail salon\" three weeks before a trip are looking for completely different things from the same Google Business Profile — same-day availability for one, price and loyalty programs for the other. Winning both takes the correct primary category, a complete and current photo set, a steady stream of reviews in English and Korean, and a website that converts the click either way: a same-day booking button for the walk-in searcher, and a visible service menu and package pricing for the local comparing options ahead of time. Google also tracks which listings convert clicks into actual visits, and quietly favors the ones that do." },
+        { type: 'cta', content: "Run a nail or beauty salon in the Las Vegas valley and losing chairs to DM bookings and group no-shows? ZOE LUMOS builds bilingual salon websites with live tech-by-tech booking, group and deposit rules built in, and a Google Business Profile set up to win both local and visitor searches. We are also a registered Apple App Store developer, for salons that eventually want their own booking app. Free consultation in Korean or English: email info@zoelumos.com or message us on KakaoTalk (http://pf.kakao.com/_xhxdxmlX/chat)." },
+      ],
+      ko: [
+        { type: 'intro', content: '토요일 오전 11시. 2주 전 DM으로 예약한 5인 브라이덜 파티. 예약 10분 전, 문자 한 통이 옵니다. "죄송해요 좀 늦을 것 같아요 어쩌면 못 갈 수도... 😭" — 그리고 그걸로 끝입니다. 풀세트 시술 한 타임만큼 체어 다섯 개가 그대로 비고, 그날 아침 돌려보냈던 워크인 손님은 이미 떠났고, 손실은 그저 "오늘 오후가 유난히 한산했다"는 느낌 말고는 아무 데도 기록되지 않습니다. 라스베가스 네일·뷰티샵은 이런 상황을 다른 어느 지역보다 자주 겪습니다. 이 밸리의 비즈니스가 성격이 전혀 다른 두 고객층으로 동시에 돌아가기 때문입니다 — 한 테크니션과 꾸준한 관계를 쌓는 로컬 손님, 그리고 결혼식·프롬·주말 여행을 앞두고 단체 예약을 잡는 방문객. 이 장면이 낯익다면, 이 글은 사장님을 위한 글입니다.' },
+        { type: 'h2', content: 'DM·전화 예약이 라스베가스에서 유독 빨리 무너지는 이유' },
+        { type: 'p', content: '대부분의 네일·뷰티샵은 공용 전화번호와 예약 노트로 시작하고, 1인 워크인만 있을 땐 그럭저럭 돌아갑니다. 문제는 단체 예약이 끼어드는 순간 시작되는데, 라스베가스는 다른 일반적인 시장보다 이런 예약을 훨씬 더 많이 만들어냅니다 — 브라이덜 파티, 프롬 그룹, 킨세아녜라, 웨딩 파티 모두 한 번에 5~12개 체어를 원하고, 종종 타주에서 며칠·몇 주 전에 미리 예약합니다. 전화와 노트 시스템은 특정 시간에 특정 체어 다섯 개를 잡아두면서 동시에 1인 예약 전화도 받을 방법이 없어서, 이중 예약과 놓친 단체 예약이 끊임없이 발생합니다 — 그리고 놓친 네일 예약 하나와 달리, 망친 단체 예약은 결혼식 파티 전체에게 두고두고 이야기되는 사건이 됩니다.' },
+        { type: 'h2', content: '네일샵에서 노쇼가 다른 업종과 다르게 아픈 이유' },
+        { type: 'p', content: '헤어살롱 노쇼는 스타일리스트 한 명의 시간 하나를 잃는 것으로 끝납니다. 5체어 단체 예약의 노쇼는 테크니션 다섯 명의 시간을 동시에, 그것도 한 주 중 매출이 가장 높은 토요일 시간대에 잃는 것입니다. 식당 테이블과 달리 네일 체어는 시술 시간에 확실한 상한이 있어서, 노쇼로 생긴 빈 체어는 식당이 나중에 다른 손님을 앉히듯 그날 안에 회복할 수 없습니다. 실제로 이 계산을 해 본 사장님들 — 체어 5개, 한 시간, 평균 단체 티켓 금액 — 은 그 숫자가 반올림 오차가 아니라는 걸 확인합니다. "좀 늦을 것 같다"는 문자 한 통에, 테크니션 한 명의 하루 매출에 가까운 돈이 날아간 셈입니다.' },
+        { type: 'h2', content: '진짜 예약 + 예약금 집행이 실제로 하는 일' },
+        { type: 'p', content: 'Vagaro, Boulevard, Fresha, GlossGenius 같은 살롱 전용 예약 플랫폼은 공용 전화번호로는 안 되는 세 가지를 합니다. 체어별·테크니션별 실시간 예약 가능 여부를 보여줘서 손님이 추측이 아니라 실제 빈 시간에 예약하게 하고, 카드를 미리 등록해 둬서 단체 예약금이나 노쇼 수수료를 나중에 쫓아다니지 않고 자동으로 청구하고, 영어·한국어 자동 확인·리마인더 문자를 보내서 아무도 "예약한 걸 잊었다"고 말할 수 없게 만듭니다. 이 중 어느 것도 IT 회사가 되자는 얘기가 아닙니다. 살롱 전용으로 만들어진 예약 플랫폼, 그룹 규모에 맞춰 커지는 예약금 규칙, 그리고 이 모든 걸 애초에 쉽게 찾을 수 있게 하는 이중언어 웹사이트가 필요할 뿐입니다.' },
+        { type: 'ul', content: '라스베가스 네일·뷰티샵 웹사이트와 예약 세팅에 실제로 필요한 것:', items: [
+          "예약 플랫폼과 실시간으로 연동된 테크니션별 예약 — '가능 여부는 전화 문의' 대신 오늘의 실제 빈 시간을 보여주기",
+          '스트립 인근 검색의 상당수가 오늘 당장 자리가 필요한 방문객에게서 나오므로, 당일 워크인 가능 여부를 명확히 안내',
+          '3인 이상 체어부터 인당 예약금이 자동으로 커지는 단체·파티 예약 플로우',
+          "가격이 표시된 시술 메뉴 — 스마트폰으로 세 곳을 비교 중인 방문객은 '가격은 문의' 라고 적힌 곳을 그냥 건너뜁니다",
+          '노쇼·취소 정책을 예약 전에 한국어·영어로 분명히 안내',
+          '정기적으로 업데이트되는 실제 매장·최근 시술 사진 — 5년 된 내부 사진은 비교 중인 손님이 바로 알아채는 부분입니다',
+        ] },
+        { type: 'tip', content: '최근 90일간의 단체 예약을 뽑아서 인원이 덜 오거나 아예 안 온 경우가 몇 번인지 세어 보세요. 이 감사를 처음 해 보는 샵들은 대개 그 숫자가 두 자릿수라는 데 놀랍니다 — 그리고 모든 1인 단골이 아니라 이런 단체 예약에만 인당 예약금을 붙이는 것만으로도, 워크인 손님은 전혀 건드리지 않으면서 손실 대부분을 막을 수 있다는 것도 확인하게 됩니다.' },
+        { type: 'h2', content: '구글 지도 — 같은 리스팅이 서로 다른 두 검색을 모두 이겨야 한다' },
+        { type: 'p', content: '금요일 밤 9시, 스트립 근처에서 "nail salon near me"를 검색하는 방문객과, 여행 3주 전 "라스베가스 네일샵"이나 "summerlin nail salon"을 검색하는 서머린 로컬 손님은 같은 구글 비즈니스 프로필에서 완전히 다른 것을 찾고 있습니다 — 한쪽은 당일 예약 가능 여부, 다른 한쪽은 가격과 적립 프로그램. 이 둘을 모두 이기려면 정확한 주 업종, 완전하고 최신인 사진 세트, 영어·한국어로 꾸준히 쌓이는 리뷰, 그리고 어느 쪽 클릭이든 전환시키는 웹사이트가 필요합니다 — 워크인 검색자에게는 당일 예약 버튼을, 미리 비교 중인 로컬에게는 눈에 보이는 시술 메뉴와 패키지 가격을요. 구글은 또한 어떤 리스팅이 클릭을 실제 방문으로 바꾸는지도 지켜보고, 그런 리스팅을 조용히 더 밀어줍니다.' },
+        { type: 'cta', content: '라스베가스 밸리에서 네일·뷰티샵을 운영하시면서 DM 예약과 단체 노쇼로 체어를 잃고 계신가요? ZOE LUMOS는 테크니션별 실시간 예약, 단체·예약금 규칙이 내장된 이중언어 살롱 웹사이트를 만들고, 로컬과 방문객 검색을 모두 잡는 구글 비즈니스 프로필을 세팅해 드립니다. 저희는 등록된 Apple App Store 개발사이기도 해서, 나중에 살롱 전용 예약 앱을 원하시면 그것도 가능합니다. 한국어/영어 무료 상담: info@zoelumos.com 이메일 또는 카카오톡(http://pf.kakao.com/_xhxdxmlX/chat)으로 편하게 문의하세요.' },
+      ],
+    },
+  },
 ]
