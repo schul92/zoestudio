@@ -13521,4 +13521,104 @@ export const blogContent: BlogPost[] = [
       ],
     },
   },
+  // ─────────────────────────────────────────────────────────────────
+  // 2026-09-07 — B2B trust layer that comes before an RFQ is ever
+  // requested: owned domain, matching company email, About/profile page.
+  // Distinct from b2b-manufacturing-supplier-website-rfq-leads-georgia-2026
+  // (RFQ form mechanics) and b2b-wholesale-quote-leads-seo-los-angeles
+  // (search-lead generation). Audience rotation: Montgomery, AL automotive
+  // corridor (Hyundai HMMA), not NJ/NY/GA/LA.
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'b2b-trading-company-domain-email-trust-alabama-2026',
+    date: '2026-09-07',
+    updatedDate: '2026-09-07',
+    readTime: 9,
+    category: { en: 'B2B & Trade', ko: 'B2B 무역' },
+    title: {
+      en: "Why That '@naver.com' Address Is Costing You the Deal: Domain Trust for Korean-American B2B Companies in Alabama's Auto Corridor (2026)",
+      ko: '견적 요청서를 열어보기도 전에 이미 걸러졌습니다 — 앨라배마 한인 무역·제조업체를 위한 회사 도메인·이메일 신뢰도 가이드 (2026)',
+    },
+    metaDescription: {
+      en: "Korean-American trading, wholesale, and manufacturing companies around Alabama's Hyundai-anchored auto corridor are losing B2B deals before a quote is ever requested — because a personal Naver or Gmail address, a domain-less site, or a thin 'About Us' page fails a buyer's five-minute vendor check. Here is what that check actually looks for, and how to pass it.",
+      ko: '앨라배마 현대차 공장을 중심으로 한 자동차 산업벨트의 한인 무역·도매·제조업체들이 견적을 요청받기도 전에 거래에서 걸러지고 있습니다 — 네이버나 지메일 같은 개인 이메일, 도메인 없는 사이트, 부실한 회사 소개 페이지가 바이어의 5분짜리 벤더 검증을 통과하지 못하기 때문입니다. 그 검증이 실제로 무엇을 보는지, 어떻게 통과하는지 정리했습니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: "We've done business by email for years using a Naver or Gmail address. Do we really need to change now?",
+          ko: '몇 년째 네이버나 지메일 개인 이메일로 거래해 왔습니다. 지금 와서 꼭 바꿔야 하나요?',
+        },
+        a: {
+          en: "Yes, if a meaningful share of your leads now come from buyers who do not already know you personally — because a free-provider email address (naver.com, gmail.com, hanmail.net) reads as a personal account, not a company, and procurement teams at OEMs and larger US firms increasingly screen out vendors on that signal alone before ever replying. Existing relationships built over years of trust are not at risk from this — nobody is going to distrust a supplier they have ordered from for a decade. The risk is entirely on new inbound business: a buyer who found you through a Google search, a directory, or a referral and is doing a first-time background check has nothing but that email address and your website to go on, and a free-provider address is the fastest disqualifier in that check.",
+          ko: '네, 새로 들어오는 문의 중 상당수가 사장님을 개인적으로 이미 알지 못하는 바이어라면 바꾸셔야 합니다. 네이버, 지메일, 한메일 같은 무료 이메일 주소는 회사가 아니라 개인 계정처럼 보이고, OEM이나 규모 있는 미국 기업의 구매팀은 답장을 보내기도 전에 그 신호 하나만으로 공급업체를 걸러내는 경우가 점점 늘고 있습니다. 수년간 거래해 온 기존 관계는 이 위험과 무관합니다 — 10년째 주문해 온 공급사를 이제 와서 못 믿을 사람은 없습니다. 위험은 전적으로 새로 들어오는 문의에 있습니다. 구글 검색이나 디렉토리, 소개로 사장님 회사를 처음 알게 된 바이어에게는 그 이메일 주소와 웹사이트가 전부이고, 무료 이메일 주소는 그 첫 검증에서 가장 빠르게 탈락하는 요인입니다.',
+        },
+      },
+      {
+        q: {
+          en: 'Does the age of our domain actually affect how buyers judge us, or is that just a search engine ranking factor?',
+          ko: '도메인을 등록한 지 얼마나 됐는지가 정말 바이어의 판단에 영향을 주나요, 아니면 그냥 검색엔진 순위 요소일 뿐인가요?',
+        },
+        a: {
+          en: "It affects both, through two separate mechanisms. As a ranking factor its effect is modest and often overstated. As a trust signal a careful buyer checks by hand, it matters more directly: a WHOIS or domain-age lookup showing a domain registered only a few months ago, right around when a company started actively pitching for new OEM or Tier-1 business, reads as a shell or a fly-by-night operation to a purchasing manager who has been burned by one before — even if your company has operated for fifteen years. If your business is established but your website and domain are new or recently changed, say so plainly on the About page ('serving the Southeast automotive supply chain since 2011, this website relaunched in 2026') so the buyer does not have to guess which story the domain age is telling.",
+          ko: '두 가지 서로 다른 경로로 둘 다에 영향을 줍니다. 검색 순위 요소로서의 영향은 제한적이고 흔히 과장되는 편입니다. 하지만 신중한 바이어가 직접 확인하는 신뢰 신호로서는 더 직접적으로 작용합니다. WHOIS나 도메인 등록 정보를 조회했을 때, 회사가 새 OEM·1차 협력사 영업을 본격적으로 시작한 시점과 비슷하게 도메인이 불과 몇 달 전에 등록된 것으로 나오면, 회사가 실제로는 15년째 운영되어 왔더라도 예전에 한 번 당해본 구매 담당자에게는 유령회사나 단기 업체처럼 보일 수 있습니다. 회사는 오래됐는데 웹사이트나 도메인만 새것이거나 최근에 바뀌었다면, 회사 소개 페이지에 그 사실을 명확히 적어두세요("2011년부터 동남부 자동차 공급망에 협력해왔으며, 이 웹사이트는 2026년에 새로 개편되었습니다" 같은 식으로). 그러면 바이어가 도메인 나이가 말해주는 이야기를 스스로 오해할 필요가 없습니다.',
+        },
+      },
+      {
+        q: {
+          en: 'How long does it actually take to move company email from a free provider to our own domain?',
+          ko: '회사 이메일을 무료 서비스에서 자체 도메인으로 옮기는 데 실제로 얼마나 걸리나요?',
+        },
+        a: {
+          en: "The core switch — creating info@yourcompany.com and a handful of named addresses on Google Workspace or Microsoft 365, pointed at a domain you already own — is typically a same-day setup, and both providers walk you through the DNS records step by step. The part that takes longer is the transition itself: forwarding the old free-provider inbox so nothing gets missed, updating the email address on your website, Google Business Profile, LinkedIn company page, business cards, and any OEM or Tier-1 supplier portal listings, and giving existing partners a heads-up before the old address goes quiet. Budget a same-day technical setup and two to four weeks of overlap before you consider the old address fully retired.",
+          ko: '핵심 전환 작업 — 이미 보유한 도메인에 연결해서 구글 워크스페이스나 마이크로소프트 365에서 info@회사명.com과 담당자별 이메일 몇 개를 만드는 작업 — 은 보통 하루 안에 끝나고, 두 서비스 모두 DNS 설정 과정을 단계별로 안내해 줍니다. 시간이 더 걸리는 건 전환 자체입니다. 기존 무료 이메일 편지함을 새 주소로 포워딩해서 놓치는 메일이 없게 하고, 웹사이트·구글 비즈니스 프로필·링크드인 회사 페이지·명함·OEM/1차 협력사 벤더 포털에 등록된 이메일 주소를 전부 업데이트하고, 기존 거래처에는 예전 주소가 조용해지기 전에 미리 알려야 합니다. 기술적 설정은 하루, 완전히 예전 주소를 정리하기까지는 2~4주 정도 여유를 두고 계획하세요.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "A Korean-American trading company owner near Montgomery, Alabama sends a sharp, competitively priced quote to a purchasing manager at a Tier-1 supplier feeding the region's Hyundai-anchored automotive corridor. No reply. Not a rejection — just silence, the kind that never explains itself. What often happened in the gap is invisible and takes the buyer less than five minutes: before ever opening the quote seriously, they searched the company name, found a thin one-page website with no working links, noticed the reply-to address was someone@naver.com instead of anything tied to the company, and quietly moved the RFQ file to the next supplier on the list. No email said any of this. The quote itself may have been the best one in the stack, and it never got read as anything more than noise from an unverifiable source." },
+        { type: 'h2', content: 'Why one email address can quietly end a deal' },
+        { type: 'p', content: "A free-provider address — naver.com, gmail.com, hanmail.net — costs a purchasing manager nothing to notice, and it tells them something specific: this reply-to address belongs to a person, not a verifiable company. It is the same instinct that makes a resume with a Hotmail address from 2004 feel dated, applied to a much higher-stakes decision. Many Korean-American manufacturers and trading companies have used a personal free-provider address for official quotes for years without incident, simply because it was the address they already had when the company started, back when every deal came through someone who already knew them personally. That habit is invisible to existing partners who trust the company regardless of the address. It is highly visible to a first-time buyer doing exactly the kind of background check that decides whether an unfamiliar supplier gets a callback at all." },
+        { type: 'h2', content: "The five-minute check a buyer runs before they ever reply" },
+        { type: 'p', content: "Purchasing teams at OEMs, Tier-1 suppliers, and larger US companies rarely say this check happens, but it happens on nearly every unfamiliar vendor before a quote gets taken seriously. It is fast, it is done alone at a desk, and it produces a yes/no gut call long before anyone picks up a phone." },
+        { type: 'ul', content: "What that five-minute vendor check typically looks for:", items: [
+          "A company email address that matches the website domain (info@yourcompany.com), not a free provider — the single fastest pass/fail signal in the whole check.",
+          "A domain that has existed for a reasonable length of time, checked via a quick WHOIS or domain-age lookup, or a clear explanation on the site if the domain is newer than the company.",
+          "A real 'About Us' or company profile page with a physical address, founding year, and what the company actually makes or sources — not a single paragraph of generic marketing language.",
+          "A LinkedIn company page that exists, is reasonably active, and matches the name and details on the website — a mismatch or missing page reads as a red flag on its own.",
+          "Certifications, capability specs, or industries served listed somewhere a buyer can find without asking — ISO 9001, IATF 16949, or equivalent, where applicable.",
+          "A working, professional-looking site on the company's own domain — not a Naver Blog, a bare Instagram profile, or a free website builder subdomain as the only web presence.",
+        ] },
+        { type: 'tip', content: "If you fix only one item on this list this month, fix the email address. Moving info@ from a free provider to Google Workspace or Microsoft 365 on your own domain is a same-day technical change, and it is the single highest-leverage trust signal on the whole check — because it is the first thing a buyer sees, in the reply-to line, before they have clicked anything else." },
+        { type: 'h2', content: 'The domain has to be registered in your name, not your agency\'s' },
+        { type: 'p', content: "This trust check has a quiet prerequisite that gets skipped often enough to matter: the company domain needs to be registered to the company, not to a web designer, a relative who 'set it up for free,' or an agency that built the original site years ago. A WHOIS lookup that shows a stranger's name and email as the domain owner is its own kind of red flag to a careful buyer, and it is a real operational risk to you regardless of who is checking — it means someone outside the company can, in theory, control where that domain points. If you are not certain who currently owns your domain registration, a WHOIS lookup takes thirty seconds and settles the question." },
+        { type: 'h2', content: "Why this matters more in Alabama's automotive corridor specifically" },
+        { type: 'p', content: "Alabama's Korean-American manufacturing and trading community has grown around one of the most consequential automotive investments in the state's history — Hyundai's assembly plant in Montgomery, with a supplier ecosystem built up around it and connected to the broader Kia and Hyundai supply chain across the Southeast. That growth means two things at once for a company trying to win new business here. First, more buyers are actively looking for new qualified suppliers as the regional supply chain keeps expanding, so the opportunity is real. Second, more competing suppliers — Korean and otherwise — are one Google search away from the same buyer, which means more of the vetting that used to happen face-to-face at a trade show now happens silently, online, before a phone call is ever scheduled. A company that passes the five-minute check on the first look — a real domain, a matching email, a complete profile in both English for OEM purchasing teams and Korean for supply-chain communication back to headquarters — starts the actual relationship-building further ahead than one that gets filtered out before anyone on either side says a word." },
+        { type: 'cta', content: "ZOE LUMOS builds bilingual, trust-ready websites for Korean-American trading companies, wholesalers, and manufacturers across the US — a company website and email on a domain registered in your name, a real company profile and capability pages, and everything set up to pass a buyer's background check before the RFQ conversation even starts. Free consultation in Korean or English: email info@zoelumos.com or reach us on KakaoTalk (http://pf.kakao.com/_xhxdxmlX/chat)." },
+      ],
+      ko: [
+        { type: 'intro', content: "앨라배마 몽고메리 인근에서 무역업을 하는 한인 사장님이 이 지역 현대차 공장을 중심으로 한 자동차 산업벨트의 1차 협력사 구매 담당자에게 가격 경쟁력 있는 견적서를 보냈습니다. 답이 없습니다. 거절도 아니고, 그냥 아무 설명 없는 침묵입니다. 그 사이에 벌어진 일은 눈에 보이지 않고, 바이어 입장에서는 5분도 채 걸리지 않습니다. 견적서를 진지하게 열어보기도 전에 회사 이름을 검색해서, 링크가 제대로 작동하지 않는 부실한 한 페이지짜리 웹사이트를 발견하고, 회신 주소가 회사와 아무 관련 없는 someone@naver.com이라는 걸 확인한 뒤, 조용히 RFQ 파일을 다음 후보 업체로 넘긴 겁니다. 그 어떤 이메일도 이걸 말해주지 않았습니다. 견적 내용 자체는 그 안에서 가장 좋았을 수도 있지만, 검증되지 않은 출처에서 온 잡음 이상으로 읽히지 못한 채 끝난 겁니다." },
+        { type: 'h2', content: '이메일 주소 하나가 조용히 거래를 끝내는 이유' },
+        { type: 'p', content: "네이버, 지메일, 한메일 같은 무료 이메일 주소는 구매 담당자 눈에 띄는 데 아무 노력이 들지 않고, 아주 구체적인 메시지를 전달합니다 — 이 회신 주소는 검증 가능한 회사가 아니라 한 개인의 것이라는 메시지입니다. 2004년식 핫메일 주소가 붙은 이력서가 왠지 낡아 보이는 것과 같은 직감이, 훨씬 큰 판돈이 걸린 결정에 그대로 적용되는 겁니다. 많은 한인 제조업체와 무역회사가 몇 년째 아무 문제 없이 개인 무료 이메일로 공식 견적을 보내왔는데, 이유는 단순합니다 — 회사를 처음 시작했을 때, 모든 거래가 이미 사장님을 개인적으로 아는 사람을 통해 들어오던 시절에 쓰던 주소를 그대로 쓰고 있는 것뿐입니다. 이 습관은 회사를 신뢰하는 기존 거래처에게는 전혀 보이지 않습니다. 하지만 낯선 공급업체에 콜백을 줄지 말지를 정확히 이런 배경 확인으로 결정하는 첫 거래 바이어에게는 아주 잘 보입니다." },
+        { type: 'h2', content: '바이어가 답장하기 전에 실행하는 5분짜리 검증' },
+        { type: 'p', content: "OEM, 1차 협력사, 규모 있는 미국 기업의 구매팀은 이 검증을 한다고 말하는 법이 거의 없지만, 낯선 공급업체 거의 전부에게 견적을 진지하게 받아들이기 전 이 검증을 실행합니다. 빠르고, 책상에 앉아 혼자 하며, 누군가 전화를 걸기 훨씬 전에 예/아니오에 가까운 직감적 판단을 만들어냅니다." },
+        { type: 'ul', content: '바이어의 5분짜리 벤더 검증이 보통 확인하는 것들:', items: [
+          '웹사이트 도메인과 일치하는 회사 이메일 주소(info@회사명.com) — 무료 서비스가 아닌 것. 이 검증 전체에서 가장 빠르게 통과·탈락을 가르는 신호입니다.',
+          '간단한 WHOIS나 도메인 등록 연도 조회로 확인했을 때 어느 정도 기간 존재해온 도메인, 혹은 도메인이 회사보다 새것이라면 그 이유를 사이트에 명확히 설명해두는 것.',
+          '실제 주소, 설립 연도, 회사가 실제로 무엇을 만들거나 소싱하는지가 담긴 진짜 회사 소개 페이지 — 일반적인 마케팅 문구 한 단락짜리가 아니라.',
+          '실제로 존재하고, 어느 정도 활동 중이며, 웹사이트의 이름·정보와 일치하는 링크드인 회사 페이지 — 불일치하거나 아예 없으면 그 자체로 위험 신호가 됩니다.',
+          '바이어가 굳이 물어보지 않아도 어딘가에서 찾을 수 있는 인증서·생산 역량 스펙·취급 산업군 정보 — 해당된다면 ISO 9001, IATF 16949 등.',
+          '자사 도메인 위에서 실제로 작동하는, 전문적으로 보이는 사이트 — 네이버 블로그나 인스타그램 프로필, 무료 홈페이지 빌더 서브도메인이 유일한 온라인 창구인 상태가 아닌 것.',
+        ] },
+        { type: 'tip', content: "이번 달에 이 목록에서 딱 하나만 고칠 수 있다면, 이메일 주소를 고치세요. 무료 서비스의 info@ 주소를 자사 도메인 위의 구글 워크스페이스나 마이크로소프트 365로 옮기는 건 하루 만에 끝나는 기술적 변경이고, 전체 검증 중 가장 효율이 높은 신뢰 신호입니다 — 바이어가 다른 걸 클릭하기도 전에, 회신 주소 줄에서 가장 먼저 보는 것이기 때문입니다." },
+        { type: 'h2', content: '도메인은 반드시 회사 명의여야지, 에이전시 명의면 안 됩니다' },
+        { type: 'p', content: "이 신뢰 검증에는 자주 간과되지만 중요한 전제 조건이 하나 있습니다. 회사 도메인이 웹 디자이너나, '무료로 만들어준' 친척, 혹은 몇 년 전 처음 사이트를 만든 에이전시가 아니라 회사 명의로 등록되어 있어야 한다는 점입니다. WHOIS 조회에서 낯선 사람의 이름과 이메일이 도메인 소유자로 뜨는 건 신중한 바이어에게 그 자체로 위험 신호이고, 누가 확인하든 상관없이 사장님에게도 실질적인 운영 리스크입니다 — 회사 외부의 누군가가 이론적으로 그 도메인이 어디를 가리킬지 통제할 수 있다는 뜻이기 때문입니다. 지금 도메인 등록자가 누구인지 확실하지 않다면, WHOIS 조회는 30초면 끝나고 바로 답을 알려줍니다." },
+        { type: 'h2', content: '앨라배마 자동차 산업벨트에서 특히 더 중요한 이유' },
+        { type: 'p', content: "앨라배마의 한인 제조·무역 커뮤니티는 이 주(州) 역사상 가장 파급력 있는 자동차 산업 투자 중 하나인 몽고메리의 현대차 조립 공장을 중심으로 성장해 왔고, 그 주변에 형성된 협력사 생태계는 동남부 전역의 더 넓은 현대·기아 공급망과 연결되어 있습니다. 이런 성장은 이 지역에서 새 거래를 따내려는 회사에게 두 가지를 동시에 의미합니다. 첫째, 지역 공급망이 계속 확장되면서 새로운 검증된 협력사를 실제로 찾고 있는 바이어가 늘어나고 있으니, 기회는 진짜입니다. 둘째, 한인 업체든 아니든 경쟁하는 공급업체들도 구글 검색 한 번이면 같은 바이어에게 닿을 수 있어서, 예전에는 전시회에서 얼굴을 맞대고 이뤄지던 검증의 상당 부분이 이제는 전화 통화 일정을 잡기도 전에 조용히 온라인에서 끝나버립니다. 첫눈에 5분짜리 검증을 통과하는 회사 — 진짜 도메인, 일치하는 이메일, OEM 구매팀을 위한 영어와 본사와의 공급망 소통을 위한 한국어 둘 다 갖춘 완성된 회사 소개 — 는 양쪽 누구도 한마디 하기 전에 걸러지는 회사보다 훨씬 앞선 지점에서 실제 관계 구축을 시작하게 됩니다." },
+        { type: 'cta', content: "ZOE LUMOS는 미국 전역의 한인 무역회사·도매업체·제조업체를 위한 이중언어 신뢰 웹사이트를 만듭니다 — 사장님 명의로 등록된 도메인 위의 회사 웹사이트와 이메일, 진짜 회사 소개·역량 페이지, 그리고 RFQ 대화가 시작되기도 전에 바이어의 배경 확인을 통과하도록 세팅된 모든 것까지. 한국어/영어 무료 상담: info@zoelumos.com 이메일 또는 카카오톡(http://pf.kakao.com/_xhxdxmlX/chat)으로 편하게 문의하세요." },
+      ],
+    },
+  },
 ]
