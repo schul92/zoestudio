@@ -13521,4 +13521,114 @@ export const blogContent: BlogPost[] = [
       ],
     },
   },
+  // ─────────────────────────────────────────────────────────────────
+  // 2026-09-11 — B2B logistics: freight forwarders & customs brokers
+  // (Dallas–Fort Worth inland port). Fills the least-covered rotation
+  // topic (B2B) with a fresh sub-vertical — prior B2B posts covered
+  // wholesale distributors and manufacturers; this one covers the
+  // logistics/customs-brokerage service companies that move cargo for
+  // those same wholesale, trading, and e-commerce clients.
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'b2b-freight-forwarding-customs-broker-website-dallas-2026',
+    date: '2026-09-11',
+    updatedDate: '2026-09-11',
+    readTime: 8,
+    category: { en: 'B2B & Logistics', ko: 'B2B · 물류' },
+    title: {
+      en: "Why Korean Freight Forwarders and Customs Brokers Need More Than a KakaoTalk Number (Dallas–Fort Worth, 2026)",
+      ko: '카카오톡 번호만으로는 부족합니다 — 댈러스·포트워스 한인 포워딩·통관대행업체 웹사이트 가이드 (2026)',
+    },
+    metaDescription: {
+      en: "Korean-American freight forwarders and customs brokers around the Dallas–Fort Worth inland port are losing new B2B clients who can't find a rate quote, license number, or service lane online. Here is what a B2B logistics website actually needs.",
+      ko: '댈러스·포트워스 인랜드포트의 한인 포워딩·통관대행업체들이 온라인에서 견적 요청, 라이선스 번호, 취급 항로를 찾을 수 없어 새 B2B 고객을 놓치고 있습니다. B2B 물류회사 웹사이트에 실제로 필요한 것을 정리했습니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'Do we need to publish actual freight rates on our website?',
+          ko: '포워딩 회사 웹사이트에 실제 운임을 공개해야 하나요?',
+        },
+        a: {
+          en: "No — ocean and air freight rates change too often (fuel surcharges, space availability, seasonal demand) to publish as fixed numbers, and most established forwarders don't. What matters instead is a structured quote-request form that collects origin, destination, cargo type, container size or weight, and timeline, so you can send back an accurate quote within hours instead of a slow email back-and-forth figuring out what the buyer actually needs.",
+          ko: '아니요, 공개할 필요는 없습니다. 해상·항공 운임은 유류할증료, 선복 상황, 성수기 수요에 따라 너무 자주 바뀌어서 고정 숫자로 게시하는 곳은 거의 없습니다. 대신 중요한 건 출발지·도착지, 화물 종류, 컨테이너 사이즈나 중량, 희망 일정을 받는 구조화된 견적 요청 폼입니다. 그래야 바이어가 뭘 원하는지 이메일로 몇 번씩 되묻는 대신 몇 시간 안에 정확한 견적을 보낼 수 있습니다.',
+        },
+      },
+      {
+        q: {
+          en: 'How should we show our FMC or customs broker license on the site so it actually builds trust?',
+          ko: 'FMC나 통관사 라이선스를 웹사이트에 어떻게 보여줘야 실제로 신뢰로 이어지나요?',
+        },
+        a: {
+          en: "Put the license number where a buyer doing due diligence will actually look — a dedicated 'About' or 'Credentials' section, not buried in a footer — and state it in plain language: your FMC-licensed NVOCC number if you consolidate ocean freight, your customs broker license number if you file entries, and your bond status. A sophisticated wholesale or manufacturing buyer moving cargo through a new forwarder for the first time checks this before they will trust a container to you, and a license number they have to ask for by email is a license number most buyers never confirm before they choose someone else.",
+          ko: "실사하는 바이어가 실제로 찾아보는 자리에 두셔야 합니다 — 푸터 구석이 아니라 별도의 '회사 소개'나 '자격 요건' 섹션에요. 해상 화물을 컨솔하신다면 FMC 라이선스 NVOCC 번호를, 수입 신고를 직접 하신다면 통관사 라이선스 번호를, 그리고 본드 상태를 평문으로 명시하세요. 처음 거래하는 포워딩 업체에 화물을 맡기는 도매·제조 바이어는 컨테이너를 맡기기 전에 반드시 이걸 확인하는데, 이메일로 물어봐야만 알 수 있는 라이선스 번호는 대부분의 바이어가 확인도 안 하고 다른 업체로 넘어가게 만드는 번호입니다.",
+        },
+      },
+      {
+        q: {
+          en: 'Most of our current clients found us through KakaoTalk trading-company group chats — do we really need a website?',
+          ko: '지금 고객 대부분은 카카오톡 무역업체 단톡방을 통해 오는데, 정말 웹사이트가 필요한가요?',
+        },
+        a: {
+          en: 'Yes, because that network has a ceiling your website does not. Existing referral relationships will keep sending you business regardless of your site, but a new wholesale importer who just started shipping, an e-commerce seller who has never worked with a Korean forwarder before, or a manufacturer expanding into the Dallas–Fort Worth inland port has no group chat to ask — so they search Google instead. A website is not a replacement for the KakaoTalk network; it is how you reach the buyers that network cannot.',
+          ko: '네, 필요합니다. 그 네트워크에는 천장이 있는데 웹사이트에는 없기 때문입니다. 기존 소개 관계는 웹사이트가 있든 없든 계속 일감을 보내주겠지만, 이제 막 수출입을 시작한 도매 수입업체나 한인 포워딩 업체와 한 번도 거래해 본 적 없는 이커머스 셀러, 댈러스·포트워스 인랜드포트로 사업을 확장하는 제조업체는 물어볼 단톡방이 없어서 구글로 검색합니다. 웹사이트는 카카오톡 네트워크를 대체하는 게 아니라, 그 네트워크가 닿지 않는 바이어에게 닿는 방법입니다.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "Talk to a Korean-American freight forwarder or customs broker serving the Dallas–Fort Worth inland port, and you will hear a familiar story: most new business still comes through a KakaoTalk group chat with fellow trading-company owners, or a phone call from someone who worked with them at a previous employer. That network is real and durable. But it has a ceiling. A wholesale importer who just relocated to Dallas from Korea, or an e-commerce seller shipping a first pallet of K-beauty product, has no existing relationship to call on — so they search. And when a logistics company's entire online footprint is a Facebook page with a phone number, that search ends with a competitor who published an actual quote form and a license number." },
+        { type: 'h2', content: 'Why freight forwarders lose B2B leads they never see' },
+        { type: 'p', content: "A wholesale or manufacturing buyer researching a new forwarder is trying to answer three questions before they ever pick up the phone: can this company legally move my cargo, have they handled this specific lane before, and how fast will they respond. A site with no license number, no lane pages, and only a 'call us' button answers none of those questions — so the buyer never calls at all. You do not see this as a lost deal. There is no bounced email, no error message. The RFQ simply goes to whichever forwarder's website answered those three questions first, usually a non-Korean competitor with a more built-out site." },
+        { type: 'h2', content: 'What a B2B logistics website actually needs' },
+        { type: 'ul', content: 'The components that turn a cold search into a workable quote request:', items: [
+          'A structured quote-request form, not a phone number alone — origin and destination, cargo type, container size (FCL/LCL) or air weight, approximate volume, incoterm, and target ship date.',
+          'License and credential display in an About or Credentials section: your FMC-licensed NVOCC number if you consolidate ocean freight, your customs broker license number if you file entries, and your bond status.',
+          'Dedicated lane and service pages — Korea to Dallas via Long Beach drayage and rail, Korea to Savannah with inland rail to DFW, and air freight through DFW airport — so a buyer researching one specific route lands on the page built for it, not a generic homepage.',
+          'Real transit-time ranges and a plain-language explanation of the process, instead of "contact us for details." Buyers comparison-shop against forwarders who are willing to show timelines up front.',
+          'Bilingual content — English for the Dallas-based receiving business, Korean for coordinating with a factory or head office shipping the goods out of Korea.',
+          'An instant internal alert the moment a quote form is submitted, so a request from a new buyer does not sit unread in a shared inbox until the next morning.',
+        ] },
+        { type: 'tip', content: "The forwarders who win new B2B business are rarely the cheapest quote — they are the fastest, most complete first response. A quote request that gets a specific, accurate answer within a few hours beats a lower number that arrives two days later after several rounds of 'what exactly are you shipping.' Publishing typical transit times and building a form that collects the right details up front does most of that work automatically." },
+        { type: 'h2', content: 'Why Dallas–Fort Worth matters for Korean import businesses' },
+        { type: 'p', content: "Dallas–Fort Worth has grown into one of the country's busiest inland ports, built around rail intermodal facilities like the Alliance Global Logistics Hub and BNSF and Union Pacific rail yards that pull containers in from the ports of Long Beach and Savannah for regional distribution. That matters for Korean-American import businesses because it means a growing share of cargo destined for Texas, Oklahoma, and the broader South Central US never physically passes through a Korean-owned freight office on the coast — it moves through DFW instead. A Korean-American wholesale, trading, or e-commerce community that has been steadily growing across the Dallas metro (Carrollton, Plano, and the wider DFW suburbs) increasingly needs a forwarder and customs broker who can be found and vetted locally online, not just through a coastal referral network." },
+        { type: 'h2', content: 'Common mistakes Korean freight and customs brokerage companies make online' },
+        { type: 'ul', content: 'What quietly costs you new-client leads:', items: [
+          'Only a phone number, no quote form — a buyer who is not ready to talk yet simply leaves instead of submitting a written request.',
+          'No license numbers displayed — a missing or hard-to-find FMC or customs broker license reads as a red flag to a sophisticated buyer, not as an oversight.',
+          'One page covering "everything we do" instead of lane-specific pages — this hurts both search visibility and the buyer\'s confidence that you actually handle their specific route.',
+          'Korean-only content — a Dallas-based receiving warehouse or retail client with no Korean speaker on staff cannot even confirm you serve their lane.',
+          'No mention of typical transit times or process — forcing every serious buyer to call three forwarders just to compare basic timelines.',
+        ] },
+        { type: 'cta', content: "ZOE LUMOS builds bilingual, quote-ready websites for Korean-American freight forwarders, customs brokers, and logistics companies across the US — structured RFQ forms, license and credential pages, lane-specific landing pages, and everything registered in YOUR name. Free consultation in Korean or English: email info@zoelumos.com or reach us on KakaoTalk (http://pf.kakao.com/_xhxdxmlX/chat)." },
+      ],
+      ko: [
+        { type: 'intro', content: '댈러스·포트워스 인랜드포트에서 일하는 한인 포워딩·통관대행업체 사장님께 새 거래가 어떻게 들어오는지 물어보면, 익숙한 대답이 돌아옵니다. 대부분 무역업체 사장님들끼리의 카카오톡 단톡방이나, 예전 직장에서 알던 사람의 전화로 시작된다는 것이죠. 그 네트워크는 실재하고 견고합니다. 하지만 천장이 있습니다. 한국에서 막 댈러스로 진출한 도매 수입업체나, K-뷰티 제품 첫 팔레트를 처음 선적하는 이커머스 셀러에게는 전화할 기존 인맥이 없습니다 — 그래서 검색을 합니다. 그리고 물류회사의 온라인 존재감이 전화번호 하나 적힌 페이스북 페이지가 전부라면, 그 검색은 실제 견적 폼과 라이선스 번호를 게시해 둔 경쟁사에게로 끝납니다.' },
+        { type: 'h2', content: '포워딩 업체가 눈치채지 못한 채 놓치는 B2B 리드' },
+        { type: 'p', content: '새 포워더를 찾는 도매·제조 바이어는 전화를 걸기 전에 세 가지 질문에 대한 답을 먼저 찾습니다. 이 업체가 내 화물을 합법적으로 운송할 수 있는가, 이 항로를 다뤄본 경험이 있는가, 얼마나 빨리 응답하는가. 라이선스 번호도 없고, 항로별 페이지도 없고, "전화주세요" 버튼만 있는 사이트는 이 세 질문 중 어느 것에도 답하지 못합니다 — 그래서 바이어는 아예 전화를 걸지 않습니다. 사장님은 이걸 놓친 거래로 인지하지도 못합니다. 반송된 이메일도, 에러 메시지도 없습니다. 그 견적 요청은 그냥 이 세 질문에 먼저 답해준 다른 포워딩 업체의 웹사이트로 넘어갈 뿐이고, 대개는 사이트가 더 잘 갖춰진 비한인계 경쟁사입니다.' },
+        { type: 'h2', content: 'B2B 물류회사 웹사이트에 실제로 필요한 것' },
+        { type: 'ul', content: '낯선 검색을 실행 가능한 견적 요청으로 바꾸는 요소들:', items: [
+          '전화번호 하나가 아니라 구조화된 견적 요청 폼 — 출발지·도착지, 화물 종류, 컨테이너 사이즈(FCL/LCL)나 항공 중량, 대략적인 물량, 인코텀즈, 희망 선적일.',
+          '회사 소개나 자격 요건 섹션에 라이선스·자격 명시 — 해상 화물을 컨솔한다면 FMC 라이선스 NVOCC 번호, 수입 신고를 직접 한다면 통관사 라이선스 번호, 그리고 본드 상태.',
+          '항로·서비스별 전용 페이지 — 롱비치 경유 드레이지·철도로 댈러스까지, 서배나 경유 내륙 철도로 DFW까지, DFW 공항을 통한 항공 화물까지. 특정 항로를 검색한 바이어가 일반 홈페이지가 아니라 그 항로 전용 페이지로 들어오게 합니다.',
+          '"자세한 내용은 문의주세요" 대신 실제 운송 기간 범위와 평문 프로세스 설명 — 바이어는 미리 일정을 보여주는 포워더끼리 비교합니다.',
+          '이중언어 콘텐츠 — 댈러스 현지에서 화물을 받는 업체를 위한 영어, 한국에서 화물을 보내는 공장·본사와의 조율을 위한 한국어.',
+          '견적 폼 제출 즉시 가는 사내 알림 — 새 바이어의 요청이 다음 날 아침까지 공유 편지함에 방치되지 않도록.',
+        ] },
+        { type: 'tip', content: '새 B2B 거래를 따내는 포워더는 대부분 가장 싼 견적을 낸 곳이 아니라, 가장 빠르고 완성도 있게 첫 응답을 준 곳입니다. 몇 시간 안에 구체적이고 정확한 답을 주는 견적이, "정확히 뭘 보내시는 거예요"를 몇 차례 주고받은 뒤 이틀 후에 도착한 더 낮은 숫자를 이깁니다. 평균 운송 기간을 미리 게시하고, 필요한 정보를 처음부터 받는 폼을 만들어두면 이 일의 대부분이 자동으로 처리됩니다.' },
+        { type: 'h2', content: '댈러스·포트워스가 한인 수입 비즈니스에 중요한 이유' },
+        { type: 'p', content: '댈러스·포트워스는 미국에서 가장 분주한 인랜드포트 중 하나로 성장했습니다. 얼라이언스 글로벌 로지스틱스 허브 같은 철도 인터모달 시설, 그리고 롱비치와 서배나 항구에서 들어온 컨테이너를 지역 유통을 위해 끌어오는 BNSF·유니언퍼시픽 철도 야적장이 그 중심입니다. 이건 한인 수입 비즈니스에 중요한 의미를 갖습니다. 텍사스, 오클라호마, 그리고 더 넓은 사우스센트럴 지역으로 향하는 화물의 점점 더 많은 비중이 해안의 한인 포워딩 사무실을 물리적으로 거치지 않고 DFW를 통해 이동한다는 뜻이기 때문입니다. 댈러스 메트로(캐롤턴, 플레이노, 그리고 더 넓은 DFW 교외 지역)에서 꾸준히 성장해 온 한인 도매·무역·이커머스 커뮤니티는 해안 지역 소개 네트워크만이 아니라, 온라인에서 직접 찾고 검증할 수 있는 현지 포워더와 통관사를 점점 더 필요로 합니다.' },
+        { type: 'h2', content: '한인 포워딩·통관대행업체가 온라인에서 자주 하는 실수' },
+        { type: 'ul', content: '조용히 새 고객 리드를 갉아먹는 것들:', items: [
+          '전화번호만 있고 견적 폼이 없음 — 아직 통화할 준비가 안 된 바이어는 서면 요청을 남기는 대신 그냥 이탈합니다.',
+          '라이선스 번호 미게시 — FMC나 통관사 라이선스가 없거나 찾기 어려우면, 노련한 바이어에게는 단순 누락이 아니라 위험 신호로 읽힙니다.',
+          '"우리가 하는 모든 일"을 한 페이지에 담기 — 항로별 전용 페이지가 없으면 검색 노출도, 사장님 업체가 실제로 그 항로를 다룬다는 바이어의 확신도 떨어집니다.',
+          '한국어 콘텐츠만 있음 — 한국어 화자가 없는 댈러스 현지 창고·리테일 고객은 사장님 업체가 자신들의 항로를 취급하는지조차 확인할 수 없습니다.',
+          '평균 운송 기간이나 프로세스 설명이 없음 — 진지한 바이어라면 기본 일정을 비교해보려고 포워더 세 곳에 일일이 전화를 걸어야 합니다.',
+        ] },
+        { type: 'cta', content: 'ZOE LUMOS는 미국 전역의 한인 포워딩·통관대행·물류 업체를 위한 이중언어 견적 준비형 웹사이트를 만듭니다 — 구조화된 RFQ 폼, 라이선스·자격 요건 페이지, 항로별 랜딩 페이지, 그리고 전부 사장님 명의로 등록까지. 한국어/영어 무료 상담: info@zoelumos.com 이메일 또는 카카오톡(http://pf.kakao.com/_xhxdxmlX/chat)으로 편하게 문의하세요.' },
+      ],
+    },
+  },
 ]
