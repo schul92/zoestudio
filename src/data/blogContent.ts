@@ -13429,6 +13429,106 @@ export const blogContent: BlogPost[] = [
     },
   },
   // ─────────────────────────────────────────────────────────────────
+  // 2026-09-12 — B2B trust/compliance angle (least-covered rotation slot):
+  // domain-matched company email + real website as vendor fraud-risk
+  // screening, for Korean-American Tier 1/2/3 auto-parts suppliers around
+  // Montgomery, Alabama (HMMA) and the broader AL automotive corridor.
+  // Distinct from the Georgia RFQ-intake post: focuses on the trust/
+  // verification layer that has to exist before an RFQ is even trusted.
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'b2b-auto-supplier-domain-email-trust-alabama-2026',
+    date: '2026-09-12',
+    updatedDate: '2026-09-12',
+    readTime: 9,
+    category: { en: 'Strategy', ko: '전략' },
+    title: {
+      en: "Your Gmail Address Is Costing You Contracts: Website & Email Trust for Alabama's Korean Auto-Parts Suppliers (2026)",
+      ko: '지메일 주소 때문에 계약을 놓치고 있습니다 — 앨라배마 한인 자동차 부품 협력사를 위한 웹사이트·이메일 신뢰 가이드 (2026)',
+    },
+    metaDescription: {
+      en: "Korean-American Tier 1/2/3 auto-parts suppliers around Montgomery, Alabama increasingly get held up in vendor approval before a quote is ever discussed, because a free Gmail or Naver email address fails basic procurement fraud-risk screening. What OEM vendor vetting actually checks, and how a real company website and domain email fix it.",
+      ko: '몽고메리 앨라배마 일대의 한인 1·2·3차 자동차 부품 협력사들이 견적 논의를 시작하기도 전에 벤더 승인 단계에서 막히는 일이 늘고 있습니다 — 무료 지메일이나 네이버 이메일 주소가 기본적인 구매 사기 위험 심사를 통과하지 못하기 때문입니다. OEM 벤더 검증이 실제로 무엇을 확인하는지, 그리고 제대로 된 회사 웹사이트와 도메인 이메일이 어떻게 이를 해결하는지 알려드립니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'Can an established supplier that has shipped parts to the same OEM for years really run into trouble now because of an email address?',
+          ko: '우리 회사는 이미 몇 년째 같은 OEM에 납품하고 있는데, 이제 와서 이메일 주소 때문에 문제가 생길 수 있나요?',
+        },
+        a: {
+          en: "Yes, and it usually isn't about the relationship you already have — it's about the vendor re-certification and third-party risk reviews procurement and finance departments now run on a recurring basis, often annually, independent of how long you've supplied them. These reviews increasingly follow standardized supplier-risk questionnaires that flag a mismatch between your legal entity name and a free email domain (gmail.com, naver.com) as a fraud indicator, because that exact mismatch is the signature of business-email-compromise scams that impersonate real suppliers to redirect payments. A long relationship does not exempt you from a newer compliance policy — it just means nobody has run the newer check on your file yet.",
+          ko: '네, 그럴 수 있습니다. 그리고 보통 문제는 기존 거래 관계가 아니라, 구매팀과 재무팀이 거래 기간과 상관없이 정기적으로 — 흔히 매년 — 돌리는 벤더 재인증·제3자 리스크 심사입니다. 이 심사는 점점 더 표준화된 공급업체 리스크 설문지를 따르는데, 이 설문지는 법인명과 무료 이메일 도메인(gmail.com, naver.com)이 일치하지 않는 것을 사기 신호로 표시합니다 — 바로 이 불일치가 실제 공급업체를 사칭해 대금을 가로채는 비즈니스 이메일 사기(BEC)의 전형적인 특징이기 때문입니다. 오래된 거래 관계가 새로운 컴플라이언스 정책에서 우리 회사를 면제해 주지는 않습니다 — 단지 아직 그 새 심사가 우리 회사 파일에 적용되지 않았을 뿐입니다.',
+        },
+      },
+      {
+        q: {
+          en: "We already have a Naver blog and a Gmail account for the business — isn't that enough of an online presence for a supplier that mostly deals B2B, not consumers?",
+          ko: '이미 회사용 네이버 블로그와 지메일 계정이 있는데, 소비자가 아니라 B2B 위주로 거래하는 협력사에게는 그 정도면 충분한 온라인 존재감 아닌가요?',
+        },
+        a: {
+          en: "It isn't, because a Naver blog and a Gmail account answer a consumer's question (\"does this business seem real\") but fail the specific checks a procurement or accounts-payable department runs, which look for a company website on a domain that matches your legal entity name, a matching @yourcompany.com email for anyone requesting payment changes or sending invoices, and basic technical signals like SPF, DKIM, and DMARC email authentication that prove a message actually originated from your domain. None of that exists on a free blog or a Gmail inbox, so a buyer's compliance team simply cannot verify you the way their policy requires, no matter how strong the relationship feels informally.",
+          ko: '충분하지 않습니다. 네이버 블로그와 지메일 계정은 소비자의 질문("이 업체가 진짜인가?")에는 답이 되지만, 구매팀이나 매입채무팀이 실제로 확인하는 항목은 다릅니다 — 법인명과 일치하는 도메인의 회사 웹사이트, 대금 변경이나 인보이스를 요청하는 담당자의 @회사도메인.com 이메일, 그리고 그 메일이 실제로 해당 도메인에서 발송됐음을 증명하는 SPF·DKIM·DMARC 같은 기본 이메일 인증 기술입니다. 이 중 어느 것도 무료 블로그나 지메일 편지함에는 존재하지 않기 때문에, 거래 관계가 아무리 끈끈하게 느껴져도 바이어 측 컴플라이언스 팀은 정책이 요구하는 방식으로 우리 회사를 검증할 수가 없습니다.',
+        },
+      },
+      {
+        q: {
+          en: "Setting up a company website and domain email sounds expensive and slow for a mid-size parts supplier. What's actually the minimum that clears vendor screening?",
+          ko: '중소 규모 부품 협력사 입장에서 회사 웹사이트와 도메인 이메일을 새로 갖추는 게 비싸고 오래 걸릴 것 같은데, 벤더 심사를 통과하려면 최소한 뭐가 필요한가요?',
+        },
+        a: {
+          en: "The minimum is smaller than most owners expect: a registered domain matching your legal entity name, a handful of pages (company overview, certifications, capabilities, and a real contact page with a physical address), and Google Workspace or Microsoft 365 mailboxes on that domain for anyone who touches invoices, purchase orders, or payment details — typically a one-to-two-week project, not a months-long rebuild. The two components that actually clear a fraud-risk screen are the domain-matched email and a working, indexed website; everything else (a blog, case studies, a polished design) is worth doing eventually, but it isn't what a vendor questionnaire is actually checking.",
+          ko: '대부분의 사장님이 생각하는 것보다 최소 기준은 작습니다 — 법인명과 일치하는 등록 도메인, 몇 개의 페이지(회사 소개, 인증, 생산 역량, 실제 주소가 있는 연락처 페이지), 그리고 인보이스·발주서·대금 정보를 다루는 모든 직원을 위한 그 도메인 기반 Google Workspace 또는 Microsoft 365 메일함이면 됩니다 — 보통 몇 달짜리 재구축이 아니라 1~2주짜리 작업입니다. 사기 위험 심사를 실제로 통과시키는 요소는 도메인과 일치하는 이메일, 그리고 실제로 작동하고 검색에 노출되는 웹사이트, 이 두 가지입니다. 블로그, 사례 연구, 세련된 디자인 같은 나머지는 언젠가 하면 좋지만 벤더 설문지가 실제로 확인하는 항목은 아닙니다.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "When Hyundai Motor Manufacturing Alabama opened its Montgomery plant in 2005, it pulled a wave of Korean-American Tier 1, 2, and 3 auto-parts suppliers into Central Alabama almost overnight, many of them standing up a US subsidiary fast to meet the OEM's supply timeline. Two decades later, a lot of those companies still run the way they started: a real factory floor, real production, and a company email that's still a personal Gmail or Naver account because \"everyone we deal with already knows us.\" That worked for years. It is starting not to work, and the reason has nothing to do with the parts themselves — it's an email address, and a company website that either doesn't exist or hasn't been touched since it was built." },
+        { type: 'h2', content: "Why now, and why an email address: the rise of vendor fraud-risk screening" },
+        { type: 'p', content: "Business email compromise — a scam where a fraudster impersonates a real supplier, often through a free or look-alike email address, to redirect an invoice payment to a different bank account — has become one of the most common and costly categories of corporate fraud the FBI's Internet Crime Complaint Center tracks. In response, procurement and accounts-payable departments at large manufacturers have rolled out standardized vendor-risk screening, frequently modeled on frameworks like the Standardized Information Gathering (SIG) questionnaire, that specifically checks whether the email domain a supplier communicates from matches its legal business name and website. A supplier whose invoices and purchase-order confirmations come from a gmail.com or naver.com address looks, to that screening process, indistinguishable from the exact fraud pattern it exists to catch — regardless of how many years of real parts shipments back the relationship." },
+        { type: 'h2', content: "What a company website actually has to prove" },
+        { type: 'p', content: "The website itself is not the point — what it proves is the point. A buyer's compliance team is checking whether a real, findable company sits behind the name on the purchase order: a registered domain, a physical address that matches your state filings, and a digital paper trail that existed before this particular deal came up. A one-page site thrown together years ago and never updated raises the same question a missing site does, because domain age and content freshness are both signals a risk review checks." },
+        { type: 'ul', content: 'What actually needs to be in place to clear a standard vendor-risk review:', items: [
+          "A company domain name matching your legal entity name exactly, registered to the business — not a founder's personal name or a generic reseller domain",
+          "@yourcompany.com email addresses for everyone who sends invoices, requests payment or banking changes, or signs quotes — never a free-provider address for anything money-related",
+          "SPF, DKIM, and DMARC records configured on that domain, so a receiving mail server can verify a message actually came from you, not a spoofed look-alike — this alone stops most impersonation attempts before a human ever sees them",
+          "A company overview page stating your legal entity name, physical facility address, and years in operation",
+          "An ISO 9001 or IATF 16949 certification page, since many buyers filter suppliers by certification before an RFQ is even opened",
+          "A real contact page with an address that matches your official state filings, not just a phone number or a message box",
+        ] },
+        { type: 'tip', content: "Domain-matched email is usually the fastest fix on this list: migrating your team to Google Workspace or Microsoft 365 on your own domain, with SPF/DKIM/DMARC configured correctly, is typically a same-week project. It is also cheap insurance against a far more expensive problem — a purchase order or payment release stuck in compliance review while a plant floor waits on a shipment." },
+        { type: 'h2', content: "Trust is the foundation an RFQ process sits on" },
+        { type: 'p', content: "Once a buyer's compliance check clears you, how you handle the actual quote request still matters — a structured RFQ intake, fast acknowledgment, and clear capability information all shorten the distance between a buyer's search and an awarded order. But none of that matters if the vendor file never clears the first gate. Get the trust layer right first: domain-matched email, a real website, and certifications a buyer can verify before they ever have to ask you for them." },
+        { type: 'h2', content: "A note on Alabama's automotive supplier corridor" },
+        { type: 'p', content: "Central Alabama's Korean-American parts-supply community grew up around Hyundai's Montgomery assembly plant, but it doesn't stop there. Kia's assembly plant sits just across the state line in West Point, Georgia, pulling a second, overlapping wave of Tier 1 and Tier 2 Korean suppliers into Auburn and Opelika on the Alabama side of that border. Mercedes-Benz has manufactured vehicles in Vance, in Tuscaloosa County, since 1997, adding a third OEM anchor to the state's automotive footprint. A supplier serving any combination of these plants is increasingly being screened by finance and procurement teams that never meet you in person and have never heard of your company by reputation — which is exactly the audience a real, verifiable web presence is built for." },
+        { type: 'cta', content: "ZOE LUMOS builds bilingual, verifiable company websites and sets up domain-matched business email (with SPF/DKIM/DMARC configured correctly) for Korean-American manufacturers and auto-parts suppliers across the US — everything registered in your company's name, built to clear vendor-risk screening, not just look presentable. Free consultation in Korean or English: email info@zoelumos.com or reach us on KakaoTalk (http://pf.kakao.com/_xhxdxmlX/chat)." },
+      ],
+      ko: [
+        { type: 'intro', content: "2005년 현대자동차 앨라배마 공장(HMMA)이 몽고메리에 문을 열었을 때, 이 공장은 거의 하룻밤 사이에 한인 1차·2차·3차 자동차 부품 협력사들의 물결을 중앙 앨라배마로 끌어들였습니다. 그중 많은 업체가 OEM의 납품 일정을 맞추기 위해 미국 법인을 서둘러 세웠습니다. 20년이 지난 지금도 그 업체들 중 상당수는 처음 시작할 때 방식 그대로 운영되고 있습니다 — 실제 생산 현장, 실제 생산량, 그리고 여전히 개인 지메일이나 네이버 계정으로 남아 있는 회사 이메일. \"거래하는 사람들은 다 우리를 이미 알고 있으니까요.\" 이 방식은 오랫동안 통했습니다. 하지만 이제 통하지 않기 시작했고, 이유는 부품 자체와는 아무 상관이 없습니다 — 이메일 주소, 그리고 아예 없거나 만든 이후 손댄 적 없는 회사 웹사이트 때문입니다." },
+        { type: 'h2', content: "왜 지금, 왜 이메일 주소인가 — 벤더 사기 위험 심사의 등장" },
+        { type: 'p', content: "비즈니스 이메일 사기(BEC) — 사기범이 실제 공급업체를 사칭해, 흔히 무료 이메일이나 비슷하게 보이는 주소로 인보이스 대금을 다른 계좌로 돌리게 만드는 수법 — 는 FBI 인터넷범죄신고센터(IC3)가 추적하는 기업 사기 유형 중 가장 흔하고 피해 규모가 큰 축에 속하게 됐습니다. 그 대응으로 대형 제조업체의 구매·매입채무 부서들은 표준화된 벤더 리스크 심사를 도입했고, 흔히 표준정보수집(SIG) 설문지 같은 프레임워크를 기반으로 공급업체가 사용하는 이메일 도메인이 법인명·웹사이트와 일치하는지를 구체적으로 확인합니다. 인보이스와 발주 확인서를 gmail.com이나 naver.com 주소로 보내는 협력사는, 이 심사 절차의 눈에는 몇 년치 실제 납품 실적이 있든 없든 그 심사가 잡아내려는 사기 패턴과 구분되지 않게 보입니다." },
+        { type: 'h2', content: "회사 웹사이트가 실제로 증명해야 하는 것" },
+        { type: 'p', content: "웹사이트 자체가 목적이 아닙니다 — 그것이 증명하는 내용이 목적입니다. 바이어 측 컴플라이언스 팀은 발주서에 적힌 이름 뒤에 실제로 찾을 수 있는 회사가 있는지를 확인합니다 — 등록된 도메인, 주 정부 등록 서류와 일치하는 실제 주소, 그리고 이번 거래가 시작되기 전부터 존재했던 디지털 흔적입니다. 몇 년 전에 대충 만들고 한 번도 손대지 않은 한 페이지짜리 사이트는, 사이트가 아예 없는 것과 똑같은 의문을 불러일으킵니다 — 도메인 생성 연도와 콘텐츠의 최신성 모두 리스크 심사가 확인하는 신호이기 때문입니다." },
+        { type: 'ul', content: '표준 벤더 리스크 심사를 통과하려면 실제로 갖춰야 하는 것:', items: [
+          "법인명과 정확히 일치하고, 회사 명의로 등록된 도메인 — 대표자 개인 이름이나 범용 리셀러 도메인이 아니어야 합니다",
+          "인보이스 발송, 대금·계좌 변경 요청, 견적서 서명을 하는 모든 담당자를 위한 @회사도메인.com 이메일 — 돈과 관련된 어떤 것도 무료 이메일 제공자 주소로 처리해서는 안 됩니다",
+          "해당 도메인에 설정된 SPF·DKIM·DMARC 레코드 — 수신 메일 서버가 그 메일이 사칭이 아니라 실제로 우리 회사에서 온 것임을 검증할 수 있게 해줍니다. 이 하나만으로도 대부분의 사칭 시도가 사람 눈에 띄기도 전에 걸러집니다",
+          "법인명, 실제 생산 시설 주소, 운영 연수를 명시한 회사 소개 페이지",
+          "ISO 9001 또는 IATF 16949 인증 페이지 — 많은 바이어가 RFQ를 열어보기도 전에 인증 여부로 공급사를 먼저 걸러냅니다",
+          "전화번호나 문의 상자 하나가 아니라, 주 정부 등록 서류와 일치하는 주소가 있는 실제 연락처 페이지",
+        ] },
+        { type: 'tip', content: "이 목록에서 보통 가장 빨리 고칠 수 있는 건 도메인 기반 이메일입니다. 우리 회사 도메인으로 Google Workspace나 Microsoft 365로 팀 전체를 옮기고 SPF·DKIM·DMARC를 제대로 설정하는 작업은 보통 일주일 안에 끝납니다. 그리고 이건 훨씬 더 비싼 문제 — 생산 라인이 출하를 기다리는 동안 발주서나 대금 지급이 컴플라이언스 심사에 걸려 멈춰버리는 상황 — 에 대한 값싼 보험이기도 합니다." },
+        { type: 'h2', content: "신뢰는 RFQ 프로세스 전체가 딛고 서는 기반입니다" },
+        { type: 'p', content: "바이어의 컴플라이언스 심사를 통과한 다음에도, 실제 견적 요청을 어떻게 처리하는지는 여전히 중요합니다 — 구조화된 RFQ 접수, 빠른 접수 확인, 명확한 생산 역량 정보 모두 바이어의 검색과 실제 수주 사이의 거리를 줄여줍니다. 하지만 벤더 파일이 첫 관문조차 통과하지 못하면 그중 어느 것도 소용이 없습니다. 도메인 기반 이메일, 실제 웹사이트, 그리고 바이어가 직접 물어보기 전에 확인할 수 있는 인증 — 신뢰라는 기반부터 먼저 갖추세요." },
+        { type: 'h2', content: "앨라배마 자동차 부품 협력사 벨트에 대한 참고" },
+        { type: 'p', content: "중앙 앨라배마의 한인 부품 공급 커뮤니티는 현대차 몽고메리 조립 공장을 중심으로 성장했지만, 거기서 끝나지 않습니다. 기아차 조립 공장은 주 경계 바로 건너 조지아주 웨스트포인트에 있어서, 앨라배마 쪽 국경 지역인 오번과 오필리카로 또 하나의 겹치는 1차·2차 한인 협력사 물결을 끌어들였습니다. 메르세데스-벤츠는 1997년부터 터스컬루사 카운티 밴스에서 차량을 생산해 왔고, 이는 앨라배마 자동차 산업 지형에 세 번째 OEM 축을 더합니다. 이 공장들 중 어느 조합이든 납품하는 협력사는, 우리 회사를 직접 만난 적도 없고 평판으로 들어본 적도 없는 재무·구매팀에게 점점 더 많이 심사받고 있습니다 — 그리고 그것이 바로 실제로 검증 가능한 온라인 존재감이 필요한 이유입니다." },
+        { type: 'cta', content: "ZOE LUMOS는 미국 전역의 한인 제조업체·자동차 부품 협력사를 위해 이중언어 회사 웹사이트를 만들고, SPF·DKIM·DMARC까지 제대로 설정된 도메인 기반 회사 이메일을 세팅해 드립니다 — 전부 회사 명의로 등록되고, 단순히 보기 좋은 사이트가 아니라 벤더 리스크 심사를 실제로 통과하도록 만듭니다. 한국어/영어 무료 상담: info@zoelumos.com 이메일 또는 카카오톡(http://pf.kakao.com/_xhxdxmlX/chat)으로 편하게 문의하세요." },
+      ],
+    },
+  },
+  // ─────────────────────────────────────────────────────────────────
   // Backfilled from the March 2026 SEO batch (PR #37) — multi-platform
   // social strategy. Distinct from `instagram-vs-website-korean-business`
   // (a comparison) and `kakaotalk-channel-vs-instagram-korean-business`.
