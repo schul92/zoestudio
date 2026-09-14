@@ -55,6 +55,7 @@ export const PILLARS = {
       'korean-restaurant-chicago-online-ordering-pos-reviews-2026',
       'korean-restaurant-catering-denver-aurora-2026',
       'korean-restaurant-houston-pos-catering-reviews-2026',
+      'korean-restaurant-delivery-commission-online-ordering-pos-boston-2026',
     ],
   },
   'beauty-wellness': {
@@ -358,4 +359,7 @@ export const POST_TO_PILLAR: Record<string, PillarKey> = {
 
   // 2026-08-17 — Houston F&B: online ordering, POS (Square/Toast/Clover), catering, reviews
   'korean-restaurant-houston-pos-catering-reviews-2026': 'restaurant-marketing',
+
+  // 2026-09-14 — F&B: delivery-app commission bleed → direct online ordering + POS (Boston)
+  'korean-restaurant-delivery-commission-online-ordering-pos-boston-2026': 'restaurant-marketing',
 }

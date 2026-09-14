@@ -13521,4 +13521,119 @@ export const blogContent: BlogPost[] = [
       ],
     },
   },
+  // ─────────────────────────────────────────────────────────────────
+  // 2026-09-14 — F&B rotation: delivery-app commission bleed → direct
+  // online ordering wired into POS (Toast/Clover/Square) + catering funnel
+  // + review-request automation. Boston metro (Allston-Brighton, Cambridge,
+  // Malden) angle to keep the F&B city rotation moving; Annandale/Chicago/
+  // Denver/Houston already covered general online-ordering+POS ground, so
+  // this post's distinct angle is the commission math and the hybrid
+  // "keep delivery apps for discovery, own the repeat order" strategy.
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'korean-restaurant-delivery-commission-online-ordering-pos-boston-2026',
+    date: '2026-09-14',
+    updatedDate: '2026-09-14',
+    readTime: 10,
+    category: { en: 'Restaurant', ko: '레스토랑' },
+    title: {
+      en: 'Boston Korean Restaurants: Cut DoorDash & Uber Eats Commission With Your Own Online Ordering + POS Integration (2026)',
+      ko: '보스턴 한인 식당 사장님 — 배달앱 수수료 줄이는 자체 온라인 주문 + POS 연동 가이드 (2026)',
+    },
+    metaDescription: {
+      en: 'Korean restaurant and bakery owners around Boston, Cambridge, and Malden often lose 15-30% of every delivery order to DoorDash, Uber Eats, and Grubhub commissions, with none of that revenue building a direct customer relationship. Here is how a restaurant’s own online ordering page, wired directly into its Toast, Clover, or Square POS, cuts that commission on repeat orders while still using delivery apps for new-customer discovery.',
+      ko: '보스턴·케임브리지·몰든 일대 한인 식당·베이커리 사장님들은 배달 주문마다 도어대시·우버이츠·그럽허브에 15~30%의 수수료를 내면서도, 그 매출로는 고객과의 직접적인 관계를 전혀 쌓지 못하는 경우가 많습니다. 식당 자체 온라인 주문 페이지를 Toast·Clover·Square POS에 직접 연동해 재주문 고객에게는 수수료 부담을 줄이면서, 신규 고객 발굴에는 배달앱을 계속 활용하는 방법을 정리했습니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'Do we need to stop using DoorDash and Uber Eats to make this work?',
+          ko: '이 방법을 쓰려면 도어대시·우버이츠를 완전히 끊어야 하나요?',
+        },
+        a: {
+          en: "No, you do not need to stop using them. Delivery apps remain useful as a discovery channel for new customers searching something like \"Korean food delivery Boston,\" so most restaurants keep the apps for exactly that purpose while routing customers who have already ordered once toward a self-owned online ordering page that carries no delivery-app commission. Putting the direct-order link on receipt QR codes, a KakaoTalk channel, and the order button on Google Business Profile lets the share of direct orders grow naturally over time without ever having to cut the apps off.",
+          ko: '아니요, 완전히 끊을 필요는 없습니다. 배달앱은 신규 고객이 "보스턴 한식 배달"처럼 검색할 때 발견되는 통로로 계속 유용하기 때문에, 대부분의 식당은 신규 고객 발굴용으로는 배달앱을 유지하면서, 이미 한 번 주문한 재구매 고객은 자체 온라인 주문 페이지로 유도해 수수료 부담 없이 직접 받는 하이브리드 방식을 씁니다. 영수증 QR코드, 카카오톡 채널, 구글 비즈니스 프로필의 주문 버튼에 자체 주문 링크를 걸어두면 시간이 지날수록 직접 주문 비중이 자연스럽게 늘어납니다.',
+        },
+      },
+      {
+        q: {
+          en: "Can our restaurant's existing POS (Toast, Clover, or Square) actually connect to a self-owned online ordering page, or do we need to switch POS systems?",
+          ko: '지금 쓰는 POS(Toast·Clover·Square)에 자체 온라인 주문 페이지를 연동할 수 있나요, 아니면 POS를 바꿔야 하나요?',
+        },
+        a: {
+          en: 'You do not need to switch POS systems to do this. Toast, Clover, and Square each offer an official online-ordering module and API, so an order placed on a restaurant’s own ordering page can be routed straight to the same kitchen printer or KDS (kitchen display system) an in-person or delivery-app order already uses. The three platforms differ in exactly how their online-ordering feature is activated and documented, so the actual setup starts with confirming which POS and plan the restaurant is on and configuring the integration to match it.',
+          ko: 'POS를 바꿀 필요 없이 그대로 연동할 수 있습니다. Toast·Clover·Square 세 곳 모두 공식 온라인 주문 모듈과 API를 제공하고 있어서, 자체 주문 페이지에서 들어온 주문을 배달앱 주문과 똑같이 주방 프린터나 KDS(주방 디스플레이)로 바로 전송되도록 연동할 수 있습니다. 다만 세 플랫폼마다 온라인 주문 기능을 활성화하고 문서화하는 방식이 달라서, 실제 설정 작업은 지금 쓰고 있는 POS와 요금제가 정확히 무엇인지 먼저 확인한 뒤 그에 맞게 진행합니다.',
+        },
+      },
+      {
+        q: {
+          en: 'How much does it cost and how long does it take to set up a direct online ordering system like this?',
+          ko: '이런 자체 온라인 주문 시스템을 만드는 데 비용과 기간이 얼마나 드나요?',
+        },
+        a: {
+          en: 'The exact cost depends on the current POS and website setup, but most Korean restaurants can have the ordering page built, connected to the POS, and linked into KakaoTalk and Google Business Profile within a few weeks, after which the ongoing cost is a standard card-processing fee — commonly around 3% — instead of a 15-30% delivery-app commission. The upfront build cost is typically recovered within the first month or two of commission savings once a meaningful share of repeat orders shifts to the direct page.',
+          ko: '정확한 비용은 이미 쓰고 있는 POS와 웹사이트 상태에 따라 다르지만, 대부분의 한인 식당은 온라인 주문 페이지 구축과 POS 연동, 카카오톡·구글 비즈니스 프로필 연결까지 몇 주 안에 마칠 수 있고, 이후 드는 비용은 배달앱 수수료(15~30%)보다 훨씬 낮은 카드 결제 수수료(보통 3% 안팎) 정도입니다. 재구매 고객 중 상당수가 자체 주문 페이지로 옮겨오면, 초기 구축 비용은 대체로 한두 달치 수수료 절감분 안에서 회수되는 경우가 많습니다.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: 'We keep hearing the same math from Korean restaurant and bakery owners around Boston, Cambridge, and Malden: a $40 order comes in through DoorDash or Uber Eats, and after the delivery commission and the platform’s own card-processing fee, somewhere around $28 to $30 actually lands in the restaurant’s bank account. The customer experiences the order as coming from the app, not from the restaurant, so there is no email, no phone number, and no way to bring that person back next week without paying the same commission all over again. This is not a Boston-specific problem, but the wave of new Korean bakeries, BBQ restaurants, and cafes that have opened across the Allston-Brighton, Cambridge, and Malden corridor over the past couple of years has made the commission bleed a bigger line item than most owners expected when they were focused on the kitchen, not the checkout flow.' },
+        { type: 'h2', content: 'What delivery-app commissions actually cost over a year' },
+        { type: 'p', content: 'Most owners know delivery apps take "a cut," but few have actually added up what that cut totals across a full year of orders, or noticed how many separate fees are layered into it.' },
+        { type: 'ul', content: 'The pieces that stack on top of each other on every delivery-app order:', items: [
+          'Standard commission — DoorDash, Uber Eats, and Grubhub commonly charge 15% to 30% of the order total for delivery orders, depending on the plan and whether the restaurant is enrolled in a "premium" placement tier.',
+          'Marketing and promotion fees — many restaurants are opted into additional sponsored-placement or promotional fees on top of the base commission, often without noticing it until reading a weekly payout report line by line.',
+          'Card processing, again — the platform’s own payment-processing fee is typically layered on top of the commission rather than included inside it.',
+          'Zero customer data — the platform keeps the customer’s phone number, email, and order history; the restaurant sees a first name and an order total, with no way to send a direct text, email, or KakaoTalk promotion.',
+          'No control over visibility — how easily a restaurant is found inside the app depends on that app’s own search algorithm and paid placement, not on the restaurant’s own reviews, SEO, or reputation work.',
+        ] },
+        { type: 'h2', content: 'The fix is not quitting delivery apps — it is building the direct order path next to them' },
+        { type: 'p', content: 'The realistic move for most Korean restaurants is not an all-or-nothing switch. It is running a hybrid: delivery apps stay in place as the channel that gets a restaurant discovered by someone who has never ordered from it before, while a self-owned online ordering page — charging a standard card-processing fee instead of a 15-30% commission — becomes the default for anyone who already knows the restaurant: repeat customers, people who saw an Instagram post, and anyone who scans a QR code on the receipt or the table.' },
+        { type: 'h2', content: 'What a POS-integrated online ordering system actually includes' },
+        { type: 'ul', content: 'The concrete pieces, and the problem each one solves:', items: [
+          'Direct POS integration — Toast, Clover, and Square each offer an official online-ordering module that sends orders straight to the kitchen printer or KDS the same way an in-person order would, with no separate tablet to babysit.',
+          'Your own checkout, your own data — every order captures the customer’s name, phone, and email under the restaurant’s own account, building a list that can be messaged directly the next time there is a promotion or a slow Tuesday.',
+          'One link everywhere — the same ordering link works on Instagram, the order button on Google Business Profile, a KakaoTalk channel, and a QR code printed on receipts and table tents.',
+          'Catering as its own funnel — a separate catering request form (headcount, date, event type) that lands directly in the owner’s inbox as a lead, instead of getting buried inside the general order queue.',
+          'Review-request automation — an automatic text or email sent after pickup or delivery asking for a Google review, timed to go out after a smooth order rather than blasted to every customer regardless of how the order actually went.',
+        ] },
+        { type: 'tip', content: 'A rough gut-check: a restaurant doing $15,000 a month in delivery-app orders at a blended 25% commission is handing over roughly $3,750 a month — about $45,000 a year — before that money ever reaches the restaurant’s own account. Moving even half of the repeat-customer volume to a direct ordering page recovers a meaningful piece of that every single month.' },
+        { type: 'h2', content: 'Why this matters specifically around Boston right now' },
+        { type: 'p', content: 'The Allston-Brighton, Cambridge, and Malden corridor sits next to one of the highest concentrations of college students in the country, which means delivery-app usage for late-night and weekend orders runs unusually high — a real advantage for discovery, since students search in English and rarely know a restaurant’s name before the app surfaces it. But that same student-heavy customer base also churns constantly as people graduate and move on, which makes it more valuable, not less, to capture a direct email or KakaoTalk contact from every repeat customer while you have them, rather than relying entirely on an app that resets the relationship to zero the moment someone stops opening it. A bilingual Korean-English ordering page and a well-optimized Google Business Profile matter here specifically because a large share of the search traffic — both from students and from the area’s Korean-American residents — happens in English, not inside a Korean-language app.' },
+        { type: 'h2', content: 'How the rollout actually runs' },
+        { type: 'p', content: 'We start by auditing the restaurant’s current online-ordering and POS setup — which delivery apps are active, what commission tiers apply, and exactly what the current POS supports — without touching anything live yet. From there we build and test the direct ordering page and its POS integration in parallel with the existing delivery-app listings, confirming that orders route correctly to the kitchen printer or KDS during a low-volume window before pushing the link out publicly. Once it is confirmed working, the ordering link goes onto the QR codes, Google Business Profile, Instagram, and the KakaoTalk channel, and the catering form and review-request automation get switched on. Delivery-app listings stay active the entire time — nothing about this requires taking the restaurant off DoorDash or Uber Eats to work.' },
+        { type: 'cta', content: 'Losing too much of every order to delivery-app commissions? ZOE LUMOS builds POS-integrated online ordering pages — wired into Toast, Clover, or Square — along with catering funnels and review-request automation for Korean-American restaurants and bakeries across the US. Free consultation in English or Korean: email info@zoelumos.com or message us on KakaoTalk (http://pf.kakao.com/_xhxdxmlX/chat).' },
+      ],
+      ko: [
+        { type: 'intro', content: '보스턴, 케임브리지, 몰든 일대의 한인 식당·베이커리 사장님들에게서 자주 듣는 계산이 있습니다. 도어대시나 우버이츠로 4만 원(약 40달러)짜리 주문이 들어오면, 배달 수수료와 플랫폼 자체 카드 결제 수수료를 떼고 나서 실제로 식당 계좌에 들어오는 돈은 2만 8천~3만 원(28~30달러) 정도라는 겁니다. 고객 입장에서는 이 주문이 앱에서 온 것이지 식당에서 온 게 아니기 때문에, 이메일도 전화번호도 남지 않고, 다음 주에 그 고객을 다시 데려오려면 또 같은 수수료를 내야 합니다. 이건 보스턴만의 문제는 아니지만, 지난 몇 년 사이 올스턴-브라이튼, 케임브리지, 몰든 일대에 새로 문을 연 한인 베이커리·BBQ 식당·카페가 늘면서, 주방과 요리에 집중하느라 계산대(체크아웃) 흐름은 미처 신경 쓰지 못했던 사장님들이 예상보다 큰 수수료 출혈을 겪는 경우가 많아졌습니다.' },
+        { type: 'h2', content: '배달앱 수수료가 1년 동안 실제로 얼마나 나가는가' },
+        { type: 'p', content: '대부분의 사장님은 배달앱이 "수수료를 뗀다"는 건 알지만, 1년치 주문 전체에 걸쳐 그 수수료가 얼마나 쌓이는지, 그리고 그 안에 몇 가지 항목이 겹겹이 붙어 있는지는 정확히 계산해 본 적이 없는 경우가 많습니다.' },
+        { type: 'ul', content: '배달앱 주문 하나마다 겹겹이 쌓이는 항목들:', items: [
+          '기본 수수료 — 도어대시·우버이츠·그럽허브는 요금제와 "프리미엄" 노출 등급 가입 여부에 따라 보통 주문 금액의 15~30%를 수수료로 가져갑니다.',
+          '마케팅·광고 노출 수수료 — 많은 식당이 기본 수수료 위에 스폰서 노출·프로모션 수수료까지 별도로 가입되어 있는데, 주간 정산 보고서를 꼼꼼히 읽기 전까지는 이게 별도 항목인지조차 모르는 경우가 흔합니다.',
+          '또 한 번의 카드 결제 수수료 — 플랫폼 자체 결제 처리 수수료는 보통 기본 수수료 안에 포함된 게 아니라 그 위에 추가로 붙습니다.',
+          '고객 데이터는 전혀 남지 않음 — 고객의 전화번호·이메일·주문 이력은 플랫폼이 갖고, 식당은 이름 하나와 주문 금액만 볼 수 있어서 문자·이메일·카카오톡으로 직접 프로모션을 보낼 방법이 없습니다.',
+          '노출 순위를 식당이 통제할 수 없음 — 앱 안에서 식당이 얼마나 잘 보이는지는 식당의 리뷰·SEO·평판 관리가 아니라 그 앱 자체의 검색 알고리즘과 유료 노출에 달려 있습니다.',
+        ] },
+        { type: 'h2', content: '해법은 배달앱을 끊는 게 아니라, 그 옆에 직접 주문 경로를 만드는 것' },
+        { type: 'p', content: '대부분의 한인 식당에게 현실적인 방법은 전부 아니면 전무 식의 전환이 아니라 하이브리드 운영입니다. 배달앱은 한 번도 주문한 적 없는 신규 고객이 식당을 발견하는 통로로 그대로 두고, 15~30% 수수료 대신 표준 카드 결제 수수료만 내는 자체 온라인 주문 페이지를, 이미 식당을 아는 사람 — 재구매 고객, 인스타그램 게시물을 본 사람, 영수증이나 테이블의 QR코드를 스캔한 사람 — 에게는 기본 선택지로 만드는 것입니다.' },
+        { type: 'h2', content: 'POS 연동 온라인 주문 시스템이 실제로 포함하는 것' },
+        { type: 'ul', content: '구체적인 구성 요소와 각각이 해결하는 문제:', items: [
+          'POS 직접 연동 — Toast·Clover·Square 모두 공식 온라인 주문 모듈을 제공해서, 자체 주문 페이지로 들어온 주문이 대면 주문과 똑같이 주방 프린터나 KDS(주방 디스플레이)로 바로 전송되고, 따로 관리해야 할 태블릿이 늘어나지 않습니다.',
+          '내 결제, 내 데이터 — 모든 주문이 식당 자체 계정 아래 고객의 이름·전화번호·이메일을 남겨서, 다음 프로모션이나 손님 없는 화요일에 직접 메시지를 보낼 수 있는 고객 목록이 쌓입니다.',
+          '어디서나 하나의 링크 — 같은 주문 링크를 인스타그램, 구글 비즈니스 프로필의 주문 버튼, 카카오톡 채널, 영수증·테이블에 인쇄된 QR코드에 모두 걸어둘 수 있습니다.',
+          '케이터링을 별도 창구로 분리 — 인원수·날짜·행사 종류를 묻는 별도의 케이터링 문의 양식을 만들어, 일반 주문 대기열에 묻히지 않고 사장님 받은편지함에 리드로 바로 도착하게 합니다.',
+          '리뷰 요청 자동화 — 픽업이나 배달이 끝난 뒤 구글 리뷰를 요청하는 문자·이메일이 자동으로 발송되고, 모든 고객에게 무조건 보내는 게 아니라 주문이 무리 없이 끝났을 때만 발송되도록 타이밍을 맞춥니다.',
+        ] },
+        { type: 'tip', content: '대략적인 감을 잡아보면: 월 배달앱 주문이 1,500만 원(약 1만 5천 달러) 규모이고 평균 수수료가 25%라면, 그 돈이 식당 계좌에 닿기도 전에 매달 약 375만 원(3,750달러) — 연간 약 4,500만 원(4만 5천 달러) — 를 넘겨주고 있는 셈입니다. 재구매 고객 물량의 절반만 자체 주문 페이지로 옮겨도 매달 상당한 금액을 되찾아올 수 있습니다.' },
+        { type: 'h2', content: '왜 지금 보스턴 지역에서 특히 중요한가' },
+        { type: 'p', content: '올스턴-브라이튼, 케임브리지, 몰든 일대는 미국에서 대학생 밀집도가 가장 높은 지역 중 하나와 맞닿아 있어서, 늦은 밤과 주말의 배달앱 주문 비중이 유독 높습니다 — 학생들은 영어로 검색하고 앱이 보여주기 전까지는 식당 이름조차 모르는 경우가 많기 때문에, 이는 발견(discovery) 측면에서 분명한 장점입니다. 하지만 같은 이유로 이 고객층은 졸업과 이사로 계속 물갈이되기 때문에, 그 고객이 곁에 있을 때 이메일이나 카카오톡 연락처를 직접 확보해 두는 일이 오히려 더 중요해집니다 — 누군가 앱을 그만 여는 순간 관계가 완전히 리셋되는 앱에만 전적으로 의존해서는 안 되는 이유입니다. 한국어·영어 이중언어 주문 페이지와 잘 정리된 구글 비즈니스 프로필이 이 지역에서 특히 중요한 이유는, 학생들뿐 아니라 이 지역 한인 주민들의 검색 트래픽 상당수도 한국어 앱이 아니라 영어로 이루어지기 때문입니다.' },
+        { type: 'h2', content: '실제 진행은 어떻게 이루어지나' },
+        { type: 'p', content: '저희는 먼저 식당의 현재 온라인 주문·POS 상태를 감사(audit)합니다 — 어떤 배달앱이 활성화되어 있는지, 어떤 수수료 등급이 적용되는지, 지금 쓰는 POS가 정확히 무엇을 지원하는지를 아무것도 건드리지 않은 채 먼저 파악합니다. 그다음 기존 배달앱 리스팅과 병행해 자체 주문 페이지와 POS 연동을 구축·테스트하고, 손님이 적은 시간대에 주방 프린터나 KDS로 주문이 정확히 전달되는지 확인한 뒤에야 링크를 외부에 공개합니다. 정상 작동이 확인되면 그 주문 링크를 QR코드, 구글 비즈니스 프로필, 인스타그램, 카카오톡 채널에 걸고, 케이터링 문의 양식과 리뷰 요청 자동화도 함께 켭니다. 이 모든 과정 동안 배달앱 리스팅은 그대로 유지됩니다 — 이 시스템이 작동하는 데 도어대시나 우버이츠를 끊을 필요는 전혀 없습니다.' },
+        { type: 'cta', content: '배달앱 수수료로 주문마다 너무 많이 떼이고 계신가요? ZOE LUMOS는 Toast·Clover·Square에 연동되는 POS 통합 온라인 주문 페이지와 케이터링 창구, 리뷰 요청 자동화까지 미국 전역의 한인 식당·베이커리를 위해 구축합니다. 한국어/영어 무료 상담: info@zoelumos.com 이메일 또는 카카오톡(http://pf.kakao.com/_xhxdxmlX/chat)으로 편하게 문의하세요.' },
+      ],
+    },
+  },
 ]
