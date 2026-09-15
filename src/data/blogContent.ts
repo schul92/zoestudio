@@ -13521,4 +13521,98 @@ export const blogContent: BlogPost[] = [
       ],
     },
   },
+  // 2026-09-15 — Cloud & Infrastructure: AWS Auto Scaling + CDN for traffic
+  // spikes (seasonal sales, viral moments) hitting Korean-American e-commerce
+  // and retail brands. Audience rotation: Raleigh–Durham / Research Triangle,
+  // NC — not yet covered by any prior post. Fills the most underrepresented
+  // topic slot: Cloud & Infrastructure has had far fewer recent posts than
+  // B2B trust/email or C2C booking content.
+  {
+    slug: 'aws-auto-scaling-cdn-traffic-spike-korean-ecommerce-raleigh-2026',
+    date: '2026-09-15',
+    updatedDate: '2026-09-15',
+    readTime: 9,
+    category: { en: 'Cloud & Infrastructure', ko: '클라우드 · 인프라' },
+    title: {
+      en: 'Your Site Crashed on Your Biggest Sales Day: AWS Auto-Scaling & CDN for Korean-American E-Commerce (Raleigh–Durham Guide, 2026)',
+      ko: '대박 세일 날 사이트가 멈췄다면 — 한인 이커머스를 위한 AWS 오토스케일링 · CDN 가이드 (롤리-더럼 편, 2026)',
+    },
+    metaDescription: {
+      en: "A Chuseok sale, a viral mention, a Mother's Day flower rush — and the website goes down at the exact moment it should be making the most money. Here is how AWS Auto Scaling and a CloudFront CDN keep a Korean-American e-commerce or retail site running through a traffic spike, and what it actually costs.",
+      ko: '추석 세일, SNS에서 갑자기 터진 순간, 어버이날 꽃 주문 폭주 — 하필 돈을 가장 많이 벌어야 할 그 순간에 사이트가 멈춥니다. AWS 오토스케일링과 CloudFront CDN이 한인 이커머스·리테일 사이트를 트래픽 급증 속에서도 버티게 하는 방법과 실제 비용을 정리했습니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'Why does a website go down or slow to a crawl when traffic suddenly spikes?',
+          ko: '트래픽이 갑자기 몰리면 왜 사이트가 다운되거나 느려지나요?',
+        },
+        a: {
+          en: "Most small business websites run on a single server or a shared hosting plan sized for an average day, and an average day is not what causes the crash — the top 1% of traffic is. When a sale, a press mention, or a viral social post sends ten or twenty times the normal number of visitors at once, that one server runs out of CPU, memory, or database connections and either slows every page load to a crawl or stops responding entirely. Cloud infrastructure with Auto Scaling avoids this by automatically adding more server capacity the moment traffic rises, and removing it once traffic drops back down, so the site is sized for the spike instead of the average.",
+          ko: '대부분의 소규모 비즈니스 웹사이트는 평균적인 하루를 기준으로 만든 서버 하나 또는 공유 호스팅 위에서 돌아가는데, 사이트를 다운시키는 건 그 평균이 아니라 상위 1%의 트래픽입니다. 세일, 언론 노출, 또는 SNS에서 갑자기 화제가 되면서 평소보다 10배, 20배 많은 방문자가 한꺼번에 몰리면, 서버 하나로는 CPU·메모리·데이터베이스 연결이 바닥나서 모든 페이지가 느려지거나 아예 응답을 멈춥니다. 오토스케일링이 적용된 클라우드 인프라는 트래픽이 오르는 순간 자동으로 서버 용량을 늘리고, 다시 내려가면 그만큼 줄여서, 평균이 아니라 급증 상황에 맞춰 사이트 규모를 조절해 이 문제를 막습니다.',
+        },
+      },
+      {
+        q: {
+          en: 'Is moving to AWS Auto Scaling much more expensive than our current hosting?',
+          ko: 'AWS 오토스케일링으로 옮기면 지금 쓰는 호스팅보다 훨씬 비싸지나요?',
+        },
+        a: {
+          en: "Usually not, and it can end up cheaper, because Auto Scaling is pay-for-what-you-use rather than pay-for-peak-capacity-all-year. A site sized to survive Black Friday on a fixed server plan is paying for that peak capacity every single ordinary Tuesday too. With Auto Scaling, the infrastructure runs small and inexpensive on a normal day, scales up automatically for the hours or days traffic is actually high, and scales back down afterward, so the extra cost is concentrated on the days it is actually earning extra revenue. A CDN layer on top typically lowers cost further by serving images and static files from cache instead of the origin server, cutting bandwidth and server load on every visit, not just spikes.",
+          ko: '보통은 아닙니다. 오히려 더 저렴해지는 경우도 많습니다. 오토스케일링은 1년 내내 최고 성수기 기준 용량을 미리 깔아두고 요금을 내는 방식이 아니라, 실제로 쓴 만큼만 내는 방식이기 때문입니다. 고정 서버 플랜으로 블랙프라이데이를 버틸 수 있게 맞춰두면, 평범한 화요일에도 그 최고 용량만큼 요금을 계속 내고 있는 셈입니다. 오토스케일링을 쓰면 평소에는 작고 저렴하게 돌아가다가, 실제로 트래픽이 몰리는 시간·날에만 자동으로 확장되고 끝나면 다시 줄어들어서, 추가 비용이 실제로 추가 매출이 나는 날에 집중됩니다. 그 위에 CDN까지 더하면 이미지·정적 파일을 원본 서버가 아니라 캐시에서 서비스하게 되어, 급증 시점뿐 아니라 평소 방문에서도 대역폭과 서버 부하가 줄어 비용이 한 단계 더 내려가는 경우가 많습니다.',
+        },
+      },
+      {
+        q: {
+          en: 'How do we know if our business actually needs Auto Scaling, or if regular hosting is still fine?',
+          ko: '우리 회사에 오토스케일링이 실제로 필요한지, 아니면 그냥 일반 호스팅으로 충분한지 어떻게 판단하나요?',
+        },
+        a: {
+          en: "The clearest signal is a recurring pattern of predictable spikes — Chuseok or Lunar New Year sales, Mother's Day flower orders, a holiday catering rush, a seasonal product drop — where the site has slowed down or gone down before, or where the team manually upgrades server capacity ahead of a known busy date and downgrades it afterward out of caution. A second signal is exposure to an unpredictable spike: active social media marketing, PR outreach, or a TikTok/Instagram presence with a real chance of a post going viral. If neither applies — steady, predictable daily traffic with no seasonal sales push and no social growth strategy — standard hosting is genuinely fine, and Auto Scaling would be solving a problem that does not exist yet.",
+          ko: '가장 확실한 신호는 반복되는 예측 가능한 급증 패턴입니다 — 추석·설날 세일, 어버이날 꽃 주문, 명절 케이터링 몰림, 시즌 상품 출시 등 이전에 사이트가 느려지거나 다운된 적이 있거나, 바쁜 날을 미리 알고 수동으로 서버 용량을 올렸다가 끝난 뒤 조심스럽게 다시 낮추는 작업을 반복하고 있다면 필요한 신호입니다. 두 번째 신호는 예측하기 어려운 급증에 노출돼 있는 경우입니다 — 적극적인 SNS 마케팅, 언론 홍보, 또는 실제로 화제가 될 가능성이 있는 틱톡·인스타그램 활동을 하고 있다면 해당됩니다. 둘 다 해당하지 않는다면 — 꾸준하고 예측 가능한 일일 트래픽이고 시즌 세일이나 SNS 확장 전략이 없다면 — 일반 호스팅으로도 충분하며, 오토스케일링은 아직 존재하지 않는 문제를 해결하는 셈이 됩니다.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "It happens to a Korean-American e-commerce or retail business every season, somewhere in the country. A Chuseok gift-set sale goes out on the mailing list and Instagram at the same time. A K-food brand gets tagged in a viral video. A florist's Mother's Day pre-order link gets shared in a dozen KakaoTalk group chats at once. Traffic that normally trickles in over a week arrives in three hours instead — and the website, built and hosted for an ordinary day, cannot keep up. Pages take ten seconds to load, the checkout page times out, or the site goes fully unresponsive, right as the largest number of paying customers of the year are trying to hand over their credit card." },
+        { type: 'h2', content: 'Why a normal hosting setup buckles under a spike' },
+        { type: 'p', content: "Most small business websites run on a single server, or a shared hosting plan where many other sites' traffic competes for the same limited resources. That setup is sized around an average day, because an average day is what the owner is paying for month to month, and it works fine right up until it does not. A single server has a fixed ceiling on how many requests it can process at once — once visitors exceed that ceiling, requests queue up, page loads slow down, and the database that stores product inventory and orders becomes a second bottleneck as more shoppers try to check availability and check out simultaneously. None of this shows up as a dramatic outage message. It shows up as a slow, frustrating site that a rushed shopper abandons after ten seconds, on the one day that shopper was actually ready to buy." },
+        { type: 'h2', content: 'What Auto Scaling and a CDN actually change' },
+        { type: 'ul', content: 'The core pieces of infrastructure that let a site absorb a traffic spike instead of buckling under it:', items: [
+          'Auto Scaling Group — automatically launches additional server capacity the moment traffic rises past a set threshold, and shuts it back down once traffic returns to normal, so capacity tracks demand instead of sitting fixed.',
+          'A load balancer — spreads incoming visitors evenly across all active servers, so no single server gets overwhelmed while others sit idle.',
+          'A CDN (CloudFront) — caches images, product photos, and static files at edge locations across the country, so a shopper in Seattle or Charlotte gets those files from a nearby cache instead of a round trip to the origin server, cutting both load time and origin server load on every visit.',
+          "A caching layer (like ElastiCache/Redis) in front of the database — serves frequently requested data (product listings, inventory counts) from fast memory instead of hitting the database on every single page view.",
+          'A managed database with a read replica — separates the read traffic (shoppers browsing) from write traffic (orders being placed), so a browsing surge does not slow down the checkout process for people actually buying.',
+        ] },
+        { type: 'tip', content: "Auto Scaling and a CDN are not an all-or-nothing rebuild. Most sites can add a CDN in front of their existing hosting in a single afternoon with no code changes, and it alone often fixes the worst of the slowdown — the full Auto Scaling setup is worth doing once the CDN is in place and the remaining bottleneck is server capacity itself, not just static file delivery." },
+        { type: 'h2', content: 'How to tell if this is actually worth doing yet' },
+        { type: 'p', content: "This is not infrastructure every small business website needs on day one, and a consultant who tells every client to migrate to AWS immediately is not being honest about the tradeoff. The businesses where it genuinely pays for itself share a pattern: recurring predictable spikes tied to the Korean and broader American retail calendar — Chuseok, Lunar New Year, Mother's Day, Black Friday, a seasonal product launch — where the site has slowed or gone down before, or where someone on the team manually upgrades server capacity ahead of a known busy date out of learned caution. A second, less predictable trigger is active growth on social media or press outreach, where a single viral moment could send a month's worth of traffic in an afternoon with no advance warning. A site with steady, predictable traffic and no seasonal sales push genuinely does not need this yet — and that is a fine answer too." },
+        { type: 'h2', content: 'A note for growing Korean-American businesses around Raleigh–Durham' },
+        { type: 'p', content: "The Research Triangle — Raleigh, Durham, and the surrounding Cary, Apex, and Morrisville area — has grown into one of the faster-growing Korean-American communities in the Southeast, pulled in by the region's semiconductor, biotech, and tech employers and the university and research infrastructure around them. Korean-American e-commerce sellers, grocers, and specialty retailers based here increasingly sell nationwide rather than just to the local community, shipping K-beauty, Korean snacks, and Korea-sourced goods to customers well outside the Triangle. That shift changes what 'enough' infrastructure looks like: a site built to comfortably serve local foot traffic and a modest local customer base needs a different foundation once a national customer base, national ad campaigns, or a viral moment can hit it at any time, from any time zone, with no local warning." },
+        { type: 'cta', content: "ZOE LUMOS builds and manages AWS infrastructure — Auto Scaling, CDN, database architecture, and security — for Korean-American e-commerce, retail, and service businesses across the US. We also design and register everything, website and cloud infrastructure alike, in your name. Free consultation in Korean or English: email info@zoelumos.com or reach us on KakaoTalk (http://pf.kakao.com/_xhxdxmlX/chat)." },
+      ],
+      ko: [
+        { type: 'intro', content: "미국 어딘가에서, 한인 이커머스·리테일 비즈니스에 시즌마다 반복되는 일입니다. 추석 선물세트 세일 메일이 메일링 리스트와 인스타그램에 동시에 나갑니다. K-푸드 브랜드가 화제의 영상에 태그됩니다. 꽃집의 어버이날 사전주문 링크가 여러 개의 카카오톡 단체채팅방에 동시에 공유됩니다. 평소라면 일주일에 걸쳐 천천히 들어올 트래픽이 세 시간 만에 몰려듭니다 — 그리고 평범한 하루를 기준으로 만들고 호스팅한 웹사이트는 그걸 감당하지 못합니다. 페이지 로딩에 10초가 걸리고, 결제 페이지가 타임아웃되거나, 사이트가 아예 응답을 멈춥니다. 하필 1년 중 가장 많은 결제 고객이 카드를 꺼내려는 바로 그 순간에요." },
+        { type: 'h2', content: '일반 호스팅이 트래픽 급증에 버티지 못하는 이유' },
+        { type: 'p', content: "대부분의 소규모 비즈니스 웹사이트는 서버 하나, 또는 다른 여러 사이트의 트래픽과 같은 제한된 자원을 나눠 쓰는 공유 호스팅 위에서 돌아갑니다. 이 구성은 평균적인 하루를 기준으로 만들어져 있습니다 — 사장님이 매달 내는 요금이 바로 그 평균 기준이니까요 — 그리고 문제가 터지기 전까지는 문제없이 잘 돌아갑니다. 서버 하나는 동시에 처리할 수 있는 요청 수에 고정된 한계가 있고, 방문자가 그 한계를 넘어서면 요청이 밀리면서 페이지 로딩이 느려지고, 재고와 주문을 저장하는 데이터베이스도 여러 쇼핑객이 동시에 재고를 확인하고 결제를 시도하면서 두 번째 병목이 됩니다. 이건 극적인 장애 메시지로 나타나지 않습니다. 그냥 느리고 답답한 사이트로 나타나고, 마음이 급한 쇼핑객은 10초 만에 창을 닫아버립니다. 하필 그 쇼핑객이 정말로 살 준비가 되어 있었던 바로 그날에요." },
+        { type: 'h2', content: '오토스케일링과 CDN이 실제로 바꾸는 것' },
+        { type: 'ul', content: '사이트가 트래픽 급증에 무너지지 않고 버티게 해주는 핵심 인프라 구성 요소:', items: [
+          '오토스케일링 그룹 — 트래픽이 설정한 기준을 넘는 순간 자동으로 추가 서버 용량을 띄우고, 트래픽이 평소 수준으로 돌아오면 다시 줄입니다. 용량이 고정돼 있지 않고 수요를 따라갑니다.',
+          '로드밸런서 — 들어오는 방문자를 활성화된 모든 서버에 고르게 분산시켜서, 특정 서버 하나만 과부하 걸리고 다른 서버는 놀지 않게 합니다.',
+          'CDN(CloudFront) — 이미지, 제품 사진, 정적 파일을 전국 곳곳의 엣지 위치에 캐싱해둬서, 시애틀이나 샬럿의 쇼핑객이 원본 서버까지 왕복하지 않고 가까운 캐시에서 파일을 받아갑니다. 로딩 속도와 원본 서버 부하가 평소 방문에서도 함께 줄어듭니다.',
+          '데이터베이스 앞단의 캐싱 레이어(ElastiCache/Redis 등) — 자주 요청되는 데이터(상품 목록, 재고 수량)를 페이지 조회마다 데이터베이스를 두드리는 대신 빠른 메모리에서 바로 서비스합니다.',
+          '읽기 복제본(read replica)을 둔 관리형 데이터베이스 — 둘러보는 트래픽(읽기)과 주문이 들어가는 트래픽(쓰기)을 분리해서, 둘러보는 인원이 몰려도 실제로 결제하려는 고객의 체크아웃이 느려지지 않게 합니다.',
+        ] },
+        { type: 'tip', content: "오토스케일링과 CDN이 전부 아니면 전무인 대공사는 아닙니다. 대부분의 사이트는 기존 호스팅 앞단에 코드 수정 없이 반나절 만에 CDN을 추가할 수 있고, 그것만으로도 가장 심각한 저속 문제가 해결되는 경우가 많습니다. 전체 오토스케일링 구성은 CDN을 먼저 붙여본 뒤, 남은 병목이 정적 파일 전송이 아니라 서버 용량 자체일 때 진행할 가치가 있습니다." },
+        { type: 'h2', content: '지금 이게 정말 필요한지 판단하는 법' },
+        { type: 'p', content: "모든 소규모 비즈니스 웹사이트가 처음부터 이런 인프라가 필요한 건 아니며, 모든 고객에게 무조건 AWS로 옮기라고 말하는 컨설턴트는 트레이드오프에 정직하지 않은 것입니다. 실제로 이게 값어치를 하는 비즈니스에는 공통된 패턴이 있습니다 — 추석, 설날, 어버이날, 블랙프라이데이, 시즌 상품 출시 등 한인·미국 소매 캘린더에 반복적으로 걸리는 예측 가능한 급증이 있고, 이전에 사이트가 느려지거나 다운된 적이 있거나, 바쁠 걸 미리 아는 날짜를 앞두고 팀 누군가가 경험으로 배운 조심성 때문에 수동으로 서버 용량을 올리고 있다면 해당됩니다. 두 번째로, 덜 예측 가능한 계기는 SNS나 언론 홍보에서 적극적으로 성장하고 있는 경우입니다. 사전 경고 없이 한순간의 화제가 한 달치 트래픽을 오후 한나절에 몰고 올 수 있으니까요. 트래픽이 꾸준하고 예측 가능하며 시즌 세일 푸시가 없는 사이트라면 아직 정말 필요 없을 수 있고, 그것도 충분히 타당한 답입니다." },
+        { type: 'h2', content: '롤리-더럼 지역에서 성장하는 한인 비즈니스를 위한 참고' },
+        { type: 'p', content: '리서치 트라이앵글 — 롤리, 더럼, 그리고 주변의 캐리, 에이펙스, 모리스빌 일대 — 은 반도체·바이오테크·테크 기업들과 그 주변의 대학·연구 인프라에 이끌려, 남동부에서 가장 빠르게 성장하는 한인 커뮤니티 중 하나가 됐습니다. 이 지역에 자리 잡은 한인 이커머스 셀러, 마켓, 전문 리테일 업체들은 이제 동네 커뮤니티만이 아니라 전국 단위로 판매하는 경우가 늘고 있습니다. K-뷰티, 한국 과자, 한국에서 소싱한 상품을 트라이앵글 밖 먼 지역 고객에게까지 배송하는 것이죠. 이런 변화는 "충분한" 인프라의 기준 자체를 바꿔놓습니다 — 동네 방문객과 소규모 지역 고객층을 무난히 감당하도록 만든 사이트는, 전국 고객층과 전국 단위 광고, 그리고 사전 경고 없이 어느 시간대에서든 몰릴 수 있는 화제의 순간을 마주하게 되면 다른 토대가 필요해집니다.' },
+        { type: 'cta', content: 'ZOE LUMOS는 미국 전역의 한인 이커머스·리테일·서비스 비즈니스를 위해 AWS 인프라 — 오토스케일링, CDN, 데이터베이스 아키텍처, 보안 — 를 설계하고 운영합니다. 웹사이트와 클라우드 인프라 모두 사장님 명의로 등록해 드립니다. 한국어/영어 무료 상담: info@zoelumos.com 이메일 또는 카카오톡(http://pf.kakao.com/_xhxdxmlX/chat)으로 편하게 문의하세요.' },
+      ],
+    },
+  },
 ]
