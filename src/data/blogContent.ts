@@ -13521,4 +13521,102 @@ export const blogContent: BlogPost[] = [
       ],
     },
   },
+  // ─────────────────────────────────────────────────────────────────
+  // 2026-09-16 — Custom app development for a Korean-American taekwondo /
+  // martial-arts academy (Sacramento metro: Natomas, Elk Grove, Roseville).
+  // Fills the least-covered rotation topic on main (B2B/app-dev/AWS are all
+  // thin relative to F&B, e-commerce, and beauty/service, and app-dev
+  // specifically hasn't touched education/martial-arts academies yet).
+  // Positions ZOE LUMOS as a registered Apple App Store developer.
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'korean-taekwondo-academy-app-sacramento-2026',
+    date: '2026-09-16',
+    updatedDate: '2026-09-16',
+    readTime: 9,
+    category: { en: 'App Development', ko: '앱 개발' },
+    title: {
+      en: 'Beyond the Sign-In Sheet: Why Sacramento-Area Korean Taekwondo Academies Need Their Own App (2026)',
+      ko: '출석부로는 부족합니다 — 새크라멘토 한인 태권도장에 자체 앱이 필요한 이유 (2026)',
+    },
+    metaDescription: {
+      en: "Korean-American taekwondo and martial arts academies around Sacramento, Natomas, Elk Grove, and Roseville often run belt tracking, attendance, and tuition off paper and group chats. Here is what a real academy app needs, from a registered Apple App Store developer.",
+      ko: '새크라멘토, 나토마스, 엘크그로브, 로즈빌 지역 한인 태권도장·무술 학원들은 여전히 승급 관리, 출석, 수강료를 종이와 단체 채팅방으로 처리합니다. Apple 앱스토어 등록 개발사가 정리한, 학원 전용 앱에 실제로 필요한 기능들.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'Is a taekwondo academy really big enough to need its own app, or is Instagram/KakaoTalk enough?',
+          ko: '태권도장처럼 작은 학원도 자체 앱이 필요한가요, 아니면 인스타그램이나 카카오톡 채널로 충분한가요?',
+        },
+        a: {
+          en: 'Instagram and KakaoTalk stop being enough once an academy passes roughly 60–80 active students, because both tools can broadcast an announcement to everyone but neither can track any individual student — who attended which class, who is eligible for the next belt test, who still owes September tuition. Below that size, a master can hold most of it in memory. Above it, every one of those questions turns into a manual lookup through old messages or a paper binder, and the time lost to that lookup grows faster than the student count does.',
+          ko: '학생 수가 대략 60~80명을 넘어가는 순간부터는 인스타그램이나 카카오톡만으로는 부족해집니다. 두 도구 모두 전체 공지는 보낼 수 있지만, 어떤 학생 개개인의 정보 — 어느 수업에 출석했는지, 다음 승급 심사 자격이 되는지, 9월 수강료를 냈는지 — 는 추적하지 못하기 때문입니다. 그 규모 이하라면 관장님이 기억으로 대부분 관리할 수 있지만, 그 이상이 되면 이런 질문 하나하나가 옛날 메시지나 종이 바인더를 뒤지는 수작업으로 바뀌고, 거기에 드는 시간은 학생 수보다 훨씬 빠르게 늘어납니다.',
+        },
+      },
+      {
+        q: {
+          en: 'Should we build a custom app or just subscribe to an existing martial-arts management SaaS?',
+          ko: '자체 앱을 새로 만드는 것과 기존 태권도장 관리 SaaS를 구독하는 것 중 어느 쪽이 나은가요?',
+        },
+        a: {
+          en: "A generic SaaS is the faster, cheaper starting point, and it is a reasonable choice for a single-location academy just getting off paper — but it comes with a per-student monthly fee that scales with enrollment forever, a shared generic name in the App Store (not yours), and no control if the vendor raises prices, gets acquired, or shuts down. A custom app costs more upfront but appears under your own academy's name and branding in App Store search, has no per-student software fee once built, and is something you own outright rather than rent indefinitely — the tradeoff that matters most for an academy already past one location or planning to open a second.",
+          ko: '일반 SaaS는 더 빠르고 저렴하게 시작할 수 있는 방법이고, 종이 관리에서 막 벗어나려는 단일 매장 학원이라면 합리적인 선택입니다. 다만 학생 수에 따라 계속 늘어나는 월 구독료가 붙고, 앱스토어에는 사장님 학원이 아니라 그 SaaS 업체의 공용 이름으로 뜨며, 업체가 가격을 올리거나 인수되거나 서비스를 접어도 사장님이 통제할 수 있는 부분이 없습니다. 자체 앱은 초기 비용이 더 들지만 앱스토어 검색 결과에 사장님 학원 고유의 이름과 브랜드로 뜨고, 한번 만들면 학생 수와 무관하게 추가 소프트웨어 비용이 없으며, 계속 빌리는 게 아니라 완전히 소유하는 자산이 됩니다 — 이미 매장이 두 곳 이상이거나 두 번째 매장을 계획 중인 학원이라면 이 차이가 가장 크게 작용합니다.',
+        },
+      },
+      {
+        q: {
+          en: 'How do we actually get parents to install and use a new app instead of just texting or KakaoTalk-ing us?',
+          ko: '학부모들이 문자나 카카오톡 대신 새 앱을 실제로 설치하고 쓰게 만들려면 어떻게 해야 하나요?',
+        },
+        a: {
+          en: "The reliable way is to make the app the only path to something parents already have to do, rather than asking them to adopt it for its own sake: set up tuition auto-pay and belt-test registration inside the app at enrollment, so installing it is a required step, not an optional extra. Once it is on their phone for that reason, push notifications for class cancellations and belt-test dates keep it useful on its own, and most parents keep it rather than uninstall something tied to their payment method.",
+          ko: '가장 확실한 방법은 앱을 "쓰면 좋은 부가 기능"이 아니라 학부모가 어차피 해야 하는 일의 유일한 통로로 만드는 것입니다. 등록 시점에 수강료 자동결제와 승급 심사 신청을 앱 안에서만 처리하도록 설정하면, 앱 설치가 선택이 아니라 필수 절차가 됩니다. 그렇게 일단 휴대폰에 설치되고 나면, 휴강 알림이나 승급 심사 일정 같은 푸시 알림이 그 자체로 계속 쓸모를 만들어 주고, 결제 수단이 연결된 앱을 굳이 삭제하는 학부모는 많지 않습니다.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "Walk into most Korean-American taekwondo and martial arts academies around Sacramento — Natomas, Elk Grove, Roseville — and you will usually find the same three tools running the entire operation: a paper sign-in sheet taped by the door, a KakaoTalk or Band group chat where the master posts announcements, and a notebook or spreadsheet tracking who tested for which belt and who still owes tuition. It works fine at 40 students. Somewhere past 70 or 80, the master starts spending evenings reconstructing attendance from memory instead of teaching, and parents start asking questions nobody has a fast answer for — when is my child eligible to test for green belt, did we already pay this month, why didn't I hear that Tuesday's class was cancelled." },
+        { type: 'h2', content: 'Why a website alone does not solve this' },
+        { type: 'p', content: "A website is the right tool for a parent discovering the academy for the first time — class schedule, tuition, a trial class signup. It is the wrong tool for the daily operations of an already-enrolled family, because a website cannot push a notification to a parent's phone when Tuesday's class is cancelled for a tournament, cannot work reliably in a gym with weak wifi during check-in, and does not stay open on a phone's home screen the way an installed app does. Academies that try to run daily attendance and payment reminders through a website end up falling back on the group chat anyway — which is exactly the tool that cannot track anything per student." },
+        { type: 'h2', content: 'What a real taekwondo academy app needs' },
+        { type: 'ul', content: 'The components that turn a phone into an actual front desk:', items: [
+          "Digital check-in by QR code or PIN at the door, logged per student automatically — no more reconstructing attendance from memory at test time.",
+          'Belt rank and testing eligibility visible to parents in real time, so "when can my child test for green belt" stops being a question that requires calling the front desk.',
+          'Recurring tuition auto-pay with a reminder before a card is charged or declined, instead of a paper invoice that goes unnoticed in a backpack.',
+          "Push notifications for class cancellations, weather closures, tournament results, and belt-test dates — the one feature no group chat can guarantee gets seen in time.",
+          'A multi-child family view for parents with more than one student enrolled, instead of tracking two kids across two separate chat threads.',
+          "An instructor-facing view that marks a whole class present in seconds during warm-ups, not a clipboard passed around the mat.",
+        ] },
+        { type: 'tip', content: "The most expensive failure on this list is invisible: a parent whose autopay quietly failed, never got a reminder, and stopped showing up rather than deal with an awkward conversation about a missed payment. That is not a retention problem you can fix with better teaching — it is a notification problem, and it is usually the single highest-ROI feature to build first." },
+        { type: 'h2', content: 'What "registered Apple App Store developer" actually buys you' },
+        { type: 'p', content: "A native app that appears in App Store and Google Play search under your academy's own name is a different trust signal than a bookmarked website, particularly for parents doing the first-week comparison between two or three nearby academies. ZOE LUMOS is a registered Apple App Store developer, which means the app we build for you is published under your name, not a shared vendor account — you own the listing, the branding, and the App Store presence outright, the same way you own your domain and your Google Business Profile." },
+        { type: 'h2', content: 'A note for academies in the Sacramento area' },
+        { type: 'p', content: "The Korean-American community around Sacramento has grown steadily into Natomas, Elk Grove, and Roseville over the past decade, and taekwondo academies have followed — which means a family choosing a dojang today usually has two or three within a short drive to compare, not one default option. Most of those families include kids who grew up speaking English day to day and parents or grandparents who are more comfortable in Korean, so an app that pushes belt-test and closure notifications in both languages covers a household a single-language group chat does not. For an academy weighing a second location in the metro, having attendance, billing, and belt tracking already centralized in one app — rather than one notebook per storefront — is what makes that expansion survivable." },
+        { type: 'cta', content: "ZOE LUMOS is a registered Apple App Store developer building custom iOS and Android apps for Korean-American academies, gyms, and service businesses across the US — attendance and belt tracking, tuition auto-pay, and bilingual push notifications, published under your own name. Free consultation in Korean or English: email info@zoelumos.com or reach us on KakaoTalk (http://pf.kakao.com/_xhxdxmlX/chat)." },
+      ],
+      ko: [
+        { type: 'intro', content: '새크라멘토 지역 — 나토마스, 엘크그로브, 로즈빌 — 의 한인 태권도장이나 무술 학원에 가보면, 대부분 같은 세 가지 도구로 학원 전체를 운영하고 계십니다. 문 옆에 붙여둔 종이 출석부, 관장님이 공지를 올리는 카카오톡이나 밴드 단체 채팅방, 그리고 누가 어떤 승급 심사를 봤고 누가 아직 수강료를 안 냈는지 적어둔 노트나 엑셀 파일. 학생이 40명일 때는 잘 돌아갑니다. 70~80명을 넘어가는 순간부터 관장님은 저녁 시간을 수업 대신 기억으로 출석 기록을 재구성하는 데 쓰기 시작하고, 학부모들은 아무도 빨리 답해주지 못하는 질문들을 하기 시작합니다 — 우리 아이가 초록띠 심사를 볼 자격이 되나요, 이번 달 수강료는 이미 냈나요, 화요일 수업이 취소된 걸 왜 몰랐죠.' },
+        { type: 'h2', content: '웹사이트만으로는 왜 부족한가' },
+        { type: 'p', content: '웹사이트는 학원을 처음 알게 된 학부모에게 딱 맞는 도구입니다 — 수업 시간표, 수강료, 체험 수업 신청. 하지만 이미 등록한 가족의 일상적인 운영에는 맞지 않는 도구입니다. 웹사이트는 화요일 수업이 대회 때문에 취소됐을 때 학부모 휴대폰으로 알림을 보낼 수 없고, 체육관의 약한 와이파이 환경에서 출석 체크가 안정적으로 작동하지 않으며, 설치된 앱처럼 휴대폰 홈 화면에 계속 떠 있지도 않습니다. 웹사이트로 일일 출석과 결제 알림을 처리하려던 학원들은 결국 다시 단체 채팅방으로 돌아가게 되는데, 그 채팅방이 바로 학생 개개인을 전혀 추적하지 못하는 도구입니다.' },
+        { type: 'h2', content: '진짜 태권도장 앱에 필요한 것' },
+        { type: 'ul', content: '휴대폰을 실제 프런트 데스크로 바꿔주는 요소들:', items: [
+          '문 앞 QR코드나 PIN 입력으로 하는 디지털 체크인 — 학생별로 자동 기록되어, 승급 심사 때 기억을 더듬어 출석을 재구성할 필요가 없습니다.',
+          '학부모가 실시간으로 볼 수 있는 승급 단계와 심사 자격 현황 — "우리 아이가 언제 초록띠를 볼 수 있나요"가 프런트에 전화해야만 알 수 있는 질문이 아니게 됩니다.',
+          '카드가 결제되거나 실패하기 전에 알림이 오는 반복 수강료 자동결제 — 가방 속에서 잊혀지는 종이 청구서가 아닙니다.',
+          '휴강, 기상 악화로 인한 휴원, 대회 결과, 승급 심사 일정에 대한 푸시 알림 — 어떤 단체 채팅방도 제때 확인된다는 보장을 해주지 못하는 유일한 기능입니다.',
+          '두 자녀 이상을 등록한 가족을 위한 통합 가족 보기 — 두 아이를 두 개의 따로 된 채팅방에서 따로 챙기지 않아도 됩니다.',
+          '준비운동 중 몇 초 만에 반 전체를 출석 처리할 수 있는 사범님용 화면 — 매트 위를 돌아다니는 클립보드가 아닙니다.',
+        ] },
+        { type: 'tip', content: '이 목록에서 가장 비용이 큰 실패는 눈에 보이지 않습니다 — 자동결제가 조용히 실패했는데 아무 알림도 못 받고, 밀린 결제에 대해 어색한 대화를 하느니 그냥 안 나오게 된 학부모입니다. 이건 더 잘 가르쳐서 해결되는 유지율 문제가 아니라 알림의 문제이고, 보통 가장 먼저 만들어야 할 가장 높은 효과의 기능입니다.' },
+        { type: 'h2', content: '"Apple 앱스토어 등록 개발사"가 실제로 주는 것' },
+        { type: 'p', content: '앱스토어와 구글플레이 검색 결과에 학원 자체 이름으로 뜨는 네이티브 앱은, 즐겨찾기한 웹사이트와는 다른 신뢰 신호입니다. 특히 근처 두세 곳의 학원을 첫 주에 비교해보는 학부모에게는 더욱 그렇습니다. ZOE LUMOS는 Apple 앱스토어 등록 개발사로, 사장님을 위해 만드는 앱이 공유 벤더 계정이 아니라 사장님 이름으로 게시됩니다 — 도메인과 구글 비즈니스 프로필을 소유하는 것과 마찬가지로, 앱 리스팅과 브랜드, 앱스토어 존재감을 온전히 사장님 것으로 가져가시게 됩니다.' },
+        { type: 'h2', content: '새크라멘토 지역 학원을 위한 참고' },
+        { type: 'p', content: '새크라멘토 일대 한인 커뮤니티는 지난 10년간 나토마스, 엘크그로브, 로즈빌로 꾸준히 확장돼 왔고, 태권도장들도 그 흐름을 따라갔습니다. 즉 오늘 도장을 고르는 가족은 대개 차로 잠깐 갈 수 있는 거리에 두세 곳을 두고 비교하지, 선택지가 하나뿐인 경우는 드뭅니다. 그런 가정 대부분은 평소 영어로 자란 자녀와 한국어가 더 편한 부모님·조부모님이 함께 있는 경우가 많아서, 승급 심사와 휴원 알림을 두 언어로 보내는 앱이 단일 언어 단체 채팅방으로는 커버되지 않는 부분을 채워줍니다. 메트로 지역에 두 번째 매장을 고려 중인 학원이라면, 출석·결제·승급 관리가 매장별 노트 한 권씩이 아니라 앱 하나에 이미 중앙화되어 있는 것이 그 확장을 버틸 수 있게 해주는 조건입니다.' },
+        { type: 'cta', content: 'ZOE LUMOS는 Apple 앱스토어 등록 개발사로서 미국 전역의 한인 학원·체육관·서비스 비즈니스를 위한 iOS·안드로이드 커스텀 앱을 만듭니다 — 출석·승급 관리, 수강료 자동결제, 이중언어 푸시 알림까지 전부 사장님 이름으로 게시됩니다. 한국어/영어 무료 상담: info@zoelumos.com 이메일 또는 카카오톡(http://pf.kakao.com/_xhxdxmlX/chat)으로 편하게 문의하세요.' },
+      ],
+    },
+  },
 ]
