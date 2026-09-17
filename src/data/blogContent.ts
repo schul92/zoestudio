@@ -13521,4 +13521,129 @@ export const blogContent: BlogPost[] = [
       ],
     },
   },
+  // ─────────────────────────────────────────────────────────────────
+  // 2026-09-17 — E-commerce rotation: returns/exchange policy + compliant
+  // review management for Korean-American online sellers (Shopify/Amazon/Etsy),
+  // San Antonio / South Texas angle to keep the metro rotation moving.
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'ecommerce-returns-reviews-trust-korean-sellers-san-antonio-2026',
+    date: '2026-09-17',
+    updatedDate: '2026-09-17',
+    readTime: 9,
+    category: { en: 'E-commerce', ko: '이커머스' },
+    title: {
+      en: 'Returns, Exchanges & Reviews: The Trust System Korean-American Online Sellers in San Antonio Are Missing (2026)',
+      ko: '반품·교환·리뷰 관리 — 샌안토니오 한인 온라인 셀러가 놓치고 있는 신뢰 시스템 (2026)',
+    },
+    metaDescription: {
+      en: 'Korean-American online sellers around San Antonio and South Texas often copy a generic returns policy from a template and never touch it again, while reviews sit unrequested and chargebacks quietly pile up. Here is how to write a clear returns and exchange policy, automate it inside Shopify, Amazon, and Etsy, and turn reviews into a compliant, repeatable system that increases conversion.',
+      ko: '샌안토니오와 남부 텍사스의 한인 온라인 셀러들은 반품 정책을 템플릿에서 그대로 복사해 붙여넣고 다시 손대지 않는 경우가 많습니다 — 그 사이 리뷰는 요청도 못 받고 쌓이고, 차지백은 조용히 늘어갑니다. 명확한 반품·교환 정책을 만들고 Shopify·Amazon·Etsy 안에서 자동화하며, 리뷰를 규정을 지키면서 전환율을 높이는 반복 가능한 시스템으로 만드는 방법을 정리했습니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'How should an online store write a returns and exchange policy?',
+          ko: '온라인 쇼핑몰 반품·교환 정책은 어떻게 작성해야 하나요?',
+        },
+        a: {
+          en: "A returns policy needs six things stated in plain language, not buried in a wall of legal text: the return window (30 days is the market standard for most non-perishable goods), the condition items must be in (unopened, original packaging — especially important for cosmetics, supplements, and food items where hygiene rules apply), who pays return shipping, whether the customer gets a refund to the original payment method or store credit and how long that takes, a separate and clearly explained exchange path, and explicit exceptions (final-sale items, opened beauty or food products, custom orders). The policy needs to be visible in three places — the footer, the product page, and the checkout page — not just a link nobody clicks. A vague or hidden policy does not stop returns from happening; it just moves the dispute from a return request to a credit card chargeback, which costs the seller more in fees and account-health risk than the return itself would have.",
+          ko: '반품 정책은 법률 문구로 도배하지 말고 여섯 가지를 쉬운 말로 명시해야 합니다 — 반품 가능 기간(비식품·비부패성 제품 기준 보통 30일이 시장 표준입니다), 제품 상태 조건(미개봉·원래 포장 — 위생 규정이 적용되는 화장품·건강기능식품·식품류에서 특히 중요합니다), 반품 배송비를 누가 부담하는지, 환불이 원결제수단으로 가는지 스토어 크레딧으로 가는지와 처리 기간, 환불과 구분되는 교환 절차, 그리고 명확한 예외 사항(세일 최종 판매 상품, 개봉된 뷰티·식품, 맞춤 제작 상품). 이 정책은 푸터, 상품 페이지, 결제 페이지 세 곳 모두에 보여야 합니다 — 아무도 클릭하지 않는 링크 하나로는 부족합니다. 애매하거나 숨겨진 정책은 반품 자체를 막지 못합니다. 그저 분쟁을 반품 요청에서 신용카드 차지백으로 옮길 뿐이고, 차지백은 판매자에게 반품 자체보다 수수료와 계정 건전성 리스크 면에서 더 큰 비용을 안깁니다.',
+        },
+      },
+      {
+        q: {
+          en: 'Can returns be automated inside Shopify, or does every request need a manual reply?',
+          ko: 'Shopify에서 반품 처리를 자동화할 수 있나요, 아니면 요청마다 일일이 수동으로 답해야 하나요?',
+        },
+        a: {
+          en: "Shopify has built native return and refund tools into the platform since 2022 — a customer can start a return from their order status page, Shopify generates the shipping label, and the refund can trigger automatically once the return is marked received, all inside rules the seller sets once (window, eligible reasons, restocking fee if any). Sellers who need more — store credit as an option, exchange-for-different-size flows, or return analytics — add an app like Loop Returns, Return Prime, or AfterShip Returns on top of that native flow rather than replacing it. Amazon has a separate system entirely: return settings live in Seller Central, and FBA (Fulfilled by Amazon) returns are largely automated by Amazon itself under its own policy, while FBM (Fulfilled by Merchant) returns route through the seller's own process. Etsy runs its own case-resolution system independent of both. The practical fix for a seller running more than one channel is making sure the written policy language is identical everywhere, even though the backend mechanics differ, so a customer who bought on Amazon and a customer who bought on the seller's own Shopify site are never told two different things.",
+          ko: 'Shopify는 2022년부터 반품·환불 도구를 플랫폼 자체에 내장했습니다 — 고객이 주문 상태 페이지에서 반품을 시작하면 Shopify가 배송 라벨을 생성하고, 반품 수령 처리가 되면 판매자가 한 번 설정해 둔 규칙(기간, 인정 사유, 재입고 수수료 여부) 안에서 환불이 자동으로 진행될 수 있습니다. 스토어 크레딧 옵션, 사이즈 교환 플로우, 반품 분석 같은 추가 기능이 필요하면 이 기본 기능을 대체하는 게 아니라 그 위에 Loop Returns, Return Prime, AfterShip Returns 같은 앱을 얹으면 됩니다. Amazon은 완전히 별도의 시스템입니다 — 반품 설정은 Seller Central 안에 있고, FBA(아마존 풀필먼트) 반품은 대부분 아마존 자체 정책에 따라 자동으로 처리되는 반면, FBM(판매자 직접 배송) 반품은 판매자 자신의 프로세스를 거칩니다. Etsy는 둘과 독립된 자체 분쟁 해결 시스템을 운영합니다. 여러 채널을 동시에 운영하는 셀러에게 실전에서 중요한 건, 백엔드 메커니즘은 채널마다 다르더라도 서면 정책 문구는 모든 곳에서 동일하게 유지하는 것입니다. Amazon에서 산 고객과 자체 Shopify 사이트에서 산 고객이 서로 다른 이야기를 듣게 해서는 안 됩니다.',
+        },
+      },
+      {
+        q: {
+          en: 'How can a small online seller get more reviews without violating Amazon or FTC rules?',
+          ko: '작은 온라인 셀러가 Amazon이나 FTC 규정을 어기지 않고 리뷰를 늘리려면 어떻게 해야 하나요?',
+        },
+        a: {
+          en: "Ask every customer after delivery, make it effortless, and never condition anything of value on the review being positive. Amazon's own 'Request a Review' button inside Seller Central sends a neutral, Amazon-approved request with no room for a seller to filter or incentivize — that is the compliant path on Amazon, and offering a discount, refund, or free product in exchange for a positive review violates Amazon's terms of service and can get a listing or account suspended. On a seller's own Shopify or Etsy store, an automated post-delivery email or SMS asking for a review is standard and allowed, and a seller can offer a discount on a future purchase for leaving any review, positive or negative, as long as that is disclosed and not conditioned on the rating — the FTC's endorsement guidelines require that any incentive be disclosed and that the review reflect the customer's honest opinion. The other lever that actually moves the needle is simply responding to every review, in the language it was written in — a bilingual buyer base checking a Korean-language review with no response reads it the same way an English-speaking buyer reads an ignored one-star review.",
+          ko: '배송 완료 후 모든 고객에게 요청하고, 남기기 쉽게 만들고, 좋은 평가를 조건으로 무언가 가치 있는 것을 걸지 않는 것입니다. Amazon Seller Central 안의 공식 "리뷰 요청" 버튼은 셀러가 필터링하거나 대가를 걸 여지가 없는 중립적이고 아마존이 승인한 요청을 보내줍니다 — 이것이 Amazon에서 규정을 지키는 방법이고, 좋은 리뷰를 대가로 할인·환불·무료 상품을 제공하는 것은 Amazon 이용약관 위반으로 리스팅이나 계정 정지로 이어질 수 있습니다. 자체 Shopify나 Etsy 스토어에서는 배송 완료 후 자동으로 발송되는 이메일이나 문자로 리뷰를 요청하는 것이 표준이고 허용되며, 평점과 무관하게 리뷰를 남기면 다음 구매에 할인을 제공하는 것도 그 사실을 공개하고 평점을 조건으로 걸지 않는 한 가능합니다 — FTC의 보증·추천 가이드라인은 어떤 형태든 대가는 공개되어야 하고 리뷰는 고객의 솔직한 의견을 반영해야 한다고 요구합니다. 실제로 효과가 큰 다른 지렛대는 단순히 모든 리뷰에 쓰인 언어 그대로 답글을 다는 것입니다 — 답글 없는 한국어 리뷰는 이중언어 구매자층에게, 영어권 구매자가 답글 없는 별점 1개 리뷰를 보는 것과 똑같이 읽힙니다.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "San Antonio and the broader South Texas corridor have a growing wave of Korean-American online sellers — Korean beauty and skincare, snacks and specialty grocery, imported home goods, and resale of Korea-sourced products, running on Shopify, Amazon, and Etsy, often as a second income alongside a storefront or built entirely online. What we see again and again when we audit these stores is the same gap: the returns policy is a page copied from a template during setup and never revisited, and reviews are something that happen to the store rather than something the store actively manages. Neither gap shows up in the sales dashboard directly. It shows up in cart abandonment at checkout, in chargeback fees, and in a review count that stays flat while competitors climb." },
+        { type: 'h2', content: 'A weak returns policy costs more than the returns themselves' },
+        { type: 'ul', content: 'What actually happens when the policy is vague, hidden, or missing:', items: [
+          "Cart abandonment at checkout — a meaningful share of online shoppers check a store's return policy before completing a purchase, and if they cannot find one or find one that reads as hostile, they leave without buying rather than risk it.",
+          "Chargebacks instead of returns — when a customer cannot find a clear return path, they often dispute the charge with their card issuer instead, which costs the seller the sale, a chargeback fee, and a mark against the payment processor's risk score.",
+          "Inconsistent handling — without a written policy staff and the owner actually follow, one customer gets a full refund and another gets refused for the same situation, and both outcomes get posted publicly in a review.",
+          "Amazon account-health risk — a pattern of A-to-z Guarantee claims from confused or frustrated buyers, driven by an unclear return process, is exactly the kind of metric Amazon tracks when deciding whether to restrict a seller account.",
+        ] },
+        { type: 'h2', content: 'What a clear returns and exchange policy actually needs' },
+        { type: 'ul', content: 'The six elements every policy should state in plain language:', items: [
+          "Return window — 30 days is the market standard for most non-perishable goods; state the exact number, not 'reasonable time.'",
+          "Condition required — unopened, original packaging, with a clear note on cosmetics, supplements, and food items where hygiene rules mean opened products often cannot be returned at all.",
+          "Who pays return shipping — the seller, the customer, or a shared arrangement above a certain order value.",
+          "Refund method and timing — original payment method or store credit, and how many business days it takes once the return is received.",
+          "A separate, clearly explained exchange path — swapping for a different size or item is a different process than a refund and should not be lumped into the same paragraph.",
+          "Explicit exceptions — final-sale items, opened beauty or food products, and custom or made-to-order pieces, stated up front rather than discovered mid-dispute.",
+        ] },
+        { type: 'h2', content: 'Automating it inside Shopify, Amazon, and Etsy so it is not one more manual task' },
+        { type: 'p', content: "Shopify has shipped native return and refund tools since 2022 — a customer starts a return from their order status page, a shipping label generates automatically, and a refund can trigger the moment the return is marked received, all governed by rules the seller sets once. Sellers who need store credit as an option, size-exchange flows, or return analytics add an app like Loop Returns, Return Prime, or AfterShip Returns on top of that native flow. Amazon runs an entirely separate system through Seller Central — FBA returns are largely automated under Amazon's own policy, while FBM returns route through the seller's process — and Etsy runs its own independent case-resolution system. The part that actually matters for a seller running more than one channel is not which tool handles the mechanics; it is making sure the written policy language matches across all of them, so an Amazon buyer and a Shopify buyer are never told two different things." },
+        { type: 'h2', content: 'Reviews are the other half of the trust system' },
+        { type: 'p', content: "A returns policy earns trust before the purchase. Reviews earn it during the decision — a shopper comparing a Korean skincare brand they have never heard of against a familiar one leans almost entirely on star rating and review count to decide. The mistake most small sellers make is treating review generation as something that either happens on its own or gets pushed with incentives that cross a compliance line." },
+        { type: 'ul', content: 'What a compliant, repeatable review system actually looks like:', items: [
+          "Amazon: use the built-in 'Request a Review' button inside Seller Central — a neutral, Amazon-approved request with no room to filter for happy customers or offer anything in exchange, which is exactly what Amazon's terms require.",
+          "Shopify or Etsy: an automated post-delivery email or SMS, sent a few days after the order should have arrived, with a one-click link straight to the review form.",
+          "Incentives, if offered on your own store, must be disclosed and never conditioned on a positive rating — a discount for leaving any honest review, positive or negative, is compliant with FTC endorsement guidelines; a discount for a five-star review is not.",
+          "Respond to every review within the week, in the language it was written in — an unanswered Korean-language review reads to a Korean-speaking shopper exactly like an unanswered one-star review reads to anyone else.",
+        ] },
+        { type: 'tip', content: "Check one thing today: can a customer find your return policy without leaving the product page or the checkout screen, or do they have to hunt for it in a footer link? And is your Amazon 'Request a Review' button actually turned on? Both are quick fixes that directly affect conversion and review count." },
+        { type: 'h2', content: 'Why this matters specifically for South Texas sellers' },
+        { type: 'p', content: "San Antonio's Korean-American community has deep roots tied to the city's long military presence, and the online-selling wave here — beauty, specialty grocery, imported goods — increasingly serves customers well beyond South Texas who have never set foot in a physical store and have nothing to judge the business on except the website, the policy page, and the reviews. Without a local storefront to build trust in person, those three things carry the entire weight of the buying decision. A seller in Chicago or Georgia comparing two nearly identical Korean skincare listings will pick the one with a clear return policy and forty reviews over the one with neither, every time." },
+        { type: 'h2', content: 'How we help' },
+        { type: 'p', content: "We start by auditing a seller's current returns and review setup across every channel they sell on — what the policy actually says, where it is (or is not) visible, whether return automation is turned on, and whether review requests are running at all. From there we rewrite the policy in plain, bilingual language, wire up return automation inside Shopify, Amazon, or Etsy, and set up a compliant, automated review-request flow so getting reviews stops depending on the owner remembering to ask." },
+        { type: 'cta', content: "Running an online store out of San Antonio or South Texas and not sure your return policy or review setup is pulling its weight? ZOE LUMOS audits and rebuilds e-commerce trust systems — returns and exchange policies, Shopify/Amazon/Etsy return automation, and compliant review-request flows — for Korean-American online sellers across the US. Free consultation in English or Korean: email info@zoelumos.com or message us on KakaoTalk (http://pf.kakao.com/_xhxdxmlX/chat)." },
+      ],
+      ko: [
+        { type: 'intro', content: '샌안토니오와 남부 텍사스 전역에서 한인 온라인 셀러가 빠르게 늘고 있습니다 — 한국 화장품·스킨케어, 과자·특수 식품, 수입 생활용품, 한국 소싱 제품 리셀까지, Shopify·Amazon·Etsy 위에서 매장을 겸한 부업으로, 혹은 완전히 온라인으로만 운영됩니다. 저희가 이런 쇼핑몰을 진단할 때마다 반복해서 보는 똑같은 빈틈이 있습니다 — 반품 정책은 설정할 때 템플릿에서 복사해 붙여넣은 페이지 그대로이고 이후로 한 번도 손대지 않았으며, 리뷰는 쇼핑몰이 적극적으로 관리하는 대상이 아니라 그냥 저절로 생기는 것으로 취급됩니다. 두 빈틈 다 매출 대시보드에 직접 나타나지 않습니다. 결제 단계의 장바구니 이탈, 차지백 수수료, 경쟁사는 올라가는데 제자리인 리뷰 수로 나타납니다.' },
+        { type: 'h2', content: '허술한 반품 정책은 반품 자체보다 더 큰 비용을 만듭니다' },
+        { type: 'ul', content: '정책이 애매하거나 숨겨져 있거나 아예 없을 때 실제로 벌어지는 일:', items: [
+          '결제 단계 장바구니 이탈 — 상당수 온라인 쇼핑객이 구매 완료 전에 쇼핑몰의 반품 정책을 확인하는데, 찾을 수 없거나 불친절하게 읽히면 위험을 감수하는 대신 그냥 구매를 포기합니다.',
+          '반품 대신 차지백 — 고객이 명확한 반품 경로를 찾지 못하면 반품 대신 카드사에 결제를 이의 제기하는 경우가 많고, 이는 판매자에게 매출 손실에 더해 차지백 수수료와 결제 대행사 리스크 점수 하락까지 안깁니다.',
+          '일관되지 않은 처리 — 직원과 사장님이 실제로 따르는 서면 정책이 없으면 같은 상황에서 어떤 고객은 전액 환불을 받고 어떤 고객은 거절당하고, 두 결과 모두 리뷰로 공개적으로 남습니다.',
+          'Amazon 계정 건전성 리스크 — 불명확한 반품 절차 때문에 혼란스럽거나 불만족한 구매자가 A-to-z 보증 클레임을 거는 패턴은, Amazon이 셀러 계정 제한 여부를 판단할 때 정확히 보는 지표 중 하나입니다.',
+        ] },
+        { type: 'h2', content: '명확한 반품·교환 정책이 실제로 필요로 하는 것' },
+        { type: 'ul', content: '모든 정책이 쉬운 말로 명시해야 할 여섯 가지:', items: [
+          '반품 가능 기간 — 비부패성 제품 기준 보통 30일이 시장 표준입니다. "적정 기간" 같은 표현이 아니라 정확한 숫자를 명시하세요.',
+          '요구되는 제품 상태 — 미개봉·원래 포장. 위생 규정상 화장품·건강기능식품·식품은 개봉하면 아예 반품이 안 되는 경우가 많다는 점을 명확히 안내하세요.',
+          '반품 배송비 부담 주체 — 판매자, 고객, 혹은 일정 금액 이상 주문에 한해 공동 부담인지.',
+          '환불 방식과 처리 기간 — 원결제수단인지 스토어 크레딧인지, 반품 수령 후 며칠 안에 처리되는지.',
+          '환불과 구분되는 명확한 교환 절차 — 사이즈나 품목 교환은 환불과 다른 프로세스이니 같은 문단에 뭉뚱그리지 마세요.',
+          '명시적인 예외 사항 — 세일 최종 판매 상품, 개봉된 뷰티·식품, 맞춤 제작 상품은 분쟁이 생긴 뒤가 아니라 미리 안내하세요.',
+        ] },
+        { type: 'h2', content: 'Shopify · Amazon · Etsy 안에서 자동화해서 수작업으로 만들지 않기' },
+        { type: 'p', content: 'Shopify는 2022년부터 반품·환불 도구를 자체 내장했습니다 — 고객이 주문 상태 페이지에서 반품을 시작하면 배송 라벨이 자동 생성되고, 반품 수령 처리가 되는 순간 판매자가 한 번 설정한 규칙에 따라 환불이 트리거될 수 있습니다. 스토어 크레딧 옵션, 사이즈 교환 플로우, 반품 분석이 필요한 셀러는 이 기본 기능을 대체하지 않고 그 위에 Loop Returns, Return Prime, AfterShip Returns 같은 앱을 얹습니다. Amazon은 Seller Central을 통한 완전히 별도의 시스템을 운영합니다 — FBA 반품은 대부분 아마존 자체 정책에 따라 자동 처리되고, FBM 반품은 판매자의 프로세스를 거칩니다. Etsy는 독립된 자체 분쟁 해결 시스템을 씁니다. 여러 채널을 운영하는 셀러에게 실제로 중요한 건 어떤 도구가 메커니즘을 처리하느냐가 아니라, 서면 정책 문구가 모든 채널에서 일치하는지입니다 — Amazon 구매자와 Shopify 구매자가 서로 다른 이야기를 듣게 해서는 안 됩니다.' },
+        { type: 'h2', content: '리뷰는 신뢰 시스템의 나머지 절반입니다' },
+        { type: 'p', content: '반품 정책은 구매 전 신뢰를 얻습니다. 리뷰는 결정의 순간에 신뢰를 얻습니다 — 처음 들어보는 한국 스킨케어 브랜드와 익숙한 브랜드를 비교하는 쇼핑객은 거의 전적으로 별점과 리뷰 수에 의존해 결정합니다. 대부분의 작은 셀러가 저지르는 실수는, 리뷰 확보를 저절로 일어나는 일로 방치하거나, 컴플라이언스 선을 넘는 대가로 밀어붙이는 것입니다.' },
+        { type: 'ul', content: '규정을 지키면서 반복 가능한 리뷰 시스템이 실제로 갖춰야 할 것:', items: [
+          'Amazon: Seller Central 안의 "리뷰 요청" 버튼을 사용하세요 — 만족한 고객만 골라내거나 대가를 걸 여지가 전혀 없는, 중립적이고 아마존이 승인한 요청이며 이것이 정확히 Amazon 이용약관이 요구하는 방식입니다.',
+          'Shopify나 Etsy: 주문이 도착했을 시점에서 며칠 뒤 자동으로 발송되는 이메일이나 문자에, 리뷰 폼으로 바로 가는 원클릭 링크를 넣으세요.',
+          '자체 스토어에서 대가를 제공한다면 반드시 공개하고 좋은 평점을 조건으로 걸지 마세요 — 평점과 무관하게 솔직한 리뷰를 남기면 할인을 주는 것은 FTC 보증 가이드라인에 부합하지만, 별점 5개 리뷰에 할인을 거는 것은 그렇지 않습니다.',
+          '모든 리뷰에 일주일 안에 쓰인 언어 그대로 답글을 다세요 — 답글 없는 한국어 리뷰는 한국어권 쇼핑객에게, 답글 없는 별점 1개 리뷰가 다른 누구에게나 그렇듯 똑같이 읽힙니다.',
+        ] },
+        { type: 'tip', content: '오늘 딱 하나만 확인해 보세요. 고객이 상품 페이지나 결제 화면을 벗어나지 않고 반품 정책을 찾을 수 있나요, 아니면 푸터 링크를 뒤져야 하나요? 그리고 Amazon의 "리뷰 요청" 버튼은 실제로 켜져 있나요? 둘 다 전환율과 리뷰 수에 바로 영향을 주는 빠른 수정 사항입니다.' },
+        { type: 'h2', content: '남부 텍사스 셀러에게 특히 중요한 이유' },
+        { type: 'p', content: '샌안토니오의 한인 커뮤니티는 이 도시의 오랜 군사 기지 역사와 깊이 연결되어 있고, 이곳의 온라인 판매 흐름 — 뷰티, 특수 식품, 수입 생활용품 — 은 물리적 매장에 한 번도 발을 들인 적 없는, 남부 텍사스 밖의 고객까지 점점 더 많이 상대하게 됩니다. 그 고객들에게는 쇼핑몰을 판단할 근거가 웹사이트, 정책 페이지, 리뷰 말고는 없습니다. 직접 만나 신뢰를 쌓을 오프라인 매장이 없으니, 이 세 가지가 구매 결정의 무게를 전부 짊어집니다. 시카고나 조지아의 쇼핑객이 거의 똑같은 한국 스킨케어 상품 두 개를 비교한다면, 명확한 반품 정책과 리뷰 40개를 갖춘 쪽을 둘 다 없는 쪽보다 항상 먼저 선택합니다.' },
+        { type: 'h2', content: '저희가 돕는 방식' },
+        { type: 'p', content: '저희는 셀러가 판매하는 모든 채널에 걸쳐 현재 반품·리뷰 체계를 진단하는 것부터 시작합니다 — 정책이 실제로 뭐라고 쓰여 있는지, 어디에 보이는지(혹은 안 보이는지), 반품 자동화가 켜져 있는지, 리뷰 요청이 애초에 돌아가고 있는지. 여기서부터 정책을 쉬운 이중언어로 다시 쓰고, Shopify·Amazon·Etsy 안에 반품 자동화를 연결하고, 규정을 지키는 자동 리뷰 요청 플로우를 구축해서, 리뷰 확보가 사장님이 요청을 기억하는지에 더 이상 의존하지 않게 만듭니다.' },
+        { type: 'cta', content: '샌안토니오나 남부 텍사스에서 온라인 쇼핑몰을 운영하시는데 반품 정책이나 리뷰 체계가 제 역할을 못 하고 있는 것 같으신가요? ZOE LUMOS는 미국 전역의 한인 온라인 셀러를 위해 반품·교환 정책, Shopify/Amazon/Etsy 반품 자동화, 규정을 지키는 리뷰 요청 플로우까지 이커머스 신뢰 시스템을 진단하고 재구축합니다. 한국어/영어 무료 상담: info@zoelumos.com 이메일 또는 카카오톡(http://pf.kakao.com/_xhxdxmlX/chat)으로 편하게 문의하세요.' },
+      ],
+    },
+  },
 ]
