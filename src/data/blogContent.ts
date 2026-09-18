@@ -13522,106 +13522,108 @@ export const blogContent: BlogPost[] = [
     },
   },
   // ─────────────────────────────────────────────────────────────────
-  // 2026-09-18 — Custom iOS app (order-ready push notifications + loyalty)
-  // for Korean-American dry cleaners / laundromats. App Development
-  // rotation topic; audience rotation: Philadelphia, PA (new market, not
-  // previously covered — diversifies beyond NJ/NY/TX/GA/CA/WA/VA/NC).
+  // 2026-09-18 — Custom iOS app (repair-status photo updates + in-app
+  // estimate approval) for Korean-American auto repair / auto body shops.
+  // App Development rotation topic; audience rotation: Philadelphia, PA
+  // (new market — not used by any merged post or the open daily-post
+  // pipeline as of this writing, which already covers dry cleaners,
+  // BBQ/karaoke booking, and a generic guide under this same topic).
   // ─────────────────────────────────────────────────────────────────
   {
-    slug: 'korean-dry-cleaner-laundromat-app-philadelphia-2026',
+    slug: 'korean-auto-repair-shop-ios-app-philadelphia-2026',
     date: '2026-09-18',
     updatedDate: '2026-09-18',
     readTime: 9,
     category: { en: 'App Development', ko: '앱 개발' },
     title: {
-      en: "\"Your Order Is Ready\" Without a Phone Call: A Custom iOS App for Philadelphia's Korean-American Dry Cleaners and Laundromats (2026)",
-      ko: '전화 없이 "세탁물 나왔어요" — 필라델피아 한인 세탁소·런드로맷을 위한 커스텀 iOS 앱 (2026)',
+      en: "\"Found Two More Issues\" Shouldn't Be a Cold Call: A Custom iOS App for Philadelphia's Korean-American Auto Repair Shops (2026)",
+      ko: '"추가로 두 군데 더 나왔어요"를 전화로 듣게 하지 마세요 — 필라델피아 한인 카센터를 위한 커스텀 iOS 앱 (2026)',
     },
     metaDescription: {
-      en: 'Philadelphia-area Korean-American dry cleaners and laundromats still track ready orders on a paper ticket board and call customers one by one. A custom iOS app — order-ready push notifications, a digital punch card, and a queue you can see from your phone — replaces the phone tag, built by a registered Apple App Store developer.',
-      ko: '필라델피아 지역 한인 세탁소·런드로맷은 아직도 종이 티켓 보드로 완료 주문을 관리하고 손님에게 한 명씩 전화를 겁니다. 세탁 완료 푸시 알림, 디지털 적립카드, 폰으로 보는 대기 현황까지 — 전화 돌리기를 없애는 커스텀 iOS 앱을 Apple 앱스토어 등록 개발사가 정리했습니다.',
+      en: "Philadelphia-area Korean-American auto repair and body shops still call customers mid-day to describe a newly found issue and talk them through a price over the phone. A custom iOS app — photo-based repair updates and in-app estimate approval — replaces that call with a message the customer can read and approve on their own time, built by a registered Apple App Store developer.",
+      ko: '필라델피아 지역 한인 카센터·바디샵은 아직도 작업 중 추가로 발견된 문제를 손님에게 전화로 설명하고 가격을 그 자리에서 구두로 협의합니다. 사진으로 보여주는 수리 현황과 앱 안에서 바로 승인하는 견적 — 손님이 편한 시간에 직접 읽고 승인할 수 있는 메시지로 그 전화를 대체하는 커스텀 iOS 앱을, Apple 앱스토어 등록 개발사가 정리했습니다.',
     },
     author: 'Steve Song',
     faq: [
       {
         q: {
-          en: 'Is a custom app worth it for a single dry cleaning location, or only for chains?',
-          ko: '세탁소 한 곳만 운영해도 커스텀 앱을 만들 가치가 있나요, 아니면 체인점에만 필요한가요?',
+          en: 'Why would an auto repair shop need an app instead of just calling customers about additional repairs?',
+          ko: '카센터가 추가 수리를 그냥 전화로 안내하면 되지, 굳이 앱까지 필요한 이유가 뭔가요?',
         },
         a: {
-          en: "A single location can justify it purely on the phone-call math: a shop processing 40-60 ready orders a day is making that many outbound calls, or eating missed pickups when nobody answers. A push notification replaces every one of those calls for the cost of a few seconds of staff time to mark an order ready — the app pays for its own maintenance well before a second location ever opens. Where a second and third location changes the picture is the punch card: a single-location shop can still run paper stamps reasonably well, but a customer who drops off in Center City and picks up near the Northeast can't use a card left at the other counter. Multi-location is where a shared digital punch card stops being a nice-to-have and starts being the reason customers stay loyal at all.",
-          ko: '세탁소 한 곳만 있어도 전화 횟수만으로 충분히 남는 장사입니다 — 하루에 완료 주문이 40~60건 나오는 매장이라면 그만큼 전화를 걸어야 하고, 안 받으면 픽업이 늦어집니다. 푸시 알림은 그 전화 한 통 한 통을 직원이 주문을 "완료" 처리하는 몇 초로 대체합니다. 두 번째 매장을 열기 훨씬 전에 앱 유지비를 회수하고도 남습니다. 매장이 두세 곳으로 늘어나면 그림이 달라지는 부분은 적립카드입니다. 매장 하나라면 종이 도장도 그럭저럭 돌아가지만, 센터시티에서 맡기고 노스이스트에서 찾는 손님은 다른 카운터에 두고 온 카드를 쓸 수 없습니다. 매장이 여러 곳일 때 공유 디지털 적립카드는 있으면 좋은 기능이 아니라 손님이 계속 그 세탁소를 쓰는 이유 자체가 됩니다.',
+          en: "A phone call for a mid-repair upsell has three problems an app solves at once: the customer is often at work and can't take the call, the shop has to explain a mechanical issue verbally with no visual, and a verbal 'yes, go ahead' leaves no record if there's a dispute about what was approved later. An app sends a photo of the actual part, a plain-language explanation, and a price, and the customer approves it with a tap whenever they have thirty seconds — during a meeting, on a break, whenever. That written, photo-backed approval also protects the shop: there's a timestamped record of exactly what the customer agreed to pay for, which matters the one time a customer says they never approved that charge.",
+          ko: '작업 중 추가 수리를 전화로 안내하는 방식에는 앱이 한 번에 해결하는 세 가지 문제가 있습니다. 손님이 근무 중이라 전화를 못 받는 경우가 많고, 정비 문제를 사진 없이 말로만 설명해야 하고, 구두로 "네, 진행하세요"라고 한 승인은 나중에 분쟁이 생기면 기록이 남지 않습니다. 앱은 실제 부품 사진, 쉬운 말로 된 설명, 가격을 함께 보내고, 손님은 30초 여유가 생기는 아무 때나 — 회의 중, 쉬는 시간, 언제든 — 탭 한 번으로 승인합니다. 사진과 함께 남는 이 서면 승인 기록은 매장도 보호합니다. 손님이 나중에 "그 비용은 승인한 적 없다"고 할 때 정확히 무엇에 동의했는지 시각이 찍힌 기록이 남으니까요.',
         },
       },
       {
         q: {
-          en: 'How does an app know when my order is actually ready, without extra work for staff?',
-          ko: '직원이 따로 일을 더 하지 않아도 앱이 세탁물이 완료된 걸 어떻게 아나요?',
+          en: 'Do we need a separate app for each service — repair status, estimate approval, and maintenance reminders — or can one app do all of it?',
+          ko: '수리 현황, 견적 승인, 정비 알림마다 앱을 따로 만들어야 하나요, 아니면 하나로 다 되나요?',
         },
         a: {
-          en: "The simplest reliable version adds exactly one step to a process staff already do: when an order comes off the rack and gets tagged, the same person taps 'ready' on a phone or tablet at the counter — the same motion as writing the ticket number on the board, just digital. That single tap fires the push notification instantly, no phone call needed. A more advanced version scans the barcode already printed on most cleaning tags, which removes even that tap and also gives the owner a searchable order history. Either way, the goal is to attach the notification to a step your staff already performs, not to create a new one — an app that asks staff to do more work than calling customers will get ignored within a week.",
-          ko: '가장 단순하면서 확실한 방식은 직원이 이미 하는 작업에 딱 한 단계만 더하는 것입니다 — 옷이 완료되어 걸릴 때, 같은 직원이 카운터의 폰이나 태블릿에서 "완료" 버튼만 누릅니다. 보드에 티켓 번호를 적던 동작을 디지털로 바꾼 것뿐입니다. 그 한 번의 터치가 바로 푸시 알림을 보내며, 전화는 필요 없습니다. 더 발전된 방식은 대부분의 세탁 태그에 이미 인쇄된 바코드를 스캔하는 것으로, 이 터치조차 없애면서 사장님이 검색 가능한 주문 이력까지 얻게 됩니다. 어느 쪽이든 핵심은 알림을 직원이 이미 하는 동작에 붙이는 것이지 새 일거리를 만드는 게 아니라는 점입니다 — 전화보다 일이 많아지는 앱은 일주일 안에 외면받습니다.',
+          en: "One app handles all three, because they're really the same data — a vehicle, its owner, and its service history — viewed at different moments. The same record that shows today's repair photos also holds last year's oil change date, which is what powers a mileage-based reminder six months from now without anyone at the shop having to remember to send it. Building it as one app instead of three separate tools also means one login for the customer and one dashboard for staff, rather than juggling a texting tool, a separate payment app, and a paper file for service history.",
+          ko: '세 가지 모두 사실 같은 데이터입니다 — 차량, 소유주, 정비 이력을 서로 다른 시점에서 보는 것뿐입니다. 오늘의 수리 사진을 보여주는 그 기록이 작년 오일 교환 날짜도 함께 담고 있고, 그게 6개월 뒤 주행거리 기반 알림을 아무도 기억해서 보내지 않아도 자동으로 작동하게 하는 원동력입니다. 세 가지 도구 대신 앱 하나로 만들면 손님도 로그인 하나, 직원도 대시보드 하나로 끝나서, 문자 도구·별도 결제 앱·종이 정비 이력을 따로 관리할 필요가 없어집니다.',
         },
       },
       {
         q: {
-          en: 'Should this be a native iOS app or a simple web page customers can text-message a link to?',
-          ko: '네이티브 iOS 앱으로 만들어야 하나요, 아니면 문자로 링크를 보내는 간단한 웹페이지면 충분한가요?',
+          en: 'How does in-app payment or estimate approval work for something as high-cost as a car repair — is it actually safe?',
+          ko: '자동차 수리처럼 금액이 큰 경우, 앱 내 결제나 견적 승인이 실제로 안전한가요?',
         },
         a: {
-          en: "For this specific use case, native matters more than it does for most small-business apps, because the entire value proposition is a push notification that reaches a customer without them opening anything — a web link sent by text can offer status pages and reminders, but reliable, no-tap push notifications are a native-app strength that a text-message workflow can't fully match. That said, the two aren't mutually exclusive: many shops start with a lightweight web version (a phone number and a link, no download required) to prove customers actually want status updates, then commission the native App Store app once that habit is proven — with the same backend carrying over, nothing from the first phase goes to waste. We're a registered Apple App Store developer and typically recommend this two-step path for shops testing the idea for the first time.",
-          ko: '이 용도에서는 네이티브 앱이 다른 소상공인 앱보다 훨씬 중요합니다 — 이 서비스 전체의 가치가 "아무것도 열지 않아도 오는 알림"이기 때문입니다. 문자로 보내는 웹 링크도 상태 페이지나 리마인더는 제공할 수 있지만, 별도 터치 없이 확실하게 오는 푸시 알림은 네이티브 앱의 강점이고 문자 워크플로가 완전히 따라오지 못하는 부분입니다. 다만 둘이 배타적인 건 아닙니다 — 많은 매장이 먼저 가벼운 웹 버전(전화번호와 링크, 다운로드 불필요)으로 손님들이 실제로 상태 알림을 원하는지 검증한 뒤, 그 습관이 확인되면 앱스토어 네이티브 앱을 의뢰합니다. 같은 백엔드가 그대로 이어지므로 1단계에서 한 작업이 버려지지 않습니다. 저희는 Apple 앱스토어 등록 개발사이며, 처음 아이디어를 검증하는 매장에는 보통 이 2단계 경로를 권합니다.',
+          en: "The approval and the payment are two separate steps, and that separation is what makes it safe: the customer approves the estimate first — a clear line-item breakdown with photos, no payment involved yet — and actual payment happens afterward, at pickup, through a standard PCI-compliant payment processor (the same category of provider that already powers your point-of-sale, not something the app builds from scratch). No card numbers are ever stored in the app itself. For high-cost repairs, some shops add a required deposit on approval and the balance at pickup, which the app can support the same way, but the core safety point is that we never build custom payment-storage code — we integrate an established processor and let it handle the sensitive part.",
+          ko: '승인과 결제는 별개의 두 단계이고, 이 분리가 안전을 만듭니다 — 손님은 먼저 견적을 승인합니다. 사진과 함께 항목별로 명확한 내역이지만 아직 결제는 없습니다. 실제 결제는 그 이후, 픽업 시점에 표준 PCI 규정을 준수하는 결제 프로세서를 통해 이루어집니다(이미 매장 POS를 돌리는 것과 같은 부류의 업체이지, 앱이 처음부터 만드는 게 아닙니다). 카드 번호는 앱 자체에 절대 저장되지 않습니다. 고액 수리의 경우 일부 매장은 승인 시 예치금을 걸고 픽업 때 잔금을 받는 방식을 쓰는데, 앱도 같은 방식으로 지원할 수 있습니다. 핵심은 저희가 결제 정보를 저장하는 코드를 직접 만들지 않는다는 것입니다 — 검증된 프로세서와 연동해서 민감한 부분은 그쪽이 처리하게 합니다.',
         },
       },
     ],
     sections: {
       en: [
-        { type: 'intro', content: "Walk into most Korean-American dry cleaners in the Philadelphia area — Olney, the Northeast, the Main Line suburbs — and you'll still find the same board: numbered tickets clipped to a corkboard or spinning rack, and a staff member on the phone reading names off it one by one. It works, until the shop gets busy, the line backs up because someone's mid-call, or a customer's order sits ready for three days because the one call went to voicemail. Laundromats have their own version of the same problem — a machine finishes and nobody nearby knows until they walk over and check. We build custom iOS apps as a registered Apple App Store developer, and the order-ready notification is one of the fastest-paying-for-itself apps we build, because it replaces a phone call with a tap." },
-        { type: 'h2', content: "Why this is a genuinely good app idea, not just a nice-to-have" },
-        { type: 'p', content: "Most small-business app ideas need to justify themselves against a free alternative — Instagram, Google Business Profile, a group chat. This one competes against a phone call, which costs staff time on every single order, every single day, forever. That math is why order-ready notifications are one of the highest-ROI native app features we build, and why it works whether a shop has one counter or five." },
-        { type: 'ul', content: 'What the app replaces or adds for a dry cleaner or laundromat:', items: [
-          "Push notification the moment an order is marked ready — no outbound call, no voicemail, no 'sorry, we tried to reach you.'",
-          'A digital punch card / loyalty balance customers can check from their phone, shareable across every location if the business has more than one.',
-          'A queue or estimated-ready-time view for laundromat customers, so they stop walking over to check a dryer that still has 12 minutes left.',
-          'Order history a customer can search themselves — what came in, what was picked up, what is still hanging — instead of calling to ask.',
-          'Bilingual push copy and app screens, since the same shop often serves an English-primary second generation and a Korean-primary older customer base in the same storefront.',
+        { type: 'intro', content: "There's a specific moment that repeats every day at Korean-American auto repair and body shops around Philadelphia — Olney, the Northeast, the Main Line suburbs — a technician pulls a wheel or opens a panel and finds something the customer didn't come in for: worn brake pads, a cracked CV boot, hail damage hiding under a bumper. The shop's only tool for that moment is usually a phone call, made from a noisy bay, to a customer who is often at a desk somewhere and can't take it. We build custom iOS apps as a registered Apple App Store developer, and a repair-status app built around photos and in-app approval turns that awkward call into a message the customer reads and approves on their own schedule." },
+        { type: 'h2', content: 'Why a phone call is the wrong tool for a mid-repair upsell' },
+        { type: 'p', content: "Describing a mechanical problem over the phone puts the shop at a disadvantage it doesn't need to have. A photo of the actual worn part does in one glance what two minutes of verbal explanation struggles to do, and it does it without asking a customer to trust a stranger's voice on the phone. The math on approval speed matters too — a text or push notification with a photo gets answered between meetings; a phone call from an unknown shop number gets sent to voicemail, and the technician either waits on a car mid-repair or moves to the next job and loses the slot." },
+        { type: 'ul', content: 'What a repair-status app replaces or adds for a shop:', items: [
+          'Photo-based repair updates sent the moment a technician finds an issue — the actual part, not a verbal description.',
+          'In-app estimate approval with a line-item breakdown, so the customer sees the price before saying yes, with a timestamped record of what was approved.',
+          'A simple repair-progress view — checked in, diagnosis, awaiting approval, in progress, ready — so customers stop calling to ask "is it done yet."',
+          'Vehicle service history tied to the customer, powering mileage- or date-based reminders for the next oil change or inspection without anyone at the counter having to track it manually.',
+          'Bilingual push notifications and screens, since the same shop often serves English-primary customers alongside a Korean-primary customer base.',
         ] },
         { type: 'h2', content: 'What we actually build first (and what waits)' },
-        { type: 'p', content: "The mistake owners make with any first app is asking for everything at once — payments, scheduling, delivery routing, reviews — which turns a two-month build into a year-long one and doubles the cost before anything ships. The right first version is narrow: mark ready, notify, let the customer see their punch card. That alone eliminates most of the phone calls a counter makes in a day." },
-        { type: 'ul', content: 'A sensible build order for a Philadelphia dry cleaner or laundromat:', items: [
-          'Phase 1 — Order-ready push notifications and a customer-facing order status view. This is the whole value proposition; ship it first and alone.',
-          'Phase 2 — Digital punch card / loyalty points, shareable across locations for multi-store owners.',
-          'Phase 3 — Pickup and delivery scheduling, if the shop offers it, tied to the same order records.',
-          'Phase 4 — In-app payment and pre-pay balances, once the shop has real usage data on how customers actually behave in the app.',
+        { type: 'p', content: "The temptation with a first app is to ask for everything — scheduling, in-app chat, a loyalty program, parts inventory — which turns a focused two-month build into a year-long one before anything ships. The right first version solves the specific moment that costs the shop the most right now: getting a customer to see and approve additional work without a phone tag. Everything else can wait for a second phase once that habit is proven." },
+        { type: 'ul', content: 'A sensible build order for a Philadelphia auto repair or body shop:', items: [
+          'Phase 1 — Photo-based repair updates and in-app estimate approval. This is the whole value proposition; ship it first and alone.',
+          'Phase 2 — Repair-progress status view and service history, so customers stop calling to check status.',
+          'Phase 3 — Mileage- or date-based maintenance reminder push notifications, tied to the same vehicle records.',
+          'Phase 4 — In-app payment at pickup and appointment scheduling, once real usage data shows how customers actually behave in the app.',
         ] },
-        { type: 'tip', content: "Ask any developer this before signing: does marking an order 'ready' take one tap, or does it require re-typing information staff already wrote on the ticket? If the answer involves double data entry, the app will get abandoned at the counter within weeks, no matter how good the customer-facing side looks." },
+        { type: 'tip', content: "Ask any developer this before signing: can a technician attach a photo and send an estimate from the shop floor in under a minute, using a phone or tablet they already have? If the workflow requires going back to a front-desk computer to enter the same information a second time, staff will quietly go back to phone calls within a month." },
         { type: 'h2', content: 'What this costs and how App Store review factors in' },
-        { type: 'p', content: "A focused Phase 1 app — order status, push notifications, a simple counter-side dashboard — is a native iOS build, not a website, so it goes through Apple's App Store review process: a Developer Program enrollment ($99/year), privacy labels describing what customer data is collected, and a review that checks the app actually does what it claims. As a registered App Store developer, we handle that submission end to end, including the resubmission cycle if Apple's first pass raises a question — which is routine, not a red flag. Ownership matters here as much as it does for any app: the Developer account should be one the business controls or can be transferred into, so the app, its push-notification list, and its customer history stay with the shop if the vendor relationship ever changes." },
-        { type: 'cta', content: "Running a dry cleaner or laundromat in the Philadelphia area and tired of the phone-call ticket board? ZOE LUMOS designs and builds custom iOS apps — as a registered Apple App Store developer, we take the build from a one-page idea through App Store review, bilingual from day one. Free consultation: email info@zoelumos.com or message us on KakaoTalk (http://pf.kakao.com/_xhxdxmlX/chat)." },
+        { type: 'p', content: "A focused Phase 1 app — photo updates, estimate approval, a simple shop-floor dashboard — is a native iOS build, not a website, so it goes through Apple's App Store review process: a Developer Program enrollment ($99/year), privacy labels describing what customer and vehicle data is collected, and a review that checks the app does what it claims. As a registered App Store developer, we handle that submission end to end, including the resubmission cycle if Apple's first pass raises a question — routine, not a red flag. Ownership matters as much here as for any app: the Developer account should be one the business controls or can be transferred into, so the app, its customer messages, and its vehicle history stay with the shop if the vendor relationship ever changes." },
+        { type: 'cta', content: "Running an auto repair or body shop in the Philadelphia area and tired of explaining a torn CV boot over the phone? ZOE LUMOS designs and builds custom iOS apps — as a registered Apple App Store developer, we take the build from a one-page idea through App Store review, bilingual from day one. Free consultation: email info@zoelumos.com or message us on KakaoTalk (http://pf.kakao.com/_xhxdxmlX/chat)." },
       ],
       ko: [
-        { type: 'intro', content: '필라델피아 지역 한인 세탁소 — 올니, 노스이스트, 메인라인 교외 — 대부분에 가면 아직도 같은 풍경을 볼 수 있습니다. 코르크보드나 회전 랙에 걸린 번호표, 그리고 그 번호를 한 명씩 부르며 전화를 거는 직원. 한가할 땐 그럭저럭 돌아가지만, 바빠지면 통화 중인 사이 줄이 밀리고, 전화 한 통이 음성사서함으로 넘어가면 완료된 옷이 사흘씩 걸려 있기도 합니다. 런드로맷도 비슷한 문제가 있습니다 — 세탁기가 다 돌았는데 근처에 아무도 없으면 손님이 직접 가서 확인할 때까지 아무도 모릅니다. 저희는 Apple 앱스토어 등록 개발사로서 커스텀 iOS 앱을 만듭니다. 완료 알림 앱은 저희가 만드는 앱 중에서도 가장 빨리 본전을 뽑는 축에 속합니다 — 전화 한 통을 터치 한 번으로 바꾸기 때문입니다.' },
-        { type: 'h2', content: '이게 왜 그냥 "있으면 좋은" 게 아니라 진짜 좋은 앱 아이디어인가' },
-        { type: 'p', content: '대부분의 소상공인 앱 아이디어는 인스타그램, 구글 비즈니스 프로필, 단톡방 같은 무료 대안 앞에서 존재 이유를 증명해야 합니다. 이 앱은 전화 통화와 경쟁합니다 — 주문 한 건마다, 매일, 영원히 직원 시간을 잡아먹는 그 통화 말입니다. 그 계산 때문에 완료 알림은 저희가 만드는 네이티브 앱 기능 중 투자 대비 효과가 가장 높은 축에 들고, 카운터가 하나든 다섯이든 똑같이 통합니다.' },
-        { type: 'ul', content: '세탁소·런드로맷에서 앱이 대체하거나 더해주는 것들:', items: [
-          '주문이 완료 처리되는 즉시 오는 푸시 알림 — 전화도, 음성사서함도, "연락드렸는데 안 받으셨어요"도 없습니다.',
-          '폰에서 바로 확인하는 디지털 적립카드·포인트, 매장이 여러 곳이면 전 지점 공유.',
-          '런드로맷 고객을 위한 대기·예상 완료 시간 화면 — 아직 12분 남은 건조기를 확인하러 걸어갈 필요가 없어집니다.',
-          '손님이 직접 검색하는 주문 이력 — 뭐가 들어왔고, 뭐가 찾아갔고, 뭐가 아직 걸려 있는지 전화로 물어볼 필요가 없습니다.',
-          '이중언어 푸시 문구와 화면 — 같은 매장이 영어가 편한 2세 손님과 한국어가 편한 부모 세대 손님을 같은 카운터에서 응대하는 경우가 많으니까요.',
+        { type: 'intro', content: '필라델피아 지역 한인 카센터·바디샵 — 올니, 노스이스트, 메인라인 교외 — 에서 매일 반복되는 특정한 순간이 있습니다. 정비사가 바퀴를 빼거나 패널을 열었다가 손님이 원래 맡긴 이유와 상관없는 문제를 발견하는 순간입니다. 닳은 브레이크 패드, 갈라진 CV부츠, 범퍼 안쪽에 숨은 우박 손상. 이 순간 매장이 가진 유일한 도구는 보통 시끄러운 작업장에서 거는 전화 한 통인데, 손님은 대개 어딘가 책상에 앉아 있어서 전화를 받지 못합니다. 저희는 Apple 앱스토어 등록 개발사로서 커스텀 iOS 앱을 만듭니다. 사진 기반 수리 현황과 앱 내 승인을 중심으로 만든 앱은 그 어색한 전화 통화를, 손님이 자기 시간에 읽고 승인하는 메시지로 바꿔줍니다.' },
+        { type: 'h2', content: '작업 중 추가 수리 안내에 전화가 맞지 않는 이유' },
+        { type: 'p', content: '정비 문제를 전화로 설명하는 건 매장이 굳이 안 가져도 될 불리함을 스스로 짊어지는 셈입니다. 실제로 닳은 부품 사진 한 장이면 2분간의 말 설명이 겨우 해내는 일을 한눈에 보여주고, 손님이 전화 속 낯선 목소리를 그냥 믿어야 하는 상황도 만들지 않습니다. 승인 속도 계산도 중요합니다 — 사진이 붙은 문자나 푸시 알림은 회의 사이사이에 확인되지만, 모르는 매장 번호로 걸려온 전화는 음성사서함으로 넘어가고, 정비사는 차를 세워둔 채 기다리거나 다음 작업으로 넘어가 그 작업 시간대를 놓치게 됩니다.' },
+        { type: 'ul', content: '수리 현황 앱이 매장에 대체하거나 더해주는 것들:', items: [
+          '정비사가 문제를 발견하는 즉시 보내는 사진 기반 수리 업데이트 — 말 설명이 아니라 실제 부품 사진.',
+          '항목별 내역이 담긴 앱 내 견적 승인 — 손님이 동의하기 전에 가격을 먼저 보고, 무엇을 승인했는지 시각이 찍힌 기록이 남습니다.',
+          '접수·진단·승인 대기·작업 중·완료로 이어지는 간단한 수리 진행 화면 — "다 됐나요" 전화가 줄어듭니다.',
+          '고객에 연결된 차량 정비 이력 — 다음 오일 교환이나 검사를 주행거리·날짜 기준으로 알려주는 알림을, 카운터 직원이 일일이 기억하지 않아도 자동으로 작동하게 합니다.',
+          '이중언어 푸시 알림과 화면 — 같은 매장이 영어가 편한 손님과 한국어가 편한 손님을 함께 응대하는 경우가 많으니까요.',
         ] },
         { type: 'h2', content: '실제로 먼저 만드는 것 (그리고 뒤로 미루는 것)' },
-        { type: 'p', content: '첫 앱을 의뢰하는 사장님들이 흔히 하는 실수는 결제, 예약, 배송 동선, 리뷰까지 한 번에 다 넣어달라는 것입니다 — 두 달짜리 개발이 1년짜리가 되고, 출시도 전에 비용이 두 배가 됩니다. 올바른 첫 버전은 좁습니다: 완료 처리, 알림, 손님이 자기 적립카드를 보는 것. 이것만으로도 카운터가 하루에 거는 전화의 대부분이 사라집니다.' },
-        { type: 'ul', content: '필라델피아 세탁소·런드로맷에 맞는 합리적인 개발 순서:', items: [
-          '1단계 — 완료 푸시 알림과 손님용 주문 상태 화면. 이게 이 서비스의 핵심 가치입니다. 이것부터, 이것만 먼저 출시하세요.',
-          '2단계 — 디지털 적립카드·포인트, 멀티 매장이면 전 지점 공유.',
-          '3단계 — 매장이 픽업·배송 서비스를 한다면, 같은 주문 기록에 연동한 스케줄링.',
-          '4단계 — 앱 내 결제와 선불 잔액, 손님들이 앱을 실제로 어떻게 쓰는지 데이터가 쌓인 뒤에.',
+        { type: 'p', content: '첫 앱을 의뢰할 때 흔한 유혹은 예약, 앱 내 채팅, 적립 프로그램, 부품 재고까지 한 번에 다 넣어달라는 것입니다 — 두 달짜리 집중 개발이 출시도 전에 1년짜리로 늘어납니다. 올바른 첫 버전은 지금 매장에 가장 큰 비용을 발생시키는 그 순간을 해결하는 것입니다 — 전화로 실랑이하지 않고 손님이 추가 작업을 보고 승인하게 만드는 것. 나머지는 그 습관이 자리 잡은 뒤 2단계로 미뤄도 됩니다.' },
+        { type: 'ul', content: '필라델피아 카센터·바디샵에 맞는 합리적인 개발 순서:', items: [
+          '1단계 — 사진 기반 수리 업데이트와 앱 내 견적 승인. 이게 이 서비스의 핵심 가치입니다. 이것부터, 이것만 먼저 출시하세요.',
+          '2단계 — 수리 진행 상태 화면과 정비 이력 — 손님이 상태 확인 전화를 안 걸게 됩니다.',
+          '3단계 — 같은 차량 기록에 연동한, 주행거리·날짜 기준 정비 알림 푸시.',
+          '4단계 — 픽업 시 앱 내 결제와 예약 스케줄링, 손님들이 앱을 실제로 어떻게 쓰는지 데이터가 쌓인 뒤에.',
         ] },
-        { type: 'tip', content: '서명 전에 어떤 개발자에게든 이걸 물어보세요 — 주문을 "완료" 처리하는 데 터치 한 번이면 되나요, 아니면 직원이 티켓에 이미 적은 정보를 다시 입력해야 하나요? 이중 입력이 필요하다는 답이 나오면, 손님용 화면이 아무리 예뻐도 카운터에서 몇 주 안에 버려집니다.' },
+        { type: 'tip', content: '서명 전에 어떤 개발자에게든 이걸 물어보세요 — 정비사가 작업장 바닥에서 이미 쓰던 폰이나 태블릿으로, 사진을 첨부해서 견적을 1분 안에 보낼 수 있나요? 같은 정보를 프런트 컴퓨터로 돌아가서 다시 입력해야 하는 방식이라면, 직원들은 한 달 안에 조용히 전화로 돌아갑니다.' },
         { type: 'h2', content: '비용과 앱스토어 심사는 어떻게 되나' },
-        { type: 'p', content: '주문 상태, 푸시 알림, 카운터용 간단한 대시보드로 구성된 1단계 앱은 웹사이트가 아니라 네이티브 iOS 빌드이므로 Apple의 앱스토어 심사를 거칩니다 — 개발자 프로그램 가입(연 $99), 어떤 고객 데이터를 수집하는지 밝히는 개인정보 라벨, 그리고 앱이 실제로 설명한 대로 동작하는지 확인하는 심사입니다. 저희는 앱스토어 등록 개발사로서 이 제출 과정을 처음부터 끝까지 맡아 처리하며, Apple이 첫 심사에서 질문을 던지면 재제출까지 함께합니다 — 이는 흔한 절차이지 경고 신호가 아닙니다. 소유권은 이 앱에서도 다른 앱과 똑같이 중요합니다 — 개발자 계정은 사업체가 통제하거나 이전받을 수 있는 계정이어야, 업체와의 관계가 바뀌더라도 앱과 푸시 알림 목록, 고객 이력이 매장에 남습니다.' },
-        { type: 'cta', content: '필라델피아 지역에서 세탁소나 런드로맷을 운영하시면서 전화 돌리는 티켓 보드에 지치셨나요? ZOE LUMOS는 커스텀 iOS 앱을 설계하고 만듭니다 — Apple 앱스토어 등록 개발사로서, 한 페이지 아이디어부터 앱스토어 심사까지 처음부터 이중언어로 진행합니다. 무료 상담: info@zoelumos.com 이메일 또는 카카오톡(http://pf.kakao.com/_xhxdxmlX/chat)으로 문의하세요.' },
+        { type: 'p', content: '사진 업데이트, 견적 승인, 작업장용 간단한 대시보드로 구성된 1단계 앱은 웹사이트가 아니라 네이티브 iOS 빌드이므로 Apple의 앱스토어 심사를 거칩니다 — 개발자 프로그램 가입(연 $99), 어떤 고객·차량 데이터를 수집하는지 밝히는 개인정보 라벨, 그리고 앱이 실제로 설명한 대로 동작하는지 확인하는 심사입니다. 저희는 앱스토어 등록 개발사로서 이 제출 과정을 처음부터 끝까지 맡아 처리하며, Apple이 첫 심사에서 질문을 던지면 재제출까지 함께합니다 — 이는 흔한 절차이지 경고 신호가 아닙니다. 소유권은 이 앱에서도 다른 앱과 똑같이 중요합니다 — 개발자 계정은 사업체가 통제하거나 이전받을 수 있는 계정이어야, 업체와의 관계가 바뀌더라도 앱과 고객 메시지, 차량 이력이 매장에 남습니다.' },
+        { type: 'cta', content: '필라델피아 지역에서 카센터나 바디샵을 운영하시면서 갈라진 CV부츠를 전화로 설명하는 데 지치셨나요? ZOE LUMOS는 커스텀 iOS 앱을 설계하고 만듭니다 — Apple 앱스토어 등록 개발사로서, 한 페이지 아이디어부터 앱스토어 심사까지 처음부터 이중언어로 진행합니다. 무료 상담: info@zoelumos.com 이메일 또는 카카오톡(http://pf.kakao.com/_xhxdxmlX/chat)으로 문의하세요.' },
       ],
     },
   },
