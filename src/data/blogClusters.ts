@@ -55,6 +55,7 @@ export const PILLARS = {
       'korean-restaurant-chicago-online-ordering-pos-reviews-2026',
       'korean-restaurant-catering-denver-aurora-2026',
       'korean-restaurant-houston-pos-catering-reviews-2026',
+      'korean-cafe-bakery-columbus-ohio-pos-catering-reviews-2026',
     ],
   },
   'beauty-wellness': {
@@ -358,4 +359,7 @@ export const POST_TO_PILLAR: Record<string, PillarKey> = {
 
   // 2026-08-17 — Houston F&B: online ordering, POS (Square/Toast/Clover), catering, reviews
   'korean-restaurant-houston-pos-catering-reviews-2026': 'restaurant-marketing',
+
+  // 2026-09-19 — Columbus, OH F&B: cafe/bakery online ordering, POS, campus-calendar catering, reviews
+  'korean-cafe-bakery-columbus-ohio-pos-catering-reviews-2026': 'restaurant-marketing',
 }

@@ -13521,4 +13521,132 @@ export const blogContent: BlogPost[] = [
       ],
     },
   },
+  // ─────────────────────────────────────────────────────────────────
+  // 2026-09-19 — F&B rotation: cafe/bakery online ordering + POS + campus
+  // catering + review management, Columbus, Ohio (Bethel Rd corridor /
+  // Ohio State University) angle — college-town customer turnover
+  // distinguishes it from the Houston and Chicago restaurant posts already
+  // in the pillar. City confirmed via web search: Columbus has the
+  // largest Korean-American population of any Ohio city, driven by OSU;
+  // Bethel Road has a real cluster of Korean grocery/restaurant businesses
+  // (no H Mart confirmed there, so that anchor is not used).
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'korean-cafe-bakery-columbus-ohio-pos-catering-reviews-2026',
+    date: '2026-09-19',
+    updatedDate: '2026-09-19',
+    readTime: 10,
+    category: { en: 'Restaurant', ko: '레스토랑' },
+    title: {
+      en: 'Korean Cafes & Bakeries in Columbus, Ohio: Wire Online Ordering, POS, Catering, and Reviews Into One System (2026)',
+      ko: '콜럼버스(오하이오) 한인 카페·베이커리 사장님 — 온라인 주문 · POS · 케이터링 · 리뷰 관리를 하나의 시스템으로 (2026)',
+    },
+    metaDescription: {
+      en: "Korean cafes and bakeries along the Bethel Road corridor in Columbus, Ohio — home to the largest Korean-American community in the state, anchored by Ohio State University — serve two different rhythms at once: loyal local regulars, and a huge, constantly turning-over population of students who search 'korean bakery near OSU' once, decide from reviews alone, and graduate within a few years. Here is how to wire direct ordering into your Square, Toast, or Clover POS, build a catering system that can handle game-day weekends and graduation season, and keep Google and Yelp reviews answered for readers who have no other way to judge you.",
+      ko: "콜럼버스(오하이오) 벧엘 로드(Bethel Rd) 상권 — 오하이오주립대(OSU)를 중심으로 형성된, 오하이오주에서 가장 큰 한인 커뮤니티가 있는 곳 — 의 한인 카페·베이커리는 서로 다른 두 리듬을 동시에 상대합니다. 오래된 단골 손님과, '오하이오주립대 근처 한인 베이커리'를 한 번 검색하고 리뷰만 보고 결정한 뒤 몇 년 안에 졸업해 떠나는, 끊임없이 교체되는 거대한 학생 인구입니다. 직접 주문을 Square·Toast·Clover POS에 연결하고, 홈경기 주말과 졸업 시즌을 감당할 수 있는 케이터링 시스템을 만들고, 다른 판단 근거가 없는 독자들을 위해 구글·Yelp 리뷰에 답글을 다는 방법을 정리했습니다.",
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'Square, Toast, or Clover — which POS fits a Korean cafe or bakery near Ohio State University best?',
+          ko: '오하이오주립대 인근 한인 카페·베이커리에는 Square, Toast, Clover 중 어떤 POS가 맞나요?',
+        },
+        a: {
+          en: "Square usually fits a Korean cafe or bakery best in a college-town market like this because its hardware and monthly costs are lower, its line moves fast at the register during the rush between classes, and online ordering, catering invoicing, and a loyalty program all live in the same free-to-start dashboard — a strong match for a counter-service spot doing $8k–$25k a month with no table service to manage. Toast is built for full-service dining with servers and kitchen display screens, so it earns its higher monthly cost mainly at Korean BBQ and full-service restaurants nearby, not at a counter bakery. Clover sits in between and is often what a payments processor already put on the counter — a reasonable choice to keep rather than replace. The Columbus-specific factor: a large share of the customer base near Ohio State is students who default to Apple Pay or Google Pay on their phones rather than carrying a card at all. Whichever POS you choose, confirm contactless tap-to-pay is actually turned on at the terminal — a register that makes a student dig for a physical card between classes loses that sale to the next place in line before they even finish deciding.",
+          ko: '보통 이런 대학가 상권에서는 한인 카페·베이커리에 Square가 가장 잘 맞습니다. 하드웨어와 월 비용이 더 낮고, 수업 사이 쉬는 시간 러시에도 계산대 줄이 빠르게 빠지며, 온라인 주문·케이터링 인보이스·적립 프로그램이 모두 무료로 시작하는 같은 대시보드 안에 있어서, 테이블 서비스가 없는 월 매출 8천~2만 5천 달러대 카운터 서비스 매장에 잘 맞습니다. Toast는 서버와 주방 디스플레이 화면을 갖춘 정통 홀서빙을 위해 만들어졌기 때문에, 더 높은 월 비용은 카운터 베이커리보다는 근처의 한식 바비큐·풀서비스 레스토랑에서 가치를 발휘합니다. Clover는 그 중간이고, 결제 대행사가 이미 카운터에 놓고 간 경우가 많아 교체보다 유지가 합리적일 때가 많습니다. 콜럼버스만의 변수는 이것입니다 — 오하이오주립대 인근 고객층의 상당수가 카드를 아예 들고 다니지 않고 휴대폰의 Apple Pay·Google Pay를 기본으로 쓰는 학생들입니다. 어떤 POS를 고르든 단말기에 비접촉 탭 결제가 실제로 켜져 있는지 확인하세요 — 수업 사이 짧은 시간에 학생이 실물 카드를 뒤적이게 만드는 계산대는, 학생이 결정을 마치기도 전에 그 매출을 줄 선 다음 가게에 넘겨주는 셈입니다.',
+        },
+      },
+      {
+        q: {
+          en: 'How do I set up a catering system that can handle predictable campus rush weekends like move-in week or graduation?',
+          ko: '입주 주간이나 졸업식처럼 예측 가능한 캠퍼스 대량 주문 시기는 케이터링 시스템에 어떻게 반영하나요?',
+        },
+        a: {
+          en: "Publish a fixed catering menu with per-person pricing in tiers by headcount, require a minimum lead time that gets longer during Ohio State's predictable high-demand windows — home football Saturdays, welcome and move-in week, finals week, and graduation weekend — and collect a deposit online through your POS invoicing feature before a date is confirmed on a shared kitchen calendar. Add one thing worth building specifically for a campus market: a standing relationship with the Korean Student Association, the international student office, and Greek life event planners, since these groups order catering repeatedly on a predictable academic-year rhythm rather than once. A simple form asking for headcount, event date, and pickup or delivery, tied to a deposit at booking, turns graduation weekend from a scramble of last-minute DMs into a calendar you can staff for months in advance.",
+          ko: '패키지 규모별 인당 가격을 담은 고정 케이터링 메뉴를 공개하고, 오하이오주립대의 예측 가능한 성수기 — 홈경기가 있는 토요일, 신학기 입주 주간, 기말고사 기간, 졸업식 주말 — 에는 최소 리드타임을 더 길게 설정하고, 날짜가 공유 주방 캘린더에 확정으로 등록되기 전 POS의 인보이스 기능으로 예치금을 온라인으로 받으세요. 캠퍼스 상권이라면 특히 만들 가치가 있는 것 하나를 더하세요 — 한인학생회(KSA), 국제학생 담당 부서, 그릭라이프(동아리·자매회) 행사 담당자와의 지속적인 관계입니다. 이런 단체들은 한 번이 아니라 학사 일정에 맞춰 예측 가능한 리듬으로 반복 주문합니다. 인원수·행사 날짜·픽업 또는 배달 여부를 받고 예약 시점에 예치금으로 연결되는 간단한 폼 하나면, 졸업식 주말이 막판 DM으로 우왕좌왕하는 대신 몇 달 전부터 인력을 배치할 수 있는 일정표로 바뀝니다.',
+        },
+      },
+      {
+        q: {
+          en: 'How do I manage Google and Yelp reviews when a large share of my customers graduate and leave every few years?',
+          ko: '손님의 상당수가 몇 년마다 졸업하고 떠나는데, 구글·Yelp 리뷰는 어떻게 관리해야 하나요?',
+        },
+        a: {
+          en: "Reply to every review — from a longtime local or a sophomore who found you once — within the week, in the language it was written in, and do not treat a passing student's review as less valuable, because incoming students with zero history in the city rely on those reviews as close to their only signal. The rules are the same everywhere: never pay, discount, or offer anything in exchange for a review, and never filter who gets asked, since Google and Yelp both prohibit this and can wipe a profile's reviews if caught. What is different near a large campus is turnover — a meaningful share of your reviewers graduate and leave within a few years, so your review profile is constantly being read by a new wave of students with no institutional memory of your bakery, unlike a mostly-local market where regulars build a relationship with a business over a decade. A standing weekly 30-minute reply block, plus a short bilingual review-request card in the pickup bag, keeps the profile current for whichever incoming class is searching this semester.",
+          ko: '오래된 단골이든 한 번 찾아온 2학년 학생이든 상관없이, 리뷰가 쓰인 언어 그대로 일주일 안에 모두 답글을 다세요. 그리고 잠깐 스쳐 가는 학생의 리뷰를 덜 중요하게 여기지 마세요 — 이 도시에 대한 사전 정보가 전혀 없는 신입생에게는 그 리뷰가 사실상 유일한 판단 근거이기 때문입니다. 기본 규칙은 어디서나 같습니다 — 리뷰 대가로 돈이나 할인을 주지 말고, 만족한 손님만 골라 부탁하지 마세요. 구글과 Yelp 모두 이를 금지하고, 적발되면 프로필의 리뷰가 통째로 사라질 수 있습니다. 대형 캠퍼스 인근에서 다른 점은 회전율입니다 — 리뷰어의 상당수가 몇 년 안에 졸업하고 떠나기 때문에, 리뷰 프로필은 우리 베이커리에 대한 아무 기억도 없는 새로운 학생 세대에게 끊임없이 다시 읽힙니다. 단골이 10년에 걸쳐 관계를 쌓는 지역 중심 상권과는 다른 조건입니다. 매주 고정된 30분 답글 시간과, 픽업 봉투에 넣는 짧은 이중언어 리뷰 요청 카드만 있으면, 이번 학기에 검색 중인 신입생 세대에게도 프로필을 최신 상태로 유지할 수 있습니다.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "Columbus's Korean food scene centers loosely on the Bethel Road corridor on the city's north side — a cluster of independent Korean groceries and restaurants that has grown alongside Ohio State University, which draws the largest concentration of Korean-American residents of any city in Ohio. What makes this market different from almost anywhere else a Korean cafe or bakery operates in the US is the rhythm of who walks through the door: loyal local families and longtime residents, next to a massive, constantly turning-over population of students who found the place through a single Google search and will graduate and leave within a few years. Run well, that is one of the steadiest-growing customer bases in the Midwest. Run on four disconnected systems — a delivery app taking the orders, a POS nobody analyzes, catering requests scattered across texts, and reviews from both audiences piling up unanswered — it is a lot of demand quietly leaking value." },
+        { type: 'h2', content: 'Two customer rhythms, one set of disconnected systems' },
+        { type: 'p', content: "Most Korean cafe and bakery owners near campus built each piece of their online presence at a different time, for a different reason, the same way owners everywhere do — a delivery tablet a rep dropped off, a POS bundled with a payments deal, catering handled by phone as a favor that never got formalized, a Google listing claimed years ago. In most cities that is just inefficient. Near a campus the size of Ohio State's it is a missed opportunity on a larger scale, because so much of the customer base resets every few years — the business has to keep winning over students who have never heard of it before, semester after semester, and a system built purely on memorized regulars does not carry that weight." },
+        { type: 'ul', content: 'What the disconnection costs here specifically:', items: [
+          "Marketplace commissions on students who would order direct — a student searching 'korean bakery near OSU' will tap whatever ordering link Google shows first, and if that link is a commissioned marketplace instead of your own site, you pay a fee on a customer who had no other way to find you.",
+          'Catering that cannot move fast enough — a Korean Student Association or sorority event planner needing 40 boxed lunches for a Friday meeting will move to the next search result if your only channel is a phone call during your lunch rush.',
+          'No record of repeat campus-org buyers — one-off catering handled by text leaves no list of the student organizations or offices who would order again every semester if you simply followed up.',
+          'Reviews read by strangers with no context — a slow or unanswered review is a bigger loss here than in a mostly-local market, because so many future readers are incoming students deciding whether to visit at all, not whether to come back.',
+        ] },
+        { type: 'h2', content: 'Step one: pick your POS and make contactless payment non-negotiable' },
+        { type: 'p', content: "Square, Toast, and Clover all now ship first-party online ordering that reads from the same menu your register uses. Square tends to fit a counter-service cafe or bakery best because of its lower cost and built-in invoicing; Toast earns its higher price at full-service BBQ restaurants running table service; Clover works for either and is often already on the counter from a processor deal. Whichever you run, treat contactless payment as mandatory rather than optional — students overwhelmingly default to Apple Pay or Google Pay on their phones rather than carrying a card, and every terminal that only reads chip cards is quietly losing sales during the short window between classes." },
+        { type: 'ul', content: 'The order of operations we recommend:', items: [
+          "Turn on your POS vendor's online ordering so a direct channel exists, flowing into the same kitchen workflow as everything else.",
+          'Enable Apple Pay and Google Pay at every terminal — not just the option on your phone, on the actual card reader customers tap.',
+          "Point your Google Business Profile 'Order' action and any QR code at the register to your direct ordering page, not a marketplace.",
+          'Give regulars a small, sustainable reason to order direct — a pickup discount you can afford precisely because no commission is coming out of it.',
+        ] },
+        { type: 'tip', content: "Check one thing today: search your business name on Google and see where the 'Order online' button actually sends people. Along the Bethel Road corridor especially, that button often points to a third-party marketplace — meaning Google is routing even a customer who searched you by name through a commissioned channel. Repointing it is a ten-minute fix inside Google Business Profile." },
+        { type: 'h2', content: 'Step two: build a catering system that runs on the academic calendar' },
+        { type: 'p', content: "Catering is often the highest-margin work a Korean cafe or bakery does, and near a campus this size it follows a predictable rhythm most cities do not have: demand spikes hard around home football Saturdays, welcome and move-in week, finals week, and graduation weekend, then goes quiet over the summer. A structured system built around that calendar turns predictable spikes into planned revenue instead of scrambles." },
+        { type: 'ul', content: 'What the catering system needs to include:', items: [
+          'A published per-person price tier by package size, visible before anyone has to call.',
+          'A standard minimum lead time that extends automatically around known campus peaks — game days, move-in week, finals, and graduation weekend.',
+          "A deposit collected online at booking through your POS's invoicing feature, before the date counts as confirmed.",
+          'A shared kitchen calendar blocked the moment a deposit clears, plus a standing relationship with the Korean Student Association, international student office, and Greek life event planners who order on a predictable academic-year rhythm.',
+        ] },
+        { type: 'p', content: "None of this requires new software if you already run Square, Toast, or Clover — all three support invoicing that can double as deposit collection. The addition worth building specifically for this market is the standing relationship with campus organizations: a Korean Student Association or international student office that orders once usually orders again next semester if someone simply follows up, turning graduation weekend from a scramble of last-minute DMs into a calendar you can staff for months in advance." },
+        { type: 'h2', content: 'Step three: review management built for a four-year memory reset' },
+        { type: 'p', content: "A standing weekly 30-minute block to reply to every new review, in the language it was written in, covers the basics — thank the good ones specifically, answer the bad ones calmly with what changed. What matters more near a large campus is remembering who is actually reading the reply: a meaningful share of your reviewers graduate and leave within a few years, so the profile is constantly being read by a new wave of incoming students with no institutional memory of your bakery, unlike a mostly-local market where regulars build a relationship with a business over a decade. Never pay for reviews, discount for them, or filter who gets asked — Google and Yelp both prohibit this and can remove a profile's reviews entirely if caught. On Yelp specifically, where even asking is discouraged, invest in the profile itself: real photos of what people actually order and fast owner responses do more work here than anywhere else, because so many readers have no other way to judge you." },
+        { type: 'h2', content: 'The Columbus-specific layer: build for lifers and a four-year population at once' },
+        { type: 'p', content: "A bilingual website that covers hours, parking, the Bethel Road corridor location, and direct ordering and catering links serves Korean-American regulars searching '콜럼버스 한인 베이커리' the same way it serves an incoming freshman searching 'korean bakery near Ohio State.' Most cafes here build for one audience and hope the other finds them anyway. As Columbus's Korean-American community keeps growing around the state's largest concentration of Korean residents, and as a new class of students arrives every August with zero institutional memory of who is good, the businesses that plan for both audiences from the start — fast contactless payment, a catering system built around the academic calendar, and reviews answered for readers who have never set foot in the store — are the ones that convert that unusually loyal, unusually renewing customer base into repeat and referral business instead of one good semester." },
+        { type: 'cta', content: "Running a Korean cafe or bakery in Columbus and juggling ordering, POS, catering, and reviews across four different places? ZOE LUMOS builds bilingual cafe and bakery websites with direct online ordering wired into Square, Toast, or Clover, a catering system built around a campus market's academic calendar, and Google Business Profile and review management set up as a routine you can actually keep. Free consultation in English or Korean: email info@zoelumos.com or message us on KakaoTalk (http://pf.kakao.com/_xhxdxmlX/chat)." },
+      ],
+      ko: [
+        { type: 'intro', content: '콜럼버스의 한인 외식 상권은 도시 북쪽 벧엘 로드(Bethel Rd)를 중심으로 느슨하게 형성돼 있습니다 — 오하이오주에서 어느 도시보다도 많은 한인 인구를 끌어모으는 오하이오주립대(OSU)와 함께 성장해 온, 독립 한인 마트·식당들의 클러스터입니다. 이 시장이 미국 어느 지역의 한인 카페·베이커리와도 다른 점은 문을 열고 들어오는 손님의 리듬입니다 — 오래된 단골 가족과 오래 거주한 주민들 옆에는, 구글 검색 한 번으로 찾아왔다가 몇 년 안에 졸업하고 떠날, 끊임없이 교체되는 거대한 학생 인구가 있습니다. 잘 운영하면 중서부에서 가장 꾸준히 늘어나는 고객층 중 하나입니다. 하지만 주문을 가져가는 배달 앱, 아무도 분석하지 않는 POS, 문자에 흩어진 케이터링 요청, 두 고객층 모두에게서 답글 없이 쌓이는 리뷰 — 이렇게 네 개의 단절된 시스템으로 돌아간다면, 이 꾸준한 수요가 조용히 가치를 흘리고 있는 것입니다.' },
+        { type: 'h2', content: '두 개의 고객 리듬, 하나의 단절된 시스템' },
+        { type: 'p', content: '캠퍼스 근처 한인 카페·베이커리 사장님 대부분은 온라인 존재감의 각 조각을 다른 시기에, 다른 이유로 만드셨습니다 — 어디서나 그렇듯, 영업사원이 놓고 간 배달 태블릿, 결제 대행 계약에 묶여 딸려 온 POS, 정식화된 적 없이 호의로 시작해 전화로 처리돼 온 케이터링, 몇 년 전 누군가 등록해 둔 구글 리스팅. 대부분의 도시에서는 이게 그저 비효율일 뿐입니다. 오하이오주립대 규모의 캠퍼스 근처에서는 더 큰 규모의 놓친 기회입니다 — 고객층의 상당 부분이 몇 년마다 통째로 리셋되기 때문에, 매 학기 우리 가게를 전혀 모르는 학생들을 새로 설득해야 하고, 오직 암기된 단골에게만 의존하는 시스템은 그 무게를 버티지 못합니다.' },
+        { type: 'ul', content: '이 단절이 여기서 특히 더 비싸게 먹히는 이유:', items: [
+          "직접 주문했을 학생에게까지 나가는 마켓플레이스 수수료 — '오하이오주립대 근처 한인 베이커리'를 검색하는 학생은 구글이 먼저 보여주는 주문 링크를 그대로 탭합니다. 그 링크가 자사 사이트가 아니라 수수료가 붙는 마켓플레이스라면, 다른 방법으로는 우리 가게를 찾을 수 없었던 손님에게까지 수수료를 내는 셈입니다.",
+          '충분히 빠르게 움직이지 못하는 케이터링 — 금요일 모임용 도시락 40개가 필요한 한인학생회나 자매회 행사 담당자는, 점심 러시 중 전화 한 통이 유일한 채널이라면 다음 검색 결과로 넘어갑니다.',
+          '재주문하는 캠퍼스 단체 고객이 누구인지 기록이 없음 — 문자로 처리한 일회성 케이터링은, 다시 팔로업만 하면 매 학기 재주문할 학생 단체·부서 명단을 전혀 남기지 않습니다.',
+          '맥락 없는 낯선 사람들이 읽는 리뷰 — 대부분 현지 손님인 시장보다 여기서는 느리거나 답 없는 리뷰의 손실이 더 큽니다. 미래의 독자 상당수가 신입생이고, "재방문 여부"가 아니라 "애초에 방문할지 말지"를 이 리뷰로 결정하기 때문입니다.',
+        ] },
+        { type: 'h2', content: '1단계 — POS를 정하고, 비접촉 결제는 선택이 아니라 필수로' },
+        { type: 'p', content: 'Square, Toast, Clover 모두 이제 계산대가 쓰는 것과 같은 메뉴를 그대로 읽어오는 자사 온라인 주문을 제공합니다. Square는 비용이 낮고 인보이스 기능이 내장돼 있어 카운터 서비스 카페·베이커리에 가장 잘 맞고, Toast는 홀서빙을 운영하는 정통 바비큐 레스토랑에서 더 높은 비용만큼의 값을 하며, Clover는 둘 다에서 쓸 수 있고 결제 대행사가 이미 카운터에 놓고 간 경우가 많습니다. 어느 쪽을 쓰든 비접촉 결제는 선택이 아니라 필수로 다루세요 — 학생들은 카드를 들고 다니기보다 휴대폰의 Apple Pay·Google Pay를 압도적으로 기본값처럼 씁니다. 칩 카드만 읽는 단말기는 수업 사이 짧은 시간에 조용히 매출을 놓치고 있는 것입니다.' },
+        { type: 'ul', content: '저희가 권하는 작업 순서:', items: [
+          'POS 업체의 온라인 주문을 켜서 직접 주문 채널부터 존재하게 만드세요. 다른 모든 주문과 같은 주방 워크플로로 흘러갑니다.',
+          '모든 단말기에서 Apple Pay·Google Pay를 켜세요 — 휴대폰 앱 옵션이 아니라, 손님이 실제로 탭하는 카드 리더기에서요.',
+          "구글 비즈니스 프로필의 '주문' 버튼과 계산대의 QR 코드를 마켓플레이스가 아니라 자체 주문 페이지로 향하게 하세요.",
+          '단골이 직접 주문을 택할 작고 지속 가능한 이유를 주세요 — 수수료가 안 나가니 그만큼 감당 가능한 픽업 할인으로요.',
+        ] },
+        { type: 'tip', content: "오늘 딱 하나만 확인해 보세요. 구글에 우리 가게 이름을 검색하고 '온라인 주문' 버튼이 실제로 어디로 보내는지 보는 겁니다. 특히 벧엘 로드 상권에서는 이 버튼이 제3자 마켓플레이스로 연결된 경우가 많습니다 — 이름까지 검색해서 찾아온 손님마저 구글이 수수료 채널로 흘려보내고 있다는 뜻입니다. 이 버튼을 바꾸는 건 구글 비즈니스 프로필 안에서 10분이면 되는 수정입니다." },
+        { type: 'h2', content: '2단계 — 학사 일정에 맞춰 돌아가는 케이터링 시스템 만들기' },
+        { type: 'p', content: '케이터링은 한인 카페·베이커리가 하는 일 중 마진이 가장 좋은 경우가 많고, 이 정도 규모의 캠퍼스 근처에서는 다른 도시엔 잘 없는 예측 가능한 리듬을 탑니다 — 홈경기가 있는 토요일, 신학기 입주 주간, 기말고사 기간, 졸업식 주말에 수요가 크게 몰렸다가 여름에는 조용해집니다. 이 일정에 맞춰 만든 구조화된 시스템은 예측 가능한 성수기를 우왕좌왕이 아니라 계획된 매출로 바꿔 줍니다.' },
+        { type: 'ul', content: '케이터링 시스템에 들어가야 할 것:', items: [
+          '패키지 규모별로 공개된 인당 가격표 — 전화하기 전에 이미 보이는 숫자.',
+          '경기일·입주 주간·기말고사·졸업식 주말 같은 캠퍼스 성수기에는 자동으로 길어지는 기본 최소 리드타임.',
+          "날짜가 확정으로 인정되기 전, POS의 인보이스 기능으로 예약 시점에 온라인으로 받는 예치금.",
+          '예치금이 처리되는 순간 블록 처리되는 공유 주방 캘린더, 그리고 학사 일정에 맞춰 예측 가능하게 주문하는 한인학생회·국제학생 담당 부서·그릭라이프 행사 담당자와의 지속적인 관계.',
+        ] },
+        { type: 'p', content: '이미 Square, Toast, Clover 중 하나를 쓰고 계시다면 새 소프트웨어가 필요 없습니다 — 셋 다 예치금 수집 도구로도 쓸 수 있는 인보이스 기능을 지원합니다. 이 시장을 위해 특별히 만들 가치가 있는 추가 요소는 캠퍼스 단체와의 지속적인 관계입니다 — 한 번 주문한 한인학생회나 국제학생 담당 부서는, 누군가 팔로업만 하면 보통 다음 학기에도 다시 주문합니다. 이것이 졸업식 주말을 막판 DM으로 우왕좌왕하는 대신 몇 달 전부터 인력을 배치할 수 있는 일정표로 바꿔 줍니다.' },
+        { type: 'h2', content: '3단계 — 4년마다 리셋되는 기억을 감안한 리뷰 관리' },
+        { type: 'p', content: '매주 고정된 30분 동안 새 리뷰 전부에 쓰인 언어 그대로 답글을 다는 것이 기본입니다 — 좋은 리뷰엔 구체적으로 감사하고, 나쁜 리뷰엔 무엇을 바꿨는지 차분하게 답하세요. 대형 캠퍼스 근처에서 더 중요한 건 그 답글을 실제로 누가 읽는지 기억하는 것입니다. 리뷰어의 상당수가 몇 년 안에 졸업하고 떠나기 때문에, 프로필은 우리 베이커리에 대한 아무 기억도 없는 새로운 학생 세대에게 끊임없이 다시 읽힙니다. 단골이 10년에 걸쳐 관계를 쌓는 지역 중심 상권과는 다른 조건입니다. 리뷰에 돈을 내거나, 할인을 걸거나, 만족한 손님만 골라 부탁하는 일은 절대 하지 마세요 — 구글과 Yelp 모두 이를 금지하고, 적발되면 프로필의 리뷰가 통째로 사라질 수 있습니다. 요청 자체를 지양하라고 하는 Yelp에서는 특히 프로필 그 자체에 투자하세요 — 손님들이 실제로 시키는 메뉴의 진짜 사진과 빠른 사장님 답글이, 다른 판단 근거가 없는 독자가 많은 이곳에서 다른 어디보다 더 큰 역할을 합니다.' },
+        { type: 'h2', content: '콜럼버스에서만 더해지는 한 겹 — 오래된 주민과 4년마다 바뀌는 인구를 동시에 위한 설계' },
+        { type: 'p', content: "영업시간, 주차, 벧엘 로드 상권 위치, 직접 주문·케이터링 링크를 담은 이중언어 웹사이트는 '콜럼버스 한인 베이커리'를 검색하는 단골 한인 손님과 'korean bakery near Ohio State'를 검색하는 신입생을 똑같이 잘 상대합니다. 이곳의 많은 카페가 한쪽 고객층만 위해 만들고 나머지는 알아서 찾아오길 바랍니다. 콜럼버스의 한인 커뮤니티가 오하이오주에서 가장 큰 한인 인구를 중심으로 계속 성장하고, 매년 8월 우리 가게에 대한 사전 정보가 전혀 없는 새 학생 세대가 도착하는 지금, 처음부터 두 고객층 모두를 위해 설계한 곳 — 빠른 비접촉 결제, 학사 일정에 맞춘 케이터링 시스템, 매장에 한 번도 발을 들이지 않은 독자를 위한 리뷰 답글까지 갖춘 곳 — 이 이례적으로 충성도 높고 이례적으로 계속 새로워지는 고객층을, 좋았던 한 학기가 아니라 재방문과 소개로 전환합니다." },
+        { type: 'cta', content: '콜럼버스에서 한인 카페·베이커리를 운영하시면서, 주문·POS·케이터링·리뷰가 네 개의 다른 곳에서 따로 돌아가는 데 지치셨나요? ZOE LUMOS는 Square·Toast·Clover에 직접 연결되는 온라인 주문을 갖춘 이중언어 카페·베이커리 웹사이트를 만들고, 캠퍼스 상권의 학사 일정에 맞춘 케이터링 시스템, 그리고 실제로 지킬 수 있는 루틴으로 세팅된 구글 비즈니스 프로필·리뷰 관리를 제공합니다. 한국어/영어 무료 상담: info@zoelumos.com 이메일 또는 카카오톡(http://pf.kakao.com/_xhxdxmlX/chat)으로 편하게 문의하세요.' },
+      ],
+    },
+  },
 ]
