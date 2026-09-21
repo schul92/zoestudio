@@ -13521,4 +13521,125 @@ export const blogContent: BlogPost[] = [
       ],
     },
   },
+  // ─────────────────────────────────────────────────────────────────
+  // 2026-09-21 — AWS cost optimization for Korean-American tech/e-commerce
+  // businesses in Austin, TX. Distinct angle from prior AWS posts (Dallas
+  // foundational migration, Atlanta network security, Seattle multi-location
+  // scaling, Virginia CMMC compliance, Atlanta HIPAA, Minneapolis DR):
+  // this one is about a self-built or freelancer-built AWS account that has
+  // grown expensive and unpredictable, and the audit/right-sizing process
+  // that fixes it. Ties back to the site's recurring "own your
+  // infrastructure" theme via the account-ownership FAQ.
+  // Audience rotation: Austin, TX (not previously covered).
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'aws-cost-optimization-korean-business-austin-2026',
+    date: '2026-09-21',
+    updatedDate: '2026-09-21',
+    readTime: 9,
+    category: { en: 'Cloud & Infrastructure', ko: '클라우드 · 인프라' },
+    title: {
+      en: 'Your AWS Bill Tripled and Nobody Can Explain Why: A Cloud Cost Optimization Guide for Korean-American Businesses in Austin (2026)',
+      ko: 'AWS 요금이 갑자기 세 배로 뛰었는데 이유를 아는 사람이 없다면 — 오스틴 한인 기업을 위한 클라우드 비용 최적화 가이드 (2026)',
+    },
+    metaDescription: {
+      en: 'Korean-American tech, e-commerce, and professional services businesses around Austin, Texas often build their first AWS setup themselves or through a freelancer, then get hit with a monthly bill nobody can fully explain. Here is what a cloud cost optimization audit actually finds — idle compute, missing Savings Plans, unmanaged S3 storage — and how to fix it without a risky full rebuild.',
+      ko: '텍사스 오스틴 일대의 한인 테크·이커머스·전문 서비스 기업은 첫 AWS 환경을 직접 만들거나 프리랜서에게 맡기는 경우가 많은데, 어느 순간 아무도 완전히 설명할 수 없는 월 요금 고지서를 받게 됩니다. 클라우드 비용 최적화 감사가 실제로 무엇을 찾아내는지 — 유휴 컴퓨팅 자원, 누락된 절감형 요금제, 방치된 S3 스토리지 — 그리고 위험한 전면 재구축 없이 이를 고치는 방법을 정리했습니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'Can we just look at AWS Cost Explorer ourselves instead of hiring someone for cloud cost optimization?',
+          ko: 'AWS 비용 최적화, 그냥 저희가 AWS Cost Explorer를 켜서 직접 보면 안 되나요?',
+        },
+        a: {
+          en: "You can and should start there — Cost Explorer is free and it is the right first move. What it shows you, though, is which service the money is going to, not why your architecture is generating that spend or which changes are safe to make without breaking a production system nobody wants to touch on a Friday afternoon. Cost Explorer will tell you EC2 is your biggest line item; it will not tell you that three of those instances have had under 5% CPU utilization for two months and can be downsized or scheduled to shut off overnight. That gap between seeing the number and knowing what to safely change is where an outside review earns its cost, and it is usually a short, contained engagement rather than an ongoing dependency.",
+          ko: '직접 보는 것부터 시작하는 게 맞습니다 — Cost Explorer는 무료이고 첫 단계로 적절합니다. 다만 Cost Explorer가 보여주는 건 어느 서비스에 돈이 나가고 있는지일 뿐, 왜 지금 아키텍처가 그만큼의 비용을 발생시키는지, 그리고 금요일 오후에 아무도 건드리고 싶어 하지 않는 운영 시스템을 망가뜨리지 않으면서 어떤 걸 바꿔도 안전한지는 알려주지 않습니다. Cost Explorer는 EC2가 가장 큰 비용 항목이라는 건 알려주지만, 그 인스턴스 중 세 대가 두 달째 CPU 사용률 5% 미만이라 다운사이징하거나 야간에 꺼도 된다는 사실까지는 말해주지 않습니다. 숫자를 보는 것과 무엇을 안전하게 바꿀 수 있는지 아는 것 사이의 그 간극이 외부 검토가 값을 하는 지점이고, 보통은 계속 이어지는 의존 관계가 아니라 짧고 범위가 정해진 프로젝트로 끝납니다.',
+        },
+      },
+      {
+        q: {
+          en: 'Will a cost optimization audit actually find meaningful savings, or does it just add complexity?',
+          ko: '비용 최적화 감사를 하면 정말 요금이 줄어드나요, 아니면 괜히 복잡해지기만 하나요?',
+        },
+        a: {
+          en: "In nearly every audit we run on an account that has never had one, we find at least one clear category of waste — most commonly idle or oversized compute running 24/7 for a workload that does not need it, storage that has been accumulating at standard rates for years with no lifecycle policy, or a steady baseline of usage still being billed at full on-demand rates with no Savings Plan or Reserved Instance ever purchased. How much that adds up to depends entirely on your specific setup, so we will not quote you a percentage before we have actually looked — anyone who does is guessing. What we can tell you is that the fix itself should not add complexity: a well-run optimization pass removes waste and adds monitoring, it does not bolt on new systems you now have to manage.",
+          ko: '한 번도 감사를 받아본 적 없는 계정을 감사하면 거의 매번 적어도 한 가지 명확한 낭비 항목이 나옵니다 — 그럴 필요가 없는 워크로드인데 24시간 계속 돌아가는 유휴 또는 과대 사이징된 컴퓨팅 자원, 수명주기 정책 없이 몇 년째 표준 요금으로 쌓여만 가는 스토리지, 또는 꾸준한 기본 사용량인데도 절감형 요금제(Savings Plan)나 예약 인스턴스를 한 번도 구매하지 않고 계속 정가로 청구되고 있는 경우가 가장 흔합니다. 그게 얼마나 되는지는 전적으로 사장님 회사의 구체적인 환경에 달려 있어서, 실제로 들여다보기 전에 몇 퍼센트라고 미리 말씀드리지는 않습니다 — 그렇게 말하는 곳이 있다면 그냥 추측일 뿐입니다. 다만 확실히 말씀드릴 수 있는 건, 최적화 작업 자체가 복잡함을 더하지는 않는다는 점입니다. 제대로 된 최적화는 낭비를 걷어내고 모니터링을 더하는 것이지, 새로 관리해야 할 시스템을 얹는 게 아닙니다.',
+        },
+      },
+      {
+        q: {
+          en: 'Our AWS account was set up years ago by a freelancer or a previous agency who still holds the root login. Can you still help?',
+          ko: '저희 AWS 계정은 예전에 프리랜서나 이전 업체가 만들어서 루트 로그인 정보를 그쪽이 아직 가지고 있는데, 이런 상태에서도 도와주실 수 있나요?',
+        },
+        a: {
+          en: "Yes, and this is common enough that it is usually the first thing we help fix, before any cost work starts. The priority is re-establishing that your company, not a contractor who may no longer be reachable, controls the root account: adding a company-owned email and phone number as the account's security contact, enabling MFA on an account your team controls, and creating IAM users so day-to-day work never touches the root login again. If the original freelancer is unresponsive, AWS Support has an account-recovery and billing-contact process for the account holder of record, which we can walk you through. Once ownership is settled, the cost audit and optimization work proceeds the same way it would on an account you had full access to from day one.",
+          ko: '네, 도와드릴 수 있고, 이런 상황은 흔해서 대개 비용 관련 작업을 시작하기 전에 먼저 손보는 부분입니다. 우선순위는 연락이 닿지 않을 수도 있는 외주업체가 아니라 사장님 회사가 루트 계정을 통제하도록 되돌리는 것입니다 — 계정의 보안 연락처를 회사 소유의 이메일·전화번호로 바꾸고, 회사 쪽에서 관리하는 계정에 MFA를 활성화하고, 일상 업무는 더 이상 루트 로그인을 쓰지 않도록 IAM 사용자를 만듭니다. 원래 만들었던 프리랜서와 연락이 안 되는 경우, AWS 고객지원에 정식 계정 소유자를 위한 계정 복구·청구 연락처 변경 절차가 있고, 저희가 그 과정을 함께 안내해 드립니다. 소유권 문제가 정리되고 나면, 비용 감사와 최적화 작업은 처음부터 완전한 접근 권한을 가졌던 계정과 똑같은 방식으로 진행됩니다.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "Austin has one of the fastest-growing Korean-American business communities in Texas — engineers who came through Samsung Austin Semiconductor and later left to start their own company, e-commerce sellers who moved from California for lower costs, SaaS and consulting founders drawn by the tech scene. A lot of them are technical enough to spin up their own AWS account, or comfortable enough with cloud infrastructure to hire a freelancer to do it cheaply rather than a full agency. That works fine for the first year. Then a bill arrives that is two or three times the usual amount, nobody on the team can point to what changed, and the honest answer is usually that nothing dramatic happened — the account simply accumulated cost the way unattended cloud accounts always do." },
+        { type: 'h2', content: 'Why AWS bills climb quietly, with no single dramatic cause' },
+        { type: 'p', content: "AWS bills by the second for compute, by the gigabyte for storage, and by the gigabyte for data that moves between services, availability zones, and regions. That granularity is exactly what makes it powerful for a growing business — you only pay for what you use — and exactly what makes it easy for cost to compound invisibly when nobody is assigned to actually watch it. A test environment spun up for a two-week feature launch that is still running eight months later does not send an alert. A database snapshot schedule that nobody ever cleaned up does not send an alert either. Each individual item is small. The total is not." },
+        { type: 'h2', content: 'What is actually driving the number up' },
+        { type: 'ul', content: "The handful of causes behind most unexplained AWS bill growth we see:", items: [
+          "Idle or oversized EC2 instances — running at full price around the clock for a workload that only needs a fraction of that capacity, or none at all outside business hours.",
+          "No auto-scaling matched to real traffic — provisioned for a peak that happens for an hour a day, paid for 24 hours.",
+          "S3 buckets with no lifecycle policy — logs, backups, and old assets sitting at Standard storage rates indefinitely instead of moving to Infrequent Access or Glacier as they age.",
+          "Forgotten dev, staging, or proof-of-concept environments — spun up for a project that shipped or was shelved, still running and still billing.",
+          "Steady baseline usage still on full on-demand pricing — no Savings Plan or Reserved Instance purchased despite months of predictable, stable compute load.",
+          "NAT Gateway data processing charges — a common, easy-to-miss line item that grows with traffic and is often replaceable with a cheaper VPC endpoint for AWS-to-AWS traffic.",
+        ] },
+        { type: 'h2', content: 'What a cost optimization audit actually finds and fixes' },
+        { type: 'p', content: "This is not a sales pitch to migrate off AWS, and it is not a rebuild. The overwhelming majority of what drives an unexpectedly high bill is fixable by right-sizing and cleaning up the account you already have, using data AWS already collects about how your resources are actually being used." },
+        { type: 'ul', content: 'What a proper audit walks through, concretely:', items: [
+          "Right-sizing compute using actual CloudWatch utilization data — not a guess, but a look at real CPU, memory, and network usage over weeks to determine the smallest instance type that comfortably handles your load.",
+          "Savings Plans or Reserved Instances for any workload with a predictable baseline — a straightforward purchase that cuts the rate on usage you were always going to pay for anyway.",
+          "S3 lifecycle policies that automatically transition aging data to cheaper storage tiers, and delete what nobody actually needs to keep.",
+          "A schedule or shutdown for non-production environments outside business hours, since a dev environment rarely needs to run at 3am.",
+          "AWS Budgets and billing alerts configured so a spike gets caught the week it happens, not three months later in a quarterly statement review.",
+          "An architecture pass on high-traffic paths for cheaper alternatives — VPC endpoints instead of NAT Gateway for internal AWS traffic being the most common find.",
+        ] },
+        { type: 'tip', content: "A five-minute check you can run this week: open AWS Cost Explorer, group by service, and look at the last three months. If EC2 or NAT Gateway cost has been climbing steadily while your actual business volume has not, that gap is worth investigating before it becomes next quarter's surprise. And if you do not have an AWS Budget with an email alert set up at all, that alone is worth fixing today — it costs nothing and it is the single easiest way to stop being surprised by a bill." },
+        { type: 'h2', content: 'Why this needs someone fluent in both AWS and your business' },
+        { type: 'p', content: "A pure cost-optimization vendor will hand you a spreadsheet of recommendations and a bill of their own. What a growing Korean-American business in Austin usually needs is someone who can look at the account, explain in plain terms — in Korean when that is easier — which changes are safe to make this week and which ones need more testing first, and actually make the changes rather than leaving a list for your team to implement. If the account was set up by a freelancer who is no longer around, or an agency that never fully handed over access, that gets sorted first, since you cannot optimize an account you do not fully control." },
+        { type: 'h2', content: 'How an engagement actually runs' },
+        { type: 'p', content: "We start with a cost and usage audit — typically two to three weeks, reviewing Cost Explorer history, CloudWatch metrics, and the actual architecture rather than guessing from the bill alone — and we do this without touching production, since diagnosis should never risk an outage. From there, quick wins come first: shutting down or scheduling idle resources, setting up budgets and alerts, and cleaning up obvious storage waste, all changes that carry essentially no risk and usually show up in the very next billing cycle. Savings Plan purchases and any architecture changes that touch live traffic come next, planned and tested before anything changes in production. Once the account is right-sized, ongoing monitoring keeps new waste from quietly building back up, since an AWS account left unattended drifts the same way twice." },
+        { type: 'cta', content: "Getting AWS bills that nobody on your team can fully explain? ZOE LUMOS runs cloud cost audits and optimization for Korean-American businesses across the US — right-sizing, Savings Plans, storage lifecycle policies, budgets and alerts, and architecture review — alongside our web and app development work. Free consultation in English or Korean: email info@zoelumos.com or message us on KakaoTalk (http://pf.kakao.com/_xhxdxmlX/chat)." },
+      ],
+      ko: [
+        { type: 'intro', content: '오스틴은 텍사스에서 가장 빠르게 성장하는 한인 비즈니스 커뮤니티 중 하나입니다. 삼성 오스틴 반도체를 거쳐 나와 자기 회사를 차린 엔지니어들, 비용이 더 저렴해서 캘리포니아에서 옮겨 온 이커머스 셀러들, 테크 생태계에 끌려 온 SaaS·컨설팅 창업자들이 모여 있습니다. 이 중 상당수는 직접 AWS 계정을 만들 수 있을 만큼 기술에 능숙하거나, 풀 에이전시 대신 저렴한 프리랜서에게 맡길 정도로 클라우드 인프라에 익숙합니다. 첫 1년은 그렇게 해도 별문제가 없습니다. 그러다 평소보다 두세 배 되는 요금 고지서가 날아오고, 팀 안에서 아무도 뭐가 바뀌었는지 콕 집어 말하지 못하는 순간이 옵니다. 솔직한 답은 대개 극적인 사건이 있었던 게 아니라, 방치된 클라우드 계정이 늘 그렇듯 비용이 조용히 쌓였다는 것입니다.' },
+        { type: 'h2', content: '단일한 극적 원인 없이 AWS 요금이 조용히 오르는 이유' },
+        { type: 'p', content: 'AWS는 컴퓨팅은 초 단위로, 스토리지는 기가바이트 단위로, 서비스·가용 영역·리전 사이를 오가는 데이터도 기가바이트 단위로 요금을 매깁니다. 이 세밀함이 바로 성장하는 기업에게 AWS를 강력하게 만드는 이유입니다 — 쓴 만큼만 내니까요 — 그리고 동시에, 아무도 실제로 지켜보는 사람이 없으면 비용이 눈에 안 띄게 불어나기 딱 좋은 구조이기도 합니다. 2주짜리 기능 출시를 위해 띄운 테스트 환경이 8개월째 그대로 돌아가고 있어도 알림은 오지 않습니다. 아무도 정리한 적 없는 데이터베이스 스냅샷 스케줄도 알림을 보내지 않습니다. 항목 하나하나는 작습니다. 합계는 작지 않습니다.' },
+        { type: 'h2', content: '실제로 요금을 밀어올리는 원인들' },
+        { type: 'ul', content: '설명되지 않는 AWS 요금 상승 뒤에 있는, 저희가 가장 흔하게 보는 몇 가지 원인:', items: [
+          '유휴 상태이거나 과대 사이징된 EC2 인스턴스 — 업무 시간 외에는 필요 없거나 실제 필요한 용량의 일부만 필요한 워크로드인데 24시간 정가로 돌아갑니다.',
+          '실제 트래픽에 맞춰지지 않은 오토스케일링 — 하루 한 시간 발생하는 피크치 기준으로 프로비저닝되어 24시간 요금이 나갑니다.',
+          '수명주기 정책이 없는 S3 버킷 — 로그, 백업, 오래된 자산이 시간이 지나도 Infrequent Access나 Glacier로 옮겨지지 않고 계속 표준(Standard) 요금으로 쌓입니다.',
+          '잊혀진 개발·스테이징·개념검증(POC) 환경 — 출시됐거나 보류된 프로젝트를 위해 만들었는데 여전히 돌아가면서 계속 청구되고 있습니다.',
+          '꾸준한 기본 사용량인데도 여전히 정가(on-demand)로 청구됨 — 몇 달째 예측 가능하고 안정적인 컴퓨팅 부하가 있는데도 절감형 요금제나 예약 인스턴스를 구매한 적이 없습니다.',
+          'NAT 게이트웨이 데이터 처리 요금 — 트래픽에 비례해 늘어나면서도 놓치기 쉬운 항목이며, AWS 내부 트래픽이라면 더 저렴한 VPC 엔드포인트로 대체 가능한 경우가 많습니다.',
+        ] },
+        { type: 'h2', content: '비용 최적화 감사가 실제로 찾아내고 고치는 것' },
+        { type: 'p', content: '이건 AWS를 떠나라는 영업이 아니고, 재구축도 아닙니다. 예상치 못하게 높은 요금을 만드는 원인의 대부분은, 이미 가지고 있는 계정을 대상으로 AWS가 이미 수집하고 있는 실제 사용 데이터를 활용해 사이즈를 다시 맞추고 정리하는 것만으로 해결됩니다.' },
+        { type: 'ul', content: '제대로 된 감사가 구체적으로 살펴보는 것들:', items: [
+          '실제 CloudWatch 사용률 데이터를 이용한 컴퓨팅 리사이징 — 추측이 아니라 몇 주간의 실제 CPU, 메모리, 네트워크 사용량을 보고 부하를 무리 없이 감당하는 가장 작은 인스턴스 유형을 찾습니다.',
+          '예측 가능한 기본 부하가 있는 워크로드를 위한 절감형 요금제나 예약 인스턴스 — 어차피 계속 낼 비용의 요율을 낮춰주는 간단한 구매입니다.',
+          '오래된 데이터를 더 저렴한 스토리지 등급으로 자동 전환하고, 아무도 필요 없는 데이터는 삭제하는 S3 수명주기 정책.',
+          '업무 시간 외에는 비운영 환경을 스케줄에 따라 끄기 — 새벽 3시에 개발 환경이 돌아갈 필요는 거의 없습니다.',
+          '스파이크가 발생한 그 주에 바로 잡히도록 설정된 AWS Budgets와 청구 알림 — 3개월 뒤 분기 결산에서 발견하는 게 아니라요.',
+          '고트래픽 구간에 대한 아키텍처 검토 — 내부 AWS 트래픽이라면 NAT 게이트웨이 대신 VPC 엔드포인트를 쓰는 것이 가장 흔하게 발견되는 개선점입니다.',
+        ] },
+        { type: 'tip', content: '이번 주에 5분이면 되는 점검: AWS Cost Explorer를 열어 서비스별로 그룹화하고 최근 3개월을 보세요. 실제 사업 규모는 그대로인데 EC2나 NAT 게이트웨이 비용이 꾸준히 오르고 있다면, 다음 분기의 요금 고지서 충격이 되기 전에 그 간극을 살펴볼 가치가 있습니다. 그리고 이메일 알림이 설정된 AWS Budget이 아예 없다면, 그것만 바로잡아도 오늘 당장 값어치를 합니다 — 비용은 전혀 들지 않고, 요금에 놀라지 않게 만드는 가장 쉬운 방법입니다.' },
+        { type: 'h2', content: 'AWS와 사장님 비즈니스 양쪽에 능통한 파트너가 필요한 이유' },
+        { type: 'p', content: '순수 비용 최적화 업체는 권고사항이 담긴 스프레드시트와 자신들의 청구서를 넘겨주고 끝나는 경우가 많습니다. 오스틴에서 성장 중인 한인 기업에게 보통 실제로 필요한 건, 계정을 직접 들여다보고 어떤 변경이 이번 주에 바로 해도 안전하고 어떤 건 테스트가 더 필요한지 쉬운 말로 — 필요하면 한국어로 — 설명해주고, 목록만 남기고 사라지는 게 아니라 실제로 변경 작업까지 해주는 사람입니다. 계정을 만든 프리랜서와 더 이상 연락이 안 되거나, 에이전시가 접근 권한을 완전히 넘겨준 적이 없다면 그것부터 먼저 정리합니다. 완전히 통제하지 못하는 계정은 최적화할 수 없기 때문입니다.' },
+        { type: 'h2', content: '실제 진행은 어떻게 이뤄지나' },
+        { type: 'p', content: '저희는 비용·사용량 감사로 시작합니다 — 보통 2~3주에 걸쳐, 청구서만 보고 추측하는 대신 Cost Explorer 기록, CloudWatch 지표, 실제 아키텍처를 함께 검토합니다. 진단 단계에서는 운영 환경을 건드리지 않습니다. 진단 작업이 장애 위험을 만들어서는 안 되니까요. 그다음 빠르게 효과를 볼 수 있는 것부터 처리합니다 — 유휴 리소스 종료나 스케줄링, 예산·알림 설정, 뻔히 보이는 스토리지 낭비 정리인데, 이런 변경은 위험이 사실상 없고 보통 바로 다음 청구 주기에 효과가 나타납니다. 절감형 요금제 구매와 실제 트래픽에 영향을 주는 아키텍처 변경은 그다음 단계로, 운영 환경에 반영되기 전에 계획하고 테스트를 거칩니다. 계정이 적정 규모로 맞춰지고 나면, 지속적인 모니터링이 새로운 낭비가 조용히 다시 쌓이는 것을 막아줍니다. 방치된 AWS 계정은 언제든 똑같은 방식으로 다시 흐트러지니까요.' },
+        { type: 'cta', content: '팀 내 누구도 AWS 요금을 완전히 설명하지 못하는 상황이신가요? ZOE LUMOS는 웹·앱 개발과 함께, 미국 전역의 한인 기업을 위해 클라우드 비용 감사와 최적화 — 리사이징, 절감형 요금제, 스토리지 수명주기 정책, 예산·알림 설정, 아키텍처 검토 — 를 진행합니다. 한국어/영어 무료 상담: info@zoelumos.com 이메일 또는 카카오톡(http://pf.kakao.com/_xhxdxmlX/chat)으로 편하게 문의하세요.' },
+      ],
+    },
+  },
 ]
