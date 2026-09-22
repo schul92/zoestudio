@@ -13521,4 +13521,108 @@ export const blogContent: BlogPost[] = [
       ],
     },
   },
+  {
+    slug: 'korean-dry-cleaning-laundry-app-orlando-2026',
+    date: '2026-09-22',
+    updatedDate: '2026-09-22',
+    readTime: 9,
+    category: { en: 'App Development', ko: '앱 개발' },
+    title: {
+      en: 'Korean Dry Cleaners & Laundry Shops in Orlando: Build Your Own Branded iPhone App for Pickup, Delivery, and Loyalty (2026)',
+      ko: '올랜도 한인 세탁소 사장님 — 픽업 · 배달 · 적립을 우리 브랜드 아이폰 앱 하나로 (2026)',
+    },
+    metaDescription: {
+      en: "Korean-owned dry cleaners and laundry shops around Orlando's growing Korean community in Lake Nona, Dr. Phillips, and the International Drive–Kissimmee corridor still run pickup and delivery over text messages and a box of paper tickets, while faceless third-party laundry marketplace apps take a cut of every order and keep the customer's contact information for themselves. Here is what a custom iPhone app — under your own name, live on the App Store, with push notifications and a built-in loyalty program — replaces, and why ZOE LUMOS, a registered Apple App Store developer, can take you from idea to a real App Store listing.",
+      ko: '레이크 노나, 닥터 필립스, 인터내셔널 드라이브·키시미 상권을 중심으로 커지고 있는 올랜도 한인 커뮤니티의 세탁소·수선집들은 여전히 문자와 종이 티켓 박스로 픽업·배달을 처리하고, 정체불명의 제3자 세탁 마켓플레이스 앱은 주문마다 수수료를 떼 가면서 고객 연락처는 자기들만 챙겨갑니다. 사장님 상호 이름으로, 실제 앱스토어에 올라가고, 푸시 알림과 적립 시스템까지 갖춘 커스텀 아이폰 앱이 이 둘을 무엇으로 대체하는지, 그리고 정식 등록된 애플 앱스토어 개발사인 ZOE LUMOS가 아이디어부터 실제 앱스토어 등록까지 어떻게 함께하는지 정리했습니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: "What's the real difference between a custom iPhone app and a generic laundry marketplace app?",
+          ko: '커스텀 아이폰 앱과 일반 세탁 마켓플레이스 앱은 실제로 뭐가 다른가요?',
+        },
+        a: {
+          en: "The real difference is commission, branding, and who owns the customer relationship. A custom app is built and listed under your own business name, keeps 100% of every transaction, and every customer's name, phone number, and order history belongs to you. A marketplace app lists your shop next to competitors, takes a commission on every order — often 20-30% — and holds the customer's contact information and order history inside its own platform, not yours, so you cannot text a regular about a slow Tuesday or a seasonal promotion. The marketplace app also controls your listing: your pricing display, your ranking against nearby shops, and whether your brand even shows a logo or just a generic pin on a map. A custom app costs more upfront to build than signing up for a marketplace, but it is the only version where the customer relationship, the data, and the full order revenue stay with your business instead of a platform that can change its fees or algorithm at any time.",
+          ko: '가장 큰 차이는 수수료, 브랜딩, 그리고 고객 관계를 누가 소유하느냐입니다. 커스텀 앱은 사장님의 상호 이름으로 만들어지고 등록되어 모든 거래 금액을 100% 가져가며, 고객의 이름·전화번호·주문 이력이 전부 사장님 소유가 됩니다. 반면 마켓플레이스 앱은 사장님 가게를 경쟁업체와 나란히 리스팅하고 주문마다 보통 20~30%의 수수료를 떼며, 고객의 연락처와 주문 이력을 사장님이 아니라 플랫폼 자체가 갖고 있어서, 한가한 화요일이나 시즌 프로모션을 단골에게 직접 문자로 알릴 수 없습니다. 마켓플레이스 앱은 리스팅 자체도 통제합니다 — 가격이 보이는 방식, 주변 가게 대비 순위, 브랜드 로고가 보이는지 아니면 지도 위 일반 핀으로만 표시되는지까지요. 커스텀 앱은 마켓플레이스 가입보다 초기 제작 비용이 더 들지만, 고객 관계와 데이터, 그리고 주문 매출 전액이 언제든 수수료나 알고리즘을 바꿀 수 있는 플랫폼이 아니라 사장님 사업체에 남는 유일한 방식입니다.',
+        },
+      },
+      {
+        q: {
+          en: 'How long does Apple App Store submission take and what does it actually cost?',
+          ko: '앱스토어 등록은 얼마나 걸리고 실제 비용은 얼마인가요?',
+        },
+        a: {
+          en: "Apple's Developer Program membership costs $99 per year, and Apple's own app review typically takes about 24-48 hours once a finished build is submitted — but that 24-48 hours only starts after the app itself is fully built, tested, and packaged with all of Apple's required assets: screenshots at multiple device sizes, an App Privacy 'nutrition label' disclosing exactly what data the app collects, a live privacy policy URL, and a demo account if the app requires login, so Apple's reviewer can actually test the pickup and delivery flow. First-time submissions from a new developer account or business account also tend to take longer and hit more back-and-forth than a second or third app, because Apple applies extra scrutiny the first time a business name appears in the App Store. Realistically, a Korean dry cleaner or laundry shop should budget 6-10 weeks from a first planning call to a live App Store listing — a few weeks of design and development, a round or two of internal TestFlight beta testing with real staff and a handful of regular customers, then the Apple review itself, which can bounce back once for a fixable detail like a missing privacy disclosure before final approval.",
+          ko: '애플 개발자 프로그램 연회비는 99달러이고, 완성된 빌드를 제출하면 애플의 앱 심사 자체는 보통 24~48시간 안에 끝납니다 — 하지만 이 24~48시간은 앱이 완전히 만들어지고 테스트를 마친 뒤, 애플이 요구하는 모든 요소를 갖춰 제출한 다음에야 시작됩니다. 여러 기기 크기별 스크린샷, 앱이 어떤 데이터를 수집하는지 정확히 밝히는 "앱 프라이버시" 라벨, 실제 작동하는 개인정보처리방침 URL, 로그인이 필요한 앱이라면 애플 심사자가 픽업·배달 플로우를 직접 테스트할 수 있는 데모 계정까지요. 새로 만든 개발자 계정이나 비즈니스 계정에서 처음 제출하는 앱은 두 번째, 세 번째 앱보다 시간이 더 걸리고 주고받는 절차도 더 많은 편인데, 애플이 비즈니스 이름이 앱스토어에 처음 등장할 때 더 꼼꼼히 검토하기 때문입니다. 현실적으로 올랜도의 한인 세탁소·수선집이라면 첫 기획 미팅부터 실제 앱스토어 등록까지 6~10주를 잡아야 합니다 — 몇 주간의 디자인·개발, 실제 직원과 몇몇 단골 고객이 참여하는 테스트플라이트(TestFlight) 베타 테스트 1~2회, 그리고 애플 심사 — 프라이버시 고지 누락 같은 고칠 수 있는 세부사항 때문에 한 번 반려된 뒤 최종 승인이 나는 경우도 흔합니다.',
+        },
+      },
+      {
+        q: {
+          en: 'Is a native iPhone app worth it for a small, single-location laundry or dry cleaning shop, or should I start with something simpler?',
+          ko: '매장이 하나뿐인 작은 세탁소도 네이티브 앱이 필요할까요, 아니면 더 간단하게 시작해야 할까요?',
+        },
+        a: {
+          en: "For a single location still doing a handful of pickup or delivery orders a day, start with a PWA — a progressive web app that runs from a browser and lets a customer 'add to home screen' without going through the App Store at all — and only move to a native App Store app once pickup-and-delivery volume and repeat customers justify the extra cost and Apple review process. A PWA gets you 90% of the customer-facing value — online scheduling, order status, a loyalty page — in a fraction of the time and cost, with no $99 annual fee and no app review wait. The native app becomes worth it once volume is high enough that push notifications measurably reduce missed pickups, once a loyalty and rewards program needs to feel like a real app icon on a customer's home screen instead of a bookmark, or once you are running two or more locations and want one unified brand app instead of customers bookmarking a different page per store. Most Korean-owned dry cleaners and laundry shops in Orlando are better served starting with a PWA, proving out demand for online ordering for a season, and then commissioning the native App Store version once the numbers justify it.",
+          ko: '매장이 하나뿐이고 하루 픽업·배달 주문이 아직 몇 건 수준이라면, 브라우저에서 바로 작동하고 앱스토어를 거치지 않고도 고객이 "홈 화면에 추가"할 수 있는 PWA(프로그레시브 웹앱)로 먼저 시작하는 게 맞습니다. 픽업·배달 물량과 단골 고객이 충분히 쌓여서 추가 비용과 애플 심사 과정을 감당할 가치가 생겼을 때 네이티브 앱스토어 앱으로 넘어가면 됩니다. PWA만으로도 온라인 예약, 주문 상태 확인, 적립 페이지 같은 고객 대상 가치의 90%를 훨씬 짧은 시간과 비용으로 확보할 수 있고, 연 99달러 비용도 애플 심사 대기 시간도 없습니다. 네이티브 앱이 값어치를 하는 시점은 푸시 알림이 놓친 픽업을 눈에 띄게 줄일 만큼 물량이 많아졌을 때, 적립·리워드 프로그램이 북마크가 아니라 고객 홈 화면의 진짜 앱 아이콘처럼 느껴져야 할 때, 또는 매장이 두 곳 이상이 되어 매장마다 다른 페이지를 북마크하게 하는 대신 하나로 통일된 브랜드 앱이 필요해졌을 때입니다. 올랜도의 한인 세탁소·수선집 대부분은 먼저 PWA로 시작해서 한 시즌 정도 온라인 주문 수요를 검증한 뒤, 숫자가 뒷받침될 때 네이티브 앱스토어 버전을 의뢰하는 순서가 더 맞습니다.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "Orlando's Korean-American community has been quietly expanding beyond the older pockets near International Drive, pulled by Lake Nona's medical and tech corridor, the family-friendly suburbs around Dr. Phillips and Windermere, and the steady flow of hospitality and theme-park jobs around Kissimmee. Among the businesses following that growth are Korean-owned dry cleaners and laundry-and-alterations shops — the kind of business every neighborhood needs, and the kind that still, in 2026, runs its pickup and delivery over text messages, a landline, and a box of numbered paper tickets by the register. Meanwhile the customer's phone already has two or three laundry marketplace apps on it — generic, national, and taking a cut of every order that goes through them." },
+        { type: 'h2', content: "Why the marketplace app is a trap, not a shortcut" },
+        { type: 'p', content: "Signing up for a third-party laundry marketplace app feels like the fast way to look modern: no development cost, no App Store review, live in days. The trade-off shows up later. The marketplace lists your shop next to every other dry cleaner in the same zip code, takes a real commission on every order — often 20 to 30% — and, most importantly, keeps the customer's name, phone number, and order history inside its own system. You cannot text a regular about a slow Tuesday discount or a new same-day service, because you never had their contact information to begin with. The platform did." },
+        { type: 'ul', content: 'What running your pickup and delivery through a marketplace app actually costs you over time:', items: [
+          "Commission on repeat customers — the same regular who has used your shop for three years still gets charged through the marketplace, and you still pay the cut on every one of their orders.",
+          'No customer data — no phone number to text a pickup reminder, no email for a slow-week promotion, no list of who your best customers even are.',
+          'Generic branding — your logo, if it shows at all, sits in a grid next to every competitor within driving distance, with no way to build the kind of brand loyalty a Korean-owned shop earns through word of mouth in the community.',
+          "No control over the app experience — pricing display, order flow, and even push notification wording all belong to the marketplace, not you.",
+          "A missed pickup with no accountability — paper tickets and text-based scheduling have no timestamp trail, so a 'we told you it was ready' dispute has no record on either side.",
+        ] },
+        { type: 'h2', content: 'What a custom iPhone app should actually include' },
+        { type: 'p', content: "A custom app built under your shop's own name and brand replaces both the paper ticket system and the marketplace app with one thing customers keep on their home screen. The feature set that matters for a dry cleaning or laundry business is narrower and more practical than most owners expect — this is not about building something flashy, it is about closing the specific gaps that cost pickups and loyalty today." },
+        { type: 'ul', content: 'The core features worth building first:', items: [
+          'Pickup and delivery scheduling with a real calendar — customers pick a window, staff see it on a shared schedule instead of a sticky note by the register.',
+          "Push notifications when an order is ready — the single highest-impact feature, since a text-based 'your clothes are ready' system depends on someone remembering to send it, and a push notification does not.",
+          'A digital loyalty program — a punch-card equivalent that lives in the app instead of a paper card customers lose, with a visible reward the customer can see counting up.',
+          'Photo tagging at drop-off — a quick photo of a garment with any existing stain or damage noted, timestamped in the app, which resolves a large share of lost-or-damaged disputes before they start.',
+          'In-app payment and saved payment methods, so pickup does not stall on someone digging for a card or exact cash.',
+        ] },
+        { type: 'h2', content: 'Getting it onto the App Store — and why the developer account matters' },
+        { type: 'p', content: "Building the app is roughly half the project. Getting it live on the App Store under your own business name is the other half, and it is where most small business owners get stuck without help. Apple requires an active Developer Program membership ($99/year) tied to the business, a full set of App Store assets — screenshots at multiple device sizes, an App Privacy label disclosing exactly what data the app collects, a live privacy policy URL — and, for apps with login, a demo account so Apple's reviewer can actually test the pickup and delivery flow. Apple's own review typically takes 24-48 hours once a complete build is submitted, but a first-time submission from a new business account routinely bounces back once over a fixable detail, so real timelines run 6-10 weeks from first planning conversation to a live listing. ZOE LUMOS is a registered Apple App Store developer, which means we have already been through this review process — we know which App Privacy answers trigger extra scrutiny, what a demo account submission needs to look like, and how to fix a rejection in hours instead of guessing for a week." },
+        { type: 'tip', content: "One detail that trips up first-time apps specifically: Apple's App Privacy 'nutrition label' asks exactly what data your app collects — name, phone number, payment info, location for delivery — and whether any of it is used for tracking or shared with third parties. Answer it accurately and conservatively before submission; getting caught fixing a mismatched privacy label after the fact is the single most common reason a first app review takes longer than expected." },
+        { type: 'h2', content: "The Orlando-specific layer: one app, two very different neighborhoods" },
+        { type: 'p', content: "Orlando's Korean community splits across two quite different areas that a single app needs to serve well. Around Lake Nona, Dr. Phillips, and Windermere, customers tend to be dual-income professional families who want scheduling speed and app polish and will happily pay a small delivery fee for convenience. Around International Drive and Kissimmee, a large share of customers work irregular hospitality and theme-park shift schedules, which makes flexible pickup windows and reliable notifications — not just convenience but dependability around an unpredictable work schedule — the feature that actually earns loyalty. Both audiences search and speak in two languages, so the app itself, not just the marketing around it, needs a real bilingual interface — not a machine-translated afterthought — with Korean and English toggled cleanly rather than crammed onto the same screen." },
+        { type: 'cta', content: "Running a Korean-owned dry cleaning or laundry shop in Orlando and ready to move pickup, delivery, and loyalty off text messages and marketplace apps and onto something with your own name on it? ZOE LUMOS is a registered Apple App Store developer, and we build custom iPhone apps — and the PWA version to start smaller, when that is the better fit — from first scheduling flow to a live App Store listing. Free consultation in English or Korean: email info@zoelumos.com or message us on KakaoTalk (http://pf.kakao.com/_xhxdxmlX/chat)." },
+      ],
+      ko: [
+        { type: 'intro', content: '올랜도의 한인 커뮤니티는 인터내셔널 드라이브 인근의 오래된 상권을 넘어 조용히 넓어지고 있습니다 — 레이크 노나의 의료·테크 단지, 닥터 필립스와 윈더미어 주변의 가족 친화적 교외 지역, 그리고 키시미 일대의 꾸준한 관광·호스피탤리티 일자리가 그 성장을 이끌고 있습니다. 그 성장을 따라가는 업종 중 하나가 한인 세탁소·수선집입니다 — 어느 동네에나 필요한 업종이면서도, 2026년인 지금까지 문자 메시지와 유선전화, 계산대 옆 번호표 박스로 픽업·배달을 처리하는 경우가 많습니다. 그런데 정작 그 고객의 휴대폰에는 이미 두세 개의 세탁 마켓플레이스 앱이 깔려 있습니다 — 어디에나 있는, 전국구 브랜드이면서, 지나가는 모든 주문에서 수수료를 떼 가는 앱들 말이죠.' },
+        { type: 'h2', content: '마켓플레이스 앱이 지름길이 아니라 함정인 이유' },
+        { type: 'p', content: '제3자 세탁 마켓플레이스 앱에 가입하는 건 빠르게 세련돼 보이는 지름길처럼 느껴집니다 — 개발 비용도 없고, 앱스토어 심사도 없고, 며칠이면 서비스가 시작됩니다. 대가는 나중에 나타납니다. 마켓플레이스는 같은 우편번호 안의 다른 모든 세탁소와 사장님 가게를 나란히 리스팅하고, 주문마다 보통 20~30%의 실질 수수료를 떼며, 무엇보다 고객의 이름·전화번호·주문 이력을 플랫폼 자체 시스템 안에 가둬 둡니다. 3년째 다니는 단골에게 한가한 화요일 할인이나 새로운 당일 서비스를 문자로 알릴 수 없는 건, 애초에 그 연락처를 사장님이 가진 적이 없기 때문입니다. 플랫폼이 가지고 있었죠.' },
+        { type: 'ul', content: '마켓플레이스 앱으로 픽업·배달을 운영하는 것이 시간이 지나면서 실제로 치르게 되는 비용:', items: [
+          '단골에게도 나가는 수수료 — 3년째 거래하는 단골도 여전히 마켓플레이스를 통해 결제하고, 사장님은 그 모든 주문에 여전히 수수료를 냅니다.',
+          '고객 데이터 부재 — 픽업 알림을 보낼 전화번호도, 한산한 주간 프로모션을 보낼 이메일도, 누가 최고 단골인지 알 목록도 없습니다.',
+          '개성 없는 브랜딩 — 로고가 보이더라도, 차로 갈 수 있는 거리의 모든 경쟁업체와 같은 그리드 안에 놓여서, 한인 세탁소가 입소문으로 쌓아온 브랜드 충성도를 만들 방법이 없습니다.',
+          '앱 경험에 대한 통제권 부재 — 가격 표시 방식, 주문 플로우, 심지어 푸시 알림 문구까지 사장님이 아니라 마켓플레이스가 정합니다.',
+          '책임 소재 없는 픽업 누락 — 종이 티켓과 문자 기반 스케줄링에는 시간 기록이 남지 않아서, "준비됐다고 말씀드렸는데요" 같은 분쟁이 생겨도 양쪽 다 증거가 없습니다.',
+        ] },
+        { type: 'h2', content: '커스텀 아이폰 앱에 실제로 들어가야 할 것' },
+        { type: 'p', content: '세탁소 자체 이름과 브랜드로 만들어진 커스텀 앱은 종이 티켓 시스템과 마켓플레이스 앱 둘 다를, 고객이 홈 화면에 계속 놔두는 앱 하나로 대체합니다. 세탁·수선업에 실제로 중요한 기능 구성은 대부분의 사장님이 예상하는 것보다 좁고 실용적입니다 — 화려한 무언가를 만드는 게 아니라, 지금 픽업과 단골을 잃게 만드는 구체적인 빈틈을 막는 일입니다.' },
+        { type: 'ul', content: '먼저 만들 가치가 있는 핵심 기능:', items: [
+          '실제 캘린더 기반 픽업·배달 스케줄링 — 고객이 시간대를 고르면, 직원은 계산대 옆 포스트잇이 아니라 공유 일정에서 그걸 봅니다.',
+          '주문 준비 완료 푸시 알림 — 가장 영향력이 큰 단일 기능입니다. 문자 기반의 "옷 준비됐어요" 시스템은 누군가 보내는 걸 기억해야 작동하지만, 푸시 알림은 그럴 필요가 없습니다.',
+          '디지털 적립 프로그램 — 고객이 잃어버리는 종이 카드 대신 앱 안에 사는 스탬프 카드 개념으로, 리워드가 쌓이는 게 눈에 보입니다.',
+          '접수 시 사진 태깅 — 맡길 때 기존 얼룩이나 손상 부위를 짧게 사진 찍고 앱에 시간 기록을 남기면, 분실·손상 분쟁의 상당 부분이 시작되기 전에 해결됩니다.',
+          '앱 내 결제와 저장된 결제 수단 — 픽업할 때 카드를 뒤지거나 정확한 현금을 찾느라 시간을 끌지 않게 합니다.',
+        ] },
+        { type: 'h2', content: '앱스토어에 실제로 올리기 — 개발자 계정이 중요한 이유' },
+        { type: 'p', content: '앱을 만드는 건 프로젝트의 절반 정도입니다. 사장님 상호 이름으로 앱스토어에 실제로 올리는 것이 나머지 절반이고, 대부분의 소상공인이 도움 없이 막히는 지점이 바로 여기입니다. 애플은 사업체에 연결된 유효한 개발자 프로그램 멤버십(연 99달러), 여러 기기 크기별 스크린샷을 포함한 전체 앱스토어 자산, 앱이 정확히 어떤 데이터를 수집하는지 밝히는 "앱 프라이버시" 라벨, 실제로 작동하는 개인정보처리방침 URL을 요구하고, 로그인이 필요한 앱이라면 애플 심사자가 픽업·배달 플로우를 직접 테스트할 수 있는 데모 계정도 필요합니다. 완성된 빌드를 제출하면 애플의 심사 자체는 보통 24~48시간이면 끝나지만, 새로 만든 비즈니스 계정에서 처음 제출하는 앱은 고칠 수 있는 세부사항 때문에 한 번쯤 반려되는 일이 흔해서, 첫 기획 미팅부터 실제 등록까지는 현실적으로 6~10주를 잡아야 합니다. ZOE LUMOS는 정식 등록된 애플 앱스토어 개발사입니다 — 이 심사 과정을 이미 여러 번 거쳤기 때문에, 어떤 프라이버시 답변이 추가 검토를 유발하는지, 데모 계정 제출이 어떤 형태여야 하는지, 반려됐을 때 일주일을 추측하며 보내는 대신 몇 시간 안에 고치는 법을 알고 있습니다.' },
+        { type: 'tip', content: '처음 앱을 내는 사장님들이 특히 자주 걸리는 부분 하나 — 애플의 "앱 프라이버시" 라벨은 앱이 정확히 어떤 데이터를 수집하는지(이름, 전화번호, 결제 정보, 배달을 위한 위치 정보 등), 그리고 그 데이터가 트래킹에 쓰이거나 제3자와 공유되는지를 묻습니다. 제출 전에 정확하고 보수적으로 답하세요 — 나중에 프라이버시 라벨이 실제와 맞지 않아 수정하게 되는 것이, 첫 앱 심사가 예상보다 오래 걸리는 가장 흔한 원인입니다.' },
+        { type: 'h2', content: '올랜도만의 층 — 앱 하나, 서로 다른 두 동네' },
+        { type: 'p', content: '올랜도의 한인 커뮤니티는 성격이 꽤 다른 두 지역으로 나뉘어 있고, 앱 하나가 둘 다를 잘 섬겨야 합니다. 레이크 노나, 닥터 필립스, 윈더미어 쪽 고객은 맞벌이 전문직 가족이 많아서 빠른 스케줄링과 세련된 앱 경험을 원하고, 편의를 위해서라면 약간의 배달비도 기꺼이 지불합니다. 인터내셔널 드라이브와 키시미 쪽은 관광·테마파크 업계의 불규칙한 교대 근무 스케줄을 가진 고객 비중이 커서, 편의보다는 예측 불가능한 근무 스케줄 속에서도 믿을 수 있는 유연한 픽업 시간대와 확실한 알림이 실제로 충성도를 만드는 기능입니다. 두 고객층 모두 두 언어로 검색하고 말하기 때문에, 마케팅뿐 아니라 앱 자체가 기계 번역으로 대충 끼워 넣은 것이 아니라, 한국어와 영어를 한 화면에 욱여넣지 않고 깔끔하게 전환할 수 있는 진짜 이중언어 인터페이스를 갖춰야 합니다.' },
+        { type: 'cta', content: '올랜도에서 한인 세탁소·수선집을 운영하시면서, 픽업·배달·적립을 문자와 마켓플레이스 앱에서 벗어나 사장님 이름이 붙은 우리 앱으로 옮기고 싶으신가요? ZOE LUMOS는 정식 등록된 애플 앱스토어 개발사이며, 더 작게 시작하고 싶을 때를 위한 PWA 버전부터 픽업·배달 플로우 설계, 실제 앱스토어 등록까지 함께합니다. 한국어/영어 무료 상담: info@zoelumos.com 이메일 또는 카카오톡(http://pf.kakao.com/_xhxdxmlX/chat)으로 편하게 문의하세요.' },
+      ],
+    },
+  },
 ]
