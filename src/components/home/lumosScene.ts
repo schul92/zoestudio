@@ -381,9 +381,11 @@ export function createLumosScene(canvas: HTMLCanvasElement, invalidate: () => vo
     const ph = span(p, F.phoneIn[0], F.phoneIn[1])
     // Screen beats: come in until the display fills most of the width, pull back for the line-up.
     const zoom = span(p, 0.22, 0.4) * (1 - ph)
-    hinge.rotation.x = lerp(lerp(-0.28, -1.86, open), -1.64, zoom)
-    laptop.rotation.y = lerp(-0.58, 0, span(p, 0.02, 0.36)) + idle + px * 0.1
-    laptop.rotation.x = py * 0.04
+    // Once the display is framed (close-up or line-up) it stays square-on: lid fixed, no pointer tilt, so the screen never keystones.
+    const framed = Math.max(zoom, ph)
+    hinge.rotation.x = lerp(lerp(-0.28, -1.86, open), -1.64, framed)
+    laptop.rotation.y = lerp(-0.58, 0, span(p, 0.02, 0.36)) + idle + px * 0.1 * (1 - framed) + ph * 0.07
+    laptop.rotation.x = py * 0.04 * (1 - framed)
     laptop.position.y = lerp(-0.62, -0.4, open)
 
     const lumos = span(p, 0.14, 0.3)
@@ -425,7 +427,7 @@ export function createLumosScene(canvas: HTMLCanvasElement, invalidate: () => vo
     pShadowMat.opacity = ph
 
     const cx = lerp(0, narrow ? 0 : F.cameraShiftX, ph)
-    camera.position.set(px * 0.35 * (1 - zoom * 0.6) + cx, lerp(lerp(2.3, 1.25, span(p, 0, 0.3)), zCamY, park), dist)
+    camera.position.set(px * 0.35 * (1 - framed) + cx, lerp(lerp(2.3, 1.25, span(p, 0, 0.3)), zCamY, park), dist)
     camera.lookAt(cx, lookY, 0)
 
     renderer.render(scene, camera)
