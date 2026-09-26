@@ -107,11 +107,6 @@ export default function FortLeeWebDesignPage({ params }: { params: { locale: str
     ],
     priceRange: '$$',
     openingHours: 'Mo-Fr 09:00-18:00',
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '5',
-      reviewCount: '6',
-    },
     knowsLanguage: ['English', 'Korean'],
   }
 
@@ -214,14 +209,6 @@ export default function FortLeeWebDesignPage({ params }: { params: { locale: str
 
             {/* Trust signals */}
             <div className="flex flex-wrap justify-center gap-8 text-gray-600">
-              <div className="flex items-center gap-2">
-                <Star className="w-5 h-5 text-yellow-500 fill-yellow-500" />
-                <span>{locale === 'ko' ? '5.0 평점' : '5.0 Rating'}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Users className="w-5 h-5 text-blue-500" />
-                <span>{locale === 'ko' ? '포트리 한인 비즈니스 50+ 제작' : '50+ Fort Lee Korean Businesses'}</span>
-              </div>
               <div className="flex items-center gap-2">
                 <Zap className="w-5 h-5 text-green-500" />
                 <span>{locale === 'ko' ? '2주 내 완성' : 'Ready in 2 Weeks'}</span>

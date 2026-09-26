@@ -45,8 +45,8 @@ const copy = {
     privacy: 'Your information is used only to reply to your inquiry.',
     altContact: {
       label: 'Prefer to skip the form?',
-      email: 'zoestudiollc@gmail.com',
-      emailHref: 'mailto:zoestudiollc@gmail.com?subject=Project%20inquiry%20%E2%80%94%20Zoe%20Lumos',
+      email: 'info@zoelumos.com',
+      emailHref: 'mailto:info@zoelumos.com?subject=Project%20inquiry%20%E2%80%94%20Zoe%20Lumos',
       kakao: 'KakaoTalk · Korean OK',
       kakaoHref: 'https://pf.kakao.com/_xhxdxmlX/chat',
     },
@@ -92,8 +92,8 @@ const copy = {
     privacy: '입력하신 정보는 상담 회신 목적으로만 사용됩니다.',
     altContact: {
       label: '폼이 아니어도 좋습니다',
-      email: 'zoestudiollc@gmail.com',
-      emailHref: 'mailto:zoestudiollc@gmail.com?subject=%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EB%AC%B8%EC%9D%98%20%E2%80%94%20Zoe%20Lumos',
+      email: 'info@zoelumos.com',
+      emailHref: 'mailto:info@zoelumos.com?subject=%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EB%AC%B8%EC%9D%98%20%E2%80%94%20Zoe%20Lumos',
       kakao: '카카오톡 · 한국어 OK',
       kakaoHref: 'https://pf.kakao.com/_xhxdxmlX/chat',
     },
@@ -181,7 +181,7 @@ export default function ContactWrapper({
       id="contact"
       className="relative section-pad overflow-hidden"
       style={{
-        background: '#FFF4E8',
+        background: '#FBFBFD',
       }}
     >
       <Toast message={toast} onDismiss={() => setToast(null)} />
@@ -192,8 +192,8 @@ export default function ContactWrapper({
         className="pointer-events-none absolute inset-0"
         style={{
           background: `
-            radial-gradient(40% 35% at 88% 12%, rgba(255, 212, 91, 0.28) 0%, rgba(255, 212, 91, 0) 60%),
-            radial-gradient(35% 30% at 8% 92%, rgba(255, 107, 74, 0.10) 0%, rgba(255, 107, 74, 0) 65%)
+            radial-gradient(40% 35% at 88% 12%, rgba(0,163,163, 0.28) 0%, rgba(0,163,163, 0) 60%),
+            radial-gradient(35% 30% at 8% 92%, rgba(0,113,227, 0.10) 0%, rgba(0,113,227, 0) 65%)
           `,
         }}
       />
@@ -202,7 +202,7 @@ export default function ContactWrapper({
         {/* Header — centered, single statement */}
         <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16">
           <InView className="inline-flex items-center gap-3 overline text-ash mb-6">
-            <span className="inline-block w-1.5 h-1.5 rounded-full" style={{ background: '#FF6B4A' }} />
+            <span className="inline-block w-1.5 h-1.5 rounded-full" style={{ background: '#0071E3' }} />
             <span className="section-num not-italic text-ink font-normal">§ {sectionNumber}</span>
             <span className="h-px w-8 bg-hairline" />
             <span>{t.eyebrow}</span>
@@ -210,7 +210,7 @@ export default function ContactWrapper({
           <h2
             className="font-display tracking-[-0.02em] leading-[1.0] m-0"
             style={{
-              color: '#3D1F0F',
+              color: '#1D1D1F',
               fontSize: 'clamp(40px, 6vw, 88px)',
               fontWeight: 400,
             }}
@@ -219,14 +219,14 @@ export default function ContactWrapper({
               <span className="mask-rise block">{t.headlineLead}</span>
             </InView>
             <InView as="span" className="mask-row" delay={120}>
-              <span className="mask-rise block italic font-light" style={{ color: '#FF6B4A' }}>
+              <span className="mask-rise block italic font-light" style={{ color: '#0071E3' }}>
                 {t.headlineAccent}
               </span>
             </InView>
           </h2>
           <p
             className="mt-8 mx-auto max-w-xl text-[16px] md:text-[17px] leading-[1.65]"
-            style={{ color: '#6B3D24' }}
+            style={{ color: '#424245' }}
           >
             {t.sub}
           </p>
@@ -235,8 +235,8 @@ export default function ContactWrapper({
         {/* FORM — single card, dominant element, max-w-3xl */}
         <form onSubmit={submit} noValidate className="max-w-3xl mx-auto">
           <div
-            className="bg-paper rounded-2xl p-7 md:p-10 shadow-[0_30px_70px_-30px_rgba(61,31,15,0.18),0_8px_20px_-8px_rgba(61,31,15,0.10)] border"
-            style={{ borderColor: 'rgba(61,31,15,0.08)' }}
+            className="bg-paper rounded-2xl p-7 md:p-10 shadow-[0_30px_70px_-30px_rgba(0,0,0,0.18),0_8px_20px_-8px_rgba(0,0,0,0.09)] border"
+            style={{ borderColor: 'rgba(0,0,0,0.08)' }}
           >
             {/* Name + Email row */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-6">
@@ -263,7 +263,7 @@ export default function ContactWrapper({
             <div className="mt-7">
               <label
                 className="block uppercase text-[11px] mb-3"
-                style={{ letterSpacing: '0.18em', color: '#A37C5F' }}
+                style={{ letterSpacing: '0.18em', color: '#6E6E73' }}
               >
                 {t.labels.scope}
                 <span className="ml-2 normal-case tracking-normal text-[11px]" style={{ color: 'rgba(163,124,95,0.6)' }}>
@@ -280,9 +280,9 @@ export default function ContactWrapper({
                       onClick={() => toggleScope(s)}
                       className="px-3.5 py-2 rounded-full text-[13px] transition-all duration-200 border"
                       style={{
-                        background: active ? '#3D1F0F' : 'transparent',
-                        color: active ? '#FFF4E8' : '#6B3D24',
-                        borderColor: active ? '#3D1F0F' : 'rgba(61,31,15,0.18)',
+                        background: active ? '#1D1D1F' : 'transparent',
+                        color: active ? '#FBFBFD' : '#424245',
+                        borderColor: active ? '#1D1D1F' : 'rgba(0,0,0,0.18)',
                       }}
                     >
                       {active && <span className="mr-1">✓</span>}
@@ -297,7 +297,7 @@ export default function ContactWrapper({
             <div className="mt-7">
               <label
                 className="block uppercase text-[11px] mb-3"
-                style={{ letterSpacing: '0.18em', color: '#A37C5F' }}
+                style={{ letterSpacing: '0.18em', color: '#6E6E73' }}
               >
                 {t.labels.message}
               </label>
@@ -308,28 +308,28 @@ export default function ContactWrapper({
                 rows={5}
                 className="w-full rounded-xl px-4 py-3.5 text-[15px] leading-[1.6] resize-y transition-all duration-200 outline-none focus:ring-2"
                 style={{
-                  background: '#FFF9F1',
-                  border: '1px solid rgba(61,31,15,0.12)',
-                  color: '#3D1F0F',
+                  background: '#FBFBFD',
+                  border: '1px solid rgba(0,0,0,0.12)',
+                  color: '#1D1D1F',
                   minHeight: '128px',
                 }}
                 onFocus={(e) => {
-                  e.currentTarget.style.borderColor = '#FF6B4A'
+                  e.currentTarget.style.borderColor = '#0071E3'
                   e.currentTarget.style.background = '#FFFFFF'
                 }}
                 onBlur={(e) => {
-                  e.currentTarget.style.borderColor = 'rgba(61,31,15,0.12)'
-                  e.currentTarget.style.background = '#FFF9F1'
+                  e.currentTarget.style.borderColor = 'rgba(0,0,0,0.12)'
+                  e.currentTarget.style.background = '#FBFBFD'
                 }}
               />
             </div>
 
             {/* SEND BUTTON — big, coral, impossible to miss */}
             <div className="mt-8 flex flex-col-reverse md:flex-row items-start md:items-center justify-between gap-4">
-              <p className="text-[12px] leading-relaxed" style={{ color: '#A37C5F' }}>
+              <p className="text-[12px] leading-relaxed" style={{ color: '#6E6E73' }}>
                 <span
                   className="inline-block w-1 h-1 rounded-full mr-2 align-middle"
-                  style={{ background: '#FF6B4A' }}
+                  style={{ background: '#0071E3' }}
                 />
                 {t.privacy}
               </p>
@@ -338,13 +338,13 @@ export default function ContactWrapper({
                   type="submit"
                   data-cursor={isKo ? '보내기' : 'Send'}
                   disabled={status === 'loading'}
-                  className="inline-flex items-center gap-3 px-8 py-[18px] rounded-full text-[15px] font-medium transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_24px_50px_-16px_rgba(255,107,74,0.55)] disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
+                  className="inline-flex items-center gap-3 px-8 py-[18px] rounded-full text-[15px] font-medium transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_24px_50px_-16px_rgba(0,113,227,0.55)] disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
                   style={{
-                    background: valid ? '#FF6B4A' : '#3D1F0F',
-                    color: '#FFF4E8',
+                    background: valid ? '#0071E3' : '#1D1D1F',
+                    color: '#FBFBFD',
                     boxShadow: valid
-                      ? '0 18px 40px -14px rgba(255,107,74,0.55), inset 0 0 0 1px rgba(255,255,255,0.08)'
-                      : '0 14px 40px -14px rgba(61,31,15,0.45)',
+                      ? '0 18px 40px -14px rgba(0,113,227,0.55), inset 0 0 0 1px rgba(255,255,255,0.08)'
+                      : '0 14px 40px -14px rgba(0,0,0,0.45)',
                   }}
                 >
                   {status === 'loading' ? (
@@ -369,7 +369,7 @@ export default function ContactWrapper({
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 justify-center">
             <span
               className="text-[12px] uppercase"
-              style={{ letterSpacing: '0.18em', color: '#A37C5F' }}
+              style={{ letterSpacing: '0.18em', color: '#6E6E73' }}
             >
               {t.altContact.label}
             </span>
@@ -379,12 +379,12 @@ export default function ContactWrapper({
                 className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] transition-all duration-200 hover:scale-[1.03]"
                 style={{
                   background: 'rgba(255,255,255,0.7)',
-                  border: '1px solid rgba(61,31,15,0.10)',
-                  color: '#3D1F0F',
+                  border: '1px solid rgba(0,0,0,0.09)',
+                  color: '#1D1D1F',
                   backdropFilter: 'blur(8px)',
                 }}
               >
-                <span aria-hidden style={{ color: '#FF6B4A' }}>✉</span>
+                <span aria-hidden style={{ color: '#0071E3' }}>✉</span>
                 {t.altContact.email}
               </a>
               <a
@@ -395,8 +395,8 @@ export default function ContactWrapper({
                 className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] transition-all duration-200 hover:scale-[1.03]"
                 style={{
                   background: '#FEE500',
-                  border: '1px solid rgba(61,31,15,0.10)',
-                  color: '#3D1F0F',
+                  border: '1px solid rgba(0,0,0,0.09)',
+                  color: '#1D1D1F',
                 }}
               >
                 <span aria-hidden>💬</span>
@@ -410,7 +410,7 @@ export default function ContactWrapper({
         <div className="mt-16 md:mt-20 max-w-4xl mx-auto">
           <p
             className="text-center text-[11px] uppercase mb-8"
-            style={{ letterSpacing: '0.22em', color: '#A37C5F' }}
+            style={{ letterSpacing: '0.22em', color: '#6E6E73' }}
           >
             {t.nextLabel}
           </p>
@@ -421,20 +421,20 @@ export default function ContactWrapper({
                   <span
                     className="inline-flex items-center justify-center w-7 h-7 rounded-full text-[11px] font-medium"
                     style={{
-                      background: 'rgba(255, 107, 74, 0.12)',
-                      color: '#FF6B4A',
+                      background: 'rgba(0,113,227, 0.12)',
+                      color: '#0071E3',
                     }}
                   >
                     0{i + 1}
                   </span>
                   <span
                     className="font-display italic text-[18px] md:text-[20px] font-light"
-                    style={{ color: '#3D1F0F' }}
+                    style={{ color: '#1D1D1F' }}
                   >
                     {when}
                   </span>
                 </div>
-                <p className="text-[13px] leading-[1.6]" style={{ color: '#6B3D24' }}>
+                <p className="text-[13px] leading-[1.6]" style={{ color: '#424245' }}>
                   {desc}
                 </p>
               </InView>
@@ -470,11 +470,11 @@ function Field({
     <label className="block">
       <span
         className="block uppercase text-[11px] mb-2.5"
-        style={{ letterSpacing: '0.18em', color: '#A37C5F' }}
+        style={{ letterSpacing: '0.18em', color: '#6E6E73' }}
       >
         {label}
         {required && (
-          <span className="ml-1 align-top" style={{ color: '#FF6B4A' }}>*</span>
+          <span className="ml-1 align-top" style={{ color: '#0071E3' }}>*</span>
         )}
       </span>
       <input
@@ -486,21 +486,21 @@ function Field({
         autoComplete={autoComplete}
         className="w-full rounded-xl px-4 py-3 text-[15px] transition-all duration-200 outline-none"
         style={{
-          background: '#FFF9F1',
-          border: '1px solid rgba(61,31,15,0.12)',
-          color: '#3D1F0F',
+          background: '#FBFBFD',
+          border: '1px solid rgba(0,0,0,0.12)',
+          color: '#1D1D1F',
         }}
         onFocus={(e) => {
-          e.currentTarget.style.borderColor = '#FF6B4A'
+          e.currentTarget.style.borderColor = '#0071E3'
           e.currentTarget.style.background = '#FFFFFF'
         }}
         onBlur={(e) => {
-          e.currentTarget.style.borderColor = 'rgba(61,31,15,0.12)'
-          e.currentTarget.style.background = '#FFF9F1'
+          e.currentTarget.style.borderColor = 'rgba(0,0,0,0.12)'
+          e.currentTarget.style.background = '#FBFBFD'
         }}
       />
       {helper && (
-        <span className="block mt-1.5 text-[11px]" style={{ color: '#A37C5F' }}>
+        <span className="block mt-1.5 text-[11px]" style={{ color: '#6E6E73' }}>
           {helper}
         </span>
       )}

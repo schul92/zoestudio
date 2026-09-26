@@ -9,43 +9,41 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // ── Summer 2026 palette ──────────────────────────────────────
-        // Warm peach cream backgrounds, deep terracotta text, sunset
-        // coral primary accent, soft sky teal counterpoint, sunny yellow
-        // highlight. Same token names as before — every component picks
-        // up the new palette automatically.
-        ivory: '#FFF4E8',     // main bg — warm peach cream
-        bone: '#FFE7D3',      // secondary bg — deeper peach
-        paper: '#FFFBF5',     // warmest white card
-        ink: '#3D1F0F',       // deep terracotta (was near-black)
-        graphite: '#6B3D24',  // medium warm brown
-        ash: '#A37C5F',       // warm gray
-        mute: '#C9A78A',      // soft peach-gray
-        hairline: 'rgba(61, 31, 15, 0.10)',
-        // "gold" token now carries the SUNSET CORAL — primary accent
+        // ── Keynote palette (2026-09 redesign) ───────────────────────
+        // Apple-like: near-white grounds, graphite ink, one blue action.
+        // Token names are unchanged so every page picks this up.
+        ivory: '#FBFBFD',     // main bg
+        bone: '#F5F5F7',      // secondary bg
+        paper: '#FFFFFF',     // cards
+        ink: '#1D1D1F',
+        graphite: '#424245',
+        ash: '#6E6E73',
+        mute: '#86868B',
+        hairline: 'rgba(0, 0, 0, 0.09)',
         gold: {
-          DEFAULT: '#FF6B4A',  // sunset coral
-          soft: '#FFB394',     // peach blush
-          deep: '#D54620',     // deep coral
+          DEFAULT: '#0071E3',  // action blue (legacy "gold" token name)
+          soft: '#6BB4FF',     // blue on dark grounds
+          deep: '#0066CC',     // link blue
         },
-        // New summer accents — opt-in usage
-        coral: '#FF6B4A',
-        peach: '#FFB394',
-        sun: '#FFD45B',         // sunny yellow highlight
-        teal: '#74C7C7',        // sky teal counterpoint
-        mint: '#A8D8C5',
-        watermelon: '#FF8B7A',
+        action: '#0071E3',
+        link: '#0066CC',
+        coral: '#0071E3',
+        peach: '#CFE3FB',
+        sun: '#E8F1FD',
+        teal: '#00A3A3',
+        mint: '#BFE8E0',
+        watermelon: '#0071E3',
         brand: {
-          50: '#FFF4E8',
-          100: '#FFE7D3',
-          200: '#FFD4B0',
-          300: '#FFB394',
-          400: '#FF6B4A',
-          500: '#E85A3D',
-          600: '#D54620',
-          700: '#3D1F0F',
-          800: '#2A1408',
-          900: '#1A0C04',
+          50: '#F2F7FE',
+          100: '#E1EEFD',
+          200: '#BFDAFB',
+          300: '#8CBDF7',
+          400: '#0071E3',
+          500: '#0066CC',
+          600: '#0058B0',
+          700: '#1D1D1F',
+          800: '#141416',
+          900: '#0A0A0B',
         },
         surface: {
           DEFAULT: '#0a0a0a',
@@ -63,20 +61,20 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ['var(--font-sans)', 'Inter', 'Noto Sans KR', 'system-ui', 'sans-serif'],
-        serif: ['var(--font-serif)', 'Fraunces', 'ui-serif', 'Georgia', 'serif'],
-        display: ['var(--font-serif)', 'Fraunces', 'ui-serif', 'Georgia', 'serif'],
+        sans: ['var(--font-geist-sans, var(--font-sans, -apple-system))', 'Apple SD Gothic Neo', 'Malgun Gothic', 'system-ui', '-apple-system', 'sans-serif'],
+        serif: ['var(--font-geist-sans, var(--font-serif, Georgia))', 'Apple SD Gothic Neo', 'system-ui', 'sans-serif'],
+        display: ['var(--font-geist-sans, var(--font-serif, Georgia))', 'Apple SD Gothic Neo', 'system-ui', 'sans-serif'],
       },
       fontSize: {
-        'mega': ['clamp(4rem, 11vw, 10rem)', { lineHeight: '0.9', letterSpacing: '-0.04em' }],
-        'hero': ['clamp(3rem, 8vw, 7rem)', { lineHeight: '0.95', letterSpacing: '-0.035em' }],
-        'display-lg': ['clamp(2.5rem, 6vw, 5rem)', { lineHeight: '1', letterSpacing: '-0.03em' }],
-        'display': ['clamp(2rem, 5vw, 3.5rem)', { lineHeight: '1.05', letterSpacing: '-0.025em' }],
-        'display-sm': ['clamp(1.5rem, 3.5vw, 2.25rem)', { lineHeight: '1.15', letterSpacing: '-0.02em' }],
+        'mega': ['clamp(3.5rem, 10vw, 8.5rem)', { lineHeight: '0.95', letterSpacing: '-0.055em' }],
+        'hero': ['clamp(2.75rem, 7.5vw, 6.5rem)', { lineHeight: '0.98', letterSpacing: '-0.05em' }],
+        'display-lg': ['clamp(2.25rem, 5.5vw, 4.5rem)', { lineHeight: '1.02', letterSpacing: '-0.045em' }],
+        'display': ['clamp(2rem, 4.5vw, 3.25rem)', { lineHeight: '1.06', letterSpacing: '-0.04em' }],
+        'display-sm': ['clamp(1.5rem, 3.2vw, 2.125rem)', { lineHeight: '1.15', letterSpacing: '-0.03em' }],
         'body-lg': ['1.125rem', { lineHeight: '1.7' }],
         'body': ['1rem', { lineHeight: '1.7' }],
         'body-sm': ['0.875rem', { lineHeight: '1.6', letterSpacing: '0.005em' }],
-        'overline': ['0.6875rem', { lineHeight: '1', letterSpacing: '0.24em' }],
+        'overline': ['0.75rem', { lineHeight: '1.2', letterSpacing: '0.02em' }],
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',
@@ -136,14 +134,14 @@ const config: Config = {
         'card': '0 4px 24px rgba(0,0,0,0.06)',
         'card-hover': '0 12px 48px rgba(0,0,0,0.12)',
         'elevated': '0 20px 60px rgba(0,0,0,0.10)',
-        'glow-sm': '0 0 16px rgba(200, 164, 92, 0.2)',
-        'glow': '0 0 24px rgba(200, 164, 92, 0.3)',
-        'glow-lg': '0 0 40px rgba(200, 164, 92, 0.35)',
-        'inner-glow': 'inset 0 0 60px rgba(200, 164, 92, 0.05)',
+        'glow-sm': '0 0 16px rgba(0, 113, 227, 0.2)',
+        'glow': '0 0 24px rgba(0, 113, 227, 0.3)',
+        'glow-lg': '0 0 40px rgba(0, 113, 227, 0.35)',
+        'inner-glow': 'inset 0 0 60px rgba(0, 113, 227, 0.05)',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-gold': 'linear-gradient(135deg, #C8A45C 0%, #E8D5A3 50%, #C8A45C 100%)',
+        'gradient-gold': 'linear-gradient(90deg, #0071E3 0%, #00A3A3 100%)',
         'noise': "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E\")",
       },
     },

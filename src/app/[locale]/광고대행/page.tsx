@@ -144,11 +144,6 @@ export default function AdvertisingKoreanPage({ params }: { params: { locale: st
       opens: '09:00',
       closes: '18:00',
     },
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '5',
-      reviewCount: '6',
-    },
     inLanguage: isKorean ? 'ko' : 'en',
   }
 

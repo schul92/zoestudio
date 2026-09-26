@@ -113,7 +113,7 @@ export default function PortfolioClient({ t, projects, locale }: PortfolioClient
                       className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
                       style={{
                         background:
-                          'radial-gradient(80% 60% at 50% 50%, rgba(184,145,74,0.25), transparent 80%)',
+                          'radial-gradient(80% 60% at 50% 50%, rgba(0,113,227,0.25), transparent 80%)',
                       }}
                     />
                     <div className="absolute inset-6 md:inset-8 overflow-hidden">

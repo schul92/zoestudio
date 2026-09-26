@@ -6,6 +6,9 @@ import { industries } from '@/data/industriesData'
 import { cityMarkets } from '@/data/cityMarketData'
 import { SITE_URL } from '@/lib/siteUrl'
 
+// Last real content change for non-blog pages; bump it when page copy changes (not on every build).
+const CONTENT_UPDATED = '2026-09-26'
+
 export default function sitemap(): MetadataRoute.Sitemap {
   // Force www host — Vercel apex 307-redirects to www, so canonicals must be www
   const baseUrl = SITE_URL
@@ -107,7 +110,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   standardPages.forEach((page) => {
     sitemapEntries.push({
       url: `${baseUrl}${page}`,
-      lastModified: new Date(),
+      lastModified: new Date(CONTENT_UPDATED),
       alternates: {
         languages: {
           'x-default': `${baseUrl}${page}`,
@@ -122,7 +125,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   standardPages.forEach((page) => {
     sitemapEntries.push({
       url: `${baseUrl}/ko${page}`,
-      lastModified: new Date(),
+      lastModified: new Date(CONTENT_UPDATED),
       alternates: {
         languages: {
           'x-default': `${baseUrl}${page}`,

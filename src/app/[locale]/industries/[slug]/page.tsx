@@ -123,20 +123,6 @@ export default function IndustrySlugPage({
     })),
   }
 
-  // Review schema — only when a REAL, client-approved case-study quote exists
-  const review = industry.caseStudy
-    ? {
-        '@context': 'https://schema.org',
-        '@type': 'Review',
-        '@id': `${url}#review`,
-        reviewBody: industry.caseStudy.quote[locale],
-        author: { '@type': 'Person', name: industry.caseStudy.author, jobTitle: industry.caseStudy.role[locale] },
-        itemReviewed: { '@id': `${BASE}/#organization` },
-        reviewRating: { '@type': 'Rating', ratingValue: 5, bestRating: 5 },
-        about: industry.caseStudy.project,
-      }
-    : null
-
   // WebPage
   const webPage = {
     '@context': 'https://schema.org',
@@ -163,9 +149,6 @@ export default function IndustrySlugPage({
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(service) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
-      {review && (
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(review) }} />
-      )}
       <IndustryPage industry={industry} locale={locale} />
       <Footer locale={locale} />
     </>

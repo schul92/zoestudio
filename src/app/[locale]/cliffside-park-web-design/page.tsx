@@ -74,7 +74,6 @@ export default function CliffsideParkWebDesignPage({ params }: { params: { local
       { '@type': 'AdministrativeArea', name: 'Bergen County' },
     ],
     priceRange: '$$', openingHours: 'Mo-Fr 09:00-18:00',
-    aggregateRating: { '@type': 'AggregateRating', ratingValue: '5', reviewCount: '6' },
     knowsLanguage: ['English', 'Korean'],
   }
 
@@ -148,10 +147,6 @@ export default function CliffsideParkWebDesignPage({ params }: { params: { local
               </Link>
             </div>
             <div className="flex flex-wrap justify-center gap-8 text-gray-600">
-              <div className="flex items-center gap-2">
-                <Star className="w-5 h-5 text-yellow-500 fill-yellow-500" />
-                <span>{locale === 'ko' ? '5.0 평점 (89개 리뷰)' : '5.0 Rating (89 Reviews)'}</span>
-              </div>
               <div className="flex items-center gap-2">
                 <Users className="w-5 h-5 text-blue-500" />
                 <span>{locale === 'ko' ? '100+ 한인 클라이언트' : '100+ Korean-American Clients'}</span>

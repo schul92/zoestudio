@@ -1,15 +1,7 @@
-'use client'
-
 /**
- * Trust ribbon — high-density credibility band placed directly after the hero.
- * Carries the four buyer signals that matter most for Korean small-biz owners
- * landing cold: rating, volume, geography, language.
+ * Trust ribbon — the four buyer signals that matter most for Korean small-biz
+ * owners landing cold. Client names live in the hero row directly above.
  */
-
-import { useRef } from 'react'
-import { useGSAP } from '@gsap/react'
-import gsap from 'gsap'
-import InView from '@/components/ui/motion/InView'
 
 type Stat = {
   value: string
@@ -40,128 +32,25 @@ const stats: Stat[] = [
   },
 ]
 
-const clientMarks = [
-  'TJ Flowers',
-  'Salt & Polish',
-  'Kona Coffee',
-  'CareK9',
-  'Mochinut',
-  "Vito's Pizza",
-]
-
-/**
- * Seamless infinite logo marquee (Square-style, in our warm palette).
- * The list is duplicated once; a single tween drives the track to
- * xPercent -50, so the second copy sits exactly where the first began —
- * looping with no visible seam. Pauses on hover; static + wrapped when
- * the reader prefers reduced motion.
- */
-function ClientMarquee() {
-  const trackRef = useRef<HTMLUListElement | null>(null)
-  const tweenRef = useRef<gsap.core.Tween | null>(null)
-
-  useGSAP(
-    () => {
-      const track = trackRef.current
-      if (!track) return
-
-      const mm = gsap.matchMedia()
-      mm.add('(prefers-reduced-motion: no-preference)', () => {
-        tweenRef.current = gsap.to(track, {
-          xPercent: -50,
-          repeat: -1,
-          ease: 'none',
-          duration: 30,
-        })
-        return () => tweenRef.current?.kill()
-      })
-    },
-    { scope: trackRef }
-  )
-
-  const items = [...clientMarks, ...clientMarks]
-
-  return (
-    <div
-      className="relative overflow-hidden"
-      style={{
-        WebkitMaskImage:
-          'linear-gradient(to right, transparent, black 8%, black 92%, transparent)',
-        maskImage:
-          'linear-gradient(to right, transparent, black 8%, black 92%, transparent)',
-      }}
-      onMouseEnter={() => tweenRef.current?.pause()}
-      onMouseLeave={() => tweenRef.current?.resume()}
-    >
-      {/* motion track — duplicated list, animated to xPercent -50 */}
-      <ul
-        ref={trackRef}
-        aria-hidden="true"
-        className="motion-reduce:hidden flex w-max items-center gap-x-10 md:gap-x-14 pr-10 md:pr-14 will-change-transform"
-      >
-        {items.map((m, i) => (
-          <li
-            key={`${m}-${i}`}
-            className="font-display italic text-[15px] md:text-[17px] whitespace-nowrap text-[#3a3836]/[0.55] transition-colors duration-300 hover:text-gold"
-          >
-            {m}
-          </li>
-        ))}
-      </ul>
-
-      {/* reduced-motion fallback — static wrapped row, no animation */}
-      <ul className="hidden motion-reduce:flex flex-wrap gap-x-6 md:gap-x-10 gap-y-3 items-center">
-        {clientMarks.map((m) => (
-          <li
-            key={m}
-            className="font-display italic text-[15px] md:text-[17px] text-[#3a3836]/[0.55]"
-          >
-            {m}
-          </li>
-        ))}
-      </ul>
-    </div>
-  )
-}
-
 export default function TrustRibbon({ locale = 'en' }: { locale?: string }) {
   const isKo = locale === 'ko'
 
   return (
-    <section
-      aria-label={isKo ? '신뢰 지표' : 'Trust signals'}
-      className="relative border-y border-black/[0.08] bg-[#f2ece2]"
-    >
-      <div className="mx-auto max-w-[1400px] px-5 md:px-12 py-10 md:py-14">
-        {/* Stats row */}
-        <ul className="grid grid-cols-2 md:grid-cols-4 gap-y-8 gap-x-4 md:gap-x-8">
-          {stats.map((s, i) => (
-            <InView key={i} delay={i * 70}>
-              <li className="flex flex-col">
-                <span className="font-display text-[clamp(28px,3.4vw,44px)] leading-none tracking-[-0.02em] text-[#151414]">
-                  {s.value}
-                </span>
-                <span className="mt-2 text-[13px] uppercase tracking-[0.18em] text-[#3a3836]">
-                  {s.label[isKo ? 'ko' : 'en']}
-                </span>
-                {s.sub && (
-                  <span className="mt-1 text-[12px] text-[#8a8378]">
-                    {s.sub[isKo ? 'ko' : 'en']}
-                  </span>
-                )}
-              </li>
-            </InView>
-          ))}
-        </ul>
-
-        {/* Client marks row */}
-        <div className="mt-10 md:mt-14 pt-8 border-t border-black/[0.06]">
-          <p className="text-[11px] uppercase tracking-[0.22em] text-[#8a8378] mb-5">
-            {isKo ? '함께한 브랜드' : 'Selected clients'}
-          </p>
-          <ClientMarquee />
-        </div>
-      </div>
+    <section aria-label={isKo ? '신뢰 지표' : 'Trust signals'} className="bg-ivory">
+      <ul className="container-edge grid grid-cols-2 md:grid-cols-4 py-16 md:py-24 gap-y-12">
+        {stats.map((s, i) => (
+          <li
+            key={s.value}
+            className={`flex flex-col items-center text-center px-4 ${i > 0 ? 'md:border-l md:border-[#D2D2D7]' : ''}`}
+          >
+            <span className="text-[clamp(30px,4.4vw,56px)] font-bold leading-none tracking-[-0.05em] text-ink">
+              {s.value}
+            </span>
+            <span className="mt-3 text-[15px] font-semibold text-ink">{s.label[isKo ? 'ko' : 'en']}</span>
+            {s.sub && <span className="mt-1 text-[13px] text-ash">{s.sub[isKo ? 'ko' : 'en']}</span>}
+          </li>
+        ))}
+      </ul>
     </section>
   )
 }

@@ -3,6 +3,10 @@ import dynamic from 'next/dynamic'
 import HeaderWrapper from '@/components/layout/HeaderWrapper'
 import Footer from '@/components/layout/Footer'
 import HeroNew from '@/components/HeroNew'
+import TrustRibbon from '@/components/sections/TrustRibbon'
+import FloatingDevices from '@/components/sections/FloatingDevices'
+import CaseScroll from '@/components/sections/CaseScroll'
+import AtAGlance, { atAGlanceFaqSchema } from '@/components/sections/AtAGlance'
 import { seoConfig, structuredData } from '@/config/seo'
 import {
   breadcrumbList,
@@ -12,15 +16,7 @@ import {
 } from '@/config/schemas'
 import { SITE_URL } from '@/lib/siteUrl'
 
-const TrustRibbon = dynamic(() => import('@/components/sections/TrustRibbon'), {
-  ssr: true,
-  loading: () => <div className="min-h-[200px] bg-ivory" />
-})
 
-const FloatingDevices = dynamic(() => import('@/components/sections/FloatingDevices'), {
-  ssr: true,
-  loading: () => <div className="min-h-[400px] bg-ivory" />
-})
 
 const Services = dynamic(() => import('@/components/sections/Services'), {
   ssr: true,
@@ -60,13 +56,6 @@ const BlogRail = dynamic(() => import('@/components/sections/BlogRail'), {
 const PricingTeaser = dynamic(() => import('@/components/sections/PricingTeaser'), {
   ssr: true,
   loading: () => <div className="min-h-[400px] bg-bone" />
-})
-
-// Pinned, scroll-scrubbed case study (GSAP ScrollTrigger). Client-only: it
-// pins and measures, so SSR markup would be discarded on hydration anyway.
-const CaseScroll = dynamic(() => import('@/components/sections/CaseScroll'), {
-  ssr: false,
-  loading: () => <div className="min-h-[600px] bg-[#171310]" />
 })
 
 export function generateStaticParams() {
@@ -143,22 +132,13 @@ export default function Home({ params }: { params: { locale: string } }) {
   // Selected Work ItemList
   const worksSchema = selectedWorkItemList([
     {
-      name: 'Miguk Story',
-      url: 'https://migukstory.com/',
-      image: '/portfolio/migukstory.jpg',
+      name: 'EndoPia',
+      url: 'https://endopiaglobal.com/',
+      image: '/portfolio/endopia.jpg',
       year: '2026',
-      location: 'Bilingual, US',
-      industry: 'Editorial publication',
-      disciplines: ['Editorial', 'CMS', 'Bilingual SEO'],
-    },
-    {
-      name: "Vito's Pizza & Ristorante",
-      url: 'https://www.vitospizzaandristorante.com/',
-      image: '/portfolio/vitos-pizza.jpg',
-      year: '2026',
-      location: 'Alpharetta, GA',
-      industry: 'Italian restaurant',
-      disciplines: ['Web design', 'Online ordering', 'Local SEO'],
+      location: 'United States',
+      industry: 'Medical device',
+      disciplines: ['Web design', 'Product storytelling', 'SEO'],
     },
     {
       name: 'TJ Flowers',
@@ -170,6 +150,15 @@ export default function Home({ params }: { params: { locale: string } }) {
       disciplines: ['Brand', 'Commerce'],
     },
     {
+      name: "Vito's Pizza & Ristorante",
+      url: 'https://www.vitospizzaandristorante.com/',
+      image: '/portfolio/vitos-pizza.jpg',
+      year: '2026',
+      location: 'Alpharetta, GA',
+      industry: 'Italian restaurant',
+      disciplines: ['Web design', 'Online ordering', 'Local SEO'],
+    },
+    {
       name: 'Salt & Polish',
       url: '/portfolio',
       image: '/portfolio/salt-polish.jpg',
@@ -177,15 +166,6 @@ export default function Home({ params }: { params: { locale: string } }) {
       location: 'Fort Lee, NJ',
       industry: 'Wellness studio',
       disciplines: ['Web design', 'Local SEO', 'Booking'],
-    },
-    {
-      name: 'Kona Coffee Donut',
-      url: '/portfolio',
-      image: '/portfolio/kona-coffee.jpg',
-      year: '2024',
-      location: 'Honolulu, HI',
-      industry: 'Café & bakery',
-      disciplines: ['Brand', 'Web design', 'Shopify'],
     },
     {
       name: 'CareK9',
@@ -197,6 +177,15 @@ export default function Home({ params }: { params: { locale: string } }) {
       disciplines: ['Web design', 'Booking', 'CMS'],
     },
     {
+      name: 'Kona Coffee Donut',
+      url: '/portfolio',
+      image: '/portfolio/kona-coffee.jpg',
+      year: '2024',
+      location: 'Honolulu, HI',
+      industry: 'Café & bakery',
+      disciplines: ['Brand', 'Web design', 'Shopify'],
+    },
+    {
       name: 'Mochinut',
       url: '/portfolio',
       image: '/portfolio/mochinut.jpg',
@@ -204,6 +193,15 @@ export default function Home({ params }: { params: { locale: string } }) {
       location: 'Multi-city, US',
       industry: 'Confectionery',
       disciplines: ['E-commerce', 'Rebrand', 'Franchise'],
+    },
+    {
+      name: 'Miguk Story',
+      url: 'https://migukstory.com/',
+      image: '/portfolio/migukstory.jpg',
+      year: '2026',
+      location: 'Bilingual, US',
+      industry: 'Editorial publication',
+      disciplines: ['Editorial', 'CMS', 'Bilingual SEO'],
     },
   ])
 
@@ -222,7 +220,11 @@ export default function Home({ params }: { params: { locale: string } }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(crumbs) }}
       />
-      {/* FAQPage schema omitted — Google requires visible FAQ content on the page */}
+      {/* FAQPage mirrors the visible At a glance section */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(atAGlanceFaqSchema(locale, pageUrl)) }}
+      />
       {/* Selected Work ItemList */}
       <script
         type="application/ld+json"
@@ -237,14 +239,13 @@ export default function Home({ params }: { params: { locale: string } }) {
         />
       ))}
       <HeaderWrapper locale={locale} />
-      <main className="min-h-screen relative overflow-x-hidden">
+      <main className="min-h-screen relative overflow-x-clip">
         <HeroNew locale={locale} />
         <TrustRibbon locale={locale} />
         <FloatingDevices locale={locale as 'en' | 'ko'} />
         <Services locale={locale} />
         <SelectedWork locale={locale} sectionNumber="02" />
-        {/* Dark act continues: the pinned case study rides straight out of
-            SelectedWork's ink ground, then the page returns to ivory. */}
+        <AtAGlance locale={locale} />
         <CaseScroll locale={locale} />
         <Process locale={locale} sectionNumber="03" />
         <Proof locale={locale} sectionNumber="04" />

@@ -2,7 +2,6 @@
 
 import { useTranslation } from '@/hooks/useTranslation'
 import { useState, useEffect, useRef } from 'react'
-import { motion } from 'framer-motion'
 import { useServices } from '@/context/ServiceContext'
 import { trackFormSuccess, trackFormError, trackGAEvent, GA_EVENTS, trackEmailClick, trackButtonClick, trackKakaoClick } from '@/utils/analytics'
 import Modal from '@/components/ui/Modal'
@@ -261,21 +260,12 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
         submissionData={submissionSummary || undefined}
       />
       
-      <section id="contact" className={`grain-overlay pt-20 md:pt-24 bg-[#0a0a0a] relative z-10 overflow-hidden ${selectedServices.length > 0 ? 'pb-48 sm:pb-36 md:pb-28' : 'pb-20 md:pb-20'}`}>
-      {/* Top gradient divider (replaces border-t) */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-amber-500/20 to-transparent" />
-
-      {/* Subtle radial gradients */}
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_40%_at_50%_20%,rgba(245,158,11,0.03),transparent_70%)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_80%,rgba(168,85,247,0.02),transparent_50%)]" />
-      </div>
-
+      <section id="contact" className={`pt-24 md:pt-32 bg-ink relative z-10 overflow-hidden ${selectedServices.length > 0 ? 'pb-48 sm:pb-36 md:pb-28' : 'pb-20 md:pb-20'}`}>
       <div className="container mx-auto px-6 relative z-10">
         <div className="max-w-5xl mx-auto">
           {/* Header - Improved mobile visibility */}
           <div className="text-center mb-8 md:mb-12">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-4 px-4 text-white">{t.contact.title}</h2>
+              <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-[-0.045em] mb-4 px-4 text-white">{t.contact.title}</h2>
               <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-400 max-w-2xl mx-auto px-4">
                 {t.contact.subtitle}
               </p>
@@ -283,17 +273,12 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
 
             <div className="grid lg:grid-cols-2 gap-12">
                 {/* Left: Form */}
-                <motion.div
-                  initial={{ opacity: 0, x: -50 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  className="bg-white/[0.03] p-8 rounded-2xl border border-white/[0.08]"
+                <div
+                  className="bg-white/[0.03] p-8 rounded-[18px] border border-white/[0.08]"
                 >
                   {/* Selected Services Display */}
                   {selectedServices.length > 0 && (
-                  <motion.div
-                    initial={cameFromPricing ? { scale: 0.95, opacity: 0 } : {}}
-                    animate={cameFromPricing ? { scale: 1, opacity: 1 } : {}}
-                    transition={{ duration: 0.5 }}
+                  <div
                     className={`mb-6 p-4 rounded-lg ${
                       cameFromPricing
                         ? 'bg-green-500/[0.05] border border-green-500/30'
@@ -315,11 +300,8 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                     </div>
                     <div className="flex flex-wrap gap-2">
                       {selectedServices.map(service => (
-                        <motion.span
+                        <span
                           key={service.id}
-                          initial={cameFromPricing ? { scale: 0 } : {}}
-                          animate={cameFromPricing ? { scale: 1 } : {}}
-                          transition={{ delay: 0.1 }}
                           className={`px-3 py-1 rounded-full text-sm font-medium flex items-center gap-2 inline-flex ${
                             service.id.startsWith('tier-')
                               ? 'bg-indigo-500/20 text-indigo-300 border border-indigo-500/30'
@@ -338,7 +320,7 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                           >
                             ×
                           </button>
-                        </motion.span>
+                        </span>
                       ))}
                     </div>
                     {cameFromPricing ? (
@@ -350,12 +332,12 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                     ) : (
                       <button
                         onClick={scrollToServices}
-                        className="mt-3 text-sm text-amber-400 hover:text-amber-300 font-medium"
+                        className="mt-3 text-sm text-sky-400 hover:text-sky-300 font-medium"
                       >
                         {locale === 'ko' ? '서비스 변경 ↑' : 'Change Services ↑'}
                       </button>
                     )}
-                  </motion.div>
+                  </div>
                   )}
 
                   <h3 className="text-2xl font-bold mb-6 text-white">
@@ -376,7 +358,7 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                           value={formData.name}
                           onChange={handleChange}
                           placeholder={locale === 'ko' ? '홍길동' : 'John Doe'}
-                          className="w-full px-4 py-3 border border-white/[0.1] rounded-xl focus:border-amber-500/40 focus:outline-none transition-colors bg-white/[0.04] text-white placeholder-gray-500"
+                          className="w-full px-4 py-3 border border-white/[0.1] rounded-xl focus:border-sky-500/40 focus:outline-none transition-colors bg-white/[0.04] text-white placeholder-gray-500"
                         />
                       </div>
 
@@ -391,7 +373,7 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                           value={formData.phone}
                           onChange={handleChange}
                           placeholder={locale === 'ko' ? '010-1234-5678' : '(555) 123-4567'}
-                          className="w-full px-4 py-3 border border-white/[0.1] rounded-xl focus:border-amber-500/40 focus:outline-none transition-colors bg-white/[0.04] text-white placeholder-gray-500"
+                          className="w-full px-4 py-3 border border-white/[0.1] rounded-xl focus:border-sky-500/40 focus:outline-none transition-colors bg-white/[0.04] text-white placeholder-gray-500"
                         />
                       </div>
                     </div>
@@ -417,7 +399,7 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                               ? 'border-red-500/50 focus:border-red-500/70 bg-red-500/[0.05]'
                               : formData.email && !emailError && emailTouched
                               ? 'border-green-500/50 focus:border-green-500/70 bg-green-500/[0.05]'
-                              : 'border-white/[0.1] focus:border-amber-500/40 bg-white/[0.04]'
+                              : 'border-white/[0.1] focus:border-sky-500/40 bg-white/[0.04]'
                           }`}
                           placeholder={locale === 'ko' ? 'example@email.com' : 'example@email.com'}
                         />
@@ -425,37 +407,31 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                         {emailTouched && (
                           <div className="absolute right-3 top-1/2 transform -translate-y-1/2">
                             {emailError ? (
-                              <motion.div
-                                initial={{ scale: 0 }}
-                                animate={{ scale: 1 }}
+                              <div
                                 className="text-red-500"
                               >
                                 <XCircle className="w-5 h-5" />
-                              </motion.div>
+                              </div>
                             ) : formData.email ? (
-                              <motion.div
-                                initial={{ scale: 0 }}
-                                animate={{ scale: 1 }}
+                              <div
                                 className="text-green-500"
                               >
                                 <CheckCircle className="w-5 h-5" />
-                              </motion.div>
+                              </div>
                             ) : null}
                           </div>
                         )}
                       </div>
                       {/* Error Message */}
                       {emailError && emailTouched && (
-                        <motion.p
-                          initial={{ opacity: 0, y: -10 }}
-                          animate={{ opacity: 1, y: 0 }}
+                        <p
                           role="alert"
                           aria-live="polite"
                           className="mt-2 text-sm text-red-500 flex items-center gap-1.5"
                         >
                           <AlertTriangle className="w-4 h-4 flex-shrink-0" />
                           {emailError}
-                        </motion.p>
+                        </p>
                       )}
                     </div>
                     
@@ -470,7 +446,7 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                         value={formData.business}
                         onChange={handleChange}
                         placeholder={locale === 'ko' ? '귀사명' : 'Your Company'}
-                        className="w-full px-4 py-3 border border-white/[0.1] rounded-xl focus:border-amber-500/40 focus:outline-none transition-colors bg-white/[0.04] text-white placeholder-gray-500"
+                        className="w-full px-4 py-3 border border-white/[0.1] rounded-xl focus:border-sky-500/40 focus:outline-none transition-colors bg-white/[0.04] text-white placeholder-gray-500"
                       />
                     </div>
 
@@ -488,17 +464,15 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                           ? '귀하의 비즈니스에 대해 더 알려주세요...'
                           : 'Tell us more about your business needs...'
                         }
-                        className="w-full px-4 py-3 border border-white/[0.1] rounded-xl focus:border-amber-500/40 focus:outline-none transition-colors resize-none bg-white/[0.04] text-white placeholder-gray-500 font-sans"
+                        className="w-full px-4 py-3 border border-white/[0.1] rounded-xl focus:border-sky-500/40 focus:outline-none transition-colors resize-none bg-white/[0.04] text-white placeholder-gray-500 font-sans"
                         style={{ fontFamily: 'inherit' }}
                       />
                     </div>
                     
-                    <motion.button
+                    <button
                       type="submit"
                       disabled={isSubmitting}
-                      whileHover={{ scale: 1.02 }}
-                      whileTap={{ scale: 0.98 }}
-                      className="w-full bg-gradient-to-b from-amber-400 to-amber-500 text-black py-4 rounded-xl font-bold text-lg relative overflow-hidden group disabled:opacity-50 disabled:cursor-not-allowed hover:brightness-110 transition-all shadow-glow hover:shadow-glow-lg"
+                      className="w-full bg-action text-white py-4 rounded-full font-semibold text-lg relative overflow-hidden group disabled:opacity-50 disabled:cursor-not-allowed hover:bg-[#0077ED] transition-colors"
                     >
                       <span className="relative z-10">
                         {isSubmitting
@@ -506,24 +480,22 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                           : (locale === 'ko' ? '상담 신청하기' : 'Submit Request')
                         }
                       </span>
-                    </motion.button>
+                    </button>
                   </form>
-                </motion.div>
+                </div>
                 
                 {/* Right: Contact Info & Process */}
-                <motion.div
-                  initial={{ opacity: 0, x: 50 }}
-                  animate={{ opacity: 1, x: 0 }}
+                <div
                   className="space-y-6"
                 >
                   {/* What Happens Next */}
-                  <div className="bg-white/[0.03] p-6 sm:p-8 rounded-2xl border border-white/[0.08]">
+                  <div className="bg-white/[0.03] p-6 sm:p-8 rounded-[18px] border border-white/[0.08]">
                     <h4 className="text-xl sm:text-2xl font-bold mb-6 text-white">
                       {locale === 'ko' ? '다음 단계' : 'What Happens Next?'}
                     </h4>
                     <div className="space-y-4">
                       <div className="flex items-start gap-4">
-                        <div className="w-8 h-8 bg-amber-400 text-black rounded-full flex items-center justify-center flex-shrink-0 font-bold">
+                        <div className="w-8 h-8 bg-sky-400 text-black rounded-full flex items-center justify-center flex-shrink-0 font-bold">
                           1
                         </div>
                         <div>
@@ -539,7 +511,7 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                         </div>
                       </div>
                       <div className="flex items-start gap-4">
-                        <div className="w-8 h-8 bg-amber-400 text-black rounded-full flex items-center justify-center flex-shrink-0 font-bold">
+                        <div className="w-8 h-8 bg-sky-400 text-black rounded-full flex items-center justify-center flex-shrink-0 font-bold">
                           2
                         </div>
                         <div>
@@ -555,7 +527,7 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                         </div>
                       </div>
                       <div className="flex items-start gap-4">
-                        <div className="w-8 h-8 bg-amber-400 text-black rounded-full flex items-center justify-center flex-shrink-0 font-bold">
+                        <div className="w-8 h-8 bg-sky-400 text-black rounded-full flex items-center justify-center flex-shrink-0 font-bold">
                           3
                         </div>
                         <div>
@@ -574,7 +546,7 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                   </div>
 
                   {/* Contact Info */}
-                  <div className="bg-white/[0.03] p-6 sm:p-8 rounded-2xl border border-white/[0.08]">
+                  <div className="bg-white/[0.03] p-6 sm:p-8 rounded-[18px] border border-white/[0.08]">
                     <h4 className="text-lg sm:text-xl font-bold mb-4 text-white">
                       {locale === 'ko' ? '연락처' : 'Get in Touch'}
                     </h4>
@@ -582,7 +554,7 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                       <a
                         href="mailto:info@zoelumos.com"
                         onClick={() => trackEmailClick('info@zoelumos.com')}
-                        className="flex items-center gap-3 text-gray-300 hover:text-amber-400 transition-colors"
+                        className="flex items-center gap-3 text-gray-300 hover:text-sky-400 transition-colors"
                       >
                         <Mail className="w-5 h-5 flex-shrink-0" />
                         <span className="text-sm font-medium">info@zoelumos.com</span>
@@ -593,7 +565,7 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                           target="_blank"
                           rel="noopener noreferrer"
                           onClick={() => trackButtonClick('Book a Call', 'contact-info')}
-                          className="flex items-center gap-3 text-amber-400 hover:text-amber-300 transition-colors font-semibold"
+                          className="flex items-center gap-3 text-sky-400 hover:text-sky-300 transition-colors font-semibold"
                         >
                           <CalendarCheck className="w-5 h-5 flex-shrink-0" />
                           <span className="text-sm">
@@ -627,7 +599,7 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                       </div>
                     </div>
                   </div>
-                </motion.div>
+                </div>
               </div>
           </div>
       </div>

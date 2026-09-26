@@ -1,22 +1,22 @@
 export const seoConfig = {
   en: {
     title: 'ZOE LUMOS — Shopify Expert & Korean-American Web Design | Fort Lee NJ',
-    description: 'Korean-American web design studio. Bilingual websites, Shopify builds & SEO for Korean-American businesses. TJ Flowers: $3,114 revenue in 4 weeks post-rebuild. Fort Lee NJ · serving nationwide.',
+    description: 'Korean-American web design studio. Bilingual websites, Shopify builds & SEO for Korean-American businesses. TJ Flowers: $10,000+ revenue within 3 months of the rebuild. Fort Lee NJ · serving nationwide.',
     keywords: 'Shopify Expert NJ, Shopify developer Korean, Korean American web design, bilingual web design agency, Korean web design studio, Korean business website, Korean American website, bilingual SEO, Korean SEO agency, NJ web design, NY web design, Fort Lee web design, Bergen County web design, Shopify development, e-commerce website design, local SEO expert, digital marketing agency, Google Ads management, small business SEO NJ, Korean web agency, editorial web design, boutique web design studio, 한인 마케팅 에이전시, 한인 웹디자인, Korean American web designer, Palisades Park marketing, Ridgefield web design, Edgewater web design, Cliffside Park web design, Fairview NJ web design, Hackensack web design, Leonia web design, Tenafly web design, Teaneck web design, Korean restaurant website NJ, Korean spa website NJ, Korean nail salon website, Korean hair salon website, Korean grocery store website, bilingual website Korean English NJ, Korean American small business website, Fort Lee Korean marketing agency, Palisades Park Korean business SEO, Bergen County Korean marketing agency, Korean business Google Ads, Google My Business Korean business, Instagram marketing Korean business NJ, affordable web design Bergen County, how to get more customers for Korean restaurant NJ',
     openGraph: {
       title: 'Zoe Lumos — Shopify Expert & Korean-American Web Design Studio',
-      description: 'Bilingual web design & Shopify for Korean-American businesses. TJ Flowers: $3,114 revenue in 4 weeks post-Shopify rebuild. Fort Lee NJ · nationwide.',
+      description: 'Bilingual web design & Shopify for Korean-American businesses. TJ Flowers: $10,000+ revenue within 3 months of the Shopify rebuild. Fort Lee NJ · nationwide.',
       siteName: 'Zoe Lumos',
       locale: 'en_US',
     }
   },
   ko: {
     title: 'Shopify 전문 한인 웹디자인 스튜디오 ZOE LUMOS | 뉴저지 · LA · 전국',
-    description: 'Shopify Expert + 한인·미국인 웹디자인 스튜디오. Shopify 재구축, SEO, 한·영 이중언어 웹사이트. 증거 — TJ Flowers 리뉴얼 4주 만에 $3,114 매출. 포트리 · 뉴저지 · LA · 전국.',
+    description: 'Shopify Expert + 한인·미국인 웹디자인 스튜디오. Shopify 재구축, SEO, 한·영 이중언어 웹사이트. 증거 — TJ Flowers 리빌드 후 3개월 안에 $10,000+ 매출. 포트리 · 뉴저지 · LA · 전국.',
     keywords: '미국 한인 웹사이트, 한인 웹사이트 제작, 한인 홈페이지 제작, 뉴저지 웹사이트, 뉴저지 웹사이트 제작, 뉴욕 웹사이트, 뉴욕 웹사이트 제작, 캘리포니아 웹사이트 제작, LA 한인 웹사이트, 텍사스 웹사이트 제작, 달라스 한인 웹사이트, 조지아 웹사이트 제작, 애틀랜타 한인 웹사이트, 버지니아 웹사이트 제작, 일리노이 웹사이트, 시카고 한인 웹사이트, 워싱턴 웹사이트, 시애틀 한인 웹사이트, 하와이 웹사이트, 플로리다 웹사이트, NJ 웹사이트, NY 웹사이트, 포트리 웹사이트, 팰팍 웹사이트, 플러싱 웹사이트, 한인 쇼핑몰 제작, 쇼피파이, 구글광고, 옐프광고, 한인 SEO, 검색엔진최적화, 미주 한인 비즈니스, 디지털 마케팅, 웹디자인, 클리프사이드파크 웹사이트 제작, 페어뷰 웹사이트, 해켄색 웹사이트 제작, 레오니아 웹사이트, 테나플라이 웹사이트, 한인 식당 웹사이트, 한인 스파 웹사이트, 한인 네일샵 웹사이트, 한인 부동산 웹사이트, 한인 세탁소 홈페이지, 한인 비즈니스 홈페이지, 구글 마이비즈니스 최적화, 한인 비즈니스 구글 등록, 인스타그램 마케팅 한인 비즈니스, 한국어 웹사이트 제작 비용',
     openGraph: {
       title: '오래도록 기억되는 웹사이트 | ZOE LUMOS',
-      description: '미국 전역 한인 비즈니스를 위한 에디토리얼 웹디자인 스튜디오. TJ Flowers 4주 $3,114 매출. NJ · NY · CA · TX · GA · VA 등. 웹사이트 제작, SEO, Shopify, 구글광고.',
+      description: '미국 전역 한인 비즈니스를 위한 에디토리얼 웹디자인 스튜디오. TJ Flowers 3개월 안에 $10,000+ 매출. NJ · NY · CA · TX · GA · VA 등. 웹사이트 제작, SEO, Shopify, 구글광고.',
       siteName: 'ZOE LUMOS 조이루모스',
       locale: 'ko_KR',
     }
@@ -205,13 +205,25 @@ export const structuredData = {
       }
     ],
     "knowsLanguage": ["en-US", "ko-KR"],
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": 5,
-      "reviewCount": 3,
-      "bestRating": 5,
-      "worstRating": 1
-    }
+    "logo": "https://www.zoelumos.com/logo.svg",
+    "makesOffer": [
+      { name: 'Basic care plan', description: 'Hosting & protection only', price: 49 },
+      { name: 'Care plan', description: 'Maintenance + small edits', price: 89 },
+      { name: 'Grow plan', description: 'Content edits, GA4 report, SEO monitoring, Google Business Profile', price: 199 },
+      { name: 'Scale plan', description: 'Content + local SEO engine', price: 499 },
+    ].map((plan) => ({
+      "@type": "Offer",
+      "name": plan.name,
+      "description": plan.description,
+      "url": "https://www.zoelumos.com/pricing",
+      "priceSpecification": {
+        "@type": "UnitPriceSpecification",
+        "price": plan.price,
+        "priceCurrency": "USD",
+        "unitCode": "MON",
+        "referenceQuantity": { "@type": "QuantitativeValue", "value": 1, "unitCode": "MON" }
+      }
+    }))
   },
   faqPage: {
     "@context": "https://schema.org",
@@ -222,7 +234,7 @@ export const structuredData = {
         "name": "How much does website design cost for a small business in New Jersey?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "ZOE LUMOS offers website design packages for small businesses in NJ starting at $1,000 for basic sites, $2,000-$3,000 for standard business websites, and $3,000-$6,000 for Shopify e-commerce stores. All packages include SEO optimization, mobile-responsive design, and bilingual (English/Korean) support. We serve Fort Lee, Palisades Park, Englewood, and North Bergen."
+          "text": "ZOE LUMOS publishes fixed prices for small businesses in NJ: Basic builds $500–$800, Standard builds $1,100–$1,500, and Store (Shopify / e-commerce) builds $1,800–$2,400, with monthly care plans from $49. All packages include SEO optimization, mobile-responsive design, and bilingual (English/Korean) support. We serve Fort Lee, Palisades Park, Englewood, and North Bergen."
         }
       },
       {
@@ -230,7 +242,7 @@ export const structuredData = {
         "name": "한인 비즈니스 웹사이트 제작 비용은 얼마인가요?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "ZOE LUMOS의 한인 비즈니스 웹사이트 제작 비용은 기본 사이트 $1,000부터, 비즈니스 웹사이트 $2,000-$3,500, 쇼피파이 쇼핑몰 $3,000-$6,000입니다. 모든 패키지에 SEO 최적화, 모바일 반응형 디자인, 한영 이중언어 지원이 포함됩니다. 포트리, 팰팍, 에디슨 등 NJ 전 지역과 맨하탄, 플러싱 등 NY 지역을 서비스합니다."
+          "text": "ZOE LUMOS의 한인 비즈니스 웹사이트 제작 비용은 기본 $500–$800, 일반 $1,100–$1,500, 쇼피파이·쇼핑몰 $1,800–$2,400이며, 월 관리 플랜은 $49부터입니다. 모든 패키지에 SEO 최적화, 모바일 반응형 디자인, 한영 이중언어 지원이 포함됩니다. 포트리, 팰팍, 에디슨 등 NJ 전 지역과 맨하탄, 플러싱 등 NY 지역을 서비스합니다."
         }
       },
       {

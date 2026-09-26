@@ -70,10 +70,10 @@ export default function GuaranteeStrip({
               <div className="flex items-start gap-4">
                 <span className="text-2xl" aria-hidden>{g.icon}</span>
                 <div>
-                  <h3 className={`text-[15px] font-bold mb-1.5 ${dark ? 'text-white' : 'text-[#151414]'}`}>
+                  <h3 className={`text-[15px] font-bold mb-1.5 ${dark ? 'text-white' : 'text-[#1D1D1F]'}`}>
                     {g.title[isKo ? 'ko' : 'en']}
                   </h3>
-                  <p className={`text-[13px] leading-relaxed ${dark ? 'text-gray-500' : 'text-[#3a3836]'}`}>
+                  <p className={`text-[13px] leading-relaxed ${dark ? 'text-gray-500' : 'text-[#424245]'}`}>
                     {g.desc[isKo ? 'ko' : 'en']}
                   </p>
                 </div>
@@ -90,27 +90,27 @@ export default function GuaranteeStrip({
     <aside
       aria-label={isKo ? '약속' : 'Our guarantees'}
       className={`rounded-2xl border px-6 py-5 ${
-        dark ? 'bg-[#0e0e0e] border-white/[0.07]' : 'bg-[#f7f2e9] border-black/[0.08]'
+        dark ? 'bg-[#0e0e0e] border-white/[0.07]' : 'bg-[#FBFBFD] border-black/[0.08]'
       }`}
     >
-      <p className={`text-[11px] uppercase tracking-[0.22em] mb-3 ${dark ? 'text-gray-500' : 'text-[#8a8378]'}`}>
+      <p className={`text-[11px] uppercase tracking-[0.22em] mb-3 ${dark ? 'text-gray-500' : 'text-[#6E6E73]'}`}>
         {isKo ? '저희가 지키는 약속' : 'What we guarantee'}
       </p>
       <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-2.5 m-0 p-0 list-none">
         {GUARANTEES.map((g) => (
           <li key={g.icon} className="flex items-center gap-2.5">
             <span aria-hidden className="text-base leading-none">{g.icon}</span>
-            <span className={`text-[13px] font-medium leading-snug ${dark ? 'text-gray-300' : 'text-[#151414]'}`}>
+            <span className={`text-[13px] font-medium leading-snug ${dark ? 'text-gray-300' : 'text-[#1D1D1F]'}`}>
               {g.title[isKo ? 'ko' : 'en']}
             </span>
           </li>
         ))}
       </ul>
-      <p className={`mt-3 mb-0 text-[12px] ${dark ? 'text-gray-600' : 'text-[#8a8378]'}`}>
+      <p className={`mt-3 mb-0 text-[12px] ${dark ? 'text-gray-600' : 'text-[#6E6E73]'}`}>
         {isKo ? (
-          <>자세한 내용은 <Link href={`${prefix}/pricing`} className="underline underline-offset-2 hover:text-[#151414]">가격 페이지</Link>에서 확인하세요.</>
+          <>자세한 내용은 <Link href={`${prefix}/pricing`} className="underline underline-offset-2 hover:text-[#1D1D1F]">가격 페이지</Link>에서 확인하세요.</>
         ) : (
-          <>Details on the <Link href={`${prefix}/pricing`} className="underline underline-offset-2 hover:text-[#151414]">pricing page</Link>.</>
+          <>Details on the <Link href={`${prefix}/pricing`} className="underline underline-offset-2 hover:text-[#1D1D1F]">pricing page</Link>.</>
         )}
       </p>
     </aside>

@@ -74,7 +74,6 @@ export default function FairviewWebDesignPage({ params }: { params: { locale: st
     ],
     priceRange: '$$',
     openingHours: 'Mo-Fr 09:00-18:00',
-    aggregateRating: { '@type': 'AggregateRating', ratingValue: '5', reviewCount: '6' },
     knowsLanguage: ['English', 'Korean'],
   }
 
@@ -155,14 +154,6 @@ export default function FairviewWebDesignPage({ params }: { params: { locale: st
             </div>
 
             <div className="flex flex-wrap justify-center gap-8 text-gray-600">
-              <div className="flex items-center gap-2">
-                <Star className="w-5 h-5 text-yellow-500 fill-yellow-500" />
-                <span>{locale === 'ko' ? '5.0 평점 (89개 리뷰)' : '5.0 Rating (89 Reviews)'}</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <Users className="w-5 h-5 text-emerald-500" />
-                <span>{locale === 'ko' ? '버겐카운티 한인 비즈니스 50+ 제작' : '50+ Bergen County Korean Businesses'}</span>
-              </div>
               <div className="flex items-center gap-2">
                 <Zap className="w-5 h-5 text-green-500" />
                 <span>{locale === 'ko' ? '2주 내 완성' : 'Ready in 2 Weeks'}</span>

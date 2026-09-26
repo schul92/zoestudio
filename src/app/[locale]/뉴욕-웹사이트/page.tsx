@@ -118,11 +118,6 @@ export default function NYWebsiteKoreanPage({ params }: { params: { locale: stri
       { '@type': 'State', name: 'New York' },
     ],
     priceRange: '$$',
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '5',
-      reviewCount: '6',
-    },
   }
 
   const faqSchema = {

@@ -1,13 +1,12 @@
 import type { Metadata, Viewport } from 'next'
 import dynamic from 'next/dynamic'
-import { Inter, Fraunces } from 'next/font/google'
+import { GeistSans } from 'geist/font/sans'
 import '../globals.css'
 import { seoConfig, structuredData } from '@/config/seo'
 import { ServiceProvider } from '@/context/ServiceContext'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
 import AnalyticsWrapper from '@/components/AnalyticsWrapper'
-import SmoothScroll from '@/components/ui/motion/SmoothScroll'
-import CursorEditorial from '@/components/ui/motion/CursorEditorial'
+import AfterInteraction from '@/components/AfterInteraction'
 import { SITE_URL } from '@/lib/siteUrl'
 
 // Floating KakaoTalk chat — site-wide (blogs and service pages drive most
@@ -26,29 +25,15 @@ const ChatWidget = dynamic(() => import('@/components/ui/ChatWidget'), {
   ssr: false,
 })
 
-const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-  preload: true,
-  fallback: ['system-ui', 'arial'],
-  variable: '--font-sans',
-})
-
-const fraunces = Fraunces({
-  subsets: ['latin'],
-  display: 'swap',
-  weight: ['300', '400', '500', '600'],
-  style: ['normal', 'italic'],
-  variable: '--font-serif',
-  preload: true,
-})
+// Korean glyphs use the platform's system face (Apple SD Gothic Neo, Malgun
+// Gothic, Noto Sans CJK) — a Korean webfont adds ~90 KB of @font-face CSS.
 
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
   // No maximumScale — Lighthouse a11y deducts for it; some screen readers
   // respect it and prevent users from zooming. Default (no cap) is correct.
-  themeColor: '#FAF7F0',
+  themeColor: '#FBFBFD',
 }
 
 export async function generateMetadata({
@@ -141,7 +126,7 @@ export default function RootLayout({
           __html: `
             /* Critical CSS for above-the-fold content */
             * { margin: 0; padding: 0; box-sizing: border-box; }
-            body { font-family: system-ui, -apple-system, sans-serif; line-height: 1.5; background-color: #FAF7F0; color: #141414; }
+            body { font-family: system-ui, -apple-system, sans-serif; line-height: 1.5; background-color: #FBFBFD; color: #141414; }
             .min-h-screen { min-height: 100vh; }
             .flex { display: flex; }
             .items-center { align-items: center; }
@@ -199,18 +184,20 @@ export default function RootLayout({
         />
         {/* FAQPage schema moved to homepage only — Google requires FAQ content to be visible on the page */}
       </head>
-      <body className={`${inter.variable} ${fraunces.variable} font-sans bg-ivory text-ink antialiased`} style={{ position: 'relative' }}>
-        {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
-          <GoogleAnalytics GA_MEASUREMENT_ID={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
-        )}
-        <AnalyticsWrapper />
-        <SmoothScroll />
-        <CursorEditorial />
+      <body className={`kn ${GeistSans.variable} font-sans bg-ivory text-ink antialiased`} style={{ position: 'relative' }}>
+        <AfterInteraction>
+          {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
+            <GoogleAnalytics GA_MEASUREMENT_ID={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
+          )}
+          <AnalyticsWrapper />
+        </AfterInteraction>
         <ServiceProvider>
           {children}
           <KakaoFloatingButton />
           <StickyMobileCTA locale={locale} />
-          <ChatWidget locale={locale} />
+          <AfterInteraction>
+            <ChatWidget locale={locale} />
+          </AfterInteraction>
         </ServiceProvider>
       </body>
     </html>

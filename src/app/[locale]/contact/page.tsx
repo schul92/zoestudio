@@ -232,7 +232,7 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
         {/* DIRECT CHANNELS — email + KakaoTalk only */}
         <section className="section-pad hair-bottom">
           <div className="container-edge">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-hairline border border-hairline">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-hairline border border-hairline rounded-[18px] overflow-hidden">
               <InView className="reveal bg-ivory">
                 <a
                   href={

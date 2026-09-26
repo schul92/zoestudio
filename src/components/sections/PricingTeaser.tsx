@@ -125,13 +125,13 @@ function Estimator({ isKo, prefix }: { isKo: boolean; prefix: string }) {
       <div className="grid grid-cols-1 lg:grid-cols-[1fr_minmax(320px,400px)]">
         {/* Steps */}
         <div className="p-6 md:p-8">
-          <p className="text-[11px] uppercase tracking-[0.22em] text-[#8a8378] mb-6">
+          <p className="text-[11px] uppercase tracking-[0.22em] text-[#6E6E73] mb-6">
             {isKo ? '10초 견적' : '10-second estimate'}
           </p>
           <div className="space-y-6">
             {estimatorSteps.map((step) => (
               <fieldset key={step.id} className="m-0 p-0 border-0">
-                <legend className="text-[12px] uppercase tracking-[0.18em] text-[#8a8378] mb-3 p-0">
+                <legend className="text-[12px] uppercase tracking-[0.18em] text-[#6E6E73] mb-3 p-0">
                   {step.label[isKo ? 'ko' : 'en']}
                 </legend>
                 <div className="flex flex-wrap gap-2">
@@ -145,8 +145,8 @@ function Estimator({ isKo, prefix }: { isKo: boolean; prefix: string }) {
                         onClick={() => select(step.id, opt.value)}
                         className={`inline-flex items-center min-h-[44px] px-5 rounded-full border text-[14px] transition-colors ${
                           selected
-                            ? 'bg-[#151414] border-[#151414] text-[#f2ece2]'
-                            : 'bg-transparent border-black/[0.15] text-[#3a3836] hover:border-black/[0.45]'
+                            ? 'bg-[#1D1D1F] border-[#1D1D1F] text-[#F5F5F7]'
+                            : 'bg-transparent border-black/[0.15] text-[#424245] hover:border-black/[0.45]'
                         }`}
                       >
                         {opt.label[isKo ? 'ko' : 'en']}
@@ -163,25 +163,25 @@ function Estimator({ isKo, prefix }: { isKo: boolean; prefix: string }) {
         <div className="border-t lg:border-t-0 lg:border-l border-black/[0.08] p-6 md:p-8 flex flex-col justify-center min-h-[220px]">
           {estimate ? (
             <div aria-live="polite">
-              <p className="text-[11px] uppercase tracking-[0.22em] text-[#8a8378] mb-3">
+              <p className="text-[11px] uppercase tracking-[0.22em] text-[#6E6E73] mb-3">
                 {isKo ? '예상 견적' : 'Estimated range'}
               </p>
-              <p className="font-display italic font-light text-[#b48a43] text-[clamp(32px,3.6vw,48px)] leading-[1.05] tracking-[-0.02em] m-0">
+              <p className="font-display italic font-light text-[#0071E3] text-[clamp(32px,3.6vw,48px)] leading-[1.05] tracking-[-0.02em] m-0">
                 {usd(estimate.min)}–{usd(estimate.max)}
               </p>
-              <p className="text-[14px] text-[#3a3836] mt-2 mb-0">
+              <p className="text-[14px] text-[#424245] mt-2 mb-0">
                 {weeksLabel}
-                <span className="text-[#8a8378]">
+                <span className="text-[#6E6E73]">
                   {' '}· {isKo ? '정확한 금액은 상담 후 확정돼요' : 'final quote after a quick chat'}
                 </span>
               </p>
             </div>
           ) : (
             <div aria-live="polite">
-              <p className="text-[11px] uppercase tracking-[0.22em] text-[#8a8378] mb-3">
+              <p className="text-[11px] uppercase tracking-[0.22em] text-[#6E6E73] mb-3">
                 {isKo ? '예상 견적' : 'Estimated range'}
               </p>
-              <p className="font-display italic font-light text-[#151414]/70 text-[clamp(20px,2.2vw,28px)] leading-[1.2] tracking-[-0.01em] m-0">
+              <p className="font-display italic font-light text-[#1D1D1F]/70 text-[clamp(20px,2.2vw,28px)] leading-[1.2] tracking-[-0.01em] m-0">
                 {isKo ? '3번의 탭이면 예상 비용이 나옵니다' : 'Three taps to your estimate.'}
               </p>
             </div>
@@ -199,20 +199,20 @@ function Estimator({ isKo, prefix }: { isKo: boolean; prefix: string }) {
                   page_path: window.location.pathname,
                 })
               }
-              className="inline-flex items-center justify-center min-h-[44px] px-6 rounded-full bg-[#151414] text-[#f2ece2] text-[14px] transition-colors hover:bg-[#2c2a28]"
+              className="inline-flex items-center justify-center min-h-[44px] px-6 rounded-full bg-[#1D1D1F] text-[#F5F5F7] text-[14px] transition-colors hover:bg-[#2c2a28]"
             >
               {isKo ? '카톡으로 정확한 견적 받기' : 'Get an exact quote on KakaoTalk'}
             </a>
             <Link
               href={`${prefix}/#contact`}
-              className="inline-flex items-center justify-center min-h-[44px] px-6 rounded-full border border-black/[0.2] text-[#151414] text-[14px] transition-colors hover:border-black/[0.5]"
+              className="inline-flex items-center justify-center min-h-[44px] px-6 rounded-full border border-black/[0.2] text-[#1D1D1F] text-[14px] transition-colors hover:border-black/[0.5]"
             >
               {isKo ? '상담 신청' : 'Book a consult'}
             </Link>
           </div>
           <Link
             href={`${prefix}/pricing`}
-            className="mt-4 self-start text-[13px] text-[#8a8378] border-b border-[#8a8378]/40 hover:text-[#151414] hover:border-[#151414] transition-colors pb-[2px]"
+            className="mt-4 self-start text-[13px] text-[#6E6E73] border-b border-[#6E6E73]/40 hover:text-[#1D1D1F] hover:border-[#1D1D1F] transition-colors pb-[2px]"
           >
             {isKo ? '전체 가격표 보기' : 'See the full price list'}
           </Link>
@@ -274,32 +274,32 @@ export default function PricingTeaser({ locale = 'en' }: { locale?: string }) {
   return (
     <section
       aria-label={isKo ? '가격' : 'Pricing'}
-      className="relative bg-[#f7f2e9]"
+      className="relative bg-[#FBFBFD]"
     >
       <div className="mx-auto max-w-[1400px] px-5 md:px-12 py-16 md:py-24">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 md:mb-14">
           <div>
-            <p className="text-[11px] uppercase tracking-[0.22em] text-[#8a8378] mb-3">
+            <p className="text-[11px] uppercase tracking-[0.22em] text-[#6E6E73] mb-3">
               {isKo ? '05 — 가격' : '05 — Pricing'}
             </p>
-            <h2 className="font-display text-[clamp(28px,3.6vw,48px)] leading-[1.05] tracking-[-0.02em] text-[#151414] m-0">
+            <h2 className="font-display text-[clamp(28px,3.6vw,48px)] leading-[1.05] tracking-[-0.02em] text-[#1D1D1F] m-0">
               {isKo ? (
                 <>
                   견적 없이도{' '}
-                  <span className="italic font-light text-[#b48a43]">시작가가 보입니다.</span>
+                  <span className="italic font-light text-[#0071E3]">시작가가 보입니다.</span>
                 </>
               ) : (
                 <>
                   Transparent pricing,{' '}
-                  <span className="italic font-light text-[#b48a43]">no quote dance.</span>
+                  <span className="italic font-light text-[#0071E3]">no quote dance.</span>
                 </>
               )}
             </h2>
           </div>
           <Link
             href={`${prefix}/pricing`}
-            className="inline-flex items-center gap-2 text-[14px] text-[#151414] border-b border-[#151414]/30 hover:border-[#151414] pb-1 self-start md:self-end"
+            className="inline-flex items-center gap-2 text-[14px] text-[#1D1D1F] border-b border-[#1D1D1F]/30 hover:border-[#1D1D1F] pb-1 self-start md:self-end"
           >
             {isKo ? '전체 가격 보기' : 'See full pricing'} →
           </Link>
@@ -317,33 +317,33 @@ export default function PricingTeaser({ locale = 'en' }: { locale?: string }) {
               <li
                 className={`relative rounded-2xl p-7 md:p-8 h-full border ${
                   t.popular
-                    ? 'border-[#b48a43] bg-white shadow-[0_24px_60px_-30px_rgba(180,138,67,0.45)]'
+                    ? 'border-[#0071E3] bg-white shadow-[0_24px_60px_-30px_rgba(180,138,67,0.45)]'
                     : 'border-black/[0.08] bg-white/60'
                 }`}
               >
                 {t.popular && (
-                  <span className="absolute -top-3 left-7 px-3 py-1 rounded-full bg-[#151414] text-[#f2ece2] text-[10px] uppercase tracking-[0.22em]">
+                  <span className="absolute -top-3 left-7 px-3 py-1 rounded-full bg-[#1D1D1F] text-[#F5F5F7] text-[10px] uppercase tracking-[0.22em]">
                     {isKo ? '가장 인기' : 'Most popular'}
                   </span>
                 )}
                 <div className="flex items-baseline justify-between mb-1">
-                  <span className="text-[12px] uppercase tracking-[0.22em] text-[#8a8378]">
+                  <span className="text-[12px] uppercase tracking-[0.22em] text-[#6E6E73]">
                     {t.label[isKo ? 'ko' : 'en']}
                   </span>
-                  <span className="font-display text-[clamp(26px,2.8vw,36px)] leading-none tracking-[-0.02em] text-[#151414]">
+                  <span className="font-display text-[clamp(26px,2.8vw,36px)] leading-none tracking-[-0.02em] text-[#1D1D1F]">
                     {t.price}
                   </span>
                 </div>
-                <p className="text-[13px] text-[#3a3836] mb-5">
+                <p className="text-[13px] text-[#424245] mb-5">
                   {t.forWho[isKo ? 'ko' : 'en']}
                 </p>
                 <ul className="space-y-2 mb-6">
                   {t.bullets[isKo ? 'ko' : 'en'].map((b, j) => (
                     <li
                       key={j}
-                      className="text-[14px] text-[#3a3836] flex items-start gap-2"
+                      className="text-[14px] text-[#424245] flex items-start gap-2"
                     >
-                      <span className="text-[#b48a43] mt-[2px]">·</span>
+                      <span className="text-[#0071E3] mt-[2px]">·</span>
                       <span>{b}</span>
                     </li>
                   ))}
@@ -352,8 +352,8 @@ export default function PricingTeaser({ locale = 'en' }: { locale?: string }) {
                   href={`${prefix}/#contact`}
                   className={`inline-flex items-center gap-2 text-[14px] ${
                     t.popular
-                      ? 'text-[#151414] font-medium'
-                      : 'text-[#3a3836]'
+                      ? 'text-[#1D1D1F] font-medium'
+                      : 'text-[#424245]'
                   } border-b border-current/30 hover:border-current pb-1`}
                 >
                   {isKo ? '문의하기' : 'Start a project'} →
@@ -367,20 +367,20 @@ export default function PricingTeaser({ locale = 'en' }: { locale?: string }) {
         <InView>
           <div className="mt-4 md:mt-6 rounded-2xl border border-black/[0.08] bg-white/60 p-6 md:p-7 flex flex-col md:flex-row md:items-center md:justify-between gap-4">
             <div>
-              <p className="text-[12px] uppercase tracking-[0.22em] text-[#8a8378] mb-2">
+              <p className="text-[12px] uppercase tracking-[0.22em] text-[#6E6E73] mb-2">
                 {isKo ? '월 관리 플랜' : 'Monthly care plans'}
               </p>
-              <p className="text-[15px] text-[#151414] m-0">
-                <span className="font-display italic font-light text-[#b48a43] text-[clamp(20px,2vw,26px)] leading-none tracking-[-0.01em] mr-2 align-middle">
+              <p className="text-[15px] text-[#1D1D1F] m-0">
+                <span className="font-display italic font-light text-[#0071E3] text-[clamp(20px,2vw,26px)] leading-none tracking-[-0.01em] mr-2 align-middle">
                   {isKo ? '월 $49부터' : 'From $49/mo'}
                 </span>
-                <span className="text-[#3a3836]">
+                <span className="text-[#424245]">
                   {isKo
                     ? 'Basic $49 · Care $89 · Grow $199 (추천) · Scale $499'
                     : 'Basic $49 · Care $89 · Grow $199 (recommended) · Scale $499'}
                 </span>
               </p>
-              <p className="text-[13px] text-[#8a8378] mt-2 mb-0">
+              <p className="text-[13px] text-[#6E6E73] mt-2 mb-0">
                 {isKo
                   ? '12개월 약정 시 웹사이트 제작 셋업비 면제 · 최종 견적은 무료 상담에서'
                   : '12-month commitment waives the build setup fee · final quote in a free consult'}
@@ -388,7 +388,7 @@ export default function PricingTeaser({ locale = 'en' }: { locale?: string }) {
             </div>
             <Link
               href={`${prefix}/contact`}
-              className="inline-flex items-center justify-center min-h-[44px] px-6 rounded-full border border-black/[0.2] text-[#151414] text-[14px] transition-colors hover:border-black/[0.5] shrink-0 self-start md:self-center"
+              className="inline-flex items-center justify-center min-h-[44px] px-6 rounded-full border border-black/[0.2] text-[#1D1D1F] text-[14px] transition-colors hover:border-black/[0.5] shrink-0 self-start md:self-center"
             >
               {isKo ? '무료 상담으로 시작' : 'Start with a free consult'}
             </Link>

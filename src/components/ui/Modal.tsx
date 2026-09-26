@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
 import { CheckCircle, XCircle, X, Send, Mail, Sparkles } from 'lucide-react'
 
 interface ModalProps {
@@ -46,13 +45,10 @@ export default function Modal({ isOpen, onClose, type, title, message, locale = 
     switch (type) {
       case 'success':
         return (
-          <motion.div
-            initial={{ scale: 0 }}
-            animate={{ scale: 1 }}
-            transition={{ type: 'spring', duration: 0.5 }}
+          <div
           >
             <CheckCircle className="w-16 h-16 text-green-500" />
-          </motion.div>
+          </div>
         )
       case 'error':
         return <XCircle className="w-16 h-16 text-red-500" />
@@ -60,78 +56,37 @@ export default function Modal({ isOpen, onClose, type, title, message, locale = 
         return (
           <div className="relative">
             {/* Envelope container */}
-            <motion.div
+            <div
               className="relative"
-              initial={{ scale: 0.8 }}
-              animate={{ scale: [0.8, 1, 0.8] }}
-              transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
             >
               <Mail className="w-16 h-16 text-indigo-600" />
-            </motion.div>
+            </div>
             
             {/* Flying paper plane */}
-            <motion.div
+            <div
               className="absolute -top-2 -right-2"
-              initial={{ x: 0, y: 0, opacity: 0 }}
-              animate={{
-                x: [0, 30, 60],
-                y: [0, -10, -30],
-                opacity: [0, 1, 0],
-              }}
-              transition={{
-                duration: 1.5,
-                repeat: Infinity,
-                ease: 'easeOut',
-              }}
             >
               <Send className="w-6 h-6 text-indigo-500" />
-            </motion.div>
+            </div>
             
             {/* Sparkles around */}
-            <motion.div
+            <div
               className="absolute -top-1 -left-1"
-              animate={{
-                scale: [0, 1, 0],
-                rotate: [0, 180],
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                delay: 0.5,
-              }}
             >
               <Sparkles className="w-4 h-4 text-yellow-400" />
-            </motion.div>
+            </div>
             
-            <motion.div
+            <div
               className="absolute -bottom-1 -right-1"
-              animate={{
-                scale: [0, 1, 0],
-                rotate: [0, -180],
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                delay: 1,
-              }}
             >
               <Sparkles className="w-4 h-4 text-yellow-400" />
-            </motion.div>
+            </div>
             
-            <motion.div
+            <div
               className="absolute top-1/2 -left-3"
-              animate={{
-                scale: [0, 1, 0],
-                rotate: [0, 360],
-              }}
-              transition={{
-                duration: 2,
-                repeat: Infinity,
-                delay: 1.5,
-              }}
             >
               <Sparkles className="w-3 h-3 text-purple-400" />
-            </motion.div>
+            </div>
           </div>
         )
     }
@@ -166,24 +121,17 @@ export default function Modal({ isOpen, onClose, type, title, message, locale = 
   const displayMessage = message || content.message
 
   return (
-    <AnimatePresence>
+    <>
       {isVisible && (
         <>
           {/* Backdrop */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
+          <div
             className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[9998]"
             onClick={type !== 'loading' ? onClose : undefined}
           />
 
           {/* Modal */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            transition={{ type: 'spring', damping: 25, stiffness: 300 }}
+          <div
             className="fixed inset-0 flex items-center justify-center z-[9999] pointer-events-none"
           >
             <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full mx-4 pointer-events-auto">
@@ -294,34 +242,28 @@ export default function Modal({ isOpen, onClose, type, title, message, locale = 
 
                 {/* Action Buttons */}
                 {type === 'success' && (
-                  <motion.button
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
+                  <button
                     onClick={onClose}
                     className="px-8 py-4 bg-gradient-to-r from-green-500 to-emerald-500 text-white rounded-lg font-bold text-lg hover:shadow-lg transition-shadow"
                   >
                     {locale === 'ko' ? '확인했습니다 ✓' : 'Confirmed & Close ✓'}
-                  </motion.button>
+                  </button>
                 )}
 
                 {type === 'error' && (
                   <div className="flex gap-3 justify-center">
-                    <motion.button
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
+                    <button
                       onClick={onClose}
                       className="px-6 py-3 bg-gray-200 text-gray-800 rounded-lg font-semibold hover:bg-gray-300 transition-colors"
                     >
                       {locale === 'ko' ? '닫기' : 'Close'}
-                    </motion.button>
-                    <motion.a
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
+                    </button>
+                    <a
                       href="mailto:info@zoelumos.com"
                       className="px-6 py-3 bg-indigo-600 text-white rounded-lg font-semibold hover:bg-indigo-700 transition-colors"
                     >
                       {locale === 'ko' ? '이메일 보내기' : 'Send Email'}
-                    </motion.a>
+                    </a>
                   </div>
                 )}
 
@@ -329,33 +271,17 @@ export default function Modal({ isOpen, onClose, type, title, message, locale = 
                 {type === 'loading' && (
                   <div className="space-y-4">
                     <div className="w-full bg-gray-200 rounded-full h-2 overflow-hidden">
-                      <motion.div
+                      <div
                         className="h-full bg-gradient-to-r from-indigo-500 via-purple-500 to-indigo-500 bg-[length:200%_100%]"
-                        initial={{ width: '0%' }}
-                        animate={{ 
-                          width: '75%',
-                          backgroundPosition: ['0% 50%', '100% 50%', '0% 50%']
-                        }}
-                        transition={{ 
-                          width: { duration: 2, ease: 'easeOut' },
-                          backgroundPosition: { duration: 3, repeat: Infinity, ease: 'linear' }
-                        }}
                       />
                     </div>
                     
                     {/* Animated dots */}
                     <div className="flex justify-center gap-1">
                       {[0, 1, 2].map((index) => (
-                        <motion.div
+                        <div
                           key={index}
                           className="w-2 h-2 bg-indigo-600 rounded-full"
-                          initial={{ opacity: 0.3 }}
-                          animate={{ opacity: [0.3, 1, 0.3] }}
-                          transition={{
-                            duration: 1.5,
-                            repeat: Infinity,
-                            delay: index * 0.2,
-                          }}
                         />
                       ))}
                     </div>
@@ -363,9 +289,9 @@ export default function Modal({ isOpen, onClose, type, title, message, locale = 
                 )}
               </div>
             </div>
-          </motion.div>
+          </div>
         </>
       )}
-    </AnimatePresence>
+    </>
   )
 }

@@ -1,4 +1,3 @@
-'use client'
 
 import InView from '@/components/ui/motion/InView'
 import CountUp from '@/components/ui/motion/CountUp'
@@ -135,7 +134,7 @@ function MiniChart({
           cx={i * step}
           cy={h - (p / max) * h * 0.9 - 4}
           r={i === points.length - 1 ? 3 : 1.5}
-          fill={i === points.length - 1 ? '#B8914A' : 'currentColor'}
+          fill={i === points.length - 1 ? '#0071E3' : 'currentColor'}
         />
       ))}
     </svg>

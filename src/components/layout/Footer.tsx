@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import Magnetic from '@/components/ui/motion/Magnetic'
 
 export default function Footer({ locale = 'en' }: { locale?: string }) {
   const isKo = locale === 'ko'
@@ -53,42 +52,28 @@ export default function Footer({ locale = 'en' }: { locale?: string }) {
   ]
 
   return (
-    <footer className="bg-ivory hair-top">
-      <div className="container-edge pt-24 pb-14">
-        {/* Big wordmark */}
-        <div className="flex items-end justify-between gap-8 flex-wrap pb-20 border-b border-hairline">
-          <Link href={`${prefix}/`} data-cursor="hide" className="group block">
-            <div className="font-display text-[clamp(3rem,10vw,9rem)] leading-[0.9] tracking-luxury text-ink fraunces-soft">
-              Zoe<span className="italic font-light text-gold">&nbsp;Lumos</span>
-            </div>
-            <div className="overline text-ash mt-4">
+    <footer className="bg-bone border-t border-hairline">
+      <div className="container-edge pt-16 md:pt-20 pb-10">
+        <div className="flex items-end justify-between gap-8 flex-wrap pb-12 border-b border-hairline">
+          <Link href={`${prefix}/`} className="block">
+            <div className="text-[clamp(2.25rem,6vw,4rem)] font-bold leading-none tracking-[-0.05em] text-ink">Zoe Lumos</div>
+            <div className="text-[14px] text-ash mt-3">
               {isKo ? '한인 · 미국인 디자인 스튜디오' : 'An American-Korean design studio'}
             </div>
           </Link>
-
-          <Magnetic strength={14}>
-            <Link
-              href={`${prefix}/contact`}
-              data-cursor={isKo ? '시작' : 'Begin'}
-              className="btn-ink shrink-0"
-            >
-              {isKo ? '프로젝트 의뢰' : 'Start a project'}
-              <span className="arrow">→</span>
-            </Link>
-          </Magnetic>
+          <Link href={`${prefix}/contact`} className="btn-ink shrink-0">
+            {isKo ? '프로젝트 의뢰' : 'Start a project'}
+          </Link>
         </div>
 
         {/* Columns */}
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 py-16">
-          <div className="md:col-span-4">
-            <p className="overline text-ash mb-5">{isKo ? '연락' : 'Contact'}</p>
-            <a
-              href="mailto:info@zoelumos.com"
-              className="font-display text-2xl md:text-3xl text-ink italic font-light hover:text-gold transition-colors"
-            >
+        <div className="grid grid-cols-2 md:grid-cols-12 gap-10 md:gap-12 py-12">
+          <div className="col-span-2 md:col-span-4">
+            <p className="text-[12px] font-semibold text-ink mb-4">{isKo ? '연락' : 'Contact'}</p>
+            <a href="mailto:info@zoelumos.com" className="block text-[22px] md:text-[26px] font-semibold tracking-[-0.03em] text-ink hover:text-link transition-colors">
               info@zoelumos.com
             </a>
-            <p className="mt-6 text-[13px] text-ash leading-[1.7]">
+            <p className="mt-5 text-[13px] text-ash leading-[1.7] whitespace-pre-line">
               {isKo
                 ? '뉴저지 포트리 · 월 — 금 9–6 ET\n한국어 상담 상시'
                 : 'Fort Lee, New Jersey\nMon — Fri · 9 — 6 ET · KR 대응'}
@@ -97,13 +82,13 @@ export default function Footer({ locale = 'en' }: { locale?: string }) {
 
           {cols.map((c) => (
             <div key={c.title} className="md:col-span-2 md:col-start-auto">
-              <p className="overline text-ash mb-5">{c.title}</p>
-              <ul className="space-y-3">
+              <p className="text-[12px] font-semibold text-ink mb-4">{c.title}</p>
+              <ul className="space-y-2.5">
                 {c.links.map(([label, href]) => (
                   <li key={label}>
                     <Link
                       href={href}
-                      className="text-[14px] text-graphite hover:text-ink transition-colors"
+                      className="text-[13px] text-ash hover:text-ink hover:underline"
                     >
                       {label}
                     </Link>
@@ -114,14 +99,14 @@ export default function Footer({ locale = 'en' }: { locale?: string }) {
           ))}
 
           <div className="md:col-span-2">
-            <p className="overline text-ash mb-5">{isKo ? '팔로우' : 'Follow'}</p>
-            <ul className="space-y-3 text-[14px]">
+            <p className="text-[12px] font-semibold text-ink mb-4">{isKo ? '팔로우' : 'Follow'}</p>
+            <ul className="space-y-2.5 text-[13px]">
               <li>
                 <a
                   href="https://instagram.com/zoelumos"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-graphite hover:text-ink transition-colors"
+                  className="text-ash hover:text-ink hover:underline"
                 >
                   Instagram ↗
                 </a>
@@ -131,7 +116,7 @@ export default function Footer({ locale = 'en' }: { locale?: string }) {
                   href="http://pf.kakao.com/_xhxdxmlX/chat"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-graphite hover:text-ink transition-colors"
+                  className="text-ash hover:text-ink hover:underline"
                 >
                   KakaoTalk ↗
                 </a>
@@ -141,7 +126,7 @@ export default function Footer({ locale = 'en' }: { locale?: string }) {
         </div>
 
         {/* Legal row */}
-        <div className="pt-10 border-t border-hairline flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+        <div className="pt-8 border-t border-hairline flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
           <p className="text-[12px] text-ash" suppressHydrationWarning>
             © {year} Zoe Lumos Studio, LLC · {isKo ? '모든 권리 보유' : 'All rights reserved'}
           </p>
@@ -152,7 +137,6 @@ export default function Footer({ locale = 'en' }: { locale?: string }) {
             <Link href={`${prefix}/terms`} className="hover:text-ink transition-colors">
               {isKo ? '이용약관' : 'Terms'}
             </Link>
-            <span className="gold-dot" />
             <span>{isKo ? '뉴저지에서 제작' : 'Crafted in New Jersey'}</span>
           </div>
         </div>

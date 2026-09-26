@@ -8,7 +8,7 @@ import { trackKakaoClick } from '@/utils/analytics'
 const KAKAO_CHAT_URL = 'http://pf.kakao.com/_xhxdxmlX/chat'
 
 /**
- * Mobile-only sticky bottom action bar: KakaoTalk chat + free quote.
+ * Mobile-only sticky bottom action bar: KakaoTalk chat and free quote.
  * Evidence: sticky bottom CTAs lift mobile conversions ~+31% (Contentsquare,
  * 58M sessions); KakaoTalk yellow is the instant-recognition channel for our
  * Korean SMB audience. Appears after the hero (600px), hides while the
@@ -65,7 +65,7 @@ export default function StickyMobileCTA({ locale = 'en' }: { locale?: string }) 
       style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
       aria-hidden={!show}
     >
-      <div className="grid grid-cols-2 border-t border-hairline bg-ivory/95 backdrop-blur-sm">
+      <div className="grid grid-cols-2 gap-2 p-2 border-t border-hairline kn-frost">
         <a
           href={KAKAO_CHAT_URL}
           target="_blank"
@@ -75,7 +75,7 @@ export default function StickyMobileCTA({ locale = 'en' }: { locale?: string }) 
             trackKakaoClick('sticky_mobile_cta')
           }}
           tabIndex={show ? 0 : -1}
-          className="flex items-center justify-center gap-2 bg-[#FEE500] py-4 text-[15px] font-bold text-[#3C1E1E] active:opacity-90"
+          className="flex items-center justify-center gap-2 rounded-[14px] bg-[#FEE500] min-h-[48px] py-3.5 text-[15px] font-bold text-[#3C1E1E] active:opacity-90"
           style={{ touchAction: 'manipulation' }}
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden>
@@ -90,10 +90,11 @@ export default function StickyMobileCTA({ locale = 'en' }: { locale?: string }) 
           href={`${prefix}/contact`}
           onClick={() => track('quote')}
           tabIndex={show ? 0 : -1}
-          className="flex items-center justify-center gap-2 bg-ink py-4 text-[15px] font-semibold text-ivory active:opacity-90"
+          className="flex items-center justify-center gap-1.5 rounded-[14px] bg-action min-h-[48px] py-3.5 text-[15px] font-semibold text-white active:opacity-90"
           style={{ touchAction: 'manipulation' }}
         >
-          {isKo ? '무료 견적 →' : 'Free quote →'}
+          {isKo ? '무료 견적' : 'Free quote'}
+          <span aria-hidden>→</span>
         </Link>
       </div>
     </div>

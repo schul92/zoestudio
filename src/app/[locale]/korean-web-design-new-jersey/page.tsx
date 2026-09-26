@@ -107,7 +107,6 @@ export default function KoreanWebDesignNJPage({ params }: { params: { locale: st
     ],
     priceRange: '$$',
     openingHours: 'Mo-Fr 09:00-18:00',
-    aggregateRating: { '@type': 'AggregateRating', ratingValue: '5', reviewCount: '24', bestRating: '5' },
     knowsLanguage: ['English', 'Korean', 'ko-KR', 'en-US'],
     makesOffer: [
       { '@type': 'Offer', name: locale === 'ko' ? '한영 이중언어 웹사이트' : 'Bilingual Korean-English Websites' },
