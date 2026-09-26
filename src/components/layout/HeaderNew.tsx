@@ -4,9 +4,7 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { usePathname } from 'next/navigation'
 import { useTranslation } from '@/hooks/useTranslation'
-import Magnetic from '@/components/ui/motion/Magnetic'
-import { industries } from '@/data/industriesData'
-import { cityMarkets } from '@/data/cityMarketData'
+import { industrySlugs, citySlugs } from '@/lib/localeSlugs'
 
 /**
  * Map an EN or KO path to the matching path in the other locale.
@@ -32,10 +30,10 @@ function computeOtherLocaleHref(pathname: string, locale: string): string {
     const [, iSlug, cSlug] = crossover
     const fromKey = isKo ? 'ko' : 'en'
     const toKey = isKo ? 'en' : 'ko'
-    const ind = industries.find((i) => i.slug[fromKey] === iSlug)
-    const city = cityMarkets.find((c) => c.slug[fromKey] === cSlug)
+    const ind = industrySlugs.find((p) => p[fromKey === 'en' ? 0 : 1] === iSlug)
+    const city = citySlugs.find((p) => p[fromKey === 'en' ? 0 : 1] === cSlug)
     if (ind && city) {
-      const newPath = `/industries/${ind.slug[toKey]}/${city.slug[toKey]}`
+      const newPath = `/industries/${ind[toKey === 'en' ? 0 : 1]}/${city[toKey === 'en' ? 0 : 1]}`
       return isKo ? newPath : `/ko${newPath}`
     }
   }
@@ -46,9 +44,9 @@ function computeOtherLocaleHref(pathname: string, locale: string): string {
     const slug = industryMatch[1]
     const fromKey = isKo ? 'ko' : 'en'
     const toKey = isKo ? 'en' : 'ko'
-    const ind = industries.find((i) => i.slug[fromKey] === slug)
+    const ind = industrySlugs.find((p) => p[fromKey === 'en' ? 0 : 1] === slug)
     if (ind) {
-      const newPath = `/industries/${ind.slug[toKey]}`
+      const newPath = `/industries/${ind[toKey === 'en' ? 0 : 1]}`
       return isKo ? newPath : `/ko${newPath}`
     }
   }
@@ -57,19 +55,14 @@ function computeOtherLocaleHref(pathname: string, locale: string): string {
   return isKo ? stripped : `/ko${stripped === '/' ? '' : stripped}`
 }
 
+export const PHONE_DISPLAY = '(201) 962-1702'
+export const PHONE_TEL = 'tel:+12019621702'
+
 export default function HeaderNew({ locale = 'en' }: { locale?: string }) {
   const { t } = useTranslation(locale)
   const prefix = locale === 'ko' ? '/ko' : ''
   const pathname = usePathname()
-  const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
-
-  useEffect(() => {
-    const fn = () => setScrolled(window.scrollY > 8)
-    fn()
-    window.addEventListener('scroll', fn, { passive: true })
-    return () => window.removeEventListener('scroll', fn)
-  }, [])
 
   useEffect(() => { setMenuOpen(false) }, [pathname])
   useEffect(() => {
@@ -77,83 +70,64 @@ export default function HeaderNew({ locale = 'en' }: { locale?: string }) {
     return () => { document.body.style.overflow = '' }
   }, [menuOpen])
 
+  const ko = locale === 'ko'
   const nav = [
-    { href: `${prefix}/portfolio`, label: locale === 'ko' ? '작업' : 'Work' },
-    { href: `${prefix}/services`, label: locale === 'ko' ? '서비스' : 'Services' },
-    { href: `${prefix}/industries`, label: locale === 'ko' ? '업종' : 'Industries' },
-    { href: `${prefix}/tools`, label: locale === 'ko' ? '무료 도구' : 'Free tools' },
+    { href: `${prefix}/portfolio`, label: ko ? '작업' : 'Work' },
+    { href: `${prefix}/services`, label: ko ? '서비스' : 'Services' },
+    { href: `${prefix}/pricing`, label: ko ? '가격' : 'Pricing' },
     { href: `${prefix}/blog`, label: t.nav.blog },
   ]
+  const more = [
+    { href: `${prefix}/industries`, label: ko ? '업종' : 'Industries' },
+    { href: `${prefix}/tools`, label: ko ? '무료 도구' : 'Free tools' },
+    { href: `${prefix}/about`, label: ko ? '소개' : 'About' },
+    { href: `${prefix}/contact`, label: ko ? '문의' : 'Contact' },
+  ]
+  const isActive = (href: string) => !!pathname && pathname.startsWith(href) && href !== prefix
 
   const otherLocaleHref = computeOtherLocaleHref(pathname || '/', locale)
 
   return (
-    <header
-      className={`fixed top-0 inset-x-0 z-[100] transition-colors duration-300 ${
-        menuOpen
-          ? 'bg-ivory'
-          : scrolled
-          ? 'bg-ivory/85 backdrop-blur-xl hair-bottom'
-          : 'bg-transparent'
-      }`}
-    >
+    <header className={`fixed top-0 inset-x-0 z-[100] ${menuOpen ? 'bg-ivory' : 'kn-frost'} border-b border-hairline`}>
       <div className="container-edge">
-        <div className="flex items-center justify-between h-24 md:h-28">
-          {/* Wordmark */}
-          <Link href={`${prefix}/`} data-cursor="hide" className="group flex items-center gap-3">
-            <span className="gold-dot transition-transform duration-700 group-hover:scale-150" />
-            <span className="font-display text-[26px] md:text-[32px] leading-none tracking-luxury text-ink fraunces-soft">
-              Zoe<span className="italic font-light text-gold">&nbsp;Lumos</span>
-            </span>
+        <div className="flex items-center justify-between h-14 md:h-16 gap-6">
+          <Link href={`${prefix}/`} className="text-[17px] md:text-[19px] font-bold tracking-[-0.03em] text-ink" aria-label="ZOE LUMOS home">
+            Zoe Lumos
           </Link>
 
-          {/* Desktop nav */}
-          <nav className="hidden lg:flex items-center gap-12">
+          <nav className="hidden lg:flex items-center gap-9 ml-auto" aria-label={ko ? '주요 메뉴' : 'Main'}>
             {nav.map((l) => (
               <Link
                 key={l.href}
                 href={l.href}
-                className="text-[15px] tracking-wide text-graphite hover:text-ink transition-colors duration-300"
+                aria-current={isActive(l.href) ? 'page' : undefined}
+                className={`text-[14px] transition-colors ${isActive(l.href) ? 'text-ink font-medium' : 'text-graphite hover:text-ink'}`}
               >
                 {l.label}
               </Link>
             ))}
           </nav>
 
-          {/* Right cluster */}
-          <div className="flex items-center gap-5 md:gap-8">
-            <Link
-              href={otherLocaleHref}
-              className="hidden sm:inline-flex text-[12px] uppercase tracking-[0.24em] text-ash hover:text-ink transition-colors"
-              aria-label="Switch language"
-            >
-              {locale === 'ko' ? 'EN' : 'KR'}
+          <div className="flex items-center gap-4 md:gap-6">
+            <Link href={otherLocaleHref} className="hidden sm:inline-flex text-[13px] font-medium text-ash hover:text-ink" aria-label="Switch language">
+              {ko ? 'EN' : 'KR'}
             </Link>
-
+            <a href={PHONE_TEL} className="hidden xl:inline-flex text-[13px] text-graphite hover:text-ink tabular-nums">
+              {PHONE_DISPLAY}
+            </a>
             <Link
-              href={`${prefix}/contact`}
-              className="hidden md:inline-flex items-center gap-2 text-[15px] font-medium text-ink"
+              href={`${prefix}/audit`}
+              className="hidden md:inline-flex items-center rounded-full bg-ink text-white text-[13px] font-semibold px-4 py-2 hover:bg-graphite transition-colors"
             >
-              <span className="relative">
-                {locale === 'ko' ? '프로젝트 의뢰' : 'Inquire'}
-                <span className="absolute left-0 right-0 -bottom-1 h-px bg-ink" />
-              </span>
-              <span aria-hidden className="text-[12px]">↗</span>
+              {ko ? '무료 진단' : 'Free audit'}
             </Link>
-
             <button
               onClick={() => setMenuOpen((v) => !v)}
-              aria-label="Menu"
-              className={`flex lg:!hidden items-center justify-center w-11 h-11 rounded-full transition-all duration-500 ${
-                menuOpen
-                  ? 'bg-transparent'
-                  : scrolled
-                  ? 'bg-transparent'
-                  : 'bg-ivory/70 backdrop-blur-md ring-1 ring-ink/5'
-              }`}
+              aria-label={ko ? '메뉴' : 'Menu'}
+              aria-expanded={menuOpen}
+              className="flex lg:!hidden items-center justify-center w-10 h-10 -mr-2"
             >
-              <span className="sr-only">Menu</span>
-              <div className="w-6 flex flex-col gap-[5px]">
+              <div className="w-[18px] flex flex-col gap-[5px]">
                 <span className={`h-[1.5px] bg-ink transition-transform duration-300 ${menuOpen ? 'rotate-45 translate-y-[6.5px]' : ''}`} />
                 <span className={`h-[1.5px] bg-ink transition-opacity duration-200 ${menuOpen ? 'opacity-0' : ''}`} />
                 <span className={`h-[1.5px] bg-ink transition-transform duration-300 ${menuOpen ? '-rotate-45 -translate-y-[6.5px]' : ''}`} />
@@ -163,38 +137,23 @@ export default function HeaderNew({ locale = 'en' }: { locale?: string }) {
         </div>
       </div>
 
-      {/* Mobile menu — opacity/transform only (compositor), short stagger */}
       <div
-        className={`lg:hidden fixed inset-0 top-24 bg-ivory z-[90] will-change-[opacity,transform] transition-[opacity,transform] duration-300 ease-out ${
-          menuOpen
-            ? 'opacity-100 translate-y-0 pointer-events-auto'
-            : 'opacity-0 -translate-y-2 pointer-events-none'
+        className={`lg:hidden fixed inset-0 top-14 md:top-16 bg-ivory z-[90] transition-[opacity,transform] duration-300 ease-out ${
+          menuOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-2 pointer-events-none'
         }`}
       >
-        <div className="container-edge pt-16 pb-10 h-full flex flex-col justify-between">
-          <nav className="flex flex-col gap-2">
-            {nav.map((l, i) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                className={`font-display text-4xl md:text-5xl text-ink py-3 border-b border-hairline transition-[opacity,transform] duration-300 ease-out ${
-                  menuOpen ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-3'
-                }`}
-                style={{ transitionDelay: menuOpen ? `${40 + i * 40}ms` : '0ms' }}
-              >
-                <span className="overline mr-4 text-ash">0{i + 1}</span>
+        <div className="container-edge pt-8 pb-10 h-full flex flex-col gap-10 overflow-y-auto">
+          <nav className="flex flex-col" aria-label={ko ? '모바일 메뉴' : 'Mobile'}>
+            {[...nav, ...more].map((l) => (
+              <Link key={l.href} href={l.href} className="text-[28px] font-semibold tracking-[-0.03em] text-ink py-2.5 border-b border-hairline">
                 {l.label}
               </Link>
             ))}
           </nav>
-          <div className="flex items-center justify-between pt-10">
-            <Link href={otherLocaleHref} className="overline text-ink">
-              {locale === 'ko' ? 'English' : '한국어'}
-            </Link>
-            <Link href={`${prefix}/contact`} className="btn-ink">
-              {locale === 'ko' ? '프로젝트 의뢰' : 'Start a project'}
-              <span className="arrow">→</span>
-            </Link>
+          <div className="flex flex-col gap-3">
+            <Link href={`${prefix}/audit`} className="btn-ink justify-center">{ko ? '무료 진단 받기' : 'Get a free audit'}</Link>
+            <a href={PHONE_TEL} className="btn-outline justify-center tabular-nums">{ko ? '전화 ' : 'Call '}{PHONE_DISPLAY}</a>
+            <Link href={otherLocaleHref} className="text-center text-[15px] text-link py-2">{ko ? 'English' : '한국어'}</Link>
           </div>
         </div>
       </div>

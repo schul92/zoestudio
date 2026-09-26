@@ -246,7 +246,7 @@ export default function ChatWidget({ locale = 'en' }: { locale?: string }) {
           type="button"
           onClick={() => setOpen(true)}
           aria-label={isKo ? '문의 채팅 열기' : 'Open chat'}
-          className="group fixed right-4 bottom-[calc(4.5rem+env(safe-area-inset-bottom))] z-[90] flex h-14 w-14 items-center justify-center gap-2 rounded-full bg-[#1f1c16] text-white shadow-xl ring-1 ring-[#b48a43]/40 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:ring-[#b48a43] active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#b48a43] sm:right-6 lg:bottom-6 lg:h-14 lg:w-auto lg:px-6"
+          className="group fixed right-4 bottom-[calc(5rem+env(safe-area-inset-bottom))] z-[90] flex h-14 w-14 items-center justify-center gap-2 rounded-full bg-[#1D1D1F] text-white shadow-xl ring-1 ring-[#0071E3]/40 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:ring-[#0071E3] active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3] sm:right-6 lg:bottom-6 lg:h-14 lg:w-auto lg:px-6"
           style={{ touchAction: 'manipulation' }}
         >
           <span className="relative flex shrink-0 items-center justify-center">
@@ -266,8 +266,8 @@ export default function ChatWidget({ locale = 'en' }: { locale?: string }) {
             {/* Live dot: signals "answers now", and is the only motion here.
                 motion-reduce drops the ping for vestibular sensitivity. */}
             <span className="absolute -right-1.5 -top-1.5 flex h-2.5 w-2.5">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#b48a43] opacity-60 motion-reduce:animate-none" />
-              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#b48a43]" />
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#0071E3] opacity-60 motion-reduce:animate-none" />
+              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#0071E3]" />
             </span>
           </span>
           <span className="hidden whitespace-nowrap text-[15px] font-bold lg:inline">
@@ -301,16 +301,16 @@ export default function ChatWidget({ locale = 'en' }: { locale?: string }) {
            *
            * Desktop (lg+): back to a floating card, right for a pointer UI.
            */
-          className="fixed inset-0 top-[var(--chat-vvtop,0px)] z-[120] flex h-[var(--chat-vvh,100dvh)] flex-col overflow-hidden bg-white shadow-2xl lg:inset-x-auto lg:bottom-6 lg:right-6 lg:top-auto lg:h-[560px] lg:max-h-[calc(100dvh-6rem)] lg:w-[380px] lg:rounded-2xl lg:border lg:border-[#e4ddd0]"
+          className="fixed inset-0 top-[var(--chat-vvtop,0px)] z-[120] flex h-[var(--chat-vvh,100dvh)] flex-col overflow-hidden bg-white shadow-2xl lg:inset-x-auto lg:bottom-6 lg:right-6 lg:top-auto lg:h-[560px] lg:max-h-[calc(100dvh-6rem)] lg:w-[380px] lg:rounded-2xl lg:border lg:border-[#D2D2D7]"
           style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
         >
           {/* Header */}
-          <div className="flex items-center justify-between border-b border-[#e4ddd0] bg-[#faf7f1] px-4 py-3">
+          <div className="flex items-center justify-between border-b border-[#D2D2D7] bg-[#FBFBFD] px-4 py-3">
             <div>
-              <div className="text-[13px] font-bold tracking-[0.14em] text-[#b48a43]">
+              <div className="text-[13px] font-bold tracking-[0.14em] text-[#0071E3]">
                 ZOE LUMOS
               </div>
-              <div className="mt-0.5 text-[11px] text-[#6b6459]">
+              <div className="mt-0.5 text-[11px] text-[#6E6E73]">
                 {isKo ? '보통 몇 초 안에 답변합니다' : 'Usually replies in seconds'}
               </div>
             </div>
@@ -319,7 +319,7 @@ export default function ChatWidget({ locale = 'en' }: { locale?: string }) {
               onClick={() => setOpen(false)}
               aria-label={isKo ? '닫기' : 'Close'}
               // 44px touch target on mobile (WCAG 2.5.8), tighter on desktop.
-              className="-mr-2 flex h-11 w-11 items-center justify-center rounded text-[#6b6459] transition-colors hover:bg-[#efe9dd] hover:text-[#1f1c16] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#b48a43] lg:-mr-1 lg:h-8 lg:w-8"
+              className="-mr-2 flex h-11 w-11 items-center justify-center rounded text-[#6E6E73] transition-colors hover:bg-[#efe9dd] hover:text-[#1D1D1F] focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#0071E3] lg:-mr-1 lg:h-8 lg:w-8"
               style={{ touchAction: 'manipulation' }}
             >
               <svg
@@ -352,7 +352,7 @@ export default function ChatWidget({ locale = 'en' }: { locale?: string }) {
                     key={q}
                     type="button"
                     onClick={() => send(q)}
-                    className="rounded-full border border-[#ddd4c4] bg-white px-3 py-2 text-left text-[13px] leading-snug text-[#4a443b] transition-colors hover:border-[#b48a43] hover:text-[#1f1c16] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#b48a43]"
+                    className="rounded-full border border-[#D2D2D7] bg-white px-3 py-2 text-left text-[13px] leading-snug text-[#4a443b] transition-colors hover:border-[#0071E3] hover:text-[#1D1D1F] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3]"
                     style={{ touchAction: 'manipulation' }}
                   >
                     {q}
@@ -407,7 +407,7 @@ export default function ChatWidget({ locale = 'en' }: { locale?: string }) {
                 )
               }
               disabled={streaming}
-              className="border-t border-[#e4ddd0] bg-[#faf7f1] px-4 py-2 text-left text-[11.5px] leading-snug text-[#6b6459] transition-colors hover:text-[#1f1c16] disabled:opacity-60"
+              className="border-t border-[#D2D2D7] bg-[#FBFBFD] px-4 py-2 text-left text-[11.5px] leading-snug text-[#6E6E73] transition-colors hover:text-[#1D1D1F] disabled:opacity-60"
               style={{ touchAction: 'manipulation' }}
             >
               {isKo
@@ -417,7 +417,7 @@ export default function ChatWidget({ locale = 'en' }: { locale?: string }) {
           )}
 
           {/* Composer */}
-          <div className="border-t border-[#e4ddd0] bg-white px-3 py-3">
+          <div className="border-t border-[#D2D2D7] bg-white px-3 py-3">
             <div className="flex items-end gap-2">
               <textarea
                 ref={inputRef}
@@ -435,7 +435,7 @@ export default function ChatWidget({ locale = 'en' }: { locale?: string }) {
                  * and never zooms back out. lg: drops to 14px where that
                  * behavior doesn't exist.
                  */
-                className="max-h-28 min-h-[44px] flex-1 resize-none rounded-lg border border-[#ddd4c4] bg-white px-3 py-2.5 text-base text-[#1f1c16] placeholder:text-[#9a9284] focus:border-[#b48a43] focus:outline-none lg:min-h-[40px] lg:py-2 lg:text-[14px]"
+                className="max-h-28 min-h-[44px] flex-1 resize-none rounded-lg border border-[#D2D2D7] bg-white px-3 py-2.5 text-base text-[#1D1D1F] placeholder:text-[#86868B] focus:border-[#0071E3] focus:outline-none lg:min-h-[40px] lg:py-2 lg:text-[14px]"
               />
               <button
                 type="button"
@@ -444,7 +444,7 @@ export default function ChatWidget({ locale = 'en' }: { locale?: string }) {
                 onClick={() => send()}
                 disabled={streaming || !input.trim()}
                 aria-label={isKo ? '보내기' : 'Send'}
-                className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-[#b48a43] text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#b48a43] lg:h-10 lg:w-10"
+                className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-[#0071E3] text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3] lg:h-10 lg:w-10"
                 style={{ touchAction: 'manipulation' }}
               >
                 <svg
@@ -463,7 +463,7 @@ export default function ChatWidget({ locale = 'en' }: { locale?: string }) {
                 </svg>
               </button>
             </div>
-            <p className="mt-2 text-[10.5px] leading-snug text-[#9a9284]">
+            <p className="mt-2 text-[10.5px] leading-snug text-[#86868B]">
               {isKo
                 ? 'AI 답변입니다. 정확한 상담은 '
                 : 'AI-generated. For anything specific, '}
@@ -475,7 +475,7 @@ export default function ChatWidget({ locale = 'en' }: { locale?: string }) {
                     trackGAEvent('chat_lead_form_shown', { category: 'chat', label: 'footer_button' })
                   }
                 }}
-                className="font-semibold text-[#b48a43] underline underline-offset-2 hover:text-[#8f6c30]"
+                className="font-semibold text-[#0071E3] underline underline-offset-2 hover:text-[#8f6c30]"
                 style={{ touchAction: 'manipulation' }}
               >
                 {isKo ? '상담 연결' : 'leave your contact info'}
@@ -553,14 +553,14 @@ function LeadForm({
   }
 
   const field =
-    'w-full rounded-lg border border-[#ddd4c4] bg-white px-3 py-2 text-base text-[#1f1c16] placeholder:text-[#9a9284] focus:border-[#b48a43] focus:outline-none lg:text-[13.5px]'
+    'w-full rounded-lg border border-[#D2D2D7] bg-white px-3 py-2 text-base text-[#1D1D1F] placeholder:text-[#86868B] focus:border-[#0071E3] focus:outline-none lg:text-[13.5px]'
 
   return (
     <div className="rounded-2xl border border-[#e0cfa8] bg-[#fdfaf3] p-3.5">
-      <p className="text-[13px] font-semibold text-[#1f1c16]">
+      <p className="text-[13px] font-semibold text-[#1D1D1F]">
         {isKo ? '연락처를 남겨주세요' : 'Leave your contact info'}
       </p>
-      <p className="mt-0.5 text-[11.5px] leading-snug text-[#6b6459]">
+      <p className="mt-0.5 text-[11.5px] leading-snug text-[#6E6E73]">
         {isKo
           ? '지금까지의 대화와 함께 Steve에게 바로 전달됩니다 · 1영업일 내 회신'
           : 'Sent straight to Steve with this conversation · reply within 1 business day'}
@@ -608,7 +608,7 @@ function LeadForm({
         type="button"
         onClick={submit}
         disabled={sending || !name.trim() || !email.trim()}
-        className="mt-2.5 w-full rounded-lg bg-[#b48a43] py-2.5 text-[14px] font-bold text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40"
+        className="mt-2.5 w-full rounded-lg bg-[#0071E3] py-2.5 text-[14px] font-bold text-white transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-40"
         style={{ touchAction: 'manipulation' }}
       >
         {sending
@@ -632,8 +632,8 @@ function Bubble({
       <div
         className={
           isUser
-            ? 'max-w-[85%] whitespace-pre-wrap rounded-2xl rounded-br-sm bg-[#1f1c16] px-3.5 py-2.5 text-[14px] leading-relaxed text-white'
-            : 'max-w-[85%] whitespace-pre-wrap rounded-2xl rounded-bl-sm bg-[#faf7f1] px-3.5 py-2.5 text-[14px] leading-relaxed text-[#1f1c16]'
+            ? 'max-w-[85%] whitespace-pre-wrap rounded-2xl rounded-br-sm bg-[#1D1D1F] px-3.5 py-2.5 text-[14px] leading-relaxed text-white'
+            : 'max-w-[85%] whitespace-pre-wrap rounded-2xl rounded-bl-sm bg-[#FBFBFD] px-3.5 py-2.5 text-[14px] leading-relaxed text-[#1D1D1F]'
         }
       >
         {children}
@@ -648,7 +648,7 @@ function Dots() {
       {[0, 1, 2].map((i) => (
         <span
           key={i}
-          className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#b48a43]"
+          className="h-1.5 w-1.5 animate-pulse rounded-full bg-[#0071E3]"
           style={{ animationDelay: `${i * 150}ms` }}
         />
       ))}
