@@ -119,34 +119,6 @@ export function selectedWorkItemList(works: WorkItem[]) {
   })
 }
 
-/* ── Review ─────────────────────────────────────────────────────── */
-
-export type Testimonial = {
-  id: string
-  body: string
-  author: string
-  role?: string
-  project?: string
-  rating?: number
-}
-
-export function reviewSchema(t: Testimonial) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'Review',
-    '@id': `${BASE}/#review-${t.id}`,
-    reviewBody: t.body,
-    author: { '@type': 'Person', name: t.author, ...(t.role ? { jobTitle: t.role } : {}) },
-    itemReviewed: { '@id': `${BASE}/#organization` },
-    reviewRating: {
-      '@type': 'Rating',
-      ratingValue: t.rating ?? 5,
-      bestRating: 5,
-    },
-    ...(t.project ? { about: t.project } : {}),
-  }
-}
-
 /* ── CollectionPage (blog index) ────────────────────────────────── */
 
 export type BlogIndexItem = {

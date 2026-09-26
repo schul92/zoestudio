@@ -55,9 +55,6 @@ function computeOtherLocaleHref(pathname: string, locale: string): string {
   return isKo ? stripped : `/ko${stripped === '/' ? '' : stripped}`
 }
 
-export const PHONE_DISPLAY = '(201) 962-1702'
-export const PHONE_TEL = 'tel:+12019621702'
-
 export default function HeaderNew({ locale = 'en' }: { locale?: string }) {
   const { t } = useTranslation(locale)
   const prefix = locale === 'ko' ? '/ko' : ''
@@ -112,9 +109,6 @@ export default function HeaderNew({ locale = 'en' }: { locale?: string }) {
             <Link href={otherLocaleHref} className="hidden sm:inline-flex text-[13px] font-medium text-ash hover:text-ink" aria-label="Switch language">
               {ko ? 'EN' : 'KR'}
             </Link>
-            <a href={PHONE_TEL} className="hidden xl:inline-flex text-[13px] text-graphite hover:text-ink tabular-nums">
-              {PHONE_DISPLAY}
-            </a>
             <Link
               href={`${prefix}/audit`}
               className="hidden md:inline-flex items-center rounded-full bg-ink text-white text-[13px] font-semibold px-4 py-2 hover:bg-graphite transition-colors"
@@ -152,7 +146,6 @@ export default function HeaderNew({ locale = 'en' }: { locale?: string }) {
           </nav>
           <div className="flex flex-col gap-3">
             <Link href={`${prefix}/audit`} className="btn-ink justify-center">{ko ? '무료 진단 받기' : 'Get a free audit'}</Link>
-            <a href={PHONE_TEL} className="btn-outline justify-center tabular-nums">{ko ? '전화 ' : 'Call '}{PHONE_DISPLAY}</a>
             <Link href={otherLocaleHref} className="text-center text-[15px] text-link py-2">{ko ? 'English' : '한국어'}</Link>
           </div>
         </div>

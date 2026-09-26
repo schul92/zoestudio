@@ -13,16 +13,16 @@ type Project = {
 
 const projects: Project[] = [
   {
-    name: 'Miguk Story',
-    industry: { en: 'Editorial publication', ko: '에디토리얼 퍼블리케이션' },
-    location: 'Bilingual · US',
+    name: 'EndoPia',
+    industry: { en: 'Medical device · U.S. launch', ko: '의료기기 · 미국 런칭' },
+    location: 'United States',
     year: '2026',
     disciplines: {
-      en: ['Editorial', 'CMS', 'Bilingual SEO'],
-      ko: ['에디토리얼', 'CMS', '이중언어 SEO'],
+      en: ['Web design', 'Product storytelling', 'SEO'],
+      ko: ['웹디자인', '제품 스토리텔링', 'SEO'],
     },
-    image: '/portfolio/migukstory.jpg',
-    url: 'https://migukstory.com/',
+    image: '/portfolio/endopia.jpg',
+    url: 'https://endopiaglobal.com/',
   },
   {
     name: 'TJ Flowers',
@@ -36,6 +36,18 @@ const projects: Project[] = [
     image: '/portfolio/tj-flowers.jpg',
   },
   {
+    name: "Vito's Pizza",
+    industry: { en: 'Italian restaurant', ko: '이탈리안 레스토랑' },
+    location: 'Alpharetta · GA',
+    year: '2026',
+    disciplines: {
+      en: ['Web design', 'Local SEO', 'Online ordering'],
+      ko: ['웹디자인', '로컬 SEO', '온라인 주문'],
+    },
+    image: '/portfolio/vitos-pizza.jpg',
+    url: 'https://www.vitospizzaandristorante.com/',
+  },
+  {
     name: 'Salt & Polish',
     industry: { en: 'Wellness studio', ko: '웰니스 스튜디오' },
     location: 'Fort Lee · NJ',
@@ -45,17 +57,6 @@ const projects: Project[] = [
       ko: ['웹디자인', '로컬 SEO', '예약'],
     },
     image: '/portfolio/salt-polish.jpg',
-  },
-  {
-    name: 'Kona Coffee Donut',
-    industry: { en: 'Café & bakery', ko: '카페 · 베이커리' },
-    location: 'Honolulu · HI',
-    year: '2024',
-    disciplines: {
-      en: ['Brand', 'Web design', 'Shopify'],
-      ko: ['브랜드', '웹디자인', 'Shopify'],
-    },
-    image: '/portfolio/kona-coffee.jpg',
   },
   {
     name: 'CareK9',
@@ -69,6 +70,17 @@ const projects: Project[] = [
     image: '/portfolio/carek9.jpg',
   },
   {
+    name: 'Kona Coffee Donut',
+    industry: { en: 'Café & bakery', ko: '카페 · 베이커리' },
+    location: 'Honolulu · HI',
+    year: '2024',
+    disciplines: {
+      en: ['Brand', 'Web design', 'Shopify'],
+      ko: ['브랜드', '웹디자인', 'Shopify'],
+    },
+    image: '/portfolio/kona-coffee.jpg',
+  },
+  {
     name: 'Mochinut',
     industry: { en: 'Confectionery', ko: '디저트 브랜드' },
     location: 'Multi-city',
@@ -80,16 +92,16 @@ const projects: Project[] = [
     image: '/portfolio/mochinut.jpg',
   },
   {
-    name: "Vito's Pizza",
-    industry: { en: 'Italian restaurant', ko: '이탈리안 레스토랑' },
-    location: 'Alpharetta · GA',
+    name: 'Miguk Story',
+    industry: { en: 'Editorial publication', ko: '에디토리얼 퍼블리케이션' },
+    location: 'Bilingual · US',
     year: '2026',
     disciplines: {
-      en: ['Web design', 'Local SEO', 'Online ordering'],
-      ko: ['웹디자인', '로컬 SEO', '온라인 주문'],
+      en: ['Editorial', 'CMS', 'Bilingual SEO'],
+      ko: ['에디토리얼', 'CMS', '이중언어 SEO'],
     },
-    image: '/portfolio/vitos-pizza.jpg',
-    url: 'https://www.vitospizzaandristorante.com/',
+    image: '/portfolio/migukstory.jpg',
+    url: 'https://migukstory.com/',
   },
 ]
 

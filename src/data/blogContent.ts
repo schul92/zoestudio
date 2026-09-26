@@ -4669,8 +4669,8 @@ export const blogContent: BlogPost[] = [
           ko: '새 사이트는 실제 Shopify 매출을 얼마나 만들었나요?',
         },
         a: {
-          en: 'Cumulative since launch — April 2026 (organic baseline): 7 orders, $2,604 revenue, AOV $372. May 1–14, 2026: 20 orders, $3,751 revenue, AOV $188. Total since launch ~ $6,355 in real Shopify-native online sales. The daily revenue rate jumped from $87/day in April to $268/day in May — a +208% increase. Mother\'s Day week alone (May 4–10) delivered $2,836 across 15 orders — 75% of the month\'s revenue in 7 days. All numbers exclude 250 OpenCart historical orders imported during migration ($34,286 lifetime value, NOT new revenue) and 5 internal test orders.',
-          ko: '런칭 후 누적 — 2026년 4월 (유기 베이스라인) — 주문 7건, 매출 $2,604, AOV $372. 2026년 5월 1-14일 — 주문 20건, 매출 $3,751, AOV $188. 런칭 후 누적 약 $6,355의 실제 Shopify 네이티브 온라인 매출. 일 매출 속도가 4월 $87/일에서 5월 $268/일로 +208% 증가. 어머니의 날 주간 (5월 4-10일) 만으로 15건 주문 $2,836 — 7일 만에 월 매출의 75%. 모든 숫자는 마이그레이션 임포트 OpenCart 과거 주문 250건 ($34,286 누적 가치) + 내부 테스트 주문 5건 제외.',
+          en: 'Cumulative since launch — April 2026 (organic baseline): 7 orders, $2,604 revenue, AOV $372. May 1–14, 2026: 20 orders, $3,751 revenue, AOV $188. Total since launch ~ $6,355 in real Shopify-native online sales. The daily revenue rate jumped from $87/day in April to $268/day in May — a +208% increase. Mother\'s Day week alone (May 4–10) delivered $2,836 across 15 orders — 75% of the month\'s revenue in 7 days. All numbers exclude 250 OpenCart historical orders imported during migration ($34,286 lifetime value, NOT new revenue) and 5 internal test orders. Update: revenue from the rebuilt store passed $10,000 within 3 months of the rebuild.',
+          ko: '런칭 후 누적 — 2026년 4월 (유기 베이스라인) — 주문 7건, 매출 $2,604, AOV $372. 2026년 5월 1-14일 — 주문 20건, 매출 $3,751, AOV $188. 런칭 후 누적 약 $6,355의 실제 Shopify 네이티브 온라인 매출. 일 매출 속도가 4월 $87/일에서 5월 $268/일로 +208% 증가. 어머니의 날 주간 (5월 4-10일) 만으로 15건 주문 $2,836 — 7일 만에 월 매출의 75%. 모든 숫자는 마이그레이션 임포트 OpenCart 과거 주문 250건 ($34,286 누적 가치) + 내부 테스트 주문 5건 제외. 업데이트 — 리빌드 후 3개월 안에 누적 매출이 $10,000을 넘었습니다.',
         },
       },
       {

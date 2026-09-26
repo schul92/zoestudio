@@ -159,44 +159,6 @@ const reviews = [
   }
 ]
 
-// Generate Review Schema for SEO
-function generateReviewSchema(locale: 'en' | 'ko') {
-  const reviewSchemas = reviews.map(review => ({
-    "@type": "Review",
-    "author": {
-      "@type": "Person",
-      "name": review.author
-    },
-    "datePublished": review.date,
-    "reviewBody": review.content[locale],
-    "name": review.title[locale],
-    "reviewRating": {
-      "@type": "Rating",
-      "ratingValue": review.rating,
-      "bestRating": 5,
-      "worstRating": 1
-    },
-    "itemReviewed": {
-      "@type": "LocalBusiness",
-      "@id": "https://www.zoelumos.com/#localbusiness"
-    }
-  }))
-
-  return {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": "https://www.zoelumos.com/#localbusiness",
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": 5,
-      "reviewCount": reviews.length,
-      "bestRating": 5,
-      "worstRating": 1
-    },
-    "review": reviewSchemas
-  }
-}
-
 const content = {
   en: {
     title: 'Client Reviews',
@@ -256,14 +218,6 @@ export default function ReviewsPage({ params }: { params: { locale: string } }) 
     <>
       <HeaderWrapper locale={locale} />
 
-      {/* Review Schema */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(generateReviewSchema(locale)),
-        }}
-      />
-
       <main className="min-h-screen bg-gradient-to-b from-white to-gray-50 pt-24 pb-16">
         <div className="max-w-6xl mx-auto px-6 lg:px-8">
           {/* Breadcrumb */}
@@ -281,20 +235,6 @@ export default function ReviewsPage({ params }: { params: { locale: string } }) 
             <p className="text-xl text-gray-600 mb-2">{t.subtitle}</p>
             <p className="text-gray-500">{t.description}</p>
 
-            {/* Stats */}
-            <div className="flex justify-center gap-8 mt-8">
-              <div className="text-center">
-                <div className="flex items-center justify-center gap-2">
-                  <span className="text-3xl font-bold text-gray-900">{t.stats.rating}</span>
-                  <StarRating rating={5} />
-                </div>
-                <p className="text-sm text-gray-500 mt-1">{t.stats.reviews}</p>
-              </div>
-              <div className="text-center">
-                <p className="text-3xl font-bold text-green-600">{t.stats.satisfaction}</p>
-                <p className="text-sm text-gray-500 mt-1">{locale === 'ko' ? '고객 만족률' : 'Client Satisfaction'}</p>
-              </div>
-            </div>
           </div>
 
           {/* Reviews Grid */}

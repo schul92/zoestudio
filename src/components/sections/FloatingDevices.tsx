@@ -8,9 +8,9 @@ type Device = {
 }
 
 const devices: Device[] = [
+  { name: 'EndoPia', src: '/portfolio/endopia.jpg', industry: { en: 'U.S. launch · Medical device', ko: '미국 런칭 · 의료기기' } },
   { name: 'TJ Flowers', src: '/portfolio/tj-flowers.jpg', industry: { en: 'Manhattan · Floral studio', ko: '맨하탄 · 플라워 스튜디오' } },
-  { name: 'Salt & Polish', src: '/portfolio/salt-polish.jpg', industry: { en: 'Fort Lee · Wellness studio', ko: '포트리 · 웰니스 스튜디오' } },
-  { name: 'Kona Coffee Donut', src: '/portfolio/kona-coffee.jpg', industry: { en: 'Honolulu · Café', ko: '호놀룰루 · 카페' } },
+  { name: "Vito's Pizza", src: '/portfolio/vitos-pizza.jpg', industry: { en: 'Alpharetta · Italian restaurant', ko: '알파레타 · 이탈리안 레스토랑' } },
 ]
 
 export default function FloatingDevices({ locale = 'en' }: { locale?: 'en' | 'ko' }) {

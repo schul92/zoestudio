@@ -1,21 +1,21 @@
 import * as THREE from 'three'
 import { RoundedBoxGeometry } from 'three/examples/jsm/geometries/RoundedBoxGeometry.js'
+import { SCREEN_BREAKS, SCREEN_ORDER } from './lumosStory'
 
-export type LumosFrame = { p: number; px: number; py: number; now: number; narrow: boolean; reduce: boolean }
+// `sp` drives which site is on screen; it differs from `p` only under reduced motion, where the camera stays put.
+export type LumosFrame = { p: number; sp: number; px: number; py: number; now: number; narrow: boolean; reduce: boolean; capFloor: number }
 export type LumosScene = { render: (f: LumosFrame) => void; resize: (w: number, h: number) => void; dispose: () => void }
 
 const IMG = {
-  screens: ['/portfolio/tj-flowers.jpg', '/portfolio/migukstory.jpg', '/portfolio/salt-polish.jpg'],
+  screens: ['/portfolio/tj-flowers.jpg', '/portfolio/endopia.jpg', '/portfolio/salt-polish.jpg'],
   phone: '/portfolio/mochinut.jpg',
 }
 
-// Screen swaps happen at these progress points; the captions in LumosHero use the same ranges.
-export const SCREEN_BREAKS = [0.47, 0.62] as const
 
 // End-of-story line-up: the laptop steps left and the phone stands on the same floor beside it.
 // Kept in one place so the final composition can be retuned without touching the scene graph.
 export const FINAL_POSE = {
-  phoneIn: [0.74, 0.92] as const,
+  phoneIn: [0.76, 0.92] as const,
   laptopShiftX: -0.62,
   phoneFromX: 4.4,
   phoneFromXNarrow: 2.6,
@@ -87,7 +87,7 @@ function slab(w: number, d: number, h: number, r: number, bevel: number) {
   return g
 }
 
-type Mats = { blackGlass: THREE.Material; soft: (inner: number, outer: number, a0: string, a1: string) => THREE.Texture }
+type Mats = { invalidate: () => void; blackGlass: THREE.Material; soft: (inner: number, outer: number, a0: string, a1: string) => THREE.Texture }
 
 function roundRectShape(w: number, h: number, r: number) {
   const s = new THREE.Shape()
@@ -114,7 +114,7 @@ function flatShape(w: number, h: number, r: number) {
   return g
 }
 
-function phoneScreenTexture() {
+function phoneScreenTexture(onReady: () => void) {
   const c = document.createElement('canvas')
   c.width = 720
   c.height = 1560
@@ -148,6 +148,7 @@ function phoneScreenTexture() {
     g.roundRect(240, 1510, 240, 10, 5)
     g.fill()
     tex.needsUpdate = true
+    onReady()
   }
   img.src = IMG.phone
   return tex
@@ -159,7 +160,7 @@ function buildPhone(m: Mats) {
   const PW = (PH * 77.6) / 163
   const PD = (PH * 8.25) / 163
   const PR = PW * 0.17
-  const titanium = new THREE.MeshPhysicalMaterial({ color: 0x3d3e42, metalness: 1, roughness: 0.2, clearcoat: 0.3, clearcoatRoughness: 0.2 })
+  const titanium = new THREE.MeshPhysicalMaterial({ color: 0xb8b5ae, metalness: 1, roughness: 0.24, clearcoat: 0.3, clearcoatRoughness: 0.2 })
   const phone = new THREE.Group()
   const band = new THREE.ExtrudeGeometry(roundRectShape(PW - 0.02, PH - 0.02, PR - 0.01), {
     depth: PD - 0.02,
@@ -177,7 +178,7 @@ function buildPhone(m: Mats) {
   const inset = 0.028
   const screen = new THREE.Mesh(
     flatShape(PW - inset * 2, PH - inset * 2, PR - inset * 0.8),
-    new THREE.MeshBasicMaterial({ map: phoneScreenTexture(), toneMapped: false, color: 0xededed }),
+    new THREE.MeshBasicMaterial({ map: phoneScreenTexture(m.invalidate), toneMapped: false, color: 0xededed }),
   )
   screen.position.z = PD / 2 + 0.0012
   phone.add(screen)
@@ -200,7 +201,7 @@ function buildPhone(m: Mats) {
   return { phone, shadow }
 }
 
-export function createLumosScene(canvas: HTMLCanvasElement): LumosScene {
+export function createLumosScene(canvas: HTMLCanvasElement, invalidate: () => void = () => {}): LumosScene {
   const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true, powerPreference: 'high-performance' })
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.75))
   renderer.outputColorSpace = THREE.SRGBColorSpace
@@ -212,7 +213,7 @@ export function createLumosScene(canvas: HTMLCanvasElement): LumosScene {
   const studioScene = studio()
   const envRT = pmrem.fromScene(studioScene, 0.02)
   scene.environment = envRT.texture
-  scene.environmentIntensity = 1.25
+  scene.environmentIntensity = 1.35
 
   const camera = new THREE.PerspectiveCamera(26, 1, 0.1, 100)
   const key = new THREE.DirectionalLight(0xffffff, 0.9)
@@ -221,7 +222,7 @@ export function createLumosScene(canvas: HTMLCanvasElement): LumosScene {
 
   const loader = new THREE.TextureLoader()
   const tex = (src: string) => {
-    const t = loader.load(src)
+    const t = loader.load(src, invalidate)
     t.colorSpace = THREE.SRGBColorSpace
     t.anisotropy = 8
     return t
@@ -240,11 +241,11 @@ export function createLumosScene(canvas: HTMLCanvasElement): LumosScene {
   grain.wrapS = grain.wrapT = THREE.RepeatWrapping
   grain.repeat.set(3, 3)
 
-  const alu = new THREE.MeshPhysicalMaterial({ color: 0x45484e, metalness: 1, roughness: 0.4, roughnessMap: grain, specularIntensity: 1 })
-  const aluInner = new THREE.MeshPhysicalMaterial({ color: 0x26282c, metalness: 1, roughness: 0.52, roughnessMap: grain })
-  const keyMat = new THREE.MeshStandardMaterial({ color: 0x0b0b0d, roughness: 0.72, metalness: 0 })
-  const well = new THREE.MeshStandardMaterial({ color: 0x060607, roughness: 0.9 })
-  const padMat = new THREE.MeshPhysicalMaterial({ color: 0x2a2c30, metalness: 0.9, roughness: 0.3, clearcoat: 0.4, clearcoatRoughness: 0.3 })
+  // Silver unibody aluminium, black keys, black glass: the MacBook signature.
+  const alu = new THREE.MeshPhysicalMaterial({ color: 0xdfe2e6, metalness: 1, roughness: 0.3, roughnessMap: grain, specularIntensity: 1 })
+  const aluInner = new THREE.MeshPhysicalMaterial({ color: 0x1c1d20, metalness: 0.6, roughness: 0.5 })
+  const keyMat = new THREE.MeshStandardMaterial({ color: 0x101012, roughness: 0.62, metalness: 0 })
+  const padMat = new THREE.MeshPhysicalMaterial({ color: 0xbfc2c7, metalness: 0.95, roughness: 0.2, clearcoat: 0.6, clearcoatRoughness: 0.15 })
   const blackGlass = new THREE.MeshPhysicalMaterial({ color: 0x020203, metalness: 0, roughness: 0.05, clearcoat: 1, clearcoatRoughness: 0.02 })
 
   const W = 3.2, D = 2.2, H = 0.075, T = 0.03
@@ -256,10 +257,6 @@ export function createLumosScene(canvas: HTMLCanvasElement): LumosScene {
   laptop.add(base)
 
   const kbW = W * 0.72, kbD = D * 0.4, kbZ = -D * 0.16
-  const kbWell = new THREE.Mesh(new THREE.PlaneGeometry(kbW + 0.06, kbD + 0.06), well)
-  kbWell.rotation.x = -Math.PI / 2
-  kbWell.position.set(0, 0.0005, kbZ)
-  laptop.add(kbWell)
 
   const rows: { w: number[]; h?: number }[] = [
     { w: Array(14).fill(1), h: 0.5 },
@@ -373,11 +370,11 @@ export function createLumosScene(canvas: HTMLCanvasElement): LumosScene {
   shadow.position.y = -H - 0.004
   laptop.add(shadow)
 
-  const { phone, shadow: pShadow } = buildPhone({ blackGlass, soft })
+  const { phone, shadow: pShadow } = buildPhone({ invalidate, blackGlass, soft })
   scene.add(phone, pShadow)
   const pShadowMat = pShadow.material as THREE.MeshBasicMaterial
 
-  function render({ p, px, py, now, narrow, reduce }: LumosFrame) {
+  function render({ p, sp, px, py, now, narrow, reduce, capFloor }: LumosFrame) {
     const F = FINAL_POSE
     const idle = reduce ? 0 : Math.sin(now / 2600) * 0.05 * (1 - span(p, 0, 0.15))
     const open = span(p, 0.02, 0.3)
@@ -390,22 +387,30 @@ export function createLumosScene(canvas: HTMLCanvasElement): LumosScene {
     laptop.position.y = lerp(-0.62, -0.4, open)
 
     const lumos = span(p, 0.14, 0.3)
-    const idx = p < SCREEN_BREAKS[0] ? 0 : p < SCREEN_BREAKS[1] ? 1 : 2
+    const beat = SCREEN_BREAKS.filter((b) => sp >= b).length
+    const idx = SCREEN_ORDER[beat]
     if (screenMat.map !== shots[idx]) screenMat.map = shots[idx]
-    const edge = SCREEN_BREAKS.reduce((m, e) => Math.min(m, Math.abs(p - e)), 1)
+    const edge = SCREEN_BREAKS.reduce((m, e) => Math.min(m, Math.abs(sp - e)), 1)
     screenMat.color.setScalar(lumos * 0.95 * lerp(0.2, 1, clamp(edge / 0.02)))
     glowMat.opacity = lumos * 0.5
 
     const tanHalf = Math.tan(THREE.MathUtils.degToRad(camera.fov / 2))
     const fit = (hw: number) => hw / (tanHalf * camera.aspect)
     const wide = Math.max(narrow ? 14 : 9.6, fit(1.95))
-    const dist = lerp(lerp(wide, fit(narrow ? 1.72 : 2.2), zoom), fit(narrow ? 1.85 : 2.6), ph)
-    // Close-up framing: lid near-vertical, camera square-on, display top parked just under the caption line.
+    // Close-up framing: lid near-vertical, camera square-on, display top parked just under the measured caption.
+    // Width alone isn't enough on wide, short windows — keep at least 90% of the display height below the caption.
+    const topFrac = clamp(capFloor + 0.035, 0.12, 0.5)
+    const byHeight = (0.9 * SH) / (2 * (1 - topFrac)) / tanHalf
+    const close = Math.max(fit(narrow ? 1.72 : 2.2), byHeight)
+    // The line-up must hold the whole laptop and phone, not just the display, so it sits further back.
+    const dist = lerp(lerp(wide, close, zoom), Math.max(fit(narrow ? 1.85 : 2.75), byHeight * 1.32), ph)
     const hView = tanHalf * dist
     const sTop = laptop.position.y + 2.09
-    const zLook = sTop - hView * (1 - 2 * (narrow ? 0.27 : 0.3))
+    const zLook = sTop - hView * (1 - 2 * topFrac)
     const zCamY = zLook + dist * 0.07
-    const lookY = lerp(lerp(0.0, 0.55, open) + (narrow ? 0.45 : 0), zLook, zoom)
+    // Parked under the caption for the close-up and the line-up alike, so text never sits on the product.
+    const park = Math.max(zoom, ph)
+    const lookY = lerp(lerp(narrow ? 0.0 : 0.42, 0.55, open) + (narrow ? 0.45 : 0), zLook, park)
 
     laptop.position.x = lerp(0, narrow ? 0 : F.laptopShiftX, ph)
     const floor = laptop.position.y - H
@@ -420,7 +425,7 @@ export function createLumosScene(canvas: HTMLCanvasElement): LumosScene {
     pShadowMat.opacity = ph
 
     const cx = lerp(0, narrow ? 0 : F.cameraShiftX, ph)
-    camera.position.set(px * 0.35 * (1 - zoom * 0.6) + cx, lerp(lerp(2.3, 1.25, span(p, 0, 0.3)), zCamY, zoom), dist)
+    camera.position.set(px * 0.35 * (1 - zoom * 0.6) + cx, lerp(lerp(2.3, 1.25, span(p, 0, 0.3)), zCamY, park), dist)
     camera.lookAt(cx, lookY, 0)
 
     renderer.render(scene, camera)

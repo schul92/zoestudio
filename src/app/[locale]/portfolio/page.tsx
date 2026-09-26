@@ -66,20 +66,20 @@ export async function generateMetadata({
 
 const projects = [
   {
-    id: 'migukstory',
-    url: 'https://migukstory.com/',
-    image: '/portfolio/migukstory.jpg',
+    id: 'endopia',
+    url: 'https://endopiaglobal.com/',
+    image: '/portfolio/endopia.jpg',
     en: {
-      title: 'Miguk Story (미국 스토리)',
-      category: 'Editorial / Publication',
-      description: 'Editorial publication for Korean-Americans — verified guides on immigration, taxes, healthcare, education, retirement, and community news. Clean magazine-style design with bilingual category navigation, fast load times, and a structured editorial workflow.',
-      services: ['Editorial Design', 'CMS Architecture', 'Bilingual SEO', 'Performance Engineering'],
+      title: 'EndoPia',
+      category: 'Medical Device / U.S. Launch',
+      description: "U.S. launch site for EndoPia's TISE digital spinal endoscope — an FDA 510(k)-cleared device. Product, surgeon training, events and investor pages, built for surgeons and partners.",
+      services: ['Website Design', 'Product Storytelling', 'SEO', 'Contact & Inquiry Flow'],
     },
     ko: {
-      title: '미국 스토리 (Miguk Story)',
-      category: '에디토리얼 / 퍼블리케이션',
-      description: '재미한인을 위한 에디토리얼 퍼블리케이션 — 이민·비자, 세금·재테크, 건강·보험, 교육·자녀, 은퇴·연금, 한인 커뮤니티 검증 가이드. 매거진 스타일의 깔끔한 디자인 + 이중언어 카테고리 네비게이션 + 빠른 로딩 + 구조화된 편집 워크플로우.',
-      services: ['에디토리얼 디자인', 'CMS 구조 설계', '이중언어 SEO', '성능 최적화'],
+      title: 'EndoPia',
+      category: '의료기기 / 미국 런칭',
+      description: 'FDA 510(k) 인증 디지털 척추 내시경 TISE의 미국 런칭 사이트. 제품·외과의 교육·이벤트·투자 페이지를 외과의사와 파트너를 위해 구축.',
+      services: ['웹사이트 디자인', '제품 스토리텔링', 'SEO', '문의·상담 흐름'],
     },
   },
   {
@@ -97,6 +97,23 @@ const projects = [
       category: '꽃집 / 이커머스',
       description: '1988년부터 운영된 NJ 꽃집 TJ Flower Shop의 Shopify 쇼핑몰 구축. 66종 이상의 난초, 당일 NYC 배달, 웨딩 & 이벤트 서비스, 정기 구독 플랜 제공.',
       services: ['Shopify 개발', '이커머스 디자인', 'SEO 최적화', '상품 사진 촬영'],
+    },
+  },
+  {
+    id: 'vitos-pizza',
+    url: 'https://www.vitospizzaandristorante.com/',
+    image: '/portfolio/vitos-pizza.jpg',
+    en: {
+      title: "Vito's Pizza & Ristorante",
+      category: 'Italian Restaurant / Pizzeria',
+      description: "Website for Vito's Pizza & Ristorante, a family-owned Italian restaurant and NY-style pizzeria in Alpharetta, GA. Bold editorial design with online ordering, catering inquiries, menu showcase, and local SEO — backed by 658+ five-star Google reviews.",
+      services: ['Website Design', 'Online Ordering', 'Local SEO', 'Catering Funnel'],
+    },
+    ko: {
+      title: "Vito's Pizza & Ristorante",
+      category: '이탈리안 레스토랑 / 피자',
+      description: '조지아주 알파레타의 가족 운영 이탈리안 레스토랑 & NY 스타일 피자집 Vito\'s Pizza & Ristorante 웹사이트. 대담한 에디토리얼 디자인 + 온라인 주문 + 케이터링 문의 + 메뉴 소개 + 로컬 SEO. 구글 별 5개 리뷰 658개 이상.',
+      services: ['웹사이트 디자인', '온라인 주문', '로컬 SEO', '케이터링 퍼널'],
     },
   },
   {
@@ -168,20 +185,20 @@ const projects = [
     },
   },
   {
-    id: 'vitos-pizza',
-    url: 'https://www.vitospizzaandristorante.com/',
-    image: '/portfolio/vitos-pizza.jpg',
+    id: 'migukstory',
+    url: 'https://migukstory.com/',
+    image: '/portfolio/migukstory.jpg',
     en: {
-      title: "Vito's Pizza & Ristorante",
-      category: 'Italian Restaurant / Pizzeria',
-      description: "Website for Vito's Pizza & Ristorante, a family-owned Italian restaurant and NY-style pizzeria in Alpharetta, GA. Bold editorial design with online ordering, catering inquiries, menu showcase, and local SEO — backed by 658+ five-star Google reviews.",
-      services: ['Website Design', 'Online Ordering', 'Local SEO', 'Catering Funnel'],
+      title: 'Miguk Story (미국 스토리)',
+      category: 'Editorial / Publication',
+      description: 'Editorial publication for Korean-Americans — verified guides on immigration, taxes, healthcare, education, retirement, and community news. Clean magazine-style design with bilingual category navigation, fast load times, and a structured editorial workflow.',
+      services: ['Editorial Design', 'CMS Architecture', 'Bilingual SEO', 'Performance Engineering'],
     },
     ko: {
-      title: "Vito's Pizza & Ristorante",
-      category: '이탈리안 레스토랑 / 피자',
-      description: '조지아주 알파레타의 가족 운영 이탈리안 레스토랑 & NY 스타일 피자집 Vito\'s Pizza & Ristorante 웹사이트. 대담한 에디토리얼 디자인 + 온라인 주문 + 케이터링 문의 + 메뉴 소개 + 로컬 SEO. 구글 별 5개 리뷰 658개 이상.',
-      services: ['웹사이트 디자인', '온라인 주문', '로컬 SEO', '케이터링 퍼널'],
+      title: '미국 스토리 (Miguk Story)',
+      category: '에디토리얼 / 퍼블리케이션',
+      description: '재미한인을 위한 에디토리얼 퍼블리케이션 — 이민·비자, 세금·재테크, 건강·보험, 교육·자녀, 은퇴·연금, 한인 커뮤니티 검증 가이드. 매거진 스타일의 깔끔한 디자인 + 이중언어 카테고리 네비게이션 + 빠른 로딩 + 구조화된 편집 워크플로우.',
+      services: ['에디토리얼 디자인', 'CMS 구조 설계', '이중언어 SEO', '성능 최적화'],
     },
   },
 ]

@@ -20,7 +20,7 @@ export default function CaseScroll({ locale = 'en' }: { locale?: string }) {
     },
     {
       n: '03',
-      title: isKo ? '결과 — 4주 만에 $3,114 실매출' : 'The result — $3,114 in four weeks.',
+      title: isKo ? '결과 — 3개월 안에 $10,000+ 매출' : 'The result — $10,000+ within three months.',
       sub: isKo ? '검색 노출 5배. 이제 주문이 알아서 들어옵니다.' : 'Five times the search visibility. Orders arrive on their own.',
     },
   ]

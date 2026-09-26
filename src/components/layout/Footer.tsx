@@ -73,9 +73,6 @@ export default function Footer({ locale = 'en' }: { locale?: string }) {
             <a href="mailto:info@zoelumos.com" className="block text-[22px] md:text-[26px] font-semibold tracking-[-0.03em] text-ink hover:text-link transition-colors">
               info@zoelumos.com
             </a>
-            <a href="tel:+12019621702" className="mt-2 block text-[17px] text-graphite hover:text-link tabular-nums transition-colors">
-              +1 (201) 962-1702
-            </a>
             <p className="mt-5 text-[13px] text-ash leading-[1.7] whitespace-pre-line">
               {isKo
                 ? '뉴저지 포트리 · 월 — 금 9–6 ET\n한국어 상담 상시'

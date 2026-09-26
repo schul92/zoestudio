@@ -30,8 +30,8 @@ const FEATURED: Post[] = [
   {
     slug: 'tj-flowers-shopify-revamp-case-study',
     title: {
-      en: 'Manhattan florist earned $3,114 + $277 from ChatGPT in 4 weeks',
-      ko: '맨해튼 플라워샵: 4주 만에 $3,114 + ChatGPT에서 $277',
+      en: 'Manhattan florist passed $10,000 in revenue within 3 months of the rebuild',
+      ko: '맨해튼 플라워샵: 리빌드 후 3개월 안에 매출 $10,000 돌파',
     },
     excerpt: {
       en: 'Real Shopify analytics from a real client. 68% from Google organic, $277 from ChatGPT, 38% returning customer rate. Bot traffic excluded.',

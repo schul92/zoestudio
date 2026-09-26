@@ -45,8 +45,8 @@ const copy = {
     privacy: 'Your information is used only to reply to your inquiry.',
     altContact: {
       label: 'Prefer to skip the form?',
-      email: 'zoestudiollc@gmail.com',
-      emailHref: 'mailto:zoestudiollc@gmail.com?subject=Project%20inquiry%20%E2%80%94%20Zoe%20Lumos',
+      email: 'info@zoelumos.com',
+      emailHref: 'mailto:info@zoelumos.com?subject=Project%20inquiry%20%E2%80%94%20Zoe%20Lumos',
       kakao: 'KakaoTalk · Korean OK',
       kakaoHref: 'https://pf.kakao.com/_xhxdxmlX/chat',
     },
@@ -92,8 +92,8 @@ const copy = {
     privacy: '입력하신 정보는 상담 회신 목적으로만 사용됩니다.',
     altContact: {
       label: '폼이 아니어도 좋습니다',
-      email: 'zoestudiollc@gmail.com',
-      emailHref: 'mailto:zoestudiollc@gmail.com?subject=%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EB%AC%B8%EC%9D%98%20%E2%80%94%20Zoe%20Lumos',
+      email: 'info@zoelumos.com',
+      emailHref: 'mailto:info@zoelumos.com?subject=%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EB%AC%B8%EC%9D%98%20%E2%80%94%20Zoe%20Lumos',
       kakao: '카카오톡 · 한국어 OK',
       kakaoHref: 'https://pf.kakao.com/_xhxdxmlX/chat',
     },
@@ -401,14 +401,6 @@ export default function ContactWrapper({
               >
                 <span aria-hidden>💬</span>
                 {t.altContact.kakao}
-              </a>
-              <a
-                href="tel:+12019621702"
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] tabular-nums transition-all duration-200 hover:scale-[1.03]"
-                style={{ background: 'rgba(255,255,255,0.7)', border: '1px solid rgba(0,0,0,0.09)', color: '#1D1D1F' }}
-              >
-                <span aria-hidden style={{ color: '#0071E3' }}>☎</span>
-                +1 (201) 962-1702
               </a>
             </div>
           </div>

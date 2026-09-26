@@ -12,10 +12,11 @@ const copy = {
     scroll: 'Scroll',
     sceneLabel: 'A laptop opens and lights up with client websites built by Zoe Lumos, then a phone slides in.',
     captions: [
-      { from: 0.3, to: 0.47, label: 'TJ Flowers · NYC', value: '$3,114', body: 'Revenue in the first 4 weeks after the Shopify rebuild.' },
-      { from: 0.47, to: 0.62, label: 'Miguk Story', value: '한국어 · English', body: 'Bilingual by default — one site, both of your customers.' },
-      { from: 0.62, to: 0.8, label: 'Every build', value: '<1.5s load', body: 'Fast on the phone your customers actually use.' },
-      { from: 0.8, to: 1.01, label: 'TJ Flowers · Search', value: '5× visibility', body: 'Search visibility in 6 weeks.' },
+      // Order and timing follow CAPTION_RANGES in components/home/lumosStory.ts.
+      { label: 'TJ Flowers · NYC', value: '$10,000+', body: 'Revenue within 3 months of the Shopify rebuild.' },
+      { label: 'EndoPia · Medical device', value: 'FDA 510(k)-cleared', body: 'U.S. launch site built for surgeons and investors.' },
+      { label: 'TJ Flowers · Search', value: '5× visibility', body: 'Search visibility in 6 weeks.' },
+      { label: 'Every build', value: '<1.5s load', body: 'Fast on the phone your customers actually use.' },
     ],
   },
   ko: {
@@ -29,22 +30,23 @@ const copy = {
     scroll: '스크롤',
     sceneLabel: '노트북이 열리며 Zoe Lumos가 만든 고객 웹사이트가 켜지고, 이어서 휴대폰이 들어옵니다.',
     captions: [
-      { from: 0.3, to: 0.47, label: 'TJ Flowers · NYC', value: '$3,114', body: 'Shopify 리뉴얼 후 4주 만에 실매출.' },
-      { from: 0.47, to: 0.62, label: '미국 스토리', value: '한국어 · English', body: '한·영 이중언어 기본 — 사이트 하나로 두 고객층 모두.' },
-      { from: 0.62, to: 0.8, label: '모든 빌드', value: '1.5초 미만 로딩', body: '고객이 실제로 쓰는 휴대폰에서도 빠르게.' },
-      { from: 0.8, to: 1.01, label: 'TJ Flowers · 검색', value: '검색 노출 5배', body: '6주 만에.' },
+      { label: 'TJ Flowers · NYC', value: '$10,000+', body: 'Shopify 리빌드 후 3개월 안에 매출.' },
+      { label: 'EndoPia · 의료기기', value: 'FDA 510(k) 인증', body: '외과의사와 투자자를 위한 미국 런칭 사이트.' },
+      { label: 'TJ Flowers · 검색', value: '검색 노출 5배', body: '6주 만에.' },
+      { label: '모든 빌드', value: '1.5초 미만 로딩', body: '고객이 실제로 쓰는 휴대폰에서도 빠르게.' },
     ],
   },
 } as const
 
 const CLIENT_LOGOS: { name: string; url: string }[] = [
+  { name: 'EndoPia', url: 'https://endopiaglobal.com/' },
   { name: 'TJ Flowers', url: 'https://tjflowersandevents.com/' },
-  { name: 'Salt & Polish', url: 'https://saltpolish.com/' },
-  { name: 'Miguk Story', url: 'https://migukstory.com/' },
-  { name: 'Kona Coffee', url: 'https://konacoffeedonut.com/' },
-  { name: 'CareK9', url: 'https://carek9.com/' },
-  { name: 'Mochinut', url: 'https://www.mochinutnynj.com/' },
   { name: "Vito's Pizza", url: 'https://www.vitospizzaandristorante.com/' },
+  { name: 'Salt & Polish', url: 'https://saltpolish.com/' },
+  { name: 'CareK9', url: 'https://carek9.com/' },
+  { name: 'Kona Coffee', url: 'https://konacoffeedonut.com/' },
+  { name: 'Mochinut', url: 'https://www.mochinutnynj.com/' },
+  { name: 'Miguk Story', url: 'https://migukstory.com/' },
 ]
 
 export default function HeroNew({ locale = 'en' }: { locale?: string }) {

@@ -6,6 +6,7 @@ import { seoConfig, structuredData } from '@/config/seo'
 import { ServiceProvider } from '@/context/ServiceContext'
 import GoogleAnalytics from '@/components/GoogleAnalytics'
 import AnalyticsWrapper from '@/components/AnalyticsWrapper'
+import AfterInteraction from '@/components/AfterInteraction'
 import { SITE_URL } from '@/lib/siteUrl'
 
 // Floating KakaoTalk chat — site-wide (blogs and service pages drive most
@@ -184,15 +185,19 @@ export default function RootLayout({
         {/* FAQPage schema moved to homepage only — Google requires FAQ content to be visible on the page */}
       </head>
       <body className={`kn ${GeistSans.variable} font-sans bg-ivory text-ink antialiased`} style={{ position: 'relative' }}>
-        {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
-          <GoogleAnalytics GA_MEASUREMENT_ID={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
-        )}
-        <AnalyticsWrapper />
+        <AfterInteraction>
+          {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
+            <GoogleAnalytics GA_MEASUREMENT_ID={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />
+          )}
+          <AnalyticsWrapper />
+        </AfterInteraction>
         <ServiceProvider>
           {children}
           <KakaoFloatingButton />
           <StickyMobileCTA locale={locale} />
-          <ChatWidget locale={locale} />
+          <AfterInteraction>
+            <ChatWidget locale={locale} />
+          </AfterInteraction>
         </ServiceProvider>
       </body>
     </html>

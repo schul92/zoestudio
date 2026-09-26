@@ -232,7 +232,7 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
         {/* DIRECT CHANNELS — email + KakaoTalk only */}
         <section className="section-pad hair-bottom">
           <div className="container-edge">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-hairline border border-hairline rounded-[18px] overflow-hidden">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-px bg-hairline border border-hairline rounded-[18px] overflow-hidden">
               <InView className="reveal bg-ivory">
                 <a
                   href={
@@ -265,18 +265,6 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
                   </h2>
                   <span className="inline-flex items-center gap-2 text-body text-graphite group-hover:text-gold transition-colors">
                     {t.kakaoNote}
-                    <span className="arrow">→</span>
-                  </span>
-                </a>
-              </InView>
-              <InView className="reveal bg-ivory">
-                <a href="tel:+12019621702" className="group block p-8 md:p-12 h-full transition-colors hover:bg-bone/60">
-                  <p className="overline text-ash mb-6">{t.channelsLabel} · 03</p>
-                  <h2 className="font-display text-2xl md:text-3xl tracking-luxury text-ink mb-3">
-                    {isKo ? '전화' : 'Phone'}
-                  </h2>
-                  <span className="inline-flex items-center gap-2 text-body text-graphite group-hover:text-gold transition-colors tabular-nums">
-                    +1 (201) 962-1702
                     <span className="arrow">→</span>
                   </span>
                 </a>
