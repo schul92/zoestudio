@@ -1,5 +1,5 @@
 import type Stripe from 'stripe'
-import { stripe } from '@/lib/billing/stripe'
+import { stripe, fmtUSD } from '@/lib/billing/stripe'
 import { resolvePaySegment } from '@/lib/billing/resolve'
 import { spentPriceIds } from '@/lib/billing/spent'
 import { SITE_URL } from '@/lib/siteUrl'
@@ -87,6 +87,10 @@ export async function POST(req: Request) {
   // billing_cycle_anchor can't be used here.)
   const anchor = Number(price.metadata.zl_anchor ?? 0)
   const anchored = price.recurring && anchor > Math.floor(Date.now() / 1000)
+  const amount = fmtUSD(price.unit_amount ?? 0)
+  const anchorDate = new Date(anchor * 1000)
+  const anchorEn = anchorDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'America/Chicago' })
+  const anchorDay = anchorDate.toLocaleDateString('en-US', { day: 'numeric', timeZone: 'America/Chicago' })
 
   const session = price.recurring
     ? await s.checkout.sessions.create({
@@ -98,12 +102,19 @@ export async function POST(req: Request) {
                 {
                   price_data: {
                     currency: price.currency,
-                    product: typeof price.product === 'string' ? price.product : price.product.id,
+                    product_data: { name: `First month (until ${anchorEn})` },
                     unit_amount: price.unit_amount ?? 0,
                   },
                   quantity: 1,
                 },
               ],
+              // Stripe labels a trial checkout "Try … / Pay and start trial";
+              // spell out what is actually charged so it doesn't read as free.
+              custom_text: {
+                submit: {
+                  message: `오늘 첫 달 ${amount} 결제, 이후 매월 ${anchorDay}일 ${amount} 자동 결제 (첫 자동 결제 ${anchorEn}). · Today: ${amount} for the first month. Then ${amount} every month starting ${anchorEn}.`,
+                },
+              },
             }
           : {}),
         mode: 'subscription',
