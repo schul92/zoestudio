@@ -13521,4 +13521,103 @@ export const blogContent: BlogPost[] = [
       ],
     },
   },
+  // ─────────────────────────────────────────────────────────────────
+  // 2026-09-26 — B2B vendor-onboarding trust angle (Chicago-area Korean
+  // trading/wholesale/import companies). Distinct from the LA search-lead
+  // post (b2b-wholesale-quote-leads-seo-los-angeles-korean-2026) and the
+  // Georgia manufacturing RFQ post — this one targets big-retailer new
+  // vendor vetting, @domain email, and Chicago's trade-show/rail-freight angle.
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'b2b-vendor-onboarding-website-chicago-korean-trading-2026',
+    date: '2026-09-26',
+    updatedDate: '2026-09-26',
+    readTime: 8,
+    category: { en: 'Strategy', ko: '전략' },
+    title: {
+      en: 'New Vendor Vetting: What a Big Retailer Checks Before Adding a Supplier (Chicago Korean-American Trading Companies, 2026)',
+      ko: '대형 유통업체 신규 벤더 심사, 이것부터 봅니다 — 시카고 한인 무역·도매 기업 가이드 (2026)',
+    },
+    metaDescription: {
+      en: 'A Chicago-area Korean-American trading, import, or wholesale company gets a warm introduction to a big retail buyer — and the deal quietly stalls after the buyer Googles the company. Here is what a new-vendor vetting checklist actually looks for, and why a real website and @domain email matter more than the pitch itself.',
+      ko: '시카고 지역 한인 무역·수입·도매 기업이 대형 유통업체 바이어를 소개받았는데, 구매팀이 회사를 검색해 본 뒤로 연락이 조용히 끊깁니다. 신규 벤더 심사 체크리스트가 실제로 무엇을 확인하는지, 그리고 진짜 회사 웹사이트와 @도메인 이메일이 왜 프레젠테이션 자체보다 더 중요한지 정리했습니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'We already sell to our existing buyers fine over email and fax — why would we suddenly need a website?',
+          ko: '이미 기존 바이어들과 이메일·팩스로 문제없이 거래하고 있는데, 왜 갑자기 웹사이트가 필요한가요?',
+        },
+        a: {
+          en: "You do not need one to keep serving buyers who already know and trust you — that relationship does not depend on a website. The gap shows up specifically when you try to add a new account, especially a larger retailer or distributor with a formal procurement process. Their vendor-onboarding team is instructed to verify a supplier exists as a real, ongoing business before a purchase order is ever cut, and 'search the company name and see what comes up' is one of the first, cheapest checks they run. No website, or only a Facebook page and a personal Gmail address, does not fail you outright — but it adds friction and doubt at exactly the moment a buyer is deciding whether you are worth the extra internal paperwork to onboard. That friction is invisible to you; it just shows up as a promising conversation that never turns into a purchase order.",
+          ko: '이미 사장님을 알고 신뢰하는 기존 바이어를 계속 상대하는 데는 웹사이트가 필요 없습니다 — 그 관계는 웹사이트에 의존하지 않으니까요. 문제는 특히 더 큰 유통업체나 정식 구매 프로세스를 갖춘 배급사처럼 새 거래처를 뚫으려 할 때 나타납니다. 그런 곳의 벤더 온보딩 담당자는 발주서를 끊기 전에 공급업체가 실제로 존재하고 계속 영업 중인 회사인지 확인하도록 되어 있고, "회사 이름을 검색해서 뭐가 나오는지 본다"는 그중 가장 먼저, 가장 저렴하게 할 수 있는 확인입니다. 웹사이트가 없거나 페이스북 페이지와 개인 Gmail 주소뿐이라고 해서 바로 탈락하는 건 아니지만, 바이어가 "내부 서류를 더 들여서까지 이 업체를 온보딩할 가치가 있나"를 저울질하는 바로 그 순간에 마찰과 의심을 더합니다. 그 마찰은 사장님 눈에는 안 보이고, 그냥 유망했던 대화가 발주서로 이어지지 않은 채 조용히 사라지는 것으로만 나타납니다.',
+        },
+      },
+      {
+        q: {
+          en: 'Does using a free @gmail.com or @naver.com address for business really cause problems, or is it just an appearance issue?',
+          ko: '업무용으로 @gmail.com이나 @naver.com 같은 무료 이메일을 쓰는 게 실제로 문제가 되나요, 아니면 그냥 보이는 인상 문제인가요?',
+        },
+        a: {
+          en: "It is more than appearance — it is a real operational flag for larger buyers. Corporate procurement and accounts-payable teams have been trained, largely because of a wave of business-email-compromise fraud, to treat invoices, wire instructions, or banking-detail changes coming from a free personal email domain as higher risk than the same message from a company's own domain, and some AP departments will not process a payment change request from a non-corporate address without a phone verification step. On top of that, mail sent from a free consumer domain is statistically more likely to be filtered as spam by corporate mail systems than mail from an established business domain, so your quote or invoice may never even reach the buyer's inbox. A domain email tied to your own website costs a few dollars a month and removes both problems at once.",
+          ko: '단순한 인상 문제가 아니라 큰 바이어 입장에서는 실질적인 위험 신호입니다. 기업의 구매·회계(AP) 부서는 비즈니스 이메일 사기(BEC) 피해가 잇따르면서, 무료 개인 이메일 도메인에서 오는 인보이스나 계좌 변경 요청을 회사 도메인에서 온 같은 메시지보다 더 위험하다고 취급하도록 훈련받았고, 일부 AP 부서는 기업 도메인이 아닌 주소에서 온 결제 정보 변경 요청은 전화 확인 없이는 아예 처리하지 않습니다. 게다가 무료 개인 도메인에서 보낸 메일은 통계적으로 기업 메일 시스템의 스팸 필터에 걸릴 확률이 자체 도메인보다 높아서, 견적서나 인보이스가 바이어의 받은편지함에 도착조차 못 할 수도 있습니다. 자사 웹사이트에 연결된 도메인 이메일은 월 몇 달러면 되고, 두 문제를 한 번에 없애줍니다.',
+        },
+      },
+      {
+        q: {
+          en: "We import and broker deals from a home office with no showroom in Chicago — do we still need a Google Business Profile?",
+          ko: '시카고에 쇼룸이나 창고 없이 홈오피스에서 수입·중개만 하는데도 구글 비즈니스 프로필이 필요한가요?',
+        },
+        a: {
+          en: "Yes, and it does not require a public storefront to set up correctly. Google supports a 'service area business' profile type built exactly for companies like this — you list the regions you serve instead of a walk-in address, and your home or office address stays hidden from public view while the listing itself still gets verified. The value for a trading or brokering company is the same verification signal a showroom address gives a retail buyer: a claimed, verified, actively-updated profile with your real phone number, website link, and category tells a skeptical procurement contact that a real, findable business is on the other end of the introduction — which matters most in the exact moment they are deciding whether to reply to a cold email or a trade-show follow-up.",
+          ko: '네, 필요하고, 공개 매장이 없어도 제대로 설정할 수 있습니다. 구글은 정확히 이런 회사를 위한 "서비스 지역 비즈니스" 프로필 유형을 지원합니다 — 방문 가능한 주소 대신 서비스하는 지역을 등록하고, 자택이나 사무실 주소는 공개되지 않은 채로 프로필 자체는 인증받을 수 있습니다. 무역·중개 회사에게 이 가치는 소매 바이어에게 쇼룸 주소가 주는 것과 같은 인증 신호입니다 — 등록되고 인증되고 꾸준히 업데이트되는 프로필에 실제 전화번호, 웹사이트 링크, 업종 카테고리가 있으면, 의심 많은 구매 담당자에게 소개 저편에 실제로 찾을 수 있는 진짜 회사가 있다는 걸 알려줍니다. 이건 담당자가 콜드 이메일이나 전시회 후속 연락에 답할지 말지를 결정하는 바로 그 순간에 가장 중요하게 작용합니다.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "A Korean-American trading company in the Niles-Skokie-Glenview corridor gets what feels like a breakthrough: a warm introduction to a category buyer at a regional grocery chain or a national distributor, made by a mutual contact or picked up at a McCormick Place trade show. The call goes well. The buyer says they'll pass it to their vendor-onboarding team. Then — silence. Not a rejection, just a slow fade that never turns into a purchase order. What usually happened in between is smaller and more fixable than owners assume: someone on the buyer's side searched the company name, found a Facebook page last updated two years ago and a quote sent from a personal Gmail address, and quietly moved the file to the bottom of the pile." },
+        { type: 'h2', content: 'Vendor vetting is a real internal process, and it runs before anyone tells you about it' },
+        { type: 'p', content: "Regional and national retailers, distributors, and larger manufacturers do not add a new supplier off a single conversation, no matter how strong the product or the introduction. A vendor-onboarding or supplier-compliance team runs a checklist before the account is ever opened in their system — verifying the business is real, stable, and low-risk to pay. Some of that checklist is paperwork you already have: a W-9, a certificate of insurance, a business license. But a meaningful part of it is simply confirming the company exists as an ongoing, findable business — and the cheapest, fastest way anyone on that team checks that is a search engine, not a phone call to you." },
+        { type: 'h2', content: 'What that search actually needs to find' },
+        { type: 'ul', content: 'The minimum a vendor-vetting contact expects to find in under a minute of searching:', items: [
+          'A company website whose name matches the legal name on your invoice, W-9, and business license — a mismatch reads as a red flag even when it is entirely innocent.',
+          'An email address on your own domain, not @gmail.com, @naver.com, or @hanmail.net — see below for why this matters more than it looks like it should.',
+          'A real, verifiable address or service area, ideally matching a claimed Google Business Profile.',
+          'Product category pages with enough detail — materials, sizing, compliance certifications like UL or Prop 65 where relevant — to answer a first technical question without a back-and-forth email.',
+          'Basic company facts: how long you have operated, what you specialize in, and a named contact with a title, not just a "Contact Us" box.',
+        ] },
+        { type: 'h2', content: 'Why the @domain email matters more than owners expect' },
+        { type: 'p', content: "This is the detail most owners underrate. Corporate accounts-payable teams have tightened how they treat email specifically because business-email-compromise fraud — fake invoices or banking-change requests sent from look-alike addresses — has become common enough that many companies now flag or manually verify any payment-related email arriving from a free consumer domain. Separately, mail from a personal Gmail or Naver address is statistically more likely to be caught by a corporate spam filter than mail from an established company domain, which means your quote can fail silently before a human ever sees it. A domain email — costing a few dollars a month once you own a domain — removes both problems and is one of the fastest credibility upgrades available to a trading company." },
+        { type: 'tip', content: "Run the test a buyer's procurement contact actually runs: open an incognito browser window and search your company's exact legal name. If the first results are nothing, an inactive social page, or nothing that matches your invoice name, that is precisely what a vendor-vetting contact sees before deciding whether you are worth the extra internal paperwork." },
+        { type: 'h2', content: "What Chicago adds — a trade-show and rail-freight hub where being found matters twice" },
+        { type: 'p', content: "Chicago's position as one of the largest rail-freight hubs in North America, combined with major trade shows held at McCormick Place throughout the year, means a large share of new B2B relationships for Korean-American importers and wholesalers in the area start as a brief in-person conversation — at a booth, in an aisle, over a business card exchanged in thirty seconds. That format works against you if there is nothing for the buyer to find afterward: they meet dozens of suppliers in a single day, and the ones who get a follow-up email answered are the ones a quick search confirms are a real, professional company. A trade-show conversation and a search-friendly website are not substitutes for each other — the show opens the door, and the website is what keeps it open after the buyer walks back to their desk and starts checking references." },
+        { type: 'h2', content: 'The minimum that actually moves a vendor from "maybe" to "yes"' },
+        { type: 'p', content: "None of this requires an elaborate site. A company website with an About page stating your years in business, location, and specialty; product category pages with real specs and photos rather than manufacturer stock images; a domain email; and a claimed, accurate Google Business Profile — even a service-area one with no public address — covers the checklist most vendor-onboarding teams actually run. The goal is not to impress a buyer with design; it is to remove every reason a cautious procurement contact has to hesitate before opening a new vendor file." },
+        { type: 'cta', content: "ZOE LUMOS builds bilingual B2B and trading-company websites for Korean-American importers, wholesalers, and manufacturers across Chicago, LA, Atlanta, and nationwide — company pages, product category pages, and domain email set up so a new buyer's vendor-vetting search finds exactly what it needs to say yes. Free consultation in Korean or English: email info@zoelumos.com or message us on KakaoTalk (http://pf.kakao.com/_xhxdxmlX/chat)." },
+      ],
+      ko: [
+        { type: 'intro', content: '나일스-스코키-글렌뷰 벨트의 한인 무역 회사가 돌파구처럼 느껴지는 기회를 잡습니다. 지인 소개나 맥코믹 플레이스 전시회에서 만난 지역 마트 체인 또는 전국 배급사의 카테고리 바이어를 소개받은 것입니다. 통화는 잘 풀립니다. 바이어는 벤더 온보딩 팀에 넘기겠다고 말합니다. 그리고 — 조용해집니다. 거절이 아니라, 발주서로 이어지지 않은 채 서서히 사라지는 것입니다. 그 사이에 보통 벌어지는 일은 사장님이 생각하는 것보다 작고 고치기 쉽습니다 — 바이어 쪽 누군가가 회사 이름을 검색해 봤고, 2년 전에 마지막으로 업데이트된 페이스북 페이지와 개인 Gmail 주소로 온 견적서를 발견한 뒤 그 파일을 조용히 서류 더미 맨 아래로 옮긴 것입니다.' },
+        { type: 'h2', content: '벤더 심사는 실재하는 내부 프로세스이고, 사장님에게 알리기 전에 먼저 돌아갑니다' },
+        { type: 'p', content: '지역·전국 유통업체, 배급사, 규모 있는 제조사는 아무리 제품이 좋고 소개가 강력해도 대화 한 번으로 새 공급업체를 등록하지 않습니다. 벤더 온보딩 또는 공급업체 컴플라이언스 팀이 계정을 시스템에 열기 전에 체크리스트를 먼저 돌립니다 — 회사가 실재하고 안정적이며 결제 리스크가 낮은지 확인하는 것입니다. 이 체크리스트의 일부는 이미 갖고 계신 서류입니다 — W-9, 배상책임보험 증명서, 사업자등록증. 하지만 상당 부분은 단순히 회사가 지속적으로 영업 중이고 찾을 수 있는 회사인지 확인하는 것이고, 그 팀의 누군가가 이를 확인하는 가장 저렴하고 빠른 방법은 사장님께 전화하는 게 아니라 검색 엔진입니다.' },
+        { type: 'h2', content: '그 검색이 실제로 찾아야 하는 것' },
+        { type: 'ul', content: '벤더 심사 담당자가 1분 안의 검색으로 찾을 것으로 기대하는 최소한:', items: [
+          '인보이스, W-9, 사업자등록증에 적힌 법인명과 일치하는 회사 웹사이트 — 불일치는 아무리 사소한 이유라도 위험 신호로 읽힙니다.',
+          '@gmail.com, @naver.com, @hanmail.net이 아닌 자사 도메인 이메일 — 이게 왜 보이는 것보다 더 중요한지는 아래에 있습니다.',
+          '실제로 확인 가능한 주소 또는 서비스 지역 — 이상적으로는 인증된 구글 비즈니스 프로필과 일치.',
+          '이메일을 주고받지 않고도 첫 기술 질문에 답할 수 있을 만큼 상세한 제품 카테고리 페이지 — 소재, 사이즈, 해당 시 UL·Prop 65 같은 인증.',
+          '기본적인 회사 정보 — 운영 기간, 전문 분야, 그리고 "문의하기" 박스가 아니라 직함이 있는 실제 담당자 이름.',
+        ] },
+        { type: 'h2', content: '@도메인 이메일이 사장님 생각보다 더 크게 작용하는 이유' },
+        { type: 'p', content: '이게 사장님들이 가장 과소평가하는 디테일입니다. 기업 회계(AP) 부서는 이메일을 다루는 방식을 특별히 엄격하게 조여왔는데, 가짜 인보이스나 계좌 변경 요청을 비슷하게 생긴 주소로 보내는 비즈니스 이메일 사기(BEC)가 흔해지면서, 이제 많은 회사가 무료 개인 도메인에서 온 결제 관련 이메일을 자동으로 표시하거나 수동으로 확인합니다. 별개로, 개인 Gmail·네이버 주소에서 온 메일은 자체 회사 도메인에서 온 메일보다 기업 스팸 필터에 걸릴 확률이 통계적으로 더 높습니다 — 즉 사람이 보기도 전에 견적서가 조용히 걸러질 수 있다는 뜻입니다. 도메인을 이미 갖고 계시다면 월 몇 달러면 되는 도메인 이메일 하나가 이 두 문제를 동시에 없애주고, 무역 회사가 가장 빠르게 신뢰도를 올릴 수 있는 방법 중 하나입니다.' },
+        { type: 'tip', content: '바이어 쪽 구매 담당자가 실제로 하는 테스트를 그대로 해보세요. 시크릿 브라우저 창을 열고 회사의 정확한 법인명을 검색하세요. 첫 결과가 아무것도 없거나, 방치된 소셜 페이지거나, 인보이스 이름과 일치하지 않는다면, 그것이 바로 벤더 심사 담당자가 "내부 서류를 더 들여서까지 이 업체를 온보딩할 가치가 있나"를 결정하기 전에 보는 화면입니다.' },
+        { type: 'h2', content: '시카고라는 도시가 더하는 것 — 두 번 발견되어야 하는 전시회·철도 화물 허브' },
+        { type: 'p', content: '시카고가 북미 최대 철도 화물 허브 중 하나라는 위치와, 연중 맥코믹 플레이스에서 열리는 대형 전시회들이 겹치면서, 이 지역 한인 수입·도매업체의 새 B2B 관계 상당수는 부스에서, 통로에서, 30초 만에 명함을 주고받는 짧은 대면 대화로 시작됩니다. 이 방식은 그 이후에 바이어가 찾을 게 아무것도 없으면 오히려 불리하게 작용합니다 — 바이어는 하루에도 수십 개 업체를 만나고, 후속 이메일에 답을 받는 쪽은 간단한 검색만으로 진짜 전문 회사임이 확인되는 곳입니다. 전시회 대화와 검색 친화적인 웹사이트는 서로 대체재가 아닙니다 — 전시회가 문을 열어주고, 웹사이트는 바이어가 자리로 돌아가 레퍼런스를 확인하기 시작한 뒤에도 그 문을 열어 둔 채로 유지해 주는 것입니다.' },
+        { type: 'h2', content: '벤더를 "고민 중"에서 "예"로 바꾸는 최소한의 구성' },
+        { type: 'p', content: '거창한 사이트가 필요한 게 아닙니다. 운영 기간·위치·전문 분야를 밝힌 회사소개 페이지, 제조사 스톡 이미지가 아니라 실제 사양과 사진이 담긴 제품 카테고리 페이지, 도메인 이메일, 그리고 공개 주소가 없는 서비스 지역형이라도 인증되고 정확한 구글 비즈니스 프로필 — 이 정도면 대부분의 벤더 온보딩 팀이 실제로 돌리는 체크리스트를 충족합니다. 목표는 디자인으로 바이어를 감탄시키는 게 아니라, 신중한 구매 담당자가 새 벤더 파일을 열기 전에 망설일 이유를 하나씩 없애는 것입니다.' },
+        { type: 'cta', content: 'ZOE LUMOS는 시카고, LA, 애틀랜타를 비롯한 미국 전역의 한인 수입·도매·제조 기업을 위한 이중언어 B2B·무역 회사 웹사이트를 만듭니다 — 회사소개 페이지, 제품 카테고리 페이지, 그리고 새 바이어의 벤더 심사 검색이 "예"라고 답할 만한 것을 정확히 찾도록 세팅된 도메인 이메일까지. 한국어/영어 무료 상담: info@zoelumos.com 이메일 또는 카카오톡(http://pf.kakao.com/_xhxdxmlX/chat)으로 편하게 문의하세요.' },
+      ],
+    },
+  },
 ]
