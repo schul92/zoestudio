@@ -13521,4 +13521,107 @@ export const blogContent: BlogPost[] = [
       ],
     },
   },
+  // ─────────────────────────────────────────────────────────────────
+  // 2026-09-25 — B2B online catalog gap for Korean-American trading &
+  // distribution companies (Chicago metro: Albany Park / Niles / Skokie /
+  // Glenview). Fills the least-covered rotation topic (B2B, only 3 prior
+  // posts) with a new angle — searchable catalog + dealer-gated pricing —
+  // distinct from the existing credibility-site and RFQ-form posts.
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'b2b-trading-distributor-online-catalog-chicago-2026',
+    date: '2026-09-25',
+    updatedDate: '2026-09-25',
+    readTime: 8,
+    category: { en: 'Strategy', ko: '전략' },
+    title: {
+      en: "Your Buyers Can't Browse Your Catalog: Why Chicago's Korean Trading & Distribution Companies Need One Online (2026)",
+      ko: '바이어가 카탈로그를 못 찾습니다 — 시카고 한인 무역·유통업체를 위한 온라인 카탈로그 가이드 (2026)',
+    },
+    metaDescription: {
+      en: 'Korean-American trading and distribution companies around Chicago still send price lists as PDF email attachments. Here is why a searchable online catalog — not a shopping cart — turns a Google search into a quote request, and how to use Chicago\'s logistics position as a selling point.',
+      ko: '시카고 한인 무역·유통업체 대부분이 아직도 가격표를 PDF 이메일 첨부로 보냅니다. 장바구니가 아니라 검색 가능한 온라인 카탈로그가 왜 구글 검색을 견적 요청으로 바꾸는지, 그리고 시카고의 물류 입지를 어떻게 판매 포인트로 쓸지 알려드립니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'Do we need a full e-commerce cart, or is a catalog page enough for a wholesale or trading company?',
+          ko: '도매·무역회사인데 이커머스 장바구니까지 필요할까요, 아니면 카탈로그 페이지만으로 충분할까요?',
+        },
+        a: {
+          en: "A catalog page is enough, and for most wholesale or trading companies a full cart is actually the wrong tool, because real B2B buyers expect to negotiate price, minimum order quantity, and shipping terms with a person rather than check out instantly like a consumer. What the site needs is a browsable, searchable list of your SKUs or product lines — each with its own page, spec sheet, and a 'Request a Quote' button — not a checkout flow. That gives Google something to index and gives the buyer something to browse before they ever email you, without forcing you to run consumer-style checkout, payment processing, and inventory sync you do not need.",
+          ko: "카탈로그 페이지만으로 충분하고, 대부분의 도매·무역회사에게는 오히려 완전한 장바구니가 맞지 않는 도구입니다. 진짜 B2B 바이어는 소비자처럼 즉시 결제하기보다 단가, 최소 주문 수량, 배송 조건을 사람과 직접 협상하고 싶어하기 때문입니다. 필요한 건 SKU나 제품 라인을 브라우징하고 검색할 수 있는 목록입니다 — 각 제품마다 개별 페이지, 스펙 시트, 그리고 '견적 요청' 버튼이 있으면 됩니다. 체크아웃 플로우는 필요 없습니다. 이렇게 하면 구글이 색인할 콘텐츠가 생기고, 바이어는 이메일을 보내기 전에 먼저 둘러볼 수 있으면서도, 굳이 필요 없는 소비자용 결제 처리와 재고 연동을 구축할 필요가 없습니다.",
+        },
+      },
+      {
+        q: {
+          en: 'Should we hide our pricing behind a dealer login, or show it publicly?',
+          ko: '가격을 딜러 로그인 뒤에 숨겨야 할까요, 공개해야 할까요?',
+        },
+        a: {
+          en: "Gating pricing behind a dealer or approved-buyer login is standard and reasonable for distribution companies, because open pricing can undercut existing dealer relationships and invite price shopping by competitors, not just buyers. The mistake is gating everything, including whether the product exists at all — a buyer who cannot even confirm you carry an item will not bother creating an account to find out. The working pattern is: public product pages with specs, categories, and MOQ, a visible 'Login for Dealer Pricing' or 'Request a Quote' button, and the actual price list behind that login or that request.",
+          ko: "유통업체가 가격을 딜러·승인된 바이어 로그인 뒤에 숨기는 건 표준적이고 합리적인 관행입니다. 가격을 공개하면 기존 딜러 관계를 깎아먹을 수 있고, 바이어뿐 아니라 경쟁사에게도 가격 비교 대상이 되기 때문입니다. 문제는 제품이 존재하는지 여부까지 전부 숨기는 것입니다 — 그 물건을 취급하는지조차 확인할 수 없는 바이어는 굳이 계정을 만들어서까지 알아보려 하지 않습니다. 실제로 작동하는 방식은 이렇습니다. 스펙·카테고리·최소 주문 수량이 담긴 공개 제품 페이지를 두고, '딜러 로그인' 또는 '견적 요청' 버튼을 눈에 띄게 배치한 뒤, 실제 가격표는 그 로그인이나 요청 뒤에 두는 것입니다.",
+        },
+      },
+      {
+        q: {
+          en: "Does Chicago's location actually matter for online marketing, or is that just for local SEO?",
+          ko: '시카고라는 위치가 온라인 마케팅에서 실제로 의미가 있나요, 아니면 그냥 로컬 SEO용인가요?',
+        },
+        a: {
+          en: "It matters beyond local SEO, because for a distribution or trading company, Chicago's logistics position is a genuine competitive claim, not just a location tag. The metro area sits at the crossing point of major interstates, is served by O'Hare's cargo operations, and hosts some of the largest rail intermodal yards in the country — which means a warehouse there can credibly promise fast, low-cost shipping to most of the Midwest and reasonable transit nationwide. Buyers comparing suppliers weigh delivery lead time heavily, so a capabilities page that states this plainly — not just a Chicago address in small print — turns a geographic fact into a reason to choose you over a supplier based somewhere less central.",
+          ko: '로컬 SEO를 넘어서 실제로 의미가 있습니다. 유통·무역회사에게 시카고의 물류 입지는 단순한 위치 태그가 아니라 진짜 경쟁 우위 주장이기 때문입니다. 시카고 광역권은 주요 주간고속도로가 교차하는 지점에 있고, 오헤어 공항의 화물 운영이 있으며, 미국에서 손꼽히는 규모의 철도 복합환적 야드가 자리 잡고 있습니다. 즉 이곳 창고는 중서부 대부분 지역에 빠르고 저렴한 배송을, 전국적으로도 합리적인 운송 시간을 신빙성 있게 약속할 수 있다는 뜻입니다. 바이어들은 공급사를 비교할 때 납기를 크게 따지기 때문에, 이걸 작은 글씨의 시카고 주소가 아니라 역량 페이지에 명확히 적어두는 것이 지리적 사실을 "이 회사를 선택할 이유"로 바꿔 줍니다.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "Ask a Korean-American trading or distribution company owner around Chicago — whether they are on Lawrence Avenue in Albany Park or in the office parks of Niles, Skokie, Glenview, or Lincolnwood — how buyers find their product line, and the honest answer is usually: they call, or someone emails and we send a PDF price list. That has worked for years. But a growing share of buyers today never make that first call at all. They Google the product category or model number, land on a 'Products' page that is a paragraph of prose with no actual list, and quietly move to the next supplier whose site let them browse. You never see that buyer. There is no bounced email, no rejection notice — just a quote request that never arrived." },
+        { type: 'h2', content: 'The buyer who never emails you' },
+        { type: 'p', content: "Picture a procurement buyer who needs a specific part or product line and has never heard of your company. Their process is almost always the same now: search the product, open the first few results, and see who has what they need clearly listed. If your site shows only a hero image and a sentence like 'we carry a wide range of quality products,' there is nothing for them to act on — no model number to reference, no spec sheet to check against their requirement, no obvious next step. They do not write you an angry email about it. They simply open the next tab. Because this failure is invisible, it is easy to read a quiet quarter as 'the market is slow' when the real story is that your catalog was never actually online for anyone to find." },
+        { type: 'h2', content: 'What an online catalog means when you are not selling online' },
+        { type: 'p', content: "This is not a call to build a consumer storefront. A trading or distribution company selling to other businesses almost never needs a shopping cart, and forcing one on a wholesale relationship usually creates more friction than it removes. What matters is structure: a browsable, indexed set of pages — one per SKU or product line — that Google can find and a buyer can scan in under a minute. The difference between a catalog and a brochure is simple. A brochure describes your business. A catalog lets a stranger answer, on their own, the one question they actually have: does this company carry the exact thing I need?" },
+        { type: 'ul', content: 'What turns a product list into an actual online catalog:', items: [
+          'Every SKU or product line on its own page — model or part number, description, and photos — so each one is individually searchable and indexable, not buried inside one long PDF.',
+          'Category or filter navigation so a buyer can browse by product type instead of scrolling a static list looking for one item.',
+          "A 'Request a Quote' button on each product or category, not one generic contact form for the entire catalog.",
+          'MOQ and lead time noted wherever you already know it, so buyers can self-qualify before they ever reach out to you.',
+          'A dealer or approved-buyer login for tiered or wholesale pricing, if pricing needs to stay private between you and existing accounts.',
+          'Downloadable spec sheets and certifications (customs bond, import license, FDA or USDA registration where relevant) that a procurement team screens before they ever request a quote.',
+        ] },
+        { type: 'h2', content: 'Why one PDF price list is costing you searches' },
+        { type: 'p', content: "Many trading companies already have a perfectly good catalog — it just lives as a PDF attachment, sent only to people who already know to ask for it. Google cannot index a file nobody sends it, and a buyer who has never heard of your company has no way to request it in the first place. Worse, a single PDF gives you exactly one URL to rank for, no matter how many products are inside it — so when someone searches the literal model number of the specific item you carry, there is nothing of yours for that search to find. Each product needs its own page and its own URL for this to work at all." },
+        { type: 'tip', content: "The single highest-leverage change on this whole list is giving every product its own indexable page. Once that is done, a buyer who Googles the exact part number or product name they need can land directly on your page — not a competitor's — before they have even thought to search for a supplier by name." },
+        { type: 'h2', content: "Chicago's distribution advantage — say it, don't bury it" },
+        { type: 'p', content: "Chicago's Korean-American trading and distribution community, clustered around Albany Park's Lawrence Avenue corridor and the northern suburbs of Niles, Skokie, Glenview, and Lincolnwood, sits inside one of the busiest logistics hubs in the country almost by accident of geography. Major interstates cross here, O'Hare runs significant air cargo operations, and the metro hosts some of the largest rail intermodal yards in the nation. For a distributor, that is not trivia — it is a real, defensible claim: fast, low-cost shipping to most of the Midwest, and reasonable transit nationwide. Buyers comparing suppliers weigh delivery lead time heavily, often as much as price. A capabilities or shipping page that states this plainly — 'ships to 48 states, most Midwest orders arrive in 1–2 business days from our Chicago-area warehouse' — turns a fact about your address into a reason to choose you over a supplier based somewhere less central. Most trading companies here never say it out loud on their own website." },
+        { type: 'h2', content: 'Why now, not after the next trade show' },
+        { type: 'p', content: "Owners tend to treat the website as something to fix 'when things slow down,' while trade shows and referrals keep the pipeline full. But the searches that never turn into a quote request are happening right now, quietly, alongside the relationships that already work — and they matter most exactly while you are trying to grow past the buyers who already know you. Building a real catalog is not a redesign project; it is mostly structure and content on top of a site you likely already have. Once it exists, it keeps working with almost no ongoing effort — every product page is one more door a stranger can walk through without ever needing your phone number first." },
+        { type: 'cta', content: "ZOE LUMOS builds bilingual, search-indexable product catalogs for Korean-American trading, distribution, and wholesale companies across the US — structured SKU pages, dealer-gated pricing, quote-request routing, and everything registered in your name. Free consultation in Korean or English: email info@zoelumos.com or reach us on KakaoTalk (http://pf.kakao.com/_xhxdxmlX/chat)." },
+      ],
+      ko: [
+        { type: 'intro', content: "시카고에서 무역·유통업을 하시는 한인 사장님께 — 앨버니 파크 로렌스 애비뉴에 계시든, 나일스·스코키·글렌뷰·링컨우드의 오피스 단지에 계시든 — 바이어들이 제품 라인을 어떻게 찾는지 물어보면, 솔직한 대답은 대개 이렇습니다. '전화가 오거나, 누가 이메일을 보내면 저희가 PDF 가격표를 보내드려요.' 몇 년간 그렇게 잘 돌아갔습니다. 하지만 요즘은 점점 더 많은 바이어가 그 첫 전화조차 걸지 않습니다. 제품 카테고리나 모델 번호를 구글에 검색해서 '제품' 페이지를 열어봤는데, 실제 목록 없이 문단 하나짜리 설명만 있으면, 조용히 목록을 보여주는 다음 업체로 넘어갑니다. 사장님은 그 바이어를 절대 보지 못합니다. 반송된 이메일도, 거절 통보도 없습니다 — 그냥 한 번도 도착하지 않은 견적 요청이 있을 뿐입니다." },
+        { type: 'h2', content: '이메일을 아예 보내지 않는 바이어' },
+        { type: 'p', content: "특정 부품이나 제품 라인이 필요한데 사장님 회사를 들어본 적이 없는 구매 담당자를 떠올려 보세요. 요즘 그들의 과정은 거의 항상 같습니다. 제품을 검색하고, 상위 몇 개 결과를 열어보고, 필요한 게 명확히 나열된 곳을 찾는 것이죠. 사장님 사이트에 대표 이미지 하나와 '다양한 고품질 제품을 취급합니다' 같은 문장 하나뿐이라면, 그들이 행동할 만한 게 아무것도 없습니다 — 참조할 모델 번호도, 요구 사항과 대조할 스펙 시트도, 명확한 다음 단계도 없습니다. 화난 이메일을 보내지도 않습니다. 그냥 다음 탭을 엽니다. 이 실패는 눈에 보이지 않기 때문에, 조용한 분기를 '요즘 시장이 안 좋네'로 읽기 쉽습니다 — 실제로는 카탈로그가 애초에 누군가 찾을 수 있는 형태로 온라인에 올라간 적이 없었을 뿐인데도요." },
+        { type: 'h2', content: '온라인 판매를 안 해도 온라인 카탈로그가 뜻하는 것' },
+        { type: 'p', content: "소비자용 쇼핑몰을 만들라는 이야기가 아닙니다. 다른 기업에 판매하는 무역·유통업체는 장바구니가 거의 필요 없고, 도매 거래에 그걸 억지로 끼워 넣으면 오히려 마찰만 늘어나는 경우가 많습니다. 중요한 건 구조입니다 — SKU나 제품 라인별로 하나씩, 구글이 찾을 수 있고 바이어가 1분 안에 훑어볼 수 있는, 브라우징 가능하고 색인 가능한 페이지 모음이요. 카탈로그와 브로슈어의 차이는 단순합니다. 브로슈어는 사장님 회사를 설명합니다. 카탈로그는 처음 방문한 사람이 스스로 진짜 궁금한 단 하나의 질문에 답하게 해 줍니다. '이 회사가 내가 필요한 그 물건을 정확히 취급하는가?'" },
+        { type: 'ul', content: '제품 목록을 진짜 온라인 카탈로그로 만들어 주는 것들:', items: [
+          '모든 SKU·제품 라인마다 개별 페이지 — 모델·부품 번호, 설명, 사진 — 를 두어서 긴 PDF 하나에 묻히지 않고 각각 검색·색인이 가능하게.',
+          '카테고리·필터 내비게이션으로, 바이어가 정적인 목록을 스크롤하며 물건 하나 찾는 대신 제품 종류별로 브라우징할 수 있게.',
+          '카탈로그 전체에 문의하기 폼 하나가 아니라, 제품·카테고리별로 "견적 요청" 버튼을 각각 배치.',
+          '이미 알고 있는 경우 최소 주문 수량과 납기를 표시해서, 바이어가 연락하기 전에 스스로 조건을 먼저 확인할 수 있게.',
+          '가격을 기존 거래처와만 공유해야 한다면, 등급별·도매 가격을 위한 딜러·승인된 바이어 로그인.',
+          '구매팀이 견적을 요청하기도 전에 먼저 검토하는 다운로드 가능한 스펙 시트와 인증서(통관 보증증권, 수입 라이선스, 해당 시 FDA·USDA 등록).',
+        ] },
+        { type: 'h2', content: 'PDF 가격표 하나가 검색 기회를 놓치고 있는 이유' },
+        { type: 'p', content: "많은 무역회사가 이미 꽤 괜찮은 카탈로그를 갖고 있습니다 — 다만 그게 PDF 첨부파일 형태로 존재하고, 이미 요청할 줄 아는 사람에게만 보내질 뿐입니다. 아무에게도 보내지 않는 파일은 구글이 색인할 수 없고, 사장님 회사를 들어본 적 없는 바이어는 애초에 그걸 요청할 방법이 없습니다. 더 나쁜 건, PDF 하나 안에 제품이 몇 개가 들어 있든 상관없이 순위를 매길 URL은 딱 하나뿐이라는 점입니다. 그래서 누군가 사장님이 취급하는 특정 제품의 실제 모델 번호를 검색해도, 그 검색에 걸릴 사장님 콘텐츠가 아무것도 없습니다. 이게 제대로 작동하려면 제품마다 각자의 페이지와 URL이 있어야 합니다." },
+        { type: 'tip', content: "이 목록 전체에서 가장 파급력 큰 변화 하나는 모든 제품에 색인 가능한 개별 페이지를 주는 것입니다. 이것만 해두면, 필요한 부품 번호나 제품명을 정확히 구글에 검색한 바이어가 — 공급사 이름을 검색해 볼 생각조차 하기 전에 — 경쟁사가 아니라 사장님 페이지로 바로 들어올 수 있습니다." },
+        { type: 'h2', content: '시카고의 물류 강점 — 숨기지 말고 말하세요' },
+        { type: 'p', content: "앨버니 파크 로렌스 애비뉴 상권과 나일스, 스코키, 글렌뷰, 링컨우드 같은 북부 교외에 모여 있는 시카고 한인 무역·유통 커뮤니티는, 지리적 우연이라고 할 수 있을 만큼 미국에서 가장 바쁜 물류 허브 중 한 곳 안에 자리 잡고 있습니다. 주요 주간고속도로들이 이곳에서 교차하고, 오헤어 공항은 상당한 규모의 항공 화물을 처리하며, 이 광역권에는 미국 내 손꼽히는 규모의 철도 복합환적 야드가 있습니다. 유통업체에게 이건 그냥 잡학이 아니라 실질적이고 방어 가능한 판매 포인트입니다. 중서부 대부분 지역에 빠르고 저렴한 배송, 전국적으로도 합리적인 운송 시간이요. 바이어들은 공급사를 비교할 때 납기를 가격 못지않게 크게 따집니다. '시카고 인근 창고에서 발송, 미국 48개 주 배송, 중서부 대부분 주문은 영업일 1~2일 내 도착'처럼 이걸 역량·배송 페이지에 명확히 적어두면, 주소에 관한 단순한 사실이 '덜 중심적인 곳에 있는 공급사 대신 이 회사를 고를 이유'로 바뀝니다. 이곳 대부분의 무역회사는 이걸 자기 웹사이트에서 한 번도 명시적으로 말한 적이 없습니다." },
+        { type: 'h2', content: '왜 다음 전시회 이후가 아니라 지금이어야 하나' },
+        { type: 'p', content: "사장님들은 전시회와 소개가 파이프라인을 채워 주는 동안 웹사이트는 '사업이 좀 한가해지면' 손보겠다고 미루는 경향이 있습니다. 하지만 견적 요청으로 이어지지 못하는 검색들은 지금, 조용히, 이미 잘 돌아가는 관계들과 나란히 일어나고 있습니다 — 그리고 그건 정확히 이미 사장님을 아는 바이어들을 넘어 성장하려는 지금 이 순간 가장 중요합니다. 진짜 카탈로그를 만드는 건 리디자인 프로젝트가 아닙니다. 대부분 이미 갖고 계신 사이트 위에 구조와 콘텐츠를 얹는 작업입니다. 한 번 만들어 두면 이후로는 거의 손댈 일 없이 계속 일합니다 — 제품 페이지 하나하나가, 전화번호부터 묻지 않고도 낯선 사람이 걸어 들어올 수 있는 문이 하나 더 생기는 것과 같습니다." },
+        { type: 'cta', content: "ZOE LUMOS는 미국 전역의 한인 무역·유통·도매 회사를 위한 이중언어 검색 색인 제품 카탈로그를 만듭니다 — 구조화된 SKU 페이지, 딜러 등급 가격, 견적 요청 자동 배정, 그리고 전부 사장님 명의 등록까지. 한국어/영어 무료 상담: info@zoelumos.com 이메일 또는 카카오톡(http://pf.kakao.com/_xhxdxmlX/chat)으로 편하게 문의하세요." },
+      ],
+    },
+  },
 ]
