@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
 import Link from 'next/link'
 
 const services = {
@@ -117,119 +116,106 @@ export default function StartProjectForm({ locale }: { locale: 'en' | 'ko' }) {
 
   return (
     <div className="container mx-auto px-6 max-w-3xl relative z-10">
-      <AnimatePresence mode="wait">
+      <>
 
         {/* ── Step 1: Pick services ── */}
         {step === 1 && (
-          <motion.div
+          <div
             key="step1"
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -40 }}
-            transition={{ duration: 0.35 }}
           >
             {/* Progress */}
             <div className="flex items-center gap-3 mb-10">
               <div className="flex items-center gap-2">
-                <div className="w-6 h-6 rounded-full bg-[#B12492] flex items-center justify-center text-white text-[11px] font-black">1</div>
-                <span className="text-[11px] font-black text-[#B12492] tracking-widest uppercase">{t.step1Label}</span>
+                <div className="w-6 h-6 rounded-full bg-action flex items-center justify-center text-white text-[11px] font-black">1</div>
+                <span className="text-[11px] font-black text-link tracking-widest uppercase">{t.step1Label}</span>
               </div>
-              <div className="flex-1 h-px bg-white/10" />
-              <div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center text-gray-600 text-[11px] font-black">2</div>
+              <div className="flex-1 h-px bg-bone" />
+              <div className="w-6 h-6 rounded-full bg-bone flex items-center justify-center text-mute text-[11px] font-black">2</div>
             </div>
 
             {/* Headline */}
-            <h2 className="text-5xl md:text-6xl font-black text-white leading-[0.95] tracking-tight mb-4 whitespace-pre-line">
+            <h2 className="text-5xl md:text-6xl font-black text-ink leading-[0.95] tracking-tight mb-4 whitespace-pre-line">
               {t.headline}
             </h2>
-            <p className="text-gray-500 text-base leading-relaxed mb-12 max-w-lg">{t.sub}</p>
+            <p className="text-ash text-base leading-relaxed mb-12 max-w-lg">{t.sub}</p>
 
             {/* Service cards */}
-            <p className="text-xs font-black tracking-[0.2em] text-gray-600 uppercase mb-4">
-              {t.pickLabel} <span className="text-gray-700 normal-case font-normal tracking-normal">— {t.pickHint}</span>
+            <p className="text-xs font-black tracking-[0.2em] text-mute uppercase mb-4">
+              {t.pickLabel} <span className="text-mute normal-case font-normal tracking-normal">— {t.pickHint}</span>
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
               {serviceList.map((s) => {
                 const on = selected.includes(s.id)
                 return (
-                  <motion.button
+                  <button
                     key={s.id}
                     onClick={() => toggle(s.id)}
-                    whileTap={{ scale: 0.97 }}
                     className={`text-left rounded-2xl p-5 border transition-all duration-200 ${
                       on
-                        ? 'bg-[#B12492]/10 border-[#B12492]/50 shadow-[0_0_20px_rgba(177,36,146,0.1)]'
-                        : 'bg-[#0e0e0e] border-white/[0.07] hover:border-white/20'
+                        ? 'bg-action/10 border-action/50 shadow-[0_0_20px_rgba(0,113,227,0.1)]'
+                        : 'bg-paper border-black/[0.08] hover:border-black/[0.14]'
                     }`}
                   >
                     <div className="flex items-start justify-between mb-2">
                       <span className="text-2xl">{s.emoji}</span>
                       <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center transition-all flex-shrink-0 ${
-                        on ? 'bg-[#B12492] border-[#B12492]' : 'border-white/20'
+                        on ? 'bg-action border-action' : 'border-black/[0.14]'
                       }`}>
-                        {on && <span className="text-white text-[10px] font-black">✓</span>}
+                        {on && <span className="text-ink text-[10px] font-black">✓</span>}
                       </div>
                     </div>
-                    <h3 className={`font-black text-sm mb-1 transition-colors ${on ? 'text-white' : 'text-gray-300'}`}>
+                    <h3 className={`font-black text-sm mb-1 transition-colors ${on ? 'text-ink' : 'text-graphite'}`}>
                       {s.title}
                     </h3>
-                    <p className="text-gray-600 text-xs leading-relaxed">{s.desc}</p>
-                  </motion.button>
+                    <p className="text-mute text-xs leading-relaxed">{s.desc}</p>
+                  </button>
                 )
               })}
             </div>
 
             {error && <p className="text-red-400 text-sm mb-4">{error}</p>}
 
-            <motion.button
+            <button
               onClick={goStep2}
-              whileHover={{ scale: 1.02 }}
-              whileTap={{ scale: 0.97 }}
-              className="w-full sm:w-auto relative overflow-hidden bg-[#B12492] text-white font-black px-8 py-4 rounded-xl text-sm flex items-center gap-2"
+              className="w-full sm:w-auto relative overflow-hidden bg-action text-white font-black px-8 py-4 rounded-xl text-sm flex items-center gap-2"
             >
               {t.nextBtn}
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent -skew-x-12"
-                animate={{ x: ['-100%', '200%'] }}
-                transition={{ duration: 2.5, repeat: Infinity, repeatDelay: 1 }}
+              <div
+                className="absolute inset-0 bg-gradient-to-r from-transparent via-black/10 to-transparent -skew-x-12"
               />
-            </motion.button>
-          </motion.div>
+            </button>
+          </div>
         )}
 
         {/* ── Step 2: Contact details ── */}
         {step === 2 && (
-          <motion.div
+          <div
             key="step2"
-            initial={{ opacity: 0, x: 40 }}
-            animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -40 }}
-            transition={{ duration: 0.35 }}
           >
             {/* Progress */}
             <div className="flex items-center gap-3 mb-10">
-              <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center text-white text-[11px] font-black">✓</div>
-              <div className="flex-1 h-px bg-[#B12492]/40" />
+              <div className="w-6 h-6 rounded-full bg-black/10 flex items-center justify-center text-ink text-[11px] font-black">✓</div>
+              <div className="flex-1 h-px bg-action/40" />
               <div className="flex items-center gap-2">
-                <div className="w-6 h-6 rounded-full bg-[#B12492] flex items-center justify-center text-white text-[11px] font-black">2</div>
-                <span className="text-[11px] font-black text-[#B12492] tracking-widest uppercase">{t.step2Label}</span>
+                <div className="w-6 h-6 rounded-full bg-action flex items-center justify-center text-white text-[11px] font-black">2</div>
+                <span className="text-[11px] font-black text-link tracking-widest uppercase">{t.step2Label}</span>
               </div>
             </div>
 
             {/* Selected summary */}
             <div className="flex flex-wrap gap-2 mb-8">
               {serviceList.filter(s => selected.includes(s.id)).map(s => (
-                <span key={s.id} className="inline-flex items-center gap-1.5 bg-[#B12492]/15 border border-[#B12492]/30 text-[#B12492] rounded-full px-3 py-1 text-xs font-bold">
+                <span key={s.id} className="inline-flex items-center gap-1.5 bg-action/15 border border-action/30 text-link rounded-full px-3 py-1 text-xs font-bold">
                   {s.emoji} {s.title}
                 </span>
               ))}
             </div>
 
-            <h2 className="text-4xl md:text-5xl font-black text-white leading-tight tracking-tight mb-3">
+            <h2 className="text-4xl md:text-5xl font-black text-ink leading-tight tracking-tight mb-3">
               {t.step2Headline}
             </h2>
-            <p className="text-gray-500 text-base mb-10">{t.step2Sub}</p>
+            <p className="text-ash text-base mb-10">{t.step2Sub}</p>
 
             <div className="space-y-3 mb-8">
               {[
@@ -244,7 +230,7 @@ export default function StartProjectForm({ locale }: { locale: 'en' | 'ko' }) {
                   placeholder={placeholder}
                   value={form[key as keyof typeof form]}
                   onChange={e => setForm(f => ({ ...f, [key]: e.target.value }))}
-                  className="w-full bg-[#0e0e0e] border border-white/[0.08] rounded-xl px-4 py-3.5 text-white placeholder-gray-600 text-sm focus:outline-none focus:border-[#B12492]/50 transition-colors"
+                  className="w-full bg-paper border border-black/[0.08] rounded-xl px-4 py-3.5 text-ink placeholder-mute text-sm focus:outline-none focus:border-action/50 transition-colors"
                 />
               ))}
               <textarea
@@ -252,7 +238,7 @@ export default function StartProjectForm({ locale }: { locale: 'en' | 'ko' }) {
                 rows={4}
                 value={form.desc}
                 onChange={e => setForm(f => ({ ...f, desc: e.target.value }))}
-                className="w-full bg-[#0e0e0e] border border-white/[0.08] rounded-xl px-4 py-3.5 text-white placeholder-gray-600 text-sm focus:outline-none focus:border-[#B12492]/50 transition-colors resize-none"
+                className="w-full bg-paper border border-black/[0.08] rounded-xl px-4 py-3.5 text-ink placeholder-mute text-sm focus:outline-none focus:border-action/50 transition-colors resize-none"
               />
             </div>
 
@@ -261,59 +247,49 @@ export default function StartProjectForm({ locale }: { locale: 'en' | 'ko' }) {
             <div className="flex flex-col sm:flex-row gap-3">
               <button
                 onClick={() => { setStep(1); setError('') }}
-                className="px-5 py-3.5 rounded-xl bg-white/[0.05] text-gray-400 hover:bg-white/10 hover:text-white transition-all text-sm font-medium"
+                className="px-5 py-3.5 rounded-xl bg-black/[0.03] text-ash hover:bg-bone hover:text-ink transition-all text-sm font-medium"
               >
                 {t.backBtn}
               </button>
-              <motion.button
+              <button
                 onClick={submit}
                 disabled={sending}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.97 }}
-                className="flex-1 relative overflow-hidden bg-[#B12492] text-white font-black px-8 py-3.5 rounded-xl text-sm disabled:opacity-60"
+                className="flex-1 relative overflow-hidden bg-action text-white font-black px-8 py-3.5 rounded-xl text-sm disabled:opacity-60"
               >
                 {sending ? t.sending : t.submitBtn}
                 {!sending && (
-                  <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/15 to-transparent -skew-x-12"
-                    animate={{ x: ['-100%', '200%'] }}
-                    transition={{ duration: 2.5, repeat: Infinity, repeatDelay: 1 }}
+                  <div
+                    className="absolute inset-0 bg-gradient-to-r from-transparent via-black/10 to-transparent -skew-x-12"
                   />
                 )}
-              </motion.button>
+              </button>
             </div>
-          </motion.div>
+          </div>
         )}
 
         {/* ── Done ── */}
         {step === 'done' && (
-          <motion.div
+          <div
             key="done"
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.4 }}
             className="text-center py-20"
           >
-            <motion.div
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ delay: 0.1, type: 'spring', stiffness: 200 }}
-              className="w-20 h-20 rounded-full bg-[#B12492]/20 border border-[#B12492]/40 flex items-center justify-center text-4xl mx-auto mb-8"
+            <div
+              className="w-20 h-20 rounded-full bg-action/20 border border-action/40 flex items-center justify-center text-4xl mx-auto mb-8"
             >
               🎉
-            </motion.div>
-            <h2 className="text-4xl md:text-5xl font-black text-white mb-4">{t.successHeadline}</h2>
-            <p className="text-gray-400 text-lg max-w-md mx-auto mb-10">{t.successSub}</p>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-black text-ink mb-4">{t.successHeadline}</h2>
+            <p className="text-ash text-lg max-w-md mx-auto mb-10">{t.successSub}</p>
             <Link
               href={prefix || '/'}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/[0.06] border border-white/10 text-gray-300 hover:bg-white/10 hover:text-white transition-all text-sm font-medium"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-black/[0.03] border border-black/[0.08] text-graphite hover:bg-bone hover:text-ink transition-all text-sm font-medium"
             >
               {t.successBack}
             </Link>
-          </motion.div>
+          </div>
         )}
 
-      </AnimatePresence>
+      </>
     </div>
   )
 }

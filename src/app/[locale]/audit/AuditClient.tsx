@@ -234,7 +234,7 @@ export default function AuditClient({ locale = 'en' }: { locale?: 'en' | 'ko' })
                   onChange={(e) => setUrl(e.target.value)}
                   required
                   className="w-full bg-transparent py-3 text-[18px] md:text-[22px] text-ink placeholder:text-mute/70 placeholder:italic placeholder:font-light focus:outline-none"
-                  style={{ fontFamily: 'var(--font-serif), Georgia, serif' }}
+                  style={{ fontFamily: 'var(--font-geist-sans), system-ui, sans-serif' }}
                 />
               </div>
               <Magnetic strength={12}>
@@ -396,7 +396,7 @@ function ScoreCard({
   oursLabel: string
 }) {
   const score = yours ?? 0
-  const ringColor = score >= 90 ? '#2F7A3D' : score >= 50 ? '#B8914A' : '#C0432E'
+  const ringColor = score >= 90 ? '#2F7A3D' : score >= 50 ? '#0071E3' : '#C0432E'
   const size = 140
   const stroke = 6
   const radius = (size - stroke) / 2

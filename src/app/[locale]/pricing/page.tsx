@@ -222,26 +222,26 @@ export default function PricingPage({ params }: { params: { locale: string } }) 
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <HeaderWrapper locale={locale} />
-      <main className="min-h-screen bg-[#080808] pt-28 pb-24 relative overflow-hidden">
+      <main className="min-h-screen bg-ivory pt-28 pb-24 relative overflow-hidden">
         {/* Grid texture */}
-        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.015)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.015)_1px,transparent_1px)] bg-[size:64px_64px]" />
-        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_0%,rgba(177,36,146,0.06),transparent_70%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(rgba(0,0,0,0.035)_1px,transparent_1px),linear-gradient(90deg,rgba(0,0,0,0.035)_1px,transparent_1px)] bg-[size:64px_64px]" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_0%,rgba(0,113,227,0.06),transparent_70%)]" />
 
         <div className="container mx-auto px-6 max-w-6xl relative z-10">
 
           {/* ── Hero ── */}
           <div className="max-w-3xl mb-16">
-            <p className="text-[11px] font-black text-[#B12492] tracking-[0.25em] uppercase mb-4">{t.eyebrow}</p>
-            <h1 className="text-5xl md:text-6xl font-black text-white leading-[0.98] tracking-tight mb-5">
+            <p className="text-[11px] font-black text-link tracking-[0.25em] uppercase mb-4">{t.eyebrow}</p>
+            <h1 className="text-5xl md:text-6xl font-black text-ink leading-[0.98] tracking-tight mb-5">
               {t.headline}
             </h1>
-            <p className="text-gray-500 text-base leading-relaxed max-w-xl">{t.sub}</p>
+            <p className="text-ash text-base leading-relaxed max-w-xl">{t.sub}</p>
           </div>
 
           {/* ── Monthly tiers ── */}
           <section aria-label={t.monthlyTitle} className="mb-20">
-            <h2 className="text-2xl md:text-3xl font-black text-white mb-2">{t.monthlyTitle}</h2>
-            <p className="text-gray-500 text-sm mb-8 max-w-2xl">{t.monthlySub}</p>
+            <h2 className="text-2xl md:text-3xl font-black text-ink mb-2">{t.monthlyTitle}</h2>
+            <p className="text-ash text-sm mb-8 max-w-2xl">{t.monthlySub}</p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {MONTHLY_TIERS.map((tier) => (
@@ -249,31 +249,31 @@ export default function PricingPage({ params }: { params: { locale: string } }) 
                   key={tier.name}
                   className={`relative rounded-2xl p-6 border flex flex-col ${
                     tier.recommended
-                      ? 'bg-[#B12492]/[0.08] border-[#B12492]/50 shadow-[0_0_30px_rgba(177,36,146,0.12)]'
-                      : 'bg-[#0e0e0e] border-white/[0.07]'
+                      ? 'bg-action/[0.08] border-action/50 shadow-[0_0_30px_rgba(0,113,227,0.12)]'
+                      : 'bg-paper border-black/[0.08]'
                   }`}
                 >
                   {tier.recommended && (
-                    <span className="absolute -top-3 left-6 bg-[#B12492] text-white text-[10px] font-black tracking-[0.15em] uppercase px-3 py-1 rounded-full">
+                    <span className="absolute -top-3 left-6 bg-action text-white text-[10px] font-black tracking-[0.15em] uppercase px-3 py-1 rounded-full">
                       {t.recommended}
                     </span>
                   )}
-                  <h3 className="text-lg font-black text-white mb-1">{tier.name}</h3>
-                  <p className="text-gray-600 text-xs mb-4">{tier.tagline[locale]}</p>
+                  <h3 className="text-lg font-black text-ink mb-1">{tier.name}</h3>
+                  <p className="text-mute text-xs mb-4">{tier.tagline[locale]}</p>
                   <p className="mb-1">
-                    <span className={`text-4xl font-black ${tier.recommended ? 'text-[#e058c0]' : 'text-white'}`}>{tier.price}</span>
-                    <span className="text-gray-500 text-sm ml-1">{t.perMonth}</span>
+                    <span className={`text-4xl font-black ${tier.recommended ? 'text-link' : 'text-ink'}`}>{tier.price}</span>
+                    <span className="text-ash text-sm ml-1">{t.perMonth}</span>
                   </p>
-                  <p className="text-[12px] text-gray-400 font-medium mb-5">{tier.forWho[locale]}</p>
+                  <p className="text-[12px] text-ash font-medium mb-5">{tier.forWho[locale]}</p>
                   <ul className="space-y-2.5 mb-5 flex-1">
                     {tier.includes[locale].map((item) => (
-                      <li key={item} className="flex items-start gap-2 text-[13px] text-gray-300 leading-snug">
+                      <li key={item} className="flex items-start gap-2 text-[13px] text-graphite leading-snug">
                         <span className="text-green-400 mt-[1px]" aria-hidden>✓</span>
                         {item}
                       </li>
                     ))}
                     {tier.excludes && (
-                      <li className="flex items-start gap-2 text-[13px] text-gray-600 leading-snug">
+                      <li className="flex items-start gap-2 text-[13px] text-mute leading-snug">
                         <span className="mt-[1px]" aria-hidden>✕</span>
                         {tier.excludes[locale]}
                       </li>
@@ -283,8 +283,8 @@ export default function PricingPage({ params }: { params: { locale: string } }) 
                     href={`${prefix}/contact`}
                     className={`block text-center rounded-xl px-4 py-2.5 text-[13px] font-bold transition-colors ${
                       tier.recommended
-                        ? 'bg-[#B12492] text-white hover:bg-[#c93aa8]'
-                        : 'bg-white/[0.06] text-gray-300 border border-white/10 hover:bg-white/10 hover:text-white'
+                        ? 'bg-action text-white hover:bg-[#0077ED]'
+                        : 'bg-black/[0.03] text-graphite border border-black/[0.08] hover:bg-bone hover:text-ink'
                     }`}
                   >
                     {isKo ? '이 플랜으로 상담' : 'Talk about this plan'}
@@ -292,23 +292,23 @@ export default function PricingPage({ params }: { params: { locale: string } }) 
                 </div>
               ))}
             </div>
-            <p className="text-gray-600 text-[12px] mt-5">{t.addons}</p>
+            <p className="text-mute text-[12px] mt-5">{t.addons}</p>
           </section>
 
           {/* ── Comparison table ── */}
           <section aria-label={t.compareTitle} className="mb-20">
-            <h2 className="text-2xl md:text-3xl font-black text-white mb-6">{t.compareTitle}</h2>
-            <div className="overflow-x-auto rounded-2xl border border-white/[0.07]">
+            <h2 className="text-2xl md:text-3xl font-black text-ink mb-6">{t.compareTitle}</h2>
+            <div className="overflow-x-auto rounded-2xl border border-black/[0.08]">
               <table className="w-full min-w-[640px] text-left border-collapse">
                 <thead>
-                  <tr className="bg-[#0e0e0e]">
-                    <th className="px-5 py-4 text-[12px] uppercase tracking-widest text-gray-500 font-bold" />
+                  <tr className="bg-paper">
+                    <th className="px-5 py-4 text-[12px] uppercase tracking-widest text-ash font-bold" />
                     {MONTHLY_TIERS.map((tier) => (
                       <th key={tier.name} className="px-4 py-4 text-center">
-                        <span className={`block text-sm font-black ${tier.recommended ? 'text-[#e058c0]' : 'text-white'}`}>
+                        <span className={`block text-sm font-black ${tier.recommended ? 'text-link' : 'text-ink'}`}>
                           {tier.name}{tier.recommended ? ' ★' : ''}
                         </span>
-                        <span className="block text-[12px] text-gray-500 font-medium mt-0.5">
+                        <span className="block text-[12px] text-ash font-medium mt-0.5">
                           {tier.price}{t.perMonth}
                         </span>
                       </th>
@@ -317,15 +317,15 @@ export default function PricingPage({ params }: { params: { locale: string } }) 
                 </thead>
                 <tbody>
                   {COMPARE_ROWS.map((row, i) => (
-                    <tr key={i} className={i % 2 === 0 ? 'bg-transparent' : 'bg-white/[0.02]'}>
-                      <td className="px-5 py-3 text-[13px] text-gray-300 font-medium whitespace-nowrap">
+                    <tr key={i} className={i % 2 === 0 ? 'bg-transparent' : 'bg-black/[0.03]'}>
+                      <td className="px-5 py-3 text-[13px] text-graphite font-medium whitespace-nowrap">
                         {row.label[locale]}
                       </td>
                       {row.cells.map((cell, j) => (
                         <td
                           key={j}
                           className={`px-4 py-3 text-center text-[13px] ${
-                            cell === '—' ? 'text-gray-700' : cell === '✓' ? 'text-green-400' : 'text-gray-300'
+                            cell === '—' ? 'text-mute' : cell === '✓' ? 'text-green-400' : 'text-graphite'
                           }`}
                         >
                           {cell}
@@ -334,12 +334,12 @@ export default function PricingPage({ params }: { params: { locale: string } }) 
                     </tr>
                   ))}
                   {/* Per-tier "for who" row */}
-                  <tr className="bg-[#0e0e0e]">
-                    <td className="px-5 py-3.5 text-[12px] uppercase tracking-widest text-gray-600 font-bold whitespace-nowrap">
+                  <tr className="bg-paper">
+                    <td className="px-5 py-3.5 text-[12px] uppercase tracking-widest text-mute font-bold whitespace-nowrap">
                       {isKo ? '이런 분께' : 'Best for'}
                     </td>
                     {MONTHLY_TIERS.map((tier) => (
-                      <td key={tier.name} className="px-4 py-3.5 text-center text-[12px] text-gray-400 leading-snug">
+                      <td key={tier.name} className="px-4 py-3.5 text-center text-[12px] text-ash leading-snug">
                         {tier.forWho[locale]}
                       </td>
                     ))}
@@ -351,25 +351,25 @@ export default function PricingPage({ params }: { params: { locale: string } }) 
 
           {/* ── One-time builds ── */}
           <section aria-label={t.buildTitle} className="mb-20">
-            <h2 className="text-2xl md:text-3xl font-black text-white mb-2">{t.buildTitle}</h2>
-            <p className="text-gray-500 text-sm mb-8 max-w-2xl">{t.buildSub}</p>
+            <h2 className="text-2xl md:text-3xl font-black text-ink mb-2">{t.buildTitle}</h2>
+            <p className="text-ash text-sm mb-8 max-w-2xl">{t.buildSub}</p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {BUILD_TIERS.map((b) => (
-                <div key={b.price} className="rounded-2xl p-6 bg-[#0e0e0e] border border-white/[0.07]">
-                  <p className="text-[12px] uppercase tracking-[0.2em] text-gray-500 font-black mb-2">{b.name[locale]}</p>
-                  <p className="text-3xl font-black text-white mb-3">{b.price}</p>
-                  <p className="text-[13px] text-gray-400 leading-relaxed">{b.desc[locale]}</p>
+                <div key={b.price} className="rounded-2xl p-6 bg-paper border border-black/[0.08]">
+                  <p className="text-[12px] uppercase tracking-[0.2em] text-ash font-black mb-2">{b.name[locale]}</p>
+                  <p className="text-3xl font-black text-ink mb-3">{b.price}</p>
+                  <p className="text-[13px] text-ash leading-relaxed">{b.desc[locale]}</p>
                 </div>
               ))}
             </div>
             <div className="mt-5 flex flex-col sm:flex-row sm:items-center gap-3">
-              <p className="text-[13px] text-[#e058c0] font-bold m-0">
+              <p className="text-[13px] text-link font-bold m-0">
                 {isKo ? '12개월 약정 시 셋업비 면제' : '12-month care-plan commitment waives the setup fee'}
               </p>
-              <span className="hidden sm:block text-gray-700">·</span>
+              <span className="hidden sm:block text-mute">·</span>
               <Link
                 href={`${prefix}/tools/website-cost-estimator`}
-                className="text-[13px] text-gray-400 underline underline-offset-4 hover:text-white transition-colors"
+                className="text-[13px] text-ash underline underline-offset-4 hover:text-ink transition-colors"
               >
                 {t.buildNote}
               </Link>
@@ -378,25 +378,25 @@ export default function PricingPage({ params }: { params: { locale: string } }) 
 
           {/* ── Guarantee ── */}
           <section aria-label={t.guaranteeTitle} className="mb-20">
-            <h2 className="text-2xl md:text-3xl font-black text-white mb-2">{t.guaranteeTitle}</h2>
-            <p className="text-gray-500 text-sm mb-8 max-w-2xl">{t.guaranteeSub}</p>
-            <GuaranteeStrip locale={locale} variant="full" dark />
+            <h2 className="text-2xl md:text-3xl font-black text-ink mb-2">{t.guaranteeTitle}</h2>
+            <p className="text-ash text-sm mb-8 max-w-2xl">{t.guaranteeSub}</p>
+            <GuaranteeStrip locale={locale} variant="full" />
           </section>
 
           {/* ── FAQ ── */}
           <section aria-label={t.faqTitle} className="mb-20 max-w-3xl">
-            <h2 className="text-2xl md:text-3xl font-black text-white mb-8">{t.faqTitle}</h2>
+            <h2 className="text-2xl md:text-3xl font-black text-ink mb-8">{t.faqTitle}</h2>
             <ul className="space-y-3 m-0 p-0 list-none">
               {FAQS.map((f, i) => (
                 <li key={i}>
-                  <details className="group rounded-2xl bg-[#0e0e0e] border border-white/[0.07] px-6 py-5">
+                  <details className="group rounded-2xl bg-paper border border-black/[0.08] px-6 py-5">
                     <summary className="flex items-start justify-between gap-6 cursor-pointer list-none">
-                      <h3 className="text-[15px] font-bold text-white m-0 leading-snug group-open:text-[#e058c0] transition-colors">
+                      <h3 className="text-[15px] font-bold text-ink m-0 leading-snug group-open:text-link transition-colors">
                         {f.q[locale]}
                       </h3>
-                      <span aria-hidden className="text-gray-600 text-xl leading-none transition-transform duration-300 group-open:rotate-45">+</span>
+                      <span aria-hidden className="text-mute text-xl leading-none transition-transform duration-300 group-open:rotate-45">+</span>
                     </summary>
-                    <p className="mt-4 text-[14px] text-gray-400 leading-[1.75] m-0">{f.a[locale]}</p>
+                    <p className="mt-4 text-[14px] text-ash leading-[1.75] m-0">{f.a[locale]}</p>
                   </details>
                 </li>
               ))}
@@ -404,19 +404,19 @@ export default function PricingPage({ params }: { params: { locale: string } }) 
           </section>
 
           {/* ── CTA ── */}
-          <section className="mb-24 rounded-2xl border border-[#B12492]/30 bg-[#B12492]/[0.06] px-8 py-10 text-center">
-            <h2 className="text-3xl md:text-4xl font-black text-white mb-3">{t.ctaTitle}</h2>
-            <p className="text-gray-400 text-base mb-8 max-w-xl mx-auto">{t.ctaSub}</p>
+          <section className="mb-24 rounded-2xl border border-action/30 bg-action/[0.06] px-8 py-10 text-center">
+            <h2 className="text-3xl md:text-4xl font-black text-ink mb-3">{t.ctaTitle}</h2>
+            <p className="text-ash text-base mb-8 max-w-xl mx-auto">{t.ctaSub}</p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <Link
                 href={`${prefix}/contact`}
-                className="inline-flex items-center gap-2 bg-[#B12492] text-white font-black px-8 py-4 rounded-xl text-sm hover:bg-[#c93aa8] transition-colors"
+                className="inline-flex items-center gap-2 bg-action text-white font-black px-8 py-4 rounded-xl text-sm hover:bg-[#0077ED] transition-colors"
               >
                 {t.ctaContact} →
               </Link>
               <Link
                 href={`${prefix}/tools/website-cost-estimator`}
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-white/[0.06] border border-white/10 text-gray-300 hover:bg-white/10 hover:text-white transition-all text-sm font-bold"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-black/[0.03] border border-black/[0.08] text-graphite hover:bg-bone hover:text-ink transition-all text-sm font-bold"
               >
                 {t.ctaEstimator}
               </Link>
@@ -424,7 +424,7 @@ export default function PricingPage({ params }: { params: { locale: string } }) 
           </section>
 
           {/* ── Existing 2-step custom-plan form (kept as final section) ── */}
-          <section id="start" className="pt-4 border-t border-white/[0.06]">
+          <section id="start" className="pt-4 border-t border-black/[0.08]">
             <div className="pt-16">
               <StartProjectForm locale={locale} />
             </div>

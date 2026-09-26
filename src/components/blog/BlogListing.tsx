@@ -146,7 +146,7 @@ export default function BlogListing({
                     aria-hidden
                     className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700"
                     style={{
-                      background: 'radial-gradient(80% 60% at 50% 50%, rgba(184,145,74,0.25), transparent 80%)',
+                      background: 'radial-gradient(80% 60% at 50% 50%, rgba(0,113,227,0.25), transparent 80%)',
                     }}
                   />
                   <div className="absolute inset-6 overflow-hidden">
@@ -236,7 +236,7 @@ export default function BlogListing({
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder={content.searchPlaceholder}
                 className="w-full bg-transparent border-b border-hairline focus:border-ink py-2 pr-7 text-[14px] focus:outline-none transition-colors placeholder:text-mute placeholder:italic"
-                style={{ fontFamily: 'var(--font-serif), Georgia, serif' }}
+                style={{ fontFamily: 'var(--font-geist-sans), system-ui, sans-serif' }}
               />
               <span className="absolute right-0 top-1/2 -translate-y-1/2 text-ash pointer-events-none">↵</span>
             </div>
