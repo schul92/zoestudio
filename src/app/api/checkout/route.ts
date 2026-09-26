@@ -80,11 +80,35 @@ export async function POST(req: Request) {
     metadata: { zl_price: payload.priceId },
   } satisfies Partial<Stripe.Checkout.SessionCreateParams>
 
+  // zl_anchor (unix seconds) pins renewals to a fixed date, e.g. a client billed
+  // from their go-live day: the first period is charged now as a one-time line,
+  // and the subscription itself renews on the anchor with no proration.
+  const anchor = Number(price.metadata.zl_anchor ?? 0)
+  const anchored = price.recurring && anchor > Math.floor(Date.now() / 1000)
+
   const session = price.recurring
     ? await s.checkout.sessions.create({
         ...common,
+        ...(anchored
+          ? {
+              line_items: [
+                ...common.line_items,
+                {
+                  price_data: {
+                    currency: price.currency,
+                    product: typeof price.product === 'string' ? price.product : price.product.id,
+                    unit_amount: price.unit_amount ?? 0,
+                  },
+                  quantity: 1,
+                },
+              ],
+            }
+          : {}),
         mode: 'subscription',
-        subscription_data: { metadata: { zl_price: payload.priceId } },
+        subscription_data: {
+          metadata: { zl_price: payload.priceId },
+          ...(anchored ? { billing_cycle_anchor: anchor, proration_behavior: 'none' as const } : {}),
+        },
         saved_payment_method_options: { payment_method_save: 'enabled' },
       })
     : await s.checkout.sessions.create({
