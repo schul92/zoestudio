@@ -82,7 +82,9 @@ export async function POST(req: Request) {
 
   // zl_anchor (unix seconds) pins renewals to a fixed date, e.g. a client billed
   // from their go-live day: the first period is charged now as a one-time line,
-  // and the subscription itself renews on the anchor with no proration.
+  // and the subscription trials until the anchor, then bills on it every period.
+  // (Checkout rejects proration_behavior 'none' alongside one-time prices, so
+  // billing_cycle_anchor can't be used here.)
   const anchor = Number(price.metadata.zl_anchor ?? 0)
   const anchored = price.recurring && anchor > Math.floor(Date.now() / 1000)
 
@@ -107,7 +109,7 @@ export async function POST(req: Request) {
         mode: 'subscription',
         subscription_data: {
           metadata: { zl_price: payload.priceId },
-          ...(anchored ? { billing_cycle_anchor: anchor, proration_behavior: 'none' as const } : {}),
+          ...(anchored ? { trial_end: anchor } : {}),
         },
         saved_payment_method_options: { payment_method_save: 'enabled' },
       })
