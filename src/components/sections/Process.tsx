@@ -1,4 +1,3 @@
-'use client'
 
 import InView from '@/components/ui/motion/InView'
 
@@ -194,8 +193,8 @@ function IlloDiscover({ className = '' }: { className?: string }) {
       <circle cx="90" cy="90" r="46" stroke="currentColor" strokeWidth="1.2" />
       <circle cx="90" cy="90" r="30" stroke="currentColor" strokeWidth="1.2" strokeDasharray="2 3" />
       <line x1="124" y1="124" x2="160" y2="160" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" />
-      <circle cx="90" cy="90" r="4" fill="#B8914A" />
-      <text x="100" y="195" textAnchor="middle" className="fill-current" fontFamily="Fraunces, serif" fontStyle="italic" fontWeight="300" fontSize="12" opacity="0.5">
+      <circle cx="90" cy="90" r="4" fill="#0071E3" />
+      <text x="100" y="195" textAnchor="middle" className="fill-current" fontFamily="var(--font-geist-sans), system-ui, sans-serif" fontWeight="500" fontSize="12" opacity="0.5">
         ·  listen  ·
       </text>
     </svg>
@@ -211,10 +210,10 @@ function IlloDesign({ className = '' }: { className?: string }) {
       <line x1="48" y1="92" x2="150" y2="92" stroke="currentColor" strokeWidth="1" opacity="0.5" />
       <line x1="48" y1="104" x2="140" y2="104" stroke="currentColor" strokeWidth="1" opacity="0.5" />
       <line x1="48" y1="116" x2="110" y2="116" stroke="currentColor" strokeWidth="1" opacity="0.5" />
-      <circle cx="42" cy="54" r="2" fill="#B8914A" />
+      <circle cx="42" cy="54" r="2" fill="#0071E3" />
       <circle cx="52" cy="54" r="2" stroke="currentColor" strokeWidth="1" fill="none" />
       <circle cx="62" cy="54" r="2" stroke="currentColor" strokeWidth="1" fill="none" />
-      <text x="100" y="195" textAnchor="middle" className="fill-current" fontFamily="Fraunces, serif" fontStyle="italic" fontWeight="300" fontSize="12" opacity="0.5">
+      <text x="100" y="195" textAnchor="middle" className="fill-current" fontFamily="var(--font-geist-sans), system-ui, sans-serif" fontWeight="500" fontSize="12" opacity="0.5">
         ·  compose  ·
       </text>
     </svg>
@@ -226,8 +225,8 @@ function IlloBuild({ className = '' }: { className?: string }) {
     <svg viewBox="0 0 200 200" className={className} fill="none" aria-hidden>
       <polyline points="70,70 50,100 70,130" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" fill="none" />
       <polyline points="130,70 150,100 130,130" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-      <line x1="110" y1="62" x2="90" y2="138" stroke="#B8914A" strokeWidth="1.6" strokeLinecap="round" />
-      <text x="100" y="195" textAnchor="middle" className="fill-current" fontFamily="Fraunces, serif" fontStyle="italic" fontWeight="300" fontSize="12" opacity="0.5">
+      <line x1="110" y1="62" x2="90" y2="138" stroke="#0071E3" strokeWidth="1.6" strokeLinecap="round" />
+      <text x="100" y="195" textAnchor="middle" className="fill-current" fontFamily="var(--font-geist-sans), system-ui, sans-serif" fontWeight="500" fontSize="12" opacity="0.5">
         ·  craft  ·
       </text>
     </svg>
@@ -246,10 +245,10 @@ function IlloGrow({ className = '' }: { className?: string }) {
         fill="none"
       />
       {[{ x: 34, y: 140 }, { x: 60, y: 120 }, { x: 86, y: 128 }, { x: 112, y: 96 }, { x: 138, y: 100 }, { x: 166, y: 58 }].map((p, i) => (
-        <circle key={i} cx={p.x} cy={p.y} r="2.5" fill={i === 5 ? '#B8914A' : 'currentColor'} />
+        <circle key={i} cx={p.x} cy={p.y} r="2.5" fill={i === 5 ? '#0071E3' : 'currentColor'} />
       ))}
       <line x1="34" y1="155" x2="166" y2="155" stroke="currentColor" strokeWidth="1" opacity="0.3" />
-      <text x="100" y="195" textAnchor="middle" className="fill-current" fontFamily="Fraunces, serif" fontStyle="italic" fontWeight="300" fontSize="12" opacity="0.5">
+      <text x="100" y="195" textAnchor="middle" className="fill-current" fontFamily="var(--font-geist-sans), system-ui, sans-serif" fontWeight="500" fontSize="12" opacity="0.5">
         ·  compound  ·
       </text>
     </svg>

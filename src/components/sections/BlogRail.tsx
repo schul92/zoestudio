@@ -1,4 +1,3 @@
-'use client'
 
 /**
  * Editorial blog rail — surfaces 6 strategically-chosen blog posts on the

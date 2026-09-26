@@ -88,9 +88,9 @@ export default function USMap({
       {/* Pulse ring filter for gold sheen */}
       <defs>
         <radialGradient id="pinGlow" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stopColor="#B8914A" stopOpacity="0.55" />
-          <stop offset="60%" stopColor="#B8914A" stopOpacity="0.1" />
-          <stop offset="100%" stopColor="#B8914A" stopOpacity="0" />
+          <stop offset="0%" stopColor="#0071E3" stopOpacity="0.55" />
+          <stop offset="60%" stopColor="#0071E3" stopOpacity="0.1" />
+          <stop offset="100%" stopColor="#0071E3" stopOpacity="0" />
         </radialGradient>
       </defs>
 
@@ -115,7 +115,7 @@ export default function USMap({
                 <>
                   <circle
                     r="6"
-                    stroke="#B8914A"
+                    stroke="#0071E3"
                     strokeWidth="0.8"
                     fill="none"
                     opacity="0.5"
@@ -138,7 +138,7 @@ export default function USMap({
               {/* Outer ring */}
               <circle
                 r={active ? 7 : 5}
-                stroke={active ? '#B8914A' : 'currentColor'}
+                stroke={active ? '#0071E3' : 'currentColor'}
                 strokeWidth="0.9"
                 fill={active || c.primary ? 'rgba(250,247,240,0.9)' : 'rgba(250,247,240,0.95)'}
                 style={{ transition: 'all 400ms cubic-bezier(.16,1,.3,1)' }}
@@ -146,7 +146,7 @@ export default function USMap({
               {/* Core dot */}
               <circle
                 r={active ? 2.2 : 1.8}
-                fill={active || c.primary ? '#B8914A' : 'currentColor'}
+                fill={active || c.primary ? '#0071E3' : 'currentColor'}
                 style={{ transition: 'all 400ms cubic-bezier(.16,1,.3,1)' }}
               />
               {/* Label — visible on active + primary */}
@@ -157,7 +157,7 @@ export default function USMap({
                 <LabelPlacement pin={c}>
                   <text
                     fontSize="11"
-                    fontFamily="Fraunces, serif"
+                    fontFamily="var(--font-geist-sans), system-ui, sans-serif"
                     fontStyle="italic"
                     fontWeight="300"
                     fill="currentColor"
@@ -173,7 +173,7 @@ export default function USMap({
 
       {/* Legend + meta */}
       <g transform={`translate(${VIEW_WIDTH - 200}, ${VIEW_HEIGHT - 36})`}>
-        <circle r="2.2" cx="4" cy="-4" fill="#B8914A" />
+        <circle r="2.2" cx="4" cy="-4" fill="#0071E3" />
         <text
           x="14"
           y="0"

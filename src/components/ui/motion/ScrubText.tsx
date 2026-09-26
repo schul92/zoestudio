@@ -1,24 +1,11 @@
-'use client'
-
 /**
- * ScrubText — scroll-scrubbed, word-by-word reveal.
+ * ScrubText — scroll-scrubbed, word-by-word reveal in pure CSS.
  *
- * A statement "lights up" as the reader scrolls it through the viewport:
- * each word ramps from a dim ghost (opacity 0.12) to full ink, driven by
- * ScrollTrigger scrub so the reveal is tied directly to scroll position.
- *
- * Splits on whitespace only (never per character), so it reads correctly
- * for both Korean and English. Compositor-only (opacity) — no layout work.
+ * Each word ramps from a dim ghost to full ink across its own slice of the
+ * element's view timeline (`animation-timeline: view()`). Browsers without
+ * scroll-driven animations, and reduced-motion readers, see plain full text.
+ * Splits on whitespace only, so it reads correctly for Korean and English.
  */
-
-import { useRef } from 'react'
-import { useGSAP } from '@gsap/react'
-import gsap from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
-
-if (typeof window !== 'undefined') {
-  gsap.registerPlugin(ScrollTrigger, useGSAP)
-}
 
 type ScrubTextProps = {
   children: string
@@ -26,77 +13,24 @@ type ScrubTextProps = {
   as?: 'h2' | 'p'
 }
 
-export default function ScrubText({
-  children,
-  className = '',
-  as = 'p',
-}: ScrubTextProps) {
-  const scope = useRef<HTMLElement | null>(null)
-
-  // Split on whitespace, keeping the separators so spacing is preserved
-  // exactly. Works for ko + en (never per-character).
+export default function ScrubText({ children, className = '', as = 'p' }: ScrubTextProps) {
   const tokens = (children ?? '').split(/(\s+)/)
-
-  useGSAP(
-    () => {
-      const root = scope.current
-      if (!root) return
-
-      const words = gsap.utils.toArray<HTMLElement>('[data-scrub-word]', root)
-      if (!words.length) return
-
-      const mm = gsap.matchMedia()
-
-      // Reduced motion: everything at full opacity, no ScrollTrigger.
-      mm.add('(prefers-reduced-motion: reduce)', () => {
-        gsap.set(words, { opacity: 1 })
-      })
-
-      mm.add('(prefers-reduced-motion: no-preference)', () => {
-        gsap.set(words, { opacity: 0.12 })
-
-        const tl = gsap.timeline({
-          scrollTrigger: {
-            trigger: root,
-            start: 'top 80%',
-            end: 'top 30%',
-            scrub: true,
-          },
-        })
-
-        tl.to(words, {
-          opacity: 1,
-          ease: 'none',
-          stagger: 0.4,
-        })
-
-        return () => {
-          tl.scrollTrigger?.kill()
-          tl.kill()
-        }
-      })
-    },
-    { scope, dependencies: [children] }
-  )
-
+  const words = tokens.filter((t) => t.trim()).length
+  let w = 0
   const Tag = as
 
   return (
-    <Tag ref={scope as never} className={`whitespace-pre-wrap ${className}`}>
-      {tokens.map((tok, i) =>
-        /\s+/.test(tok) || tok === '' ? (
-          // real whitespace text node — keeps native wrapping / no layout shift
-          tok
-        ) : (
-          <span
-            key={i}
-            data-scrub-word
-            className="inline-block will-change-[opacity]"
-          >
+    <Tag className={`kn-scrub ${className}`}>
+      {tokens.map((tok, i) => {
+        if (!tok.trim()) return tok
+        const start = (w / words) * 60
+        w += 1
+        return (
+          <span key={i} className="kn-scrub-w" style={{ ['--s' as string]: `${start}%` }}>
             {tok}
           </span>
         )
-      )}
+      })}
     </Tag>
   )
 }
