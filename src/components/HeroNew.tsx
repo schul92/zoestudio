@@ -1,5 +1,4 @@
-import Link from 'next/link'
-import Image from 'next/image'
+import LumosHero, { type LumosCopy } from '@/components/home/LumosHero'
 
 const copy = {
   en: {
@@ -9,12 +8,15 @@ const copy = {
     sub: 'Premium Shopify stores for Korean-American brands — bilingual by default, fast by design, built to convert.',
     cta1: 'Start your project',
     cta2: 'See TJ Flowers case study',
-    proofBadge: {
-      metric: '$3,114',
-      label: 'revenue in 4 weeks',
-      sub: 'TJ Flowers · Shopify rebuild',
-    },
     logosLabel: 'Trusted by founders shipping bilingual',
+    scroll: 'Scroll',
+    sceneLabel: 'A laptop opens and lights up with client websites built by Zoe Lumos, then a phone slides in.',
+    captions: [
+      { from: 0.3, to: 0.47, label: 'TJ Flowers · NYC', value: '$3,114', body: 'Revenue in the first 4 weeks after the Shopify rebuild.' },
+      { from: 0.47, to: 0.62, label: 'Miguk Story', value: '한국어 · English', body: 'Bilingual by default — one site, both of your customers.' },
+      { from: 0.62, to: 0.8, label: 'Every build', value: '<1.5s load', body: 'Fast on the phone your customers actually use.' },
+      { from: 0.8, to: 1.01, label: 'TJ Flowers · Search', value: '5× visibility', body: 'Search visibility in 6 weeks.' },
+    ],
   },
   ko: {
     eyebrow: '한인 비즈니스 스튜디오 · Shopify 전문',
@@ -23,12 +25,15 @@ const copy = {
     sub: '한·영 이중언어 기본, 빠른 속도, Shopify·커스텀 빌드 — 진짜 매출로 이어집니다.',
     cta1: '프로젝트 시작하기',
     cta2: 'TJ Flowers 성공 사례 보기',
-    proofBadge: {
-      metric: '$3,114',
-      label: '4주 만에 실매출',
-      sub: 'TJ Flowers · Shopify 리뉴얼',
-    },
     logosLabel: '한국어·영어로 함께 런칭한 브랜드',
+    scroll: '스크롤',
+    sceneLabel: '노트북이 열리며 Zoe Lumos가 만든 고객 웹사이트가 켜지고, 이어서 휴대폰이 들어옵니다.',
+    captions: [
+      { from: 0.3, to: 0.47, label: 'TJ Flowers · NYC', value: '$3,114', body: 'Shopify 리뉴얼 후 4주 만에 실매출.' },
+      { from: 0.47, to: 0.62, label: '미국 스토리', value: '한국어 · English', body: '한·영 이중언어 기본 — 사이트 하나로 두 고객층 모두.' },
+      { from: 0.62, to: 0.8, label: '모든 빌드', value: '1.5초 미만 로딩', body: '고객이 실제로 쓰는 휴대폰에서도 빠르게.' },
+      { from: 0.8, to: 1.01, label: 'TJ Flowers · 검색', value: '검색 노출 5배', body: '6주 만에.' },
+    ],
   },
 } as const
 
@@ -46,97 +51,40 @@ export default function HeroNew({ locale = 'en' }: { locale?: string }) {
   const ko = locale === 'ko'
   const t = ko ? copy.ko : copy.en
   const prefix = ko ? '/ko' : ''
+  const hero: LumosCopy = {
+    eyebrow: t.eyebrow,
+    h1Lead: t.h1Lead,
+    h1Accent: t.h1Accent,
+    sub: t.sub,
+    cta1: t.cta1,
+    cta2: t.cta2,
+    scroll: t.scroll,
+    sceneLabel: t.sceneLabel,
+    captions: t.captions.map((c) => ({ ...c })),
+  }
 
   return (
-    <section className="relative bg-ivory pt-28 md:pt-36" aria-labelledby="hero-title">
-      <div className="container-edge flex flex-col items-center text-center">
-        <p className="text-[14px] md:text-[15px] font-medium text-ash">{t.eyebrow}</p>
-        <h1
-          id="hero-title"
-          className="mt-4 font-bold text-ink text-[clamp(2.6rem,8.2vw,6.75rem)] leading-[0.98] tracking-[-0.055em] max-w-[14ch] text-balance"
-        >
-          <span className="block">{t.h1Lead}</span>
-          <span className="block kn-gradient pb-[0.06em]">{t.h1Accent}</span>
-        </h1>
-        <p className="mt-6 max-w-[46ch] text-[17px] md:text-[21px] leading-[1.45] text-graphite">{t.sub}</p>
-        <div className="mt-8 flex flex-wrap items-center justify-center gap-x-6 gap-y-3">
-          <Link href={`${prefix}/#contact`} className="btn-ink">
-            {t.cta1}
-          </Link>
-          <Link href={`${prefix}/blog/tj-flowers-shopify-revamp-case-study`} className="btn-ghost">
-            {t.cta2} <span aria-hidden>›</span>
-          </Link>
+    <>
+      <LumosHero t={hero} prefix={prefix} />
+      <section className="bg-ivory pt-14 md:pt-20" aria-label={t.logosLabel}>
+        <div className="container-edge pb-6 border-b border-hairline">
+          <p className="text-center text-[13px] text-ash">{t.logosLabel}</p>
+          <ul className="mt-5 flex flex-wrap justify-center gap-x-8 gap-y-3">
+            {CLIENT_LOGOS.map((logo) => (
+              <li key={logo.name}>
+                <a
+                  href={logo.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[17px] md:text-[19px] font-semibold tracking-[-0.02em] text-mute hover:text-ink transition-colors"
+                >
+                  {logo.name}
+                </a>
+              </li>
+            ))}
+          </ul>
         </div>
-      </div>
-
-      <div className="kn-stage container-edge mt-14 md:mt-20 flex justify-center">
-        <div className="kn-fan w-full max-w-[960px] aspect-[16/9.4]">
-          <div className="kn-side kn-side-l" aria-hidden>
-            <Image
-              src="/portfolio/salt-polish.jpg"
-              alt=""
-              fill
-              sizes="(max-width: 768px) 0px, 720px"
-              className="object-cover object-top rounded-[16px] border border-black/5 shadow-[0_50px_90px_-40px_rgba(0,0,0,.45)]"
-            />
-          </div>
-          <div className="kn-side kn-side-r" aria-hidden>
-            <Image
-              src="/portfolio/migukstory.jpg"
-              alt=""
-              fill
-              sizes="(max-width: 768px) 0px, 720px"
-              className="object-cover object-top rounded-[16px] border border-black/5 shadow-[0_50px_90px_-40px_rgba(0,0,0,.45)]"
-            />
-          </div>
-          <a
-            href="https://www.tjflowersandevents.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="absolute inset-0 block"
-            aria-label="TJ Flowers — live Shopify store"
-          >
-            <Image
-              src="/hero/tj-flowers-mockup.jpeg"
-              alt="TJ Flowers — Manhattan luxury florist Shopify build by Zoe Lumos"
-              fill
-              priority
-              sizes="(max-width: 768px) 92vw, 960px"
-              className="object-cover object-top rounded-[16px] border border-black/5 shadow-[0_60px_110px_-50px_rgba(0,0,0,.5)]"
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className="container-edge mt-12 md:mt-16 flex justify-center">
-        <div className="flex items-baseline gap-4 text-left">
-          <span className="text-[44px] md:text-[64px] font-bold tracking-[-0.05em] leading-none text-ink tabular-nums">
-            {t.proofBadge.metric}
-          </span>
-          <span className="flex flex-col">
-            <span className="text-[16px] md:text-[18px] font-semibold text-ink">{t.proofBadge.label}</span>
-            <span className="text-[13px] md:text-[14px] text-ash">{t.proofBadge.sub}</span>
-          </span>
-        </div>
-      </div>
-
-      <div className="container-edge mt-14 md:mt-20 pb-6 border-b border-hairline">
-        <p className="text-center text-[13px] text-ash">{t.logosLabel}</p>
-        <ul className="mt-5 flex flex-wrap justify-center gap-x-8 gap-y-3">
-          {CLIENT_LOGOS.map((logo) => (
-            <li key={logo.name}>
-              <a
-                href={logo.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[17px] md:text-[19px] font-semibold tracking-[-0.02em] text-mute hover:text-ink transition-colors"
-              >
-                {logo.name}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </section>
+      </section>
+    </>
   )
 }

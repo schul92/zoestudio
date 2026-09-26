@@ -225,7 +225,7 @@ export default function Home({ params }: { params: { locale: string } }) {
         />
       ))}
       <HeaderWrapper locale={locale} />
-      <main className="min-h-screen relative overflow-x-hidden">
+      <main className="min-h-screen relative overflow-x-clip">
         <HeroNew locale={locale} />
         <TrustRibbon locale={locale} />
         <FloatingDevices locale={locale as 'en' | 'ko'} />

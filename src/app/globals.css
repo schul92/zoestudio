@@ -372,28 +372,57 @@ input, textarea, select, button {
 
 /* ── Keynote components ─────────────────────────────── */
 .kn-card { background: #fff; border-radius: 18px; border: 1px solid rgba(0,0,0,.06); }
-.kn-gradient {
-  background: linear-gradient(90deg, #1D1D1F 15%, #0071E3 60%, #00A3A3 100%);
-  -webkit-background-clip: text; background-clip: text; color: transparent;
-}
 .kn-frost { background: rgba(251,251,253,.8); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); }
 
-/* Hero device fan: readable at rest (flat, slightly tilted); where the browser
-   supports scroll-driven animations it starts tilted and flattens as it enters. */
-.kn-stage { perspective: 1600px; }
-.kn-fan { position: relative; transform-style: preserve-3d; transform: rotateX(8deg); }
-.kn-fan > .kn-side { position: absolute; inset: 0; }
-.kn-fan > .kn-side-l { transform: translate3d(-38%, 4%, -260px) rotateY(22deg) scale(.8); }
-.kn-fan > .kn-side-r { transform: translate3d(38%, 4%, -260px) rotateY(-22deg) scale(.8); }
-@supports (animation-timeline: view()) {
-  .kn-fan { animation: kn-flat linear both; animation-timeline: view(); animation-range: entry 0% cover 40%; }
-  @keyframes kn-flat { from { transform: rotateX(30deg) translateY(4%) scale(.94); } to { transform: none; } }
+/* Lumos hero: a pinned dark stage; the 3D laptop scene renders into .lh-canvas once three.js has loaded. */
+.lh-story { position: relative; height: 460vh; background: #050506; }
+.lh-stage {
+  position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; color: #F5F5F7;
+  background: radial-gradient(70% 60% at 50% 42%, #1a1c21 0%, #0b0c0f 55%, #050506 100%);
 }
-@media (max-width: 767px) { .kn-fan > .kn-side { display: none; } }
+.lh-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.lh-fallback { position: absolute; left: 0; right: 0; bottom: 12%; margin: auto; width: min(720px, 86vw); border-radius: 14px; }
+.lh-copy {
+  position: absolute; inset: 0; pointer-events: none; display: grid; align-content: start; justify-items: center;
+  text-align: center; padding: clamp(96px, 14vh, 150px) 16px 0; will-change: opacity, transform;
+}
+.lh-eyebrow { font-size: 15px; color: #A1A1A6; }
+.lh-h1 {
+  margin-top: 10px; font-weight: 700; font-size: clamp(2.75rem, 8.4vw, 7.25rem); line-height: .95;
+  letter-spacing: -.055em; max-width: 13ch; text-wrap: balance;
+}
+.lh-accent { background: linear-gradient(180deg, #F5F5F7 0%, #9a9ca3 100%); -webkit-background-clip: text; background-clip: text; color: transparent; padding-bottom: .06em; }
+.lh-sub { margin-top: 18px; max-width: 46ch; font-size: clamp(15px, 1.5vw, 19px); line-height: 1.5; color: #A1A1A6; }
+.lh-cta {
+  position: absolute; left: 0; right: 0; bottom: clamp(28px, 6vh, 56px); display: flex; gap: 12px 24px;
+  justify-content: center; align-items: center; flex-wrap: wrap; padding-inline: 16px;
+}
+.lh-btn { background: #0071E3; color: #fff; font-weight: 600; font-size: 16px; padding: 13px 22px; border-radius: 999px; transition: background .2s; }
+.lh-btn:hover { background: #0077ED; }
+.lh-link { color: #2997FF; font-weight: 600; font-size: 16px; }
+.lh-link:hover { text-decoration: underline; }
+.lh-btn:focus-visible, .lh-link:focus-visible { outline: 2px solid #2997FF; outline-offset: 3px; }
+.lh-cap {
+  position: absolute; left: 50%; top: clamp(78px, 10vh, 112px); width: min(760px, 92vw); text-align: center;
+  opacity: 0; transform: translate(-50%, 14px); transition: opacity .5s ease, transform .5s ease; pointer-events: none;
+}
+.lh-cap.lh-on { opacity: 1; transform: translate(-50%, 0); }
+.lh-cap small { display: block; margin-bottom: 10px; font-size: 12px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: #2997FF; }
+.lh-cap b { display: inline; font-size: clamp(20px, 2.2vw, 30px); letter-spacing: -.035em; line-height: 1.15; margin-right: .25em; }
+.lh-cap p { display: inline; color: #A1A1A6; font-size: clamp(20px, 2.2vw, 30px); font-weight: 600; letter-spacing: -.025em; line-height: 1.2; }
+.lh-hint { position: absolute; left: 50%; bottom: 8px; transform: translateX(-50%); font-size: 11px; color: #6E6E73; letter-spacing: .16em; text-transform: uppercase; }
+@media (max-width: 720px) { .lh-hint { display: none; } }
+@media (prefers-reduced-motion: reduce) { .lh-cap { transition: none; } }
 
-@media (prefers-reduced-motion: reduce) {
-  .kn-fan { animation: none !important; transform: none; }
-}
+/* Nav over the dark hero */
+html[data-nav-tone="dark"] .kn-header:not(.kn-header-open) { background: rgba(10,11,14,.72); border-color: rgba(255,255,255,.08); }
+html[data-nav-tone="dark"] .kn-header:not(.kn-header-open) .text-ink { color: #F5F5F7; }
+html[data-nav-tone="dark"] .kn-header:not(.kn-header-open) .text-graphite,
+html[data-nav-tone="dark"] .kn-header:not(.kn-header-open) .text-ash { color: #A1A1A6; }
+html[data-nav-tone="dark"] .kn-header:not(.kn-header-open) a:hover { color: #F5F5F7; }
+html[data-nav-tone="dark"] .kn-header:not(.kn-header-open) .bg-ink { background: #F5F5F7; color: #1D1D1F; }
+html[data-nav-tone="dark"] .kn-header:not(.kn-header-open) button .bg-ink { background: #F5F5F7; }
+.kn-header { transition: background-color .3s ease, border-color .3s ease; }
 
 /* ScrubText: words light up across the paragraph's view timeline. */
 @supports (animation-timeline: view()) {
