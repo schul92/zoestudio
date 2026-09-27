@@ -281,7 +281,7 @@ export default function LumosHero({ t, prefix }: { t: LumosCopy; prefix: string 
 
         <div ref={ctaRef} className="lh-cta">
           <Link href={`${prefix}/#contact`} className="lh-btn">
-            {t.cta1}
+            {t.cta1} <span className="lh-btn-arrow" aria-hidden>→</span>
           </Link>
           <Link href={`${prefix}/blog/tj-flowers-shopify-revamp-case-study`} className="lh-link">
             {t.cta2} <span aria-hidden>›</span>

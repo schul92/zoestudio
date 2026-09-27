@@ -408,11 +408,30 @@ input, textarea, select, button {
   position: absolute; left: 0; right: 0; bottom: clamp(28px, 6vh, 56px); display: flex; gap: 12px 24px;
   justify-content: center; align-items: center; flex-wrap: wrap; padding-inline: 16px;
 }
-.lh-btn { background: #0071E3; color: #fff; font-weight: 600; font-size: 16px; padding: 13px 22px; border-radius: 999px; transition: background .2s; }
-.lh-btn:hover { background: #0077ED; }
-.lh-link { color: #2997FF; font-weight: 600; font-size: 16px; display: inline-flex; align-items: center; min-height: 44px; padding: 0 4px; }
-.lh-link:hover { text-decoration: underline; }
-.lh-btn:focus-visible, .lh-link:focus-visible { outline: 2px solid #2997FF; outline-offset: 3px; }
+.lh-btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 0 26px;
+  background: #F5F5F7; color: #0B0B0D; font-weight: 600; font-size: 16px; letter-spacing: -.01em; border-radius: 999px;
+  box-shadow: 0 1px 0 rgba(255,255,255,.6) inset, 0 18px 40px -18px rgba(0,0,0,.9); transition: background .2s, transform .2s;
+}
+.lh-btn:hover { background: #fff; }
+.lh-btn:active { transform: scale(.98); }
+.lh-btn-arrow { transition: transform .2s; }
+.lh-btn:hover .lh-btn-arrow { transform: translateX(3px); }
+.lh-link { color: #D2D2D7; font-weight: 500; font-size: 16px; display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 4px; }
+.lh-link:hover { color: #fff; }
+/* Phones get one clear action; the case study lives further down the page. */
+@media (max-width: 767px) {
+  .lh-link { display: none; }
+  .lh-btn { width: min(100%, 340px); }
+  /* Sit above the floating chat bubble instead of under it. */
+  .lh-cta { bottom: calc(148px + env(safe-area-inset-bottom, 0px)); }
+}
+/* Short phones (SE): no room above the bubble without covering the laptop — sit low and leave the bubble its lane. */
+@media (max-width: 767px) and (max-height: 740px) {
+  .lh-cta { bottom: calc(20px + env(safe-area-inset-bottom, 0px)); justify-content: flex-start; }
+  .lh-btn { width: calc(100% - 84px); }
+}
+.lh-btn:focus-visible, .lh-link:focus-visible { outline: 2px solid #F5F5F7; outline-offset: 3px; }
 .lh-cap {
   position: absolute; left: 50%; top: clamp(78px, 10vh, 112px); width: min(760px, 92vw); text-align: center;
   opacity: 0; transform: translate(-50%, 14px); transition: opacity .5s ease, transform .5s ease; pointer-events: none;
