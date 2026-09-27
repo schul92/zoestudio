@@ -13521,4 +13521,126 @@ export const blogContent: BlogPost[] = [
       ],
     },
   },
+  // ─────────────────────────────────────────────────────────────────
+  // 2026-09-27 — E-commerce: email/SMS marketing automation for repeat
+  // purchases (San Diego, CA / Convoy District). Distinct angle from the
+  // existing ecommerce cluster (payments/tax nexus, fulfillment, sourcing,
+  // cart abandonment/returns) — retention automation specifically.
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'korean-ecommerce-email-sms-retention-san-diego-2026',
+    date: '2026-09-27',
+    updatedDate: '2026-09-27',
+    readTime: 9,
+    category: { en: 'E-commerce', ko: '이커머스' },
+    title: {
+      en: 'San Diego Korean E-Commerce Sellers: Turn One-Time Buyers Into Repeat Customers With Email & SMS Automation (2026)',
+      ko: '샌디에이고 한인 이커머스 셀러 — 이메일·SMS 자동화로 한 번 산 손님을 재구매 고객으로 (2026)',
+    },
+    metaDescription: {
+      en: 'Korean-American product sellers around San Diego\'s Convoy District often win a first sale through paid ads or Instagram, then never hear from that customer again because nobody captured an email or phone number to reach them with. Here is how Klaviyo and SMS platforms like Postscript turn a one-time buyer into an automated repeat-purchase channel — welcome, abandoned cart, replenishment, and win-back flows — plus what TCPA actually requires before sending a marketing text.',
+      ko: '샌디에이고 콘보이 지구(Convoy District) 주변의 한인 이커머스 셀러들은 페이드 광고나 인스타그램으로 첫 판매는 곧잘 만들어내지만, 그 손님에게 다시 연락할 이메일이나 전화번호를 아무도 확보해두지 않아서 거기서 끝나는 경우가 많습니다. Klaviyo와 Postscript 같은 SMS 플랫폼으로 한 번 산 손님을 자동 재구매 채널로 바꾸는 방법 — 웰컴, 장바구니 이탈, 재구매(소모품) 리마인더, 윈백 플로우 — 그리고 마케팅 문자를 보내기 전 TCPA가 실제로 요구하는 것까지 정리했습니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'Should a Korean e-commerce seller start with email marketing or SMS marketing first?',
+          ko: '한인 이커머스 셀러는 이메일 마케팅과 SMS 마케팅 중 어느 것부터 시작해야 하나요?',
+        },
+        a: {
+          en: "Start with email — it requires a lighter consent bar than SMS under federal law, and Shopify's checkout already surfaces a marketing-consent checkbox for free, so a welcome and abandoned-cart email flow can be live within a day using a tool like Klaviyo's free starting tier. SMS is a stronger channel for urgent, time-sensitive messages — a restock alert, a flash sale ending in hours — because open rates on text are effectively immediate compared to email, but it requires collecting separate express written consent before you can add a phone number to a marketing list, which takes more deliberate setup (a dedicated opt-in checkbox or keyword, a documented consent record). The practical order for a new Convoy District or online-only seller: get the email flows running first while the list is small, then layer in SMS once there is a base of engaged customers worth reaching in real time.",
+          ko: '이메일부터 시작하세요 — 이메일은 SMS보다 연방법상 요구되는 동의 기준이 낮고, Shopify 체크아웃에는 이미 마케팅 동의 체크박스가 기본으로 붙어 있어서 Klaviyo 같은 툴의 무료 플랜만으로도 웰컴·장바구니 이탈 이메일 플로우를 하루 만에 켤 수 있습니다. SMS는 재입고 알림이나 몇 시간 안에 끝나는 플래시 세일처럼 긴급하고 시간이 중요한 메시지에 더 강한 채널입니다 — 문자는 이메일보다 사실상 즉시 열람되기 때문입니다. 다만 마케팅 리스트에 전화번호를 추가하려면 별도의 명시적 서면 동의를 받아야 하고, 이를 위해서는 전용 동의 체크박스나 키워드, 동의 기록 같은 더 신중한 세팅이 필요합니다. 새로 시작하는 콘보이 지구 셀러나 온라인 전용 셀러라면 리스트가 작을 때 이메일 플로우부터 돌리고, 실시간으로 연락할 가치가 있는 참여 고객 베이스가 쌓인 뒤 SMS를 얹는 순서가 현실적입니다.',
+        },
+      },
+      {
+        q: {
+          en: 'What consent do I legally need before sending marketing text messages to customers?',
+          ko: 'SMS(문자) 마케팅을 보내려면 법적으로 어떤 동의가 필요한가요?',
+        },
+        a: {
+          en: "Under the federal Telephone Consumer Protection Act (TCPA), you need a customer's express written consent before sending marketing text messages, and that consent has to be separate from consent to receive transactional texts like shipping or order-confirmation updates — collecting a phone number for order updates does not automatically permit you to market to it. In practice this means a dedicated opt-in step (a checkbox at checkout that is unchecked by default, or a keyword text like \"Text JOIN to get restock alerts\") that records what the customer agreed to and when, an immediate and automatic honoring of STOP replies, and avoiding sends during federally defined quiet hours. Platforms built for e-commerce SMS, like Postscript or Attentive, handle the opt-in language, consent logging, and STOP/HELP compliance automatically when set up correctly — the seller's job is making sure the opt-in step actually exists and is never skipped to grow the list faster. This is general information, not legal advice; a seller with specific TCPA exposure questions should confirm the current requirements with counsel.",
+          ko: '연방 전화소비자보호법(TCPA)에 따라 마케팅 문자를 보내려면 고객의 명시적 서면 동의(express written consent)가 필요하며, 이는 배송 안내나 주문 확인 같은 거래성 문자에 대한 동의와는 별도로 받아야 합니다 — 주문 업데이트를 위해 받은 전화번호라고 해서 자동으로 마케팅에 써도 된다는 뜻은 아닙니다. 실무적으로는 전용 옵트인 절차(기본적으로 체크가 안 되어 있는 체크아웃 체크박스, 또는 "재입고 알림 받으려면 JOIN을 보내주세요" 같은 키워드 문자)를 두어 고객이 언제 무엇에 동의했는지 기록하고, STOP 답장은 즉시 자동으로 반영하며, 연방이 정한 발송 금지 시간대를 피해야 합니다. Postscript나 Attentive처럼 이커머스 SMS 전용으로 만들어진 플랫폼은 제대로 세팅하면 옵트인 문구, 동의 기록, STOP/HELP 응대를 자동으로 처리해줍니다. 셀러가 할 일은 이 옵트인 절차가 실제로 존재하고, 리스트를 빨리 키우겠다고 절대 생략되지 않도록 하는 것입니다. 이는 일반 정보이며 법률 자문이 아닙니다 — TCPA 관련 구체적인 리스크가 걱정되신다면 변호사와 현재 요건을 확인하세요.',
+        },
+      },
+      {
+        q: {
+          en: 'When should a win-back automation trigger, and how many messages should it send?',
+          ko: '재구매(윈백) 자동화는 언제, 몇 번 메시지를 보내야 효과적인가요?',
+        },
+        a: {
+          en: "The standard setup triggers a win-back flow automatically once a customer crosses roughly 60 to 90 days since their last purchase with no repeat order, though the right number depends on the product category — consumables like skincare, snacks, or supplements should trigger sooner, timed to roughly when the typical product runs out (often 30 to 45 days), while durable or gift items can reasonably wait the full 90 days. A typical flow runs two to three messages over one to two weeks: a first check-in that reminds them what they bought without pushing a discount, a second message with a distinct incentive that is not simply a repeat of the original welcome offer (so the flow does not train customers to wait for the same coupon every time), and a final message that treats a non-response as a signal to reduce send frequency rather than escalate it. The goal is recovering customers who drifted away, not fatiguing the ones who are quietly still buying on their own schedule.",
+          ko: '표준적인 세팅은 마지막 구매 후 대략 60~90일이 지나도록 재구매가 없는 손님에게 윈백 플로우가 자동으로 트리거되는 방식이지만, 정확한 시점은 상품 카테고리에 따라 다릅니다 — 스킨케어·과자·영양제 같은 소모품은 보통 상품이 다 떨어질 시점(대략 30~45일)에 맞춰 더 빨리 트리거해야 하고, 내구재나 선물용 상품은 90일까지 기다려도 무리가 없습니다. 일반적인 플로우는 1~2주에 걸쳐 메시지 2~3개로 구성됩니다 — 할인 없이 구매했던 상품을 상기시키는 첫 체크인, 원래 웰컴 혜택을 그대로 반복하지 않는 별도의 혜택을 담은 두 번째 메시지(그래야 손님이 매번 같은 쿠폰을 기다리도록 학습되지 않습니다), 그리고 응답이 없으면 발송 빈도를 더 늘리는 게 아니라 줄이는 신호로 받아들이는 마지막 메시지입니다. 목표는 멀어진 손님을 되찾는 것이지, 자기 페이스대로 조용히 계속 구매하는 손님을 지치게 만드는 것이 아닙니다.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "San Diego's Convoy District — the strip along Convoy Street and Aja Court anchored by H Mart and Zion Market, with dozens of Korean restaurants, beauty shops, and grocers packed into a few blocks — is also home to a growing number of Korean-American sellers who ship nationally: K-beauty resellers, snack and grocery bundlers, supplement brands, and small manufacturers who found their first customers locally and then built a Shopify or Amazon storefront to sell across the country. Getting that first sale usually works. What happens after rarely does. A customer buys once, their email and phone number sit in the order database, and then nothing follows — no welcome message, no restock alert, no reason to think of the brand again before they forget the name entirely. Winning that same customer back ends up costing exactly what winning them the first time did, through the same paid ad or Instagram post, because nobody ever turned that one email address into an owned, automated channel." },
+        { type: 'h2', content: 'Why re-selling to a stranger costs more than remembering a customer' },
+        { type: 'p', content: "Every sale that comes through a paid ad, an algorithm-dependent Instagram post, or a KakaoTalk broadcast is a sale you pay for again next time, in ad spend or in the odds that the post actually reaches someone. A sale that comes through an automated email or text sent to a past customer costs almost nothing per send once the flow is built — the difference between the two is the entire economics of running a repeat-purchase business instead of a series of one-time transactions. Most Korean product sellers we talk to have the second kind of business by accident: real repeat buyers exist, but nothing is automatically reaching them, so every month starts from zero." },
+        { type: 'ul', content: 'What running without an owned retention channel actually costs:', items: [
+          "Every repeat sale still depends on a paid ad or an algorithm-dependent post, because there is no direct channel to reach people who already bought once.",
+          'Restocks and new drops only reach whoever happens to see the Instagram grid or a KakaoTalk broadcast that specific day — most past customers never see it at all.',
+          "A customer whose package arrived late or damaged has no automated way to be quietly won back with a personal follow-up; they just don't come back.",
+          'Purchase data — what someone bought, when, how often — sits unused in the order history instead of driving the next offer that customer is actually likely to want.',
+        ] },
+        { type: 'h2', content: 'Step one: capture the email and phone number at the moment of highest intent' },
+        { type: 'p', content: "Retention automation only works on contacts you actually have, and the best time to collect one is the moment someone is already buying or has just bought — not a generic newsletter popup a stranger dismisses on their first visit. Shopify's checkout has a native marketing-consent checkbox for email that many themes leave off by default; turning it on is a five-minute setting change, not a project." },
+        { type: 'ul', content: 'The capture points worth setting up first:', items: [
+          "Shopify's checkout-page email marketing consent checkbox — free, built-in, and captured at the exact moment a customer is already committed to buying.",
+          'A modest first-order discount (commonly 10-15%) in exchange for an email signup on the homepage, which pays for itself the first time that address turns into a second sale.',
+          "A post-purchase SMS opt-in question on the order-confirmation page — \"Text JOIN to get restock alerts\" — rather than bundling SMS silently into checkout, since it needs its own explicit consent.",
+          'A QR code and sign-up flow at any in-person pop-up, wholesale table, or Convoy District storefront presence, so local walk-in customers join the same automated flow as national online buyers.',
+        ] },
+        { type: 'h2', content: 'Step two: build the four flows that do the retention work automatically' },
+        { type: 'p', content: "Klaviyo for email and a platform like Postscript or Attentive for SMS both connect natively to Shopify, pulling in order history, product catalog, and customer data without manual exporting. Once connected, four flows cover most of what a product seller needs, and they only have to be built once." },
+        { type: 'ul', content: 'The four flows, in the order worth building them:', items: [
+          'Welcome flow — two to four messages over the first week that introduce the brand story and the products first-time visitors actually looked at, ending with the signup discount code if one was promised.',
+          'Abandoned cart flow — a reminder within an hour of checkout abandonment, then a second the next day, is typically the single highest-return automation because it targets someone who already decided to buy and just did not finish.',
+          "Post-purchase replenishment flow — for anything consumable (skincare, snacks, supplements, coffee), a reminder timed to roughly how long the product actually lasts should be the first flow built for these categories, since the repurchase window is predictable rather than a guess.",
+          "Win-back flow — triggered automatically once a customer crosses roughly 60-90 days without a repeat order, with a distinct incentive rather than a repeat of the welcome offer, so customers are not trained to wait for the same coupon indefinitely.",
+        ] },
+        { type: 'tip', content: "Check one thing today: open your Shopify admin's customer list and see how many past customers have an email or phone number marked as \"subscribed\" versus how many only ever checked out as a guest. A guest checkout with no consent captured can only be reached again through another paid ad — turning on consent capture at checkout costs nothing and takes about five minutes." },
+        { type: 'h2', content: 'SMS is stricter than email — get consent right the first time' },
+        { type: 'p', content: "SMS converts fast because people actually read texts, but the legal bar is higher than email. The federal TCPA requires express written consent specifically for marketing texts, separate from any consent given for transactional messages like shipping updates — a phone number collected to send delivery notifications cannot quietly become a marketing list. STOP replies need to be honored immediately and automatically, not manually the next time someone checks a dashboard, and sends need to avoid quiet hours. A platform built for e-commerce SMS handles the opt-in language, consent timestamping, and STOP/HELP logic correctly when set up as intended — the seller's part is making sure that setup is never skipped or shortcut to grow the list a little faster." },
+        { type: 'h2', content: 'San Diego specific: a small, dense local base and a much larger national one' },
+        { type: 'p', content: "Convoy District's Korean business corridor is dense but geographically small — a seller can walk it in twenty minutes — which means the in-person customer base tops out fast, while the Shopify or Amazon side of the same business can reach Korean-American households from Los Angeles to Atlanta with no added storefront cost. That split matters for how flows get written: most national customers read English-first content even when the brand is Korean, so the core flows should run in English, while a separately tagged segment — local Convoy District regulars, or customers who signed up through a Korean-language landing page or a Naver blog link — can get a Korean-language version of the same automated sequence. Building both from day one avoids the common mistake of treating the entire list as one audience and under-serving either side." },
+        { type: 'cta', content: "Selling K-beauty, snacks, supplements, or other products out of San Diego and want the emails and texts to actually run themselves? ZOE LUMOS sets up Klaviyo and Postscript/Attentive on your Shopify store — welcome, abandoned cart, replenishment, and win-back flows, in English and Korean, built to stay TCPA-compliant. Free consultation in English or Korean: email info@zoelumos.com or message us on KakaoTalk (http://pf.kakao.com/_xhxdxmlX/chat)." },
+      ],
+      ko: [
+        { type: 'intro', content: '샌디에이고 콘보이 지구(Convoy District) — H Mart와 Zion Market을 중심으로 콘보이 스트리트와 아자 코트(Aja Court)를 따라 한인 식당, 뷰티숍, 마트 수십 곳이 몇 블록 안에 밀집된 상권 — 에는 전국으로 배송하는 한인 이커머스 셀러들도 점점 늘고 있습니다. K뷰티 리셀러, 과자·식품 번들 셀러, 영양제 브랜드, 그리고 지역에서 첫 손님을 만난 뒤 Shopify나 아마존 스토어를 만들어 전국 판매로 확장한 소규모 제조업체들입니다. 첫 판매는 대체로 잘 됩니다. 그다음이 문제입니다. 손님이 한 번 구매하면 이메일과 전화번호는 주문 데이터베이스 안에 그냥 앉아 있고, 그 뒤로는 아무 일도 일어나지 않습니다 — 웰컴 메시지도, 재입고 알림도, 브랜드 이름을 잊어버리기 전에 다시 떠올릴 이유도 없습니다. 같은 손님을 다시 데려오는 데는 처음 데려왔을 때와 똑같은 비용이 듭니다 — 같은 유료 광고, 같은 인스타그램 게시물로요. 그 이메일 주소 하나를 내 소유의 자동화 채널로 바꾼 적이 한 번도 없기 때문입니다.' },
+        { type: 'h2', content: '모르는 사람에게 다시 파는 것이 아는 손님을 기억하는 것보다 비싼 이유' },
+        { type: 'p', content: '유료 광고, 알고리즘에 좌우되는 인스타그램 게시물, 카카오톡 브로드캐스트로 들어오는 판매는 모두 다음번에도 또 돈을 내야 하는 판매입니다 — 광고비로든, 게시물이 실제로 누군가에게 닿을 확률로든요. 반면 과거 손님에게 보내는 자동 이메일·문자로 들어오는 판매는 플로우를 한 번만 만들어두면 발송당 비용이 거의 들지 않습니다. 이 차이가 곧 일회성 거래를 반복하는 사업과 재구매 사업의 경제성 전체를 가릅니다. 저희가 만나는 한인 상품 셀러 대부분은 의도치 않게 전자에 해당합니다 — 실제로 재구매할 손님은 있는데, 자동으로 그들에게 닿는 채널이 없어서 매달 처음부터 다시 시작하는 셈입니다.' },
+        { type: 'ul', content: '내 소유의 재구매 채널 없이 운영할 때 실제로 드는 비용:', items: [
+          '모든 재구매가 여전히 유료 광고나 알고리즘 게시물에 의존합니다 — 이미 한 번 구매한 사람에게 직접 닿을 채널이 없기 때문입니다.',
+          '재입고나 신상품 소식은 하필 그날 인스타그램 피드나 카카오톡 브로드캐스트를 본 사람에게만 도달합니다 — 대부분의 기존 손님은 아예 보지 못합니다.',
+          '배송이 늦거나 상품이 파손된 손님을 개인화된 후속 연락으로 조용히 다시 붙잡을 자동화된 방법이 없습니다 — 그냥 다시 오지 않을 뿐입니다.',
+          '무엇을, 언제, 얼마나 자주 샀는지에 대한 구매 데이터가 주문 이력 안에 방치된 채, 그 손님이 실제로 원할 만한 다음 제안으로 이어지지 못합니다.',
+        ] },
+        { type: 'h2', content: '1단계 — 의향이 가장 높은 순간에 이메일과 전화번호를 확보하세요' },
+        { type: 'p', content: '재구매 자동화는 실제로 확보한 연락처에서만 작동합니다. 그리고 연락처를 받기 가장 좋은 순간은 처음 방문한 낯선 사람이 넘겨버리는 일반적인 뉴스레터 팝업이 아니라, 손님이 이미 구매 중이거나 막 구매를 끝낸 바로 그 순간입니다. Shopify 체크아웃에는 이메일 마케팅 동의 체크박스가 기본 기능으로 있지만 많은 테마에서 기본값이 꺼져 있습니다 — 켜는 데 5분이면 충분한, 별도 프로젝트도 아닌 설정 변경입니다.' },
+        { type: 'ul', content: '가장 먼저 세팅할 가치가 있는 포착 지점:', items: [
+          'Shopify 체크아웃 페이지의 이메일 마케팅 동의 체크박스 — 무료에 내장돼 있고, 손님이 이미 구매를 결심한 바로 그 순간에 받습니다.',
+          '홈페이지에서 이메일 가입과 맞바꾸는 적당한 첫 구매 할인(보통 10~15%) — 그 주소가 두 번째 구매로 이어지는 순간 이미 본전을 뽑습니다.',
+          '주문 확인 페이지에서 별도로 묻는 SMS 옵트인 질문 — "재입고 알림을 받으려면 JOIN을 보내주세요" — 체크아웃에 조용히 끼워 넣지 말고 따로 물으세요. SMS는 별도의 명시적 동의가 필요하기 때문입니다.',
+          '팝업 매장, 도매 부스, 콘보이 지구 오프라인 매장 어디서든 쓸 수 있는 QR코드와 가입 플로우 — 이렇게 하면 현장 손님도 전국 온라인 손님과 같은 자동화 플로우에 합류합니다.',
+        ] },
+        { type: 'h2', content: '2단계 — 재구매를 자동으로 만들어주는 네 가지 플로우를 만드세요' },
+        { type: 'p', content: '이메일용 Klaviyo와 SMS용 Postscript나 Attentive 같은 플랫폼 모두 Shopify에 네이티브로 연동되어, 수동 내보내기 없이 주문 이력·상품 카탈로그·고객 데이터를 그대로 가져옵니다. 연동만 해두면 상품 셀러에게 필요한 것 대부분을 네 가지 플로우가 커버하고, 한 번만 만들어두면 됩니다.' },
+        { type: 'ul', content: '세팅할 가치가 있는 순서대로, 네 가지 플로우:', items: [
+          '웰컴 플로우 — 첫 일주일에 걸쳐 메시지 2~4개로 브랜드 스토리와 신규 방문자가 실제로 눈여겨본 상품을 소개하고, 약속했던 가입 할인 코드로 마무리합니다.',
+          '장바구니 이탈 플로우 — 이탈 후 1시간 안에 첫 리마인더, 다음 날 두 번째 리마인더. 보통 자동화 중 단연 최고의 수익률을 보이는데, 이미 사기로 결심하고 다 못 끝낸 손님을 타깃하기 때문입니다.',
+          '재구매(소모품) 리마인더 플로우 — 스킨케어·과자·영양제·커피처럼 소모되는 상품이라면, 실제로 다 쓰는 데 걸리는 시간에 맞춘 리마인더가 이 카테고리에서 가장 먼저 만들어야 할 플로우입니다. 재구매 시점이 추측이 아니라 예측 가능하기 때문입니다.',
+          '윈백 플로우 — 마지막 구매 후 재구매 없이 대략 60~90일이 지나면 자동으로 트리거되며, 웰컴 혜택을 반복하지 않는 별도의 혜택을 담아야 손님이 항상 같은 쿠폰을 기다리도록 학습되지 않습니다.',
+        ] },
+        { type: 'tip', content: '오늘 딱 하나만 확인해 보세요. Shopify 관리자의 고객 목록을 열어서, 과거 손님 중 이메일이나 전화번호가 "구독" 상태로 표시된 사람이 몇 명인지, 게스트로만 체크아웃한 사람이 몇 명인지 비교해 보세요. 동의를 받지 못한 게스트 체크아웃 손님은 또 다른 유료 광고로만 다시 닿을 수 있습니다 — 체크아웃에서 동의 캡처를 켜는 데는 비용이 들지 않고 5분이면 됩니다.' },
+        { type: 'h2', content: 'SMS는 이메일보다 엄격합니다 — 처음부터 동의를 제대로 받으세요' },
+        { type: 'p', content: '문자는 사람들이 실제로 읽기 때문에 전환이 빠르지만, 법적 기준은 이메일보다 높습니다. 연방 TCPA는 마케팅 문자에 대해 명시적 서면 동의를 별도로 요구하며, 배송 안내 같은 거래성 메시지에 대한 동의와는 구분됩니다 — 배송 알림을 보내려고 받은 전화번호가 조용히 마케팅 리스트로 바뀌면 안 됩니다. STOP 답장은 누군가 나중에 대시보드를 확인할 때가 아니라 즉시 자동으로 반영돼야 하고, 발송은 발송 금지 시간대를 피해야 합니다. 이커머스 SMS 전용으로 만들어진 플랫폼은 의도대로 세팅하면 옵트인 문구·동의 시점 기록·STOP/HELP 처리를 정확히 대신해줍니다. 셀러가 할 일은 리스트를 조금 더 빨리 키우겠다고 이 세팅을 절대 생략하거나 건너뛰지 않는 것입니다.' },
+        { type: 'h2', content: '샌디에이고만의 특징 — 작고 밀집된 로컬 베이스와 훨씬 큰 전국 베이스' },
+        { type: 'p', content: '콘보이 지구의 한인 상권은 밀집돼 있지만 지리적으로는 작습니다 — 걸어서 20분이면 한 바퀴 도는 규모라, 현장 손님 베이스는 금방 한계에 다다릅니다. 반면 같은 브랜드의 Shopify나 아마존 채널은 추가 매장 비용 없이 LA부터 애틀랜타까지 전국 한인 가정에 닿을 수 있습니다. 이 차이는 플로우를 어떤 언어로 쓸지에도 영향을 줍니다 — 브랜드가 한인 브랜드여도 전국 손님 대부분은 영어 콘텐츠를 먼저 읽으므로 핵심 플로우는 영어로 돌리고, 콘보이 지구 단골이나 한국어 랜딩페이지·네이버 블로그 링크로 가입한 손님처럼 별도로 태그된 세그먼트에는 같은 자동화 시퀀스의 한국어 버전을 보내면 됩니다. 처음부터 둘 다 만들어두면 전체 리스트를 하나의 청중으로 취급해 어느 한쪽을 소홀히 하는 흔한 실수를 피할 수 있습니다.' },
+        { type: 'cta', content: '샌디에이고에서 K뷰티, 과자, 영양제 등 상품을 판매하시면서 이메일과 문자가 알아서 돌아가길 원하시나요? ZOE LUMOS는 Shopify 스토어에 Klaviyo와 Postscript/Attentive를 세팅합니다 — 웰컴, 장바구니 이탈, 재구매 리마인더, 윈백 플로우를 한국어·영어로, TCPA를 준수하도록 구축합니다. 한국어/영어 무료 상담: info@zoelumos.com 이메일 또는 카카오톡(http://pf.kakao.com/_xhxdxmlX/chat)으로 편하게 문의하세요.' },
+      ],
+    },
+  },
 ]
