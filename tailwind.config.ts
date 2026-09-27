@@ -12,14 +12,15 @@ const config: Config = {
         // ── Keynote palette (2026-09 redesign) ───────────────────────
         // Apple-like: near-white grounds, graphite ink, one blue action.
         // Token names are unchanged so every page picks this up.
-        ivory: '#FBFBFD',     // main bg
-        bone: '#F5F5F7',      // secondary bg
-        paper: '#FFFFFF',     // cards
-        ink: '#1D1D1F',
-        graphite: '#424245',
-        ash: '#6E6E73',
-        mute: '#86868B',
-        hairline: 'rgba(0, 0, 0, 0.09)',
+        // Values live in CSS vars: light by default (pay/admin), dark under .space (public site).
+        ivory: 'rgb(var(--c-ivory) / <alpha-value>)',
+        bone: 'rgb(var(--c-bone) / <alpha-value>)',
+        paper: 'rgb(var(--c-paper) / <alpha-value>)',
+        ink: 'rgb(var(--c-ink) / <alpha-value>)',
+        graphite: 'rgb(var(--c-graphite) / <alpha-value>)',
+        ash: 'rgb(var(--c-ash) / <alpha-value>)',
+        mute: 'rgb(var(--c-mute) / <alpha-value>)',
+        hairline: 'var(--hairline)',
         gold: {
           DEFAULT: '#0071E3',  // action blue (legacy "gold" token name)
           soft: '#6BB4FF',     // blue on dark grounds

@@ -181,7 +181,7 @@ export default function ContactWrapper({
       id="contact"
       className="relative section-pad overflow-hidden"
       style={{
-        background: '#FBFBFD',
+        background: 'var(--ivory)',
       }}
     >
       <Toast message={toast} onDismiss={() => setToast(null)} />
@@ -210,7 +210,7 @@ export default function ContactWrapper({
           <h2
             className="font-display tracking-[-0.02em] leading-[1.0] m-0"
             style={{
-              color: '#1D1D1F',
+              color: 'var(--ink)',
               fontSize: 'clamp(40px, 6vw, 88px)',
               fontWeight: 400,
             }}
@@ -226,7 +226,7 @@ export default function ContactWrapper({
           </h2>
           <p
             className="mt-8 mx-auto max-w-xl text-[16px] md:text-[17px] leading-[1.65]"
-            style={{ color: '#424245' }}
+            style={{ color: 'var(--graphite)' }}
           >
             {t.sub}
           </p>
@@ -263,7 +263,7 @@ export default function ContactWrapper({
             <div className="mt-7">
               <label
                 className="block uppercase text-[11px] mb-3"
-                style={{ letterSpacing: '0.18em', color: '#6E6E73' }}
+                style={{ letterSpacing: '0.18em', color: 'var(--ash)' }}
               >
                 {t.labels.scope}
                 <span className="ml-2 normal-case tracking-normal text-[11px]" style={{ color: 'rgba(163,124,95,0.6)' }}>
@@ -280,9 +280,9 @@ export default function ContactWrapper({
                       onClick={() => toggleScope(s)}
                       className="px-3.5 py-2 rounded-full text-[13px] transition-all duration-200 border"
                       style={{
-                        background: active ? '#1D1D1F' : 'transparent',
-                        color: active ? '#FBFBFD' : '#424245',
-                        borderColor: active ? '#1D1D1F' : 'rgba(0,0,0,0.18)',
+                        background: active ? 'var(--ink)' : 'transparent',
+                        color: active ? 'var(--ivory)' : 'var(--graphite)',
+                        borderColor: active ? 'var(--ink)' : 'var(--line)',
                       }}
                     >
                       {active && <span className="mr-1">✓</span>}
@@ -297,7 +297,7 @@ export default function ContactWrapper({
             <div className="mt-7">
               <label
                 className="block uppercase text-[11px] mb-3"
-                style={{ letterSpacing: '0.18em', color: '#6E6E73' }}
+                style={{ letterSpacing: '0.18em', color: 'var(--ash)' }}
               >
                 {t.labels.message}
               </label>
@@ -308,25 +308,25 @@ export default function ContactWrapper({
                 rows={5}
                 className="w-full rounded-xl px-4 py-3.5 text-[15px] leading-[1.6] resize-y transition-all duration-200 outline-none focus:ring-2"
                 style={{
-                  background: '#FBFBFD',
-                  border: '1px solid rgba(0,0,0,0.12)',
-                  color: '#1D1D1F',
+                  background: 'var(--ivory)',
+                  border: '1px solid var(--line)',
+                  color: 'var(--ink)',
                   minHeight: '128px',
                 }}
                 onFocus={(e) => {
                   e.currentTarget.style.borderColor = '#0071E3'
-                  e.currentTarget.style.background = '#FFFFFF'
+                  e.currentTarget.style.background = 'var(--paper)'
                 }}
                 onBlur={(e) => {
                   e.currentTarget.style.borderColor = 'rgba(0,0,0,0.12)'
-                  e.currentTarget.style.background = '#FBFBFD'
+                  e.currentTarget.style.background = 'var(--ivory)'
                 }}
               />
             </div>
 
             {/* SEND BUTTON — big, coral, impossible to miss */}
             <div className="mt-8 flex flex-col-reverse md:flex-row items-start md:items-center justify-between gap-4">
-              <p className="text-[12px] leading-relaxed" style={{ color: '#6E6E73' }}>
+              <p className="text-[12px] leading-relaxed" style={{ color: 'var(--ash)' }}>
                 <span
                   className="inline-block w-1 h-1 rounded-full mr-2 align-middle"
                   style={{ background: '#0071E3' }}
@@ -340,8 +340,8 @@ export default function ContactWrapper({
                   disabled={status === 'loading'}
                   className="inline-flex items-center gap-3 px-8 py-[18px] rounded-full text-[15px] font-medium transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_24px_50px_-16px_rgba(0,113,227,0.55)] disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
                   style={{
-                    background: valid ? '#0071E3' : '#1D1D1F',
-                    color: '#FBFBFD',
+                    background: valid ? 'var(--ink)' : 'var(--graphite)',
+                    color: 'var(--ivory)',
                     boxShadow: valid
                       ? '0 18px 40px -14px rgba(0,113,227,0.55), inset 0 0 0 1px rgba(255,255,255,0.08)'
                       : '0 14px 40px -14px rgba(0,0,0,0.45)',
@@ -369,7 +369,7 @@ export default function ContactWrapper({
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 justify-center">
             <span
               className="text-[12px] uppercase"
-              style={{ letterSpacing: '0.18em', color: '#6E6E73' }}
+              style={{ letterSpacing: '0.18em', color: 'var(--ash)' }}
             >
               {t.altContact.label}
             </span>
@@ -378,9 +378,9 @@ export default function ContactWrapper({
                 href={t.altContact.emailHref}
                 className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] transition-all duration-200 hover:scale-[1.03]"
                 style={{
-                  background: 'rgba(255,255,255,0.7)',
-                  border: '1px solid rgba(0,0,0,0.09)',
-                  color: '#1D1D1F',
+                  background: 'var(--paper)',
+                  border: '1px solid var(--line)',
+                  color: 'var(--ink)',
                   backdropFilter: 'blur(8px)',
                 }}
               >
@@ -396,7 +396,7 @@ export default function ContactWrapper({
                 style={{
                   background: '#FEE500',
                   border: '1px solid rgba(0,0,0,0.09)',
-                  color: '#1D1D1F',
+                  color: '#3C1E1E',
                 }}
               >
                 <span aria-hidden>💬</span>
@@ -410,7 +410,7 @@ export default function ContactWrapper({
         <div className="mt-16 md:mt-20 max-w-4xl mx-auto">
           <p
             className="text-center text-[11px] uppercase mb-8"
-            style={{ letterSpacing: '0.22em', color: '#6E6E73' }}
+            style={{ letterSpacing: '0.22em', color: 'var(--ash)' }}
           >
             {t.nextLabel}
           </p>
@@ -429,12 +429,12 @@ export default function ContactWrapper({
                   </span>
                   <span
                     className="font-display italic text-[18px] md:text-[20px] font-light"
-                    style={{ color: '#1D1D1F' }}
+                    style={{ color: 'var(--ink)' }}
                   >
                     {when}
                   </span>
                 </div>
-                <p className="text-[13px] leading-[1.6]" style={{ color: '#424245' }}>
+                <p className="text-[13px] leading-[1.6]" style={{ color: 'var(--graphite)' }}>
                   {desc}
                 </p>
               </InView>
@@ -470,7 +470,7 @@ function Field({
     <label className="block">
       <span
         className="block uppercase text-[11px] mb-2.5"
-        style={{ letterSpacing: '0.18em', color: '#6E6E73' }}
+        style={{ letterSpacing: '0.18em', color: 'var(--ash)' }}
       >
         {label}
         {required && (
@@ -486,21 +486,21 @@ function Field({
         autoComplete={autoComplete}
         className="w-full rounded-xl px-4 py-3 text-[15px] transition-all duration-200 outline-none"
         style={{
-          background: '#FBFBFD',
-          border: '1px solid rgba(0,0,0,0.12)',
-          color: '#1D1D1F',
+          background: 'var(--ivory)',
+          border: '1px solid var(--line)',
+          color: 'var(--ink)',
         }}
         onFocus={(e) => {
           e.currentTarget.style.borderColor = '#0071E3'
-          e.currentTarget.style.background = '#FFFFFF'
+          e.currentTarget.style.background = 'var(--paper)'
         }}
         onBlur={(e) => {
           e.currentTarget.style.borderColor = 'rgba(0,0,0,0.12)'
-          e.currentTarget.style.background = '#FBFBFD'
+          e.currentTarget.style.background = 'var(--ivory)'
         }}
       />
       {helper && (
-        <span className="block mt-1.5 text-[11px]" style={{ color: '#6E6E73' }}>
+        <span className="block mt-1.5 text-[11px]" style={{ color: 'var(--ash)' }}>
           {helper}
         </span>
       )}

@@ -17,6 +17,37 @@
     --action: #0071E3;
     --link: #0066CC;
     --line: #D2D2D7;
+    --c-ivory: 251 251 253;
+    --c-bone: 245 245 247;
+    --c-paper: 255 255 255;
+    --c-ink: 29 29 31;
+    --c-graphite: 66 66 69;
+    --c-ash: 110 110 115;
+    --c-mute: 134 134 139;
+  }
+
+  /* Space theme — the public site. /pay and /admin keep the light defaults above. */
+  .space {
+    color-scheme: dark;
+    --ivory: #000000;
+    --bone: #0A0A0C;
+    --paper: #0A0A0C;
+    --ink: #F5F5F7;
+    --graphite: #A1A1A6;
+    --ash: #8E8E93;
+    --mute: #8E8E93;
+    --hairline: rgba(255, 255, 255, 0.08);
+    --line: rgba(255, 255, 255, 0.14);
+    --action: #F5F5F7;
+    --link: #2997FF;
+    --gold: #2997FF;
+    --c-ivory: 0 0 0;
+    --c-bone: 10 10 12;
+    --c-paper: 10 10 12;
+    --c-ink: 245 245 247;
+    --c-graphite: 161 161 166;
+    --c-ash: 142 142 147;
+    --c-mute: 142 142 147;
   }
 
   html {
@@ -379,19 +410,17 @@ input, textarea, select, button {
 .lh-story-reduced { height: 220vh; }
 .lh-stage {
   position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; color: #F5F5F7;
-  background: radial-gradient(70% 60% at 50% 42%, #1a1c21 0%, #0b0c0f 55%, #050506 100%);
+  background: radial-gradient(70% 60% at 50% 42%, #16181c 0%, #07080a 55%, #000 100%);
 }
 .lh-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
 /* Stills replace the live scene on phones (by width before hydration, by device checks after). */
-.lh-stills { display: none; position: absolute; inset: 0; }
-.lh-still { position: absolute; inset: 0; transition: opacity .12s linear; }
-.lh-still-img { object-fit: cover; object-position: center top; }
-@media (max-width: 820px) { .lh-stills { display: block; } .lh-canvas { display: none; } }
-.lh-lite .lh-stills { display: block; }
+/* Phones: a pre-rendered image sequence drawn into .lh-seq, fitted between the copy and the bottom reserve. */
+.lh-seq { display: none; position: absolute; inset: 0; width: 100%; height: 100%; }
+@media (max-width: 820px) { .lh-seq { display: block; } .lh-canvas { display: none; } }
+.lh-lite .lh-seq { display: block; }
 .lh-lite .lh-canvas { display: none; }
-.lh-full .lh-stills { display: none; }
+.lh-full .lh-seq { display: none; }
 .lh-full .lh-canvas { display: block; }
-@media (orientation: landscape) { .lh-lite .lh-still-img { object-fit: contain; object-position: center; } }
 .lh-fallback { position: absolute; left: 0; right: 0; bottom: 12%; margin: auto; width: min(720px, 86vw); border-radius: 14px; }
 .lh-copy {
   position: absolute; inset: 0; pointer-events: none; display: grid; align-content: start; justify-items: center;
@@ -423,13 +452,14 @@ input, textarea, select, button {
 @media (max-width: 767px) {
   .lh-link { display: none; }
   .lh-btn { width: min(100%, 340px); }
-  /* Sit above the floating chat bubble instead of under it. */
-  .lh-cta { bottom: calc(148px + env(safe-area-inset-bottom, 0px)); }
+  /* Below the chat launcher (which sits 80–136px up); the laptop band ends above both. */
+  .lh-cta { bottom: calc(18px + env(safe-area-inset-bottom, 0px)); }
 }
-/* Short phones (SE): no room above the bubble without covering the laptop — sit low and leave the bubble its lane. */
-@media (max-width: 767px) and (max-height: 740px) {
-  .lh-cta { bottom: calc(20px + env(safe-area-inset-bottom, 0px)); justify-content: flex-start; }
-  .lh-btn { width: calc(100% - 84px); }
+/* Phones: the headline scales with the visible height so short Safari viewports keep room for the product. */
+@media (max-width: 820px) {
+  .lh-copy { padding-top: clamp(76px, 12svh, 120px); }
+  .lh-h1 { font-size: min(clamp(2.5rem, 8.4vw, 7.25rem), 6.6svh); }
+  .lh-sub { margin-top: 12px; font-size: min(15px, 2.4svh); }
 }
 .lh-btn:focus-visible, .lh-link:focus-visible { outline: 2px solid #F5F5F7; outline-offset: 3px; }
 .lh-cap {
@@ -476,3 +506,268 @@ html[data-nav-tone="dark"] .kn-header:not(.kn-header-open) button .bg-ink { back
     @keyframes kn-scrub { from { opacity: .14; } to { opacity: 1; } }
   }
 }
+
+/* ── Space theme ─────────────────────────────────────────────────── */
+.space body, body.space { background: #000; color: #F5F5F7; }
+.space ::selection { background: rgba(41,151,255,.35); color: #fff; }
+.space ::-webkit-scrollbar-thumb { background: rgba(255,255,255,.14); }
+.space ::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,.26); }
+.space .kn-card { background: #0A0A0C; border-color: rgba(255,255,255,.08); }
+.space .kn-frost { background: rgba(0,0,0,.72); }
+.space .btn-ink, .space .btn-primary { background: #F5F5F7; color: #0B0B0D; }
+.space .btn-ink:hover, .space .btn-primary:hover { background: #fff; }
+.space .btn-outline { color: #F5F5F7; border-color: rgba(255,255,255,.28); }
+.space .btn-outline:hover { background: #F5F5F7; color: #0B0B0D; }
+.space .btn-ghost { color: #2997FF; }
+.space *:focus-visible { outline-color: #F5F5F7; }
+.space .kn .font-display .italic, .space .kn .font-display em { color: #2997FF; }
+.space .ed-ring { border-color: rgba(255,255,255,.3); }
+/* Inverted "ink" panels become raised dark panels; anything that was light-on-ink keeps reading. */
+.space .bg-ink.text-ivory, .space .bg-ink .text-ivory { color: #F5F5F7; }
+/* Light pills that were ink-on-light (nav "Free audit", etc.) */
+.space .kn-header .bg-ink.bg-ink.bg-ink { background: #F5F5F7; color: #0B0B0D; }
+.space .kn-header { background: rgba(0,0,0,.72); border-color: rgba(255,255,255,.08); }
+/* Form fields on dark */
+.space input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not(.keep-light *),
+.space textarea:not(.keep-light *), .space select:not(.keep-light *) {
+  background-color: #0A0A0C; color: #F5F5F7; border-color: rgba(255,255,255,.14);
+}
+.space .field { background: transparent; }
+.space input:not(.keep-light *)::placeholder, .space textarea:not(.keep-light *)::placeholder { color: #8E8E93; }
+.space input:focus:not(.keep-light *), .space textarea:focus:not(.keep-light *), .space select:focus:not(.keep-light *) { border-color: rgba(255,255,255,.5); }
+/* Light islands inside the dark site (chat panel): restore the light tokens. */
+.space .keep-light {
+  color-scheme: light; color: #1D1D1F;
+  --ivory: #FBFBFD; --bone: #F5F5F7; --paper: #FFFFFF; --ink: #1D1D1F; --graphite: #424245; --ash: #6E6E73; --mute: #86868B;
+  --hairline: rgba(0,0,0,.09); --line: #D2D2D7; --action: #0071E3; --link: #0066CC;
+  --c-ivory: 251 251 253; --c-bone: 245 245 247; --c-paper: 255 255 255; --c-ink: 29 29 31;
+  --c-graphite: 66 66 69; --c-ash: 110 110 115; --c-mute: 134 134 139;
+}
+.space .lh-story { background: #000; }
+/* Page grounds let the starfield through; cards stay solid. */
+.space .bg-ivory { background-color: transparent; }
+.space .bg-bone { background-color: rgba(10,10,12,.55); }
+
+/* Starfield: three tiled layers of tiny dots, fixed behind everything. Pure CSS, no JS. */
+.zl-stars { position: fixed; inset: 0; z-index: -1; pointer-events: none; background: #000; overflow: hidden; }
+.zl-stars::before, .zl-stars::after, .zl-stars > i {
+  content: ''; position: absolute; inset: -50%; background-repeat: repeat;
+}
+.zl-stars::before {
+  background-image:
+    radial-gradient(1px 1px at 20px 30px, rgba(255,255,255,.55), transparent 60%),
+    radial-gradient(1px 1px at 140px 90px, rgba(255,255,255,.35), transparent 60%),
+    radial-gradient(1px 1px at 260px 170px, rgba(255,255,255,.45), transparent 60%),
+    radial-gradient(1px 1px at 90px 230px, rgba(255,255,255,.3), transparent 60%),
+    radial-gradient(1px 1px at 310px 40px, rgba(255,255,255,.4), transparent 60%);
+  background-size: 340px 280px;
+  animation: zl-drift 240s linear infinite;
+}
+.zl-stars::after {
+  background-image:
+    radial-gradient(1.2px 1.2px at 60px 120px, rgba(255,255,255,.7), transparent 60%),
+    radial-gradient(1px 1px at 380px 60px, rgba(190,215,255,.55), transparent 60%),
+    radial-gradient(1px 1px at 250px 330px, rgba(255,255,255,.5), transparent 60%);
+  background-size: 520px 460px;
+  animation: zl-drift 420s linear infinite reverse, zl-twinkle 7s ease-in-out infinite;
+}
+.zl-stars > i {
+  background-image:
+    radial-gradient(1.6px 1.6px at 180px 200px, rgba(255,255,255,.9), transparent 60%),
+    radial-gradient(1.4px 1.4px at 620px 90px, rgba(200,220,255,.8), transparent 60%);
+  background-size: 900px 760px;
+  animation: zl-twinkle 11s ease-in-out infinite 2s;
+}
+@keyframes zl-drift { to { transform: translate3d(-340px, -280px, 0); } }
+@keyframes zl-twinkle { 0%, 100% { opacity: .55; } 50% { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .zl-stars::before, .zl-stars::after, .zl-stars > i { animation: none; } }
+
+/* Footer: OpenAI-style lists over a denser field and a planet-rim horizon. */
+.zl-foot { position: relative; isolation: isolate; overflow: hidden; background: transparent; }
+.zl-foot::before {
+  content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background-image:
+    radial-gradient(1px 1px at 30px 40px, rgba(255,255,255,.6), transparent 60%),
+    radial-gradient(1px 1px at 110px 150px, rgba(255,255,255,.4), transparent 60%),
+    radial-gradient(1.3px 1.3px at 200px 70px, rgba(255,255,255,.75), transparent 60%),
+    radial-gradient(1px 1px at 170px 230px, rgba(200,220,255,.5), transparent 60%);
+  background-size: 240px 260px;
+  mask-image: linear-gradient(to bottom, transparent, #000 40%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 40%);
+}
+.zl-foot::after {
+  content: ''; position: absolute; left: -20%; right: -20%; bottom: -62vw; height: 80vw; z-index: -1; pointer-events: none;
+  border-radius: 50%;
+  background: radial-gradient(closest-side, rgba(41,151,255,.20), rgba(41,151,255,.06) 60%, transparent 72%);
+  box-shadow: 0 -1px 0 rgba(150,190,255,.35), 0 -30px 90px -20px rgba(41,151,255,.25);
+}
+.zl-foot-label { font-size: 15px; color: #8E8E93; }
+.zl-foot-link { display: inline-block; font-size: 17px; line-height: 1.35; color: #F5F5F7; padding: 7px 0; transition: color .2s; }
+.zl-foot-link:hover { color: #A1A1A6; }
+.zl-wordmark {
+  font-weight: 700; letter-spacing: -.06em; line-height: .9; font-size: clamp(3.5rem, 17vw, 13rem);
+  background: linear-gradient(180deg, #F5F5F7 0%, rgba(245,245,247,.55) 45%, rgba(245,245,247,.06) 100%);
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+}
+.zl-pill { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 18px; border-radius: 999px; background: #1C1C20; color: #F5F5F7; font-size: 15px; }
+.zl-pill:hover { background: #26262B; }
+
+/* ── Space theme overrides (generated) ───────────────────────────
+   Tailwind gray/white utilities are literal colours, so the dark theme remaps them here.
+   Scoped to .space (the public site); /pay and /admin never get the class. */
+.space .bg-white:not(.keep-light, .keep-light *),
+.space .hover\:bg-white:not(.keep-light, .keep-light *):hover { background-color:#0A0A0C }
+.space .bg-gray-50:not(.keep-light, .keep-light *),
+.space .hover\:bg-gray-50:not(.keep-light, .keep-light *):hover { background-color:#0A0A0C }
+.space .bg-gray-100:not(.keep-light, .keep-light *),
+.space .hover\:bg-gray-100:not(.keep-light, .keep-light *):hover { background-color:#141417 }
+.space .bg-gray-200:not(.keep-light, .keep-light *),
+.space .hover\:bg-gray-200:not(.keep-light, .keep-light *):hover { background-color:#1C1C20 }
+.space .hover\:bg-gray-300:not(.keep-light, .keep-light *):hover { background-color:#2A2A2F }
+.space .bg-ink:not(.keep-light, .keep-light *) { background-color:#141417 }
+.space .bg-white\/60:not(.keep-light, .keep-light *) { background-color:rgba(10,10,12,.6) }
+.space .text-gray-900:not(.keep-light, .keep-light *) { color:#F5F5F7 }
+.space .text-gray-800:not(.keep-light, .keep-light *) { color:#E5E5EA }
+.space .text-gray-700:not(.keep-light, .keep-light *),
+.space .hover\:text-gray-700:not(.keep-light, .keep-light *):hover { color:#C7C7CC }
+.space .text-gray-600:not(.keep-light, .keep-light *),
+.space .hover\:text-gray-600:not(.keep-light, .keep-light *):hover { color:#A1A1A6 }
+.space .text-gray-500:not(.keep-light, .keep-light *) { color:#8E8E93 }
+.space .text-gray-400:not(.keep-light, .keep-light *) { color:#8E8E93 }
+.space .text-ivory:not(.keep-light, .keep-light *) { color:#F5F5F7 }
+.space .placeholder-gray-500:not(.keep-light, .keep-light *)::placeholder { color:#8E8E93 }
+.space .border-gray-100:not(.keep-light, .keep-light *) { border-color:rgba(255,255,255,.08) }
+.space .border-gray-200:not(.keep-light, .keep-light *) { border-color:rgba(255,255,255,.1) }
+.space .border-gray-300:not(.keep-light, .keep-light *) { border-color:rgba(255,255,255,.16) }
+.space .border-black:not(.keep-light, .keep-light *) { border-color:rgba(255,255,255,.16) }
+.space .border-ink:not(.keep-light, .keep-light *),
+.space .hover\:border-ink:not(.keep-light, .keep-light *):hover,
+.space .group:hover .group-hover\:border-ink:not(.keep-light, .keep-light *),
+.space .focus\:border-ink:not(.keep-light, .keep-light *):focus { border-color:rgba(255,255,255,.22) }
+.space .text-gold:not(.keep-light, .keep-light *),
+.space .hover\:text-gold:not(.keep-light, .keep-light *):hover,
+.space .group:hover .group-hover\:text-gold:not(.keep-light, .keep-light *) { color:#2997FF }
+.space .text-link:not(.keep-light, .keep-light *) { color:#2997FF }
+.space .text-blue-500:not(.keep-light, .keep-light *) { color:#60A5FA }
+.space .text-\[\#1D1D1F\]:not(.keep-light, .keep-light *),
+.space .hover\:text-\[\#1D1D1F\]:not(.keep-light, .keep-light *):hover { color:#F5F5F7 }
+.space .text-\[\#424245\]:not(.keep-light, .keep-light *) { color:#C7C7CC }
+.space .text-\[\#6E6E73\]:not(.keep-light, .keep-light *) { color:#A1A1A6 }
+.space .text-\[\#86868B\]:not(.keep-light, .keep-light *) { color:#8E8E93 }
+.space .text-\[\#0071E3\]:not(.keep-light, .keep-light *) { color:#2997FF }
+.space .text-\[\#4a443b\]:not(.keep-light, .keep-light *) { color:#C7C7CC }
+.space .hover\:text-\[\#8f6c30\]:not(.keep-light, .keep-light *):hover { color:#E0B062 }
+.space .text-\[\#a8231c\]:not(.keep-light, .keep-light *) { color:#FF7B72 }
+.space .bg-\[\#FBFBFD\]:not(.keep-light, .keep-light *) { background-color:#0A0A0C }
+.space .bg-\[\#F5F5F7\]:not(.keep-light, .keep-light *) { background-color:#141417 }
+.space .bg-\[\#fdfaf3\]:not(.keep-light, .keep-light *) { background-color:#141417 }
+.space .bg-\[\#fbe9e7\]:not(.keep-light, .keep-light *) { background-color:#1C1414 }
+.space .bg-\[\#1D1D1F\]:not(.keep-light, .keep-light *) { background-color:#1C1C20 }
+.space .border-\[\#D2D2D7\]:not(.keep-light, .keep-light *) { border-color:rgba(255,255,255,.14) }
+@media (min-width:768px) { .space .md\:border-\[\#D2D2D7\]:not(.keep-light, .keep-light *) { border-color:rgba(255,255,255,.14) } }
+@media (min-width:1024px) { .space .lg\:border-\[\#D2D2D7\]:not(.keep-light, .keep-light *) { border-color:rgba(255,255,255,.14) } }
+.space .border-\[\#1D1D1F\]:not(.keep-light, .keep-light *),
+.space .hover\:border-\[\#1D1D1F\]:not(.keep-light, .keep-light *):hover { border-color:rgba(255,255,255,.3) }
+.space .border-\[\#e0cfa8\]:not(.keep-light, .keep-light *) { border-color:rgba(224,176,98,.4) }
+.space .bg-blue-50:not(.keep-light, .keep-light *),
+.space .hover\:bg-blue-50:not(.keep-light, .keep-light *):hover { background-color:rgba(59,130,246,0.08) }
+.space .bg-blue-100:not(.keep-light, .keep-light *),
+.space .hover\:bg-blue-100:not(.keep-light, .keep-light *):hover { background-color:rgba(59,130,246,0.14) }
+.space .text-blue-600:not(.keep-light, .keep-light *) { color:#93C5FD }
+.space .text-blue-700:not(.keep-light, .keep-light *) { color:#93C5FD }
+.space .text-blue-800:not(.keep-light, .keep-light *) { color:#93C5FD }
+.space .hover\:bg-sky-50:not(.keep-light, .keep-light *):hover { background-color:rgba(14,165,233,0.08) }
+.space .bg-sky-100:not(.keep-light, .keep-light *) { background-color:rgba(14,165,233,0.14) }
+.space .text-sky-600:not(.keep-light, .keep-light *) { color:#7DD3FC }
+.space .hover\:bg-cyan-50:not(.keep-light, .keep-light *):hover { background-color:rgba(6,182,212,0.08) }
+.space .bg-cyan-100:not(.keep-light, .keep-light *) { background-color:rgba(6,182,212,0.14) }
+.space .text-cyan-600:not(.keep-light, .keep-light *) { color:#67E8F9 }
+.space .bg-teal-50:not(.keep-light, .keep-light *),
+.space .hover\:bg-teal-50:not(.keep-light, .keep-light *):hover { background-color:rgba(20,184,166,0.08) }
+.space .bg-teal-100:not(.keep-light, .keep-light *) { background-color:rgba(20,184,166,0.14) }
+.space .text-teal-600:not(.keep-light, .keep-light *) { color:#5EEAD4 }
+.space .text-teal-800:not(.keep-light, .keep-light *) { color:#5EEAD4 }
+.space .bg-emerald-50:not(.keep-light, .keep-light *),
+.space .hover\:bg-emerald-50:not(.keep-light, .keep-light *):hover { background-color:rgba(16,185,129,0.08) }
+.space .bg-emerald-100:not(.keep-light, .keep-light *) { background-color:rgba(16,185,129,0.14) }
+.space .text-emerald-600:not(.keep-light, .keep-light *) { color:#6EE7B7 }
+.space .text-emerald-800:not(.keep-light, .keep-light *) { color:#6EE7B7 }
+.space .bg-green-50:not(.keep-light, .keep-light *) { background-color:rgba(34,197,94,0.08) }
+.space .bg-green-100:not(.keep-light, .keep-light *) { background-color:rgba(34,197,94,0.14) }
+.space .text-green-600:not(.keep-light, .keep-light *) { color:#86EFAC }
+.space .text-green-700:not(.keep-light, .keep-light *) { color:#86EFAC }
+.space .text-green-800:not(.keep-light, .keep-light *) { color:#86EFAC }
+.space .bg-yellow-50:not(.keep-light, .keep-light *) { background-color:rgba(234,179,8,0.08) }
+.space .bg-yellow-100:not(.keep-light, .keep-light *) { background-color:rgba(234,179,8,0.14) }
+.space .border-yellow-200:not(.keep-light, .keep-light *) { border-color:rgba(234,179,8,0.30) }
+.space .text-yellow-600:not(.keep-light, .keep-light *) { color:#FDE047 }
+.space .text-yellow-700:not(.keep-light, .keep-light *) { color:#FDE047 }
+.space .text-yellow-800:not(.keep-light, .keep-light *) { color:#FDE047 }
+.space .hover\:bg-amber-50:not(.keep-light, .keep-light *):hover { background-color:rgba(245,158,11,0.08) }
+.space .bg-amber-100:not(.keep-light, .keep-light *) { background-color:rgba(245,158,11,0.14) }
+.space .text-amber-600:not(.keep-light, .keep-light *) { color:#FCD34D }
+.space .text-amber-800:not(.keep-light, .keep-light *) { color:#FCD34D }
+.space .hover\:bg-orange-50:not(.keep-light, .keep-light *):hover { background-color:rgba(249,115,22,0.08) }
+.space .bg-orange-100:not(.keep-light, .keep-light *) { background-color:rgba(249,115,22,0.14) }
+.space .text-orange-600:not(.keep-light, .keep-light *) { color:#FDBA74 }
+.space .text-orange-800:not(.keep-light, .keep-light *) { color:#FDBA74 }
+.space .bg-red-50:not(.keep-light, .keep-light *) { background-color:rgba(239,68,68,0.08) }
+.space .bg-red-100:not(.keep-light, .keep-light *) { background-color:rgba(239,68,68,0.14) }
+.space .text-red-600:not(.keep-light, .keep-light *) { color:#FCA5A5 }
+.space .text-red-700:not(.keep-light, .keep-light *) { color:#FCA5A5 }
+.space .bg-rose-50:not(.keep-light, .keep-light *),
+.space .hover\:bg-rose-50:not(.keep-light, .keep-light *):hover { background-color:rgba(244,63,94,0.08) }
+.space .bg-rose-100:not(.keep-light, .keep-light *) { background-color:rgba(244,63,94,0.14) }
+.space .text-rose-600:not(.keep-light, .keep-light *) { color:#FDA4AF }
+.space .text-rose-700:not(.keep-light, .keep-light *) { color:#FDA4AF }
+.space .text-rose-800:not(.keep-light, .keep-light *) { color:#FDA4AF }
+.space .bg-pink-100:not(.keep-light, .keep-light *) { background-color:rgba(236,72,153,0.14) }
+.space .text-pink-600:not(.keep-light, .keep-light *) { color:#F9A8D4 }
+.space .bg-purple-50:not(.keep-light, .keep-light *),
+.space .hover\:bg-purple-50:not(.keep-light, .keep-light *):hover { background-color:rgba(168,85,247,0.08) }
+.space .bg-purple-100:not(.keep-light, .keep-light *) { background-color:rgba(168,85,247,0.14) }
+.space .text-purple-600:not(.keep-light, .keep-light *) { color:#D8B4FE }
+.space .text-purple-800:not(.keep-light, .keep-light *) { color:#D8B4FE }
+.space .bg-violet-50:not(.keep-light, .keep-light *),
+.space .hover\:bg-violet-50:not(.keep-light, .keep-light *):hover { background-color:rgba(139,92,246,0.08) }
+.space .bg-violet-100:not(.keep-light, .keep-light *),
+.space .hover\:bg-violet-100:not(.keep-light, .keep-light *):hover { background-color:rgba(139,92,246,0.14) }
+.space .text-violet-600:not(.keep-light, .keep-light *) { color:#C4B5FD }
+.space .text-violet-700:not(.keep-light, .keep-light *) { color:#C4B5FD }
+.space .text-violet-800:not(.keep-light, .keep-light *) { color:#C4B5FD }
+.space .hover\:bg-indigo-50:not(.keep-light, .keep-light *):hover { background-color:rgba(99,102,241,0.08) }
+.space .bg-indigo-100:not(.keep-light, .keep-light *) { background-color:rgba(99,102,241,0.14) }
+.space .text-indigo-600:not(.keep-light, .keep-light *) { color:#A5B4FC }
+.space .text-indigo-700:not(.keep-light, .keep-light *) { color:#A5B4FC }
+.space .text-indigo-800:not(.keep-light, .keep-light *) { color:#A5B4FC }
+.space .from-white:not(.keep-light, .keep-light *) { --tw-gradient-from:#000 var(--tw-gradient-from-position);--tw-gradient-to:rgb(0 0 0/0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to) }
+.space .via-white:not(.keep-light, .keep-light *) { --tw-gradient-to:rgb(0 0 0/0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),#000 var(--tw-gradient-via-position),var(--tw-gradient-to) }
+.space .to-white:not(.keep-light, .keep-light *) { --tw-gradient-to:#000 var(--tw-gradient-to-position) }
+.space .from-gray-50:not(.keep-light, .keep-light *) { --tw-gradient-from:#0A0A0C var(--tw-gradient-from-position);--tw-gradient-to:rgb(10 10 12/0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to) }
+.space .to-gray-50:not(.keep-light, .keep-light *) { --tw-gradient-to:#0A0A0C var(--tw-gradient-to-position) }
+.space .to-gray-100:not(.keep-light, .keep-light *) { --tw-gradient-to:#141417 var(--tw-gradient-to-position) }
+.space .from-blue-50:not(.keep-light, .keep-light *) { --tw-gradient-from:rgba(59,130,246,0.08) var(--tw-gradient-from-position);--tw-gradient-to:rgba(59,130,246,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to) }
+.space .to-blue-50:not(.keep-light, .keep-light *) { --tw-gradient-to:rgba(59,130,246,0.08) var(--tw-gradient-to-position) }
+.space .from-sky-50:not(.keep-light, .keep-light *) { --tw-gradient-from:rgba(14,165,233,0.08) var(--tw-gradient-from-position);--tw-gradient-to:rgba(14,165,233,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to) }
+.space .to-sky-50:not(.keep-light, .keep-light *) { --tw-gradient-to:rgba(14,165,233,0.08) var(--tw-gradient-to-position) }
+.space .from-cyan-50:not(.keep-light, .keep-light *) { --tw-gradient-from:rgba(6,182,212,0.08) var(--tw-gradient-from-position);--tw-gradient-to:rgba(6,182,212,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to) }
+.space .to-cyan-50:not(.keep-light, .keep-light *) { --tw-gradient-to:rgba(6,182,212,0.08) var(--tw-gradient-to-position) }
+.space .from-teal-50:not(.keep-light, .keep-light *) { --tw-gradient-from:rgba(20,184,166,0.08) var(--tw-gradient-from-position);--tw-gradient-to:rgba(20,184,166,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to) }
+.space .to-teal-50:not(.keep-light, .keep-light *) { --tw-gradient-to:rgba(20,184,166,0.08) var(--tw-gradient-to-position) }
+.space .from-emerald-50:not(.keep-light, .keep-light *) { --tw-gradient-from:rgba(16,185,129,0.08) var(--tw-gradient-from-position);--tw-gradient-to:rgba(16,185,129,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to) }
+.space .from-green-50:not(.keep-light, .keep-light *) { --tw-gradient-from:rgba(34,197,94,0.08) var(--tw-gradient-from-position);--tw-gradient-to:rgba(34,197,94,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to) }
+.space .to-green-50:not(.keep-light, .keep-light *) { --tw-gradient-to:rgba(34,197,94,0.08) var(--tw-gradient-to-position) }
+.space .to-yellow-50:not(.keep-light, .keep-light *) { --tw-gradient-to:rgba(234,179,8,0.08) var(--tw-gradient-to-position) }
+.space .from-amber-50:not(.keep-light, .keep-light *) { --tw-gradient-from:rgba(245,158,11,0.08) var(--tw-gradient-from-position);--tw-gradient-to:rgba(245,158,11,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to) }
+.space .to-amber-50:not(.keep-light, .keep-light *) { --tw-gradient-to:rgba(245,158,11,0.08) var(--tw-gradient-to-position) }
+.space .from-orange-50:not(.keep-light, .keep-light *) { --tw-gradient-from:rgba(249,115,22,0.08) var(--tw-gradient-from-position);--tw-gradient-to:rgba(249,115,22,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to) }
+.space .to-orange-50:not(.keep-light, .keep-light *) { --tw-gradient-to:rgba(249,115,22,0.08) var(--tw-gradient-to-position) }
+.space .to-red-50:not(.keep-light, .keep-light *) { --tw-gradient-to:rgba(239,68,68,0.08) var(--tw-gradient-to-position) }
+.space .from-rose-50:not(.keep-light, .keep-light *) { --tw-gradient-from:rgba(244,63,94,0.08) var(--tw-gradient-from-position);--tw-gradient-to:rgba(244,63,94,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to) }
+.space .to-pink-50:not(.keep-light, .keep-light *) { --tw-gradient-to:rgba(236,72,153,0.08) var(--tw-gradient-to-position) }
+.space .from-purple-50:not(.keep-light, .keep-light *) { --tw-gradient-from:rgba(168,85,247,0.08) var(--tw-gradient-from-position);--tw-gradient-to:rgba(168,85,247,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to) }
+.space .to-purple-50:not(.keep-light, .keep-light *) { --tw-gradient-to:rgba(168,85,247,0.08) var(--tw-gradient-to-position) }
+.space .from-violet-50:not(.keep-light, .keep-light *) { --tw-gradient-from:rgba(139,92,246,0.08) var(--tw-gradient-from-position);--tw-gradient-to:rgba(139,92,246,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to) }
+.space .to-violet-50:not(.keep-light, .keep-light *) { --tw-gradient-to:rgba(139,92,246,0.08) var(--tw-gradient-to-position) }
+.space .from-indigo-50:not(.keep-light, .keep-light *) { --tw-gradient-from:rgba(99,102,241,0.08) var(--tw-gradient-from-position);--tw-gradient-to:rgba(99,102,241,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to) }
+.space .to-indigo-50:not(.keep-light, .keep-light *) { --tw-gradient-to:rgba(99,102,241,0.08) var(--tw-gradient-to-position) }

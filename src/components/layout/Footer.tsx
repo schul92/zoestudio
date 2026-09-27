@@ -51,94 +51,67 @@ export default function Footer({ locale = 'en' }: { locale?: string }) {
     },
   ]
 
+  const contact: [string, string, boolean][] = [
+    ['info@zoelumos.com', 'mailto:info@zoelumos.com', false],
+    [isKo ? '카카오톡 상담' : 'KakaoTalk', 'http://pf.kakao.com/_xhxdxmlX/chat', true],
+    ['Instagram', 'https://instagram.com/zoelumos', true],
+  ]
+
   return (
-    <footer className="bg-bone border-t border-hairline">
-      <div className="container-edge pt-16 md:pt-20 pb-10">
-        <div className="flex items-end justify-between gap-8 flex-wrap pb-12 border-b border-hairline">
-          <Link href={`${prefix}/`} className="block">
-            <div className="text-[clamp(2.25rem,6vw,4rem)] font-bold leading-none tracking-[-0.05em] text-ink">Zoe Lumos</div>
-            <div className="text-[14px] text-ash mt-3">
-              {isKo ? '한인 · 미국인 디자인 스튜디오' : 'An American-Korean design studio'}
-            </div>
-          </Link>
-          <Link href={`${prefix}/contact`} className="btn-ink shrink-0">
-            {isKo ? '프로젝트 의뢰' : 'Start a project'}
-          </Link>
-        </div>
-
-        {/* Columns */}
-        <div className="grid grid-cols-2 md:grid-cols-12 gap-10 md:gap-12 py-12">
-          <div className="col-span-2 md:col-span-4">
-            <p className="text-[12px] font-semibold text-ink mb-4">{isKo ? '연락' : 'Contact'}</p>
-            <a href="mailto:info@zoelumos.com" className="block text-[22px] md:text-[26px] font-semibold tracking-[-0.03em] text-ink hover:text-link transition-colors">
-              info@zoelumos.com
-            </a>
-            <p className="mt-5 text-[13px] text-ash leading-[1.7] whitespace-pre-line">
-              {isKo
-                ? '뉴저지 포트리 · 월 — 금 9–6 ET\n한국어 상담 상시'
-                : 'Fort Lee, New Jersey\nMon — Fri · 9 — 6 ET · KR 대응'}
-            </p>
+    <footer className="zl-foot">
+      <div className="container-edge pt-24 md:pt-32 pb-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-x-10 gap-y-14">
+          <div>
+            <p className="zl-foot-label mb-4">{isKo ? '연락' : 'Contact'}</p>
+            <ul>
+              {contact.map(([label, href, ext]) => (
+                <li key={label}>
+                  <a href={href} className="zl-foot-link" {...(ext ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>
+                    {label}{ext ? ' ↗' : ''}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
-
           {cols.map((c) => (
-            <div key={c.title} className="md:col-span-2 md:col-start-auto">
-              <p className="text-[12px] font-semibold text-ink mb-4">{c.title}</p>
-              <ul className="space-y-2.5">
+            <div key={c.title}>
+              <p className="zl-foot-label mb-4">{c.title}</p>
+              <ul>
                 {c.links.map(([label, href]) => (
                   <li key={label}>
-                    <Link
-                      href={href}
-                      className="text-[13px] text-ash hover:text-ink hover:underline"
-                    >
-                      {label}
-                    </Link>
+                    <Link href={href} className="zl-foot-link">{label}</Link>
                   </li>
                 ))}
               </ul>
             </div>
           ))}
-
-          <div className="md:col-span-2">
-            <p className="text-[12px] font-semibold text-ink mb-4">{isKo ? '팔로우' : 'Follow'}</p>
-            <ul className="space-y-2.5 text-[13px]">
-              <li>
-                <a
-                  href="https://instagram.com/zoelumos"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-ash hover:text-ink hover:underline"
-                >
-                  Instagram ↗
-                </a>
-              </li>
-              <li>
-                <a
-                  href="http://pf.kakao.com/_xhxdxmlX/chat"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-ash hover:text-ink hover:underline"
-                >
-                  KakaoTalk ↗
-                </a>
-              </li>
-            </ul>
-          </div>
         </div>
 
-        {/* Legal row */}
-        <div className="pt-8 border-t border-hairline flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
-          <p className="text-[12px] text-ash" suppressHydrationWarning>
-            © {year} Zoe Lumos Studio, LLC · {isKo ? '모든 권리 보유' : 'All rights reserved'}
-          </p>
-          <div className="flex items-center gap-6 text-[12px] text-ash">
+        <Link href={`${prefix}/`} className="block mt-24 md:mt-32" aria-label="Zoe Lumos">
+          <div className="zl-wordmark">Zoe Lumos</div>
+        </Link>
+        <p className="mt-4 text-[15px] text-ash">
+          {isKo ? '한인 · 미국인 디자인 스튜디오 · 뉴저지 포트리' : 'An American-Korean design studio · Fort Lee, New Jersey'}
+        </p>
+
+        <div className="mt-14 flex flex-col items-center gap-6 text-center">
+          <div className="flex items-center gap-6 text-[14px] text-ash">
             <Link href={`${prefix}/privacy`} className="hover:text-ink transition-colors">
               {isKo ? '개인정보처리방침' : 'Privacy'}
             </Link>
             <Link href={`${prefix}/terms`} className="hover:text-ink transition-colors">
               {isKo ? '이용약관' : 'Terms'}
             </Link>
-            <span>{isKo ? '뉴저지에서 제작' : 'Crafted in New Jersey'}</span>
           </div>
+          <p className="text-[13px] text-ash" suppressHydrationWarning>
+            © {year} Zoe Lumos Studio, LLC
+          </p>
+          <Link href={isKo ? '/' : '/ko'} className="zl-pill" hrefLang={isKo ? 'en' : 'ko'}>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
+              <circle cx="12" cy="12" r="9" /><path d="M3 12h18M12 3c2.5 2.7 2.5 15.3 0 18M12 3c-2.5 2.7-2.5 15.3 0 18" />
+            </svg>
+            {isKo ? '한국어' : 'English'} <span className="text-ash">{isKo ? '→ English' : '→ 한국어'}</span>
+          </Link>
         </div>
       </div>
     </footer>

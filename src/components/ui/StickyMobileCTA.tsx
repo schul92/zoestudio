@@ -90,7 +90,7 @@ export default function StickyMobileCTA({ locale = 'en' }: { locale?: string }) 
           href={`${prefix}/contact`}
           onClick={() => track('quote')}
           tabIndex={show ? 0 : -1}
-          className="flex items-center justify-center gap-1.5 rounded-[14px] bg-action min-h-[48px] py-3.5 text-[15px] font-semibold text-white active:opacity-90"
+          className="flex items-center justify-center gap-1.5 keep-light rounded-[14px] bg-[#F5F5F7] min-h-[48px] py-3.5 text-[15px] font-semibold text-[#0B0B0D] active:opacity-90"
           style={{ touchAction: 'manipulation' }}
         >
           {isKo ? '무료 견적' : 'Free quote'}
