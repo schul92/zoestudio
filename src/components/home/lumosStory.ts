@@ -12,11 +12,8 @@ export const CAPTION_RANGES = [
 // Progress used for the static frame when the user prefers reduced motion.
 export const REDUCED_P = 0.42
 
-// Pre-rendered frames of the 3D scene for phones and low-power devices, one per story beat.
-export const STILLS = [
-  { p: 0, src: '/hero/lumos-still-0.webp' },
-  { p: 0.4, src: '/hero/lumos-still-1.webp' },
-  { p: 0.55, src: '/hero/lumos-still-2.webp' },
-  { p: 0.69, src: '/hero/lumos-still-3.webp' },
-  { p: 0.93, src: '/hero/lumos-still-4.webp' },
-] as const
+// Phones and low-power devices play a pre-rendered image sequence of the 3D story (Apple's method)
+// instead of loading three.js. Each frame is cropped to the product; meta.txt (JSON; .txt so the locale middleware skips it) holds the crop sizes.
+export const SEQ_COUNT = 60
+export const SEQ_DIR = '/hero/seq'
+export const seqSrc = (i: number) => `${SEQ_DIR}/f${String(i).padStart(2, '0')}.webp`

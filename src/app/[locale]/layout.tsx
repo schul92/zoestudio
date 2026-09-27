@@ -120,13 +120,15 @@ export default function RootLayout({
   const locale: 'en' | 'ko' = params?.locale === 'ko' ? 'ko' : 'en'
 
   return (
-    <html lang={locale}>
+    <html lang={locale} className="space">
       <head>
+        <meta name="theme-color" content="#000000" />
         <style dangerouslySetInnerHTML={{
           __html: `
             /* Critical CSS for above-the-fold content */
             * { margin: 0; padding: 0; box-sizing: border-box; }
-            body { font-family: system-ui, -apple-system, sans-serif; line-height: 1.5; background-color: #FBFBFD; color: #141414; }
+            html, body { background-color: #000; color: #F5F5F7; }
+            body { font-family: system-ui, -apple-system, sans-serif; line-height: 1.5; }
             .min-h-screen { min-height: 100vh; }
             .flex { display: flex; }
             .items-center { align-items: center; }
@@ -184,7 +186,8 @@ export default function RootLayout({
         />
         {/* FAQPage schema moved to homepage only — Google requires FAQ content to be visible on the page */}
       </head>
-      <body className={`kn ${GeistSans.variable} font-sans bg-ivory text-ink antialiased`} style={{ position: 'relative' }}>
+      <body className={`kn ${GeistSans.variable} font-sans text-ink antialiased`} style={{ position: 'relative' }}>
+        <div className="zl-stars" aria-hidden="true"><i /></div>
         <AfterInteraction>
           {process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID && (
             <GoogleAnalytics GA_MEASUREMENT_ID={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID} />

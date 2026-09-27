@@ -1,9 +1,8 @@
 'use client'
 
-import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
-import { CAPTION_RANGES, REDUCED_P, STILLS } from './lumosStory'
+import { CAPTION_RANGES, REDUCED_P, SEQ_COUNT, SEQ_DIR, seqSrc } from './lumosStory'
 
 export type LumosCaption = { label: string; value: string; body: string }
 export type LumosCopy = {
@@ -19,8 +18,13 @@ export type LumosCopy = {
 }
 
 const clamp = (v: number, a = 0, b = 1) => Math.min(b, Math.max(a, v))
+const lerp = (a: number, b: number, t: number) => a + (b - a) * t
 const ease = (t: number) => t * t * (3 - 2 * t)
 const span = (p: number, a: number, b: number) => ease(clamp((p - a) / (b - a)))
+
+// Room kept clear at the bottom of the phone stage: sticky KakaoTalk/quote bar and the chat launcher.
+const PHONE_BOTTOM_RESERVE = 150
+const BAND_GAP = 16
 
 // Brand names stay untranslated when a browser auto-translates the page.
 function NoTranslate({ text }: { text: string }) {
@@ -46,11 +50,15 @@ function setHidden(el: HTMLElement | null, hidden: boolean) {
   el.style.pointerEvents = hidden ? 'none' : ''
 }
 
+type SeqMeta = { w: number; h: number }[]
+
 export default function LumosHero({ t, prefix }: { t: LumosCopy; prefix: string }) {
   const storyRef = useRef<HTMLElement>(null)
   const stageRef = useRef<HTMLDivElement>(null)
   const canvasRef = useRef<HTMLCanvasElement>(null)
+  const seqRef = useRef<HTMLCanvasElement>(null)
   const copyRef = useRef<HTMLDivElement>(null)
+  const subRef = useRef<HTMLParagraphElement>(null)
   const ctaRef = useRef<HTMLDivElement>(null)
   const pillRef = useRef<HTMLDivElement>(null)
   const hintRef = useRef<HTMLDivElement>(null)
@@ -58,7 +66,6 @@ export default function LumosHero({ t, prefix }: { t: LumosCopy; prefix: string 
   const [fallback, setFallback] = useState(false)
   const [reduced, setReduced] = useState(false)
   const [mode, setMode] = useState<'' | 'lite' | 'full'>('')
-  const stillRefs = useRef<(HTMLDivElement | null)[]>([])
 
   useEffect(() => {
     setReduced(window.matchMedia('(prefers-reduced-motion: reduce)').matches)
@@ -68,8 +75,9 @@ export default function LumosHero({ t, prefix }: { t: LumosCopy; prefix: string 
     const story = storyRef.current!
     const stage = stageRef.current!
     const canvas = canvasRef.current
+    const seqCanvas = seqRef.current
     const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    // Phones, data-saver and low-memory devices never download three.js: they get pre-rendered stills.
+    // Phones, data-saver and low-memory devices never download three.js: they play the image sequence.
     const nav = navigator as Navigator & { connection?: { saveData?: boolean }; deviceMemory?: number }
     const lite =
       window.innerWidth <= 820 || !!nav.connection?.saveData || (nav.deviceMemory !== undefined && nav.deviceMemory <= 4)
@@ -85,10 +93,94 @@ export default function LumosHero({ t, prefix }: { t: LumosCopy; prefix: string 
     let dirty = true
     const pointer = { x: 0, y: 0, tx: 0, ty: 0 }
 
+    // ── Image sequence (lite) ─────────────────────────────────────
+    const frames: (HTMLImageElement | null)[] = Array(SEQ_COUNT).fill(null)
+    let meta: SeqMeta | null = null
+    let seqScale = 0
+    const staticIdx = Math.round(REDUCED_P * (SEQ_COUNT - 1))
+    const loadFrame = (i: number) =>
+      new Promise<void>((resolve) => {
+        const img = new Image()
+        img.decoding = 'async'
+        img.src = seqSrc(i)
+        img
+          .decode()
+          .then(() => {
+            if (!disposed) {
+              frames[i] = img
+              dirty = true
+            }
+          })
+          .catch(() => {})
+          .finally(resolve)
+      })
+    let restStarted = false
+    const loadRest = async () => {
+      if (restStarted || reduce) return
+      restStarted = true
+      for (let i = 1; i < SEQ_COUNT && !disposed; i++) if (!frames[i]) await loadFrame(i)
+    }
+    if (lite && seqCanvas) {
+      fetch(`${SEQ_DIR}/meta.txt`)
+        .then((r) => r.json())
+        .then((m: SeqMeta) => { meta = m; dirty = true })
+        .catch(() => {})
+      loadFrame(reduce ? staticIdx : 0)
+      const idle = (window as Window & { requestIdleCallback?: (cb: () => void) => number }).requestIdleCallback
+      if (idle) idle(() => loadRest())
+      else setTimeout(loadRest, 1200)
+    }
+    const nearestFrame = (i: number) => {
+      for (let d = 0; d < SEQ_COUNT; d++) {
+        if (frames[i - d]) return i - d
+        if (frames[i + d]) return i + d
+      }
+      return -1
+    }
+    // The product band sits between the copy/caption block and the CTA/bottom reserve, so nothing overlaps.
+    const drawSeq = (p: number, fade: number, ctaOn: boolean) => {
+      if (!seqCanvas || !meta) return
+      const W = stage.clientWidth
+      const H = stage.clientHeight
+      const dpr = Math.min(window.devicePixelRatio || 1, 2)
+      if (seqCanvas.width !== Math.round(W * dpr) || seqCanvas.height !== Math.round(H * dpr)) {
+        seqCanvas.width = Math.round(W * dpr)
+        seqCanvas.height = Math.round(H * dpr)
+      }
+      const g = seqCanvas.getContext('2d')
+      if (!g) return
+      g.setTransform(dpr, 0, 0, dpr, 0, 0)
+      g.clearRect(0, 0, W, H)
+
+      const stageTop = stage.getBoundingClientRect().top
+      const subBottom = subRef.current ? subRef.current.getBoundingClientRect().bottom - stageTop : H * 0.5
+      let capBottom = 0
+      capRefs.current.forEach((el) => { if (el) capBottom = Math.max(capBottom, el.offsetTop + el.offsetHeight) })
+      // Hold the band under the headline until it has all but faded, so the product never sits on the copy.
+      const top = lerp(subBottom, capBottom, span(fade, 0.85, 1)) + BAND_GAP
+      let bottom = H - PHONE_BOTTOM_RESERVE
+      if (ctaOn && ctaRef.current) bottom = Math.min(bottom, ctaRef.current.getBoundingClientRect().top - stageTop - BAND_GAP)
+      const bandH = Math.max(0, bottom - top)
+      const bandW = W - 32
+
+      const want = reduce ? staticIdx : Math.round(p * (SEQ_COUNT - 1))
+      const i = nearestFrame(want)
+      if (i < 0) return
+      const img = frames[i]!
+      const m = meta[i] ?? { w: img.naturalWidth, h: img.naturalHeight }
+      const s = Math.min(bandW / m.w, bandH / m.h)
+      seqScale = seqScale ? lerp(seqScale, s, 0.25) : s
+      const scale = Math.min(seqScale, s)
+      const dw = m.w * scale
+      const dh = m.h * scale
+      g.drawImage(img, (W - dw) / 2, top + (bandH - dh) / 2, dw, dh)
+    }
+
     const invalidate = () => { dirty = true }
     const readScroll = () => {
       const r = story.getBoundingClientRect()
       target = clamp(-r.top / (r.height - window.innerHeight))
+      if (lite && target > 0.002) loadRest()
     }
     const onPointer = (e: PointerEvent) => {
       if (reduce) return
@@ -134,19 +226,6 @@ export default function LumosHero({ t, prefix }: { t: LumosCopy; prefix: string 
         pillRef.current?.classList.toggle('lh-pill-on', pillOn)
         setHidden(pillRef.current, !pillOn)
         if (hintRef.current) hintRef.current.style.opacity = String(1 - span(p, 0, 0.05))
-        if (lite) {
-          // Crossfade between neighbouring stills: each one peaks at its own beat.
-          STILLS.forEach(({ p: at }, i) => {
-            const el = stillRefs.current[i]
-            if (!el) return
-            const prev = STILLS[i - 1]?.p
-            const next = STILLS[i + 1]?.p
-            let o = 0
-            if (p <= at) o = prev === undefined ? 1 : clamp((p - prev) / (at - prev))
-            else o = next === undefined ? 1 : clamp((next - p) / (next - at))
-            el.style.opacity = String(reduce ? (o >= 0.5 ? 1 : 0) : o)
-          })
-        }
         CAPTION_RANGES.forEach(([from, to], i) => {
           const el = capRefs.current[i]
           if (!el) return
@@ -154,6 +233,8 @@ export default function LumosHero({ t, prefix }: { t: LumosCopy; prefix: string 
           el.classList.toggle('lh-on', on)
           el.setAttribute('aria-hidden', on ? 'false' : 'true')
         })
+        if (lite) drawSeq(p, fade, ctaOpacity > 0.05)
+        dirty = lite ? false : dirty
       }
 
       if (scene && (moved || dirty || idling)) {
@@ -194,9 +275,10 @@ export default function LumosHero({ t, prefix }: { t: LumosCopy; prefix: string 
     }
     canvas?.addEventListener('webglcontextlost', onContextLost)
 
+    const onResize = () => { resize(); dirty = true }
     window.addEventListener('scroll', readScroll, { passive: true })
     window.addEventListener('pointermove', onPointer, { passive: true })
-    window.addEventListener('resize', resize)
+    window.addEventListener('resize', onResize)
     readScroll()
     raf = requestAnimationFrame(frame)
 
@@ -219,7 +301,7 @@ export default function LumosHero({ t, prefix }: { t: LumosCopy; prefix: string 
       canvas?.removeEventListener('webglcontextlost', onContextLost)
       window.removeEventListener('scroll', readScroll)
       window.removeEventListener('pointermove', onPointer)
-      window.removeEventListener('resize', resize)
+      window.removeEventListener('resize', onResize)
       scene?.dispose()
     }
   }, [t, fallback])
@@ -233,21 +315,7 @@ export default function LumosHero({ t, prefix }: { t: LumosCopy; prefix: string 
         ) : (
           <canvas ref={canvasRef} className="lh-canvas" role="img" aria-label={t.sceneLabel} />
         )}
-        <div className="lh-stills" role="img" aria-label={t.sceneLabel}>
-          {STILLS.map((s, i) => (
-            <div key={s.src} ref={(el) => { stillRefs.current[i] = el }} className="lh-still" style={{ opacity: i === 0 ? 1 : 0 }}>
-              <Image
-                src={s.src}
-                alt=""
-                fill
-                sizes="(max-width: 820px) 100vw, 1px"
-                priority={i === 0}
-                loading={i === 0 ? undefined : 'lazy'}
-                className="lh-still-img"
-              />
-            </div>
-          ))}
-        </div>
+        <canvas ref={seqRef} className="lh-seq" role="img" aria-label={t.sceneLabel} />
 
         <div ref={copyRef} className="lh-copy">
           <p className="lh-eyebrow">
@@ -257,7 +325,7 @@ export default function LumosHero({ t, prefix }: { t: LumosCopy; prefix: string 
             <span className="block">{t.h1Lead}</span>
             <span className="block lh-accent">{t.h1Accent}</span>
           </h1>
-          <p className="lh-sub">
+          <p ref={subRef} className="lh-sub">
             <NoTranslate text={t.sub} />
           </p>
         </div>
