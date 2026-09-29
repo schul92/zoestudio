@@ -581,6 +581,19 @@ html[data-nav-tone="dark"] .kn-header:not(.kn-header-open) button .bg-ink { back
 @keyframes zl-drift { to { transform: translate3d(-340px, -280px, 0); } }
 @keyframes zl-twinkle { 0%, 100% { opacity: .55; } 50% { opacity: 1; } }
 @media (prefers-reduced-motion: reduce) { .zl-stars::before, .zl-stars::after, .zl-stars > i { animation: none; } }
+@media (min-width: 1024px) and (hover: hover) {
+  .zl-stars::before, .zl-stars::after { will-change: transform; }
+}
+/* Phones and touch screens: a still sky. Oversized fixed layers that drift or twinkle force iOS Safari to repaint
+   the whole viewport every frame, and the frosted bars above them multiply the cost — so no motion, no blur. */
+@media (max-width: 1023px), (hover: none) {
+  .zl-stars::before, .zl-stars::after, .zl-stars > i { animation: none; inset: 0; }
+  .zl-stars > i { opacity: .8; }
+}
+@media (max-width: 1023px) {
+  .space *, .space *::before, .space *::after { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
+  .space .kn-frost, .space .kn-header { background: rgba(0,0,0,.92); }
+}
 
 /* Footer: OpenAI-style lists over a denser field and a planet-rim horizon. */
 .zl-foot { position: relative; isolation: isolate; overflow: hidden; background: transparent; }

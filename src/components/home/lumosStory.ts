@@ -14,6 +14,6 @@ export const REDUCED_P = 0.42
 
 // Phones and low-power devices play a pre-rendered image sequence of the 3D story (Apple's method)
 // instead of loading three.js. Each frame is cropped to the product; meta.txt (JSON; .txt so the locale middleware skips it) holds the crop sizes.
-export const SEQ_COUNT = 60
+export const SEQ_COUNT = 48
 export const SEQ_DIR = '/hero/seq'
 export const seqSrc = (i: number) => `${SEQ_DIR}/f${String(i).padStart(2, '0')}.webp`
