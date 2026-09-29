@@ -74,6 +74,6 @@ export const config = {
     // .txt exclusion is critical — IndexNow verification key file lives at
     // /<key>.txt and middleware was 404ing it via locale rewrite.
     // .pdf: lead-magnet downloads live at /downloads/*.pdf (public/).
-    '/((?!_next|api|favicon.ico|manifest.json|site.webmanifest|robots.txt|sitemap.xml|.*\\.png|.*\\.jpg|.*\\.jpeg|.*\\.gif|.*\\.svg|.*\\.ico|.*\\.webp|.*\\.mp4|.*\\.webm|.*\\.ogg|.*\\.html|.*\\.txt|.*\\.md|.*\\.pdf).*)',
+    '/((?!_next|api|favicon.ico|manifest.json|site.webmanifest|robots.txt|sitemap.xml|.*\\.png|.*\\.jpg|.*\\.jpeg|.*\\.gif|.*\\.svg|.*\\.ico|.*\\.webp|.*\\.avif|.*\\.mp4|.*\\.webm|.*\\.ogg|.*\\.html|.*\\.txt|.*\\.md|.*\\.pdf).*)',
   ],
 }

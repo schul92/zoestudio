@@ -1,4 +1,9 @@
 import LumosHero, { type LumosCopy } from '@/components/home/LumosHero'
+import LumosFirstFrame from '@/components/home/LumosFirstFrame'
+import { FRAMES_DESKTOP, FRAMES_MOBILE } from '@/components/home/lumosFrames'
+
+const SEQ_DESKTOP = { dir: FRAMES_DESKTOP.dir, count: FRAMES_DESKTOP.count, maxDpr: 2 }
+const SEQ_MOBILE = { dir: FRAMES_MOBILE.dir, count: FRAMES_MOBILE.count, maxDpr: 3 }
 
 const copy = {
   en: {
@@ -67,7 +72,7 @@ export default function HeroNew({ locale = 'en' }: { locale?: string }) {
 
   return (
     <>
-      <LumosHero t={hero} prefix={prefix} />
+      <LumosHero t={hero} prefix={prefix} desktop={SEQ_DESKTOP} mobile={SEQ_MOBILE} firstFrame={<LumosFirstFrame />} />
       <section className="bg-ivory pt-14 md:pt-20" aria-label={t.logosLabel}>
         <div className="container-edge pb-6 border-b border-hairline">
           <p className="text-center text-[13px] text-ash">{t.logosLabel}</p>
