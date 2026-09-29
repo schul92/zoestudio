@@ -126,6 +126,16 @@ const nextConfig = {
           },
         ],
       },
+      // Hero image sequences live in content-hashed folders, so they can be cached forever.
+      {
+        source: '/hero/:path*',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
       {
         source: '/fonts/:path*',
         headers: [
