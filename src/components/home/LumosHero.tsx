@@ -91,44 +91,72 @@ export default function LumosHero({ t, prefix }: { t: LumosCopy; prefix: string 
     let target = 0
     let progress = -1
     let dirty = true
+    let running = false
+    // Declared up front so loaders and listeners can wake the loop; frame is assigned below.
+    let frame: (now: number) => void = () => {}
+    const kick = () => {
+      if (running || !visible || disposed) return
+      running = true
+      raf = requestAnimationFrame((t) => frame(t))
+    }
     const pointer = { x: 0, y: 0, tx: 0, ty: 0 }
 
     // ── Image sequence (lite) ─────────────────────────────────────
-    const frames: (HTMLImageElement | null)[] = Array(SEQ_COUNT).fill(null)
+    type Frame = ImageBitmap
+    const frames: (Frame | null)[] = Array(SEQ_COUNT).fill(null)
     let meta: SeqMeta | null = null
     let seqScale = 0
     const staticIdx = Math.round(REDUCED_P * (SEQ_COUNT - 1))
-    const loadFrame = (i: number) =>
-      new Promise<void>((resolve) => {
-        const img = new Image()
-        img.decoding = 'async'
-        img.src = seqSrc(i)
-        img
-          .decode()
-          .then(() => {
-            if (!disposed) {
-              frames[i] = img
-              dirty = true
-            }
-          })
-          .catch(() => {})
-          .finally(resolve)
-      })
+    const store = (i: number, f: Frame) => {
+      if (disposed) return
+      frames[i] = f
+      dirty = true
+      kick()
+    }
+    // ImageBitmaps are decoded off the main thread and are ready to draw, so scrolling never pays for a decode.
+    const loadFrame = (i: number): Promise<void> =>
+      fetch(seqSrc(i))
+        .then((r) => r.blob())
+        .then((b) => createImageBitmap(b))
+        .then((bm) => store(i, bm))
+        .catch(() => {})
+    // Loads run 4 at a time, nearest-to-the-current-progress first, so the frames the reader is about to see arrive first.
+    const requested = new Set<number>()
+    let active = 0
     let restStarted = false
-    const loadRest = async () => {
+    const pump = () => {
+      while (active < 4 && !disposed) {
+        const here = Math.round(clamp(target) * (SEQ_COUNT - 1))
+        let next = -1
+        for (let d = 0; d < SEQ_COUNT && next < 0; d++) {
+          if (here + d < SEQ_COUNT && !requested.has(here + d)) next = here + d
+          else if (here - d >= 0 && !requested.has(here - d)) next = here - d
+        }
+        if (next < 0) return
+        requested.add(next)
+        active++
+        loadFrame(next).finally(() => { active--; pump() })
+      }
+    }
+    const loadRest = () => {
       if (restStarted || reduce) return
       restStarted = true
-      for (let i = 1; i < SEQ_COUNT && !disposed; i++) if (!frames[i]) await loadFrame(i)
+      pump()
     }
     if (lite && seqCanvas) {
       fetch(`${SEQ_DIR}/meta.txt`)
         .then((r) => r.json())
-        .then((m: SeqMeta) => { meta = m; dirty = true })
+        .then((m: SeqMeta) => { meta = m; dirty = true; kick() })
         .catch(() => {})
-      loadFrame(reduce ? staticIdx : 0)
+      const first = reduce ? staticIdx : 0
+      requested.add(first)
+      loadFrame(first)
+      // The rest wait for the page's own load so they never compete with the headline and fonts;
+      // the first scroll starts them sooner (see readScroll). pump() then fetches nearest-first, 4 at a time.
       const idle = (window as Window & { requestIdleCallback?: (cb: () => void) => number }).requestIdleCallback
-      if (idle) idle(() => loadRest())
-      else setTimeout(loadRest, 1200)
+      const later = () => (idle ? idle(() => loadRest()) : setTimeout(loadRest, 300))
+      if (document.readyState === 'complete') later()
+      else window.addEventListener('load', later, { once: true })
     }
     const nearestFrame = (i: number) => {
       for (let d = 0; d < SEQ_COUNT; d++) {
@@ -137,50 +165,95 @@ export default function LumosHero({ t, prefix }: { t: LumosCopy; prefix: string 
       }
       return -1
     }
-    // The product band sits between the copy/caption block and the CTA/bottom reserve, so nothing overlaps.
-    const drawSeq = (p: number, fade: number, ctaOn: boolean) => {
-      if (!seqCanvas || !meta) return
+    // Layout is measured once per resize (untransformed offsets), never inside the scroll loop, so drawing
+    // never forces a synchronous reflow.
+    const offsetIn = (el: HTMLElement | null) => {
+      let y = 0
+      let n: HTMLElement | null = el
+      while (n && n !== stage) { y += n.offsetTop; n = n.offsetParent as HTMLElement | null }
+      return y
+    }
+    let lay = { W: 0, H: 0, subBottom: 0, capBottom: 0, ctaTop: 0 }
+    const measureSeq = () => {
       const W = stage.clientWidth
       const H = stage.clientHeight
-      const dpr = Math.min(window.devicePixelRatio || 1, 2)
-      if (seqCanvas.width !== Math.round(W * dpr) || seqCanvas.height !== Math.round(H * dpr)) {
+      const sub = subRef.current
+      let capBottom = 0
+      capRefs.current.forEach((el) => { if (el) capBottom = Math.max(capBottom, el.offsetTop + el.offsetHeight) })
+      lay = {
+        W,
+        H,
+        subBottom: sub ? offsetIn(sub) + sub.offsetHeight : H * 0.5,
+        capBottom,
+        ctaTop: ctaRef.current ? offsetIn(ctaRef.current) : H,
+      }
+      if (seqCanvas) {
+        const dpr = Math.min(window.devicePixelRatio || 1, 3)
         seqCanvas.width = Math.round(W * dpr)
         seqCanvas.height = Math.round(H * dpr)
       }
+      dirty = true
+    }
+    // The product band sits between the copy/caption block and the CTA/bottom reserve, so nothing overlaps.
+    // Adjacent frames are cross-blended by the fractional progress, so 48 frames read as continuous motion.
+    const drawSeq = (p: number, fade: number, ctaOn: boolean) => {
+      if (!seqCanvas || !meta) return
+      if (!lay.W) measureSeq()
+      const { W, H } = lay
+      const dpr = seqCanvas.width / (W || 1)
       const g = seqCanvas.getContext('2d')
       if (!g) return
       g.setTransform(dpr, 0, 0, dpr, 0, 0)
+      g.imageSmoothingEnabled = true
+      g.imageSmoothingQuality = 'high'
       g.clearRect(0, 0, W, H)
 
-      const stageTop = stage.getBoundingClientRect().top
-      const subBottom = subRef.current ? subRef.current.getBoundingClientRect().bottom - stageTop : H * 0.5
-      let capBottom = 0
-      capRefs.current.forEach((el) => { if (el) capBottom = Math.max(capBottom, el.offsetTop + el.offsetHeight) })
       // Hold the band under the headline until it has all but faded, so the product never sits on the copy.
-      const top = lerp(subBottom, capBottom, span(fade, 0.85, 1)) + BAND_GAP
+      const subBottom = lay.subBottom - fade * 40
+      const top = lerp(subBottom, lay.capBottom, span(fade, 0.85, 1)) + BAND_GAP
       let bottom = H - PHONE_BOTTOM_RESERVE
-      if (ctaOn && ctaRef.current) bottom = Math.min(bottom, ctaRef.current.getBoundingClientRect().top - stageTop - BAND_GAP)
+      if (ctaOn) bottom = Math.min(bottom, lay.ctaTop - BAND_GAP)
       const bandH = Math.max(0, bottom - top)
       const bandW = W - 32
 
-      const want = reduce ? staticIdx : Math.round(p * (SEQ_COUNT - 1))
-      const i = nearestFrame(want)
+      const pos = reduce ? staticIdx : clamp(p) * (SEQ_COUNT - 1)
+      const lo = Math.floor(pos)
+      const frac = pos - lo
+      const i = nearestFrame(lo)
       if (i < 0) return
-      const img = frames[i]!
-      const m = meta[i] ?? { w: img.naturalWidth, h: img.naturalHeight }
+      const m = meta[i]
       const s = Math.min(bandW / m.w, bandH / m.h)
       seqScale = seqScale ? lerp(seqScale, s, 0.25) : s
       const scale = Math.min(seqScale, s)
-      const dw = m.w * scale
-      const dh = m.h * scale
-      g.drawImage(img, (W - dw) / 2, top + (bandH - dh) / 2, dw, dh)
+      const put = (k: number, alpha: number) => {
+        const img = frames[k]
+        if (!img || alpha <= 0) return
+        const mk = meta![k]
+        const dw = mk.w * scale
+        const dh = mk.h * scale
+        g.globalAlpha = alpha
+        g.drawImage(img, (W - dw) / 2, top + (bandH - dh) / 2, dw, dh)
+      }
+      // Crops are per-frame bounding boxes, so blending is only exact when both frames share a crop; while the
+      // framing changes (zoom, line-up) a cross-fade would ghost the edges — snap to the nearest frame instead.
+      const nb = lo + 1 < SEQ_COUNT ? frames[lo + 1] : null
+      const mn = nb ? meta[lo + 1] : null
+      const sameCrop = !!mn && Math.abs(mn.w - m.w) <= m.w * 0.005 && Math.abs(mn.h - m.h) <= m.h * 0.005
+      if (i !== lo || !nb) put(i, 1)
+      else if (sameCrop) { put(lo, 1); if (frac > 0.02) put(lo + 1, frac) }
+      else put(frac < 0.5 ? lo : lo + 1, 1)
+      g.globalAlpha = 1
     }
 
     const invalidate = () => { dirty = true }
     const readScroll = () => {
       const r = story.getBoundingClientRect()
       target = clamp(-r.top / (r.height - window.innerHeight))
-      if (lite && target > 0.002) loadRest()
+      if (lite) {
+        if (target > 0.002) loadRest()
+        if (restStarted) pump()
+      }
+      kick()
     }
     const onPointer = (e: PointerEvent) => {
       if (reduce) return
@@ -193,19 +266,23 @@ export default function LumosHero({ t, prefix }: { t: LumosCopy; prefix: string 
       const h = stage.clientHeight || 1
       capFloor = Math.max(0, ...capRefs.current.map((el) => (el ? (el.offsetTop + el.offsetHeight) / h : 0)))
       dirty = true
+      kick()
     }
     const resize = () => {
       measureCaps()
+      if (lite) measureSeq()
       scene?.resize(stage.clientWidth, stage.clientHeight)
     }
     document.fonts?.ready.then(() => { if (!disposed) measureCaps() })
 
-    const frame = (now: number) => {
-      if (!visible || disposed) return
+    frame = (now: number) => {
+      if (!visible || disposed) { running = false; return }
       const prevP = progress
       const prevX = pointer.x
       const prevY = pointer.y
       progress = progress < 0 || reduce ? target : progress + (target - progress) * 0.08
+      // Phones: snap the last sub-pixel of easing so the loop can go idle instead of redrawing forever.
+      if (lite && Math.abs(target - progress) < 1e-3) progress = target
       pointer.x += (pointer.tx - pointer.x) * 0.05
       pointer.y += (pointer.ty - pointer.y) * 0.05
       const p = progress
@@ -250,6 +327,8 @@ export default function LumosHero({ t, prefix }: { t: LumosCopy; prefix: string 
         })
         dirty = false
       }
+      // Phones render on demand: once settled, stop the loop until scroll, resize or a frame load wakes it.
+      if (lite && !moved && !dirty && progress === target) { running = false; return }
       raf = requestAnimationFrame(frame)
     }
 
@@ -262,9 +341,10 @@ export default function LumosHero({ t, prefix }: { t: LumosCopy; prefix: string 
     const io = new IntersectionObserver(([e]) => {
       visible = e.isIntersecting
       cancelAnimationFrame(raf)
+      running = false
       if (visible) {
         dirty = true
-        raf = requestAnimationFrame(frame)
+        kick()
       }
     })
     io.observe(stage)
@@ -275,12 +355,12 @@ export default function LumosHero({ t, prefix }: { t: LumosCopy; prefix: string 
     }
     canvas?.addEventListener('webglcontextlost', onContextLost)
 
-    const onResize = () => { resize(); dirty = true }
+    const onResize = () => { resize(); dirty = true; kick() }
     window.addEventListener('scroll', readScroll, { passive: true })
     window.addEventListener('pointermove', onPointer, { passive: true })
     window.addEventListener('resize', onResize)
     readScroll()
-    raf = requestAnimationFrame(frame)
+    kick()
 
     if (canvas && !lite) {
       import('./lumosScene')
@@ -303,6 +383,7 @@ export default function LumosHero({ t, prefix }: { t: LumosCopy; prefix: string 
       window.removeEventListener('pointermove', onPointer)
       window.removeEventListener('resize', onResize)
       scene?.dispose()
+      frames.forEach((f) => f?.close())
     }
   }, [t, fallback])
 
