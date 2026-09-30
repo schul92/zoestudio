@@ -102,6 +102,7 @@ export const PILLARS = {
       'aws-cmmc-security-korean-government-contractor-virginia-2026',
       'korean-beauty-fitness-membership-app-charlotte-2026',
       'aws-hipaa-cloud-korean-medical-dental-atlanta-2026',
+      'b2b-trade-show-wholesale-website-leads-las-vegas-2026',
     ],
   },
   'kakaotalk-marketing': {
@@ -358,4 +359,7 @@ export const POST_TO_PILLAR: Record<string, PillarKey> = {
 
   // 2026-08-17 — Houston F&B: online ordering, POS (Square/Toast/Clover), catering, reviews
   'korean-restaurant-houston-pos-catering-reviews-2026': 'restaurant-marketing',
+
+  // 2026-09-30 — B2B/wholesale trade-show lead follow-up gap (Las Vegas trade-show capital)
+  'b2b-trade-show-wholesale-website-leads-las-vegas-2026': 'website-cost',
 }

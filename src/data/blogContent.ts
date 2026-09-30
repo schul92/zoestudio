@@ -13521,4 +13521,101 @@ export const blogContent: BlogPost[] = [
       ],
     },
   },
+  // ─────────────────────────────────────────────────────────────────
+  // 2026-09-30 — B2B & wholesale/trading cluster: trade-show lead follow-up
+  // gap for Korean-American wholesalers/trading companies. Las Vegas angle
+  // (ASD Market Week / trade-show capital) — fills the least-covered
+  // category (B2B) and rotates audience away from NJ/NY and away from the
+  // auto-parts-manufacturing angle already used for Georgia.
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'b2b-trade-show-wholesale-website-leads-las-vegas-2026',
+    date: '2026-09-30',
+    updatedDate: '2026-09-30',
+    readTime: 9,
+    category: { en: 'B2B & Wholesale', ko: 'B2B & 도매' },
+    title: {
+      en: 'Your Booth Scanned 200 Badges, You Got 4 Replies: The Website Gap That Loses Trade-Show Buyers (Las Vegas, 2026)',
+      ko: '라스베가스 한인 도매·무역회사 웹사이트 제작 — 전시회 명함 200장이 거래로 안 이어지는 이유 (2026)',
+    },
+    metaDescription: {
+      en: 'Korean-American wholesalers and trading companies exhibit at Las Vegas trade shows, scan hundreds of badges, and hear back from almost none of them. The reason is usually not the booth — it is what the buyer finds (or does not find) when they Google the company that night. Here is what a B2B website needs before the next show, not after.',
+      ko: '라스베가스 전시회에서 명함과 배지를 수백 개 스캔해도 회신은 몇 통뿐인 한인 도매·무역업체가 많습니다. 원인은 대개 부스가 아니라, 그날 밤 바이어가 구글에서 회사를 검색했을 때 무엇을 보거나 못 봤는가입니다. 다음 전시회 전에 웹사이트가 갖춰야 할 것들을 정리했습니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'We get plenty of badge scans at trade shows but almost no email replies afterward. Could the website really be the problem?',
+          ko: '전시회에서 배지 스캔은 많이 받는데 이후 이메일 회신이 거의 없습니다. 웹사이트가 진짜 원인일 수 있나요?',
+        },
+        a: {
+          en: "Yes, in a large share of cases, because most buyers do not decide to order from a booth conversation alone — they Google the company that same night before replying to anyone, and a weak website quietly disqualifies you during that check. A buyer who met a dozen suppliers on the show floor uses the website to narrow that list before spending time on email: a personal Gmail address instead of a company domain, no line card or catalog to download, no minimum order quantity or lead time listed, and a generic 'contact us' box instead of a quote form all read as red flags to a buyer who has been scammed or ghosted by an unverifiable supplier before. Fix what the site shows in the 48 hours after a show before assuming the booth or the product was the issue.",
+          ko: '많은 경우 그렇습니다. 대부분의 바이어는 부스에서 나눈 대화만으로 발주를 결정하지 않고, 누구에게도 회신하기 전에 그날 밤 회사를 구글에서 검색하며, 이때 부실한 웹사이트가 조용히 사장님을 후보에서 탈락시키기 때문입니다. 전시장에서 십여 개 업체를 만난 바이어는 이메일에 시간을 쓰기 전에 웹사이트로 후보를 먼저 추려냅니다. 회사 도메인이 아닌 개인 Gmail 주소, 다운로드할 라인카드·카탈로그 부재, 최소주문수량(MOQ)이나 리드타임 미표기, 견적 폼 대신 평범한 "문의하기" 상자 — 이 모든 것이 예전에 검증 안 된 공급업체에게 사기를 당했거나 연락이 끊긴 경험이 있는 바이어에게는 위험 신호로 읽힙니다. 부스나 제품을 탓하기 전에, 전시회 후 48시간 안에 웹사이트가 무엇을 보여주는지부터 점검하세요.',
+        },
+      },
+      {
+        q: {
+          en: 'Is a company domain email really that important, or is it fine to quote buyers from a personal Gmail address?',
+          ko: '회사 도메인 이메일이 정말 그렇게 중요한가요? 그냥 개인 Gmail로 견적을 보내도 되지 않나요?',
+        },
+        a: {
+          en: "A company domain email (info@yourcompany.com) matters a great deal for B2B trust, because a Gmail address on a quote signals to a buyer that the company might not have a real website or verified business presence, which is exactly what fraud-wary overseas and domestic buyers screen for before wiring a deposit. It also has a practical filtering effect: many corporate buyers' spam filters and IT policies flag or quarantine quotes from free consumer email providers more aggressively than from a verified domain, so a Gmail-sent quote can simply never reach the inbox. Setting up a domain email takes under an hour through most website or hosting providers and costs a few dollars a month — it is one of the cheapest credibility upgrades a trading company can make.",
+          ko: '회사 도메인 이메일(info@회사명.com)은 B2B 신뢰에서 매우 중요합니다. 견적서에 찍힌 Gmail 주소는 바이어에게 "이 회사에 제대로 된 웹사이트나 검증된 사업체가 없을 수도 있다"는 신호로 읽히는데, 이는 해외든 국내든 계약금을 보내기 전 사기를 경계하는 바이어가 가장 먼저 확인하는 부분이기 때문입니다. 실무적인 필터링 효과도 있습니다 — 많은 기업 바이어의 스팸 필터와 IT 정책은 무료 개인 이메일 제공사에서 온 견적을 검증된 도메인보다 더 적극적으로 스팸 처리하거나 격리하기 때문에, Gmail로 보낸 견적이 아예 받은편지함에 도달하지 못하는 경우도 있습니다. 도메인 이메일 설정은 대부분의 웹사이트·호스팅 업체를 통해 한 시간 안에 끝나고 월 몇 달러면 충분합니다 — 무역회사가 할 수 있는 가장 저렴한 신뢰도 개선 중 하나입니다.',
+        },
+      },
+      {
+        q: {
+          en: "What is a 'line card,' and does our wholesale or trading company actually need one?",
+          ko: '라인카드(line card)가 정확히 뭔가요? 우리 도매·무역회사에도 꼭 필요한가요?',
+        },
+        a: {
+          en: "A line card is a single-page (usually downloadable PDF) summary of every product category or brand you carry, along with the basics a buyer needs to start a conversation — territories or industries served, minimum order quantities, typical lead times, and how to request a quote — and yes, almost every wholesale or trading company needs one, because it is the document a buyer's purchasing team actually circulates internally when deciding whether to bring you in. Without a line card on the website, a buyer who liked your booth has to either request one by email (adding a step most will skip) or try to reconstruct your full product range from memory, and both outcomes lose deals that a one-page download would have kept moving. Put it as a visible download on the homepage, not buried in a menu.",
+          ko: '라인카드는 사장님이 취급하는 모든 제품 카테고리나 브랜드를 한 페이지(보통 다운로드 가능한 PDF)로 정리하고, 바이어가 대화를 시작하는 데 필요한 기본 정보 — 담당 지역·산업군, 최소주문수량, 통상 리드타임, 견적 요청 방법 — 를 함께 담은 자료입니다. 거의 모든 도매·무역회사에 필요한 이유는, 바이어의 구매팀이 내부적으로 "이 업체를 들일지" 결정할 때 실제로 돌려보는 문서가 바로 이것이기 때문입니다. 웹사이트에 라인카드가 없으면, 부스가 마음에 들었던 바이어도 이메일로 따로 요청하거나(대부분 이 단계에서 포기합니다) 기억에 의존해 전체 제품군을 재구성해야 하는데, 두 경우 모두 한 페이지 다운로드 자료 하나면 이어졌을 거래를 놓치게 만듭니다. 메뉴 깊숙이 숨기지 말고 홈페이지에 바로 보이는 다운로드로 올려두세요.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "Every Korean-American wholesaler and trading company owner who exhibits at a Las Vegas trade show — ASD Market Week, a sourcing fair at the Las Vegas Convention Center, or one of the dozens of category shows that pass through the city each year — comes home with the same thing: a phone full of badge scans and a stack of business cards, and a real expectation that a good chunk of those contacts turn into new accounts. A week later, the reality is usually a handful of replies out of hundreds of scans. The instinct is to blame the booth, the samples, or the show itself. In most cases, the actual leak happens later that same night, when a buyer who liked what they saw on the floor opens a laptop, searches the company name, and decides — based entirely on the website — whether this supplier is worth a follow-up email at all." },
+        { type: 'h2', content: 'Why 200 scans do not become 20 new accounts' },
+        { type: 'p', content: "A buyer walking a trade show floor talks to dozens of suppliers in a single day and cannot possibly remember the details of each conversation by evening. What they do instead is shortlist: they pull up each company's website that night or the next morning and use it to decide who is worth the time to email back. This check is fast and unforgiving. A site that loads slowly, still shows a template placeholder, lists a Gmail or Yahoo address as the only contact, or has no way to see the actual product range without asking, gets quietly dropped from the list — not because the product was wrong, but because the site gave the buyer no reason to trust that a deposit sent to this company would come back as real, on-time inventory." },
+        { type: 'h2', content: 'What a buyer is actually checking for' },
+        { type: 'ul', content: 'The specific things a buyer looks for on a supplier website within hours of a trade show, before they ever reply:', items: [
+          'A company domain email (info@yourcompany.com), not a personal Gmail or Naver address — the single fastest trust signal or trust killer on the page.',
+          'A downloadable line card or catalog (PDF) listing product categories, brands carried, and the basics needed to start a conversation without another email.',
+          'Minimum order quantity (MOQ), typical lead time, and payment terms stated somewhere on the site, even in general ranges — buyers screen these before they screen price.',
+          'A structured quote/RFQ request form, not a bare "contact us" box, so a buyer can submit product, quantity, and destination in one pass.',
+          'A real business address and basic company information — buyers who were once burned by an unverifiable supplier check for this specifically before wiring a deposit.',
+          'An "industries served" or "who we supply" page, especially for a trading company working through distributors rather than selling direct to consumers.',
+        ] },
+        { type: 'tip', content: "The highest-leverage fix costs nothing but time: reply to every trade-show contact within 24 to 48 hours with a short, personal email that links directly to your line card and RFQ page. Buyers are actively comparing several suppliers in that same window, and the first one who makes it easy to keep the conversation moving usually gets the follow-up call, not necessarily the cheapest one." },
+        { type: 'h2', content: 'The Gmail problem, specifically' },
+        { type: 'p', content: "It is worth calling out on its own because it is the most common and most fixable issue: a quote or line card sent from a personal Gmail or Naver address, instead of a company domain, reads to many corporate buyers as a company that may not have a real website or verified business presence — exactly the profile a fraud-wary buyer has learned to avoid. It also has a mechanical cost separate from trust: many corporate spam filters and IT policies flag mail from free consumer email providers more aggressively than mail from a verified company domain, so some quotes sent from Gmail never reach the buyer's inbox in the first place, follow-up email or not. A domain email is inexpensive, quick to set up, and one of the cheapest credibility fixes available before the next show." },
+        { type: 'h2', content: 'A note for Las Vegas trade-show exhibitors' },
+        { type: 'p', content: "Las Vegas hosts more B2B trade shows per year than almost any other US city, which means a Korean-American wholesaler or trading company that exhibits here is competing for attention against an unusually large field of suppliers a buyer sees in the same trip — often dozens in a single day at events like ASD Market Week. That density cuts both ways: it means more potential buyers pass by the booth, but also that the post-show website check happens against a larger and more recent set of comparisons than at a smaller regional show. A wholesaler based anywhere in the country exhibiting in Las Vegas gets the same benefit from a bilingual, RFQ-ready website — English for the buyer doing the vetting, Korean for supply-chain communication back to a Korea-based manufacturer or head office — regardless of where the warehouse actually sits." },
+        { type: 'cta', content: "ZOE LUMOS builds bilingual, RFQ-ready websites for Korean-American wholesalers and trading companies nationwide — line card and catalog pages, structured quote forms, company domain email setup, and everything registered in your own name. Free consultation in Korean or English: email info@zoelumos.com or reach us on KakaoTalk (http://pf.kakao.com/_xhxdxmlX/chat)." },
+      ],
+      ko: [
+        { type: 'intro', content: '라스베가스 전시회 — ASD 마켓위크, 라스베가스 컨벤션센터의 소싱 박람회, 또는 매년 이 도시를 거쳐 가는 수많은 업종별 전시회 중 하나 — 에 참가하는 한인 도매·무역회사 사장님들은 대부분 같은 걸 들고 집에 돌아옵니다. 배지 스캔으로 가득 찬 휴대폰과 명함 한 뭉치, 그리고 그중 상당수가 신규 거래처로 이어질 거라는 기대죠. 일주일 뒤 현실은 보통 수백 건의 스캔 중 회신 몇 통입니다. 본능적으로 부스나 샘플, 전시회 자체를 탓하게 되지만, 실제 손실은 대부분 바로 그날 밤 일어납니다. 부스에서 마음에 들었던 바이어가 노트북을 열고 회사 이름을 검색한 뒤, 오직 웹사이트만 보고 "이 업체에 후속 이메일을 보낼 가치가 있는지" 결정하는 그 순간입니다.' },
+        { type: 'h2', content: '왜 명함 200장이 신규 거래처 20곳으로 안 이어지는가' },
+        { type: 'p', content: '전시장을 도는 바이어는 하루에 수십 개 업체와 대화를 나누기 때문에, 저녁쯤엔 각 대화의 세부 내용을 다 기억하지 못합니다. 대신 하는 일은 후보 추리기입니다. 그날 밤이나 다음 날 아침, 각 회사의 웹사이트를 열어보고 그걸로 "이메일을 보낼 만한 시간 가치가 있는 업체"를 골라냅니다. 이 검증은 빠르고 가차 없습니다. 로딩이 느리거나, 여전히 템플릿 자리 표시자가 보이거나, 유일한 연락처가 Gmail이나 Yahoo 주소이거나, 물어보지 않고는 실제 제품군을 볼 방법이 없는 사이트는 조용히 목록에서 빠집니다 — 제품이 틀려서가 아니라, 이 회사에 계약금을 보내면 실제로 제때 재고가 돌아올 거라는 믿음을 사이트가 전혀 주지 못했기 때문입니다.' },
+        { type: 'h2', content: '바이어가 실제로 확인하는 것들' },
+        { type: 'ul', content: '전시회 직후 몇 시간 안에, 회신을 보내기도 전에 바이어가 공급업체 웹사이트에서 확인하는 구체적인 항목들:', items: [
+          '개인 Gmail이나 네이버 주소가 아닌 회사 도메인 이메일(info@회사명.com) — 페이지에서 가장 빠르게 신뢰를 주거나 깨뜨리는 요소.',
+          '제품 카테고리, 취급 브랜드, 그리고 추가 이메일 없이 대화를 시작할 수 있는 기본 정보를 담은 다운로드 가능한 라인카드나 카탈로그(PDF).',
+          '최소주문수량(MOQ), 통상 리드타임, 결제 조건이 대략적인 범위로라도 사이트 어딘가에 명시되어 있는지 — 바이어는 가격보다 이것부터 걸러냅니다.',
+          '단순한 "문의하기" 상자가 아니라 구조화된 견적·RFQ 요청 폼 — 바이어가 제품, 수량, 배송지를 한 번에 제출할 수 있어야 합니다.',
+          '실제 사업장 주소와 기본 회사 정보 — 예전에 검증 안 된 공급업체에게 당한 경험이 있는 바이어는 계약금을 보내기 전 이걸 특히 확인합니다.',
+          '"취급 산업군" 또는 "누구에게 공급하는지" 페이지 — 특히 소비자 직판이 아니라 유통업체를 통해 거래하는 무역회사라면 더욱 필요합니다.',
+        ] },
+        { type: 'tip', content: '가장 효과가 큰 해결책은 돈이 아니라 시간만 들입니다. 전시회 후 24~48시간 안에 모든 접촉자에게 라인카드와 RFQ 페이지로 바로 연결되는 짧고 개인화된 이메일을 보내세요. 바이어는 같은 시간대에 여러 공급업체를 동시에 비교하고 있고, 대화를 이어가기 가장 쉽게 만들어 준 업체가 대개 다음 통화를 받게 됩니다 — 꼭 가장 싼 업체가 아니라요.' },
+        { type: 'h2', content: '특히 Gmail 문제' },
+        { type: 'p', content: '따로 짚을 가치가 있습니다. 가장 흔하면서도 가장 고치기 쉬운 문제이기 때문입니다. 회사 도메인이 아니라 개인 Gmail이나 네이버 주소로 보낸 견적서나 라인카드는 많은 기업 바이어에게 "이 회사엔 제대로 된 웹사이트나 검증된 사업체가 없을 수도 있다"는 신호로 읽힙니다 — 바로 사기를 경계하는 바이어가 피하도록 학습한 그 프로필입니다. 신뢰와 별개로 기계적인 비용도 있습니다. 많은 기업의 스팸 필터와 IT 정책은 무료 개인 이메일 제공사에서 온 메일을 검증된 회사 도메인보다 더 적극적으로 걸러내기 때문에, Gmail로 보낸 견적 중 일부는 후속 이메일 여부와 상관없이 애초에 바이어의 받은편지함에 도달하지도 못합니다. 도메인 이메일은 저렴하고 빠르게 설정할 수 있으며, 다음 전시회 전에 손볼 수 있는 가장 값싼 신뢰도 개선책 중 하나입니다.' },
+        { type: 'h2', content: '라스베가스 전시회 참가자를 위한 참고' },
+        { type: 'p', content: '라스베가스는 다른 어떤 미국 도시보다 연간 B2B 전시회가 많이 열리는 도시 중 하나입니다. 즉 이곳에서 부스를 여는 한인 도매·무역회사는 바이어가 같은 출장 안에서 마주치는 유난히 많은 경쟁 공급업체 — ASD 마켓위크 같은 행사에서는 하루에 수십 곳 — 와 관심을 두고 경쟁하는 셈입니다. 이 밀집도는 양날의 검입니다. 부스를 지나가는 잠재 바이어가 더 많아지지만, 전시회 이후 웹사이트 검증도 더 크고 더 최근의 비교 대상군을 놓고 이뤄진다는 뜻이기도 합니다. 본사가 미국 어느 지역에 있든 라스베가스에서 부스를 여는 도매업체라면, 이중언어에 RFQ까지 준비된 웹사이트에서 같은 이점을 얻습니다 — 실사 중인 바이어를 위한 영어, 한국 제조사나 본사와의 공급망 소통을 위한 한국어 — 실제 창고가 어디에 있든 상관없이요.' },
+        { type: 'cta', content: 'ZOE LUMOS는 미국 전역의 한인 도매업체·무역회사를 위한 이중언어 RFQ 웹사이트를 만듭니다 — 라인카드·카탈로그 페이지, 구조화된 견적 폼, 회사 도메인 이메일 설정, 그리고 전부 사장님 명의 등록까지. 한국어/영어 무료 상담: info@zoelumos.com 이메일 또는 카카오톡(http://pf.kakao.com/_xhxdxmlX/chat)으로 문의하세요.' },
+      ],
+    },
+  },
 ]
