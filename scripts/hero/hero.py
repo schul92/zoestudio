@@ -1,5 +1,5 @@
 # Headless Blender scene for the zoelumos hero image sequence.
-# Usage: Blender -b -P hero.py -- <set: desktop|mobile> <out_dir> <count> <samples> [scale%] [p,p,...]
+# Usage: Blender -b -P hero.py -- <set: desktop|mobile> <out_dir> <count|0=motion schedule> <samples> [scale%] [p,p,...]
 import bpy, bmesh, math, sys, os
 from mathutils import Vector, Matrix
 
@@ -98,8 +98,8 @@ al.new(tc.outputs['Object'], mp.inputs['Vector']); al.new(mp.outputs['Vector'], 
 al.new(nz.outputs['Fac'], mr.inputs['Value']); al.new(mr.outputs['Result'], alu_b.inputs['Roughness'])
 al.new(nz.outputs['Fac'], bump.inputs['Height']); al.new(bump.outputs['Normal'], alu_b.inputs['Normal'])
 
-keycap, kb_, *_ = principled('key', (0.003, 0.003, 0.0035), rough=0.55)
-kb_.inputs['Specular IOR Level'].default_value = 0.06
+keycap, kb_, *_ = principled('key', (0.004, 0.004, 0.0045), rough=0.42, coat=0.15, coat_rough=0.25)
+kb_.inputs['Specular IOR Level'].default_value = 0.18
 well, wb_, *_ = principled('well', (0.002, 0.002, 0.0025), rough=0.7)
 wb_.inputs['Specular IOR Level'].default_value = 0.2
 glass, *_ = principled('glass', (0.003, 0.003, 0.004), rough=0.03, coat=1.0, coat_rough=0.01)
@@ -107,6 +107,9 @@ hingemat, *_ = principled('hinge', (0.015, 0.015, 0.016), metal=0.8, rough=0.35)
 pad, *_ = principled('pad', (0.034, 0.035, 0.038), metal=0.9, rough=0.26, coat=0.25, coat_rough=0.12)
 padgap, *_ = principled('padgap', (0.004, 0.004, 0.004), rough=0.8)
 camdot, *_ = principled('camdot', (0.02, 0.022, 0.03), rough=0.1, coat=1.0)
+legend, lgb, *_ = principled('legend', (0.52, 0.53, 0.55), rough=0.5)
+lgb.inputs['Emission Color'].default_value = (1.0, 0.97, 0.92, 1)
+lgb.inputs['Emission Strength'].default_value = 0.0
 titan, *_ = principled('titan', (0.11, 0.11, 0.115), metal=1.0, rough=0.24)
 
 # speaker grille: dot pattern punched as dark holes
@@ -198,15 +201,39 @@ gap = 0.0026
 unit = (KW - 13 * gap) / 14.5
 rowh = (KD - 5 * gap) / 5.55
 z = KY + KD / 2
-for widths, hf in rows:
+LEGENDS = [
+    ['esc', 'F1', 'F2', 'F3', 'F4', 'F5', 'F6', 'F7', 'F8', 'F9', 'F10', 'F11', 'F12', ''],
+    ['`', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', '=', 'delete'],
+    ['tab', 'Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P', '[', ']', '\\'],
+    ['caps lock', 'A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L', ';', "'", 'return'],
+    ['shift', 'Z', 'X', 'C', 'V', 'B', 'N', 'M', ',', '.', '/', 'shift'],
+    ['fn', 'control', 'option', 'command', '', 'command', 'option', '<', '>'],
+]
+KEY_TOP = H - 0.0013 + 0.0011 + 0.00004
+def add_legend(txt, cx, cy, kw, kh):
+    if not txt: return
+    small = len(txt) > 1 and not txt.startswith('F')
+    cu = bpy.data.curves.new('lg', 'FONT'); cu.body = txt
+    cu.align_x = 'CENTER'; cu.align_y = 'CENTER'
+    cu.size = 0.0020 if small else (0.0025 if txt.startswith('F') or len(txt) > 1 else 0.0047)
+    cu.materials.append(legend)
+    ob = link(bpy.data.objects.new('lg', cu), laptop)
+    if small:   # modifiers: small, bottom-left like a real board
+        ob.location = (cx - kw / 2 + 0.0012 if txt not in ('return', 'delete') else cx + kw / 2 - 0.0012, cy - kh / 2 + 0.0024, KEY_TOP)
+        cu.align_x = 'LEFT' if txt not in ('return', 'delete') else 'RIGHT'
+    else:
+        ob.location = (cx, cy, KEY_TOP)
+for ri, (widths, hf) in enumerate(rows):
+    ki = 0
     hh = rowh * hf
     tot = sum(widths) * unit + (len(widths) - 1) * gap
     x = -tot / 2
     for wu in widths:
         kw = wu * unit
-        k = slab('key', kw, hh, 0.0011, 0.0012, bevel=0.00035, seg=6, bseg=3, mat=keycap, parent=laptop)
+        k = slab('key', kw, hh, 0.0011, 0.0013, bevel=0.0005, seg=6, bseg=4, mat=keycap, parent=laptop)
         k.location = (x + kw / 2, z - hh / 2, H - 0.0013)
-        x += kw + gap
+        add_legend(LEGENDS[ri][ki], x + kw / 2, z - hh / 2, kw, hh)
+        x += kw + gap; ki += 1
     z -= hh + gap
 
 for sx in (-1, 1):
@@ -215,7 +242,7 @@ for sx in (-1, 1):
 
 TPW, TPD, TPY = 0.158, 0.094, -0.071
 pg = plate('padgap', TPW + 0.0012, TPD + 0.0012, 0.0062, padgap, parent=laptop); pg.location = (0, TPY, H + 0.00004)
-tp = plate('trackpad', TPW, TPD, 0.0056, pad, parent=laptop); tp.location = (0, TPY, H + 0.00008)
+tp = slab('trackpad', TPW, TPD, 0.00035, 0.0056, bevel=0.00022, seg=12, bseg=3, mat=pad, parent=laptop); tp.location = (0, TPY, H - 0.0002)
 
 # hinge + lid; lid local: back edge on the hinge axis, extends toward -Y when closed, screen faces -Z
 hinge = link(bpy.data.objects.new('hinge', None), laptop)
@@ -342,17 +369,18 @@ def pose(p):
     lid_deg = lerp(lid_deg, 110, ph)
     hinge.rotation_euler = (-math.radians(lid_deg), 0, 0)
     laptop.rotation_euler = (0, 0, math.radians(lerp(-33, 0, span(p, 0.02, 0.36)) + ph * 5))
-    laptop.location = (lerp(0, -0.080 if MOBILE else -0.075, ph), 0, 0)
-    phone.location = (lerp(0.55 if not MOBILE else 0.45, 0.175 if MOBILE else 0.200, ph), -0.150 if MOBILE else -0.045, PHH / 2 + 0.0002)
+    laptop.location = (lerp(0, -0.066 if MOBILE else -0.075, ph), 0, 0)
+    phone.location = (lerp(0.55 if not MOBILE else 0.45, 0.160 if MOBILE else 0.200, ph), -0.150 if MOBILE else -0.045, PHH / 2 + 0.0002)
     phone.rotation_euler = (math.radians(90), 0, math.radians(lerp(-45, -8 if MOBILE else -14, ph)))
     phone.hide_render = ph < 0.001
     beat = sum(1 for b in BREAKS if p >= b)
     set_screen(KEYS[ORDER[beat]])
     lum.inputs['Fac'].default_value = lumos
+    lgb.inputs['Emission Strength'].default_value = 0.22 * lumos
     bpy.context.view_layer.update()
 
     # overview camera
-    elev = math.radians(lerp(30, 12, span(p, 0.0, 0.30)))
+    elev = math.radians(lerp(30 if MOBILE else 13, 12, span(p, 0.0, 0.30)))
     ov_w = (0.66 if MOBILE else 0.98) if p < 0.2 else lerp(0.66 if MOBILE else 0.98, 0.52 if MOBILE else 0.80, span(p, 0.1, 0.3))
     ov_w = lerp(0.66 if MOBILE else 0.98, 0.52 if MOBILE else 0.80, span(p, 0.08, 0.30))
     tgt = Vector((laptop.location.x, 0.0, lerp(0.02, 0.10, open_)))
@@ -371,7 +399,7 @@ def pose(p):
     # line-up
     lu_tgt = Vector((-0.004 if MOBILE else -0.012, -0.02, 0.085))
     lu_w = 0.56 if MOBILE else 0.70
-    le = math.radians(9)
+    le = math.radians(14 if MOBILE else 9)
     lu_pos = lu_tgt + Vector((0, -math.cos(le), math.sin(le))) * dist_for(lu_w)
     pos = vlerp(vlerp(ov_pos, cl_pos, zoom_raw), lu_pos, ph)
     tg = vlerp(vlerp(tgt, cl_tgt, zoom_raw), lu_tgt, ph)
@@ -400,9 +428,28 @@ if os.environ.get('CROP'):
     sc.render.use_border = True; sc.render.use_crop_to_border = True
     sc.render.border_min_x, sc.render.border_min_y, sc.render.border_max_x, sc.render.border_max_y = x0, y0, x1, y1
 os.makedirs(OUT, exist_ok=True)
-ps_ = PLIST if PLIST else [i / (COUNT - 1) for i in range(COUNT)]
+
+# Motion-weighted schedule: dense where something moves (lid, camera, line-up), sparse on static holds, with a
+# before/after pair around each screen swap so the player cross-fades the swap instead of cutting.
+def schedule():
+    n_open, n_lu = (104, 40) if not MOBILE else (82, 30)
+    ps = [0.40 * i / (n_open - 1) for i in range(n_open)]
+    for b in (0.47, 0.62):
+        ps += [b - 0.012, b + 0.012]
+    ps += [0.748]
+    ps += [0.764 + (0.92 - 0.764) * i / (n_lu - 1) for i in range(n_lu)]
+    ps += [1.0]
+    return sorted(set(round(x, 5) for x in ps))
+if PLIST: ps_ = PLIST
+elif COUNT == 0: ps_ = schedule()
+else: ps_ = [i / (COUNT - 1) for i in range(COUNT)]
+import json
+if not PLIST:
+    with open(os.path.join(OUT, 'schedule.json'), 'w') as fh: json.dump(ps_, fh)
 for i, p in enumerate(ps_):
+    fp = os.path.join(OUT, f'f{i:03d}.png' if not PLIST else f'p{p:.2f}.png')
+    if os.environ.get('RESUME') and os.path.exists(fp): continue
     pose(p)
-    sc.render.filepath = os.path.join(OUT, f'f{i:02d}.png' if not PLIST else f'p{p:.2f}.png')
+    sc.render.filepath = fp
     bpy.ops.render.render(write_still=True)
     print('RENDERED', i, p, flush=True)

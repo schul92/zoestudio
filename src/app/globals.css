@@ -406,7 +406,7 @@ input, textarea, select, button {
 .kn-frost { background: rgba(251,251,253,.8); backdrop-filter: saturate(180%) blur(20px); -webkit-backdrop-filter: saturate(180%) blur(20px); }
 
 /* Lumos hero: a pinned dark stage; a photoreal pre-rendered image sequence is scrubbed into .lh-seq by scroll. */
-.lh-story { position: relative; height: 400vh; background: #050506; }
+.lh-story { position: relative; height: 300vh; background: #050506; }
 .lh-story-reduced { height: 220vh; }
 .lh-stage {
   position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; color: #F5F5F7;
@@ -422,6 +422,8 @@ input, textarea, select, button {
 .lh-first img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; display: block; }
 .lh-stage[data-ready] .lh-first { visibility: hidden; }
 @media (max-width: 820px) { .lh-first { background-image: var(--ph-m); } }
+/* Desktop opening: the closed laptop is held to 60% of the width under the headline (mirrors the player's band). */
+@media (min-width: 821px) { .lh-first { justify-self: center; width: min(100%, 62vw); } }
 .lh-fallback { position: absolute; left: 0; right: 0; bottom: 12%; margin: auto; width: min(720px, 86vw); border-radius: 14px; }
 .lh-copy {
   position: absolute; inset: 0; pointer-events: none; display: grid; grid-template-rows: auto auto auto minmax(0, 1fr);
