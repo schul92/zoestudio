@@ -13521,4 +13521,131 @@ export const blogContent: BlogPost[] = [
       ],
     },
   },
+  // ─────────────────────────────────────────────────────────────────
+  // 2026-09-28 — C2C/service booking: Korean-American veterinary clinics
+  // (Portland–Beaverton, OR). No existing vet/animal-hospital post; C2C
+  // was the least-covered rotation slot over the prior 15 daily posts.
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'korean-vet-clinic-booking-noshow-portland-2026',
+    date: '2026-09-28',
+    updatedDate: '2026-09-28',
+    readTime: 9,
+    category: { en: 'Industry Guide', ko: '업종별 가이드' },
+    title: {
+      en: 'Booking & No-Show Prevention for Korean-American Veterinary Clinics (Portland–Beaverton, OR, 2026)',
+      ko: '포틀랜드·비버튼 한인 동물병원 예약 시스템 가이드 — 노쇼 방지와 구글 지도 최적화 (2026)',
+    },
+    metaDescription: {
+      en: 'Korean-American veterinary clinics and animal hospitals around Portland and Beaverton, OR often still book by phone only, which means missed calls during procedures, double-booked exam rooms, and no-shows nobody can back-fill. How real booking software, a new-patient deposit, and Google Business Profile optimization change the math.',
+      ko: '포틀랜드·비버튼 지역 한인 동물병원은 여전히 전화로만 예약을 받는 경우가 많아, 진료 중 놓치는 전화·중복 예약·채울 수 없는 노쇼가 반복됩니다. 실제 예약 소프트웨어와 신규 환자 예약금, 구글 비즈니스 프로필 최적화가 이 계산을 어떻게 바꾸는지 정리했습니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'Does a small veterinary clinic really need online booking software, or is a phone line enough?',
+          ko: '소규모 동물병원도 온라인 예약 소프트웨어가 꼭 필요한가요, 전화 예약만으로는 부족한가요?',
+        },
+        a: {
+          en: "Yes, once the front desk is also the only person who can answer the phone while a vet is mid-procedure — that is exactly where phone-only booking breaks. A call that goes to voicemail during a surgery or a dental cleaning is a lost booking, because most callers hang up and call the next clinic on the list rather than leave a message and wait. Online booking software lets a pet owner see real open slots and book at 9pm without anyone picking up a phone, and it frees staff to answer clinical questions instead of relaying schedule availability all day. A single-vet clinic with light call volume can still get by on phone-only for a while, but the moment missed calls start showing up as empty slots on the schedule, booking software pays for itself within the first month.",
+          ko: '네, 필요합니다. 수의사가 진료나 수술 중일 때 전화를 받을 수 있는 사람이 데스크 직원 한 명뿐인 순간부터 전화 예약만으로는 무너지기 시작합니다. 수술이나 스케일링 중 온 전화가 음성사서함으로 넘어가면 그 예약은 대부분 사라집니다. 대부분의 보호자는 메시지를 남기고 기다리기보다 목록의 다음 병원에 바로 전화를 걸기 때문입니다. 온라인 예약 소프트웨어는 보호자가 밤 9시에도 실제 빈 시간을 보고 직접 예약할 수 있게 해주고, 직원은 하루 종일 일정 안내 대신 진료 관련 문의에 집중할 수 있게 됩니다. 통화량이 적은 1인 수의사 병원이라면 당분간 전화만으로도 버틸 수 있지만, 놓친 전화가 스케줄의 빈 시간으로 눈에 보이기 시작하는 순간부터는 예약 소프트웨어가 첫 달 안에 비용을 회수합니다.',
+        },
+      },
+      {
+        q: {
+          en: 'Should a veterinary clinic charge a deposit to reduce no-shows?',
+          ko: '노쇼를 줄이려면 동물병원도 예약금을 받아야 하나요?',
+        },
+        a: {
+          en: "Yes, especially for new patients and for appointment types that block real chair time, such as a first wellness exam, a dental consult, or a surgery consult. A no-show on a 30-minute exam slot is not just one missed visit — it is a slot that could have gone to a waitlisted pet, and unlike a nail salon or restaurant, a clinic cannot simply re-open the room to walk-in traffic on short notice. A modest deposit, applied to the visit cost and clearly explained at booking, filters out the casual no-shows without discouraging genuine new patients. Existing, established patients with a track record of showing up can reasonably be exempted, which keeps the policy from feeling punitive to loyal clients.",
+          ko: '네, 특히 신규 환자와 첫 웰니스 검진·치과 상담·수술 상담처럼 실제 진료 시간을 오래 잡아먹는 예약 유형에는 받는 것이 좋습니다. 30분짜리 검진 슬롯의 노쇼는 단순히 한 건의 방문을 놓치는 게 아니라, 대기자 명단에 있던 다른 반려동물이 들어올 수 있었던 자리를 그대로 날리는 것입니다. 네일샵이나 식당과 달리 동물병원은 갑자기 워크인 손님으로 그 방을 다시 채울 수 없습니다. 진료비에서 차감되는 적당한 예약금을 예약 시점에 명확히 안내하면, 진짜 신규 환자를 막지 않으면서도 가벼운 마음으로 잡아두는 노쇼를 걸러낼 수 있습니다. 꾸준히 방문 이력이 있는 기존 단골 환자는 예약금 대상에서 빼주는 것이 합리적이며, 그래야 정책이 단골 고객에게 벌주는 것처럼 느껴지지 않습니다.',
+        },
+      },
+      {
+        q: {
+          en: 'Why does our veterinary clinic not show up when people search "animal hospital near me" in Beaverton?',
+          ko: '비버튼에서 "동물병원 근처" 같은 검색을 해도 왜 저희 병원이 잘 안 보이나요?',
+        },
+        a: {
+          en: 'The most common cause is an unclaimed, incomplete, or inconsistent Google Business Profile — wrong hours, a missing service list, no recent photos, or a business name and address that does not exactly match what is printed on your sign and website. Google ranks local results heavily on relevance, distance, and prominence, and prominence is built from a complete profile, accurate categories (Veterinarian and Animal Hospital, not just a generic Medical Clinic label), regular posts, and a steady flow of recent reviews you actually respond to. A clinic with a thin, outdated profile can be a genuinely excellent vet and still lose the map-pack ranking to a mediocre clinic with a fully optimized one, because Google cannot read quality it was never shown.',
+          ko: '가장 흔한 원인은 구글 비즈니스 프로필을 아예 등록하지 않았거나, 정보가 부실하거나, 여기저기 정보가 다른 경우입니다 — 잘못된 영업시간, 빠진 진료 항목 목록, 오래된 사진, 간판·웹사이트와 정확히 일치하지 않는 상호명·주소 같은 것들이 대표적입니다. 구글은 지역 검색 결과 순위를 관련성·거리·인지도(prominence) 세 가지로 정하는데, 인지도는 완성도 높은 프로필, 정확한 카테고리 설정(단순 "병원"이 아니라 수의사·동물병원으로), 꾸준한 게시물, 실제로 답글을 다는 최근 리뷰의 흐름에서 만들어집니다. 프로필이 부실하고 오래된 병원은 실력이 정말 좋아도, 프로필을 제대로 관리한 평범한 병원에 지도 검색 상위 노출을 내줄 수 있습니다. 구글은 보여지지 않은 실력을 읽어내지 못하기 때문입니다.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "Portland's Korean-American community has grown steadily around Beaverton and Hillsboro — pulled in part by Nike's world headquarters and the semiconductor jobs at Intel's Washington County campuses — and with that growth has come more Korean-owned and Korean-speaking pet care, including the veterinary clinics that first-generation pet owners specifically look for so they can describe symptoms in their own language. Most of those clinics still run booking the way a single-doctor practice always has: a front desk phone line, a paper or whiteboard schedule, and a receptionist who has to stop answering calls the moment a procedure starts. That system worked when the clinic saw a handful of patients a day. It starts quietly costing real appointments once call volume outgrows the number of people available to answer it." },
+        { type: 'h2', content: 'Why Portland–Beaverton, and why now' },
+        { type: 'p', content: "The Korean-American population around Washington County has grown alongside the tech and manufacturing employers that anchor the area, with visible concentration in Beaverton, Hillsboro, and Aloha. Pet ownership has grown right along with it, and a Korean-speaking veterinary clinic solves a real problem for first-generation owners who want to describe a pet's symptoms precisely rather than through a translation app in an already stressful moment. That trust is exactly why booking friction costs more here than it would for a generic service business — a pet owner who cannot get through by phone does not wait around; they search for the next Korean-speaking or highly-rated clinic nearby and rarely come back to try again." },
+        { type: 'h2', content: 'Why phone-only booking breaks for a veterinary clinic' },
+        { type: 'p', content: "A vet clinic has a scheduling problem that most other service businesses do not: the person answering the phone is often the same person needed in the exam room, restraining an anxious animal or handing instruments during a procedure. Every minute spent on hold or in voicemail is a minute a genuinely sick pet's owner is deciding whether to call somewhere else instead. None of that is a staffing failure — it is simply what phone-only booking guarantees once a clinic is busy enough to be worth running." },
+        { type: 'ul', content: 'Signs a Korean-American veterinary clinic has outgrown phone-only booking:', items: [
+          "Calls that come in during a procedure go to voicemail, and most callers never leave a message — they call the next clinic instead.",
+          "The front-desk schedule is a paper book or whiteboard, so a same-day cancellation cannot be automatically offered to anyone on a waitlist.",
+          "There is no way to send an automatic reminder before an appointment, so no-shows happen simply because a busy owner forgot.",
+          "Different appointment types (a 15-minute vaccine visit vs. a 45-minute surgery consult) are not distinguished in the schedule, so exam rooms run late all day from one long visit.",
+          "New patients cannot see real available times outside business hours, so an owner searching at 9pm books with whichever clinic lets them book at 9pm.",
+        ] },
+        { type: 'h2', content: 'What a real booking system needs to do for a vet clinic' },
+        { type: 'p', content: "The question is never 'do we need booking software' in the abstract — it is which specific gap in the current phone-and-whiteboard system is actually costing appointments. For a Korean-American veterinary clinic, that gap is almost always the same shape." },
+        { type: 'ul', content: 'The core pieces that make booking software worth adopting:', items: [
+          "Separate appointment types with the correct time blocks — a wellness exam, a vaccine visit, a dental consult, and a surgery consult should never share the same slot length.",
+          "A deposit for new patients and for longer appointment types, refunded or applied to the visit, so a genuine cancellation is free but a casual no-show has a real cost.",
+          "Automatic SMS and email reminders at 24 hours and again at 2 hours before the visit — the two windows that actually recover forgotten appointments.",
+          "A public waitlist that auto-offers a same-day cancellation to the next person in line, instead of that slot simply sitting empty.",
+          "Bilingual intake forms so a first-generation Korean-speaking owner can describe symptoms accurately in Korean before the visit, saving exam-room time for both sides.",
+        ] },
+        { type: 'h2', content: 'Google Business Profile: why "animal hospital near me" is where new patients start' },
+        { type: 'p', content: "Nearly every new-patient search for a veterinary clinic starts as a local search — 'animal hospital near me', '비버튼 동물병원', or 'Korean speaking vet Portland' — and Google answers that with the map pack, not a list of websites. A Google Business Profile that is unclaimed, has outdated hours, or is filed under a generic 'Medical Clinic' category instead of Veterinarian and Animal Hospital will consistently lose that placement to a clinic with a thinner practice but a fully optimized profile. Hours accuracy matters especially for a vet clinic, because Google visibly flags a listing that shows conflicting hours, and a pet owner deciding between an emergency visit now or waiting until morning will simply call whichever result looks reliable." },
+        { type: 'ul', content: 'What actually moves a veterinary clinic up in local search results:', items: [
+          "Correct primary category (Veterinarian or Animal Hospital) plus accurate services list — emergency care, dental, surgery, boarding, grooming, whichever genuinely apply.",
+          "Hours that exactly match the front door and the website, including holiday hours — a mismatch is one of the fastest ways to lose trust in a map-pack click.",
+          "A steady stream of recent reviews, with responses in both English and Korean, since review recency weighs as heavily as review count in most local rankings.",
+          "Photos of the actual clinic, exam rooms, and staff — not stock imagery — since Google Business Profile listings with recent real photos measurably out-click bare listings.",
+          "Weekly posts (a seasonal reminder, a new service, a holiday closure) that keep the profile active, which Google treats as a freshness signal.",
+        ] },
+        { type: 'tip', content: "The single fastest fix for most Korean-American clinics is correcting the primary Google Business Profile category. A clinic filed under a generic 'Medical Clinic' or 'Doctor' category instead of 'Veterinarian' or 'Animal Hospital' is functionally invisible to the exact searches that would find it — this is a five-minute fix with an outsized effect on local visibility." },
+        { type: 'h2', content: 'No-show prevention beyond the deposit' },
+        { type: 'p', content: "A deposit filters out the casual no-shows, but the reminder cadence is what recovers the forgetful ones — which is most of them. A reminder 24 hours out gives an owner time to reschedule instead of simply not showing, and a second reminder roughly 2 hours before catches the same-day forgetting that a single reminder misses. Neither reminder needs to feel like a threat; a short bilingual text confirming the time, the pet's name, and a one-tap reschedule link performs better than a formal cancellation-policy notice, and it reads as a courtesy rather than a warning." },
+        { type: 'cta', content: "Running a Korean-American veterinary clinic in Portland or Beaverton and still booking by phone alone? ZOE LUMOS builds bilingual booking systems with deposits, automatic reminders, and Google Business Profile optimization built in. Free consultation in Korean or English: email info@zoelumos.com or message us on KakaoTalk (http://pf.kakao.com/_xhxdxmlX/chat)." },
+      ],
+      ko: [
+        { type: 'intro', content: "포틀랜드 한인 커뮤니티는 나이키 본사와 인텔의 워싱턴 카운티 사업장이 이끄는 일자리를 따라 비버튼과 힐스보로를 중심으로 꾸준히 성장해 왔습니다. 그 성장과 함께 한인이 운영하거나 한국어가 통하는 반려동물 케어 업체도 늘었고, 그중에서도 1세대 보호자들이 특히 찾는 곳이 증상을 자기 언어로 정확히 설명할 수 있는 동물병원입니다. 이런 병원 대부분은 여전히 1인 원장 병원 시절부터 이어온 방식으로 예약을 받습니다 — 데스크 전화 한 대, 종이나 화이트보드 스케줄, 그리고 진료가 시작되는 순간 전화를 못 받게 되는 직원 한 명. 하루에 환자 몇 명 보던 시절에는 이 방식이 문제없었습니다. 통화량이 받을 수 있는 사람 수를 넘어서기 시작하면, 이 시스템은 조용히 진짜 예약들을 놓치기 시작합니다." },
+        { type: 'h2', content: '왜 포틀랜드·비버튼이고, 왜 지금인가' },
+        { type: 'p', content: '워싱턴 카운티 지역의 한인 인구는 이 지역을 지탱하는 테크·제조업 일자리와 함께 성장해 왔고, 비버튼과 힐스보로, 알로하를 중심으로 눈에 띄게 자리 잡고 있습니다. 반려동물 양육도 그만큼 늘었고, 한국어가 통하는 동물병원은 이미 스트레스 받는 순간에 번역 앱을 거치지 않고 증상을 정확히 설명하고 싶은 1세대 보호자들의 실제 필요를 해결해 줍니다. 바로 그 신뢰 때문에 예약 마찰이 일반 서비스업보다 더 큰 비용으로 이어집니다 — 전화가 안 되는 보호자는 기다리지 않습니다. 근처의 다음 한인 병원이나 평점 높은 병원을 바로 검색하고, 대부분 다시 시도하지 않습니다.' },
+        { type: 'h2', content: '동물병원에서 전화 예약만으로 무너지는 이유' },
+        { type: 'p', content: '동물병원은 다른 서비스업에는 잘 없는 예약 문제를 안고 있습니다. 전화를 받아야 할 사람이 동시에 진료실에서 불안해하는 동물을 붙잡거나 진료 도구를 건네야 하는 바로 그 사람인 경우가 많다는 점입니다. 대기음이나 음성사서함으로 흘러가는 1분 1분이, 진짜 아픈 반려동물의 보호자가 다른 곳에 전화할지 고민하는 시간이 됩니다. 이건 직원의 잘못이 아닙니다. 병원이 운영할 가치가 있을 만큼 바빠지는 순간, 전화 예약만으로는 원래 이렇게 될 수밖에 없는 구조일 뿐입니다.' },
+        { type: 'ul', content: '한인 동물병원이 전화 예약의 한계에 다다른 신호들:', items: [
+          "진료 중 온 전화가 음성사서함으로 넘어가고, 대부분의 보호자는 메시지를 남기지 않고 다음 병원에 전화합니다.",
+          "데스크 스케줄이 종이 수첩이나 화이트보드라서, 당일 취소가 생겨도 대기자에게 자동으로 안내할 방법이 없습니다.",
+          "예약 전에 자동 리마인더를 보낼 방법이 없어서, 바쁜 보호자가 단순히 깜빡해서 노쇼가 발생합니다.",
+          "예방접종 15분 방문과 수술 상담 45분 방문 같은 예약 유형이 스케줄상 구분되지 않아, 긴 진료 하나 때문에 하루 종일 진료실이 밀립니다.",
+          "영업시간 이후에는 신규 환자가 실제 빈 시간을 볼 방법이 없어서, 밤 9시에 검색한 보호자는 밤 9시에도 예약 가능한 다른 병원으로 넘어갑니다.",
+        ] },
+        { type: 'h2', content: '동물병원용 예약 시스템이 실제로 해야 하는 일' },
+        { type: 'p', content: "질문은 막연히 '예약 소프트웨어가 필요한가'가 아니라, 지금의 전화+화이트보드 시스템에서 정확히 어떤 빈틈이 예약을 놓치고 있는가입니다. 한인 동물병원이라면 그 빈틈은 거의 항상 같은 모양입니다." },
+        { type: 'ul', content: '예약 소프트웨어를 도입할 가치가 있게 만드는 핵심 요소들:', items: [
+          "예방접종, 웰니스 검진, 치과 상담, 수술 상담처럼 예약 유형별로 정확한 소요 시간이 구분되는 것 — 절대 같은 슬롯 길이를 쓰면 안 됩니다.",
+          "신규 환자와 긴 예약 유형에 대한 예약금 — 진료비에서 차감되거나 환불되며, 진짜 취소는 무료지만 가벼운 노쇼에는 실제 비용이 생기도록.",
+          "방문 24시간 전과 2시간 전, 두 번의 자동 SMS·이메일 리마인더 — 실제로 깜빡한 예약을 되살리는 두 타이밍입니다.",
+          "당일 취소가 생기면 대기자 다음 순번에게 자동으로 안내되는 공개 대기자 명단 — 그 자리가 그냥 비어 있지 않도록.",
+          "1세대 한국어 보호자가 방문 전에 증상을 한국어로 정확히 적을 수 있는 이중언어 문진표 — 양쪽 모두의 진료실 시간을 아낍니다.",
+        ] },
+        { type: 'h2', content: '구글 비즈니스 프로필 — "동물병원 근처" 검색이 시작되는 곳' },
+        { type: 'p', content: "동물병원을 찾는 신규 환자 검색은 거의 전부 지역 검색으로 시작됩니다 — '동물병원 근처', '비버튼 동물병원', 'Korean speaking vet Portland' 같은 검색어들이고, 구글은 이 검색에 웹사이트 목록이 아니라 지도 팩(map pack)으로 답합니다. 구글 비즈니스 프로필을 아예 등록하지 않았거나, 영업시간이 오래됐거나, 수의사·동물병원이 아니라 일반 '병원' 카테고리로 등록돼 있다면, 실력이 부족한 병원에도 이 노출 자리를 꾸준히 내주게 됩니다. 특히 영업시간 정확도가 중요한데, 구글은 서로 다른 시간대 정보가 있는 리스팅을 눈에 띄게 표시하고, 지금 응급 진료를 볼지 아침까지 기다릴지 고민하는 보호자는 결국 더 믿음직해 보이는 결과에 전화를 겁니다." },
+        { type: 'ul', content: '동물병원을 지역 검색 상위로 올리는 실제 요소들:', items: [
+          "정확한 기본 카테고리(수의사 또는 동물병원)와 정확한 진료 항목 목록 — 응급진료, 치과, 수술, 호텔링, 미용 중 실제로 하는 것만.",
+          "간판·웹사이트와 정확히 일치하는 영업시간(공휴일 포함) — 불일치는 지도 검색 클릭에서 신뢰를 가장 빨리 잃는 방법 중 하나입니다.",
+          "꾸준히 쌓이는 최근 리뷰와 영어·한국어 답글 — 대부분의 지역 순위 알고리즘에서 리뷰의 최신성은 리뷰 개수만큼 중요합니다.",
+          "스톡 이미지가 아닌 실제 병원, 진료실, 직원 사진 — 최근 실사진이 있는 프로필은 밋밋한 프로필보다 클릭률이 확연히 높습니다.",
+          "계절 안내, 신규 서비스, 휴무 공지 같은 주 1회 게시물 — 구글은 이를 프로필이 살아있다는 신호로 봅니다.",
+        ] },
+        { type: 'tip', content: "대부분의 한인 병원에 가장 빠르게 효과가 나는 수정은 구글 비즈니스 프로필의 기본 카테고리를 바로잡는 것입니다. 일반 '병원'이나 '의사' 카테고리로 등록된 병원은 '수의사'나 '동물병원'으로 검색하는 바로 그 사람들에게 사실상 보이지 않습니다 — 5분이면 고칠 수 있는데 지역 노출에 미치는 효과는 그보다 훨씬 큽니다." },
+        { type: 'h2', content: '예약금을 넘어선 노쇼 방지' },
+        { type: 'p', content: '예약금은 가벼운 노쇼를 걸러내지만, 실제로 깜빡한 대다수의 예약을 되살리는 건 리마인더 타이밍입니다. 24시간 전 리마인더는 그냥 안 나타나는 대신 재예약할 시간을 주고, 약 2시간 전 두 번째 리마인더는 한 번의 리마인더로는 못 잡는 당일 깜빡임을 잡아줍니다. 어느 쪽도 경고처럼 느껴질 필요는 없습니다. 시간, 반려동물 이름, 원터치 재예약 링크를 담은 짧은 이중언어 문자 하나가 딱딱한 취소 정책 안내보다 효과가 좋고, 경고가 아니라 배려로 읽힙니다.' },
+        { type: 'cta', content: '포틀랜드나 비버튼에서 한인 동물병원을 운영 중인데 아직 전화로만 예약을 받고 계신가요? ZOE LUMOS는 예약금, 자동 리마인더, 구글 비즈니스 프로필 최적화까지 담은 이중언어 예약 시스템을 만듭니다. 한국어/영어 무료 상담: info@zoelumos.com 이메일 또는 카카오톡(http://pf.kakao.com/_xhxdxmlX/chat)으로 편하게 문의하세요.' },
+      ],
+    },
+  },
 ]

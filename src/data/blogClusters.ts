@@ -136,6 +136,7 @@ export const PILLARS = {
       'korean-church-website-guide',
       'starting-korean-business-america-2026',
       'korean-sat-academy-booking-noshow-irvine-2026',
+      'korean-vet-clinic-booking-noshow-portland-2026',
     ],
   },
   'ai-services': {
@@ -358,4 +359,7 @@ export const POST_TO_PILLAR: Record<string, PillarKey> = {
 
   // 2026-08-17 — Houston F&B: online ordering, POS (Square/Toast/Clover), catering, reviews
   'korean-restaurant-houston-pos-catering-reviews-2026': 'restaurant-marketing',
+
+  // 2026-09-28 — C2C/service booking: veterinary clinics (Portland–Beaverton, OR)
+  'korean-vet-clinic-booking-noshow-portland-2026': 'professional-services',
 }
