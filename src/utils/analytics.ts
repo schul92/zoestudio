@@ -250,7 +250,10 @@ export const initScrollTracking = () => {
   const scrollDepths = [25, 50, 75, 90, 100]
   const trackedDepths: Set<number> = new Set()
 
-  const handleScroll = () => {
+  // One layout read per frame at most, never inside the scroll event itself.
+  let raf = 0
+  const measure = () => {
+    raf = 0
     const scrollHeight = document.documentElement.scrollHeight - window.innerHeight
     const scrollPercent = Math.round((window.scrollY / scrollHeight) * 100)
 
@@ -261,8 +264,14 @@ export const initScrollTracking = () => {
       }
     })
   }
+  const handleScroll = () => {
+    if (!raf) raf = requestAnimationFrame(measure)
+  }
 
   window.addEventListener('scroll', handleScroll, { passive: true })
 
-  return () => window.removeEventListener('scroll', handleScroll)
+  return () => {
+    cancelAnimationFrame(raf)
+    window.removeEventListener('scroll', handleScroll)
+  }
 }
