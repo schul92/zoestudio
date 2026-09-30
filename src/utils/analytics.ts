@@ -250,11 +250,16 @@ export const initScrollTracking = () => {
   const scrollDepths = [25, 50, 75, 90, 100]
   const trackedDepths: Set<number> = new Set()
 
-  // One layout read per frame at most, never inside the scroll event itself.
+  // Page height is read on load/resize only; per scroll frame this reads just scrollY, so it never forces a layout
+  // right after the hero has written its styles for that frame.
+  let scrollHeight = 1
+  const size = () => { scrollHeight = Math.max(1, document.documentElement.scrollHeight - window.innerHeight) }
+  size()
+  window.addEventListener('resize', size, { passive: true })
+  window.addEventListener('load', size, { once: true })
   let raf = 0
   const measure = () => {
     raf = 0
-    const scrollHeight = document.documentElement.scrollHeight - window.innerHeight
     const scrollPercent = Math.round((window.scrollY / scrollHeight) * 100)
 
     scrollDepths.forEach(depth => {
@@ -273,5 +278,6 @@ export const initScrollTracking = () => {
   return () => {
     cancelAnimationFrame(raf)
     window.removeEventListener('scroll', handleScroll)
+    window.removeEventListener('resize', size)
   }
 }

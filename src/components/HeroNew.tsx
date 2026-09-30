@@ -3,7 +3,7 @@ import LumosFirstFrame from '@/components/home/LumosFirstFrame'
 import { FRAMES_DESKTOP, FRAMES_MOBILE } from '@/components/home/lumosFrames'
 
 const SEQ_DESKTOP = { dir: FRAMES_DESKTOP.dir, count: FRAMES_DESKTOP.count, maxDpr: 2 }
-const SEQ_MOBILE = { dir: FRAMES_MOBILE.dir, count: FRAMES_MOBILE.count, maxDpr: 3 }
+const SEQ_MOBILE = { dir: FRAMES_MOBILE.dir, count: FRAMES_MOBILE.count, maxDpr: 2 }
 
 const copy = {
   en: {
