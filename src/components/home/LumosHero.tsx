@@ -290,26 +290,19 @@ export default function LumosHero({
         g.globalAlpha = alpha
         g.drawImage(img, T.tx + b.x * T.s, T.ty + b.y * T.s, b.w * T.s, b.h * T.s)
       }
-      let lo = reduce ? staticIdx : idxAt(clamp(p))
+      // Frames are dense where things move, so drawing the nearest one is smooth; blending neighbours ghosted the lid
+      // and the phone whenever the pose changed between them.
+      const lo = reduce ? staticIdx : idxAt(clamp(p))
       const hi = reduce ? lo : Math.min(lo + 1, N - 1)
-      // Cross-fade over the middle of each gap only: neighbours are a few px apart while the lid moves, so a 50/50 mix
-      // held for long reads as a double edge — this keeps each frame crisp for most of its span and still hides steps.
-      let t = hi > lo ? clamp(((p - f[lo].p) / (f[hi].p - f[lo].p) - 0.3) / 0.4) : 0
-      if (!frames[lo] || (t >= 0.002 && !frames[hi])) {
-        lo = nearestFrame(lo)
-        if (lo < 0) return
-        t = 0
+      let k = hi > lo && (p - f[lo].p) / (f[hi].p - f[lo].p) >= 0.5 ? hi : lo
+      if (!frames[k]) {
+        k = nearestFrame(k)
+        if (k < 0) return
       }
-      const A = fit(lo)
-      const B = t ? fit(hi) : A
-      const T = { s: lerp(A.s, B.s, t), tx: lerp(A.tx, B.tx, t), ty: lerp(A.ty, B.ty, t) }
-      g.globalCompositeOperation = 'lighter'
-      put(lo, 1 - t, T)
-      if (t >= 0.002) put(hi, t, T)
-      g.globalCompositeOperation = 'source-over'
+      put(k, 1, fit(k))
       g.globalAlpha = 1
       markFirst()
-      if (trace) trace.push({ t: performance.now(), y: window.scrollY, p, lo, frac: t })
+      if (trace) trace.push({ t: performance.now(), y: window.scrollY, p, lo: k, frac: 0 })
     }
 
     const readScroll = () => {
