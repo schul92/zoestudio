@@ -797,14 +797,16 @@ html[data-nav-tone="dark"] .kn-header:not(.kn-header-open) button .bg-ink { back
 /* ── Readability pass (mobile-first) ─────────────────────────────── */
 /* Old light-theme buttons: bg-white was remapped dark but its text stayed black (invisible), and black-on-black
    primary buttons lost their shape. Both read as the site's light pill now. */
-.space a.bg-white.text-black:not(.keep-light, .keep-light *),
-.space button.bg-white.text-black:not(.keep-light, .keep-light *),
+/* White CTA buttons (any accent text colour) on coloured bands had turned into black boxes; they're all
+   button-styled links, so they become the light pill with dark text. */
+.space a.bg-white:not(.keep-light, .keep-light *),
+.space button.bg-white:not(.keep-light, .keep-light *),
 .space a.bg-black.text-white:not(.keep-light, .keep-light *),
 .space button.bg-black.text-white:not(.keep-light, .keep-light *) { background-color: #F5F5F7; color: #0B0B0D; border-color: transparent; }
-.space a.bg-white.text-black:not(.keep-light, .keep-light *):hover,
-.space button.bg-white.text-black:not(.keep-light, .keep-light *):hover,
+.space a.bg-white:not(.keep-light, .keep-light *):hover,
+.space button.bg-white:not(.keep-light, .keep-light *):hover,
 .space a.bg-black.text-white:not(.keep-light, .keep-light *):hover,
-.space button.bg-black.text-white:not(.keep-light, .keep-light *):hover { background-color: #fff; }
+.space button.bg-black.text-white:not(.keep-light, .keep-light *):hover { background-color: #fff; color: #0B0B0D; }
 .space .hover\:text-black:not(.keep-light, .keep-light *):hover { color: #fff; }
 /* Nothing readable below 12px on the dark ground. */
 .space .text-\[10px\]:not(.keep-light, .keep-light *) { font-size: 11px; }

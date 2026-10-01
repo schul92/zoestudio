@@ -448,9 +448,9 @@ function RenderSection({
                 key={i}
                 className="relative bg-bone rounded-[2px] p-5 md:p-6 hair-y overflow-hidden"
               >
-                <div className="flex items-baseline gap-2 mb-1">
+                <div className="flex flex-wrap items-baseline gap-x-2 mb-1">
                   <span
-                    className={`font-display text-[clamp(1.75rem,3.4vw,2.6rem)] leading-none tracking-luxury ${
+                    className={`min-w-0 [overflow-wrap:anywhere] font-display text-[clamp(1.5rem,3.4vw,2.6rem)] leading-[1.05] tracking-luxury ${
                       c.positive ? 'text-ink' : 'text-graphite'
                     }`}
                   >
