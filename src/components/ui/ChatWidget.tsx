@@ -62,6 +62,16 @@ const CONTACT_INTENT =
 export default function ChatWidget({ locale = 'en' }: { locale?: string }) {
   const isKo = locale === 'ko'
   const [open, setOpen] = useState(false)
+  // Phones: while the visitor types into a page form, the launcher would sit on the field — step aside.
+  const [fieldFocus, setFieldFocus] = useState(false)
+  useEffect(() => {
+    const isField = (el: EventTarget | null) => el instanceof HTMLElement && el.matches('input, textarea, select, [contenteditable="true"]')
+    const onIn = (e: FocusEvent) => { if (isField(e.target)) setFieldFocus(true) }
+    const onOut = () => setFieldFocus(false)
+    document.addEventListener('focusin', onIn)
+    document.addEventListener('focusout', onOut)
+    return () => { document.removeEventListener('focusin', onIn); document.removeEventListener('focusout', onOut) }
+  }, [])
   const [input, setInput] = useState('')
   const [messages, setMessages] = useState<Msg[]>([])
   const [streaming, setStreaming] = useState(false)
@@ -246,7 +256,7 @@ export default function ChatWidget({ locale = 'en' }: { locale?: string }) {
           type="button"
           onClick={() => setOpen(true)}
           aria-label={isKo ? '문의 채팅 열기' : 'Open chat'}
-          className="group fixed right-4 bottom-[calc(5rem+env(safe-area-inset-bottom))] z-[90] flex h-14 w-14 items-center justify-center gap-2 rounded-full bg-[#1D1D1F] text-white shadow-xl ring-1 ring-[#0071E3]/40 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:ring-[#0071E3] active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3] sm:right-6 lg:bottom-6 lg:h-14 lg:w-auto lg:px-6"
+          className={`${fieldFocus ? 'max-lg:hidden ' : ''}group fixed right-4 bottom-[calc(5rem+env(safe-area-inset-bottom))] z-[90] flex h-14 w-14 items-center justify-center gap-2 rounded-full bg-[#1D1D1F] text-white shadow-xl ring-1 ring-[#0071E3]/40 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:ring-[#0071E3] active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3] sm:right-6 lg:bottom-6 lg:h-14 lg:w-auto lg:px-6`}
           style={{ touchAction: 'manipulation' }}
         >
           <span className="relative flex shrink-0 items-center justify-center">

@@ -174,8 +174,8 @@ export default function BlogRail({
         {/* 3-up grid */}
         <ul className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {FEATURED.map((post, i) => (
-            <InView key={post.slug} delay={i * 80}>
-              <li>
+            <InView as="li" key={post.slug} delay={i * 80}>
+              <div>
                 <Link
                   href={`${prefix}/blog/${post.slug}`}
                   className="group block h-full"
@@ -218,7 +218,7 @@ export default function BlogRail({
                     <span className="transition-transform group-hover:translate-x-1">→</span>
                   </span>
                 </Link>
-              </li>
+              </div>
             </InView>
           ))}
         </ul>

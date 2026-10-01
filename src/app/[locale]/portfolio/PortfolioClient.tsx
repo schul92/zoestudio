@@ -127,7 +127,7 @@ export default function PortfolioClient({ t, projects, locale }: PortfolioClient
                           onError={() => handleImageError(project.id)}
                         />
                       ) : (
-                        <div className="absolute inset-0 flex flex-col items-center justify-center bg-bone text-ash p-6">
+                        <div className="absolute inset-0 flex flex-col items-center justify-center bg-paper text-ash p-6">
                           <svg
                             className="w-14 h-14 mb-4 opacity-40"
                             fill="none"

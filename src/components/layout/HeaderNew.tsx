@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { usePathname } from 'next/navigation'
 import { useTranslation } from '@/hooks/useTranslation'
 import { industrySlugs, citySlugs, localSeoSlugs } from '@/lib/localeSlugs'
@@ -65,10 +65,27 @@ export default function HeaderNew({ locale = 'en' }: { locale?: string }) {
   const pathname = usePathname()
   const [menuOpen, setMenuOpen] = useState(false)
 
+  const menuRef = useRef<HTMLDivElement>(null)
+  const toggleRef = useRef<HTMLButtonElement>(null)
+
   useEffect(() => { setMenuOpen(false) }, [pathname])
   useEffect(() => {
+    const root = document.documentElement
+    root.style.overflow = menuOpen ? 'hidden' : ''
     document.body.style.overflow = menuOpen ? 'hidden' : ''
-    return () => { document.body.style.overflow = '' }
+    if (!menuOpen) return () => { root.style.overflow = ''; document.body.style.overflow = '' }
+    menuRef.current?.querySelector<HTMLElement>('a')?.focus({ preventScroll: true })
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key !== 'Escape') return
+      setMenuOpen(false)
+      toggleRef.current?.focus()
+    }
+    window.addEventListener('keydown', onKey)
+    return () => {
+      window.removeEventListener('keydown', onKey)
+      root.style.overflow = ''
+      document.body.style.overflow = ''
+    }
   }, [menuOpen])
 
   const ko = locale === 'ko'
@@ -92,7 +109,7 @@ export default function HeaderNew({ locale = 'en' }: { locale?: string }) {
     <header className={`kn-header fixed top-0 inset-x-0 z-[100] ${menuOpen ? 'kn-solid kn-header-open' : 'kn-frost'} border-b border-hairline`}>
       <div className="container-edge">
         <div className="flex items-center justify-between h-14 md:h-16 gap-6">
-          <Link href={`${prefix}/`} className="text-[17px] md:text-[19px] font-bold tracking-[-0.03em] text-ink" aria-label="ZOE LUMOS home">
+          <Link href={`${prefix}/`} className="inline-flex items-center min-h-[44px] text-[17px] md:text-[19px] font-bold tracking-[-0.03em] text-ink" aria-label="ZOE LUMOS home">
             Zoe Lumos
           </Link>
 
@@ -120,10 +137,12 @@ export default function HeaderNew({ locale = 'en' }: { locale?: string }) {
               {ko ? '무료 진단' : 'Free audit'}
             </Link>
             <button
+              ref={toggleRef}
               onClick={() => setMenuOpen((v) => !v)}
-              aria-label={ko ? '메뉴' : 'Menu'}
+              aria-label={menuOpen ? (ko ? '메뉴 닫기' : 'Close menu') : (ko ? '메뉴' : 'Menu')}
               aria-expanded={menuOpen}
-              className="flex lg:!hidden items-center justify-center w-10 h-10 -mr-2"
+              aria-controls="mobile-menu"
+              className="flex lg:!hidden items-center justify-center w-11 h-11 -mr-2.5"
             >
               <div className="w-[18px] flex flex-col gap-[5px]">
                 <span className={`h-[1.5px] bg-ink transition-transform duration-300 ${menuOpen ? 'rotate-45 translate-y-[6.5px]' : ''}`} />
@@ -136,6 +155,11 @@ export default function HeaderNew({ locale = 'en' }: { locale?: string }) {
       </div>
 
       <div
+        ref={menuRef}
+        id="mobile-menu"
+        // React 18 has no typed `inert` prop; passing it as a plain attribute keeps closed links out of the tab order.
+        {...({ inert: menuOpen ? undefined : '' } as Record<string, string | undefined>)}
+        aria-hidden={!menuOpen}
         className={`lg:hidden fixed inset-0 top-14 md:top-16 kn-solid z-[90] transition-[opacity,transform,visibility] duration-300 ease-out ${
           menuOpen ? 'visible opacity-100 translate-y-0 pointer-events-auto' : 'invisible opacity-0 -translate-y-2 pointer-events-none'
         }`}
@@ -143,14 +167,14 @@ export default function HeaderNew({ locale = 'en' }: { locale?: string }) {
         <div className="container-edge pt-8 pb-10 h-full flex flex-col gap-10 overflow-y-auto">
           <nav className="flex flex-col" aria-label={ko ? '모바일 메뉴' : 'Mobile'}>
             {[...nav, ...more].map((l) => (
-              <Link key={l.href} href={l.href} className="text-[28px] font-semibold tracking-[-0.03em] text-ink py-2.5 border-b border-hairline">
+              <Link key={l.href} href={l.href} onClick={() => setMenuOpen(false)} className="text-[28px] font-semibold tracking-[-0.03em] text-ink py-2.5 border-b border-hairline">
                 {l.label}
               </Link>
             ))}
           </nav>
           <div className="flex flex-col gap-3">
-            <Link href={`${prefix}/audit`} className="btn-ink justify-center">{ko ? '무료 진단 받기' : 'Get a free audit'}</Link>
-            <Link href={otherLocaleHref} className="text-center text-[15px] text-link py-2">{ko ? 'English' : '한국어'}</Link>
+            <Link href={`${prefix}/audit`} onClick={() => setMenuOpen(false)} className="btn-ink justify-center">{ko ? '무료 진단 받기' : 'Get a free audit'}</Link>
+            <Link href={otherLocaleHref} onClick={() => setMenuOpen(false)} className="text-center text-[15px] text-link py-3">{ko ? 'English' : '한국어'}</Link>
           </div>
         </div>
       </div>

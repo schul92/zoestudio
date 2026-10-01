@@ -181,7 +181,7 @@ function Estimator({ isKo, prefix }: { isKo: boolean; prefix: string }) {
               <p className="text-[11px] uppercase tracking-[0.22em] text-[#6E6E73] mb-3">
                 {isKo ? '예상 견적' : 'Estimated range'}
               </p>
-              <p className="font-display italic font-light text-[#1D1D1F]/70 text-[clamp(20px,2.2vw,28px)] leading-[1.2] tracking-[-0.01em] m-0">
+              <p className="font-display italic font-light text-ink/80 text-[clamp(20px,2.2vw,28px)] leading-[1.2] tracking-[-0.01em] m-0">
                 {isKo ? '3번의 탭이면 예상 비용이 나옵니다' : 'Three taps to your estimate.'}
               </p>
             </div>
@@ -299,7 +299,7 @@ export default function PricingTeaser({ locale = 'en' }: { locale?: string }) {
           </div>
           <Link
             href={`${prefix}/pricing`}
-            className="inline-flex items-center gap-2 text-[14px] text-[#1D1D1F] border-b border-[#1D1D1F]/30 hover:border-[#1D1D1F] pb-1 self-start md:self-end"
+            className="inline-flex items-center gap-2 text-[14px] text-ink border-b border-ink/30 hover:border-ink pb-1 self-start md:self-end"
           >
             {isKo ? '전체 가격 보기' : 'See full pricing'} →
           </Link>
@@ -313,8 +313,8 @@ export default function PricingTeaser({ locale = 'en' }: { locale?: string }) {
         {/* Tiers */}
         <ul className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
           {tiers.map((t, i) => (
-            <InView key={t.id} delay={i * 80}>
-              <li
+            <InView as="li" key={t.id} delay={i * 80}>
+              <div
                 className={`relative rounded-2xl p-7 md:p-8 h-full border ${
                   t.popular
                     ? 'border-[#0071E3] bg-white shadow-[0_24px_60px_-30px_rgba(180,138,67,0.45)]'
@@ -358,7 +358,7 @@ export default function PricingTeaser({ locale = 'en' }: { locale?: string }) {
                 >
                   {isKo ? '문의하기' : 'Start a project'} →
                 </Link>
-              </li>
+              </div>
             </InView>
           ))}
         </ul>

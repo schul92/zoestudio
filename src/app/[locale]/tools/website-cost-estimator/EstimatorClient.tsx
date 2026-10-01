@@ -225,7 +225,7 @@ export default function EstimatorClient({ locale = 'en' }: { locale?: 'en' | 'ko
   const quoteHref = `${prefix}/contact`
 
   return (
-    <main className="bg-ivory text-ink min-h-screen overflow-x-hidden">
+    <main className="bg-ivory text-ink min-h-screen overflow-x-clip">
       {/* HERO */}
       <section className="hair-bottom pt-32 md:pt-48 pb-12 md:pb-16">
         <div className="container-edge">
@@ -332,7 +332,7 @@ export default function EstimatorClient({ locale = 'en' }: { locale?: 'en' | 'ko
                           }`}
                         >
                           {plan.recommended && (
-                            <span className="absolute -top-2.5 right-4 bg-gold text-ivory text-[10px] tracking-[0.12em] uppercase px-2.5 py-0.5">
+                            <span className="absolute -top-2.5 right-4 bg-gold text-white text-[11px] tracking-[0.12em] uppercase px-2.5 py-0.5">
                               {t.monthlyBadge}
                             </span>
                           )}

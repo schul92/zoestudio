@@ -219,7 +219,7 @@ export default function ContactWrapper({
               <span className="mask-rise block">{t.headlineLead}</span>
             </InView>
             <InView as="span" className="mask-row" delay={120}>
-              <span className="mask-rise block italic font-light" style={{ color: '#0071E3' }}>
+              <span className="mask-rise block italic font-light" style={{ color: 'var(--link)' }}>
                 {t.headlineAccent}
               </span>
             </InView>
@@ -236,7 +236,7 @@ export default function ContactWrapper({
         <form onSubmit={submit} noValidate className="max-w-3xl mx-auto">
           <div
             className="bg-paper rounded-2xl p-7 md:p-10 shadow-[0_30px_70px_-30px_rgba(0,0,0,0.18),0_8px_20px_-8px_rgba(0,0,0,0.09)] border"
-            style={{ borderColor: 'rgba(0,0,0,0.08)' }}
+            style={{ borderColor: 'var(--hairline)' }}
           >
             {/* Name + Email row */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-6">
@@ -262,11 +262,11 @@ export default function ContactWrapper({
             {/* Scope chips — optional but useful */}
             <div className="mt-7">
               <label
-                className="block uppercase text-[11px] mb-3"
+                className="block uppercase text-[12px] mb-3"
                 style={{ letterSpacing: '0.18em', color: 'var(--ash)' }}
               >
                 {t.labels.scope}
-                <span className="ml-2 normal-case tracking-normal text-[11px]" style={{ color: 'rgba(163,124,95,0.6)' }}>
+                <span className="ml-2 normal-case tracking-normal text-[12px]" style={{ color: 'var(--ash)' }}>
                   {isKo ? '· 선택' : '· optional'}
                 </span>
               </label>
@@ -278,7 +278,7 @@ export default function ContactWrapper({
                       key={s}
                       type="button"
                       onClick={() => toggleScope(s)}
-                      className="px-3.5 py-2 rounded-full text-[13px] transition-all duration-200 border"
+                      className="px-4 min-h-[44px] rounded-full text-[14px] transition-all duration-200 border"
                       style={{
                         background: active ? 'var(--ink)' : 'transparent',
                         color: active ? 'var(--ivory)' : 'var(--graphite)',
@@ -296,7 +296,7 @@ export default function ContactWrapper({
             {/* Message textarea */}
             <div className="mt-7">
               <label
-                className="block uppercase text-[11px] mb-3"
+                className="block uppercase text-[12px] mb-3"
                 style={{ letterSpacing: '0.18em', color: 'var(--ash)' }}
               >
                 {t.labels.message}
@@ -384,7 +384,7 @@ export default function ContactWrapper({
                   backdropFilter: 'blur(8px)',
                 }}
               >
-                <span aria-hidden style={{ color: '#0071E3' }}>✉</span>
+                <span aria-hidden style={{ color: 'var(--link)' }}>✉</span>
                 {t.altContact.email}
               </a>
               <a
@@ -409,7 +409,7 @@ export default function ContactWrapper({
         {/* What happens next — small horizontal row, no longer dominant */}
         <div className="mt-16 md:mt-20 max-w-4xl mx-auto">
           <p
-            className="text-center text-[11px] uppercase mb-8"
+            className="text-center text-[12px] uppercase mb-8"
             style={{ letterSpacing: '0.22em', color: 'var(--ash)' }}
           >
             {t.nextLabel}
@@ -422,7 +422,7 @@ export default function ContactWrapper({
                     className="inline-flex items-center justify-center w-7 h-7 rounded-full text-[11px] font-medium"
                     style={{
                       background: 'rgba(0,113,227, 0.12)',
-                      color: '#0071E3',
+                      color: 'var(--link)',
                     }}
                   >
                     0{i + 1}
@@ -469,12 +469,12 @@ function Field({
   return (
     <label className="block">
       <span
-        className="block uppercase text-[11px] mb-2.5"
+        className="block uppercase text-[12px] mb-2.5"
         style={{ letterSpacing: '0.18em', color: 'var(--ash)' }}
       >
         {label}
         {required && (
-          <span className="ml-1 align-top" style={{ color: '#0071E3' }}>*</span>
+          <span className="ml-1 align-top" style={{ color: 'var(--link)' }}>*</span>
         )}
       </span>
       <input
@@ -500,7 +500,7 @@ function Field({
         }}
       />
       {helper && (
-        <span className="block mt-1.5 text-[11px]" style={{ color: 'var(--ash)' }}>
+        <span className="block mt-1.5 text-[12px]" style={{ color: 'var(--ash)' }}>
           {helper}
         </span>
       )}

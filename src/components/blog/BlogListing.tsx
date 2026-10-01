@@ -104,7 +104,7 @@ export default function BlogListing({
             <span className="section-num not-italic text-ink font-normal">§</span>
             <span className="h-px w-10 bg-hairline" />
             <span>{isKo ? '저널' : 'Journal'}</span>
-            <span className="ml-2 text-ash/60">· {posts.length} {isKo ? '편' : 'pieces'}</span>
+            <span className="ml-2 text-ash">· {posts.length} {isKo ? '편' : 'pieces'}</span>
           </InView>
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-14 items-end">

@@ -115,7 +115,7 @@
   .btn-ink:hover .arrow { transform: translateX(4px); }
 
   .btn-ghost {
-    @apply inline-flex items-center gap-1 px-1 py-2 text-[15px] font-semibold transition-colors duration-200;
+    @apply inline-flex items-center gap-1 px-1 py-2 min-h-[44px] text-[15px] font-semibold transition-colors duration-200;
     color: var(--link);
   }
   .btn-ghost:hover { text-decoration: underline; }
@@ -469,9 +469,10 @@ input, textarea, select, button {
 .lh-btn:focus-visible, .lh-link:focus-visible { outline: 2px solid #F5F5F7; outline-offset: 3px; }
 .lh-cap {
   position: absolute; left: 50%; top: clamp(78px, 10vh, 112px); width: min(760px, 92vw); text-align: center;
-  opacity: 0; transform: translate(-50%, 14px); transition: opacity .5s ease, transform .5s ease; pointer-events: none;
+  opacity: 0; transform: translate(-50%, 14px); transition: opacity .16s ease, transform .16s ease; pointer-events: none;
 }
-.lh-cap.lh-on { opacity: 1; transform: translate(-50%, 0); }
+/* Captions share one spot: the outgoing one clears before the incoming one fades in, so two never overlap. */
+.lh-cap.lh-on { opacity: 1; transform: translate(-50%, 0); transition: opacity .38s ease .16s, transform .38s ease .16s; }
 .lh-cap small { display: block; margin-bottom: 10px; font-size: 12px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: #2997FF; }
 .lh-cap b { display: inline; font-size: clamp(20px, 2.2vw, 30px); letter-spacing: -.035em; line-height: 1.15; margin-right: .25em; }
 .lh-cap p { display: inline; color: #A1A1A6; font-size: clamp(20px, 2.2vw, 30px); font-weight: 600; letter-spacing: -.025em; line-height: 1.2; }
@@ -600,7 +601,12 @@ html[data-nav-tone="dark"] .kn-header:not(.kn-header-open) button .bg-ink { back
 }
 @media (max-width: 1023px) {
   .space *, .space *::before, .space *::after { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
-  .space .kn-frost, .space .kn-header { background: rgba(0,0,0,.92); }
+  /* Without blur, any translucency lets the text scrolling underneath ghost through — keep these bars solid. */
+  .space .kn-frost, .space .kn-header { background: #000; }
+  /* Scroll-scrubbed words start at 14% opacity — on a phone that's unreadable copy until it's scrolled to. */
+  .kn-scrub-w { animation: none !important; opacity: 1 !important; }
+  /* The fixed KakaoTalk / quote bar must never sit on the footer's last row. */
+  .space .zl-foot { padding-bottom: calc(84px + env(safe-area-inset-bottom, 0px)); }
 }
 
 /* Footer: OpenAI-style lists over a denser field and a planet-rim horizon. */
@@ -792,3 +798,84 @@ html[data-nav-tone="dark"] .kn-header:not(.kn-header-open) button .bg-ink { back
 .space .to-violet-50:not(.keep-light, .keep-light *) { --tw-gradient-to:rgba(139,92,246,0.08) var(--tw-gradient-to-position) }
 .space .from-indigo-50:not(.keep-light, .keep-light *) { --tw-gradient-from:rgba(99,102,241,0.08) var(--tw-gradient-from-position);--tw-gradient-to:rgba(99,102,241,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to) }
 .space .to-indigo-50:not(.keep-light, .keep-light *) { --tw-gradient-to:rgba(99,102,241,0.08) var(--tw-gradient-to-position) }
+
+/* ── Readability pass (mobile-first) ─────────────────────────────── */
+/* Old light-theme buttons: bg-white was remapped dark but its text stayed black (invisible), and black-on-black
+   primary buttons lost their shape. Both read as the site's light pill now. */
+/* White CTA buttons (any accent text colour) on coloured bands had turned into black boxes; they're all
+   button-styled links, so they become the light pill with dark text. */
+.space a.bg-white:not(.keep-light, .keep-light *),
+.space button.bg-white:not(.keep-light, .keep-light *),
+.space a.bg-black.text-white:not(.keep-light, .keep-light *),
+.space button.bg-black.text-white:not(.keep-light, .keep-light *) { background-color: #F5F5F7; color: #0B0B0D; border-color: transparent; }
+.space a.bg-white:not(.keep-light, .keep-light *):hover,
+.space button.bg-white:not(.keep-light, .keep-light *):hover,
+.space a.bg-black.text-white:not(.keep-light, .keep-light *):hover,
+.space button.bg-black.text-white:not(.keep-light, .keep-light *):hover { background-color: #fff; color: #0B0B0D; }
+.space .hover\:text-black:not(.keep-light, .keep-light *):hover { color: #fff; }
+/* Nothing readable below 12px on the dark ground. */
+.space .text-\[10px\]:not(.keep-light, .keep-light *) { font-size: 11px; }
+.space .text-\[11px\]:not(.keep-light, .keep-light *) { font-size: 12px; }
+/* Footer rows: 44px touch targets. */
+.zl-foot-link { display: inline-flex; align-items: center; min-height: 44px; padding: 0; }
+/* Touch screens: small text links (breadcrumbs, underlined "Start a project →" links, contact rows) get an invisible
+   44px hit area without moving anything on screen. */
+@media (pointer: coarse) {
+  .space nav.overline a, .space a.inline-flex.border-b, .space .tap-44 { position: relative; }
+  .space nav.overline a::after, .space a.inline-flex.border-b::after, .space .tap-44::after {
+    content: ''; position: absolute; left: -6px; right: -6px; top: 50%; height: 44px; transform: translateY(-50%);
+  }
+}
+
+/* The page never pans sideways. `clip` (not `hidden`) keeps position: sticky working because it doesn't create a
+   scroll container; `hidden` on <html> is the fallback for Safari < 16 (it propagates to the viewport, not html). */
+html.space { overflow-x: hidden; overflow-x: clip; }
+html.space body { overflow-x: clip; overflow-wrap: break-word; touch-action: pan-y pinch-zoom; }
+/* Long URLs, emails and code never push a line past the screen edge. */
+.space code, .space kbd, .space .break-anywhere { overflow-wrap: anywhere; }
+/* Korean breaks between words, not mid-word; break-word above still rescues an unbroken run. */
+html.space[lang="ko"] body { word-break: keep-all; }
+/* Horizontal scrollers (tables, filter rows) keep their own sideways swipe. */
+.space .overflow-x-auto, .space .overflow-x-scroll { touch-action: pan-x pan-y pinch-zoom; overscroll-behavior-x: contain; }
+
+/* Coloured CTA bands and buttons (state/city templates): white text must clear 4.5:1, so each hue steps one shade darker. */
+.space .bg-emerald-600:not(.keep-light, .keep-light *) { background-color:#047857 }
+.space .hover\:bg-emerald-700:not(.keep-light, .keep-light *):hover { background-color:#065F46 }
+.space .from-emerald-600:not(.keep-light, .keep-light *) { --tw-gradient-from:#047857 var(--tw-gradient-from-position) }
+.space .to-emerald-600:not(.keep-light, .keep-light *) { --tw-gradient-to:#047857 var(--tw-gradient-to-position) }
+.space .to-emerald-700:not(.keep-light, .keep-light *) { --tw-gradient-to:#065F46 var(--tw-gradient-to-position) }
+.space .bg-orange-600:not(.keep-light, .keep-light *) { background-color:#C2410C }
+.space .hover\:bg-orange-700:not(.keep-light, .keep-light *):hover { background-color:#9A3412 }
+.space .from-orange-600:not(.keep-light, .keep-light *) { --tw-gradient-from:#C2410C var(--tw-gradient-from-position) }
+.space .to-orange-600:not(.keep-light, .keep-light *) { --tw-gradient-to:#C2410C var(--tw-gradient-to-position) }
+.space .to-orange-700:not(.keep-light, .keep-light *) { --tw-gradient-to:#9A3412 var(--tw-gradient-to-position) }
+.space .bg-teal-600:not(.keep-light, .keep-light *) { background-color:#0F766E }
+.space .hover\:bg-teal-700:not(.keep-light, .keep-light *):hover { background-color:#115E59 }
+.space .from-teal-600:not(.keep-light, .keep-light *) { --tw-gradient-from:#0F766E var(--tw-gradient-from-position) }
+.space .to-teal-600:not(.keep-light, .keep-light *) { --tw-gradient-to:#0F766E var(--tw-gradient-to-position) }
+.space .to-teal-700:not(.keep-light, .keep-light *) { --tw-gradient-to:#115E59 var(--tw-gradient-to-position) }
+.space .bg-green-600:not(.keep-light, .keep-light *) { background-color:#15803D }
+.space .hover\:bg-green-700:not(.keep-light, .keep-light *):hover { background-color:#166534 }
+.space .from-green-600:not(.keep-light, .keep-light *) { --tw-gradient-from:#15803D var(--tw-gradient-from-position) }
+.space .to-green-600:not(.keep-light, .keep-light *) { --tw-gradient-to:#15803D var(--tw-gradient-to-position) }
+.space .to-green-700:not(.keep-light, .keep-light *) { --tw-gradient-to:#166534 var(--tw-gradient-to-position) }
+.space .bg-amber-600:not(.keep-light, .keep-light *) { background-color:#B45309 }
+.space .hover\:bg-amber-700:not(.keep-light, .keep-light *):hover { background-color:#92400E }
+.space .from-amber-600:not(.keep-light, .keep-light *) { --tw-gradient-from:#B45309 var(--tw-gradient-from-position) }
+.space .to-amber-600:not(.keep-light, .keep-light *) { --tw-gradient-to:#B45309 var(--tw-gradient-to-position) }
+.space .to-amber-700:not(.keep-light, .keep-light *) { --tw-gradient-to:#92400E var(--tw-gradient-to-position) }
+.space .bg-cyan-600:not(.keep-light, .keep-light *) { background-color:#0E7490 }
+.space .hover\:bg-cyan-700:not(.keep-light, .keep-light *):hover { background-color:#155E75 }
+.space .from-cyan-600:not(.keep-light, .keep-light *) { --tw-gradient-from:#0E7490 var(--tw-gradient-from-position) }
+.space .to-cyan-600:not(.keep-light, .keep-light *) { --tw-gradient-to:#0E7490 var(--tw-gradient-to-position) }
+.space .to-cyan-700:not(.keep-light, .keep-light *) { --tw-gradient-to:#155E75 var(--tw-gradient-to-position) }
+.space .bg-sky-600:not(.keep-light, .keep-light *) { background-color:#0369A1 }
+.space .hover\:bg-sky-700:not(.keep-light, .keep-light *):hover { background-color:#075985 }
+.space .from-sky-600:not(.keep-light, .keep-light *) { --tw-gradient-from:#0369A1 var(--tw-gradient-from-position) }
+.space .to-sky-600:not(.keep-light, .keep-light *) { --tw-gradient-to:#0369A1 var(--tw-gradient-to-position) }
+.space .to-sky-700:not(.keep-light, .keep-light *) { --tw-gradient-to:#075985 var(--tw-gradient-to-position) }
+.space .bg-violet-500:not(.keep-light, .keep-light *) { background-color:#7C3AED }
+.space .to-yellow-600:not(.keep-light, .keep-light *) { --tw-gradient-to:#A16207 var(--tw-gradient-to-position) }
+.space .text-indigo-500:not(.keep-light, .keep-light *) { color:#818CF8 }
+/* Body copy on those bands was knocked back to 90% — full white reads; the band colour already sets the mood. */
+.space p.opacity-90:not(.keep-light, .keep-light *) { opacity:1 }

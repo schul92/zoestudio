@@ -30,7 +30,7 @@ export default function CaseScroll({ locale = 'en' }: { locale?: string }) {
       <div className="container-edge py-24 md:py-36">
         <p className="text-[15px] font-semibold text-gold-soft">{isKo ? '실제 사례 연구' : 'A real case study'}</p>
         <h2 id="case-title" className="mt-3 text-[clamp(2rem,5vw,4rem)] font-semibold tracking-[-0.045em] leading-[1.02] text-white">
-          TJ Flowers <span className="text-white/40">· Manhattan</span>
+          TJ Flowers <span className="text-white/70">· Manhattan</span>
         </h2>
 
         <div className="mt-14 md:mt-20 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
@@ -41,7 +41,7 @@ export default function CaseScroll({ locale = 'en' }: { locale?: string }) {
                   <span className="w-2.5 h-2.5 rounded-full bg-white/15" />
                   <span className="w-2.5 h-2.5 rounded-full bg-white/15" />
                   <span className="w-2.5 h-2.5 rounded-full bg-white/15" />
-                  <span className="ml-3 truncate text-[12px] text-white/40">tjflowersandevents.com</span>
+                  <span className="ml-3 truncate text-[12px] text-white/70">tjflowersandevents.com</span>
                 </div>
                 <div className="relative aspect-[16/10]">
                   <Image
@@ -59,7 +59,7 @@ export default function CaseScroll({ locale = 'en' }: { locale?: string }) {
           <ol className="lg:col-span-5 flex flex-col gap-16 lg:gap-[28vh] lg:py-[6vh]">
             {steps.map((s) => (
               <li key={s.n} className="flex flex-col gap-3">
-                <span className="text-[13px] font-medium text-white/40 tabular-nums">{s.n} / 03</span>
+                <span className="text-[13px] font-medium text-white/70 tabular-nums">{s.n} / 03</span>
                 <h3 className="text-[26px] md:text-[34px] font-semibold tracking-[-0.035em] leading-[1.12] text-white text-balance">
                   {s.title}
                 </h3>

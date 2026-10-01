@@ -35,15 +35,27 @@ export default function StickyMobileCTA({ locale = 'en' }: { locale?: string }) 
     }
   }, [])
 
+  // Hide over any form or the contact section — on phones those run several screens tall, so a ratio threshold
+  // never fired and the bar sat on top of "Send inquiry". Also hide while the keyboard is up.
+  const [typing, setTyping] = useState(false)
   useEffect(() => {
-    const contact = document.getElementById('contact')
-    if (!contact) return
-    const io = new IntersectionObserver(
-      ([e]) => setContactVisible(e.isIntersecting),
-      { threshold: 0.15 }
-    )
-    io.observe(contact)
-    return () => io.disconnect()
+    const targets = Array.from(document.querySelectorAll<HTMLElement>('#contact, form'))
+    const onScreen = new Set<Element>()
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => (e.isIntersecting ? onScreen.add(e.target) : onScreen.delete(e.target)))
+      setContactVisible(onScreen.size > 0)
+    })
+    targets.forEach((t) => io.observe(t))
+    const isField = (el: EventTarget | null) => el instanceof HTMLElement && el.matches('input, textarea, select, [contenteditable="true"]')
+    const onFocusIn = (e: FocusEvent) => { if (isField(e.target)) setTyping(true) }
+    const onFocusOut = () => setTyping(false)
+    document.addEventListener('focusin', onFocusIn)
+    document.addEventListener('focusout', onFocusOut)
+    return () => {
+      io.disconnect()
+      document.removeEventListener('focusin', onFocusIn)
+      document.removeEventListener('focusout', onFocusOut)
+    }
   }, [])
 
   const track = (label: string) => {
@@ -55,7 +67,7 @@ export default function StickyMobileCTA({ locale = 'en' }: { locale?: string }) 
     }
   }
 
-  const show = pastHero && !contactVisible && selectedServices.length === 0
+  const show = pastHero && !contactVisible && !typing && selectedServices.length === 0
 
   return (
     <div
