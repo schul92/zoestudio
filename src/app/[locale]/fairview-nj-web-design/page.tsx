@@ -64,8 +64,7 @@ export default function FairviewWebDesignPage({ params }: { params: { locale: st
       : 'Web design agency for Korean-American businesses in Fairview, NJ',
     url: `${baseUrl}/${locale === 'ko' ? 'ko/' : ''}fairview-nj-web-design`,
     email: 'info@zoelumos.com',
-    address: { '@type': 'PostalAddress', addressLocality: 'Fairview', addressRegion: 'NJ', postalCode: '07022', addressCountry: 'US' },
-    geo: { '@type': 'GeoCoordinates', latitude: '40.8137', longitude: '-73.9993' },
+    address: { '@type': 'PostalAddress', addressLocality: 'Fort Lee', addressRegion: 'NJ', addressCountry: 'US' },
     areaServed: [
       { '@type': 'City', name: 'Fairview' }, { '@type': 'City', name: 'Cliffside Park' },
       { '@type': 'City', name: 'Fort Lee' }, { '@type': 'City', name: 'Palisades Park' },
@@ -84,7 +83,7 @@ export default function FairviewWebDesignPage({ params }: { params: { locale: st
       {
         '@type': 'Question',
         name: '페어뷰에서 웹사이트 제작 비용은 얼마인가요?',
-        acceptedAnswer: { '@type': 'Answer', text: '페어뷰 지역 웹사이트 제작은 $1,000부터 시작합니다. 소규모 비즈니스 $1,000-$3,000, 이커머스 $3,000-$6,000. 무료 상담 가능합니다.' },
+        acceptedAnswer: { '@type': 'Answer', text: '페어뷰 지역 웹사이트 제작은 $500부터 시작합니다. 기본 $500~$800, 일반 $1,100~$1,500, 이커머스(스토어) $1,800~$2,400. 무료 상담 가능합니다.' },
       },
       {
         '@type': 'Question',
@@ -100,7 +99,7 @@ export default function FairviewWebDesignPage({ params }: { params: { locale: st
       {
         '@type': 'Question',
         name: 'How much does web design cost in Fairview, NJ?',
-        acceptedAnswer: { '@type': 'Answer', text: 'Fairview web design starts at $1,000. Small business sites $1,000-$3,000, e-commerce $3,000-$6,000. Free consultation available.' },
+        acceptedAnswer: { '@type': 'Answer', text: 'Fairview web design starts at $500. Basic $500–$800, Standard $1,100–$1,500, e-commerce (Store) $1,800–$2,400. Free consultation available.' },
       },
       {
         '@type': 'Question',

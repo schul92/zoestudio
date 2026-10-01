@@ -87,15 +87,9 @@ export default function PalisadesParkMarketingPage({ params }: { params: { local
     email: 'info@zoelumos.com',
     address: {
       '@type': 'PostalAddress',
-      addressLocality: 'Palisades Park',
+      addressLocality: 'Fort Lee',
       addressRegion: 'NJ',
-      postalCode: '07650',
       addressCountry: 'US',
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: '40.8482',
-      longitude: '-73.9976',
     },
     areaServed: [
       { '@type': 'City', name: 'Palisades Park' },

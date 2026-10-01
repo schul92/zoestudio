@@ -62,8 +62,7 @@ export default function RidgefieldWebDesignPage({ params }: { params: { locale: 
     description: locale === 'ko' ? '리지필드 한인 비즈니스를 위한 웹사이트 제작 에이전시' : 'Web design agency for Korean-American businesses in Ridgefield, NJ',
     url: `${baseUrl}/${locale === 'ko' ? 'ko/' : ''}ridgefield-web-design`,
     email: 'info@zoelumos.com',
-    address: { '@type': 'PostalAddress', addressLocality: 'Ridgefield', addressRegion: 'NJ', postalCode: '07657', addressCountry: 'US' },
-    geo: { '@type': 'GeoCoordinates', latitude: '40.8334', longitude: '-74.0099' },
+    address: { '@type': 'PostalAddress', addressLocality: 'Fort Lee', addressRegion: 'NJ', addressCountry: 'US' },
     areaServed: [
       { '@type': 'City', name: 'Ridgefield' }, { '@type': 'City', name: 'Palisades Park' },
       { '@type': 'City', name: 'Fort Lee' }, { '@type': 'City', name: 'Edgewater' },

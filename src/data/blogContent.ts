@@ -5024,7 +5024,7 @@ export const blogContent: BlogPost[] = [
         {
           type: 'p',
           content:
-            'Website pricing in 2026 varies widely depending on complexity, the agency you choose, and whether the content is bilingual. At ZOE LUMOS, our website packages for Korean-American businesses start at $1,000 for a clean, modern single-page or simple 4–5 page site. A standard business website — think a restaurant, nail salon, law firm, or medical practice — with full bilingual content, contact forms, and local SEO setup typically falls in the $2,000–$3,500 range. More complex sites, such as those with appointment booking systems, e-commerce functionality, custom animations, or large content libraries, run from $4,000 to $6,000 or more.',
+            'Website pricing in 2026 varies widely depending on complexity, the agency you choose, and whether the content is bilingual. At ZOE LUMOS, builds for Korean-American businesses start at $500–$800 for a simple site of up to 5 pages. A standard business website — think a restaurant, nail salon, law firm, or medical practice — with custom design, bilingual content, and local SEO is our Standard tier at $1,100–$1,500. Sites that need Shopify or e-commerce — products, payments, and orders or bookings — are our Store tier at $1,800–$2,400.',
         },
         {
           type: 'p',
@@ -5035,10 +5035,10 @@ export const blogContent: BlogPost[] = [
           type: 'ul',
           content: 'ZOE LUMOS 2026 website pricing tiers:',
           items: [
-            'Starter ($1,000–$1,500): 4–5 pages, bilingual content, mobile-responsive, contact form',
-            'Standard ($2,000–$3,500): 6–10 pages, bilingual, local SEO, Google Analytics, blog-ready',
-            'Professional ($4,000–$6,000): 10+ pages, custom design, booking/e-commerce, advanced SEO',
-            'Monthly maintenance from $150/mo: updates, security, performance monitoring',
+            'Basic — $500–$800: up to 5 responsive pages, basic SEO, contact form',
+            'Standard — $1,100–$1,500: 6–15 pages, custom design, bilingual Korean/English, local SEO',
+            'Store — $1,800–$2,400: Shopify/e-commerce with products, payments, and orders or bookings',
+            'Monthly care plans — $49–$499/mo: Basic $49 (hosting & security), Care $89 (maintenance + small edits), Grow $199 (content edits, GA4 report, SEO monitoring, Google Business Profile), Scale $499 (content + local SEO engine)',
           ],
         },
         {
@@ -5168,7 +5168,7 @@ export const blogContent: BlogPost[] = [
         {
           type: 'p',
           content:
-            '2026년 웹사이트 제작 비용은 복잡도, 선택하는 업체, 이중언어 포함 여부에 따라 크게 다릅니다. ZOE LUMOS의 한인 비즈니스 웹사이트 패키지는 단순 4~5페이지 사이트의 경우 $1,000부터 시작합니다. 레스토랑, 네일샵, 법률 사무소, 의원 등의 표준 비즈니스 웹사이트 — 이중언어 콘텐츠, 문의 폼, 로컬 SEO 설정 포함 — 는 일반적으로 $2,000~$3,500 범위입니다. 예약 시스템, 이커머스 기능, 커스텀 애니메이션 등 복잡한 사이트는 $4,000~$6,000 이상입니다.',
+            '2026년 웹사이트 제작 비용은 복잡도, 선택하는 업체, 이중언어 포함 여부에 따라 크게 다릅니다. ZOE LUMOS의 한인 비즈니스 웹사이트 제작은 5페이지 이하 단순 사이트 기준 $500~$800부터 시작합니다. 레스토랑, 네일샵, 법률 사무소, 의원 등의 표준 비즈니스 웹사이트 — 맞춤 디자인, 이중언어 콘텐츠, 로컬 SEO 포함 — 는 일반 등급 $1,100~$1,500입니다. Shopify·이커머스(상품, 결제, 주문/예약)가 필요한 사이트는 스토어 등급 $1,800~$2,400입니다.',
         },
         {
           type: 'p',
@@ -5179,10 +5179,10 @@ export const blogContent: BlogPost[] = [
           type: 'ul',
           content: 'ZOE LUMOS 2026 웹사이트 가격 구조:',
           items: [
-            '스타터 ($1,000~$1,500): 4~5페이지, 이중언어, 모바일 반응형, 문의 폼',
-            '스탠다드 ($2,000~$3,500): 6~10페이지, 이중언어, 로컬 SEO, 구글 애널리틱스, 블로그',
-            '프로페셔널 ($4,000~$6,000): 10페이지 이상, 커스텀 디자인, 예약/이커머스, 고급 SEO',
-            '월 유지보수 $150~/mo: 업데이트, 보안, 성능 모니터링',
+            '기본 — $500~$800: 5페이지 이하 반응형, 기본 SEO, 문의 폼',
+            '일반 — $1,100~$1,500: 6~15페이지, 맞춤 디자인, 한·영 이중언어, 로컬 SEO',
+            '스토어 — $1,800~$2,400: Shopify·이커머스 상품, 결제, 주문/예약',
+            '월 관리 플랜 — $49~$499/월: Basic $49(호스팅·보안), Care $89(유지보수 + 소규모 수정), Grow $199(콘텐츠 수정, GA4 리포트, SEO 모니터링, 구글 비즈니스 프로필 관리), Scale $499(콘텐츠 + 로컬 SEO 엔진)',
           ],
         },
         {
@@ -5789,8 +5789,8 @@ export const blogContent: BlogPost[] = [
       ko: '2026년 뉴저지·뉴욕 웹사이트 제작 비용 완전 분석',
     },
     metaDescription: {
-      en: 'Transparent 2026 website pricing for Korean businesses in NJ and NY. Compare costs, understand what you get, and avoid overpaying. From $1,000 to $6,000+.',
-      ko: '2026년 뉴저지·뉴욕 한인 비즈니스 웹사이트 제작 비용 완전 분석. $1,000~$6,000+ 패키지 비교, 월 유지비 안내.',
+      en: 'Transparent 2026 website pricing for Korean businesses in NJ and NY. Compare costs, understand what you get, and see our published $500–$2,400 builds and $49–$499/mo care plans.',
+      ko: '2026년 뉴저지·뉴욕 한인 비즈니스 웹사이트 제작 비용 완전 분석. 시장 가격 비교와 조이루모스 공개 가격(제작 $500~$2,400, 월 $49~$499) 안내.',
     },
     author: 'Steve Song',
     sections: {
@@ -5807,22 +5807,21 @@ export const blogContent: BlogPost[] = [
         {
           type: 'p',
           content:
-            'For a Korean-American small business in Fort Lee, Palisades Park, Flushing, or Manhattan, professional website costs in 2026 generally fall into four tiers. The entry tier ($1,000–$1,500) covers a clean, mobile-responsive 4–5 page website with bilingual content, a contact form, Google Maps integration, and basic on-page SEO. This is appropriate for a new business, a startup testing the market, or a service business that primarily gets customers through word-of-mouth but wants a professional online presence.',
+            'For a Korean-American small business in Fort Lee, Palisades Park, Flushing, or Manhattan, website builds at ZOE LUMOS fall into three published tiers. The Basic tier ($500–$800) covers a clean, mobile-responsive website of up to 5 pages with basic SEO and a contact form. This is appropriate for a new business, a startup testing the market, or a service business that primarily gets customers through word-of-mouth but wants a professional online presence.',
         },
         {
           type: 'p',
           content:
-            'The standard tier ($2,000–$3,500) is the most popular choice for established Korean-American businesses. It includes 6–10 pages, fully bilingual content written by a professional (not machine-translated), a photo gallery or portfolio section, a blog for ongoing SEO content, appointment booking or inquiry form integration, full local SEO setup including Google Business Profile optimization, Google Analytics 4, and Google Search Console. This tier is designed to rank well in local searches and generate consistent leads from the start.',
+            'The Standard tier ($1,100–$1,500) is the most popular choice for established Korean-American businesses. It covers 6–15 pages with custom design, bilingual Korean and English content, and local SEO, and it is designed to rank well in local searches and generate consistent leads from the start. The Store tier ($1,800–$2,400) adds Shopify or e-commerce: products, payments, and orders or bookings.',
         },
         {
           type: 'ul',
           content: 'ZOE LUMOS 2026 website pricing at a glance:',
           items: [
-            'Starter — $1,000–$1,500: 4–5 pages, bilingual, mobile-ready, contact form, Google Maps',
-            'Standard — $2,000–$3,500: 6–10 pages, bilingual copy, gallery, blog, local SEO, GA4',
-            'Professional — $4,000–$6,000: 10+ pages, custom design, booking system or e-commerce, advanced SEO',
-            'Enterprise — $6,000+: Full custom build, multiple service areas, CMS, ongoing retainer',
-            'Monthly maintenance — $150–$300/mo: updates, security, backups, performance monitoring',
+            'Basic — $500–$800: up to 5 responsive pages, basic SEO, contact form',
+            'Standard — $1,100–$1,500: 6–15 pages, custom design, bilingual Korean/English, local SEO',
+            'Store — $1,800–$2,400: Shopify/e-commerce with products, payments, and orders or bookings',
+            'Monthly care plans — $49–$499/mo: Basic $49 (hosting & security), Care $89 (maintenance + small edits), Grow $199 (content edits, GA4 report, SEO monitoring, Google Business Profile), Scale $499 (content + local SEO engine)',
           ],
         },
         {
@@ -5837,7 +5836,7 @@ export const blogContent: BlogPost[] = [
         {
           type: 'p',
           content:
-            'Custom design versus template-based design is another major cost variable. Template-based websites using premium themes (Squarespace, Webflow templates, premium WordPress themes) can produce attractive, functional results at lower cost. Custom-designed websites built from the ground up offer a unique brand identity, better performance optimization, and more precise control over the user experience — but they take longer and cost more. For most Korean small businesses, a thoughtfully customized template in the $2,000–$3,500 range offers the best balance of quality, uniqueness, and cost.',
+            'Custom design versus template-based design is another major cost variable. Template-based websites using premium themes (Squarespace, Webflow templates, premium WordPress themes) can produce attractive, functional results at lower cost. Custom-designed websites built from the ground up offer a unique brand identity, better performance optimization, and more precise control over the user experience — but they take longer and cost more. For most Korean small businesses, a custom-designed Standard build ($1,100–$1,500) offers the best balance of quality, uniqueness, and cost.',
         },
         {
           type: 'h2',
@@ -5865,7 +5864,7 @@ export const blogContent: BlogPost[] = [
         {
           type: 'p',
           content:
-            'A professional Korean-American business website package from ZOE LUMOS at the $2,000–$3,500 standard tier includes: custom design mockups before development begins, professional bilingual copywriting in Korean and English, mobile-first responsive development, SSL certificate installation, on-page SEO for all pages (title tags, meta descriptions, header structure, image alt text), local business schema markup, Google Business Profile optimization with Korean-language content, Google Analytics 4 setup with goal tracking, Google Search Console setup and submission, XML sitemap and robots.txt, and 30 days of post-launch support for minor revisions and bug fixes.',
+            'A professional Korean-American business website package from ZOE LUMOS at the $1,100–$1,500 Standard tier includes: custom design mockups before development begins, professional bilingual copywriting in Korean and English, mobile-first responsive development, SSL certificate installation, on-page SEO for all pages (title tags, meta descriptions, header structure, image alt text), local business schema markup, Google Business Profile optimization with Korean-language content, Google Analytics 4 setup with goal tracking, Google Search Console setup and submission, XML sitemap and robots.txt, and 30 days of post-launch support for minor revisions and bug fixes.',
         },
         {
           type: 'p',
@@ -5884,7 +5883,7 @@ export const blogContent: BlogPost[] = [
         {
           type: 'p',
           content:
-            'That said, ZOE LUMOS serves Korean-American businesses across the country — in LA Koreatown, Atlanta, Dallas, Houston, and Chicago — with the same pricing structure as NJ/NY clients. Because we work remotely and our team is based in Fort Lee, NJ, geography does not significantly affect our pricing. A Korean restaurant in Atlanta can get the same quality bilingual website as one in Fort Lee for the same $2,000–$3,500 investment. We believe Korean-American businesses in every market deserve access to high-quality, culturally fluent digital marketing.',
+            'That said, ZOE LUMOS serves Korean-American businesses across the country — in LA Koreatown, Atlanta, Dallas, Houston, and Chicago — with the same pricing structure as NJ/NY clients. Because we work remotely and our team is based in Fort Lee, NJ, geography does not significantly affect our pricing. A Korean restaurant in Atlanta can get the same quality bilingual website as one in Fort Lee on the same $1,100–$1,500 Standard tier. We believe Korean-American businesses in every market deserve access to high-quality, culturally fluent digital marketing.',
         },
         {
           type: 'h2',
@@ -5898,12 +5897,12 @@ export const blogContent: BlogPost[] = [
         {
           type: 'p',
           content:
-            'ZOE LUMOS monthly maintenance packages start at $150/month for basic maintenance (security, backups, updates, performance monitoring) and range to $300/month for plans that include content updates, monthly reporting, and priority support. Some clients choose to pair maintenance with our SEO service at $500/month, which includes all maintenance tasks plus monthly content creation, Google Business Profile management, and review monitoring. Investing in proper website maintenance prevents the much more costly scenario of a hacked site, a crashed site during peak hours, or a site that gradually loses its Google ranking due to technical decay.',
+            'ZOE LUMOS monthly care plans start at $49/month (Basic: hosting and security), then $89/month (Care: maintenance plus small edits) and $199/month (Grow: content edits, a GA4 report, SEO monitoring, and Google Business Profile management). Scale at $499/month adds a full content and local SEO engine. Investing in proper website maintenance prevents the much more costly scenario of a hacked site, a crashed site during peak hours, or a site that gradually loses its Google ranking due to technical decay.',
         },
         {
           type: 'cta',
           content:
-            'Looking for transparent, honest pricing on a bilingual Korean-American business website in NJ or NY? ZOE LUMOS offers website packages from $1,000 to $6,000+ with no hidden fees. Contact us for a free project estimate.',
+            'Looking for transparent, honest pricing on a bilingual Korean-American business website in NJ or NY? ZOE LUMOS publishes every price: builds from $500 to $2,400 and care plans from $49/month, with no hidden fees. Contact us for a free project estimate.',
         },
       ],
       ko: [
@@ -5919,17 +5918,16 @@ export const blogContent: BlogPost[] = [
         {
           type: 'p',
           content:
-            '포트리, 팰리세이즈 파크, 플러싱, 맨해튼의 한인 소규모 비즈니스의 경우 2026년 전문 웹사이트 비용은 일반적으로 4개 등급으로 나뉩니다. 입문 등급($1,000~$1,500)은 이중언어 콘텐츠, 문의 폼, 구글 맵 연동, 기본 온페이지 SEO가 포함된 깔끔한 모바일 반응형 4~5페이지 웹사이트입니다. 신규 비즈니스, 시장을 테스트하는 스타트업, 또는 주로 입소문으로 고객을 유치하지만 전문적인 온라인 존재감을 원하는 서비스 업체에 적합합니다.',
+            '포트리, 팰리세이즈 파크, 플러싱, 맨해튼의 한인 소규모 비즈니스의 경우 조이루모스의 웹사이트 제작은 세 가지 공개 등급으로 나뉩니다. 기본 등급($500~$800)은 기본 SEO와 문의 폼이 포함된 깔끔한 모바일 반응형 5페이지 이하 웹사이트입니다. 신규 비즈니스, 시장을 테스트하는 스타트업, 또는 주로 입소문으로 고객을 유치하지만 전문적인 온라인 존재감을 원하는 서비스 업체에 적합합니다.',
         },
         {
           type: 'ul',
           content: 'ZOE LUMOS 2026 웹사이트 가격 요약:',
           items: [
-            '스타터 — $1,000~$1,500: 4~5페이지, 이중언어, 모바일 준비, 문의 폼, 구글 맵',
-            '스탠다드 — $2,000~$3,500: 6~10페이지, 이중언어 카피, 갤러리, 블로그, 로컬 SEO, GA4',
-            '프로페셔널 — $4,000~$6,000: 10페이지 이상, 커스텀 디자인, 예약 시스템/이커머스, 고급 SEO',
-            '엔터프라이즈 — $6,000+: 완전 커스텀 빌드, 다중 서비스 지역, CMS, 지속 리테이너',
-            '월 유지보수 — $150~$300/mo: 업데이트, 보안, 백업, 성능 모니터링',
+            '기본 — $500~$800: 5페이지 이하 반응형, 기본 SEO, 문의 폼',
+            '일반 — $1,100~$1,500: 6~15페이지, 맞춤 디자인, 한·영 이중언어, 로컬 SEO',
+            '스토어 — $1,800~$2,400: Shopify·이커머스 상품, 결제, 주문/예약',
+            '월 관리 플랜 — $49~$499/월: Basic $49(호스팅·보안), Care $89(유지보수 + 소규모 수정), Grow $199(콘텐츠 수정, GA4 리포트, SEO 모니터링, 구글 비즈니스 프로필 관리), Scale $499(콘텐츠 + 로컬 SEO 엔진)',
           ],
         },
         {
@@ -5962,7 +5960,7 @@ export const blogContent: BlogPost[] = [
         {
           type: 'p',
           content:
-            'ZOE LUMOS의 $2,000~$3,500 스탠다드 등급 전문 한인 비즈니스 웹사이트 패키지에는 다음이 포함됩니다: 개발 전 커스텀 디자인 목업, 한국어·영어 전문 이중언어 카피라이팅, 모바일 우선 반응형 개발, SSL 인증서 설치, 모든 페이지 온페이지 SEO(타이틀 태그, 메타 설명, 헤더 구조, 이미지 대체 텍스트), 로컬 비즈니스 스키마 마크업, 한국어 콘텐츠가 포함된 구글 비즈니스 프로필 최적화, 목표 추적 포함 구글 애널리틱스 4 설정, 구글 서치 콘솔 설정 및 제출, XML 사이트맵 및 robots.txt, 사소한 수정 및 버그 수정을 위한 30일 출시 후 지원.',
+            'ZOE LUMOS의 $1,100~$1,500 일반 등급 전문 한인 비즈니스 웹사이트 패키지에는 다음이 포함됩니다: 개발 전 커스텀 디자인 목업, 한국어·영어 전문 이중언어 카피라이팅, 모바일 우선 반응형 개발, SSL 인증서 설치, 모든 페이지 온페이지 SEO(타이틀 태그, 메타 설명, 헤더 구조, 이미지 대체 텍스트), 로컬 비즈니스 스키마 마크업, 한국어 콘텐츠가 포함된 구글 비즈니스 프로필 최적화, 목표 추적 포함 구글 애널리틱스 4 설정, 구글 서치 콘솔 설정 및 제출, XML 사이트맵 및 robots.txt, 사소한 수정 및 버그 수정을 위한 30일 출시 후 지원.',
         },
         {
           type: 'h2',
@@ -5985,12 +5983,12 @@ export const blogContent: BlogPost[] = [
         {
           type: 'p',
           content:
-            'ZOE LUMOS 월 유지보수 패키지는 기본 유지보수(보안, 백업, 업데이트, 성능 모니터링)를 위한 $150/월부터 시작하여 콘텐츠 업데이트, 월간 보고서, 우선 지원이 포함된 $300/월 플랜까지 제공합니다. 일부 고객들은 월 $500의 SEO 서비스와 함께 유지보수를 선택하며, 이는 모든 유지보수 작업에 더해 월간 콘텐츠 제작, 구글 비즈니스 프로필 관리, 리뷰 모니터링이 포함됩니다.',
+            'ZOE LUMOS 월 관리 플랜은 Basic $49/월(호스팅·보안)부터 Care $89/월(유지보수 + 소규모 수정), Grow $199/월(콘텐츠 수정, GA4 리포트, SEO 모니터링, 구글 비즈니스 프로필 관리)까지 있으며, 콘텐츠와 로컬 SEO를 통째로 맡기시려면 Scale $499/월을 선택하시면 됩니다.',
         },
         {
           type: 'cta',
           content:
-            'NJ 또는 NY에서 투명하고 솔직한 이중언어 한인 비즈니스 웹사이트 가격을 찾고 계신가요? ZOE LUMOS는 숨겨진 비용 없이 $1,000~$6,000+ 웹사이트 패키지를 제공합니다. 무료 프로젝트 견적을 받으세요.',
+            'NJ 또는 NY에서 투명하고 솔직한 이중언어 한인 비즈니스 웹사이트 가격을 찾고 계신가요? ZOE LUMOS는 모든 가격을 공개합니다. 제작 $500~$2,400, 월 관리 플랜 $49부터, 숨겨진 비용 없음. 무료 프로젝트 견적을 받으세요.',
         },
       ],
     },
@@ -6160,7 +6158,7 @@ export const blogContent: BlogPost[] = [
         { type: 'p', content: 'Most businesses compare quotes based on initial cost. Smart businesses compare 3-year total cost of ownership (TCO) because that is what actually matters. Here are three realistic examples:' },
         { type: 'p', content: 'Scenario A: "Cheap" $99/month DIY-style platform — 3-year cost: $3,564. No ownership. Limited customization. Migration when you leave can cost $1,000–$3,000 more.' },
         { type: 'p', content: 'Scenario B: Mid-tier freelancer $2,500 build + $20/month hosting + DIY maintenance — 3-year cost: $3,220. You own everything. Risk: freelancer may not be available when you need fixes. Security maintenance is your responsibility.' },
-        { type: 'p', content: 'Scenario C: Modern agency like ZOE LUMOS, $2,800 build + $99/month maintenance plan — 3-year cost: $6,364. You own everything. Site is always up-to-date, secure, backed up, and supported. For a business generating $200,000+ annual revenue, the extra $3,000 over 3 years pays itself back in one lost customer saved from a broken site or dropped Google ranking.' },
+        { type: 'p', content: 'Scenario C: Modern agency like ZOE LUMOS, $1,500 Standard build + $89/month Care plan — 3-year cost: $4,704. You own everything. Site is always up-to-date, secure, backed up, and supported. For a business generating $200,000+ annual revenue, the extra ~$1,500 over 3 years pays itself back in one lost customer saved from a broken site or dropped Google ranking.' },
         { type: 'h2', content: 'What should a small business actually budget for year 1?' },
         { type: 'p', content: 'A realistic year-one budget for a Korean-American small business website in 2026:' },
         { type: 'ul', content: '', items: [
@@ -6171,7 +6169,7 @@ export const blogContent: BlogPost[] = [
           'Optional SEO: $0–$6,000 ($0–$500/month)',
           '— Total year 1: $2,115–$12,055',
         ] },
-        { type: 'p', content: 'Most of our Korean small business clients land in the $2,500–$5,500 range for year 1, including build and modest maintenance. SEO is typically added in year 2 once the site is stable and the business is ready to scale.' },
+        { type: 'p', content: 'On our published pricing, a typical year 1 — a Standard build ($1,100–$1,500) plus a Care or Grow plan ($89–$199/month) — comes to about $2,200–$3,900. SEO is typically added in year 2 once the site is stable and the business is ready to scale.' },
         { type: 'h2', content: 'How to compare agency quotes apples-to-apples' },
         { type: 'p', content: 'When you receive multiple quotes, normalize them into this table: 1) build cost, 2) number of pages, 3) languages included, 4) revisions allowed, 5) content writing included? 6) who owns the domain and files, 7) monthly maintenance cost and what it covers, 8) cost to make post-launch changes, 9) migration/export policy if you leave, 10) response time for support requests. If any agency cannot answer all ten clearly in writing, that itself is the answer.' },
         { type: 'cta', content: 'ZOE LUMOS quotes always include a written line-item scope, ownership terms, and 3-year TCO on request. No hidden fees, no proprietary platform traps. Book a free consultation and we will send you a detailed quote you can compare against any other agency.' },
@@ -6209,7 +6207,7 @@ export const blogContent: BlogPost[] = [
         { type: 'p', content: '대부분의 사업자는 초기 비용만 비교합니다. 똑똑한 사업자는 3년 총 소유 비용(TCO)으로 비교합니다. 현실적인 세 가지 시나리오:' },
         { type: 'p', content: '시나리오 A: "저렴한" 월 $99 DIY 플랫폼 — 3년 총액 $3,564. 소유권 없음. 커스터마이징 제한. 떠날 때 마이그레이션 비용 $1,000~$3,000 추가 가능.' },
         { type: 'p', content: '시나리오 B: 중급 프리랜서 $2,500 제작 + 월 $20 호스팅 + DIY 유지보수 — 3년 총액 $3,220. 모든 것 소유. 리스크: 프리랜서가 수정 필요할 때 연락 안 될 수 있음. 보안 유지보수가 본인 책임.' },
-        { type: 'p', content: '시나리오 C: ZOE LUMOS 같은 모던 에이전시 $2,800 제작 + 월 $99 유지보수 — 3년 총액 $6,364. 모든 것 소유. 사이트 항상 최신 상태, 보안, 백업, 지원 포함. 연매출 $20만+ 비즈니스에서는 3년간 추가 $3,000가 "고장난 사이트로 놓친 고객 1명"만 방지해도 본전.' },
+        { type: 'p', content: '시나리오 C: ZOE LUMOS 같은 모던 에이전시 $1,500 일반 등급 제작 + 월 $89 Care 플랜 — 3년 총액 $4,704. 모든 것 소유. 사이트 항상 최신 상태, 보안, 백업, 지원 포함. 연매출 $20만+ 비즈니스에서는 3년간 추가 약 $1,500가 "고장난 사이트로 놓친 고객 1명"만 방지해도 본전.' },
         { type: 'h2', content: '1년차에 얼마를 잡아야 할까?' },
         { type: 'p', content: '2026년 미국 한인 소상공업 웹사이트의 현실적인 1년차 예산:' },
         { type: 'ul', content: '', items: [
@@ -6220,7 +6218,7 @@ export const blogContent: BlogPost[] = [
           '선택 SEO: $0~$6,000 (월 $0~$500)',
           '— 1년차 총합: $2,115~$12,055',
         ] },
-        { type: 'p', content: '저희 한인 소상공업 고객 대부분은 제작 + 적정 유지보수 포함 1년차 $2,500~$5,500 범위에 위치합니다. SEO는 보통 사이트가 안정되고 비즈니스가 성장 준비가 된 2년차에 추가합니다.' },
+        { type: 'p', content: '공개 가격 기준으로 일반 등급 제작($1,100~$1,500)에 Care 또는 Grow 플랜(월 $89~$199)을 더하면 1년차는 약 $2,200~$3,900입니다. SEO는 보통 사이트가 안정되고 비즈니스가 성장 준비가 된 2년차에 추가합니다.' },
         { type: 'h2', content: '여러 견적을 공정하게 비교하는 방법' },
         { type: 'p', content: '여러 견적을 받으면 다음 10가지 항목으로 정규화해 비교하세요: 1) 제작 비용, 2) 페이지 수, 3) 포함 언어, 4) 허용 수정 횟수, 5) 콘텐츠 작성 포함 여부, 6) 도메인/파일 소유권, 7) 월 유지보수 비용과 범위, 8) 런칭 후 수정 비용, 9) 이탈 시 마이그레이션/내보내기 정책, 10) 지원 요청 응답 시간. 이 10가지를 서면으로 명확히 답변 못 하는 에이전시라면, 그 자체가 답입니다.' },
         { type: 'cta', content: 'ZOE LUMOS 견적에는 항상 서면 항목별 범위, 소유권 조건, 요청 시 3년 TCO가 포함됩니다. 숨은 비용 없음, 독점 플랫폼 함정 없음. 무료 상담을 예약하시면 다른 에이전시와 비교 가능한 상세 견적을 보내 드립니다.' },

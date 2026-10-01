@@ -86,11 +86,10 @@ export default function KoreanWebDesignNJPage({ params }: { params: { locale: st
     email: 'info@zoelumos.com',
     address: {
       '@type': 'PostalAddress',
-      addressLocality: 'Bergen County',
+      addressLocality: 'Fort Lee',
       addressRegion: 'NJ',
       addressCountry: 'US',
     },
-    geo: { '@type': 'GeoCoordinates', latitude: '40.8509', longitude: '-73.9712' },
     areaServed: [
       { '@type': 'State', name: 'New Jersey' },
       { '@type': 'AdministrativeArea', name: 'Bergen County' },
