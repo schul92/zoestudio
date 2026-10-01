@@ -85,7 +85,7 @@ export default function HeaderNew({ locale = 'en' }: { locale?: string }) {
   const otherLocaleHref = computeOtherLocaleHref(pathname || '/', locale)
 
   return (
-    <header className={`kn-header fixed top-0 inset-x-0 z-[100] ${menuOpen ? 'bg-ivory kn-header-open' : 'kn-frost'} border-b border-hairline`}>
+    <header className={`kn-header fixed top-0 inset-x-0 z-[100] ${menuOpen ? 'kn-solid kn-header-open' : 'kn-frost'} border-b border-hairline`}>
       <div className="container-edge">
         <div className="flex items-center justify-between h-14 md:h-16 gap-6">
           <Link href={`${prefix}/`} className="text-[17px] md:text-[19px] font-bold tracking-[-0.03em] text-ink" aria-label="ZOE LUMOS home">
@@ -132,7 +132,7 @@ export default function HeaderNew({ locale = 'en' }: { locale?: string }) {
       </div>
 
       <div
-        className={`lg:hidden fixed inset-0 top-14 md:top-16 bg-ivory z-[90] transition-[opacity,transform] duration-300 ease-out ${
+        className={`lg:hidden fixed inset-0 top-14 md:top-16 kn-solid z-[90] transition-[opacity,transform] duration-300 ease-out ${
           menuOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-2 pointer-events-none'
         }`}
       >
