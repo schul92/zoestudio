@@ -269,6 +269,23 @@ screen.location.y = -LD + 0.0035 + TOP + SH / 2
 cd = plate('camdot', 0.0022, 0.0022, 0.0011, camdot, parent=hinge, down=True, uv=False)
 cd.location = (0, -LD + 0.0035 + TOP / 2, 0.00008)
 
+# ── lid mark: polished "Z" inlaid in the lid centre, turned 33° so it reads upright from the opening 3/4 camera ──
+zmat, zb, *_ = principled('zmirror', (0.93, 0.94, 0.96), metal=1.0, rough=0.14)
+ZW, ZH, ZS = 0.056, 0.048, 0.0104
+ZD = ZS * 1.5
+zpts = [(-ZW/2, ZH/2), (ZW/2, ZH/2), (ZW/2, ZH/2 - ZS), (-ZW/2 + ZD, -ZH/2 + ZS), (ZW/2, -ZH/2 + ZS),
+        (ZW/2, -ZH/2), (-ZW/2, -ZH/2), (-ZW/2, -ZH/2 + ZS), (ZW/2 - ZD, ZH/2 - ZS), (-ZW/2, ZH/2 - ZS)]
+zme = bpy.data.meshes.new('zmark'); zbm = bmesh.new()
+zf = zbm.faces.new([zbm.verts.new((x, y, 0)) for x, y in zpts])
+zx = bmesh.ops.extrude_face_region(zbm, geom=[zf])
+bmesh.ops.translate(zbm, verts=[e for e in zx['geom'] if isinstance(e, bmesh.types.BMVert)], vec=(0, 0, 0.00022))
+bmesh.ops.recalc_face_normals(zbm, faces=zbm.faces)
+zbm.to_mesh(zme); zbm.free(); zme.materials.append(zmat)
+zo = link(bpy.data.objects.new('zmark', zme), hinge)
+zbev = zo.modifiers.new('bev', 'BEVEL'); zbev.width = 0.00018; zbev.segments = 3; zbev.limit_method = 'ANGLE'
+zo.location = (0, -LD / 2 + 0.0035, 0.0003 + T - 0.00006)
+zo.rotation_euler = (0, 0, math.radians(33))
+
 # ── phone (generic: flat titanium band, black glass, island pill; no marks) ─────────
 PHH, PHW, PHD, PHR = 0.1630, 0.0776, 0.00825, 0.0118
 phone = link(bpy.data.objects.new('phone', None))
@@ -380,7 +397,7 @@ def pose(p):
     bpy.context.view_layer.update()
 
     # overview camera
-    elev = math.radians(lerp(30 if MOBILE else 13, 12, span(p, 0.0, 0.30)))
+    elev = math.radians(lerp(34 if MOBILE else 24, 12, span(p, 0.0, 0.30)))
     ov_w = (0.66 if MOBILE else 0.98) if p < 0.2 else lerp(0.66 if MOBILE else 0.98, 0.52 if MOBILE else 0.80, span(p, 0.1, 0.3))
     ov_w = lerp(0.66 if MOBILE else 0.98, 0.52 if MOBILE else 0.80, span(p, 0.08, 0.30))
     tgt = Vector((laptop.location.x, 0.0, lerp(0.02, 0.10, open_)))
