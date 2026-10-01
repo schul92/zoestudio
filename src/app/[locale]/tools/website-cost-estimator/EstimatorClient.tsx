@@ -332,7 +332,7 @@ export default function EstimatorClient({ locale = 'en' }: { locale?: 'en' | 'ko
                           }`}
                         >
                           {plan.recommended && (
-                            <span className="absolute -top-2.5 right-4 bg-gold text-ivory text-[10px] tracking-[0.12em] uppercase px-2.5 py-0.5">
+                            <span className="absolute -top-2.5 right-4 bg-gold text-white text-[11px] tracking-[0.12em] uppercase px-2.5 py-0.5">
                               {t.monthlyBadge}
                             </span>
                           )}

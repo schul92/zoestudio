@@ -554,7 +554,7 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                       <a
                         href="mailto:info@zoelumos.com"
                         onClick={() => trackEmailClick('info@zoelumos.com')}
-                        className="flex items-center gap-3 text-gray-300 hover:text-sky-400 transition-colors"
+                        className="tap-44 flex items-center gap-3 text-gray-300 hover:text-sky-400 transition-colors"
                       >
                         <Mail className="w-5 h-5 flex-shrink-0" />
                         <span className="text-sm font-medium">info@zoelumos.com</span>
@@ -578,7 +578,7 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={() => trackKakaoClick('contact_info')}
-                        className="flex items-center gap-3 text-gray-300 hover:text-[#FEE500] transition-colors"
+                        className="tap-44 flex items-center gap-3 text-gray-300 hover:text-[#FEE500] transition-colors"
                       >
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="flex-shrink-0">
                           <path d="M12 3C6.477 3 2 6.463 2 10.691c0 2.724 1.8 5.113 4.508 6.463-.2.723-.722 2.62-.828 3.026-.13.502.184.496.387.36.16-.106 2.544-1.726 3.576-2.428.766.112 1.56.17 2.357.17 5.523 0 10-3.463 10-7.591S17.523 3 12 3Z" fill="currentColor"/>

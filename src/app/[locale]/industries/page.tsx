@@ -102,7 +102,7 @@ export default function IndustriesIndex({ params }: { params: { locale: string }
               <span className="section-num not-italic text-ink font-normal">§</span>
               <span className="h-px w-10 bg-hairline" />
               <span>{isKo ? '업종별 전문성' : 'Industry practice'}</span>
-              <span className="ml-2 text-ash/60">· {industries.length} {isKo ? '업종' : 'verticals'}</span>
+              <span className="ml-2 text-ash">· {industries.length} {isKo ? '업종' : 'verticals'}</span>
             </InView>
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-end">
