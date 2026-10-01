@@ -24,10 +24,10 @@ export async function generateMetadata({
   // This page is primarily for Korean SEO
   return {
     title: locale === 'ko'
-      ? '뉴저지 웹사이트 제작 | NJ 한인 홈페이지 제작 전문 | 조이루모스'
+      ? '뉴저지 홈페이지 제작 · 웹사이트 제작 | 한인 업소 전문 조이루모스'
       : 'New Jersey Website Design | NJ Korean Business Web Development | ZOE LUMOS',
     description: locale === 'ko'
-      ? '뉴저지 웹사이트 제작 전문 업체 조이루모스. 포트리, 팰팍, 에디슨 한인 홈페이지 제작. SEO 최적화, 구글 상위노출, 광고대행, 소셜미디어 관리, 구글/인스타 광고.'
+      ? '뉴저지 홈페이지·웹사이트 제작 전문 조이루모스(포트리). 팰팍, 잉글우드클립스, 레오니아 등 버겐카운티 한인 업소 홈페이지 제작. 한·영 이중언어, 구글 SEO. 제작 $500부터, 관리 월 $49부터 가격 공개.'
       : 'Professional New Jersey website design for Korean-American businesses. Fort Lee, Palisades Park, Edison web development. NJ SEO, Google ranking, e-commerce.',
     keywords: locale === 'ko'
       ? '뉴저지 웹사이트, 뉴저지 웹사이트 제작, 뉴저지 홈페이지, NJ 웹사이트, 뉴저지 한인 웹사이트, 포트리 웹사이트, 팰팍 웹사이트, 에디슨 웹사이트, 뉴저지 쇼핑몰, 뉴저지 SEO, 뉴저지 구글광고, 뉴저지 웹디자인, 뉴저지 웹개발, 뉴저지 광고대행, 뉴저지 소셜미디어, 뉴저지 인스타광고, 한인 광고대행'
@@ -630,6 +630,23 @@ export default function NJWebsiteKoreanPage({ params }: { params: { locale: stri
               <Link href={isKorean ? '/ko/portfolio' : '/portfolio'} className="text-emerald-600 hover:underline">
                 {isKorean ? '포트폴리오' : 'Portfolio'}
               </Link>
+            </div>
+            <h3 className="text-lg font-bold mt-8 mb-4 text-center">
+              {isKorean ? '버겐카운티 지역별 홈페이지 제작' : 'Bergen County towns'}
+            </h3>
+            <div className="flex flex-wrap justify-center gap-x-4 gap-y-2">
+              {[
+                { ko: '버겐카운티 홈페이지 제작', en: 'Bergen County web design', koHref: '/ko/버겐카운티-홈페이지-제작', enHref: '/bergen-county-web-design' },
+                { ko: '포트리 홈페이지 제작', en: 'Fort Lee web design', koHref: '/ko/fort-lee-web-design', enHref: '/fort-lee-web-design' },
+                { ko: '팰팍 홈페이지 제작', en: 'Palisades Park web design', koHref: '/ko/팰팍-홈페이지-제작', enHref: '/palisades-park-web-design' },
+                { ko: '잉글우드클립스 홈페이지 제작', en: 'Englewood Cliffs web design', koHref: '/ko/잉글우드클립스-홈페이지-제작', enHref: '/englewood-cliffs-web-design' },
+                { ko: '레오니아 홈페이지 제작', en: 'Leonia web design', koHref: '/ko/레오니아-홈페이지-제작', enHref: '/leonia-web-design' },
+                { ko: '포스 업체 홈페이지 vs 전문 제작', en: 'POS-company website vs. web studio', koHref: '/ko/포스-업체-홈페이지-vs-전문-제작', enHref: '/pos-company-website-vs-web-studio' },
+              ].map((l) => (
+                <Link key={l.enHref} href={isKorean ? l.koHref : l.enHref} className="text-emerald-600 hover:underline">
+                  {isKorean ? l.ko : l.en}
+                </Link>
+              ))}
             </div>
           </div>
         </section>

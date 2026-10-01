@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 import { usePathname } from 'next/navigation'
 import { useTranslation } from '@/hooks/useTranslation'
-import { industrySlugs, citySlugs } from '@/lib/localeSlugs'
+import { industrySlugs, citySlugs, localSeoSlugs } from '@/lib/localeSlugs'
 
 /**
  * Map an EN or KO path to the matching path in the other locale.
@@ -51,6 +51,10 @@ function computeOtherLocaleHref(pathname: string, locale: string): string {
     }
   }
 
+  // Landing pages whose Korean URL uses a Korean slug
+  const landing = localSeoSlugs.find(([en, ko]) => decoded === `/${en}` || decoded === `/${ko}`)
+  if (landing) return isKo ? `/${landing[0]}` : `/ko/${landing[1]}`
+
   // Default: flip /ko prefix using normalized (stripped) path
   return isKo ? stripped : `/ko${stripped === '/' ? '' : stripped}`
 }
@@ -85,7 +89,7 @@ export default function HeaderNew({ locale = 'en' }: { locale?: string }) {
   const otherLocaleHref = computeOtherLocaleHref(pathname || '/', locale)
 
   return (
-    <header className={`kn-header fixed top-0 inset-x-0 z-[100] ${menuOpen ? 'bg-ivory kn-header-open' : 'kn-frost'} border-b border-hairline`}>
+    <header className={`kn-header fixed top-0 inset-x-0 z-[100] ${menuOpen ? 'kn-solid kn-header-open' : 'kn-frost'} border-b border-hairline`}>
       <div className="container-edge">
         <div className="flex items-center justify-between h-14 md:h-16 gap-6">
           <Link href={`${prefix}/`} className="text-[17px] md:text-[19px] font-bold tracking-[-0.03em] text-ink" aria-label="ZOE LUMOS home">
@@ -132,7 +136,7 @@ export default function HeaderNew({ locale = 'en' }: { locale?: string }) {
       </div>
 
       <div
-        className={`lg:hidden fixed inset-0 top-14 md:top-16 bg-ivory z-[90] transition-[opacity,transform,visibility] duration-300 ease-out ${
+        className={`lg:hidden fixed inset-0 top-14 md:top-16 kn-solid z-[90] transition-[opacity,transform,visibility] duration-300 ease-out ${
           menuOpen ? 'visible opacity-100 translate-y-0 pointer-events-auto' : 'invisible opacity-0 -translate-y-2 pointer-events-none'
         }`}
       >

@@ -551,6 +551,8 @@ html[data-nav-tone="dark"] .kn-header:not(.kn-header-open) button .bg-ink { back
 .space .lh-story { background: #000; }
 /* Page grounds let the starfield through; cards stay solid. */
 .space .bg-ivory { background-color: transparent; }
+/* Overlays (open header, mobile menu) must stay opaque so page content never shows through them. */
+.kn-solid { background-color: rgb(var(--c-ivory)); }
 .space .bg-bone { background-color: rgba(10,10,12,.55); }
 
 /* Starfield: three tiled layers of tiny dots, fixed behind everything. Pure CSS, no JS. */

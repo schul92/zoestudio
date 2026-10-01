@@ -4,10 +4,12 @@ import { koreanCities } from '@/data/koreanCities'
 import { usStates, STATES_WITH_CUSTOM_PAGES } from '@/data/usStates'
 import { industries } from '@/data/industriesData'
 import { cityMarkets } from '@/data/cityMarketData'
+import { localSeoPages } from '@/data/localSeoPages'
 import { SITE_URL } from '@/lib/siteUrl'
 
 // Last real content change for non-blog pages; bump it when page copy changes (not on every build).
 const CONTENT_UPDATED = '2026-09-26'
+const LOCAL_LANDINGS_UPDATED = '2026-09-30'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   // Force www host — Vercel apex 307-redirects to www, so canonicals must be www
@@ -163,6 +165,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
         }
       }
     })
+  })
+
+  // Bergen County landings: English slug + Korean slug, paired by hreflang.
+  localSeoPages.forEach((p) => {
+    const en = `${baseUrl}/${p.slug}`
+    const ko = `${baseUrl}/ko/${p.koSlug}`
+    const languages = { 'x-default': en, en, ko }
+    sitemapEntries.push({ url: en, lastModified: new Date(LOCAL_LANDINGS_UPDATED), alternates: { languages } })
+    sitemapEntries.push({ url: ko, lastModified: new Date(LOCAL_LANDINGS_UPDATED), alternates: { languages } })
   })
 
   // Audit tool (both locales)
