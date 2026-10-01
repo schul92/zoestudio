@@ -143,8 +143,8 @@ export default function CrossoverPage({
         ? `${city.name.ko}에서 ${industry.name.ko} 웹사이트 제작, 평균 비용은 얼마인가요?`
         : `What does a ${industry.name.en.toLowerCase()} website cost in ${city.name.en}?`,
       a: isKo
-        ? `${city.name.ko} 지역 ${industry.name.ko}은 대개 $5,000 — $15,000 선에서 맞춤 제작이 가능합니다. 로컬 SEO, 이중언어 카피, 온라인 예약 · 주문 통합이 포함됩니다.`
-        : `Most ${industry.name.en.toLowerCase()} builds in ${city.name.en} land between $5,000 and $15,000 including local SEO, bilingual copy, and online booking/ordering integration.`,
+        ? `${city.name.ko} 지역 ${industry.name.ko} 홈페이지는 제작 $500–$800(기본), $1,100–$1,500(일반, 예약·주문 연동), $1,800–$2,400(쇼핑몰)입니다. 월 관리 플랜 $49–$499. 모든 가격은 가격 페이지에 공개되어 있습니다.`
+        : `${industry.name.en} websites in ${city.name.en} are $500–$800 (basic), $1,100–$1,500 (standard, with booking or ordering) or $1,800–$2,400 (store). Care plans run $49–$499/month. All prices are published on our pricing page.`,
     },
     {
       q: isKo
@@ -175,8 +175,8 @@ export default function CrossoverPage({
         ? `한국어로 상담할 수 있나요?`
         : 'Can we consult in Korean?',
       a: isKo
-        ? '네. 전체 스튜디오가 한국어 · 영어 이중언어로 운영됩니다. 카카오톡 · 이메일 · 전화 모두 한국어 가능.'
-        : 'Yes — our entire studio is bilingual. KakaoTalk, email, and phone all in Korean or English.',
+        ? '네. 전체 스튜디오가 한국어 · 영어 이중언어로 운영됩니다. 카카오톡 · 이메일 · 문의 폼 모두 한국어로 답변드립니다.'
+        : 'Yes — our entire studio is bilingual. KakaoTalk, email, and the contact form are all answered in Korean or English.',
     },
   ]
 

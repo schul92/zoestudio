@@ -108,8 +108,8 @@ export default function NYWebsitePage({ params }: { params: { locale: string } }
     email: 'info@zoelumos.com',
     address: {
       '@type': 'PostalAddress',
-      addressLocality: 'New York',
-      addressRegion: 'NY',
+      addressLocality: 'Fort Lee',
+      addressRegion: 'NJ',
       addressCountry: 'US',
     },
     areaServed: [
@@ -138,11 +138,6 @@ export default function NYWebsitePage({ params }: { params: { locale: string } }
     priceRange: '$500-$2,400',
     paymentAccepted: 'Cash, Credit Card, Bank Transfer',
     openingHours: 'Mo-Fr 09:00-18:00',
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: '40.7128',
-      longitude: '-74.0060',
-    },
     sameAs: [
       'https://www.instagram.com/zoelumos',
       'https://www.linkedin.com/company/zoelumos',

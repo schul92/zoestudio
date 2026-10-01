@@ -411,6 +411,8 @@ input, textarea, select, button {
 .lh-stage {
   position: sticky; top: 0; height: 100vh; height: 100svh; overflow: hidden; color: #F5F5F7;
   background: radial-gradient(70% 60% at 50% 42%, #16181c 0%, #07080a 55%, #000 100%);
+  /* Composited from load, so WebKit doesn't build the sticky layer on the reader's first scroll (a dropped frame). */
+  will-change: transform;
 }
 .lh-seq { display: block; position: absolute; inset: 0; width: 100%; height: 100%; }
 /* Server-rendered first frame: the copy grid's last row is the same band the player draws into (subline + 16px →
@@ -555,7 +557,8 @@ html[data-nav-tone="dark"] .kn-header:not(.kn-header-open) button .bg-ink { back
 .space .bg-bone { background-color: rgba(10,10,12,.55); }
 
 /* Starfield: three tiled layers of tiny dots, fixed behind everything. Pure CSS, no JS. */
-.zl-stars { position: fixed; inset: 0; z-index: -1; pointer-events: none; background: #000; overflow: hidden; }
+/* Own compositing layer from the start: WebKit otherwise builds it on the first scroll, a dropped frame. */
+.zl-stars { position: fixed; inset: 0; z-index: -1; pointer-events: none; background: #000; overflow: hidden; will-change: transform; }
 .zl-stars::before, .zl-stars::after, .zl-stars > i {
   content: ''; position: absolute; inset: -50%; background-repeat: repeat;
 }

@@ -86,11 +86,10 @@ export default function KoreanWebDesignNJPage({ params }: { params: { locale: st
     email: 'info@zoelumos.com',
     address: {
       '@type': 'PostalAddress',
-      addressLocality: 'Bergen County',
+      addressLocality: 'Fort Lee',
       addressRegion: 'NJ',
       addressCountry: 'US',
     },
-    geo: { '@type': 'GeoCoordinates', latitude: '40.8509', longitude: '-73.9712' },
     areaServed: [
       { '@type': 'State', name: 'New Jersey' },
       { '@type': 'AdministrativeArea', name: 'Bergen County' },
@@ -413,6 +412,31 @@ export default function KoreanWebDesignNJPage({ params }: { params: { locale: st
                   </summary>
                   <p className="mt-4 text-gray-600 leading-relaxed">{faq.acceptedAnswer.text}</p>
                 </details>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Town landings */}
+        <section className="py-16 px-4 bg-white text-gray-900">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-2xl md:text-3xl font-bold text-center mb-8">
+              {locale === 'ko' ? '버겐카운티 지역별 홈페이지 제작' : 'Web design by Bergen County town'}
+            </h2>
+            <div className="flex flex-wrap justify-center gap-3">
+              {[
+                { en: 'Bergen County', ko: '버겐카운티', enHref: '/bergen-county-web-design', koHref: '/ko/버겐카운티-홈페이지-제작' },
+                { en: 'Fort Lee', ko: '포트리', enHref: '/fort-lee-web-design', koHref: '/ko/fort-lee-web-design' },
+                { en: 'Palisades Park', ko: '팰팍', enHref: '/palisades-park-web-design', koHref: '/ko/팰팍-홈페이지-제작' },
+                { en: 'Englewood Cliffs', ko: '잉글우드클립스', enHref: '/englewood-cliffs-web-design', koHref: '/ko/잉글우드클립스-홈페이지-제작' },
+                { en: 'Leonia', ko: '레오니아', enHref: '/leonia-web-design', koHref: '/ko/레오니아-홈페이지-제작' },
+                { en: 'Ridgefield', ko: '리지필드', enHref: '/ridgefield-web-design', koHref: '/ko/ridgefield-web-design' },
+                { en: 'Edgewater', ko: '에지워터', enHref: '/edgewater-web-design', koHref: '/ko/edgewater-web-design' },
+                { en: 'Cliffside Park', ko: '클리프사이드파크', enHref: '/cliffside-park-web-design', koHref: '/ko/cliffside-park-web-design' },
+              ].map((l) => (
+                <Link key={l.enHref} href={locale === 'ko' ? l.koHref : l.enHref} className="inline-flex min-h-[44px] items-center rounded-full border border-gray-300 px-4 text-sm font-medium hover:border-gray-900">
+                  {locale === 'ko' ? `${l.ko} 홈페이지 제작` : `${l.en} web design`}
+                </Link>
               ))}
             </div>
           </div>

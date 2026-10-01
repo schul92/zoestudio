@@ -63,8 +63,7 @@ export default function CliffsideParkWebDesignPage({ params }: { params: { local
       : 'Web design agency for Korean-American businesses in Cliffside Park, NJ',
     url: `${baseUrl}/${locale === 'ko' ? 'ko/' : ''}cliffside-park-web-design`,
     email: 'info@zoelumos.com',
-    address: { '@type': 'PostalAddress', addressLocality: 'Cliffside Park', addressRegion: 'NJ', postalCode: '07010', addressCountry: 'US' },
-    geo: { '@type': 'GeoCoordinates', latitude: '40.8218', longitude: '-73.9871' },
+    address: { '@type': 'PostalAddress', addressLocality: 'Fort Lee', addressRegion: 'NJ', addressCountry: 'US' },
     areaServed: [
       { '@type': 'City', name: 'Cliffside Park' },
       { '@type': 'City', name: 'Fort Lee' },
@@ -84,7 +83,7 @@ export default function CliffsideParkWebDesignPage({ params }: { params: { local
       {
         '@type': 'Question',
         name: '클리프사이드파크 웹사이트 제작 비용은 얼마인가요?',
-        acceptedAnswer: { '@type': 'Answer', text: '클리프사이드파크 웹사이트 제작은 $1,000부터 시작합니다. 비즈니스 규모와 필요 기능에 따라 맞춤 견적을 드립니다. 무료 상담 신청 후 정확한 견적을 받아보세요.' }
+        acceptedAnswer: { '@type': 'Answer', text: '클리프사이드파크 웹사이트 제작은 $500부터 시작합니다. 기본 $500~$800, 일반 $1,100~$1,500, 스토어 $1,800~$2,400으로 가격이 공개되어 있습니다. 무료 상담 신청 후 정확한 견적을 받아보세요.' }
       },
       {
         '@type': 'Question',
@@ -100,7 +99,7 @@ export default function CliffsideParkWebDesignPage({ params }: { params: { local
       {
         '@type': 'Question',
         name: 'How much does web design cost in Cliffside Park NJ?',
-        acceptedAnswer: { '@type': 'Answer', text: 'Cliffside Park web design packages start at $1,000. We offer custom quotes based on your business needs. Contact us for a free consultation.' }
+        acceptedAnswer: { '@type': 'Answer', text: 'Cliffside Park web design starts at $500: Basic $500–$800, Standard $1,100–$1,500, Store $1,800–$2,400, all published. Contact us for a free consultation.' }
       },
       {
         '@type': 'Question',

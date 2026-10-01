@@ -1,7 +1,7 @@
 export const seoConfig = {
   en: {
-    title: 'ZOE LUMOS — Shopify Expert & Korean-American Web Design | Fort Lee NJ',
-    description: 'Korean-American web design studio. Bilingual websites, Shopify builds & SEO for Korean-American businesses. TJ Flowers: $10,000+ revenue within 3 months of the rebuild. Fort Lee NJ · serving nationwide.',
+    title: 'Korean-American Web Design & Shopify · Fort Lee NJ | ZOE LUMOS',
+    description: 'Korean-American web design studio in Fort Lee, Bergen County. Bilingual sites, Shopify and local SEO from $500, care $49/mo. TJ Flowers: $10K+ in 3 months.',
     keywords: 'Shopify Expert NJ, Shopify developer Korean, Korean American web design, bilingual web design agency, Korean web design studio, Korean business website, Korean American website, bilingual SEO, Korean SEO agency, NJ web design, NY web design, Fort Lee web design, Bergen County web design, Shopify development, e-commerce website design, local SEO expert, digital marketing agency, Google Ads management, small business SEO NJ, Korean web agency, editorial web design, boutique web design studio, 한인 마케팅 에이전시, 한인 웹디자인, Korean American web designer, Palisades Park marketing, Ridgefield web design, Edgewater web design, Cliffside Park web design, Fairview NJ web design, Hackensack web design, Leonia web design, Tenafly web design, Teaneck web design, Korean restaurant website NJ, Korean spa website NJ, Korean nail salon website, Korean hair salon website, Korean grocery store website, bilingual website Korean English NJ, Korean American small business website, Fort Lee Korean marketing agency, Palisades Park Korean business SEO, Bergen County Korean marketing agency, Korean business Google Ads, Google My Business Korean business, Instagram marketing Korean business NJ, affordable web design Bergen County, how to get more customers for Korean restaurant NJ',
     openGraph: {
       title: 'Zoe Lumos — Shopify Expert & Korean-American Web Design Studio',
@@ -11,8 +11,8 @@ export const seoConfig = {
     }
   },
   ko: {
-    title: 'Shopify 전문 한인 웹디자인 스튜디오 ZOE LUMOS | 뉴저지 · LA · 전국',
-    description: 'Shopify Expert + 한인·미국인 웹디자인 스튜디오. Shopify 재구축, SEO, 한·영 이중언어 웹사이트. 증거 — TJ Flowers 리빌드 후 3개월 안에 $10,000+ 매출. 포트리 · 뉴저지 · LA · 전국.',
+    title: '뉴저지 한인 홈페이지 제작 · Shopify 전문 | 조이루모스 ZOE LUMOS',
+    description: '포트리의 한인 웹디자인 스튜디오 조이루모스. 한·영 이중언어 홈페이지 제작, Shopify 쇼핑몰, 구글 SEO. 제작 $500부터 · 관리 월 $49부터 가격 공개. TJ Flowers 리빌드 후 3개월 안에 $10,000+ 매출. 버겐카운티 · 뉴욕 · 전국.',
     keywords: '미국 한인 웹사이트, 한인 웹사이트 제작, 한인 홈페이지 제작, 뉴저지 웹사이트, 뉴저지 웹사이트 제작, 뉴욕 웹사이트, 뉴욕 웹사이트 제작, 캘리포니아 웹사이트 제작, LA 한인 웹사이트, 텍사스 웹사이트 제작, 달라스 한인 웹사이트, 조지아 웹사이트 제작, 애틀랜타 한인 웹사이트, 버지니아 웹사이트 제작, 일리노이 웹사이트, 시카고 한인 웹사이트, 워싱턴 웹사이트, 시애틀 한인 웹사이트, 하와이 웹사이트, 플로리다 웹사이트, NJ 웹사이트, NY 웹사이트, 포트리 웹사이트, 팰팍 웹사이트, 플러싱 웹사이트, 한인 쇼핑몰 제작, 쇼피파이, 구글광고, 옐프광고, 한인 SEO, 검색엔진최적화, 미주 한인 비즈니스, 디지털 마케팅, 웹디자인, 클리프사이드파크 웹사이트 제작, 페어뷰 웹사이트, 해켄색 웹사이트 제작, 레오니아 웹사이트, 테나플라이 웹사이트, 한인 식당 웹사이트, 한인 스파 웹사이트, 한인 네일샵 웹사이트, 한인 부동산 웹사이트, 한인 세탁소 홈페이지, 한인 비즈니스 홈페이지, 구글 마이비즈니스 최적화, 한인 비즈니스 구글 등록, 인스타그램 마케팅 한인 비즈니스, 한국어 웹사이트 제작 비용',
     openGraph: {
       title: '오래도록 기억되는 웹사이트 | ZOE LUMOS',
@@ -102,16 +102,9 @@ export const structuredData = {
     "parentOrganization": { "@id": "https://www.zoelumos.com/#organization" },
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "2200 Center Ave",
       "addressCountry": "US",
       "addressRegion": "NJ",
-      "addressLocality": "Fort Lee",
-      "postalCode": "07024"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 40.8509,
-      "longitude": -73.9712
+      "addressLocality": "Fort Lee"
     },
     "areaServed": [
       {
@@ -182,6 +175,26 @@ export const structuredData = {
       {
         "@type": "City",
         "name": "Leonia",
+        "containedInPlace": { "@type": "State", "name": "New Jersey" }
+      },
+      {
+        "@type": "City",
+        "name": "Englewood Cliffs",
+        "containedInPlace": { "@type": "State", "name": "New Jersey" }
+      },
+      {
+        "@type": "City",
+        "name": "Ridgefield",
+        "containedInPlace": { "@type": "State", "name": "New Jersey" }
+      },
+      {
+        "@type": "City",
+        "name": "Edgewater",
+        "containedInPlace": { "@type": "State", "name": "New Jersey" }
+      },
+      {
+        "@type": "City",
+        "name": "Closter",
         "containedInPlace": { "@type": "State", "name": "New Jersey" }
       },
       {

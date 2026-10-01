@@ -79,7 +79,7 @@ export default function NorthBergenWebDesign({ params }: { params: { locale: str
           {
             '@type': 'Question',
             name: '노스버겐 웹사이트 제작 비용은 얼마인가요?',
-            acceptedAnswer: { '@type': 'Answer', text: '노스버겐 웹사이트 제작은 $1,000부터 시작합니다. 비즈니스 유형과 필요한 기능에 따라 $1,000-$5,000 범위입니다. 무료 상담으로 정확한 견적을 받아보세요.' },
+            acceptedAnswer: { '@type': 'Answer', text: '노스버겐 웹사이트 제작은 $500부터 시작합니다. 기본 $500–$800, 일반 $1,100–$1,500, 쇼핑몰 $1,800–$2,400이며 월 관리 플랜은 $49–$499입니다. 모든 가격은 가격 페이지에 공개되어 있습니다.' },
           },
           {
             '@type': 'Question',
@@ -96,7 +96,7 @@ export default function NorthBergenWebDesign({ params }: { params: { locale: str
           {
             '@type': 'Question',
             name: 'How much does web design cost in North Bergen, NJ?',
-            acceptedAnswer: { '@type': 'Answer', text: 'Web design in North Bergen starts at $1,000. Depending on your business type and the features you need, projects typically range from $1,000 to $5,000. Contact us for a free quote.' },
+            acceptedAnswer: { '@type': 'Answer', text: 'Web design in North Bergen starts at $500: basic $500–$800, standard $1,100–$1,500, store $1,800–$2,400. Care plans run $49–$499/month. All prices are published on our pricing page.' },
           },
           {
             '@type': 'Question',

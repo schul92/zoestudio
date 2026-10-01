@@ -43,6 +43,7 @@ export default function Footer({ locale = 'en' }: { locale?: string }) {
       title: isKo ? '지역' : 'Cities',
       links: [
         [isKo ? '뉴저지' : 'New Jersey', isKo ? '/ko/뉴저지-웹사이트' : '/nj-website'],
+        [isKo ? '버겐카운티' : 'Bergen County', isKo ? '/ko/버겐카운티-홈페이지-제작' : '/bergen-county-web-design'],
         [isKo ? '뉴욕' : 'New York', isKo ? '/ko/뉴욕-웹사이트' : '/ny-website'],
         [isKo ? 'LA · 캘리포니아' : 'LA · California', isKo ? '/ko/캘리포니아-웹사이트' : '/ca-website'],
         [isKo ? '애틀랜타' : 'Atlanta', isKo ? '/ko/조지아-웹사이트' : '/ga-website'],

@@ -60,8 +60,7 @@ export default function EdgewaterWebDesignPage({ params }: { params: { locale: s
     description: locale === 'ko' ? '에지워터 한인 비즈니스를 위한 웹사이트 제작 에이전시' : 'Web design agency for Korean-American businesses in Edgewater, NJ',
     url: `${baseUrl}/${locale === 'ko' ? 'ko/' : ''}edgewater-web-design`,
     email: 'info@zoelumos.com',
-    address: { '@type': 'PostalAddress', addressLocality: 'Edgewater', addressRegion: 'NJ', postalCode: '07020', addressCountry: 'US' },
-    geo: { '@type': 'GeoCoordinates', latitude: '40.8271', longitude: '-73.9754' },
+    address: { '@type': 'PostalAddress', addressLocality: 'Fort Lee', addressRegion: 'NJ', addressCountry: 'US' },
     areaServed: [
       { '@type': 'City', name: 'Edgewater' }, { '@type': 'City', name: 'Fort Lee' },
       { '@type': 'City', name: 'Palisades Park' }, { '@type': 'City', name: 'Cliffside Park' },
