@@ -115,7 +115,7 @@ export default function NorthBergenWebDesign({ params }: { params: { locale: str
     <div className="relative">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <HeaderWrapper locale={params.locale} />
-      <main className="min-h-screen relative overflow-x-hidden">
+      <main className="min-h-screen relative overflow-x-clip">
         {/* Hero */}
         <section className="relative min-h-[70vh] flex items-center justify-center bg-gradient-to-b from-[#111111] to-[#1a1a2e]">
           <div className="container mx-auto px-6 text-center">

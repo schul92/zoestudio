@@ -132,7 +132,7 @@ export default function LocationLinksClient({
 
       {/* Reverse marquee */}
       <div className="mt-24 md:mt-32 hair-y py-6 marq-wrap" data-dir="reverse" data-cursor="drag">
-        <div className="overflow-hidden">
+        <div className="relative overflow-hidden [contain:paint]">
           <div className="marq font-display text-ash/80">
             {[...cityRoll, ...cityRoll, ...cityRoll].map((c, i) => (
               <span key={i} className="flex items-center gap-10 text-[clamp(1.1rem,2vw,1.6rem)]">

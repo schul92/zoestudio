@@ -199,7 +199,7 @@ export default function CrossoverPage({
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localService) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      <main className="bg-ivory text-ink min-h-screen overflow-x-hidden">
+      <main className="bg-ivory text-ink min-h-screen overflow-x-clip">
         {/* HERO */}
         <section className="relative hair-bottom pt-32 md:pt-48 pb-16 md:pb-24">
           <div

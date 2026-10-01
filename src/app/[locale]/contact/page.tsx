@@ -195,7 +195,7 @@ export default function ContactPage({ params }: { params: { locale: string } }) 
       />
 
       <HeaderWrapper locale={locale} />
-      <main className="bg-ivory text-ink min-h-screen overflow-x-hidden">
+      <main className="bg-ivory text-ink min-h-screen overflow-x-clip">
         {/* HERO */}
         <section className="pt-32 md:pt-44 pb-10 md:pb-14">
           <div className="container-edge">

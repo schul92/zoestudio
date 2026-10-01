@@ -113,7 +113,7 @@ export default function ToolsPage({ params }: { params: { locale: string } }) {
   return (
     <>
       <HeaderWrapper locale={locale} />
-      <main className="bg-ivory text-ink min-h-screen overflow-x-hidden">
+      <main className="bg-ivory text-ink min-h-screen overflow-x-clip">
         {/* HERO */}
         <section className="hair-bottom pt-32 md:pt-48 pb-16 md:pb-24">
           <div className="container-edge">

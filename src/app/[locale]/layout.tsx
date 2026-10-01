@@ -33,7 +33,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   // No maximumScale — Lighthouse a11y deducts for it; some screen readers
   // respect it and prevent users from zooming. Default (no cap) is correct.
-  themeColor: '#FBFBFD',
+  themeColor: '#000000',
 }
 
 export async function generateMetadata({

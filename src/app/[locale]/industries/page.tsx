@@ -86,7 +86,7 @@ export default function IndustriesIndex({ params }: { params: { locale: string }
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemList) }} />
 
-      <main className="bg-ivory text-ink min-h-screen overflow-x-hidden">
+      <main className="bg-ivory text-ink min-h-screen overflow-x-clip">
         {/* Hero */}
         <section className="hair-bottom pt-32 md:pt-48 pb-20 md:pb-24">
           <div className="container-edge">

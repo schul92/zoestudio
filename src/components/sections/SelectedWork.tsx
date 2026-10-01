@@ -166,7 +166,7 @@ export default function SelectedWork({
                       href={p.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="mt-auto pt-2 text-[15px] font-semibold text-link hover:underline"
+                      className="mt-auto inline-flex items-center min-h-[44px] text-[15px] font-semibold text-link hover:underline"
                     >
                       {isKo ? '실제 사이트' : 'Visit live site'} <span aria-hidden>↗</span>
                     </a>

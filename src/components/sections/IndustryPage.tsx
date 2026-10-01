@@ -18,7 +18,7 @@ export default function IndustryPage({
   const prefix = isKo ? '/ko' : ''
 
   return (
-    <main className="bg-ivory text-ink overflow-x-hidden">
+    <main className="bg-ivory text-ink overflow-x-clip">
       {/* ─── HERO ────────────────────────────────────────── */}
       <section className="relative hair-bottom pt-32 md:pt-48 pb-20 md:pb-28">
         {/* Soft radial halo */}

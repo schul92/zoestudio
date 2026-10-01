@@ -115,7 +115,7 @@
   .btn-ink:hover .arrow { transform: translateX(4px); }
 
   .btn-ghost {
-    @apply inline-flex items-center gap-1 px-1 py-2 text-[15px] font-semibold transition-colors duration-200;
+    @apply inline-flex items-center gap-1 px-1 py-2 min-h-[44px] text-[15px] font-semibold transition-colors duration-200;
     color: var(--link);
   }
   .btn-ghost:hover { text-decoration: underline; }
@@ -467,9 +467,10 @@ input, textarea, select, button {
 .lh-btn:focus-visible, .lh-link:focus-visible { outline: 2px solid #F5F5F7; outline-offset: 3px; }
 .lh-cap {
   position: absolute; left: 50%; top: clamp(78px, 10vh, 112px); width: min(760px, 92vw); text-align: center;
-  opacity: 0; transform: translate(-50%, 14px); transition: opacity .5s ease, transform .5s ease; pointer-events: none;
+  opacity: 0; transform: translate(-50%, 14px); transition: opacity .16s ease, transform .16s ease; pointer-events: none;
 }
-.lh-cap.lh-on { opacity: 1; transform: translate(-50%, 0); }
+/* Captions share one spot: the outgoing one clears before the incoming one fades in, so two never overlap. */
+.lh-cap.lh-on { opacity: 1; transform: translate(-50%, 0); transition: opacity .38s ease .16s, transform .38s ease .16s; }
 .lh-cap small { display: block; margin-bottom: 10px; font-size: 12px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: #2997FF; }
 .lh-cap b { display: inline; font-size: clamp(20px, 2.2vw, 30px); letter-spacing: -.035em; line-height: 1.15; margin-right: .25em; }
 .lh-cap p { display: inline; color: #A1A1A6; font-size: clamp(20px, 2.2vw, 30px); font-weight: 600; letter-spacing: -.025em; line-height: 1.2; }
@@ -597,7 +598,10 @@ html[data-nav-tone="dark"] .kn-header:not(.kn-header-open) button .bg-ink { back
 }
 @media (max-width: 1023px) {
   .space *, .space *::before, .space *::after { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
-  .space .kn-frost, .space .kn-header { background: rgba(0,0,0,.92); }
+  /* Without blur, any translucency lets the text scrolling underneath ghost through — keep these bars solid. */
+  .space .kn-frost, .space .kn-header { background: #000; }
+  /* The fixed KakaoTalk / quote bar must never sit on the footer's last row. */
+  .space .zl-foot { padding-bottom: calc(84px + env(safe-area-inset-bottom, 0px)); }
 }
 
 /* Footer: OpenAI-style lists over a denser field and a planet-rim horizon. */
@@ -789,3 +793,32 @@ html[data-nav-tone="dark"] .kn-header:not(.kn-header-open) button .bg-ink { back
 .space .to-violet-50:not(.keep-light, .keep-light *) { --tw-gradient-to:rgba(139,92,246,0.08) var(--tw-gradient-to-position) }
 .space .from-indigo-50:not(.keep-light, .keep-light *) { --tw-gradient-from:rgba(99,102,241,0.08) var(--tw-gradient-from-position);--tw-gradient-to:rgba(99,102,241,0) var(--tw-gradient-to-position);--tw-gradient-stops:var(--tw-gradient-from),var(--tw-gradient-to) }
 .space .to-indigo-50:not(.keep-light, .keep-light *) { --tw-gradient-to:rgba(99,102,241,0.08) var(--tw-gradient-to-position) }
+
+/* ── Readability pass (mobile-first) ─────────────────────────────── */
+/* Old light-theme buttons: bg-white was remapped dark but its text stayed black (invisible), and black-on-black
+   primary buttons lost their shape. Both read as the site's light pill now. */
+.space a.bg-white.text-black:not(.keep-light, .keep-light *),
+.space button.bg-white.text-black:not(.keep-light, .keep-light *),
+.space a.bg-black.text-white:not(.keep-light, .keep-light *),
+.space button.bg-black.text-white:not(.keep-light, .keep-light *) { background-color: #F5F5F7; color: #0B0B0D; border-color: transparent; }
+.space a.bg-white.text-black:not(.keep-light, .keep-light *):hover,
+.space button.bg-white.text-black:not(.keep-light, .keep-light *):hover,
+.space a.bg-black.text-white:not(.keep-light, .keep-light *):hover,
+.space button.bg-black.text-white:not(.keep-light, .keep-light *):hover { background-color: #fff; }
+.space .hover\:text-black:not(.keep-light, .keep-light *):hover { color: #fff; }
+/* Nothing readable below 12px on the dark ground. */
+.space .text-\[10px\]:not(.keep-light, .keep-light *) { font-size: 11px; }
+.space .text-\[11px\]:not(.keep-light, .keep-light *) { font-size: 12px; }
+/* Footer rows: 44px touch targets. */
+.zl-foot-link { padding: 10px 0; }
+
+/* The page never pans sideways. `clip` (not `hidden`) keeps position: sticky working because it doesn't create a
+   scroll container; `hidden` on <html> is the fallback for Safari < 16 (it propagates to the viewport, not html). */
+html.space { overflow-x: hidden; overflow-x: clip; }
+html.space body { overflow-x: clip; overflow-wrap: break-word; touch-action: pan-y pinch-zoom; }
+/* Long URLs, emails and code never push a line past the screen edge. */
+.space code, .space kbd, .space .break-anywhere { overflow-wrap: anywhere; }
+/* Korean breaks between words, not mid-word; break-word above still rescues an unbroken run. */
+html.space[lang="ko"] body { word-break: keep-all; }
+/* Horizontal scrollers (tables, filter rows) keep their own sideways swipe. */
+.space .overflow-x-auto, .space .overflow-x-scroll { touch-action: pan-x pan-y pinch-zoom; overscroll-behavior-x: contain; }

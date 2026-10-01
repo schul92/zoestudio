@@ -124,7 +124,7 @@ export default function Process({
                 delay={i * 120}
               >
                 {/* Dot on connector */}
-                <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 top-[104px] w-4 h-4 rounded-full bg-bone border border-hairline items-center justify-center z-10 group-hover:border-gold transition-colors duration-500">
+                <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 top-[104px] w-4 h-4 rounded-full bg-paper border border-hairline items-center justify-center z-10 group-hover:border-gold transition-colors duration-500">
                   <span className="block w-1.5 h-1.5 rounded-full bg-ink group-hover:bg-gold transition-colors duration-500" />
                 </div>
 
