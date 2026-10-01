@@ -313,8 +313,8 @@ export default function PricingTeaser({ locale = 'en' }: { locale?: string }) {
         {/* Tiers */}
         <ul className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
           {tiers.map((t, i) => (
-            <InView key={t.id} delay={i * 80}>
-              <li
+            <InView as="li" key={t.id} delay={i * 80}>
+              <div
                 className={`relative rounded-2xl p-7 md:p-8 h-full border ${
                   t.popular
                     ? 'border-[#0071E3] bg-white shadow-[0_24px_60px_-30px_rgba(180,138,67,0.45)]'
@@ -358,7 +358,7 @@ export default function PricingTeaser({ locale = 'en' }: { locale?: string }) {
                 >
                   {isKo ? '문의하기' : 'Start a project'} →
                 </Link>
-              </li>
+              </div>
             </InView>
           ))}
         </ul>

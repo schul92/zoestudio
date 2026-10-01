@@ -600,6 +600,8 @@ html[data-nav-tone="dark"] .kn-header:not(.kn-header-open) button .bg-ink { back
   .space *, .space *::before, .space *::after { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }
   /* Without blur, any translucency lets the text scrolling underneath ghost through — keep these bars solid. */
   .space .kn-frost, .space .kn-header { background: #000; }
+  /* Scroll-scrubbed words start at 14% opacity — on a phone that's unreadable copy until it's scrolled to. */
+  .kn-scrub-w { animation: none !important; opacity: 1 !important; }
   /* The fixed KakaoTalk / quote bar must never sit on the footer's last row. */
   .space .zl-foot { padding-bottom: calc(84px + env(safe-area-inset-bottom, 0px)); }
 }
