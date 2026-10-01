@@ -23,8 +23,8 @@ export async function generateMetadata({
   
   if (locale === 'ko') {
     return {
-      title: '포트리 웹사이트 제작 | Fort Lee 한인 웹디자인 전문 | ZOE LUMOS',
-      description: '포트리(Fort Lee) 웹사이트 제작 전문. 포트리 한인 비즈니스 웹디자인, 홈페이지 제작, 구글 SEO, 한인 마케팅 에이전시. 포트리 현지 사무실 운영. 100% 한국어 상담.',
+      title: '포트리 홈페이지 제작 · 웹사이트 제작 | 한인 웹디자인 조이루모스',
+      description: '포트리(Fort Lee) 홈페이지·웹사이트 제작. 포트리에 있는 한인 웹디자인 스튜디오 조이루모스 — 한·영 이중언어, Shopify, 구글 SEO. 제작 $500부터, 관리 월 $49부터. 100% 한국어 상담.',
       keywords: '포트리 웹사이트, 포트리 웹디자인, Fort Lee 웹사이트, 포트리 홈페이지 제작, 포트리 한인 비즈니스, 한인 마케팅 에이전시, 포트리 SEO, 포트리 구글 광고, 포트리 웹개발, 버겐카운티 웹사이트',
       openGraph: {
         title: '포트리 웹사이트 제작 전문 - ZOE LUMOS',

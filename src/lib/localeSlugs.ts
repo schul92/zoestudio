@@ -17,3 +17,12 @@ export const citySlugs: [string, string][] = [
   ['la-koreatown', 'LA-코리아타운'],
   ['atlanta-duluth-ga', '애틀랜타-둘루스'],
 ]
+
+// Bergen County landings (data/localSeoPages.ts): /{en} ↔ /ko/{ko}.
+export const localSeoSlugs: [string, string][] = [
+  ['englewood-cliffs-web-design', '잉글우드클립스-홈페이지-제작'],
+  ['palisades-park-web-design', '팰팍-홈페이지-제작'],
+  ['leonia-web-design', '레오니아-홈페이지-제작'],
+  ['bergen-county-web-design', '버겐카운티-홈페이지-제작'],
+  ['pos-company-website-vs-web-studio', '포스-업체-홈페이지-vs-전문-제작'],
+]

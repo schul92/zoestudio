@@ -120,8 +120,8 @@ export const industries: Industry[] = [
       {
         q: { en: 'How much does a Korean restaurant website cost?', ko: '한식당 웹사이트 제작 비용은 얼마인가요?' },
         a: {
-          en: 'Most Korean restaurant sites we build land between $5,000 and $10,000 including bilingual menus, reservations, and Google Maps optimization. Full online ordering + delivery adds $2,000 — $4,000.',
-          ko: '이중언어 메뉴, 예약, 구글 지도 최적화 포함 일반적으로 $5,000 — $10,000 선입니다. 온라인 주문 · 배달 추가 시 $2,000 — $4,000 추가.',
+          en: 'Most Korean restaurant sites fit our Standard build, $1,100–$1,500, including bilingual menus, reservations and Google Maps optimization. Full online ordering with payments fits the Store build, $1,800–$2,400. Care plans run $49–$499/month.',
+          ko: '이중언어 메뉴, 예약, 구글 지도 최적화 포함 대부분 일반 플랜 $1,100–$1,500에 해당합니다. 결제가 포함된 온라인 주문은 쇼핑몰 플랜 $1,800–$2,400. 월 관리 $49–$499.',
         },
       },
       {
@@ -153,11 +153,11 @@ export const industries: Industry[] = [
     seo: {
       title: {
         en: 'Korean Restaurant Website Design — Bilingual Menus, Online Ordering, Local SEO | Zoe Lumos',
-        ko: '한식당 웹사이트 제작 — 이중언어 메뉴 · 온라인 주문 · 로컬 SEO | ZOE LUMOS',
+        ko: '한인 식당 홈페이지 제작 — 이중언어 메뉴 · 온라인 주문 | 조이루모스',
       },
       description: {
-        en: 'Bilingual websites, online ordering, and reservations for Korean restaurants across Fort Lee, Flushing, LA Koreatown, and the US. $5k — $10k · 4–6 week launch.',
-        ko: '포트리 · 플러싱 · LA 코리아타운 등 미국 한식당을 위한 이중언어 웹사이트, 온라인 주문, 예약 시스템. $5,000 — $10,000 · 4–6주 런칭.',
+        en: 'Bilingual websites, online ordering, and reservations for Korean restaurants across Fort Lee, Flushing, LA Koreatown, and the US. Builds $1,100–$2,400 · 2–6 week launch.',
+        ko: '포트리 · 플러싱 · LA 코리아타운 등 미국 한식당을 위한 이중언어 홈페이지, 온라인 주문, 예약 시스템. 제작 $1,100–$2,400 · 2–6주 런칭.',
       },
     },
   },
@@ -215,7 +215,7 @@ export const industries: Industry[] = [
     faqs: [
       {
         q: { en: 'How much does a salon website cost?', ko: '뷰티샵 웹사이트 제작 비용은 얼마인가요?' },
-        a: { en: 'Most beauty studios land between $5,000 and $9,000 including booking system, Instagram integration, and local SEO. Review-automation flows add ~$1,000.', ko: '예약 시스템 · 인스타 연동 · 로컬 SEO 포함 $5,000 — $9,000. 리뷰 자동화 플로우 추가 시 $1,000 상당.' },
+        a: { en: 'Most beauty studios fit our Standard build, $1,100–$1,500, including booking integration, Instagram and local SEO. Booking care is a +$50/month add-on.', ko: '예약 연동 · 인스타 · 로컬 SEO 포함 대부분 일반 플랜 $1,100–$1,500. 예약 시스템 관리는 월 +$50 부가 서비스.' },
       },
       {
         q: { en: 'Which booking system do you recommend?', ko: '어떤 예약 시스템을 추천하시나요?' },
@@ -234,11 +234,11 @@ export const industries: Industry[] = [
     seo: {
       title: {
         en: 'Korean Beauty Salon Website Design — Online Booking, Instagram Sync, Reviews | Zoe Lumos',
-        ko: '한인 뷰티샵 · 헤어샵 웹사이트 제작 — 온라인 예약 · 인스타 연동 · 리뷰 자동화 | ZOE LUMOS',
+        ko: '한인 미용실·네일샵 홈페이지 제작 — 온라인 예약 · 인스타 연동 | 조이루모스',
       },
       description: {
-        en: 'Online booking websites for Korean nail, hair, and beauty studios. Instagram sync, review automation, bilingual UX. $5k — $9k · 4 week launch.',
-        ko: '한인 네일 · 헤어 · 뷰티 스튜디오를 위한 온라인 예약 웹사이트. 인스타 연동, 리뷰 자동화, 이중언어 UX. $5,000 — $9,000 · 4주 런칭.',
+        en: 'Online booking websites for Korean nail, hair, and beauty studios. Instagram sync, reviews, bilingual UX. Builds from $1,100 · 2–3 week launch.',
+        ko: '한인 네일 · 헤어 · 뷰티 스튜디오를 위한 온라인 예약 홈페이지. 인스타 연동, 리뷰, 이중언어 UX. 제작 $1,100부터 · 2–3주 런칭.',
       },
     },
   },
@@ -278,7 +278,7 @@ export const industries: Industry[] = [
       { title: { en: 'Events + small group directory', ko: '행사 · 소그룹 디렉토리' }, body: { en: 'Members find groups by age, day, location. Leaders update their group from their phone.', ko: '성도가 연령 · 요일 · 위치별로 소그룹 탐색. 리더는 휴대폰에서 본인 그룹 업데이트.' } },
     ],
     faqs: [
-      { q: { en: 'How much does a church website cost?', ko: '교회 홈페이지 제작 비용은 얼마인가요?' }, a: { en: 'Most Korean church builds fall between $6,000 and $12,000 including bilingual copy, sermon archive setup, online giving, and new-family flow.', ko: '이중언어 카피 · 설교 아카이브 · 온라인 헌금 · 새가족 플로우 포함 $6,000 — $12,000 선.' } },
+      { q: { en: 'How much does a church website cost?', ko: '교회 홈페이지 제작 비용은 얼마인가요?' }, a: { en: 'Most Korean church sites fit our Standard build, $1,100–$1,500, including bilingual copy, sermon archive, online giving links and a new-family flow. Care plans run $49–$499/month.', ko: '이중언어 카피 · 설교 아카이브 · 온라인 헌금 연결 · 새가족 플로우 포함 대부분 일반 플랜 $1,100–$1,500. 월 관리 $49–$499.' } },
       { q: { en: 'Do you handle 501(c)(3) tax-deductible giving receipts?', ko: '501(c)(3) 세금 공제 헌금 영수증도 처리되나요?' }, a: { en: 'Yes. We configure Stripe or Tithely so members receive automatic year-end giving statements.', ko: '네. Stripe · Tithely 설정으로 성도들에게 연말 헌금 증명서 자동 발송.' } },
       { q: { en: 'Can our elders update it?', ko: '어르신들도 직접 수정하실 수 있나요?' }, a: { en: 'Yes — we build in a Korean-language CMS interface so Korean-speaking staff update bulletins, sermons, and events without IT help.', ko: '네 — 한국어 CMS 인터페이스로 한국어 사용 스태프가 IT 도움 없이 주보 · 설교 · 행사 업데이트.' } },
       { q: { en: 'Can we embed our YouTube live service?', ko: '유튜브 라이브 예배를 임베드할 수 있나요?' }, a: { en: 'Yes. The homepage auto-switches to live mode when your YouTube stream goes live, then reverts to the archive after.', ko: '네. 유튜브 스트림이 시작되면 홈페이지가 자동으로 라이브 모드로 전환, 종료 후 자동 아카이브 복귀.' } },
@@ -287,11 +287,11 @@ export const industries: Industry[] = [
     seo: {
       title: {
         en: 'Korean Church Website Design — Bilingual, Sermon Archive, Online Giving | Zoe Lumos',
-        ko: '한인 교회 홈페이지 제작 — 이중언어 · 설교 아카이브 · 온라인 헌금 | ZOE LUMOS',
+        ko: '한인 교회 홈페이지 제작 — 한어부·영어부 · 설교 · 온라인 헌금 | 조이루모스',
       },
       description: {
-        en: 'Websites for Korean-American churches. Bilingual service schedules, searchable sermon archive, online giving, new-family flow. $6k — $12k.',
-        ko: '한인 교회를 위한 홈페이지 제작. 이중언어 예배 안내, 검색 가능한 설교 아카이브, 온라인 헌금, 새가족 플로우. $6,000 — $12,000.',
+        en: 'Websites for Korean-American churches. Bilingual service schedules, searchable sermon archive, online giving, new-family flow. Builds from $1,100.',
+        ko: '한인 교회를 위한 홈페이지 제작. 이중언어 예배 안내, 검색 가능한 설교 아카이브, 온라인 헌금, 새가족 플로우. 제작 $1,100부터.',
       },
     },
   },
@@ -331,7 +331,7 @@ export const industries: Industry[] = [
       { title: { en: 'Free assessment + trial class booking', ko: '무료 레벨 테스트 · 체험 수업 예약' }, body: { en: 'Zero-friction trial flow converts 2 — 3× more than "call to schedule" buttons.', ko: '마찰 없는 체험 플로우가 "전화 예약" 버튼 대비 2 — 3배 더 많이 전환.' } },
     ],
     faqs: [
-      { q: { en: 'How much does an academy website cost?', ko: '학원 웹사이트 제작 비용은 얼마인가요?' }, a: { en: '$7,000 — $14,000 depending on program calendar complexity and whether you need a parent portal. Most SAT-prep hagwons land around $9,000.', ko: '프로그램 캘린더 복잡도와 학부모 포털 유무에 따라 $7,000 — $14,000. 대부분 SAT 학원은 $9,000 선.' } },
+      { q: { en: 'How much does an academy website cost?', ko: '학원 웹사이트 제작 비용은 얼마인가요?' }, a: { en: 'Most academy sites fit our Standard build, $1,100–$1,500, with programs, schedules, instructors and inquiry or registration forms. A custom parent portal is quoted separately.', ko: '프로그램, 시간표, 강사 소개, 문의·등록 폼 포함 대부분 일반 플랜 $1,100–$1,500. 맞춤 학부모 포털은 별도 견적.' } },
       { q: { en: 'Can we show real score improvements without breaking FERPA?', ko: 'FERPA를 지키면서 실제 점수 향상을 보여줄 수 있나요?' }, a: { en: 'Yes. We show anonymized before/after score ranges ("Our top 10 students averaged +230 on SAT") which is fully compliant and more convincing to parents.', ko: '네. 익명화된 전후 점수 범위 표시 ("저희 상위 10명 학생 평균 SAT +230점") — FERPA 준수 + 학부모 설득력 향상.' } },
       { q: { en: 'Do you integrate with KakaoTalk?', ko: '카카오톡과 연동되나요?' }, a: { en: 'Yes. Sticky KakaoTalk channel button on mobile, auto-opens KakaoTalk with a pre-filled inquiry. Critical for Korean parents.', ko: '네. 모바일에 카카오톡 채널 상시 버튼, 미리 작성된 문의 내용으로 카카오톡 자동 실행. 한인 학부모에게 필수.' } },
       { q: { en: 'Can parents see their child\'s progress?', ko: '학부모가 자녀 진도를 확인할 수 있나요?' }, a: { en: 'Yes — optional secure parent portal with attendance, class homework, mock test scores, and teacher notes. Accessible by parent email login.', ko: '네 — 출결 · 숙제 · 모의고사 점수 · 강사 코멘트가 있는 선택적 보안 포털. 학부모 이메일 로그인으로 접근.' } },
@@ -340,11 +340,11 @@ export const industries: Industry[] = [
     seo: {
       title: {
         en: 'Korean Academy + Hagwon Website Design — SAT, K-12, Parent Portal | Zoe Lumos',
-        ko: '한인 학원 · 학습센터 웹사이트 제작 — SAT · K-12 · 학부모 포털 | ZOE LUMOS',
+        ko: '한인 학원 홈페이지 제작 — SAT · K-12 · 수강 등록 | 조이루모스',
       },
       description: {
-        en: 'Websites for Korean-American academies, SAT prep, and K-12 tutoring. Bilingual instructor profiles, KakaoTalk inquiry, parent portal. $7k — $14k.',
-        ko: '한인 학원 · SAT · K-12 튜터링을 위한 웹사이트. 이중언어 강사 프로필, 카카오톡 문의, 학부모 포털. $7,000 — $14,000.',
+        en: 'Websites for Korean-American academies, SAT prep, and K-12 tutoring. Bilingual instructor profiles, KakaoTalk inquiry, registration. Builds from $1,100.',
+        ko: '한인 학원 · SAT · K-12 튜터링을 위한 홈페이지. 이중언어 강사 프로필, 카카오톡 문의, 수강 등록. 제작 $1,100부터.',
       },
     },
   },
@@ -385,7 +385,7 @@ export const industries: Industry[] = [
     ],
     faqs: [
       { q: { en: 'Is the website HIPAA compliant?', ko: '웹사이트가 HIPAA를 준수하나요?' }, a: { en: 'Yes. All forms and patient data flow through HIPAA-compliant infrastructure (typically Jotform HIPAA, SimplePractice, or custom encrypted submission with BAA). We sign a Business Associate Agreement.', ko: '네. 모든 양식과 환자 데이터는 HIPAA 준수 인프라(Jotform HIPAA · SimplePractice · 또는 BAA 체결한 맞춤 암호화 시스템)를 통해 처리. BAA(비즈니스 어소시에이트 계약) 체결.' } },
-      { q: { en: 'How much does a medical or dental website cost?', ko: '의료 · 치과 웹사이트 비용은 얼마인가요?' }, a: { en: '$8,000 — $15,000 depending on integrations. Standard build includes online booking, HIPAA forms, insurance list, and provider profiles. More for multi-location practices.', ko: '연동 범위에 따라 $8,000 — $15,000. 온라인 예약 · HIPAA 양식 · 보험 리스트 · 의료진 프로필 포함. 다지점일 경우 추가.' } },
+      { q: { en: 'How much does a medical or dental website cost?', ko: '의료 · 치과 웹사이트 비용은 얼마인가요?' }, a: { en: 'Most practice sites fit our Standard build, $1,100–$1,500, with online booking, insurance list and provider profiles. HIPAA-compliant intake forms and practice-software integrations are quoted separately based on the provider you use.', ko: '온라인 예약 · 보험 리스트 · 의료진 프로필 포함 대부분 일반 플랜 $1,100–$1,500. HIPAA 양식과 진료 소프트웨어 연동은 사용하는 업체에 따라 별도 견적.' } },
       { q: { en: 'Can you integrate with my practice management software?', ko: '기존 진료 관리 소프트웨어와 연동되나요?' }, a: { en: 'Yes — common integrations include Dentrix, Eaglesoft, Open Dental, athenahealth, DrChrono, and Kareo. Appointment requests flow into your existing schedule.', ko: '네 — Dentrix · Eaglesoft · Open Dental · athenahealth · DrChrono · Kareo 등 연동 가능. 예약 요청이 기존 스케줄로 바로 반영.' } },
       { q: { en: 'Can you help us rank for "Korean dentist near me"?', ko: '"Korean dentist near me" 검색에서 상위 노출 가능한가요?' }, a: { en: 'Yes. Local SEO for bilingual search ("Korean dentist Fort Lee" + "포트리 한인 치과") is a core deliverable. We optimize Google Business Profile, structured data, and localized service pages.', ko: '네. 이중언어 로컬 SEO ("Korean dentist Fort Lee" + "포트리 한인 치과")가 핵심 서비스. 구글 비즈니스 프로필, 구조화 데이터, 지역화된 서비스 페이지 최적화 포함.' } },
     ],
@@ -393,11 +393,11 @@ export const industries: Industry[] = [
     seo: {
       title: {
         en: 'Korean Medical + Dental Website Design — HIPAA, Bilingual, Online Booking | Zoe Lumos',
-        ko: '한인 의료 · 치과 웹사이트 제작 — HIPAA · 이중언어 · 온라인 예약 | ZOE LUMOS',
+        ko: '한인 병원·치과 홈페이지 제작 — 이중언어 · 온라인 예약 | 조이루모스',
       },
       description: {
-        en: 'HIPAA-compliant websites for Korean-speaking doctors, dentists, pediatricians, and dermatologists. Bilingual, insurance-ready, online booking. $8k — $15k.',
-        ko: '한국어 진료 내과 · 치과 · 소아과 · 피부과를 위한 HIPAA 준수 웹사이트. 이중언어, 보험 리스트, 온라인 예약. $8,000 — $15,000.',
+        en: 'Websites for Korean-speaking doctors, dentists, pediatricians, and dermatologists. Bilingual, insurance-ready, online booking. Builds from $1,100.',
+        ko: '한국어 진료 내과 · 치과 · 소아과 · 피부과를 위한 홈페이지. 이중언어, 보험 리스트, 온라인 예약. 제작 $1,100부터.',
       },
     },
   },
@@ -437,7 +437,7 @@ export const industries: Industry[] = [
       { title: { en: 'Reviews with photo upload', ko: '사진 업로드 가능한 리뷰' }, body: { en: 'Judge.me or Loox with Korean + English review flows. Photo + video reviews boost conversion 40%+.', ko: 'Judge.me · Loox를 한국어 · 영어 리뷰 플로우로 설정. 사진 · 영상 리뷰가 전환율 40%+ 상승시킵니다.' } },
     ],
     faqs: [
-      { q: { en: 'How much does a custom Shopify store cost?', ko: '맞춤 Shopify 스토어 비용은 얼마인가요?' }, a: { en: '$10,000 — $25,000 for a custom-themed store with bilingual copy, subscriptions, and IG/TikTok sync. Plus ~$80 — $300/month for Shopify + apps.', ko: '이중언어 카피 · 구독 · IG/TikTok 동기화 포함 맞춤 테마 스토어 $10,000 — $25,000. Shopify + 앱 월 $80 — $300 별도.' } },
+      { q: { en: 'How much does a custom Shopify store cost?', ko: '맞춤 Shopify 스토어 비용은 얼마인가요?' }, a: { en: 'Our Store build is $1,800–$2,400 for a bilingual Shopify store. Subscriptions, custom theme work and extra integrations are quoted separately. Shopify and app fees (roughly $80–$300/month) are paid to Shopify directly.', ko: '이중언어 Shopify 스토어는 쇼핑몰 플랜 $1,800–$2,400. 구독, 맞춤 테마, 추가 연동은 별도 견적. Shopify·앱 비용(월 약 $80–$300)은 Shopify에 직접 지불.' } },
       { q: { en: 'Can you migrate from WordPress/WooCommerce?', ko: 'WordPress/WooCommerce에서 이전할 수 있나요?' }, a: { en: 'Yes. Products, customers, orders, reviews, and SEO URLs all migrate cleanly with 301 redirects so your Google rankings transfer.', ko: '네. 상품 · 고객 · 주문 · 리뷰 · SEO URL 모두 301 리다이렉트와 함께 깨끗이 이전 — 구글 랭킹 유지.' } },
       { q: { en: 'Do you handle Korean + US shipping calculations?', ko: '한국 · 미국 배송 계산도 가능한가요?' }, a: { en: 'Yes. US shipping via Shopify rates or ShipStation. Korea shipping via DHL Express or CJ Logistics with accurate duties. KakaoPay and domestic Korean cards supported.', ko: '네. 미국 배송은 Shopify 요율 · ShipStation. 한국 배송은 DHL Express · CJ대한통운, 정확한 관세 계산. KakaoPay · 한국 국내 카드 지원.' } },
       { q: { en: 'Can we sell on Coupang or 11번가 too?', ko: '쿠팡 · 11번가에서도 판매할 수 있나요?' }, a: { en: 'Yes — we handle the multi-channel sync so your US Shopify is the source of truth and Korean marketplaces stay in stock.', ko: '네 — 멀티채널 동기화로 미국 Shopify를 소스로, 한국 마켓플레이스 재고 자동 연동.' } },
@@ -446,11 +446,11 @@ export const industries: Industry[] = [
     seo: {
       title: {
         en: 'Korean E-commerce + Shopify Design — K-Beauty, K-Food, Bilingual Stores | Zoe Lumos',
-        ko: '한인 쇼핑몰 · Shopify 제작 — K-뷰티 · K-푸드 · 이중언어 스토어 | ZOE LUMOS',
+        ko: '한인 쇼핑몰 제작 · Shopify — K-뷰티 · K-푸드 · 이중언어 | 조이루모스',
       },
       description: {
-        en: 'Custom Shopify stores for Korean brands — K-beauty, K-food, fashion, home. Bilingual, subscriptions, Instagram/TikTok Shop sync, KakaoPay. $10k — $25k.',
-        ko: 'K-뷰티 · K-푸드 · 패션 · 홈 — 한인 브랜드를 위한 맞춤 Shopify 스토어. 이중언어, 구독, Instagram/TikTok Shop 동기화, KakaoPay. $10,000 — $25,000.',
+        en: 'Shopify stores for Korean brands — K-beauty, K-food, fashion, home. Bilingual, Instagram/TikTok Shop sync. Store builds $1,800–$2,400.',
+        ko: 'K-뷰티 · K-푸드 · 패션 · 홈 — 한인 브랜드를 위한 Shopify 스토어. 이중언어, Instagram/TikTok Shop 동기화. 쇼핑몰 제작 $1,800–$2,400.',
       },
     },
   },
