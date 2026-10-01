@@ -115,16 +115,9 @@ export default function NJWebsiteKoreanPage({ params }: { params: { locale: stri
     email: 'info@zoelumos.com',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: '2200 Center Ave',
       addressLocality: 'Fort Lee',
       addressRegion: 'NJ',
-      postalCode: '07024',
       addressCountry: 'US',
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: '40.8509',
-      longitude: '-73.9701',
     },
     areaServed: [
       { '@type': 'City', name: 'Fort Lee' },

@@ -24,7 +24,7 @@ export async function generateMetadata({
   if (locale === 'ko') {
     return {
       title: '버겐카운티 SEO 업체 | 잉글우드 NJ 한인 비즈니스 검색 최적화 | ZOE LUMOS',
-      description: '포트리에 있는 버겐카운티 SEO 업체. 로컬 SEO 월 $50부터, 구글 비즈니스 프로필 관리 월 $50. 실제 사례: 맨해튼 꽃집 하루 매출 $87 → $268. 잉글우드·포트리·팰팍 한인 비즈니스 전문.',
+      description: '포트리에 있는 버겐카운티 SEO 업체. 관리 플랜 월 $49부터, 구글 비즈니스 프로필 관리·SEO 모니터링은 Grow 월 $199. 실제 사례: 맨해튼 꽃집 하루 매출 $87 → $268. 잉글우드·포트리·팰팍 한인 비즈니스 전문.',
       keywords: '잉글우드 SEO, Englewood NJ SEO, 잉글우드 디지털 마케팅, 버겐카운티 SEO, 한인 SEO 서비스, 잉글우드 한인 비즈니스',
       alternates: {
         canonical: `${baseUrl}/ko/englewood-nj-seo`,
@@ -47,7 +47,7 @@ export async function generateMetadata({
 
   return {
     title: 'SEO Company Bergen County NJ | Englewood & Fort Lee Local SEO | ZOE LUMOS',
-    description: 'Bergen County SEO company based in Fort Lee, NJ. Local SEO from $50/mo, Google Business Profile management $50/mo. Real result: a Manhattan florist went from $87 to $268 in daily revenue. Bilingual English & Korean.',
+    description: 'Bergen County SEO company based in Fort Lee, NJ. Care plans from $49/mo; Google Business Profile management and SEO monitoring on Grow at $199/mo. Real result: a Manhattan florist went from $87 to $268 in daily revenue. Bilingual English & Korean.',
     keywords: 'seo company bergen county, seo company bergen county nj, bergen county seo, local seo company bergen county nj, Englewood NJ SEO, SEO agency Englewood NJ, Fort Lee SEO, Korean SEO New Jersey',
     alternates: {
       canonical: `${baseUrl}/englewood-nj-seo`,
@@ -88,16 +88,9 @@ export default function EnglewoodSEO({ params }: { params: { locale: string } })
     serviceType: 'Search Engine Optimization (SEO)',
     address: {
       '@type': 'PostalAddress',
-      streetAddress: 'Fort Lee',
       addressLocality: 'Fort Lee',
       addressRegion: 'NJ',
-      postalCode: '07024',
       addressCountry: 'US',
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: 40.8509,
-      longitude: -73.9701,
     },
     areaServed: [
       { '@type': 'City', name: 'Englewood' },
@@ -128,7 +121,7 @@ export default function EnglewoodSEO({ params }: { params: { locale: string } })
         },
         {
           q: '버겐카운티 SEO 업체는 어떻게 골라야 하나요?',
-          a: '세 가지만 확인하시면 됩니다. 첫째, 가격을 먼저 말해주는가 — 상담 전화를 해야만 견적을 주는 곳은 견적이 사람마다 다릅니다. 둘째, 실제 고객 결과를 숫자로 보여주는가. 셋째, 순위를 보장한다고 말하는가 — 보장한다면 지킬 수 없는 약속입니다. 저희는 가격(로컬 SEO 월 $50, GBP 관리 월 $50)과 실제 사례를 이 페이지에 적어두었고, 순위는 보장하지 않습니다.',
+          a: '세 가지만 확인하시면 됩니다. 첫째, 가격을 먼저 말해주는가 — 상담 전화를 해야만 견적을 주는 곳은 견적이 사람마다 다릅니다. 둘째, 실제 고객 결과를 숫자로 보여주는가. 셋째, 순위를 보장한다고 말하는가 — 보장한다면 지킬 수 없는 약속입니다. 저희는 가격(관리 플랜 월 $49~$499, GBP 관리는 Grow $199에 포함)과 실제 사례를 이 페이지에 적어두었고, 순위는 보장하지 않습니다.',
         },
         {
           q: '포트리에 계신데 잉글우드까지 오시나요?',
@@ -162,7 +155,7 @@ export default function EnglewoodSEO({ params }: { params: { locale: string } })
         },
         {
           q: 'How do I choose an SEO company in Bergen County?',
-          a: 'Check three things. First, whether they will say a price before you book a call — agencies that quote only on the phone quote differently to different people. Second, whether they show client results as numbers. Third, whether they guarantee rankings; if they do, they are promising something no agency controls. Our prices are on this page (local SEO $50/mo, Google Business Profile management $50/mo), our results are named, and we do not guarantee rankings.',
+          a: 'Check three things. First, whether they will say a price before you book a call — agencies that quote only on the phone quote differently to different people. Second, whether they show client results as numbers. Third, whether they guarantee rankings; if they do, they are promising something no agency controls. Our prices are on this page (care plans $49–$499/mo, with Google Business Profile management included in Grow at $199/mo), our results are named, and we do not guarantee rankings.',
         },
         {
           q: 'You are in Fort Lee — do you actually serve Englewood?',
@@ -245,8 +238,8 @@ export default function EnglewoodSEO({ params }: { params: { locale: string } })
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8">
               {isKo
-                ? '포트리에 사무실을 둔 버겐카운티 SEO 업체입니다. 로컬 SEO 월 $50, 구글 비즈니스 프로필 관리 월 $50 — 가격을 먼저 공개합니다. 영어와 한국어 두 언어로 검색되는 것이 저희의 전문 분야입니다.'
-                : 'We are an SEO company in Bergen County, NJ, based in Fort Lee — ten minutes from Englewood. Local SEO from $50/month, Google Business Profile management $50/month, prices published up front. Bilingual English and Korean search is what we specialize in.'}
+                ? '포트리에 사무실을 둔 버겐카운티 SEO 업체입니다. 관리 플랜 월 $49부터, 구글 비즈니스 프로필 관리는 Grow 월 $199 — 가격을 먼저 공개합니다. 영어와 한국어 두 언어로 검색되는 것이 저희의 전문 분야입니다.'
+                : 'We are an SEO company in Bergen County, NJ, based in Fort Lee — ten minutes from Englewood. Care plans from $49/month, Google Business Profile management on Grow at $199/month, prices published up front. Bilingual English and Korean search is what we specialize in.'}
             </p>
           </div>
         </section>
@@ -401,16 +394,16 @@ export default function EnglewoodSEO({ params }: { params: { locale: string } })
             <div className="space-y-4">
               {(isKo
                 ? [
-                    ['월간 SEO / GEO 최적화', '$50/월', '키워드 타겟팅, 지역 SEO 전략 실행, 콘텐츠 개선, ChatGPT 등 AI 검색 노출 유지 작업.'],
-                    ['구글 비즈니스 프로필 관리', '$50/월', '사진·영업시간·게시물 정기 업데이트, 리뷰 응답. 로컬 검색(맵팩) 노출의 핵심입니다.'],
-                    ['구글 광고 운영', '$200/월 (유지관리 플랜 이용 시)', '캠페인 설계와 월간 리포트 포함. 광고비는 사장님 계정에서 직접 나가 지출이 투명합니다.'],
-                    ['웹사이트 제작', '$900부터 (일회성)', '검색에 잡히도록 만든 5페이지 사이트. 기본 SEO 설정과 구글 등록까지 포함됩니다.'],
+                    ['로컬 SEO · 구글 비즈니스 프로필 (Grow)', '$199/월', '콘텐츠 수정, GA4 리포트, SEO 모니터링, 구글 비즈니스 프로필 관리가 함께 포함됩니다.'],
+                    ['콘텐츠 + 로컬 SEO 엔진 (Scale)', '$499/월', '콘텐츠와 로컬 SEO를 통째로 맡기는 플랜입니다.'],
+                    ['구글 광고 운영', '+$150/월 (관리 플랜 이용 시)', '캠페인 설계와 월간 리포트 포함. 광고비는 사장님 계정에서 직접 나가 지출이 투명합니다.'],
+                    ['웹사이트 제작', '$500부터 (일회성)', '5페이지 이하 반응형 사이트. 기본 SEO와 문의 폼이 포함됩니다.'],
                   ]
                 : [
-                    ['Monthly SEO / GEO optimization', '$50/mo', 'Keyword targeting, local SEO execution, content improvements, and upkeep for AI search visibility (ChatGPT, Perplexity, AI Overviews).'],
-                    ['Google Business Profile management', '$50/mo', 'Photos, hours, posts, and review responses — the engine behind Map Pack visibility in Bergen County.'],
-                    ['Google Ads management', '$200/mo with a care plan', 'Campaign build and monthly reporting. Ad budget stays on your own Google account, so spend is always visible to you.'],
-                    ['Website build', 'from $900 one-time', 'A five-page site built to be found: SEO setup, schema, sitemap, and Google registration included.'],
+                    ['Local SEO + Google Business Profile (Grow)', '$199/mo', 'Content edits, a GA4 report, SEO monitoring, and Google Business Profile management in one plan.'],
+                    ['Content + local SEO engine (Scale)', '$499/mo', 'Content and local SEO handled for you, end to end.'],
+                    ['Google Ads management', '+$150/mo with a care plan', 'Campaign build and monthly reporting. Ad budget stays on your own Google account, so spend is always visible to you.'],
+                    ['Website build', 'from $500 one-time', 'A responsive site of up to five pages with basic SEO and a contact form.'],
                   ]
               ).map(([name, price, body]) => (
                 <div key={name} className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 flex flex-col md:flex-row md:items-center gap-4">
@@ -481,11 +474,11 @@ export default function EnglewoodSEO({ params }: { params: { locale: string } })
                   {(isKo
                     ? ['버겐카운티에서 손님이 직접 찾아오는 업종 (식당, 살롱, 병원, 세탁소, 학원)',
                        '영어와 한국어 손님을 모두 받는 사업체',
-                       '월 $50~$200 사이에서 꾸준히 관리받고 싶은 소상공인',
+                       '월 $49~$199 사이에서 꾸준히 관리받고 싶은 소상공인',
                        '숫자로 보고받고 직접 판단하고 싶은 사장님']
                     : ['Bergen County businesses customers walk into — restaurants, salons, clinics, dry cleaners, academies',
                        'Businesses serving both English and Korean speaking customers',
-                       'Owners who want steady management in the $50–$200/month range',
+                       'Owners who want steady management in the $49–$199/month range',
                        'Owners who want to see the numbers and decide for themselves']
                   ).map(t => <li key={t}>· {t}</li>)}
                 </ul>

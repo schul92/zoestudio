@@ -62,8 +62,7 @@ export default function HackensackWebDesignPage({ params }: { params: { locale: 
     description: locale === 'ko' ? '해켄색 한인 비즈니스를 위한 웹사이트 제작 에이전시' : 'Web design agency for Korean-American businesses in Hackensack, NJ',
     url: `${baseUrl}/${locale === 'ko' ? 'ko/' : ''}hackensack-web-design`,
     email: 'info@zoelumos.com',
-    address: { '@type': 'PostalAddress', addressLocality: 'Hackensack', addressRegion: 'NJ', postalCode: '07601', addressCountry: 'US' },
-    geo: { '@type': 'GeoCoordinates', latitude: '40.8859', longitude: '-74.0435' },
+    address: { '@type': 'PostalAddress', addressLocality: 'Fort Lee', addressRegion: 'NJ', addressCountry: 'US' },
     areaServed: [
       { '@type': 'City', name: 'Hackensack' }, { '@type': 'City', name: 'Fort Lee' },
       { '@type': 'City', name: 'Palisades Park' }, { '@type': 'City', name: 'Englewood' },
@@ -77,10 +76,10 @@ export default function HackensackWebDesignPage({ params }: { params: { locale: 
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: locale === 'ko' ? [
-      { '@type': 'Question', name: '해켄색에서 웹사이트 제작 비용은?', acceptedAnswer: { '@type': 'Answer', text: '해켄색 웹사이트 제작은 $1,000부터 시작합니다. 무료 상담 후 정확한 견적을 드립니다.' } },
+      { '@type': 'Question', name: '해켄색에서 웹사이트 제작 비용은?', acceptedAnswer: { '@type': 'Answer', text: '해켄색 웹사이트 제작은 $500부터 시작합니다(기본 $500~$800, 일반 $1,100~$1,500, 스토어 $1,800~$2,400). 무료 상담 후 정확한 견적을 드립니다.' } },
       { '@type': 'Question', name: '해켄색 한인 비즈니스 전문 서비스가 있나요?', acceptedAnswer: { '@type': 'Answer', text: '네, 해켄색과 버겐카운티 한인 비즈니스를 위한 이중언어 웹사이트, 한국어 SEO, 커뮤니티 마케팅 등을 제공합니다.' } },
     ] : [
-      { '@type': 'Question', name: 'How much does web design cost in Hackensack?', acceptedAnswer: { '@type': 'Answer', text: 'Hackensack web design starts at $1,000. Free consultation to get an exact quote.' } },
+      { '@type': 'Question', name: 'How much does web design cost in Hackensack?', acceptedAnswer: { '@type': 'Answer', text: 'Hackensack web design starts at $500 (Basic $500–$800, Standard $1,100–$1,500, Store $1,800–$2,400). Free consultation to get an exact quote.' } },
       { '@type': 'Question', name: 'Do you specialize in Korean businesses in Bergen County?', acceptedAnswer: { '@type': 'Answer', text: 'Yes, we specialize in Korean-American businesses throughout Bergen County including Hackensack, Fort Lee, and Palisades Park. Bilingual websites, Korean SEO, and community marketing.' } },
     ],
   }

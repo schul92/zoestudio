@@ -131,7 +131,7 @@ const COPY = {
     faqs: [
       {
         q: 'I already have a Squarespace site — should I migrate to Shopify?',
-        a: 'Only if your e-commerce volume justifies it. The migration cost is $4,000-$8,000 (we offer fixed-scope), and Shopify\'s monthly run rate is higher. Rule of thumb: if you do $5,000+/mo in online sales, Shopify pays for itself. Under $1,500/mo, stay on Squarespace and add a free cost-audit pass.',
+        a: 'Only if your e-commerce volume justifies it. A Shopify store build is $1,800-$2,400 on our published Store tier, and Shopify\'s monthly run rate is higher. Rule of thumb: if you do $5,000+/mo in online sales, Shopify pays for itself. Under $1,500/mo, stay on Squarespace and add a free cost-audit pass.',
       },
       {
         q: 'Can I run a Korean restaurant on Wix?',
@@ -230,7 +230,7 @@ const COPY = {
     faqs: [
       {
         q: '이미 Squarespace 사이트가 있는데 Shopify로 이전해야 하나요?',
-        a: '이커머스 볼륨이 정당화할 때만. 이전 비용 $4,000-$8,000 (고정 범위 제공), Shopify 월 운영 속도가 더 높음. 경험 법칙 — 월 온라인 매출 $5,000+ 이면 Shopify 회수. 월 $1,500 미만이면 Squarespace 유지 + 무료 비용 감사 추가.',
+        a: '이커머스 볼륨이 정당화할 때만. Shopify 스토어 제작은 공개 스토어 등급 $1,800-$2,400, Shopify 월 운영 비용이 더 높음. 경험 법칙 — 월 온라인 매출 $5,000+ 이면 Shopify 회수. 월 $1,500 미만이면 Squarespace 유지 + 무료 비용 감사 추가.',
       },
       {
         q: 'Wix에서 한식당 운영 가능한가요?',

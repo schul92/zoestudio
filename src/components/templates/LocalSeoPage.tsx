@@ -96,8 +96,7 @@ export default function LocalSeoPage({ entry: e, locale, baseUrl }: { entry: Loc
     email: 'info@zoelumos.com',
     image: `${baseUrl}/logo.svg`,
     parentOrganization: { '@id': `${baseUrl}/#organization` },
-    address: { '@type': 'PostalAddress', streetAddress: '2200 Center Ave', addressLocality: 'Fort Lee', addressRegion: 'NJ', postalCode: '07024', addressCountry: 'US' },
-    geo: { '@type': 'GeoCoordinates', latitude: 40.8509, longitude: -73.9712 },
+    address: { '@type': 'PostalAddress', addressLocality: 'Fort Lee', addressRegion: 'NJ', addressCountry: 'US' },
     areaServed: e.areaServed.map((name) =>
       name === 'Bergen County'
         ? { '@type': 'AdministrativeArea', name, containedInPlace: { '@type': 'State', name: 'New Jersey' } }

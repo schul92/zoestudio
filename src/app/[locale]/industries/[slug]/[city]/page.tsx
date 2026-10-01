@@ -175,8 +175,8 @@ export default function CrossoverPage({
         ? `한국어로 상담할 수 있나요?`
         : 'Can we consult in Korean?',
       a: isKo
-        ? '네. 전체 스튜디오가 한국어 · 영어 이중언어로 운영됩니다. 카카오톡 · 이메일 · 전화 모두 한국어 가능.'
-        : 'Yes — our entire studio is bilingual. KakaoTalk, email, and phone all in Korean or English.',
+        ? '네. 전체 스튜디오가 한국어 · 영어 이중언어로 운영됩니다. 카카오톡 · 이메일 · 문의 폼 모두 한국어로 답변드립니다.'
+        : 'Yes — our entire studio is bilingual. KakaoTalk, email, and the contact form are all answered in Korean or English.',
     },
   ]
 

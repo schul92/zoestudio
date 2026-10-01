@@ -102,16 +102,9 @@ export const structuredData = {
     "parentOrganization": { "@id": "https://www.zoelumos.com/#organization" },
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "2200 Center Ave",
       "addressCountry": "US",
       "addressRegion": "NJ",
-      "addressLocality": "Fort Lee",
-      "postalCode": "07024"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 40.8509,
-      "longitude": -73.9712
+      "addressLocality": "Fort Lee"
     },
     "areaServed": [
       {

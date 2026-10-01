@@ -89,13 +89,7 @@ export default function FortLeeWebDesignPage({ params }: { params: { locale: str
       '@type': 'PostalAddress',
       addressLocality: 'Fort Lee',
       addressRegion: 'NJ',
-      postalCode: '07024',
       addressCountry: 'US',
-    },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: '40.8509',
-      longitude: '-73.9712',
     },
     areaServed: [
       { '@type': 'City', name: 'Fort Lee' },
