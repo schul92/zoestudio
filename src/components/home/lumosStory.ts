@@ -10,6 +10,9 @@ export const CAPTION_RANGES = [
 export const REDUCED_P = 0.42
 // End of the opening segment (lid opens, screen lights, camera settles square-on). Its frames load first, in order.
 export const OPENING_END = 0.42
+// Frames up to here are decoded right after load and kept resident, so a fling through the lid opening never waits
+// on a decode.
+export const PIN_END = 0.35
 // Copy block (eyebrow, H1, subline) fades out over this range; the product band only moves up after it has gone.
 export const COPY_FADE = [0.04, 0.13] as const
 export const BAND_RISE = [0.1, 0.22] as const

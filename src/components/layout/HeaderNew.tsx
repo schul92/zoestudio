@@ -136,8 +136,8 @@ export default function HeaderNew({ locale = 'en' }: { locale?: string }) {
       </div>
 
       <div
-        className={`lg:hidden fixed inset-0 top-14 md:top-16 kn-solid z-[90] transition-[opacity,transform] duration-300 ease-out ${
-          menuOpen ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 -translate-y-2 pointer-events-none'
+        className={`lg:hidden fixed inset-0 top-14 md:top-16 kn-solid z-[90] transition-[opacity,transform,visibility] duration-300 ease-out ${
+          menuOpen ? 'visible opacity-100 translate-y-0 pointer-events-auto' : 'invisible opacity-0 -translate-y-2 pointer-events-none'
         }`}
       >
         <div className="container-edge pt-8 pb-10 h-full flex flex-col gap-10 overflow-y-auto">

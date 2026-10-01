@@ -1,5 +1,5 @@
 // The hero's scroll player: loaded on demand after first render, so none of it counts toward first-load JS.
-import { BAND_RISE, CAPTION_RANGES, COPY_FADE, OPENING_END, PHONE_MQ, REDUCED_P, type SeqMeta, type SeqSet, seqSrc } from './lumosStory'
+import { BAND_RISE, CAPTION_RANGES, COPY_FADE, OPENING_END, PHONE_MQ, PIN_END, REDUCED_P, type SeqMeta, type SeqSet, seqSrc } from './lumosStory'
 
 const clamp = (v: number, a = 0, b = 1) => Math.min(b, Math.max(a, v))
 const lerp = (a: number, b: number, t: number) => a + (b - a) * t
@@ -53,7 +53,11 @@ export function mountLumos({ story, stage, canvas, copy, sub, cta, pill, hint, c
     const touch = window.matchMedia('(pointer: coarse)').matches
     const set = phone ? mobile : desktop
     const N = set.count
-    const WINDOW = phone ? 12 : 16
+    // Decoded-pixel budgets (MB). The opening segment is pinned (decoded once, never evicted) within PIN_MB; the
+    // sliding window over the rest of the story gets WINDOW_MB on top.
+    const PIN_MB = phone ? 90 : 200
+    const WINDOW_MB = phone ? 40 : 64
+    const BASE_LEAD = phone ? 12 : 16
     const root = document.documentElement
     // Test hook: a harness may set window.__lumos = [] before load to log every draw.
     const trace = (window as Window & { __lumos?: unknown[] }).__lumos
@@ -137,37 +141,79 @@ export function mountLumos({ story, stage, canvas, copy, sub, cta, pill, hint, c
       else if (bm) bm.src = ''
       bitmaps[i] = null
     }
-    // The window leans into the scroll: a short tail behind, and ahead as far as the current speed will carry the
-    // reader in the next ~10 frames (a fling runs several frames per rAF, so decoding has to be well ahead of it).
-    let speed = 0
-    const ahead = () => Math.min(WINDOW * 4, WINDOW * 3 + Math.round(speed * 10))
-    const behind = 6
-    // Two decodes in flight (off the main thread): stays ahead of a steady scroll without competing with drawing.
-    const DECODERS = 2
-    const inWindow = (i: number) => {
-      if (reduce && i === staticIdx) return true
-      const d = (i - cur) * dir
-      return d >= -behind && d <= ahead()
+    const bytesOf = (i: number) => (meta ? meta.f[i].w * meta.f[i].h * 4 : 0)
+
+    // Pinned opening frames: every other frame up to PIN_END first (so the nearest resident frame is never more than
+    // one away), then the rest in story order while the budget lasts. Decoded right after load, never released.
+    const pinned = new Uint8Array(N)
+    const choosePinned = () => {
+      if (!meta || reduce) return
+      const f = meta.f
+      const op: number[] = []
+      for (let i = 0; i < N && f[i].p <= PIN_END; i++) op.push(i)
+      if (!op.length) return
+      let used = 0
+      const budget = PIN_MB * 1048576
+      const add = (i: number) => { if (!pinned[i]) { pinned[i] = 1; used += bytesOf(i) } }
+      for (let j = 0; j < op.length; j += 2) add(op[j])
+      add(op[op.length - 1])
+      for (const i of op) {
+        if (pinned[i]) continue
+        if (used + bytesOf(i) > budget) break
+        add(i)
+      }
     }
-    // Decode nearest-first in the scroll direction (then the short tail behind); drop what falls out of the window.
+
+    // Sliding window over the rest: a short tail behind and, ahead, as far as the reader will travel in ~300 ms at
+    // the current scroll speed, nearest-first in the direction of travel, capped at WINDOW_MB of non-pinned frames.
+    let vel = 0 // frames per ms, smoothed
+    const behind = 6
+    const inWin = new Uint8Array(N)
+    const order: number[] = []
+    const planWindow = () => {
+      inWin.fill(0)
+      order.length = 0
+      if (reduce) { inWin[staticIdx] = 1; order.push(staticIdx); return }
+      const lead = Math.max(BASE_LEAD, Math.ceil(vel * 300))
+      const budget = WINDOW_MB * 1048576
+      let used = 0
+      const take = (k: number) => {
+        if (k < 0 || k >= N || inWin[k]) return true
+        inWin[k] = 1
+        order.push(k)
+        if (pinned[k]) return true
+        used += bytesOf(k)
+        return used <= budget
+      }
+      take(cur)
+      for (let d = 1; d <= Math.max(lead, behind); d++) {
+        if (d <= lead && !take(cur + d * dir)) break
+        if (d <= behind && !take(cur - d * dir)) break
+      }
+      // Pinned frames the reader can reach, nearest first, after the window proper.
+      for (let d = 1; d < N; d++) {
+        for (const k of [cur + d * dir, cur - d * dir]) if (k >= 0 && k < N && pinned[k] && !inWin[k]) { inWin[k] = 1; order.push(k) }
+      }
+    }
+    const keep = (i: number) => pinned[i] === 1 || inWin[i] === 1
+    // Decodes in flight (off the main thread); enough to stay ahead without competing with drawing.
+    const DECODERS = 2
     const pumpDecode = () => {
-      if (disposed) return
-      for (let i = 0; i < N; i++) if (bitmaps[i] && !inWindow(i)) release(i)
-      const reach = ahead()
-      for (let d = 0; d <= reach && decoding.size < DECODERS; d++) {
-        for (const k of d <= behind ? [cur + d * dir, cur - d * dir] : [cur + d * dir]) {
-          if (decoding.size >= DECODERS) break
-          if (k < 0 || k >= N || bitmaps[k] || decoding.has(k) || !blobs[k]) continue
-          decoding.add(k)
-          decodeBlob(k, blobs[k]!).then((bm) => {
-            decoding.delete(k)
-            if (disposed || !inWindow(k)) { if ('close' in bm) bm.close(); else bm.src = ''; return }
-            bitmaps[k] = bm
-            if (k === pickIdx(pNow) || !shownFirst) dirty = true
-            kick()
-            pumpDecode()
-          }).catch(() => { decoding.delete(k) })
-        }
+      if (disposed || !meta) return
+      planWindow()
+      for (let i = 0; i < N; i++) if (bitmaps[i] && !keep(i)) release(i)
+      for (let j = 0; j < order.length && decoding.size < DECODERS; j++) {
+        const k = order[j]
+        if (bitmaps[k] || decoding.has(k) || !blobs[k]) continue
+        decoding.add(k)
+        decodeBlob(k, blobs[k]!).then((bm) => {
+          decoding.delete(k)
+          if (disposed || !keep(k)) { if ('close' in bm) bm.close(); else bm.src = ''; return }
+          bitmaps[k] = bm
+          if (k === pickIdx(pNow) || !shownFirst) dirty = true
+          kick()
+          pumpDecode()
+        }).catch(() => { decoding.delete(k) })
       }
     }
 
@@ -190,7 +236,7 @@ export function mountLumos({ story, stage, canvas, copy, sub, cta, pill, hint, c
         .then((b) => {
           if (disposed) return
           blobs[i] = b
-          if (inWindow(i)) pumpDecode()
+          if (keep(i)) pumpDecode()
         })
     const pump = () => {
       while (active < 4 && !disposed) {
@@ -216,6 +262,7 @@ export function mountLumos({ story, stage, canvas, copy, sub, cta, pill, hint, c
         if (disposed) return
         meta = m
         staticIdx = idxAt(REDUCED_P)
+        choosePinned()
         dirty = true
         kick()
       })
@@ -284,7 +331,20 @@ export function mountLumos({ story, stage, canvas, copy, sub, cta, pill, hint, c
       lastW = window.innerWidth
       dirty = true
     }
-    if (trace) (window as Window & { __lumosReallocs?: () => number }).__lumosReallocs = () => reallocs
+    if (trace) {
+      const w = window as Window & { __lumosReallocs?: () => number; __lumosMem?: () => object }
+      w.__lumosReallocs = () => reallocs
+      // Resident decoded pixels (MB): pinned opening frames plus the sliding window.
+      w.__lumosMem = () => {
+        let pin = 0, win = 0, pinCount = 0, pinDecoded = 0
+        for (let i = 0; i < N; i++) {
+          if (pinned[i]) { pinCount++; if (bitmaps[i]) { pinDecoded++; pin += bytesOf(i) } }
+          else if (bitmaps[i]) win += bytesOf(i)
+        }
+        const mb = (v: number) => Math.round((v / 1048576) * 10) / 10
+        return { pinMB: mb(pin), winMB: mb(win), totalMB: mb(pin + win), pinCount, pinDecoded }
+      }
+    }
 
     const markFirst = () => {
       if (shownFirst) return
@@ -412,14 +472,16 @@ export function mountLumos({ story, stage, canvas, copy, sub, cta, pill, hint, c
       const moved = Math.abs(p - prevP) > 1e-5
       if (moved || dirty) {
         dirty = false
+        const t0 = trace ? performance.now() : 0
         const k = pickIdx(p)
-        // Frames per rAF, smoothed: sets how far ahead the decode window reaches.
-        speed = speed * 0.7 + Math.abs(k - cur) * 0.3
+        // Frames per ms, smoothed: sets how far ahead the decode window reaches.
+        vel = vel * 0.6 + (Math.abs(k - cur) / dt) * 0.4
         if (k !== cur) { dir = k > cur ? 1 : -1; cur = k; pumpDecode() }
         const ctaOn = applyChrome(p)
         draw(p, ctaOn)
+        if (trace) trace.push({ work: performance.now() - t0 })
       }
-      if (!moved && !dirty && progress === target) { running = false; return }
+      if (!moved && !dirty && progress === target) { running = false; vel = 0; return }
       raf = requestAnimationFrame((n) => frame(n))
     }
 
