@@ -161,7 +161,7 @@ export default function PortfolioClient({ t, projects, locale }: PortfolioClient
                       <span className="gold-dot" />
                       {isKo ? '도판' : 'Plate'} · {String(index + 1).padStart(2, '0')}
                     </div>
-                    <span className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-1 group-hover:translate-y-0 bg-ink text-ivory px-4 py-2 rounded-full text-[12px] tracking-wide">
+                    <span className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition duration-500 translate-y-1 group-hover:translate-y-0 bg-ink text-ivory px-4 py-2 rounded-full text-[12px] tracking-wide">
                       {t.viewSite} →
                     </span>
                   </a>
@@ -170,7 +170,7 @@ export default function PortfolioClient({ t, projects, locale }: PortfolioClient
                   <div className="mt-6 grid grid-cols-12 gap-4 items-baseline">
                     <div className="col-span-12 md:col-span-8">
                       <div className="overline text-ash mb-3">{project.category}</div>
-                      <h2 className="font-display text-[clamp(1.6rem,2.6vw,2.25rem)] tracking-luxury leading-tight text-ink fraunces-soft group-hover:italic group-hover:text-gold group-hover:font-light transition-all duration-500">
+                      <h2 className="font-display text-[clamp(1.6rem,2.6vw,2.25rem)] tracking-luxury leading-tight text-ink fraunces-soft group-hover:text-gold transition duration-500">
                         <a href={project.url} target="_blank" rel="noopener noreferrer">
                           {project.title}
                         </a>

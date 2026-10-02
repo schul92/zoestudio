@@ -20,7 +20,7 @@ export default function FloatingDevices({ locale = 'en' }: { locale?: 'en' | 'ko
   return (
     <section className="bg-bone section-pad" aria-labelledby="work-in-motion">
       <div className="container-edge">
-        <div className="text-center max-w-3xl mx-auto">
+        <div data-reveal className="text-center max-w-3xl mx-auto">
           <p className="text-[15px] font-semibold text-gold">{isKo ? '움직이는 작업' : 'Work in motion'}</p>
           <h2 id="work-in-motion" className="mt-3 font-display text-display-lg text-ink text-balance">
             {isKo ? '화면 위에서 ' : 'Live on the '}
@@ -33,7 +33,7 @@ export default function FloatingDevices({ locale = 'en' }: { locale?: 'en' | 'ko
           </p>
         </div>
 
-        <ul className="mt-14 md:mt-20 grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 [perspective:1400px]">
+        <ul data-reveal-group className="mt-14 md:mt-20 grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 [perspective:1400px]">
           {devices.map((d) => (
             <li key={d.name}>
               <Link

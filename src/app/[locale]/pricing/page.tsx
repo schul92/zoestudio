@@ -416,7 +416,7 @@ export default function PricingPage({ params }: { params: { locale: string } }) 
               </Link>
               <Link
                 href={`${prefix}/tools/website-cost-estimator`}
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-black/[0.03] border border-black/[0.08] text-graphite hover:bg-bone hover:text-ink transition-all text-sm font-bold"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-black/[0.03] border border-black/[0.08] text-graphite hover:bg-bone hover:text-ink transition text-sm font-bold"
               >
                 {t.ctaEstimator}
               </Link>

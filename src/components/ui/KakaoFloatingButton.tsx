@@ -34,7 +34,7 @@ export default function KakaoFloatingButton() {
        * stacked on top of each other, and the right side is where a
        * right-handed thumb and a mouse both land first.
        */
-      className={`fixed left-4 sm:left-6 bottom-6 z-50 hidden lg:flex items-center gap-2 rounded-full bg-[#FEE500] px-3.5 py-2.5 text-[#3C1E1E] shadow-md transition-all duration-500 hover:scale-105 hover:shadow-lg active:scale-95 ${
+      className={`fixed left-4 sm:left-6 bottom-6 z-50 hidden lg:flex items-center gap-2 rounded-full bg-[#FEE500] px-3.5 py-2.5 text-[#3C1E1E] shadow-md transition-[transform,opacity,box-shadow] duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] hover:scale-105 hover:shadow-lg active:scale-[.97] ${
         visible ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
       }`}
       style={{ touchAction: 'manipulation' }}

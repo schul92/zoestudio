@@ -74,7 +74,7 @@ export default function InstagramHover({ position = 'bottom', showLabel = true, 
           <InstagramIcon className="w-5 h-5" />
         </span>
         {showLabel && (
-          <span className="text-sm border-b border-transparent group-hover/link:border-amber-400 transition-all duration-200">
+          <span className="text-sm border-b border-transparent group-hover/link:border-amber-400 transition duration-200">
             @zoelumos
           </span>
         )}
@@ -82,7 +82,7 @@ export default function InstagramHover({ position = 'bottom', showLabel = true, 
 
       {/* Dropdown with videos */}
       <div
-        className={`absolute left-0 ${dropdownPosition} bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden transition-all duration-300 z-50 ${isHovering ? 'opacity-100 visible' : 'opacity-0 invisible'} ${dropdownAnimation}`}
+        className={`absolute left-0 ${dropdownPosition} bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden transition duration-300 z-50 ${isHovering ? 'opacity-100 visible' : 'opacity-0 invisible'} ${dropdownAnimation}`}
         style={{ width: '280px' }}
       >
         <div className="p-3">
@@ -156,7 +156,7 @@ export function InstagramNavHover({ locale = 'en', lightMode = false }: { locale
 
       {/* Dropdown with videos */}
       <div
-        className={`absolute right-0 top-full mt-2 bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden transition-all duration-300 z-50 ${isHovering ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}
+        className={`absolute right-0 top-full mt-2 bg-white rounded-xl shadow-2xl border border-gray-100 overflow-hidden transition duration-300 z-50 ${isHovering ? 'opacity-100 visible translate-y-0' : 'opacity-0 invisible -translate-y-2'}`}
         style={{ width: '340px' }}
       >
         <div className="p-4">

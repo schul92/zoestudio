@@ -444,7 +444,7 @@ function Choice({
       type="button"
       onClick={onClick}
       aria-pressed={active}
-      className={`group text-left p-4 border transition-all duration-300 ${
+      className={`group text-left p-4 border transition duration-300 ${
         active ? 'border-gold bg-gold/[0.04]' : 'border-hairline hover:border-ink/40'
       }`}
     >

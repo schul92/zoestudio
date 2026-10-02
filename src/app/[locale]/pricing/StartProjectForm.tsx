@@ -151,7 +151,7 @@ export default function StartProjectForm({ locale }: { locale: 'en' | 'ko' }) {
                   <button
                     key={s.id}
                     onClick={() => toggle(s.id)}
-                    className={`text-left rounded-2xl p-5 border transition-all duration-200 ${
+                    className={`text-left rounded-2xl p-5 border transition duration-200 ${
                       on
                         ? 'bg-action/10 border-action/50 shadow-[0_0_20px_rgba(0,113,227,0.1)]'
                         : 'bg-paper border-black/[0.08] hover:border-black/[0.14]'
@@ -159,7 +159,7 @@ export default function StartProjectForm({ locale }: { locale: 'en' | 'ko' }) {
                   >
                     <div className="flex items-start justify-between mb-2">
                       <span className="text-2xl">{s.emoji}</span>
-                      <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center transition-all flex-shrink-0 ${
+                      <div className={`w-5 h-5 rounded-full border-2 flex items-center justify-center transition flex-shrink-0 ${
                         on ? 'bg-action border-action' : 'border-black/[0.14]'
                       }`}>
                         {on && <span className="text-ink text-[10px] font-black">✓</span>}
@@ -247,7 +247,7 @@ export default function StartProjectForm({ locale }: { locale: 'en' | 'ko' }) {
             <div className="flex flex-col sm:flex-row gap-3">
               <button
                 onClick={() => { setStep(1); setError('') }}
-                className="px-5 py-3.5 rounded-xl bg-black/[0.03] text-ash hover:bg-bone hover:text-ink transition-all text-sm font-medium"
+                className="px-5 py-3.5 rounded-xl bg-black/[0.03] text-ash hover:bg-bone hover:text-ink transition text-sm font-medium"
               >
                 {t.backBtn}
               </button>
@@ -282,7 +282,7 @@ export default function StartProjectForm({ locale }: { locale: 'en' | 'ko' }) {
             <p className="text-ash text-lg max-w-md mx-auto mb-10">{t.successSub}</p>
             <Link
               href={prefix || '/'}
-              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-black/[0.03] border border-black/[0.08] text-graphite hover:bg-bone hover:text-ink transition-all text-sm font-medium"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-black/[0.03] border border-black/[0.08] text-graphite hover:bg-bone hover:text-ink transition text-sm font-medium"
             >
               {t.successBack}
             </Link>

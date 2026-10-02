@@ -503,7 +503,7 @@ export default function CrossoverPage({
                         data-cursor="view"
                         className="group flex items-baseline justify-between gap-4 py-2 border-b border-hairline"
                       >
-                        <span className="font-display text-lg text-ink fraunces-soft group-hover:italic group-hover:text-gold group-hover:font-light transition-all duration-500">
+                        <span className="font-display text-lg text-ink fraunces-soft group-hover:text-gold transition duration-500">
                           {c.fullName[locale]}
                         </span>
                         <span aria-hidden className="text-ash group-hover:text-gold transition-colors">↗</span>
@@ -525,7 +525,7 @@ export default function CrossoverPage({
                         data-cursor="view"
                         className="group flex items-baseline justify-between gap-4 py-2 border-b border-hairline"
                       >
-                        <span className="font-display text-lg text-ink fraunces-soft group-hover:italic group-hover:text-gold group-hover:font-light transition-all duration-500">
+                        <span className="font-display text-lg text-ink fraunces-soft group-hover:text-gold transition duration-500">
                           {ind.name[locale]}
                         </span>
                         <span aria-hidden className="text-ash group-hover:text-gold transition-colors">↗</span>

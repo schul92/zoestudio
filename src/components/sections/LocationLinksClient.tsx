@@ -93,21 +93,21 @@ export default function LocationLinksClient({
                     onMouseLeave={() => setActive(null)}
                     onFocus={() => setActive(loc.id)}
                     onBlur={() => setActive(null)}
-                    className={`group flex items-baseline justify-between gap-6 py-5 md:py-6 transition-all duration-500 ${
-                      isActive ? 'pl-4' : ''
+                    className={`group flex items-baseline justify-between gap-6 py-5 md:py-6 transition-transform duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] ${
+                      isActive ? 'translate-x-4' : ''
                     }`}
                   >
                     <div className="flex items-baseline gap-4">
                       <span
-                        className={`section-num text-sm transition-colors duration-500 ${
+                        className={`section-num text-sm transition-colors duration-200 ${
                           isActive ? 'text-gold' : ''
                         }`}
                       >
                         {String(i + 1).padStart(2, '0')}
                       </span>
                       <div>
-                        <div className={`font-display text-[clamp(1.4rem,2.2vw,1.9rem)] tracking-luxury leading-tight fraunces-soft transition-all duration-500 ${
-                          isActive ? 'italic text-gold font-light' : 'text-ink'
+                        <div className={`font-display text-[clamp(1.4rem,2.2vw,1.9rem)] tracking-luxury leading-tight fraunces-soft transition-colors duration-200 ${
+                          isActive ? 'text-gold' : 'text-ink'
                         }`}>
                           {loc.name}
                         </div>
@@ -116,7 +116,7 @@ export default function LocationLinksClient({
                     </div>
                     <span
                       aria-hidden
-                      className={`transition-all duration-500 ${
+                      className={`transition duration-300 ease-[cubic-bezier(0.23,1,0.32,1)] ${
                         isActive ? 'text-gold translate-x-0' : 'text-ash -translate-x-2'
                       }`}
                     >

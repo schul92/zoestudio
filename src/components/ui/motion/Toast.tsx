@@ -45,7 +45,7 @@ export default function Toast({
     <div
       role="status"
       aria-live="polite"
-      className={`fixed top-24 right-6 md:right-10 z-[9999] max-w-[360px] transition-all duration-500 ease-[cubic-bezier(.16,1,.3,1)] ${
+      className={`fixed top-24 right-6 md:right-10 z-[9999] max-w-[360px] transition duration-500 ease-[cubic-bezier(.16,1,.3,1)] ${
         visible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-6'
       }`}
     >

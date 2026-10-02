@@ -256,7 +256,7 @@ export default function ChatWidget({ locale = 'en' }: { locale?: string }) {
           type="button"
           onClick={() => setOpen(true)}
           aria-label={isKo ? '문의 채팅 열기' : 'Open chat'}
-          className={`${fieldFocus ? 'max-lg:hidden ' : ''}group fixed right-4 bottom-[calc(5rem+env(safe-area-inset-bottom))] z-[90] flex h-14 w-14 items-center justify-center gap-2 rounded-full bg-[#1D1D1F] text-white shadow-xl ring-1 ring-[#0071E3]/40 transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:ring-[#0071E3] active:scale-95 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3] sm:right-6 lg:bottom-6 lg:h-14 lg:w-auto lg:px-6`}
+          className={`${fieldFocus ? 'max-lg:hidden ' : ''}group fixed right-4 bottom-[calc(5rem+env(safe-area-inset-bottom))] z-[90] flex h-14 w-14 items-center justify-center gap-2 rounded-full bg-[#1D1D1F] text-white shadow-xl ring-1 ring-[#0071E3]/40 transition-[transform,box-shadow] duration-200 ease-[cubic-bezier(0.23,1,0.32,1)] hover:scale-105 hover:shadow-2xl hover:ring-[#0071E3] active:scale-[.97] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0071E3] sm:right-6 lg:bottom-6 lg:h-14 lg:w-auto lg:px-6`}
           style={{ touchAction: 'manipulation' }}
         >
           <span className="relative flex shrink-0 items-center justify-center">
@@ -276,7 +276,7 @@ export default function ChatWidget({ locale = 'en' }: { locale?: string }) {
             {/* Live dot: signals "answers now", and is the only motion here.
                 motion-reduce drops the ping for vestibular sensitivity. */}
             <span className="absolute -right-1.5 -top-1.5 flex h-2.5 w-2.5">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#0071E3] opacity-60 motion-reduce:animate-none" />
+              <span className="absolute inline-flex h-full w-full animate-[ping_1.4s_cubic-bezier(0,0,0.2,1)_3] rounded-full bg-[#0071E3] opacity-60 motion-reduce:animate-none" />
               <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-[#0071E3]" />
             </span>
           </span>
@@ -311,7 +311,7 @@ export default function ChatWidget({ locale = 'en' }: { locale?: string }) {
            *
            * Desktop (lg+): back to a floating card, right for a pointer UI.
            */
-          className="keep-light fixed inset-0 top-[var(--chat-vvtop,0px)] z-[120] flex h-[var(--chat-vvh,100dvh)] flex-col overflow-hidden bg-white shadow-2xl lg:inset-x-auto lg:bottom-6 lg:right-6 lg:top-auto lg:h-[560px] lg:max-h-[calc(100dvh-6rem)] lg:w-[380px] lg:rounded-2xl lg:border lg:border-[#D2D2D7]"
+          className="zl-sheet keep-light fixed inset-0 top-[var(--chat-vvtop,0px)] z-[120] flex h-[var(--chat-vvh,100dvh)] flex-col overflow-hidden bg-white shadow-2xl lg:inset-x-auto lg:bottom-6 lg:right-6 lg:top-auto lg:h-[560px] lg:max-h-[calc(100dvh-6rem)] lg:w-[380px] lg:rounded-2xl lg:border lg:border-[#D2D2D7]"
           style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}
         >
           {/* Header */}
