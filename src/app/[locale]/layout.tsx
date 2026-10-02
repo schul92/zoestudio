@@ -110,6 +110,12 @@ export async function generateMetadata({
   }
 }
 
+// Scroll reveals (see globals.css "Scroll reveals"). Plain inline scripts, not part of the JS bundle: the flag
+// runs in <head>; the scanner runs at the end of <body>, before hydration, and keeps watching for elements that
+// client-side navigation adds later.
+const REVEAL_FLAG = `(function(){try{var d=document.documentElement;if(!('IntersectionObserver'in window)||matchMedia('(prefers-reduced-motion: reduce)').matches)return;d.setAttribute('data-rv','');setTimeout(function(){if(!window.__rvok)d.removeAttribute('data-rv')},2500)}catch(e){}})();`
+const REVEAL_SCAN = `(function(){try{var d=document.documentElement;if(!d.hasAttribute('data-rv'))return;var S='[data-reveal],[data-reveal-group],.reveal,.mask-rise';var io=new IntersectionObserver(function(es){for(var i=0;i<es.length;i++){if(es[i].isIntersecting){es[i].target.setAttribute('data-in','');io.unobserve(es[i].target)}}},{rootMargin:'0px 0px -8% 0px',threshold:0.1});function prep(el){if(el.hasAttribute('data-in')||el.__rv)return;el.__rv=1;var r=el.getBoundingClientRect();if(r.bottom>0&&r.top<innerHeight){el.setAttribute('data-in',el.matches('.reveal,.mask-rise')?'':'now')}else io.observe(el)}function scan(n){if(n.matches&&n.matches(S))prep(n);if(n.querySelectorAll){var l=n.querySelectorAll(S);for(var i=0;i<l.length;i++)prep(l[i])}}scan(document);window.__rvok=1;new MutationObserver(function(ms){for(var i=0;i<ms.length;i++){var a=ms[i].addedNodes;for(var j=0;j<a.length;j++)if(a[j].nodeType===1)scan(a[j])}}).observe(document.body,{childList:true,subtree:true})}catch(e){document.documentElement.removeAttribute('data-rv')}})();`
+
 export default function RootLayout({
   children,
   params,
@@ -123,6 +129,9 @@ export default function RootLayout({
     <html lang={locale} className="space">
       <head>
         <meta name="theme-color" content="#000000" />
+        {/* Scroll-reveal flag, set before first paint so off-screen reveals start paused instead of half-playing.
+            Released after 2.5s if the scanner at the end of <body> never ran, so nothing can stay hidden. */}
+        <script dangerouslySetInnerHTML={{ __html: REVEAL_FLAG }} />
         <style dangerouslySetInnerHTML={{
           __html: `
             /* Critical CSS for above-the-fold content */
@@ -202,6 +211,7 @@ export default function RootLayout({
             <ChatWidget locale={locale} />
           </AfterInteraction>
         </ServiceProvider>
+        <script dangerouslySetInnerHTML={{ __html: REVEAL_SCAN }} />
       </body>
     </html>
   )

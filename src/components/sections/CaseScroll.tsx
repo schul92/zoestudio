@@ -29,7 +29,7 @@ export default function CaseScroll({ locale = 'en' }: { locale?: string }) {
     <section id="case-study" className="bg-ink text-white" aria-labelledby="case-title">
       <div className="container-edge py-24 md:py-36">
         <p className="text-[15px] font-semibold text-gold-soft">{isKo ? '실제 사례 연구' : 'A real case study'}</p>
-        <h2 id="case-title" className="mt-3 text-[clamp(2rem,5vw,4rem)] font-semibold tracking-[-0.045em] leading-[1.02] text-white">
+        <h2 data-reveal id="case-title" className="mt-3 text-[clamp(2rem,5vw,4rem)] font-semibold tracking-[-0.045em] leading-[1.02] text-white">
           TJ Flowers <span className="text-white/70">· Manhattan</span>
         </h2>
 

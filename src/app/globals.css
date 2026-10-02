@@ -24,6 +24,11 @@
     --c-graphite: 66 66 69;
     --c-ash: 110 110 115;
     --c-mute: 134 134 139;
+    /* Motion tokens: strong ease-out for anything entering/responding, ease-in-out for on-screen moves,
+       the iOS sheet curve for drawers and bars. */
+    --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
+    --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+    --ease-drawer: cubic-bezier(0.32, 0.72, 0, 1);
   }
 
   /* Space theme — the public site. /pay and /admin keep the light defaults above. */
@@ -52,6 +57,8 @@
 
   html {
     scroll-behavior: smooth;
+    /* Every pressable here has its own :active state, so the grey tap flash is noise. */
+    -webkit-tap-highlight-color: transparent;
   }
 
   body {
@@ -110,9 +117,17 @@
     background: #0077ED;
   }
   .btn-ink .arrow {
-    transition: transform .5s cubic-bezier(.16,1,.3,1);
+    transition: transform .3s var(--ease-out);
   }
-  .btn-ink:hover .arrow { transform: translateX(4px); }
+  @media (hover: hover) and (pointer: fine) {
+    .btn-ink:hover .arrow { transform: translateX(4px); }
+  }
+
+  /* Press feedback: every primary/secondary button gives under the finger. */
+  .btn-ink, .btn-primary, .btn-outline {
+    transition: background-color .2s ease, color .2s ease, border-color .2s ease, transform .16s var(--ease-out);
+  }
+  .btn-ink:active, .btn-primary:active, .btn-outline:active { transform: scale(.97); }
 
   .btn-ghost {
     @apply inline-flex items-center gap-1 px-1 py-2 min-h-[44px] text-[15px] font-semibold transition-colors duration-200;
@@ -158,15 +173,17 @@
     background: var(--ink);
     transform-origin: right;
     transform: scaleX(1);
-    transition: transform .55s cubic-bezier(.77,0,.18,1);
+    transition: transform .4s var(--ease-in-out);
   }
-  .link-ed:hover::after {
-    transform-origin: left;
-    transform: scaleX(0);
+  @media (hover: hover) and (pointer: fine) {
+    .link-ed:hover::after {
+      transform-origin: left;
+      transform: scaleX(0);
+    }
   }
 
-  /* Soft fade-up reveal */
-  .reveal { animation: zl-rise .8s cubic-bezier(.16,1,.3,1) both; }
+  /* Soft fade-up reveal. Held at its first frame until it scrolls into view (see [data-reveal] below). */
+  .reveal { animation: zl-rv .6s var(--ease-out) both; }
 
   /* Gold mark */
   .gold-dot {
@@ -299,20 +316,37 @@ body.has-editorial-cursor [contenteditable="true"] { cursor: text; }
 }
 .mask-rise {
   display: block;
-  animation: zl-rise .9s cubic-bezier(.16,1,.3,1) both;
+  animation: zl-rise .7s var(--ease-out) both;
 }
 @keyframes zl-rise { from { transform: translateY(40%); opacity: 0; } to { transform: none; opacity: 1; } }
+/* Blocks and cards travel a fixed 14px — a percentage of a 400px card would be a 160px slide. */
+@keyframes zl-rv { from { transform: translate3d(0, 14px, 0); opacity: 0; } }
+
+/* ── Scroll reveals ──────────────────────────────
+   [data-reveal] (one block) and [data-reveal-group] (its children, 50ms apart) fade up 14px as they enter the
+   viewport; legacy .reveal / .mask-rise do the same instead of playing once at page load, off-screen. Nothing is
+   hidden unless <html data-rv> is set — the inline script at the end of <body> sets it only when
+   IntersectionObserver exists and motion isn't reduced, after marking whatever is already on screen as in
+   (data-in="now": shown without animating), so content is never parked invisible on first paint or without JS.
+   State lives in data attributes React doesn't own, so a re-render can't reset it. */
+html[data-rv] [data-reveal], html[data-rv] [data-reveal-group] > * {
+  animation: zl-rv .4s var(--ease-out) backwards;
+  animation-delay: min(calc(var(--rv-i, 0) * 50ms), 300ms);
+}
+[data-reveal-group] > :nth-child(2) { --rv-i: 1; }
+[data-reveal-group] > :nth-child(3) { --rv-i: 2; }
+[data-reveal-group] > :nth-child(4) { --rv-i: 3; }
+[data-reveal-group] > :nth-child(5) { --rv-i: 4; }
+[data-reveal-group] > :nth-child(6) { --rv-i: 5; }
+[data-reveal-group] > :nth-child(n+7) { --rv-i: 6; }
+html[data-rv] [data-reveal]:not([data-in]), html[data-rv] [data-reveal-group]:not([data-in]) > *,
+html[data-rv] .reveal:not([data-in]), html[data-rv] .mask-rise:not([data-in]) { animation-play-state: paused; }
+html[data-rv] [data-reveal][data-in="now"], html[data-rv] [data-reveal-group][data-in="now"] > * { animation: none; }
 
 /* Fraunces optical-axis play on italic hover */
-.fraunces-soft {
-  font-variation-settings: "SOFT" 0, "WONK" 0, "opsz" 48;
-  transition: font-variation-settings .6s ease, letter-spacing .6s ease;
-}
-.fraunces-soft:hover,
-.group:hover .fraunces-soft {
-  font-variation-settings: "SOFT" 100, "WONK" 1, "opsz" 144;
-  letter-spacing: -0.012em;
-}
+/* Fraunces-era hover axis play. The site is Geist now (no SOFT/WONK axes); the letter-spacing change only
+   reflowed headlines on hover, so the class is inert and headline hover is colour-only. */
+.fraunces-soft { transition: color .2s ease; }
 
 /* Hairline draw-on-view */
 .hair-draw {
@@ -414,7 +448,22 @@ input, textarea, select, button {
   /* Composited from load, so WebKit doesn't build the sticky layer on the reader's first scroll (a dropped frame). */
   will-change: transform;
 }
-.lh-seq { display: block; position: absolute; inset: 0; width: 100%; height: 100%; }
+.lh-seq { display: block; position: absolute; inset: 0; width: 100%; height: 100%; transform-origin: 50% 58%; }
+/* The screen beats are static frames: without this, ~600px of scroll changed nothing but a caption (motiscope:
+   a 0.65–0.9s dead hold at reading speed, where apple.com keeps something moving). A 3% push-in tied to the
+   story's own scroll timeline keeps the close-up alive. Scroll-driven, so it runs on the compositor; browsers
+   without scroll timelines simply hold still as before. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .lh-story { view-timeline-name: --lh-story; }
+    .lh-seq { animation: lh-push linear both; animation-timeline: --lh-story; animation-range: contain 0% contain 100%; }
+  }
+}
+@keyframes lh-push {
+  0%, 40% { transform: none; animation-timing-function: cubic-bezier(.45, 0, .55, 1); }
+  74% { transform: scale(1.03); animation-timing-function: cubic-bezier(.45, 0, .55, 1); }
+  82%, 100% { transform: none; }
+}
 /* Server-rendered first frame: the copy grid's last row is the same band the player draws into (subline + 16px →
    stage bottom − 150px, 16px gutters), and object-fit: contain matches its fit — so the canvas takes over in place. */
 .lh-first {
@@ -445,14 +494,17 @@ input, textarea, select, button {
 .lh-btn {
   display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 52px; padding: 0 26px;
   background: #F5F5F7; color: #0B0B0D; font-weight: 600; font-size: 16px; letter-spacing: -.01em; border-radius: 999px;
-  box-shadow: 0 1px 0 rgba(255,255,255,.6) inset, 0 18px 40px -18px rgba(0,0,0,.9); transition: background .2s, transform .2s;
+  box-shadow: 0 1px 0 rgba(255,255,255,.6) inset, 0 18px 40px -18px rgba(0,0,0,.9);
+  transition: background-color .2s ease, transform .16s var(--ease-out);
 }
-.lh-btn:hover { background: #fff; }
-.lh-btn:active { transform: scale(.98); }
-.lh-btn-arrow { transition: transform .2s; }
-.lh-btn:hover .lh-btn-arrow { transform: translateX(3px); }
-.lh-link { color: #D2D2D7; font-weight: 500; font-size: 16px; display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 4px; }
-.lh-link:hover { color: #fff; }
+.lh-btn:active { transform: scale(.97); }
+.lh-btn-arrow { transition: transform .3s var(--ease-out); }
+.lh-link { color: #D2D2D7; font-weight: 500; font-size: 16px; display: inline-flex; align-items: center; gap: 6px; min-height: 44px; padding: 0 4px; transition: color .2s ease; }
+@media (hover: hover) and (pointer: fine) {
+  .lh-btn:hover { background: #fff; }
+  .lh-btn:hover .lh-btn-arrow { transform: translateX(3px); }
+  .lh-link:hover { color: #fff; }
+}
 /* Phones get one clear action; the case study lives further down the page. */
 @media (max-width: 767px) {
   .lh-link { display: none; }
@@ -469,10 +521,17 @@ input, textarea, select, button {
 .lh-btn:focus-visible, .lh-link:focus-visible { outline: 2px solid #F5F5F7; outline-offset: 3px; }
 .lh-cap {
   position: absolute; left: 50%; top: clamp(78px, 10vh, 112px); width: min(760px, 92vw); text-align: center;
-  opacity: 0; transform: translate(-50%, 14px); transition: opacity .16s ease, transform .16s ease; pointer-events: none;
+  opacity: 0; transform: translate3d(-50%, 12px, 0); filter: blur(3px); pointer-events: none;
+  transition: opacity .16s var(--ease-out), transform .2s var(--ease-out), filter .16s var(--ease-out);
 }
-/* Captions share one spot: the outgoing one clears before the incoming one fades in, so two never overlap. */
-.lh-cap.lh-on { opacity: 1; transform: translate(-50%, 0); transition: opacity .38s ease .16s, transform .38s ease .16s; }
+/* Captions share one spot and move with the scroll: going down, the old line lifts out (.lh-past) as the new one
+   rises in from below; going up, the reverse. The crossfade overlaps briefly; a 3px blur on the moving pair hides
+   the double exposure, and the incoming line starts 40ms after the outgoing one so it never trails a fast scroll. */
+.lh-cap.lh-past { transform: translate3d(-50%, -10px, 0); }
+.lh-cap.lh-on {
+  opacity: 1; transform: translate3d(-50%, 0, 0); filter: blur(0);
+  transition: opacity .3s var(--ease-out) .04s, transform .45s var(--ease-out) .04s, filter .3s var(--ease-out) .04s;
+}
 .lh-cap small { display: block; margin-bottom: 10px; font-size: 12px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: #2997FF; }
 .lh-cap b { display: inline; font-size: clamp(20px, 2.2vw, 30px); letter-spacing: -.035em; line-height: 1.15; margin-right: .25em; }
 .lh-cap p { display: inline; color: #A1A1A6; font-size: clamp(20px, 2.2vw, 30px); font-weight: 600; letter-spacing: -.025em; line-height: 1.2; }
@@ -482,13 +541,13 @@ input, textarea, select, button {
 .lh-pill {
   position: absolute; left: 50%; bottom: calc(24px + env(safe-area-inset-bottom, 0px)); z-index: 5;
   transform: translate(-50%, 12px); opacity: 0; visibility: hidden;
-  transition: opacity .35s ease, transform .35s ease, visibility 0s linear .35s;
+  transition: opacity .2s var(--ease-out), transform .2s var(--ease-out), visibility 0s linear .2s;
 }
-.lh-pill.lh-pill-on { opacity: 1; visibility: visible; transform: translate(-50%, 0); transition: opacity .35s ease, transform .35s ease; }
+.lh-pill.lh-pill-on { opacity: 1; visibility: visible; transform: translate(-50%, 0); transition: opacity .3s var(--ease-out), transform .4s var(--ease-out); }
 .lh-pill-btn { display: inline-flex; align-items: center; min-height: 44px; padding: 0 20px; font-size: 15px; box-shadow: 0 10px 30px -10px rgba(0,113,227,.6); }
 /* Below lg the sticky KakaoTalk / Call / Free quote bar already carries the CTA. */
 @media (max-width: 1023px) { .lh-pill { display: none; } }
-@media (prefers-reduced-motion: reduce) { .lh-cap, .lh-pill { transition: none; } }
+@media (prefers-reduced-motion: reduce) { .lh-cap, .lh-pill { transition: none; filter: none; } }
 
 /* Nav over the dark hero */
 html[data-nav-tone="dark"] .kn-header:not(.kn-header-open) { background: rgba(10,11,14,.72); border-color: rgba(255,255,255,.08); }
@@ -879,3 +938,38 @@ html.space[lang="ko"] body { word-break: keep-all; }
 .space .text-indigo-500:not(.keep-light, .keep-light *) { color:#818CF8 }
 /* Body copy on those bands was knocked back to 90% — full white reads; the band colour already sets the mood. */
 .space p.opacity-90:not(.keep-light, .keep-light *) { opacity:1 }
+
+/* ── Motion polish (Emil Kowalski / Motion rules) ─────────────────── */
+/* Mobile menu: the panel drops in on the strong ease-out; its links follow 30ms apart so the eye reads down the
+   list. Closing is the system responding, so it's quicker and un-staggered. */
+.zl-menu { transition: opacity .18s var(--ease-out), transform .18s var(--ease-out), visibility 0s linear .18s; }
+/* The panel itself goes opaque almost at once (the page must never ghost through it); the links carry the motion. */
+.zl-menu[data-open] { transition: opacity .1s linear, transform .32s var(--ease-out), visibility 0s; }
+.zl-menu .zl-mi { opacity: 0; transform: translate3d(0, 10px, 0); transition: opacity .12s ease, transform .12s ease; }
+.zl-menu[data-open] .zl-mi {
+  opacity: 1; transform: none;
+  transition: opacity .32s var(--ease-out), transform .42s var(--ease-out);
+  transition-delay: calc(40ms + var(--i, 0) * 30ms);
+}
+.zl-burger > span { transition: transform .3s var(--ease-out), opacity .2s ease; }
+@media (prefers-reduced-motion: reduce) {
+  .zl-menu .zl-mi { transform: none; }
+}
+
+/* Sticky mobile bar: slides like an iOS sheet; leaving is faster than arriving. */
+.zl-bar { transition: transform .22s var(--ease-out); }
+.zl-bar[data-show] { transition: transform .45s var(--ease-drawer); }
+.zl-press { transition: transform .16s var(--ease-out), opacity .16s ease; }
+.zl-press:active { transform: scale(.97); }
+
+/* Chat sheet enters from where it lives: up from the bottom on phones, out of the launcher corner on desktop. */
+.zl-sheet { transition: opacity .24s var(--ease-out), transform .38s var(--ease-drawer); transform-origin: 100% 100%; }
+@starting-style { .zl-sheet { opacity: 0; transform: translate3d(0, 24px, 0); } }
+@media (min-width: 1024px) {
+  @starting-style { .zl-sheet { opacity: 0; transform: translate3d(0, 8px, 0) scale(.96); } }
+}
+
+/* iOS zooms the page into any focused field under 16px; keep touch typing at 16px. */
+@media (pointer: coarse) {
+  input:not([type="checkbox"]):not([type="radio"]):not([type="range"]), textarea, select { font-size: max(16px, 1em); }
+}

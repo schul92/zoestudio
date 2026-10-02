@@ -317,7 +317,7 @@ export default function KoreanWebDesignNJPage({ params }: { params: { locale: st
                 { en: 'Hackensack', ko: '해켄색', slug: 'hackensack-web-design', population: '46,000+', korean: '4%' },
                 { en: 'Fairview', ko: '페어뷰', slug: 'fairview-nj-web-design', population: '15,000+', korean: '6%' },
               ].map((city) => (
-                <Link key={city.en} href={`${prefix}/${city.slug}`} className="p-6 rounded-lg border-2 border-gray-200 hover:border-rose-500 hover:shadow-md transition-all">
+                <Link key={city.en} href={`${prefix}/${city.slug}`} className="p-6 rounded-lg border-2 border-gray-200 hover:border-rose-500 hover:shadow-md transition">
                   <p className="font-bold text-lg text-gray-900">{locale === 'ko' ? city.ko : city.en}</p>
                   <p className="text-sm text-gray-500 mt-1">{locale === 'ko' ? `한인 인구 ${city.korean}` : `${city.korean} Korean population`}</p>
                   <p className="text-xs text-gray-400 mt-1">{city.population}</p>

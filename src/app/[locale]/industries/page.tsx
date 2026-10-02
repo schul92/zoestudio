@@ -145,7 +145,7 @@ export default function IndustriesIndex({ params }: { params: { locale: string }
                           <span className="h-px w-6 bg-hairline" />
                           <span>{ind.eyebrow[locale]}</span>
                         </div>
-                        <h2 className="font-display text-[clamp(1.5rem,2.8vw,2.25rem)] leading-[1.15] tracking-luxury text-ink fraunces-soft group-hover:italic group-hover:text-gold group-hover:font-light transition-all duration-500">
+                        <h2 className="font-display text-[clamp(1.5rem,2.8vw,2.25rem)] leading-[1.15] tracking-luxury text-ink fraunces-soft group-hover:text-gold transition duration-500">
                           {ind.name[locale]}
                         </h2>
                         <p className="mt-4 text-[14px] md:text-body text-graphite leading-[1.7] max-w-xl">
@@ -154,7 +154,7 @@ export default function IndustriesIndex({ params }: { params: { locale: string }
                       </div>
                       <span
                         aria-hidden
-                        className="shrink-0 mt-2 text-ash group-hover:text-gold group-hover:-translate-y-1 group-hover:translate-x-1 transition-all duration-500"
+                        className="shrink-0 mt-2 text-ash group-hover:text-gold group-hover:-translate-y-1 group-hover:translate-x-1 transition duration-500"
                       >
                         ↗
                       </span>

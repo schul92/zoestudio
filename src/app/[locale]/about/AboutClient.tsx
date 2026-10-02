@@ -129,7 +129,7 @@ export default function AboutClient({ t, locale }: { t: any, locale: string }) {
             {t.philosophy.items.map((item: any, index: number) => (
               <div
                 key={index}
-                className="bg-[#1a1a1a] p-8 rounded-2xl border border-white/10 hover:border-[#6BB4FF]/30 transition-all"
+                className="bg-[#1a1a1a] p-8 rounded-2xl border border-white/10 hover:border-[#6BB4FF]/30 transition"
               >
                 <div className="text-5xl mb-4">{item.icon}</div>
                 <h3 className="text-xl font-bold mb-3 text-white">{item.title}</h3>
@@ -176,7 +176,7 @@ export default function AboutClient({ t, locale }: { t: any, locale: string }) {
                 className="group relative"
               >
                 <div className="bg-gradient-to-br from-[#6BB4FF] to-[#00A3A3] p-[2px] rounded-2xl">
-                  <div className="bg-[#1a1a1a] rounded-2xl p-8 h-full hover:bg-[#222222] transition-all">
+                  <div className="bg-[#1a1a1a] rounded-2xl p-8 h-full hover:bg-[#222222] transition">
                     <h3 className="text-xl font-bold mb-2 text-white">{item.title}</h3>
                     <p className="text-gray-400 text-sm">{item.description}</p>
                   </div>
@@ -239,7 +239,7 @@ export default function AboutClient({ t, locale }: { t: any, locale: string }) {
                   <span className="text-[#6BB4FF] font-semibold text-sm">✦ {t.founder.promoLabel}</span>
                   <a
                     href={`${prefix}/contact`}
-                    className="bg-[#6BB4FF] text-black px-6 py-3 rounded-full font-bold text-sm hover:bg-[#6BB4FF] hover:scale-105 transition-all"
+                    className="bg-[#6BB4FF] text-black px-6 py-3 rounded-full font-bold text-sm hover:bg-[#6BB4FF] hover:scale-105 transition"
                   >
                     {t.founder.promoButton}
                   </a>
@@ -284,7 +284,7 @@ export default function AboutClient({ t, locale }: { t: any, locale: string }) {
           >
             <a
               href={`${prefix}/contact`}
-              className="inline-block bg-[#6BB4FF] text-black px-10 py-5 text-lg font-bold rounded-full hover:bg-[#6BB4FF] hover:scale-110 transition-all shadow-2xl"
+              className="inline-block bg-[#6BB4FF] text-black px-10 py-5 text-lg font-bold rounded-full hover:bg-[#6BB4FF] hover:scale-110 transition shadow-2xl"
             >
               {t.cta.button}
             </a>

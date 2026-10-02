@@ -437,6 +437,8 @@ export function mountLumos({ story, stage, canvas, copy, sub, cta, pill, hint, c
         caps.forEach((el, i) => {
           if (!el) return
           el.classList.toggle('lh-on', i === beat)
+          // Captions already passed sit above the slot, so they leave upward and come back down on a reverse scroll.
+          el.classList.toggle('lh-past', beat >= 0 && i < beat)
           el.setAttribute('aria-hidden', i === beat ? 'false' : 'true')
         })
       }

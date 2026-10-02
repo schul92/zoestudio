@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState, type CSSProperties } from 'react'
 import { usePathname } from 'next/navigation'
 import { useTranslation } from '@/hooks/useTranslation'
 import { industrySlugs, citySlugs, localSeoSlugs } from '@/lib/localeSlugs'
@@ -144,10 +144,10 @@ export default function HeaderNew({ locale = 'en' }: { locale?: string }) {
               aria-controls="mobile-menu"
               className="flex lg:!hidden items-center justify-center w-11 h-11 -mr-2.5"
             >
-              <div className="w-[18px] flex flex-col gap-[5px]">
-                <span className={`h-[1.5px] bg-ink transition-transform duration-300 ${menuOpen ? 'rotate-45 translate-y-[6.5px]' : ''}`} />
-                <span className={`h-[1.5px] bg-ink transition-opacity duration-200 ${menuOpen ? 'opacity-0' : ''}`} />
-                <span className={`h-[1.5px] bg-ink transition-transform duration-300 ${menuOpen ? '-rotate-45 -translate-y-[6.5px]' : ''}`} />
+              <div className="zl-burger w-[18px] flex flex-col gap-[5px]">
+                <span className={`h-[1.5px] bg-ink ${menuOpen ? 'rotate-45 translate-y-[6.5px]' : ''}`} />
+                <span className={`h-[1.5px] bg-ink ${menuOpen ? 'opacity-0' : ''}`} />
+                <span className={`h-[1.5px] bg-ink ${menuOpen ? '-rotate-45 -translate-y-[6.5px]' : ''}`} />
               </div>
             </button>
           </div>
@@ -160,19 +160,20 @@ export default function HeaderNew({ locale = 'en' }: { locale?: string }) {
         // React 18 has no typed `inert` prop; passing it as a plain attribute keeps closed links out of the tab order.
         {...({ inert: menuOpen ? undefined : '' } as Record<string, string | undefined>)}
         aria-hidden={!menuOpen}
-        className={`lg:hidden fixed inset-0 top-14 md:top-16 kn-solid z-[90] transition-[opacity,transform,visibility] duration-300 ease-out ${
+        data-open={menuOpen ? '' : undefined}
+        className={`zl-menu lg:hidden fixed inset-0 top-14 md:top-16 kn-solid z-[90] ${
           menuOpen ? 'visible opacity-100 translate-y-0 pointer-events-auto' : 'invisible opacity-0 -translate-y-2 pointer-events-none'
         }`}
       >
         <div className="container-edge pt-8 pb-10 h-full flex flex-col gap-10 overflow-y-auto">
           <nav className="flex flex-col" aria-label={ko ? '모바일 메뉴' : 'Mobile'}>
-            {[...nav, ...more].map((l) => (
-              <Link key={l.href} href={l.href} onClick={() => setMenuOpen(false)} className="text-[28px] font-semibold tracking-[-0.03em] text-ink py-2.5 border-b border-hairline">
+            {[...nav, ...more].map((l, i) => (
+              <Link key={l.href} href={l.href} onClick={() => setMenuOpen(false)} style={{ '--i': i } as CSSProperties} className="zl-mi text-[28px] font-semibold tracking-[-0.03em] text-ink py-2.5 border-b border-hairline">
                 {l.label}
               </Link>
             ))}
           </nav>
-          <div className="flex flex-col gap-3">
+          <div className="zl-mi flex flex-col gap-3" style={{ '--i': 8 } as CSSProperties}>
             <Link href={`${prefix}/audit`} onClick={() => setMenuOpen(false)} className="btn-ink justify-center">{ko ? '무료 진단 받기' : 'Get a free audit'}</Link>
             <Link href={otherLocaleHref} onClick={() => setMenuOpen(false)} className="text-center text-[15px] text-link py-3">{ko ? 'English' : '한국어'}</Link>
           </div>

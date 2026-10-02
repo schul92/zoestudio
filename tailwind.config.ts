@@ -1,6 +1,8 @@
 import type { Config } from 'tailwindcss'
 
 const config: Config = {
+  // hover: utilities only on devices that really hover — on touch, a tap otherwise leaves the hover state stuck on.
+  future: { hoverOnlyWhenSupported: true },
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',

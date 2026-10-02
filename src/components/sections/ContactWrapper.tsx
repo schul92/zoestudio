@@ -278,7 +278,7 @@ export default function ContactWrapper({
                       key={s}
                       type="button"
                       onClick={() => toggleScope(s)}
-                      className="px-4 min-h-[44px] rounded-full text-[14px] transition-all duration-200 border"
+                      className="px-4 min-h-[44px] rounded-full text-[14px] transition duration-200 border"
                       style={{
                         background: active ? 'var(--ink)' : 'transparent',
                         color: active ? 'var(--ivory)' : 'var(--graphite)',
@@ -306,7 +306,7 @@ export default function ContactWrapper({
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
                 placeholder={t.placeholders.message}
                 rows={5}
-                className="w-full rounded-xl px-4 py-3.5 text-[15px] leading-[1.6] resize-y transition-all duration-200 outline-none focus:ring-2"
+                className="w-full rounded-xl px-4 py-3.5 text-[15px] leading-[1.6] resize-y transition duration-200 outline-none focus:ring-2"
                 style={{
                   background: 'var(--ivory)',
                   border: '1px solid var(--line)',
@@ -338,7 +338,7 @@ export default function ContactWrapper({
                   type="submit"
                   data-cursor={isKo ? '보내기' : 'Send'}
                   disabled={status === 'loading'}
-                  className="inline-flex items-center gap-3 px-8 py-[18px] rounded-full text-[15px] font-medium transition-all duration-300 hover:scale-[1.02] hover:shadow-[0_24px_50px_-16px_rgba(0,113,227,0.55)] disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
+                  className="inline-flex items-center gap-3 px-8 py-[18px] rounded-full text-[15px] font-medium transition duration-300 hover:scale-[1.02] hover:shadow-[0_24px_50px_-16px_rgba(0,113,227,0.55)] disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
                   style={{
                     background: valid ? 'var(--ink)' : 'var(--graphite)',
                     color: 'var(--ivory)',
@@ -376,7 +376,7 @@ export default function ContactWrapper({
             <div className="flex flex-wrap items-center gap-3">
               <a
                 href={t.altContact.emailHref}
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] transition-all duration-200 hover:scale-[1.03]"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] transition duration-200 hover:scale-[1.03]"
                 style={{
                   background: 'var(--paper)',
                   border: '1px solid var(--line)',
@@ -392,7 +392,7 @@ export default function ContactWrapper({
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => trackKakaoClick('contact_section')}
-                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] transition-all duration-200 hover:scale-[1.03]"
+                className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] transition duration-200 hover:scale-[1.03]"
                 style={{
                   background: '#FEE500',
                   border: '1px solid rgba(0,0,0,0.09)',
@@ -484,7 +484,7 @@ function Field({
         placeholder={placeholder}
         required={required}
         autoComplete={autoComplete}
-        className="w-full rounded-xl px-4 py-3 text-[15px] transition-all duration-200 outline-none"
+        className="w-full rounded-xl px-4 py-3 text-[15px] transition duration-200 outline-none"
         style={{
           background: 'var(--ivory)',
           border: '1px solid var(--line)',

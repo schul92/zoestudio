@@ -69,7 +69,7 @@ export default function AtAGlance({ locale = 'en' }: { locale?: string }) {
           {isKo ? '자주 묻는 네 가지, ' : 'Four answers, '}
           <em>{isKo ? '짧게.' : 'up front.'}</em>
         </h2>
-        <dl className="mt-12 md:mt-14 grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
+        <dl data-reveal-group className="mt-12 md:mt-14 grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
           {items.map((it) => (
             <div key={it.q} className="kn-card p-6 md:p-7">
               <dt className="text-[19px] md:text-[21px] font-semibold tracking-[-0.03em] text-ink">{it.q}</dt>

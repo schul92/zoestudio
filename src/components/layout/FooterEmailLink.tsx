@@ -14,7 +14,7 @@ export default function FooterEmailLink({ email }: FooterEmailLinkProps) {
       className="flex items-center group/link text-gray-400 hover:text-amber-400 transition-colors duration-200"
     >
       <span className="mr-3 text-lg group-hover/link:scale-110 transition-transform duration-200">✉️</span>
-      <span className="text-sm border-b border-transparent group-hover/link:border-amber-400 transition-all duration-200">
+      <span className="text-sm border-b border-transparent group-hover/link:border-amber-400 transition duration-200">
         {email}
       </span>
     </a>

@@ -37,7 +37,7 @@ export default function TrustRibbon({ locale = 'en' }: { locale?: string }) {
 
   return (
     <section aria-label={isKo ? '신뢰 지표' : 'Trust signals'} className="bg-ivory">
-      <ul className="container-edge grid grid-cols-2 md:grid-cols-4 py-16 md:py-24 gap-y-12">
+      <ul data-reveal-group className="container-edge grid grid-cols-2 md:grid-cols-4 py-16 md:py-24 gap-y-12">
         {stats.map((s, i) => (
           <li
             key={s.value}

@@ -117,7 +117,7 @@ export default function SelectedWork({
   return (
     <section id="work" className="bg-ivory section-pad" aria-labelledby="work-title">
       <div className="container-edge">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
+        <div data-reveal className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
           <div>
             <p className="text-[15px] font-semibold text-gold">
               {isKo ? '작업' : 'Selected Work'}
@@ -135,7 +135,7 @@ export default function SelectedWork({
           </Link>
         </div>
 
-        <ul className="mt-14 md:mt-16 grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
+        <ul data-reveal-group className="mt-14 md:mt-16 grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
           {projects.map((p, i) => (
             <li key={p.name} className={i === 0 ? 'md:col-span-2' : ''}>
               <article className="kn-card overflow-hidden h-full flex flex-col">

@@ -176,7 +176,7 @@ export default function BlogListing({
                     <span className="w-6 h-px bg-hairline" />
                     <span>{featured.readTime} {content.minRead}</span>
                   </div>
-                  <h2 className="font-display text-[clamp(2rem,4vw,3.25rem)] leading-[1.05] tracking-luxury text-ink fraunces-soft group-hover:italic group-hover:text-gold group-hover:font-light transition-all duration-500">
+                  <h2 className="font-display text-[clamp(2rem,4vw,3.25rem)] leading-[1.05] tracking-luxury text-ink fraunces-soft group-hover:text-gold transition duration-500">
                     {featured.title[locale]}
                   </h2>
                   <p className="mt-6 text-body text-graphite leading-[1.7] max-w-xl line-clamp-4">
@@ -201,7 +201,7 @@ export default function BlogListing({
               <span className="overline text-ash shrink-0 pr-2">{isKo ? '카테고리' : 'Topics'}</span>
               <button
                 onClick={() => setActiveCategory('all')}
-                className={`px-4 py-2 rounded-full text-[13px] transition-all duration-300 border whitespace-nowrap ${
+                className={`px-4 py-2 rounded-full text-[13px] transition duration-300 border whitespace-nowrap ${
                   activeCategory === 'all'
                     ? 'bg-ink text-ivory border-ink'
                     : 'text-graphite border-hairline hover:border-ink'
@@ -216,7 +216,7 @@ export default function BlogListing({
                   <button
                     key={cat}
                     onClick={() => setActiveCategory(cat)}
-                    className={`px-4 py-2 rounded-full text-[13px] transition-all duration-300 border whitespace-nowrap ${
+                    className={`px-4 py-2 rounded-full text-[13px] transition duration-300 border whitespace-nowrap ${
                       active
                         ? 'bg-ink text-ivory border-ink'
                         : 'text-graphite border-hairline hover:border-ink'
@@ -248,7 +248,7 @@ export default function BlogListing({
               <span className="overline text-ash shrink-0 pr-2">{isKo ? '시리즈' : 'Series'}</span>
               <button
                 onClick={() => setActivePillar('all')}
-                className={`px-4 py-2 rounded-full text-[13px] transition-all duration-300 border whitespace-nowrap ${
+                className={`px-4 py-2 rounded-full text-[13px] transition duration-300 border whitespace-nowrap ${
                   activePillar === 'all'
                     ? 'bg-ink text-ivory border-ink'
                     : 'text-graphite border-hairline hover:border-ink'
@@ -263,7 +263,7 @@ export default function BlogListing({
                   <button
                     key={key}
                     onClick={() => setActivePillar(active ? 'all' : key)}
-                    className={`px-4 py-2 rounded-full text-[13px] transition-all duration-300 border whitespace-nowrap ${
+                    className={`px-4 py-2 rounded-full text-[13px] transition duration-300 border whitespace-nowrap ${
                       active
                         ? 'bg-ink text-ivory border-ink'
                         : 'text-graphite border-hairline hover:border-ink'
@@ -320,7 +320,7 @@ export default function BlogListing({
                         <span>{post.readTime} {content.minRead}</span>
                       </div>
 
-                      <h3 className="mt-3 font-display text-[clamp(1.35rem,2.3vw,1.75rem)] leading-[1.15] tracking-luxury text-ink fraunces-soft group-hover:italic group-hover:text-gold group-hover:font-light transition-all duration-500 line-clamp-3">
+                      <h3 className="mt-3 font-display text-[clamp(1.35rem,2.3vw,1.75rem)] leading-[1.15] tracking-luxury text-ink fraunces-soft group-hover:text-gold transition duration-500 line-clamp-3">
                         {post.title[locale]}
                       </h3>
 
@@ -332,7 +332,7 @@ export default function BlogListing({
                         <span className="text-[12px] text-ash">{formatDate(post.date)}</span>
                         <span
                           aria-hidden
-                          className="text-ash group-hover:text-gold group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-all duration-500"
+                          className="text-ash group-hover:text-gold group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition duration-500"
                         >
                           ↗
                         </span>

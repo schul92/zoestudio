@@ -278,7 +278,7 @@ export default function PricingTeaser({ locale = 'en' }: { locale?: string }) {
     >
       <div className="mx-auto max-w-[1400px] px-5 md:px-12 py-16 md:py-24">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 md:mb-14">
+        <div data-reveal className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-10 md:mb-14">
           <div>
             <p className="text-[11px] uppercase tracking-[0.22em] text-[#6E6E73] mb-3">
               {isKo ? '05 — 가격' : '05 — Pricing'}
@@ -311,7 +311,7 @@ export default function PricingTeaser({ locale = 'en' }: { locale?: string }) {
         </InView>
 
         {/* Tiers */}
-        <ul className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
+        <ul data-reveal-group className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
           {tiers.map((t, i) => (
             <InView as="li" key={t.id} delay={i * 80}>
               <div

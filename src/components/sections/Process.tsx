@@ -139,7 +139,7 @@ export default function Process({
                     <span className="section-num text-lg">{s.no}</span>
                     <span className="overline text-ash">{s.weeks[locale as 'en' | 'ko']}</span>
                   </div>
-                  <h3 className="font-display text-2xl md:text-3xl text-ink tracking-luxury fraunces-soft group-hover:italic group-hover:text-gold group-hover:font-light transition-all duration-500">
+                  <h3 className="font-display text-2xl md:text-3xl text-ink tracking-luxury fraunces-soft group-hover:text-gold transition duration-500">
                     {s.title[locale as 'en' | 'ko']}
                   </h3>
                   <p className="mt-4 text-[14px] text-graphite leading-[1.7] max-w-[30ch] mx-auto md:mx-0">

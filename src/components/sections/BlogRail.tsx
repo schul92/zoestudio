@@ -150,7 +150,7 @@ export default function BlogRail({
           <span>{isKo ? '저널' : 'Journal'}</span>
         </InView>
 
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-14 items-end mb-12 md:mb-16">
+        <div data-reveal className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-14 items-end mb-12 md:mb-16">
           <h2 className="md:col-span-8 font-display text-[clamp(2rem,5vw,4rem)] leading-[1.05] tracking-luxury text-ink m-0">
             {isKo ? (
               <>
@@ -172,7 +172,7 @@ export default function BlogRail({
         </div>
 
         {/* 3-up grid */}
-        <ul className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        <ul data-reveal-group className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
           {FEATURED.map((post, i) => (
             <InView as="li" key={post.slug} delay={i * 80}>
               <div>

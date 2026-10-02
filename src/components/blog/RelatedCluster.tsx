@@ -50,7 +50,7 @@ function SiblingList({
             </div>
             <span
               aria-hidden
-              className="text-ash group-hover:text-gold group-hover:translate-x-1 transition-all shrink-0"
+              className="text-ash group-hover:text-gold group-hover:translate-x-1 transition shrink-0"
             >
               →
             </span>

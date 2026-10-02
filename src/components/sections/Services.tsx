@@ -63,7 +63,7 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
   return (
     <section id="services" className="bg-ivory section-pad" aria-labelledby="services-title">
       <div className="container-edge">
-        <div className="text-center max-w-3xl mx-auto">
+        <div data-reveal className="text-center max-w-3xl mx-auto">
           <p className="text-[15px] font-semibold text-gold">{isKo ? '서비스' : 'Disciplines'}</p>
           <h2 id="services-title" className="mt-3 font-display text-display-lg text-ink text-balance">
             {isKo ? '조용하게, ' : 'Quiet craft, '}
@@ -72,7 +72,7 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
           <p className="mt-5 text-body-lg text-graphite">{t.services.subtitle}</p>
         </div>
 
-        <ul className="mt-14 md:mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+        <ul data-reveal-group className="mt-14 md:mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
           {items.map((it) => (
             <li key={it.no} className={`flex ${it.no === '01' ? 'lg:col-span-2' : it.no === '07' ? 'md:col-span-2' : ''}`}>
               <Link

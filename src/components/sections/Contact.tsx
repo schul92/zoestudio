@@ -394,7 +394,7 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                             setEmailTouched(true)
                             setEmailError(validateEmail(formData.email))
                           }}
-                          className={`w-full px-4 py-3 pr-10 border rounded-xl focus:outline-none transition-all text-white placeholder-gray-500 ${
+                          className={`w-full px-4 py-3 pr-10 border rounded-xl focus:outline-none transition text-white placeholder-gray-500 ${
                             emailError && emailTouched
                               ? 'border-red-500/50 focus:border-red-500/70 bg-red-500/[0.05]'
                               : formData.email && !emailError && emailTouched
