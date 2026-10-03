@@ -91,27 +91,22 @@ export const trackFormSuccess = (data: {
     submission_time: data.timeToSubmit,
   })
   
-  // GA4 recommended lead event — this is the name marked as a key event in
-  // GA4 (and imported into Google Ads), so it must fire on every successful
-  // contact submission site-wide.
-  if (window.gtag) {
-    window.gtag('event', 'generate_lead', {
-      currency: 'USD',
-      value: Math.max(1, data.services.length),
-      lead_source: 'contact_form',
-      page_path: window.location.pathname,
-    })
-  }
+  // generate_lead is fired once by submitLead (src/lib/leadCapture.ts) — not here, or it double-counts.
+}
 
-  // Also send as a conversion goal
-  if (window.gtag) {
-    window.gtag('event', 'conversion', {
-      'send_to': process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID,
-      'value': data.services.length,
-      'currency': 'USD',
-      'transaction_id': Date.now().toString(),
-    })
-  }
+export type LeadMethod = 'form' | 'chat' | 'kakao' | 'magnet'
+
+// GA4 recommended lead event: the key event imported into Google Ads as the conversion. Fired exactly once per
+// confirmed submission (KakaoTalk clicks fire it from the global click listener in the locale layout).
+export const trackLead = (method: LeadMethod, source: string) => {
+  if (typeof window === 'undefined' || !window.gtag) return
+  window.gtag('event', 'generate_lead', {
+    method,
+    lead_source: source,
+    currency: 'USD',
+    value: 1,
+    page_path: window.location.pathname,
+  })
 }
 
 // Track form errors for optimization
@@ -209,31 +204,8 @@ export const trackPhoneClick = (phoneNumber: string) => {
   })
 }
 
-// Track KakaoTalk chat link clicks (secondary lead channel alongside the
-// contact form — surfaced in GA4 as `kakao_click`)
-export const trackKakaoClick = (location: string) => {
-  if (typeof window !== 'undefined' && window.gtag) {
-    window.gtag('event', 'kakao_click', {
-      link_location: location,
-      lead_source: 'kakao_chat',
-      page_path: window.location.pathname,
-    })
-  }
-}
-
-// Track lead-magnet email submissions (e.g. the KakaoTalk checklist) — fires
-// the same GA4 `generate_lead` key event as the contact form, with its own
-// lead_source so magnet leads are separable in reports.
-export const trackChecklistLead = (leadSource: string) => {
-  if (typeof window !== 'undefined' && window.gtag) {
-    window.gtag('event', 'generate_lead', {
-      currency: 'USD',
-      value: 1,
-      lead_source: leadSource,
-      page_path: window.location.pathname,
-    })
-  }
-}
+// KakaoTalk clicks (`kakao_click`) are tracked by one delegated listener in the locale layout, so every Kakao
+// link on the site — including ones inside blog content — is counted without per-link handlers.
 
 // Track email clicks
 export const trackEmailClick = (email: string) => {

@@ -1,7 +1,11 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import { submitLead, loadDraft, leadText } from '@/lib/leadCapture'
+import LeadFallback from '@/components/ui/LeadFallback'
+
+const DRAFT_KEY = 'pricing_start_project'
 
 const services = {
   en: [
@@ -81,6 +85,21 @@ export default function StartProjectForm({ locale }: { locale: 'en' | 'ko' }) {
   const [form, setForm] = useState({ name: '', business: '', email: '', phone: '', desc: '' })
   const [error, setError] = useState('')
   const [sending, setSending] = useState(false)
+  const [unsent, setUnsent] = useState('')
+
+  // Restore a draft that never reached us (closed tab, mail outage).
+  useEffect(() => {
+    const d = loadDraft<{ name: string; business: string; email: string; phone: string; desc: string; selected: string[] }>(DRAFT_KEY)
+    if (!d) return
+    setForm((f) => ({
+      name: d.name || f.name,
+      business: d.business || f.business,
+      email: d.email || f.email,
+      phone: d.phone || f.phone,
+      desc: d.desc || f.desc,
+    }))
+    if (Array.isArray(d.selected) && d.selected.length) setSelected(d.selected)
+  }, [])
 
   const toggle = (id: string) => {
     setSelected(prev => prev.includes(id) ? prev.filter(s => s !== id) : [...prev, id])
@@ -95,23 +114,30 @@ export default function StartProjectForm({ locale }: { locale: 'en' | 'ko' }) {
   const submit = async () => {
     if (!form.name.trim() || !form.email.trim()) { setError(t.requiredContact); return }
     setSending(true)
+    setUnsent('')
     const selectedTitles = serviceList.filter(s => selected.includes(s.id)).map(s => s.title).join(', ')
+    const payload = {
+      name: form.name,
+      business: form.business,
+      email: form.email,
+      phone: form.phone,
+      services: selectedTitles,
+      message: form.desc,
+      locale,
+    }
+    // Keep the raw form (incl. selected ids) as the draft so it can be restored verbatim.
     try {
-      await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: form.name,
-          business: form.business,
-          email: form.email,
-          phone: form.phone,
-          message: `Services: ${selectedTitles}\n\n${form.desc}`,
-          locale,
-        }),
-      })
-    } catch (_) {}
+      localStorage.setItem('zl_draft_' + DRAFT_KEY, JSON.stringify({ ...form, selected, savedAt: Date.now() }))
+    } catch {}
+    const result = await submitLead(payload, { method: 'form', source: 'pricing_start_project' })
     setSending(false)
-    setStep('done')
+    if (result.ok) {
+      try { localStorage.removeItem('zl_draft_' + DRAFT_KEY) } catch {}
+      setStep('done')
+    } else {
+      // Only show success when the server confirmed delivery — a failure keeps the visitor here with direct channels.
+      setUnsent(leadText(payload, locale === 'ko'))
+    }
   }
 
   return (
@@ -243,6 +269,12 @@ export default function StartProjectForm({ locale }: { locale: 'en' | 'ko' }) {
             </div>
 
             {error && <p className="text-red-400 text-sm mb-4">{error}</p>}
+
+            {unsent && (
+              <div className="mb-6">
+                <LeadFallback locale={locale} text={unsent} />
+              </div>
+            )}
 
             <div className="flex flex-col sm:flex-row gap-3">
               <button

@@ -8,6 +8,7 @@ import GoogleAnalytics from '@/components/GoogleAnalytics'
 import AnalyticsWrapper from '@/components/AnalyticsWrapper'
 import AfterInteraction from '@/components/AfterInteraction'
 import { SITE_URL } from '@/lib/siteUrl'
+import { analyticsBoot } from '@/lib/analyticsBoot'
 
 // Floating KakaoTalk chat — site-wide (blogs and service pages drive most
 // sessions; the button was previously homepage-only).
@@ -132,6 +133,7 @@ export default function RootLayout({
         {/* Scroll-reveal flag, set before first paint so off-screen reveals start paused instead of half-playing.
             Released after 2.5s if the scanner at the end of <body> never ran, so nothing can stay hidden. */}
         <script dangerouslySetInnerHTML={{ __html: REVEAL_FLAG }} />
+        <script dangerouslySetInnerHTML={{ __html: analyticsBoot(process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID) }} />
         <style dangerouslySetInnerHTML={{
           __html: `
             /* Critical CSS for above-the-fold content */

@@ -3,7 +3,11 @@
 import { useTranslation } from '@/hooks/useTranslation'
 import { useState, useEffect, useRef } from 'react'
 import { useServices } from '@/context/ServiceContext'
-import { trackFormSuccess, trackFormError, trackGAEvent, GA_EVENTS, trackEmailClick, trackButtonClick, trackKakaoClick } from '@/utils/analytics'
+import { trackFormSuccess, trackFormError, trackGAEvent, GA_EVENTS, trackEmailClick, trackButtonClick } from '@/utils/analytics'
+import { submitLead, loadDraft, leadText } from '@/lib/leadCapture'
+import LeadFallback from '@/components/ui/LeadFallback'
+
+const DRAFT_KEY = 'contact_section'
 import Modal from '@/components/ui/Modal'
 import { Mail, MapPin, Clock, CheckCircle, XCircle, AlertTriangle, CalendarCheck } from 'lucide-react'
 import { BOOKING_URL } from '@/lib/booking'
@@ -28,10 +32,13 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
   const [cameFromPricing, setCameFromPricing] = useState(false)
   const [isMounted, setIsMounted] = useState(false)
   const formStartTime = useRef<number>(0)
+  const [unsent, setUnsent] = useState('')
   
-  // Set mounted state
+  // Set mounted state; restore a draft that never reached us (closed tab, mail outage).
   useEffect(() => {
     setIsMounted(true)
+    const d = loadDraft<{ name: string; email: string; phone: string; business: string; message: string }>(DRAFT_KEY)
+    if (d) setFormData((f) => ({ ...f, ...Object.fromEntries(Object.entries(d).filter(([k, v]) => k in f && typeof v === 'string')) }))
   }, [])
   
   // Check if user came from pricing page - only runs on client
@@ -139,25 +146,23 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
     // Calculate time spent on form
     const timeToSubmit = formStartTime.current ? Math.round((Date.now() - formStartTime.current) / 1000) : 0
 
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          ...formData,
-          services: selectedServices.map(s => {
-            // Format service with price if available
-            if (s.price && s.price !== s.title) {
-              return `${s.title} (${s.price})`
-            }
-            return s.title
-          }).join(' | '),
-        }),
-      })
+    setUnsent('')
+    const payload = {
+      ...formData,
+      services: selectedServices.map(s => {
+        // Format service with price if available
+        if (s.price && s.price !== s.title) {
+          return `${s.title} (${s.price})`
+        }
+        return s.title
+      }).join(' | '),
+      locale,
+    }
 
-      if (response.ok) {
+    try {
+      const result = await submitLead(payload, { method: 'form', source: 'contact_section', draftKey: DRAFT_KEY })
+
+      if (result.ok) {
         setSubmitStatus('success')
         setSubmittedEmail(formData.email)
         
@@ -185,15 +190,16 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
           timeToSubmit: timeToSubmit
         })
       } else {
+        // Close the spinner and keep the visitor's text on screen with direct channels, instead of a dead-end modal.
         setSubmitStatus('error')
-        setModalState({ isOpen: true, type: 'error' })
-        // Track submission error with details
-        trackFormError('server_error', `Status: ${response.status}`)
+        setModalState({ isOpen: false, type: 'loading' })
+        setUnsent(leadText(payload, locale === 'ko'))
+        trackFormError(result.code === 'NETWORK' ? 'network_error' : 'server_error', result.code)
       }
     } catch (error) {
       setSubmitStatus('error')
-      setModalState({ isOpen: true, type: 'error' })
-      // Track network error
+      setModalState({ isOpen: false, type: 'loading' })
+      setUnsent(leadText(payload, locale === 'ko'))
       trackFormError('network_error', error instanceof Error ? error.message : 'Unknown error')
     } finally {
       setIsSubmitting(false)
@@ -482,6 +488,11 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                       </span>
                     </button>
                   </form>
+                  {submitStatus === 'error' && unsent && (
+                    <div className="keep-light mt-6">
+                      <LeadFallback locale={locale} text={unsent} />
+                    </div>
+                  )}
                 </div>
                 
                 {/* Right: Contact Info & Process */}
@@ -577,7 +588,7 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                         href="http://pf.kakao.com/_xhxdxmlX/chat"
                         target="_blank"
                         rel="noopener noreferrer"
-                        onClick={() => trackKakaoClick('contact_info')}
+                        data-kakao-loc="contact_info"
                         className="tap-44 flex items-center gap-3 text-gray-300 hover:text-[#FEE500] transition-colors"
                       >
                         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="flex-shrink-0">

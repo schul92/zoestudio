@@ -2,6 +2,8 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { trackGAEvent } from '@/utils/analytics'
+import { submitLead, leadText } from '@/lib/leadCapture'
+import LeadFallback from '@/components/ui/LeadFallback'
 
 /**
  * Site chatbot widget. Talks to /api/chat, which streams plain text back.
@@ -520,12 +522,12 @@ function LeadForm({
   const [website, setWebsite] = useState('')
   const [question, setQuestion] = useState(lastQuestion)
   const [sending, setSending] = useState(false)
-  const [failed, setFailed] = useState(false)
+  const [unsent, setUnsent] = useState('')
 
   const submit = async () => {
     if (sending || !name.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.trim())) return
     setSending(true)
-    setFailed(false)
+    setUnsent('')
 
     // Last 12 turns, capped — enough context to reply without shipping a novel.
     const transcript = messages
@@ -534,19 +536,17 @@ function LeadForm({
       .join('\n')
       .slice(0, 2500)
 
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: name.trim(),
-          email: email.trim(),
-          business: website.trim() || undefined,
-          services: 'AI chat lead (site widget)',
-          message: `${question.trim() || '(no question)'}\n\n--- chat transcript ---\n${transcript}`,
-        }),
-      })
-      if (!res.ok) throw new Error(String(res.status))
+    const payload = {
+      name: name.trim(),
+      email: email.trim(),
+      business: website.trim() || undefined,
+      services: 'AI chat lead (site widget)',
+      message: `${question.trim() || '(no question)'}\n\n--- chat transcript ---\n${transcript}`,
+      locale: isKo ? 'ko' : 'en',
+    }
+    const result = await submitLead(payload, { method: 'chat', source: 'chat_widget', draftKey: 'chat_lead' })
+    setSending(false)
+    if (result.ok) {
       trackGAEvent('chat_lead_submit', {
         category: 'chat',
         label: 'success',
@@ -554,11 +554,10 @@ function LeadForm({
         message_length: question.length,
       })
       onDone()
-    } catch {
-      setFailed(true)
-      trackGAEvent('chat_lead_submit', { category: 'chat', label: 'error', form_type: 'chat_widget' })
-    } finally {
-      setSending(false)
+    } else {
+      // The copyable text is just what the visitor typed; the transcript is already in our logs if sending failed.
+      setUnsent(leadText({ ...payload, message: question.trim(), services: undefined }, isKo))
+      trackGAEvent('chat_lead_submit', { category: 'chat', label: `error:${result.code}`, form_type: 'chat_widget' })
     }
   }
 
@@ -607,12 +606,10 @@ function LeadForm({
           className={`${field} resize-none`}
         />
       </div>
-      {failed && (
-        <p className="mt-2 text-[11.5px] text-[#a8231c]">
-          {isKo
-            ? '전송에 실패했습니다. 잠시 후 다시 시도하시거나 info@zoelumos.com 으로 보내주세요.'
-            : 'Failed to send. Please try again or email info@zoelumos.com.'}
-        </p>
+      {unsent && (
+        <div className="mt-2.5">
+          <LeadFallback locale={isKo ? 'ko' : 'en'} text={unsent} />
+        </div>
       )}
       <button
         type="button"

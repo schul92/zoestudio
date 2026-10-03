@@ -13,7 +13,9 @@ const nextConfig = {
   compress: true,
   poweredByHeader: false,
   compiler: {
-    removeConsole: process.env.NODE_ENV === 'production',
+    // Keep console.error/warn in production: server errors (e.g. LEAD_NOT_SENT during a mail outage) must reach the
+    // Vercel logs. Stripping them hid the Sept 2026 contact-form outage.
+    removeConsole: process.env.NODE_ENV === 'production' ? { exclude: ['error', 'warn'] } : false,
   },
   experimental: {
     scrollRestoration: true,
