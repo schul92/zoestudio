@@ -13519,4 +13519,107 @@ export const blogContent: BlogPost[] = [
       ],
     },
   },
+  // ─────────────────────────────────────────────────────────────────
+  // 2026-10-03 — C2C/service real estate angle: private showing/open-house
+  // booking + Zillow/Google review trust for Korean-American real estate
+  // agents. The prior real estate post (2026-03-31) was a general
+  // evergreen guide with no booking-system focus; this fills that gap.
+  // Audience rotation: Philadelphia, PA — not yet used in this blog.
+  // NOTE: B2B (vendor onboarding / company-domain email trust) was
+  // deliberately skipped today — it is already covered by 9+ open PRs
+  // from this same daily routine over the past month (see 2026-09-07,
+  // 09-08, 09-09, 09-11, 09-12, 09-25, 09-26, 09-30, 10-02), none yet
+  // merged to main, so the topic was badly over-rotated relative to the
+  // merged baseline this routine checks against.
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'korean-real-estate-agent-showing-booking-reviews-philadelphia-2026',
+    date: '2026-10-03',
+    updatedDate: '2026-10-03',
+    readTime: 8,
+    category: { en: 'Industry Guide', ko: '업종별 가이드' },
+    title: {
+      en: "Philadelphia Korean Real Estate Agents: Stop Losing Buyers to a Phone-Tag Showing Request (2026)",
+      ko: '필라델피아 한인 부동산 에이전트, 전화로 쇼잉 잡다가 바이어를 놓치고 있다면 (2026)',
+    },
+    metaDescription: {
+      en: "Korean-American real estate agents in Philadelphia are still scheduling private showings by phone and text while buyers compare Zillow reviews before they ever call. Here is how an online showing-request system and an optimized Google Business Profile change which agent gets the appointment.",
+      ko: '필라델피아 한인 부동산 에이전트들이 여전히 전화와 문자로 쇼잉을 잡는 동안, 바이어들은 전화하기도 전에 질로우(Zillow) 리뷰부터 비교합니다. 온라인 쇼잉 요청 시스템과 최적화된 구글 비즈니스 프로필이 어떤 에이전트가 약속을 잡는지를 어떻게 바꾸는지 알려드립니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: "Do buyers really check an agent's reviews before requesting a showing, or do they just call whoever the listing shows?",
+          ko: '바이어들이 정말로 쇼잉을 요청하기 전에 에이전트 리뷰를 확인하나요, 아니면 그냥 매물에 나온 담당자에게 전화하나요?',
+        },
+        a: {
+          en: "Yes, most buyers now check reviews first, because a home purchase is one of the largest decisions they will make and Zillow, Google, and Realtor.com all surface agent review scores directly next to the listing or contact button before a buyer ever dials a number. A listing agent with no reviews, or with old reviews under a different brokerage name, reads as a smaller risk signal than an agent with recent, specific five-star reviews — and in a competitive market a buyer who is unsure will often just request the showing through whichever agent looks more established rather than wait to clarify.",
+          ko: '네, 대부분의 바이어가 전화를 걸기 전에 먼저 리뷰를 확인합니다. 집을 사는 건 인생에서 가장 큰 결정 중 하나이고, 질로우·구글·리얼터닷컴 모두 매물이나 연락 버튼 바로 옆에 에이전트 리뷰 점수를 보여주기 때문입니다. 리뷰가 아예 없거나, 예전 소속 중개회사 이름으로 남은 오래된 리뷰만 있는 에이전트는 최근의 구체적인 5점 리뷰가 많은 에이전트보다 더 위험하게 느껴집니다. 경쟁이 치열한 시장에서는 확신이 안 서는 바이어가 굳이 확인하려 하지 않고, 그냥 더 자리 잡아 보이는 에이전트 쪽으로 쇼잉을 요청해 버리는 경우가 많습니다.',
+        },
+      },
+      {
+        q: {
+          en: 'What is actually wrong with scheduling private showings by phone call or text?',
+          ko: '전화나 문자로 개인 쇼잉 일정을 잡는 게 구체적으로 뭐가 문제인가요?',
+        },
+        a: {
+          en: "Phone and text scheduling is slower and less complete than it feels, because it requires a live back-and-forth to find a time that works for the buyer, the seller or tenant, and the agent, and it captures none of the information you actually need before confirming — pre-approval status, which agent represents the buyer, or how many people are coming. A buyer who texts at 9pm and does not hear back until the next afternoon has often already scheduled three other showings in that window, and an online request form with a live calendar confirms a time instantly and collects the qualifying details upfront, which matters most during exactly the fast-moving weekend windows when most showing requests come in.",
+          ko: '전화나 문자 예약은 느끼는 것보다 훨씬 느리고 허술합니다. 바이어, 매도인(또는 세입자), 에이전트 세 사람 모두에게 맞는 시간을 찾으려면 실시간으로 계속 주고받아야 하고, 확정하기 전에 정말 필요한 정보 — 사전 승인(pre-approval) 여부, 바이어 측 에이전트가 있는지, 몇 명이 오는지 — 는 전혀 받지 못합니다. 밤 9시에 문자를 보낸 바이어가 다음 날 오후까지 답을 못 받으면, 그 사이 이미 다른 쇼잉 세 건을 잡아버린 경우가 많습니다. 실시간 캘린더가 있는 온라인 요청 폼은 시간을 즉시 확정해 주고 필요한 정보를 미리 받아두기 때문에, 대부분의 쇼잉 요청이 몰리는 바로 그 빠르게 돌아가는 주말 시간대에 가장 큰 차이를 만듭니다.',
+        },
+      },
+      {
+        q: {
+          en: 'Is it worth setting up a full showing-booking system for an individual agent, or is that only for large teams?',
+          ko: '개인 에이전트도 풀 쇼잉 예약 시스템을 갖출 가치가 있나요, 아니면 대형 팀에만 필요한 건가요?',
+        },
+        a: {
+          en: "It is worth it for an individual agent specifically because the buyer on the other end cannot tell, and does not care, whether you are a solo agent or a ten-person team — they only see whether requesting a showing was fast and easy, so the same tool that makes a large team look organized makes a solo Korean-American agent look exactly as professional as any big-brokerage competitor. The cost of a booking tool is a small monthly fee, while the cost of losing even one buyer to a faster-responding agent is a lost commission many times that amount.",
+          ko: '개인 에이전트에게도 가치가 있습니다. 바이어 입장에서는 사장님이 혼자 일하는 에이전트인지 10명짜리 팀인지 알 수도, 신경 쓸 수도 없고, 그저 쇼잉 요청이 빠르고 쉬웠는지만 봅니다. 대형 팀을 체계적으로 보이게 해주는 바로 그 도구가, 혼자 일하는 한인 에이전트도 대형 중개회사 경쟁자 못지않게 전문적으로 보이게 만들어 줍니다. 예약 도구 비용은 월 소액이지만, 응답이 더 빠른 다른 에이전트에게 바이어 한 명만 놓쳐도 그 비용보다 훨씬 큰 수수료를 잃게 됩니다.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "A Korean-American real estate agent in Philadelphia lists a well-priced rowhome in Olney or a renovated colonial in Upper Darby, and the inquiries come in fast. But by the time a buyer's text gets a reply, and a showing time gets confirmed back and forth, the weekend's best viewing slots are already gone — often to a buyer who requested a showing online with another agent in the time it took to type that first text. The listing was never the problem. The gap between a buyer's interest and a confirmed appointment was." },
+        { type: 'h2', content: "Buyers are already comparing you before they call" },
+        { type: 'p', content: "By the time a buyer reaches out about a listing, they have usually already looked you up — your Zillow or Realtor.com agent profile, your Google Business Profile, how many reviews you have and how recent they are, and sometimes your personal website if one exists. None of this happens after the first conversation; it happens before it, often from the listing page itself where review scores sit right next to the contact button. An agent with a thin or outdated online profile is not disqualified outright, but is quietly competing at a disadvantage against any agent in the same price range whose profile looks current, reviewed, and easy to book with." },
+        { type: 'h2', content: 'What a real showing-request system needs' },
+        { type: 'ul', content: 'The components that turn a browsing buyer into a confirmed, qualified appointment:', items: [
+          'A live, bookable calendar on your website and listing profiles — buyers see open time slots and pick one instantly, instead of guessing your availability.',
+          "A short qualifying form before confirmation — buyer name, whether they are pre-approved, whether they have a buyer's agent, and how many people are attending.",
+          'Automatic confirmation and a reminder text 24 hours and 2 hours before the showing, which is the single biggest lever against no-shows on vacant or tenant-occupied listings.',
+          'Instant notification to you and, when relevant, the seller or listing coordinator the moment a showing is requested — not a form that sits in an inbox overnight.',
+          'An easy reschedule or cancel link in every confirmation, since a buyer who cannot easily reschedule often just does not show up instead.',
+          'A Google Business Profile and Zillow agent profile kept current with recent reviews, service areas, and a direct booking link — this is where most first contact actually happens now.',
+        ] },
+        { type: 'tip', content: "If you set up only one thing from this list, make it the automatic reminder text. Vacant-listing no-shows and tenant-occupied showings where the resident was never properly notified are two of the most common, most avoidable failure points in residential real estate — and a reminder text costs nothing per showing to send." },
+        { type: 'h2', content: "Reviews are not a vanity metric here — they are the first filter" },
+        { type: 'p', content: "A buyer deciding between two agents with similar listings in the same neighborhood will frequently default to whichever one has more recent, specific Google or Zillow reviews, because reviews are the only signal they have before any personal interaction happens. Asking every closed client for a review, responding to each one in both English and Korean, and keeping your Google Business Profile posts current are not marketing extras — they are the groundwork that makes the booking system above actually convert, since a polished showing request form attached to an empty review profile still reads as untested to a cautious buyer." },
+        { type: 'h2', content: "Why this matters specifically in Philadelphia right now" },
+        { type: 'p', content: "Philadelphia's Korean-American community is concentrated enough — around the Olney, Oxford Circle, and Cheltenham corridor, with a growing presence further out in Upper Darby, Elkins Park, and parts of Bucks and Montgomery counties — that referrals still carry real weight, and that is not going away. But the first-generation buyer who finds you through a community referral and the second-generation or non-Korean buyer who finds your listing cold on Zillow now go through the exact same evaluation: look up reviews, check responsiveness, try to book a showing. A bilingual, review-backed, instantly bookable online presence serves both buyers at once instead of forcing you to run two separate systems for two different audiences." },
+        { type: 'cta', content: "ZOE LUMOS builds bilingual real estate agent websites with live showing-request booking, automated reminder texts, and Google Business Profile optimization for Korean-American agents across the US. Free consultation in Korean or English: email info@zoelumos.com or reach us on KakaoTalk." },
+      ],
+      ko: [
+        { type: 'intro', content: "필라델피아의 한인 부동산 에이전트가 올니(Olney)의 가격 좋은 로우하우스나 어퍼 다비(Upper Darby)의 리모델링된 콜로니얼 주택을 매물로 올리면 문의가 빠르게 들어옵니다. 하지만 바이어의 문자에 답장이 가고, 쇼잉 시간을 주고받으며 확정하는 사이, 그 주말의 가장 좋은 시간대는 이미 다 찼습니다 — 처음 문자를 치는 그 시간에 다른 에이전트에게 온라인으로 쇼잉을 요청해 버린 바이어에게 넘어가는 경우가 많습니다. 매물 자체는 문제가 아니었습니다. 문제는 바이어의 관심과 확정된 약속 사이의 간격이었습니다." },
+        { type: 'h2', content: '바이어는 전화하기 전에 이미 비교하고 있습니다' },
+        { type: 'p', content: "바이어가 매물에 대해 연락하기 전에, 보통 이미 사장님을 검색해 본 상태입니다 — 질로우나 리얼터닷컴 에이전트 프로필, 구글 비즈니스 프로필, 리뷰 개수와 최신성, 그리고 개인 웹사이트가 있다면 그것까지도요. 이건 첫 통화 이후가 아니라 그 이전에 일어나는 일이고, 흔히 매물 페이지 자체에서 리뷰 점수가 연락 버튼 바로 옆에 붙어 있는 상태로 보여집니다. 온라인 프로필이 부실하거나 오래된 에이전트가 아예 탈락하는 건 아니지만, 같은 가격대에서 프로필이 최신이고 리뷰도 있고 예약도 쉬운 다른 에이전트와 비교해 조용히 불리한 위치에서 경쟁하게 됩니다." },
+        { type: 'h2', content: '진짜 쇼잉 요청 시스템에 필요한 것' },
+        { type: 'ul', content: '둘러보는 바이어를 확정된, 검증된 약속으로 바꾸는 요소들:', items: [
+          '웹사이트와 매물 프로필에 걸린 실시간 예약 캘린더 — 바이어가 빈 시간대를 보고 바로 선택하게 하며, 사장님 일정을 추측하게 만들지 않습니다.',
+          '확정 전 짧은 사전 확인 폼 — 바이어 이름, 사전 승인(pre-approval) 여부, 바이어 측 에이전트 유무, 참석 인원.',
+          '쇼잉 24시간 전과 2시간 전에 가는 자동 확인·리마인더 문자 — 공실이나 세입자가 거주 중인 매물의 노쇼를 막는 가장 큰 지렛대입니다.',
+          '쇼잉이 요청되는 즉시 사장님과(필요하다면) 매도인·리스팅 코디네이터에게 가는 알림 — 편지함에 밤새 묻히는 폼이 아니라요.',
+          '모든 확인 메시지에 들어가는 간편한 일정 변경·취소 링크 — 쉽게 변경할 수 없으면 바이어는 그냥 안 나타나는 경우가 많습니다.',
+          '최신 리뷰, 서비스 지역, 바로 예약 가능한 링크를 갖춘 구글 비즈니스 프로필과 질로우 에이전트 프로필 — 요즘 첫 접촉 대부분이 여기서 일어납니다.',
+        ] },
+        { type: 'tip', content: "이 목록에서 딱 하나만 먼저 하신다면 자동 리마인더 문자를 선택하세요. 공실 매물의 노쇼와, 세입자가 제대로 통보받지 못한 상태에서 벌어지는 쇼잉은 주거용 부동산에서 가장 흔하고 가장 막기 쉬운 실패 지점 두 가지이며, 리마인더 문자는 쇼잉 한 건당 추가 비용이 거의 들지 않습니다." },
+        { type: 'h2', content: '리뷰는 여기서 장식용 지표가 아니라 첫 번째 필터입니다' },
+        { type: 'p', content: "같은 동네에서 비슷한 매물을 가진 두 에이전트 사이에서 고민하는 바이어는 흔히 더 최근이고 더 구체적인 구글·질로우 리뷰가 있는 쪽을 기본값으로 선택합니다. 실제로 사람을 만나보기 전에 가진 유일한 신호가 리뷰이기 때문입니다. 거래를 마친 고객 모두에게 리뷰를 요청하고, 하나하나 영어와 한국어로 답글을 달고, 구글 비즈니스 프로필 게시물을 꾸준히 올리는 것은 부가적인 마케팅이 아니라, 위에서 말한 예약 시스템이 실제로 전환되게 만드는 기초 작업입니다. 아무리 깔끔한 쇼잉 요청 폼이라도 리뷰가 텅 빈 프로필에 붙어 있으면 신중한 바이어에게는 검증되지 않은 느낌으로 읽힙니다." },
+        { type: 'h2', content: '지금 필라델피아 지역에서 특히 중요한 이유' },
+        { type: 'p', content: "필라델피아의 한인 커뮤니티는 올니, 옥스퍼드 서클, 첼튼햄 일대를 중심으로, 그리고 어퍼 다비, 엘킨스 파크, 벅스·몽고메리 카운티 일부로 점점 더 넓어지며 모여 있을 만큼 응집력이 있어서 소개를 통한 거래가 여전히 큰 비중을 차지하고, 그건 앞으로도 그럴 겁니다. 하지만 커뮤니티 소개로 사장님을 찾은 1세대 바이어와, 질로우에서 매물을 처음 보고 연락한 2세대 혹은 비한인 바이어는 이제 똑같은 과정을 거칩니다 — 리뷰를 확인하고, 응답 속도를 보고, 쇼잉 예약을 시도합니다. 이중언어로 되어 있고, 리뷰로 뒷받침되며, 즉시 예약 가능한 온라인 프로필 하나가 서로 다른 두 고객층을 위해 두 개의 시스템을 따로 운영할 필요 없이 두 바이어 모두를 동시에 응대해 줍니다." },
+        { type: 'cta', content: "ZOE LUMOS는 미국 전역의 한인 부동산 에이전트를 위해 실시간 쇼잉 예약, 자동 리마인더 문자, 구글 비즈니스 프로필 최적화를 갖춘 이중언어 웹사이트를 만듭니다. 한국어/영어 무료 상담: info@zoelumos.com 이메일 또는 카카오톡으로 편하게 문의하세요." },
+      ],
+    },
+  },
 ]
