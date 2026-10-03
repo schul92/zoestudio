@@ -4,10 +4,38 @@ import nodemailer from 'nodemailer'
 const escapeHtml = (s: string) =>
   s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
 
+const clip = (v: unknown, n: number) => (typeof v === 'string' ? v.slice(0, n) : undefined)
+
+// A lead that couldn't be emailed is written to the server log as one structured line, so it can be recovered
+// from Vercel logs (search "LEAD_NOT_SENT") during a mail outage instead of vanishing.
+function logUnsent(stage: string, lead: Record<string, unknown>, err?: unknown) {
+  console.error(
+    JSON.stringify({
+      event: 'LEAD_NOT_SENT',
+      stage,
+      at: new Date().toISOString(),
+      lead,
+      error: err instanceof Error ? err.message : err ? String(err) : undefined,
+    }),
+  )
+}
+
+const mailUnavailable = () =>
+  NextResponse.json({ error: 'Email service unavailable', code: 'MAIL_UNAVAILABLE' }, { status: 503 })
+
 export async function POST(request: Request) {
+  let lead: Record<string, unknown> = {}
   try {
     const body = await request.json()
     const { name, email, phone, business, message, services } = body
+    const ads = {
+      gclid: clip(body.gclid, 200),
+      gbraid: clip(body.gbraid, 200),
+      wbraid: clip(body.wbraid, 200),
+      landing: clip(body.landing, 300),
+      lead_source: clip(body.lead_source, 60),
+    }
+    lead = { name, email, phone, business, services, message, ...ads }
 
     // Message is optional — the homepage form allows submitting with just
     // name + email, and rejecting those was silently dropping leads.
@@ -20,6 +48,13 @@ export async function POST(request: Request) {
     const safeMessage = typeof message === 'string' && message.trim()
       ? message.trim()
       : '(no message provided)'
+    const adLine = [
+      ads.lead_source && `source=${ads.lead_source}`,
+      ads.gclid && `gclid=${ads.gclid}`,
+      ads.gbraid && `gbraid=${ads.gbraid}`,
+      ads.wbraid && `wbraid=${ads.wbraid}`,
+      ads.landing && `landing=${ads.landing}`,
+    ].filter(Boolean).join(' · ')
 
     // Always send to the real owner inboxes. Never honor a client-supplied
     // `to` (open-relay vector), and info@zoelumos.com isn't monitored.
@@ -49,6 +84,7 @@ export async function POST(request: Request) {
         ` : ''}
         <p><strong>Message:</strong></p>
         <p>${h.message.replace(/\n/g, '<br>')}</p>
+        ${adLine ? `<p style="color:#666;font-size:12px;"><strong>Attribution:</strong> ${escapeHtml(adLine)}</p>` : ''}
         <hr>
         <p><small>This email was sent from the ZOE LUMOS website contact form.</small></p>
       `,
@@ -63,7 +99,7 @@ ${services ? `\nSelected Services/Plans: ${services}\n` : ''}
 
 Message:
 ${safeMessage}
-
+${adLine ? `\nAttribution: ${adLine}\n` : ''}
 ---
 This email was sent from the ZOE LUMOS website contact form.
       `
@@ -79,11 +115,8 @@ This email was sent from the ZOE LUMOS website contact form.
         )
       }
       // In production this is an outage, not a success — never fake a 200.
-      console.error('EMAIL_USER/EMAIL_PASS missing in production — lead NOT sent:', emailData.text)
-      return NextResponse.json(
-        { error: 'Email service unavailable' },
-        { status: 500 }
-      )
+      logUnsent('config', lead)
+      return mailUnavailable()
     }
 
     // Create transporter with Gmail service - with better configuration
@@ -100,23 +133,25 @@ This email was sent from the ZOE LUMOS website contact form.
     // Verify connection configuration
     try {
       await transporter.verify()
-      console.log('Email server connection verified successfully')
     } catch (verifyError) {
-      console.error('Email verification failed:', verifyError)
-      console.log('Email User:', process.env.EMAIL_USER)
-      console.log('Password length:', process.env.EMAIL_PASS?.length || 0)
-      throw verifyError
+      logUnsent('verify', lead, verifyError)
+      return mailUnavailable()
     }
 
     // Send email to admin
-    await transporter.sendMail({
-      from: `"ZOE LUMOS Website" <${process.env.EMAIL_USER}>`,
-      to: emailData.to,
-      replyTo: email, // Reply to the sender's email
-      subject: emailData.subject,
-      text: emailData.text,
-      html: emailData.html
-    })
+    try {
+      await transporter.sendMail({
+        from: `"ZOE LUMOS Website" <${process.env.EMAIL_USER}>`,
+        to: emailData.to,
+        replyTo: email, // Reply to the sender's email
+        subject: emailData.subject,
+        text: emailData.text,
+        html: emailData.html
+      })
+    } catch (sendError) {
+      logUnsent('send', lead, sendError)
+      return mailUnavailable()
+    }
 
     // Send confirmation email to user
     try {
@@ -153,7 +188,8 @@ This email was sent from the ZOE LUMOS website contact form.
       { status: 200 }
     )
   } catch (error) {
-    console.error('Contact form error:', error)
+    if (Object.keys(lead).length) logUnsent('unexpected', lead, error)
+    else console.error('Contact form error:', error)
     return NextResponse.json(
       { error: 'Failed to send message' },
       { status: 500 }

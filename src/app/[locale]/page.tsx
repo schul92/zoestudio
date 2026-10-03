@@ -3,6 +3,7 @@ import dynamic from 'next/dynamic'
 import HeaderWrapper from '@/components/layout/HeaderWrapper'
 import Footer from '@/components/layout/Footer'
 import HeroNew from '@/components/HeroNew'
+import HomeContactStrip from '@/components/sections/HomeContactStrip'
 import TrustRibbon from '@/components/sections/TrustRibbon'
 import FloatingDevices from '@/components/sections/FloatingDevices'
 import CaseScroll from '@/components/sections/CaseScroll'
@@ -241,6 +242,7 @@ export default function Home({ params }: { params: { locale: string } }) {
       <HeaderWrapper locale={locale} />
       <main className="min-h-screen relative overflow-x-clip">
         <HeroNew locale={locale} />
+        <HomeContactStrip locale={locale} />
         <TrustRibbon locale={locale} />
         <FloatingDevices locale={locale as 'en' | 'ko'} />
         <Services locale={locale} />

@@ -2,7 +2,8 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
-import { trackChecklistLead } from '@/utils/analytics'
+import { submitLead } from '@/lib/leadCapture'
+import LeadFallback from '@/components/ui/LeadFallback'
 
 /**
  * Lead magnet for the KakaoTalk guides: email → /api/contact ("카카오톡
@@ -61,25 +62,18 @@ export default function KakaoChecklistMagnet({ locale }: { locale: 'en' | 'ko' }
     }
     setValidationError('')
     setStatus('sending')
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: trimmed.split('@')[0] || 'Checklist request',
-          email: trimmed,
-          message: `카카오톡 체크리스트 요청 (KakaoTalk checklist request) — lead magnet on ${
+    const result = await submitLead(
+      {
+        name: trimmed.split('@')[0] || 'Checklist request',
+        email: trimmed,
+        message: `카카오톡 체크리스트 요청 (KakaoTalk checklist request) — lead magnet on ${
             typeof window !== 'undefined' ? window.location.pathname : 'blog'
           }`,
-          locale,
-        }),
-      })
-      if (!res.ok) throw new Error('contact api failed')
-      trackChecklistLead('kakao_checklist')
-      setStatus('done')
-    } catch {
-      setStatus('error')
-    }
+        locale,
+      },
+      { method: 'magnet', source: 'kakao_checklist', draftKey: 'magnet_kakao_checklist' },
+    )
+    setStatus(result.ok ? 'done' : 'error')
   }
 
   return (
@@ -101,6 +95,7 @@ export default function KakaoChecklistMagnet({ locale }: { locale: 'en' | 'ko' }
           >
             {t.successLink}
           </Link>
+          {status === 'error' && <LeadFallback compact locale={locale} className="mt-5" />}
         </div>
       ) : (
         <>

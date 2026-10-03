@@ -1,7 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import { trackChecklistLead } from '@/utils/analytics'
+import { submitLead } from '@/lib/leadCapture'
+import LeadFallback from '@/components/ui/LeadFallback'
 
 /**
  * Lead magnet for the website pricing guide: email → /api/contact ("가격 가이드
@@ -69,25 +70,18 @@ export default function PricingGuideMagnet({ locale }: { locale: 'en' | 'ko' }) 
     }
     setValidationError('')
     setStatus('sending')
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: trimmed.split('@')[0] || 'Pricing guide request',
-          email: trimmed,
-          message: `웹사이트 가격 가이드 요청 (Website pricing guide request) — lead magnet on ${
+    const result = await submitLead(
+      {
+        name: trimmed.split('@')[0] || 'Pricing guide request',
+        email: trimmed,
+        message: `웹사이트 가격 가이드 요청 (Website pricing guide request) — lead magnet on ${
             typeof window !== 'undefined' ? window.location.pathname : '/website-pricing-guide'
           }`,
-          locale,
-        }),
-      })
-      if (!res.ok) throw new Error('contact api failed')
-      trackChecklistLead('pricing_guide')
-      setStatus('done')
-    } catch {
-      setStatus('error')
-    }
+        locale,
+      },
+      { method: 'magnet', source: 'pricing_guide', draftKey: 'magnet_pricing_guide' },
+    )
+    setStatus(result.ok ? 'done' : 'error')
   }
 
   const links = (
@@ -123,6 +117,7 @@ export default function PricingGuideMagnet({ locale }: { locale: 'en' | 'ko' }) 
             {status === 'error' ? t.error : t.successTitle}
           </p>
           {links}
+          {status === 'error' && <LeadFallback compact locale={locale} className="mt-5" />}
         </div>
       ) : (
         <>

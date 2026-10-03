@@ -2,31 +2,11 @@
 
 import Script from 'next/script'
 
+// The dataLayer/gtag stub, `js` + `config` commands, ad click-ID capture and the KakaoTalk click listener run
+// inline in <head> (analyticsBoot in src/lib/analyticsBoot.ts), so events fired before this script arrives are
+// queued, not dropped. This component only loads gtag.js, after the first interaction.
 export default function GoogleAnalytics({ GA_MEASUREMENT_ID }: { GA_MEASUREMENT_ID: string }) {
-  return (
-    <>
-      <Script
-        strategy="lazyOnload"
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-      />
-      <Script
-        id="google-analytics"
-        strategy="lazyOnload"
-        dangerouslySetInnerHTML={{
-          __html: `
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', '${GA_MEASUREMENT_ID}', {
-              page_path: window.location.pathname,
-              send_page_view: true,
-              cookie_flags: 'SameSite=None;Secure'
-            });
-          `,
-        }}
-      />
-    </>
-  )
+  return <Script strategy="lazyOnload" src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`} />
 }
 
 // Helper function to track custom events

@@ -3,7 +3,6 @@
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { useServices } from '@/context/ServiceContext'
-import { trackKakaoClick } from '@/utils/analytics'
 
 const KAKAO_CHAT_URL = 'http://pf.kakao.com/_xhxdxmlX/chat'
 
@@ -83,10 +82,8 @@ export default function StickyMobileCTA({ locale = 'en' }: { locale?: string }) 
           href={KAKAO_CHAT_URL}
           target="_blank"
           rel="noopener noreferrer"
-          onClick={() => {
-            track('kakao')
-            trackKakaoClick('sticky_mobile_cta')
-          }}
+          data-kakao-loc="sticky_mobile_cta"
+          onClick={() => track('kakao')}
           tabIndex={show ? 0 : -1}
           className="flex items-center justify-center gap-2 rounded-[14px] bg-[#FEE500] min-h-[48px] py-3.5 text-[15px] font-bold text-[#3C1E1E] zl-press active:opacity-90"
           style={{ touchAction: 'manipulation' }}

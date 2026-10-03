@@ -1,11 +1,14 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import InView from '@/components/ui/motion/InView'
 import Magnetic from '@/components/ui/motion/Magnetic'
 import Toast, { ToastMessage } from '@/components/ui/motion/Toast'
 import { trackEvent } from '@/components/GoogleAnalytics'
-import { trackKakaoClick } from '@/utils/analytics'
+import { submitLead, loadDraft, leadText } from '@/lib/leadCapture'
+import LeadFallback from '@/components/ui/LeadFallback'
+
+const DRAFT_KEY = 'home_contact'
 
 type Status = 'idle' | 'loading' | 'success' | 'error'
 
@@ -38,8 +41,6 @@ const copy = {
     sending: 'Sending…',
     successTitle: 'Inquiry sent',
     successBody: "We've received your message. Expect a reply within one business day.",
-    errorTitle: 'Could not send',
-    errorBody: 'Please try again, or email us directly at the address below.',
     requiredTitle: 'Almost there',
     required_err: 'Please complete your name and email so we can reply.',
     privacy: 'Your information is used only to reply to your inquiry.',
@@ -85,8 +86,6 @@ const copy = {
     sending: '전송 중…',
     successTitle: '상담 신청 완료',
     successBody: '메시지 수신 완료. 영업일 기준 1일 이내에 회신드립니다.',
-    errorTitle: '전송 실패',
-    errorBody: '다시 시도하시거나 아래 이메일로 직접 연락 주세요.',
     requiredTitle: '거의 다 됐어요',
     required_err: '회신을 위해 이름과 이메일을 입력해 주세요.',
     privacy: '입력하신 정보는 상담 회신 목적으로만 사용됩니다.',
@@ -124,6 +123,19 @@ export default function ContactWrapper({
   })
   const [status, setStatus] = useState<Status>('idle')
   const [toast, setToast] = useState<ToastMessage | null>(null)
+  const [unsent, setUnsent] = useState('')
+
+  // A draft that never reached us (closed tab, mail outage) comes back pre-filled on the next visit.
+  useEffect(() => {
+    const d = loadDraft<{ name: string; email: string; message: string; services: string }>(DRAFT_KEY)
+    if (!d) return
+    setForm((f) => ({
+      name: d.name || f.name,
+      email: d.email || f.email,
+      message: d.message || f.message,
+      scope: d.services ? d.services.split(' | ').filter(Boolean) : f.scope,
+    }))
+  }, [])
 
   const toggleScope = (s: string) => {
     setForm((f) =>
@@ -143,36 +155,25 @@ export default function ContactWrapper({
       return
     }
     setStatus('loading')
+    setUnsent('')
     trackEvent('form_submit_attempt', 'conversion', 'home_contact')
-    try {
-      const res = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: form.name,
-          email: form.email,
-          message: form.message,
-          services: form.scope.join(' | '),
-        }),
-      })
-      if (!res.ok) throw new Error('bad response')
+    const payload = {
+      name: form.name,
+      email: form.email,
+      message: form.message,
+      services: form.scope.join(' | '),
+      locale,
+    }
+    const result = await submitLead(payload, { method: 'form', source: 'home_contact', draftKey: DRAFT_KEY })
+    if (result.ok) {
       setStatus('success')
       trackEvent('form_submit_success', 'conversion', 'home_contact')
-      // GA4 recommended lead event — the key event counted as a conversion
-      if (typeof window !== 'undefined' && (window as any).gtag) {
-        ;(window as any).gtag('event', 'generate_lead', {
-          currency: 'USD',
-          value: 1,
-          lead_source: 'home_contact',
-          page_path: window.location.pathname,
-        })
-      }
       setToast({ id: Date.now(), kind: 'success', title: t.successTitle, body: t.successBody })
       setForm({ name: '', email: '', message: '', scope: [] })
-    } catch {
+    } else {
       setStatus('error')
-      trackEvent('form_submit_error', 'conversion', 'home_contact')
-      setToast({ id: Date.now(), kind: 'error', title: t.errorTitle, body: t.errorBody })
+      trackEvent('form_submit_error', 'conversion', `home_contact:${result.code}`)
+      setUnsent(leadText(payload, isKo))
     }
   }
 
@@ -364,6 +365,12 @@ export default function ContactWrapper({
           </div>
         </form>
 
+        {status === 'error' && unsent && (
+          <div className="max-w-3xl mx-auto mt-6">
+            <LeadFallback locale={locale} text={unsent} />
+          </div>
+        )}
+
         {/* Alternative contact — email + KakaoTalk pills, prominent */}
         <div className="mt-12 md:mt-14 max-w-3xl mx-auto">
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 justify-center">
@@ -391,7 +398,7 @@ export default function ContactWrapper({
                 href={t.altContact.kakaoHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                onClick={() => trackKakaoClick('contact_section')}
+                data-kakao-loc="contact_section"
                 className="inline-flex items-center gap-2 px-4 py-2.5 rounded-full text-[13px] transition duration-200 hover:scale-[1.03]"
                 style={{
                   background: '#FEE500',

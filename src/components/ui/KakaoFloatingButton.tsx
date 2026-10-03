@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import { useServices } from '@/context/ServiceContext'
-import { trackKakaoClick } from '@/utils/analytics'
 
 const KAKAO_CHAT_URL = 'http://pf.kakao.com/_xhxdxmlX/chat'
 
@@ -26,7 +25,7 @@ export default function KakaoFloatingButton() {
       href={KAKAO_CHAT_URL}
       target="_blank"
       rel="noopener noreferrer"
-      onClick={() => trackKakaoClick('floating_button')}
+      data-kakao-loc="floating_button"
       aria-label="Chat on KakaoTalk"
       /*
        * Bottom-LEFT. The right corner is now the AI chat launcher's — one
