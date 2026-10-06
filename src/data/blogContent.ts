@@ -13519,4 +13519,98 @@ export const blogContent: BlogPost[] = [
       ],
     },
   },
+  // ─────────────────────────────────────────────────────────────────
+  // 2026-10-06 — B2B wholesale/trading cluster: beauty supply distribution
+  // (Philadelphia, PA — new state/metro, least-covered topic bucket: B2B)
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'korean-wholesale-beauty-supply-b2b-website-philadelphia-2026',
+    date: '2026-10-06',
+    updatedDate: '2026-10-06',
+    readTime: 9,
+    category: { en: 'B2B & Wholesale', ko: 'B2B·도매' },
+    title: {
+      en: "Beyond the Trade Show: A Wholesale Website That Actually Sells — A Guide for Philadelphia's Korean-American Beauty Supply Distributors (2026)",
+      ko: '전시회와 전화만으론 부족합니다 — 필라델피아 한인 뷰티서플라이 도매업체를 위한 B2B 웹사이트 가이드 (2026)',
+    },
+    metaDescription: {
+      en: "Philadelphia is home to one of the country's largest Korean-American-owned beauty supply wholesale and distribution networks, serving thousands of independent hair and beauty retail stores nationwide. Most still run on a phone line, a paper price sheet, and word of mouth. Here is what a real B2B wholesale website — resale-verified pricing, a digital line sheet, and an online credit application — actually does for a distributor at this scale.",
+      ko: '필라델피아는 미국에서 가장 큰 한인 소유 뷰티서플라이 도매·유통 네트워크 중 하나로, 전국 수천 개의 독립 헤어·뷰티 소매점에 제품을 공급합니다. 그런데 여전히 전화 한 대와 종이 가격표, 입소문으로 돌아가는 곳이 많습니다. 리셀러 인증 기반 가격, 디지털 라인시트, 온라인 신용 신청서를 갖춘 진짜 B2B 도매 웹사이트가 이 규모의 유통업체에 실제로 무엇을 해주는지 정리했습니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'Should a beauty supply wholesaler show prices publicly on its website, or hide them?',
+          ko: '뷰티서플라이 도매업체가 웹사이트에 가격을 공개해야 하나요, 숨겨야 하나요?',
+        },
+        a: {
+          en: "Neither extreme is right — the answer is a two-tier site. The public side (brand list, categories, a 'do you carry this?' search) should be fully open, because that is what shows up in Google and lets a new retail buyer confirm you stock what they need before they ever call. Actual wholesale unit pricing should sit behind a short account application that verifies a resale certificate, EIN, or business license, which is standard practice across the industry and protects your margin from being screenshotted by a competitor or a non-trade shopper. The mistake most distributors make is hiding everything, including the brand catalog — that just makes you invisible in search to the exact buyers who would have applied for an account.",
+          ko: '둘 다 정답이 아니라, 2단계 구조가 맞습니다. 공개 영역(취급 브랜드 목록, 카테고리, "이 제품 취급하시나요" 검색)은 완전히 열어두세요 — 이게 구글에 노출되어서 신규 소매 바이어가 전화하기 전에 원하는 제품이 있는지 먼저 확인할 수 있게 해줍니다. 실제 도매 단가는 리셀러 인증서·EIN·사업자 등록증을 확인하는 짧은 계정 신청 뒤에 두세요 — 업계 표준 관행이고, 경쟁사나 일반 소비자가 스크린샷으로 가격을 퍼가는 걸 막아줍니다. 대부분의 유통업체가 하는 실수는 브랜드 카탈로그까지 전부 숨기는 것입니다 — 그러면 계정을 신청했을 바로 그 바이어들에게 검색에서 아예 보이지 않게 됩니다.',
+        },
+      },
+      {
+        q: {
+          en: 'Is it safe to take trade credit (net-30) applications from new retail accounts online?',
+          ko: '신규 소매 거래처의 외상 거래(net-30 등) 신청을 온라인으로 받아도 안전한가요?',
+        },
+        a: {
+          en: "Yes, and most established distributors already do this rather than mailing paper forms back and forth. A standard net-30 application collects the business name, EIN, resale certificate, trade references, and a signature authorizing a credit check — none of which requires collecting a bank account number or Social Security number through the website form itself. Route the submission straight to whoever approves credit internally, and keep the actual underwriting (the credit check, the reference calls) off the web form entirely. What the online form should do is replace the fax-and-wait step, not replace your judgment on who gets terms.",
+          ko: '네, 그리고 자리 잡은 유통업체 대부분은 이미 종이 서식을 우편으로 주고받는 대신 이 방식을 씁니다. 표준 net-30 신청서는 상호명, EIN, 리셀러 인증서, 거래 레퍼런스, 신용조회 동의 서명을 받습니다 — 이 중 어느 것도 웹 폼 자체에서 계좌번호나 사회보장번호를 받을 필요는 없습니다. 제출된 신청서는 사내에서 신용 승인을 담당하는 사람에게 바로 보내고, 실제 심사(신용조회, 레퍼런스 확인 전화)는 웹 폼 바깥에서 처리하세요. 온라인 폼이 대체해야 하는 건 팩스를 보내고 기다리는 단계이지, 누구에게 외상을 줄지 판단하는 사장님의 몫이 아닙니다.',
+        },
+      },
+      {
+        q: {
+          en: 'We already have sourcing relationships in Korea and China — is an English-only website enough?',
+          ko: '이미 한국·중국 소싱 공급망이 있는데, 영어로만 된 웹사이트로 충분한가요?',
+        },
+        a: {
+          en: "No — a distributor at this scale almost always needs two audiences served in two languages, not one site doing double duty. The retail-buyer-facing side (catalog, account application, order status) should be English-first, since that is who is searching and applying in English. But the supply-chain side — sourcing updates, new-product sheets for your Korea or China partners, financial and shipping documentation shared with manufacturers or trading partners — reads and gets responded to faster in Korean, and a bilingual company profile also reads as more credible to a Korean factory or trading company evaluating whether to extend you better terms. The two audiences do not need to see the same pages; they need the ones that matter to each of them, in the right language.",
+          ko: '아닙니다. 이 규모의 유통업체는 거의 항상 두 개의 서로 다른 대상을 서로 다른 언어로 상대해야 합니다. 한 사이트가 둘 다 억지로 맡아서는 안 됩니다. 소매 바이어를 상대하는 쪽(카탈로그, 계정 신청, 주문 현황)은 영어가 먼저여야 합니다 — 영어로 검색하고 영어로 신청하는 사람들이니까요. 하지만 공급망 쪽 — 한국·중국 소싱 파트너에게 보내는 신상품 시트, 제조사·무역 파트너와 공유하는 재무·선적 서류 — 는 한국어로 읽고 답할 때 훨씬 빠르고, 이중언어로 된 회사 소개는 한국 공장이나 무역회사가 사장님께 더 나은 조건을 줄지 판단할 때도 신용도를 높여줍니다. 두 대상이 같은 페이지를 볼 필요는 없습니다 — 각자에게 필요한 페이지를, 맞는 언어로 보여주면 됩니다.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "Drive down Olney Avenue or through the distribution blocks of North Philadelphia and you are looking at one of the largest Korean-American-owned wholesale networks in the country — beauty supply distributors who, over three and four decades, built the supply chain that stocks thousands of independently owned hair and beauty stores across the East Coast and beyond. The business was built on trade shows (ABS, ISSE), personal relationships with store owners, and a phone line that has rung non-stop since the 1980s. That foundation is not going anywhere. But a new store owner opening this year did not inherit a decade of relationships — they are searching Google for 'wholesale hair extensions distributor Philadelphia' or 'beauty supply wholesale accounts near me,' and what they find decides whether your company or a competitor's gets the application." },
+        { type: 'h2', content: "Why 'call us for pricing' stops scaling" },
+        { type: 'p', content: "A phone-and-fax order system works fine when every buyer already knows your rep by name. It breaks down exactly where growth happens: a new store owner who does not know to call, an existing account trying to reorder at 11pm before a morning restock, or a buyer comparing five distributors and only able to reach three of them before close of business. None of this shows up as a complaint — the buyer who could not get pricing or could not place a late-night reorder simply does not become your account, or quietly drifts to whichever distributor made it easier. The volume lost this way is invisible on a sales report, because it never shows up as a lead in the first place." },
+        { type: 'h2', content: 'What a real B2B wholesale website needs' },
+        { type: 'ul', content: 'The pieces that turn a static brand list into a working wholesale channel:', items: [
+          "A public brand and category catalog — searchable by brand, product type, or 'do you carry X' — open to Google and to anyone, with no pricing shown.",
+          "A gated wholesale account application that verifies a resale certificate, EIN, or business license before unlocking actual unit pricing and the full line sheet.",
+          "A digital line sheet or order sheet — downloadable or searchable by SKU — that replaces the photocopied price list most buyers are still working from.",
+          "An online net-30 or trade credit application that collects references and authorizes a credit check, routed to whoever approves terms internally.",
+          "A real company page — address, years in business, @yourcompany.com email — because banks, factoring companies, and freight partners run the same two-minute legitimacy check a new buyer does.",
+          "Reorder and minimum-order-quantity information visible per account tier, so an existing store owner can reorder without waiting for a callback.",
+        ] },
+        { type: 'tip', content: "Gate the pricing, not the catalog. Distributors who hide the whole site behind a login to 'protect pricing' also hide themselves from the exact Google searches new accounts are running — the brand and category list should be wide open; only the actual unit price needs the resale-certificate wall." },
+        { type: 'h2', content: 'The due-diligence check happening on the other side' },
+        { type: 'p', content: "It is not only retail buyers checking you out. A factoring company or bank evaluating a line of credit, a freight forwarder setting up a new account, or a larger retail chain's vendor-compliance team doing supplier onboarding all run a version of the same search: does this company have a real address, how long has it operated, does the website match the invoice letterhead, is the email a company domain or a personal Gmail. A distributor moving real volume through accounts receivable financing or applying for a larger line of trade credit is, in effect, applying for that credit every time someone searches the company name — and a thin or outdated web presence reads as risk, independent of how solid the actual books are." },
+        { type: 'h2', content: 'A note for Philadelphia beauty supply distributors' },
+        { type: 'p', content: "Philadelphia's Korean-American beauty supply and distribution community is not a small or new niche — it is one of the most established, highest-volume wholesale sectors any Korean-American business community runs in the United States, built over generations of relationships with independently owned retail stores, many of them Black-owned businesses that have been trade partners for decades. That scale cuts both ways: the referral network is real and durable, but the next generation of store owners opening accounts increasingly starts with a search engine, not an introduction, and a growing share of financing and freight partners now run digital due diligence before extending terms. A website that serves English-speaking retail buyers on one side and Korean-speaking sourcing and trading partners on the other is not a departure from how this business has always worked — it is the same trust-building the trade show floor has always done, running twenty-four hours instead of three days a year." },
+        { type: 'cta', content: "ZOE LUMOS builds bilingual B2B wholesale websites for Korean-American distributors, importers, and trading companies nationwide — resale-verified pricing portals, digital line sheets, online credit applications, and a company presence that holds up to a bank's or a buyer's two-minute check, registered entirely in your name. Free consultation in Korean or English: email info@zoelumos.com or reach us on KakaoTalk (http://pf.kakao.com/_xhxdxmlX/chat)." },
+      ],
+      ko: [
+        { type: 'intro', content: '필라델피아 올니 애비뉴나 북필라델피아 유통 블록을 지나가면, 미국에서 가장 큰 한인 소유 도매 네트워크 중 하나를 보게 됩니다 — 30~40년에 걸쳐 동부 해안을 비롯한 전국 수천 개의 독립 헤어·뷰티 소매점에 제품을 공급하는 유통망을 만든 뷰티서플라이 도매업체들입니다. 이 사업은 전시회(ABS, ISSE), 매장 사장님들과의 개인적인 관계, 그리고 1980년대부터 쉬지 않고 울려온 전화 한 대 위에 세워졌습니다. 그 기반은 어디로 가지 않습니다. 하지만 올해 새로 매장을 연 사장님은 10년 치 관계를 물려받지 못했습니다 — 그들은 구글에서 "wholesale hair extensions distributor Philadelphia" 또는 "beauty supply wholesale accounts near me"를 검색하고 있고, 거기서 무엇을 찾느냐가 그 계정 신청이 사장님 회사로 오느냐 경쟁사로 가느냐를 결정합니다.' },
+        { type: 'h2', content: '"가격은 전화로 문의하세요"가 더 이상 안 통하는 이유' },
+        { type: 'p', content: '전화·팩스 주문 시스템은 모든 바이어가 이미 담당 영업 직원을 이름으로 알고 있을 때는 문제없이 돌아갑니다. 문제는 정확히 성장이 일어나는 지점에서 터집니다 — 누구에게 전화해야 할지도 모르는 신규 매장 사장님, 아침 재입고 전 밤 11시에 재주문을 넣으려는 기존 거래처, 또는 다섯 업체를 비교하다가 영업시간 안에 세 곳밖에 연락이 안 닿은 바이어. 이 중 아무것도 "불만"으로 드러나지 않습니다 — 가격을 못 받았거나 밤늦게 재주문을 못 넣은 바이어는 그냥 거래처가 되지 않거나, 더 쉽게 만들어 놓은 다른 유통업체로 조용히 넘어갈 뿐입니다. 이렇게 새는 물량은 매출 리포트에 보이지 않습니다 — 처음부터 리드로 잡히지도 않았으니까요.' },
+        { type: 'h2', content: '진짜 B2B 도매 웹사이트에 필요한 것' },
+        { type: 'ul', content: '정적인 브랜드 목록을 실제로 작동하는 도매 채널로 바꾸는 요소들:', items: [
+          '공개 브랜드·카테고리 카탈로그 — 브랜드, 제품 종류, "이거 취급하시나요"로 검색 가능해야 하고, 구글과 누구에게나 열려 있어야 하며, 가격은 보이지 않아야 합니다.',
+          '리셀러 인증서·EIN·사업자 등록증을 확인해야 실제 단가와 전체 라인시트가 열리는 계정 신청 폼.',
+          'SKU로 검색하거나 다운로드할 수 있는 디지털 라인시트·오더시트 — 아직도 많은 바이어가 쓰고 있는 복사된 가격표를 대체합니다.',
+          '레퍼런스를 받고 신용조회 동의를 받는 온라인 net-30·외상 거래 신청서 — 사내 승인 담당자에게 바로 전달됩니다.',
+          '실제 회사 페이지 — 주소, 운영 연수, @회사명.com 이메일. 은행·팩토링 회사·화물 운송 파트너도 신규 바이어와 똑같은 2분짜리 신뢰 확인을 합니다.',
+          '계정 등급별 재주문·최소 주문 수량 정보 — 기존 매장 사장님이 콜백을 기다리지 않고 재주문할 수 있게 합니다.',
+        ] },
+        { type: 'tip', content: '가격만 막고 카탈로그는 열어두세요. "가격 보호"를 위해 사이트 전체를 로그인 뒤에 숨기는 유통업체는 신규 거래처가 실제로 검색하는 구글 검색에서 자신도 함께 사라집니다 — 브랜드·카테고리 목록은 완전히 열어두고, 실제 단가에만 리셀러 인증 벽을 두세요.' },
+        { type: 'h2', content: '반대편에서 진행 중인 실사' },
+        { type: 'p', content: '사장님을 확인하는 건 소매 바이어만이 아닙니다. 신용 라인을 심사하는 팩토링 회사나 은행, 신규 계정을 여는 화물 운송사, 벤더 등록 심사를 하는 대형 소매 체인의 공급업체 관리팀도 비슷한 검색을 합니다 — 실제 주소가 있는지, 얼마나 오래 운영했는지, 웹사이트가 인보이스 레터헤드와 일치하는지, 이메일이 회사 도메인인지 개인 Gmail인지. 외상 매출 금융(AR financing)으로 실제 물량을 돌리거나 더 큰 외상 거래 라인을 신청하는 유통업체는, 누군가 회사 이름을 검색할 때마다 사실상 매번 그 신용을 다시 신청하고 있는 셈입니다 — 그리고 부실하거나 오래된 웹 존재감은 실제 장부가 얼마나 건전한지와 무관하게 위험 신호로 읽힙니다.' },
+        { type: 'h2', content: '필라델피아 뷰티서플라이 유통업체를 위한 참고' },
+        { type: 'p', content: '필라델피아의 한인 뷰티서플라이·유통 커뮤니티는 작거나 새로운 영역이 아닙니다 — 미국의 어느 한인 비즈니스 커뮤니티가 운영하는 것 중에서도 가장 자리 잡고, 가장 거래량이 큰 도매 업종 중 하나이며, 수십 년에 걸쳐 독립 소매점들 — 그중 다수가 수십 년째 거래해 온 흑인 소유 매장들 — 과의 관계 위에 세워졌습니다. 이 규모는 양쪽으로 작용합니다 — 소개 네트워크는 실재하고 견고하지만, 계정을 새로 여는 다음 세대 매장 사장님들은 점점 더 소개가 아니라 검색엔진으로 시작하고, 금융·화물 파트너들도 조건을 내주기 전에 디지털 실사를 돌리는 비중이 늘고 있습니다. 한쪽에는 영어권 소매 바이어를, 다른 쪽에는 한국어권 소싱·무역 파트너를 상대하는 웹사이트는 이 비즈니스가 늘 해오던 방식에서 벗어나는 게 아니라 — 전시회 바닥이 늘 해왔던 신뢰 쌓기를, 1년에 사흘이 아니라 하루 24시간 돌리는 것일 뿐입니다.' },
+        { type: 'cta', content: 'ZOE LUMOS는 미국 전역의 한인 유통업체·수입업체·무역회사를 위한 이중언어 B2B 도매 웹사이트를 만듭니다 — 리셀러 인증 기반 가격 포털, 디지털 라인시트, 온라인 신용 신청서, 그리고 은행이나 바이어의 2분짜리 확인을 통과하는 회사 존재감까지, 전부 사장님 명의로 등록됩니다. 한국어/영어 무료 상담: info@zoelumos.com 이메일 또는 카카오톡(http://pf.kakao.com/_xhxdxmlX/chat)으로 편하게 문의하세요.' },
+      ],
+    },
+  },
 ]
