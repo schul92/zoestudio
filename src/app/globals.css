@@ -973,3 +973,61 @@ html.space[lang="ko"] body { word-break: keep-all; }
 @media (pointer: coarse) {
   input:not([type="checkbox"]):not([type="radio"]):not([type="range"]), textarea, select { font-size: max(16px, 1em); }
 }
+
+/* ── US-launch page (/us-launch-for-korean-brands · /ko/미국-진출-홈페이지-제작) ──────────────
+   Hero pieces play once on load (CSS keyframes, off the main thread). Everything else hangs off the shared
+   [data-reveal] → [data-in] contract above: nothing is hidden without <html data-rv> (no JS / reduced motion),
+   and anything already on screen at load (data-in="now") is shown in its final state with no motion.
+   transform/opacity only, apart from the route's stroke-dashoffset on one small SVG path. */
+.ul-panel { background: rgb(var(--c-bone)); box-shadow: inset 0 0 0 1px var(--hairline); }
+.ul-frame { box-shadow: 0 0 0 1px rgba(255, 255, 255, .08), 0 40px 90px -40px rgba(0, 0, 0, .9), 0 12px 30px -18px rgba(0, 0, 0, .6); }
+.ul-card {
+  background: rgba(18, 18, 20, .82);
+  -webkit-backdrop-filter: saturate(160%) blur(20px);
+  backdrop-filter: saturate(160%) blur(20px);
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, .09), 0 22px 50px -24px rgba(0, 0, 0, .85);
+}
+.ul-chip { color: var(--gold); background: color-mix(in srgb, var(--gold) 16%, transparent); }
+
+@keyframes ul-rise { from { transform: translate3d(0, 28px, 0); } }
+@keyframes ul-pop { from { opacity: 0; transform: translate3d(0, 14px, 0) scale(.96); } }
+html[data-rv] .ul-rise { animation: ul-rise .9s var(--ease-out) both; }
+html[data-rv] .ul-pop { animation: ul-pop .7s var(--ease-out) both; animation-delay: var(--ul-d, 0ms); }
+
+/* Charts — bars grow from their left edge. */
+.ul-bar { transform-origin: left center; }
+html[data-rv] .ul-chart:not([data-in]) .ul-bar { transform: scaleX(0); }
+html[data-rv] .ul-chart[data-in=""] .ul-bar { transition: transform 1.1s var(--ease-out) var(--ul-d, 0ms); }
+
+/* Seoul ↔ New Jersey route — the line draws, then the endpoint and the chip arrive. */
+.ul-tz-arc { stroke-dasharray: 1; stroke-dashoffset: 0; }
+.ul-tz-dot { transform-box: fill-box; transform-origin: center; }
+.ul-tz-chip { transform: translate3d(-50%, 0, 0); background: rgba(18, 18, 20, .9); box-shadow: 0 0 0 1px rgba(255, 255, 255, .1); }
+html[data-rv] .ul-tz:not([data-in]) .ul-tz-arc { stroke-dashoffset: 1; }
+html[data-rv] .ul-tz:not([data-in]) .ul-tz-dot { opacity: 0; transform: scale(.4); }
+html[data-rv] .ul-tz:not([data-in]) .ul-tz-chip { opacity: 0; transform: translate3d(-50%, 8px, 0); }
+html[data-rv] .ul-tz[data-in=""] .ul-tz-arc { transition: stroke-dashoffset 1.6s var(--ease-in-out) .25s; }
+html[data-rv] .ul-tz[data-in=""] .ul-tz-dot { transition: opacity .3s var(--ease-out) 1.75s, transform .6s var(--ease-out) 1.75s; }
+html[data-rv] .ul-tz[data-in=""] .ul-tz-chip { transition: opacity .5s var(--ease-out) 1s, transform .6s var(--ease-out) 1s; }
+
+/* Six-week timeline — the line draws, nodes light up as it reaches them. */
+.ul-node { color: #fff; background: rgb(var(--c-bone)); box-shadow: 0 0 0 1px var(--hairline); }
+.ul-node::before { content: ''; position: absolute; inset: 0; border-radius: 9999px; background: var(--gold); }
+.ul-tl-fill { transform-origin: left center; }
+.ul-tl-fill-v { transform-origin: center top; }
+html[data-rv] .ul-tl:not([data-in]) .ul-tl-fill { transform: scaleX(0); }
+html[data-rv] .ul-tl:not([data-in]) .ul-tl-fill-v { transform: scaleY(0); }
+html[data-rv] .ul-tl:not([data-in]) .ul-node { color: rgb(var(--c-graphite)); }
+html[data-rv] .ul-tl:not([data-in]) .ul-node::before { opacity: 0; transform: scale(.5); }
+html[data-rv] .ul-tl[data-in=""] .ul-tl-fill,
+html[data-rv] .ul-tl[data-in=""] .ul-tl-fill-v { transition: transform 1.4s var(--ease-in-out) .1s; }
+html[data-rv] .ul-tl[data-in=""] .ul-node { transition: color .3s var(--ease-out) var(--ul-d, 0ms); }
+html[data-rv] .ul-tl[data-in=""] .ul-node::before {
+  transition: opacity .3s var(--ease-out) var(--ul-d, 0ms), transform .5s var(--ease-out) var(--ul-d, 0ms);
+}
+
+/* Case frames lift on a real hover only (touch fires false hovers). */
+.ul-case-frame { transition: transform .35s var(--ease-out); }
+@media (hover: hover) and (pointer: fine) {
+  .ul-case:hover .ul-case-frame { transform: translate3d(0, -4px, 0); }
+}
