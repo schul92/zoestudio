@@ -27,8 +27,8 @@ export const US_LAUNCH_META = {
     ko: '미국 진출 홈페이지 제작 | 한국 기업 미국 공식 영문 사이트 | ZOE LUMOS',
   },
   description: {
-    en: 'Official US English websites for Korean companies and franchises entering the US, built by a bilingual team in Fort Lee, NJ: Korean-language project management, a Korean admin CMS, Google SEO, AI search, accessibility checks and ongoing care.',
-    ko: '미국 진출을 준비하는 한국 기업·프랜차이즈를 위한 미국 공식 영문 홈페이지 제작. 뉴저지 현지 팀이 한국어로 진행하고 한국어 관리자 화면, Google SEO·AI 검색, 웹 접근성 검수, 출시 후 운영까지 맡습니다.',
+    en: 'Official US English websites for Korean companies and franchises entering the US. Run in Korean from Fort Lee, NJ, with a Korean admin CMS, SEO and AI search.',
+    ko: '미국 진출 한국 기업·프랜차이즈의 미국 공식 영문 홈페이지 제작. 뉴저지 현지 팀이 한국어로 진행하고 한국어 관리자 화면, Google SEO·AI 검색, 웹 접근성 검수까지 맡습니다.',
   },
 }
 
