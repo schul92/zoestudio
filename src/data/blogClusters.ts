@@ -24,9 +24,7 @@ export const PILLARS = {
       'local-seo-korean-business-2026',
       'local-seo-guide-korean-business-2026',
       'affordable-seo-new-jersey-korean-business',
-      'case-study-korean-nail-salon-seo-10x',
       'tj-flowers-shopify-revamp-case-study',
-      'case-study-salt-and-polish-fort-lee-spa-rebuild-2026',
       'website-no-traffic-not-showing-google-2026',
       'florist-online-ordering-korean-flower-shop-2026',
     ],
@@ -49,7 +47,6 @@ export const PILLARS = {
       'korean-food-truck-catering-website-guide-2026',
       'doordash-vs-ubereats-vs-own-app-korean-restaurant',
       'korean-restaurant-marketing-annandale-va',
-      'case-study-korean-restaurant-palisades-park-bookings-3x-2026',
       'toast-clover-pos-analytics-goldmine-2026',
       'website-drives-revenue-pizza-catering-case-study-2026',
       'korean-restaurant-chicago-online-ordering-pos-reviews-2026',
@@ -184,7 +181,6 @@ export const POST_TO_PILLAR: Record<string, PillarKey> = {
   'local-seo-korean-business-2026': 'bilingual-seo',
   'local-seo-guide-korean-business-2026': 'bilingual-seo',
   'affordable-seo-new-jersey-korean-business': 'bilingual-seo',
-  'case-study-korean-nail-salon-seo-10x': 'bilingual-seo',
   'tj-flowers-shopify-revamp-case-study': 'bilingual-seo',
 
   // restaurant-marketing
@@ -263,8 +259,6 @@ export const POST_TO_PILLAR: Record<string, PillarKey> = {
   'ai-search-korean-business-owner-survival-guide-2026': 'ai-services',
 
   // 2026-05-13 — 2 new case studies (analytics showed 3.7x engagement on case studies)
-  'case-study-salt-and-polish-fort-lee-spa-rebuild-2026': 'bilingual-seo',
-  'case-study-korean-restaurant-palisades-park-bookings-3x-2026': 'restaurant-marketing',
 
   // backfill — previously unmapped existing posts (restored internal linking)
   'korean-bbq-restaurant-website-marketing-2026': 'restaurant-marketing',

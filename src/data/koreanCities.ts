@@ -55,8 +55,8 @@ export const koreanCities: CityData[] = [
       ko: '덜루스, 수와니, 존스크릭 중심의 애틀랜타 메트로는 미 남부에서 가장 빠르게 성장하는 한인 커뮤니티.',
     },
     proofPoints: {
-      en: ['Southeast US #1 Korean market', 'Gwinnett County K-belt', 'Duluth & Suwanee coverage'],
-      ko: ['미 남부 #1 한인 시장', '귀넷 카운티 한인 벨트', '덜루스 & 수와니 전담'],
+      en: ['Southeast US Korean hub', 'Gwinnett County K-belt', 'Duluth & Suwanee coverage'],
+      ko: ['미 남부 한인 중심지', '귀넷 카운티 한인 벨트', '덜루스 & 수와니 전담'],
     },
     neighborhoods: [
       { en: 'Duluth', ko: '덜루스', koreanPct: '22%', note: 'K-hub HQ' },

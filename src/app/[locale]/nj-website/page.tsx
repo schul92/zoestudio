@@ -25,11 +25,11 @@ export async function generateMetadata({
   if (locale === 'ko') {
     return {
       title: '뉴저지 웹사이트 제작 전문 | NJ 한인 비즈니스 웹개발 | ZOE LUMOS',
-      description: '뉴저지 웹사이트 제작 1위 업체. 포트리, 팰팍, 리지필드, 에디슨 한인 비즈니스를 위한 전문 웹사이트 개발. 뉴저지 로컬 SEO, 구글 최적화, 쇼피파이 이커머스 전문.',
+      description: '뉴저지 한인 비즈니스 웹사이트 제작. 포트리, 팰팍, 리지필드, 에디슨 한인 비즈니스를 위한 전문 웹사이트 개발. 뉴저지 로컬 SEO, 구글 최적화, 쇼피파이 이커머스 전문.',
       keywords: '뉴저지 웹사이트, 뉴저지 웹사이트 제작, NJ 웹개발, 뉴저지 한인 웹사이트, 포트리 웹사이트, 팰팍 웹사이트, 리지필드 웹사이트, 에디슨 웹사이트, 체리힐 웹사이트, 뉴저지 쇼피파이, 뉴저지 이커머스, 뉴저지 SEO, 뉴저지 구글 광고',
       openGraph: {
         title: '뉴저지 웹사이트 제작 전문 - ZOE LUMOS',
-        description: '뉴저지 최고의 한인 웹사이트 제작 업체. 포트리부터 에디슨까지, NJ 전 지역 한인 비즈니스를 위한 맞춤 웹사이트 개발.',
+        description: '뉴저지 한인 웹사이트 제작 전문 업체. 포트리부터 에디슨까지, NJ 전 지역 한인 비즈니스를 위한 맞춤 웹사이트 개발.',
         url: `${baseUrl}/ko/뉴저지-웹사이트`,
         siteName: 'ZOE LUMOS',
         locale: 'ko_KR',
@@ -60,7 +60,7 @@ export async function generateMetadata({
   
   return {
     title: 'New Jersey Website Design & Development | NJ Web Agency | ZOE LUMOS',
-    description: '#1 Website development in New Jersey. Professional web design for Fort Lee, Palisades Park, Edison businesses. Local NJ SEO, Google optimization, Shopify e-commerce experts.',
+    description: 'Website development in New Jersey. Professional web design for Fort Lee, Palisades Park, Edison businesses. Local NJ SEO, Google optimization, Shopify e-commerce experts.',
     keywords: 'New Jersey website, NJ web design, Fort Lee website, Palisades Park website, Edison website, Ridgefield website, Cherry Hill website, New Jersey Shopify, NJ e-commerce, New Jersey SEO, NJ Google Ads',
     openGraph: {
       title: 'New Jersey Website Design & Development - ZOE LUMOS',
@@ -104,8 +104,8 @@ export default function NJWebsitePage({ params }: { params: { locale: string } }
     '@id': `${baseUrl}/${locale === 'ko' ? 'ko/' : ''}nj-website`,
     name: locale === 'ko' ? '뉴저지 웹사이트 제작' : 'New Jersey Website Design',
     description: locale === 'ko'
-      ? '뉴저지 최고의 웹사이트 제작 전문 업체'
-      : 'Premier website design agency in New Jersey',
+      ? '뉴저지 웹사이트 제작 전문 업체'
+      : 'Website design agency in New Jersey',
     url: `${baseUrl}/${locale === 'ko' ? 'ko/' : ''}nj-website`,
     isPartOf: { '@id': 'https://www.zoelumos.com/#website' },
     about: { '@id': 'https://www.zoelumos.com/#localbusiness' },
@@ -210,8 +210,8 @@ export default function NJWebsitePage({ params }: { params: { locale: string } }
               </h1>
               <p className="text-xl md:text-2xl text-gray-700 mb-8 max-w-3xl mx-auto">
                 {locale === 'ko'
-                  ? '포트리, 팰팍, 리지필드, 에디슨 - NJ 전 지역 한인 비즈니스를 위한 최고의 웹사이트 제작 서비스'
-                  : 'Premier web development for Fort Lee, Palisades Park, Edison businesses. #1 in New Jersey.'
+                  ? '포트리, 팰팍, 리지필드, 에디슨 - NJ 전 지역 한인 비즈니스를 위한 웹사이트 제작 서비스'
+                  : 'Web development for Fort Lee, Palisades Park, Edison businesses.'
                 }
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
@@ -272,8 +272,8 @@ export default function NJWebsitePage({ params }: { params: { locale: string } }
                 </h3>
                 <p className="text-gray-600">
                   {locale === 'ko'
-                    ? '구글에서 "뉴저지 [업종]" 검색시 1페이지 노출. 로컬 SEO로 뉴저지 고객 유치'
-                    : 'Rank #1 for "New Jersey [your business]" searches. Local SEO to attract NJ customers'
+                    ? '구글에서 "뉴저지 [업종]" 검색 시 상위 노출을 목표로 합니다. 로컬 SEO로 뉴저지 고객 유치'
+                    : 'Show up when customers search "New Jersey [your business]". Local SEO to attract NJ customers'
                   }
                 </p>
               </div>
@@ -373,26 +373,6 @@ export default function NJWebsitePage({ params }: { params: { locale: string } }
           </div>
         </section>
 
-        {/* Testimonial */}
-        <section className="py-20 px-4 bg-white text-gray-900">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-8">
-              {locale === 'ko' 
-                ? '뉴저지 한인 비즈니스 성공 사례'
-                : 'NJ Korean Business Success Stories'
-              }
-            </h2>
-            <blockquote className="text-xl italic text-gray-700 mb-4">
-              {locale === 'ko'
-                ? '"포트리에서 식당을 운영하는데, ZOE LUMOS가 만든 웹사이트 덕분에 온라인 주문이 300% 증가했습니다. 구글에서 뉴저지 한식당 검색하면 1페이지에 나옵니다!"'
-                : '"Running a restaurant in Fort Lee, our online orders increased 300% thanks to the website ZOE LUMOS created. We rank on page 1 for NJ Korean restaurant searches!"'
-              }
-            </blockquote>
-            <p className="text-gray-600">
-              - {locale === 'ko' ? '김 사장님, 포트리 한식당' : 'Mr. Kim, Fort Lee Korean Restaurant'}
-            </p>
-          </div>
-        </section>
 
         {/* Contact Section */}
         <SchemaFaq schema={faqSchema} locale={params.locale} />

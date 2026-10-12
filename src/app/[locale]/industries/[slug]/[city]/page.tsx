@@ -59,6 +59,9 @@ export async function generateMetadata({
         ko: `${BASE}/ko/industries/${industry.slug.ko}/${city.slug.ko}`,
       },
     },
+    // Near-identical local variations of the industry hubs (2026-10 audit: ~95% shared text) — kept for
+    // visitors and internal links, but out of the index so they can't read as doorway pages.
+    robots: { index: false, follow: true },
     openGraph: {
       title,
       description,

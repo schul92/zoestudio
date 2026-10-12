@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
       : 'Hawaii website, HI website design, Honolulu Korean website, Waikiki website, Hawaii tourism website, HI SEO, Hawaii social media management, Hawaii Google Ads, Hawaii Korean advertising agency',
     openGraph: {
       title: locale === 'ko' ? '하와이 웹사이트 제작 전문 - 조이루모스' : 'Hawaii Website Design - ZOE LUMOS',
-      description: locale === 'ko' ? '하와이 한인 비즈니스를 위한 최고의 웹사이트 제작 서비스.' : 'Premier website design for HI Korean businesses.',
+      description: locale === 'ko' ? '하와이 한인 비즈니스를 위한 웹사이트 제작 서비스.' : 'Website design for HI Korean businesses.',
       url: locale === 'ko' ? `${baseUrl}/ko/하와이-웹사이트` : `${baseUrl}/hi-website`,
       siteName: 'ZOE LUMOS 조이루모스', locale: locale === 'ko' ? 'ko_KR' : 'en_US', type: 'website',
       images: [{ url: `${baseUrl}/api/og?title=Hawaii&subtitle=Korean+Web+Design`, width: 1200, height: 630, alt: locale === 'ko' ? '하와이 웹사이트 제작' : 'Hawaii Website Design' }],
@@ -225,7 +225,7 @@ export default function HIWebsiteKoreanPage({ params }: { params: { locale: stri
               <div className="text-center">
                 <div className="w-16 h-16 bg-cyan-100 rounded-full flex items-center justify-center mx-auto mb-4"><Search className="w-8 h-8 text-cyan-600" /></div>
                 <h3 className="text-xl font-bold mb-2">{isKorean ? '관광 SEO 전문' : 'Tourism SEO Specialists'}</h3>
-                <p className="text-gray-600">{isKorean ? '"하와이 한국 투어", "호놀룰루 한식당" 검색시 구글 1페이지 노출. 네이버 검색 최적화.' : 'Rank on page 1 for "Hawaii Korean tour" searches. Naver search optimization.'}</p>
+                <p className="text-gray-600">{isKorean ? '"하와이 한국 투어", "호놀룰루 한식당" 검색에서 찾을 수 있도록. 네이버 검색 최적화.' : 'Rank on page 1 for "Hawaii Korean tour" searches. Naver search optimization.'}</p>
               </div>
               <div className="text-center">
                 <div className="w-16 h-16 bg-cyan-100 rounded-full flex items-center justify-center mx-auto mb-4"><Mail className="w-8 h-8 text-cyan-600" /></div>

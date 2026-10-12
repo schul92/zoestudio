@@ -35,8 +35,8 @@ export async function generateMetadata({
     openGraph: {
       title: locale === 'ko' ? '뉴저지 웹사이트 제작 전문 - 조이루모스' : 'New Jersey Website Design - ZOE LUMOS',
       description: locale === 'ko'
-        ? '뉴저지 한인 비즈니스를 위한 최고의 웹사이트 제작 서비스. 포트리, 팰팍, 에디슨 전 지역.'
-        : 'Premier website design for NJ Korean businesses.',
+        ? '뉴저지 한인 비즈니스를 위한 웹사이트 제작 서비스. 포트리, 팰팍, 에디슨 전 지역.'
+        : 'Website design for NJ Korean businesses.',
       url: locale === 'ko' ? `${baseUrl}/ko/뉴저지-웹사이트` : `${baseUrl}/뉴저지-웹사이트`,
       siteName: 'ZOE LUMOS 조이루모스',
       locale: locale === 'ko' ? 'ko_KR' : 'en_US',
@@ -109,8 +109,8 @@ export default function NJWebsiteKoreanPage({ params }: { params: { locale: stri
     name: isKorean ? '조이루모스 - 뉴저지 웹사이트 제작' : 'ZOE LUMOS - New Jersey Website Design',
     image: `${baseUrl}/logo.png`,
     description: isKorean
-      ? '뉴저지 최고의 웹사이트 제작 전문 업체. 포트리, 팰팍, 에디슨 한인 비즈니스 전문.'
-      : 'Premier website design agency in New Jersey for Korean-American businesses.',
+      ? '뉴저지 웹사이트 제작 전문 업체. 포트리, 팰팍, 에디슨 한인 비즈니스 전문.'
+      : 'Website design agency in New Jersey for Korean-American businesses.',
     url: isKorean ? `${baseUrl}/ko/뉴저지-웹사이트` : `${baseUrl}/nj-website`,
     email: 'info@zoelumos.com',
     address: {
@@ -474,7 +474,7 @@ export default function NJWebsiteKoreanPage({ params }: { params: { locale: stri
                 </h3>
                 <p className="text-gray-600">
                   {isKorean
-                    ? '"뉴저지 [업종]" 검색시 구글 1페이지 노출. 로컬 SEO로 뉴저지 고객 확보.'
+                    ? '"뉴저지 [업종]" 검색에서 찾을 수 있도록. 로컬 SEO로 뉴저지 고객 확보.'
                     : 'Rank on page 1 for "New Jersey [business]" searches. Local SEO for NJ customers.'
                   }
                 </p>

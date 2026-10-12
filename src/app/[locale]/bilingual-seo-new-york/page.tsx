@@ -20,7 +20,7 @@ export async function generateMetadata({
 
   if (locale === 'ko') {
     return {
-      title: '뉴욕 한영 이중언어 SEO 에이전시 | 한인 비즈니스 검색 1위 | ZOE LUMOS',
+      title: '뉴욕 한영 이중언어 SEO 에이전시 | 한인 비즈니스 검색 노출 | ZOE LUMOS',
       description:
         '뉴욕 한인 비즈니스를 위한 한국어·영어 이중언어 SEO 전문 에이전시. 구글 검색 1페이지 진입, hreflang 최적화, 카카오톡·네이버 통합. 맨하탄·플러싱·롱아일랜드 전역.',
       keywords:
@@ -31,7 +31,7 @@ export async function generateMetadata({
       },
       openGraph: {
         title: '뉴욕 한영 이중언어 SEO 에이전시 - ZOE LUMOS',
-        description: '뉴욕 한인 비즈니스 한국어·영어 이중언어 SEO. 구글 1페이지 노출.',
+        description: '뉴욕 한인 비즈니스 한국어·영어 이중언어 SEO. 구글 검색 상위 노출을 목표로 합니다.',
         url: koUrl,
         siteName: 'ZOE LUMOS',
         locale: 'ko_KR',

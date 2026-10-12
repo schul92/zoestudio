@@ -179,8 +179,8 @@ export default function CliffsideParkWebDesignPage({ params }: { params: { local
                   icon: <Search className="w-8 h-8" />,
                   title: locale === 'ko' ? '구글 SEO' : 'Local SEO',
                   desc: locale === 'ko'
-                    ? '클리프사이드파크 지역 구글 검색 1위 목표. 한영 이중언어 검색 최적화.'
-                    : 'Rank #1 on Google for Cliffside Park searches. English & Korean keyword optimization.',
+                    ? '클리프사이드파크 지역 구글 검색 상위 노출을 목표로 합니다. 한영 이중언어 검색 최적화.'
+                    : 'Show up on Google for Cliffside Park searches. English & Korean keyword optimization.',
                 },
                 {
                   icon: <Zap className="w-8 h-8" />,

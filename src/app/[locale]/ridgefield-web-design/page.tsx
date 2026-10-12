@@ -137,7 +137,7 @@ export default function RidgefieldWebDesignPage({ params }: { params: { locale: 
               <div className="bg-white p-8 rounded-xl shadow-sm">
                 <Search className="w-10 h-10 text-blue-600 mb-4" />
                 <h3 className="text-xl font-bold mb-3">{locale === 'ko' ? '리지필드 로컬 SEO' : 'Ridgefield Local SEO'}</h3>
-                <p className="text-gray-600">{locale === 'ko' ? '"리지필드 [업종]" 구글 검색 1페이지 노출. Google My Business 최적화, 로컬 키워드 타겟팅.' : 'Rank page 1 for "Ridgefield [your business]" on Google. GMB optimization, local keyword targeting.'}</p>
+                <p className="text-gray-600">{locale === 'ko' ? '"리지필드 [업종]" 구글 검색 상위 노출을 목표로 합니다. Google My Business 최적화, 로컬 키워드 타겟팅.' : 'Rank page 1 for "Ridgefield [your business]" on Google. GMB optimization, local keyword targeting.'}</p>
               </div>
               <div className="bg-white p-8 rounded-xl shadow-sm">
                 <MapPin className="w-10 h-10 text-red-600 mb-4" />

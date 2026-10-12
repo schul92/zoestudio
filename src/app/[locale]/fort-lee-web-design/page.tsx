@@ -29,7 +29,7 @@ export async function generateMetadata({
       keywords: '포트리 웹사이트, 포트리 웹디자인, Fort Lee 웹사이트, 포트리 홈페이지 제작, 포트리 한인 비즈니스, 한인 마케팅 에이전시, 포트리 SEO, 포트리 구글 광고, 포트리 웹개발, 버겐카운티 웹사이트',
       openGraph: {
         title: '포트리 웹사이트 제작 전문 - ZOE LUMOS',
-        description: '포트리(Fort Lee) 한인 비즈니스를 위한 최고의 웹사이트 제작 서비스. 현지 사무실 운영.',
+        description: '포트리(Fort Lee) 한인 비즈니스를 위한 웹사이트 제작 서비스. 현지 사무실 운영.',
         url: `${baseUrl}/ko/fort-lee-web-design`,
         siteName: 'ZOE LUMOS',
         locale: 'ko_KR',
@@ -50,11 +50,11 @@ export async function generateMetadata({
   
   return {
     title: 'Fort Lee Web Design & Development | Korean Business Website Expert | ZOE LUMOS',
-    description: 'Fort Lee, NJ #1 web design agency. Korean-American business website specialists in Bergen County. Local SEO, Google Ads, Shopify e-commerce. Bilingual Korean & English. Free consultation.',
+    description: 'Web design agency in Fort Lee, NJ. Korean-American business website specialists in Bergen County. Local SEO, Google Ads, Shopify e-commerce. Bilingual Korean & English. Free consultation.',
     keywords: 'Fort Lee web design, Fort Lee NJ website, Fort Lee web developer, Bergen County web design, Korean business Fort Lee, Fort Lee SEO, Fort Lee digital marketing, Korean American web design NJ, small business SEO NJ, korean business marketing nyc, NJ web design agency',
     openGraph: {
       title: 'Fort Lee Web Design & Development - ZOE LUMOS',
-      description: '#1 Web design agency in Fort Lee, NJ. Korean-American business specialists.',
+      description: 'Web design agency in Fort Lee, NJ. Korean-American business specialists.',
       url: `${baseUrl}/fort-lee-web-design`,
       siteName: 'ZOE LUMOS',
       locale: 'en_US',
@@ -83,7 +83,7 @@ export default function FortLeeWebDesignPage({ params }: { params: { locale: str
     name: locale === 'ko' ? 'ZOE LUMOS - 포트리 웹디자인' : 'ZOE LUMOS - Fort Lee Web Design',
     description: locale === 'ko' 
       ? '포트리 한인 비즈니스를 위한 웹사이트 제작 전문 에이전시'
-      : 'Premier web design agency for Korean-American businesses in Fort Lee, NJ',
+      : 'Web design agency for Korean-American businesses in Fort Lee, NJ',
     url: `${baseUrl}/${locale === 'ko' ? 'ko/' : ''}fort-lee-web-design`,
     email: 'info@zoelumos.com',
     address: {
@@ -273,7 +273,7 @@ export default function FortLeeWebDesignPage({ params }: { params: { locale: str
                 </h3>
                 <p className="text-gray-600">
                   {locale === 'ko'
-                    ? '"포트리 [업종]" 구글 검색 1페이지 노출. Google My Business 최적화, 포트리 지역 키워드 타겟팅.'
+                    ? '"포트리 [업종]" 구글 검색 상위 노출을 목표로 합니다. Google My Business 최적화, 포트리 지역 키워드 타겟팅.'
                     : 'Rank page 1 for "Fort Lee [your business]" on Google. GMB optimization, Fort Lee keyword targeting.'
                   }
                 </p>

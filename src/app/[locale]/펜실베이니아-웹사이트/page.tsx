@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
       : 'Pennsylvania website, PA website design, Philadelphia Korean website, King of Prussia website, PA SEO, Pennsylvania social media management, Pennsylvania Google Ads, Pennsylvania Korean advertising agency',
     openGraph: {
       title: locale === 'ko' ? '펜실베이니아 웹사이트 제작 전문 - 조이루모스' : 'Pennsylvania Website Design - ZOE LUMOS',
-      description: locale === 'ko' ? '펜실베이니아 한인 비즈니스를 위한 최고의 웹사이트 제작 서비스.' : 'Premier website design for PA Korean businesses.',
+      description: locale === 'ko' ? '펜실베이니아 한인 비즈니스를 위한 웹사이트 제작 서비스.' : 'Website design for PA Korean businesses.',
       url: locale === 'ko' ? `${baseUrl}/ko/펜실베이니아-웹사이트` : `${baseUrl}/pa-website`,
       siteName: 'ZOE LUMOS 조이루모스', locale: locale === 'ko' ? 'ko_KR' : 'en_US', type: 'website',
       images: [{ url: `${baseUrl}/api/og?title=Pennsylvania&subtitle=Korean+Web+Design`, width: 1200, height: 630, alt: locale === 'ko' ? '펜실베이니아 웹사이트 제작' : 'Pennsylvania Website Design' }],
@@ -218,7 +218,7 @@ export default function PAWebsiteKoreanPage({ params }: { params: { locale: stri
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">{isKorean ? '왜 조이루모스를 선택해야 할까요?' : 'Why Choose ZOE LUMOS?'}</h2>
             <div className="grid md:grid-cols-3 gap-8">
               <div className="text-center"><div className="w-16 h-16 bg-violet-100 rounded-full flex items-center justify-center mx-auto mb-4"><Globe className="w-8 h-8 text-violet-600" /></div><h3 className="text-xl font-bold mb-2">{isKorean ? '한영 이중언어 전문' : 'Bilingual Experts'}</h3><p className="text-gray-600">{isKorean ? '한국어와 영어 완벽 지원. 필라델피아 한인 고객과 미국 고객 모두 타겟팅.' : 'Perfect Korean and English support for Pennsylvania businesses.'}</p></div>
-              <div className="text-center"><div className="w-16 h-16 bg-violet-100 rounded-full flex items-center justify-center mx-auto mb-4"><Search className="w-8 h-8 text-violet-600" /></div><h3 className="text-xl font-bold mb-2">{isKorean ? '펜실베이니아 SEO 전문' : 'PA SEO Specialists'}</h3><p className="text-gray-600">{isKorean ? '"필라델피아 [업종]" 검색시 구글 1페이지 노출. 펜실베이니아 로컬 SEO.' : 'Rank on page 1 for "Philadelphia [business]" searches. PA local SEO.'}</p></div>
+              <div className="text-center"><div className="w-16 h-16 bg-violet-100 rounded-full flex items-center justify-center mx-auto mb-4"><Search className="w-8 h-8 text-violet-600" /></div><h3 className="text-xl font-bold mb-2">{isKorean ? '펜실베이니아 SEO 전문' : 'PA SEO Specialists'}</h3><p className="text-gray-600">{isKorean ? '"필라델피아 [업종]" 검색에서 찾을 수 있도록. 펜실베이니아 로컬 SEO.' : 'Rank on page 1 for "Philadelphia [business]" searches. PA local SEO.'}</p></div>
               <div className="text-center"><div className="w-16 h-16 bg-violet-100 rounded-full flex items-center justify-center mx-auto mb-4"><MapPin className="w-8 h-8 text-violet-600" /></div><h3 className="text-xl font-bold mb-2">{isKorean ? 'NJ 본사 인접' : 'Near NJ HQ'}</h3><p className="text-gray-600">{isKorean ? '뉴저지 본사에서 가까워 방문 미팅 가능. 화상 미팅과 카카오톡 상담도 지원.' : 'Close to our NJ headquarters. In-person meetings possible. Video and KakaoTalk also available.'}</p></div>
             </div>
           </div>

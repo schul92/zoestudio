@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-type Project = {
+export type Project = {
   name: string
   industry: { en: string; ko: string }
   location: string
@@ -11,7 +11,7 @@ type Project = {
   url?: string
 }
 
-const projects: Project[] = [
+export const projects: Project[] = [
   {
     name: 'EndoPia',
     industry: { en: 'Medical device · U.S. launch', ko: '의료기기 · 미국 런칭' },

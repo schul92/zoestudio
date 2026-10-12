@@ -34,8 +34,8 @@ export async function generateMetadata({
     openGraph: {
       title: locale === 'ko' ? '캘리포니아 웹사이트 제작 전문 - 조이루모스' : 'California Website Design - ZOE LUMOS',
       description: locale === 'ko'
-        ? '캘리포니아 한인 비즈니스를 위한 최고의 웹사이트 제작 서비스. LA, 오렌지카운티, 샌프란시스코 전 지역.'
-        : 'Premier website design for CA Korean businesses.',
+        ? '캘리포니아 한인 비즈니스를 위한 웹사이트 제작 서비스. LA, 오렌지카운티, 샌프란시스코 전 지역.'
+        : 'Website design for CA Korean businesses.',
       url: locale === 'ko' ? `${baseUrl}/ko/캘리포니아-웹사이트` : `${baseUrl}/ca-website`,
       siteName: 'ZOE LUMOS 조이루모스',
       locale: locale === 'ko' ? 'ko_KR' : 'en_US',
@@ -108,8 +108,8 @@ export default function CAWebsiteKoreanPage({ params }: { params: { locale: stri
     name: isKorean ? '조이루모스 - 캘리포니아 웹사이트 제작' : 'ZOE LUMOS - California Website Design',
     image: `${baseUrl}/logo.png`,
     description: isKorean
-      ? '캘리포니아 최고의 웹사이트 제작 전문 업체. LA 코리아타운, 오렌지카운티 한인 비즈니스 전문.'
-      : 'Premier website design agency in California for Korean-American businesses.',
+      ? '캘리포니아 웹사이트 제작 전문 업체. LA 코리아타운, 오렌지카운티 한인 비즈니스 전문.'
+      : 'Website design agency in California for Korean-American businesses.',
     url: isKorean ? `${baseUrl}/ko/캘리포니아-웹사이트` : `${baseUrl}/ca-website`,
     email: 'info@zoelumos.com',
     address: {
@@ -469,7 +469,7 @@ export default function CAWebsiteKoreanPage({ params }: { params: { locale: stri
                 </h3>
                 <p className="text-gray-600">
                   {isKorean
-                    ? '"LA [업종]", "오렌지카운티 [업종]" 검색시 구글 1페이지 노출. 캘리포니아 로컬 SEO 전문.'
+                    ? '"LA [업종]", "오렌지카운티 [업종]" 검색에서 찾을 수 있도록. 캘리포니아 로컬 SEO 전문.'
                     : 'Rank on page 1 for "LA [business]" and "Orange County [business]" searches. CA local SEO experts.'
                   }
                 </p>

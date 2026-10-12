@@ -34,8 +34,8 @@ export async function generateMetadata({
     openGraph: {
       title: locale === 'ko' ? '조지아 웹사이트 제작 전문 - 조이루모스' : 'Georgia Website Design - ZOE LUMOS',
       description: locale === 'ko'
-        ? '조지아 한인 비즈니스를 위한 최고의 웹사이트 제작 서비스. 애틀랜타, 둘루스, 수와니 전 지역.'
-        : 'Premier website design for GA Korean businesses.',
+        ? '조지아 한인 비즈니스를 위한 웹사이트 제작 서비스. 애틀랜타, 둘루스, 수와니 전 지역.'
+        : 'Website design for GA Korean businesses.',
       url: locale === 'ko' ? `${baseUrl}/ko/조지아-웹사이트` : `${baseUrl}/ga-website`,
       siteName: 'ZOE LUMOS 조이루모스',
       locale: locale === 'ko' ? 'ko_KR' : 'en_US',
@@ -468,7 +468,7 @@ export default function GAWebsiteKoreanPage({ params }: { params: { locale: stri
                 </h3>
                 <p className="text-gray-600">
                   {isKorean
-                    ? '"둘루스 [업종]", "수와니 [업종]" 검색시 구글 1페이지 노출. 귀넷카운티 로컬 SEO.'
+                    ? '"둘루스 [업종]", "수와니 [업종]" 검색에서 찾을 수 있도록. 귀넷카운티 로컬 SEO.'
                     : 'Rank on page 1 for "Duluth [business]" and "Suwanee [business]" searches. Gwinnett County local SEO.'
                   }
                 </p>

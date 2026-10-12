@@ -34,8 +34,8 @@ export async function generateMetadata({
     openGraph: {
       title: locale === 'ko' ? '버지니아 웹사이트 제작 전문 - 조이루모스' : 'Virginia Website Design - ZOE LUMOS',
       description: locale === 'ko'
-        ? '버지니아 한인 비즈니스를 위한 최고의 웹사이트 제작 서비스. 애난데일, 센터빌, 페어팩스 전 지역.'
-        : 'Premier website design for VA Korean businesses.',
+        ? '버지니아 한인 비즈니스를 위한 웹사이트 제작 서비스. 애난데일, 센터빌, 페어팩스 전 지역.'
+        : 'Website design for VA Korean businesses.',
       url: locale === 'ko' ? `${baseUrl}/ko/버지니아-웹사이트` : `${baseUrl}/va-website`,
       siteName: 'ZOE LUMOS 조이루모스',
       locale: locale === 'ko' ? 'ko_KR' : 'en_US',
@@ -342,7 +342,7 @@ export default function VAWebsiteKoreanPage({ params }: { params: { locale: stri
               <div className="text-center">
                 <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4"><Search className="w-8 h-8 text-indigo-600" /></div>
                 <h3 className="text-xl font-bold mb-2">{isKorean ? '버지니아 SEO 전문' : 'VA SEO Specialists'}</h3>
-                <p className="text-gray-600">{isKorean ? '"애난데일 [업종]", "센터빌 [업종]" 검색시 구글 1페이지 노출. 북버지니아 로컬 SEO.' : 'Rank on page 1 for "Annandale [business]" and "Centreville [business]" searches. NoVA local SEO.'}</p>
+                <p className="text-gray-600">{isKorean ? '"애난데일 [업종]", "센터빌 [업종]" 검색에서 찾을 수 있도록. 북버지니아 로컬 SEO.' : 'Rank on page 1 for "Annandale [business]" and "Centreville [business]" searches. NoVA local SEO.'}</p>
               </div>
               <div className="text-center">
                 <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4"><Mail className="w-8 h-8 text-indigo-600" /></div>

@@ -38,7 +38,7 @@ export interface BlogPost {
   }
 }
 
-export const blogContent: BlogPost[] = [
+const allBlogPosts: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
   // 2026-06-27 — "Why owners fire their web agency" viral pain batch (10 posts)
   // Targets vendor-switch complaints: ghosting, hostage/ownership, opaque fees,
@@ -8606,13 +8606,7 @@ export const blogContent: BlogPost[] = [
     ],
     sections: {
       en: [
-        { type: 'intro', content: 'A Korean hair salon in Palisades Park gets 80% of its new clients from Google Maps — not from Instagram, not from word-of-mouth, not from KakaoTalk. Most owners do not realize this until they audit their own Google Business Profile insights. Once they see the data, the next question is always the same: how do I rank in the Map Pack against the salons that have been here for 15 years? This playbook is the exact local SEO process we run for Korean salons and spas in Bergen County, Hudson County, and Cherry Hill. 14 ranking factors, the order you should fix them, and three-month results from real shops we have worked with.' },
-        { type: 'stats', content: 'Local SEO results — 3 Korean beauty businesses (90-day measurement, 2025-2026)', items: [
-          '+312%|GBP profile views|Korean nail spa, Fort Lee',
-          '+187%|Direction requests|Korean hair salon, Palpark',
-          '+94|New reviews|Korean medspa, Englewood',
-          '47% → 11%|Phone call wait time|after booking widget',
-        ] },
+        { type: 'intro', content: 'For many Korean hair salons, Google Maps is the biggest source of new clients — often bigger than Instagram, word-of-mouth or KakaoTalk. Most owners do not realize this until they open their own Google Business Profile insights. Once they see the data, the next question is always the same: how do I rank in the Map Pack against the salons that have been here for 15 years? This playbook is the exact local SEO process we run for Korean salons and spas in Bergen County, Hudson County, and Cherry Hill. 14 ranking factors and the order you should fix them.' },
         { type: 'h2', content: 'The 14 local ranking factors that actually move Korean beauty businesses' },
         { type: 'ul', content: 'In priority order — fix in this sequence, not random order:', items: [
           '#1 — Google Business Profile primary category (must be "Hair Salon", "Nail Salon", "Beauty Salon", or "Med Spa" — not the generic "Salon")',
@@ -8642,13 +8636,7 @@ export const blogContent: BlogPost[] = [
         { type: 'cta', content: 'ZOE LUMOS runs Korean salon and spa local SEO as a fixed 90-day program — GBP audit, citation cleanup, bilingual website service pages, schema markup, and review-velocity flow setup. Most Bergen County shops see Map Pack movement by week 6. Free 30-minute audit before any contract.' },
       ],
       ko: [
-        { type: 'intro', content: '팰팍 한인 미용실 신규 고객의 80%가 구글 맵에서 옵니다 — 인스타그램·입소문·카카오톡이 아닙니다. 대부분의 사장님은 본인 구글 비즈니스 프로필 인사이트를 감사하기 전까진 모릅니다. 데이터를 본 다음 질문은 항상 같습니다 — 15년 된 미용실과 어떻게 맵 팩에서 경쟁하나요? 이 플레이북은 버겐 카운티, 허드슨 카운티, 체리힐 한인 미용실·스파에 저희가 실행하는 로컬 SEO 프로세스 그대로입니다. 14가지 순위 요인, 수정 순서, 실제 매장 3개월 결과까지.' },
-        { type: 'stats', content: '한인 뷰티 비즈니스 3곳 로컬 SEO 결과 (90일 측정, 2025-2026)', items: [
-          '+312%|GBP 프로필 조회|포트리 한인 네일샵',
-          '+187%|길찾기 요청|팰팍 한인 미용실',
-          '+94|신규 리뷰|잉글우드 한인 메드스파',
-          '47% → 11%|전화 대기시간|예약 위젯 도입 후',
-        ] },
+        { type: 'intro', content: '많은 한인 미용실에서 신규 고객이 가장 많이 들어오는 경로는 구글 맵입니다 — 인스타그램·입소문·카카오톡보다 많은 경우가 흔합니다. 대부분의 사장님은 본인 구글 비즈니스 프로필 인사이트를 열어 보기 전까지는 모릅니다. 데이터를 본 다음 질문은 항상 같습니다 — 15년 된 미용실과 어떻게 맵 팩에서 경쟁하나요? 이 플레이북은 버겐 카운티, 허드슨 카운티, 체리힐 한인 미용실·스파에 저희가 실행하는 로컬 SEO 프로세스 그대로입니다. 14가지 순위 요인과 수정 순서를 정리했습니다.' },
         { type: 'h2', content: '한인 뷰티 비즈니스를 실제로 움직이는 14가지 로컬 순위 요인' },
         { type: 'ul', content: '우선순위 순 — 무작위 말고 이 순서대로:', items: [
           '#1 — GBP 1차 카테고리 ("Hair Salon", "Nail Salon", "Beauty Salon", "Med Spa" 중 — 일반 "Salon" 금지)',
@@ -13520,3 +13508,17 @@ export const blogContent: BlogPost[] = [
     },
   },
 ]
+
+/**
+ * Posts withheld from the site — not rendered, not in the sitemap or any listing — but kept in source so
+ * they can be restored. 2026-10-11: client case studies whose details or results could not be verified
+ * (the Salt & Polish story contradicted the real engagement; the other two name no client).
+ * Restore only with real data and the client's permission.
+ */
+export const UNPUBLISHED_POSTS = new Set<string>([
+  'case-study-salt-and-polish-fort-lee-spa-rebuild-2026',
+  'case-study-korean-nail-salon-seo-10x',
+  'case-study-korean-restaurant-palisades-park-bookings-3x-2026',
+])
+
+export const blogContent: BlogPost[] = allBlogPosts.filter((p) => !UNPUBLISHED_POSTS.has(p.slug))

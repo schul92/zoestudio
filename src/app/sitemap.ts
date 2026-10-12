@@ -3,7 +3,6 @@ import { blogContent } from '@/data/blogContent'
 import { koreanCities } from '@/data/koreanCities'
 import { usStates, STATES_WITH_CUSTOM_PAGES } from '@/data/usStates'
 import { industries } from '@/data/industriesData'
-import { cityMarkets } from '@/data/cityMarketData'
 import { localSeoPages } from '@/data/localSeoPages'
 import { SITE_URL } from '@/lib/siteUrl'
 import { US_LAUNCH_PATHS, US_LAUNCH_UPDATED } from '@/data/usLaunch'
@@ -266,29 +265,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       },
     })
 
-    // City × industry crossover pages (local SEO plays)
-    cityMarkets.forEach((c) => {
-      sitemapEntries.push({
-        url: `${baseUrl}/industries/${ind.slug.en}/${c.slug.en}`,
-        alternates: {
-          languages: {
-            'x-default': `${baseUrl}/industries/${ind.slug.en}/${c.slug.en}`,
-            en: `${baseUrl}/industries/${ind.slug.en}/${c.slug.en}`,
-            ko: `${baseUrl}/ko/industries/${ind.slug.ko}/${c.slug.ko}`,
-          },
-        },
-      })
-      sitemapEntries.push({
-        url: `${baseUrl}/ko/industries/${ind.slug.ko}/${c.slug.ko}`,
-        alternates: {
-          languages: {
-            'x-default': `${baseUrl}/industries/${ind.slug.en}/${c.slug.en}`,
-            en: `${baseUrl}/industries/${ind.slug.en}/${c.slug.en}`,
-            ko: `${baseUrl}/ko/industries/${ind.slug.ko}/${c.slug.ko}`,
-          },
-        },
-      })
-    })
   })
 
   // Blog posts

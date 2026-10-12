@@ -1,282 +1,152 @@
 import { Metadata } from 'next'
+import Image from 'next/image'
+import Link from 'next/link'
+import { ArrowUpRight, MapPin, Star } from 'lucide-react'
 import HeaderWrapper from '@/components/layout/HeaderWrapper'
 import Footer from '@/components/layout/Footer'
-import Link from 'next/link'
+import { projects } from '@/components/sections/SelectedWork'
 import { SITE_URL } from '@/lib/siteUrl'
 
+// Independent review profiles (same URLs as the Organization schema's sameAs / the Yelp listing).
+const GOOGLE_REVIEWS = 'https://maps.google.com/maps?cid=423025541319098436'
+const YELP = 'https://www.yelp.com/biz/zoe-lumos-fort-lee'
+
+/**
+ * 2026-10-11: this page used to show six testimonials that could not be tied to any real client, plus
+ * "5-star / 100% satisfaction" badges. It now shows only verifiable proof: the real client list (shared
+ * with the homepage), published case studies, and links to independent review platforms.
+ */
+
 export async function generateStaticParams() {
-  return [
-    { locale: 'en' },
-    { locale: 'ko' }
-  ]
+  return [{ locale: 'en' }, { locale: 'ko' }]
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { locale: string }
-}): Promise<Metadata> {
-  const locale = params.locale as 'en' | 'ko'
-  const baseUrl = SITE_URL
-
-  const metadata = {
-    en: {
-      title: 'Client Reviews & Testimonials - ZOE LUMOS | 5-Star Rated Agency',
-      description: 'Read what our clients say about ZOE LUMOS. 5-star rated digital marketing agency specializing in SEO, Google Ads, and web design for small businesses.',
-      keywords: 'ZOE LUMOS reviews, digital marketing agency reviews, SEO agency testimonials, web design reviews, Google Ads management reviews, NY NJ marketing agency',
-    },
-    ko: {
-      title: '고객 후기 & 리뷰 - ZOE LUMOS | 5성급 에이전시',
-      description: 'ZOE LUMOS 고객 리뷰를 확인하세요. 소규모 비즈니스를 위한 SEO, 구글 광고, 웹 디자인 전문 5성급 디지털 마케팅 에이전시.',
-      keywords: 'ZOE LUMOS 리뷰, 디지털 마케팅 에이전시 후기, SEO 에이전시 리뷰, 웹 디자인 후기, 구글 광고 관리 리뷰, NY NJ 마케팅 에이전시',
-    }
-  }
-
+export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
+  const ko = params.locale === 'ko'
+  const url = `${SITE_URL}${ko ? '/ko' : ''}/reviews`
+  const title = ko ? '고객 사례·리뷰 | ZOE LUMOS' : 'Client Work & Reviews | ZOE LUMOS'
+  const description = ko
+    ? '조이루모스가 작업한 실제 고객(EndoPia, TJ Flowers, Vito’s Pizza, Salt & Polish 등)과 구글·Yelp 독립 리뷰 링크.'
+    : 'Real client work by ZOE LUMOS (EndoPia, TJ Flowers, Vito’s Pizza, Salt & Polish and more) and links to independent reviews on Google and Yelp.'
   return {
-    title: metadata[locale].title,
-    description: metadata[locale].description,
-    keywords: metadata[locale].keywords,
+    title,
+    description,
     alternates: {
-      canonical: locale === 'en' ? `${baseUrl}/reviews` : `${baseUrl}/ko/reviews`,
-      languages: {
-        'x-default': `${baseUrl}/reviews`,
-        'en': `${baseUrl}/reviews`,
-        'ko': `${baseUrl}/ko/reviews`,
-      },
+      canonical: url,
+      languages: { 'x-default': `${SITE_URL}/reviews`, en: `${SITE_URL}/reviews`, ko: `${SITE_URL}/ko/reviews` },
     },
-    openGraph: {
-      title: metadata[locale].title,
-      description: metadata[locale].description,
-      url: locale === 'en' ? `${baseUrl}/reviews` : `${baseUrl}/ko/reviews`,
-      siteName: 'ZOE LUMOS',
-      locale: locale === 'ko' ? 'ko_KR' : 'en_US',
-      type: 'website',
-    },
-    robots: {
-      index: true,
-      follow: true,
-    },
+    openGraph: { title, description, url, siteName: 'ZOE LUMOS', locale: ko ? 'ko_KR' : 'en_US', type: 'website' },
+    robots: { index: true, follow: true },
   }
-}
-
-// Client reviews data
-const reviews = [
-  {
-    id: 1,
-    author: 'James K.',
-    business: 'Restaurant Owner',
-    location: 'Fort Lee, NJ',
-    rating: 5,
-    date: '2024-11-15',
-    title: {
-      en: 'Outstanding SEO Results',
-      ko: '뛰어난 SEO 결과'
-    },
-    content: {
-      en: 'ZOE LUMOS helped our restaurant rank #1 for "Korean BBQ Fort Lee" within 3 months. Our reservations have increased by 200%. The team is professional and truly understands local SEO.',
-      ko: 'ZOE LUMOS 덕분에 3개월 만에 "Fort Lee 한국 BBQ" 검색 1위를 달성했습니다. 예약이 200% 증가했어요. 팀이 전문적이고 로컬 SEO를 정말 잘 이해합니다.'
-    }
-  },
-  {
-    id: 2,
-    author: 'Sarah L.',
-    business: 'Nail Salon Owner',
-    location: 'Palisades Park, NJ',
-    rating: 5,
-    date: '2024-10-20',
-    title: {
-      en: 'Best Investment for My Business',
-      ko: '사업에 최고의 투자'
-    },
-    content: {
-      en: 'I was skeptical about digital marketing, but ZOE LUMOS proved me wrong. My Google Ads campaign brings in 15-20 new clients every month. Korean-speaking support made everything so easy!',
-      ko: '디지털 마케팅에 회의적이었는데, ZOE LUMOS가 증명해 보였습니다. 구글 광고 캠페인으로 매달 15-20명의 신규 고객이 옵니다. 한국어 상담이 모든 것을 쉽게 만들었어요!'
-    }
-  },
-  {
-    id: 3,
-    author: 'Michael C.',
-    business: 'Law Firm Partner',
-    location: 'Manhattan, NY',
-    rating: 5,
-    date: '2024-09-08',
-    title: {
-      en: 'Professional Website That Converts',
-      ko: '전환율 높은 전문 웹사이트'
-    },
-    content: {
-      en: 'Our new website looks amazing and loads incredibly fast. More importantly, we\'re getting quality leads through our contact form. ZOE LUMOS delivered exactly what we needed.',
-      ko: '새 웹사이트가 멋지고 매우 빠르게 로드됩니다. 더 중요한 건 문의 폼을 통해 양질의 리드를 받고 있다는 것입니다. ZOE LUMOS가 정확히 필요한 것을 제공했습니다.'
-    }
-  },
-  {
-    id: 4,
-    author: 'Jenny P.',
-    business: 'Boutique Shop Owner',
-    location: 'Flushing, NY',
-    rating: 5,
-    date: '2024-08-25',
-    title: {
-      en: 'Shopify Store Success',
-      ko: '쇼피파이 스토어 성공'
-    },
-    content: {
-      en: 'They built my Shopify store from scratch and set up everything perfectly. Now I\'m selling products 24/7 online. The e-commerce SEO is bringing in organic traffic every day.',
-      ko: '쇼피파이 스토어를 처음부터 완벽하게 구축해 주었습니다. 이제 온라인으로 24시간 제품을 판매하고 있어요. 이커머스 SEO로 매일 자연 유입이 들어옵니다.'
-    }
-  },
-  {
-    id: 5,
-    author: 'David H.',
-    business: 'Dental Clinic',
-    location: 'Ridgewood, NJ',
-    rating: 5,
-    date: '2024-07-12',
-    title: {
-      en: 'Google Ads Expert',
-      ko: '구글 광고 전문가'
-    },
-    content: {
-      en: 'Our cost per acquisition dropped by 40% after ZOE LUMOS took over our Google Ads. They know how to target the right patients in Bergen County. Highly recommend!',
-      ko: 'ZOE LUMOS가 구글 광고를 맡은 후 고객 획득 비용이 40% 줄었습니다. 버겐 카운티에서 적합한 환자를 타겟팅하는 방법을 알고 있습니다. 강력 추천!'
-    }
-  },
-  {
-    id: 6,
-    author: 'Lisa M.',
-    business: 'Real Estate Agent',
-    location: 'Englewood, NJ',
-    rating: 5,
-    date: '2024-06-30',
-    title: {
-      en: 'Finally Found the Right Agency',
-      ko: '드디어 맞는 에이전시를 찾았습니다'
-    },
-    content: {
-      en: 'After working with 3 other agencies, I finally found ZOE LUMOS. They understand the real estate market and created a personal brand website that sets me apart from competitors.',
-      ko: '다른 3개 에이전시와 일한 후, 드디어 ZOE LUMOS를 찾았습니다. 부동산 시장을 이해하고 경쟁사와 차별화되는 개인 브랜드 웹사이트를 만들어 주었습니다.'
-    }
-  }
-]
-
-const content = {
-  en: {
-    title: 'Client Reviews',
-    subtitle: 'What Our Clients Say About Us',
-    description: 'Real testimonials from real businesses we\'ve helped grow online.',
-    stats: {
-      rating: '5.0',
-      reviews: `${reviews.length}+ Reviews`,
-      satisfaction: '100% Satisfaction'
-    },
-    cta: {
-      title: 'Ready to Join Our Success Stories?',
-      subtitle: 'Let us help your business grow online',
-      button: 'Get Free Consultation'
-    }
-  },
-  ko: {
-    title: '고객 후기',
-    subtitle: '고객들이 말하는 ZOE LUMOS',
-    description: '온라인 성장을 도운 실제 비즈니스들의 진솔한 후기입니다.',
-    stats: {
-      rating: '5.0',
-      reviews: `${reviews.length}+ 리뷰`,
-      satisfaction: '100% 만족'
-    },
-    cta: {
-      title: '성공 스토리에 함께하시겠습니까?',
-      subtitle: '온라인에서 비즈니스 성장을 도와드립니다',
-      button: '무료 상담 받기'
-    }
-  }
-}
-
-function StarRating({ rating }: { rating: number }) {
-  return (
-    <div className="flex gap-1">
-      {[...Array(5)].map((_, i) => (
-        <svg
-          key={i}
-          className={`w-5 h-5 ${i < rating ? 'text-yellow-400' : 'text-gray-300'}`}
-          fill="currentColor"
-          viewBox="0 0 20 20"
-        >
-          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-        </svg>
-      ))}
-    </div>
-  )
 }
 
 export default function ReviewsPage({ params }: { params: { locale: string } }) {
-  const locale = params.locale as 'en' | 'ko'
-  const t = content[locale]
-  const prefix = locale === 'ko' ? '/ko' : ''
+  const locale = params.locale === 'ko' ? 'ko' : 'en'
+  const ko = locale === 'ko'
+  const prefix = ko ? '/ko' : ''
+
+  const caseStudies = [
+    {
+      href: `${prefix}/blog/tj-flowers-shopify-revamp-case-study`,
+      title: ko ? 'TJ Flowers — Shopify 리빌드 사례' : 'TJ Flowers — Shopify rebuild case study',
+      body: ko ? '맨해튼 플라워샵의 Shopify 리빌드와 검색 노출 변화를 실제 수치로 정리했습니다.' : 'A Manhattan florist’s Shopify rebuild and what changed in search, with the real numbers.',
+    },
+    {
+      href: `${prefix}/blog/website-drives-revenue-pizza-catering-case-study-2026`,
+      title: ko ? 'Vito’s Pizza — 웹사이트와 케이터링 주문' : 'Vito’s Pizza — website and catering orders',
+      body: ko ? '전환 추적과 사장님 대시보드로 가장 큰 주문을 찾아낸 과정입니다.' : 'How conversion tracking and an owner dashboard surfaced the highest-value orders.',
+    },
+  ]
 
   return (
     <>
       <HeaderWrapper locale={locale} />
-
-      <main className="min-h-screen bg-gradient-to-b from-white to-gray-50 pt-24 pb-16">
-        <div className="max-w-6xl mx-auto px-6 lg:px-8">
-          {/* Breadcrumb */}
-          <nav className="mb-8 text-sm">
-            <Link href={prefix || '/'} className="text-gray-500 hover:text-black transition-colors">
-              {locale === 'ko' ? '홈' : 'Home'}
-            </Link>
-            <span className="mx-2 text-gray-400">/</span>
-            <span className="text-gray-900">{t.title}</span>
+      <main className="bg-ivory text-ink">
+        <section className="container-edge pt-32 md:pt-44 pb-12 md:pb-16">
+          <nav className="mb-8 flex flex-wrap items-center gap-2 overline text-ash" aria-label={ko ? '경로' : 'Breadcrumb'}>
+            <Link href={prefix || '/'} className="transition-colors hover:text-ink">{ko ? '홈' : 'Home'}</Link>
+            <span className="opacity-50">/</span>
+            <span className="text-ink">{ko ? '고객 사례·리뷰' : 'Client work & reviews'}</span>
           </nav>
-
-          {/* Header */}
-          <div className="text-center mb-16">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">{t.title}</h1>
-            <p className="text-xl text-gray-600 mb-2">{t.subtitle}</p>
-            <p className="text-gray-500">{t.description}</p>
-
+          <h1 className="font-display text-[clamp(2.25rem,6vw,4.25rem)] leading-[1.06] tracking-luxury text-ink max-w-4xl">
+            {ko ? '고객 사례와 리뷰' : 'Client work and reviews'}
+          </h1>
+          <p className="mt-7 max-w-2xl text-body-lg leading-[1.7] text-graphite">
+            {ko
+              ? '확인할 수 있는 리뷰만 게시합니다. 리뷰는 구글과 Yelp에서 직접 확인하시고, 아래에서 저희가 작업한 실제 고객을 보세요.'
+              : 'We only publish reviews you can verify. Read them on Google and Yelp, and see the businesses we have built for below.'}
+          </p>
+          <div className="mt-9 flex flex-wrap items-center gap-3">
+            <a href={GOOGLE_REVIEWS} target="_blank" rel="noopener noreferrer" className="btn-ink">
+              <Star className="h-4 w-4" aria-hidden />
+              {ko ? '구글 리뷰 보기' : 'Google reviews'}
+            </a>
+            <a href={YELP} target="_blank" rel="noopener noreferrer" className="btn-outline">
+              {ko ? 'Yelp 리뷰 보기' : 'Yelp reviews'}
+            </a>
           </div>
+        </section>
 
-          {/* Reviews Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-            {reviews.map((review) => (
-              <div
-                key={review.id}
-                className="bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-shadow border border-gray-100"
-              >
-                <div className="flex items-start justify-between mb-4">
-                  <div>
-                    <p className="font-semibold text-gray-900">{review.author}</p>
-                    <p className="text-sm text-gray-500">{review.business}</p>
-                    <p className="text-xs text-gray-400">{review.location}</p>
-                  </div>
-                  <StarRating rating={review.rating} />
+        <section className="container-edge border-t border-hairline py-16 md:py-24">
+          <h2 className="font-display text-[clamp(1.75rem,3.6vw,2.5rem)] leading-[1.15] tracking-luxury text-ink mb-10">
+            {ko ? '함께한 고객' : 'Who we have built for'}
+          </h2>
+          <ul data-reveal-group className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 md:gap-6">
+            {projects.map((p) => (
+              <li key={p.name}>
+                <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-bone">
+                  <Image src={p.image} alt={ko ? `${p.name} 웹사이트 화면` : `${p.name} website`} fill sizes="(min-width: 1024px) 24vw, (min-width: 640px) 48vw, 100vw" className="object-cover object-top" />
                 </div>
-                <h3 className="font-medium text-gray-900 mb-2">{review.title[locale]}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{review.content[locale]}</p>
-                <p className="text-xs text-gray-400 mt-4">
-                  {new Date(review.date).toLocaleDateString(locale === 'ko' ? 'ko-KR' : 'en-US', {
-                    year: 'numeric',
-                    month: 'long',
-                    day: 'numeric'
-                  })}
+                <p className="mt-4 text-[13px] text-ash">{p.industry[locale]} · {p.year}</p>
+                <h3 className="mt-1 text-[19px] font-semibold tracking-[-0.02em] text-ink">
+                  {p.url ? (
+                    <a href={p.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 hover:underline">
+                      {p.name}
+                      <ArrowUpRight className="h-4 w-4" aria-hidden />
+                    </a>
+                  ) : (
+                    p.name
+                  )}
+                </h3>
+                <p className="mt-1 inline-flex items-center gap-1.5 text-[13px] text-graphite">
+                  <MapPin className="h-3.5 w-3.5" aria-hidden />
+                  {p.location}
                 </p>
-              </div>
+                <p className="mt-2 text-[13.5px] text-graphite">{p.disciplines[locale].join(' · ')}</p>
+              </li>
             ))}
-          </div>
+          </ul>
+        </section>
 
-          {/* CTA Section */}
-          <div className="bg-black rounded-3xl p-8 md:p-12 text-center text-white">
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">{t.cta.title}</h2>
-            <p className="text-gray-300 mb-8">{t.cta.subtitle}</p>
-            <Link
-              href={`${prefix}/contact`}
-              className="inline-block bg-white text-black font-semibold px-8 py-4 rounded-full hover:bg-gray-100 transition-colors"
-            >
-              {t.cta.button}
-            </Link>
+        <section className="container-edge border-t border-hairline py-16 md:py-24">
+          <h2 className="font-display text-[clamp(1.75rem,3.6vw,2.5rem)] leading-[1.15] tracking-luxury text-ink mb-10">
+            {ko ? '공개 사례 연구' : 'Published case studies'}
+          </h2>
+          <ul className="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-5">
+            {caseStudies.map((c) => (
+              <li key={c.href}>
+                <Link href={c.href} className="group block rounded-[24px] p-6 md:p-8 bg-bone ring-1 ring-hairline transition-colors hover:ring-ink/30">
+                  <h3 className="text-[19px] md:text-[21px] font-semibold tracking-[-0.02em] text-ink group-hover:underline">{c.title}</h3>
+                  <p className="mt-3 text-[15px] leading-[1.7] text-graphite">{c.body}</p>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+
+        <section className="container-edge border-t border-hairline py-20 md:py-28">
+          <p className="font-display text-[clamp(1.5rem,3vw,2.1rem)] leading-[1.3] tracking-luxury text-ink max-w-2xl mb-8">
+            {ko
+              ? '저희와 일해 보셨나요? 짧은 구글 리뷰가 다른 사장님들이 저희를 찾는 데 큰 도움이 됩니다.'
+              : 'Worked with us? A short Google review helps other business owners find us.'}
+          </p>
+          <div className="flex flex-wrap items-center gap-3">
+            <a href={GOOGLE_REVIEWS} target="_blank" rel="noopener noreferrer" className="btn-ink">
+              {ko ? '구글 리뷰 남기기' : 'Leave a Google review'}
+            </a>
+            <Link href={`${prefix}/contact`} className="btn-outline">{ko ? '상담 요청' : 'Start a conversation'}</Link>
           </div>
-        </div>
+        </section>
       </main>
       <Footer locale={locale} />
     </>
