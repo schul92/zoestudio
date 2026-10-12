@@ -25,4 +25,5 @@ export const localSeoSlugs: [string, string][] = [
   ['leonia-web-design', '레오니아-홈페이지-제작'],
   ['bergen-county-web-design', '버겐카운티-홈페이지-제작'],
   ['pos-company-website-vs-web-studio', '포스-업체-홈페이지-vs-전문-제작'],
+  ['us-launch-for-korean-brands', '미국-진출-홈페이지-제작'],
 ]
