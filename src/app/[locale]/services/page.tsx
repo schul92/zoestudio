@@ -6,6 +6,7 @@ import Contact from '@/components/sections/Contact'
 import PricingTeaser from '@/components/sections/PricingTeaser'
 import GuaranteeStrip from '@/components/sections/GuaranteeStrip'
 import { SITE_URL } from '@/lib/siteUrl'
+import { US_LAUNCH_PATHS } from '@/data/usLaunch'
 
 export async function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'ko' }]
@@ -66,6 +67,14 @@ export default function ServicesHub({ params }: { params: { locale: string } }) 
   const p = isKo ? '/ko' : ''
 
   const services = [
+    {
+      href: isKo ? US_LAUNCH_PATHS.ko : US_LAUNCH_PATHS.en,
+      kicker: isKo ? '미국 진출 기업 · 프랜차이즈 본사' : 'Korean companies entering the US',
+      title: isKo ? '미국 진출 기업 공식 홈페이지 제작' : 'US launch websites for Korean brands',
+      body: isKo
+        ? '미국 1호점·미국 법인·미국 판매를 앞둔 한국 기업의 공식 영문 홈페이지. 한국어로 진행하고 한국 시간에 미팅하며, 본사가 한국어 관리자 화면으로 직접 운영합니다.'
+        : 'Official US English websites for Korean companies opening US stores, entities or online sales. Run in Korean, meetings on Korea time, and a Korean admin panel for your HQ.',
+    },
     {
       href: isKo ? '/ko/웹사이트-제작' : '/웹사이트-제작',
       kicker: isKo ? '웹사이트 제작 · 유지보수' : 'Website design & care',

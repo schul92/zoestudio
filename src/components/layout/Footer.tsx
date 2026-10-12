@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { US_LAUNCH_PATHS } from '@/data/usLaunch'
 
 export default function Footer({ locale = 'en' }: { locale?: string }) {
   const isKo = locale === 'ko'
@@ -21,6 +22,7 @@ export default function Footer({ locale = 'en' }: { locale?: string }) {
     {
       title: isKo ? '서비스' : 'Services',
       links: [
+        [isKo ? '미국 진출 기업 홈페이지' : 'US launch for Korean brands', isKo ? US_LAUNCH_PATHS.ko : US_LAUNCH_PATHS.en],
         [isKo ? '웹사이트 제작' : 'Website design', isKo ? '/ko/웹사이트-제작' : '/웹사이트-제작'],
         [isKo ? '구글 광고대행' : 'Google Ads', isKo ? '/ko/광고대행' : '/광고대행'],
         [isKo ? 'SEO · 검색 최적화' : 'SEO', isKo ? '/ko/englewood-nj-seo' : '/englewood-nj-seo'],

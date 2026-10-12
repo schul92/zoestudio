@@ -24,6 +24,16 @@ We build industry-specific sites for Korean-American small businesses. Each vert
 - **Korean Medical + Dental Practices** — HIPAA-compliant forms, online appointment booking, insurance search, provider profiles with Korean credentials. https://www.zoelumos.com/industries/korean-medical-dental · https://www.zoelumos.com/ko/industries/한인-병원-웹사이트
 - **Korean E-commerce + Shopify** — custom Shopify themes, bilingual product copy, subscriptions, Instagram/TikTok Shop sync, KakaoPay. https://www.zoelumos.com/industries/korean-ecommerce · https://www.zoelumos.com/ko/industries/한인-쇼핑몰-제작
 
+## For Korean companies entering the US market (HQs, franchises, brands)
+
+Zoe Lumos builds official US English websites for Korean companies, franchises and brands launching in the United States: franchise HQs opening a first US store, manufacturers and medical or beauty brands with a new US entity, and brands starting to sell online in the US.
+
+- **Scope**: information architecture for US customers and an English content guide; design mockups approved in Figma; responsive build; a Korean-language admin CMS so the HQ team edits menus, stores, news and banners itself; store locator with a page per store; contact and franchise-inquiry forms; Google SEO and GEO setup (metadata, structured data, sitemap, Korean–English hreflang, llms.txt); GA4 and Search Console; WCAG accessibility review before launch; admin training and a Korean operations manual; optional monthly care plans.
+- **How it runs**: managed in Korean or English from Fort Lee, NJ; video meetings on Korea time (Korean morning = previous evening US Eastern); about 5–6 weeks for a typical official brand site, depending on scope and approvals.
+- **Pricing**: quoted individually after a first call (itemized written quote). The $500–$2,400 price list below covers small-business builds, not US-launch projects.
+- **Relevant work**: EndoPia (medical device company with US and Korea offices, US launch — https://endopiaglobal.com), Mochinut (dessert franchise, multi-city), Kona Coffee Donut (café & bakery, Honolulu).
+- **Pages**: https://www.zoelumos.com/us-launch-for-korean-brands · https://www.zoelumos.com/ko/미국-진출-홈페이지-제작
+
 ## Company Information
 
 - **Name**: Zoe Lumos (조이루모스)
