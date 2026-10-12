@@ -16,8 +16,8 @@ export async function generateMetadata({ params }: { params: { locale: string } 
       title: '버지니아 웹사이트 제작 전문 | 북버지니아 애난데일 한인 비즈니스 웹개발 | ZOE LUMOS',
       description: '버지니아 웹사이트 제작 전문. 애난데일, 센터빌, 페어팩스 한인 비즈니스를 위한 전문 웹사이트 개발. 버지니아 로컬 SEO.',
       keywords: '버지니아 웹사이트, 북버지니아 웹사이트 제작, 애난데일 웹사이트, 센터빌 웹사이트, 페어팩스 웹사이트, 버지니아 SEO',
-      openGraph: { title: '버지니아 웹사이트 제작 전문 - ZOE LUMOS', url: `${baseUrl}/ko/va-website`, siteName: 'ZOE LUMOS', locale: 'ko_KR', type: 'website' },
-      alternates: { canonical: `${baseUrl}/ko/va-website`, languages: { 'x-default': `${baseUrl}/va-website`, 'en': `${baseUrl}/va-website`, 'ko': `${baseUrl}/ko/va-website` } },
+      openGraph: { title: '버지니아 웹사이트 제작 전문 - ZOE LUMOS', url: `${baseUrl}/ko/버지니아-웹사이트`, siteName: 'ZOE LUMOS', locale: 'ko_KR', type: 'website' },
+      alternates: { canonical: `${baseUrl}/ko/버지니아-웹사이트`, languages: { 'x-default': `${baseUrl}/va-website`, 'en': `${baseUrl}/va-website`, 'ko': `${baseUrl}/ko/버지니아-웹사이트` } },
       robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-video-preview': -1, 'max-image-preview': 'large', 'max-snippet': -1 } },
     }
   }
@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
     description: 'Professional website development in Virginia. Web design for Annandale, Centreville, Fairfax Korean businesses. VA SEO, Google optimization.',
     keywords: 'Virginia website, VA web design, Annandale Korean website, Centreville website, Fairfax website, VA SEO',
     openGraph: { title: 'Virginia Website Design - ZOE LUMOS', url: `${baseUrl}/va-website`, siteName: 'ZOE LUMOS', locale: 'en_US', type: 'website' },
-    alternates: { canonical: `${baseUrl}/va-website`, languages: { 'x-default': `${baseUrl}/va-website`, 'en': `${baseUrl}/va-website`, 'ko': `${baseUrl}/ko/va-website` } },
+    alternates: { canonical: `${baseUrl}/va-website`, languages: { 'x-default': `${baseUrl}/va-website`, 'en': `${baseUrl}/va-website`, 'ko': `${baseUrl}/ko/버지니아-웹사이트` } },
     robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-video-preview': -1, 'max-image-preview': 'large', 'max-snippet': -1 } },
   }
 }

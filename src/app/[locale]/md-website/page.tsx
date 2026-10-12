@@ -16,8 +16,8 @@ export async function generateMetadata({ params }: { params: { locale: string } 
       title: '메릴랜드 웹사이트 제작 전문 | 엘리컷시티 한인 비즈니스 웹개발 | ZOE LUMOS',
       description: '메릴랜드 웹사이트 제작 전문. 엘리컷시티, 콜럼비아, 게이더스버그 한인 비즈니스를 위한 전문 웹사이트 개발.',
       keywords: '메릴랜드 웹사이트, 엘리컷시티 웹사이트 제작, 콜럼비아 웹사이트, 게이더스버그 웹사이트, 메릴랜드 SEO',
-      openGraph: { title: '메릴랜드 웹사이트 제작 전문 - ZOE LUMOS', url: `${baseUrl}/ko/md-website`, siteName: 'ZOE LUMOS', locale: 'ko_KR', type: 'website' },
-      alternates: { canonical: `${baseUrl}/ko/md-website`, languages: { 'x-default': `${baseUrl}/md-website`, 'en': `${baseUrl}/md-website`, 'ko': `${baseUrl}/ko/md-website` } },
+      openGraph: { title: '메릴랜드 웹사이트 제작 전문 - ZOE LUMOS', url: `${baseUrl}/ko/메릴랜드-웹사이트`, siteName: 'ZOE LUMOS', locale: 'ko_KR', type: 'website' },
+      alternates: { canonical: `${baseUrl}/ko/메릴랜드-웹사이트`, languages: { 'x-default': `${baseUrl}/md-website`, 'en': `${baseUrl}/md-website`, 'ko': `${baseUrl}/ko/메릴랜드-웹사이트` } },
       robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-video-preview': -1, 'max-image-preview': 'large', 'max-snippet': -1 } },
     }
   }
@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
     description: 'Professional website development in Maryland. Web design for Ellicott City, Columbia, Gaithersburg Korean businesses. MD SEO, Google optimization.',
     keywords: 'Maryland website, MD web design, Ellicott City Korean website, Columbia website, Gaithersburg website, MD SEO',
     openGraph: { title: 'Maryland Website Design - ZOE LUMOS', url: `${baseUrl}/md-website`, siteName: 'ZOE LUMOS', locale: 'en_US', type: 'website' },
-    alternates: { canonical: `${baseUrl}/md-website`, languages: { 'x-default': `${baseUrl}/md-website`, 'en': `${baseUrl}/md-website`, 'ko': `${baseUrl}/ko/md-website` } },
+    alternates: { canonical: `${baseUrl}/md-website`, languages: { 'x-default': `${baseUrl}/md-website`, 'en': `${baseUrl}/md-website`, 'ko': `${baseUrl}/ko/메릴랜드-웹사이트` } },
     robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-video-preview': -1, 'max-image-preview': 'large', 'max-snippet': -1 } },
   }
 }

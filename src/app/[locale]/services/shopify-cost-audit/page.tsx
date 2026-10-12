@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import SchemaFaq from '@/components/SchemaFaq'
 import Link from 'next/link'
 import HeaderWrapper from '@/components/layout/HeaderWrapper'
 import Footer from '@/components/layout/Footer'
@@ -325,6 +326,7 @@ export default function Page({ params }: { params: { locale: string } }) {
             {t.cta} <span aria-hidden>→</span>
           </Link>
         </section>
+        <SchemaFaq schema={faqSchema} locale={params.locale} />
       </main>
       <Footer locale={locale} />
     </>

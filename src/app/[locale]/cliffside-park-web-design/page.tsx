@@ -1,4 +1,6 @@
 import { Metadata } from 'next'
+import { SITE_URL } from '@/lib/siteUrl'
+import SchemaFaq from '@/components/SchemaFaq'
 import HeaderWrapper from '@/components/layout/HeaderWrapper'
 import Footer from '@/components/layout/Footer'
 import Contact from '@/components/sections/Contact'
@@ -11,7 +13,7 @@ export async function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: { locale: string } }): Promise<Metadata> {
   const locale = params.locale as 'en' | 'ko'
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
+  const baseUrl = SITE_URL
 
   if (locale === 'ko') {
     return {
@@ -52,7 +54,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
 
 export default function CliffsideParkWebDesignPage({ params }: { params: { locale: string } }) {
   const locale = params.locale as 'en' | 'ko'
-  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://www.zoelumos.com'
+  const baseUrl = SITE_URL
 
   const localBusinessSchema = {
     '@context': 'https://schema.org',
@@ -251,6 +253,7 @@ export default function CliffsideParkWebDesignPage({ params }: { params: { local
           </div>
         </section>
 
+        <SchemaFaq schema={faqSchema} locale={params.locale} />
         <Contact locale={locale} />
       </main>
       <Footer locale={locale} />

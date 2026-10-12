@@ -530,7 +530,7 @@ export default function EnglewoodSEO({ params }: { params: { locale: string } })
             </h2>
             <div className="grid md:grid-cols-3 gap-6">
               <Link
-                href={`/${params.locale}/웹사이트-제작`}
+                href={`${params.locale === 'ko' ? '/ko' : ''}/웹사이트-제작`}
                 className="block bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-blue-400/50 transition-colors"
               >
                 <h3 className="text-lg font-bold mb-2 text-blue-400">{isKo ? '웹사이트 제작' : 'Website Design'}</h3>
@@ -539,7 +539,7 @@ export default function EnglewoodSEO({ params }: { params: { locale: string } })
                 </p>
               </Link>
               <Link
-                href={`/${params.locale}/광고대행`}
+                href={`${params.locale === 'ko' ? '/ko' : ''}/광고대행`}
                 className="block bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-blue-400/50 transition-colors"
               >
                 <h3 className="text-lg font-bold mb-2 text-blue-400">{isKo ? '구글 광고 대행' : 'Google Ads Management'}</h3>
@@ -548,7 +548,7 @@ export default function EnglewoodSEO({ params }: { params: { locale: string } })
                 </p>
               </Link>
               <Link
-                href={`/${params.locale}/bilingual-seo-new-york`}
+                href={`${params.locale === 'ko' ? '/ko' : ''}/bilingual-seo-new-york`}
                 className="block bg-white/5 backdrop-blur-sm rounded-2xl p-6 border border-white/10 hover:border-blue-400/50 transition-colors"
               >
                 <h3 className="text-lg font-bold mb-2 text-blue-400">{isKo ? '뉴욕 이중언어 SEO' : 'Bilingual SEO New York'}</h3>
@@ -570,7 +570,7 @@ export default function EnglewoodSEO({ params }: { params: { locale: string } })
               {isKo ? '지금 바로 연락주세요. 100% 한국어 상담 가능합니다.' : 'Contact us today for a free SEO audit of your Englewood business website.'}
             </p>
             <Link
-              href={`/${params.locale}/contact`}
+              href={`${params.locale === 'ko' ? '/ko' : ''}/contact`}
               className="inline-block px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition-colors"
             >
               {isKo ? '무료 상담 신청' : 'Free Consultation'}

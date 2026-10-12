@@ -16,8 +16,8 @@ export async function generateMetadata({ params }: { params: { locale: string } 
       title: '워싱턴 웹사이트 제작 전문 | 시애틀 한인 비즈니스 웹개발 | ZOE LUMOS',
       description: '워싱턴주 웹사이트 제작 전문. 시애틀, 페더럴웨이, 벨뷰 한인 비즈니스를 위한 전문 웹사이트 개발.',
       keywords: '워싱턴 웹사이트, 시애틀 웹사이트 제작, 페더럴웨이 웹사이트, 벨뷰 웹사이트, 워싱턴 SEO',
-      openGraph: { title: '워싱턴 웹사이트 제작 전문 - ZOE LUMOS', url: `${baseUrl}/ko/wa-website`, siteName: 'ZOE LUMOS', locale: 'ko_KR', type: 'website' },
-      alternates: { canonical: `${baseUrl}/ko/wa-website`, languages: { 'x-default': `${baseUrl}/wa-website`, 'en': `${baseUrl}/wa-website`, 'ko': `${baseUrl}/ko/wa-website` } },
+      openGraph: { title: '워싱턴 웹사이트 제작 전문 - ZOE LUMOS', url: `${baseUrl}/ko/워싱턴-웹사이트`, siteName: 'ZOE LUMOS', locale: 'ko_KR', type: 'website' },
+      alternates: { canonical: `${baseUrl}/ko/워싱턴-웹사이트`, languages: { 'x-default': `${baseUrl}/wa-website`, 'en': `${baseUrl}/wa-website`, 'ko': `${baseUrl}/ko/워싱턴-웹사이트` } },
       robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-video-preview': -1, 'max-image-preview': 'large', 'max-snippet': -1 } },
     }
   }
@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
     description: 'Professional website development in Washington. Web design for Seattle, Federal Way, Bellevue Korean businesses. WA SEO, Google optimization.',
     keywords: 'Washington website, WA web design, Seattle Korean website, Federal Way website, Bellevue website, WA SEO',
     openGraph: { title: 'Washington Website Design - ZOE LUMOS', url: `${baseUrl}/wa-website`, siteName: 'ZOE LUMOS', locale: 'en_US', type: 'website' },
-    alternates: { canonical: `${baseUrl}/wa-website`, languages: { 'x-default': `${baseUrl}/wa-website`, 'en': `${baseUrl}/wa-website`, 'ko': `${baseUrl}/ko/wa-website` } },
+    alternates: { canonical: `${baseUrl}/wa-website`, languages: { 'x-default': `${baseUrl}/wa-website`, 'en': `${baseUrl}/wa-website`, 'ko': `${baseUrl}/ko/워싱턴-웹사이트` } },
     robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-video-preview': -1, 'max-image-preview': 'large', 'max-snippet': -1 } },
   }
 }

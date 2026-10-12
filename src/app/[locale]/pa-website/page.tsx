@@ -16,8 +16,8 @@ export async function generateMetadata({ params }: { params: { locale: string } 
       title: '펜실베이니아 웹사이트 제작 전문 | 필라델피아 한인 비즈니스 웹개발 | ZOE LUMOS',
       description: '펜실베이니아 웹사이트 제작 전문. 필라델피아, 킹오브프러시아, 첼튼햄 한인 비즈니스를 위한 전문 웹사이트 개발.',
       keywords: '펜실베이니아 웹사이트, 필라델피아 웹사이트 제작, 킹오브프러시아 웹사이트, 펜실베이니아 SEO',
-      openGraph: { title: '펜실베이니아 웹사이트 제작 전문 - ZOE LUMOS', url: `${baseUrl}/ko/pa-website`, siteName: 'ZOE LUMOS', locale: 'ko_KR', type: 'website' },
-      alternates: { canonical: `${baseUrl}/ko/pa-website`, languages: { 'x-default': `${baseUrl}/pa-website`, 'en': `${baseUrl}/pa-website`, 'ko': `${baseUrl}/ko/pa-website` } },
+      openGraph: { title: '펜실베이니아 웹사이트 제작 전문 - ZOE LUMOS', url: `${baseUrl}/ko/펜실베이니아-웹사이트`, siteName: 'ZOE LUMOS', locale: 'ko_KR', type: 'website' },
+      alternates: { canonical: `${baseUrl}/ko/펜실베이니아-웹사이트`, languages: { 'x-default': `${baseUrl}/pa-website`, 'en': `${baseUrl}/pa-website`, 'ko': `${baseUrl}/ko/펜실베이니아-웹사이트` } },
       robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-video-preview': -1, 'max-image-preview': 'large', 'max-snippet': -1 } },
     }
   }
@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
     description: 'Professional website development in Pennsylvania. Web design for Philadelphia, King of Prussia, Cheltenham Korean businesses. PA SEO, Google optimization.',
     keywords: 'Pennsylvania website, PA web design, Philadelphia Korean website, King of Prussia website, PA SEO',
     openGraph: { title: 'Pennsylvania Website Design - ZOE LUMOS', url: `${baseUrl}/pa-website`, siteName: 'ZOE LUMOS', locale: 'en_US', type: 'website' },
-    alternates: { canonical: `${baseUrl}/pa-website`, languages: { 'x-default': `${baseUrl}/pa-website`, 'en': `${baseUrl}/pa-website`, 'ko': `${baseUrl}/ko/pa-website` } },
+    alternates: { canonical: `${baseUrl}/pa-website`, languages: { 'x-default': `${baseUrl}/pa-website`, 'en': `${baseUrl}/pa-website`, 'ko': `${baseUrl}/ko/펜실베이니아-웹사이트` } },
     robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-video-preview': -1, 'max-image-preview': 'large', 'max-snippet': -1 } },
   }
 }

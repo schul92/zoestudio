@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import SchemaFaq from '@/components/SchemaFaq'
 import HeaderWrapper from '@/components/layout/HeaderWrapper'
 import Footer from '@/components/layout/Footer'
 import Contact from '@/components/sections/Contact'
@@ -29,18 +30,18 @@ export async function generateMetadata({
       openGraph: {
         title: '뉴저지 웹사이트 제작 전문 - ZOE LUMOS',
         description: '뉴저지 최고의 한인 웹사이트 제작 업체. 포트리부터 에디슨까지, NJ 전 지역 한인 비즈니스를 위한 맞춤 웹사이트 개발.',
-        url: `${baseUrl}/ko/nj-website`,
+        url: `${baseUrl}/ko/뉴저지-웹사이트`,
         siteName: 'ZOE LUMOS',
         locale: 'ko_KR',
         alternateLocale: 'en_US',
         type: 'website',
       },
       alternates: {
-        canonical: `${baseUrl}/ko/nj-website`,
+        canonical: `${baseUrl}/ko/뉴저지-웹사이트`,
         languages: {
           'x-default': `${baseUrl}/nj-website`,
           'en': `${baseUrl}/nj-website`,
-          'ko': `${baseUrl}/ko/nj-website`,
+          'ko': `${baseUrl}/ko/뉴저지-웹사이트`,
         },
       },
       robots: {
@@ -75,7 +76,7 @@ export async function generateMetadata({
       languages: {
         'x-default': `${baseUrl}/nj-website`,
         'en': `${baseUrl}/nj-website`,
-        'ko': `${baseUrl}/ko/nj-website`,
+        'ko': `${baseUrl}/ko/뉴저지-웹사이트`,
       },
     },
     robots: {
@@ -394,6 +395,7 @@ export default function NJWebsitePage({ params }: { params: { locale: string } }
         </section>
 
         {/* Contact Section */}
+        <SchemaFaq schema={faqSchema} locale={params.locale} />
         <Contact locale={locale} />
       </main>
       

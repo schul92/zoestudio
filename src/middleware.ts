@@ -2,8 +2,15 @@ import { NextResponse } from 'next/server'
 import type { NextRequest } from 'next/server'
 import NextAuth from 'next-auth'
 import { authConfig, isAllowed } from '@/auth.config'
+import { STATE_SLUG_PAIRS } from '@/lib/stateSlugs'
 
 const locales = ['en', 'ko']
+
+const KO_STATE_BY_EN = new Map(STATE_SLUG_PAIRS)
+const EN_STATE_BY_KO = new Map(STATE_SLUG_PAIRS.map(([en, ko]) => [ko, en] as [string, string]))
+const safeDecode = (s: string) => {
+  try { return decodeURIComponent(s) } catch { return s }
+}
 
 // Edge-safe Auth.js instance (no DB adapter, JWT sessions).
 const { auth } = NextAuth(authConfig)
@@ -56,8 +63,23 @@ export async function middleware(request: NextRequest) {
       url.pathname = newPath
       return NextResponse.redirect(url, { status: 301 })
     }
+    // Korean state pages live on Hangul slugs; /ko/ca-website and friends were duplicates of them.
+    const koState = pathname.startsWith('/ko/') ? KO_STATE_BY_EN.get(pathname.slice(4)) : undefined
+    if (koState) {
+      const url = request.nextUrl.clone()
+      url.pathname = `/ko/${koState}`
+      return NextResponse.redirect(url, { status: 308 })
+    }
     // Korean paths stay as-is
     return NextResponse.next()
+  }
+
+  // English state pages live on English slugs; /뉴욕-웹사이트 (English copy on a Hangul slug) duplicated /ny-website.
+  const enState = EN_STATE_BY_KO.get(safeDecode(pathname.slice(1)))
+  if (enState) {
+    const url = request.nextUrl.clone()
+    url.pathname = `/${enState}`
+    return NextResponse.redirect(url, { status: 308 })
   }
 
   // For paths without locale, rewrite to /en internally (don't change URL)

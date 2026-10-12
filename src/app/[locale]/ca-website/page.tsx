@@ -19,8 +19,8 @@ export async function generateMetadata({ params }: { params: { locale: string } 
       title: '캘리포니아 웹사이트 제작 전문 | LA 한인 비즈니스 웹개발 | ZOE LUMOS',
       description: '캘리포니아 웹사이트 제작 전문 업체. LA 코리아타운, 오렌지카운티, 풀러턴, 어바인 한인 비즈니스를 위한 전문 웹사이트 개발. 캘리포니아 로컬 SEO, 구글 최적화.',
       keywords: '캘리포니아 웹사이트, LA 웹사이트 제작, CA 웹개발, 코리아타운 웹사이트, 오렌지카운티 웹사이트, 풀러턴 웹사이트, 캘리포니아 SEO',
-      openGraph: { title: '캘리포니아 웹사이트 제작 전문 - ZOE LUMOS', description: '캘리포니아 최고의 한인 웹사이트 제작 업체.', url: `${baseUrl}/ko/ca-website`, siteName: 'ZOE LUMOS', locale: 'ko_KR', type: 'website' },
-      alternates: { canonical: `${baseUrl}/ko/ca-website`, languages: { 'x-default': `${baseUrl}/ca-website`, 'en': `${baseUrl}/ca-website`, 'ko': `${baseUrl}/ko/ca-website` } },
+      openGraph: { title: '캘리포니아 웹사이트 제작 전문 - ZOE LUMOS', description: '캘리포니아 최고의 한인 웹사이트 제작 업체.', url: `${baseUrl}/ko/캘리포니아-웹사이트`, siteName: 'ZOE LUMOS', locale: 'ko_KR', type: 'website' },
+      alternates: { canonical: `${baseUrl}/ko/캘리포니아-웹사이트`, languages: { 'x-default': `${baseUrl}/ca-website`, 'en': `${baseUrl}/ca-website`, 'ko': `${baseUrl}/ko/캘리포니아-웹사이트` } },
       robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-video-preview': -1, 'max-image-preview': 'large', 'max-snippet': -1 } },
     }
   }
@@ -30,7 +30,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
     description: 'Professional website development in California. Web design for LA Koreatown, Orange County, Fullerton, Irvine businesses. Local CA SEO, Google optimization, Shopify e-commerce.',
     keywords: 'California website, CA web design, LA Koreatown website, Orange County website, Fullerton website, Irvine website, CA Shopify, CA SEO',
     openGraph: { title: 'California Website Design - ZOE LUMOS', description: 'Leading web development for California Korean businesses.', url: `${baseUrl}/ca-website`, siteName: 'ZOE LUMOS', locale: 'en_US', type: 'website' },
-    alternates: { canonical: `${baseUrl}/ca-website`, languages: { 'x-default': `${baseUrl}/ca-website`, 'en': `${baseUrl}/ca-website`, 'ko': `${baseUrl}/ko/ca-website` } },
+    alternates: { canonical: `${baseUrl}/ca-website`, languages: { 'x-default': `${baseUrl}/ca-website`, 'en': `${baseUrl}/ca-website`, 'ko': `${baseUrl}/ko/캘리포니아-웹사이트` } },
     robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-video-preview': -1, 'max-image-preview': 'large', 'max-snippet': -1 } },
   }
 }

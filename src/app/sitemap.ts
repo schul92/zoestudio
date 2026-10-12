@@ -7,6 +7,7 @@ import { cityMarkets } from '@/data/cityMarketData'
 import { localSeoPages } from '@/data/localSeoPages'
 import { SITE_URL } from '@/lib/siteUrl'
 import { US_LAUNCH_PATHS, US_LAUNCH_UPDATED } from '@/data/usLaunch'
+import { STATE_SLUG_PAIRS } from '@/lib/stateSlugs'
 
 // Last real content change for non-blog pages; bump it when page copy changes (not on every build).
 const CONTENT_UPDATED = '2026-09-26'
@@ -88,7 +89,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/뉴욕-웹사이트', enPath: '/ny-website', priority: 0.95 },
     { path: '/웹사이트-제작', enPath: '/웹사이트-제작', priority: 0.95 },
     { path: '/쇼핑몰-제작', enPath: '/pricing', priority: 0.9 },
-    { path: '/포트리-웹디자인', enPath: '/fort-lee-web-design', priority: 0.95 },
     { path: '/캘리포니아-웹사이트', enPath: '/ca-website', priority: 0.95 },
     { path: '/텍사스-웹사이트', enPath: '/tx-website', priority: 0.95 },
     { path: '/조지아-웹사이트', enPath: '/ga-website', priority: 0.95 },
@@ -99,7 +99,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/하와이-웹사이트', enPath: '/hi-website', priority: 0.95 },
     { path: '/펜실베이니아-웹사이트', enPath: '/pa-website', priority: 0.95 },
     { path: '/플로리다-웹사이트', enPath: '/fl-website', priority: 0.95 },
-    { path: '/팰팍-마케팅', enPath: '/palisades-park-marketing', priority: 0.95 },
     { path: '/광고대행', enPath: '/광고대행', priority: 0.95 },
     // Korean-slug URLs for the 38 programmatic state pages ([주명]-웹사이트)
     ...usStates
@@ -108,6 +107,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ]
 
   const sitemapEntries: MetadataRoute.Sitemap = []
+
+  // State pages: the Korean version lives on the Hangul slug (/ko/캘리포니아-웹사이트, emitted with
+  // koreanSeoPages below); /ko/ca-website only 308-redirects there (middleware), so it never goes in.
+  if (usStates.some((s) => !STATE_SLUG_PAIRS.some(([en, ko]) => en === s.slug && ko === s.koSlug))) {
+    throw new Error('src/lib/stateSlugs.ts is out of sync with src/data/usStates.ts')
+  }
+  const stateKo = new Map(STATE_SLUG_PAIRS.map(([en, ko]) => [`/${en}`, `/${ko}`] as [string, string]))
 
   // English pages (without locale prefix)
   standardPages.forEach((page) => {
@@ -118,14 +124,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
         languages: {
           'x-default': `${baseUrl}${page}`,
           'en': `${baseUrl}${page}`,
-          'ko': `${baseUrl}/ko${page}`,
+          'ko': `${baseUrl}/ko${stateKo.get(page) ?? page}`,
         }
       }
     })
   })
 
-  // Korean pages (with /ko prefix for standard pages)
-  standardPages.forEach((page) => {
+  // English copy served on Korean slugs (self-canonical, linked site-wide from the footer).
+  ;['/웹사이트-제작', '/광고대행'].forEach((page) => {
+    const en = `${baseUrl}${page}`
+    const ko = `${baseUrl}/ko${page}`
+    sitemapEntries.push({ url: en, lastModified: new Date(CONTENT_UPDATED), alternates: { languages: { 'x-default': en, en, ko } } })
+  })
+
+  // Korean pages (with /ko prefix for standard pages; state pages use their Hangul slug instead)
+  standardPages.filter((page) => !stateKo.has(page)).forEach((page) => {
     sitemapEntries.push({
       url: `${baseUrl}/ko${page}`,
       lastModified: new Date(CONTENT_UPDATED),

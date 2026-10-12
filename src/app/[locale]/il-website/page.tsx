@@ -16,8 +16,8 @@ export async function generateMetadata({ params }: { params: { locale: string } 
       title: '일리노이 웹사이트 제작 전문 | 시카고 한인 비즈니스 웹개발 | ZOE LUMOS',
       description: '일리노이 웹사이트 제작 전문. 시카고, 글렌뷰, 나일스, 마운트프로스펙트 한인 비즈니스를 위한 전문 웹사이트 개발.',
       keywords: '일리노이 웹사이트, 시카고 웹사이트 제작, 글렌뷰 웹사이트, 나일스 웹사이트, 일리노이 SEO',
-      openGraph: { title: '일리노이 웹사이트 제작 전문 - ZOE LUMOS', url: `${baseUrl}/ko/il-website`, siteName: 'ZOE LUMOS', locale: 'ko_KR', type: 'website' },
-      alternates: { canonical: `${baseUrl}/ko/il-website`, languages: { 'x-default': `${baseUrl}/il-website`, 'en': `${baseUrl}/il-website`, 'ko': `${baseUrl}/ko/il-website` } },
+      openGraph: { title: '일리노이 웹사이트 제작 전문 - ZOE LUMOS', url: `${baseUrl}/ko/일리노이-웹사이트`, siteName: 'ZOE LUMOS', locale: 'ko_KR', type: 'website' },
+      alternates: { canonical: `${baseUrl}/ko/일리노이-웹사이트`, languages: { 'x-default': `${baseUrl}/il-website`, 'en': `${baseUrl}/il-website`, 'ko': `${baseUrl}/ko/일리노이-웹사이트` } },
       robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-video-preview': -1, 'max-image-preview': 'large', 'max-snippet': -1 } },
     }
   }
@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
     description: 'Professional website development in Illinois. Web design for Chicago, Glenview, Niles Korean businesses. IL SEO, Google optimization.',
     keywords: 'Illinois website, IL web design, Chicago Korean website, Glenview website, Niles website, IL SEO',
     openGraph: { title: 'Illinois Website Design - ZOE LUMOS', url: `${baseUrl}/il-website`, siteName: 'ZOE LUMOS', locale: 'en_US', type: 'website' },
-    alternates: { canonical: `${baseUrl}/il-website`, languages: { 'x-default': `${baseUrl}/il-website`, 'en': `${baseUrl}/il-website`, 'ko': `${baseUrl}/ko/il-website` } },
+    alternates: { canonical: `${baseUrl}/il-website`, languages: { 'x-default': `${baseUrl}/il-website`, 'en': `${baseUrl}/il-website`, 'ko': `${baseUrl}/ko/일리노이-웹사이트` } },
     robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-video-preview': -1, 'max-image-preview': 'large', 'max-snippet': -1 } },
   }
 }

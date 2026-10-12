@@ -16,8 +16,8 @@ export async function generateMetadata({ params }: { params: { locale: string } 
       title: '플로리다 웹사이트 제작 전문 | 마이애미 올랜도 한인 비즈니스 웹개발 | ZOE LUMOS',
       description: '플로리다 웹사이트 제작 전문. 마이애미, 올랜도, 탬파 한인 비즈니스를 위한 전문 웹사이트 개발.',
       keywords: '플로리다 웹사이트, 마이애미 웹사이트 제작, 올랜도 웹사이트, 탬파 웹사이트, 플로리다 SEO',
-      openGraph: { title: '플로리다 웹사이트 제작 전문 - ZOE LUMOS', url: `${baseUrl}/ko/fl-website`, siteName: 'ZOE LUMOS', locale: 'ko_KR', type: 'website' },
-      alternates: { canonical: `${baseUrl}/ko/fl-website`, languages: { 'x-default': `${baseUrl}/fl-website`, 'en': `${baseUrl}/fl-website`, 'ko': `${baseUrl}/ko/fl-website` } },
+      openGraph: { title: '플로리다 웹사이트 제작 전문 - ZOE LUMOS', url: `${baseUrl}/ko/플로리다-웹사이트`, siteName: 'ZOE LUMOS', locale: 'ko_KR', type: 'website' },
+      alternates: { canonical: `${baseUrl}/ko/플로리다-웹사이트`, languages: { 'x-default': `${baseUrl}/fl-website`, 'en': `${baseUrl}/fl-website`, 'ko': `${baseUrl}/ko/플로리다-웹사이트` } },
       robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-video-preview': -1, 'max-image-preview': 'large', 'max-snippet': -1 } },
     }
   }
@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
     description: 'Professional website development in Florida. Web design for Miami, Orlando, Tampa Korean businesses. FL SEO, Google optimization.',
     keywords: 'Florida website, FL web design, Miami Korean website, Orlando website, Tampa website, FL SEO',
     openGraph: { title: 'Florida Website Design - ZOE LUMOS', url: `${baseUrl}/fl-website`, siteName: 'ZOE LUMOS', locale: 'en_US', type: 'website' },
-    alternates: { canonical: `${baseUrl}/fl-website`, languages: { 'x-default': `${baseUrl}/fl-website`, 'en': `${baseUrl}/fl-website`, 'ko': `${baseUrl}/ko/fl-website` } },
+    alternates: { canonical: `${baseUrl}/fl-website`, languages: { 'x-default': `${baseUrl}/fl-website`, 'en': `${baseUrl}/fl-website`, 'ko': `${baseUrl}/ko/플로리다-웹사이트` } },
     robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-video-preview': -1, 'max-image-preview': 'large', 'max-snippet': -1 } },
   }
 }

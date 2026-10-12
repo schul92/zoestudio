@@ -16,8 +16,8 @@ export async function generateMetadata({ params }: { params: { locale: string } 
       title: '하와이 웹사이트 제작 전문 | 호놀룰루 한인 비즈니스 웹개발 | ZOE LUMOS',
       description: '하와이 웹사이트 제작 전문. 호놀룰루, 와이키키, 카폴레이 한인 비즈니스를 위한 전문 웹사이트 개발. 관광 비즈니스 웹사이트.',
       keywords: '하와이 웹사이트, 호놀룰루 웹사이트 제작, 와이키키 웹사이트, 하와이 관광 웹사이트, 하와이 SEO',
-      openGraph: { title: '하와이 웹사이트 제작 전문 - ZOE LUMOS', url: `${baseUrl}/ko/hi-website`, siteName: 'ZOE LUMOS', locale: 'ko_KR', type: 'website' },
-      alternates: { canonical: `${baseUrl}/ko/hi-website`, languages: { 'x-default': `${baseUrl}/hi-website`, 'en': `${baseUrl}/hi-website`, 'ko': `${baseUrl}/ko/hi-website` } },
+      openGraph: { title: '하와이 웹사이트 제작 전문 - ZOE LUMOS', url: `${baseUrl}/ko/하와이-웹사이트`, siteName: 'ZOE LUMOS', locale: 'ko_KR', type: 'website' },
+      alternates: { canonical: `${baseUrl}/ko/하와이-웹사이트`, languages: { 'x-default': `${baseUrl}/hi-website`, 'en': `${baseUrl}/hi-website`, 'ko': `${baseUrl}/ko/하와이-웹사이트` } },
       robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-video-preview': -1, 'max-image-preview': 'large', 'max-snippet': -1 } },
     }
   }
@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
     description: 'Professional website development in Hawaii. Web design for Honolulu, Waikiki, Kapolei Korean businesses. HI SEO, tourism websites.',
     keywords: 'Hawaii website, HI web design, Honolulu Korean website, Waikiki website, Hawaii tourism website, HI SEO',
     openGraph: { title: 'Hawaii Website Design - ZOE LUMOS', url: `${baseUrl}/hi-website`, siteName: 'ZOE LUMOS', locale: 'en_US', type: 'website' },
-    alternates: { canonical: `${baseUrl}/hi-website`, languages: { 'x-default': `${baseUrl}/hi-website`, 'en': `${baseUrl}/hi-website`, 'ko': `${baseUrl}/ko/hi-website` } },
+    alternates: { canonical: `${baseUrl}/hi-website`, languages: { 'x-default': `${baseUrl}/hi-website`, 'en': `${baseUrl}/hi-website`, 'ko': `${baseUrl}/ko/하와이-웹사이트` } },
     robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-video-preview': -1, 'max-image-preview': 'large', 'max-snippet': -1 } },
   }
 }
