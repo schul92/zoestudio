@@ -27,8 +27,8 @@ export async function generateMetadata({ params }: { params: { locale: string } 
     openGraph: {
       title: locale === 'ko' ? '일리노이 웹사이트 제작 전문 - 조이루모스' : 'Illinois Website Design - ZOE LUMOS',
       description: locale === 'ko'
-        ? '일리노이 한인 비즈니스를 위한 최고의 웹사이트 제작 서비스. 시카고, 글렌뷰, 나일스 전 지역.'
-        : 'Premier website design for IL Korean businesses.',
+        ? '일리노이 한인 비즈니스를 위한 웹사이트 제작 서비스. 시카고, 글렌뷰, 나일스 전 지역.'
+        : 'Website design for IL Korean businesses.',
       url: locale === 'ko' ? `${baseUrl}/ko/일리노이-웹사이트` : `${baseUrl}/il-website`,
       siteName: 'ZOE LUMOS 조이루모스',
       locale: locale === 'ko' ? 'ko_KR' : 'en_US',
@@ -285,7 +285,7 @@ export default function ILWebsiteKoreanPage({ params }: { params: { locale: stri
               <div className="text-center">
                 <div className="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-4"><Search className="w-8 h-8 text-rose-600" /></div>
                 <h3 className="text-xl font-bold mb-2">{isKorean ? '일리노이 SEO 전문' : 'IL SEO Specialists'}</h3>
-                <p className="text-gray-600">{isKorean ? '"시카고 [업종]", "글렌뷰 [업종]" 검색시 구글 1페이지 노출. 시카고 로컬 SEO 전문.' : 'Rank on page 1 for "Chicago [business]" searches. Chicago local SEO experts.'}</p>
+                <p className="text-gray-600">{isKorean ? '"시카고 [업종]", "글렌뷰 [업종]" 검색에서 찾을 수 있도록. 시카고 로컬 SEO 전문.' : 'Rank on page 1 for "Chicago [business]" searches. Chicago local SEO experts.'}</p>
               </div>
               <div className="text-center">
                 <div className="w-16 h-16 bg-rose-100 rounded-full flex items-center justify-center mx-auto mb-4"><Mail className="w-8 h-8 text-rose-600" /></div>

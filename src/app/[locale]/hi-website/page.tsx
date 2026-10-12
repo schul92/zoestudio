@@ -45,7 +45,7 @@ export default function HIWebsitePage({ params }: { params: { locale: string } }
         <section className="pt-32 pb-20 px-4 bg-gradient-to-br from-cyan-50 to-white">
           <div className="max-w-7xl mx-auto text-center mb-12">
             <h1 className="text-4xl md:text-6xl font-black mb-6 text-gray-900">{ko ? '하와이 웹사이트 제작 전문' : 'Hawaii Website Design & Development'}</h1>
-            <p className="text-xl md:text-2xl text-gray-700 mb-8 max-w-3xl mx-auto">{ko ? '호놀룰루, 와이키키, 카폴레이 - 하와이 전 지역 한인 비즈니스 & 관광 업체를 위한 웹사이트' : 'Premier web development for Honolulu, Waikiki Korean businesses & tourism.'}</p>
+            <p className="text-xl md:text-2xl text-gray-700 mb-8 max-w-3xl mx-auto">{ko ? '호놀룰루, 와이키키, 카폴레이 - 하와이 전 지역 한인 비즈니스 & 관광 업체를 위한 웹사이트' : 'Web development for Honolulu, Waikiki Korean businesses & tourism.'}</p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Link href={`/${ko ? 'ko/' : ''}pricing`} className="px-8 py-4 bg-black text-white rounded-lg font-bold text-lg hover:bg-gray-800 transition-colors">{ko ? '가격 보기' : 'View Pricing'}</Link>
               <Link href="#contact" className="px-8 py-4 bg-white text-black border-2 border-black rounded-lg font-bold text-lg hover:bg-gray-50 transition-colors">{ko ? '무료 상담' : 'Free Consultation'}</Link>
@@ -61,7 +61,7 @@ export default function HIWebsitePage({ params }: { params: { locale: string } }
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">{ko ? '왜 하와이 비즈니스들이 저희를 선택할까요?' : 'Why HI Businesses Choose Us'}</h2>
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center"><div className="w-16 h-16 bg-cyan-100 rounded-full flex items-center justify-center mx-auto mb-4"><Search className="w-8 h-8 text-cyan-600" /></div><h3 className="text-xl font-bold mb-2">{ko ? '관광 SEO 전문' : 'Tourism SEO Experts'}</h3><p className="text-gray-600">{ko ? '"하와이 한국 투어" 검색시 구글 1페이지 노출. 네이버 검색 최적화.' : 'Rank #1 for "Hawaii Korean tour" searches. Naver optimization.'}</p></div>
+              <div className="text-center"><div className="w-16 h-16 bg-cyan-100 rounded-full flex items-center justify-center mx-auto mb-4"><Search className="w-8 h-8 text-cyan-600" /></div><h3 className="text-xl font-bold mb-2">{ko ? '관광 SEO 전문' : 'Tourism SEO Experts'}</h3><p className="text-gray-600">{ko ? '"하와이 한국 투어" 검색에서 찾을 수 있도록. 네이버 검색 최적화.' : 'Show up when customers search "Hawaii Korean tour". Naver optimization.'}</p></div>
               <div className="text-center"><div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"><Globe className="w-8 h-8 text-blue-600" /></div><h3 className="text-xl font-bold mb-2">{ko ? '다국어 지원' : 'Multilingual Support'}</h3><p className="text-gray-600">{ko ? '한국어, 영어, 일본어 다국어 웹사이트. 관광객과 현지 고객 모두 타겟팅.' : 'Korean, English, Japanese multilingual websites for tourists and locals'}</p></div>
               <div className="text-center"><div className="w-16 h-16 bg-teal-100 rounded-full flex items-center justify-center mx-auto mb-4"><Building2 className="w-8 h-8 text-teal-600" /></div><h3 className="text-xl font-bold mb-2">{ko ? '화상 미팅 & 카카오톡' : 'Video & KakaoTalk'}</h3><p className="text-gray-600">{ko ? '하와이 시간대 맞춤 화상 미팅과 카카오톡 상담' : 'Hawaii time zone scheduling. Video and KakaoTalk consultations'}</p></div>
             </div>

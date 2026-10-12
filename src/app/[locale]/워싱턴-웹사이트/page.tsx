@@ -27,8 +27,8 @@ export async function generateMetadata({ params }: { params: { locale: string } 
     openGraph: {
       title: locale === 'ko' ? '워싱턴 웹사이트 제작 전문 - 조이루모스' : 'Washington Website Design - ZOE LUMOS',
       description: locale === 'ko'
-        ? '워싱턴주 한인 비즈니스를 위한 최고의 웹사이트 제작 서비스. 시애틀, 페더럴웨이 전 지역.'
-        : 'Premier website design for WA Korean businesses.',
+        ? '워싱턴주 한인 비즈니스를 위한 웹사이트 제작 서비스. 시애틀, 페더럴웨이 전 지역.'
+        : 'Website design for WA Korean businesses.',
       url: locale === 'ko' ? `${baseUrl}/ko/워싱턴-웹사이트` : `${baseUrl}/wa-website`,
       siteName: 'ZOE LUMOS 조이루모스',
       locale: locale === 'ko' ? 'ko_KR' : 'en_US',
@@ -279,7 +279,7 @@ export default function WAWebsiteKoreanPage({ params }: { params: { locale: stri
               <div className="text-center">
                 <div className="w-16 h-16 bg-sky-100 rounded-full flex items-center justify-center mx-auto mb-4"><Search className="w-8 h-8 text-sky-600" /></div>
                 <h3 className="text-xl font-bold mb-2">{isKorean ? '워싱턴 SEO 전문' : 'WA SEO Specialists'}</h3>
-                <p className="text-gray-600">{isKorean ? '"시애틀 [업종]", "페더럴웨이 [업종]" 검색시 구글 1페이지 노출.' : 'Rank on page 1 for "Seattle [business]" and "Federal Way [business]" searches.'}</p>
+                <p className="text-gray-600">{isKorean ? '"시애틀 [업종]", "페더럴웨이 [업종]" 검색에서 찾을 수 있도록.' : 'Rank on page 1 for "Seattle [business]" and "Federal Way [business]" searches.'}</p>
               </div>
               <div className="text-center">
                 <div className="w-16 h-16 bg-sky-100 rounded-full flex items-center justify-center mx-auto mb-4"><Mail className="w-8 h-8 text-sky-600" /></div>

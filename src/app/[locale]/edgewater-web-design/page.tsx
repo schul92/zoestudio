@@ -135,7 +135,7 @@ export default function EdgewaterWebDesignPage({ params }: { params: { locale: s
               <div className="bg-white p-8 rounded-xl shadow-sm">
                 <Search className="w-10 h-10 text-blue-600 mb-4" />
                 <h3 className="text-xl font-bold mb-3">{locale === 'ko' ? '에지워터 로컬 SEO' : 'Edgewater Local SEO'}</h3>
-                <p className="text-gray-600">{locale === 'ko' ? '"에지워터 [업종]" 구글 검색 1페이지 노출. Google My Business 최적화, 로컬 키워드 타겟팅.' : 'Rank page 1 for "Edgewater [your business]" on Google. GMB optimization, local keyword targeting.'}</p>
+                <p className="text-gray-600">{locale === 'ko' ? '"에지워터 [업종]" 구글 검색 상위 노출을 목표로 합니다. Google My Business 최적화, 로컬 키워드 타겟팅.' : 'Rank page 1 for "Edgewater [your business]" on Google. GMB optimization, local keyword targeting.'}</p>
               </div>
               <div className="bg-white p-8 rounded-xl shadow-sm">
                 <MapPin className="w-10 h-10 text-red-600 mb-4" />
@@ -177,7 +177,7 @@ export default function EdgewaterWebDesignPage({ params }: { params: { locale: s
               {locale === 'ko' ? '에지워터 비즈니스를 온라인에서 성장시키세요' : 'Grow Your Edgewater Business Online'}
             </h2>
             <p className="text-xl mb-8 opacity-90">
-              {locale === 'ko' ? '오늘 무료 상담을 예약하세요. 허드슨강변 최고의 웹디자인 에이전시.' : 'Book your free consultation today. The best web design agency on the Hudson River waterfront.'}
+              {locale === 'ko' ? '오늘 무료 상담을 예약하세요. 허드슨강변 한인 비즈니스를 위한 웹디자인 에이전시.' : 'Book your free consultation today. The best web design agency on the Hudson River waterfront.'}
             </p>
             <Link href="#contact" className="inline-block px-10 py-4 bg-white text-teal-600 rounded-lg font-bold text-lg hover:bg-gray-100 transition-colors">
               {locale === 'ko' ? '무료 상담 예약 →' : 'Book Free Consultation →'}

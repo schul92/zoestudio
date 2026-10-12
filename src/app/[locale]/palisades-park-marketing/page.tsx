@@ -50,11 +50,11 @@ export async function generateMetadata({
   
   return {
     title: 'Palisades Park Marketing Agency | Korean Business Marketing NJ | Small Business SEO NJ | ZOE LUMOS',
-    description: 'Palisades Park, NJ #1 Korean marketing agency. Website design, SEO, Google Ads for Korean-American small businesses. Small business SEO NJ specialist. Bilingual Korean & English. Free consultation.',
+    description: 'Korean marketing agency in Palisades Park, NJ. Website design, SEO, Google Ads for Korean-American small businesses. Small business SEO NJ specialist. Bilingual Korean & English. Free consultation.',
     keywords: 'Palisades Park marketing, Korean marketing agency NJ, small business SEO NJ, Palisades Park web design, Korean business marketing NYC, 한인 마케팅 에이전시 뉴저지, Palisades Park SEO, Bergen County Korean business, NJ Korean digital marketing, Korean social media marketing NJ, Instagram marketing Korean business',
     openGraph: {
       title: 'Palisades Park Marketing Agency - Korean Business Experts - ZOE LUMOS',
-      description: '#1 Korean marketing agency in Palisades Park, NJ. Website design, SEO & digital marketing.',
+      description: 'Korean marketing agency in Palisades Park, NJ. Website design, SEO & digital marketing.',
       url: `${baseUrl}/palisades-park-marketing`,
       siteName: 'ZOE LUMOS',
       locale: 'en_US',
@@ -205,7 +205,7 @@ export default function PalisadesParkMarketingPage({ params }: { params: { local
             <p className="text-xl md:text-2xl text-gray-700 mb-8 max-w-3xl mx-auto">
               {locale === 'ko'
                 ? '팰리세이즈파크(팰팍) 한인 비즈니스를 위한 전문 디지털 마케팅. 웹사이트 제작, 구글 SEO, 소셜미디어 마케팅. 뉴저지 한인 마케팅 에이전시 1위.'
-                : 'Expert digital marketing for Korean-American businesses in Palisades Park. Website design, Google SEO, social media marketing. #1 Korean marketing agency in NJ.'
+                : 'Expert digital marketing for Korean-American businesses in Palisades Park. Website design, Google SEO, social media marketing.'
               }
             </p>
             
@@ -301,7 +301,7 @@ export default function PalisadesParkMarketingPage({ params }: { params: { local
                 </h3>
                 <p className="text-gray-600">
                   {locale === 'ko'
-                    ? '"팰팍 [업종]" 구글 검색 1페이지 노출. Google My Business 최적화, 한국어 키워드 SEO, 지역 검색 최적화.'
+                    ? '"팰팍 [업종]" 구글 검색 상위 노출을 목표로 합니다. Google My Business 최적화, 한국어 키워드 SEO, 지역 검색 최적화.'
                     : 'Rank page 1 for "Palisades Park [business]". Google My Business optimization, Korean keyword SEO, local search optimization.'
                   }
                 </p>

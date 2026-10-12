@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
       : 'Maryland website, MD website design, Ellicott City Korean website, Columbia website, Gaithersburg website, MD SEO, Maryland social media management, Maryland Google Ads, Maryland Korean advertising agency',
     openGraph: {
       title: locale === 'ko' ? '메릴랜드 웹사이트 제작 전문 - 조이루모스' : 'Maryland Website Design - ZOE LUMOS',
-      description: locale === 'ko' ? '메릴랜드 한인 비즈니스를 위한 최고의 웹사이트 제작 서비스.' : 'Premier website design for MD Korean businesses.',
+      description: locale === 'ko' ? '메릴랜드 한인 비즈니스를 위한 웹사이트 제작 서비스.' : 'Website design for MD Korean businesses.',
       url: locale === 'ko' ? `${baseUrl}/ko/메릴랜드-웹사이트` : `${baseUrl}/md-website`,
       siteName: 'ZOE LUMOS 조이루모스',
       locale: locale === 'ko' ? 'ko_KR' : 'en_US',
@@ -237,7 +237,7 @@ export default function MDWebsiteKoreanPage({ params }: { params: { locale: stri
               <div className="text-center">
                 <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4"><Search className="w-8 h-8 text-amber-600" /></div>
                 <h3 className="text-xl font-bold mb-2">{isKorean ? '메릴랜드 SEO 전문' : 'MD SEO Specialists'}</h3>
-                <p className="text-gray-600">{isKorean ? '"엘리컷시티 [업종]", "게이더스버그 [업종]" 검색시 구글 1페이지 노출.' : 'Rank on page 1 for "Ellicott City [business]" and "Gaithersburg [business]" searches.'}</p>
+                <p className="text-gray-600">{isKorean ? '"엘리컷시티 [업종]", "게이더스버그 [업종]" 검색에서 찾을 수 있도록.' : 'Rank on page 1 for "Ellicott City [business]" and "Gaithersburg [business]" searches.'}</p>
               </div>
               <div className="text-center">
                 <div className="w-16 h-16 bg-amber-100 rounded-full flex items-center justify-center mx-auto mb-4"><Mail className="w-8 h-8 text-amber-600" /></div>

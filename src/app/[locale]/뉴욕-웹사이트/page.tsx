@@ -34,8 +34,8 @@ export async function generateMetadata({
     openGraph: {
       title: locale === 'ko' ? '뉴욕 웹사이트 제작 전문 - 조이루모스' : 'New York Website Design - ZOE LUMOS',
       description: locale === 'ko'
-        ? '뉴욕 한인 비즈니스를 위한 최고의 웹사이트 제작 서비스. 맨하탄, 플러싱, 퀸즈 전 지역.'
-        : 'Premier website design for NYC Korean businesses.',
+        ? '뉴욕 한인 비즈니스를 위한 웹사이트 제작 서비스. 맨하탄, 플러싱, 퀸즈 전 지역.'
+        : 'Website design for NYC Korean businesses.',
       url: locale === 'ko' ? `${baseUrl}/ko/뉴욕-웹사이트` : `${baseUrl}/뉴욕-웹사이트`,
       siteName: 'ZOE LUMOS 조이루모스',
       locale: locale === 'ko' ? 'ko_KR' : 'en_US',
@@ -93,8 +93,8 @@ export default function NYWebsiteKoreanPage({ params }: { params: { locale: stri
     name: isKorean ? '조이루모스 - 뉴욕 웹사이트 제작' : 'ZOE LUMOS - New York Website Design',
     image: `${baseUrl}/logo.png`,
     description: isKorean
-      ? '뉴욕 최고의 웹사이트 제작 전문 업체. 맨하탄, 플러싱, 퀸즈 한인 비즈니스 전문.'
-      : 'Premier website design agency in New York for Korean-American businesses.',
+      ? '뉴욕 웹사이트 제작 전문 업체. 맨하탄, 플러싱, 퀸즈 한인 비즈니스 전문.'
+      : 'Website design agency in New York for Korean-American businesses.',
     url: isKorean ? `${baseUrl}/ko/뉴욕-웹사이트` : `${baseUrl}/ny-website`,
     inLanguage: isKorean ? 'ko' : 'en',
     email: 'info@zoelumos.com',
@@ -406,7 +406,7 @@ export default function NYWebsiteKoreanPage({ params }: { params: { locale: stri
                 </h3>
                 <p className="text-gray-600">
                   {isKorean
-                    ? '"뉴욕 [업종]" 검색시 구글 1페이지 노출. 로컬 SEO로 뉴욕 고객 확보.'
+                    ? '"뉴욕 [업종]" 검색에서 찾을 수 있도록. 로컬 SEO로 뉴욕 고객 확보.'
                     : 'Rank on page 1 for "New York [business]" searches. Local SEO for NYC customers.'
                   }
                 </p>
@@ -421,8 +421,8 @@ export default function NYWebsiteKoreanPage({ params }: { params: { locale: stri
                 </h3>
                 <p className="text-gray-600">
                   {isKorean
-                    ? '뉴욕 비즈니스 속도에 맞춘 3-7일 완성. 맨하탄, 플러싱 미팅 가능.'
-                    : '3-7 day completion matching NYC business speed. Manhattan, Flushing meetings available.'
+                    ? '보통 4~6주 안에 완성합니다. 맨하탄, 플러싱 미팅 가능.'
+                    : 'Typically completed in 4–6 weeks. Manhattan, Flushing meetings available.'
                   }
                 </p>
               </div>

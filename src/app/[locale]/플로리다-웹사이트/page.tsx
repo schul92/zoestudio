@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
       : 'Florida website, FL website design, Miami Korean website, Orlando Korean website, Tampa website, FL SEO, Florida social media management, Florida Google Ads, Florida Korean advertising agency',
     openGraph: {
       title: locale === 'ko' ? '플로리다 웹사이트 제작 전문 - 조이루모스' : 'Florida Website Design - ZOE LUMOS',
-      description: locale === 'ko' ? '플로리다 한인 비즈니스를 위한 최고의 웹사이트 제작 서비스.' : 'Premier website design for FL Korean businesses.',
+      description: locale === 'ko' ? '플로리다 한인 비즈니스를 위한 웹사이트 제작 서비스.' : 'Website design for FL Korean businesses.',
       url: locale === 'ko' ? `${baseUrl}/ko/플로리다-웹사이트` : `${baseUrl}/fl-website`,
       siteName: 'ZOE LUMOS 조이루모스', locale: locale === 'ko' ? 'ko_KR' : 'en_US', type: 'website',
       images: [{ url: `${baseUrl}/api/og?title=Florida&subtitle=Korean+Web+Design`, width: 1200, height: 630, alt: locale === 'ko' ? '플로리다 웹사이트 제작' : 'Florida Website Design' }],
@@ -218,7 +218,7 @@ export default function FLWebsiteKoreanPage({ params }: { params: { locale: stri
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">{isKorean ? '왜 조이루모스를 선택해야 할까요?' : 'Why Choose ZOE LUMOS?'}</h2>
             <div className="grid md:grid-cols-3 gap-8">
               <div className="text-center"><div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4"><Globe className="w-8 h-8 text-orange-600" /></div><h3 className="text-xl font-bold mb-2">{isKorean ? '한영 이중언어 전문' : 'Bilingual Experts'}</h3><p className="text-gray-600">{isKorean ? '한국어와 영어 완벽 지원. 플로리다 한인 고객과 미국 고객 모두 타겟팅.' : 'Perfect Korean and English support for Florida businesses.'}</p></div>
-              <div className="text-center"><div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4"><Search className="w-8 h-8 text-orange-600" /></div><h3 className="text-xl font-bold mb-2">{isKorean ? '플로리다 SEO 전문' : 'FL SEO Specialists'}</h3><p className="text-gray-600">{isKorean ? '"마이애미 [업종]", "올랜도 [업종]" 검색시 구글 1페이지 노출.' : 'Rank on page 1 for "Miami [business]" and "Orlando [business]" searches.'}</p></div>
+              <div className="text-center"><div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4"><Search className="w-8 h-8 text-orange-600" /></div><h3 className="text-xl font-bold mb-2">{isKorean ? '플로리다 SEO 전문' : 'FL SEO Specialists'}</h3><p className="text-gray-600">{isKorean ? '"마이애미 [업종]", "올랜도 [업종]" 검색에서 찾을 수 있도록.' : 'Rank on page 1 for "Miami [business]" and "Orlando [business]" searches.'}</p></div>
               <div className="text-center"><div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4"><Mail className="w-8 h-8 text-orange-600" /></div><h3 className="text-xl font-bold mb-2">{isKorean ? '화상 미팅 & 카카오톡' : 'Video & KakaoTalk'}</h3><p className="text-gray-600">{isKorean ? 'Zoom 화상 미팅과 카카오톡으로 편리하게 상담. 동부 시간대 동일.' : 'Consultations via Zoom and KakaoTalk. Same Eastern time zone.'}</p></div>
             </div>
           </div>

@@ -19,7 +19,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
       title: '캘리포니아 웹사이트 제작 전문 | LA 한인 비즈니스 웹개발 | ZOE LUMOS',
       description: '캘리포니아 웹사이트 제작 전문 업체. LA 코리아타운, 오렌지카운티, 풀러턴, 어바인 한인 비즈니스를 위한 전문 웹사이트 개발. 캘리포니아 로컬 SEO, 구글 최적화.',
       keywords: '캘리포니아 웹사이트, LA 웹사이트 제작, CA 웹개발, 코리아타운 웹사이트, 오렌지카운티 웹사이트, 풀러턴 웹사이트, 캘리포니아 SEO',
-      openGraph: { title: '캘리포니아 웹사이트 제작 전문 - ZOE LUMOS', description: '캘리포니아 최고의 한인 웹사이트 제작 업체.', url: `${baseUrl}/ko/캘리포니아-웹사이트`, siteName: 'ZOE LUMOS', locale: 'ko_KR', type: 'website' },
+      openGraph: { title: '캘리포니아 웹사이트 제작 전문 - ZOE LUMOS', description: '캘리포니아 한인 웹사이트 제작 전문 업체.', url: `${baseUrl}/ko/캘리포니아-웹사이트`, siteName: 'ZOE LUMOS', locale: 'ko_KR', type: 'website' },
       alternates: { canonical: `${baseUrl}/ko/캘리포니아-웹사이트`, languages: { 'x-default': `${baseUrl}/ca-website`, 'en': `${baseUrl}/ca-website`, 'ko': `${baseUrl}/ko/캘리포니아-웹사이트` } },
       robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-video-preview': -1, 'max-image-preview': 'large', 'max-snippet': -1 } },
     }
@@ -57,7 +57,7 @@ export default function CAWebsitePage({ params }: { params: { locale: string } }
         <section className="pt-32 pb-20 px-4 bg-gradient-to-br from-blue-50 to-white">
           <div className="max-w-7xl mx-auto text-center mb-12">
             <h1 className="text-4xl md:text-6xl font-black mb-6 text-gray-900">{ko ? '캘리포니아 웹사이트 제작 전문' : 'California Website Design & Development'}</h1>
-            <p className="text-xl md:text-2xl text-gray-700 mb-8 max-w-3xl mx-auto">{ko ? 'LA 코리아타운, 오렌지카운티, 풀러턴, 어바인 - 캘리포니아 전 지역 한인 비즈니스를 위한 최고의 웹사이트 제작 서비스' : 'Premier web development for LA Koreatown, Orange County, Fullerton, Irvine. #1 in California.'}</p>
+            <p className="text-xl md:text-2xl text-gray-700 mb-8 max-w-3xl mx-auto">{ko ? 'LA 코리아타운, 오렌지카운티, 풀러턴, 어바인 - 캘리포니아 전 지역 한인 비즈니스를 위한 웹사이트 제작 서비스' : 'Web development for LA Koreatown, Orange County, Fullerton, Irvine.'}</p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Link href={`/${ko ? 'ko/' : ''}pricing`} className="px-8 py-4 bg-black text-white rounded-lg font-bold text-lg hover:bg-gray-800 transition-colors">{ko ? '가격 보기' : 'View Pricing'}</Link>
               <Link href="#contact" className="px-8 py-4 bg-white text-black border-2 border-black rounded-lg font-bold text-lg hover:bg-gray-50 transition-colors">{ko ? '무료 상담' : 'Free Consultation'}</Link>
@@ -83,7 +83,7 @@ export default function CAWebsitePage({ params }: { params: { locale: string } }
               <div className="text-center">
                 <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"><Search className="w-8 h-8 text-blue-600" /></div>
                 <h3 className="text-xl font-bold mb-2">{ko ? '캘리포니아 SEO 전문' : 'CA SEO Experts'}</h3>
-                <p className="text-gray-600">{ko ? '"LA [업종]" 검색시 구글 1페이지 노출. 로컬 SEO로 캘리포니아 고객 유치' : 'Rank #1 for "LA [your business]" searches. Local SEO for CA customers'}</p>
+                <p className="text-gray-600">{ko ? '"LA [업종]" 검색에서 찾을 수 있도록. 로컬 SEO로 캘리포니아 고객 유치' : 'Show up when customers search "LA [your business]". Local SEO for CA customers'}</p>
               </div>
               <div className="text-center">
                 <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4"><Globe className="w-8 h-8 text-indigo-600" /></div>

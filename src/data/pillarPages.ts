@@ -58,15 +58,15 @@ export const pillarPages: PillarPageContent[] = [
     },
     whatYouWillLearn: {
       en: [
-        'Why bilingual sites convert 2.3x better than English-only for Korean-American SMBs',
-        'Hreflang implementation that 90% of agencies still get wrong in 2026',
+        'Why bilingual sites convert better than English-only for Korean-American SMBs',
+        'The hreflang mistakes many agencies still make in 2026',
         'When to target Naver and when Google is enough',
         'City-by-city local SEO for Korean diaspora hubs (NJ, NY, GA, TX, CA)',
         'Real case studies — Salt & Polish (7x bookings), TJ Flowers (Shopify revamp), Korean Nail Salon (10x organic)',
       ],
       ko: [
-        '한인 SMB에서 이중언어 사이트가 영어 전용보다 2.3배 더 잘 전환하는 이유',
-        '2026년에도 대행사 90%가 틀리는 hreflang 구현',
+        '한인 SMB에서 이중언어 사이트가 영어 전용보다 더 잘 전환하는 이유',
+        '2026년에도 많은 대행사가 틀리는 hreflang 구현',
         'Naver 타겟이 필요한 때 vs 구글만으로 충분한 때',
         '한인 디아스포라 허브 도시별 로컬 SEO (NJ, NY, GA, TX, CA)',
         '실제 케이스 스터디 — Salt & Polish (예약 7배), TJ Flowers (Shopify 재구축), 한인 네일샵 (유기 트래픽 10배)',
@@ -75,9 +75,9 @@ export const pillarPages: PillarPageContent[] = [
     sections: {
       en: [
         { type: 'intro', content: 'There is a specific kind of business in America: Korean-owned, Korean-named, serving a customer base that is half Korean-speaking and half English-speaking second-generation. Restaurants in Palisades Park. Beauty spas in Fort Lee. Dental practices in Flushing. Tutoring centers in LA Koreatown. Real estate offices in Atlanta. Every one of these businesses is competing in a Google search market where their customers type both "korean bbq palpark" and "한식당 팰팍" — sometimes the same person, on the same day. If your website only ranks for one language, you are systematically losing 40-60% of the traffic you could be capturing.' },
-        { type: 'h2', content: 'Why bilingual sites convert 2.3x better for Korean-American SMBs' },
-        { type: 'p', content: 'We measured this across 23 Korean SMBs in 2025-2026. The English-only sites averaged 1.8% visitor-to-booking conversion. The bilingual sites (proper hreflang + native-written Korean, not machine translation) averaged 4.1%. The 2.3x lift comes from three places: (1) Korean-speaking visitors complete forms at 2.4x the rate when the form is in Korean, (2) Korean customers stay on the site 84% longer when they encounter Korean text in the first 5 seconds, and (3) Korean URLs and Korean meta tags allow Google to surface the site in Korean-language searches, which English-only sites do not appear in at all. The compound effect on monthly leads is significant.' },
-        { type: 'h2', content: 'The hreflang implementation 90% of agencies get wrong' },
+        { type: 'h2', content: 'Why bilingual sites convert better for Korean-American SMBs' },
+        { type: 'p', content: 'Bilingual sites tend to convert better for Korean-American businesses, for three reasons. (1) Korean-speaking visitors are more likely to finish a booking or inquiry form when the form itself is in Korean. (2) Visitors who meet Korean text in the first few seconds recognize the business is for them and keep reading. (3) Korean URLs and Korean meta tags let Google surface the site in Korean-language searches, where English-only sites do not appear at all. How big the lift is depends on how many of your customers search in Korean, so measure it on your own site in GA4 rather than trusting an industry average.' },
+        { type: 'h2', content: 'The hreflang implementation many agencies get wrong' },
         { type: 'p', content: 'Hreflang is the HTML tag that tells Google "this page exists in English at URL X and in Korean at URL Y." Most agencies implement it incorrectly in one of three ways: (1) Missing x-default fallback, so Google does not know which version to show users in regions where neither language is dominant; (2) Mismatched canonical and hreflang, so each language page tries to be the canonical for both versions; (3) Implementing hreflang on the Korean page but not the English page, breaking the bidirectional link. The correct implementation is bidirectional — every English page declares its Korean alternate AND every Korean page declares its English alternate AND both declare an x-default. We have audited 47 Korean SMB sites in 2026 and 41 had at least one of these errors.' },
         { type: 'h2', content: 'When you need Naver SEO (and when you don\'t)' },
         { type: 'p', content: 'Naver is Korea\'s dominant search engine, with ~55-60% of search market share in Korea. For US Korean businesses, the question is whether your audience uses Naver. The answer in 2026: 1st-generation Korean immigrants ages 50+ still use Naver for some queries (especially Korean news, recipes, and Korea-tied topics), but they use Google for US-local queries (restaurants near them, services in their city). 2nd-generation Korean-Americans rarely use Naver. So for a US Korean SMB targeting local customers, Google is the primary battleground — Naver is a secondary supplement at most. The exception: if you sell products imported from Korea or services to Korea-resident customers (travel agencies, education consultants), Naver becomes equally important.' },
@@ -90,9 +90,9 @@ export const pillarPages: PillarPageContent[] = [
       ],
       ko: [
         { type: 'intro', content: '미국에 특정한 종류의 비즈니스가 있습니다 — 한국인이 소유, 한국 이름, 고객층이 절반은 한국어 사용자 절반은 영어 사용 재미한인 2세. 팰팍의 식당. 포트리의 뷰티 스파. 플러싱의 치과. LA 코리아타운의 학원. 애틀랜타의 부동산 사무실. 이 모든 비즈니스가 고객이 "korean bbq palpark"와 "한식당 팰팍"을 둘 다 입력하는 — 가끔 같은 사람이 같은 날 — 구글 검색 시장에서 경쟁. 웹사이트가 한 언어만 순위에 들면 캡처할 수 있는 트래픽의 40-60%를 체계적으로 잃는 중.' },
-        { type: 'h2', content: '한인 SMB에서 이중언어 사이트가 2.3배 더 잘 전환하는 이유' },
-        { type: 'p', content: '2025-2026 한인 SMB 23곳에서 측정. 영어 전용 사이트 평균 방문자→예약 전환 1.8%. 이중언어 사이트 (적절한 hreflang + 기계 번역 아닌 원어민 작성 한국어) 평균 4.1%. 2.3배 상승의 원인 3가지 — (1) 한국어 사용 방문자가 폼이 한국어일 때 2.4배 빠른 비율로 완료, (2) 한인 고객이 첫 5초 안에 한국어 텍스트 만나면 사이트에 84% 더 오래 머묾, (3) 한국어 URL과 한국어 메타 태그가 영어 전용 사이트가 전혀 등장하지 않는 한국어 검색에 사이트 노출. 월간 리드에 복리 효과 상당.' },
-        { type: 'h2', content: '대행사 90%가 틀리는 hreflang 구현' },
+        { type: 'h2', content: '한인 SMB에서 이중언어 사이트가 더 잘 전환하는 이유' },
+        { type: 'p', content: '이중언어 사이트가 한인 비즈니스에서 더 잘 전환되는 이유는 세 가지입니다. (1) 한국어를 쓰는 방문자는 예약·문의 폼이 한국어일 때 끝까지 작성할 가능성이 높습니다. (2) 첫 몇 초 안에 한국어를 보면 자신을 위한 가게라고 느끼고 계속 읽습니다. (3) 한국어 URL과 한국어 메타 태그가 있어야 영어 전용 사이트는 나오지 않는 한국어 검색에 노출됩니다. 효과의 크기는 고객 중 한국어로 검색하는 비율에 따라 달라지므로, 업계 평균보다 GA4로 직접 측정하는 것을 권합니다.' },
+        { type: 'h2', content: '많은 대행사가 틀리는 hreflang 구현' },
         { type: 'p', content: 'Hreflang은 구글에 "이 페이지는 URL X에 영어로, URL Y에 한국어로 존재" 알리는 HTML 태그. 대부분 대행사가 셋 중 하나로 잘못 구현 — (1) x-default 폴백 누락 → 어느 언어도 우세하지 않은 지역 사용자에 어느 버전 보여줄지 구글이 모름; (2) canonical과 hreflang 불일치 → 각 언어 페이지가 양 버전의 canonical 되려 함; (3) 한국어 페이지에 hreflang 구현하고 영어 페이지에 안 함 → 양방향 링크 깨짐. 올바른 구현은 양방향 — 모든 영어 페이지가 한국어 대안 선언 AND 모든 한국어 페이지가 영어 대안 선언 AND 양쪽 다 x-default 선언. 2026년 한인 SMB 47개 사이트 감사 — 41개에 이 오류 중 최소 하나.' },
         { type: 'h2', content: 'Naver SEO가 필요한 때 (불필요한 때)' },
         { type: 'p', content: 'Naver는 한국 우세 검색엔진, 한국 검색 시장 점유율 약 55-60%. 미국 한인 비즈니스에 질문은 — 본인 청중이 Naver 쓰나? 2026년 답 — 50대+ 1세대 한인 이민자는 일부 쿼리 (특히 한국 뉴스, 레시피, 한국 관련 주제) 에 Naver 여전히 사용, 그러나 미국 로컬 쿼리 (근처 식당, 자기 도시 서비스) 엔 구글. 재미 2세 한인은 Naver 거의 안 씀. 그래서 로컬 고객 타겟 미국 한인 SMB엔 구글이 주 전장 — Naver는 기껏해야 보조. 예외 — 한국 수입품 판매나 한국 거주 고객 서비스 (여행사, 유학원) 면 Naver가 동등하게 중요.' },
@@ -313,7 +313,7 @@ export const pillarPages: PillarPageContent[] = [
       },
       {
         q: { en: 'Do I need to buy expensive AI software, or are free tools enough?', ko: '비싼 AI 소프트웨어 사야 하나, 무료 도구로 충분?' },
-        a: { en: 'For most Korean SMBs, $20/month ChatGPT Plus + free Gemini for backup covers 85-90% of needs. Add $45-60/month for a bilingual chatbot (Tidio, Crisp, ChannelTalk). Total AI tooling budget for a single-location Korean SMB rarely needs to exceed $80/month. Enterprise AI software ($500+/month) is overscoped for SMBs.', ko: '대부분 한인 SMB는 월 $20 ChatGPT Plus + 백업 무료 Gemini로 필요의 85-90% 커버. 이중언어 챗봇 (Tidio, Crisp, ChannelTalk) 에 월 $45-60 추가. 단일 매장 한인 SMB의 총 AI 도구 예산은 월 $80 넘을 필요 거의 없음. 엔터프라이즈 AI 소프트웨어 (월 $500+) 는 SMB에 과대 범위.' },
+        a: { en: 'For most Korean SMBs, $20/month ChatGPT Plus + free Gemini for backup covers most needs. Add $45-60/month for a bilingual chatbot (Tidio, Crisp, ChannelTalk). Total AI tooling budget for a single-location Korean SMB rarely needs to exceed $80/month. Enterprise AI software ($500+/month) is overscoped for SMBs.', ko: '대부분 한인 SMB는 월 $20 ChatGPT Plus + 백업 무료 Gemini로 필요 대부분 커버. 이중언어 챗봇 (Tidio, Crisp, ChannelTalk) 에 월 $45-60 추가. 단일 매장 한인 SMB의 총 AI 도구 예산은 월 $80 넘을 필요 거의 없음. 엔터프라이즈 AI 소프트웨어 (월 $500+) 는 SMB에 과대 범위.' },
       },
     ],
   },
@@ -344,14 +344,14 @@ export const pillarPages: PillarPageContent[] = [
     whatYouWillLearn: {
       en: [
         'Why Yelp Reservations is killing your Korean customer bookings',
-        'Native reservation embedding that lifts completion from 53% to 84%',
+        'Native reservation embedding that keeps customers on your site to finish booking',
         'KakaoTalk Channel automation that drops no-show rate from 22% to 6%',
         'POS choice — Toast vs Square vs Korean-native systems',
         'Real case study — Palpark Korean BBQ 3X\'d Saturday bookings, $0 ad spend',
       ],
       ko: [
         'Yelp Reservations가 한인 고객 예약 죽이는 이유',
-        '예약 완료율 53% → 84% 올리는 네이티브 예약 임베드',
+        '고객이 사이트를 떠나지 않고 예약을 마치게 하는 네이티브 예약 임베드',
         '노쇼율 22% → 6%로 떨어뜨리는 카카오톡 채널 자동화',
         'POS 선택 — Toast vs Square vs 한국식 시스템',
         '실 케이스 스터디 — 팰팍 한식 BBQ가 광고비 $0로 토요일 예약 3배',
@@ -396,7 +396,7 @@ export const pillarPages: PillarPageContent[] = [
       },
       {
         q: { en: 'Do I need to change my menu or branding to fix bookings?', ko: '예약 수정에 메뉴나 브랜드 변경 필요?' },
-        a: { en: 'Usually no. Most Korean restaurants we work with have great food and strong brand identity — the bottleneck is digital infrastructure. We rebrand only when the brand itself is broken; for 90% of Korean restaurants, the brand is the strongest asset and should be protected, not changed.', ko: '보통 아니오. 우리와 일하는 대부분 한식당이 좋은 음식과 강한 브랜드 정체성 보유 — 병목은 디지털 인프라. 브랜드 자체가 망가졌을 때만 리브랜드; 한식당 90%엔 브랜드가 최강 자산 — 보호하고 바꾸지 않아야.' },
+        a: { en: 'Usually no. Most Korean restaurants we work with have great food and strong brand identity — the bottleneck is digital infrastructure. We rebrand only when the brand itself is broken; for most Korean restaurants, the brand is the strongest asset and should be protected, not changed.', ko: '보통 아니오. 우리와 일하는 대부분 한식당이 좋은 음식과 강한 브랜드 정체성 보유 — 병목은 디지털 인프라. 브랜드 자체가 망가졌을 때만 리브랜드; 대부분의 한식당에선 브랜드가 최강 자산 — 보호하고 바꾸지 않아야.' },
       },
       {
         q: { en: 'Should I offer DoorDash and UberEats or build my own ordering?', ko: 'DoorDash와 UberEats 제공 vs 자체 주문 구축?' },
@@ -408,7 +408,7 @@ export const pillarPages: PillarPageContent[] = [
       },
       {
         q: { en: 'When does it make sense to build a custom app instead of just a website?', ko: '커스텀 앱 vs 웹사이트만 — 언제 합당?' },
-        a: { en: 'For 90% of Korean restaurants, a strong website with native ordering is enough — a custom app costs $35K-$90K to build and 70% of customers never download it. The 10% where an app makes sense: 3+ locations with a loyalty program, $2M+ revenue, and a customer base that already messages the restaurant 5+ times per week. Below those thresholds, the website is the right answer.', ko: '한식당 90%엔 네이티브 주문 강한 웹사이트로 충분 — 커스텀 앱은 $35K-$90K 구축 비용 + 고객 70%가 절대 안 다운로드. 앱이 합당한 10% — 로열티 프로그램 있는 3개+ 매장, 매출 $2M+, 식당에 이미 주 5+ 메시지 보내는 고객층. 이 임계점 미만은 웹사이트가 정답.' },
+        a: { en: 'For most Korean restaurants, a strong website with native ordering is enough — a custom app is a large build cost and many customers never download it. Where an app can make sense: 3+ locations with a loyalty program, $2M+ revenue, and a customer base that already messages the restaurant 5+ times per week. Below those thresholds, the website is the right answer.', ko: '대부분의 한식당은 네이티브 주문이 되는 탄탄한 웹사이트로 충분 — 커스텀 앱은 구축비가 크고 많은 고객이 다운로드하지 않음. 앱이 합당한 경우 — 로열티 프로그램 있는 3개+ 매장, 매출 $2M+, 식당에 이미 주 5+ 메시지 보내는 고객층. 이 임계점 미만은 웹사이트가 정답.' },
       },
     ],
   },
@@ -464,7 +464,7 @@ export const pillarPages: PillarPageContent[] = [
         { type: 'h2', content: 'Review velocity — the cheat code for Korean beauty Map Pack' },
         { type: 'p', content: 'Review velocity (new reviews per month, sustained) is the single highest-leverage Map Pack ranking factor for Korean beauty businesses. The unlock is asking only Yelp/Google regulars to leave reviews, not new accounts. Our flow: at checkout, staff asks "do you use Yelp or Google regularly?" If yes, they get the review link via SMS or KakaoTalk. If no, they get a thank-you card with no review request. This single qualification step lifts review completion from 3-5% to 22-28% in our cohort. For a salon doing 200 services/month, that is 44-56 new reviews per month vs 6-10 — Map Pack dominance within 60-90 days.' },
         { type: 'h2', content: 'The Salt & Polish case study (7X bookings in 90 days)' },
-        { type: 'p', content: 'Salt & Polish, a Korean-owned spa in Fort Lee NJ, went from 12 to 87 monthly bookings in 90 days after a $7,800 rebuild — booking completion 53% → 84%, 0 → 47 Korean-language bookings per month, +312% GBP profile views, Map Pack #2 for "korean spa fort lee" and #1 for "korean nail spa palpark." The owner kept the existing brand identity; we fixed structure, performance, and SEO infrastructure. The detailed case study with month-by-month metrics is linked below — it is the proof point behind everything in this pillar.' },
+        { type: 'p', content: 'Our own work in this category includes the website and online booking for Salt & Polish, a nail bar in Fort Lee, NJ. We do not publish a client\'s booking or revenue numbers without their permission, so judge any agency by the measured results it can show you with the client\'s consent.' },
         { type: 'h2', content: 'The 60-90 day implementation timeline' },
         { type: 'p', content: 'Weeks 1-2: discovery, brand voice capture, audit of current GBP and Instagram. Weeks 3-4: design + bilingual content writing (native Korean copywriter, never machine translation). Weeks 5-6: native booking integration, Instagram API sync, schema markup, GBP optimization. Weeks 7-8: citation cleanup across 8 Korean directories, staff training on the new booking dashboard and review-velocity flow. Weeks 9-12: monitor first ranking signals, iterate, push content. Most Korean beauty businesses see meaningful Map Pack movement by week 6, with full booking lift by day 90.' },
       ],
@@ -479,7 +479,7 @@ export const pillarPages: PillarPageContent[] = [
         { type: 'h2', content: '리뷰 속도 — 한인 뷰티 맵 팩의 치트 코드' },
         { type: 'p', content: '리뷰 속도 (지속 월 신규 리뷰) 가 한인 뷰티 비즈니스의 단일 최고 레버리지 맵 팩 순위 요인. 잠금 해제 — 신규 계정 아닌 Yelp/구글 단골에게만 리뷰 요청. 우리 플로우 — 결제 시 직원이 "Yelp나 구글 자주 쓰세요?" 물음. Yes면 SMS 또는 카카오톡으로 리뷰 링크. No면 리뷰 요청 없는 감사 카드. 이 단일 자격 단계가 코호트에서 리뷰 완료율 3-5% → 22-28%. 월 200 서비스 미용실 — 월 신규 리뷰 6-10개 vs 44-56개 — 60-90일 안에 맵 팩 장악.' },
         { type: 'h2', content: 'Salt & Polish 케이스 스터디 (90일에 예약 7배)' },
-        { type: 'p', content: '포트리 NJ 한인 소유 스파 Salt & Polish — $7,800 재구축 후 90일 만에 월 예약 12 → 87 — 예약 완료 53% → 84%, 월 한국어 예약 0 → 47, GBP 프로필 조회 +312%, "korean spa fort lee" 맵 팩 2위 + "korean nail spa palpark" 1위. 사장님이 기존 브랜드 정체성 유지; 우리가 구조, 성능, SEO 인프라 수정. 월별 지표 상세 케이스 스터디 아래 링크 — 이 필러 모든 것의 증거점.' },
+        { type: 'p', content: '이 분야의 실제 작업으로는 포트리 네일바 Salt & Polish의 웹사이트와 온라인 예약 구축이 있습니다. 고객 동의 없이 예약·매출 수치는 공개하지 않으며, 대행사를 고를 때도 고객 동의를 받아 공개한 실측 결과로 판단하시길 권합니다.' },
         { type: 'h2', content: '60-90일 구현 일정' },
         { type: 'p', content: '1-2주차 — 디스커버리, 브랜드 보이스 캡처, 현 GBP·인스타 감사. 3-4주차 — 디자인 + 이중언어 콘텐츠 작성 (원어민 한국어 카피라이터, 기계 번역 X). 5-6주차 — 네이티브 예약 통합, 인스타 API 동기화, 스키마 마크업, GBP 최적화. 7-8주차 — 한인 디렉토리 8개 인용 정리, 새 예약 대시보드와 리뷰 속도 플로우 직원 교육. 9-12주차 — 첫 순위 신호 모니터링, 반복, 콘텐츠 푸시. 대부분 한인 뷰티 비즈니스 6주차에 의미 있는 맵 팩 움직임, 90일까지 전체 예약 상승.' },
       ],
@@ -561,7 +561,7 @@ export const pillarPages: PillarPageContent[] = [
         { type: 'h2', content: 'How to read a website quote and spot upsell traps' },
         { type: 'p', content: 'Six lines to demand on any quote before signing: (1) Total fixed scope (not "starting at"). (2) List of every page being built, by name. (3) List of every integration being installed (booking, KakaoTalk, Instagram, schema). (4) Hosting cost, who pays, after launch. (5) Post-launch support window length and what is included. (6) Cancellation terms — what happens to your domain, content, and code if you leave the agency. If any of these six is missing, the agency is preserving room to upsell later. Walk away or demand revision.' },
         { type: 'h2', content: 'No-retainer model — why we offer it (and most agencies do not)' },
-        { type: 'p', content: 'Most US web agencies push monthly retainers because retainers are 4-7x more profitable than fixed-scope projects. The problem for Korean SMB clients: retainers create incentive to keep clients dependent rather than autonomous. We build sites with the explicit goal of making ourselves unnecessary — sites that the owner can maintain with 2-3 hours/month after launch + the occasional content addition. The trade-off — we make less per client lifetime but we have a 90%+ referral rate from former clients because the relationship is professional, not extractive.' },
+        { type: 'p', content: 'Most US web agencies push monthly retainers because retainers are more profitable for agencies than fixed-scope projects. The problem for Korean SMB clients: retainers create incentive to keep clients dependent rather than autonomous. We build sites with the explicit goal of making ourselves unnecessary — sites that the owner can maintain with 2-3 hours/month after launch + the occasional content addition. The trade-off is that we earn less per client over time, and we accept that.' },
       ],
       ko: [
         { type: 'intro', content: '팰팍 한식당 사장님이 같은 주에 웹사이트 견적 3개 받음 — $1,500 (사촌 친구 "웹사이트 하는 사람"), $7,500 (우리 또는 비슷한 대행사), $24,000 (프리미엄 NYC 회사). 셋 다 같은 기본 — 식당 이중언어 웹사이트 — 제안. 차이는 무작위 아님. 같은 이름으로 팔리는 3가지 다른 것 반영. 이 필러가 풀어내 정확히 무엇에 지불하는지, 비용이 어디 가는지 알게 함.' },
@@ -576,7 +576,7 @@ export const pillarPages: PillarPageContent[] = [
         { type: 'h2', content: '웹사이트 견적 읽는 법 + 업셀 함정 발견' },
         { type: 'p', content: '계약 서명 전 모든 견적에 요구할 6줄 — (1) 총 고정 범위 ("부터" X). (2) 구축할 모든 페이지 이름별 목록. (3) 설치할 모든 통합 목록 (예약, 카카오톡, 인스타, 스키마). (4) 런칭 후 호스팅 비용, 누가 지불. (5) 런칭 후 지원 기간 길이와 포함 내역. (6) 해지 조건 — 대행사 떠날 때 도메인, 콘텐츠, 코드 어떻게 됨. 이 6개 중 하나라도 없으면 대행사가 나중에 업셀할 여지 보존 중. 떠나거나 수정 요구.' },
         { type: 'h2', content: '무리테이너 모델 — 우리가 제공하는 이유 (대부분 대행사는 안 함)' },
-        { type: 'p', content: '대부분 미국 웹 대행사가 월 리테이너 푸시 — 리테이너가 고정 범위 프로젝트보다 4-7배 더 수익. 한인 SMB 고객엔 문제 — 리테이너는 고객을 자율 아닌 의존하게 두려는 인센티브 생성. 우리는 명시적 목표 — 우리가 불필요해지게 만들기 — 로 사이트 구축 — 사장님이 런칭 후 월 2-3시간 + 가끔 콘텐츠 추가로 유지 가능한 사이트. 트레이드오프 — 고객 평생당 우리 수익 적지만 전 고객 추천율 90%+ — 관계가 추출적 아닌 전문적이라서.' },
+        { type: 'p', content: '대부분 미국 웹 대행사가 월 리테이너 푸시 — 리테이너가 고정 범위 프로젝트보다 대행사에 수익이 더 남음. 한인 SMB 고객엔 문제 — 리테이너는 고객을 자율 아닌 의존하게 두려는 인센티브 생성. 우리는 명시적 목표 — 우리가 불필요해지게 만들기 — 로 사이트 구축 — 사장님이 런칭 후 월 2-3시간 + 가끔 콘텐츠 추가로 유지 가능한 사이트. 트레이드오프 — 고객당 우리 수익은 줄지만 그 편을 택합니다.' },
       ],
     },
     faq: [

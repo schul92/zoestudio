@@ -21,11 +21,11 @@ export async function generateMetadata({
   if (locale === 'ko') {
     return {
       title: '뉴저지 한인 웹디자인 | 한국계 미국인 웹사이트 제작 전문 | ZOE LUMOS',
-      description: '뉴저지 #1 한인 웹디자인 에이전시. 한국어-영어 이중언어 웹사이트, 구글 SEO, 카카오톡 연동. 포트리, 팰팍, 잉글우드, 버겐카운티 전역 서비스. 100% 한국어 상담. 무료 견적.',
+      description: '뉴저지 포트리의 한인 웹디자인 에이전시. 한국어-영어 이중언어 웹사이트, 구글 SEO, 카카오톡 연동. 포트리, 팰팍, 잉글우드, 버겐카운티 전역 서비스. 100% 한국어 상담. 무료 견적.',
       keywords: '뉴저지 한인 웹디자인, 한인 웹사이트 제작 NJ, 한국계 미국인 웹디자인, korean web design new jersey, 뉴저지 웹사이트 제작, 한인 마케팅 에이전시 뉴저지, 이중언어 웹사이트, 포트리 한인 웹디자인, 팰팍 웹사이트, 버겐카운티 한인 웹사이트',
       openGraph: {
         title: '뉴저지 한인 웹디자인 전문 - ZOE LUMOS',
-        description: '뉴저지 #1 한인 웹디자인 에이전시. 이중언어, 구글 SEO, 카카오톡 연동.',
+        description: '뉴저지 포트리의 한인 웹디자인 에이전시. 이중언어, 구글 SEO, 카카오톡 연동.',
         url: `${baseUrl}/ko/korean-web-design-new-jersey`,
         siteName: 'ZOE LUMOS',
         locale: 'ko_KR',
@@ -45,12 +45,12 @@ export async function generateMetadata({
   }
 
   return {
-    title: 'Korean Web Design New Jersey | #1 Korean-American Website Agency | ZOE LUMOS',
-    description: 'New Jersey\'s #1 Korean web design agency. Bilingual Korean-English websites, local SEO, KakaoTalk integration. Serving Fort Lee, Palisades Park, Englewood & all of Bergen County. Free consultation.',
+    title: 'Korean Web Design New Jersey | Korean-American Website Agency | ZOE LUMOS',
+    description: 'Korean web design agency in Fort Lee, New Jersey. Bilingual Korean-English websites, local SEO, KakaoTalk integration. Serving Fort Lee, Palisades Park, Englewood & all of Bergen County. Free consultation.',
     keywords: 'korean web design new jersey, korean american web design nj, korean website design nj, bilingual web design new jersey, korean web developer nj, korean marketing agency new jersey, korean business website nj, korean seo new jersey, web design fort lee korean, korean web design bergen county',
     openGraph: {
       title: 'Korean Web Design New Jersey - ZOE LUMOS',
-      description: 'NJ\'s #1 Korean web design agency. Bilingual, Fort Lee based, Bergen County wide.',
+      description: 'Korean web design agency in Fort Lee, NJ. Bilingual, Fort Lee based, Bergen County wide.',
       url: `${baseUrl}/korean-web-design-new-jersey`,
       siteName: 'ZOE LUMOS',
       locale: 'en_US',
@@ -80,7 +80,7 @@ export default function KoreanWebDesignNJPage({ params }: { params: { locale: st
     '@id': `${baseUrl}/korean-web-design-new-jersey#business`,
     name: locale === 'ko' ? 'ZOE LUMOS - 뉴저지 한인 웹디자인' : 'ZOE LUMOS - Korean Web Design New Jersey',
     description: locale === 'ko'
-      ? '뉴저지 최고의 한인 웹디자인 에이전시. 한영 이중언어 웹사이트, 로컬 SEO, 디지털 마케팅 전문.'
+      ? '뉴저지 포트리의 한인 웹디자인 에이전시. 한영 이중언어 웹사이트, 로컬 SEO, 디지털 마케팅 전문.'
       : 'New Jersey\'s premier Korean-American web design agency. Bilingual websites, local SEO, and digital marketing specialists.',
     url: `${baseUrl}${prefix}/korean-web-design-new-jersey`,
     email: 'info@zoelumos.com',
@@ -176,7 +176,7 @@ export default function KoreanWebDesignNJPage({ params }: { params: { locale: st
             <div className="inline-flex items-center gap-2 bg-rose-100 text-rose-800 px-4 py-2 rounded-full mb-6">
               <Award className="w-4 h-4" />
               <span className="font-semibold">
-                {locale === 'ko' ? '뉴저지 #1 한인 웹디자인 에이전시' : "New Jersey's #1 Korean Web Design Agency"}
+                {locale === 'ko' ? '뉴저지 포트리의 한인 웹디자인 에이전시' : "Korean Web Design Agency in Fort Lee, New Jersey"}
               </span>
             </div>
 
@@ -446,7 +446,7 @@ export default function KoreanWebDesignNJPage({ params }: { params: { locale: st
         <section className="py-20 px-4 bg-gradient-to-br from-rose-600 to-rose-700 text-white">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl md:text-5xl font-bold mb-6">
-              {locale === 'ko' ? '뉴저지 #1 한인 웹디자인 에이전시' : "New Jersey's #1 Korean Web Design Agency"}
+              {locale === 'ko' ? '뉴저지 포트리의 한인 웹디자인 에이전시' : "Korean Web Design Agency in Fort Lee, New Jersey"}
             </h2>
             <p className="text-xl mb-8 opacity-90">
               {locale === 'ko' ? '오늘 무료 상담을 예약하세요. 한국어 상담 100% 가능. 뉴저지 전역 서비스.' : 'Book your free consultation today. 100% Korean-language support. Serving all of New Jersey.'}

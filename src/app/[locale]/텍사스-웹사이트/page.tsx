@@ -34,8 +34,8 @@ export async function generateMetadata({
     openGraph: {
       title: locale === 'ko' ? '텍사스 웹사이트 제작 전문 - 조이루모스' : 'Texas Website Design - ZOE LUMOS',
       description: locale === 'ko'
-        ? '텍사스 한인 비즈니스를 위한 최고의 웹사이트 제작 서비스. 달라스, 휴스턴 전 지역.'
-        : 'Premier website design for TX Korean businesses.',
+        ? '텍사스 한인 비즈니스를 위한 웹사이트 제작 서비스. 달라스, 휴스턴 전 지역.'
+        : 'Website design for TX Korean businesses.',
       url: locale === 'ko' ? `${baseUrl}/ko/텍사스-웹사이트` : `${baseUrl}/tx-website`,
       siteName: 'ZOE LUMOS 조이루모스',
       locale: locale === 'ko' ? 'ko_KR' : 'en_US',
@@ -468,7 +468,7 @@ export default function TXWebsiteKoreanPage({ params }: { params: { locale: stri
                 </h3>
                 <p className="text-gray-600">
                   {isKorean
-                    ? '"달라스 [업종]", "휴스턴 [업종]" 검색시 구글 1페이지 노출. 텍사스 로컬 SEO 전문.'
+                    ? '"달라스 [업종]", "휴스턴 [업종]" 검색에서 찾을 수 있도록. 텍사스 로컬 SEO 전문.'
                     : 'Rank on page 1 for "Dallas [business]" and "Houston [business]" searches. TX local SEO experts.'
                   }
                 </p>

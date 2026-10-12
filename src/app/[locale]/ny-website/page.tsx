@@ -25,11 +25,11 @@ export async function generateMetadata({
   if (locale === 'ko') {
     return {
       title: '뉴욕 웹사이트 제작 전문 | NYC 한인 비즈니스 웹개발 | ZOE LUMOS',
-      description: '뉴욕 웹사이트 제작 1위 업체. 맨하탄, 브루클린, 퀸즈 한인 비즈니스를 위한 전문 웹사이트 개발. 뉴욕 로컬 SEO, 구글 최적화, 쇼피파이 이커머스 전문.',
+      description: '뉴욕 한인 비즈니스 웹사이트 제작. 맨하탄, 브루클린, 퀸즈 한인 비즈니스를 위한 전문 웹사이트 개발. 뉴욕 로컬 SEO, 구글 최적화, 쇼피파이 이커머스 전문.',
       keywords: '뉴욕 웹사이트, 뉴욕 웹사이트 제작, NYC 웹개발, 뉴욕 한인 웹사이트, 맨하탄 웹사이트, 브루클린 웹사이트, 퀸즈 웹사이트, 플러싱 웹사이트, 뉴욕 쇼피파이, 뉴욕 이커머스, 뉴욕 SEO, 뉴욕 구글 광고',
       openGraph: {
         title: '뉴욕 웹사이트 제작 전문 - ZOE LUMOS',
-        description: '뉴욕 최고의 한인 웹사이트 제작 업체. 맨하탄부터 플러싱까지, NYC 전 지역 한인 비즈니스를 위한 맞춤 웹사이트 개발.',
+        description: '뉴욕 한인 웹사이트 제작 전문 업체. 맨하탄부터 플러싱까지, NYC 전 지역 한인 비즈니스를 위한 맞춤 웹사이트 개발.',
         url: `${baseUrl}/ko/뉴욕-웹사이트`,
         siteName: 'ZOE LUMOS',
         locale: 'ko_KR',
@@ -60,7 +60,7 @@ export async function generateMetadata({
   
   return {
     title: 'New York Website Design & Development | NYC Web Agency | ZOE LUMOS',
-    description: '#1 Website development in New York. Professional web design for Manhattan, Brooklyn, Queens businesses. Local NYC SEO, Google optimization, Shopify e-commerce experts.',
+    description: 'Website development in New York. Professional web design for Manhattan, Brooklyn, Queens businesses. Local NYC SEO, Google optimization, Shopify e-commerce experts.',
     keywords: 'New York website, NYC web design, Manhattan website, Brooklyn website, Queens website, Flushing website, New York Shopify, NYC e-commerce, New York SEO, NYC Google Ads',
     openGraph: {
       title: 'New York Website Design & Development - ZOE LUMOS',
@@ -103,8 +103,8 @@ export default function NYWebsitePage({ params }: { params: { locale: string } }
     '@type': ['LocalBusiness', 'ProfessionalService'],
     name: 'ZOE LUMOS - New York Website Design',
     description: locale === 'ko' 
-      ? '뉴욕 최고의 웹사이트 제작 전문 업체'
-      : 'Premier website design agency in New York',
+      ? '뉴욕 웹사이트 제작 전문 업체'
+      : 'Website design agency in New York',
     url: `${baseUrl}/${locale === 'ko' ? 'ko/' : ''}ny-website`,
     email: 'info@zoelumos.com',
     address: {
@@ -227,8 +227,8 @@ export default function NYWebsitePage({ params }: { params: { locale: string } }
               </h1>
               <p className="text-xl md:text-2xl text-gray-700 mb-8 max-w-3xl mx-auto">
                 {locale === 'ko'
-                  ? '맨하탄, 브루클린, 퀸즈, 플러싱 - NYC 전 지역 한인 비즈니스를 위한 최고의 웹사이트 제작 서비스'
-                  : 'Premier web development for Manhattan, Brooklyn, Queens, and Flushing businesses. #1 in NYC.'
+                  ? '맨하탄, 브루클린, 퀸즈, 플러싱 - NYC 전 지역 한인 비즈니스를 위한 웹사이트 제작 서비스'
+                  : 'Web development for Manhattan, Brooklyn, Queens, and Flushing businesses.'
                 }
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
@@ -287,8 +287,8 @@ export default function NYWebsitePage({ params }: { params: { locale: string } }
                 </h3>
                 <p className="text-gray-600">
                   {locale === 'ko'
-                    ? '구글에서 "뉴욕 [업종]" 검색시 1페이지 노출. 로컬 SEO로 뉴욕 고객 유치'
-                    : 'Rank #1 for "New York [your business]" searches. Local SEO to attract NYC customers'
+                    ? '구글에서 "뉴욕 [업종]" 검색 시 상위 노출을 목표로 합니다. 로컬 SEO로 뉴욕 고객 유치'
+                    : 'Show up when customers search "New York [your business]". Local SEO to attract NYC customers'
                   }
                 </p>
               </div>
@@ -317,8 +317,8 @@ export default function NYWebsitePage({ params }: { params: { locale: string } }
                 </h3>
                 <p className="text-gray-600">
                   {locale === 'ko'
-                    ? '뉴욕 비즈니스 속도에 맞춘 3-7일 완성. 맨하탄 미팅 가능'
-                    : '3-7 day completion matching NYC business speed. In-person meetings in Manhattan'
+                    ? '보통 4~6주 안에 완성합니다. 맨하탄 미팅 가능'
+                    : 'Typically completed in 4–6 weeks. In-person meetings in Manhattan'
                   }
                 </p>
               </div>

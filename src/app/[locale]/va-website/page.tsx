@@ -45,7 +45,7 @@ export default function VAWebsitePage({ params }: { params: { locale: string } }
         <section className="pt-32 pb-20 px-4 bg-gradient-to-br from-indigo-50 to-white">
           <div className="max-w-7xl mx-auto text-center mb-12">
             <h1 className="text-4xl md:text-6xl font-black mb-6 text-gray-900">{ko ? '버지니아 웹사이트 제작 전문' : 'Virginia Website Design & Development'}</h1>
-            <p className="text-xl md:text-2xl text-gray-700 mb-8 max-w-3xl mx-auto">{ko ? '애난데일, 센터빌, 페어팩스 - 북버지니아 전 지역 한인 비즈니스를 위한 웹사이트' : 'Premier web development for Annandale, Centreville, Fairfax Korean businesses.'}</p>
+            <p className="text-xl md:text-2xl text-gray-700 mb-8 max-w-3xl mx-auto">{ko ? '애난데일, 센터빌, 페어팩스 - 북버지니아 전 지역 한인 비즈니스를 위한 웹사이트' : 'Web development for Annandale, Centreville, Fairfax Korean businesses.'}</p>
             <div className="flex flex-wrap gap-4 justify-center">
               <Link href={`/${ko ? 'ko/' : ''}pricing`} className="px-8 py-4 bg-black text-white rounded-lg font-bold text-lg hover:bg-gray-800 transition-colors">{ko ? '가격 보기' : 'View Pricing'}</Link>
               <Link href="#contact" className="px-8 py-4 bg-white text-black border-2 border-black rounded-lg font-bold text-lg hover:bg-gray-50 transition-colors">{ko ? '무료 상담' : 'Free Consultation'}</Link>
@@ -61,7 +61,7 @@ export default function VAWebsitePage({ params }: { params: { locale: string } }
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">{ko ? '왜 버지니아 비즈니스들이 저희를 선택할까요?' : 'Why VA Businesses Choose Us'}</h2>
             <div className="grid md:grid-cols-3 gap-8">
-              <div className="text-center"><div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4"><Search className="w-8 h-8 text-indigo-600" /></div><h3 className="text-xl font-bold mb-2">{ko ? '버지니아 SEO 전문' : 'VA SEO Experts'}</h3><p className="text-gray-600">{ko ? '"애난데일 [업종]" 검색시 구글 1페이지 노출' : 'Rank #1 for "Annandale [your business]" searches'}</p></div>
+              <div className="text-center"><div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4"><Search className="w-8 h-8 text-indigo-600" /></div><h3 className="text-xl font-bold mb-2">{ko ? '버지니아 SEO 전문' : 'VA SEO Experts'}</h3><p className="text-gray-600">{ko ? '"애난데일 [업종]" 검색에서 찾을 수 있도록' : 'Show up when customers search "Annandale [your business]"'}</p></div>
               <div className="text-center"><div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4"><Globe className="w-8 h-8 text-blue-600" /></div><h3 className="text-xl font-bold mb-2">{ko ? '한영 이중언어' : 'Bilingual Korean-English'}</h3><p className="text-gray-600">{ko ? '북버지니아 한인 고객과 미국 고객 모두를 위한 이중언어 웹사이트' : 'Bilingual websites for Korean and American customers in VA'}</p></div>
               <div className="text-center"><div className="w-16 h-16 bg-violet-100 rounded-full flex items-center justify-center mx-auto mb-4"><Building2 className="w-8 h-8 text-violet-600" /></div><h3 className="text-xl font-bold mb-2">{ko ? '화상 미팅 & 카카오톡' : 'Video & KakaoTalk'}</h3><p className="text-gray-600">{ko ? '동부 시간대 동일. 화상 미팅과 카카오톡 상담' : 'Same Eastern time zone. Video and KakaoTalk consultations'}</p></div>
             </div>
