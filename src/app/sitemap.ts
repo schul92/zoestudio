@@ -6,6 +6,7 @@ import { industries } from '@/data/industriesData'
 import { cityMarkets } from '@/data/cityMarketData'
 import { localSeoPages } from '@/data/localSeoPages'
 import { SITE_URL } from '@/lib/siteUrl'
+import { US_LAUNCH_PATHS, US_LAUNCH_UPDATED } from '@/data/usLaunch'
 
 // Last real content change for non-blog pages; bump it when page copy changes (not on every build).
 const CONTENT_UPDATED = '2026-09-26'
@@ -175,6 +176,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     sitemapEntries.push({ url: en, lastModified: new Date(LOCAL_LANDINGS_UPDATED), alternates: { languages } })
     sitemapEntries.push({ url: ko, lastModified: new Date(LOCAL_LANDINGS_UPDATED), alternates: { languages } })
   })
+
+  // Korean companies launching in the US: Korean slug ↔ English slug, paired by hreflang.
+  {
+    const en = `${baseUrl}${US_LAUNCH_PATHS.en}`
+    const ko = `${baseUrl}${US_LAUNCH_PATHS.ko}`
+    const languages = { 'x-default': en, en, ko }
+    sitemapEntries.push({ url: en, lastModified: new Date(US_LAUNCH_UPDATED), priority: 0.95, alternates: { languages } })
+    sitemapEntries.push({ url: ko, lastModified: new Date(US_LAUNCH_UPDATED), priority: 0.95, alternates: { languages } })
+  }
 
   // Audit tool (both locales)
   sitemapEntries.push({

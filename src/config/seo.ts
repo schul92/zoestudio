@@ -39,9 +39,19 @@ export const structuredData = {
       "height": 512
     },
     "email": "info@zoelumos.com",
-    "description": "American-Korean design studio for Korean-American businesses. Editorial web design, SEO, Shopify e-commerce, and Google Ads — serving Fort Lee, Manhattan, LA, Atlanta, Chicago, and nationwide. Bilingual (English · Korean).",
+    "description": "American-Korean design studio in Fort Lee, NJ. Editorial web design, SEO, Shopify e-commerce, and Google Ads for Korean-American businesses nationwide, and official US English websites for Korean companies and franchises entering the US market. Bilingual (English · Korean).",
     "slogan": "Websites worth remembering.",
     "foundingDate": "2019",
+    "knowsAbout": [
+      "US market-entry websites for Korean companies",
+      "Franchise websites with store locators",
+      "Korean-language admin CMS",
+      "Bilingual Korean-English SEO",
+      "Generative Engine Optimization (GEO)",
+      "Web accessibility (WCAG)",
+      "Shopify development",
+      "Google Ads"
+    ],
     "contactPoint": [
       {
         "@type": "ContactPoint",
