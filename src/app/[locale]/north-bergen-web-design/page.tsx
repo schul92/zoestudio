@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import SchemaFaq from '@/components/SchemaFaq'
 import HeaderWrapper from '@/components/layout/HeaderWrapper'
 import Footer from '@/components/layout/Footer'
 import Contact from '@/components/sections/Contact'
@@ -203,7 +204,7 @@ export default function NorthBergenWebDesign({ params }: { params: { locale: str
               {isKo ? '지금 바로 연락주세요. 100% 한국어 상담 가능합니다.' : 'Contact us today for a free web design and SEO consultation.'}
             </p>
             <Link
-              href={`/${params.locale}/contact`}
+              href={`${params.locale === 'ko' ? '/ko' : ''}/contact`}
               className="inline-block px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-xl transition-colors"
             >
               {isKo ? '무료 상담 신청' : 'Free Consultation'}
@@ -211,6 +212,7 @@ export default function NorthBergenWebDesign({ params }: { params: { locale: str
           </div>
         </section>
 
+        <SchemaFaq schema={faqSchema} locale={params.locale} />
         <Contact locale={params.locale} />
       </main>
       <Footer locale={params.locale} />

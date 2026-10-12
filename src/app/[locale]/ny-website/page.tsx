@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import SchemaFaq from '@/components/SchemaFaq'
 import HeaderWrapper from '@/components/layout/HeaderWrapper'
 import Footer from '@/components/layout/Footer'
 import Contact from '@/components/sections/Contact'
@@ -29,18 +30,18 @@ export async function generateMetadata({
       openGraph: {
         title: '뉴욕 웹사이트 제작 전문 - ZOE LUMOS',
         description: '뉴욕 최고의 한인 웹사이트 제작 업체. 맨하탄부터 플러싱까지, NYC 전 지역 한인 비즈니스를 위한 맞춤 웹사이트 개발.',
-        url: `${baseUrl}/ko/ny-website`,
+        url: `${baseUrl}/ko/뉴욕-웹사이트`,
         siteName: 'ZOE LUMOS',
         locale: 'ko_KR',
         alternateLocale: 'en_US',
         type: 'website',
       },
       alternates: {
-        canonical: `${baseUrl}/ko/ny-website`,
+        canonical: `${baseUrl}/ko/뉴욕-웹사이트`,
         languages: {
           'x-default': `${baseUrl}/ny-website`,
           'en': `${baseUrl}/ny-website`,
-          'ko': `${baseUrl}/ko/ny-website`,
+          'ko': `${baseUrl}/ko/뉴욕-웹사이트`,
         },
       },
       robots: {
@@ -75,7 +76,7 @@ export async function generateMetadata({
       languages: {
         'x-default': `${baseUrl}/ny-website`,
         'en': `${baseUrl}/ny-website`,
-        'ko': `${baseUrl}/ko/ny-website`,
+        'ko': `${baseUrl}/ko/뉴욕-웹사이트`,
       },
     },
     robots: {
@@ -388,6 +389,7 @@ export default function NYWebsitePage({ params }: { params: { locale: string } }
         </section>
 
         {/* Contact Section */}
+        <SchemaFaq schema={faqSchema} locale={params.locale} />
         <Contact locale={locale} />
       </main>
       

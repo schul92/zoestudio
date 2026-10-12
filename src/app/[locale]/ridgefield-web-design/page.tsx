@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import SchemaFaq from '@/components/SchemaFaq'
 import HeaderWrapper from '@/components/layout/HeaderWrapper'
 import Footer from '@/components/layout/Footer'
 import Contact from '@/components/sections/Contact'
@@ -186,6 +187,7 @@ export default function RidgefieldWebDesignPage({ params }: { params: { locale: 
           </div>
         </section>
 
+        <SchemaFaq schema={faqSchema} locale={params.locale} />
         <Contact locale={locale} />
       </main>
       <Footer locale={locale} />

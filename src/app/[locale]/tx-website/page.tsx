@@ -19,8 +19,8 @@ export async function generateMetadata({ params }: { params: { locale: string } 
       title: '텍사스 웹사이트 제작 전문 | 달라스 휴스턴 한인 비즈니스 웹개발 | ZOE LUMOS',
       description: '텍사스 웹사이트 제작 전문 업체. 달라스, 캐롤턴, 휴스턴 한인 비즈니스를 위한 전문 웹사이트 개발. 텍사스 로컬 SEO, 구글 최적화.',
       keywords: '텍사스 웹사이트, 달라스 웹사이트 제작, TX 웹개발, 캐롤턴 웹사이트, 휴스턴 웹사이트, 텍사스 SEO',
-      openGraph: { title: '텍사스 웹사이트 제작 전문 - ZOE LUMOS', url: `${baseUrl}/ko/tx-website`, siteName: 'ZOE LUMOS', locale: 'ko_KR', type: 'website' },
-      alternates: { canonical: `${baseUrl}/ko/tx-website`, languages: { 'x-default': `${baseUrl}/tx-website`, 'en': `${baseUrl}/tx-website`, 'ko': `${baseUrl}/ko/tx-website` } },
+      openGraph: { title: '텍사스 웹사이트 제작 전문 - ZOE LUMOS', url: `${baseUrl}/ko/텍사스-웹사이트`, siteName: 'ZOE LUMOS', locale: 'ko_KR', type: 'website' },
+      alternates: { canonical: `${baseUrl}/ko/텍사스-웹사이트`, languages: { 'x-default': `${baseUrl}/tx-website`, 'en': `${baseUrl}/tx-website`, 'ko': `${baseUrl}/ko/텍사스-웹사이트` } },
       robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-video-preview': -1, 'max-image-preview': 'large', 'max-snippet': -1 } },
     }
   }
@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
     description: 'Professional website development in Texas. Web design for Dallas, Carrollton, Houston Korean businesses. TX SEO, Google optimization, Shopify e-commerce.',
     keywords: 'Texas website, TX web design, Dallas Korean website, Carrollton website, Houston website, TX Shopify, TX SEO',
     openGraph: { title: 'Texas Website Design - ZOE LUMOS', url: `${baseUrl}/tx-website`, siteName: 'ZOE LUMOS', locale: 'en_US', type: 'website' },
-    alternates: { canonical: `${baseUrl}/tx-website`, languages: { 'x-default': `${baseUrl}/tx-website`, 'en': `${baseUrl}/tx-website`, 'ko': `${baseUrl}/ko/tx-website` } },
+    alternates: { canonical: `${baseUrl}/tx-website`, languages: { 'x-default': `${baseUrl}/tx-website`, 'en': `${baseUrl}/tx-website`, 'ko': `${baseUrl}/ko/텍사스-웹사이트` } },
     robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-video-preview': -1, 'max-image-preview': 'large', 'max-snippet': -1 } },
   }
 }

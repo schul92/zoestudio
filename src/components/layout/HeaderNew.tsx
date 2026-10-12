@@ -5,6 +5,7 @@ import { useEffect, useRef, useState, type CSSProperties } from 'react'
 import { usePathname } from 'next/navigation'
 import { useTranslation } from '@/hooks/useTranslation'
 import { industrySlugs, citySlugs, localSeoSlugs } from '@/lib/localeSlugs'
+import { STATE_SLUG_PAIRS } from '@/lib/stateSlugs'
 
 /**
  * Map an EN or KO path to the matching path in the other locale.
@@ -54,6 +55,10 @@ function computeOtherLocaleHref(pathname: string, locale: string): string {
   // Landing pages whose Korean URL uses a Korean slug
   const landing = localSeoSlugs.find(([en, ko]) => decoded === `/${en}` || decoded === `/${ko}`)
   if (landing) return isKo ? `/${landing[0]}` : `/ko/${landing[1]}`
+
+  // State pages: /ca-website ↔ /ko/캘리포니아-웹사이트
+  const state = STATE_SLUG_PAIRS.find(([en, ko]) => decoded === `/${en}` || decoded === `/${ko}`)
+  if (state) return isKo ? `/${state[0]}` : `/ko/${state[1]}`
 
   // Default: flip /ko prefix using normalized (stripped) path
   return isKo ? stripped : `/ko${stripped === '/' ? '' : stripped}`

@@ -16,8 +16,8 @@ export async function generateMetadata({ params }: { params: { locale: string } 
       title: '조지아 웹사이트 제작 전문 | 애틀랜타 둘루스 한인 비즈니스 웹개발 | ZOE LUMOS',
       description: '조지아 웹사이트 제작 전문. 애틀랜타, 둘루스, 수와니, 존스크릭 한인 비즈니스를 위한 전문 웹사이트 개발. 조지아 로컬 SEO.',
       keywords: '조지아 웹사이트, 애틀랜타 웹사이트 제작, 둘루스 웹사이트, 수와니 웹사이트, 조지아 SEO',
-      openGraph: { title: '조지아 웹사이트 제작 전문 - ZOE LUMOS', url: `${baseUrl}/ko/ga-website`, siteName: 'ZOE LUMOS', locale: 'ko_KR', type: 'website' },
-      alternates: { canonical: `${baseUrl}/ko/ga-website`, languages: { 'x-default': `${baseUrl}/ga-website`, 'en': `${baseUrl}/ga-website`, 'ko': `${baseUrl}/ko/ga-website` } },
+      openGraph: { title: '조지아 웹사이트 제작 전문 - ZOE LUMOS', url: `${baseUrl}/ko/조지아-웹사이트`, siteName: 'ZOE LUMOS', locale: 'ko_KR', type: 'website' },
+      alternates: { canonical: `${baseUrl}/ko/조지아-웹사이트`, languages: { 'x-default': `${baseUrl}/ga-website`, 'en': `${baseUrl}/ga-website`, 'ko': `${baseUrl}/ko/조지아-웹사이트` } },
       robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-video-preview': -1, 'max-image-preview': 'large', 'max-snippet': -1 } },
     }
   }
@@ -26,7 +26,7 @@ export async function generateMetadata({ params }: { params: { locale: string } 
     description: 'Professional website development in Georgia. Web design for Atlanta, Duluth, Suwanee, Johns Creek Korean businesses. GA SEO, Google optimization.',
     keywords: 'Georgia website, GA web design, Atlanta Korean website, Duluth website, Suwanee website, GA SEO',
     openGraph: { title: 'Georgia Website Design - ZOE LUMOS', url: `${baseUrl}/ga-website`, siteName: 'ZOE LUMOS', locale: 'en_US', type: 'website' },
-    alternates: { canonical: `${baseUrl}/ga-website`, languages: { 'x-default': `${baseUrl}/ga-website`, 'en': `${baseUrl}/ga-website`, 'ko': `${baseUrl}/ko/ga-website` } },
+    alternates: { canonical: `${baseUrl}/ga-website`, languages: { 'x-default': `${baseUrl}/ga-website`, 'en': `${baseUrl}/ga-website`, 'ko': `${baseUrl}/ko/조지아-웹사이트` } },
     robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-video-preview': -1, 'max-image-preview': 'large', 'max-snippet': -1 } },
   }
 }

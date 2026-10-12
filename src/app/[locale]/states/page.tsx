@@ -4,6 +4,7 @@ import Image from 'next/image'
 import HeaderWrapper from '@/components/layout/HeaderWrapper'
 import Footer from '@/components/layout/Footer'
 import { usStates } from '@/data/usStates'
+import { koreanCities } from '@/data/koreanCities'
 import { SITE_URL } from '@/lib/siteUrl'
 
 export function generateStaticParams() {
@@ -51,6 +52,9 @@ export default function StatesIndex({ params }: { params: { locale: string } }) 
   const locale = params.locale === 'ko' ? 'ko' : 'en'
   const ko = locale === 'ko'
   const prefix = ko ? '/ko' : ''
+  // Korean state pages live on Hangul slugs (/ko/캘리포니아-웹사이트); /ko/ca-website only redirects.
+  const stateHref = (s: { slug: string; koSlug: string }) => (ko ? `/ko/${s.koSlug}` : `/${s.slug}`)
+  const cityHref = (c: { slug: string; koSlug: string }) => (ko ? `/ko/${c.koSlug}` : `/${c.slug}`)
 
   const itemList = {
     '@context': 'https://schema.org',
@@ -61,7 +65,7 @@ export default function StatesIndex({ params }: { params: { locale: string } }) 
       '@type': 'ListItem',
       position: i + 1,
       name: s.name.en,
-      url: `${SITE_URL}${prefix}/${s.slug}`,
+      url: `${SITE_URL}${stateHref(s)}`,
     })),
   }
 
@@ -108,7 +112,7 @@ export default function StatesIndex({ params }: { params: { locale: string } }) 
                 {states.map((s) => (
                   <li key={s.abbr}>
                     <Link
-                      href={`${prefix}/${s.slug}`}
+                      href={stateHref(s)}
                       className="group flex items-baseline justify-between gap-2 py-2.5 border-b border-hairline hover:border-ink/40 transition-colors"
                     >
                       <span className="text-[15px] text-ink group-hover:text-gold transition-colors">{ko ? s.name.ko : s.name.en}</span>
@@ -120,6 +124,24 @@ export default function StatesIndex({ params }: { params: { locale: string } }) 
             </section>
           )
         })}
+
+        <section className="container-edge py-10 md:py-12 border-t border-hairline">
+          <h2 className="font-display text-display-sm tracking-luxury mb-2">{ko ? '주요 한인 도시' : 'Major Korean-American cities'}</h2>
+          <p className="text-[13px] text-ash mb-7">{koreanCities.length} {ko ? '개 도시' : 'cities'}</p>
+          <ul className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-1">
+            {koreanCities.map((c) => (
+              <li key={c.slug}>
+                <Link
+                  href={cityHref(c)}
+                  className="group flex items-baseline justify-between gap-2 py-2.5 border-b border-hairline hover:border-ink/40 transition-colors"
+                >
+                  <span className="text-[15px] text-ink group-hover:text-gold transition-colors">{ko ? c.city.ko : c.city.en}</span>
+                  <span className="overline text-ash">{ko ? c.region.ko : c.region.en}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
 
         <section className="container-edge py-20 md:py-28 border-t border-hairline">
           <p className="font-display italic font-light text-[clamp(1.35rem,2.5vw,2rem)] text-ink leading-[1.4] max-w-2xl mb-8">
