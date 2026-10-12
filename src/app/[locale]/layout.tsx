@@ -29,6 +29,10 @@ const ChatWidget = dynamic(() => import('@/components/ui/ChatWidget'), {
 // Korean glyphs use the platform's system face (Apple SD Gothic Neo, Malgun
 // Gothic, Noto Sans CJK) — a Korean webfont adds ~90 KB of @font-face CSS.
 
+// Naver Search Advisor ownership code (searchadvisor.naver.com › 사이트 등록 › HTML 태그 → the content value).
+// Public by design; renders <meta name="naver-site-verification"> only once filled in.
+const NAVER_SITE_VERIFICATION = ''
+
 export const viewport: Viewport = {
   width: 'device-width',
   initialScale: 1,
@@ -98,6 +102,7 @@ export async function generateMetadata({
     verification: {
       google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || '',
       yandex: process.env.NEXT_PUBLIC_YANDEX_VERIFICATION || '',
+      ...(NAVER_SITE_VERIFICATION ? { other: { 'naver-site-verification': NAVER_SITE_VERIFICATION } } : {}),
     },
     other: {
       'msapplication-TileColor': '#000000',
