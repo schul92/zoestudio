@@ -3,11 +3,18 @@ import type { NextRequest } from 'next/server'
 import NextAuth from 'next-auth'
 import { authConfig, isAllowed } from '@/auth.config'
 import { STATE_SLUG_PAIRS } from '@/lib/stateSlugs'
+import { US_LAUNCH_PATHS } from '@/data/usLaunch'
+import { AWS_PATHS, LOGISTICS_PATHS } from '@/data/enterprise'
 
 const locales = ['en', 'ko']
 
 const KO_STATE_BY_EN = new Map(STATE_SLUG_PAIRS)
 const EN_STATE_BY_KO = new Map(STATE_SLUG_PAIRS.map(([en, ko]) => [ko, en] as [string, string]))
+// Korean-only landings (/ko/<Hangul slug>) whose English pages live on English slugs. Without /ko the Hangul slug
+// isn't prerendered for en and falls through to the [stateKoSlug] catch-all (404), so send it to the English page.
+const EN_LANDING_BY_KO = new Map(
+  [US_LAUNCH_PATHS, AWS_PATHS, LOGISTICS_PATHS].map((p) => [p.ko.slice('/ko/'.length), p.en] as [string, string])
+)
 const safeDecode = (s: string) => {
   try { return decodeURIComponent(s) } catch { return s }
 }
@@ -79,6 +86,12 @@ export async function middleware(request: NextRequest) {
   if (enState) {
     const url = request.nextUrl.clone()
     url.pathname = `/${enState}`
+    return NextResponse.redirect(url, { status: 308 })
+  }
+  const enLanding = EN_LANDING_BY_KO.get(safeDecode(pathname.slice(1)))
+  if (enLanding) {
+    const url = request.nextUrl.clone()
+    url.pathname = enLanding
     return NextResponse.redirect(url, { status: 308 })
   }
 
