@@ -31,7 +31,7 @@ const ChatWidget = dynamic(() => import('@/components/ui/ChatWidget'), {
 
 // Naver Search Advisor ownership code (searchadvisor.naver.com › 사이트 등록 › HTML 태그 → the content value).
 // Public by design; renders <meta name="naver-site-verification"> only once filled in.
-const NAVER_SITE_VERIFICATION = ''
+const NAVER_SITE_VERIFICATION = 'f58b021d76f73d58bbc098b12372b94e0adba064'
 
 export const viewport: Viewport = {
   width: 'device-width',
