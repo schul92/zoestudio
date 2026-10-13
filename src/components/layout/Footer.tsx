@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { US_LAUNCH_PATHS } from '@/data/usLaunch'
+import { AWS_PATHS, LOGISTICS_PATHS } from '@/data/enterprise'
 
 export default function Footer({ locale = 'en' }: { locale?: string }) {
   const isKo = locale === 'ko'
@@ -23,6 +24,7 @@ export default function Footer({ locale = 'en' }: { locale?: string }) {
       title: isKo ? '서비스' : 'Services',
       links: [
         [isKo ? '미국 진출 기업 홈페이지' : 'US launch for Korean brands', isKo ? US_LAUNCH_PATHS.ko : US_LAUNCH_PATHS.en],
+        [isKo ? 'AWS · API 연동 · 대시보드' : 'AWS, APIs & dashboards', isKo ? AWS_PATHS.ko : AWS_PATHS.en],
         [isKo ? '웹사이트 제작' : 'Website design', isKo ? '/ko/웹사이트-제작' : '/웹사이트-제작'],
         [isKo ? '구글 광고대행' : 'Google Ads', isKo ? '/ko/광고대행' : '/광고대행'],
         [isKo ? 'SEO · 검색 최적화' : 'SEO', isKo ? '/ko/englewood-nj-seo' : '/englewood-nj-seo'],
@@ -33,6 +35,7 @@ export default function Footer({ locale = 'en' }: { locale?: string }) {
     {
       title: isKo ? '업종별 전문성' : 'Industries',
       links: [
+        [isKo ? '물류 · 3PL' : 'Logistics + 3PL', isKo ? LOGISTICS_PATHS.ko : LOGISTICS_PATHS.en],
         [isKo ? '한식당' : 'Korean restaurants', isKo ? '/ko/industries/한식당-웹사이트' : '/industries/korean-restaurant'],
         [isKo ? '뷰티샵 · 헤어' : 'Beauty + salon', isKo ? '/ko/industries/한인-뷰티샵-웹사이트' : '/industries/korean-beauty-salon'],
         [isKo ? '교회' : 'Korean church', isKo ? '/ko/industries/한인-교회-홈페이지' : '/industries/korean-church'],

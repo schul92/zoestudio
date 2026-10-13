@@ -26,4 +26,6 @@ export const localSeoSlugs: [string, string][] = [
   ['bergen-county-web-design', '버겐카운티-홈페이지-제작'],
   ['pos-company-website-vs-web-studio', '포스-업체-홈페이지-vs-전문-제작'],
   ['us-launch-for-korean-brands', '미국-진출-홈페이지-제작'],
+  ['aws-api-integration-dashboards', 'aws-api-연동-대시보드-구축'],
+  ['logistics-3pl-web-development', '물류-3pl-홈페이지-시스템-구축'],
 ]

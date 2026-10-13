@@ -7,6 +7,7 @@ import PricingTeaser from '@/components/sections/PricingTeaser'
 import GuaranteeStrip from '@/components/sections/GuaranteeStrip'
 import { SITE_URL } from '@/lib/siteUrl'
 import { US_LAUNCH_PATHS } from '@/data/usLaunch'
+import { AWS_PATHS, LOGISTICS_PATHS } from '@/data/enterprise'
 
 export async function generateStaticParams() {
   return [{ locale: 'en' }, { locale: 'ko' }]
@@ -74,6 +75,22 @@ export default function ServicesHub({ params }: { params: { locale: string } }) 
       body: isKo
         ? '미국 1호점·미국 법인·미국 판매를 앞둔 한국 기업의 공식 영문 홈페이지. 한국어로 진행하고 한국 시간에 미팅하며, 본사가 한국어 관리자 화면으로 직접 운영합니다.'
         : 'Official US English websites for Korean companies opening US stores, entities or online sales. Run in Korean, meetings on Korea time, and a Korean admin panel for your HQ.',
+    },
+    {
+      href: isKo ? AWS_PATHS.ko : AWS_PATHS.en,
+      kicker: isKo ? 'AWS · API 연동 · 대시보드' : 'AWS · API integration · Dashboards',
+      title: isKo ? 'AWS 클라우드 구축 · API 연동 · 대시보드 개발' : 'AWS cloud, API integration and dashboards',
+      body: isKo
+        ? '쇼핑몰·창고·회계·거래처 시스템을 고객사 명의의 AWS 계정에서 API로 연결하고, 한국 본사와 미국 현장이 같은 숫자를 보는 대시보드를 만듭니다.'
+        : 'Commerce, warehouse, accounting and partner systems connected by API in an AWS account you own, with dashboards your HQ and US team share.',
+    },
+    {
+      href: isKo ? LOGISTICS_PATHS.ko : LOGISTICS_PATHS.en,
+      kicker: isKo ? '물류 · 3PL 기업' : 'Logistics & 3PL companies',
+      title: isKo ? '물류 회사 홈페이지 · 화주 포털 · EDI 연동' : 'Logistics websites, shipper portals and EDI',
+      body: isKo
+        ? '3PL·창고·포워딩 회사의 B2B 홈페이지, 화주용 고객 포털, WMS·X12 EDI(940·945·943·944) 연동과 운영 대시보드를 AWS 위에 구축합니다.'
+        : 'B2B websites, shipper portals, WMS and X12 EDI (940, 945, 943, 944) integration and operations dashboards for 3PLs, warehouses and forwarders, on AWS.',
     },
     {
       href: isKo ? '/ko/웹사이트-제작' : '/웹사이트-제작',

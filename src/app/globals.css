@@ -1031,3 +1031,52 @@ html[data-rv] .ul-tl[data-in=""] .ul-node::before {
 @media (hover: hover) and (pointer: fine) {
   .ul-case:hover .ul-case-frame { transform: translate3d(0, -4px, 0); }
 }
+
+/* ── Enterprise landings (AWS · API · dashboards, logistics) ──────────────
+   Sequenced scenes on the [data-reveal] contract, with one difference from plain reveals: the pieces of a stage
+   play whether it is marked in on scroll (data-in="") or on load (data-in="now"), so a diagram that is already
+   in view still plays once on arrival. Pieces are held at frame 0 only while <html data-rv> is set and their stage
+   is not in yet; without JS or with reduced motion everything is static and fully drawn. Phones play stage by
+   stage (--ul-d); desktop plays a whole scene as one timeline (--ul-d-lg). transform/opacity, plus
+   stroke-dashoffset and offset-distance on a few small paths. */
+.ent-node { background: rgba(255, 255, 255, .045); box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .07); }
+.ent-in, .ent-fade, .ent-dash, .ent-draw-x, .ent-draw-y, .ent-pkt { --ent-d: var(--ul-d, 0ms); }
+@media (min-width: 1024px) {
+  .ent-in, .ent-fade, .ent-dash, .ent-draw-x, .ent-draw-y, .ent-pkt { --ent-d: var(--ul-d-lg, var(--ul-d, 0ms)); }
+}
+@keyframes ent-in { from { opacity: 0; transform: translate3d(0, 10px, 0) scale(.97); } }
+@keyframes ent-fade { from { opacity: 0; } }
+@keyframes ent-dash { from { stroke-dashoffset: 1; } }
+@keyframes ent-draw-x { from { transform: scaleX(0); } }
+@keyframes ent-draw-y { from { transform: scaleY(0); } }
+.ent-draw-x { transform-origin: left center; }
+.ent-draw-x[data-dir="left"] { transform-origin: right center; }
+.ent-draw-y { transform-origin: center top; }
+html[data-rv] .ent-in { animation: ent-in .6s var(--ease-out) backwards; animation-delay: var(--ent-d); }
+html[data-rv] .ent-fade { animation: ent-fade .5s var(--ease-out) backwards; animation-delay: var(--ent-d); }
+html[data-rv] .ent-dash { stroke-dasharray: 1; animation: ent-dash 1s var(--ease-in-out) backwards; animation-delay: var(--ent-d); }
+html[data-rv] .ent-draw-x { animation: ent-draw-x .7s var(--ease-in-out) backwards; animation-delay: var(--ent-d); }
+html[data-rv] .ent-draw-y { animation: ent-draw-y .7s var(--ease-in-out) backwards; animation-delay: var(--ent-d); }
+
+/* Data packets keep travelling the drawn connectors (CSS motion path; skipped where unsupported). One loop is
+   3.9s: travel for half of it, rest for the other half, staggered so a few are always in flight. */
+.ent-pkt {
+  position: absolute; top: 0; left: 0; width: 6px; height: 6px; border-radius: 9999px; pointer-events: none;
+  background: var(--gold); box-shadow: 0 0 0 3px color-mix(in srgb, var(--gold) 22%, transparent);
+  opacity: 0; offset-anchor: center; offset-rotate: 0deg;
+}
+@keyframes ent-pkt {
+  0% { offset-distance: 0%; opacity: 0; }
+  6% { opacity: 1; }
+  46% { opacity: 1; }
+  52%, 100% { offset-distance: 100%; opacity: 0; }
+}
+@supports (offset-path: path('M0 0 L1 1')) {
+  html[data-rv] .ent-pkt { animation: ent-pkt 3.9s ease-in-out infinite; animation-delay: var(--ent-d); }
+}
+html[data-rv] [data-reveal]:not([data-in]) .ent-in,
+html[data-rv] [data-reveal]:not([data-in]) .ent-fade,
+html[data-rv] [data-reveal]:not([data-in]) .ent-dash,
+html[data-rv] [data-reveal]:not([data-in]) .ent-draw-x,
+html[data-rv] [data-reveal]:not([data-in]) .ent-draw-y,
+html[data-rv] [data-reveal]:not([data-in]) .ent-pkt { animation-play-state: paused; }
