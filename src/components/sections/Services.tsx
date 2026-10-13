@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { useTranslation } from '@/hooks/useTranslation'
 import { US_LAUNCH_PATHS } from '@/data/usLaunch'
+import { AWS_PATHS, LOGISTICS_PATHS } from '@/data/enterprise'
 
 export default function Services({ locale = 'en' }: { locale?: string }) {
   const { t } = useTranslation(locale)
@@ -61,6 +62,33 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
     },
   ]
 
+  const enterprise = [
+    {
+      href: isKo ? US_LAUNCH_PATHS.ko : US_LAUNCH_PATHS.en,
+      kicker: isKo ? '미국 진출 기업' : 'Korean companies entering the US',
+      title: isKo ? '미국 진출 기업의 공식 영문 홈페이지' : 'Official US websites for Korean brands',
+      blurb: isKo
+        ? '미국 1호점·법인·판매를 앞둔 본사를 위해 한국어로 진행하고, 출시 후에는 한국어 관리자 화면으로 직접 운영하게 해 드립니다.'
+        : 'For HQ teams opening US stores, entities or online sales: run in Korean, with a Korean-language admin panel after launch.',
+    },
+    {
+      href: isKo ? AWS_PATHS.ko : AWS_PATHS.en,
+      kicker: isKo ? 'AWS · API 연동 · 대시보드' : 'AWS · APIs · Dashboards',
+      title: isKo ? '흩어진 시스템을 AWS에서 하나로' : 'Your systems, connected on AWS',
+      blurb: isKo
+        ? '쇼핑몰·창고·회계·거래처 데이터를 고객사 AWS 계정에서 API로 연결하고, 본사와 현장이 같은 숫자를 보는 대시보드를 만듭니다.'
+        : 'Commerce, warehouse, accounting and partner data connected by API in your own AWS account, with dashboards HQ and the field share.',
+    },
+    {
+      href: isKo ? LOGISTICS_PATHS.ko : LOGISTICS_PATHS.en,
+      kicker: isKo ? '물류 · 3PL' : 'Logistics & 3PL',
+      title: isKo ? '물류 회사의 홈페이지 · 포털 · EDI' : 'Websites, portals and EDI for logistics',
+      blurb: isKo
+        ? '화주용 고객 포털, WMS·EDI(940·945) 연동, 운영 대시보드까지 한 팀이 만듭니다.'
+        : 'Shipper portals, WMS and EDI (940 · 945) integration and operations dashboards, from one team.',
+    },
+  ]
+
   return (
     <section id="services" className="bg-ivory section-pad" aria-labelledby="services-title">
       <div className="container-edge">
@@ -73,31 +101,32 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
           <p className="mt-5 text-body-lg text-graphite">{t.services.subtitle}</p>
         </div>
 
-        {/* Korean HQs launching in the US — the enterprise line, set above the SMB disciplines. */}
-        <Link
-          href={isKo ? US_LAUNCH_PATHS.ko : US_LAUNCH_PATHS.en}
-          data-reveal
-          className="group kn-card mt-14 md:mt-20 flex flex-col md:flex-row md:items-end gap-6 md:gap-10 w-full p-7 md:p-10 transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[0_24px_60px_-30px_rgba(0,0,0,.25)]"
-        >
-          <div className="flex-1">
-            <span className="text-[13px] font-semibold text-gold">
-              {isKo ? '미국 진출 기업' : 'For Korean companies entering the US'}
-            </span>
-            <h3 className="mt-3 text-[26px] md:text-[32px] font-semibold tracking-[-0.035em] leading-[1.1] text-ink text-balance">
-              {isKo ? '미국 진출 한국 기업의 공식 영문 홈페이지' : 'Official US websites for Korean brands launching here'}
-            </h3>
-            <p className="mt-3 text-[15px] md:text-[16px] text-graphite leading-relaxed max-w-2xl">
-              {isKo
-                ? '미국 1호점, 미국 법인, 미국 판매를 앞둔 본사를 위해 한국어로 진행하고 한국 시간에 미팅합니다. 출시 후에는 한국어 관리자 화면으로 직접 운영하실 수 있습니다.'
-                : 'For HQ teams opening US stores, entities or online sales: run in Korean, meetings on Korea time, and a Korean-language admin panel after launch.'}
-            </p>
-          </div>
-          <span className="text-[15px] font-semibold text-link group-hover:underline whitespace-nowrap">
-            {isKo ? '자세히 보기' : 'Learn more'} <span aria-hidden>›</span>
-          </span>
-        </Link>
+        {/* For companies — Korean HQs launching in the US, systems on AWS, logistics. Set above the SMB disciplines. */}
+        <div className="mt-14 md:mt-20">
+          <p className="text-[13px] font-semibold text-ash">{isKo ? '기업 솔루션' : 'For companies'}</p>
+          <ul data-reveal-group className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
+            {enterprise.map((e) => (
+              <li key={e.href} className="flex">
+                <Link
+                  href={e.href}
+                  className="group kn-card flex flex-col w-full p-7 md:p-8 transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[0_24px_60px_-30px_rgba(0,0,0,.25)]"
+                >
+                  <span className="text-[13px] font-semibold text-gold">{e.kicker}</span>
+                  <h3 className="mt-3 text-[23px] md:text-[26px] font-semibold tracking-[-0.035em] leading-[1.15] text-ink text-balance">
+                    {e.title}
+                  </h3>
+                  <p className="mt-3 text-[15px] text-graphite leading-relaxed">{e.blurb}</p>
+                  <span className="mt-auto pt-6 text-[15px] font-semibold text-link group-hover:underline">
+                    {isKo ? '자세히 보기' : 'Learn more'} <span aria-hidden>›</span>
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
 
-        <ul data-reveal-group className="mt-4 md:mt-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+        <p className="mt-12 md:mt-16 text-[13px] font-semibold text-ash">{isKo ? '매장 · 소상공인' : 'For local businesses'}</p>
+        <ul data-reveal-group className="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
           {items.map((it) => (
             <li key={it.no} className={`flex ${it.no === '01' ? 'lg:col-span-2' : it.no === '07' ? 'md:col-span-2' : ''}`}>
               <Link

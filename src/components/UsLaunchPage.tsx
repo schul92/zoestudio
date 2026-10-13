@@ -36,6 +36,7 @@ import LawsuitCharts from '@/components/us-launch/LawsuitCharts'
 import ProcessTimeline, { type Step } from '@/components/us-launch/ProcessTimeline'
 import { SITE_URL } from '@/lib/siteUrl'
 import { US_LAUNCH_PATHS } from '@/data/usLaunch'
+import { AWS_PATHS } from '@/data/enterprise'
 
 export { US_LAUNCH_PATHS }
 
@@ -476,8 +477,11 @@ export default function UsLaunchPage({ locale }: { locale: L }) {
           </ul>
           <p className="mt-8 max-w-3xl text-sm text-ash">
             {isKo
-              ? '전체 번역, 신규 카피 작성, 촬영, 주문·결제·POS 연동은 별도로 견적드립니다.'
-              : 'Full translation, new copywriting, photography and ordering, payment or POS integrations are quoted separately.'}
+              ? '전체 번역, 신규 카피 작성, 촬영, 주문·결제·POS 연동은 별도로 견적드립니다. '
+              : 'Full translation, new copywriting, photography and ordering, payment or POS integrations are quoted separately. '}
+            <Link href={isKo ? AWS_PATHS.ko : AWS_PATHS.en} className="text-graphite underline underline-offset-2 hover:text-ink">
+              {isKo ? '시스템 연동과 대시보드 보기 →' : 'See integrations and dashboards →'}
+            </Link>
           </p>
         </section>
 

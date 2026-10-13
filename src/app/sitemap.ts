@@ -6,6 +6,7 @@ import { industries } from '@/data/industriesData'
 import { localSeoPages } from '@/data/localSeoPages'
 import { SITE_URL } from '@/lib/siteUrl'
 import { US_LAUNCH_PATHS, US_LAUNCH_UPDATED } from '@/data/usLaunch'
+import { AWS_PATHS, LOGISTICS_PATHS, ENTERPRISE_UPDATED } from '@/data/enterprise'
 import { STATE_SLUG_PAIRS } from '@/lib/stateSlugs'
 
 // Last real content change for non-blog pages; bump it when page copy changes (not on every build).
@@ -197,6 +198,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     sitemapEntries.push({ url: en, lastModified: new Date(US_LAUNCH_UPDATED), priority: 0.95, alternates: { languages } })
     sitemapEntries.push({ url: ko, lastModified: new Date(US_LAUNCH_UPDATED), priority: 0.95, alternates: { languages } })
   }
+
+  // Enterprise landings (AWS · API · dashboards, logistics): same KO ↔ EN pairing.
+  ;[AWS_PATHS, LOGISTICS_PATHS].forEach((paths) => {
+    const en = `${baseUrl}${paths.en}`
+    const ko = `${baseUrl}${paths.ko}`
+    const languages = { 'x-default': en, en, ko }
+    sitemapEntries.push({ url: en, lastModified: new Date(ENTERPRISE_UPDATED), priority: 0.9, alternates: { languages } })
+    sitemapEntries.push({ url: ko, lastModified: new Date(ENTERPRISE_UPDATED), priority: 0.9, alternates: { languages } })
+  })
 
   // Audit tool (both locales)
   sitemapEntries.push({
