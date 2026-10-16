@@ -13507,6 +13507,101 @@ const allBlogPosts: BlogPost[] = [
       ],
     },
   },
+  // ─────────────────────────────────────────────────────────────────
+  // 2026-10-16 — B2B email deliverability / domain trust (SPF, DKIM, DMARC)
+  // for Korean-American wholesale, import, and trading companies.
+  // Audience rotation: Chicago (Albany Park / Lincolnwood / Niles), not NJ/NY.
+  // Fills a gap the existing B2B-credibility posts touch but never go deep on:
+  // why a company domain alone still doesn't get RFQ replies delivered.
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'b2b-email-deliverability-domain-trust-korean-wholesale-chicago-2026',
+    date: '2026-10-16',
+    updatedDate: '2026-10-16',
+    readTime: 9,
+    category: { en: 'Email Deliverability', ko: '이메일 신뢰도' },
+    title: {
+      en: 'Why Your Quote Replies Are Landing in Spam: Email Trust for Korean-American Wholesale & Trading Companies in Chicago (2026)',
+      ko: '견적 답장이 스팸함으로 가고 있다면 — 시카고 한인 도매·무역업체를 위한 이메일 신뢰도(SPF·DKIM·DMARC) 가이드 (2026)',
+    },
+    metaDescription: {
+      en: "Korean-American wholesale, import, and trading companies around Chicago often send RFQ replies from a company domain that still fails basic email authentication — so the quote lands in the buyer's spam folder and the deal dies silently. Here is what SPF, DKIM, and DMARC actually do and why they decide whether a buyer ever sees your reply.",
+      ko: '시카고 일대의 한인 도매·수입·무역업체는 회사 도메인 이메일을 쓰면서도 기본적인 이메일 인증을 통과하지 못해, 견적 답장이 바이어의 스팸함으로 조용히 사라지는 경우가 많습니다. SPF·DKIM·DMARC가 실제로 무엇을 하는지, 그리고 왜 이것이 바이어가 답장을 보는지 못 보는지를 가르는지 알려드립니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'We already reply to buyers from our own company domain (@ourcompany.com). Why would a buyer still say our quote went to spam?',
+          ko: '이미 회사 도메인(@회사명.com)으로 바이어에게 답장하고 있는데, 왜 견적이 스팸으로 갔다는 말을 듣나요?',
+        },
+        a: {
+          en: 'Having a company domain only fixes how the email looks to a human reading it — it does nothing for how a receiving mail server evaluates it, and that evaluation runs on three separate DNS records (SPF, DKIM, and DMARC) that most companies never set up even after switching off a free email address. Without them, a receiving mail server cannot verify that your domain actually authorized the email, and treats it the same way it would treat someone spoofing your domain to send a phishing email — flagging it, quarantining it, or dropping it outright, with no notification back to you. Switching to a company domain is a necessary first step, but it is not the step that gets the email delivered.',
+          ko: '회사 도메인을 쓰는 것은 사람이 이메일을 볼 때 어떻게 보이는지만 바꿔줄 뿐, 수신 메일 서버가 그 이메일을 어떻게 판단하는지에는 전혀 영향을 주지 않습니다. 그 판단은 SPF, DKIM, DMARC라는 세 개의 별도 DNS 레코드를 기준으로 이뤄지는데, 대부분의 회사는 무료 이메일 주소를 끊은 뒤에도 이걸 설정하지 않습니다. 이게 없으면 수신 메일 서버는 사장님의 도메인이 실제로 그 이메일을 보낼 권한을 줬는지 확인할 수 없고, 누군가 도메인을 사칭해 피싱 메일을 보내는 것과 똑같이 취급해서 플래그를 걸거나 격리하거나 그냥 삭제해 버립니다 — 그리고 그 사실을 사장님께 알려주지도 않습니다. 회사 도메인으로 바꾼 건 꼭 필요한 첫걸음이지만, 이메일이 실제로 도착하게 만드는 단계는 아닙니다.',
+        },
+      },
+      {
+        q: {
+          en: 'Does setting up SPF, DKIM, and DMARC cost money, and do we need to hire an IT company to do it?',
+          ko: 'SPF, DKIM, DMARC를 설정하는 데 비용이 드나요? 꼭 IT 전문 업체를 써야 하나요?',
+        },
+        a: {
+          en: "No — all three are free DNS records with no ongoing cost, and most Google Workspace or Microsoft 365 accounts already include the tools to generate the exact values needed; the work is adding a few text records to your domain's DNS settings, which takes under an hour for someone with access to the domain registrar or DNS host. The reason most Korean-American trading and wholesale companies still have not done it is not cost or difficulty — it is that nobody flagged it as a problem, since a dropped email produces no error message and no complaint, just a quote that quietly never gets answered. A web developer or IT contact can do it in one short session if you would rather not touch DNS yourself.",
+          ko: '아니요. SPF, DKIM, DMARC 세 가지 모두 무료 DNS 레코드이고 유지 비용이 들지 않으며, 구글 워크스페이스나 마이크로소프트 365 계정에는 필요한 값을 만들어주는 도구가 이미 포함되어 있는 경우가 많습니다. 실제로 할 일은 도메인 DNS 설정에 텍스트 레코드 몇 개를 추가하는 것뿐이고, 도메인 등록업체나 DNS 호스트 접근 권한이 있는 사람이라면 한 시간 안에 끝납니다. 대부분의 한인 무역·도매업체가 아직 이걸 안 한 이유는 비용이나 어려움 때문이 아니라, 아무도 이게 문제라고 알려주지 않았기 때문입니다 — 사라진 이메일은 에러 메시지도 민원도 남기지 않고, 그냥 조용히 답 없는 견적으로 남을 뿐입니다. DNS를 직접 만지고 싶지 않으시면 웹 개발자나 IT 담당자가 짧은 작업 한 번으로 끝내줄 수 있습니다.',
+        },
+      },
+      {
+        q: {
+          en: "If we use Google Workspace or Microsoft 365, doesn't that set up SPF, DKIM, and DMARC automatically?",
+          ko: '구글 워크스페이스나 마이크로소프트 365를 쓰면 SPF, DKIM, DMARC가 자동으로 설정되나요?',
+        },
+        a: {
+          en: "No — Google Workspace and Microsoft 365 both generate the SPF and DKIM values you need and support turning them on, but neither adds those records to your domain's DNS automatically, and neither sets up DMARC at all by default, because DMARC is a separate policy decision about what should happen to mail that fails the other two checks. Someone still has to log in to the domain's DNS settings (wherever the domain was registered, which may be a different company entirely from your email provider) and add the records by hand, or the authentication exists in theory but is never actually switched on. This is the single most common reason a company 'already uses Google Workspace' and still has none of this configured.",
+          ko: '아니요. 구글 워크스페이스와 마이크로소프트 365 둘 다 필요한 SPF·DKIM 값을 만들어주고 켜는 기능을 지원하지만, 그 레코드를 도메인 DNS에 자동으로 추가해 주지는 않고, DMARC는 기본적으로 전혀 설정해 주지 않습니다. DMARC는 다른 두 검증에 실패한 메일을 어떻게 처리할지에 대한 별도의 정책 결정이기 때문입니다. 누군가는 도메인이 등록된 곳(이메일 공급업체와 완전히 다른 회사일 수도 있습니다)의 DNS 설정에 직접 로그인해서 레코드를 손으로 추가해야 하고, 그렇지 않으면 인증 기능이 이론적으로는 있어도 실제로는 켜져 있지 않은 상태로 남습니다. "이미 구글 워크스페이스를 쓰는데도" 이게 하나도 설정되어 있지 않은 가장 흔한 이유가 바로 이것입니다.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "Ask a Korean-American wholesale, import, or trading company around Chicago how a new buyer relationship usually starts, and the answer is almost always the same: an email. A buyer found the company through Google, a sourcing directory, or a referral, requested a quote, and is now waiting on a reply. What that buyer often never sees is the reply itself — not because nobody wrote it, but because it never reached their inbox. It landed in spam, or worse, got silently rejected before it even arrived, and the buyer simply assumes the company went quiet and moves on to whichever competitor answered first." },
+        { type: 'h2', content: "Why a company domain email still isn't enough" },
+        { type: 'p', content: "Most Korean-American trading and wholesale companies know by now that replying to a serious buyer from a @gmail.com or @naver.com address looks unprofessional, so they switch to a company domain — @yourcompany.com — and assume the trust problem is solved. It isn't. A domain alone tells a buyer's eye that the company looks legitimate; it tells nothing to the buyer's mail server, which is the thing actually deciding whether the email arrives at all. Corporate mail systems — especially at the manufacturers, distributors, and retail buyers that Korean wholesale companies sell to — run aggressive spam and phishing filters, because impersonating a real supplier's domain to intercept a wire payment is one of the most common forms of B2B fraud today. A domain with no SPF record, no DKIM signature, and no DMARC policy is, to that filter, indistinguishable from an attacker spoofing the same domain. The email can be flagged, quarantined, or dropped — and the company never finds out, because there is no bounce, no error, nothing. It just silently disappears, and the RFQ that was close to becoming an order goes to a competitor who happened to reply." },
+        { type: 'h2', content: "What actually decides whether a quote reply arrives" },
+        { type: 'ul', content: "The three DNS records that separate a trusted sender from one buyers' mail systems quarantine on sight:", items: [
+          "SPF (Sender Policy Framework) — a DNS record that lists every mail server allowed to send as your domain (Google Workspace, Microsoft 365, any CRM or marketing tool). Without it, your own outgoing mail fails a check your domain never told anyone to expect.",
+          "DKIM (DomainKeys Identified Mail) — a cryptographic signature added to every outgoing email proving it really came from your domain and was not altered in transit. Google Workspace and Microsoft 365 both support it, but it is off by default and has to be turned on in the admin console.",
+          "DMARC (Domain-based Message Authentication, Reporting & Conformance) — the policy that tells a receiving mail server what to do when SPF or DKIM fails: let it through anyway, quarantine it, or reject it outright. A domain that has never set this up is effectively telling every buyer's mail server 'no instructions, use your own judgment' — and judgment defaults to spam.",
+          "A website whose About and Contact pages match the sending domain exactly, so the two-minute search a cautious buyer runs before replying confirms the email they received is real.",
+          "A dedicated quote-request form on that same domain, so a new buyer's first message arrives as a complete request instead of a one-line email that is easy to let sit.",
+        ] },
+        { type: 'tip', content: "Setting up SPF, DKIM, and DMARC together usually takes under an hour once you have admin access to your domain's DNS — and there is no ongoing cost. Start DMARC in monitoring mode (p=none) so you can see what is failing before you switch to an enforcement policy that actually blocks spoofed mail. This is one of the very few trust fixes in B2B that is both free and nearly instant, which is exactly why it is worth doing before anything else on this list." },
+        { type: 'h2', content: "Why this costs more in Chicago's wholesale corridor than it looks like it should" },
+        { type: 'p', content: "Chicago's Korean-American wholesale, import, and distribution companies — many clustered around Albany Park, Lincolnwood, and Niles, and serving customers nationally through the city's O'Hare air-cargo and rail-intermodal logistics — increasingly win new accounts from buyers who have never met anyone at the company in person. A purchasing manager in another state finds the company through a Google search, a sourcing directory, or a request posted on a B2B marketplace, and the entire relationship starts as a cold email exchange. In a business built on trade-show relationships and years-long referrals, that first email was never the weak link before — but for the growing share of business that starts as a stranger's cold inquiry, it is now the only link, and a silently dropped reply ends the relationship before it starts." },
+        { type: 'h2', content: 'A note for Korean-American wholesale and trading companies in Chicago' },
+        { type: 'p', content: "For a Chicago-based trading or wholesale company, the email and website setup carries a second job beyond winning a US buyer's trust: the same bilingual infrastructure usually has to communicate supply-chain and order status back to a parent company or supplier in Korea. A domain that authenticates cleanly and a website that documents the company in both English and Korean — capability pages, certifications, and a quote-request form that routes correctly either way — covers both audiences with one setup instead of running two half-finished ones." },
+        { type: 'cta', content: "ZOE LUMOS builds bilingual, RFQ-ready websites for Korean-American wholesale, import, and trading companies across the US, and sets up the SPF, DKIM, and DMARC records that decide whether your quote replies ever reach a buyer's inbox. Free consultation in Korean or English: email info@zoelumos.com or reach us on KakaoTalk (http://pf.kakao.com/_xhxdxmlX/chat)." },
+      ],
+      ko: [
+        { type: 'intro', content: '시카고 일대의 한인 도매·수입·무역업체 사장님께 새로운 바이어와의 관계가 보통 어떻게 시작되는지 물어보면, 거의 항상 같은 대답이 나옵니다. 이메일입니다. 바이어가 구글이나 소싱 디렉토리, 또는 소개를 통해 회사를 찾아 견적을 요청했고, 지금 답장을 기다리고 있습니다. 그런데 그 바이어가 종종 전혀 보지 못하는 것이 바로 그 답장 자체입니다. 아무도 쓰지 않아서가 아니라, 답장이 아예 도착하지 않았기 때문입니다. 스팸함으로 들어갔거나, 더 나쁘게는 도착하기도 전에 조용히 거부당했고, 바이어는 그냥 회사가 조용해졌다고 생각하며 가장 먼저 답한 다른 경쟁사로 넘어갑니다.' },
+        { type: 'h2', content: '회사 도메인 이메일만으로는 충분하지 않은 이유' },
+        { type: 'p', content: '이제 많은 한인 무역·도매업체 사장님들이 중요한 바이어에게 @gmail.com이나 @naver.com 주소로 답장하는 게 전문적으로 보이지 않는다는 걸 알고 계셔서, 회사 도메인(@회사명.com)으로 바꾸고 신뢰 문제는 끝났다고 생각하십니다. 하지만 그렇지 않습니다. 도메인은 바이어의 눈에는 회사가 그럴듯해 보이게 만들지만, 실제로 이메일이 도착할지 말지를 결정하는 바이어의 메일 서버에는 아무것도 알려주지 않습니다. 한인 도매업체가 거래하는 제조사·유통사·리테일 바이어 쪽 기업 메일 시스템은 공격적인 스팸·피싱 필터를 돌리는데, 실제 공급업체의 도메인을 흉내 내 송금을 가로채는 것이 오늘날 가장 흔한 B2B 사기 유형 중 하나이기 때문입니다. SPF 레코드도, DKIM 서명도, DMARC 정책도 없는 도메인은 그 필터 입장에서 같은 도메인을 사칭하는 공격자와 구분되지 않습니다. 이메일은 플래그가 걸리거나 격리되거나 그냥 삭제될 수 있고, 회사는 그 사실을 전혀 알지 못합니다. 반송 메일도, 에러도, 아무것도 없습니다. 그냥 조용히 사라지고, 주문으로 이어질 뻔했던 RFQ는 마침 답장을 보낸 경쟁사에게 넘어갑니다.' },
+        { type: 'h2', content: '견적 답장이 도착할지 말지를 실제로 결정하는 것' },
+        { type: 'ul', content: "바이어의 메일 시스템이 신뢰하는 발신자와 눈에 보이는 즉시 격리하는 발신자를 가르는 세 가지 DNS 레코드:", items: [
+          'SPF(Sender Policy Framework) — 사장님의 도메인으로 메일을 보낼 수 있는 모든 서버(구글 워크스페이스, 마이크로소프트 365, CRM이나 마케팅 툴 등)를 나열한 DNS 레코드입니다. 이게 없으면, 회사가 보내는 정상 메일조차 아무도 미리 알려주지 않은 검증을 통과하지 못합니다.',
+          'DKIM(DomainKeys Identified Mail) — 보내는 모든 이메일에 붙는 암호화 서명으로, 이 메일이 실제로 사장님의 도메인에서 왔고 전송 중 변조되지 않았음을 증명합니다. 구글 워크스페이스와 마이크로소프트 365 둘 다 지원하지만 기본값은 꺼져 있어서 관리자 콘솔에서 직접 켜야 합니다.',
+          "DMARC(Domain-based Message Authentication, Reporting & Conformance) — SPF나 DKIM 검증에 실패했을 때 수신 메일 서버가 어떻게 할지 알려주는 정책입니다(그래도 통과시킬지, 격리할지, 거부할지). 이걸 한 번도 설정하지 않은 도메인은 사실상 모든 바이어의 메일 서버에 '지시 없음, 알아서 판단하라'고 말하는 셈이고, 그 판단은 보통 스팸입니다.",
+          '발신 도메인과 정확히 일치하는 소개·연락처 페이지를 갖춘 웹사이트 — 신중한 바이어가 답장 전에 돌리는 2분짜리 검색에서, 받은 이메일이 진짜임을 확인시켜 줍니다.',
+          '같은 도메인에 연결된 전용 견적 요청 폼 — 새 바이어의 첫 연락이 한 줄짜리 방치되기 쉬운 이메일이 아니라 완성된 요청으로 도착하게 합니다.',
+        ] },
+        { type: 'tip', content: 'SPF, DKIM, DMARC를 한꺼번에 설정하는 건 도메인 DNS 관리자 권한만 있으면 보통 한 시간 안에 끝나고, 추가 비용도 없습니다. DMARC는 처음엔 모니터링 모드(p=none)로 시작해서 무엇이 실패하는지 먼저 확인한 다음, 스푸핑 메일을 실제로 막는 강제 정책으로 넘어가세요. B2B 신뢰도를 올리는 방법 중 공짜이면서 거의 즉시 효과가 나는 건 정말 드문데, 바로 그래서 이 목록에서 가장 먼저 해야 할 일입니다.' },
+        { type: 'h2', content: '시카고 도매업체 상권에서 이게 보이는 것보다 더 비싼 이유' },
+        { type: 'p', content: "앨버니 파크, 링컨우드, 나일스 일대에 모여 있는 시카고의 한인 도매·수입·유통업체들은 오헤어 항공 화물과 철도 복합운송이라는 도시의 물류 거점을 통해 전국 고객에게 서비스하면서, 회사 사람을 직접 만나본 적 없는 바이어로부터 새 거래를 점점 더 많이 따내고 있습니다. 다른 주의 구매 담당자가 구글 검색이나 소싱 디렉토리, B2B 마켓플레이스에 올라온 요청을 통해 회사를 찾고, 관계 전체가 콜드 이메일 교환으로 시작됩니다. 전시회 인맥과 수년에 걸친 소개로 쌓아온 사업 구조에서는 그 첫 이메일이 원래 약한 고리가 아니었지만, 낯선 바이어의 콜드 문의로 시작하는 사업의 비중이 커지는 지금은 그 이메일이 유일한 고리이고, 조용히 사라진 답장 한 번이 관계가 시작되기도 전에 끝내 버립니다." },
+        { type: 'h2', content: '시카고 한인 도매·무역업체를 위한 참고' },
+        { type: 'p', content: '시카고에 있는 무역·도매업체에게 이메일과 웹사이트 설정은 미국 바이어의 신뢰를 얻는 것 외에 두 번째 역할도 합니다. 같은 이중언어 인프라가 보통 한국의 본사나 공급사에게 공급망과 주문 현황을 전달하는 통로이기도 하다는 점입니다. 깨끗하게 인증을 통과하는 도메인과 영어·한국어 둘 다로 회사를 설명하는 웹사이트 — 역량 페이지, 인증서, 양방향으로 올바르게 라우팅되는 견적 요청 폼 — 이면 반쪽짜리 두 개를 따로 운영하는 대신 하나의 설정으로 두 대상을 모두 커버할 수 있습니다.' },
+        { type: 'cta', content: 'ZOE LUMOS는 미국 전역의 한인 도매·수입·무역업체를 위한 이중언어 RFQ 웹사이트를 만들고, 견적 답장이 바이어의 받은편지함에 도착할지를 결정하는 SPF·DKIM·DMARC 설정까지 함께 해드립니다. 한국어/영어 무료 상담: info@zoelumos.com 이메일 또는 카카오톡(http://pf.kakao.com/_xhxdxmlX/chat)으로 편하게 문의하세요.' },
+      ],
+    },
+  },
 ]
 
 /**
