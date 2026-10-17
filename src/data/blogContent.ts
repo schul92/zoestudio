@@ -13507,6 +13507,121 @@ const allBlogPosts: BlogPost[] = [
       ],
     },
   },
+  // ─────────────────────────────────────────────────────────────────
+  // 2026-10-17 — C2C/service rotation: real estate showing-request booking
+  // + no-show prevention + Google Business Profile for Korean-American
+  // agents, Las Vegas (Spring Mountain Rd / Summerlin / Henderson) angle.
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'korean-real-estate-agent-showing-booking-noshow-las-vegas-2026',
+    date: '2026-10-17',
+    updatedDate: '2026-10-17',
+    readTime: 9,
+    category: { en: 'Industry Guide', ko: '업종별 가이드' },
+    title: {
+      en: "Your Showing Request Form Said \"Confirmed\" Three Times Today — So Why Did Only One Buyer Walk Through the Door? (Las Vegas Korean Real Estate Guide, 2026)",
+      ko: '쇼잉 신청서엔 오늘도 "확정"이 세 번 떴는데, 실제로 문을 열고 들어온 바이어는 왜 한 명뿐일까요 — 라스베이거스 한인 부동산 에이전트 가이드 (2026)',
+    },
+    metaDescription: {
+      en: 'Korean-American real estate agents around Spring Mountain Road, Summerlin, and Henderson lose real showings every week to phone-and-text scheduling: double-booked appointments, no-show buyers, and no way to tell a serious lead from a casual one before driving across the valley. Here is how a real showing-request system with pre-screening and automatic reminders fixes it, and what actually belongs on your Google Business Profile.',
+      ko: '스프링 마운틴 로드, 서머린, 헨더슨 일대의 한인 부동산 에이전트들은 전화와 문자로 쇼잉을 잡다가 매주 실제 거래 기회를 놓칩니다 — 이중 예약, 노쇼 바이어, 그리고 밸리를 가로질러 운전하기 전에 진지한 리드인지 가려낼 방법이 없다는 것까지. 사전 질문과 자동 리마인더를 갖춘 진짜 쇼잉 예약 시스템이 어떻게 이걸 해결하는지, 그리고 구글 비즈니스 프로필에 실제로 뭐가 들어가야 하는지 정리했습니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'Is it rude to ask a buyer for their pre-approval status before confirming a showing?',
+          ko: '쇼잉을 확정하기 전에 바이어에게 사전 승인(pre-approval) 여부를 물어보는 게 무례한가요?',
+        },
+        a: {
+          en: "No, and most experienced agents already ask some version of this before they will drive out for a showing. Requiring a buyer to state whether they are pre-approved, working with a lender, or paying cash — and naming their own agent if they are represented — is standard industry practice, not an interrogation; it protects the seller, who often still lives in the home, and it protects the agent's time, which is the one resource an agent cannot get back. Framed as a short required field on an online booking form rather than a phone-call cross-examination, it reads as professional rather than suspicious, and it quietly filters out the casual lookers and duplicate bookings that cause most no-shows in the first place.",
+          ko: '아니요, 전혀 무례하지 않습니다. 경험 있는 에이전트들은 이미 쇼잉을 나가기 전에 어떤 형태로든 이걸 물어봅니다. 바이어에게 사전 승인을 받았는지, 대출 상담을 받고 있는지, 현금 매수인지 밝히게 하고 — 다른 에이전트와 거래 중이라면 그 에이전트 이름까지 묻는 것은 취조가 아니라 업계 표준 관행입니다. 이는 여전히 그 집에 살고 있는 셀러를 보호하고, 에이전트가 절대 되돌릴 수 없는 유일한 자원인 시간을 보호합니다. 전화로 캐묻는 방식이 아니라 온라인 예약 폼의 짧은 필수 항목으로 넣으면 의심스럽게 느껴지지 않고 전문적으로 보이며, 대부분의 노쇼를 일으키는 가벼운 둘러보기나 중복 예약을 조용히 걸러내는 효과가 있습니다.',
+        },
+      },
+      {
+        q: {
+          en: 'What should our Google Business Profile actually say to rank for searches like "Las Vegas Korean real estate agent"?',
+          ko: '"라스베가스 한인 부동산" 같은 검색에서 상위 노출되려면 구글 비즈니스 프로필에 실제로 뭘 넣어야 하나요?',
+        },
+        a: {
+          en: 'Five things matter far more than most agents realize: the correct primary category (Real Estate Agency or Real Estate Agent, not a generic "Consultant" category that buries the listing in unrelated results), a clearly listed service area covering the neighborhoods you actually work — Spring Mountain Road/Chinatown, Summerlin, Henderson, North Las Vegas — written in both English and Korean, a bilingual business description matching the exact phrases Korean buyers search rather than an English bio translated once and forgotten, a steady stream of recent reviews from closed clients since Google weights how recently reviews arrive nearly as much as the star average, and a "Request a Showing" link that goes directly into a live scheduling tool instead of a phone number a buyer has to remember to call back. A family that just decided to relocate to Las Vegas, Henderson, or Summerlin searches this within days and has no referral yet to fall back on — the search result is the entire first impression.',
+          ko: '대부분의 에이전트가 잘 모르는 다섯 가지가 훨씬 중요합니다. 정확한 주 업종(Real Estate Agency 또는 Real Estate Agent — 관련 없는 결과에 묻히게 만드는 일반적인 "Consultant" 카테고리가 아님), 실제로 활동하는 동네를 명확히 명시한 서비스 지역(스프링 마운틴 로드/차이나타운, 서머린, 헨더슨, 노스라스베이거스)을 영어·한국어 둘 다로, 한인 바이어가 실제로 검색하는 문구와 일치하는 이중언어 사업 설명(한 번 번역하고 잊어버린 영어 프로필이 아니라), 최근 거래를 마친 클라이언트들의 꾸준한 리뷰(구글은 별점 평균만큼이나 리뷰의 최신성을 중요하게 봄), 그리고 전화번호가 아니라 실시간 예약 도구로 바로 연결되는 "쇼잉 신청" 링크입니다. 라스베이거스, 헨더슨, 서머린으로 막 이주를 결정한 가족은 며칠 안에 이런 검색을 하고 아직 의지할 소개처도 없습니다 — 그 검색 결과가 첫인상 전부입니다.',
+        },
+      },
+      {
+        q: {
+          en: 'Do we need dedicated showing-scheduling software, or can a simple booking tool handle this?',
+          ko: '쇼잉 예약 전용 소프트웨어가 필요한가요, 아니면 간단한 예약 도구로도 충분한가요?',
+        },
+        a: {
+          en: "A single agent working solo can run comfortably on an inexpensive scheduling tool (Calendly, Acuity, or Square Appointments) with one or two custom intake questions added for pre-approval status and representation — you do not need an enterprise showing platform to fix this specific problem. It becomes worth a dedicated showing tool (ShowingTime, Showami, or a CRM's built-in scheduler) once you are working as part of a team or regularly co-listing with a broker partner, because the real failure point at that stage is two agents each confirming the same lockbox and the same 20-minute window with two different buyers from calendars that never talk to each other. Start with the simple tool; move to a team-synced one only once double-bookings start actually happening.",
+          ko: '혼자 활동하는 에이전트라면 사전 승인 여부와 거래 에이전트 정보를 묻는 커스텀 질문 한두 개를 추가한 저렴한 예약 도구(Calendly, Acuity, Square Appointments)만으로 충분히 돌아갑니다 — 이 문제 하나를 해결하려고 기업용 쇼잉 플랫폼까지는 필요 없습니다. 팀으로 활동하거나 브로커 파트너와 정기적으로 공동 리스팅을 하는 단계가 되면 전용 쇼잉 도구(ShowingTime, Showami, 또는 CRM 내장 스케줄러)가 가치를 갖기 시작합니다 — 이 단계에서 진짜 실패 지점은 서로 연동되지 않는 캘린더에서 두 에이전트가 각각 같은 락박스와 같은 20분 시간대를 서로 다른 바이어에게 확정해버리는 것이기 때문입니다. 간단한 도구로 시작하고, 이중 예약이 실제로 발생하기 시작할 때만 팀 연동 도구로 넘어가세요.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "Drive down Spring Mountain Road in Las Vegas — the stretch of Korean restaurants, markets, and professional offices locals call Koreatown — and you will find a growing roster of Korean-American real estate agents working buyers and sellers from that same corridor out into Summerlin, Henderson, and the newer master-planned communities in the northwest valley. Ask one of them about their week and a familiar frustration surfaces fast: a showing request comes in by text or a phone call, gets typed into whatever calendar app happened to be open, and says \"confirmed\" — and then the agent drives fifteen minutes across the valley, unlocks the lockbox, and waits at an empty house for a buyer who never shows." },
+        { type: 'h2', content: "Why phone-and-text showing scheduling quietly costs agents sales" },
+        { type: 'p', content: "Unlike a storefront business, an agent's day is entirely mobile — a missed showing is not just an empty chair, it is thirty to sixty minutes of drive time and gas across a valley that sprawls from downtown to Summerlin to Henderson. When scheduling lives in a string of texts, a buyer's agent or a lead from a discount listing site can book a slot with one agent, then book overlapping viewings with two other agents \"just to compare,\" and whichever agent answers last either loses the slot or ends up double-booked at the same lockbox. Worse, there is often no single record of which lead source — Zillow, Realtor.com, your own website, or a referral — actually produced the showing, so marketing spend keeps flowing to channels that generate clicks but not buyers who show up." },
+        { type: 'ul', content: "Signs your showing requests are quietly costing you deals:", items: [
+          "No single source of truth for which time slots are actually booked — it lives across texts, a paper calendar, and a co-listing agent's separate schedule.",
+          "No pre-screening question before confirming, so casual lookers and agents \"just checking for a client\" occupy slots a serious buyer would have taken.",
+          "No automatic reminder, so a buyer who booked three days ago simply forgets, and the agent finds out only by standing at an empty door.",
+          "No record of which lead source — Zillow, Realtor.com, your own website, a referral — actually produced the showing, so ad spend keeps going to channels that never convert.",
+          "Showings for occupied homes get handled with the same casual phone tag as vacant ones, creating real friction with sellers who are still living there.",
+        ] },
+        { type: 'h2', content: "What a real showing-request system actually changes" },
+        { type: 'p', content: "The fix does not require an expensive platform. A showing-request form embedded on your own website and on individual listing pages — not a generic \"contact me\" form — shows real available time slots, asks one short qualifying question (pre-approved, working with a lender, cash buyer, or the name of their own agent if represented), and sends an automatic text confirmation plus a reminder two hours before the appointment. That qualifying question does the same quiet filtering work a deposit does for a nail salon or an academy: a buyer who is seriously house-hunting answers it without friction, while a casual click-through or a duplicate booking from a competing site usually never follows through to confirm." },
+        { type: 'tip', content: "A useful gut check: pull your last month of confirmed showings and count how many buyers never actually showed up. If that number is higher than one or two a month, the leak is in your booking process, not your marketing — and it is the cheaper of the two problems to fix." },
+        { type: 'h2', content: "Team and co-listing calendars are where this breaks down fastest" },
+        { type: 'p', content: "For agents working as part of a team, or co-listing with a broker partner, the same lockbox and the same listing often get shown by more than one agent. Without a single shared calendar that both agents and their booking tool read from, it is easy for two agents to each confirm the same twenty-minute window with two different buyers. A scheduling tool that syncs to one shared team calendar — not just one agent's personal phone — closes this gap, and it tends to be the single biggest point of friction that agent teams along the Spring Mountain Road and Summerlin corridor run into once they grow past a solo practice." },
+        { type: 'h2', content: "Google Maps: where a buyer new to Las Vegas starts looking for a Korean-speaking agent" },
+        { type: 'p', content: "Families relocating to Las Vegas, Henderson, or Summerlin for work, or to be closer to the Korean community there, search some version of '라스베가스 한인 부동산' or 'Las Vegas Korean real estate agent' within days of deciding to move. That search result is the entire first impression — there is no referral yet to fall back on." },
+        { type: 'ul', content: "What a real estate agent's Google Business Profile needs to actually compete in Las Vegas search:", items: [
+          "The correct primary category — Real Estate Agency or Real Estate Agent, not a generic 'Consultant' category that buries the listing in unrelated results.",
+          "A clearly listed service area covering the neighborhoods you actually work — Spring Mountain Road/Chinatown, Summerlin, Henderson, North Las Vegas — in both English and Korean.",
+          "A bilingual business description matching the exact phrases Korean buyers search, not an English bio translated once years ago and forgotten.",
+          "A steady stream of recent reviews from closed clients, since Google weights how recently reviews arrive nearly as heavily as the star average.",
+          "A 'Request a Showing' link that goes directly into your live scheduling tool, not just a phone number a buyer has to remember to call back.",
+        ] },
+        { type: 'p', content: "That last point compounds over time: Google increasingly tracks which listings turn a search into a completed action, and rewards those listings in future rankings. A profile that sends the click straight into a working booking flow does more for long-term visibility than one more staged listing photo ever will." },
+        { type: 'h2', content: "This works the same way outside Las Vegas" },
+        { type: 'p', content: "Las Vegas' Korean-American community continues to grow along Spring Mountain Road and out into Henderson and Summerlin, but the same scheduling-and-visibility gap looks identical in every market with a concentration of Korean-American agents — Bergen County NJ, Koreatown LA and Orange County, the Duluth/Suwanee corridor outside Atlanta, Bellevue near Seattle. Wherever a Korean buyer is comparing two or three agents within the same week, the one whose showings are easy to book, reliably confirmed, and visible on Google when the search happens is the one who gets the call back." },
+        { type: 'cta', content: "Working as a Korean-American real estate agent or team in Las Vegas, Henderson, or Summerlin and tired of no-show showings and double-booked lockboxes? ZOE LUMOS builds bilingual real estate agent websites with live showing-request booking, pre-screening built into the form, and Google Business Profile setup that actually converts searches into confirmed appointments. Free consultation in Korean or English: email info@zoelumos.com or message us on KakaoTalk (http://pf.kakao.com/_xhxdxmlX/chat)." },
+      ],
+      ko: [
+        { type: 'intro', content: "라스베이거스 스프링 마운틴 로드 — 현지에서 코리아타운이라 부르는, 한인 식당과 마켓, 전문직 오피스가 모인 그 구간을 달려보면, 같은 상권에서 시작해 서머린, 헨더슨, 그리고 북서쪽 밸리의 새로 생긴 계획도시 커뮤니티까지 바이어와 셀러를 상대하는 한인 부동산 에이전트가 점점 늘고 있는 것을 보게 됩니다. 이 분들에게 한 주가 어땠는지 물어보면 익숙한 답답함이 금방 나옵니다 — 쇼잉 신청이 문자나 전화로 들어오고, 그때 열려 있던 캘린더 앱에 입력되고, \"확정\"이라고 뜹니다. 그리고 에이전트는 밸리를 가로질러 15분을 운전해서, 락박스를 열고, 빈 집에서 끝내 오지 않는 바이어를 기다립니다." },
+        { type: 'h2', content: "전화·문자로 잡는 쇼잉 예약이 조용히 거래를 잃는 이유" },
+        { type: 'p', content: "매장이 있는 업종과 달리 에이전트의 하루는 전적으로 이동 중심입니다 — 쇼잉을 놓친다는 건 빈 의자 하나가 아니라, 다운타운에서 서머린, 헨더슨까지 넓게 퍼진 밸리를 가로지르는 30~60분의 운전과 기름값입니다. 예약이 문자 몇 통에 의존하면, 바이어의 에이전트나 할인형 리스팅 사이트에서 온 리드가 한 에이전트와 시간을 잡고, \"비교해보려고\" 다른 두 에이전트와도 겹치는 시간에 쇼잉을 잡을 수 있습니다. 그리고 가장 늦게 답한 에이전트는 그 시간대를 놓치거나, 같은 락박스에서 이중 예약이 돼버립니다. 더 나쁜 건, 그 쇼잉이 질로우(Zillow)·Realtor.com·내 웹사이트·소개 중 어디서 왔는지 기록이 없는 경우가 많다는 점입니다 — 그래서 마케팅 비용은 클릭만 만들고 실제로 오는 바이어는 데려오지 못하는 채널에 계속 흘러갑니다." },
+        { type: 'ul', content: "쇼잉 신청이 조용히 거래 기회를 갉아먹고 있다는 신호:", items: [
+          "실제로 어느 시간대가 예약됐는지에 대한 단일 기준이 없음 — 문자, 종이 캘린더, 공동 리스팅 에이전트의 별도 일정 사이에 흩어져 있음.",
+          "확정 전 사전 질문이 없어서, 가볍게 둘러보는 사람이나 \"고객 대신 그냥 확인하는\" 에이전트가 진지한 바이어가 썼을 시간대를 차지함.",
+          "자동 리마인더가 없어서, 3일 전에 예약한 바이어가 그냥 잊어버리고, 에이전트는 빈 집 앞에 서서야 그걸 알게 됨.",
+          "그 쇼잉이 질로우·Realtor.com·내 웹사이트·소개 중 어디서 왔는지 기록이 없어서, 광고비가 전환되지 않는 채널에 계속 들어감.",
+          "사람이 살고 있는 집의 쇼잉도 빈 집과 똑같이 즉흥적인 전화 핑퐁으로 처리돼, 아직 거기 거주 중인 셀러와 실제 마찰이 생김.",
+        ] },
+        { type: 'h2', content: "진짜 쇼잉 예약 시스템이 실제로 바꾸는 것" },
+        { type: 'p', content: "해법에 비싼 플랫폼이 필요한 건 아닙니다. 내 웹사이트와 개별 리스팅 페이지에 심는 쇼잉 신청 폼 — 범용 \"문의하기\" 폼이 아니라 — 은 실제 남아 있는 시간대를 보여주고, 짧은 사전 질문 하나(사전 승인 여부, 대출 상담 중인지, 현금 매수인지, 거래 중인 에이전트가 있다면 그 이름)를 묻고, 자동 문자 확인과 약속 2시간 전 리마인더를 보냅니다. 이 사전 질문은 네일샵이나 학원의 보증금과 똑같은 조용한 필터 역할을 합니다 — 정말로 집을 알아보는 바이어는 거리낌 없이 답하지만, 가볍게 클릭만 해본 사람이나 경쟁 사이트에서 온 중복 예약은 대개 확정까지 가지 않습니다." },
+        { type: 'tip', content: "해볼 만한 현실 점검 — 지난 한 달 확정된 쇼잉 목록을 뽑아서 실제로 안 온 바이어가 몇 명인지 세어 보세요. 한 달에 한두 명보다 많다면, 새고 있는 건 마케팅이 아니라 예약 과정이고, 둘 중 고치기 더 저렴한 쪽입니다." },
+        { type: 'h2', content: "팀·공동 리스팅 캘린더에서 가장 빨리 무너진다" },
+        { type: 'p', content: "팀으로 활동하거나 브로커 파트너와 공동 리스팅을 하는 에이전트라면, 같은 락박스와 같은 리스팅을 한 명 이상의 에이전트가 보여주는 경우가 흔합니다. 두 에이전트와 예약 도구가 함께 참조하는 하나의 공유 캘린더가 없으면, 두 에이전트가 각각 같은 20분 시간대를 서로 다른 바이어에게 확정해버리기 쉽습니다. 에이전트 한 명의 개인 휴대폰이 아니라 공유 팀 캘린더에 연동되는 예약 도구가 이 틈을 막아줍니다 — 스프링 마운틴 로드와 서머린 상권의 에이전트 팀들이 1인 체제를 벗어나 성장할 때 가장 크게 부딪히는 마찰 지점이 바로 여기입니다." },
+        { type: 'h2', content: "구글 지도: 라스베이거스에 새로 온 바이어가 한국어 가능한 에이전트를 찾기 시작하는 곳" },
+        { type: 'p', content: "일 때문에, 혹은 그곳 한인 커뮤니티와 더 가까이 살고 싶어서 라스베이거스·헨더슨·서머린으로 이주를 결정한 가족은 이사를 결정하고 며칠 안에 '라스베가스 한인 부동산' 같은 검색을 합니다. 그 검색 결과가 첫인상 전부입니다 — 아직 의지할 소개처가 없습니다." },
+        { type: 'ul', content: "라스베이거스 검색에서 실제로 경쟁하려면 부동산 에이전트 구글 비즈니스 프로필에 필요한 것:", items: [
+          "정확한 주 업종 — Real Estate Agency 또는 Real Estate Agent. 관련 없는 결과에 묻히는 일반적인 'Consultant' 카테고리가 아님.",
+          "실제로 활동하는 동네를 명확히 표시한 서비스 지역 — 스프링 마운틴 로드/차이나타운, 서머린, 헨더슨, 노스라스베이거스 — 영어·한국어 둘 다로.",
+          "한인 바이어가 실제로 검색하는 문구와 일치하는 이중언어 사업 설명. 몇 년 전 번역하고 잊어버린 영어 소개가 아니라.",
+          "거래를 마친 클라이언트들의 꾸준한 최근 리뷰 — 구글은 별점 평균만큼이나 리뷰의 최신성을 중요하게 봄.",
+          "전화번호 하나가 아니라 실시간 예약 도구로 바로 연결되는 '쇼잉 신청' 링크 — 바쁜 바이어가 나중에 다시 걸겠다고 기억할 필요가 없게.",
+        ] },
+        { type: 'p', content: "마지막 항목은 시간이 지날수록 더 중요해집니다. 구글은 어떤 리스팅이 검색을 실제 완료된 행동으로 전환시키는지 점점 더 추적하고, 그런 리스팅을 향후 노출 순위에서 우대합니다. 클릭이 실제로 작동하는 예약 흐름으로 바로 이어지는 프로필은, 연출된 리스팅 사진을 하나 더 추가하는 것보다 장기 노출에 훨씬 더 큰 도움이 됩니다." },
+        { type: 'h2', content: "라스베이거스 밖에서도 똑같이 작동합니다" },
+        { type: 'p', content: "라스베이거스의 한인 커뮤니티는 스프링 마운틴 로드를 중심으로 헨더슨, 서머린까지 계속 커지고 있지만, 같은 예약·가시성 격차는 한인 에이전트가 밀집한 모든 시장에서 똑같이 나타납니다 — 뉴저지 버겐카운티, LA 코리아타운과 오렌지카운티, 애틀랜타 외곽 둘루스·수와니 상권, 시애틀 인근 벨뷰. 한인 바이어가 같은 주 안에 두세 명의 에이전트를 비교하는 곳이라면 어디든, 쇼잉 예약이 쉽고 확실하게 확인되고 검색했을 때 구글에 보이는 에이전트가 콜백을 받습니다." },
+        { type: 'cta', content: "라스베이거스, 헨더슨, 서머린에서 한인 부동산 에이전트나 팀으로 활동하시면서 노쇼 쇼잉과 이중 예약된 락박스에 지치셨나요? ZOE LUMOS는 실시간 쇼잉 신청 예약, 폼에 내장된 사전 심사, 그리고 검색을 확정된 약속으로 바꾸는 구글 비즈니스 프로필 설정까지 갖춘 이중언어 부동산 에이전트 웹사이트를 만듭니다. 한국어/영어 무료 상담: info@zoelumos.com 이메일 또는 카카오톡(http://pf.kakao.com/_xhxdxmlX/chat)으로 편하게 문의하세요." },
+      ],
+    },
+  },
 ]
 
 /**

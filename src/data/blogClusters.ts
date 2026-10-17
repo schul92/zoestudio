@@ -133,6 +133,7 @@ export const PILLARS = {
       'korean-church-website-guide',
       'starting-korean-business-america-2026',
       'korean-sat-academy-booking-noshow-irvine-2026',
+      'korean-real-estate-agent-showing-booking-noshow-las-vegas-2026',
     ],
   },
   'ai-services': {
@@ -352,4 +353,7 @@ export const POST_TO_PILLAR: Record<string, PillarKey> = {
 
   // 2026-08-17 — Houston F&B: online ordering, POS (Square/Toast/Clover), catering, reviews
   'korean-restaurant-houston-pos-catering-reviews-2026': 'restaurant-marketing',
+
+  // 2026-10-17 — Real estate showing-request booking + no-show prevention + GBP (Las Vegas, NV)
+  'korean-real-estate-agent-showing-booking-noshow-las-vegas-2026': 'professional-services',
 }
