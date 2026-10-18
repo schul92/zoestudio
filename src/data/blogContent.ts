@@ -13507,6 +13507,105 @@ const allBlogPosts: BlogPost[] = [
       ],
     },
   },
+  // ─────────────────────────────────────────────────────────────────
+  // 2026-10-18 — B2B wholesale/trading/manufacturing: trade-show lead
+  // capture, a vertical this cluster has covered least (credibility,
+  // LA organic-search RFQs, Georgia automotive RFQ forms) — new angle
+  // (booth → landing page → follow-up) and a new metro (Chicago /
+  // McCormick Place) to keep the city rotation moving off NJ/NY.
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'b2b-trade-show-leads-korean-wholesale-chicago-2026',
+    date: '2026-10-18',
+    updatedDate: '2026-10-18',
+    readTime: 9,
+    category: { en: 'Trade Shows', ko: '트레이드쇼' },
+    title: {
+      en: 'Korean Wholesale & Trading Companies in Chicago: Turn Trade Show Booth Visits Into Real RFQs (2026)',
+      ko: '시카고 한인 도매·무역 회사 사장님 — 트레이드쇼 부스 방문자를 견적 리드로 바꾸는 법 (2026)',
+    },
+    metaDescription: {
+      en: "Korean-American wholesale, import, and manufacturing companies around Chicago spend thousands of dollars a year exhibiting at McCormick Place trade shows, then let most of the business cards and badge scans sit in a spreadsheet nobody reopens. Here is how a show-specific landing page, a QR code at the booth, and a fast, specific follow-up turn booth traffic into quote requests instead of forgotten contacts.",
+      ko: '시카고 인근 한인 도매·수입·제조 회사들은 매콜믹 플레이스(McCormick Place) 트레이드쇼 부스에 매년 상당한 비용을 쓰지만, 받은 명함과 배지 스캔 대부분은 아무도 다시 열어보지 않는 스프레드시트에 묻힙니다. 쇼 전용 랜딩페이지, 부스에 붙인 QR 코드, 그리고 빠르고 구체적인 후속 연락이 부스 방문자를 잊혀진 연락처가 아닌 견적 요청으로 바꾸는 방법을 정리했습니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'How is a trade-show landing page different from our regular company homepage?',
+          ko: '트레이드쇼용 랜딩페이지는 일반 회사 홈페이지와 어떻게 달라야 하나요?',
+        },
+        a: {
+          en: "A trade-show landing page is narrower on purpose: it names the specific show and booth number, shows only the product lines you are exhibiting there, and routes every inquiry through an RFQ form tagged with that show's name so you know exactly which leads came from which event. Your homepage has to serve everyone who finds you — buyers, banks, landlords, job applicants — and that generality is exactly what makes it a weak follow-up tool. A buyer who talked to you for four minutes at booth 3412 does not want to search your full site for the one product you discussed; a one-page URL you can read off a business card or scan from a QR code gets them straight back to that conversation.",
+          ko: '트레이드쇼용 랜딩페이지는 의도적으로 좁게 만들어야 합니다 — 해당 쇼의 이름과 부스 번호를 명시하고, 그 쇼에서 전시하는 제품군만 보여주며, 모든 문의가 그 쇼 이름이 태그된 RFQ 폼을 거치게 해서 어떤 리드가 어떤 행사에서 왔는지 바로 구분할 수 있게 만듭니다. 일반 홈페이지는 바이어·은행·건물주·입사 지원자 등 모두를 상대해야 하는데, 바로 그 범용성 때문에 후속 연락용 도구로는 약합니다. 3412번 부스에서 4분 동안 이야기 나눈 바이어는 그때 논의했던 제품 하나를 찾으려고 전체 사이트를 뒤지고 싶어하지 않습니다 — 명함에 적힌 URL이나 QR 코드로 바로 그 대화로 돌아갈 수 있는 한 페이지가 필요합니다.',
+        },
+      },
+      {
+        q: {
+          en: 'How soon after the show should we follow up with a buyer who visited our booth?',
+          ko: '부스를 방문한 바이어에게는 쇼가 끝난 뒤 며칠 안에 연락해야 하나요?',
+        },
+        a: {
+          en: "Ideally while the show is still running, or within 24 to 48 hours of it closing, and the message has to reference the specific product or quantity you discussed rather than a generic 'great meeting you' note. A buyer who walks a show floor like McCormick Place talks to dozens of suppliers in two or three days, so by the time they are back at their own desk the following week, a vague follow-up has nothing to anchor the memory to and gets deleted with the rest of the pile. A message that says 'you asked about MOQ on the stainless steel line we showed at booth 3412' does the memory work for them, and it is the single biggest difference between a lead that converts and one that goes cold.",
+          ko: '이상적으로는 쇼가 아직 진행 중일 때, 늦어도 쇼가 끝난 지 24~48시간 안에 연락해야 하고, 그 메시지는 "만나서 반가웠습니다" 같은 일반적인 인사말이 아니라 대화에서 나온 구체적인 제품이나 수량을 언급해야 합니다. 매콜믹 플레이스 같은 쇼의 전시장을 걷는 바이어는 2~3일 사이에 수십 개 부스와 이야기를 나누기 때문에, 다음 주 자기 책상으로 돌아갔을 때 흐릿한 후속 연락은 기억을 붙잡을 단서가 없어 다른 메일들과 함께 삭제됩니다. "3412번 부스에서 보여드린 스테인리스 라인의 최소 주문량(MOQ)을 물어보셨죠" 같은 메시지는 바이어 대신 그 기억 작업을 해주는 것이고, 이것이 전환되는 리드와 식어버리는 리드를 가르는 가장 큰 차이입니다.',
+        },
+      },
+      {
+        q: {
+          en: 'What should the RFQ form on a trade-show landing page actually ask for?',
+          ko: '트레이드쇼 랜딩페이지의 RFQ 폼에는 어떤 항목이 들어가야 하나요?',
+        },
+        a: {
+          en: "Four fields cover almost every case without scaring off a busy buyer: the show name and booth number (so you can track lead source), the product category discussed, an estimated quantity or order frequency, and the timeline they need pricing by. That is enough for your sales team to triage a serious import order against someone collecting catalogs for a file, without the ten-field form that makes a buyer abandon it on their phone between booths. Save deeper questions — payment terms, shipping Incoterms, certification requirements — for the human follow-up call, where they belong anyway.",
+          ko: '쇼 이름과 부스 번호(리드 출처 추적용), 논의한 제품 카테고리, 예상 수량이나 주문 빈도, 희망 견적 응답 기한 — 이 네 가지만 받으면 바쁜 바이어를 겁먹게 하지 않으면서도 거의 모든 경우를 커버할 수 있습니다. 이 정도면 영업팀이 진짜 수입 주문과 카탈로그만 모으는 방문객을 구분할 수 있고, 부스 사이를 이동하며 휴대폰으로 작성하다가 포기하게 만드는 10개짜리 긴 폼은 필요 없습니다. 결제 조건, 선적 인코텀즈(Incoterms), 인증 요구사항 같은 더 깊은 질문은 원래 자리인 사람 대 사람 후속 통화로 남겨두세요.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "Chicago sits on the national trade show circuit in a way few other Korean-American business hubs do — McCormick Place hosts the International Home + Housewares Show every March and the National Restaurant Association Show every May, among dozens of other industry events, and Korean-American wholesale, import, and manufacturing companies from the Lawrence Avenue corridor (long marked by the city as 'Seoul Drive') and the northwest suburbs around Niles and Skokie fly in buyers and fly out exhibitors every year. A booth at one of these shows is not cheap — space, drayage, travel, and days of staff time all add up. What happens after the show closes decides whether that spend turns into orders or into a stack of business cards nobody looks at again." },
+        { type: 'h2', content: 'What actually happens to the business cards after the booth comes down' },
+        { type: 'p', content: "Walk the aisles at McCormick Place during move-out and the pattern is everywhere: a shoebox or a phone full of badge scans, a few hastily scribbled notes on the backs of cards, and a vague plan to 'follow up next week.' By the time next week arrives, the trip is over, the backlog of regular orders is waiting, and the specific buyer who asked about a particular SKU has blurred into forty other conversations. The lead list gets a mass 'great meeting you at the show' email, most of it unopened, and the handful of real buyers in that pile get the same generic treatment as the people who stopped by for a free sample." },
+        { type: 'h2', content: 'What a show-specific landing page needs before the booth even opens' },
+        { type: 'ul', content: 'Build this before you fly out, not after you get home:', items: [
+          "A dedicated URL for the show (e.g. /mccormick-housewares-2026) with the show name and booth number right at the top, so a buyer who scans it on their phone immediately recognizes it as 'yes, this is that company.'",
+          'Only the product lines you are actually exhibiting there — a 40-page full catalog is the wrong tool for a buyer standing in an aisle with limited time.',
+          'A short line card: category, minimum order quantity, lead time, and relevant certifications, so the basic questions get answered without a phone call.',
+          "A QR code on your booth signage, business cards, and any printed line sheet, pointing straight to that page — not to your general homepage.",
+          "An RFQ form on the page itself, pre-tagged with the show name, so every submission already tells your sales team where the lead came from.",
+        ] },
+        { type: 'tip', content: "If you exhibit at more than one show a year, keep each show's landing page live afterward instead of deleting it — a buyer who picked up your card in March sometimes searches for you again in June, and the page still answering their question (with an updated 'see us next at...' note) beats a 404." },
+        { type: 'h2', content: 'Speed decides whether the buyer still remembers which booth was yours' },
+        { type: 'p', content: "A buyer walking a show like the Housewares Show or the NRA Show talks to dozens of suppliers across two or three days, often in back-to-back half-hour blocks. That compresses your window: a follow-up sent while the show is still running, or within 24–48 hours of it closing, can reference the specific product or quantity discussed and land while the conversation is still fresh. A follow-up sent ten days later competes with a full inbox of other suppliers who moved faster, and a generic 'nice meeting you' message gives the buyer nothing to recall the conversation by — it reads as a mass blast because, functionally, it is one." },
+        { type: 'h2', content: 'Why most trade show leads go cold — and the one habit that fixes it' },
+        { type: 'p', content: "The common failure is not a lack of effort; it is a lack of a system between the booth and the office. Badge scans get exported to a spreadsheet, the spreadsheet sits in someone's downloads folder, and the actual follow-up depends on whoever remembers to open it during a busy week back at the warehouse. The fix does not require new software: a shared spreadsheet or a free-tier CRM with one column for 'show,' one for 'what they asked about,' and one for 'follow-up sent — yes/no,' reviewed in a standing 20-minute block the Monday after every show, catches the leads that would otherwise sit untouched until they are cold." },
+        { type: 'h2', content: 'Why Chicago is a different trade show market than Los Angeles or Atlanta' },
+        { type: 'p', content: "Korean-American wholesale and manufacturing companies in Los Angeles tend to win buyers through organic search once a company is known; in Georgia's automotive corridor, the game is often an RFQ form that has to beat a competitor's response time. Chicago's edge is different: O'Hare makes it a landing point for buyers flying in from across the country specifically for a show, and McCormick Place puts hundreds of competing booths in the same two buildings for three straight days. That means the deciding factor is rarely whether a buyer can find you — they already found you at the booth — it is whether your follow-up reaches them before the trip home erases which of those hundreds of booths was yours." },
+        { type: 'cta', content: "Exhibiting at McCormick Place or another trade show this year and tired of watching good leads go cold in a spreadsheet? ZOE LUMOS builds show-specific landing pages with QR-ready RFQ forms for Korean-American wholesale, import, and manufacturing companies, plus the company website and @yourcompany.com email that make a buyer comfortable enough to actually respond. Free consultation in English or Korean: email info@zoelumos.com or message us on KakaoTalk (http://pf.kakao.com/_xhxdxmlX/chat)." },
+      ],
+      ko: [
+        { type: 'intro', content: '시카고는 다른 한인 비즈니스 거점들과는 다르게 전국 트레이드쇼 서킷의 중심에 있습니다 — 매콜믹 플레이스(McCormick Place)는 매년 3월 인터내셔널 홈+하우스웨어스 쇼(International Home + Housewares Show)와 5월 전미레스토랑협회쇼(NRA Show)를 비롯해 수십 개의 업종별 행사를 개최하고, 시 당국이 오래전 "서울 드라이브(Seoul Drive)"로 표기한 로렌스 애비뉴(Lawrence Avenue) 상권과 나일스·스코키 등 북서부 교외의 한인 도매·수입·제조 회사들이 매년 이 행사들에 전시하러 날아갔다가 바이어를 만나고 돌아옵니다. 이런 쇼의 부스는 저렴하지 않습니다 — 공간, 화물 운반비, 출장비, 며칠간의 인력까지 전부 더해집니다. 쇼가 끝난 뒤 무슨 일이 일어나는지가 그 비용이 주문으로 이어질지, 아니면 다시 들여다보지 않는 명함 더미로 끝날지를 결정합니다.' },
+        { type: 'h2', content: '부스가 철수된 뒤 명함들은 실제로 어디로 가나' },
+        { type: 'p', content: '매콜믹 플레이스 이동 설치(move-out) 시간에 통로를 걸어보면 어디서나 같은 패턴이 보입니다 — 배지 스캔으로 가득한 신발 상자나 휴대폰, 명함 뒷면에 급하게 적힌 몇 마디 메모, 그리고 "다음 주에 연락해야지"라는 모호한 계획. 다음 주가 오면 출장은 이미 끝나 있고, 밀려 있던 정기 주문들이 기다리고 있고, 특정 SKU를 물어봤던 그 바이어는 다른 마흔 명의 대화와 뒤섞여 흐릿해집니다. 리드 목록에는 "쇼에서 만나서 반가웠습니다" 단체 메일이 뿌려지고, 대부분은 열어보지도 않으며, 그중 진짜 바이어였던 소수조차 샘플만 받으러 들렀던 사람들과 똑같은 일반적인 대우를 받습니다.' },
+        { type: 'h2', content: '부스를 열기 전에 쇼 전용 랜딩페이지에 필요한 것' },
+        { type: 'ul', content: '출장 가기 전에 만들어야 합니다 — 돌아온 뒤가 아니라:', items: [
+          '쇼 전용 URL(예: /mccormick-housewares-2026)에 쇼 이름과 부스 번호를 맨 위에 적어서, 휴대폰으로 스캔한 바이어가 "맞다, 그 회사다"라고 바로 알아보게 만드세요.',
+          '그 쇼에서 실제로 전시하는 제품군만 — 통로에 서서 시간이 부족한 바이어에게 40페이지짜리 전체 카탈로그는 맞는 도구가 아닙니다.',
+          '짧은 라인 카드: 카테고리, 최소 주문량, 리드타임, 관련 인증을 적어서 기본적인 질문은 전화 없이 답이 되게 하세요.',
+          '부스 사이니지, 명함, 인쇄된 라인 시트에 QR 코드를 넣어서 일반 홈페이지가 아니라 바로 그 페이지로 연결하세요.',
+          '페이지 안에 쇼 이름이 미리 태그된 RFQ 폼을 넣어서, 제출될 때마다 영업팀이 어느 리드가 어디서 왔는지 바로 알게 하세요.',
+        ] },
+        { type: 'tip', content: '한 해에 두 개 이상의 쇼에 전시한다면, 쇼가 끝난 뒤에도 각 랜딩페이지를 지우지 말고 살려두세요 — 3월에 명함을 받아 간 바이어가 6월에 다시 검색하는 경우가 있고, 404 페이지보다는 "다음엔 어디서 뵙겠습니다" 안내가 업데이트된 페이지가 훨씬 낫습니다.' },
+        { type: 'h2', content: '바이어가 어느 부스였는지 기억하느냐는 속도가 결정합니다' },
+        { type: 'p', content: '하우스웨어스 쇼나 NRA 쇼 같은 행사를 걷는 바이어는 2~3일 사이에 수십 개 공급사와 이야기를 나누고, 종종 30분 단위로 연속해서 미팅을 합니다. 그만큼 시간이 좁습니다 — 쇼가 아직 진행 중일 때, 또는 끝난 지 24~48시간 안에 보내는 후속 연락은 논의했던 구체적인 제품이나 수량을 언급할 수 있고, 대화가 아직 생생할 때 도착합니다. 열흘 뒤에 보내는 후속 연락은 더 빨리 움직인 다른 공급사들의 메일로 가득 찬 받은편지함과 경쟁해야 하고, "만나서 반가웠습니다" 같은 일반적인 메시지는 바이어가 대화를 떠올릴 단서를 주지 못합니다 — 실질적으로 단체 발송이니, 단체 발송처럼 읽힙니다.' },
+        { type: 'h2', content: '대부분의 트레이드쇼 리드가 식는 이유 — 그리고 이를 고치는 한 가지 습관' },
+        { type: 'p', content: '흔한 실패 원인은 노력 부족이 아니라, 부스와 사무실 사이를 잇는 시스템의 부재입니다. 배지 스캔은 스프레드시트로 내보내지고, 그 스프레드시트는 누군가의 다운로드 폴더에 들어앉고, 실제 후속 연락은 창고로 돌아와 바쁜 한 주 중 누군가 그 파일을 열어볼 걸 기억하느냐에 달려 있습니다. 해법에는 새로운 소프트웨어가 필요 없습니다 — "쇼", "무엇을 물어봤는지", "후속 연락 발송 — 예/아니오" 열 하나씩 있는 공유 스프레드시트나 무료 CRM을, 쇼가 끝난 다음 월요일 고정된 20분 동안 검토하는 것만으로, 그대로 두면 식어버릴 리드를 건질 수 있습니다.' },
+        { type: 'h2', content: '시카고가 LA나 애틀랜타와는 다른 트레이드쇼 시장인 이유' },
+        { type: 'p', content: 'LA의 한인 도매·제조 회사들은 일단 알려지면 보통 오가닉 검색을 통해 바이어를 얻습니다. 조지아 자동차 산업벨트에서는 경쟁사보다 빠른 응답 시간이 RFQ 폼 게임의 핵심인 경우가 많습니다. 시카고의 포인트는 다릅니다 — 오헤어(O\'Hare) 공항 덕분에 전국에서 바이어들이 특정 쇼를 보러 비행기로 날아오는 도착지가 되고, 매콜믹 플레이스는 같은 두 건물 안에 수백 개의 경쟁 부스를 사흘 내내 몰아넣습니다. 그 말은, 바이어가 당신을 찾을 수 있느냐는 거의 중요하지 않다는 뜻입니다 — 이미 부스에서 당신을 찾았으니까요. 중요한 건 집으로 돌아가는 여정이 수백 개 부스 중 어느 것이 당신이었는지 지워버리기 전에, 후속 연락이 먼저 도착하느냐입니다.' },
+        { type: 'cta', content: '올해 매콜믹 플레이스나 다른 트레이드쇼에 전시하면서, 좋은 리드가 스프레드시트 안에서 식어가는 걸 지켜보는 데 지치셨나요? ZOE LUMOS는 한인 도매·수입·제조 회사를 위해 QR 코드로 바로 연결되는 RFQ 폼을 갖춘 쇼 전용 랜딩페이지를 만들고, 바이어가 안심하고 답장할 수 있게 해주는 회사 웹사이트와 @회사명.com 이메일까지 함께 세팅합니다. 한국어/영어 무료 상담: info@zoelumos.com 이메일 또는 카카오톡(http://pf.kakao.com/_xhxdxmlX/chat)으로 문의하세요.' },
+      ],
+    },
+  },
 ]
 
 /**
