@@ -13507,6 +13507,125 @@ const allBlogPosts: BlogPost[] = [
       ],
     },
   },
+  // ─────────────────────────────────────────────────────────────────
+  // 2026-10-11 — Custom iOS app for Korean-American taekwondo/martial
+  // arts academies (belt tracking, class booking, tuition billing),
+  // Las Vegas / Henderson / Summerlin, NV
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'korean-taekwondo-academy-ios-app-las-vegas-2026',
+    date: '2026-10-11',
+    updatedDate: '2026-10-11',
+    readTime: 9,
+    category: { en: 'App Development', ko: '앱 개발' },
+    title: {
+      en: 'Belt Cards in a Binder, Trial Sign-Ups in a Group Chat: When a Taekwondo Academy Is Ready for Its Own iPhone App (Las Vegas Guide, 2026)',
+      ko: '벨트 카드는 바인더에, 체험 신청은 단톡방에 — 태권도 학원이 자체 아이폰 앱을 만들 때 (라스베가스 가이드 2026)',
+    },
+    metaDescription: {
+      en: 'Korean-American taekwondo, hapkido, and martial arts academies in Las Vegas, Henderson, and Summerlin often track belt progress on a laminated card and book trial classes through a shared KakaoTalk group chat. Here is when a custom iOS app for class booking, attendance, belt tracking, and tuition billing pays for itself, and how one gets built and published by a registered Apple App Store developer.',
+      ko: '라스베가스·헨더슨·서머린의 한인 태권도·합기도·무술 학원은 흔히 벨트 진급을 코팅된 카드로 관리하고 체험 수업은 여러 학원이 함께 쓰는 카카오톡 단톡방으로 신청받습니다. 수업 예약, 출석, 벨트 진급 추적, 수강료 결제까지 담은 커스텀 iOS 앱이 실제로 돈값을 하는 시점과, Apple 앱스토어 등록 개발사가 그걸 어떻게 만들고 출시하는지 정리했습니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'Does a one or two-location taekwondo academy actually need a custom app, or is off-the-shelf scheduling software enough?',
+          ko: '지점이 한두 곳인 태권도 학원도 정말 커스텀 앱이 필요한가요, 아니면 기성 예약 소프트웨어로 충분한가요?',
+        },
+        a: {
+          en: "For a single-location academy with one or two instructors, a custom app is usually overkill — martial-arts-specific software like Zen Planner, Rev Belt, or Member Solutions already handles class scheduling, attendance, and belt-rank tracking at a fraction of the cost of building something from zero, and switching to custom development that early rarely pays for itself. The tipping point tends to arrive with a second or third location, a curriculum with enough belt-specific rules (minimum class counts per rank, instructor sign-off before test eligibility, age-division class restrictions) that generic software models them poorly, or a desire to have attendance, tuition billing, and trial-class booking share one login and one dataset instead of living in three tools that never sync with each other.",
+          ko: '지점 하나에 사범님이 한두 명인 학원이라면 커스텀 앱은 보통 과합니다 — Zen Planner, Rev Belt, Member Solutions 같은 무술 전문 소프트웨어가 이미 수업 예약, 출석, 벨트 진급 관리를 처음부터 만드는 비용의 일부로 처리해 주고, 그렇게 이른 시점에 커스텀으로 넘어가면 투자 회수가 거의 안 됩니다. 전환점은 보통 지점이 두세 곳이 되거나, 벨트별 규칙(승급 전 최소 수업 횟수, 심사 전 사범 승인, 연령대별 수업 제한)이 충분히 복잡해서 범용 소프트웨어가 제대로 모델링하지 못할 때, 또는 출석·수강료 결제·체험 수업 예약이 서로 동기화 안 되는 세 개의 도구가 아니라 하나의 로그인과 하나의 데이터셋을 공유하길 원할 때 찾아옵니다.',
+        },
+      },
+      {
+        q: {
+          en: "How does Apple App Store review work for an academy's own branded app, and how long does it take?",
+          ko: '학원 자체 브랜드 앱의 애플 앱스토어 심사는 어떻게 진행되고, 얼마나 걸리나요?',
+        },
+        a: {
+          en: "Because a parent-facing academy app is public-facing software your students' families install from the App Store, it goes through Apple's standard review process rather than the private distribution path available for staff-only internal tools. The groundwork — enrolling your business in the Apple Developer Program, which requires a D-U-N-S number if your academy is not already enrolled, and setting up the App Store listing — typically takes one to two weeks the first time, mostly waiting on D-U-N-S verification. Once the app itself is submitted, Apple's actual review usually completes within one to three business days; the most common cause of a rejection on a first submission is an incomplete privacy policy or a login screen Apple's reviewers cannot test, both of which we account for before submitting. We are a registered Apple App Store developer and manage the entire enrollment and submission process.",
+          ko: '학부모용 학원 앱은 학생 가정이 앱스토어에서 직접 설치하는 공개 소프트웨어이기 때문에, 직원 전용 내부 도구에 쓰는 비공개 배포 경로가 아니라 애플의 표준 심사 절차를 거칩니다. 기초 작업 — 학원이 아직 등록되어 있지 않다면 D-U-N-S 번호가 필요한 Apple Developer Program 가입, 그리고 앱스토어 리스팅 설정 — 은 처음 할 때 보통 1~2주가 걸리는데, 대부분 D-U-N-S 인증 대기 시간입니다. 앱 자체를 제출한 뒤 애플의 실제 심사는 보통 영업일 1~3일 안에 끝납니다. 첫 제출에서 반려되는 가장 흔한 이유는 미완성된 개인정보 보호정책이나 애플 심사관이 테스트할 수 없는 로그인 화면인데, 저희는 제출 전에 이 두 가지를 미리 처리해 둡니다. 저희는 등록된 Apple 앱스토어 개발사로서 가입부터 제출까지 전 과정을 직접 관리합니다.',
+        },
+      },
+      {
+        q: {
+          en: 'Can the app handle monthly tuition billing and belt test fees, or do we still need a separate payment processor?',
+          ko: '앱이 월 수강료와 승급 심사비 결제까지 처리할 수 있나요, 아니면 별도의 결제 업체가 여전히 필요한가요?',
+        },
+        a: {
+          en: "The app itself does not process payments directly — no software legally should, since that requires PCI-compliant infrastructure that payment processors like Stripe already maintain. What the app does is integrate with a processor such as Stripe to automate recurring monthly tuition on file, add one-time charges for a belt test fee or new gear automatically to the same account, and surface a clean payment history to both the owner and the parent, so collection no longer depends on a parent remembering to Venmo or Zelle the right amount on the right day. For most academies this also meaningfully reduces late payments, since a card on file with automatic retry catches far more missed payments than a manual reminder text ever does.",
+          ko: '앱이 직접 결제를 처리하지는 않습니다 — 어떤 소프트웨어도 법적으로 그래서는 안 됩니다. 결제에는 Stripe 같은 결제 업체가 이미 유지하고 있는 PCI 준수 인프라가 필요하기 때문입니다. 앱이 실제로 하는 일은 Stripe 같은 결제 업체와 연동해서 등록된 카드로 월 수강료를 자동으로 반복 청구하고, 승급 심사비나 새 도복 같은 일회성 결제를 같은 계정에 자동으로 추가하고, 원장님과 학부모 모두에게 깔끔한 결제 내역을 보여주는 것입니다. 그래서 수금이 학부모가 정해진 날 정해진 금액을 벤모나 젤로 보내는 걸 기억하는 데 더 이상 의존하지 않게 됩니다. 대부분의 학원에서 이것만으로도 연체가 눈에 띄게 줄어듭니다. 자동 재시도가 있는 등록 카드 결제가 수동 리마인더 문자보다 놓친 결제를 훨씬 더 많이 잡아내기 때문입니다.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "Drive down Spring Mountain Road in Las Vegas on a Saturday morning and the parking lot outside almost every Korean-run taekwondo and hapkido academy is already full by 9am — parents dropping off kids for the first of three belt-level classes before lunch. Las Vegas, together with Henderson and Summerlin, has become one of the fastest-growing Korean-American martial arts markets in the country as families relocate in from California and the Pacific Northwest. Talk to the owners running two or three locations and a familiar pattern comes up fast: belt progress lives on a laminated card punched by hand after each test, trial-class sign-ups come in through a KakaoTalk group chat shared with two or three other local academies' promotions, and tuition gets collected through a mix of Venmo, Zelle, and whatever a parent remembers to send that month. None of this was a problem with one dojang and forty students. Past that, it becomes the actual bottleneck — and it is entirely separate from whether your website looks good." },
+        { type: 'h2', content: "What running a growing academy on paper cards and group chats actually costs you" },
+        { type: 'p', content: "The cost rarely shows up as one dramatic failure — it shows up as small friction that compounds weekly and that owners stop noticing because it has always worked this way. A belt card gets left in a gym bag and a parent asks, with no good way to answer quickly, exactly how many classes their child has left before the next test. A trial-class lead posts into a group chat that also carries two competing academies' flyers, and by the time someone notices and replies, the family has already booked a trial somewhere else. A student who missed six classes in a row still gets tested because no one cross-checked attendance against eligibility before the sign-up sheet went up." },
+        { type: 'ul', content: 'What we see most often when a growing Korean-American martial arts academy audits its own operations:', items: [
+          "Belt rank and testing eligibility tracked on a laminated card punched by hand, with no backup if the card is lost and no way for a parent to check progress without asking at the front desk.",
+          "Trial-class sign-ups shared across a KakaoTalk group chat that also carries other local academies' promotions, so a genuine lead gets buried and nobody follows up before the family tries a competitor.",
+          "Monthly tuition collected through a mix of Venmo, Zelle, and cash, so figuring out who actually paid this month means cross-checking three apps and a notebook by hand.",
+          "No record tying attendance to belt-test eligibility, so a student who missed several classes in a row still gets tested because nobody caught it in time.",
+          "Every new location means training a new front-desk instructor on the same informal system instead of something documented and consistent across branches.",
+        ] },
+        { type: 'h2', content: "What a custom academy app actually replaces" },
+        { type: 'p', content: "This is not a generic fitness-app template — it is software built around how your specific curriculum, belt structure, and class schedule actually run, covering both the parent-facing side (booking, progress, payment) and the instructor-facing side (attendance, eligibility, rosters) in one system instead of three disconnected ones." },
+        { type: 'ul', content: 'The concrete pieces, and the problem each one solves:', items: [
+          "Digital belt tracking tied directly to attendance — a student's rank, test eligibility, and required class count update automatically instead of living on a card that can be lost or left at the gym.",
+          "A trial-class and ongoing class booking page with real seat limits per class and age division, embedded on your own website instead of buried inside a group chat shared with other academies.",
+          "Attendance check-in by QR code or an instructor's tap at the start of each class, building the attendance record automatically instead of a paper sign-in sheet someone transcribes later.",
+          "Push notifications to parents for an upcoming belt test, a missed-class makeup reminder, or a tournament sign-up deadline, instead of relying on a flyer taped to the front door.",
+          "Recurring monthly tuition billed automatically through an integrated payment processor, with belt-test fees and gear purchases added as one-time charges to the same account.",
+          "A parent-facing view of their child's attendance streak and belt progress — the single feature academy owners tell us drives the most organic word-of-mouth referrals, since parents screenshot and share it.",
+        ] },
+        { type: 'h2', content: "Off-the-shelf martial arts software is the right answer more often than not" },
+        { type: 'p', content: "Before recommending custom development to a client, we usually try to talk them out of it — genuinely. Zen Planner, Rev Belt, GymMaster, and Member Solutions are built by companies that do nothing but martial-arts and fitness studio management, they are inexpensive relative to custom development, and for a single-location academy they almost always cover what you actually need. Custom becomes worth the investment specifically when your curriculum does not fit their model — belt-specific eligibility rules too granular for a generic system to express, two or three locations that need one owner-facing dashboard instead of logging into each branch separately, or a desire to have attendance, tuition, and trial booking share one login instead of three apps that never quite sync." },
+        { type: 'tip', content: "A useful gut check: for two weeks, have your front-desk staff note every time they have to open a second app, flip through a binder, or re-enter the same student's information to answer a parent's question. If that list is short, an off-the-shelf tool will serve you well. If it is long and repeats across locations, that list is effectively the feature spec for the custom app you actually need." },
+        { type: 'h2', content: "Web app or native iOS app — and where the App Store actually comes in" },
+        { type: 'p', content: "Because this app is parent-facing, not an internal staff tool, it works differently from a back-office operations app. A booking page can live as a simple web page embedded on your website with no install required, and that alone fixes the trial-class and group-chat problem. The case for a true native iOS app grows once you want push notifications that reliably reach a parent even when the app is closed, QR-code check-in that works instantly without opening a browser, and an app icon on the home screen that a parent actually taps every week instead of forgetting a bookmarked page exists. Because families install this app themselves from the App Store, it goes through Apple's standard public review rather than the private staff-only distribution path — which means enrolling your academy in the Apple Developer Program (a D-U-N-S number is required if you are not already enrolled) and submitting through standard review, which typically completes within one to three business days once the listing is ready. We are a registered Apple App Store developer and manage the full enrollment and submission process." },
+        { type: 'h2', content: "How a build like this actually runs" },
+        { type: 'p', content: "We start by sitting in on an actual trial-class sign-up and an actual belt-test day, not designing from a feature wish list, to see exactly where the current paper-and-group-chat system breaks under real conditions. From there we scope the smallest version that fixes the most painful piece first — usually trial booking or belt tracking, since those compound weekly — and ship that before adding the rest, so an academy running on group chats today is not waiting four months for a complete system when the booking piece alone can be live within weeks. Front-desk staff keep using the current process until each piece is tested and ready, and training an instructor on a purpose-built tool for your actual curriculum is typically faster than onboarding them into the current informal system. Once live, we keep supporting it the same way we support every client — bilingual, one point of contact, reachable on KakaoTalk." },
+        { type: 'h2', content: "This works the same way outside Las Vegas" },
+        { type: 'p', content: "Spring Mountain Road and the Henderson/Summerlin corridor happen to be one of the fastest-growing Korean-American martial arts markets in the country right now, but the same belt-card-and-group-chat pattern shows up identically wherever Korean-run taekwondo and hapkido academies operate — Koreatown in Los Angeles, Bergen County in New Jersey, Duluth and Suwanee outside Atlanta, Annandale in Northern Virginia. Wherever a Korean-American academy has grown past one location, the belt-card binder and the shared group chat stop being a quirky habit and start being the thing quietly capping enrollment." },
+        { type: 'cta', content: "Running a taekwondo, hapkido, or martial arts academy in Las Vegas, Henderson, Summerlin, or anywhere else in the US and tired of paper belt cards and group-chat trial sign-ups? ZOE LUMOS builds bilingual academy websites and custom iOS apps — belt tracking, class booking, attendance, and tuition billing — and we are a registered Apple App Store developer. Free consultation in English or Korean: email info@zoelumos.com or message us on KakaoTalk (http://pf.kakao.com/_xhxdxmlX/chat)." },
+      ],
+      ko: [
+        { type: 'intro', content: '토요일 아침 라스베가스 스프링 마운틴 로드(Spring Mountain Road)를 지나가면 한인이 운영하는 태권도·합기도 학원 거의 모든 곳의 주차장이 오전 9시면 이미 꽉 차 있습니다 — 점심 전 세 개 벨트 레벨 수업 중 첫 수업에 아이를 내려주는 학부모들입니다. 라스베가스는 헨더슨, 서머린과 함께 캘리포니아와 태평양 북서부에서 가족들이 이주해 오면서 미국에서 가장 빠르게 성장하는 한인 무술 학원 상권 중 하나가 됐습니다. 지점 두세 곳을 운영하는 원장님들과 이야기해 보면 익숙한 패턴이 금방 나옵니다. 벨트 진급은 심사 후 손으로 펀칭하는 코팅 카드로 관리되고, 체험 수업 신청은 지역 학원 두세 곳의 홍보가 함께 섞인 카카오톡 단톡방으로 들어오고, 수강료는 벤모·젤로와 학부모가 그달 기억해서 보내는 금액이 섞여서 걷힙니다. 도장 하나에 학생 40명일 때는 이게 문제가 아니었습니다. 그 규모를 넘어서면 진짜 병목이 됩니다 — 그리고 이건 웹사이트가 예쁜지와는 완전히 별개의 문제입니다.' },
+        { type: 'h2', content: "종이 카드와 단톡방으로 운영하는 게 실제로 어떤 비용을 만드는가" },
+        { type: 'p', content: '이 비용은 극적인 사고 하나로 드러나는 경우가 드뭅니다 — 매주 쌓이는 작은 마찰로 나타나고, 항상 이래왔다는 이유로 사장님도 더는 알아채지 못하게 됩니다. 벨트 카드를 체육관 가방에 두고 와서 학부모가 다음 심사까지 몇 수업이 남았는지 물으면 빠르게 답할 좋은 방법이 없습니다. 체험 수업 리드가 경쟁 학원 두 곳의 전단지도 함께 올라오는 단톡방에 묻혀서, 누군가 알아채고 답장할 때쯔음 그 가족은 이미 다른 곳에서 체험 수업을 예약했습니다. 여러 번 연속으로 수업을 빠진 학생이 신청 명단이 올라오기 전에 아무도 출석을 심사 자격과 대조하지 않아서 그대로 심사를 받습니다.' },
+        { type: 'ul', content: '성장 중인 한인 무술 학원이 스스로 운영을 감사할 때 가장 자주 발견하는 것들:', items: [
+          '벨트 등급과 심사 자격이 손으로 펀칭하는 코팅 카드로 관리돼서, 카드를 잃어버리면 백업이 없고 학부모가 프런트에 물어보지 않고는 진급 상황을 확인할 방법이 없음.',
+          '체험 수업 신청이 다른 지역 학원들의 홍보와 함께 섞인 카카오톡 단톡방으로 들어와서, 진짜 리드가 묻혀 가족이 경쟁 학원을 먼저 체험하게 됨.',
+          '월 수강료가 벤모, 젤로, 현금이 섞여서 걷혀서, 이번 달 누가 실제로 냈는지 확인하려면 세 개의 앱과 공책을 손으로 대조해야 함.',
+          '출석과 벨트 심사 자격을 연결하는 기록이 없어서, 여러 번 연속 결석한 학생이 아무도 제때 알아채지 못해 그대로 심사를 받음.',
+          '새 지점이 생길 때마다 문서화되고 지점 간 일관된 시스템이 아니라 같은 비공식 시스템을 새 프런트 사범에게 매번 다시 가르쳐야 함.',
+        ] },
+        { type: 'h2', content: '커스텀 학원 앱이 실제로 대체하는 것' },
+        { type: 'p', content: '이건 범용 피트니스 앱 템플릿이 아닙니다 — 학원의 실제 커리큘럼, 벨트 체계, 수업 스케줄이 돌아가는 방식을 중심으로 만들어지며, 학부모용(예약, 진급, 결제)과 사범용(출석, 자격, 명단) 양쪽을 서로 동기화 안 되는 세 개의 도구가 아니라 하나의 시스템으로 묶습니다.' },
+        { type: 'ul', content: '구체적인 구성 요소들과, 각각이 해결하는 문제:', items: [
+          '출석과 직접 연동된 디지털 벨트 추적 — 학생의 등급, 심사 자격, 필요 수업 횟수가 잃어버리거나 체육관에 두고 올 수 있는 카드가 아니라 자동으로 업데이트됨.',
+          '수업·연령대별 실제 정원이 반영된 체험 수업 및 정규 수업 예약 페이지 — 다른 학원들과 함께 쓰는 단톡방이 아니라 학원 자체 웹사이트에 들어감.',
+          '수업 시작 시 QR코드 또는 사범의 탭으로 하는 출석 체크인 — 나중에 누군가 옮겨 적는 종이 출석부가 아니라 자동으로 출석 기록이 쌓임.',
+          '다가오는 벨트 심사, 결석 보충 수업 리마인더, 대회 신청 마감일에 대한 학부모 푸시 알림 — 현관에 붙인 전단지에 의존하는 대신.',
+          '연동된 결제 업체를 통한 월 수강료 자동 반복 청구, 승급 심사비와 도복 구매는 같은 계정에 일회성 결제로 추가.',
+          '자녀의 출석 연속 기록과 벨트 진급을 보여주는 학부모용 화면 — 원장님들이 가장 많은 자연 입소문 추천을 만드는 단일 기능이라고 말씀하시는 바로 그것입니다. 학부모들이 캡처해서 공유하기 때문입니다.',
+        ] },
+        { type: 'h2', content: '기성 무술 학원 소프트웨어가 더 나은 답일 때가 많습니다' },
+        { type: 'p', content: '클라이언트에게 커스텀 개발을 권하기 전, 저희는 보통 진심으로 말리려고 합니다. Zen Planner, Rev Belt, GymMaster, Member Solutions 같은 도구는 무술·피트니스 스튜디오 관리만 전문으로 하는 회사가 만들고, 커스텀 개발에 비해 저렴하며, 단일 지점 학원이라면 거의 항상 필요한 것을 다 커버합니다. 커스텀이 투자할 가치가 생기는 시점은 정확히 커리큘럼이 그 도구의 모델과 안 맞을 때입니다 — 범용 시스템이 표현하기엔 너무 세밀한 벨트별 자격 규칙, 지점마다 따로 로그인하는 대신 원장님용 통합 대시보드가 필요한 지점 두세 곳, 또는 출석·수강료·체험 예약이 서로 동기화 안 되는 세 개의 앱이 아니라 하나의 로그인을 공유하길 원하는 경우입니다.' },
+        { type: 'tip', content: '해볼 만한 현실 점검 — 2주 동안 프런트 사범님이 학부모 질문에 답하려고 두 번째 앱을 열거나, 바인더를 뒤적이거나, 같은 학생 정보를 다시 입력해야 했던 순간을 모두 적어보세요. 그 목록이 짧다면 기성 도구로 충분합니다. 목록이 길고 여러 지점에서 반복된다면, 그 목록이 사실상 사장님께 필요한 커스텀 앱의 기능 명세입니다.' },
+        { type: 'h2', content: '웹앱이냐 네이티브 iOS 앱이냐 — 그리고 앱스토어가 실제로 등장하는 지점' },
+        { type: 'p', content: '이 앱은 내부 직원용 도구가 아니라 학부모용이기 때문에 백오피스 운영 앱과는 다르게 접근합니다. 예약 페이지는 설치 없이 학원 웹사이트에 들어가는 단순한 웹 페이지로도 충분하고, 그것만으로도 체험 수업과 단톡방 문제가 해결됩니다. 진짜 네이티브 iOS 앱이 가치를 갖는 건 앱이 닫혀 있어도 학부모에게 확실히 도달하는 푸시 알림, 브라우저를 열지 않고 즉시 작동하는 QR코드 체크인, 그리고 북마크해둔 페이지의 존재를 잊는 대신 매주 실제로 누르는 홈 화면 앱 아이콘을 원할 때입니다. 가족들이 이 앱을 앱스토어에서 직접 설치하기 때문에, 직원 전용 비공개 배포 경로가 아니라 애플의 표준 공개 심사를 거칩니다 — 즉 학원을 Apple Developer Program에 가입시키고(아직 가입되어 있지 않다면 D-U-N-S 번호가 필요합니다), 리스팅이 준비되면 보통 영업일 1~3일 안에 끝나는 표준 심사를 거쳐 제출합니다. 저희는 등록된 Apple 앱스토어 개발사로서 가입부터 제출까지 전 과정을 직접 관리합니다.' },
+        { type: 'h2', content: '이런 개발은 실제로 어떻게 진행되나' },
+        { type: 'p', content: '저희는 기능 희망 목록을 보고 설계하는 대신 실제 체험 수업 신청 현장과 실제 벨트 심사일에 함께 앉아서, 지금의 종이·단톡방 시스템이 실제 상황에서 정확히 어디서 무너지는지 봅니다. 여기서부터 가장 아픈 부분부터 고치는 가장 작은 버전을 정하고 — 보통 체험 수업 예약이나 벨트 추적입니다, 매주 누적되니까요 — 나머지를 추가하기 전에 그것부터 출시합니다. 오늘 단톡방으로 돌아가는 학원이 예약 기능 하나만으로도 몇 주 안에 라이브가 될 수 있는데 완전한 시스템을 4개월씩 기다릴 필요는 없습니다. 각 부분이 테스트되고 준비될 때까지 프런트 직원들은 기존 방식을 계속 쓰고, 학원의 실제 커리큘럼에 맞게 만들어진 도구를 사범님께 교육하는 건 보통 지금의 비공식 시스템으로 온보딩하는 것보다 빠릅니다. 출시 후에도 저희는 다른 모든 클라이언트와 똑같은 방식으로 계속 지원합니다 — 이중언어, 한 명의 담당자, 카카오톡으로 바로 연락 가능하게.' },
+        { type: 'h2', content: '라스베가스 밖에서도 똑같이 작동합니다' },
+        { type: 'p', content: '스프링 마운틴 로드와 헨더슨·서머린 상권이 지금 미국에서 가장 빠르게 성장하는 한인 무술 학원 상권 중 하나인 건 맞지만, 똑같은 벨트카드·단톡방 패턴은 한인이 운영하는 태권도·합기도 학원이 있는 곳이라면 어디서나 똑같이 나타납니다 — LA 코리아타운, 뉴저지 버겐카운티, 애틀랜타 외곽 덜루스·수와니, 버지니아 북부 애난데일. 한인 학원이 지점 하나를 넘어 성장한 곳이라면 어디든, 벨트카드 바인더와 공유 단톡방은 더 이상 특이한 습관이 아니라 조용히 등록을 가로막는 원인이 됩니다.' },
+        { type: 'cta', content: '라스베가스, 헨더슨, 서머린, 혹은 미국 어디서든 태권도, 합기도, 무술 학원을 운영하시면서 종이 벨트 카드와 단톡방 체험 신청에 지치셨나요? ZOE LUMOS는 벨트 추적, 수업 예약, 출석, 수강료 결제까지 담은 이중언어 학원 웹사이트와 커스텀 iOS 앱을 만듭니다. 네이티브 앱이 필요한 학원을 위한 등록된 Apple 앱스토어 개발사이기도 합니다. 한국어/영어 무료 상담: info@zoelumos.com 이메일 또는 카카오톡(http://pf.kakao.com/_xhxdxmlX/chat)으로 편하게 문의하세요.' },
+      ],
+    },
+  },
 ]
 
 /**
