@@ -13507,6 +13507,111 @@ const allBlogPosts: BlogPost[] = [
       ],
     },
   },
+  // ─────────────────────────────────────────────────────────────────
+  // 2026-10-10 — Customer-facing iOS loyalty/ordering app for multi-location
+  // Korean-American grocery & retail chains (Austin, TX). App development
+  // rotation topic — distinct from the Houston internal-ops app and the
+  // Charlotte beauty/fitness membership app: this one is retail/grocery,
+  // customer-facing, and centers the App Store submission process.
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'korean-grocery-retail-ios-loyalty-app-austin-2026',
+    date: '2026-10-10',
+    updatedDate: '2026-10-10',
+    readTime: 9,
+    category: { en: 'App Development', ko: '앱 개발' },
+    title: {
+      en: "Austin's Korean Grocery & Retail Chains: Building a Customer-Facing iOS App for Loyalty, Pre-Orders, and Push Alerts (2026)",
+      ko: '오스틴 한인 마트·리테일 체인을 위한 고객용 iOS 앱 — 적립 포인트, 사전주문, 푸시 알림까지 (2026)',
+    },
+    metaDescription: {
+      en: "Korean grocery stores and retail chains expanding across Austin, Round Rock, and Cedar Park often run customer loyalty on paper stamp cards and restock news on a KakaoTalk group chat that half the customer base never opens. A custom iOS app — published as a registered Apple App Store developer — can unify loyalty points, pre-order pickup, and push notifications across every location. Here is how the process actually works, what it costs, and the ownership questions that protect the business.",
+      ko: '오스틴, 라운드록, 시더파크로 매장을 넓혀가는 한인 마트·리테일 체인은 흔히 적립을 종이 스탬프 카드로, 재입고 소식을 고객 절반은 안 보는 카카오톡 단체방으로 처리합니다. Apple 앱스토어 등록 개발사가 만드는 커스텀 iOS 앱 하나로 모든 매장의 적립 포인트, 사전주문 픽업, 푸시 알림을 통합할 수 있습니다. 실제 진행 과정, 비용 감, 그리고 사업체를 지켜주는 소유권 질문까지 정리했습니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'Is a custom iOS app worth it for a multi-location Korean grocery or retail chain, or should we stick with a loyalty punch-card app?',
+          ko: '한인 마트·리테일 체인에 커스텀 iOS 앱이 정말 필요한가요, 아니면 기성 적립 앱으로 충분한가요?',
+        },
+        a: {
+          en: "A custom app earns its cost specifically when a business has outgrown what a generic punch-card app can express — most often that means more than one location, inventory that actually varies by store, or promotions and restock news you want to push directly to customers' phones instead of hoping they check a KakaoTalk group. A generic loyalty app works fine for a single counter with one simple reward. Once you need a location switcher, Korean-English bilingual push notifications, and points that reconcile against your own POS rather than a third party's black box, the generic tools start costing you in workarounds what a custom build would have cost once. The deciding question is not app size — it is whether your loyalty and inventory logic are simple enough for someone else's template to express honestly.",
+          ko: '커스텀 앱은 기성 펀치카드 앱이 표현할 수 없는 수준으로 사업이 커졌을 때 비용값을 합니다 — 보통 매장이 두 곳 이상이거나, 매장마다 재고가 실제로 다르거나, 프로모션·재입고 소식을 카카오톡 단체방에 올리고 보는 사람만 보게 두는 대신 고객 휴대폰에 직접 밀어 넣고 싶을 때입니다. 매장 하나에 보상 규칙 하나뿐이라면 기성 적립 앱으로도 충분합니다. 하지만 매장 선택 기능, 한영 이중언어 푸시 알림, 외부 블랙박스가 아니라 사장님의 POS와 맞아떨어지는 적립 포인트가 필요해지는 순간부터는, 기성 툴의 임시방편에 들어가는 비용이 한 번의 커스텀 개발 비용을 결국 넘어섭니다. 판단 기준은 앱의 규모가 아니라, 적립·재고 로직이 남의 템플릿으로 솔직하게 표현될 만큼 단순한가입니다.',
+        },
+      },
+      {
+        q: {
+          en: 'How long does it take to get a custom loyalty and ordering app approved on the Apple App Store?',
+          ko: '커스텀 적립·주문 앱이 애플 앱스토어 심사를 통과하는 데 보통 얼마나 걸리나요?',
+        },
+        a: {
+          en: "Apple's own review typically takes a few days once a finished build is submitted, but owners consistently underestimate the stage before that: design and development for a loyalty-plus-ordering app with multi-location support usually runs several weeks to a few months depending on scope, followed by a TestFlight beta period where staff and a few regular customers actually use it before public submission. Budget extra time for the first submission specifically — Apple's Guideline 4.3 rejects apps that look like a white-labeled template, so a reviewer may ask for changes that demonstrate the app's custom business logic, and a registered App Store developer who has been through this review before can usually resolve a rejection in one resubmission cycle rather than several.",
+          ko: '완성된 빌드를 제출하면 애플 자체 심사는 보통 며칠 안에 끝나지만, 사장님들이 꾸준히 과소평가하는 건 그 이전 단계입니다. 멀티매장 지원이 들어간 적립+주문 앱의 기획·개발은 범위에 따라 보통 몇 주에서 몇 달이 걸리고, 그다음 TestFlight 베타 기간에 직원과 단골 고객 일부가 실제로 써보는 과정이 공개 제출 전에 있습니다. 첫 제출에는 특히 여유 시간을 두세요 — Apple 가이드라인 4.3은 화이트라벨 템플릿처럼 보이는 앱을 거절하므로, 심사관이 앱의 커스텀 비즈니스 로직을 보여달라고 요청할 수 있습니다. 이런 심사를 여러 번 겪어본 앱스토어 등록 개발사와 일하면 보통 반려 후 재제출 한 번으로 해결됩니다.',
+        },
+      },
+      {
+        q: {
+          en: 'What happens to our app and customer data if we switch developers later?',
+          ko: '나중에 개발사를 바꾸면 우리 앱과 고객 데이터는 어떻게 되나요?',
+        },
+        a: {
+          en: "That depends entirely on how the app was set up at the start, which is why it should be settled before any code is written, not after a falling-out. If the app is published under an Apple Developer account your business owns, with source code delivered to a repository you control and full access to your own customer and loyalty database, switching developers is a clean handoff — a new developer picks up exactly where the last one left off, and your App Store reviews, install history, and customer accounts move with you. If instead the account, code, or database sit under the vendor's name, you are starting over from zero if the relationship ends, losing every review and every customer who already has the app installed. Ask these three ownership questions in writing before signing with anyone.",
+          ko: '전적으로 앱을 처음 어떻게 설정했는지에 달려 있습니다. 그래서 관계가 깨진 뒤가 아니라 코드를 쓰기도 전에 미리 정리해둬야 하는 문제입니다. 앱이 사업체 소유의 Apple 개발자 계정으로 출시되어 있고, 소스 코드가 사업체가 통제하는 저장소로 전달되며, 자체 고객·적립 데이터베이스에 전체 접근 권한이 있다면 개발사를 바꾸는 건 깔끔한 인수인계입니다 — 새 개발사가 이전 개발사가 멈춘 지점부터 정확히 이어받고, 앱스토어 리뷰·설치 이력·고객 계정이 모두 그대로 사장님을 따라옵니다. 반대로 계정·코드·데이터베이스가 업체 명의로 되어 있다면, 관계가 끝나는 순간 처음부터 다시 시작해야 하고 이미 앱을 설치한 모든 고객과 리뷰를 잃습니다. 누구와 계약하든 서명 전에 이 세 가지 소유권 질문을 서면으로 확인하세요.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "Austin's Korean business community has grown well past the original cluster near North Lamar — new grocery counters and retail shops are opening toward Round Rock and Cedar Park, and more than a few owners now run two or three locations instead of one. The loyalty system has not caught up with the expansion. Points still live on a paper stamp card that cannot be checked across stores. Restock and sale news goes into a KakaoTalk group chat that newer, English-first customers never join. We build custom iOS apps as a registered Apple App Store developer, and a loyalty-and-ordering app is one of the most common requests we get from growing Korean-American retail chains — because it is the one piece of the business that a spreadsheet or a generic app genuinely cannot hold together once there is more than one store." },
+        { type: 'h2', content: 'Why now, why an app' },
+        { type: 'p', content: "A paper stamp card is fine when there is one counter. The moment a business opens a second or third location, the system breaks — points earned at one store cannot be checked at another, restock and sale news gets buried in a KakaoTalk group chat, and how often any given customer actually comes back lives only in the owner's memory. This is exactly where an app earns its place: loyalty that follows the customer across every location, bilingual push notifications, and inventory or pickup status that genuinely matches what the POS says." },
+        { type: 'ul', content: "Features Austin-area Korean grocery and retail owners actually ask for:", items: [
+          'Location-aware loyalty points — earned at any store, checked and redeemed in one app.',
+          'Pre-order and pickup alerts — holiday gift sets, banchan, and popular items taken as pre-orders, with a push notification when ready.',
+          'Bilingual (Korean/English) push notifications — restock, sales, and per-location announcements sent in the customer\'s chosen language.',
+          'Google Maps-integrated store finder — pointing customers to whichever of Austin, Round Rock, or Cedar Park is closest.',
+          'POS integration — keeping loyalty points reconciled against actual transaction data from Square or Clover, not a disconnected third system.',
+        ] },
+        { type: 'h2', content: 'How the build actually runs, from planning to the App Store' },
+        { type: 'p', content: "The first stage is discovery — scoping concrete questions like how many locations exist, whether loyalty rules differ store to store, and which POS is already in place. Next comes design, where screens can be reviewed and changed before any code is written, which is the cheap stage to get things right. During development, staff and a handful of regular customers test the real thing through a TestFlight beta before public release. The last stage is Apple's App Store review — as a registered developer, we handle provisioning, privacy labels, and Guideline 4.3 compliance routinely at this stage. After launch, the app needs to be updated every time inventory or loyalty rules change, so a maintenance plan should be part of the deal from day one, not an afterthought." },
+        { type: 'tip', content: "If more locations are on the roadmap, design the 'store selector' into the app from day one. Retrofitting a single-location app into a multi-location one later costs more, in both time and money, than building it multi-location from the start." },
+        { type: 'h2', content: 'Cost and ownership — what to confirm before signing' },
+        { type: 'ul', content: 'Questions to settle before any contract is signed:', items: [
+          'Is the app published under an Apple Developer account the business owns, or transferable to one?',
+          'Is the source code delivered to a repository the business controls?',
+          'Does the business have full access to its own customer and loyalty database?',
+          'How — and at what cost — is post-launch maintenance (POS integration changes, OS updates) handled?',
+          'Did the developer actually understand and implement industry-specific logic like inventory and loyalty rules, or repackage a template?',
+        ] },
+        { type: 'cta', content: "Growing a Korean grocery or retail chain across Austin, Round Rock, or Cedar Park? ZOE LUMOS is a registered Apple App Store developer, building multi-location loyalty, pre-order, and push-notification iOS apps from planning through App Store review and ongoing maintenance. Free consultation: email info@zoelumos.com or message us on KakaoTalk (http://pf.kakao.com/_xhxdxmlX/chat)." },
+      ],
+      ko: [
+        { type: 'intro', content: '오스틴 한인 비즈니스 커뮤니티는 노스 라마(North Lamar) 인근의 원래 상권을 훌쩍 넘어섰습니다. 라운드록과 시더파크 쪽으로 새 마트·리테일 매장이 열리고 있고, 적지 않은 사장님들이 이제 매장을 한 곳이 아니라 두세 곳 운영합니다. 적립 시스템은 이 확장 속도를 따라가지 못하고 있습니다. 포인트는 여전히 매장 간 확인이 안 되는 종이 스탬프 카드에 머물러 있고, 재입고·세일 소식은 영어가 편한 신규 고객들은 들어오지 않는 카카오톡 단체방에 묻혀버립니다. 저희는 Apple 앱스토어 등록 개발사로서 커스텀 iOS 앱을 만들고, 적립·주문 앱은 성장하는 한인 리테일 체인에서 가장 많이 받는 의뢰 중 하나입니다 — 매장이 둘 이상이 되는 순간, 스프레드시트나 기성 앱으로는 정말로 묶어낼 수 없는 영역이기 때문입니다.' },
+        { type: 'h2', content: '왜 지금, 왜 앱인가' },
+        { type: 'p', content: '매장이 하나뿐일 때는 종이 스탬프 카드도 충분합니다. 매장이 둘, 셋이 되는 순간 문제가 생깁니다 — 한 매장에서 쌓은 포인트를 다른 매장에서 확인할 방법이 없고, 재입고·세일 소식은 카카오톡 단체방에 묻혀버리고, 어느 고객이 얼마나 자주 오는지는 사장님의 기억에만 있습니다. 앱이 정당화되는 지점은 정확히 여기입니다 — 매장을 넘나드는 적립, 두 언어로 가는 푸시 알림, 그리고 사장님의 POS와 실제로 맞아떨어지는 재고·픽업 정보.' },
+        { type: 'ul', content: '오스틴 지역 한인 마트·리테일 사장님들이 실제로 의뢰하는 기능들:', items: [
+          '매장 선택 기반 적립 포인트 — 어느 매장에서 쌓든 고객이 한 앱에서 확인하고 사용합니다.',
+          '사전주문 · 픽업 알림 — 명절 선물세트, 반찬, 인기 품목을 미리 주문받고 준비되면 푸시로 알립니다.',
+          '한영 이중언어 푸시 알림 — 재입고, 세일, 매장별 공지를 고객이 설정한 언어로 보냅니다.',
+          '구글 지도 연동 매장 찾기 — 오스틴, 라운드록, 시더파크 중 가장 가까운 매장을 안내합니다.',
+          'POS 연동 — Square나 Clover의 실제 거래 데이터와 적립 포인트가 어긋나지 않게 맞춥니다.',
+        ] },
+        { type: 'h2', content: '실제 진행 과정 — 기획부터 앱스토어까지' },
+        { type: 'p', content: '첫 단계는 디스커버리입니다 — 매장이 몇 곳인지, 적립 규칙이 매장마다 같은지 다른지, 어떤 POS를 쓰는지 같은 구체적인 질문들로 범위를 정합니다. 그다음 디자인 — 화면을 직접 보고 피드백할 수 있는 단계로, 코드를 쓰기 전에 끝내야 저렴합니다. 개발 단계에서는 직원과 단골 고객 몇 명이 TestFlight로 실제 사용해보는 베타 기간을 반드시 거칩니다. 마지막은 Apple 앱스토어 심사 — 저희는 등록 개발사로서 프로비저닝, 개인정보 라벨, 가이드라인 4.3 대응까지 이 단계를 정기적으로 처리합니다. 출시 후에는 재고·적립 규칙이 바뀔 때마다 앱도 함께 업데이트되어야 하므로, 유지보수 계획이 처음부터 포함돼야 합니다.' },
+        { type: 'tip', content: '매장이 늘어날 계획이 있다면 처음부터 "매장 선택" 구조로 설계해 두세요. 매장 하나짜리 앱을 나중에 멀티매장으로 바꾸는 것은 처음부터 멀티매장으로 짜는 것보다 비용과 시간이 더 듭니다.' },
+        { type: 'h2', content: '비용과 소유권 — 서명 전에 확인할 것' },
+        { type: 'ul', content: '계약 전 반드시 확인해야 할 질문들:', items: [
+          '앱은 사업체 소유의 Apple 개발자 계정으로 출시되나요, 아니면 이전 가능한가요?',
+          '소스 코드는 사업체가 통제하는 저장소로 전달되나요?',
+          '고객·적립 데이터베이스에 사업체가 전체 접근 권한을 갖나요?',
+          '출시 후 유지보수(POS 연동 변경, OS 업데이트 대응)는 어떻게, 얼마에 처리되나요?',
+          '재고·적립 로직처럼 업종 특화 규칙을 개발자가 실제로 이해하고 구현했나요, 아니면 템플릿을 재포장했나요?',
+        ] },
+        { type: 'cta', content: '오스틴·라운드록·시더파크에서 매장을 넓혀가는 한인 마트·리테일 사장님이신가요? ZOE LUMOS는 Apple 앱스토어 등록 개발사로서 멀티매장 적립·사전주문·푸시 알림 iOS 앱을 기획부터 앱스토어 심사, 그 이후 유지보수까지 함께합니다. 무료 상담: info@zoelumos.com 이메일 또는 카카오톡(http://pf.kakao.com/_xhxdxmlX/chat)으로 문의하세요.' },
+      ],
+    },
+  },
 ]
 
 /**
