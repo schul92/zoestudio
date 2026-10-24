@@ -13507,6 +13507,105 @@ const allBlogPosts: BlogPost[] = [
       ],
     },
   },
+  // ─────────────────────────────────────────────────────────────────
+  // 2026-10-08 — B2B trust/credibility: free-email (gmail/naver) as a
+  // wire-fraud red flag for Korean-American trading & wholesale companies,
+  // vs. a @company-domain email + real website as a buyer due-diligence
+  // pass. Distinct from the existing B2B posts: that one (credibility,
+  // general) covers overall site trust, the LA post covers SEO-driven
+  // quote lead gen, and the Georgia post covers RFQ-form speed-to-lead.
+  // This one is specifically about the email-domain/BEC-fraud trust gap.
+  // Audience rotation: Chicago-area Korean import/trading/wholesale
+  // corridor (Lincolnwood–Niles–Skokie–Glenview), not NJ/NY.
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'b2b-trading-wholesale-company-domain-email-trust-chicago-2026',
+    date: '2026-10-08',
+    updatedDate: '2026-10-08',
+    readTime: 9,
+    category: { en: 'B2B Trust & Credibility', ko: 'B2B 신뢰 구축' },
+    title: {
+      en: 'Your Gmail Address Is Costing You the Deal: Why Korean-American Trading & Wholesale Companies Need a @YourCompany Email (Chicago Guide, 2026)',
+      ko: '회사 도메인 이메일 없인 큰 거래가 끊깁니다 — 시카고 한인 무역·도매업체를 위한 B2B 신뢰 구축 가이드 (2026)',
+    },
+    metaDescription: {
+      en: "A serious buyer or overseas principal does a 10-minute background check before wiring a deposit — and a reply from a free @gmail.com or @naver.com address is one of the fastest ways to fail it. Why free email addresses now read as a fraud red flag in B2B trade, and what Korean-American trading and wholesale companies around Chicago's Lincolnwood–Niles–Skokie corridor need instead.",
+      ko: '진지한 바이어나 해외 본사는 보증금을 송금하기 전 10분짜리 신원 확인을 합니다 — 그리고 @gmail.com이나 @naver.com 같은 무료 이메일로 답장이 오면 그 확인을 가장 빠르게 통과하지 못하는 길 중 하나입니다. 왜 무료 이메일 주소가 요즘 B2B 거래에서 사기 위험 신호로 읽히는지, 그리고 시카고 링컨우드·나일스·스코키 일대 한인 무역·도매업체에 실제로 필요한 것은 무엇인지 정리했습니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: 'Is it really a problem to run a trading or wholesale business on a Gmail or Naver email address?',
+          ko: '지메일이나 네이버 이메일로 무역·도매 거래를 하면 정말 문제가 되나요?',
+        },
+        a: {
+          en: "Yes, it is a real and growing problem, because business email compromise (BEC) and invoice fraud — where a scammer impersonates a real company from a lookalike free email address to redirect a wire transfer — is now one of the most common types of fraud in international trade, and it has trained buyers' finance and procurement teams to treat any free-domain email on a wire-worthy deal as a reason to slow down or walk away. A legitimate company replying from @gmail.com or @naver.com is indistinguishable, from the buyer's side, from the scam pattern they were just warned about in a compliance training. This does not mean the deal always dies outright — but it adds friction, extra verification calls, and hesitation at exactly the moment you want the buyer moving forward, and against a competitor whose email matches their own website domain, that hesitation usually decides who gets the order.",
+          ko: '네, 실제로 문제이고 점점 커지고 있습니다. 사기꾼이 비슷하게 생긴 무료 이메일 주소로 진짜 회사를 사칭해 송금 계좌를 바꿔치기하는 BEC(비즈니스 이메일 침해)·인보이스 사기가 지금 국제 거래에서 가장 흔한 사기 유형 중 하나가 됐고, 그 때문에 바이어 쪽 재무·구매 담당자들은 송금이 걸린 거래에서 무료 도메인 이메일을 보면 일단 속도를 늦추거나 거래를 피하도록 훈련돼 있습니다. 진짜 회사가 @gmail.com이나 @naver.com으로 보낸 메일은, 바이어 입장에서 방금 컴플라이언스 교육에서 경고받은 사기 패턴과 구분이 되지 않습니다. 그렇다고 거래가 늘 완전히 끊기는 건 아니지만, 바이어가 앞으로 나가야 할 바로 그 순간에 마찰과 추가 확인 전화, 망설임이 끼어들고, 자기 회사 웹사이트 도메인과 이메일이 일치하는 경쟁사가 있다면 그 망설임이 보통 누가 수주하는지를 결정합니다.',
+        },
+      },
+      {
+        q: {
+          en: 'How much does it actually cost to set up a proper @company-domain email?',
+          ko: '제대로 된 회사 도메인 이메일을 설정하는 데 비용이 실제로 얼마나 드나요?',
+        },
+        a: {
+          en: 'It typically costs under $200 a year total for a small trading or wholesale company — roughly $10-20/year for the domain itself, plus $6-12 per mailbox per month for Google Workspace or Microsoft 365, which is the same inbox, calendar, and file storage most buyers already use, just under your own company name. That is a small fraction of the value of a single mid-size container order, and it is usually a same-day setup: buy the domain in your company\'s legal name, create mailboxes for each employee who emails buyers, forward the old free address as a safety net for a few weeks, and update your email signature, invoices, and website to match. The cost is rarely the real barrier — it is simply that nobody got around to it while the business was small, and it never became urgent until a buyer\'s hesitation made it urgent.',
+          ko: '소규모 무역·도매업체 기준으로 보통 연간 총 $200도 안 듭니다 — 도메인 자체는 연 $10~20 정도이고, Google Workspace나 Microsoft 365 메일박스가 직원 1명당 월 $6~12 정도입니다. 대부분의 바이어가 이미 쓰는 것과 똑같은 받은편지함·캘린더·파일 저장공간을 회사 명의로 쓰는 것뿐입니다. 중간 규모 컨테이너 주문 한 건 가치에 비하면 아주 작은 비용이고, 설정도 보통 당일에 끝납니다 — 회사 법인명으로 도메인을 구매하고, 바이어와 이메일을 주고받는 직원마다 메일박스를 만들고, 기존 무료 주소는 몇 주간 안전장치로 포워딩해두고, 이메일 서명·인보이스·웹사이트를 모두 맞추면 됩니다. 진짜 걸림돌은 비용이 아니라, 사업이 작을 때는 미뤄두다가 바이어의 망설임이 발목을 잡기 전까지는 급한 일로 느껴지지 않았다는 점입니다.',
+        },
+      },
+      {
+        q: {
+          en: "Besides the email address, what else does a buyer check before trusting a new supplier with a wire transfer?",
+          ko: '이메일 주소 말고, 바이어는 새 공급업체에 돈을 송금하기 전에 또 무엇을 확인하나요?',
+        },
+        a: {
+          en: "A buyer typically checks whether every piece of information lines up: the email domain matches the website domain, the company name on the invoice matches the name on the website and bank account, the website has a real street address and real facility or office photos rather than stock images, and a quick search turns up the company on LinkedIn, a trade directory, or past news in a way that matches what the company claims about itself. None of these checks individually proves legitimacy, but a mismatch in any one — an invoice from a slightly different company name, a website with no address, or a domain registered last month for a company claiming to be 20 years old — is enough to make a cautious buyer pick up the phone and verify before wiring money, or quietly move on to a supplier whose details are consistent everywhere they look.",
+          ko: '바이어는 보통 모든 정보가 서로 일치하는지를 확인합니다 — 이메일 도메인과 웹사이트 도메인이 같은지, 인보이스에 적힌 회사명이 웹사이트와 은행 계좌의 회사명과 같은지, 웹사이트에 실제 도로명 주소와 스톡 이미지가 아닌 실제 공장·사무실 사진이 있는지, 그리고 검색했을 때 LinkedIn이나 업계 디렉토리, 과거 기사에서 회사가 스스로 내세우는 내용과 일치하는 정보가 나오는지입니다. 이 중 하나만으로 정당성이 증명되는 건 아니지만, 어느 하나라도 어긋나면 — 인보이스의 회사명이 살짝 다르거나, 웹사이트에 주소가 없거나, 20년 됐다는 회사의 도메인이 지난달에 등록됐거나 — 신중한 바이어는 송금 전에 전화로 다시 확인하거나, 그냥 조용히 다른 업체로 넘어가 버립니다.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "A Korean-American trading or wholesale company around Chicago's Lincolnwood, Niles, or Skokie corridor gets a promising inquiry from a new buyer — maybe a regional distributor, maybe an overseas principal's US purchasing office. A few emails go back and forth, pricing looks workable, and then the thread goes quiet. No rejection, no objection, just silence. What often happened is invisible to the seller: someone on the buyer's side pulled up the reply address, saw @gmail.com or @naver.com instead of a company domain, checked the website and found either nothing or a page that has not been touched in years, and quietly decided this was not a company they were ready to wire a deposit to yet. The product, the price, and the relationship were never the problem. The paperwork trail just did not look like something a cautious buyer could defend to their own finance team." },
+        { type: 'h2', content: 'Why a free email address now reads as a fraud red flag' },
+        { type: 'p', content: "This did not used to matter nearly as much. But business email compromise — a scam where someone impersonates a real supplier from a lookalike free-email address to redirect a wire transfer to a fraudulent account — has become one of the most common and costly fraud types in international trade, and it has trained an entire generation of buyer-side finance and procurement staff to treat certain patterns as warning signs. A free email domain on a deal involving a wire transfer is near the top of that list, right alongside a sudden change in bank details or an urgent request to skip the usual approval steps. A legitimate Korean-American trading company replying from @gmail.com or @naver.com is not doing anything wrong, but it is, from the buyer's side of the screen, indistinguishable from the exact pattern their compliance training told them to be suspicious of." },
+        { type: 'h2', content: "What a buyer's quiet 10-minute check actually looks for" },
+        { type: 'ul', content: "Before a cautious buyer wires a deposit or signs a purchase order with a new supplier, they usually run a check that never gets mentioned out loud. It looks for:", items: [
+          'Email domain matching the website domain — a reply from @yourcompany.com, not a free provider, is the fastest signal that this is a real, standing business.',
+          "A real website with the company's legal name, a physical address, and actual facility or office photos — not stock images that could belong to any company.",
+          'Consistency across every document the buyer touches — the company name on the invoice, the website, and the bank account should all match exactly, with no near-miss spelling.',
+          'A domain and company age that make sense together — a company claiming decades of history should not be running on a domain registered last month.',
+          'A footprint beyond the website — a LinkedIn company page, a trade directory listing (ThomasNet, Kompass, or industry-specific equivalents), or a past news mention that corroborates what the company says about itself.',
+        ] },
+        { type: 'tip', content: "The fastest, cheapest fix on this entire list is the email domain. A proper @company-domain mailbox costs under $200 a year total between the domain and hosted email, and it can be set up the same day — against a single delayed or lost deal, that is close to free. Fix this one first, because it is also the first thing a buyer's eye catches." },
+        { type: 'h2', content: 'Setting up domain email is simpler than it sounds' },
+        { type: 'p', content: "Buy the domain in your company's own legal name, not a web vendor's account — the same rule that applies to any business website applies doubly here, since a domain registered under someone else's name is itself a red flag if a buyer ever checks the WHOIS record. From there, a hosted email service like Google Workspace or Microsoft 365 gives every employee who emails buyers a mailbox under your domain, with the same inbox, calendar, and shared drive most buyers already use daily — nothing new to learn. The one technical step worth doing properly, even if it sounds unfamiliar, is setting up SPF, DKIM, and DMARC records for your domain: these are what tell a buyer's email server that mail from your domain is genuinely authorized, not spoofed, which both keeps your messages out of spam and is itself part of what a security-conscious buyer's IT team checks on a new vendor. Most hosted email providers walk you through this during setup; it is a one-time task, not ongoing maintenance." },
+        { type: 'h2', content: "A note for Chicago-area Korean trading and wholesale companies" },
+        { type: 'p', content: "The Lincolnwood–Niles–Skokie–Glenview corridor north of Chicago is home to one of the Midwest's steadiest concentrations of Korean-American import, trading, and wholesale distribution businesses — food ingredients, packaging, consumer goods, and components moving between Korea, the broader US market, and regional buyers across the Midwest. Many of these companies were built on relationships, trade shows, and referrals that still matter and still work. But a growing share of new inbound interest — a distributor finding you through a trade directory, an overseas principal's US office sourcing a new US-based partner, a buyer doing first-contact research before a trade show meeting — now runs through exactly the online check this article describes, before a phone call ever happens. A company whose email, website, and paperwork tell a consistent, verifiable story clears that check without ever knowing it happened. A company that does not clears fewer deals than its products and pricing deserve." },
+        { type: 'cta', content: "ZOE LUMOS sets up trustworthy, buyer-ready web presences for Korean-American trading, wholesale, and import companies across the US — company-domain email with proper authentication, real credibility pages, and everything registered in your own company's name. Free consultation in Korean or English: email info@zoelumos.com or reach us on KakaoTalk (http://pf.kakao.com/_xhxdxmlX/chat)." },
+      ],
+      ko: [
+        { type: 'intro', content: '시카고 링컨우드, 나일스, 스코키 일대의 한인 무역·도매업체가 새로운 바이어로부터 괜찮아 보이는 문의를 받습니다 — 지역 유통업체일 수도 있고, 해외 본사의 미국 구매 담당 사무소일 수도 있습니다. 이메일이 몇 차례 오가고 가격도 맞아떨어지는 듯하더니, 어느 순간 조용해집니다. 거절도 없고 이의 제기도 없이, 그냥 침묵입니다. 판매자 쪽에서는 보이지 않는 일이 보통 일어난 뒤입니다 — 바이어 쪽 담당자가 답장 주소를 확인했는데 회사 도메인이 아니라 @gmail.com이나 @naver.com이었고, 웹사이트를 찾아봤더니 아예 없거나 몇 년째 손대지 않은 페이지였고, 아직 보증금을 송금할 준비가 된 회사는 아니라고 조용히 판단한 겁니다. 제품도, 가격도, 관계도 문제가 아니었습니다. 서류상의 흐름이 신중한 바이어가 자기 회사 재무팀에 변명할 수 있을 만한 모습이 아니었던 것뿐입니다.' },
+        { type: 'h2', content: '왜 무료 이메일 주소가 이제 사기 위험 신호로 읽히는가' },
+        { type: 'p', content: '예전엔 이렇게까지 중요하지 않았습니다. 하지만 비슷하게 생긴 무료 이메일 주소로 진짜 공급업체를 사칭해 송금 계좌를 가짜 계좌로 바꿔치기하는 BEC(비즈니스 이메일 침해) 사기가 국제 거래에서 가장 흔하고 피해가 큰 사기 유형 중 하나가 됐고, 이 때문에 바이어 쪽 재무·구매 담당 직원들 세대 전체가 특정 패턴을 경고 신호로 보도록 훈련돼 있습니다. 송금이 걸린 거래에서 무료 이메일 도메인은 그 목록 최상단에 가깝습니다 — 은행 계좌 정보가 갑자기 바뀌거나, 평소 승인 절차를 건너뛰라는 긴급 요청과 거의 같은 수준으로요. 진짜 한인 무역업체가 @gmail.com이나 @naver.com으로 답장을 보낸다고 해서 잘못된 건 아니지만, 화면 건너편 바이어 입장에서는 컴플라이언스 교육에서 의심하라고 배운 패턴과 구분이 되지 않습니다.' },
+        { type: 'h2', content: '바이어의 조용한 10분짜리 확인이 실제로 보는 것' },
+        { type: 'ul', content: '신중한 바이어가 새 공급업체에 보증금을 송금하거나 발주서에 서명하기 전, 겉으로 말하지 않는 확인 절차를 돌립니다. 이때 보는 것들:', items: [
+          '이메일 도메인과 웹사이트 도메인의 일치 — 무료 메일이 아니라 @yourcompany.com에서 온 답장이, 실재하고 지속되는 사업체라는 가장 빠른 신호입니다.',
+          '회사 법인명, 실제 도로명 주소, 아무 회사나 가져다 써도 될 것 같은 스톡 이미지가 아닌 실제 공장·사무실 사진이 담긴 진짜 웹사이트.',
+          '바이어가 접하는 모든 문서 간 일치 — 인보이스, 웹사이트, 은행 계좌의 회사명이 철자 하나까지 정확히 같아야 합니다.',
+          '도메인 나이와 회사 연혁이 서로 말이 되는지 — 수십 년 역사를 내세우는 회사가 지난달에 등록된 도메인을 쓰고 있어서는 안 됩니다.',
+          '웹사이트 밖의 흔적 — LinkedIn 회사 페이지, 업계 디렉토리 등록(ThomasNet, Kompass 등), 또는 회사가 스스로 내세우는 내용과 일치하는 과거 기사 언급.',
+        ] },
+        { type: 'tip', content: '이 목록 전체에서 가장 빠르고 가장 싼 해결책은 이메일 도메인입니다. 제대로 된 @회사도메인 메일박스는 도메인과 호스팅 이메일 합쳐서 연간 $200도 안 들고, 당일에 설정할 수 있습니다 — 거래 한 건이 지연되거나 날아가는 것과 비교하면 거의 공짜입니다. 이것부터 고치세요. 바이어의 눈에 가장 먼저 걸리는 것도 바로 이것이니까요.' },
+        { type: 'h2', content: '도메인 이메일 설정, 생각보다 간단합니다' },
+        { type: 'p', content: '도메인은 웹 업체 계정이 아니라 사장님 회사의 법인명으로 직접 구매하세요 — 어떤 비즈니스 웹사이트에도 적용되는 이 원칙이 여기서는 두 배로 중요합니다. 바이어가 혹시라도 WHOIS 기록을 확인했을 때 다른 사람 명의로 등록된 도메인 자체가 위험 신호가 되기 때문입니다. 그다음엔 Google Workspace나 Microsoft 365 같은 호스팅 이메일 서비스를 쓰면, 바이어와 이메일을 주고받는 모든 직원이 회사 도메인으로 메일박스를 갖게 되고, 바이어들이 이미 매일 쓰는 것과 똑같은 받은편지함·캘린더·공유 드라이브를 쓸 수 있습니다 — 새로 배울 게 없습니다. 낯설게 들려도 제대로 해둘 가치가 있는 기술적 단계 하나는 도메인에 SPF, DKIM, DMARC 레코드를 설정하는 것입니다. 이건 바이어의 이메일 서버에 "이 도메인에서 온 메일은 진짜 승인된 것이고 스푸핑(위조)이 아니다"라고 알려주는 역할을 하는데, 메일이 스팸으로 빠지지 않게 해주는 동시에 보안에 신경 쓰는 바이어의 IT팀이 신규 거래처를 확인할 때 들여다보는 항목이기도 합니다. 대부분의 호스팅 이메일 업체가 가입 과정에서 이 설정을 안내해주고, 한 번만 해두면 되는 작업이지 계속 관리해야 하는 일은 아닙니다.' },
+        { type: 'h2', content: '시카고 지역 한인 무역·도매업체를 위한 참고' },
+        { type: 'p', content: '시카고 북쪽의 링컨우드·나일스·스코키·글렌뷰 일대는 중서부에서 가장 꾸준한 한인 수입·무역·도매 유통 업체 밀집 지역 중 하나입니다 — 식품 원료, 패키징, 생활용품, 부품이 한국과 미국 전역, 그리고 중서부 지역 바이어들 사이를 오갑니다. 이 업체들 중 상당수는 관계, 전시회, 소개로 쌓아온 사업이고, 지금도 여전히 중요하고 여전히 통합니다. 하지만 새로 들어오는 관심 중 점점 더 많은 비중이 — 업계 디렉토리에서 사장님 회사를 발견한 유통업체, 새로운 미국 파트너를 찾는 해외 본사의 미국 사무소, 전시회 미팅 전에 먼저 조사하는 바이어 — 전화 통화가 이뤄지기도 전에 이 글에서 설명한 바로 그 온라인 확인을 거칩니다. 이메일, 웹사이트, 서류가 일관되고 확인 가능한 이야기를 들려주는 회사는 그 확인을 거쳤는지조차 모른 채 통과합니다. 그렇지 않은 회사는 제품과 가격이 받아 마땅한 만큼의 거래를 놓칩니다.' },
+        { type: 'cta', content: 'ZOE LUMOS는 미국 전역의 한인 무역·도매·수입업체를 위해 바이어가 믿을 수 있는 웹 환경을 구축합니다 — 제대로 인증된 회사 도메인 이메일, 신뢰를 보여주는 페이지, 그리고 전부 사장님 회사 명의로 등록까지. 한국어/영어 무료 상담: info@zoelumos.com 이메일 또는 카카오톡(http://pf.kakao.com/_xhxdxmlX/chat)으로 편하게 문의하세요.' },
+      ],
+    },
+  },
 ]
 
 /**
