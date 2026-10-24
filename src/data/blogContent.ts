@@ -13507,6 +13507,117 @@ const allBlogPosts: BlogPost[] = [
       ],
     },
   },
+  // ─────────────────────────────────────────────────────────────────
+  // 2026-10-09 — AWS cloud infrastructure for a Korean-American business
+  // expanding across the Hawaiian Islands. Topic rotation: "Advanced
+  // technical consulting" (AWS/network/architecture), underrepresented
+  // relative to the recent B2B glut. New region (Honolulu/Hawaii), never
+  // covered before in this dataset.
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'aws-cloud-infrastructure-korean-business-hawaii-2026',
+    date: '2026-10-09',
+    updatedDate: '2026-10-09',
+    readTime: 9,
+    category: { en: 'Cloud & Infrastructure', ko: '클라우드 · 인프라' },
+    title: {
+      en: "AWS Cloud Infrastructure for Korean-American Businesses Expanding Across the Hawaiian Islands: What Changes When Store Two Is On a Different Island (2026)",
+      ko: '하와이에서 섬을 넘어 확장하는 한인 사업체 — 두 번째 매장이 다른 섬일 때 AWS 클라우드 인프라는 무엇이 달라지나 (2026)',
+    },
+    metaDescription: {
+      en: "Korean-American restaurants, markets, and salons opening a second location on Maui or the Big Island after starting in Honolulu run into a problem mainland businesses rarely face: every island depends on the same handful of undersea cables, and a single ISP outage can take an entire store offline for hours. Here is what real AWS network architecture and disaster recovery look like for a multi-island Korean-American business, and when it is actually worth the investment.",
+      ko: '호놀룰루에서 시작해 마우이나 빅아일랜드에 두 번째 매장을 여는 한인 식당·마트·샵 사장님들은 본토 사업체는 잘 겪지 않는 문제를 만납니다 — 모든 섬이 몇 개 안 되는 해저 케이블에 의존하고 있어서, ISP 하나가 끊기면 매장 전체가 몇 시간씩 먹통이 될 수 있습니다. 여러 섬에 걸친 한인 사업체에 실제로 필요한 AWS 네트워크 아키텍처와 재해 복구가 어떤 모습인지, 그리고 언제 투자할 가치가 있는지 정리했습니다.',
+    },
+    author: 'Steve Song',
+    faq: [
+      {
+        q: {
+          en: "Why is internet reliability a bigger issue for a Hawaii business with locations on two islands than for a mainland business with two locations in the same city?",
+          ko: '같은 도시에 매장이 두 개인 본토 사업체보다, 섬이 다른 하와이 사업체가 인터넷 안정성 문제를 더 크게 겪는 이유는 뭔가요?',
+        },
+        a: {
+          en: "Because a mainland business in one city usually has several independent internet providers and fiber routes feeding each location, so one outage rarely takes down both stores at once. Every island in Hawaii, by contrast, reaches the rest of the internet through a small number of undersea cables landing at a handful of points, and within an island, most businesses in a given area often share the same utility pole and the same one or two ISP options. A cut cable, a storm, or a single provider's outage does not just slow things down — it can take every connected device at a location fully offline at the same time, with no second provider to fail over to unless one was deliberately set up in advance.",
+          ko: '본토의 한 도시 안에 있는 사업체는 보통 독립된 인터넷 제공업체와 광케이블 경로가 여러 개 매장 각각으로 들어오기 때문에, 장애 하나가 두 매장을 동시에 끊어버리는 일이 드뭅니다. 반면 하와이의 각 섬은 몇 개 안 되는 지점에 상륙하는 소수의 해저 케이블을 통해서만 나머지 인터넷과 연결되고, 섬 안에서도 한 지역의 사업체 대부분이 같은 전신주와 같은 한두 개 ISP 선택지를 공유하는 경우가 많습니다. 케이블 절단, 폭풍, 혹은 제공업체 하나의 장애가 단순히 속도를 늦추는 게 아니라 매장의 모든 연결 기기를 한꺼번에 완전히 끊어버릴 수 있고, 사전에 일부러 준비해 두지 않았다면 전환할 두 번째 제공업체도 없습니다.',
+        },
+      },
+      {
+        q: {
+          en: "Do we really need a disaster recovery setup, or is a daily backup to an external hard drive enough for a hurricane season?",
+          ko: '허리케인 시즌을 대비하는 데 외장하드에 매일 백업하는 걸로 충분한가요, 아니면 재해 복구 체계가 정말 필요한가요?',
+        },
+        a: {
+          en: "An external hard drive sitting in the same store is not disaster recovery — it fails for the same reason the store does. Hawaii's hurricane season runs roughly June through November, and the real risk is not just data loss but the location itself losing power and connectivity for days at a time, with no way to process orders, check inventory, or even confirm the backup still exists until someone can physically get to it. Real disaster recovery means your point-of-sale data, inventory, and customer records are automatically and continuously copied to a mainland AWS region (commonly us-west-2 in Oregon, the nearest to Hawaii) so that even if a store's power, internet, and the device holding the local backup are all down at once, the business data survives untouched and the moment connectivity returns, the store is working from current numbers, not a backup from three days ago.",
+          ko: '같은 매장 안에 있는 외장하드는 재해 복구가 아닙니다 — 매장이 멈추는 바로 그 이유로 외장하드도 멈춥니다. 하와이의 허리케인 시즌은 대략 6월부터 11월까지이고, 진짜 위험은 데이터 손실만이 아니라 매장 자체가 며칠씩 전력과 인터넷을 잃어서 주문 처리도, 재고 확인도, 백업이 여전히 살아 있는지 확인하는 것조차 누군가 직접 가보기 전에는 불가능해지는 상황입니다. 진짜 재해 복구는 POS 데이터·재고·고객 기록이 본토의 AWS 리전(하와이에서 가장 가까운 오리건 us-west-2가 일반적)으로 자동으로, 지속적으로 복제되는 것을 뜻합니다. 그래야 매장의 전력·인터넷·로컬 백업 장치가 동시에 다 끊겨도 사업 데이터는 그대로 살아남고, 연결이 돌아오는 순간 사흘 전 백업이 아니라 최신 숫자로 매장이 다시 돌아갑니다.',
+        },
+      },
+      {
+        q: {
+          en: "We just opened our second location — one on Oahu, one on Maui. Is that really enough scale to justify AWS cloud consulting?",
+          ko: '매장을 이제 막 두 개로 늘렸어요 — 오아후 하나, 마우이 하나. 이 정도 규모에서도 AWS 클라우드 컨설팅이 정말 필요한가요?',
+        },
+        a: {
+          en: "Yes, and for inter-island Hawaii businesses specifically, the need usually arrives earlier than it would for a mainland business with two locations in the same metro. One store is simple to keep in your head; a second store on a different island means you can no longer drive over to check on it, you are relying entirely on a phone call to know what today's sales looked like, and any inventory transfer between islands has to be tracked manually because the two locations' systems have no shared view of each other. The setup does not need to be elaborate — centralized reporting, secure site-to-site connectivity between locations and the cloud, and automated off-island backup cover the core risk — but it is worth doing as soon as the second island location opens, rather than after a cable cut or a missed inventory transfer makes the gap obvious the hard way.",
+          ko: '네, 그리고 섬을 넘나드는 하와이 사업체는 특히 본토의 같은 광역권 두 매장보다 이 필요가 더 일찍 찾아오는 경우가 많습니다. 매장 하나는 머릿속으로 다 파악하기 쉽지만, 다른 섬에 생긴 두 번째 매장은 차를 몰고 가서 확인할 수 없고, 오늘 매출이 어땠는지는 전적으로 전화 통화에 의존하게 되며, 섬 간 재고 이동은 두 매장의 시스템이 서로를 보지 못해 수동으로 추적해야 합니다. 거창한 구성이 필요한 건 아닙니다 — 통합 리포팅, 매장과 클라우드 사이의 안전한 사이트투사이트 연결, 섬 밖(본토)으로의 자동 백업 정도면 핵심 위험은 커버됩니다. 다만 케이블 절단이나 재고 이동 누락으로 그 공백을 힘들게 깨닫기 전에, 두 번째 섬 매장을 연 바로 그 시점에 해두는 게 맞습니다.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: "Honolulu has long been the center of gravity for Korean-American business in Hawaii — restaurants and markets around Keeaumoku Street and Mapunapuna, salons and clinics scattered through Oahu's suburbs. What's newer is the next step: a restaurant group, a beauty supply distributor, or a salon chain that started with one Oahu location opening a second one on Maui or the Big Island to follow the same tourist and local traffic that built the first store. That move changes the infrastructure math in a way that rarely comes up when a mainland business opens a second location across town. In most of the mainland US, a second location means a different building with its own internet provider, on a grid with several redundant paths to the rest of the internet. In Hawaii, a second location on a different island means depending on the same small set of undersea cables, the same limited ISP choices, and a disaster-risk profile — hurricanes, grid instability, physical isolation — that a consumer router and a shared spreadsheet were never built to survive." },
+        { type: 'h2', content: 'Why island geography changes the infrastructure math' },
+        { type: 'p', content: "Every island in the Hawaiian chain reaches the rest of the internet through a limited number of undersea fiber cables landing at a handful of points, mostly on Oahu. That single dependency means an outage affecting one of those cables, a damaged landing station, or a single ISP's equipment failure does not just slow things down for one business — it can take every connected device at a location fully offline for hours, with no second provider available to fail over to unless one was deliberately arranged in advance. A mainland business rarely has to think about this, because most cities have multiple independent fiber routes and several competing ISPs feeding any given commercial building. A Korean-American restaurant group running one store on Oahu and a second on Maui is, in effect, running on two different islands' worth of single points of failure, with no shared infrastructure between them unless someone builds one." },
+        { type: 'ul', content: 'What actually breaks once the second island location opens:', items: [
+          "No shared visibility — the owner finds out how Maui did today by calling the manager, because the two locations' POS systems and spreadsheets have no common view.",
+          'Manual inventory transfers — moving stock between islands (or ordering a container that splits between two stores) gets tracked in texts and notebooks, with no system catching a double order or a shortfall until it is too late.',
+          'A single ISP outage takes a whole store down — orders, card payments, and inventory lookups all stop at once, with no fallback connection.',
+          'Access control nobody maintains — an employee who transfers from the Oahu store to the new Maui location often keeps login access at both, with nobody tracking who can see what.',
+          'No real backup — if backups exist at all, they usually live on a drive in the same building that could lose power in the same storm.',
+        ] },
+        { type: 'h2', content: 'What a real multi-island AWS setup actually covers' },
+        { type: 'p', content: "None of this requires an enterprise IT department. A properly scoped AWS consulting engagement for a two- or three-location Hawaii business typically covers four things: secure site-to-site connectivity between each location and a central cloud environment (so stores talk to one shared system instead of to each other through consumer routers), redundant internet paths at each location where the business can afford it, a centralized reporting dashboard that pulls POS and inventory data from every island into one view, and automated backup replication to a mainland AWS region — commonly us-west-2 in Oregon, the closest to Hawaii — so business data survives even if a store's power and internet go down together." },
+        { type: 'ul', content: 'The pieces that matter most for an inter-island setup:', items: [
+          'Site-to-site VPN between each location and the cloud environment, replacing ad hoc remote-desktop or shared-login setups that break under any network hiccup.',
+          "PCI DSS-aligned segmentation of POS traffic from general store Wi-Fi, so a guest network issue at one location can't touch payment processing at either.",
+          'Role-based access tied to the person, not the location, so a transfer between islands updates access automatically instead of leaving old logins active.',
+          'Automated, continuous backup replication to a mainland region, not a nightly job to a local drive that shares the same power and network as the store.',
+          'A single reporting view across islands, so "how did Maui do today" has an answer before anyone has to call and ask.',
+        ] },
+        { type: 'tip', content: "A useful test before you invest in any of this: pick a slow Tuesday and ask what would actually happen if the Maui store's internet went down for six hours on a day three cruise ships are in port. If the honest answer involves someone driving to the store, a lost day of card payments, or no way to know how the other location is doing, that gap is worth closing before a real storm does it for you." },
+        { type: 'h2', content: 'Disaster recovery for hurricane season and grid instability' },
+        { type: 'p', content: "Hawaii's hurricane season runs roughly June through November, and even outside of named storms, an island's power grid or a single utility pole going down can isolate a location for longer than a mainland business typically plans for. The risk that matters for a Korean-American business isn't just losing today's sales data — it's a store that is completely dark for two or three days, with no way to confirm orders, check what inventory survived, or even know whether yesterday's numbers are safely stored anywhere. The fix is continuous replication of POS, inventory, and customer data to a mainland AWS region, set up once and running automatically in the background, so that when connectivity returns, the business picks up from current numbers rather than rebuilding from whatever paper or memory survived the outage." },
+        { type: 'h2', content: 'When it is actually time to invest in this' },
+        { type: 'p', content: "The trigger is almost always the moment a second island location opens, not a particular revenue number. One store is easy to run from memory and a single POS screen; a second store on a different island means phone calls replace line of sight, inventory transfers need a system instead of a notebook, and a disaster at either location is now a risk the owner is carrying twice over, in two different undersea-cable catchment areas. Waiting until after a cable cut, a hurricane, or a lost inventory shipment makes the gap obvious costs more — in lost sales and in the scramble to rebuild records — than setting up the basics ahead of time would have." },
+        { type: 'cta', content: "Running a Korean-American business with locations on more than one Hawaiian island? ZOE LUMOS sets up AWS network architecture for inter-island operations — secure site-to-site connectivity, centralized multi-location reporting, and automated backup replication to the mainland so a storm on one island never means losing the business's data. Free consultation in English or Korean: email info@zoelumos.com or message us on KakaoTalk (http://pf.kakao.com/_xhxdxmlX/chat)." },
+      ],
+      ko: [
+        { type: 'intro', content: '하와이 한인 비즈니스의 중심은 오랫동안 호놀룰루였습니다 — 케에아우모쿠(Keeaumoku) 거리와 마푸나푸나(Mapunapuna) 일대의 식당·마트들, 오아후 교외 곳곳에 흩어진 샵·클리닉들. 요즘 새로 나타나는 흐름은 그 다음 단계입니다 — 오아후에서 매장 하나로 시작한 식당 그룹, 뷰티서플라이 유통업체, 샵 체인이 처음 매장을 키운 그 관광객·현지인 수요를 따라 마우이나 빅아일랜드에 두 번째 매장을 여는 것입니다. 이 한 걸음은 본토 사업체가 같은 도시 안에서 두 번째 매장을 열 때는 거의 등장하지 않는 방식으로 인프라 계산을 바꿔놓습니다. 본토 대부분 지역에서 두 번째 매장은 그저 다른 건물, 자기만의 인터넷 제공업체, 나머지 인터넷으로 가는 여러 중복 경로가 있는 전력망 위에 서는 것을 뜻합니다. 하와이에서 다른 섬의 두 번째 매장은, 같은 몇 개 안 되는 해저 케이블과 같은 제한된 ISP 선택지, 그리고 가정용 공유기와 공유 스프레드시트로는 절대 버티지 못할 재해 위험 프로필 — 허리케인, 전력망 불안정, 물리적 고립 — 에 의존하게 되는 것을 뜻합니다.' },
+        { type: 'h2', content: '섬이라는 지리가 인프라 계산을 바꾸는 이유' },
+        { type: 'p', content: '하와이 제도의 모든 섬은 대부분 오아후에 상륙하는 몇 개 안 되는 해저 광케이블을 통해서만 나머지 인터넷과 연결됩니다. 이 단일 의존성 때문에, 그 케이블 중 하나에 장애가 생기거나, 상륙 기지국이 손상되거나, 단일 ISP의 장비가 고장 나면 한 사업체의 속도만 느려지는 게 아니라 — 매장의 모든 연결 기기가 몇 시간씩 완전히 먹통이 될 수 있고, 사전에 일부러 준비해 두지 않았다면 전환할 두 번째 제공업체도 없습니다. 본토 사업체는 이런 고민을 거의 할 필요가 없는데, 대부분 도시에는 독립된 광케이블 경로 여러 개와, 어떤 상업용 건물에든 경쟁하는 ISP가 여러 개 들어오기 때문입니다. 오아후에 매장 하나, 마우이에 두 번째 매장을 운영하는 한인 식당 그룹은, 사실상 서로 공유하는 인프라가 하나도 없는 두 섬 각각의 단일 장애점을 그대로 떠안고 운영하는 셈입니다 — 누군가 직접 연결해두지 않는다면요.' },
+        { type: 'ul', content: '두 번째 섬 매장이 열리는 순간 실제로 깨지는 것들:', items: [
+          '공유되지 않는 현황 — 사장님은 마우이 매장이 오늘 어땠는지 매니저에게 전화해서야 알게 됩니다. 두 매장의 POS와 스프레드시트가 서로를 보는 공통 화면이 없기 때문입니다.',
+          '수동 재고 이동 — 섬 사이로 재고를 옮기거나 컨테이너를 두 매장에 나눠 받는 과정이 문자와 수첩으로 추적되고, 중복 주문이나 부족을 잡아주는 시스템이 없어 너무 늦게야 발견됩니다.',
+          'ISP 하나의 장애가 매장 전체를 멈춥니다 — 주문, 카드 결제, 재고 조회가 한꺼번에 멈추고, 전환할 대체 연결이 없습니다.',
+          '누구도 관리하지 않는 접근 권한 — 오아후 매장에서 새 마우이 매장으로 옮긴 직원이 보통 두 곳 모두의 로그인을 그대로 유지하고, 누가 무엇을 볼 수 있는지 추적하는 사람이 없습니다.',
+          '진짜 백업이 없음 — 백업이 있다 해도 보통 같은 건물의 드라이브에 있어서, 같은 폭풍에 전력과 함께 날아갈 수 있습니다.',
+        ] },
+        { type: 'h2', content: '여러 섬에 걸친 AWS 구성이 실제로 다루는 것' },
+        { type: 'p', content: '이 중 어느 것도 대기업급 IT 부서가 필요하지는 않습니다. 매장 두세 개짜리 하와이 사업체에 맞게 설계된 AWS 컨설팅은 보통 네 가지를 다룹니다 — 각 매장과 중앙 클라우드 환경 사이의 안전한 사이트투사이트 연결(매장들이 가정용 공유기를 통해 서로가 아니라, 하나의 공유 시스템과 대화하게), 여력이 되는 매장마다 중복 인터넷 경로, 모든 섬의 POS·재고 데이터를 한 화면으로 모으는 통합 리포팅 대시보드, 그리고 본토 AWS 리전(하와이에서 가장 가까운 오리건 us-west-2가 일반적)으로의 자동 백업 복제 — 매장의 전력과 인터넷이 동시에 끊겨도 사업 데이터는 살아남게 하는 것.' },
+        { type: 'ul', content: '섬을 넘나드는 구성에서 가장 중요한 요소들:', items: [
+          '각 매장과 클라우드 환경 사이의 사이트투사이트 VPN — 네트워크에 작은 문제만 생겨도 끊어지는 임시 원격 데스크톱이나 공용 로그인 방식을 대체합니다.',
+          'PCI DSS 기준에 맞춰 POS 트래픽을 매장 일반 와이파이와 분리 — 한 매장의 게스트 네트워크 문제가 양쪽 어느 쪽의 결제 처리도 건드리지 못하게 합니다.',
+          '매장이 아니라 사람에 연결된 역할 기반 접근 권한 — 섬 간 전환 시 접근 권한이 자동으로 갱신되어, 예전 로그인이 그대로 살아 있는 일이 없습니다.',
+          '같은 전력·네트워크를 공유하는 매장 내 드라이브로의 야간 백업이 아니라, 본토 리전으로의 자동·지속 백업 복제.',
+          '섬을 가로지르는 하나의 리포팅 화면 — "마우이 오늘 어땠어"에 전화하기 전에 답이 있습니다.',
+        ] },
+        { type: 'tip', content: '투자하기 전에 해볼 만한 테스트 — 한가한 화요일을 골라, 크루즈선 세 대가 들어온 날 마우이 매장 인터넷이 여섯 시간 끊긴다면 실제로 무슨 일이 벌어질지 물어보세요. 솔직한 답이 "누군가 직접 매장까지 가야 한다", "하루치 카드 결제를 날린다", "다른 매장이 어떤지 알 방법이 없다"로 이어진다면, 그 공백은 진짜 폭풍이 메우기 전에 직접 메워둘 가치가 있습니다.' },
+        { type: 'h2', content: '허리케인 시즌과 전력망 불안정을 위한 재해 복구' },
+        { type: 'p', content: '하와이의 허리케인 시즌은 대략 6월부터 11월까지이고, 이름 붙은 폭풍이 아니어도 섬의 전력망이나 전신주 하나가 내려가는 것만으로 본토 사업체가 보통 대비하는 기간보다 더 길게 매장이 고립될 수 있습니다. 한인 사업체에게 중요한 위험은 단순히 오늘 매출 데이터를 잃는 게 아니라 — 매장이 완전히 암전된 채 이틀, 사흘이 지나고, 주문을 확인할 방법도, 어떤 재고가 살아남았는지 볼 방법도, 심지어 어제 숫자가 어딘가에 안전하게 저장돼 있는지조차 알 방법이 없는 상황입니다. 해법은 POS·재고·고객 데이터를 본토 AWS 리전으로 지속적으로 복제하는 것입니다. 한 번 설정해두면 백그라운드에서 자동으로 돌아가서, 연결이 돌아왔을 때 폭풍에서 살아남은 종이나 기억으로 다시 쌓는 게 아니라 최신 숫자로 사업을 이어갈 수 있습니다.' },
+        { type: 'h2', content: '실제로 투자할 때가 된 시점' },
+        { type: 'p', content: '계기는 거의 항상 특정 매출 규모가 아니라 두 번째 섬 매장이 열리는 바로 그 순간입니다. 매장 하나는 기억과 POS 화면 하나로 운영하기 쉽지만, 다른 섬의 두 번째 매장은 눈으로 직접 보는 것을 전화 통화로 대체하게 하고, 재고 이동은 수첩이 아니라 시스템이 필요하게 하며, 어느 쪽에서든 생기는 재해는 이제 사장님이 서로 다른 두 해저 케이블 권역에서 이중으로 짊어지는 위험이 됩니다. 케이블 절단, 허리케인, 재고 분실로 그 공백이 뚜렷해질 때까지 기다리는 것은 — 잃어버린 매출과 기록을 다시 쌓는 수고 양쪽에서 — 미리 기본 구성을 해두는 것보다 더 큰 비용이 듭니다.' },
+        { type: 'cta', content: '하와이 여러 섬에 매장을 둔 한인 사업체를 운영하고 계신가요? ZOE LUMOS는 섬 간 운영을 위한 AWS 네트워크 아키텍처를 구성합니다 — 안전한 사이트투사이트 연결, 다매장 통합 리포팅, 본토로의 자동 백업 복제까지, 한 섬의 폭풍이 사업 데이터를 잃는 일로 이어지지 않도록 해드립니다. 한국어·영어 무료 상담: info@zoelumos.com 이메일 또는 카카오톡(http://pf.kakao.com/_xhxdxmlX/chat)으로 문의하세요.' },
+      ],
+    },
+  },
 ]
 
 /**
