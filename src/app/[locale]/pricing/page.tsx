@@ -302,9 +302,11 @@ export default function PricingPage({ params }: { params: { locale: string } }) 
               <table className="w-full min-w-[640px] text-left border-collapse">
                 <thead>
                   <tr className="bg-paper">
-                    <th className="px-5 py-4 text-[12px] uppercase tracking-widest text-ash font-bold" />
+                    <th scope="col" className="px-5 py-4 text-[12px] uppercase tracking-widest text-ash font-bold">
+                      <span className="sr-only">{isKo ? '항목' : 'Feature'}</span>
+                    </th>
                     {MONTHLY_TIERS.map((tier) => (
-                      <th key={tier.name} className="px-4 py-4 text-center">
+                      <th key={tier.name} scope="col" className="px-4 py-4 text-center">
                         <span className={`block text-sm font-black ${tier.recommended ? 'text-link' : 'text-ink'}`}>
                           {tier.name}{tier.recommended ? ' ★' : ''}
                         </span>
@@ -318,9 +320,9 @@ export default function PricingPage({ params }: { params: { locale: string } }) 
                 <tbody>
                   {COMPARE_ROWS.map((row, i) => (
                     <tr key={i} className={i % 2 === 0 ? 'bg-transparent' : 'bg-black/[0.03]'}>
-                      <td className="px-5 py-3 text-[13px] text-graphite font-medium whitespace-nowrap">
+                      <th scope="row" className="text-left px-5 py-3 text-[13px] text-graphite font-medium whitespace-nowrap">
                         {row.label[locale]}
-                      </td>
+                      </th>
                       {row.cells.map((cell, j) => (
                         <td
                           key={j}
@@ -335,9 +337,9 @@ export default function PricingPage({ params }: { params: { locale: string } }) 
                   ))}
                   {/* Per-tier "for who" row */}
                   <tr className="bg-paper">
-                    <td className="px-5 py-3.5 text-[12px] uppercase tracking-widest text-mute font-bold whitespace-nowrap">
+                    <th scope="row" className="text-left px-5 py-3.5 text-[12px] uppercase tracking-widest text-mute font-bold whitespace-nowrap">
                       {isKo ? '이런 분께' : 'Best for'}
-                    </td>
+                    </th>
                     {MONTHLY_TIERS.map((tier) => (
                       <td key={tier.name} className="px-4 py-3.5 text-center text-[12px] text-ash leading-snug">
                         {tier.forWho[locale]}

@@ -593,7 +593,7 @@ export default function BlogPostPage({
 
   const formattedDate = new Date(post.date).toLocaleDateString(
     locale === 'ko' ? 'ko-KR' : 'en-US',
-    { year: 'numeric', month: 'long', day: 'numeric' }
+    { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' }
   )
 
   // Bottom-CTA headline keyed to the pillar's money page.

@@ -84,6 +84,9 @@ export default function BlogListing({
       year: 'numeric',
       month: 'short',
       day: 'numeric',
+      // Date-only strings parse as UTC midnight: pin the zone so the server (UTC) and a US browser print the same
+      // day. Unpinned, every card hydration-mismatched (React #418) — same fix as BlogRail.
+      timeZone: 'UTC',
     })
 
   return (
