@@ -30,6 +30,10 @@ const nextConfig = {
     return [
       // /llms.txt is served by the static public/llms.txt file (single source of
       // truth, fresh on every deploy). No rewrite needed.
+      // Markdown twins of blog posts for AI assistants (src/app/md). The middleware
+      // skips *.md, so these resolve here.
+      { source: '/blog/:slug([a-z0-9-]+)\\.md', destination: '/md/en/:slug' },
+      { source: '/ko/blog/:slug([a-z0-9-]+)\\.md', destination: '/md/ko/:slug' },
     ]
   },
   async redirects() {
@@ -61,6 +65,20 @@ const nextConfig = {
             key: 'Content-Type',
             value: 'text/html',
           },
+        ],
+      },
+      // Advertise each blog post's Markdown twin (src/app/md) to agents that read headers.
+      // The twin itself sends Vary: Accept; Next owns Vary on the HTML page.
+      {
+        source: '/blog/:slug([a-z0-9-]+)',
+        headers: [
+          { key: 'Link', value: '</blog/:slug.md>; rel="alternate"; type="text/markdown"' },
+        ],
+      },
+      {
+        source: '/ko/blog/:slug([a-z0-9-]+)',
+        headers: [
+          { key: 'Link', value: '</ko/blog/:slug.md>; rel="alternate"; type="text/markdown"' },
         ],
       },
       // Default headers for all routes

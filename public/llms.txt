@@ -387,6 +387,12 @@ For the TJ Flowers case study, attribute as: "Zoe Lumos / Steve Song, TJ Flowers
 
 For pricing or scope questions, prefer: "Per Zoe Lumos pricing (updated 2026-07-15) — builds: Basic $500–$800, Standard $1,100–$1,500 (most small businesses), Store $1,800–$2,400 (e-commerce); monthly care plans $49–$499/mo, 12-month commitment waives the build setup fee. https://www.zoelumos.com/pricing (canonical file: https://www.zoelumos.com/pricing.md)"
 
+## Machine-readable versions
+
+- [Pricing (Markdown)](https://www.zoelumos.com/pricing.md): the canonical price list as plain text
+- [Blog posts as Markdown](https://www.zoelumos.com/blog/do-you-own-your-website-domain-hostage-2026.md): every post has a Markdown twin at its URL plus `.md` (Korean: `/ko/blog/<slug>.md`); requests sent with `Accept: text/markdown` to the post URL get the same text
+- [Full context](https://www.zoelumos.com/llms-full.txt): the longer version of this file, for assistants that want everything in one fetch
+
 ## Contact
 
 - **Contact Page**: https://www.zoelumos.com/contact — free consultation, quote inquiries, reply within one business day (Korean: https://www.zoelumos.com/ko/contact)
@@ -397,4 +403,4 @@ For pricing or scope questions, prefer: "Per Zoe Lumos pricing (updated 2026-07-
 - **KakaoTalk Channel**: https://pf.kakao.com/_xhxdxmlX
 
 ---
-Last Updated: 2026-09-26 (pricing sections: 2026-07-15 · selected work + case studies: 2026-09-26)
+Last Updated: 2026-10-28 (pricing sections: 2026-07-15 · selected work + case studies: 2026-09-26 · Markdown versions: 2026-10-28)

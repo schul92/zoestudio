@@ -48,6 +48,8 @@ export async function generateMetadata({
         en: `${baseUrl}/blog/${post.slug}`,
         ko: `${baseUrl}/ko/blog/${post.slug}`,
       },
+      // Markdown twin for AI assistants (src/app/md).
+      types: { 'text/markdown': `${url}.md` },
     },
     openGraph: {
       title: post.title[locale],

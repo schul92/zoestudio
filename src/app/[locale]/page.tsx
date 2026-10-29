@@ -66,6 +66,10 @@ export function generateStaticParams() {
   ]
 }
 
+// Only /en and /ko are homes. Paths the middleware skips (any *.md, *.txt) land here as a "locale" and used to
+// render the homepage with a 200 — a soft 404 that fails Lighthouse's llms-txt and ARD checks.
+export const dynamicParams = false
+
 export async function generateMetadata({
   params,
 }: {

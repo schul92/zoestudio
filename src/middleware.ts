@@ -51,6 +51,14 @@ export async function middleware(request: NextRequest) {
     return NextResponse.next()
   }
 
+  // Agents that ask for text get the Markdown twin of a blog post (src/app/md); browsers keep the page.
+  const mdPost = /^\/(?:(ko)\/)?blog\/([a-z0-9-]+)\/?$/.exec(pathname)
+  if (mdPost && request.headers.get('accept')?.includes('text/markdown')) {
+    const url = request.nextUrl.clone()
+    url.pathname = `/md/${mdPost[1] || 'en'}/${mdPost[2]}`
+    return NextResponse.rewrite(url)
+  }
+
   const isLocalHost =
     hostname === 'localhost' ||
     hostname === '127.0.0.1' ||
