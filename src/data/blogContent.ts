@@ -124,8 +124,8 @@ const allBlogPosts: BlogPost[] = [
       steps: [
         {
           name: {
-            en: '1. Who owns the domain registrar account?',
-            ko: '1. 도메인 등록기관 계정은 누구 소유인가요?',
+            en: 'Who owns the domain registrar account?',
+            ko: '도메인 등록기관 계정은 누구 소유인가요?',
           },
           text: {
             en: 'Find out which company your domain is registered with (GoDaddy, Namecheap, Squarespace Domains, and so on) and whose name and email are on that account. Log in yourself if you can. If you cannot log in, or the account is under your developer\'s personal email, this is your most important gap. The registrar account is the deed to your address on the internet. Whoever holds it can point your domain anywhere, or let it expire.',
@@ -134,8 +134,8 @@ const allBlogPosts: BlogPost[] = [
         },
         {
           name: {
-            en: '2. Who controls the hosting and server?',
-            ko: '2. 호스팅과 서버는 누가 통제하나요?',
+            en: 'Who controls the hosting and server?',
+            ko: '호스팅과 서버는 누가 통제하나요?',
           },
           text: {
             en: 'Identify where your website actually lives (the hosting provider or platform such as Vercel, a managed WordPress host, Squarespace, Wix, or a private server). Ask whether the hosting account is in your name and whether you have the login. If your site lives inside someone else\'s account, they can take it offline, change it, or hold your content the moment a relationship sours.',
@@ -144,8 +144,8 @@ const allBlogPosts: BlogPost[] = [
         },
         {
           name: {
-            en: '3. Do you have your own admin logins?',
-            ko: '3. 본인 명의의 관리자 로그인이 있나요?',
+            en: 'Do you have your own admin logins?',
+            ko: '본인 명의의 관리자 로그인이 있나요?',
           },
           text: {
             en: 'Make a list of every system your site touches: the CMS or site builder, the domain registrar, the hosting dashboard, analytics, email, and any payment tools. For each one, confirm you have your own admin-level login, not a password your developer types in for you. Shared or developer-only logins mean you depend on their goodwill for access to your own business.',
@@ -154,8 +154,8 @@ const allBlogPosts: BlogPost[] = [
         },
         {
           name: {
-            en: '4. Is your site portable or proprietary-locked?',
-            ko: '4. 내 사이트는 이전 가능한가요, 아니면 특정 업체에 묶여 있나요?',
+            en: 'Is your site portable or proprietary-locked?',
+            ko: '내 사이트는 이전 가능한가요, 아니면 특정 업체에 묶여 있나요?',
           },
           text: {
             en: 'Ask a simple question: if you switched providers tomorrow, could you take your website with you? Standard, portable setups (your content, your design, exportable files, a common platform) move easily. Proprietary-locked setups (a custom builder only that one developer can edit, or code they refuse to share) trap you. If leaving means rebuilding from scratch, you do not really own the site you paid for.',
@@ -164,8 +164,8 @@ const allBlogPosts: BlogPost[] = [
         },
         {
           name: {
-            en: '5. Can you leave without anyone\'s permission?',
-            ko: '5. 누구의 허락도 없이 떠날 수 있나요?',
+            en: 'Can you leave without anyone\'s permission?',
+            ko: '누구의 허락도 없이 떠날 수 있나요?',
           },
           text: {
             en: 'This is the master question. Right now, today, could you move your domain, download your site, and switch developers without needing your current provider to cooperate? If the honest answer is no, you are not the owner. You are a tenant who can be locked out. True ownership means you can walk away cleanly, on your own timeline, and the only thing your developer can do is wish you well.',

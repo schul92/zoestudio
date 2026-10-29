@@ -481,6 +481,8 @@ function RenderSection({
         return { label: label?.trim(), value: parseFloat(value), highlight: flag?.trim() === 'highlight', raw: value?.trim() }
       })
       const max = Math.max(...rows.map((r) => r.value || 0))
+      // Only money charts get a $ — "GA4 sessions" read as "$488" before. The caption names the unit.
+      const unit = section.content?.includes('$') ? '$' : ''
       return (
         <div className="my-12">
           {section.content && (
@@ -507,7 +509,7 @@ function RenderSection({
                         r.highlight ? 'text-ink' : 'text-graphite'
                       }`}
                     >
-                      ${r.raw}
+                      {unit}{r.raw}
                     </span>
                   </div>
                   <div className="relative h-3 rounded-[2px] bg-ink/[0.04] overflow-hidden">

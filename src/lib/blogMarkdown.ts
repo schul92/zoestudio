@@ -8,6 +8,17 @@ import { SITE_URL } from '@/lib/siteUrl'
 export const postUrl = (slug: string, locale: 'en' | 'ko') =>
   `${SITE_URL}${locale === 'ko' ? '/ko' : ''}/blog/${slug}`
 
+// Pipe-delimited section items as a Markdown table, one column per header.
+function table(s: BlogSection, headers: string[]): string {
+  const rows = (s.items || []).map((i) => i.split('|').map((c) => c.trim()))
+  return [
+    ...(s.content ? [`**${s.content}**`, ''] : []),
+    `| ${headers.join(' | ')} |`,
+    `| ${headers.map(() => '---').join(' | ')} |`,
+    ...rows.map((r) => `| ${headers.map((_, i) => r[i] || '').join(' | ')} |`),
+  ].join('\n')
+}
+
 function section(s: BlogSection, locale: 'en' | 'ko'): string {
   switch (s.type) {
     case 'intro':
@@ -21,26 +32,12 @@ function section(s: BlogSection, locale: 'en' | 'ko'): string {
       return `> **${locale === 'ko' ? '참고' : 'Note'}:** ${s.content}`
     case 'cta':
       return `${s.content}\n\n[${locale === 'ko' ? '무료 상담 받기' : 'Get a free consultation'}](${SITE_URL}${locale === 'ko' ? '/ko' : ''}/contact)`
-    case 'stats': {
+    case 'stats':
       // items: 'CHANGE|LABEL|ABSOLUTE'
-      const rows = (s.items || []).map((i) => i.split('|').map((c) => c.trim()))
-      return [
-        ...(s.content ? [`**${s.content}**`, ''] : []),
-        locale === 'ko' ? '| 수치 | 항목 | 비고 |' : '| Figure | Measure | Detail |',
-        '| --- | --- | --- |',
-        ...rows.map(([a, b, c]) => `| ${a || ''} | ${b || ''} | ${c || ''} |`),
-      ].join('\n')
-    }
-    case 'bars': {
-      // items: 'LABEL|VALUE[|highlight]'
-      const rows = (s.items || []).map((i) => i.split('|').map((c) => c.trim()))
-      return [
-        ...(s.content ? [`**${s.content}**`, ''] : []),
-        locale === 'ko' ? '| 항목 | 값 |' : '| Item | Value |',
-        '| --- | --- |',
-        ...rows.map(([a, b]) => `| ${a || ''} | ${b || ''} |`),
-      ].join('\n')
-    }
+      return table(s, locale === 'ko' ? ['수치', '항목', '비고'] : ['Figure', 'Measure', 'Detail'])
+    case 'bars':
+      // items: 'LABEL|VALUE[|highlight]'; the caption carries the unit
+      return table(s, locale === 'ko' ? ['항목', '값'] : ['Item', 'Value'])
     case 'screenshot': {
       const caption = s.items?.[0] || ''
       return `![${caption}](${SITE_URL}${s.content})${caption ? `\n\n*${caption}*` : ''}`
@@ -62,8 +59,21 @@ export function blogPostMarkdown(post: BlogPost, locale: 'en' | 'ko'): string {
       ? `작성: ${post.author} · ZOE LUMOS (조이루모스) · 게시 ${post.date} · 수정 ${updated} · 원문: ${postUrl(post.slug, locale)}`
       : `By ${post.author} · ZOE LUMOS · Published ${post.date} · Updated ${updated} · Source: ${postUrl(post.slug, locale)}`,
     '',
-    sections.map((s) => section(s, locale)).filter(Boolean).join('\n\n'),
   ]
+
+  // The page opens with this "Quick answer" block, above the article.
+  if (post.howto) {
+    lines.push(
+      `## ${post.howto.name[locale]}`,
+      '',
+      post.howto.description[locale],
+      '',
+      ...post.howto.steps.map((st, i) => `${i + 1}. **${st.name[locale]}** — ${st.text[locale]}`),
+      '',
+    )
+  }
+
+  lines.push(sections.map((s) => section(s, locale)).filter(Boolean).join('\n\n'))
 
   if (post.faq?.length) {
     lines.push('', locale === 'ko' ? '## 자주 묻는 질문' : '## Frequently asked questions')

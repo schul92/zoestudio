@@ -19,9 +19,30 @@ const safeDecode = (s: string) => {
   try { return decodeURIComponent(s) } catch { return s }
 }
 
+// Blog post URLs, which also answer in Markdown (src/app/md). Group 1: "ko" or empty, group 2: slug.
+const BLOG_POST = /^\/(?:(ko)\/)?blog\/([a-z0-9-]+)\/?$/
+
+// True when the Accept header ranks text/markdown at least as high as HTML (RFC 9110 q-values), so
+// `text/markdown;q=0` or `text/html, text/markdown;q=0.1` keep getting the page.
+function prefersMarkdown(accept: string | null) {
+  if (!accept) return false
+  const q: Record<string, number> = {}
+  for (const part of accept.toLowerCase().split(',')) {
+    const [type, ...params] = part.split(';').map((p) => p.trim())
+    const qParam = params.find((p) => p.startsWith('q='))
+    const value = qParam ? parseFloat(qParam.slice(2)) : 1
+    q[type] = Number.isNaN(value) ? 0 : value
+  }
+  const md = q['text/markdown'] ?? 0
+  const html = q['text/html'] ?? q['text/*'] ?? q['*/*'] ?? 0
+  return md > 0 && md >= html
+}
+
 // Edge-safe Auth.js instance (no DB adapter, JWT sessions).
 const { auth } = NextAuth(authConfig)
 
+// No `Vary: Accept` on the HTML page: Next sets Vary on app-router responses and drops one added here or in
+// next.config. Harmless on Vercel, where middleware runs before the edge cache; the Markdown twin sends it.
 export async function middleware(request: NextRequest) {
   const pathname = request.nextUrl.pathname
   const hostname = request.nextUrl.hostname
@@ -52,8 +73,8 @@ export async function middleware(request: NextRequest) {
   }
 
   // Agents that ask for text get the Markdown twin of a blog post (src/app/md); browsers keep the page.
-  const mdPost = /^\/(?:(ko)\/)?blog\/([a-z0-9-]+)\/?$/.exec(pathname)
-  if (mdPost && request.headers.get('accept')?.includes('text/markdown')) {
+  const mdPost = BLOG_POST.exec(pathname)
+  if (mdPost && prefersMarkdown(request.headers.get('accept'))) {
     const url = request.nextUrl.clone()
     url.pathname = `/md/${mdPost[1] || 'en'}/${mdPost[2]}`
     return NextResponse.rewrite(url)

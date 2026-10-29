@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from 'next'
+import { notFound } from 'next/navigation'
 import dynamic from 'next/dynamic'
 import { GeistSans } from 'geist/font/sans'
 import '../globals.css'
@@ -122,6 +123,13 @@ export async function generateMetadata({
 const REVEAL_FLAG = `(function(){try{var d=document.documentElement;if(!('IntersectionObserver'in window)||matchMedia('(prefers-reduced-motion: reduce)').matches)return;d.setAttribute('data-rv','');setTimeout(function(){if(!window.__rvok)d.removeAttribute('data-rv')},2500)}catch(e){}})();`
 const REVEAL_SCAN = `(function(){try{var d=document.documentElement;if(!d.hasAttribute('data-rv'))return;var S='[data-reveal],[data-reveal-group],.reveal,.mask-rise';var io=new IntersectionObserver(function(es){for(var i=0;i<es.length;i++){if(es[i].isIntersecting){es[i].target.setAttribute('data-in','');io.unobserve(es[i].target)}}},{rootMargin:'0px 0px -8% 0px',threshold:0.1});function prep(el){if(el.hasAttribute('data-in')||el.__rv)return;el.__rv=1;var r=el.getBoundingClientRect();if(r.bottom>0&&r.top<innerHeight){el.setAttribute('data-in',el.matches('.reveal,.mask-rise')?'':'now')}else io.observe(el)}function scan(n){if(n.matches&&n.matches(S))prep(n);if(n.querySelectorAll){var l=n.querySelectorAll(S);for(var i=0;i<l.length;i++)prep(l[i])}}scan(document);window.__rvok=1;new MutationObserver(function(ms){for(var i=0;i<ms.length;i++){var a=ms[i].addedNodes;for(var j=0;j<a.length;j++)if(a[j].nodeType===1)scan(a[j])}}).observe(document.body,{childList:true,subtree:true})}catch(e){document.documentElement.removeAttribute('data-rv')}})();`
 
+// Only /en and /ko exist. The middleware skips any path containing .md/.txt/.html, so /x.md/about arrives with
+// locale "x.md"; without this, pages render it (soft 404) or crash on it (500) before the check below runs.
+export function generateStaticParams() {
+  return [{ locale: 'en' }, { locale: 'ko' }]
+}
+export const dynamicParams = false
+
 export default function RootLayout({
   children,
   params,
@@ -129,7 +137,8 @@ export default function RootLayout({
   children: React.ReactNode
   params: { locale: string }
 }) {
-  const locale: 'en' | 'ko' = params?.locale === 'ko' ? 'ko' : 'en'
+  if (params?.locale !== 'en' && params?.locale !== 'ko') notFound()
+  const locale = params.locale as 'en' | 'ko'
 
   return (
     <html lang={locale} className="space">

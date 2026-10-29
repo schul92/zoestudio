@@ -17,6 +17,16 @@ import { pillarHubExists } from '@/components/blog/pillarLinks'
 
 type Post = (typeof blogContent)[0]
 
+// Up to `count` slugs around `current` in the cluster order: 2 before, then the ones after, wrapping at the ends.
+function neighbours(posts: readonly string[], current: string, count: number): string[] {
+  const others = posts.filter((s) => s !== current)
+  const at = posts.indexOf(current)
+  if (at < 0 || others.length <= count) return others.slice(0, count)
+  // `others` drops `current`, so index `at` in it is the post right after the current one.
+  const start = (at - 2 + others.length) % others.length
+  return Array.from({ length: count }, (_, i) => others[(start + i) % others.length])
+}
+
 function SiblingList({
   posts,
   locale,
@@ -74,12 +84,11 @@ export default function RelatedCluster({
   const pillarKey = POST_TO_PILLAR[currentSlug]
   const pillar = pillarKey ? PILLARS[pillarKey] : undefined
 
-  // Sibling posts: everything in the cluster except the current post.
-  // Cap at 5 visible siblings so the section doesn't dominate the page.
+  // Sibling posts: the 5 cluster neighbours around the current post (2 before, 3 after, wrapping), so every post
+  // in a long cluster is linked from the posts beside it. Always taking the first 5 left the rest with no inbound
+  // cluster links at all.
   const siblings: Post[] = pillar
-    ? (pillar.posts
-        .filter((s) => s !== currentSlug)
-        .slice(0, 5)
+    ? (neighbours(pillar.posts, currentSlug, 5)
         .map((slug) => blogContent.find((p) => p.slug === slug))
         .filter(Boolean) as Post[])
     : []
