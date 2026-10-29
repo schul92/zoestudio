@@ -99,6 +99,25 @@ export const PILLARS = {
       'aws-cmmc-security-korean-government-contractor-virginia-2026',
       'korean-beauty-fitness-membership-app-charlotte-2026',
       'aws-hipaa-cloud-korean-medical-dental-atlanta-2026',
+      'korean-grocery-market-ios-app-loyalty-ordering-san-diego-2026',
+      'b2b-trading-export-website-rfq-leads-miami-korean-2026',
+      'korean-dry-cleaning-laundry-ios-app-multi-location-dallas-2026',
+      'korean-bbq-karaoke-booking-app-las-vegas-2026',
+      'aws-disaster-recovery-korean-multi-location-business-minneapolis-2026',
+      'b2b-freight-forwarding-customs-broker-website-dallas-2026',
+      'shopify-cart-abandonment-trust-badges-korean-sellers-nashville-2026',
+      'aws-auto-scaling-cdn-traffic-spike-korean-ecommerce-raleigh-2026',
+      'korean-taekwondo-academy-app-sacramento-2026',
+      'ecommerce-returns-reviews-trust-korean-sellers-san-antonio-2026',
+      'korean-auto-repair-shop-ios-app-philadelphia-2026',
+      'aws-cost-optimization-korean-business-austin-2026',
+      'b2b-trading-distributor-online-catalog-chicago-2026',
+      'b2b-vendor-onboarding-website-chicago-korean-trading-2026',
+      'korean-ecommerce-email-sms-retention-san-diego-2026',
+      'b2b-trade-show-wholesale-website-leads-las-vegas-2026',
+      'korean-wholesale-distributor-credit-application-reorder-portal-memphis-2026',
+      'b2b-wholesale-sales-rep-order-app-phoenix-2026',
+      'b2b-email-deliverability-domain-trust-korean-wholesale-chicago-2026',
     ],
   },
   'kakaotalk-marketing': {
@@ -133,6 +152,7 @@ export const PILLARS = {
       'korean-church-website-guide',
       'starting-korean-business-america-2026',
       'korean-sat-academy-booking-noshow-irvine-2026',
+      'korean-real-estate-agent-showing-booking-noshow-austin-2026',
     ],
   },
   'ai-services': {
@@ -352,4 +372,52 @@ export const POST_TO_PILLAR: Record<string, PillarKey> = {
 
   // 2026-08-17 — Houston F&B: online ordering, POS (Square/Toast/Clover), catering, reviews
   'korean-restaurant-houston-pos-catering-reviews-2026': 'restaurant-marketing',
+
+  // 2026-08-18 — real estate showing scheduling + no-show prevention + Google Maps
+  // (Austin metro, tied to Samsung Taylor semiconductor relocation wave)
+  'korean-real-estate-agent-showing-booking-noshow-austin-2026': 'professional-services',
+  // 2026-08-19 — native iOS ordering + loyalty app for a Korean grocery/specialty
+  // market vs. PWA/web-only, plus Apple Developer account ownership (San Diego, CA)
+  'korean-grocery-market-ios-app-loyalty-ordering-san-diego-2026': 'website-cost',
+  // 2026-08-20 — B2B trading/export companies in Miami-Doral selling into Latin
+  // America through PortMiami: English-first site trust + RFQ lead capture
+  'b2b-trading-export-website-rfq-leads-miami-korean-2026': 'website-cost',
+  // 2026-08-26 — custom iOS app (Apple App Store) for multi-location Korean dry cleaning chains (DFW)
+  'korean-dry-cleaning-laundry-ios-app-multi-location-dallas-2026': 'website-cost',
+  // 2026-08-30 — room-based booking app (BBQ tables + karaoke rooms) for
+  // tourist-driven Korean businesses in Las Vegas (Spring Mountain Rd)
+  'korean-bbq-karaoke-booking-app-las-vegas-2026': 'website-cost',
+  // 2026-09-10 — AWS disaster recovery / business continuity for multi-location businesses (Minneapolis–St. Paul)
+  'aws-disaster-recovery-korean-multi-location-business-minneapolis-2026': 'website-cost',
+  // 2026-09-11 — B2B logistics: freight forwarding & customs brokerage website (Dallas–Fort Worth inland port)
+  'b2b-freight-forwarding-customs-broker-website-dallas-2026': 'website-cost',
+  // 2026-09-13 — cart abandonment automation + trust signals for Shopify sellers (Nashville, TN)
+  'shopify-cart-abandonment-trust-badges-korean-sellers-nashville-2026': 'website-cost',
+  // 2026-09-15 — AWS Auto Scaling + CDN for e-commerce/retail traffic spikes (Raleigh–Durham, NC)
+  'aws-auto-scaling-cdn-traffic-spike-korean-ecommerce-raleigh-2026': 'website-cost',
+  // 2026-09-16 — custom iOS/Android app for a Korean taekwondo/martial arts academy (Sacramento metro)
+  'korean-taekwondo-academy-app-sacramento-2026': 'website-cost',
+  // 2026-09-17 — E-commerce returns/exchange policy + compliant review management
+  // (Shopify/Amazon/Etsy), San Antonio / South Texas
+  'ecommerce-returns-reviews-trust-korean-sellers-san-antonio-2026': 'website-cost',
+  // 2026-09-18 — custom iOS app (photo-based repair updates + in-app estimate
+  // approval) for Korean-American auto repair / auto body shops (Philadelphia, PA)
+  'korean-auto-repair-shop-ios-app-philadelphia-2026': 'website-cost',
+  // 2026-09-21 — AWS cloud cost optimization for Korean-American tech/e-commerce businesses (Austin, TX)
+  'aws-cost-optimization-korean-business-austin-2026': 'website-cost',
+  // 2026-09-25 — B2B online catalog gap for Korean trading/distribution companies (Chicago metro)
+  'b2b-trading-distributor-online-catalog-chicago-2026': 'website-cost',
+  // 2026-09-26 — B2B vendor-onboarding trust (big-retailer supplier vetting), Chicago trading/wholesale
+  'b2b-vendor-onboarding-website-chicago-korean-trading-2026': 'website-cost',
+  // 2026-09-27 — E-commerce: email/SMS retention automation for Korean product sellers (San Diego, CA)
+  'korean-ecommerce-email-sms-retention-san-diego-2026': 'website-cost',
+  // 2026-09-30 — B2B/wholesale trade-show lead follow-up gap (Las Vegas trade-show capital)
+  'b2b-trade-show-wholesale-website-leads-las-vegas-2026': 'website-cost',
+  // 2026-10-04 — B2B wholesale/import distributor credit-application + reorder portal (Memphis, TN)
+  'korean-wholesale-distributor-credit-application-reorder-portal-memphis-2026': 'website-cost',
+  // 2026-10-07 — custom mobile order-entry app for wholesale/trading field sales reps (Phoenix, AZ)
+  'b2b-wholesale-sales-rep-order-app-phoenix-2026': 'website-cost',
+  // 2026-10-16 — B2B email deliverability / domain trust (SPF, DKIM, DMARC) for Korean-American
+  // wholesale, import, and trading companies (Chicago — Albany Park / Lincolnwood / Niles)
+  'b2b-email-deliverability-domain-trust-korean-wholesale-chicago-2026': 'website-cost',
 }
