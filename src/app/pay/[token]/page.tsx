@@ -188,6 +188,7 @@ export default async function PayPage({
   let services: ReturnType<typeof parseServices> = []
   let alreadyPaid = false
   let once = false
+  let kr = false
 
   try {
     const s = stripe()
@@ -227,6 +228,7 @@ export default async function PayPage({
     }
 
     services = parseServices(typeof price.metadata?.zl_services === 'string' ? price.metadata.zl_services : null)
+    kr = price.metadata?.zl_region === 'kr'
     alreadyPaid = paid
   } catch {
     return <InvalidLink />
@@ -291,18 +293,34 @@ export default async function PayPage({
           {/* Checkout reorders payment methods by its own conversion heuristics
               and gives us no ordering control, so we point at the cheaper rail
               here. ACH costs us 0.8% capped at $5; cards cost 2.9% + 30c. */}
-          <div className="mb-4 flex gap-3 rounded-xl border border-gold/25 bg-gold/[0.06] p-4">
-            <span className="mt-0.5 flex-shrink-0 text-gold">🏦</span>
-            <p className="text-xs leading-relaxed text-graphite">
-              <strong className="font-medium text-ink">은행 계좌(US bank account)로 결제하시길 권해드립니다.</strong>
-              <br />
-              카드보다 수수료가 낮아 그만큼을 서비스에 더 쓸 수 있습니다. 은행 로그인 한 번으로 몇 초 만에 인증됩니다.
-              <br />
-              <span className="text-mute">
-                We recommend paying by US bank account — lower processing fees, verified in seconds.
-              </span>
-            </p>
-          </div>
+          {kr ? (
+            // Korean clients pay by card only (no US bank account); the amount is in USD.
+            <div className="mb-4 rounded-xl border border-gold/25 bg-gold/[0.06] p-4">
+              <p className="text-xs leading-relaxed text-graphite">
+                <strong className="font-medium text-ink">해외 결제가 되는 카드(Visa · Mastercard · Amex)로 결제해 주세요.</strong>
+                <br />
+                금액은 미국 달러(USD)로 청구되며, 원화 금액은 결제일의 카드사 환율로 정해집니다. 카드사 해외이용 수수료가 붙을 수
+                있습니다. 결제가 끝나면 영수증과 인보이스가 이메일로 발송됩니다.
+                <br />
+                <span className="text-mute">
+                  Please pay with a card enabled for overseas payments. Charged in USD; your card issuer sets the KRW amount.
+                </span>
+              </p>
+            </div>
+          ) : (
+            <div className="mb-4 flex gap-3 rounded-xl border border-gold/25 bg-gold/[0.06] p-4">
+              <span className="mt-0.5 flex-shrink-0 text-gold">🏦</span>
+              <p className="text-xs leading-relaxed text-graphite">
+                <strong className="font-medium text-ink">은행 계좌(US bank account)로 결제하시길 권해드립니다.</strong>
+                <br />
+                카드보다 수수료가 낮아 그만큼을 서비스에 더 쓸 수 있습니다. 은행 로그인 한 번으로 몇 초 만에 인증됩니다.
+                <br />
+                <span className="text-mute">
+                  We recommend paying by US bank account — lower processing fees, verified in seconds.
+                </span>
+              </p>
+            </div>
+          )}
           <CheckoutEmbed token={params.token} />
           <p className="mt-4 text-xs leading-relaxed text-mute">
             결제는 Stripe가 안전하게 처리하며, 카드 정보는 저희 서버에 저장되지 않습니다.

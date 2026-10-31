@@ -43,6 +43,9 @@ const PAYMENT_METHOD_OPTIONS = {
   },
 } as const
 
+/** Korean clients (Price metadata zl_region=kr) have no US bank account, so they get cards only, in Korean. */
+const KR_PAYMENT_METHOD_TYPES = ['card'] as const
+
 export async function POST(req: Request) {
   let body: Body
   try {
@@ -67,13 +70,15 @@ export async function POST(req: Request) {
     return Response.json({ error: 'already_paid' }, { status: 409 })
   }
 
+  const kr = price.metadata.zl_region === 'kr'
+
   const common = {
     // Clover-era API: the embedded UI mode is 'embedded_page'.
     ui_mode: 'embedded_page',
     customer: payload.customerId,
     line_items: [{ price: payload.priceId, quantity: 1 }],
-    payment_method_types: [...PAYMENT_METHOD_TYPES],
-    payment_method_options: PAYMENT_METHOD_OPTIONS,
+    payment_method_types: [...(kr ? KR_PAYMENT_METHOD_TYPES : PAYMENT_METHOD_TYPES)],
+    ...(kr ? { locale: 'ko' as const } : { payment_method_options: PAYMENT_METHOD_OPTIONS }),
     return_url: `${SITE_URL}/pay/${token}?done={CHECKOUT_SESSION_ID}`,
     // zl_price on the session lets the webhook burn the pay link the moment
     // this checkout completes, and lets spentPriceIds() see one-time payments.

@@ -19,6 +19,8 @@ export const SERVICES = {
   seo: { en: 'Local SEO & Google Business Profile', ko: '로컬 SEO · 구글 비즈니스 프로필' },
   kakao: { en: 'KakaoTalk Channel management', ko: '카카오톡 채널 관리' },
   domain: { en: 'Email & domain management', ko: '이메일 · 도메인 관리' },
+  build: { en: 'Website build (milestone payment)', ko: '홈페이지 제작 (단계별 결제)' },
+  blog: { en: 'Website blog posts', ko: '홈페이지 블로그 글' },
 } as const
 
 export type ServiceKey = keyof typeof SERVICES
@@ -57,6 +59,20 @@ export type BillingPeriod = keyof typeof BILLING_PERIODS
 
 export const isBillingPeriod = (v: unknown): v is BillingPeriod =>
   typeof v === 'string' && v in BILLING_PERIODS
+
+/**
+ * Where the client pays from. Korean clients can't use US bank accounts (ACH), so a `kr` link offers cards only,
+ * opens Checkout in Korean and swaps the /pay page's bank-transfer tip for card guidance. Stored as the Price's
+ * `zl_region` metadata; a Price without it is `us`.
+ */
+export const CLIENT_REGIONS = {
+  us: { en: 'US client · card or US bank account' },
+  kr: { en: 'Korea client · card only, Korean checkout' },
+} as const
+
+export type ClientRegion = keyof typeof CLIENT_REGIONS
+
+export const isClientRegion = (v: unknown): v is ClientRegion => typeof v === 'string' && v in CLIENT_REGIONS
 
 /** Recurring intervals only — `once` has no Stripe `recurring` object. */
 export const isRecurring = (p: BillingPeriod): p is 'month' | 'year' => p !== 'once'

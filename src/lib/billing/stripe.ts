@@ -113,6 +113,9 @@ export {
   BILLING_PERIODS,
   isBillingPeriod,
   isRecurring,
+  CLIENT_REGIONS,
+  isClientRegion,
   type ServiceKey,
   type BillingPeriod,
+  type ClientRegion,
 } from './services'

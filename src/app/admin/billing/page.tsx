@@ -6,8 +6,10 @@ import {
   SERVICES,
   isServiceKey,
   BILLING_PERIODS,
+  CLIENT_REGIONS,
   type ServiceKey,
   type BillingPeriod,
+  type ClientRegion,
 } from '@/lib/billing/services'
 
 // ── Types (mirror GET /api/admin/billing contract) ───────────────────
@@ -534,6 +536,7 @@ function NewClientForm() {
   const [email, setEmail] = useState('')
   const [amount, setAmount] = useState('')
   const [interval, setInterval] = useState<BillingPeriod>('month')
+  const [region, setRegion] = useState<ClientRegion>('us')
   const [services, setServices] = useState<ServiceKey[]>([])
   const [submitting, setSubmitting] = useState(false)
   const [error, setError] = useState<string | null>(null)
@@ -563,7 +566,7 @@ function NewClientForm() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         credentials: 'include',
-        body: JSON.stringify({ name: name.trim(), email: email.trim(), amountCents, services, interval }),
+        body: JSON.stringify({ name: name.trim(), email: email.trim(), amountCents, services, interval, region }),
       })
       const j = await res.json().catch(() => ({}))
       if (!res.ok || !j.payUrl) {
@@ -627,6 +630,16 @@ function NewClientForm() {
               Charged a single time — no subscription is created.
             </span>
           )}
+        </label>
+        <label className="block sm:col-span-2">
+          <span className="mb-1 block text-[11px] uppercase tracking-wider text-zinc-500">Client region</span>
+          <select className={inputCls} value={region} onChange={(e) => setRegion(e.target.value as ClientRegion)}>
+            {(Object.keys(CLIENT_REGIONS) as ClientRegion[]).map((k) => (
+              <option key={k} value={k}>
+                {CLIENT_REGIONS[k].en}
+              </option>
+            ))}
+          </select>
         </label>
       </div>
 

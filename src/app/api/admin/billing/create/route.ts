@@ -6,9 +6,11 @@ import {
   isServiceKey,
   isBillingPeriod,
   isRecurring,
+  isClientRegion,
   BILLING_PERIODS,
   type ServiceKey,
   type BillingPeriod,
+  type ClientRegion,
 } from '@/lib/billing/stripe'
 import { newPayCode } from '@/lib/billing/paycode'
 import { spentPriceIds } from '@/lib/billing/spent'
@@ -49,6 +51,7 @@ type Body = {
   amountCents?: unknown
   services?: unknown
   interval?: unknown
+  region?: unknown
 }
 
 export async function POST(req: Request) {
@@ -65,6 +68,7 @@ export async function POST(req: Request) {
   const email = typeof body.email === 'string' ? body.email.trim() : ''
   const amountCents = body.amountCents
   const interval: BillingPeriod = isBillingPeriod(body.interval) ? body.interval : 'month'
+  const region: ClientRegion = isClientRegion(body.region) ? body.region : 'us'
 
   if (!name) return bad('name is required')
   if (!email || !EMAIL_RE.test(email)) return bad('a valid email is required')
@@ -123,6 +127,7 @@ export async function POST(req: Request) {
       // A one-time Price has no `recurring` at all.
       (p.recurring?.interval ?? 'once') === interval &&
       (p.metadata.zl_services ?? '') === servicesCsv &&
+      (p.metadata.zl_region ?? 'us') === region &&
       Number(p.metadata.zl_pay_exp ?? 0) > now
   )
 
@@ -159,6 +164,7 @@ export async function POST(req: Request) {
       zl_client: name,
       zl_customer: customer.id,
       zl_pay_exp: String(payExp),
+      zl_region: region,
     },
   })
 
