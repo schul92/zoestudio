@@ -9,6 +9,8 @@ export type Project = {
   disciplines: { en: string[]; ko: string[] }
   image: string
   url?: string
+  /** Signed and in build — shown with a badge and no live link until launch. */
+  status?: 'in-progress'
 }
 
 export const projects: Project[] = [
@@ -23,6 +25,18 @@ export const projects: Project[] = [
     },
     image: '/portfolio/endopia.jpg',
     url: 'https://endopiaglobal.com/',
+  },
+  {
+    name: 'Seoul Choice Dental',
+    industry: { en: 'Dental clinic · Website rebuild', ko: '치과의원 · 홈페이지 개편' },
+    location: 'Seoul · Korea',
+    year: '2026',
+    disciplines: {
+      en: ['Web design', 'Treatment pages', 'Naver & Google search'],
+      ko: ['웹디자인', '진료 안내 페이지', '네이버·구글 검색'],
+    },
+    image: '/portfolio/seoul-choice-dental.jpg',
+    status: 'in-progress',
   },
   {
     name: 'TJ Flowers',
@@ -147,6 +161,13 @@ export default function SelectedWork({
                     sizes={i === 0 ? '(max-width: 768px) 92vw, 1200px' : '(max-width: 768px) 92vw, 600px'}
                     className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.02]"
                   />
+                  {/* Fixed colors: the badge sits on a screenshot, so it must not flip with the theme tokens. */}
+                  {p.status === 'in-progress' && (
+                    <span className="absolute top-4 left-4 inline-flex items-center gap-2 rounded-full bg-black/80 text-white text-[12px] font-semibold px-3 py-1.5 backdrop-blur">
+                      <span className="w-1.5 h-1.5 rounded-full bg-[#2997FF] animate-pulse" aria-hidden />
+                      {isKo ? '제작 중' : 'In progress'}
+                    </span>
+                  )}
                 </Link>
                 <div className="p-6 md:p-7 flex flex-col gap-3 flex-1">
                   <div className="flex items-baseline justify-between gap-4">
@@ -170,6 +191,11 @@ export default function SelectedWork({
                     >
                       {isKo ? '실제 사이트' : 'Visit live site'} <span aria-hidden>↗</span>
                     </a>
+                  )}
+                  {!p.url && p.status === 'in-progress' && (
+                    <p className="mt-auto pt-2 text-[14px] font-semibold text-ash">
+                      {isKo ? '오픈 준비 중' : 'Launching soon'}
+                    </p>
                   )}
                 </div>
               </article>

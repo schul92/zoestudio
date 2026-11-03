@@ -8,7 +8,9 @@ import Magnetic from '@/components/ui/motion/Magnetic'
 
 interface Project {
   id: string
-  url: string
+  /** Omitted while a project is still in build. */
+  url?: string
+  status?: 'in-progress'
   image: string
   title: string
   category: string
@@ -24,6 +26,7 @@ interface PortfolioClientProps {
       description: string
     }
     viewSite: string
+    inProgress: string
     servicesLabel: string
     cta: {
       title: string
@@ -92,6 +95,11 @@ export default function PortfolioClient({ t, projects, locale }: PortfolioClient
                 'md:col-span-5 md:mt-16',
               ]
               const span = wideCols[index % wideCols.length] || 'md:col-span-6'
+              // In-build projects have no live URL yet: render the frame as a plain block.
+              const Frame = (project.url ? 'a' : 'div') as 'a'
+              const linkProps = project.url
+                ? { href: project.url, target: '_blank', rel: 'noopener noreferrer', 'data-cursor': 'view' }
+                : {}
               return (
                 <InView
                   key={project.id}
@@ -100,11 +108,8 @@ export default function PortfolioClient({ t, projects, locale }: PortfolioClient
                   delay={(index % 3) * 80}
                 >
                   {/* Image frame */}
-                  <a
-                    href={project.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    data-cursor="view"
+                  <Frame
+                    {...linkProps}
                     className="block relative w-full aspect-[5/4] overflow-hidden rounded-[2px] bg-bone"
                   >
                     {/* Halo */}
@@ -145,9 +150,11 @@ export default function PortfolioClient({ t, projects, locale }: PortfolioClient
                           <span className="font-display text-lg italic font-light text-ink">
                             {project.title}
                           </span>
-                          <span className="text-xs text-ash mt-1">
-                            {project.url.replace('https://', '').replace('www.', '')}
-                          </span>
+                          {project.url && (
+                            <span className="text-xs text-ash mt-1">
+                              {project.url.replace('https://', '').replace('www.', '')}
+                            </span>
+                          )}
                         </div>
                       )}
                     </div>
@@ -161,19 +168,30 @@ export default function PortfolioClient({ t, projects, locale }: PortfolioClient
                       <span className="gold-dot" />
                       {isKo ? '도판' : 'Plate'} · {String(index + 1).padStart(2, '0')}
                     </div>
-                    <span className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition duration-500 translate-y-1 group-hover:translate-y-0 bg-ink text-ivory px-4 py-2 rounded-full text-[12px] tracking-wide">
-                      {t.viewSite} →
-                    </span>
-                  </a>
+                    {project.status === 'in-progress' ? (
+                      <span className="absolute bottom-4 right-4 bg-ink text-ivory px-4 py-2 rounded-full text-[12px] tracking-wide flex items-center gap-2">
+                        <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" aria-hidden />
+                        {t.inProgress}
+                      </span>
+                    ) : (
+                      <span className="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition duration-500 translate-y-1 group-hover:translate-y-0 bg-ink text-ivory px-4 py-2 rounded-full text-[12px] tracking-wide">
+                        {t.viewSite} →
+                      </span>
+                    )}
+                  </Frame>
 
                   {/* Caption */}
                   <div className="mt-6 grid grid-cols-12 gap-4 items-baseline">
                     <div className="col-span-12 md:col-span-8">
                       <div className="overline text-ash mb-3">{project.category}</div>
                       <h2 className="font-display text-[clamp(1.6rem,2.6vw,2.25rem)] tracking-luxury leading-tight text-ink fraunces-soft group-hover:text-gold transition duration-500">
-                        <a href={project.url} target="_blank" rel="noopener noreferrer">
-                          {project.title}
-                        </a>
+                        {project.url ? (
+                          <a href={project.url} target="_blank" rel="noopener noreferrer">
+                            {project.title}
+                          </a>
+                        ) : (
+                          project.title
+                        )}
                       </h2>
                       <p className="mt-3 text-body text-graphite leading-[1.7] max-w-xl">
                         {project.description}

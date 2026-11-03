@@ -30,6 +30,8 @@ const copy = {
       message: 'A few sentences is plenty — what are you building, any deadlines, a site or brand you love as a reference?',
     },
     scopes: [
+      'Medical / dental website',
+      'B2B website or portal',
       'Shopify build',
       'Shopify takeover',
       'Cost audit',
@@ -75,6 +77,8 @@ const copy = {
       message: '몇 줄이면 충분합니다 — 무엇을 만들고 싶으신가요, 일정, 참고하는 사이트나 브랜드?',
     },
     scopes: [
+      '병원·치과 홈페이지',
+      'B2B 웹사이트·포털',
       'Shopify 구축',
       'Shopify 인수',
       '비용 감사',

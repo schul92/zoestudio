@@ -1,24 +1,24 @@
 /**
- * Trust ribbon — the four buyer signals that matter most for Korean small-biz
- * owners landing cold. Client names live in the hero row directly above.
+ * Trust ribbon — the four signals that say who we build for: doctors and B2B
+ * companies first. Client names live in the hero row directly above.
  */
 
 type Stat = {
-  value: string
+  value: string | { en: string; ko: string }
   label: { en: string; ko: string }
   sub?: { en: string; ko: string }
 }
 
 const stats: Stat[] = [
   {
-    value: 'Shopify',
-    label: { en: 'Expert builds', ko: 'Shopify 전문' },
-    sub: { en: 'rebuild · migrate · scale', ko: '재구축 · 이전 · 확장' },
+    value: { en: 'Medical', ko: '의료' },
+    label: { en: 'Doctor & clinic websites', ko: '의사 · 병원 홈페이지' },
+    sub: { en: 'clinics · dental · medical devices', ko: '의원 · 치과 · 의료기기' },
   },
   {
-    value: '5×',
-    label: { en: 'Search visibility', ko: '검색 노출' },
-    sub: { en: 'TJ Flowers · 6 weeks', ko: 'TJ Flowers · 6주' },
+    value: 'B2B',
+    label: { en: 'Sites, portals & integrations', ko: '기업 사이트 · 포털 · 연동' },
+    sub: { en: 'distributors · logistics · manufacturers', ko: '유통 · 물류 · 제조' },
   },
   {
     value: '150+',
@@ -40,11 +40,11 @@ export default function TrustRibbon({ locale = 'en' }: { locale?: string }) {
       <ul data-reveal-group className="container-edge grid grid-cols-2 md:grid-cols-4 py-16 md:py-24 gap-y-12">
         {stats.map((s, i) => (
           <li
-            key={s.value}
+            key={s.label.en}
             className={`flex flex-col items-center text-center px-4 ${i > 0 ? 'md:border-l md:border-[#D2D2D7]' : ''}`}
           >
             <span className="text-[clamp(30px,4.4vw,56px)] font-bold leading-none tracking-[-0.05em] text-ink">
-              {s.value}
+              {typeof s.value === 'string' ? s.value : s.value[isKo ? 'ko' : 'en']}
             </span>
             <span className="mt-3 text-[15px] font-semibold text-ink">{s.label[isKo ? 'ko' : 'en']}</span>
             {s.sub && <span className="mt-1 text-[13px] text-ash">{s.sub[isKo ? 'ko' : 'en']}</span>}

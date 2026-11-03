@@ -64,6 +64,14 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
 
   const enterprise = [
     {
+      href: isKo ? '/ko/industries/한인-병원-웹사이트' : '/industries/korean-medical-dental',
+      kicker: isKo ? '의사 · 병원 · 치과' : 'Doctors · Clinics · Dental',
+      title: isKo ? '진료 예약으로 이어지는 병원 홈페이지' : 'Practice websites that book patients',
+      blurb: isKo
+        ? '진료 안내, 의료진 소개, 온라인 예약, 보험 안내까지 환자가 찾는 순서대로 만듭니다. 한국어 진료 병원은 한·영 이중언어로, 검색 노출까지 함께 잡습니다.'
+        : 'Treatments, providers, online booking and insurance, laid out in the order patients look for them. Bilingual for Korean-speaking practices, with local search built in.',
+    },
+    {
       href: isKo ? US_LAUNCH_PATHS.ko : US_LAUNCH_PATHS.en,
       kicker: isKo ? '미국 진출 기업' : 'Korean companies entering the US',
       title: isKo ? '미국 진출 기업의 공식 영문 홈페이지' : 'Official US websites for Korean brands',
@@ -101,10 +109,10 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
           <p className="mt-5 text-body-lg text-graphite">{t.services.subtitle}</p>
         </div>
 
-        {/* For companies — Korean HQs launching in the US, systems on AWS, logistics. Set above the SMB disciplines. */}
+        {/* Our focus — doctors and B2B companies (medical practices, Korean HQs launching in the US, systems on AWS, logistics). Set above the SMB disciplines. */}
         <div className="mt-14 md:mt-20">
-          <p className="text-[13px] font-semibold text-ash">{isKo ? '기업 솔루션' : 'For companies'}</p>
-          <ul data-reveal-group className="mt-4 grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-5">
+          <p className="text-[13px] font-semibold text-gold">{isKo ? '의사 · 병원 · B2B 전문' : 'Our focus: doctors & B2B companies'}</p>
+          <ul data-reveal-group className="mt-4 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-5">
             {enterprise.map((e) => (
               <li key={e.href} className="flex">
                 <Link
