@@ -99,6 +99,16 @@ export async function generateMetadata({
       locale: locale === 'ko' ? 'ko_KR' : 'en_US',
       alternateLocale: locale === 'ko' ? 'en_US' : 'ko_KR',
       type: 'website',
+      // A page-level openGraph replaces the layout's whole object, so the image has to be restated here.
+      // Naver reads og:image as the result thumbnail.
+      images: [
+        {
+          url: `${baseUrl}/api/og?title=${encodeURIComponent(seo.openGraph.title)}&subtitle=${encodeURIComponent(locale === 'ko' ? '의사 · 병원 · B2B 웹사이트 · 한·영 이중언어' : 'Websites for doctors & B2B · Bilingual EN/KR')}`,
+          width: 1200,
+          height: 630,
+          alt: seo.openGraph.title,
+        },
+      ],
     },
     robots: {
       index: true,

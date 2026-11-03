@@ -1,8 +1,12 @@
 import { blogContent } from '@/data/blogContent'
 import { SITE_URL } from '@/lib/siteUrl'
+import { blogPostMarkdown } from '@/lib/blogMarkdown'
+import { mdToHtml } from '@/lib/mdToHtml'
 
 // Korean blog feed — submitted to Naver Search Advisor (요청 › RSS 제출) so new posts get crawled
 // quickly, and usable by any feed reader. Excluded from the locale middleware like sitemap.xml.
+// Naver's guide asks for the whole post in each item, so <content:encoded> carries the full body (from the
+// post's Markdown twin); <description> stays the short summary.
 export const dynamic = 'force-static'
 
 const esc = (s: string) =>
@@ -22,6 +26,7 @@ export function GET() {
         `      <link>${url}</link>`,
         `      <guid isPermaLink="true">${url}</guid>`,
         `      <description>${esc(p.metaDescription.ko)}</description>`,
+        `      <content:encoded><![CDATA[${mdToHtml(blogPostMarkdown(p, 'ko')).replace(/]]>/g, ']]]]><![CDATA[>')}]]></content:encoded>`,
         `      <category>${esc(p.category.ko)}</category>`,
         `      <pubDate>${new Date(p.date).toUTCString()}</pubDate>`,
         '    </item>',
@@ -31,7 +36,7 @@ export function GET() {
 
   const latest = posts[0] ? new Date(posts[0].updatedDate || posts[0].date) : new Date()
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>조이루모스 ZOE LUMOS 블로그</title>
     <link>${SITE_URL}/ko/blog</link>

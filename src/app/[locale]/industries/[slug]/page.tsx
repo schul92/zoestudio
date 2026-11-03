@@ -49,6 +49,14 @@ export async function generateMetadata({
       siteName: locale === 'ko' ? 'ZOE LUMOS' : 'Zoe Lumos',
       locale: locale === 'ko' ? 'ko_KR' : 'en_US',
       type: 'website',
+      // Each industry's own picture, so Naver/social previews differ per page instead of reusing one logo card.
+      images: [{ url: `${BASE}${industry.image}`, alt: industry.name[locale] }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: industry.seo.title[locale],
+      description: industry.seo.description[locale],
+      images: [`${BASE}${industry.image}`],
     },
     robots: {
       index: true,
