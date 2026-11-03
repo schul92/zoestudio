@@ -220,6 +220,165 @@ export default function IndustryPage({
         </div>
       </section>
 
+      {/* ─── ILLUSTRATION · MOTION (optional) ─────────────── */}
+      {industry.gallery && (
+        <section className="section-pad hair-bottom">
+          <div className="container-edge">
+            <div className="grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-12 mb-12 md:mb-16">
+              <div className="md:col-span-6">
+                <InView className="flex items-center gap-3 overline text-ash mb-6 hair-draw pb-4">
+                  <span className="section-num not-italic text-ink font-normal">§</span>
+                  <span className="h-px w-10 bg-hairline" />
+                  <span>{industry.gallery.eyebrow[locale]}</span>
+                </InView>
+                <h2 className="font-display text-display-lg text-ink tracking-luxury">
+                  <InView as="span" className="mask-row">
+                    <span className="mask-rise block">{industry.gallery.title[locale][0]}</span>
+                  </InView>
+                  <InView as="span" className="mask-row" delay={140}>
+                    <span className="mask-rise block italic font-light text-gold fraunces-soft">
+                      {industry.gallery.title[locale][1]}
+                    </span>
+                  </InView>
+                </h2>
+              </div>
+              <InView as="p" className="reveal md:col-span-5 md:col-start-8 self-end text-body-lg text-graphite leading-[1.7]">
+                {industry.gallery.body[locale]}
+              </InView>
+            </div>
+
+            {/* Motion first: muted loops from real drafts. Reduced motion gets the still poster instead. */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 mb-6 md:mb-8">
+              {industry.gallery.videos.map((v, i) => (
+                <InView as="figure" key={v.mp4} className="reveal" delay={i * 100}>
+                  <div className="relative overflow-hidden rounded-[2px] bg-bone border border-hairline">
+                    <video
+                      // Some browsers skip autoplay when the element arrives before hydration; start it explicitly.
+                      ref={(el) => {
+                        if (el && el.paused) {
+                          el.muted = true
+                          el.play().catch(() => {})
+                        }
+                      }}
+                      className="block w-full h-auto motion-reduce:hidden"
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                      preload="metadata"
+                      poster={v.poster}
+                      aria-label={v.caption[locale]}
+                    >
+                      <source src={v.webm} type="video/webm" />
+                      <source src={v.mp4} type="video/mp4" />
+                    </video>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={v.poster} alt={v.caption[locale]} className="hidden motion-reduce:block w-full h-auto" />
+                  </div>
+                  <figcaption className="mt-3 flex items-center gap-2 text-[13px] text-graphite">
+                    <span className="w-1.5 h-1.5 rounded-full bg-gold" aria-hidden />
+                    {v.caption[locale]}
+                  </figcaption>
+                </InView>
+              ))}
+            </div>
+
+            <ul className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+              {industry.gallery.images.map((img, i) => (
+                <InView as="li" key={img.src} className="reveal" delay={(i % 3) * 80}>
+                  <figure>
+                    <div className="relative overflow-hidden rounded-[2px] bg-bone border border-hairline aspect-[4/3]">
+                      <Image
+                        src={img.src}
+                        alt={img.alt[locale]}
+                        fill
+                        sizes="(max-width: 1024px) 50vw, 33vw"
+                        className="object-cover object-top"
+                      />
+                    </div>
+                    <figcaption className="mt-2.5 text-[12.5px] leading-snug text-graphite">{img.caption[locale]}</figcaption>
+                  </figure>
+                </InView>
+              ))}
+            </ul>
+          </div>
+        </section>
+      )}
+
+      {/* ─── SPECIALTIES (optional) ───────────────────────── */}
+      {industry.specialties && (
+        <section className="section-pad hair-bottom bg-bone">
+          <div className="container-edge grid grid-cols-1 md:grid-cols-12 gap-10 md:gap-14">
+            <div className="md:col-span-5">
+              <InView className="flex items-center gap-3 overline text-ash mb-6 hair-draw pb-4">
+                <span className="section-num not-italic text-ink font-normal">§</span>
+                <span className="h-px w-10 bg-hairline" />
+                <span>{industry.specialties.eyebrow[locale]}</span>
+              </InView>
+              <h2 className="font-display text-display-lg text-ink tracking-luxury">
+                <InView as="span" className="mask-row">
+                  <span className="mask-rise block">{industry.specialties.title[locale][0]}</span>
+                </InView>
+                <InView as="span" className="mask-row" delay={140}>
+                  <span className="mask-rise block italic font-light text-gold fraunces-soft">
+                    {industry.specialties.title[locale][1]}
+                  </span>
+                </InView>
+              </h2>
+              <InView as="p" className="reveal mt-6 text-[15px] text-graphite leading-[1.7] max-w-[46ch]">
+                {industry.specialties.body[locale]}
+              </InView>
+            </div>
+            <InView as="ul" className="reveal md:col-span-7 flex flex-wrap content-start gap-2.5 md:gap-3">
+              {industry.specialties.items.map((s) => (
+                <li
+                  key={s.en}
+                  className="rounded-full border border-hairline bg-ivory px-4 py-2 text-[14px] text-ink"
+                >
+                  {s[locale]}
+                </li>
+              ))}
+            </InView>
+          </div>
+        </section>
+      )}
+
+      {/* ─── PROCESS (optional) ───────────────────────────── */}
+      {industry.process && (
+        <section className="section-pad hair-bottom">
+          <div className="container-edge">
+            <div className="mb-12 md:mb-16 max-w-2xl">
+              <InView className="flex items-center gap-3 overline text-ash mb-6 hair-draw pb-4 max-w-sm">
+                <span className="section-num not-italic text-ink font-normal">§</span>
+                <span className="h-px w-10 bg-hairline" />
+                <span>{industry.process.eyebrow[locale]}</span>
+              </InView>
+              <h2 className="font-display text-display-lg text-ink tracking-luxury">
+                <InView as="span" className="mask-row">
+                  <span className="mask-rise block">{industry.process.title[locale][0]}</span>
+                </InView>
+                <InView as="span" className="mask-row" delay={140}>
+                  <span className="mask-rise block italic font-light text-gold fraunces-soft">
+                    {industry.process.title[locale][1]}
+                  </span>
+                </InView>
+              </h2>
+            </div>
+            <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-10">
+              {industry.process.steps.map((s, i) => (
+                <InView as="li" key={i} className="reveal border-t border-ink pt-5" delay={i * 80}>
+                  <span className="section-num text-2xl">{String(i + 1).padStart(2, '0')}</span>
+                  <h3 className="mt-3 font-display text-[clamp(1.15rem,1.8vw,1.4rem)] leading-[1.2] tracking-luxury text-ink fraunces-soft">
+                    {s.title[locale]}
+                  </h3>
+                  <p className="mt-2 text-[14px] text-graphite leading-[1.7]">{s.body[locale]}</p>
+                </InView>
+              ))}
+            </ol>
+          </div>
+        </section>
+      )}
+
       {/* ─── CASE STUDY PULL (only with a real, client-approved quote) ── */}
       {industry.caseStudy && (
       <section className="hair-bottom section-pad">

@@ -6,6 +6,7 @@ export const industrySlugs: [string, string][] = [
   ['korean-beauty-salon', '한인-뷰티샵-웹사이트'],
   ['korean-church', '한인-교회-홈페이지'],
   ['korean-academy', '한인-학원-웹사이트'],
+  ['clinic-websites', '병원-홈페이지-제작'],
   ['korean-medical-dental', '한인-병원-웹사이트'],
   ['korean-ecommerce', '한인-쇼핑몰-제작'],
 ]

@@ -40,6 +40,7 @@ export default function Footer({ locale = 'en' }: { locale?: string }) {
         [isKo ? '뷰티샵 · 헤어' : 'Beauty + salon', isKo ? '/ko/industries/한인-뷰티샵-웹사이트' : '/industries/korean-beauty-salon'],
         [isKo ? '교회' : 'Korean church', isKo ? '/ko/industries/한인-교회-홈페이지' : '/industries/korean-church'],
         [isKo ? '학원' : 'Academy · hagwon', isKo ? '/ko/industries/한인-학원-웹사이트' : '/industries/korean-academy'],
+        [isKo ? '병원 · 치과 홈페이지' : 'Clinic & hospital websites', isKo ? '/ko/industries/병원-홈페이지-제작' : '/industries/clinic-websites'],
         [isKo ? '의료 · 치과' : 'Medical + dental', isKo ? '/ko/industries/한인-병원-웹사이트' : '/industries/korean-medical-dental'],
         [isKo ? '쇼핑몰 · Shopify' : 'E-commerce', isKo ? '/ko/industries/한인-쇼핑몰-제작' : '/industries/korean-ecommerce'],
       ] as [string, string][],

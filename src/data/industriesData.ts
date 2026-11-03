@@ -8,6 +8,18 @@ export type IndustryStat = { num: string; suf: string; label: { en: string; ko: 
 export type IndustryProblem = { title: { en: string; ko: string }; body: { en: string; ko: string }; icon: IconId }
 export type IndustryFeature = { title: { en: string; ko: string }; body: { en: string; ko: string } }
 export type IndustryFAQ = { q: { en: string; ko: string }; a: { en: string; ko: string } }
+type L = { en: string; ko: string }
+type L2 = { en: [string, string]; ko: [string, string] }
+export type IndustryGallery = {
+  eyebrow: L
+  title: L2
+  body: L
+  /** Looping, muted clips recorded from real concept drafts. */
+  videos: { mp4: string; webm: string; poster: string; caption: L }[]
+  images: { src: string; width: number; height: number; alt: L; caption: L }[]
+}
+export type IndustrySpecialties = { eyebrow: L; title: L2; body: L; items: L[] }
+export type IndustryProcess = { eyebrow: L; title: L2; steps: { title: L; body: L }[] }
 
 export type IconId =
   | 'clock'
@@ -45,6 +57,12 @@ export type Industry = {
     role: { en: string; ko: string }
     image: string
   }
+  // Optional — illustration / motion showcase, rendered after the features list.
+  gallery?: IndustryGallery
+  // Optional — every specialty the page serves, as a chip list.
+  specialties?: IndustrySpecialties
+  // Optional — how an engagement runs, step by step.
+  process?: IndustryProcess
   faqs: IndustryFAQ[]
   cta: { en: string; ko: string }
   seo: {
@@ -345,6 +363,100 @@ export const industries: Industry[] = [
       description: {
         en: 'Websites for Korean-American academies, SAT prep, and K-12 tutoring. Bilingual instructor profiles, KakaoTalk inquiry, registration. Builds from $1,100.',
         ko: '한인 학원 · SAT · K-12 튜터링을 위한 홈페이지. 이중언어 강사 프로필, 카카오톡 문의, 수강 등록. 제작 $1,100부터.',
+      },
+    },
+  },
+
+  /* ─── Clinic & hospital websites, every specialty, Korea + US ──── */
+  {
+    slug: { en: 'clinic-websites', ko: '병원-홈페이지-제작' },
+    name: { en: 'Clinic & Hospital Websites', ko: '병원 · 치과 홈페이지' },
+    eyebrow: { en: 'For doctors of every specialty · Korea and the US', ko: '모든 진료과 의사를 위한 · 한국 · 미국' },
+    headline: {
+      en: ['Websites for doctors.', 'See the draft first.'],
+      ko: ['병원 전문 홈페이지,', '시안부터 먼저 보여드립니다.'],
+    },
+    intro: {
+      en: 'From dentistry to dermatology, orthopedics and Korean medicine. We draw your treatments as precise illustrations, sketch the design, and bring the first screen to life with motion. Before you sign anything, we share a working draft. Copy is checked against medical-advertising rules, and the site is built to be found on Naver, Google and AI search.',
+      ko: '치과부터 피부과, 정형외과, 한의원까지. 진료 내용을 정확한 일러스트로 그리고, 디자인 스케치에서 움직이는 첫 화면(모션그래픽)까지 만듭니다. 계약 전에 움직이는 시안 초안을 먼저 보여드리고, 의료법 기준 문구와 네이버 · 구글 · AI 검색까지 한 팀이 맡습니다.',
+    },
+    image: '/medical/dental-arch.jpg',
+    accent: '#E7D9CF',
+    stats: [
+      { num: '7', suf: '종', label: { en: 'dental illustrations drawn for one clinic draft', ko: '한 치과 시안에 그린 진료 일러스트' } },
+      { num: '1', suf: '주', label: { en: 'typical time from consult to first draft', ko: '상담 후 시안 초안까지 (보통)' } },
+      { num: '90', suf: '+', label: { en: 'mobile speed target (Google Lighthouse)', ko: '휴대폰 속도 목표 (Google Lighthouse)' } },
+    ],
+    problems: [
+      { icon: 'mobile', title: { en: 'Clinic sites that break on phones', ko: '휴대폰에서 깨지는 병원 홈페이지' }, body: { en: 'We checked 882 Korean dental clinic websites in November 2026: 37% had no mobile viewport at all.', ko: '2026년 11월 전국 치과 홈페이지 882곳을 점검해 보니 37%가 휴대폰 화면 설정조차 없었습니다.' } },
+      { icon: 'lock', title: { en: 'No secure connection', ko: '보안 연결(https)이 없는 사이트' }, body: { en: 'In the same check, 61% opened without https, so browsers warn patients before they read a word.', ko: '같은 점검에서 61%가 https 없이 열렸습니다. 환자가 글을 읽기도 전에 브라우저가 "주의 요함"을 띄웁니다.' } },
+      { icon: 'shield', title: { en: 'Copy that breaks medical-ad rules', ko: '의료법에 걸리는 문구' }, body: { en: '55% showed words a Korean medical-ad review would flag: reviews, "free", discounts, "best".', ko: '55%에서 의료광고 심의에 걸릴 수 있는 단어가 보였습니다. 후기, 무료, 할인, 최고 같은 표현입니다.' } },
+      { icon: 'palette', title: { en: 'Templates that all look alike', ko: '어디서 본 듯한 템플릿' }, body: { en: 'The same banner and stock smile. If the treatment is never drawn, patients cannot tell one clinic from the next.', ko: '같은 배너, 같은 모델 사진. 진료가 그림으로 보이지 않으면 환자는 병원의 차이를 알 수 없습니다.' } },
+    ],
+    features: [
+      { title: { en: 'Treatment illustrations', ko: '진료 일러스트' }, body: { en: 'Tooth charts, crown sections, shade guides, CT planning: drawn precisely, as artwork. Other specialties get the same care: skin layers, joints, the eye, the spine.', ko: '치아 배열도, 크라운 단면, 셰이드 가이드, CT 계획처럼 진료를 정확한 그림으로 그립니다. 다른 진료과도 피부층, 관절, 눈, 척추를 같은 방식으로 그립니다.' } },
+      { title: { en: 'Design sketch → motion graphics', ko: '디자인 스케치 → 모션그래픽' }, body: { en: 'We set the direction in sketches, then animate the first screen in SVG and WebGL. Light enough to stay fast on phones.', ko: '스케치로 방향을 잡고, 첫 화면은 SVG · WebGL로 움직이게 만듭니다. 휴대폰에서도 빠르도록 가볍게 만듭니다.' } },
+      { title: { en: 'A draft before you sign', ko: '계약 전 시안 초안' }, body: { en: 'After a short consult we share one or two key screens as a live, moving link. Decide after you have seen it.', ko: '상담 후 대표 화면 1–2개를 움직이는 링크로 먼저 보내드립니다. 보시고 결정하시면 됩니다.' } },
+      { title: { en: 'Medical-ad compliant copy', ko: '의료법 기준 문구' }, body: { en: 'No patient reviews, before/after photos, discounts or superlatives; specialist titles exactly as licensed.', ko: '후기, 전후 사진, 가격 할인, 과장 표현 없이 씁니다. "전문" 표기는 실제 전문의 자격대로만 합니다.' } },
+      { title: { en: 'Naver, Google and AI search', ko: '네이버 · 구글 · AI 검색' }, body: { en: 'Built to Naver Search Advisor\'s official guide and Google\'s, with structured clinic data for AI answers.', ko: '네이버 서치어드바이저 공식 가이드와 구글 기준으로 만들고, AI 검색이 읽는 병원 정보까지 넣습니다.' } },
+      { title: { en: 'Hours and booking that work', ko: '진료시간 · 예약 연결' }, body: { en: 'Late hours shown automatically; booking, KakaoTalk and phone one tap away.', ko: '야간진료를 자동으로 표시하고, 네이버 예약 · 카카오톡 · 전화를 한 번에 연결합니다.' } },
+    ],
+    gallery: {
+      eyebrow: { en: 'Illustration · sketch · motion', ko: '일러스트 · 디자인 스케치 · 모션그래픽' },
+      title: { en: ['Treatments, drawn.', 'First screens that move.'], ko: ['진료를 그림으로,', '첫 화면은 움직이게.'] },
+      body: { en: 'Frames from real concept drafts we made for a dental clinic in Seoul. Every specialty can be drawn this way.', ko: '서울의 한 치과를 위해 만든 실제 시안의 장면들입니다. 어떤 진료과든 같은 방식으로 그립니다.' },
+      videos: [
+        { mp4: '/medical/dental-arch-motion.mp4', webm: '/medical/dental-arch-motion.webm', poster: '/medical/dental-arch-motion.jpg', caption: { en: 'Tooth chart that inks itself, then points to each treatment', ko: '선이 그려지며 진료 자리를 짚어 주는 치아 배열도' } },
+        { mp4: '/medical/crown-motion.mp4', webm: '/medical/crown-motion.webm', poster: '/medical/crown-motion.jpg', caption: { en: 'Crown seating onto the prepared tooth', ko: '지대치에 맞춰 내려앉는 크라운 단면' } },
+      ],
+      images: [
+        { src: '/medical/veneer-shade.jpg', width: 1200, height: 1046, alt: { en: 'Front tooth with a shade guide', ko: '앞니 정면과 셰이드 가이드 일러스트' }, caption: { en: 'Veneers: matching shade to the neighbouring teeth', ko: '라미네이트 · 옆 치아 색 맞추기' } },
+        { src: '/medical/implant-cbct.jpg', width: 1200, height: 834, alt: { en: 'CT-style implant planning drawing', ko: 'CT 위 임플란트 계획 그림' }, caption: { en: 'Implants: planned on CT before placement', ko: '임플란트 · CT 위에서 먼저 계획' } },
+        { src: '/medical/wisdom-loupe.jpg', width: 1200, height: 763, alt: { en: 'Impacted wisdom tooth under a loupe', ko: '확대경으로 본 누운 사랑니' }, caption: { en: 'Wisdom teeth: the nerve canal under a loupe', ko: '사랑니 · 확대경으로 본 신경관 거리' } },
+        { src: '/medical/gum-probe.jpg', width: 1200, height: 984, alt: { en: 'Gums with a periodontal probe', ko: '잇몸과 치주 탐침 일러스트' }, caption: { en: 'Gum care: pocket depth, tooth by tooth', ko: '잇몸 치료 · 치아별 잇몸 깊이' } },
+        { src: '/medical/molar-engraving.jpg', width: 1120, height: 1280, alt: { en: 'Engraving-style molar illustration', ko: '판화 느낌의 어금니 일러스트' }, caption: { en: 'Natural teeth first: an engraving-style molar', ko: '자연치아 우선 · 판화 스타일 어금니' } },
+        { src: '/medical/crown-section.jpg', width: 1200, height: 1165, alt: { en: 'Crown section drawing with materials', ko: '크라운 단면과 재료 선택 일러스트' }, caption: { en: 'Crowns: zirconia, ceramic or gold', ko: '보철 · 지르코니아 · 세라믹 · 골드' } },
+      ],
+    },
+    specialties: {
+      eyebrow: { en: 'Every specialty', ko: '모든 진료과' },
+      title: { en: ['Whatever you treat,', 'we can draw it.'], ko: ['어떤 진료든,', '그림과 화면으로.'] },
+      body: { en: 'Clinics in Korea get Naver, KakaoTalk and Korean medical-ad rules; practices in the US get Google, HIPAA-ready forms and bilingual pages.', ko: '한국 병원은 네이버 · 카카오톡 · 의료법 기준으로, 미국 병원은 구글 · HIPAA 양식 · 한영 페이지로 만듭니다.' },
+      items: [
+        { en: 'Dentistry', ko: '치과' }, { en: 'Dermatology', ko: '피부과' }, { en: 'Plastic surgery', ko: '성형외과' },
+        { en: 'Ophthalmology', ko: '안과' }, { en: 'Orthopedics', ko: '정형외과' }, { en: 'Rehabilitation', ko: '재활의학과' },
+        { en: 'Neurosurgery', ko: '신경외과' }, { en: 'Pain medicine', ko: '마취통증의학과' }, { en: 'Internal medicine', ko: '내과' },
+        { en: 'Family medicine', ko: '가정의학과' }, { en: 'Pediatrics', ko: '소아청소년과' }, { en: 'OB/GYN', ko: '산부인과' },
+        { en: 'ENT', ko: '이비인후과' }, { en: 'Urology', ko: '비뇨의학과' }, { en: 'Psychiatry', ko: '정신건강의학과' },
+        { en: 'Radiology', ko: '영상의학과' }, { en: 'Korean medicine', ko: '한의원' }, { en: 'Hospitals', ko: '병원 · 종합병원' },
+      ],
+    },
+    process: {
+      eyebrow: { en: 'How it works', ko: '진행 순서' },
+      title: { en: ['Draft first,', 'contract second.'], ko: ['시안 먼저,', '계약은 그다음.'] },
+      steps: [
+        { title: { en: 'Consult', ko: '상담' }, body: { en: 'Your specialty, the treatments to feature and the searches patients use near you.', ko: '진료과, 강조할 진료, 우리 동네 환자들의 검색어를 확인합니다.' } },
+        { title: { en: 'Draft shared', ko: '시안 초안 공유' }, body: { en: 'One or two key screens as a moving link, usually within a week. No contract yet.', ko: '대표 화면 1–2개를 움직이는 링크로 보통 1주 안에 보내드립니다. 아직 계약 전입니다.' } },
+        { title: { en: 'Build', ko: '계약 · 제작' }, body: { en: 'About 5–7 weeks once materials arrive, paid in stages.', ko: '자료를 받은 날부터 약 5–7주, 단계별로 결제합니다.' } },
+        { title: { en: 'Launch and care', ko: '오픈 · 관리' }, body: { en: 'Speed and search checks at launch; monthly care if you want it.', ko: '오픈 때 속도와 검색을 점검하고, 원하시면 월 관리로 이어갑니다.' } },
+      ],
+    },
+    faqs: [
+      { q: { en: 'Can we really see a draft before signing?', ko: '계약 전에 정말 시안을 볼 수 있나요?' }, a: { en: 'Yes. We send one or two key screens as a live link at no cost. If you like it, we sign then.', ko: '네. 대표 화면 1–2개를 움직이는 링크로 비용 없이 먼저 보내드립니다. 마음에 드시면 그때 계약합니다.' } },
+      { q: { en: 'Can you illustrate specialties other than dentistry?', ko: '치과 말고 다른 진료과도 일러스트가 되나요?' }, a: { en: 'Yes: skin layers for dermatology, joints and spine for orthopedics, the eye for ophthalmology, and so on, drawn in the same precise way.', ko: '네. 피부과는 피부층, 정형외과는 관절과 척추, 안과는 눈 구조처럼 같은 방식으로 정확하게 그립니다.' } },
+      { q: { en: 'Do you work with clinics in Korea? How do we pay?', ko: '한국 병원도 가능한가요? 결제는요?' }, a: { en: 'Yes. Consults and builds run in Korean; payment is by card on our zoelumos.com payment link, charged in USD.', ko: '네. 상담과 제작은 한국어로 하고, 결제는 zoelumos.com 결제 링크에서 해외 결제 카드로 합니다(USD 청구).' } },
+      { q: { en: 'What about Korean medical-ad law?', ko: '의료법 위반이 걱정됩니다.' }, a: { en: 'We write and review copy against Medical Service Act Art. 56. Final approval stays with the clinic, and our review is not legal advice.', ko: '문구를 의료법 56조 기준으로 쓰고 검토합니다. 최종 승인은 병원에서 하시며, 저희 검토는 법률 자문이 아닙니다.' } },
+      { q: { en: 'How much does it cost?', ko: '비용은 얼마인가요?' }, a: { en: 'It depends on the number of pages and languages. You get a fixed quote after seeing the draft.', ko: '페이지 수와 언어에 따라 달라집니다. 시안 초안을 보신 뒤 확정 견적을 드립니다.' } },
+    ],
+    cta: { en: 'Want to see a draft first?', ko: '시안 초안부터 받아보시겠어요?' },
+    seo: {
+      title: {
+        en: 'Clinic & Hospital Websites — Medical Illustration, Motion, Draft First | Zoe Lumos',
+        ko: '병원·치과 홈페이지 제작 — 진료 일러스트 · 모션그래픽 · 시안 먼저 | 조이루모스',
+      },
+      description: {
+        en: 'Websites for doctors of every specialty in Korea and the US: treatment illustrations, motion first screens, medical-ad compliant copy, Naver and Google search. See a working draft before you sign.',
+        ko: '치과 · 피부과 · 정형외과 · 한의원 등 모든 진료과 병원 홈페이지. 진료 일러스트와 움직이는 첫 화면, 의료법 기준 문구, 네이버 · 구글 검색. 계약 전 시안 초안을 먼저 보여드립니다.',
       },
     },
   },

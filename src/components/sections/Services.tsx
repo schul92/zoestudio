@@ -64,7 +64,7 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
 
   const enterprise = [
     {
-      href: isKo ? '/ko/industries/한인-병원-웹사이트' : '/industries/korean-medical-dental',
+      href: isKo ? '/ko/industries/병원-홈페이지-제작' : '/industries/korean-medical-dental',
       kicker: isKo ? '의사 · 병원 · 치과' : 'Doctors · Clinics · Dental',
       title: isKo ? '진료 예약으로 이어지는 병원 홈페이지' : 'Practice websites that book patients',
       blurb: isKo

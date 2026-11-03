@@ -32,7 +32,7 @@ const copy = {
     sub: '검색이 진료 예약으로 이어지는 병원 홈페이지. 거래처를 얻고 지키는 B2B 사이트·포털·시스템 연동. 한·영 이중언어로 한 팀이 만듭니다.',
     cta1: '프로젝트 시작하기',
     cta2: '병원·치과 홈페이지 보기',
-    cta2Href: '/ko/industries/한인-병원-웹사이트',
+    cta2Href: '/ko/industries/병원-홈페이지-제작',
     logosLabel: '함께 런칭한 의료 · B2B · 브랜드 고객사',
     scroll: '스크롤',
     sceneLabel: '노트북이 열리며 Zoe Lumos가 만든 고객 웹사이트가 켜지고, 이어서 휴대폰이 들어옵니다.',
