@@ -12,6 +12,8 @@ export type LumosCopy = {
   sub: string
   cta1: string
   cta2: string
+  /** Full path for the secondary CTA (locale prefix included); defaults to the TJ Flowers case study. */
+  cta2Href?: string
   scroll: string
   sceneLabel: string
   captions: LumosCaption[]
@@ -129,7 +131,7 @@ export default function LumosHero({
           <Link href={`${prefix}/#contact`} className="lh-btn">
             {t.cta1} <span className="lh-btn-arrow" aria-hidden>→</span>
           </Link>
-          <Link href={`${prefix}/blog/tj-flowers-shopify-revamp-case-study`} className="lh-link">
+          <Link href={t.cta2Href ?? `${prefix}/blog/tj-flowers-shopify-revamp-case-study`} className="lh-link">
             {t.cta2} <span aria-hidden>›</span>
           </Link>
         </div>

@@ -146,6 +146,15 @@ export default function Home({ params }: { params: { locale: string } }) {
       disciplines: ['Web design', 'Product storytelling', 'SEO'],
     },
     {
+      name: 'Seoul Choice Dental',
+      url: '/portfolio',
+      image: '/portfolio/seoul-choice-dental.jpg',
+      year: '2026',
+      location: 'Seoul, Korea',
+      industry: 'Dental clinic',
+      disciplines: ['Web design', 'Treatment pages', 'Naver & Google SEO'],
+    },
+    {
       name: 'TJ Flowers',
       url: '/portfolio',
       image: '/portfolio/tj-flowers.jpg',

@@ -22,11 +22,11 @@ export async function generateMetadata({
   const metadata = {
     en: {
       title: 'Our Work - Portfolio | ZOE LUMOS',
-      description: 'Explore our portfolio of successful website designs and digital marketing projects. See real results from businesses we\'ve helped grow in NY and NJ.',
+      description: 'Portfolio of websites for doctors, dental clinics, medical-device and B2B companies, plus the local brands we\'ve launched across the US since 2019.',
     },
     ko: {
       title: '포트폴리오 - 제작 사례 | ZOE LUMOS',
-      description: '저희가 제작한 웹사이트와 디지털 마케팅 프로젝트를 확인하세요. 뉴욕, 뉴저지 비즈니스의 실제 성공 사례를 보여드립니다.',
+      description: '병원·치과·의료기기·B2B 기업 웹사이트 제작 사례와, 2019년부터 미국 전역에서 함께 런칭한 브랜드들의 포트폴리오입니다.',
     }
   }
 
@@ -80,6 +80,24 @@ const projects = [
       category: '의료기기 / 미국 런칭',
       description: 'FDA 510(k) 인증 디지털 척추 내시경 TISE의 미국 런칭 사이트. 제품·외과의 교육·이벤트·투자 페이지를 외과의사와 파트너를 위해 구축.',
       services: ['웹사이트 디자인', '제품 스토리텔링', 'SEO', '문의·상담 흐름'],
+    },
+  },
+  {
+    id: 'seoul-choice-dental',
+    // 5:4 crop of the same screen: this page's frames are 5:4, so the 16:10 home image would clip the headline.
+    image: '/portfolio/seoul-choice-dental-5x4.jpg',
+    status: 'in-progress' as const,
+    en: {
+      title: 'Seoul Choice Dental',
+      category: 'Dental Clinic / Website Rebuild · In progress',
+      description: "Full rebuild of a Seoul dental clinic's website: treatment and equipment pages written to medical-advertising rules, Naver and Google search cleanup, and a static build with no monthly server fees. Launching soon.",
+      services: ['Website Design', 'Treatment Pages', 'Naver & Google SEO', 'Booking Flow'],
+    },
+    ko: {
+      title: '서울초이스치과의원',
+      category: '치과의원 / 홈페이지 개편 · 제작 중',
+      description: '서울 영등포 치과의원의 홈페이지 전면 개편. 의료광고 기준에 맞춘 진료·장비 소개 페이지, 네이버·구글 검색 정리, 월 서버비가 들지 않는 정적 사이트로 제작 중입니다. 곧 오픈합니다.',
+      services: ['웹사이트 디자인', '진료 안내 페이지', '네이버·구글 SEO', '상담 예약 흐름'],
     },
   },
   {
@@ -208,9 +226,10 @@ const content = {
     hero: {
       subtitle: 'Our Work',
       title: 'Portfolio',
-      description: 'Real projects. Real results. See how we\'ve helped businesses like yours succeed online.',
+      description: 'Websites for doctors, medical companies and B2B teams, plus the brands we\'ve launched since 2019. Real projects, real results.',
     },
     viewSite: 'Visit Website',
+    inProgress: 'In progress · Launching soon',
     servicesLabel: 'Services Provided',
     cta: {
       title: 'Ready to Start Your Project?',
@@ -222,9 +241,10 @@ const content = {
     hero: {
       subtitle: '제작 사례',
       title: '포트폴리오',
-      description: '실제 프로젝트, 실제 결과. 저희가 어떻게 비즈니스의 온라인 성공을 도왔는지 확인하세요.',
+      description: '병원·의료기업·B2B 웹사이트, 그리고 2019년부터 함께 런칭한 브랜드들. 실제 프로젝트, 실제 결과입니다.',
     },
     viewSite: '웹사이트 방문',
+    inProgress: '제작 중 · 오픈 준비 중',
     servicesLabel: '제공된 서비스',
     cta: {
       title: '프로젝트를 시작할 준비가 되셨나요?',
