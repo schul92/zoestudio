@@ -19,6 +19,7 @@ export const SERVICES = {
   seo: { en: 'Local SEO & Google Business Profile', ko: '로컬 SEO · 구글 비즈니스 프로필' },
   kakao: { en: 'KakaoTalk Channel management', ko: '카카오톡 채널 관리' },
   domain: { en: 'Email & domain management', ko: '이메일 · 도메인 관리' },
+  deposit: { en: 'Website build — deposit', ko: '홈페이지 제작 착수금' },
   build: { en: 'Website build (milestone payment)', ko: '홈페이지 제작 (단계별 결제)' },
   blog: { en: 'Website blog posts', ko: '홈페이지 블로그 글' },
 } as const

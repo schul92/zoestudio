@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect } from 'react'
 import { useApi, Kpi, Card, Spinner, ErrorBox } from '@/components/admin/AdminUI'
 import {
   SERVICES,
@@ -542,6 +542,21 @@ function NewClientForm() {
   const [error, setError] = useState<string | null>(null)
   const [payUrl, setPayUrl] = useState<string | null>(null)
   const [copied, setCopied] = useState(false)
+
+  // Prefill from the URL so a link can be prepared ahead and only needs the Create click:
+  // /admin/billing?name=…&email=…&amount=1000&interval=once&region=us&services=deposit,build
+  useEffect(() => {
+    const q = new URLSearchParams(window.location.search)
+    const v = (k: string) => q.get(k)?.trim() || ''
+    if (v('name')) setName(v('name'))
+    if (v('email')) setEmail(v('email'))
+    if (v('amount')) setAmount(v('amount'))
+    const iv = v('interval')
+    if (iv && iv in BILLING_PERIODS) setInterval(iv as BillingPeriod)
+    const rg = v('region')
+    if (rg && rg in CLIENT_REGIONS) setRegion(rg as ClientRegion)
+    if (v('services')) setServices(v('services').split(',').map((k) => k.trim()).filter(isServiceKey))
+  }, [])
 
   function toggle(key: ServiceKey) {
     setServices((prev) => (prev.includes(key) ? prev.filter((k) => k !== key) : [...prev, key]))
