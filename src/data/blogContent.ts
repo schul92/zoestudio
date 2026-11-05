@@ -4782,7 +4782,7 @@ const allBlogPosts: BlogPost[] = [
         { type: 'p', content: '23 ChatGPT-referred sessions in 30 days with 65%+ engagement is not a vanity metric. ChatGPT\'s web browsing tool is pulling TJ Flowers into conversations like "where can I order luxury flowers in Manhattan" and citing the brand, with real humans clicking through. Bing Copilot is doing the same — 14 sessions at 78.6% engagement. AI search rewards exactly what we built: FAQ schema, factual content with specific local entities (1640 York Avenue, Mount Sinai protocols, Mandarin Oriental wedding setups), clear E-E-A-T signals (38-year-old business, specific orchid expertise). Korean and US Korean SMB owners reading this: this channel does not exist for you yet either — building for AI search now, not later, is the same playbook.' },
         { type: 'tip', content: 'The TJ Flowers engagement validates a 5-step playbook for small businesses with strong offline equity and weak digital presence: (1) Fix technical SEO and conversion fundamentals first — do not pour content into a leaky bucket. (2) Programmatic SEO for local intent — a single well-built page generated 2,029 impressions in 14 days. (3) Long-tail content with FAQ schema — ranks faster, has higher CTR potential, earns AI citations. (4) Build for AI search now — ChatGPT is already sending traffic 60 days into the program. (5) Connect SEO to revenue with proper event tracking — without it, the program looks like vanity.' },
         { type: 'h2', content: 'What is next for TJ Flowers' },
-        { type: 'p', content: 'The post-Mother\'s Day phase is the test. Current daily revenue rate is $100–200/day in the trough between Mother\'s Day and Father\'s Day. The next 30 days will validate: (1) Subscription product launch — `/products/flower-subscription` with $89/$149/$249 tiers will create the missing recurring revenue line. (2) Klaviyo bounce-back email sequence to the fresh Mother\'s Day buyer list. (3) Wedding venue cluster ranking — 5 new venue guides should start ranking for "wedding flowers [venue]" queries in 2–4 weeks. (4) Father\'s Day pre-build for early June demand capture.' },
+        { type: 'p', content: 'The post-Mother\'s Day phase is the test. Current daily revenue rate is $100–200/day in the trough between Mother\'s Day and Father\'s Day. The next 30 days will validate: (1) Subscription product launch — `/products/flower-subscription` with $129/$149/$249 tiers will create the missing recurring revenue line. (2) Klaviyo bounce-back email sequence to the fresh Mother\'s Day buyer list. (3) Wedding venue cluster ranking — 5 new venue guides should start ranking for "wedding flowers [venue]" queries in 2–4 weeks. (4) Father\'s Day pre-build for early June demand capture.' },
         { type: 'h2', content: 'What this means for other Korean-American small businesses' },
         { type: 'p', content: 'TJ Flowers is not a special case. It is a normal small business with strong offline equity and a website that was actively losing them money. The unlock is not a single hack — it is the cumulative weight of small, professional decisions a templated site is structurally incapable of making: bot blocking, schema markup that AI search engines actually parse, programmatic landing pages for local intent, long-form content with FAQ schema, native checkout that respects mobile thumbs, and a 12-month editorial calendar tied to actual revenue moments.' },
         { type: 'p', content: 'And the headline lesson — 5× monthly impression run-rate in 6 weeks with zero ad spend — is the most important number in this entire report. SEO is the only marketing channel where every dollar invested compounds for years. Paid ads stop working the day you stop paying. Instagram requires daily content. Google organic + AI search citations, once they kick in, are closer to owning a building than renting one.' },
@@ -4855,7 +4855,7 @@ const allBlogPosts: BlogPost[] = [
         { type: 'p', content: '30일간 ChatGPT 추천 세션 23건 + 65%+ 참여율 = 허영 지표 아님. ChatGPT의 웹 브라우징 도구가 "맨해튼에서 어디서 럭셔리 꽃 주문하지" 같은 대화에 TJ Flowers 끌어오고 브랜드 인용 — 실 사람이 클릭 통과. Bing Copilot도 동일 — 78.6% 참여율로 14 세션. AI 검색이 정확히 우리가 만든 것을 보상 — FAQ 스키마, 구체 로컬 엔티티 있는 사실 콘텐츠 (1640 York Avenue, Mount Sinai 프로토콜, Mandarin Oriental 결혼식 셋업), 명확한 E-E-A-T 신호 (38년 비즈니스, 구체 난초 전문성). 이 글 읽는 한인·미국 한인 SMB 사장님 — 이 채널은 여러분에게도 아직 존재하지 않음 — 나중 아닌 지금 AI 검색용으로 구축이 같은 플레이북.' },
         { type: 'tip', content: 'TJ Flowers 약정이 강한 오프라인 자산 + 약한 디지털 존재의 스몰비즈니스용 5단계 플레이북 검증 — (1) 기술 SEO + 전환 기본기 먼저 — 새는 양동이에 콘텐츠 X. (2) 로컬 의도용 프로그래매틱 SEO — 단일 잘 구축된 페이지가 14일 만에 2,029 노출. (3) FAQ 스키마 있는 장문 콘텐츠 — 더 빨리 랭킹, 더 높은 CTR 잠재력, AI 인용 획득. (4) 지금 AI 검색용 구축 — ChatGPT가 이미 프로그램 60일째에 트래픽 보냄. (5) 적절한 이벤트 추적으로 SEO를 매출에 연결 — 없으면 프로그램이 허영처럼 보임.' },
         { type: 'h2', content: 'TJ Flowers의 다음 단계' },
-        { type: 'p', content: '어머니의 날 후 단계가 테스트. 현재 일 매출 속도는 어머니의 날과 아버지의 날 사이 골에서 일 $100-200. 다음 30일이 검증할 것 — (1) 정기구독 상품 런칭 — `/products/flower-subscription` $89/$149/$249 티어가 빠진 반복 매출 라인 생성. (2) 신선한 어머니의 날 구매자 리스트에 Klaviyo 반송 이메일 시퀀스. (3) 결혼식장 클러스터 랭킹 — 신규 식장 가이드 5개가 2-4주 안에 "wedding flowers [식장]" 쿼리에 랭킹 시작 예상. (4) 6월 초 수요 캡처용 아버지의 날 사전 빌드.' },
+        { type: 'p', content: '어머니의 날 후 단계가 테스트. 현재 일 매출 속도는 어머니의 날과 아버지의 날 사이 골에서 일 $100-200. 다음 30일이 검증할 것 — (1) 정기구독 상품 런칭 — `/products/flower-subscription` $129/$149/$249 티어가 빠진 반복 매출 라인 생성. (2) 신선한 어머니의 날 구매자 리스트에 Klaviyo 반송 이메일 시퀀스. (3) 결혼식장 클러스터 랭킹 — 신규 식장 가이드 5개가 2-4주 안에 "wedding flowers [식장]" 쿼리에 랭킹 시작 예상. (4) 6월 초 수요 캡처용 아버지의 날 사전 빌드.' },
         { type: 'h2', content: '다른 한인 스몰비즈니스에게 이것이 의미하는 바' },
         { type: 'p', content: 'TJ Flowers는 특별 케이스 아님. 강한 오프라인 자산 + 적극적으로 돈을 잃게 만드는 웹사이트의 평범한 스몰비즈니스. 자물쇠 푸는 건 단일 해킹 아님 — 템플릿 사이트가 구조적으로 못 내리는 작은, 프로페셔널한 결정들의 누적된 무게 — 봇 차단, AI 검색 엔진이 실제 파싱하는 스키마 마크업, 로컬 의도용 프로그래매틱 랜딩 페이지, FAQ 스키마 있는 장문 콘텐츠, 모바일 엄지를 존중하는 네이티브 결제, 실 매출 모먼트에 묶인 12개월 에디토리얼 캘린더.' },
         { type: 'p', content: '그리고 가장 중요한 헤드라인 교훈 — 광고비 0원으로 6주에 월 노출 속도 5배 — 이 리포트 전체에서 가장 중요한 숫자. SEO는 투자한 한 푼이 몇 년에 걸쳐 복리로 쌓이는 유일한 마케팅 채널. 유료 광고는 돈을 안 내는 순간 멈춤. 인스타그램은 매일 콘텐츠를 요구. 구글 유기 + AI 검색 인용은 일단 작동하기 시작하면 — 빌딩을 임대하는 게 아니라 소유하는 것에 더 가까움.' },
@@ -5038,7 +5038,7 @@ const allBlogPosts: BlogPost[] = [
             'Basic — $500–$800: up to 5 responsive pages, basic SEO, contact form',
             'Standard — $1,100–$1,500: 6–15 pages, custom design, bilingual Korean/English, local SEO',
             'Store — $1,800–$2,400: Shopify/e-commerce with products, payments, and orders or bookings',
-            'Monthly care plans — $49–$499/mo: Basic $49 (hosting & security), Care $89 (maintenance + small edits), Grow $199 (content edits, GA4 report, SEO monitoring, Google Business Profile), Scale $499 (content + local SEO engine)',
+            'Monthly care plans — $49–$499/mo: Basic $49 (hosting & security), Care $129 (maintenance + 2 edits/mo), Grow $199 (content edits, GA4 report, SEO monitoring, Google Business Profile), Scale $499 (content + local SEO engine)',
           ],
         },
         {
@@ -5182,7 +5182,7 @@ const allBlogPosts: BlogPost[] = [
             '기본 — $500~$800: 5페이지 이하 반응형, 기본 SEO, 문의 폼',
             '일반 — $1,100~$1,500: 6~15페이지, 맞춤 디자인, 한·영 이중언어, 로컬 SEO',
             '스토어 — $1,800~$2,400: Shopify·이커머스 상품, 결제, 주문/예약',
-            '월 관리 플랜 — $49~$499/월: Basic $49(호스팅·보안), Care $89(유지보수 + 소규모 수정), Grow $199(콘텐츠 수정, GA4 리포트, SEO 모니터링, 구글 비즈니스 프로필 관리), Scale $499(콘텐츠 + 로컬 SEO 엔진)',
+            '월 관리 플랜 — $49~$499/월: Basic $49(호스팅·보안), Care $129(유지보수 + 월 2회 수정), Grow $199(콘텐츠 수정, GA4 리포트, SEO 모니터링, 구글 비즈니스 프로필 관리), Scale $499(콘텐츠 + 로컬 SEO 엔진)',
           ],
         },
         {
@@ -5821,7 +5821,7 @@ const allBlogPosts: BlogPost[] = [
             'Basic — $500–$800: up to 5 responsive pages, basic SEO, contact form',
             'Standard — $1,100–$1,500: 6–15 pages, custom design, bilingual Korean/English, local SEO',
             'Store — $1,800–$2,400: Shopify/e-commerce with products, payments, and orders or bookings',
-            'Monthly care plans — $49–$499/mo: Basic $49 (hosting & security), Care $89 (maintenance + small edits), Grow $199 (content edits, GA4 report, SEO monitoring, Google Business Profile), Scale $499 (content + local SEO engine)',
+            'Monthly care plans — $49–$499/mo: Basic $49 (hosting & security), Care $129 (maintenance + 2 edits/mo), Grow $199 (content edits, GA4 report, SEO monitoring, Google Business Profile), Scale $499 (content + local SEO engine)',
           ],
         },
         {
@@ -5897,7 +5897,7 @@ const allBlogPosts: BlogPost[] = [
         {
           type: 'p',
           content:
-            'ZOE LUMOS monthly care plans start at $49/month (Basic: hosting and security), then $89/month (Care: maintenance plus small edits) and $199/month (Grow: content edits, a GA4 report, SEO monitoring, and Google Business Profile management). Scale at $499/month adds a full content and local SEO engine. Investing in proper website maintenance prevents the much more costly scenario of a hacked site, a crashed site during peak hours, or a site that gradually loses its Google ranking due to technical decay.',
+            'ZOE LUMOS monthly care plans start at $49/month (Basic: hosting and security), then $129/month (Care: maintenance plus 2 edits a month) and $199/month (Grow: content edits, a GA4 report, SEO monitoring, and Google Business Profile management). Scale at $499/month adds a full content and local SEO engine. Investing in proper website maintenance prevents the much more costly scenario of a hacked site, a crashed site during peak hours, or a site that gradually loses its Google ranking due to technical decay.',
         },
         {
           type: 'cta',
@@ -5927,7 +5927,7 @@ const allBlogPosts: BlogPost[] = [
             '기본 — $500~$800: 5페이지 이하 반응형, 기본 SEO, 문의 폼',
             '일반 — $1,100~$1,500: 6~15페이지, 맞춤 디자인, 한·영 이중언어, 로컬 SEO',
             '스토어 — $1,800~$2,400: Shopify·이커머스 상품, 결제, 주문/예약',
-            '월 관리 플랜 — $49~$499/월: Basic $49(호스팅·보안), Care $89(유지보수 + 소규모 수정), Grow $199(콘텐츠 수정, GA4 리포트, SEO 모니터링, 구글 비즈니스 프로필 관리), Scale $499(콘텐츠 + 로컬 SEO 엔진)',
+            '월 관리 플랜 — $49~$499/월: Basic $49(호스팅·보안), Care $129(유지보수 + 월 2회 수정), Grow $199(콘텐츠 수정, GA4 리포트, SEO 모니터링, 구글 비즈니스 프로필 관리), Scale $499(콘텐츠 + 로컬 SEO 엔진)',
           ],
         },
         {
@@ -5983,7 +5983,7 @@ const allBlogPosts: BlogPost[] = [
         {
           type: 'p',
           content:
-            'ZOE LUMOS 월 관리 플랜은 Basic $49/월(호스팅·보안)부터 Care $89/월(유지보수 + 소규모 수정), Grow $199/월(콘텐츠 수정, GA4 리포트, SEO 모니터링, 구글 비즈니스 프로필 관리)까지 있으며, 콘텐츠와 로컬 SEO를 통째로 맡기시려면 Scale $499/월을 선택하시면 됩니다.',
+            'ZOE LUMOS 월 관리 플랜은 Basic $49/월(호스팅·보안)부터 Care $129/월(유지보수 + 월 2회 수정), Grow $199/월(콘텐츠 수정, GA4 리포트, SEO 모니터링, 구글 비즈니스 프로필 관리)까지 있으며, 콘텐츠와 로컬 SEO를 통째로 맡기시려면 Scale $499/월을 선택하시면 됩니다.',
         },
         {
           type: 'cta',
@@ -6158,7 +6158,7 @@ const allBlogPosts: BlogPost[] = [
         { type: 'p', content: 'Most businesses compare quotes based on initial cost. Smart businesses compare 3-year total cost of ownership (TCO) because that is what actually matters. Here are three realistic examples:' },
         { type: 'p', content: 'Scenario A: "Cheap" $99/month DIY-style platform — 3-year cost: $3,564. No ownership. Limited customization. Migration when you leave can cost $1,000–$3,000 more.' },
         { type: 'p', content: 'Scenario B: Mid-tier freelancer $2,500 build + $20/month hosting + DIY maintenance — 3-year cost: $3,220. You own everything. Risk: freelancer may not be available when you need fixes. Security maintenance is your responsibility.' },
-        { type: 'p', content: 'Scenario C: Modern agency like ZOE LUMOS, $1,500 Standard build + $89/month Care plan — 3-year cost: $4,704. You own everything. Site is always up-to-date, secure, backed up, and supported. For a business generating $200,000+ annual revenue, the extra ~$1,500 over 3 years pays itself back in one lost customer saved from a broken site or dropped Google ranking.' },
+        { type: 'p', content: 'Scenario C: Modern agency like ZOE LUMOS, $1,500 Standard build + $129/month Care plan — 3-year cost: $6,144. You own everything. Site is always up-to-date, secure, backed up, and supported. For a business generating $200,000+ annual revenue, the extra ~$2,900 over 3 years pays itself back in one lost customer saved from a broken site or dropped Google ranking.' },
         { type: 'h2', content: 'What should a small business actually budget for year 1?' },
         { type: 'p', content: 'A realistic year-one budget for a Korean-American small business website in 2026:' },
         { type: 'ul', content: '', items: [
@@ -6169,7 +6169,7 @@ const allBlogPosts: BlogPost[] = [
           'Optional SEO: $0–$6,000 ($0–$500/month)',
           '— Total year 1: $2,115–$12,055',
         ] },
-        { type: 'p', content: 'On our published pricing, a typical year 1 — a Standard build ($1,100–$1,500) plus a Care or Grow plan ($89–$199/month) — comes to about $2,200–$3,900. SEO is typically added in year 2 once the site is stable and the business is ready to scale.' },
+        { type: 'p', content: 'On our published pricing, a typical year 1 — a Standard build ($1,100–$1,500) plus a Care or Grow plan ($129–$199/month) — comes to about $2,600–$3,900. SEO is typically added in year 2 once the site is stable and the business is ready to scale.' },
         { type: 'h2', content: 'How to compare agency quotes apples-to-apples' },
         { type: 'p', content: 'When you receive multiple quotes, normalize them into this table: 1) build cost, 2) number of pages, 3) languages included, 4) revisions allowed, 5) content writing included? 6) who owns the domain and files, 7) monthly maintenance cost and what it covers, 8) cost to make post-launch changes, 9) migration/export policy if you leave, 10) response time for support requests. If any agency cannot answer all ten clearly in writing, that itself is the answer.' },
         { type: 'cta', content: 'ZOE LUMOS quotes always include a written line-item scope, ownership terms, and 3-year TCO on request. No hidden fees, no proprietary platform traps. Book a free consultation and we will send you a detailed quote you can compare against any other agency.' },
@@ -6207,7 +6207,7 @@ const allBlogPosts: BlogPost[] = [
         { type: 'p', content: '대부분의 사업자는 초기 비용만 비교합니다. 똑똑한 사업자는 3년 총 소유 비용(TCO)으로 비교합니다. 현실적인 세 가지 시나리오:' },
         { type: 'p', content: '시나리오 A: "저렴한" 월 $99 DIY 플랫폼 — 3년 총액 $3,564. 소유권 없음. 커스터마이징 제한. 떠날 때 마이그레이션 비용 $1,000~$3,000 추가 가능.' },
         { type: 'p', content: '시나리오 B: 중급 프리랜서 $2,500 제작 + 월 $20 호스팅 + DIY 유지보수 — 3년 총액 $3,220. 모든 것 소유. 리스크: 프리랜서가 수정 필요할 때 연락 안 될 수 있음. 보안 유지보수가 본인 책임.' },
-        { type: 'p', content: '시나리오 C: ZOE LUMOS 같은 모던 에이전시 $1,500 일반 등급 제작 + 월 $89 Care 플랜 — 3년 총액 $4,704. 모든 것 소유. 사이트 항상 최신 상태, 보안, 백업, 지원 포함. 연매출 $20만+ 비즈니스에서는 3년간 추가 약 $1,500가 "고장난 사이트로 놓친 고객 1명"만 방지해도 본전.' },
+        { type: 'p', content: '시나리오 C: ZOE LUMOS 같은 모던 에이전시 $1,500 일반 등급 제작 + 월 $129 Care 플랜 — 3년 총액 $6,144. 모든 것 소유. 사이트 항상 최신 상태, 보안, 백업, 지원 포함. 연매출 $20만+ 비즈니스에서는 3년간 추가 약 $2,900가 "고장난 사이트로 놓친 고객 1명"만 방지해도 본전.' },
         { type: 'h2', content: '1년차에 얼마를 잡아야 할까?' },
         { type: 'p', content: '2026년 미국 한인 소상공업 웹사이트의 현실적인 1년차 예산:' },
         { type: 'ul', content: '', items: [
@@ -6218,7 +6218,7 @@ const allBlogPosts: BlogPost[] = [
           '선택 SEO: $0~$6,000 (월 $0~$500)',
           '— 1년차 총합: $2,115~$12,055',
         ] },
-        { type: 'p', content: '공개 가격 기준으로 일반 등급 제작($1,100~$1,500)에 Care 또는 Grow 플랜(월 $89~$199)을 더하면 1년차는 약 $2,200~$3,900입니다. SEO는 보통 사이트가 안정되고 비즈니스가 성장 준비가 된 2년차에 추가합니다.' },
+        { type: 'p', content: '공개 가격 기준으로 일반 등급 제작($1,100~$1,500)에 Care 또는 Grow 플랜(월 $129~$199)을 더하면 1년차는 약 $2,600~$3,900입니다. SEO는 보통 사이트가 안정되고 비즈니스가 성장 준비가 된 2년차에 추가합니다.' },
         { type: 'h2', content: '여러 견적을 공정하게 비교하는 방법' },
         { type: 'p', content: '여러 견적을 받으면 다음 10가지 항목으로 정규화해 비교하세요: 1) 제작 비용, 2) 페이지 수, 3) 포함 언어, 4) 허용 수정 횟수, 5) 콘텐츠 작성 포함 여부, 6) 도메인/파일 소유권, 7) 월 유지보수 비용과 범위, 8) 런칭 후 수정 비용, 9) 이탈 시 마이그레이션/내보내기 정책, 10) 지원 요청 응답 시간. 이 10가지를 서면으로 명확히 답변 못 하는 에이전시라면, 그 자체가 답입니다.' },
         { type: 'cta', content: 'ZOE LUMOS 견적에는 항상 서면 항목별 범위, 소유권 조건, 요청 시 3년 TCO가 포함됩니다. 숨은 비용 없음, 독점 플랫폼 함정 없음. 무료 상담을 예약하시면 다른 에이전시와 비교 가능한 상세 견적을 보내 드립니다.' },

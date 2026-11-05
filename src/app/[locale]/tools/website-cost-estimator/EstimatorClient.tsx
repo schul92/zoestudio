@@ -65,8 +65,8 @@ const copy = {
       },
       {
         name: 'Care',
-        price: '$89/mo',
-        desc: 'Everything in Basic + 30 min of content edits/mo + monthly report.',
+        price: '$129/mo',
+        desc: 'Everything in Basic + 2 content edits/mo (up to 30 min each) + monthly report.',
       },
       {
         name: 'Grow',
@@ -144,8 +144,8 @@ const copy = {
       },
       {
         name: 'Care',
-        price: '월 $89',
-        desc: 'Basic 전부 + 월 30분 콘텐츠 수정 + 월간 리포트.',
+        price: '월 $129',
+        desc: 'Basic 전부 + 월 2회 콘텐츠 수정(회당 30분 이내) + 월간 리포트.',
       },
       {
         name: 'Grow',

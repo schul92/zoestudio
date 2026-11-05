@@ -14,7 +14,7 @@ Ongoing hosting, maintenance, and growth plans. Cancel anytime — service runs 
 | Plan | Price | Best for | Includes |
 |------|-------|----------|----------|
 | Basic | $49/mo | Owners who just need safe hosting | Hosting + SSL, security & backups, uptime monitoring. No content edits (extra edits $75/hr or upgrade). |
-| Care | $89/mo | Sites that need occasional edits | Everything in Basic + 30 min content edits/mo + monthly report |
+| Care | $129/mo | Sites that need occasional edits | Everything in Basic + 2 content edits/mo (up to 30 min each) + monthly report |
 | Grow (recommended) | $199/mo | Owners investing in growth | Everything in Care + 2 hrs content edits/mo + GA4 analytics report + SEO monitoring + Google Business Profile management |
 | Scale | $499/mo | Owners who want marketing handled | Everything in Grow + 4 content pieces/mo (blog or social) + local SEO + review management + quarterly strategy session |
 

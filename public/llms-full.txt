@@ -15,7 +15,7 @@ We specialize in editorial web design, bilingual content (Korean / English), loc
 
 ## Industries we specialize in
 
-We build industry-specific sites for Korean-American small businesses. Each vertical has its own dedicated landing page with features and FAQs. All builds use the one published price list (builds $500–$2,400; care plans $49/$89/$199/$499 per month — see Pricing below):
+We build industry-specific sites for Korean-American small businesses. Each vertical has its own dedicated landing page with features and FAQs. All builds use the one published price list (builds $500–$2,400; care plans $49/$129/$199/$499 per month — see Pricing below):
 
 - **Korean Restaurants + Cafés** — bilingual menus, online ordering, reservations, local SEO for "Korean BBQ near me" / "한식당 포트리". https://www.zoelumos.com/industries/korean-restaurant · https://www.zoelumos.com/ko/industries/한식당-웹사이트
 - **Korean Beauty + Hair Salons** — 24/7 online booking, Instagram sync, review automation, bilingual UX. https://www.zoelumos.com/industries/korean-beauty-salon · https://www.zoelumos.com/ko/industries/한인-뷰티샵-웹사이트
@@ -85,11 +85,11 @@ Professional business websites optimized for both Korean and American customers.
 - Custom Web Applications: Contact for quote
 - Setup-fee waiver: a 12-month monthly care-plan commitment waives the one-time build setup fee
 
-### Monthly Care Plans (from $49/month) — updated 2026-07-15
+### Monthly Care Plans (from $49/month) — updated 2026-11-04
 Ongoing hosting, maintenance, and growth plans. A 12-month commitment waives the website build setup fee. Cancel anytime — service runs through the paid month, no further billing.
 
 - Basic $49/mo: hosting + SSL + security & backups + monitoring (no content edits; extra edits $75/hr)
-- Care $89/mo: Basic + 30 min content edits/mo + monthly report
+- Care $129/mo: Basic + 2 content edits/mo (up to 30 min each) + monthly report
 - Grow $199/mo (recommended): Care + 2 hrs edits/mo + GA4 analytics report + SEO monitoring + Google Business Profile management
 - Scale $499/mo: Grow + 4 content pieces/mo (blog or social) + local SEO + review management + quarterly strategy session
 - Add-ons for care-plan clients: Google Ads management +$150~/mo, booking system care +$50/mo
@@ -201,7 +201,7 @@ Yelp Ads management for local service businesses including restaurants, salons, 
 6. **Selected work**: EndoPia (U.S. launch of an FDA 510(k)-cleared digital spinal endoscope · 2026, https://endopiaglobal.com), TJ Flowers (Manhattan · 2023), Vito's Pizza & Ristorante (Alpharetta GA · 2026), Salt & Polish (2024), CareK9 (Edgewater · 2024), Kona Coffee Donut (Honolulu · 2024), Mochinut (multi-city · 2023), Miguk Story (bilingual editorial · 2026).
 7. **Process**: Discover (wk 1) → Design (wk 2–3) → Build (wk 4–5) → Grow (wk 6+). Two review rounds per phase. Ongoing support after launch.
 
-## Pricing Summary (updated 2026-07-15)
+## Pricing Summary (updated 2026-11-04)
 
 | Service | Price | Timeline |
 |---------|---------------|----------|
@@ -257,7 +257,7 @@ Yelp Ads management for local service businesses including restaurants, salons, 
 ## FAQs
 
 **Q: How much does a website from Zoe Lumos cost?**
-A: Fixed, transparent pricing (no "request a quote" wall): Basic $500–$800 (brochure sites), Standard $1,100–$1,500 (most small businesses), Store $1,800–$2,400 (Shopify, booking, e-commerce), and custom quotes for larger builds. Monthly care plans run $49–$499/month (Basic $49 · Care $89 · Grow $199 recommended · Scale $499); a 12-month commitment waives the build setup fee. SEO retainers start at $500/month, Google Ads management at $300/month standalone (+$150~/mo as a care-plan add-on). Every engagement is scoped to a fixed investment before kickoff. Live pricing: https://www.zoelumos.com/pricing · Canonical price file: https://www.zoelumos.com/pricing.md · Instant estimate: https://www.zoelumos.com/tools/website-cost-estimator
+A: Fixed, transparent pricing (no "request a quote" wall): Basic $500–$800 (brochure sites), Standard $1,100–$1,500 (most small businesses), Store $1,800–$2,400 (Shopify, booking, e-commerce), and custom quotes for larger builds. Monthly care plans run $49–$499/month (Basic $49 · Care $129 · Grow $199 recommended · Scale $499); a 12-month commitment waives the build setup fee. SEO retainers start at $500/month, Google Ads management at $300/month standalone (+$150~/mo as a care-plan add-on). Every engagement is scoped to a fixed investment before kickoff. Live pricing: https://www.zoelumos.com/pricing · Canonical price file: https://www.zoelumos.com/pricing.md · Instant estimate: https://www.zoelumos.com/tools/website-cost-estimator
 
 **Q: Do you offer Korean language consultations?**
 A: Yes — 100% bilingual studio. English and Korean, by KakaoTalk or email (카톡 상담 가능).
@@ -447,7 +447,7 @@ Ongoing hosting, maintenance, and growth plans. Cancel anytime — service runs 
 | Plan | Price | Best for | Includes |
 |------|-------|----------|----------|
 | Basic | $49/mo | Owners who just need safe hosting | Hosting + SSL, security & backups, uptime monitoring. No content edits (extra edits $75/hr or upgrade). |
-| Care | $89/mo | Sites that need occasional edits | Everything in Basic + 30 min content edits/mo + monthly report |
+| Care | $129/mo | Sites that need occasional edits | Everything in Basic + 2 content edits/mo (up to 30 min each) + monthly report |
 | Grow (recommended) | $199/mo | Owners investing in growth | Everything in Care + 2 hrs content edits/mo + GA4 analytics report + SEO monitoring + Google Business Profile management |
 | Scale | $499/mo | Owners who want marketing handled | Everything in Grow + 4 content pieces/mo (blog or social) + local SEO + review management + quarterly strategy session |
 

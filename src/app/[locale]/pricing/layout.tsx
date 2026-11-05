@@ -19,12 +19,12 @@ export async function generateMetadata({
     en: {
       title: 'Pricing — Transparent Website & Care Plans | Zoe Lumos',
       description:
-        'Transparent pricing for Korean-American businesses: monthly care plans from $49/mo (Basic $49 · Care $89 · Grow $199 · Scale $499) and one-time builds $500–$2,400. 12-month commitment waives the setup fee.',
+        'Transparent pricing for Korean-American businesses: monthly care plans from $49/mo (Basic $49 · Care $129 · Grow $199 · Scale $499) and one-time builds $500–$2,400. 12-month commitment waives the setup fee.',
     },
     ko: {
       title: '가격 — 투명한 웹사이트 제작·관리 비용 | ZOE LUMOS',
       description:
-        '한인 비즈니스를 위한 투명한 가격표. 월 관리 플랜 $49부터 (Basic $49 · Care $89 · Grow $199 · Scale $499), 일회성 제작 $500–$2,400. 12개월 약정 시 셋업비 면제.',
+        '한인 비즈니스를 위한 투명한 가격표. 월 관리 플랜 $49부터 (Basic $49 · Care $129 · Grow $199 · Scale $499), 일회성 제작 $500–$2,400. 12개월 약정 시 셋업비 면제.',
     },
   }[locale]
 

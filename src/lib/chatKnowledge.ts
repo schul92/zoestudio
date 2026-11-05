@@ -40,7 +40,7 @@ export const KNOWLEDGE = `
 
 ## Monthly care plans
 - Basic $49/mo — hosting, SSL, security, backups, uptime monitoring
-- Care $89/mo — Basic plus 30 min of content edits per month and a monthly report
+- Care $129/mo — Basic plus 2 content edits per month (up to 30 min each) and a monthly report
 - Grow $199/mo — Care plus 2 hrs of edits, GA4 reporting, SEO monitoring, Google Business Profile management
 - Scale $499/mo — full content and local SEO management
 - Extra edits beyond the plan: $75/hour

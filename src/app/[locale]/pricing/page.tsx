@@ -7,7 +7,7 @@ import StartProjectForm from './StartProjectForm'
 // ─────────────────────────────────────────────────────────────────────────────
 // /pricing — the single published source of truth for prices.
 // Same numbers live in public/pricing.md and public/llms.txt: keep in sync.
-// Monthly: Basic $49 · Care $89 · Grow $199 (recommended) · Scale $499
+// Monthly: Basic $49 · Care $129 · Grow $199 (recommended) · Scale $499
 // One-time builds: Basic $500–800 · Standard $1,100–1,500 · Store $1,800–2,400
 // ─────────────────────────────────────────────────────────────────────────────
 
@@ -42,12 +42,12 @@ const MONTHLY_TIERS: Tier[] = [
   },
   {
     name: 'Care',
-    price: '$89',
-    tagline: { en: 'Maintenance + small edits', ko: '유지보수 + 소규모 수정' },
+    price: '$129',
+    tagline: { en: 'Maintenance + 2 edits a month', ko: '유지보수 + 월 2회 수정' },
     forWho: { en: 'For sites that need occasional edits', ko: '가끔 수정이 필요한 분께' },
     includes: {
-      en: ['Everything in Basic', '30 min content edits/mo', 'Monthly report'],
-      ko: ['Basic의 모든 기능', '월 30분 콘텐츠 수정', '월간 리포트'],
+      en: ['Everything in Basic', '2 content edits/mo (up to 30 min each)', 'Monthly report'],
+      ko: ['Basic의 모든 기능', '월 2회 콘텐츠 수정 (회당 30분 이내)', '월간 리포트'],
     },
   },
   {
@@ -100,7 +100,7 @@ const COMPARE_ROWS: Array<{ label: { en: string; ko: string }; cells: [string, s
   { label: { en: 'Hosting + SSL', ko: '호스팅 + SSL' }, cells: ['✓', '✓', '✓', '✓'] },
   { label: { en: 'Security & backups', ko: '보안 · 백업' }, cells: ['✓', '✓', '✓', '✓'] },
   { label: { en: 'Uptime monitoring', ko: '모니터링' }, cells: ['✓', '✓', '✓', '✓'] },
-  { label: { en: 'Content edits', ko: '콘텐츠 수정' }, cells: ['—', '30min/mo', '2hrs/mo', '2hrs/mo'] },
+  { label: { en: 'Content edits', ko: '콘텐츠 수정' }, cells: ['—', '2 edits/mo', '2hrs/mo', '2hrs/mo'] },
   { label: { en: 'Monthly report', ko: '월간 리포트' }, cells: ['—', '✓', '✓', '✓'] },
   { label: { en: 'GA4 analytics report', ko: 'GA4 분석 리포트' }, cells: ['—', '—', '✓', '✓'] },
   { label: { en: 'SEO monitoring', ko: 'SEO 모니터링' }, cells: ['—', '—', '✓', '✓'] },
@@ -132,8 +132,8 @@ const FAQS: Array<{ q: { en: string; ko: string }; a: { en: string; ko: string }
   {
     q: { en: 'Which plan should I choose?', ko: '어떤 플랜을 선택해야 하나요?' },
     a: {
-      en: 'Most small businesses are best served by Grow at $199/month, because it combines content edits, a GA4 report, SEO monitoring, and Google Business Profile management. Choose Basic ($49) if you only need safe hosting, Care ($89) if you need occasional edits, and Scale ($499) if you want content and local SEO fully handled for you.',
-      ko: '대부분의 소상공인에게는 월 $199 Grow 플랜이 가장 잘 맞습니다. 콘텐츠 수정, GA4 리포트, SEO 모니터링, 구글 비즈니스 프로필 관리가 모두 포함되기 때문입니다. 호스팅·보안만 필요하면 Basic($49), 가끔 수정이 필요하면 Care($89), 콘텐츠와 로컬 SEO까지 통째로 맡기시려면 Scale($499)을 선택하세요.',
+      en: 'Most small businesses are best served by Grow at $199/month, because it combines content edits, a GA4 report, SEO monitoring, and Google Business Profile management. Choose Basic ($49) if you only need safe hosting, Care ($129) if you need occasional edits, and Scale ($499) if you want content and local SEO fully handled for you.',
+      ko: '대부분의 소상공인에게는 월 $199 Grow 플랜이 가장 잘 맞습니다. 콘텐츠 수정, GA4 리포트, SEO 모니터링, 구글 비즈니스 프로필 관리가 모두 포함되기 때문입니다. 호스팅·보안만 필요하면 Basic($49), 가끔 수정이 필요하면 Care($129), 콘텐츠와 로컬 SEO까지 통째로 맡기시려면 Scale($499)을 선택하세요.',
     },
   },
   {

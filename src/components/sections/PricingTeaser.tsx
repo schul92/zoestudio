@@ -376,8 +376,8 @@ export default function PricingTeaser({ locale = 'en' }: { locale?: string }) {
                 </span>
                 <span className="text-[#424245]">
                   {isKo
-                    ? 'Basic $49 · Care $89 · Grow $199 (추천) · Scale $499'
-                    : 'Basic $49 · Care $89 · Grow $199 (recommended) · Scale $499'}
+                    ? 'Basic $49 · Care $129 · Grow $199 (추천) · Scale $499'
+                    : 'Basic $49 · Care $129 · Grow $199 (recommended) · Scale $499'}
                 </span>
               </p>
               <p className="text-[13px] text-[#6E6E73] mt-2 mb-0">
