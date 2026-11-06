@@ -90,8 +90,12 @@ export const KNOWLEDGE = `
 ## Industries we build for
 Specialty: doctors and medical/dental practices, medical-device companies, and B2B companies
 (B2B websites, customer portals, system and data integrations). Current medical work: EndoPia
-(FDA 510(k) medical-device U.S. launch site, live) and Seoul Choice Dental (dental clinic
-website rebuild, in progress).
+(FDA 510(k) medical-device U.S. launch site, live) and Seoul Choice Dental (서울초이스치과의원,
+a dental clinic in Yeongdeungpo, Seoul, Korea; launched November 2026 at
+https://www.seoulchoicedent.com with 132 pages in Korean, English, Japanese and Chinese and
+19 treatment pages; case study: /ko/blog/seoul-dental-clinic-website-case-study).
+Clinics in Korea are welcome: work runs in Korean over KakaoTalk and email, and payment is by an
+internationally enabled card (Visa, Mastercard, Amex) billed in USD.
 Also: Korean restaurants and cafes, beauty and hair salons, churches, academies and hagwons,
 e-commerce and Shopify stores, travel agencies, real estate.
 

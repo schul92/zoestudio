@@ -5,6 +5,7 @@ import Footer from '@/components/layout/Footer'
 import HeroNew from '@/components/HeroNew'
 import HomeContactStrip from '@/components/sections/HomeContactStrip'
 import TrustRibbon from '@/components/sections/TrustRibbon'
+import NewLaunch from '@/components/sections/NewLaunch'
 import FloatingDevices from '@/components/sections/FloatingDevices'
 import CaseScroll from '@/components/sections/CaseScroll'
 import AtAGlance, { atAGlanceFaqSchema } from '@/components/sections/AtAGlance'
@@ -157,12 +158,12 @@ export default function Home({ params }: { params: { locale: string } }) {
     },
     {
       name: 'Seoul Choice Dental',
-      url: '/portfolio',
-      image: '/portfolio/seoul-choice-dental.jpg',
+      url: 'https://www.seoulchoicedent.com/',
+      image: '/portfolio/seoul-choice-dental-live.jpg',
       year: '2026',
       location: 'Seoul, Korea',
       industry: 'Dental clinic',
-      disciplines: ['Web design', 'Treatment pages', 'Naver & Google SEO'],
+      disciplines: ['Web design', '4 languages (KO/EN/JA/ZH)', 'Naver & Google SEO'],
     },
     {
       name: 'TJ Flowers',
@@ -267,6 +268,7 @@ export default function Home({ params }: { params: { locale: string } }) {
         <HeroNew locale={locale} />
         <HomeContactStrip locale={locale} />
         <TrustRibbon locale={locale} />
+        <NewLaunch locale={locale} />
         <FloatingDevices locale={locale as 'en' | 'ko'} />
         <Services locale={locale} />
         <SelectedWork locale={locale} sectionNumber="02" />

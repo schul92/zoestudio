@@ -10,7 +10,7 @@ interface Project {
   id: string
   /** Omitted while a project is still in build. */
   url?: string
-  status?: 'in-progress'
+  status?: 'in-progress' | 'new'
   image: string
   title: string
   category: string
@@ -168,6 +168,12 @@ export default function PortfolioClient({ t, projects, locale }: PortfolioClient
                       <span className="gold-dot" />
                       {isKo ? '도판' : 'Plate'} · {String(index + 1).padStart(2, '0')}
                     </div>
+                    {project.status === 'new' && (
+                      // Fixed colors: sits on a screenshot, so it must not flip with the theme tokens.
+                      <span className="absolute top-4 right-4 bg-[#0071E3] text-white px-3 py-1 rounded-full text-[12px] font-bold tracking-[0.08em]">
+                        NEW
+                      </span>
+                    )}
                     {project.status === 'in-progress' ? (
                       <span className="absolute bottom-4 right-4 bg-ink text-ivory px-4 py-2 rounded-full text-[12px] tracking-wide flex items-center gap-2">
                         <span className="w-1.5 h-1.5 rounded-full bg-gold animate-pulse" aria-hidden />
