@@ -144,6 +144,7 @@ export const PILLARS = {
     pillarSlug: 'korean-dental-practice-website-guide',
     posts: [
       'korean-dental-practice-website-guide',
+      'seoul-dental-clinic-website-case-study',
       'korean-medical-clinic-online-booking-system-guide',
       'korean-law-firm-website-guide',
       'korean-real-estate-agent-website',
@@ -241,6 +242,8 @@ export const POST_TO_PILLAR: Record<string, PillarKey> = {
   // professional-services
   'korean-dental-practice-website-guide': 'professional-services',
   'korean-medical-clinic-online-booking-system-guide': 'professional-services',
+  // 2026-11-06 — Seoul Choice Dental launch case study (clinic in Seoul, Korea)
+  'seoul-dental-clinic-website-case-study': 'professional-services',
   'korean-law-firm-website-guide': 'professional-services',
   'korean-real-estate-agent-website': 'professional-services',
   'korean-insurance-financial-services-website': 'professional-services',

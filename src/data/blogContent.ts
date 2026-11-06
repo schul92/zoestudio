@@ -30,6 +30,10 @@ export interface BlogPost {
   title: { en: string; ko: string }
   metaDescription: { en: string; ko: string }
   author: string
+  /** Social/OG + BlogPosting image (site-relative path, ideally 1200×630). Defaults to the generated OG card. */
+  image?: string
+  /** Extra BlogPosting JSON-LD properties, e.g. `about` / `contentLocation` for a case study tied to a real place. */
+  schemaExtras?: Record<string, unknown>
   faq?: BlogFAQ[]
   howto?: BlogHowTo
   sections: {
@@ -39,6 +43,219 @@ export interface BlogPost {
 }
 
 const allBlogPosts: BlogPost[] = [
+  // ─────────────────────────────────────────────────────────────────
+  // 2026-11-06 — Seoul Choice Dental launch case study (clinic in Seoul, Korea).
+  // KO-first: written for clinic owners in Korea searching 치과/병원 홈페이지 제작·리뉴얼.
+  // Every number below was checked on the live site (sitemap, page titles, schema) on launch week.
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'seoul-dental-clinic-website-case-study',
+    date: '2026-11-06',
+    updatedDate: '2026-11-06',
+    readTime: 9,
+    category: { en: 'Case Study', ko: '케이스 스터디' },
+    title: {
+      en: 'Dental Clinic Website Case Study: Seoul Choice Dental in Yeongdeungpo, Seoul (4 Languages, 132 Pages)',
+      ko: '치과 홈페이지 제작 사례: 서울 영등포 서울초이스치과의원 리뉴얼 (4개 국어 · 132페이지)',
+    },
+    metaDescription: {
+      en: 'How we rebuilt the website of Seoul Choice Dental, a clinic near Dangsan and Mullae stations in Yeongdeungpo, Seoul: 19 treatment pages, 132 pages in Korean, English, Japanese and Chinese, Naver and Google search setup, and Dentist structured data.',
+      ko: '서울 영등포구 당산역·문래역 인근 서울초이스치과의원 홈페이지 리뉴얼 사례. Wix 사이트를 진료별 안내 19개, 한국어·영어·일본어·중국어 132페이지, 네이버·구글 검색 등록과 치과 구조화 데이터를 갖춘 새 사이트로 만든 과정을 정리했습니다.',
+    },
+    author: 'Steve Song',
+    image: '/blog/seoul-choice-dental/og.jpg',
+    schemaExtras: {
+      // The clinic this case study is about — same @id as the clinic's own Dentist schema.
+      about: {
+        '@type': ['Dentist', 'MedicalClinic'],
+        '@id': 'https://www.seoulchoicedent.com/#clinic',
+        name: '서울초이스치과의원',
+        alternateName: 'Seoul Choice Dental Clinic',
+        url: 'https://www.seoulchoicedent.com/',
+        telephone: '+82-2-2671-9188',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: '영등포로 130, 진로상가 206호',
+          addressLocality: '영등포구',
+          addressRegion: '서울특별시',
+          postalCode: '07292',
+          addressCountry: 'KR',
+        },
+        geo: { '@type': 'GeoCoordinates', latitude: 37.5210178, longitude: 126.895789 },
+      },
+      contentLocation: {
+        '@type': 'Place',
+        name: '서울특별시 영등포구 (Yeongdeungpo-gu, Seoul)',
+        address: { '@type': 'PostalAddress', addressLocality: '영등포구', addressRegion: '서울특별시', addressCountry: 'KR' },
+      },
+    },
+    faq: [
+      {
+        q: {
+          en: 'Can a clinic in Korea hire Zoe Lumos to build its website?',
+          ko: '한국에 있는 병원도 조이루모스에 홈페이지 제작을 맡길 수 있나요?',
+        },
+        a: {
+          en: "Yes. Seoul Choice Dental is a clinic in Seoul. Consultations, design reviews and file handoffs run in Korean over KakaoTalk and email, and payment is by an internationally enabled card (Visa, Mastercard or Amex), billed in US dollars at the card issuer's exchange rate on the payment date.",
+          ko: '네. 서울초이스치과의원처럼 한국 병원도 진행합니다. 상담, 시안 확인, 자료 전달은 카카오톡과 이메일로 한국어로 하고, 결제는 해외 결제가 되는 카드(Visa · Mastercard · Amex)로 합니다. 미국 달러로 청구되며, 원화 금액은 결제일의 카드사 환율로 정해집니다.',
+        },
+      },
+      {
+        q: {
+          en: 'How long does a dental clinic website take?',
+          ko: '치과 홈페이지 제작 기간은 얼마나 걸리나요?',
+        },
+        a: {
+          en: 'It depends on the number of treatment pages and languages. A typical single-language clinic site takes about 2–3 weeks; a 132-page, four-language site like Seoul Choice Dental needs extra time for translation and review. We show design options first, then build every page in the direction the doctor picks.',
+          ko: '진료 페이지 수와 언어 수에 따라 다릅니다. 한국어 한 가지 언어의 일반적인 병원 홈페이지는 보통 2~3주, 서울초이스치과의원처럼 4개 국어 132페이지 규모는 번역과 검수 시간이 더 듭니다. 먼저 시안을 보여 드리고, 원장님이 고른 방향으로 전체 페이지를 만듭니다.',
+        },
+      },
+      {
+        q: {
+          en: 'Which pages does a dental clinic website need?',
+          ko: '치과 홈페이지에 꼭 있어야 하는 페이지는 무엇인가요?',
+        },
+        a: {
+          en: 'Treatment pages, the doctor profile, equipment, opening hours and directions, appointment requests, and a non-covered fee schedule are the baseline. Dental-insurance claim guidance and foreign-language pages are added to match the patient base.',
+          ko: '진료별 안내, 의료진 소개, 장비 소개, 진료시간·오시는 길, 상담 예약, 비급여 진료비 안내가 기본입니다. 치아보험 청구 안내와 외국어 페이지는 환자층에 맞춰 더합니다.',
+        },
+      },
+      {
+        q: {
+          en: 'Will the new website show up on Naver?',
+          ko: '새 홈페이지가 네이버 검색에도 나오나요?',
+        },
+        a: {
+          en: 'At launch we set up Naver Search Advisor ownership verification, the sitemap, and a search title and description for each page. Naver decides rankings and timing, so no one can guarantee them, but making sure Naver and Google read the clinic information correctly is our job.',
+          ko: '오픈할 때 네이버 서치어드바이저 소유 확인, 사이트맵, 페이지별 제목과 설명문을 함께 준비합니다. 노출 순위와 시점은 네이버가 정하기 때문에 보장할 수는 없지만, 네이버와 구글이 병원 정보를 정확하게 읽을 수 있게 만드는 것까지가 저희 일입니다.',
+        },
+      },
+      {
+        q: {
+          en: "Is the website copy written to Korea's medical advertising rules?",
+          ko: '홈페이지 문구는 의료광고 규정에 맞게 쓰나요?',
+        },
+        a: {
+          en: 'We leave out patient testimonials, superlatives, comparisons with other clinics and unsupported claims about results, and describe the clinic’s principles, equipment and treatment process as facts. The clinic reviews the final copy before it goes live.',
+          ko: '치료 경험담, 과장·비교 표현, 근거 없는 효과 표현은 쓰지 않고, 진료 원칙과 장비, 진료 과정을 사실대로 적습니다. 최종 문구는 병원에서 확인한 뒤 반영합니다.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: 'We rebuilt the website of Seoul Choice Dental, a dental clinic near Dangsan and Mullae stations in Yeongdeungpo, Seoul, and launched it in November 2026. The old Wix site became a 132-page site in Korean, English, Japanese and Chinese with 19 treatment pages, set up for Naver and Google search with Dentist structured data. Here is what we built and why.' },
+        { type: 'screenshot', content: '/blog/seoul-choice-dental/home.jpg', items: ['The new Seoul Choice Dental home screen (seoulchoicedent.com): pick a treatment on the tooth chart and the explanation changes'] },
+        { type: 'stats', content: 'The new site at a glance', items: [
+          '4|languages|Korean · English · Japanese · Chinese',
+          '132|pages|33 per language',
+          '19|treatment pages|from implants to myofunctional therapy',
+          '5|devices explained|3D CT · microscope · intraoral scanner and more',
+        ] },
+        { type: 'h2', content: 'Before: what we fixed first' },
+        { type: 'p', content: 'The old site was a Wix template. Before the design, the first thing to fix was what search engines read: part of the structured data that tells Google and Naver (Korea’s largest search engine) the clinic’s address still held the template’s placeholder text. Patients never see that data, but search engines and AI assistants read it word for word.' },
+        { type: 'p', content: 'We set three goals: show information in the order patients ask for it; give every treatment its own page that can rank on its own; and follow medical advertising rules while still making the doctor’s principles clear.' },
+        { type: 'h2', content: 'The home screen: in the order patients ask' },
+        { type: 'p', content: 'The headline reads “The treatment you need, where you need it,” followed by “A board-certified integrated dentistry specialist treats you herself.” On the right, a tooth chart lets patients pick implants, laminates, crowns and bridges, root canals, wisdom teeth, jaw joint or gum treatment, and the explanation and “Learn more” link change with it. The header shows live status such as “Open today from 9:30 AM,” and the Wednesday and Thursday late hours (until 8 PM) are written into the search description and the hours page.' },
+        { type: 'screenshot', content: '/blog/seoul-choice-dental/mobile.jpg', items: ['On phones, Call · Naver booking · Consultation stay pinned to the bottom of the screen'] },
+        { type: 'p', content: 'Most clinic-site visits happen on a phone, so the mobile layout keeps three buttons pinned to the bottom: call, Naver booking and consultation request. The clinic already takes bookings through Naver, so the site hands patients straight to the booking path they already know.' },
+        { type: 'h2', content: '19 treatment pages, one structure' },
+        { type: 'p', content: 'Implants alone split into navigation-guided, front-tooth, full-arch and implant-supported dentures, and patients search for each one separately. So the treatments became 19 pages.' },
+        { type: 'ul', content: 'The 19 treatment pages', items: [
+          'Implants: implants · navigation (guided) implants · front-tooth implants · full-arch implants · implant dentures',
+          'Saving natural teeth: cavity treatment (resin, inlay) · microscope root canal · gum treatment · checkups and scaling',
+          'Prosthetics and aesthetics: crowns and bridges · laminates · whitening · dentures',
+          'Oral surgery and jaw: wisdom-tooth extraction · jaw joint (TMJ) treatment',
+          'Orthodontics and kids: full orthodontics · clear aligners · pediatric care · myofunctional therapy',
+        ] },
+        { type: 'screenshot', content: '/blog/seoul-choice-dental/implant.jpg', items: ['The implant page: a 7-step treatment diagram and an “At a glance” panel (visits, duration, insurance)'] },
+        { type: 'p', content: 'Every treatment page follows the same order: overview, treatment process, at a glance, frequently asked questions, summary. On the implant page, “At a glance” lists the usual number of visits (typically 4–6 or more), duration (typically 3–6 months) and national health-insurance coverage (two implants for patients 65 and older, 30% copay), with a note right below that these vary by patient. Patients find the same information in the same place on every page, and AI search such as ChatGPT and Google AI Overviews can quote the summary and FAQ directly.' },
+        { type: 'h2', content: 'Medical advertising rules and fee disclosure' },
+        { type: 'p', content: 'Clinic websites in Korea fall under the medical advertising rules of the Medical Service Act. Instead of patient testimonials, superlatives like “best” or “only,” or comparisons with other clinics, the site states the doctor’s principles as facts. That is why the About page is organized under “We check first,” “We save natural teeth first,” “We do only the treatment you need” and “One doctor sees you from start to finish.”' },
+        { type: 'p', content: 'The equipment page covers 3D CT (CBCT), a dental microscope, an intraoral scanner, implant surgical guides and a PRF centrifuge by name and by what each is used for. The clinic’s blog posts state limits and risks alongside benefits, with sections such as “Problems implants can still have” and “What a microscope does not change.”' },
+        { type: 'tip', content: 'Non-covered treatment fees must be easy for patients to find. The new site has a separate non-covered fee page and a dental-insurance claim guide (how to claim, which documents the clinic issues, and document fees).' },
+        { type: 'h2', content: 'Four languages: English, Japanese and Chinese patients too' },
+        { type: 'p', content: 'All 33 Korean pages were carried over into English, Japanese and Chinese, for 33 pages per language and 132 in total. Treatments, equipment, directions and booking keep the same structure, so foreign patients see the same information in the same order as Korean patients. The language switcher sits in the top right.' },
+        { type: 'screenshot', content: '/blog/seoul-choice-dental/japanese.jpg', items: ['The Japanese home screen: all four languages share the Korean layout'] },
+        { type: 'h2', content: 'Ready for Naver, Google and AI search' },
+        { type: 'ul', content: 'Shipped with the launch', items: [
+          'Ownership verified in Naver Search Advisor and Google Search Console',
+          'Sitemap: 132 URLs across four languages',
+          'Dentist structured data: address, map coordinates, daily opening hours, phone, and service area (Yeongdeungpo-gu · Dangsan-dong · Mullae-dong · Yangpyeong-dong)',
+          'Naver Place, the clinic’s Naver blog and Instagram linked to the same clinic (sameAs)',
+          'A search title for every page, for example “Implants | Seoul Choice Dental”',
+          'Four clinic blog posts to start, each opening with a key-points summary: choosing a dentist in Mullae-dong, why dentists use microscopes, what to ask at an implant consultation, and whether to extract or save a tooth',
+        ] },
+        { type: 'p', content: 'Search visibility does not appear on launch day. Naver and Google usually take a few weeks to crawl new pages and settle rankings. We will update this post as impressions and inquiries change.' },
+        { type: 'h2', content: 'Checklist before you rebuild a dental website' },
+        { type: 'ul', content: 'Check these on your current site first', items: [
+          'Does the structured data for search engines still contain template placeholder text or outdated information?',
+          'Is the site registered in Naver Search Advisor and Google Search Console?',
+          'Are opening hours, late hours and the nearest station visible on the first screen or in the search description?',
+          'Does each treatment have its own page, or is everything crammed into one implant page?',
+          'Can a patient call or book in one tap on a phone?',
+          'Is the copy free of testimonials, superlatives and comparisons that medical advertising rules prohibit?',
+          'Is there a non-covered fee page?',
+        ] },
+        { type: 'cta', content: 'Want a second look at your clinic’s website? Zoe Lumos works with clinics in Korea in Korean, over KakaoTalk and email. It starts with a free review of your current site.' },
+      ],
+      ko: [
+        { type: 'intro', content: '서울 영등포구 당산역·문래역 인근의 서울초이스치과의원 홈페이지를 새로 만들어 2026년 11월에 오픈했습니다. 기존 Wix 사이트를 진료별 안내 19개, 한국어·영어·일본어·중국어 4개 국어 132페이지 규모로 다시 만들었고, 네이버·구글 검색 등록과 치과 구조화 데이터까지 함께 넣었습니다. 치과 홈페이지 리뉴얼을 고민하는 원장님께 참고가 되도록, 무엇을 왜 그렇게 만들었는지 정리합니다.' },
+        { type: 'screenshot', content: '/blog/seoul-choice-dental/home.jpg', items: ['서울초이스치과의원 새 홈페이지 첫 화면 (seoulchoicedent.com) — 치아 그림에서 진료를 고르면 설명이 바뀝니다'] },
+        { type: 'stats', content: '새 홈페이지 한눈에 보기', items: [
+          '4개|언어|한국어 · 영어 · 일본어 · 중국어',
+          '132|페이지|언어마다 33페이지',
+          '19개|진료별 안내|임플란트부터 근기능 교정까지',
+          '5종|장비 소개|3D CT · 현미경 · 구강 스캐너 등',
+        ] },
+        { type: 'h2', content: '리뉴얼 전: 무엇부터 바꿨나' },
+        { type: 'p', content: '기존 홈페이지는 Wix 템플릿으로 만들어져 있었습니다. 디자인보다 먼저 손봐야 했던 건 검색엔진이 읽는 정보였습니다. 구글과 네이버에 병원 주소를 알려주는 구조화 데이터 일부에 템플릿 예시 문구("실제 주소")가 그대로 남아 있었기 때문입니다. 환자 눈에는 보이지 않지만, 검색엔진과 AI 검색은 이 정보를 그대로 읽습니다.' },
+        { type: 'p', content: '그래서 목표를 세 가지로 잡았습니다. 첫째, 환자가 궁금한 순서대로 보여줄 것. 둘째, 진료마다 검색에 걸릴 페이지를 따로 만들 것. 셋째, 의료광고 기준을 지키면서 원장님의 진료 원칙이 드러나게 할 것.' },
+        { type: 'h2', content: '첫 화면: 환자가 궁금한 순서대로' },
+        { type: 'p', content: '첫 화면 문구는 "필요한 치료를, 필요한 자리에."이고, 바로 아래에 "통합치의학 전문의 원장이 직접 진료합니다."를 두었습니다. 오른쪽에는 치아 그림을 넣어 임플란트·라미네이트·보철·신경치료·사랑니·턱관절·잇몸 중 하나를 고르면 해당 진료 설명과 "자세히 보기" 링크가 바뀌도록 만들었습니다. 상단에는 "오늘 오전 9시 30분부터 진료"처럼 지금 시각 기준의 진료 상태가 나오고, 수·목요일 오후 8시까지 하는 야간진료는 검색 결과 설명문과 진료시간 안내에 넣었습니다.' },
+        { type: 'screenshot', content: '/blog/seoul-choice-dental/mobile.jpg', items: ['휴대폰 화면 — 하단에 전화 · 네이버 예약 · 상담 예약 버튼을 고정했습니다'] },
+        { type: 'p', content: '병원 홈페이지 방문은 대부분 휴대폰에서 일어납니다. 그래서 휴대폰 화면 하단에 전화, 네이버 예약, 상담 예약 세 버튼을 늘 보이게 두었습니다. 이미 네이버 예약을 쓰는 병원이라, 환자에게 익숙한 예약 경로를 홈페이지에서 그대로 이어 주는 것이 중요했습니다.' },
+        { type: 'h2', content: '진료별 페이지 19개, 모두 같은 구조로' },
+        { type: 'p', content: '임플란트 하나만 해도 네비게이션 임플란트, 앞니 임플란트, 전체 임플란트, 틀니 임플란트를 따로 찾아보는 환자가 있습니다. 그래서 진료를 19개 페이지로 나눴습니다.' },
+        { type: 'ul', content: '진료별 안내 페이지 19개', items: [
+          '임플란트: 임플란트 · 네비게이션(가이드) 임플란트 · 앞니 임플란트 · 전체 임플란트 · 틀니 임플란트',
+          '자연치아 치료: 충치 치료(레진·인레이) · 현미경 신경치료 · 잇몸 치료 · 구강 검진·스케일링',
+          '보철·심미: 보철(크라운·브릿지) · 라미네이트 · 치아 미백 · 틀니',
+          '구강외과·턱관절: 사랑니 발치 · 턱관절 치료',
+          '교정·소아: 전체 교정 · 투명교정 · 소아치료 · 근기능 교정',
+        ] },
+        { type: 'screenshot', content: '/blog/seoul-choice-dental/implant.jpg', items: ['임플란트 페이지 — 7단계 진료 과정 그림과 "한눈에 보기"(내원 횟수 · 기간 · 건강보험)'] },
+        { type: 'p', content: '모든 진료 페이지는 진료 안내, 진료 과정, 한눈에 보기, 자주 묻는 질문, 요약 순서로 똑같이 구성했습니다. 예를 들어 임플란트 페이지의 "한눈에 보기"에는 내원 횟수(보통 4~6회 이상), 기간(보통 3~6개월), 건강보험 적용(만 65세 이상 2개, 본인부담 30%)을 적고, 바로 아래에 개인에 따라 다르다는 안내를 붙였습니다. 환자는 어느 진료 페이지에서든 같은 자리에서 같은 정보를 찾고, ChatGPT나 구글 AI 개요 같은 AI 검색도 "요약"과 "자주 묻는 질문"을 그대로 인용하기 쉬워집니다.' },
+        { type: 'h2', content: '의료광고 기준과 진료비 안내' },
+        { type: 'p', content: '병원 홈페이지 문구는 의료법의 의료광고 규정을 따라야 합니다. 그래서 치료 경험담이나 "최고", "유일" 같은 과장 표현, 다른 병원과의 비교 대신 원장님의 진료 원칙을 사실 그대로 적었습니다. 병원 소개 페이지의 소제목이 "먼저 확인합니다", "자연치아를 먼저 지킵니다", "필요한 치료만 합니다", "한 원장이 처음부터 끝까지 봅니다"인 이유입니다.' },
+        { type: 'p', content: '장비 소개 페이지도 3D CT(CBCT), 치과용 현미경, 구강 스캐너, 임플란트 수술 가이드, PRF 원심분리기를 장비 이름과 어떤 진료에 쓰는지 위주로 정리했습니다. 병원 블로그 글에는 "임플란트에도 생길 수 있는 문제", "현미경으로도 달라지지 않는 것"처럼 한계와 부작용도 함께 적었습니다.' },
+        { type: 'tip', content: '비급여 진료비는 환자가 쉽게 확인할 수 있게 알려야 합니다. 새 홈페이지에는 비급여 진료비 안내 페이지와 치아보험 청구 안내 페이지(청구 방법, 병원에서 받는 서류, 서류 발급 수수료)를 따로 두었습니다.' },
+        { type: 'h2', content: '4개 국어: 영어·일본어·중국어 환자까지' },
+        { type: 'p', content: '한국어 페이지 33개를 영어, 일본어, 중국어로 모두 옮겨 언어마다 33페이지, 총 132페이지가 되었습니다. 진료 안내, 장비, 오시는 길, 상담 예약까지 구조가 같아서 외국인 환자도 한국어 환자와 같은 정보를 같은 순서로 봅니다. 언어는 화면 오른쪽 위에서 바꿀 수 있습니다.' },
+        { type: 'screenshot', content: '/blog/seoul-choice-dental/japanese.jpg', items: ['일본어 첫 화면 — 4개 국어 모두 한국어와 같은 구성입니다'] },
+        { type: 'h2', content: '네이버·구글·AI 검색 준비' },
+        { type: 'ul', content: '오픈과 함께 넣은 것', items: [
+          '네이버 서치어드바이저와 구글 서치 콘솔 소유 확인',
+          '사이트맵: 4개 국어 132개 주소',
+          '치과(Dentist) 구조화 데이터: 주소, 지도 좌표, 요일별 진료시간, 전화번호, 진료 지역(영등포구 · 당산동 · 문래동 · 양평동)',
+          '네이버 플레이스, 네이버 블로그, 인스타그램을 같은 병원으로 연결(sameAs)',
+          '페이지마다 검색 결과용 제목 — 예: "임플란트 | 서울초이스치과의원"',
+          '병원 블로그 4편으로 시작, 모두 "이 글의 요점"으로 시작: 「문래동에서 치과를 고를 때 미리 확인할 것」, 「치과에서 현미경을 쓰는 이유」, 「임플란트 상담 때 확인할 것」, 「이 치아, 뽑아야 할까요?」',
+        ] },
+        { type: 'p', content: '검색 노출은 오픈하자마자 생기지 않습니다. 네이버와 구글이 새 페이지를 수집하고 순위를 정하는 데 보통 몇 주가 걸립니다. 노출과 문의가 어떻게 바뀌는지는 이 글에 이어서 업데이트하겠습니다.' },
+        { type: 'h2', content: '치과 홈페이지 리뉴얼 전 체크리스트' },
+        { type: 'ul', content: '지금 홈페이지에서 먼저 확인해 보세요', items: [
+          '검색엔진용 병원 정보(구조화 데이터)에 템플릿 예시 문구나 사실과 다른 정보가 남아 있지 않은가',
+          '네이버 서치어드바이저와 구글 서치 콘솔에 사이트가 등록되어 있는가',
+          '진료시간, 야간진료, 가까운 역이 첫 화면이나 검색 결과 설명문에 보이는가',
+          '진료마다 별도 페이지가 있는가 (임플란트 페이지 하나에 모든 진료가 몰려 있지 않은가)',
+          '휴대폰에서 전화와 예약이 한 번에 되는가',
+          '치료 경험담, 과장·비교 표현처럼 의료광고에서 금지된 표현이 없는가',
+          '비급여 진료비 안내 페이지가 있는가',
+        ] },
+        { type: 'cta', content: '우리 병원 홈페이지도 점검해 볼까요? 조이루모스는 한국에 있는 병원도 카카오톡과 이메일로, 한국어로 진행합니다. 현재 홈페이지 무료 진단부터 시작합니다.' },
+      ],
+    },
+  },
   // ─────────────────────────────────────────────────────────────────
   // 2026-06-27 — "Why owners fire their web agency" viral pain batch (10 posts)
   // Targets vendor-switch complaints: ghosting, hostage/ownership, opaque fees,

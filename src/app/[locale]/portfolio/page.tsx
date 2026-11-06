@@ -84,20 +84,21 @@ const projects = [
   },
   {
     id: 'seoul-choice-dental',
+    url: 'https://www.seoulchoicedent.com/',
     // 5:4 crop of the same screen: this page's frames are 5:4, so the 16:10 home image would clip the headline.
-    image: '/portfolio/seoul-choice-dental-5x4.jpg',
-    status: 'in-progress' as const,
+    image: '/portfolio/seoul-choice-dental-live-5x4.jpg',
+    status: 'new' as const,
     en: {
       title: 'Seoul Choice Dental',
-      category: 'Dental Clinic / Website Rebuild · In progress',
-      description: "Full rebuild of a Seoul dental clinic's website: treatment and equipment pages written to medical-advertising rules, Naver and Google search cleanup, and a static build with no monthly server fees. Launching soon.",
-      services: ['Website Design', 'Treatment Pages', 'Naver & Google SEO', 'Booking Flow'],
+      category: 'Dental Clinic / New Website · Seoul, Korea',
+      description: 'New website for a dental clinic near Dangsan and Mullae stations in Yeongdeungpo, Seoul, launched November 2026: 19 treatment pages, 132 pages in Korean, English, Japanese and Chinese, live opening-hours status, and Naver and Google search setup with Dentist structured data.',
+      services: ['Website Design', '4 Languages', 'Naver & Google SEO', 'Dentist Schema'],
     },
     ko: {
       title: '서울초이스치과의원',
-      category: '치과의원 / 홈페이지 개편 · 제작 중',
-      description: '서울 영등포 치과의원의 홈페이지 전면 개편. 의료광고 기준에 맞춘 진료·장비 소개 페이지, 네이버·구글 검색 정리, 월 서버비가 들지 않는 정적 사이트로 제작 중입니다. 곧 오픈합니다.',
-      services: ['웹사이트 디자인', '진료 안내 페이지', '네이버·구글 SEO', '상담 예약 흐름'],
+      category: '치과의원 / 홈페이지 리뉴얼 · 서울 영등포',
+      description: '서울 영등포구 당산역·문래역 인근 치과의원 홈페이지를 새로 만들어 2026년 11월에 오픈했습니다. 진료별 안내 19개, 한국어·영어·일본어·중국어 4개 국어 132페이지, 실시간 진료 상태 표시, 네이버·구글 검색 등록과 치과 구조화 데이터까지.',
+      services: ['웹사이트 디자인', '4개 국어', '네이버·구글 SEO', '치과 구조화 데이터'],
     },
   },
   {

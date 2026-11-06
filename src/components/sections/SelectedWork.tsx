@@ -9,8 +9,10 @@ export type Project = {
   disciplines: { en: string[]; ko: string[] }
   image: string
   url?: string
-  /** Signed and in build — shown with a badge and no live link until launch. */
-  status?: 'in-progress'
+  /** 'in-progress': signed and in build, badge and no live link until launch. 'new': recently launched, NEW badge. */
+  status?: 'in-progress' | 'new'
+  /** Blog slug of the project's case study, linked from the card. */
+  caseStudy?: string
 }
 
 export const projects: Project[] = [
@@ -28,15 +30,17 @@ export const projects: Project[] = [
   },
   {
     name: 'Seoul Choice Dental',
-    industry: { en: 'Dental clinic · Website rebuild', ko: '치과의원 · 홈페이지 개편' },
+    industry: { en: 'Dental clinic · New website', ko: '치과의원 · 홈페이지 리뉴얼' },
     location: 'Seoul · Korea',
     year: '2026',
     disciplines: {
-      en: ['Web design', 'Treatment pages', 'Naver & Google search'],
-      ko: ['웹디자인', '진료 안내 페이지', '네이버·구글 검색'],
+      en: ['Web design', '4 languages', 'Naver & Google search'],
+      ko: ['웹디자인', '4개 국어', '네이버·구글 검색'],
     },
-    image: '/portfolio/seoul-choice-dental.jpg',
-    status: 'in-progress',
+    image: '/portfolio/seoul-choice-dental-live.jpg',
+    url: 'https://www.seoulchoicedent.com/',
+    status: 'new',
+    caseStudy: 'seoul-dental-clinic-website-case-study',
   },
   {
     name: 'TJ Flowers',
@@ -168,6 +172,12 @@ export default function SelectedWork({
                       {isKo ? '제작 중' : 'In progress'}
                     </span>
                   )}
+                  {/* Top-right so the client's logo (top-left in most screenshots) stays visible. */}
+                  {p.status === 'new' && (
+                    <span className="absolute top-4 right-4 inline-flex items-center rounded-full bg-[#0071E3] text-white text-[12px] font-bold tracking-[0.08em] px-3 py-1.5">
+                      NEW
+                    </span>
+                  )}
                 </Link>
                 <div className="p-6 md:p-7 flex flex-col gap-3 flex-1">
                   <div className="flex items-baseline justify-between gap-4">
@@ -182,15 +192,27 @@ export default function SelectedWork({
                       <li key={d} className="text-[12px] text-graphite bg-bone rounded-full px-3 py-1">{d}</li>
                     ))}
                   </ul>
-                  {p.url && (
-                    <a
-                      href={p.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-auto inline-flex items-center min-h-[44px] text-[15px] font-semibold text-link hover:underline"
-                    >
-                      {isKo ? '실제 사이트' : 'Visit live site'} <span aria-hidden>↗</span>
-                    </a>
+                  {(p.url || p.caseStudy) && (
+                    <div className="mt-auto flex flex-wrap gap-x-6">
+                      {p.url && (
+                        <a
+                          href={p.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center min-h-[44px] text-[15px] font-semibold text-link hover:underline"
+                        >
+                          {isKo ? '실제 사이트' : 'Visit live site'} <span aria-hidden>↗</span>
+                        </a>
+                      )}
+                      {p.caseStudy && (
+                        <Link
+                          href={`${prefix}/blog/${p.caseStudy}`}
+                          className="inline-flex items-center min-h-[44px] text-[15px] font-semibold text-link hover:underline"
+                        >
+                          {isKo ? '제작 사례 읽기' : 'Read the case study'} <span aria-hidden>›</span>
+                        </Link>
+                      )}
+                    </div>
                   )}
                   {!p.url && p.status === 'in-progress' && (
                     <p className="mt-auto pt-2 text-[14px] font-semibold text-ash">

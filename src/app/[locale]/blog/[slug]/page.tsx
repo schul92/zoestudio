@@ -61,7 +61,9 @@ export async function generateMetadata({
       publishedTime: post.date,
       modifiedTime: post.updatedDate,
       authors: [post.author],
+      ...(post.image && { images: [{ url: `${baseUrl}${post.image}`, width: 1200, height: 630, alt: post.title[locale] }] }),
     },
+    ...(post.image && { twitter: { card: 'summary_large_image', images: [`${baseUrl}${post.image}`] } }),
     robots: { index: true, follow: true },
   }
 }
@@ -116,7 +118,9 @@ function BlogPostingSchema({
     articleSection: post.category[locale],
     image: {
       '@type': 'ImageObject',
-      url: `${baseUrl}/api/og?title=ZOE+LUMOS&subtitle=Korean+Web+Design+%26+SEO`,
+      url: post.image
+        ? `${baseUrl}${post.image}`
+        : `${baseUrl}/api/og?title=ZOE+LUMOS&subtitle=Korean+Web+Design+%26+SEO`,
       width: 1200,
       height: 630,
     },
@@ -124,6 +128,7 @@ function BlogPostingSchema({
       '@type': 'WebPage',
       '@id': `${baseUrl}${prefix}/blog/${post.slug}`,
     },
+    ...post.schemaExtras,
   }
   return (
     <script
