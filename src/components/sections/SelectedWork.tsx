@@ -17,18 +17,6 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    name: 'EndoPia',
-    industry: { en: 'Medical device · U.S. launch', ko: '의료기기 · 미국 런칭' },
-    location: 'United States',
-    year: '2026',
-    disciplines: {
-      en: ['Web design', 'Product storytelling', 'SEO'],
-      ko: ['웹디자인', '제품 스토리텔링', 'SEO'],
-    },
-    image: '/portfolio/endopia.jpg',
-    url: 'https://endopiaglobal.com/',
-  },
-  {
     name: 'Seoul Choice Dental',
     industry: { en: 'Dental clinic · New website', ko: '치과의원 · 홈페이지 리뉴얼' },
     location: 'Seoul · Korea',
@@ -41,6 +29,18 @@ export const projects: Project[] = [
     url: 'https://www.seoulchoicedent.com/',
     status: 'new',
     caseStudy: 'seoul-dental-clinic-website-case-study',
+  },
+  {
+    name: 'EndoPia',
+    industry: { en: 'Medical device · U.S. launch', ko: '의료기기 · 미국 런칭' },
+    location: 'United States',
+    year: '2026',
+    disciplines: {
+      en: ['Web design', 'Product storytelling', 'SEO'],
+      ko: ['웹디자인', '제품 스토리텔링', 'SEO'],
+    },
+    image: '/portfolio/endopia.jpg',
+    url: 'https://endopiaglobal.com/',
   },
   {
     name: 'TJ Flowers',

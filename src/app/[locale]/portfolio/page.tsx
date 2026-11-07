@@ -66,23 +66,6 @@ export async function generateMetadata({
 
 const projects = [
   {
-    id: 'endopia',
-    url: 'https://endopiaglobal.com/',
-    image: '/portfolio/endopia.jpg',
-    en: {
-      title: 'EndoPia',
-      category: 'Medical Device / U.S. Launch',
-      description: "U.S. launch site for EndoPia's TISE digital spinal endoscope — an FDA 510(k)-cleared device. Product, surgeon training, events and investor pages, built for surgeons and partners.",
-      services: ['Website Design', 'Product Storytelling', 'SEO', 'Contact & Inquiry Flow'],
-    },
-    ko: {
-      title: 'EndoPia',
-      category: '의료기기 / 미국 런칭',
-      description: 'FDA 510(k) 인증 디지털 척추 내시경 TISE의 미국 런칭 사이트. 제품·외과의 교육·이벤트·투자 페이지를 외과의사와 파트너를 위해 구축.',
-      services: ['웹사이트 디자인', '제품 스토리텔링', 'SEO', '문의·상담 흐름'],
-    },
-  },
-  {
     id: 'seoul-choice-dental',
     url: 'https://www.seoulchoicedent.com/',
     // 5:4 crop of the same screen: this page's frames are 5:4, so the 16:10 home image would clip the headline.
@@ -99,6 +82,23 @@ const projects = [
       category: '치과의원 / 홈페이지 리뉴얼 · 서울 영등포',
       description: '서울 영등포구 당산역·문래역 인근 치과의원 홈페이지를 새로 만들어 2026년 11월에 오픈했습니다. 진료별 안내 19개, 한국어·영어·일본어·중국어 4개 국어 132페이지, 실시간 진료 상태 표시, 네이버·구글 검색 등록과 치과 구조화 데이터까지.',
       services: ['웹사이트 디자인', '4개 국어', '네이버·구글 SEO', '치과 구조화 데이터'],
+    },
+  },
+  {
+    id: 'endopia',
+    url: 'https://endopiaglobal.com/',
+    image: '/portfolio/endopia.jpg',
+    en: {
+      title: 'EndoPia',
+      category: 'Medical Device / U.S. Launch',
+      description: "U.S. launch site for EndoPia's TISE digital spinal endoscope — an FDA 510(k)-cleared device. Product, surgeon training, events and investor pages, built for surgeons and partners.",
+      services: ['Website Design', 'Product Storytelling', 'SEO', 'Contact & Inquiry Flow'],
+    },
+    ko: {
+      title: 'EndoPia',
+      category: '의료기기 / 미국 런칭',
+      description: 'FDA 510(k) 인증 디지털 척추 내시경 TISE의 미국 런칭 사이트. 제품·외과의 교육·이벤트·투자 페이지를 외과의사와 파트너를 위해 구축.',
+      services: ['웹사이트 디자인', '제품 스토리텔링', 'SEO', '문의·상담 흐름'],
     },
   },
   {
