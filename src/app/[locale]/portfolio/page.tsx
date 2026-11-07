@@ -23,10 +23,12 @@ export async function generateMetadata({
     en: {
       title: 'Our Work - Portfolio | ZOE LUMOS',
       description: 'Portfolio of websites for doctors, dental clinics, medical-device and B2B companies, plus the local brands we\'ve launched across the US since 2019.',
+      ogAlt: 'Seoul Choice Dental website by ZOE LUMOS — tooth-chart home screen, launched November 2026',
     },
     ko: {
       title: '포트폴리오 - 제작 사례 | ZOE LUMOS',
       description: '병원·치과·의료기기·B2B 기업 웹사이트 제작 사례와, 2019년부터 미국 전역에서 함께 런칭한 브랜드들의 포트폴리오입니다.',
+      ogAlt: 'ZOE LUMOS가 제작한 서울초이스치과의원 홈페이지 — 치아 그림 첫 화면, 2026년 11월 오픈',
     }
   }
 
@@ -49,6 +51,13 @@ export async function generateMetadata({
       locale: locale === 'ko' ? 'ko_KR' : 'en_US',
       alternateLocale: locale === 'ko' ? 'en_US' : 'ko_KR',
       type: 'website',
+      images: [{ url: `${baseUrl}/portfolio/seoul-choice-dental-live.jpg`, width: 1600, height: 1000, alt: metadata[locale].ogAlt }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: metadata[locale].title,
+      description: metadata[locale].description,
+      images: [`${baseUrl}/portfolio/seoul-choice-dental-live.jpg`],
     },
     robots: {
       index: true,
@@ -71,6 +80,17 @@ const projects = [
     // 5:4 crop of the same screen: this page's frames are 5:4, so the 16:10 home image would clip the headline.
     image: '/portfolio/seoul-choice-dental-live-5x4.jpg',
     status: 'new' as const,
+    launched: '2026-11',
+    caseStudy: 'seoul-dental-clinic-website-case-study',
+    // Same @id as the clinic's own Dentist schema and the case study's `about`, so Google/AI engines merge the entity.
+    entity: {
+      '@type': ['Dentist', 'MedicalClinic'],
+      '@id': 'https://www.seoulchoicedent.com/#clinic',
+      name: '서울초이스치과의원',
+      alternateName: 'Seoul Choice Dental Clinic',
+      url: 'https://www.seoulchoicedent.com/',
+      address: { '@type': 'PostalAddress', addressLocality: '영등포구', addressRegion: '서울특별시', addressCountry: 'KR' },
+    },
     en: {
       title: 'Seoul Choice Dental',
       category: 'Dental Clinic / New Website · Seoul, Korea',
@@ -290,13 +310,19 @@ export default function PortfolioPage({ params }: { params: { locale: string } }
         '@type': 'ListItem',
         position: i + 1,
         item: {
-          '@type': 'CreativeWork',
+          '@type': ['CreativeWork', 'WebSite'],
           name: p.title,
           url: p.url,
           image: `${baseUrl}${p.image}`,
-          about: p.category,
+          description: p.description,
+          about: 'entity' in p && p.entity ? p.entity : p.category,
+          genre: p.category,
           keywords: p.services.join(', '),
           creator: { '@id': `${baseUrl}/#organization` },
+          ...('launched' in p && p.launched ? { dateCreated: p.launched, datePublished: p.launched } : {}),
+          ...('caseStudy' in p && p.caseStudy
+            ? { subjectOf: { '@type': 'Article', url: `${baseUrl}${prefix}/blog/${p.caseStudy}` } }
+            : {}),
         },
       })),
     },
