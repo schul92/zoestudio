@@ -11,7 +11,7 @@ const AT_A_GLANCE: Record<'en' | 'ko', QA[]> = {
     },
     {
       q: 'Who is it for?',
-      a: 'Doctors, dental and medical practices, medical-device makers, and B2B companies such as distributors, logistics firms, manufacturers and Korean HQs entering the U.S. We also build for Korean-American restaurants, salons and shops nationwide.',
+      a: 'Doctors first: dental, medical and hospital practices in the US and in Korea (Seoul Choice Dental in Yeongdeungpo, Seoul, launched November 2026 with 132 pages in 4 languages), medical-device makers, and B2B companies such as distributors, logistics firms, manufacturers and Korean HQs entering the U.S. We also build for Korean-American local businesses: restaurants, salons, churches, academies and Shopify stores.',
     },
     {
       q: 'How much does it cost?',
@@ -29,7 +29,7 @@ const AT_A_GLANCE: Record<'en' | 'ko', QA[]> = {
     },
     {
       q: '누구를 위한 서비스인가요?',
-      a: '의사·치과·병원, 의료기기 회사, 그리고 유통·물류·제조·미국 진출 기업 같은 B2B 고객이 중심입니다. 미국 전역의 한인 식당·뷰티샵·쇼핑몰도 함께 만듭니다.',
+      a: '의사가 첫 번째 고객입니다. 미국과 한국의 치과·의원·병원 (2026년 11월 오픈한 서울 영등포 서울초이스치과의원은 4개 국어 132페이지), 의료기기 회사, 그리고 유통·물류·제조·미국 진출 기업 같은 B2B 고객. 미국 전역의 한인 식당·뷰티샵·교회·학원·Shopify 쇼핑몰도 만듭니다.',
     },
     {
       q: '비용은 얼마인가요?',

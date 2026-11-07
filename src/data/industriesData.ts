@@ -49,6 +49,8 @@ export type Industry = {
   stats: IndustryStat[]
   problems: IndustryProblem[]
   features: IndustryFeature[]
+  // Optional — renders the home page's "Just launched" card (NewLaunch) after the gallery.
+  newLaunch?: boolean
   // Optional — only populate with a REAL, client-approved quote.
   caseStudy?: {
     project: string
@@ -382,8 +384,9 @@ export const industries: Industry[] = [
     },
     image: '/medical/dental-arch.jpg',
     accent: '#E7D9CF',
+    newLaunch: true,
     stats: [
-      { num: '7', suf: '종', label: { en: 'dental illustrations drawn for one clinic draft', ko: '한 치과 시안에 그린 진료 일러스트' } },
+      { num: '132', suf: 'p', label: { en: 'pages in the Seoul Choice Dental rebuild (KO · EN · JA · ZH, Nov 2026)', ko: '서울초이스치과의원 리뉴얼 페이지 수 (한·영·일·중, 2026.11 오픈)' } },
       { num: '1', suf: '주', label: { en: 'typical time from consult to first draft', ko: '상담 후 시안 초안까지 (보통)' } },
       { num: '90', suf: '+', label: { en: 'mobile speed target (Google Lighthouse)', ko: '휴대폰 속도 목표 (Google Lighthouse)' } },
     ],
@@ -451,12 +454,12 @@ export const industries: Industry[] = [
     cta: { en: 'Want to see a draft first?', ko: '시안 초안부터 받아보시겠어요?' },
     seo: {
       title: {
-        en: 'Clinic & Hospital Websites — Medical Illustration, Motion, Draft First | Zoe Lumos',
-        ko: '병원·치과 홈페이지 제작 — 진료 일러스트 · 모션그래픽 · 시안 먼저 | 조이루모스',
+        en: 'Clinic & Dental Website Design for Doctors in Korea and the US — Draft First | Zoe Lumos',
+        ko: '병원·치과 홈페이지 제작 — 서울·미국 의사를 위한 홈페이지, 시안 먼저 | 조이루모스',
       },
       description: {
-        en: 'Websites for doctors of every specialty in Korea and the US: treatment illustrations, motion first screens, medical-ad compliant copy, Naver and Google search. See a working draft before you sign.',
-        ko: '치과 · 피부과 · 정형외과 · 한의원 등 모든 진료과 병원 홈페이지. 진료 일러스트와 움직이는 첫 화면, 의료법 기준 문구, 네이버 · 구글 검색. 계약 전 시안 초안을 먼저 보여드립니다.',
+        en: 'Websites for doctors of every specialty in Korea and the US. Just launched: Seoul Choice Dental, Seoul (132 pages, 4 languages). Treatment illustrations, motion first screens, medical-ad compliant copy, Naver and Google search. See a working draft before you sign.',
+        ko: '치과 · 피부과 · 정형외과 · 한의원 등 모든 진료과 병원 홈페이지 제작·리뉴얼. 2026년 11월 오픈한 서울초이스치과의원(4개 국어 132페이지) 사례. 진료 일러스트와 움직이는 첫 화면, 의료법 기준 문구, 네이버 · 구글 검색 등록. 계약 전 시안 초안을 먼저 보여드립니다.',
       },
     },
   },

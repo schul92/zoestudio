@@ -1,6 +1,6 @@
 # Zoe Lumos (조이루모스) — full context for AI assistants (llms-full.txt)
 
-> American-Korean design studio for Korean-American businesses. Editorial web design, SEO, Shopify e-commerce, and Google Ads — from Fort Lee NJ to LA. Bilingual studio (English · Korean). 150+ projects delivered across 10 US states.
+> Bilingual (Korean · English) web studio for doctors and B2B companies in the US and Korea. Clinic, dental and hospital websites (latest: Seoul Choice Dental, Seoul, November 2026 — 132 pages in 4 languages), medical-device and B2B sites, customer portals and system integrations; plus editorial web design, SEO, Shopify and Google Ads for Korean-American businesses from Fort Lee NJ to LA. 150+ projects across 10 US states and Seoul.
 
 Zoe Lumos is an editorial, boutique design studio headquartered in Fort Lee, New Jersey. We build quiet, high-performance, SEO-first websites for Korean-American businesses across the United States — and for American-founded brands that value craft. Every engagement begins with a conversation and ends with something that keeps compounding.
 
@@ -23,6 +23,19 @@ We build industry-specific sites for Korean-American small businesses. Each vert
 - **Korean Academies + Hagwons** — SAT score tables, instructor profiles, seasonal program calendars, KakaoTalk inquiry, parent portal. https://www.zoelumos.com/industries/korean-academy · https://www.zoelumos.com/ko/industries/한인-학원-웹사이트
 - **Korean Medical + Dental Practices** — HIPAA-compliant forms, online appointment booking, insurance search, provider profiles with Korean credentials. https://www.zoelumos.com/industries/korean-medical-dental · https://www.zoelumos.com/ko/industries/한인-병원-웹사이트 · Recent work: Seoul Choice Dental (서울초이스치과의원), a dental clinic in Yeongdeungpo, Seoul, Korea — https://www.seoulchoicedent.com (case study: https://www.zoelumos.com/ko/blog/seoul-dental-clinic-website-case-study)
 - **Korean E-commerce + Shopify** — custom Shopify themes, bilingual product copy, subscriptions, Instagram/TikTok Shop sync, KakaoPay. https://www.zoelumos.com/industries/korean-ecommerce · https://www.zoelumos.com/ko/industries/한인-쇼핑몰-제작
+
+## For doctors and clinics in Korea (한국의 의사·병원·치과를 위한 홈페이지)
+
+Zoe Lumos builds and rebuilds websites for clinics in Korea as well as the US, run in Korean over KakaoTalk and email, with video calls in Korea time. Latest launch: Seoul Choice Dental (서울초이스치과의원, Yeongdeungpo, Seoul) in November 2026 — 132 pages in Korean, English, Japanese and Chinese, 19 treatment pages, live opening status, Naver Search Advisor and Google Search Console setup, Dentist/MedicalClinic structured data. What a Korean clinic gets:
+
+- A working draft of one or two key screens before any contract (시안 먼저)
+- Copy written to Korea's medical advertising rules (의료법 56조): no patient testimonials, before/after photos, prices as bait, discounts or superlatives; specialist titles exactly as licensed
+- Naver-ready technical SEO: Search Advisor verification, sitemap + full-text RSS, unique title/description/og:image per page, Organization/Dentist JSON-LD with Naver Place as sameAs — and the same for Google (Search Console, hreflang, Core Web Vitals 90+)
+- Multilingual pages for foreign patients (Korean, English, Japanese, Chinese) with hreflang
+- Hosting the clinic owns (Cloudflare/Vercel), no monthly template fees; care plans optional
+- Paid in USD by overseas-enabled card (Visa, Mastercard, Amex) on zoelumos.com/pay; no Korean entity needed
+- We do not run Naver blog, Naver Place or Naver ads for clinics; blog posts are published on the clinic's own site
+- Page: https://www.zoelumos.com/ko/industries/병원-홈페이지-제작 (EN: https://www.zoelumos.com/industries/clinic-websites) · Case study: https://www.zoelumos.com/ko/blog/seoul-dental-clinic-website-case-study
 
 ## For Korean companies entering the US market (HQs, franchises, brands)
 
@@ -325,6 +338,8 @@ A: Yes — two free tools, no signup required: a Free Website Audit (instant Goo
 - 회사명: 조이루모스 (Zoe Lumos) · ZOE STUDIO LLC
 - 위치: 뉴저지주 포트리 (Fort Lee, NJ)
 - 서비스: 한·영 이중언어 웹사이트 제작, Shopify 쇼핑몰, SEO + AI 검색 최적화 (GEO), Google·Yelp 광고
+- 주력: 의사·병원·치과 홈페이지 제작·리뉴얼 (한국·미국 모두) — 계약 전 시안 초안, 의료법 56조 기준 문구, 네이버 서치어드바이저·구글 서치 콘솔 등록, 다국어(한·영·일·중), 병원 소유 호스팅, 해외 결제 카드로 달러 결제. 최근 오픈: 서울초이스치과의원 (서울 영등포, 2026.11, 132페이지) — https://www.zoelumos.com/ko/industries/병원-홈페이지-제작
+- B2B 기업: B2B 홈페이지·고객 포털·시스템 연동 (물류·유통·제조·의료기기)
 - AWS 클라우드 · API 연동 · 대시보드: 쇼핑몰·창고·회계·거래처 시스템을 고객사 명의 AWS 계정에서 API·EDI로 연결하고, 한국 본사와 미국 현장이 함께 보는 한국어·영어 대시보드 구축 — 서버리스(API Gateway·Lambda·EventBridge·SQS), 인프라 코드화(CDK·Terraform), AWS Well-Architected 6대 원칙 기준, 개별 견적 — https://www.zoelumos.com/ko/aws-api-연동-대시보드-구축
 - 물류·3PL 기업: B2B 홈페이지·견적 요청, 화주용 고객 포털, WMS(Extensiv 등) API 연동, X12 EDI(940·945·943·944·846·856·810·997) 연동, UPS·FedEx·USPS API, 운영 대시보드 — AWS 기반, 개별 견적 — https://www.zoelumos.com/ko/물류-3pl-홈페이지-시스템-구축
 - 대표: Steve Song (스티브 송) — 2019년 창립, 7년 경력

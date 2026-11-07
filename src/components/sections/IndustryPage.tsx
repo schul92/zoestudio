@@ -5,6 +5,7 @@ import Link from 'next/link'
 import InView from '@/components/ui/motion/InView'
 import Magnetic from '@/components/ui/motion/Magnetic'
 import CountUp from '@/components/ui/motion/CountUp'
+import NewLaunch from '@/components/sections/NewLaunch'
 import type { Industry, IconId } from '@/data/industriesData'
 
 export default function IndustryPage({
@@ -219,6 +220,13 @@ export default function IndustryPage({
           </ul>
         </div>
       </section>
+
+      {/* ─── JUST LAUNCHED (optional) ─────────────────────── */}
+      {industry.newLaunch && (
+        <div className="pt-16 md:pt-24 hair-bottom">
+          <NewLaunch locale={locale} />
+        </div>
+      )}
 
       {/* ─── ILLUSTRATION · MOTION (optional) ─────────────── */}
       {industry.gallery && (

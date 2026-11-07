@@ -1,22 +1,22 @@
 export const seoConfig = {
   en: {
     title: 'Medical & B2B Website Design · Bilingual EN/KR | ZOE LUMOS',
-    description: 'Websites for doctors, dental clinics and B2B companies: bilingual EN/KR, online booking, portals and integrations. Built EndoPia\'s FDA 510(k) U.S. launch site.',
-    keywords: 'medical website design, doctor website design, dental website design, dental clinic website, medical practice website, healthcare web design, medical device website, B2B website design, B2B portal development, Korean doctor website, bilingual medical website, Shopify Expert NJ, Shopify developer Korean, Korean American web design, bilingual web design agency, Korean web design studio, Korean business website, Korean American website, bilingual SEO, Korean SEO agency, NJ web design, NY web design, Fort Lee web design, Bergen County web design, Shopify development, e-commerce website design, local SEO expert, digital marketing agency, Google Ads management, small business SEO NJ, Korean web agency, editorial web design, boutique web design studio, 한인 마케팅 에이전시, 한인 웹디자인, Korean American web designer, Palisades Park marketing, Ridgefield web design, Edgewater web design, Cliffside Park web design, Fairview NJ web design, Hackensack web design, Leonia web design, Tenafly web design, Teaneck web design, Korean restaurant website NJ, Korean spa website NJ, Korean nail salon website, Korean hair salon website, Korean grocery store website, bilingual website Korean English NJ, Korean American small business website, Fort Lee Korean marketing agency, Palisades Park Korean business SEO, Bergen County Korean marketing agency, Korean business Google Ads, Google My Business Korean business, Instagram marketing Korean business NJ, affordable web design Bergen County, how to get more customers for Korean restaurant NJ',
+    description: 'Websites for doctors, dental clinics and B2B companies in the US and Korea: bilingual EN/KR, online booking, portals and integrations. Launched Seoul Choice Dental (Seoul, 2026, 4 languages) and EndoPia\'s FDA 510(k) U.S. site.',
+    keywords: 'medical website design, doctor website design, dental website design, dental clinic website, medical practice website, healthcare web design, clinic website Korea, dental clinic website Seoul, multilingual clinic website, Korean medical advertising law compliant website, Naver SEO for clinics, medical device website, B2B website design, B2B portal development, Korean doctor website, bilingual medical website, Shopify Expert NJ, Shopify developer Korean, Korean American web design, bilingual web design agency, Korean web design studio, Korean business website, Korean American website, bilingual SEO, Korean SEO agency, NJ web design, NY web design, Fort Lee web design, Bergen County web design, Shopify development, e-commerce website design, local SEO expert, digital marketing agency, Google Ads management, small business SEO NJ, Korean web agency, editorial web design, boutique web design studio, 한인 마케팅 에이전시, 한인 웹디자인, Korean American web designer, Palisades Park marketing, Ridgefield web design, Edgewater web design, Cliffside Park web design, Fairview NJ web design, Hackensack web design, Leonia web design, Tenafly web design, Teaneck web design, Korean restaurant website NJ, Korean spa website NJ, Korean nail salon website, Korean hair salon website, Korean grocery store website, bilingual website Korean English NJ, Korean American small business website, Fort Lee Korean marketing agency, Palisades Park Korean business SEO, Bergen County Korean marketing agency, Korean business Google Ads, Google My Business Korean business, Instagram marketing Korean business NJ, affordable web design Bergen County, how to get more customers for Korean restaurant NJ',
     openGraph: {
       title: 'Zoe Lumos — Websites for Doctors & B2B Companies',
-      description: 'Bilingual EN/KR websites for doctors, dental clinics, medical-device and B2B companies. Online booking, customer portals, system integrations. Fort Lee NJ · US · Korea.',
+      description: 'Websites for doctors, dental clinics, medical-device and B2B companies in the US and Korea. Seoul Choice Dental (Seoul, 2026) · EndoPia (FDA 510(k) U.S. launch). Online booking, portals, integrations. Fort Lee NJ · Seoul.',
       siteName: 'Zoe Lumos',
       locale: 'en_US',
     }
   },
   ko: {
-    title: '병원·치과 홈페이지 제작 · B2B 웹사이트 전문 | 한인 웹스튜디오 조이루모스',
-    description: '의사·병원·치과와 B2B 기업 웹사이트 전문 조이루모스. 한·영 이중언어, 온라인 진료 예약, B2B 포털·시스템 연동. FDA 510(k) 의료기기 EndoPia 미국 런칭 사이트 제작. 제작 $500부터 가격 공개.',
-    keywords: '병원 홈페이지 제작, 의원 홈페이지 제작, 치과 홈페이지 제작, 의사 웹사이트, 병원 웹사이트 제작, 한인 병원 웹사이트, 의료기기 홈페이지, B2B 홈페이지 제작, B2B 웹사이트, 기업 홈페이지 제작, 고객 포털 구축, 미국 한인 웹사이트, 한인 웹사이트 제작, 한인 홈페이지 제작, 뉴저지 웹사이트, 뉴저지 웹사이트 제작, 뉴욕 웹사이트, 뉴욕 웹사이트 제작, 캘리포니아 웹사이트 제작, LA 한인 웹사이트, 텍사스 웹사이트 제작, 달라스 한인 웹사이트, 조지아 웹사이트 제작, 애틀랜타 한인 웹사이트, 버지니아 웹사이트 제작, 일리노이 웹사이트, 시카고 한인 웹사이트, 워싱턴 웹사이트, 시애틀 한인 웹사이트, 하와이 웹사이트, 플로리다 웹사이트, NJ 웹사이트, NY 웹사이트, 포트리 웹사이트, 팰팍 웹사이트, 플러싱 웹사이트, 한인 쇼핑몰 제작, 쇼피파이, 구글광고, 옐프광고, 한인 SEO, 검색엔진최적화, 미주 한인 비즈니스, 디지털 마케팅, 웹디자인, 클리프사이드파크 웹사이트 제작, 페어뷰 웹사이트, 해켄색 웹사이트 제작, 레오니아 웹사이트, 테나플라이 웹사이트, 한인 식당 웹사이트, 한인 스파 웹사이트, 한인 네일샵 웹사이트, 한인 부동산 웹사이트, 한인 세탁소 홈페이지, 한인 비즈니스 홈페이지, 구글 마이비즈니스 최적화, 한인 비즈니스 구글 등록, 인스타그램 마케팅 한인 비즈니스, 한국어 웹사이트 제작 비용',
+    title: '병원·치과 홈페이지 제작 · 의사를 위한 웹사이트 · B2B | ZOE LUMOS 조이루모스',
+    description: '의사·병원·치과 홈페이지 제작 전문 조이루모스. 서울초이스치과의원(서울 영등포, 2026) 4개 국어 리뉴얼, FDA 510(k) 의료기기 EndoPia 미국 런칭. 한국·미국 병원 모두 한국어로 진행, 의료법 기준 문구, 네이버·구글 검색 등록, 온라인 진료 예약. 제작 $500부터 가격 공개.',
+    keywords: '병원 홈페이지 제작, 의원 홈페이지 제작, 치과 홈페이지 제작, 치과 홈페이지 리뉴얼, 병원 홈페이지 리뉴얼, 한의원 홈페이지 제작, 피부과 홈페이지 제작, 성형외과 홈페이지 제작, 정형외과 홈페이지 제작, 서울 치과 홈페이지 제작, 다국어 병원 홈페이지, 외국인 환자 병원 홈페이지, 의료법 준수 홈페이지, 병원 네이버 검색 등록, 의사 웹사이트, 병원 웹사이트 제작, 한인 병원 웹사이트, 의료기기 홈페이지, B2B 홈페이지 제작, B2B 웹사이트, 기업 홈페이지 제작, 고객 포털 구축, 미국 한인 웹사이트, 한인 웹사이트 제작, 한인 홈페이지 제작, 뉴저지 웹사이트, 뉴저지 웹사이트 제작, 뉴욕 웹사이트, 뉴욕 웹사이트 제작, 캘리포니아 웹사이트 제작, LA 한인 웹사이트, 텍사스 웹사이트 제작, 달라스 한인 웹사이트, 조지아 웹사이트 제작, 애틀랜타 한인 웹사이트, 버지니아 웹사이트 제작, 일리노이 웹사이트, 시카고 한인 웹사이트, 워싱턴 웹사이트, 시애틀 한인 웹사이트, 하와이 웹사이트, 플로리다 웹사이트, NJ 웹사이트, NY 웹사이트, 포트리 웹사이트, 팰팍 웹사이트, 플러싱 웹사이트, 한인 쇼핑몰 제작, 쇼피파이, 구글광고, 옐프광고, 한인 SEO, 검색엔진최적화, 미주 한인 비즈니스, 디지털 마케팅, 웹디자인, 클리프사이드파크 웹사이트 제작, 페어뷰 웹사이트, 해켄색 웹사이트 제작, 레오니아 웹사이트, 테나플라이 웹사이트, 한인 식당 웹사이트, 한인 스파 웹사이트, 한인 네일샵 웹사이트, 한인 부동산 웹사이트, 한인 세탁소 홈페이지, 한인 비즈니스 홈페이지, 구글 마이비즈니스 최적화, 한인 비즈니스 구글 등록, 인스타그램 마케팅 한인 비즈니스, 한국어 웹사이트 제작 비용',
     openGraph: {
-      title: '의사·병원·B2B 웹사이트 전문 | ZOE LUMOS',
-      description: '병원 홈페이지와 B2B 웹사이트·포털·시스템 연동을 한·영 이중언어로. FDA 510(k) 의료기기 EndoPia 미국 런칭 사이트 제작. 뉴저지 포트리 · 미국 전역 · 한국.',
+      title: '병원·치과 홈페이지 제작 · 의사·B2B 웹사이트 | ZOE LUMOS',
+      description: '한국·미국 의사를 위한 병원·치과 홈페이지와 B2B 웹사이트·포털. 서울초이스치과의원(서울, 2026) 4개 국어 리뉴얼 · FDA 510(k) 의료기기 EndoPia 미국 런칭. 뉴저지 포트리 · 서울.',
       siteName: 'ZOE LUMOS 조이루모스',
       locale: 'ko_KR',
     }
@@ -39,10 +39,15 @@ export const structuredData = {
       "height": 512
     },
     "email": "info@zoelumos.com",
-    "description": "American-Korean design studio in Fort Lee, NJ. Editorial web design, SEO, Shopify e-commerce, and Google Ads for Korean-American businesses nationwide; official US English websites for Korean companies and franchises entering the US market; and system integration, AWS cloud and dashboards for companies, including logistics and 3PL operators. Bilingual (English · Korean).",
+    "description": "Bilingual (Korean · English) web studio in Fort Lee, NJ building websites for doctors and B2B companies in the US and Korea: clinic, dental and hospital sites (Seoul Choice Dental, Seoul, 2026; medical-device maker EndoPia's FDA 510(k) U.S. launch), B2B sites, customer portals and system integrations. Also editorial websites, SEO, Shopify and Google Ads for Korean-American businesses nationwide, and official US English websites for Korean companies entering the US.",
     "slogan": "Websites worth remembering.",
     "foundingDate": "2019",
     "knowsAbout": [
+      "Clinic, dental and hospital websites for doctors in Korea and the US",
+      "Multilingual clinic websites (Korean, English, Japanese, Chinese)",
+      "Korean medical advertising law (의료법 56조) compliant website copy",
+      "Naver Search Advisor and Google Search Console setup for clinics",
+      "Dentist / MedicalClinic / Physician structured data",
       "US market-entry websites for Korean companies",
       "Amazon Web Services (AWS) cloud architecture",
       "API integration",
@@ -70,7 +75,7 @@ export const structuredData = {
         "url": "https://pf.kakao.com/_xhxdxmlX/chat",
         "contactType": "customer service",
         "availableLanguage": ["Korean"],
-        "areaServed": "US"
+        "areaServed": ["US", "KR"]
       }
     ],
     "founder": {
@@ -90,10 +95,10 @@ export const structuredData = {
       ]
     },
     "knowsLanguage": ["en-US", "ko-KR"],
-    "areaServed": {
-      "@type": "Country",
-      "name": "United States"
-    },
+    "areaServed": [
+      { "@type": "Country", "name": "United States" },
+      { "@type": "Country", "name": "South Korea" }
+    ],
     "sameAs": [
       "https://maps.google.com/maps?cid=423025541319098436",
       "https://www.facebook.com/zoelumos",

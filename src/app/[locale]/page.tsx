@@ -148,15 +148,6 @@ export default function Home({ params }: { params: { locale: string } }) {
   // Selected Work ItemList
   const worksSchema = selectedWorkItemList([
     {
-      name: 'EndoPia',
-      url: 'https://endopiaglobal.com/',
-      image: '/portfolio/endopia.jpg',
-      year: '2026',
-      location: 'United States',
-      industry: 'Medical device',
-      disciplines: ['Web design', 'Product storytelling', 'SEO'],
-    },
-    {
       name: 'Seoul Choice Dental',
       url: 'https://www.seoulchoicedent.com/',
       image: '/portfolio/seoul-choice-dental-live.jpg',
@@ -164,6 +155,15 @@ export default function Home({ params }: { params: { locale: string } }) {
       location: 'Seoul, Korea',
       industry: 'Dental clinic',
       disciplines: ['Web design', '4 languages (KO/EN/JA/ZH)', 'Naver & Google SEO'],
+    },
+    {
+      name: 'EndoPia',
+      url: 'https://endopiaglobal.com/',
+      image: '/portfolio/endopia.jpg',
+      year: '2026',
+      location: 'United States',
+      industry: 'Medical device',
+      disciplines: ['Web design', 'Product storytelling', 'SEO'],
     },
     {
       name: 'TJ Flowers',

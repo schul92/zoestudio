@@ -8,7 +8,7 @@ type Device = {
 }
 
 const devices: Device[] = [
-  { name: 'EndoPia', src: '/portfolio/endopia.jpg', industry: { en: 'U.S. launch · Medical device', ko: '미국 런칭 · 의료기기' } },
+  { name: 'Seoul Choice Dental', src: '/portfolio/seoul-choice-dental-live.jpg', industry: { en: 'Seoul · Dental clinic · New', ko: '서울 · 치과의원 · 신규 오픈' } },
   { name: 'TJ Flowers', src: '/portfolio/tj-flowers.jpg', industry: { en: 'Manhattan · Floral studio', ko: '맨하탄 · 플라워 스튜디오' } },
   { name: "Vito's Pizza", src: '/portfolio/vitos-pizza.jpg', industry: { en: 'Alpharetta · Italian restaurant', ko: '알파레타 · 이탈리안 레스토랑' } },
 ]

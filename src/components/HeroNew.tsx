@@ -46,6 +46,7 @@ const copy = {
 } as const
 
 const CLIENT_LOGOS: { name: string; url: string }[] = [
+  { name: 'Seoul Choice Dental', url: 'https://www.seoulchoicedent.com/' },
   { name: 'EndoPia', url: 'https://endopiaglobal.com/' },
   { name: 'TJ Flowers', url: 'https://tjflowersandevents.com/' },
   { name: "Vito's Pizza", url: 'https://www.vitospizzaandristorante.com/' },
