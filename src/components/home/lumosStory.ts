@@ -1,5 +1,5 @@
 // Story beats — the single source of truth for caption ranges. Screen swaps and camera moves are baked into
-// the pre-rendered frames (Blender, same timings): TJ Flowers → EndoPia → TJ Flowers (search) → Salt & Polish + phone.
+// the pre-rendered frames (Blender, same timings): TJ Flowers → Seoul Choice Dental → TJ Flowers (search) → Salt & Polish + phone.
 export const CAPTION_RANGES = [
   [0.3, 0.47],
   [0.47, 0.62],

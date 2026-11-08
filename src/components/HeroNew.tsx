@@ -20,7 +20,7 @@ const copy = {
     captions: [
       // Order and timing follow CAPTION_RANGES in components/home/lumosStory.ts.
       { label: 'TJ Flowers · NYC', value: '$10,000+', body: 'Revenue within 3 months of the Shopify rebuild.' },
-      { label: 'EndoPia · Medical device', value: 'FDA 510(k)-cleared', body: 'U.S. launch site built for surgeons and investors.' },
+      { label: 'Seoul Choice Dental · Seoul', value: '4 languages · 132 pages', body: 'Dental clinic site launched November 2026, set up for Naver and Google.' },
       { label: 'TJ Flowers · Search', value: '5× visibility', body: 'Search visibility in 6 weeks.' },
       { label: 'Every build', value: '<1.5s load', body: 'Fast on the phone your customers actually use.' },
     ],
@@ -38,7 +38,7 @@ const copy = {
     sceneLabel: '노트북이 열리며 Zoe Lumos가 만든 고객 웹사이트가 켜지고, 이어서 휴대폰이 들어옵니다.',
     captions: [
       { label: 'TJ Flowers · NYC', value: '$10,000+', body: 'Shopify 리빌드 후 3개월 안에 매출.' },
-      { label: 'EndoPia · 의료기기', value: 'FDA 510(k) 인증', body: '외과의사와 투자자를 위한 미국 런칭 사이트.' },
+      { label: '서울초이스치과의원 · 서울', value: '4개 국어 · 132페이지', body: '2026년 11월 오픈한 치과 홈페이지. 네이버·구글 검색 등록까지.' },
       { label: 'TJ Flowers · 검색', value: '검색 노출 5배', body: '6주 만에.' },
       { label: '모든 빌드', value: '1.5초 미만 로딩', body: '고객이 실제로 쓰는 휴대폰에서도 빠르게.' },
     ],

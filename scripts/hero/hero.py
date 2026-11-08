@@ -7,7 +7,7 @@ argv = sys.argv[sys.argv.index('--') + 1:]
 SET, OUT, COUNT, SAMPLES = argv[0], argv[1], int(argv[2]), int(argv[3])
 SCALE = int(argv[4]) if len(argv) > 4 else 100
 PLIST = [float(x) for x in argv[5].split(',')] if len(argv) > 5 else None
-REPO = '/Users/steve/.claude/jobs/a22560ff/tmp/zl-keynote/public/portfolio'
+REPO = os.environ.get('HERO_PORTFOLIO', os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'public', 'portfolio'))
 MOBILE = SET == 'mobile'
 
 def clamp(v, a=0.0, b=1.0): return min(b, max(a, v))
@@ -130,7 +130,7 @@ gl.new(lt.outputs['Value'], rmx.inputs[0]); gl.new(rmx.outputs['Value'], gb.inpu
 
 # screen: emission of the site image (cover-fit, top-anchored) + a thin glossy layer; lumos mixes from off-glass
 IMGS = {k: bpy.data.images.load(os.path.join(REPO, f)) for k, f in
-        (('tj', 'tj-flowers.jpg'), ('endo', 'endopia.jpg'), ('salt', 'salt-polish.jpg'), ('mochi', 'mochinut.jpg'))}
+        (('tj', 'tj-flowers.jpg'), ('seoul', 'seoul-choice-dental-live.jpg'), ('salt', 'salt-polish.jpg'), ('mochi', 'mochinut.jpg'))}
 for im in IMGS.values(): im.colorspace_settings.name = 'sRGB'
 scr, sn, sl = node_mat('screen')
 for nd in list(sn): sn.remove(nd)
@@ -376,7 +376,7 @@ def look(pos, target, up=Vector((0, 0, 1))):
     cam.matrix_world = Matrix.Translation(pos) @ m.to_4x4()
 
 # ── story (same beats as lumosStory.ts / lumosScene.ts) ─────────────
-BREAKS, ORDER, KEYS = (0.47, 0.62, 0.76), (0, 1, 0, 2), ('tj', 'endo', 'salt')
+BREAKS, ORDER, KEYS = (0.47, 0.62, 0.76), (0, 1, 0, 2), ('tj', 'seoul', 'salt')
 def pose(p):
     open_ = span(p, 0.02, 0.30)
     zoom_raw = span(p, 0.22, 0.40)
