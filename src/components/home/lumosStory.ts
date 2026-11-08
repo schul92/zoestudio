@@ -6,8 +6,10 @@ export const CAPTION_RANGES = [
   [0.62, 0.76],
   [0.76, 1.01],
 ] as const
-// Progress used for the static frame when the user prefers reduced motion.
-export const REDUCED_P = 0.42
+// Progress used for the static frame when the user prefers reduced motion: mid Seoul Choice Dental beat. Only that
+// beat's caption is shown in reduced motion (REDUCED_BEAT), so the still frame and its caption always agree.
+export const REDUCED_P = 0.55
+export const REDUCED_BEAT = CAPTION_RANGES.findIndex(([from, to]) => REDUCED_P >= from && REDUCED_P < to)
 // End of the opening segment (lid opens, screen lights, camera settles square-on). Its frames load first, in order.
 export const OPENING_END = 0.42
 // Frames up to here are decoded right after load and kept resident, so a fling through the lid opening never waits

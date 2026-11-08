@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import CaseScrollSync from './CaseScrollSync'
 
 type Step = { n: string; title: string; sub: string }
 
@@ -36,21 +37,31 @@ export default function CaseScroll({ locale = 'en' }: { locale?: string }) {
         <div className="mt-14 md:mt-20 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
           <div className="lg:col-span-7">
             <div className="lg:sticky lg:top-28">
-              <div className="rounded-[18px] overflow-hidden border border-white/10 bg-[#111]">
+              <div className="cs-frame rounded-[18px] overflow-hidden border border-white/10 bg-[#111]">
                 <div className="flex items-center gap-1.5 px-4 py-3 border-b border-white/10">
                   <span className="w-2.5 h-2.5 rounded-full bg-white/15" />
                   <span className="w-2.5 h-2.5 rounded-full bg-white/15" />
                   <span className="w-2.5 h-2.5 rounded-full bg-white/15" />
                   <span className="ml-3 truncate text-[12px] text-white/70">tjflowersandevents.com</span>
                 </div>
-                <div className="relative aspect-[16/10]">
+                <div className="relative aspect-[16/10] overflow-hidden">
                   <Image
                     src="/hero/tj-flowers-mockup.jpeg"
                     alt={isKo ? 'TJ Flowers Shopify 사이트' : 'TJ Flowers Shopify site'}
                     fill
                     sizes="(max-width: 1024px) 92vw, 720px"
-                    className="object-cover object-top"
+                    className="cs-shot object-cover object-top"
                   />
+                  <span aria-hidden className="cs-scan" />
+                  {/* The result, restated on the screen it belongs to (same figures as step 03). */}
+                  <div className="cs-badges absolute left-4 bottom-4 flex flex-wrap gap-2">
+                    <span className="rounded-full bg-black/80 border border-white/15 px-3 py-1.5 text-[13px] font-semibold text-white tabular-nums">
+                      {isKo ? '3개월 $10,000+' : '$10,000+ in 3 months'}
+                    </span>
+                    <span className="rounded-full bg-black/80 border border-white/15 px-3 py-1.5 text-[13px] font-semibold text-white">
+                      {isKo ? '검색 노출 5배' : '5× search visibility'}
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -58,7 +69,7 @@ export default function CaseScroll({ locale = 'en' }: { locale?: string }) {
 
           <ol className="lg:col-span-5 flex flex-col gap-16 lg:gap-[28vh] lg:py-[6vh]">
             {steps.map((s) => (
-              <li key={s.n} className="flex flex-col gap-3">
+              <li key={s.n} data-cs-step={Number(s.n)} className="flex flex-col gap-3">
                 <span className="text-[13px] font-medium text-white/70 tabular-nums">{s.n} / 03</span>
                 <h3 className="text-[26px] md:text-[34px] font-semibold tracking-[-0.035em] leading-[1.12] text-white text-balance">
                   {s.title}
@@ -84,6 +95,7 @@ export default function CaseScroll({ locale = 'en' }: { locale?: string }) {
           </ol>
         </div>
       </div>
+      <CaseScrollSync />
     </section>
   )
 }
