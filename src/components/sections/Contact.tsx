@@ -3,7 +3,7 @@
 import { useTranslation } from '@/hooks/useTranslation'
 import { useState, useEffect, useRef } from 'react'
 import { useServices } from '@/context/ServiceContext'
-import { trackFormSuccess, trackFormError, trackGAEvent, GA_EVENTS, trackEmailClick, trackButtonClick } from '@/utils/analytics'
+import { trackFormSuccess, trackFormError, trackGAEvent, GA_EVENTS, trackButtonClick } from '@/utils/analytics'
 import { submitLead, loadDraft, leadText } from '@/lib/leadCapture'
 import LeadFallback from '@/components/ui/LeadFallback'
 
@@ -564,7 +564,6 @@ export default function Contact({ locale = 'en' }: { locale?: string }) {
                     <div className="space-y-3">
                       <a
                         href="mailto:info@zoelumos.com"
-                        onClick={() => trackEmailClick('info@zoelumos.com')}
                         className="tap-44 flex items-center gap-3 text-gray-300 hover:text-sky-400 transition-colors"
                       >
                         <Mail className="w-5 h-5 flex-shrink-0" />
