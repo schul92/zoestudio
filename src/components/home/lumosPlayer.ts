@@ -1,5 +1,5 @@
 // The hero's scroll player: loaded on demand after first render, so none of it counts toward first-load JS.
-import { BAND_RISE, CAPTION_RANGES, COPY_FADE, OPENING_END, PHONE_MQ, PIN_END, REDUCED_P, type SeqMeta, type SeqSet, seqSrc } from './lumosStory'
+import { BAND_RISE, CAPTION_RANGES, COPY_FADE, OPENING_END, PHONE_MQ, PIN_END, REDUCED_BEAT, REDUCED_P, type SeqMeta, type SeqSet, seqSrc } from './lumosStory'
 
 const clamp = (v: number, a = 0, b = 1) => Math.min(b, Math.max(a, v))
 const lerp = (a: number, b: number, t: number) => a + (b - a) * t
@@ -275,8 +275,15 @@ export function mountLumos({ story, stage, canvas, copy, sub, cta, pill, hint, c
       fetchFrame(first).catch(() => { if (!disposed) onFallback() })
       const idle = (window as Window & { requestIdleCallback?: (cb: () => void) => number }).requestIdleCallback
       later = () => { idle ? idle(() => loadRest()) : setTimeout(loadRest, 300) }
-      if (document.readyState === 'complete') later()
-      else window.addEventListener('load', later, { once: true })
+      // Data-saver and 2G/3G connections skip the idle preload of the whole set (2.7–5.2 MB, whether or not the
+      // visitor scrolls): frames start on the first scroll into the story (onScroll → loadRest) and the nearest
+      // decoded frame covers the gap.
+      const conn = (navigator as Navigator & { connection?: { saveData?: boolean; effectiveType?: string } }).connection
+      const lean = !!conn && (conn.saveData === true || /2g|3g/.test(conn.effectiveType ?? ''))
+      if (!lean) {
+        if (document.readyState === 'complete') later()
+        else window.addEventListener('load', later, { once: true })
+      }
       if (target > 0.002) loadRest()
     }).catch(() => { if (!disposed) onFallback() })
 
@@ -431,7 +438,10 @@ export function mountLumos({ story, stage, canvas, copy, sub, cta, pill, hint, c
       }
       const hintOp = q2(1 - span(p, 0, 0.05))
       if (hintOp !== lastHint && hint) { lastHint = hintOp; hint.style.opacity = String(hintOp) }
-      const beat = CAPTION_RANGES.findIndex(([from, to]) => p >= from && p < to)
+      // Reduced motion shows one still frame, so only its own caption may appear (once the story has started).
+      const beat = reduce
+        ? (p >= CAPTION_RANGES[0][0] ? REDUCED_BEAT : -1)
+        : CAPTION_RANGES.findIndex(([from, to]) => p >= from && p < to)
       if (beat !== lastBeat) {
         lastBeat = beat
         caps.forEach((el, i) => {

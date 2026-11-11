@@ -183,7 +183,7 @@
   }
 
   /* Soft fade-up reveal. Held at its first frame until it scrolls into view (see [data-reveal] below). */
-  .reveal { animation: zl-rv .6s var(--ease-out) both; }
+  .reveal { animation: zl-rv .6s var(--ease-out) both; animation-delay: var(--rv-d, 0ms); }
 
   /* Gold mark */
   .gold-dot {
@@ -317,10 +317,13 @@ body.has-editorial-cursor [contenteditable="true"] { cursor: text; }
 .mask-rise {
   display: block;
   animation: zl-rise .7s var(--ease-out) both;
+  /* InView's `delay` prop arrives as --rv-d on the wrapper (inherited here). */
+  animation-delay: var(--rv-d, 0ms);
 }
 @keyframes zl-rise { from { transform: translateY(40%); opacity: 0; } to { transform: none; opacity: 1; } }
-/* Blocks and cards travel a fixed 14px — a percentage of a 400px card would be a 160px slide. */
-@keyframes zl-rv { from { transform: translate3d(0, 14px, 0); opacity: 0; } }
+/* Blocks and cards travel a fixed 22px — a percentage of a 400px card would be a 160px slide; 14px was too slight to
+   read on the dark ground. */
+@keyframes zl-rv { from { transform: translate3d(0, 22px, 0); opacity: 0; } }
 
 /* ── Scroll reveals ──────────────────────────────
    [data-reveal] (one block) and [data-reveal-group] (its children, 50ms apart) fade up 14px as they enter the
@@ -329,19 +332,16 @@ body.has-editorial-cursor [contenteditable="true"] { cursor: text; }
    IntersectionObserver exists and motion isn't reduced, after marking whatever is already on screen as in
    (data-in="now": shown without animating), so content is never parked invisible on first paint or without JS.
    State lives in data attributes React doesn't own, so a re-render can't reset it. */
+/* Group children are watched one by one (a 9-card grid used to wait for 10% of its whole height, so the first card
+   only appeared after ~420px of empty-looking scroll). Items that enter in the same observer batch get --rv-i 0,1,2…
+   from the scanner, so a row staggers as a row and a lone card arriving later never waits on its index. */
 html[data-rv] [data-reveal], html[data-rv] [data-reveal-group] > * {
-  animation: zl-rv .4s var(--ease-out) backwards;
-  animation-delay: min(calc(var(--rv-i, 0) * 50ms), 300ms);
+  animation: zl-rv .7s var(--ease-out) backwards;
+  animation-delay: min(calc(var(--rv-i, 0) * 70ms), 350ms);
 }
-[data-reveal-group] > :nth-child(2) { --rv-i: 1; }
-[data-reveal-group] > :nth-child(3) { --rv-i: 2; }
-[data-reveal-group] > :nth-child(4) { --rv-i: 3; }
-[data-reveal-group] > :nth-child(5) { --rv-i: 4; }
-[data-reveal-group] > :nth-child(6) { --rv-i: 5; }
-[data-reveal-group] > :nth-child(n+7) { --rv-i: 6; }
-html[data-rv] [data-reveal]:not([data-in]), html[data-rv] [data-reveal-group]:not([data-in]) > *,
+html[data-rv] [data-reveal]:not([data-in]), html[data-rv] [data-reveal-group] > :not([data-in]),
 html[data-rv] .reveal:not([data-in]), html[data-rv] .mask-rise:not([data-in]) { animation-play-state: paused; }
-html[data-rv] [data-reveal][data-in="now"], html[data-rv] [data-reveal-group][data-in="now"] > * { animation: none; }
+html[data-rv] [data-reveal][data-in="now"], html[data-rv] [data-reveal-group] > [data-in="now"] { animation: none; }
 
 /* Fraunces optical-axis play on italic hover */
 /* Fraunces-era hover axis play. The site is Geist now (no SOFT/WONK axes); the letter-spacing change only
@@ -362,11 +362,13 @@ html[data-rv] [data-reveal][data-in="now"], html[data-rv] [data-reveal-group][da
   background: var(--hairline);
   transform-origin: left;
 }
+/* Draws across when it scrolls in (same [data-in] contract as reveals; already on screen at load = drawn). */
+html[data-rv] .hair-draw:not([data-in])::after { transform: scaleX(0); }
+html[data-rv] .hair-draw[data-in=""]::after { transition: transform 1s var(--ease-out) .1s; }
 
-/* Marquee pause + reverse on hover */
+/* Marquee pauses on hover so a name can actually be read (it used to only slow down). */
 .marq-wrap:hover .marq {
-  animation-play-state: running;
-  animation-duration: 140s;
+  animation-play-state: paused;
 }
 .marq-wrap[data-dir="reverse"] .marq {
   animation-direction: reverse;
@@ -532,7 +534,7 @@ input, textarea, select, button {
   opacity: 1; transform: translate3d(-50%, 0, 0); filter: blur(0);
   transition: opacity .3s var(--ease-out) .04s, transform .45s var(--ease-out) .04s, filter .3s var(--ease-out) .04s;
 }
-.lh-cap small { display: block; margin-bottom: 10px; font-size: 12px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: #2997FF; }
+.lh-cap small { display: block; margin-bottom: 10px; font-size: 12px; font-weight: 600; letter-spacing: var(--ovl-track); text-transform: uppercase; color: #2997FF; }
 .lh-cap b { display: inline; font-size: clamp(20px, 2.2vw, 30px); letter-spacing: -.035em; line-height: 1.15; margin-right: .25em; }
 .lh-cap p { display: inline; color: #A1A1A6; font-size: clamp(20px, 2.2vw, 30px); font-weight: 600; letter-spacing: -.025em; line-height: 1.2; }
 .lh-hint { position: absolute; left: 50%; bottom: 8px; transform: translateX(-50%); font-size: 11px; color: #86868B; letter-spacing: .16em; text-transform: uppercase; }
@@ -593,8 +595,8 @@ html[data-nav-tone="dark"] .kn-header:not(.kn-header-open) button .bg-ink { back
 .space .kn-header .bg-ink.bg-ink.bg-ink { background: #F5F5F7; color: #0B0B0D; }
 .space .kn-header { background: rgba(0,0,0,.72); border-color: rgba(255,255,255,.08); }
 /* Form fields on dark */
-.space input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not(.keep-light *),
-.space textarea:not(.keep-light *), .space select:not(.keep-light *) {
+.space input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):not(.keep-light *):not(.zl-field),
+.space textarea:not(.keep-light *):not(.zl-field), .space select:not(.keep-light *) {
   background-color: #0A0A0C; color: #F5F5F7; border-color: rgba(255,255,255,.14);
 }
 .space .field { background: transparent; }
@@ -689,7 +691,8 @@ html[data-nav-tone="dark"] .kn-header:not(.kn-header-open) button .bg-ink { back
 }
 .zl-foot-label { font-size: 15px; color: #8E8E93; }
 .zl-foot-link { display: inline-block; font-size: 17px; line-height: 1.35; color: #F5F5F7; padding: 7px 0; transition: color .2s; }
-.zl-foot-link:hover { color: #A1A1A6; }
+/* Hover emphasises, as in the header nav (it used to dim). */
+.zl-foot-link:hover { color: #FFFFFF; text-decoration: underline; text-decoration-color: rgba(255,255,255,.35); text-underline-offset: 5px; }
 .zl-wordmark {
   font-weight: 700; letter-spacing: -.06em; line-height: .9; font-size: clamp(3.5rem, 17vw, 13rem);
   background: linear-gradient(180deg, #F5F5F7 0%, rgba(245,245,247,.55) 45%, rgba(245,245,247,.06) 100%);
@@ -726,10 +729,11 @@ html[data-nav-tone="dark"] .kn-header:not(.kn-header-open) button .bg-ink { back
 .space .border-gray-200:not(.keep-light, .keep-light *) { border-color:rgba(255,255,255,.1) }
 .space .border-gray-300:not(.keep-light, .keep-light *) { border-color:rgba(255,255,255,.16) }
 .space .border-black:not(.keep-light, .keep-light *) { border-color:rgba(255,255,255,.16) }
-.space .border-ink:not(.keep-light, .keep-light *),
+.space .border-ink:not(.keep-light, .keep-light *) { border-color:rgba(255,255,255,.22) }
+/* Hover/focus must read stronger than rest (a .22 hover under a border-ink/30 rest used to make underlines fade). */
 .space .hover\:border-ink:not(.keep-light, .keep-light *):hover,
 .space .group:hover .group-hover\:border-ink:not(.keep-light, .keep-light *),
-.space .focus\:border-ink:not(.keep-light, .keep-light *):focus { border-color:rgba(255,255,255,.22) }
+.space .focus\:border-ink:not(.keep-light, .keep-light *):focus { border-color:rgba(255,255,255,.75) }
 .space .text-gold:not(.keep-light, .keep-light *),
 .space .hover\:text-gold:not(.keep-light, .keep-light *):hover,
 .space .group:hover .group-hover\:text-gold:not(.keep-light, .keep-light *) { color:#2997FF }
@@ -959,7 +963,10 @@ html.space[lang="ko"] body { word-break: keep-all; }
 /* Sticky mobile bar: slides like an iOS sheet; leaving is faster than arriving. */
 .zl-bar { transition: transform .22s var(--ease-out); }
 .zl-bar[data-show] { transition: transform .45s var(--ease-drawer); }
-.zl-press { transition: transform .16s var(--ease-out), opacity .16s ease; }
+.zl-press { transition: transform .16s var(--ease-out), opacity .16s ease, filter .2s var(--ease-out), box-shadow .2s var(--ease-out); }
+@media (hover: hover) and (pointer: fine) {
+  .zl-press:hover { filter: brightness(1.07); box-shadow: 0 12px 28px -16px rgba(0,0,0,.7); }
+}
 .zl-press:active { transform: scale(.97); }
 
 /* Chat sheet enters from where it lives: up from the bottom on phones, out of the launcher corner on desktop. */
@@ -1080,3 +1087,78 @@ html[data-rv] [data-reveal]:not([data-in]) .ent-dash,
 html[data-rv] [data-reveal]:not([data-in]) .ent-draw-x,
 html[data-rv] [data-reveal]:not([data-in]) .ent-draw-y,
 html[data-rv] [data-reveal]:not([data-in]) .ent-pkt { animation-play-state: paused; }
+
+/* ── Interaction feedback on the dark ground (2026-11) ─────────────────────────────────────────────────────────
+   Shadows alone vanish on #000, so interactive surfaces answer hover with a lighter border, a one-step lighter fill
+   and a top highlight, and every pressable acknowledges the press. Static info cards stay still, so a hover lift
+   keeps meaning "this is clickable". */
+
+/* Header "Free audit" pill: the forced light fill (.bg-ink ×3 above) was also swallowing its hover. */
+.space .kn-header a.bg-ink.bg-ink.bg-ink { transition: background-color .2s var(--ease-out), box-shadow .2s var(--ease-out), transform .16s var(--ease-out); }
+.space .kn-header a.bg-ink.bg-ink.bg-ink:hover { background: #FFFFFF; box-shadow: 0 0 0 4px rgba(255,255,255,.14); }
+.space .kn-header a.bg-ink.bg-ink.bg-ink:active { transform: scale(.96); }
+
+/* Cards that are, or contain, links. */
+.space a.kn-card, .space .kn-card:has(a) {
+  transition: border-color .3s var(--ease-out), background-color .3s var(--ease-out), box-shadow .3s var(--ease-out), transform .3s var(--ease-out);
+}
+.space a.kn-card:hover, .space .kn-card:has(a:hover) {
+  border-color: rgba(255,255,255,.2);
+  background-color: #111114;
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.07), 0 28px 60px -34px rgba(41,151,255,.35);
+}
+.space a.kn-card:active { transform: scale(.985); }
+
+/* Text-style buttons register a press too. */
+.btn-ghost, .lh-link { transition: opacity .15s var(--ease-out), color .2s var(--ease-out); }
+.btn-ghost:active, .lh-link:active { opacity: .6; }
+
+/* Form fields on theme tokens (inline focus handlers used to reset the border to black on blur). */
+.zl-field {
+  width: 100%;
+  background: var(--ivory);
+  border: 1px solid var(--line);
+  color: var(--ink);
+  transition: border-color .2s var(--ease-out), background-color .2s var(--ease-out), box-shadow .2s var(--ease-out);
+}
+.zl-field::placeholder { color: var(--ash); opacity: 1; }
+.zl-field:hover { border-color: rgb(var(--c-ink) / .32); }
+.zl-field:focus { outline: none; border-color: var(--link); background: var(--paper); box-shadow: 0 0 0 4px rgb(41 151 255 / .2); }
+.zl-field[aria-invalid="true"] { border-color: #FF6961; }
+.zl-field[aria-invalid="true"]:focus { box-shadow: 0 0 0 4px rgb(255 105 97 / .22); }
+.zl-error { color: #FF8A80; }
+
+/* Choice chips (contact scope, estimator): selected is inverted ink; hover and press read on either ground. */
+.zl-chip {
+  display: inline-flex; align-items: center; gap: .4rem;
+  min-height: 44px; padding: 0 1.1rem; border-radius: 999px;
+  font-size: 14px; line-height: 1.2;
+  border: 1px solid var(--line); color: var(--graphite); background: transparent;
+  transition: background-color .2s var(--ease-out), border-color .2s var(--ease-out), color .2s var(--ease-out), transform .12s var(--ease-out);
+}
+.zl-chip:hover { border-color: rgb(var(--c-ink) / .5); color: var(--ink); }
+.zl-chip:active { transform: scale(.96); }
+.zl-chip[aria-pressed="true"] { background: var(--ink); border-color: var(--ink); color: var(--ivory); }
+
+/* CaseScroll: the sticky screenshot follows the step being read — faded and out of focus for "invisible", a scan
+   sweeps it into focus for "the rebuild", full colour with the result chips for "the result". Desktop only (the
+   frame is only sticky there); without JS, below lg, or before the first step it stays in its finished state. */
+@media (min-width: 1024px) {
+  .cs-frame .cs-shot { transition: filter .9s var(--ease-out), opacity .9s var(--ease-out), transform 1.2s var(--ease-out); }
+  .cs-frame[data-step="1"] .cs-shot { filter: grayscale(1) blur(3px); opacity: .5; transform: scale(1.03); }
+  .cs-frame[data-step="2"] .cs-shot { filter: grayscale(.15); opacity: .92; transform: scale(1.015); }
+  .cs-scan {
+    position: absolute; inset: 0 0 auto 0; height: 30%; pointer-events: none; opacity: 0;
+    background: linear-gradient(180deg, rgba(41,151,255,0) 0%, rgba(41,151,255,.16) 82%, rgba(41,151,255,.55) 100%);
+  }
+  .cs-frame[data-step="2"] .cs-scan { animation: cs-scan 1.6s var(--ease-in-out) .15s 1 both; }
+  .cs-frame .cs-badges > * { transition: opacity .5s var(--ease-out), transform .6s var(--ease-out); }
+  .cs-frame[data-step="1"] .cs-badges > *, .cs-frame[data-step="2"] .cs-badges > * { opacity: 0; transform: translate3d(0, 10px, 0); }
+  .cs-frame[data-step="3"] .cs-badges > :nth-child(2) { transition-delay: .12s; }
+}
+@keyframes cs-scan { 0% { opacity: 0; transform: translateY(-100%); } 15% { opacity: 1; } 100% { opacity: 0; transform: translateY(340%); } }
+
+/* Overline tracking: wide caps tracking reads as a gap between Hangul syllables ("기 본"), so Korean pages get a
+   near-normal value. Used by labels that set letter-spacing: var(--ovl-track). */
+:root { --ovl-track: .18em; }
+html:lang(ko) { --ovl-track: .04em; }
