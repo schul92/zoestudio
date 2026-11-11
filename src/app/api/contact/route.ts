@@ -1,5 +1,5 @@
 import { NextResponse } from 'next/server'
-import nodemailer from 'nodemailer'
+import { createMailer, mailFrom } from '@/lib/mailer'
 import { attributionRows, sanitizeAttribution } from '@/lib/attribution'
 
 const escapeHtml = (s: string) =>
@@ -113,8 +113,9 @@ This email was sent from the ZOE LUMOS website contact form.
       `
     }
 
-    // Check if email credentials are configured
-    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+    // SMTP server and credentials come from src/lib/mailer.ts
+    const transporter = createMailer()
+    if (!transporter) {
       if (process.env.NODE_ENV !== 'production') {
         console.log('Email credentials not configured. Email data:', emailData)
         return NextResponse.json(
@@ -127,17 +128,6 @@ This email was sent from the ZOE LUMOS website contact form.
       return mailUnavailable()
     }
 
-    // Create transporter with Gmail service - with better configuration
-    const transporter = nodemailer.createTransport({
-      host: 'smtp.gmail.com',
-      port: 587,
-      secure: false, // true for 465, false for other ports
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS
-      }
-    })
-
     // Verify connection configuration
     try {
       await transporter.verify()
@@ -149,7 +139,7 @@ This email was sent from the ZOE LUMOS website contact form.
     // Send email to admin
     try {
       await transporter.sendMail({
-        from: `"ZOE LUMOS Website" <${process.env.EMAIL_USER}>`,
+        from: mailFrom('ZOE LUMOS Website'),
         to: emailData.to,
         replyTo: email, // Reply to the sender's email
         subject: emailData.subject,
@@ -164,7 +154,7 @@ This email was sent from the ZOE LUMOS website contact form.
     // Send confirmation email to user
     try {
       await transporter.sendMail({
-        from: `"ZOE LUMOS" <${process.env.EMAIL_USER}>`,
+        from: mailFrom('ZOE LUMOS'),
         to: email,
         subject: 'Thank you for contacting ZOE LUMOS',
         html: `

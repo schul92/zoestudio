@@ -1,5 +1,5 @@
 import 'server-only'
-import nodemailer from 'nodemailer'
+import { createMailer, mailFrom } from '@/lib/mailer'
 import { fmtUSD } from './services'
 
 /**
@@ -8,8 +8,8 @@ import { fmtUSD } from './services'
  * Stripe only emails receipts in live mode, and only when "Customer emails" is
  * enabled in the dashboard. We send our own bilingual confirmation regardless,
  * so the client always hears from ZOE LUMOS (not just from Stripe), and so the
- * owner is copied on money events. Reuses the same Gmail SMTP credentials the
- * contact form uses.
+ * owner is copied on money events. Reuses the contact form's SMTP setup
+ * (src/lib/mailer.ts).
  *
  * Never throws: a failed email must not make Stripe retry a webhook it already
  * processed successfully.
@@ -21,27 +21,15 @@ const KAKAO_URL = 'http://pf.kakao.com/_xhxdxmlX/chat'
 const escapeHtml = (s: string) =>
   s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
 
-function transport() {
-  const user = process.env.EMAIL_USER
-  const pass = process.env.EMAIL_PASS
-  if (!user || !pass) return null
-  return nodemailer.createTransport({
-    host: 'smtp.gmail.com',
-    port: 587,
-    secure: false,
-    auth: { user, pass },
-  })
-}
-
 async function send(opts: { to: string; subject: string; html: string; text: string }) {
-  const t = transport()
+  const t = createMailer()
   if (!t) {
-    console.warn('[billing.email] EMAIL_USER/EMAIL_PASS not set — skipping', opts.subject)
+    console.warn('[billing.email] mail not configured — skipping', opts.subject)
     return
   }
   try {
     await t.sendMail({
-      from: `"ZOE LUMOS" <${process.env.EMAIL_USER}>`,
+      from: mailFrom('ZOE LUMOS'),
       ...opts,
     })
   } catch (err) {

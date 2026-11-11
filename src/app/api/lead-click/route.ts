@@ -1,4 +1,4 @@
-import nodemailer from 'nodemailer'
+import { createMailer, mailFrom } from '@/lib/mailer'
 import { attributionRows, classify, sanitizeAttribution } from '@/lib/attribution'
 
 export const runtime = 'nodejs'
@@ -64,7 +64,8 @@ export async function POST(request: Request) {
     ]
     const subject = `[클릭] ${kindLabel} · ${source}${attribution.page ? ` · ${attribution.page}` : ''}`
 
-    if (!process.env.EMAIL_USER || !process.env.EMAIL_PASS) {
+    const transporter = createMailer()
+    if (!transporter) {
       if (process.env.NODE_ENV !== 'production') console.log('lead-click (mail not configured):', subject, rows)
       return done()
     }
@@ -73,14 +74,8 @@ export async function POST(request: Request) {
       return done()
     }
 
-    const transporter = nodemailer.createTransport({
-      host: 'smtp.gmail.com',
-      port: 587,
-      secure: false,
-      auth: { user: process.env.EMAIL_USER, pass: process.env.EMAIL_PASS },
-    })
     await transporter.sendMail({
-      from: `"ZOE LUMOS Website" <${process.env.EMAIL_USER}>`,
+      from: mailFrom('ZOE LUMOS Website'),
       to: OWNER_INBOXES,
       subject,
       text: `${rows.map(([k, v]) => `${k}: ${v}`).join('\n')}\n\n방문자가 ${kindLabel} 버튼을 눌렀습니다. 곧 들어오는 ${kindLabel} 문의가 이 방문자일 가능성이 높습니다.\n`,
