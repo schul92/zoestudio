@@ -44,6 +44,194 @@ export interface BlogPost {
 
 const allBlogPosts: BlogPost[] = [
   // ─────────────────────────────────────────────────────────────────
+  // 2026-11-13 — TopSkin Clinic Med Spa launch case study (med spa in Duluth, Georgia).
+  // EN-first: written for med spa and clinic owners in the US. Every number was checked on the
+  // live site (sitemap, treatment pages, device list, before/after cases, Lighthouse) on launch week.
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'med-spa-website-case-study-duluth-ga',
+    date: '2026-11-13',
+    updatedDate: '2026-11-13',
+    readTime: 7,
+    category: { en: 'Case Study', ko: '케이스 스터디' },
+    title: {
+      en: 'Med Spa Website Case Study: TopSkin Clinic in Duluth, GA (English, Korean, Vietnamese)',
+      ko: '메드스파 홈페이지 제작 사례: 미국 조지아 둘루스 TopSkin Clinic (영어·한국어·베트남어)',
+    },
+    metaDescription: {
+      en: 'How we rebuilt the website of TopSkin Clinic Med Spa in Duluth, Georgia: 36 pages in English, Korean and Vietnamese, treatments by skin concern, real before-and-after photos, a 3D map, booking requests to the clinic inbox, and a domain move that kept every old URL working.',
+      ko: '미국 조지아주 둘루스 TopSkin Clinic Med Spa 홈페이지 리뉴얼 사례. 영어·한국어·베트남어 36페이지, 피부 고민별 시술 안내, 실제 환자 전후 사진, 3D 지도, 클리닉 메일로 바로 가는 예약 요청, 기존 주소를 그대로 살린 도메인 이전까지 정리했습니다.',
+    },
+    author: 'Steve Song',
+    image: '/blog/topskin-clinic/og.jpg',
+    schemaExtras: {
+      // The clinic this case study is about — same @id as the clinic's own MedicalClinic schema.
+      about: {
+        '@type': ['MedicalClinic', 'HealthAndBeautyBusiness'],
+        '@id': 'https://www.topskinclinicmedspa.com/#clinic',
+        name: 'TopSkin Clinic Med Spa',
+        url: 'https://www.topskinclinicmedspa.com/',
+        telephone: '+16786650622',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: '3796 Satellite Blvd, Suite 200',
+          addressLocality: 'Duluth',
+          addressRegion: 'GA',
+          postalCode: '30096',
+          addressCountry: 'US',
+        },
+        geo: { '@type': 'GeoCoordinates', latitude: 33.954925, longitude: -84.139733 },
+      },
+      contentLocation: {
+        '@type': 'Place',
+        name: 'Duluth, Georgia (Gwinnett County)',
+        address: { '@type': 'PostalAddress', addressLocality: 'Duluth', addressRegion: 'GA', addressCountry: 'US' },
+      },
+    },
+    faq: [
+      {
+        q: {
+          en: 'How long does a med spa website take?',
+          ko: '메드스파 홈페이지 제작 기간은 얼마나 걸리나요?',
+        },
+        a: {
+          en: 'Most single-language med spa sites take two to three weeks from the approved design to launch. Each extra language adds time for translation and review. We show design options first, then build every page in the direction the clinic picks.',
+          ko: '한 가지 언어의 메드스파 홈페이지는 시안 확정부터 오픈까지 보통 2~3주가 걸립니다. 언어가 하나 늘 때마다 번역과 검수 시간이 더 듭니다. 먼저 시안을 보여 드리고, 클리닉이 고른 방향으로 전체 페이지를 만듭니다.',
+        },
+      },
+      {
+        q: {
+          en: 'Can we use before-and-after photos from our Instagram?',
+          ko: '인스타그램에 올린 전후 사진을 홈페이지에 써도 되나요?',
+        },
+        a: {
+          en: 'Yes, if they are your own patients and you already publish them. We keep them as published, apply the same processing to both photos of a pair, and never use AI-generated or edited results. Model photos elsewhere on the site are labeled as models.',
+          ko: '클리닉 환자의 사진이고 이미 공개해 온 사진이라면 가능합니다. 올린 그대로 쓰되 한 쌍의 전후 사진에는 똑같은 보정만 적용하고, AI로 만들거나 고친 결과 사진은 쓰지 않습니다. 그 밖의 모델 사진에는 모델이라고 표시합니다.',
+        },
+      },
+      {
+        q: {
+          en: 'Will moving to a new website hurt our Google rankings?',
+          ko: '홈페이지를 새로 옮기면 구글 검색 순위가 떨어지나요?',
+        },
+        a: {
+          en: 'Not if every old page address redirects to its new page and the new site is verified in Google Search Console with a sitemap. Some movement in the first few weeks is normal while Google recrawls the site.',
+          ko: '기존 페이지 주소를 모두 새 페이지로 연결(301 리디렉션)하고, 새 사이트를 구글 서치 콘솔에 사이트맵과 함께 등록하면 크게 떨어지지 않습니다. 구글이 사이트를 다시 읽는 처음 몇 주 동안 순위가 조금 움직이는 것은 정상입니다.',
+        },
+      },
+      {
+        q: {
+          en: 'Do you build Korean and Vietnamese versions of a clinic website?',
+          ko: '병원 홈페이지를 한국어·베트남어로도 만들 수 있나요?',
+        },
+        a: {
+          en: 'Yes. Every page is built in each language with the same structure. Our team writes English and Korean; for Vietnamese and other languages we recommend a native-speaker review before or soon after launch.',
+          ko: '네. 모든 페이지를 언어마다 같은 구조로 만듭니다. 영어와 한국어는 저희 팀이 직접 쓰고, 베트남어 등 다른 언어는 오픈 전후로 원어민 검수를 권합니다.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: 'We built a new website for TopSkin Clinic Med Spa, a K-beauty med spa on Satellite Boulevard in Duluth, Georgia, and moved the clinic’s domain to it on November 12, 2026. The site runs in English, Korean and Vietnamese, sorts treatments by skin concern, shows the clinic’s own before-and-after photos, and sends booking requests straight to the clinic’s inbox. Here is what we built and why.' },
+        { type: 'screenshot', content: '/blog/topskin-clinic/home.jpg', items: ['The new TopSkin home screen (topskinclinicmedspa.com): book or call from the first screen'] },
+        { type: 'stats', content: 'The new site at a glance', items: [
+          '3|languages|English · Korean · Vietnamese',
+          '36|pages|12 per language',
+          '6|treatment pages|one per skin concern',
+          '9|before & after cases|the clinic’s own patients',
+        ] },
+        { type: 'h2', content: 'Start from what the clinic already says' },
+        { type: 'p', content: 'The clinic’s old site, built on a website builder, already described its treatments, devices, team and frequently asked questions. We treated that text as the source. Every fact on the new site, from device names to opening hours, comes from the old site or from the clinic directly, and nothing was added to fill space. The old site named ten devices, so the new technology page explains those ten and what each one is used for.' },
+        { type: 'h2', content: 'Treatments by skin concern, not by machine' },
+        { type: 'p', content: 'Patients rarely search for a device name. They search for “melasma treatment” or “acne scar treatment near me.” So the six treatment pages follow concerns: Pigmentation & Tone, Glow & Renewal, Pores & Acne Scars, Lifting & Firming, Redness & Vessels, and Injectables & Natural Rejuvenation. Each page covers where the concern shows on the face, which devices the clinic uses for it, how a series of sessions goes, and the questions people ask at a consultation.' },
+        { type: 'screenshot', content: '/blog/topskin-clinic/treatment.jpg', items: ['The Pores & Acne Scars page: the concern, the devices and the steps on one page'] },
+        { type: 'p', content: 'A 3D cross-section of the skin shows which layer each device reaches, using the depths the clinic’s own descriptions give. On phones, a concern picker replaces the wide device-by-concern table so nothing needs sideways scrolling.' },
+        { type: 'h2', content: 'Real before-and-after photos, clearly labeled' },
+        { type: 'p', content: 'Med spa visitors look for proof first. The Before & After page uses only the clinic’s own patient photos, nine cases grouped by concern, each with a slider you drag to compare. Both photos in a pair get exactly the same processing, so the difference you see is the treatment, not the editing. Every other photo on the site is marked as a model, and the footer says that individual results vary.' },
+        { type: 'screenshot', content: '/blog/topskin-clinic/results.jpg', items: ['Before & After: the clinic’s own patients, drag the line to compare'] },
+        { type: 'tip', content: 'Skip AI-generated “results.” They are easy to spot, they mislead patients, and in the US they invite trouble under FTC advertising rules. A few real cases with matching light and angles do more than a gallery of perfect fakes.' },
+        { type: 'h2', content: 'One tap to call, text, find or book' },
+        { type: 'p', content: 'Most visits to a med spa site happen on a phone. A small dock at the bottom of every page holds Call, Text, Map and Book. It slides out of the way when the page already shows those buttons and while the visitor is typing. The booking form sends the request to the clinic’s inbox, and a visitor can also send the same request as a text message instead.' },
+        { type: 'screenshot', content: '/blog/topskin-clinic/mobile.jpg', items: ['On phones: English and Korean home screens, and the before-and-after page with the Call · Text · Map · Book dock'] },
+        { type: 'h2', content: 'A 3D map to Suite 200' },
+        { type: 'p', content: 'The Visit page has a 3D map of the blocks around the clinic, drawn from map tiles we host ourselves rather than a Google Maps embed, so it carries no third-party tracking. It marks the building and Suite 200, with the week’s hours beside it. On phones the map loads only when the visitor taps it, which keeps scrolling smooth.' },
+        { type: 'screenshot', content: '/blog/topskin-clinic/visit.jpg', items: ['The Visit page: hours, call and request buttons, and the 3D map to the suite'] },
+        { type: 'h2', content: 'English, Korean and Vietnamese' },
+        { type: 'p', content: 'Every page exists in all three languages with the same structure, so a patient reading Korean or Vietnamese finds the same information in the same place. The language menu sits in the header, and the booking form works in each language.' },
+        { type: 'screenshot', content: '/blog/topskin-clinic/vietnamese.jpg', items: ['The Vietnamese home screen: all three languages share one layout'] },
+        { type: 'h2', content: 'Moving the domain without losing search history' },
+        { type: 'ul', content: 'Shipped with the launch', items: [
+          'Every old page address redirects (301) to its new page, so existing links, bookmarks and search results keep working',
+          'MedicalClinic structured data with the address, map coordinates, opening hours and phone number',
+          'hreflang tags that tie together the English, Korean and Vietnamese version of each page',
+          'A 36-URL sitemap verified in Google Search Console, with the new pages also announced to Bing through IndexNow',
+          'Google Analytics 4 with calls and booking requests counted as key events, plus a privacy notice in all three languages',
+          'Lighthouse on a mobile profile, home page: 100 for accessibility, best practices and SEO, and 90+ for performance',
+        ] },
+        { type: 'p', content: 'Rankings take a few weeks to settle after a domain moves. We will update this post as calls and booking requests come in.' },
+        { type: 'h2', content: 'Checklist before you rebuild a med spa website' },
+        { type: 'ul', content: 'Check these on your current site first', items: [
+          'Are your before-and-after photos your own patients, with matching light and angles? Is every model photo labeled?',
+          'Can a visitor call, text or book in one tap on a phone?',
+          'Does each skin concern have its own page, or is everything on one services page?',
+          'When you change website platforms, will every old URL redirect to its new page?',
+          'Is the site verified in Google Search Console, and are calls and booking requests tracked?',
+          'If many of your patients read Korean or Vietnamese, can they read the whole site in their language?',
+        ] },
+        { type: 'cta', content: 'Want a second look at your med spa or clinic website? Zoe Lumos builds clinic sites in English and Korean for practices in the US and Korea. It starts with a free review of your current site.' },
+      ],
+      ko: [
+        { type: 'intro', content: '미국 조지아주 둘루스 새틀라이트 대로에 있는 K-뷰티 메드스파, TopSkin Clinic Med Spa의 홈페이지를 새로 만들고 2026년 11월 12일에 도메인을 옮겨 오픈했습니다. 영어·한국어·베트남어로 운영되고, 시술을 피부 고민별로 나눴으며, 클리닉 환자의 실제 전후 사진을 보여 주고, 예약 요청은 클리닉 메일로 바로 갑니다. 미국에서 메드스파나 피부과 홈페이지를 고민하는 원장님께 참고가 되도록 무엇을 왜 그렇게 만들었는지 정리합니다.' },
+        { type: 'screenshot', content: '/blog/topskin-clinic/home.jpg', items: ['TopSkin 새 홈페이지 첫 화면 (topskinclinicmedspa.com) — 첫 화면에서 바로 예약하거나 전화할 수 있습니다'] },
+        { type: 'stats', content: '새 홈페이지 한눈에 보기', items: [
+          '3개|언어|영어 · 한국어 · 베트남어',
+          '36|페이지|언어마다 12페이지',
+          '6개|시술 안내|피부 고민마다 한 페이지',
+          '9건|전후 사진|클리닉 환자의 실제 사례',
+        ] },
+        { type: 'h2', content: '클리닉이 이미 쓴 내용에서 시작' },
+        { type: 'p', content: '웹사이트 빌더로 만든 기존 홈페이지에는 시술, 장비, 의료진, 자주 묻는 질문이 이미 적혀 있었습니다. 저희는 그 내용을 원본으로 삼았습니다. 장비 이름부터 진료시간까지 새 사이트의 모든 정보는 기존 사이트나 클리닉에서 직접 받은 내용이고, 빈자리를 채우려고 지어낸 문구는 없습니다. 기존 사이트에 장비가 10종 있었기 때문에 새 장비 소개 페이지도 그 10종과 각 장비의 용도를 설명합니다.' },
+        { type: 'h2', content: '장비가 아니라 피부 고민별로' },
+        { type: 'p', content: '환자는 장비 이름보다 "기미 치료", "여드름 흉터 치료"처럼 고민으로 검색합니다. 그래서 시술 페이지 6개를 고민별로 나눴습니다: 색소·톤, 광채·재생, 모공·여드름 흉터, 리프팅·탄력, 붉은기·혈관, 주사 시술·자연스러운 리쥬비네이션. 페이지마다 얼굴 어디에 나타나는지, 클리닉이 어떤 장비를 쓰는지, 시술을 몇 번에 걸쳐 어떻게 받는지, 상담 때 많이 묻는 질문을 같은 순서로 담았습니다.' },
+        { type: 'screenshot', content: '/blog/topskin-clinic/treatment.jpg', items: ['모공·여드름 흉터 페이지 — 고민, 장비, 시술 과정을 한 페이지에'] },
+        { type: 'p', content: '피부 단면을 3D로 보여 주는 그림에서 장비마다 어느 층까지 닿는지 표시했고, 깊이는 클리닉이 쓴 설명을 그대로 따랐습니다. 휴대폰에서는 넓은 장비×고민 표 대신 고민을 고르는 화면이 나와 옆으로 스크롤할 일이 없습니다.' },
+        { type: 'h2', content: '실제 환자 전후 사진, 표시는 분명하게' },
+        { type: 'p', content: '메드스파 홈페이지 방문자가 가장 먼저 찾는 것은 결과입니다. 전후 사진 페이지에는 클리닉 환자의 실제 사진만 썼고, 9건을 고민별로 묶어 가운데 선을 끌어 비교하게 했습니다. 한 쌍의 전후 사진에는 똑같은 보정만 적용해, 보이는 차이가 보정이 아니라 시술의 차이가 되도록 했습니다. 그 밖의 사진에는 모델이라고 표시하고, 하단에는 결과가 사람마다 다르다는 안내를 넣었습니다.' },
+        { type: 'screenshot', content: '/blog/topskin-clinic/results.jpg', items: ['전후 사진 페이지 — 클리닉 환자의 실제 사례, 선을 끌어 비교합니다'] },
+        { type: 'tip', content: 'AI로 만든 "결과 사진"은 쓰지 마세요. 금방 티가 나고 환자를 오해하게 만들며, 미국에서는 FTC 광고 규정 문제로 이어질 수 있습니다. 조명과 각도가 맞는 실제 사례 몇 건이 완벽해 보이는 가짜 여러 장보다 낫습니다.' },
+        { type: 'h2', content: '전화·문자·지도·예약을 한 번에' },
+        { type: 'p', content: '메드스파 홈페이지 방문은 대부분 휴대폰에서 일어납니다. 모든 페이지 하단에 전화, 문자, 지도, 예약 네 버튼을 담은 작은 바를 두었고, 화면에 같은 버튼이 이미 보이거나 입력 중일 때는 자연스럽게 내려가 숨습니다. 예약 폼은 요청을 클리닉 메일로 보내고, 같은 내용을 문자로 보낼 수도 있습니다.' },
+        { type: 'screenshot', content: '/blog/topskin-clinic/mobile.jpg', items: ['휴대폰 화면 — 영어·한국어 첫 화면과, 하단에 전화 · 문자 · 지도 · 예약 바가 있는 전후 사진 페이지'] },
+        { type: 'h2', content: '스위트 200까지 안내하는 3D 지도' },
+        { type: 'p', content: '오시는 길 페이지에는 클리닉 주변 블록을 3D로 그린 지도를 넣었습니다. 구글 지도를 끼워 넣는 대신 저희가 직접 호스팅하는 지도 데이터를 써서 외부 추적이 붙지 않습니다. 건물과 스위트 200을 표시하고, 옆에 요일별 진료시간을 함께 보여 줍니다. 휴대폰에서는 방문자가 누를 때만 지도를 불러와 스크롤이 무거워지지 않게 했습니다.' },
+        { type: 'screenshot', content: '/blog/topskin-clinic/visit.jpg', items: ['오시는 길 페이지 — 진료시간, 전화·예약 버튼, 스위트까지 안내하는 3D 지도'] },
+        { type: 'h2', content: '영어·한국어·베트남어' },
+        { type: 'p', content: '모든 페이지를 세 언어로 같은 구조로 만들어, 한국어나 베트남어로 읽는 환자도 같은 정보를 같은 자리에서 찾습니다. 언어는 상단 메뉴에서 바꾸고, 예약 폼도 언어마다 그대로 작동합니다.' },
+        { type: 'screenshot', content: '/blog/topskin-clinic/vietnamese.jpg', items: ['베트남어 첫 화면 — 세 언어 모두 같은 구성입니다'] },
+        { type: 'h2', content: '검색 기록을 잃지 않는 도메인 이전' },
+        { type: 'ul', content: '오픈과 함께 넣은 것', items: [
+          '기존 페이지 주소를 모두 새 페이지로 301 리디렉션 — 기존 링크, 즐겨찾기, 검색 결과가 그대로 작동',
+          '병원(MedicalClinic) 구조화 데이터: 주소, 지도 좌표, 요일별 진료시간, 전화번호',
+          '페이지마다 영어·한국어·베트남어 버전을 잇는 hreflang 태그',
+          '36개 주소 사이트맵을 구글 서치 콘솔에 등록하고, IndexNow로 빙(Bing)에도 새 페이지 알림',
+          '구글 애널리틱스 4에서 전화와 예약 요청을 주요 이벤트로 측정, 세 언어 개인정보 처리방침',
+          '라이트하우스 모바일 측정(홈): 접근성·권장사항·SEO 100점, 성능 90점 이상',
+        ] },
+        { type: 'p', content: '도메인을 옮긴 뒤 검색 순위가 자리 잡기까지는 몇 주가 걸립니다. 전화와 예약 요청이 어떻게 바뀌는지는 이 글에 이어서 업데이트하겠습니다.' },
+        { type: 'h2', content: '메드스파 홈페이지 리뉴얼 전 체크리스트' },
+        { type: 'ul', content: '지금 홈페이지에서 먼저 확인해 보세요', items: [
+          '전후 사진이 우리 클리닉 환자의 실제 사진이고, 조명과 각도가 맞는가? 모델 사진에는 모델이라고 표시했는가',
+          '휴대폰에서 전화, 문자, 예약이 한 번에 되는가',
+          '피부 고민마다 별도 페이지가 있는가 (시술 목록 페이지 하나에 모두 몰려 있지 않은가)',
+          '홈페이지 플랫폼을 바꿀 때 기존 주소가 모두 새 페이지로 연결되는가',
+          '구글 서치 콘솔에 등록되어 있고, 전화와 예약 요청을 측정하고 있는가',
+          '한국어나 베트남어를 쓰는 환자가 많다면, 사이트 전체를 그 언어로 읽을 수 있는가',
+        ] },
+        { type: 'cta', content: '우리 클리닉 홈페이지도 점검해 볼까요? 조이루모스는 미국과 한국의 병원·메드스파 홈페이지를 한국어와 영어로 만듭니다. 현재 홈페이지 무료 진단부터 시작합니다.' },
+      ],
+    },
+  },
+  // ─────────────────────────────────────────────────────────────────
   // 2026-11-06 — Seoul Choice Dental launch case study (clinic in Seoul, Korea).
   // KO-first: written for clinic owners in Korea searching 치과/병원 홈페이지 제작·리뉴얼.
   // Every number below was checked on the live site (sitemap, page titles, schema) on launch week.

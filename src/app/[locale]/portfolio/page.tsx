@@ -22,12 +22,12 @@ export async function generateMetadata({
   const metadata = {
     en: {
       title: 'Our Work - Portfolio | ZOE LUMOS',
-      description: 'Portfolio of websites for doctors, dental clinics, medical-device and B2B companies, plus the local brands we\'ve launched across the US since 2019.',
+      description: 'Portfolio of websites for doctors, dental clinics, med spas, medical-device and B2B companies, plus the local brands we\'ve launched across the US since 2019.',
       ogAlt: 'Seoul Choice Dental website by ZOE LUMOS — tooth-chart home screen, launched November 2026',
     },
     ko: {
       title: '포트폴리오 - 제작 사례 | ZOE LUMOS',
-      description: '병원·치과·의료기기·B2B 기업 웹사이트 제작 사례와, 2019년부터 미국 전역에서 함께 런칭한 브랜드들의 포트폴리오입니다.',
+      description: '병원·치과·메드스파·의료기기·B2B 기업 웹사이트 제작 사례와, 2019년부터 미국 전역에서 함께 런칭한 브랜드들의 포트폴리오입니다.',
       ogAlt: 'ZOE LUMOS가 제작한 서울초이스치과의원 홈페이지 — 치아 그림 첫 화면, 2026년 11월 오픈',
     }
   }
@@ -102,6 +102,34 @@ const projects = [
       category: '치과의원 / 홈페이지 리뉴얼 · 서울 영등포',
       description: '서울 영등포구 당산역·문래역 인근 치과의원 홈페이지를 새로 만들어 2026년 11월에 오픈했습니다. 진료별 안내 19개, 한국어·영어·일본어·중국어 4개 국어 132페이지, 실시간 진료 상태 표시, 네이버·구글 검색 등록과 치과 구조화 데이터까지.',
       services: ['웹사이트 디자인', '4개 국어', '네이버·구글 SEO', '치과 구조화 데이터'],
+    },
+  },
+  {
+    id: 'topskin-clinic',
+    url: 'https://www.topskinclinicmedspa.com/',
+    image: '/portfolio/topskin-clinic-live-5x4.jpg',
+    status: 'new' as const,
+    launched: '2026-11',
+    caseStudy: 'med-spa-website-case-study-duluth-ga',
+    // Same @id as the clinic's own MedicalClinic schema on topskinclinicmedspa.com.
+    entity: {
+      '@type': ['MedicalClinic', 'HealthAndBeautyBusiness'],
+      '@id': 'https://www.topskinclinicmedspa.com/#clinic',
+      name: 'TopSkin Clinic Med Spa',
+      url: 'https://www.topskinclinicmedspa.com/',
+      address: { '@type': 'PostalAddress', addressLocality: 'Duluth', addressRegion: 'GA', addressCountry: 'US' },
+    },
+    en: {
+      title: 'TopSkin Clinic Med Spa',
+      category: 'Med Spa / New Website · Duluth, GA',
+      description: 'New website for a K-beauty med spa on Satellite Boulevard in Duluth, Georgia, launched November 2026: 36 pages in English, Korean and Vietnamese, six treatment pages by skin concern, the clinic’s own before-and-after photos with a drag-to-compare slider, a 3D map to the suite, booking requests straight to the clinic inbox, and every old URL redirected.',
+      services: ['Website Design', '3 Languages', 'Before & After Gallery', 'Local SEO'],
+    },
+    ko: {
+      title: 'TopSkin Clinic Med Spa',
+      category: '메드스파 / 홈페이지 리뉴얼 · 미국 조지아 둘루스',
+      description: '조지아주 둘루스 새틀라이트 대로의 K-뷰티 메드스파 홈페이지를 새로 만들어 2026년 11월에 오픈했습니다. 영어·한국어·베트남어 36페이지, 피부 고민별 시술 안내 6개, 클리닉 환자의 실제 전후 사진(드래그 비교), 클리닉까지 안내하는 3D 지도, 클리닉 메일로 바로 가는 예약 요청, 기존 주소 전부 리디렉션까지.',
+      services: ['웹사이트 디자인', '3개 국어', '전후 사진 갤러리', '로컬 SEO'],
     },
   },
   {

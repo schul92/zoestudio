@@ -31,6 +31,20 @@ export const projects: Project[] = [
     caseStudy: 'seoul-dental-clinic-website-case-study',
   },
   {
+    name: 'TopSkin Clinic Med Spa',
+    industry: { en: 'Med spa · New website', ko: '메드스파 · 홈페이지 리뉴얼' },
+    location: 'Duluth · GA',
+    year: '2026',
+    disciplines: {
+      en: ['Web design', '3 languages', 'Real before & after'],
+      ko: ['웹디자인', '3개 국어', '실제 전후 사진'],
+    },
+    image: '/portfolio/topskin-clinic-live.jpg',
+    url: 'https://www.topskinclinicmedspa.com/',
+    status: 'new',
+    caseStudy: 'med-spa-website-case-study-duluth-ga',
+  },
+  {
     name: 'EndoPia',
     industry: { en: 'Medical device · U.S. launch', ko: '의료기기 · 미국 런칭' },
     location: 'United States',
@@ -155,14 +169,14 @@ export default function SelectedWork({
 
         <ul data-reveal-group className="mt-14 md:mt-16 grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
           {projects.map((p, i) => (
-            <li key={p.name} className={i === 0 ? 'md:col-span-2' : ''}>
+            <li key={p.name} className={p.status === 'new' ? 'md:col-span-2' : ''}>
               <article className="kn-card overflow-hidden h-full flex flex-col">
                 <Link href={`${prefix}/portfolio`} className="block relative aspect-[16/10] bg-bone overflow-hidden group">
                   <Image
                     src={p.image}
                     alt={`${p.name} — ${p.industry.en}, ${p.location}`}
                     fill
-                    sizes={i === 0 ? '(max-width: 768px) 92vw, 1200px' : '(max-width: 768px) 92vw, 600px'}
+                    sizes={p.status === 'new' ? '(max-width: 768px) 92vw, 1200px' : '(max-width: 768px) 92vw, 600px'}
                     className="object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.02]"
                   />
                   {/* Fixed colors: the badge sits on a screenshot, so it must not flip with the theme tokens. */}
