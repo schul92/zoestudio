@@ -1,5 +1,5 @@
 import type Stripe from 'stripe'
-import { stripe, fmtUSD } from '@/lib/billing/stripe'
+import { stripe, fmtUSD, cardFeeOf, isPayMethod } from '@/lib/billing/stripe'
 import { resolvePaySegment } from '@/lib/billing/resolve'
 import { spentPriceIds } from '@/lib/billing/spent'
 import { SITE_URL } from '@/lib/siteUrl'
@@ -18,7 +18,7 @@ export const dynamic = 'force-dynamic'
  * one without opens a single payment. One link shape, both products.
  */
 
-type Body = { token?: unknown }
+type Body = { token?: unknown; method?: unknown }
 
 /**
  * ACH is far cheaper than cards — 0.8% capped at $5 versus 2.9% + 30c, which on
@@ -72,13 +72,41 @@ export async function POST(req: Request) {
 
   const kr = price.metadata.zl_region === 'kr'
 
+  // A link with a card price (zl_card_fee) opens Checkout for one method, chosen on the /pay page: bank at the Price's
+  // amount, card at amount + fee. The card amount goes in as an inline price on the same Product, so the client still
+  // sees one subscription and renewals keep charging the card amount. No method sent means bank, the cheaper one.
+  const fee = kr ? 0 : cardFeeOf(price.metadata)
+  const method = fee ? (isPayMethod(body.method) ? body.method : 'bank') : null
+  const unit = (price.unit_amount ?? 0) + (method === 'card' ? fee : 0)
+  const lineItem: Stripe.Checkout.SessionCreateParams.LineItem =
+    method === 'card'
+      ? {
+          price_data: {
+            currency: price.currency,
+            product: typeof price.product === 'string' ? price.product : price.product.id,
+            unit_amount: unit,
+            ...(price.recurring
+              ? { recurring: { interval: price.recurring.interval, interval_count: price.recurring.interval_count } }
+              : {}),
+          },
+          quantity: 1,
+        }
+      : { price: payload.priceId, quantity: 1 }
+  const methodTypes = kr
+    ? KR_PAYMENT_METHOD_TYPES
+    : method === 'card'
+      ? (['card'] as const)
+      : method === 'bank'
+        ? (['us_bank_account'] as const)
+        : PAYMENT_METHOD_TYPES
+
   const common = {
     // Clover-era API: the embedded UI mode is 'embedded_page'.
     ui_mode: 'embedded_page',
     customer: payload.customerId,
-    line_items: [{ price: payload.priceId, quantity: 1 }],
-    payment_method_types: [...(kr ? KR_PAYMENT_METHOD_TYPES : PAYMENT_METHOD_TYPES)],
-    ...(kr ? { locale: 'ko' as const } : { payment_method_options: PAYMENT_METHOD_OPTIONS }),
+    line_items: [lineItem],
+    payment_method_types: [...methodTypes],
+    ...(kr ? { locale: 'ko' as const } : method === 'card' ? {} : { payment_method_options: PAYMENT_METHOD_OPTIONS }),
     return_url: `${SITE_URL}/pay/${token}?done={CHECKOUT_SESSION_ID}`,
     // zl_price on the session lets the webhook burn the pay link the moment
     // this checkout completes, and lets spentPriceIds() see one-time payments.
@@ -92,7 +120,7 @@ export async function POST(req: Request) {
   // billing_cycle_anchor can't be used here.)
   const anchor = Number(price.metadata.zl_anchor ?? 0)
   const anchored = price.recurring && anchor > Math.floor(Date.now() / 1000)
-  const amount = fmtUSD(price.unit_amount ?? 0)
+  const amount = fmtUSD(unit)
   const anchorDate = new Date(anchor * 1000)
   const anchorEn = anchorDate.toLocaleDateString('en-US', { month: 'short', day: 'numeric', timeZone: 'America/Chicago' })
   const anchorDay = anchorDate.toLocaleDateString('en-US', { day: 'numeric', timeZone: 'America/Chicago' })
@@ -108,7 +136,7 @@ export async function POST(req: Request) {
                   price_data: {
                     currency: price.currency,
                     product_data: { name: `First month (until ${anchorEn})` },
-                    unit_amount: price.unit_amount ?? 0,
+                    unit_amount: unit,
                   },
                   quantity: 1,
                 },

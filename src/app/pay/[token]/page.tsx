@@ -6,9 +6,11 @@ import {
   fmtUSD,
   SERVICES,
   BILLING_PERIODS,
+  cardFeeOf,
   type BillingPeriod,
 } from '@/lib/billing/stripe'
 import CheckoutEmbed from '@/components/billing/CheckoutEmbed'
+import PayMethodPicker from '@/components/billing/PayMethodPicker'
 
 // Private per-client link — always resolve fresh, never cache.
 export const dynamic = 'force-dynamic'
@@ -189,6 +191,9 @@ export default async function PayPage({
   let alreadyPaid = false
   let once = false
   let kr = false
+  // Card price (zl_card_fee): the client picks card or bank, each at its own amount.
+  let bankLabel = ''
+  let cardLabel = ''
 
   try {
     const s = stripe()
@@ -229,6 +234,11 @@ export default async function PayPage({
 
     services = parseServices(typeof price.metadata?.zl_services === 'string' ? price.metadata.zl_services : null)
     kr = price.metadata?.zl_region === 'kr'
+    const fee = kr ? 0 : cardFeeOf(price.metadata)
+    if (fee) {
+      bankLabel = amountLabel
+      cardLabel = fmtUSD((price.unit_amount ?? 0) + fee)
+    }
     alreadyPaid = paid
   } catch {
     return <InvalidLink />
@@ -261,15 +271,18 @@ export default async function PayPage({
             {periodKo} / {periodEn}
           </p>
           <h1 className="mt-2 font-display text-3xl leading-tight text-ink sm:text-4xl">{name}</h1>
-          <div className="mt-4 flex items-baseline gap-2">
-            <span className="font-display text-5xl text-ink">{amountLabel}</span>
-            {suffixKo && (
-              <span className="text-lg text-ash">
-                {suffixKo}
-                <span className="ml-1 text-sm text-mute">{suffixEn}</span>
-              </span>
-            )}
-          </div>
+          {/* With a card price, the two options below carry the amounts. */}
+          {!bankLabel && (
+            <div className="mt-4 flex items-baseline gap-2">
+              <span className="font-display text-5xl text-ink">{amountLabel}</span>
+              {suffixKo && (
+                <span className="text-lg text-ash">
+                  {suffixKo}
+                  <span className="ml-1 text-sm text-mute">{suffixEn}</span>
+                </span>
+              )}
+            </div>
+          )}
         </section>
 
         {services.length > 0 && (
@@ -293,7 +306,9 @@ export default async function PayPage({
           {/* Checkout reorders payment methods by its own conversion heuristics
               and gives us no ordering control, so we point at the cheaper rail
               here. ACH costs us 0.8% capped at $5; cards cost 2.9% + 30c. */}
-          {kr ? (
+          {bankLabel ? (
+            <PayMethodPicker token={params.token} bank={bankLabel} card={cardLabel} suffixKo={suffixKo} suffixEn={suffixEn} />
+          ) : kr ? (
             // Korean clients pay by card only (no US bank account); the amount is in USD.
             <div className="mb-4 rounded-xl border border-gold/25 bg-gold/[0.06] p-4">
               <p className="text-xs leading-relaxed text-graphite">
@@ -321,7 +336,8 @@ export default async function PayPage({
               </p>
             </div>
           )}
-          <CheckoutEmbed token={params.token} />
+          {/* The picker brings its own Checkout. */}
+          {!bankLabel && <CheckoutEmbed token={params.token} />}
           <p className="mt-4 text-xs leading-relaxed text-mute">
             결제는 Stripe가 안전하게 처리하며, 카드 정보는 저희 서버에 저장되지 않습니다.
             <br />
