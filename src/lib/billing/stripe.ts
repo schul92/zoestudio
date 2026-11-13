@@ -54,6 +54,18 @@ export async function oneTimeProduct(): Promise<Stripe.Product> {
   })
 }
 
+/**
+ * The Product a card-priced link's fee line hangs off (Price metadata zl_card_fee). Its own Product so Checkout, the
+ * invoice and the receipt name the fee as a separate line: "Card processing fee · 카드 결제 수수료". No pay link ever
+ * points at it, so billingProducts() leaves it out.
+ */
+export async function cardFeeProduct(): Promise<Stripe.Product> {
+  return findOrCreateProduct('card_fee', {
+    name: 'Card processing fee · 카드 결제 수수료',
+    description: 'Card payments only · 카드 결제 시에만',
+  })
+}
+
 /** Both Products, for callers that must scan every pay link we ever minted. */
 export async function billingProducts(): Promise<Stripe.Product[]> {
   return Promise.all([retainerProduct(), oneTimeProduct()])
@@ -72,7 +84,7 @@ export async function billingProducts(): Promise<Stripe.Product[]> {
  * stray duplicate never flips which Product new Prices attach to.
  */
 async function findOrCreateProduct(
-  kind: 'retainer' | 'one_time',
+  kind: 'retainer' | 'one_time' | 'card_fee',
   fields: { name: string; description: string }
 ): Promise<Stripe.Product> {
   const s = stripe()

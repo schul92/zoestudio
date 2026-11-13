@@ -191,9 +191,10 @@ export default async function PayPage({
   let alreadyPaid = false
   let once = false
   let kr = false
-  // Card price (zl_card_fee): the client picks card or bank, each at its own amount.
+  // Card fee (zl_card_fee): the client picks card (amount + fee, the fee shown as such) or bank (no fee).
   let bankLabel = ''
   let cardLabel = ''
+  let feeLabel = ''
 
   try {
     const s = stripe()
@@ -238,6 +239,7 @@ export default async function PayPage({
     if (fee) {
       bankLabel = amountLabel
       cardLabel = fmtUSD((price.unit_amount ?? 0) + fee)
+      feeLabel = fmtUSD(fee)
     }
     alreadyPaid = paid
   } catch {
@@ -307,7 +309,7 @@ export default async function PayPage({
               and gives us no ordering control, so we point at the cheaper rail
               here. ACH costs us 0.8% capped at $5; cards cost 2.9% + 30c. */}
           {bankLabel ? (
-            <PayMethodPicker token={params.token} bank={bankLabel} card={cardLabel} suffixKo={suffixKo} suffixEn={suffixEn} />
+            <PayMethodPicker token={params.token} bank={bankLabel} card={cardLabel} fee={feeLabel} suffixKo={suffixKo} suffixEn={suffixEn} />
           ) : kr ? (
             // Korean clients pay by card only (no US bank account); the amount is in USD.
             <div className="mb-4 rounded-xl border border-gold/25 bg-gold/[0.06] p-4">

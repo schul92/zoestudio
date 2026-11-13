@@ -12,19 +12,28 @@ export default function PayMethodPicker({
   token,
   bank,
   card,
+  fee,
   suffixKo,
   suffixEn,
 }: {
   token: string
   bank: string
   card: string
+  fee: string
   suffixKo: string
   suffixEn: string
 }) {
   const [method, setMethod] = useState<'bank' | 'card' | null>(null)
   const options = [
-    { key: 'card' as const, ko: '카드', en: 'Credit or debit card', amount: card },
-    { key: 'bank' as const, ko: '은행 계좌', en: 'US bank account', amount: bank },
+    {
+      key: 'card' as const,
+      ko: '카드',
+      en: 'Credit or debit card',
+      amount: card,
+      feeKo: `${bank} + 카드 수수료 ${fee}`,
+      feeEn: `incl. ${fee} card processing fee`,
+    },
+    { key: 'bank' as const, ko: '은행 계좌', en: 'US bank account', amount: bank, feeKo: '수수료 없음', feeEn: 'No fee' },
   ]
 
   return (
@@ -55,6 +64,8 @@ export default function PayMethodPicker({
                   </span>
                 )}
               </span>
+              <span className="mt-2 block text-xs text-graphite">{o.feeKo}</span>
+              <span className="block text-[11px] text-mute">{o.feeEn}</span>
             </button>
           )
         })}

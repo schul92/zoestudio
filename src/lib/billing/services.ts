@@ -79,11 +79,10 @@ export const isClientRegion = (v: unknown): v is ClientRegion => typeof v === 's
 export const isRecurring = (p: BillingPeriod): p is 'month' | 'year' => p !== 'once'
 
 /**
- * Card price difference, in cents, stored as the Price's `zl_card_fee` metadata (US links only). When set, the /pay page
- * asks how the client will pay before Checkout opens: bank account at the Price's amount, card at amount + fee, each
- * Checkout limited to that one method. Framed as a discount for paying by bank (the card price is the listed price),
- * which US law allows for any card, where a card surcharge is barred on debit cards and needs network notice.
- * Keep it at or under 3% of the amount.
+ * Card processing fee, in cents, stored as the Price's `zl_card_fee` metadata (US links only). When set, the /pay page
+ * asks how the client will pay before Checkout opens: US bank account at the Price's amount with no fee, or card with
+ * the fee as its own labelled line (Steve, Nov 13: show exactly that the extra is the card fee). Keep it at or under 3%
+ * of the amount, the card networks' surcharge cap.
  */
 export const cardFeeOf = (meta?: Record<string, string> | null): number => {
   const n = Number(meta?.zl_card_fee ?? 0)
