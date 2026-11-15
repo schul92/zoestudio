@@ -129,7 +129,8 @@ const allBlogPosts: BlogPost[] = [
             "저장하기 · 알림받기: 손님이 업체를 찜해 두는 버튼. 많이 저장될수록 관심이 많다는 신호입니다.",
             "플레이스 쿠폰 · 네이버 주문(스마트주문): 쿠폰 발행과 QR · 원격 주문 기능. 업종에 따라 씁니다.",
             "AI 브리핑: 검색 결과 맨 위에 AI가 요약해 주는 답. 업체 정보와 리뷰를 읽어서 만들기 때문에 플레이스 정보가 정확해야 합니다."
-          ]
+          ],
+          "content": ""
         },
         {
           "type": "h2",
@@ -143,7 +144,8 @@ const allBlogPosts: BlogPost[] = [
             "인플루언서: 네이버가 분야별로 인정한 크리에이터. 체험단 형태로 쓰이는데, 병원은 의료법상 후기 광고가 막혀 있어 조심해야 합니다.",
             "카페 · 지식iN: 커뮤니티와 질문 답변 서비스. 동네 카페, 맘카페에서 업체 이름이 오가는 곳입니다.",
             "클립: 네이버의 짧은 동영상. 네이버TV가 2026년 9월 30일 종료되고 클립으로 합쳐졌습니다."
-          ]
+          ],
+          "content": ""
         },
         {
           "type": "h2",
@@ -178,7 +180,8 @@ const allBlogPosts: BlogPost[] = [
             "전환추적(옛 프리미엄 로그분석): 광고를 클릭한 사람이 예약 · 문의 · 구매까지 했는지 세는 기능. 2026년 3월 30일에 이름이 바뀌었습니다.",
             "공통 스크립트 · 전환 스크립트: 홈페이지에 붙이는 짧은 코드. 공통 스크립트는 모든 페이지에, 전환 스크립트는 예약 완료 · 구매 완료 같은 페이지에 답니다.",
             "기여전환: 마지막 클릭은 아니었지만 중간에 도움을 준 광고를 세는 새 지표(2026년 3월 도입)."
-          ]
+          ],
+          "content": ""
         },
         {
           "type": "tip",
@@ -195,7 +198,8 @@ const allBlogPosts: BlogPost[] = [
             "품질지수 표시: 2026년 7월 29일부터 광고연관지수 · 클릭기대지수로 대체.",
             "네이버TV: 2026년 9월 30일 종료, 클립으로 이동.",
             "예전 광고 관리 주소들: 2026년 3월 30일부터 '네이버 광고' 한 곳으로."
-          ]
+          ],
+          "content": ""
         },
         {
           "type": "h2",
@@ -245,7 +249,8 @@ const allBlogPosts: BlogPost[] = [
             "Free visibility: Naver Place (the map listing), blogs and your website in search results. No ad spend, but it has to be maintained.",
             "Paid visibility: Powerlink, Place ads, Brand Search and other ads, billed per click or per period.",
             "Measurement: Search Advisor, Naver Analytics and conversion tracking. Without these you can't tell whether the other two worked."
-          ]
+          ],
+          "content": ""
         },
         {
           "type": "h2",
@@ -262,7 +267,8 @@ const allBlogPosts: BlogPost[] = [
             "Save and notifications: customers bookmarking your business, a signal of interest.",
             "Place coupons and Naver Order (스마트주문): coupons and QR or remote ordering, depending on the business type.",
             "AI Briefing: the AI summary at the top of Naver results, built from Place data and reviews, so the listing has to be accurate."
-          ]
+          ],
+          "content": ""
         },
         {
           "type": "h2",
@@ -276,7 +282,8 @@ const allBlogPosts: BlogPost[] = [
             "Influencers: creators Naver recognizes by topic. Clinics in Korea must be careful, since testimonial-style medical ads are restricted.",
             "Cafe and Knowledge iN (지식iN): community forums and Q&A, where neighborhood word of mouth happens.",
             "Clip: Naver's short video. Naver TV closed on September 30, 2026 and moved into Clip."
-          ]
+          ],
+          "content": ""
         },
         {
           "type": "h2",
@@ -311,7 +318,8 @@ const allBlogPosts: BlogPost[] = [
             "Conversion tracking (formerly Premium Log Analysis, renamed March 30, 2026): counts whether an ad click led to a booking, inquiry or purchase.",
             "Common script and conversion script: short code on your site, the first on every page, the second on completion pages.",
             "Assisted conversions: a 2026 metric that credits ads that helped before the last click."
-          ]
+          ],
+          "content": ""
         },
         {
           "type": "tip",
@@ -328,7 +336,8 @@ const allBlogPosts: BlogPost[] = [
             "Quality Index display: replaced July 29, 2026.",
             "Naver TV: closed September 30, 2026.",
             "The old per-platform ad URLs: merged into Naver Ads on March 30, 2026."
-          ]
+          ],
+          "content": ""
         },
         {
           "type": "h2",
@@ -507,7 +516,8 @@ const allBlogPosts: BlogPost[] = [
             "홈페이지를 새로 만든 뒤로 숫자가 끊겼다.",
             "2026년 봄 이후 네이버 애널리틱스 화면이 비어 있다.",
             "대행사 보고서가 노출 · 클릭 수만 보여 준다."
-          ]
+          ],
+          "content": ""
         },
         {
           "type": "h2",
@@ -532,7 +542,8 @@ const allBlogPosts: BlogPost[] = [
             "2026년 3월 30일부터 '프리미엄 로그분석' 메뉴 이름이 '전환추적'으로 바뀌었습니다.",
             "새 대시보드에 총 전환수와 기여전환(마지막 클릭은 아니어도 도움을 준 광고) 지표가 생겼습니다.",
             "전환 스크립트는 새 방식(wcs.trans)으로 바뀌는 중입니다. 예약 · 문의 · 전화 · 신청처럼 종류가 훨씬 세분화됐습니다."
-          ]
+          ],
+          "content": ""
         },
         {
           "type": "h2",
@@ -567,7 +578,8 @@ const allBlogPosts: BlogPost[] = [
             "광고 링크에 붙는 NaPm 값이 리디렉션 과정에서 지워지면 광고 유입을 못 알아봅니다. 주소를 바꾸거나 http에서 https로 넘길 때 특히 확인해야 합니다.",
             "홈페이지 리뉴얼 때 예전 스크립트가 빠지는 일이 많습니다. 새 사이트 오픈 체크리스트에 꼭 넣으세요.",
             "구글 태그(GA4)만 달려 있고 네이버 코드는 없는 경우. 구글 숫자로는 네이버 광고 성과를 알 수 없습니다."
-          ]
+          ],
+          "content": ""
         },
         {
           "type": "h2",
@@ -582,7 +594,8 @@ const allBlogPosts: BlogPost[] = [
             "4. 예약 완료 · 주문 완료 페이지에 전환 스크립트를 넣습니다. 직접 설치하고 검수를 요청하거나, 네이버 측 설치 지원(FTP 정보 필요, 5~7영업일)을 받을 수 있습니다.",
             "5. 크롬 확장 '네이버 전환 스크립트 어시스턴트'로 실제로 실행되는지 확인합니다.",
             "6. 광고 화면에 '사용중'이 뜨면 그때부터 집계됩니다."
-          ]
+          ],
+          "content": ""
         },
         {
           "type": "tip",
@@ -618,7 +631,8 @@ const allBlogPosts: BlogPost[] = [
             "The numbers stopped after a website rebuild.",
             "Naver Analytics has been empty since spring 2026.",
             "Your agency report only shows impressions and clicks."
-          ]
+          ],
+          "content": ""
         },
         {
           "type": "h2",
@@ -643,7 +657,8 @@ const allBlogPosts: BlogPost[] = [
             "On March 30, 2026 the Premium Log Analysis menu was renamed Conversion tracking.",
             "The new dashboard adds total conversions and assisted conversions.",
             "Conversion scripts are moving to the newer wcs.trans format, with finer types such as booking, inquiry, call and lead."
-          ]
+          ],
+          "content": ""
         },
         {
           "type": "h2",
@@ -678,7 +693,8 @@ const allBlogPosts: BlogPost[] = [
             "If a redirect strips the NaPm parameter from the ad link, the visit no longer counts as an ad visit. Check this when URLs change or http redirects to https.",
             "Old scripts often disappear in a website rebuild. Put them on the launch checklist.",
             "Only Google's tag (GA4) is installed. Google's numbers can't tell you how Naver ads performed."
-          ]
+          ],
+          "content": ""
         },
         {
           "type": "h2",
@@ -693,7 +709,8 @@ const allBlogPosts: BlogPost[] = [
             "4. Add conversion scripts on booking-complete and order-complete pages, either yourself followed by a review, or through Naver's free installation support (FTP access, 5–7 business days).",
             "5. Confirm with the Naver Conversion Script Assistant Chrome extension.",
             "6. Counting starts once the ad center shows In use."
-          ]
+          ],
+          "content": ""
         },
         {
           "type": "tip",
@@ -781,7 +798,8 @@ const allBlogPosts: BlogPost[] = [
             "한국: 네이버 검색 · 네이버 플레이스(지도) · 블로그 · 스마트스토어 · 카카오톡",
             "미국: 구글 검색 · 구글 지도(구글 비즈니스 프로필) · Instagram · Amazon · LinkedIn(B2B)",
             "AI 검색: 한국은 네이버 AI 브리핑, 미국은 ChatGPT · 구글 AI 개요가 업체 정보를 요약해서 보여 줍니다. 두 쪽 모두 홈페이지의 구조화 데이터와 정확한 업체 정보를 읽습니다."
-          ]
+          ],
+          "content": ""
         },
         {
           "type": "h2",
@@ -801,7 +819,8 @@ const allBlogPosts: BlogPost[] = [
             "미국 바이어는 구글에서 'private label', 'cut and sew manufacturer'처럼 영어로 찾고, LinkedIn으로 회사를 확인합니다. 영문 회사 소개, 생산 가능 품목 · 최소 주문 수량(MOQ) · 리드타임, 견적 요청(RFQ) 폼이 있어야 합니다.",
             "한국 거래처는 네이버에서 회사 이름과 품목으로 찾습니다. 회사 명의 네이버 블로그와 플레이스(사무실 · 쇼룸) 정보가 신뢰를 만듭니다.",
             "견적 요청이 어느 나라 어느 검색에서 왔는지 남도록 문의 폼에 출처 추적을 붙입니다."
-          ]
+          ],
+          "content": ""
         },
         {
           "type": "h2",
@@ -814,7 +833,8 @@ const allBlogPosts: BlogPost[] = [
             "미국 판매는 Shopify 자사몰 + 구글 쇼핑 광고 + Instagram이 기본입니다.",
             "미국에서 12세 이하 어린이용 제품을 팔려면 CPSIA 기준에 맞춘 어린이 제품 인증서(CPC)가 필요합니다. 상품 페이지와 판매 전에 꼭 확인하세요.",
             "같은 상품을 두 나라에 팔 때는 사이즈 표기(한국 cm · 미국 개월 수 · T 사이즈)와 배송 · 반품 안내를 따로 씁니다."
-          ]
+          ],
+          "content": ""
         },
         {
           "type": "h2",
@@ -828,7 +848,8 @@ const allBlogPosts: BlogPost[] = [
             "측정은 네이버 애널리틱스 + 전환추적, GA4 + 구글 광고 전환을 함께 답니다.",
             "업체 정보(이름 · 주소 · 전화 · 영업시간)를 네이버 플레이스, 구글 비즈니스 프로필, 홈페이지 구조화 데이터에서 똑같이 맞춥니다.",
             "모든 계정은 회사 명의로 만들고, 대행사는 권한만 받습니다."
-          ]
+          ],
+          "content": ""
         },
         {
           "type": "h2",
@@ -866,7 +887,8 @@ const allBlogPosts: BlogPost[] = [
             "Korea: Naver search, Naver Place (maps), blogs, Smart Store, KakaoTalk",
             "US: Google search, Google Maps (Google Business Profile), Instagram, Amazon, LinkedIn for B2B",
             "AI search: Naver's AI Briefing in Korea; ChatGPT and Google AI Overviews in the US. Both read your site's structured data and business facts."
-          ]
+          ],
+          "content": ""
         },
         {
           "type": "h2",
@@ -886,7 +908,8 @@ const allBlogPosts: BlogPost[] = [
             "US buyers search Google in English (\"private label\", \"cut and sew manufacturer\") and check you on LinkedIn. You need an English company page, product categories, MOQ and lead times, and an RFQ form.",
             "Korean partners search your company name and products on Naver, where a company blog and a Place listing for your office or showroom build trust.",
             "Add source tracking to the inquiry form so every RFQ shows which country and which search it came from."
-          ]
+          ],
+          "content": ""
         },
         {
           "type": "h2",
@@ -899,7 +922,8 @@ const allBlogPosts: BlogPost[] = [
             "In the US it's a Shopify store, Google Shopping ads and Instagram.",
             "Selling children's products (age 12 and under) in the US requires a Children's Product Certificate under the CPSIA. Check this before listing.",
             "When the same item sells in both countries, write sizing (cm in Korea, months and toddler sizes in the US), shipping and returns separately."
-          ]
+          ],
+          "content": ""
         },
         {
           "type": "h2",
@@ -913,7 +937,8 @@ const allBlogPosts: BlogPost[] = [
             "Measure with Naver Analytics plus conversion tracking, and GA4 plus Google Ads conversions.",
             "Keep name, address, phone and hours identical across Naver Place, Google Business Profile and your structured data.",
             "Open every account in the company's name; agencies only get access."
-          ]
+          ],
+          "content": ""
         },
         {
           "type": "h2",
