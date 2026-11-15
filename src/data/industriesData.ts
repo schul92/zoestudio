@@ -448,6 +448,7 @@ export const industries: Industry[] = [
       { q: { en: 'Can we really see a draft before signing?', ko: '계약 전에 정말 시안을 볼 수 있나요?' }, a: { en: 'Yes. We send one or two key screens as a live link at no cost. If you like it, we sign then.', ko: '네. 대표 화면 1–2개를 움직이는 링크로 비용 없이 먼저 보내드립니다. 마음에 드시면 그때 계약합니다.' } },
       { q: { en: 'Can you illustrate specialties other than dentistry?', ko: '치과 말고 다른 진료과도 일러스트가 되나요?' }, a: { en: 'Yes: skin layers for dermatology, joints and spine for orthopedics, the eye for ophthalmology, and so on, drawn in the same precise way.', ko: '네. 피부과는 피부층, 정형외과는 관절과 척추, 안과는 눈 구조처럼 같은 방식으로 정확하게 그립니다.' } },
       { q: { en: 'Do you work with clinics in Korea? How do we pay?', ko: '한국 병원도 가능한가요? 결제는요?' }, a: { en: 'Yes. Consults and builds run in Korean; payment is by card on our zoelumos.com payment link, charged in USD.', ko: '네. 상담과 제작은 한국어로 하고, 결제는 zoelumos.com 결제 링크에서 해외 결제 카드로 합니다(USD 청구).' } },
+      { q: { en: 'Do you also do Naver marketing?', ko: '네이버 마케팅도 하나요?' }, a: { en: 'Yes, for clinics in Korea: we manage your Naver Place (Smartplace) listing, run your own Naver brand blog, and run Naver search ads (Powerlink, Place ads) inside your own ad account, with a monthly Naver and Google rank report. Every account stays in your name. We never rent agency blogs, buy reviews or promise rankings.', ko: '네. 한국 병원이라면 네이버 플레이스(스마트플레이스) 관리, 병원 명의 네이버 브랜드 블로그 운영, 네이버 검색광고(파워링크 · 플레이스 광고) 운영을 함께 맡고, 매달 네이버 · 구글 순위를 보고드립니다. 모든 계정은 병원 명의 그대로이고, 대행사 블로그 임대 · 리뷰 구매 · 순위 보장은 하지 않습니다.' } },
       { q: { en: 'What about Korean medical-ad law?', ko: '의료법 위반이 걱정됩니다.' }, a: { en: 'We write and review copy against Medical Service Act Art. 56. Final approval stays with the clinic, and our review is not legal advice.', ko: '문구를 의료법 56조 기준으로 쓰고 검토합니다. 최종 승인은 병원에서 하시며, 저희 검토는 법률 자문이 아닙니다.' } },
       { q: { en: 'How much does it cost?', ko: '비용은 얼마인가요?' }, a: { en: 'It depends on the number of pages and languages. You get a fixed quote after seeing the draft.', ko: '페이지 수와 언어에 따라 달라집니다. 시안 초안을 보신 뒤 확정 견적을 드립니다.' } },
     ],
@@ -458,8 +459,8 @@ export const industries: Industry[] = [
         ko: '병원·치과 홈페이지 제작 — 서울·미국 의사를 위한 홈페이지, 시안 먼저 | 조이루모스',
       },
       description: {
-        en: 'Websites for doctors of every specialty in Korea and the US. Just launched: Seoul Choice Dental, Seoul (132 pages, 4 languages). Treatment illustrations, motion first screens, medical-ad compliant copy, Naver and Google search. See a working draft before you sign.',
-        ko: '치과 · 피부과 · 정형외과 · 한의원 등 모든 진료과 병원 홈페이지 제작·리뉴얼. 2026년 11월 오픈한 서울초이스치과의원(4개 국어 132페이지) 사례. 진료 일러스트와 움직이는 첫 화면, 의료법 기준 문구, 네이버 · 구글 검색 등록. 계약 전 시안 초안을 먼저 보여드립니다.',
+        en: 'Websites for doctors of every specialty in Korea and the US. Just launched: Seoul Choice Dental, Seoul (132 pages, 4 languages). Treatment illustrations, motion first screens, medical-ad compliant copy, Naver and Google search, plus Naver marketing (Place, blog, search ads). See a working draft before you sign.',
+        ko: '치과 · 피부과 · 정형외과 · 한의원 등 모든 진료과 병원 홈페이지 제작·리뉴얼. 2026년 11월 오픈한 서울초이스치과의원(4개 국어 132페이지) 사례. 진료 일러스트와 움직이는 첫 화면, 의료법 기준 문구, 네이버 · 구글 검색 등록, 네이버 마케팅(플레이스 · 블로그 · 검색광고). 계약 전 시안 초안을 먼저 보여드립니다.',
       },
     },
   },

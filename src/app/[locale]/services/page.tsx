@@ -25,11 +25,11 @@ export async function generateMetadata({
       ? '서비스 — 웹사이트 제작 · 구글 광고대행 · SEO · 카카오톡 마케팅 | 조이루모스'
       : 'Services — Website Design, Google Ads, SEO & KakaoTalk Marketing | ZOE LUMOS',
     description: isKo
-      ? '미국 한인 비즈니스를 위한 디지털 서비스 한곳에서. 웹사이트 제작·유지보수, 구글 광고대행, 로컬 SEO, 카카오톡 마케팅, 쇼핑몰 제작. 한영 이중언어, 계정·도메인 소유권은 100% 고객님께. 무료 상담.'
-      : 'Every digital service for US Korean-American businesses in one place: website design & maintenance, Google Ads management, local SEO, KakaoTalk marketing, and e-commerce builds. Bilingual, you own your accounts and domain. Free consultation.',
+      ? '미국 한인 비즈니스를 위한 디지털 서비스 한곳에서. 웹사이트 제작·유지보수, 구글 광고대행, 로컬 SEO, 카카오톡 · 네이버 마케팅, 쇼핑몰 제작. 한영 이중언어, 계정·도메인 소유권은 100% 고객님께. 무료 상담.'
+      : 'Every digital service for US Korean-American businesses in one place: website design & maintenance, Google Ads management, local SEO, KakaoTalk and Naver marketing, and e-commerce builds. Bilingual, you own your accounts and domain. Free consultation.',
     keywords: isKo
-      ? '한인 마케팅 서비스, 웹사이트 제작, 구글 광고대행, 한인 SEO, 카카오톡 마케팅, 미국 한인 디지털 마케팅, 홈페이지 제작 유지보수'
-      : 'Korean marketing services, website design, Google Ads agency, Korean SEO, KakaoTalk marketing, Korean American digital marketing',
+      ? '한인 마케팅 서비스, 웹사이트 제작, 구글 광고대행, 한인 SEO, 카카오톡 마케팅, 네이버 마케팅, 네이버 플레이스, 미국 한인 디지털 마케팅, 홈페이지 제작 유지보수'
+      : 'Korean marketing services, website design, Google Ads agency, Korean SEO, KakaoTalk marketing, Naver marketing, Korean American digital marketing',
     alternates: {
       canonical: isKo ? `${baseUrl}/ko/services` : `${baseUrl}/services`,
       languages: {
@@ -107,6 +107,14 @@ export default function ServicesHub({ params }: { params: { locale: string } }) 
       body: isKo
         ? '예산을 태우지 않는 광고 운영. 전환 추적, 네거티브 키워드 관리, 월간 성과 리포트. 광고 계정 소유권은 고객님께 드립니다.'
         : 'Ad management that does not burn budget. Conversion tracking, negative keywords, monthly ROI reports — and you own the ad account.',
+    },
+    {
+      href: isKo ? '/ko/industries/병원-홈페이지-제작' : '/industries/clinic-websites',
+      kicker: isKo ? '네이버 플레이스 · 블로그 · 검색광고' : 'Naver Place, blog & search ads',
+      title: isKo ? '네이버 마케팅' : 'Naver marketing for clinics in Korea',
+      body: isKo
+        ? '한국 병원·업체의 네이버 플레이스 관리, 본인 명의 네이버 블로그 운영, 파워링크·플레이스 광고 운영과 월간 순위 리포트. 의료법 기준으로 쓰고, 계정은 모두 고객 명의입니다.'
+        : 'For clinics and businesses in Korea: Naver Place management, your own Naver brand blog, Powerlink and Place ads, and a monthly rank report. Written to Korean medical-ad rules; every account stays in your name.',
     },
     {
       href: isKo ? '/ko/englewood-nj-seo' : '/englewood-nj-seo',
