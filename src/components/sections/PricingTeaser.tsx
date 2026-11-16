@@ -400,16 +400,44 @@ export default function PricingTeaser({ locale = 'en' }: { locale?: string }) {
           ))}
         </ul>
 
-        {/* B2B scope — no fixed tier, said plainly so the tiers don't read as the ceiling */}
-        <p className="mt-4 md:mt-6 text-[14px] text-graphite">
-          {isKo ? 'B2B 포털·시스템 연동은 범위에 따라 별도로 견적드려요. ' : 'B2B portals and system integrations are quoted per project. '}
-          <Link
-            href={isKo ? '/ko/aws-api-연동-대시보드-구축' : '/aws-api-integration-dashboards'}
-            className="text-ink border-b border-ink/30 hover:border-ink pb-[1px] transition-colors"
-          >
-            {isKo ? '연동·대시보드 보기' : 'See integrations'}
-          </Link>
-        </p>
+        {/* Above the tiers: premium builds and B2B/3PL systems, so the three cards don't read as the ceiling. */}
+        <ul className="mt-4 md:mt-6 grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 list-none p-0">
+          {[
+            {
+              href: `${prefix}/pricing#premium`,
+              title: isKo ? '프리미엄 · 시그니처 제작' : 'Premium and Signature builds',
+              body: isKo
+                ? '다국어 병원·전문직 사이트, 스크롤 시네마틱 장면, 관리자 화면까지'
+                : 'Multi-language clinic and practice sites, cinematic scroll scenes, admin panels',
+              price: isKo ? '$3,500부터' : 'from $3,500',
+            },
+            {
+              href: `${prefix}/pricing#b2b`,
+              title: isKo ? 'B2B · 물류(3PL) 시스템' : 'B2B and logistics (3PL) systems',
+              body: isKo
+                ? 'WMS·EDI 연동, 운영 대시보드, 화주 포털 · EDI 연동 $8,000부터'
+                : 'WMS and EDI integration, operations dashboards, shipper portals · EDI from $8,000',
+              price: isKo ? '$3,500부터' : 'from $3,500',
+            },
+          ].map((o) => (
+            <li key={o.href} className="flex">
+              <Link href={o.href} className="kn-card group flex w-full items-center justify-between gap-6 p-6 md:p-7">
+                <span>
+                  <span className="block text-[16px] font-semibold tracking-[-0.01em] text-ink">{o.title}</span>
+                  <span className="block mt-1 text-[13px] text-graphite leading-snug">{o.body}</span>
+                </span>
+                <span className="shrink-0 text-right">
+                  <span className="block font-display text-[clamp(20px,2vw,26px)] leading-none tracking-[-0.02em] text-ink tabular-nums">
+                    {o.price}
+                  </span>
+                  <span aria-hidden className="inline-block mt-2 text-ash transition-transform duration-300 group-hover:translate-x-1 group-hover:text-link">
+                    →
+                  </span>
+                </span>
+              </Link>
+            </li>
+          ))}
+        </ul>
 
         {/* Monthly care plans — entry framing */}
         <InView>

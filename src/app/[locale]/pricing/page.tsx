@@ -2,6 +2,7 @@ import Link from 'next/link'
 import HeaderWrapper from '@/components/layout/HeaderWrapper'
 import Footer from '@/components/layout/Footer'
 import GuaranteeStrip from '@/components/sections/GuaranteeStrip'
+import { AWS_PATHS, LOGISTICS_PATHS } from '@/data/enterprise'
 import StartProjectForm from './StartProjectForm'
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -9,6 +10,10 @@ import StartProjectForm from './StartProjectForm'
 // Same numbers live in public/pricing.md and public/llms.txt: keep in sync.
 // Monthly: Basic $49 · Care $129 · Grow $199 (recommended) · Scale $499
 // One-time builds: Basic $500–800 · Standard $1,100–1,500 · Store $1,800–2,400
+// Premium builds: Premium $3,500–6,000 · Signature from $8,000
+// Marketing: SEO from $500/mo · Google Ads standalone from $300/mo · KakaoTalk Channel $400 + $150/mo
+// B2B & 3PL systems (from): B2B site + RFQ $3,500 · WMS data + dashboard $20,000 · EDI receive $8,000 ·
+//   EDI two-way $19,000 · WMS file → API switch $6,000 · shipper portal quoted per scope
 // ─────────────────────────────────────────────────────────────────────────────
 
 export function generateStaticParams() {
@@ -128,6 +133,126 @@ const BUILD_TIERS = [
   },
 ]
 
+type L = { en: string; ko: string }
+
+// Above the standard builds: the work clinics, multi-language brands and design-led clients actually buy.
+const PREMIUM_TIERS: Array<{ name: L; price: string; forWho: L; timeline: L; includes: { en: string[]; ko: string[] } }> = [
+  {
+    name: { en: 'Premium', ko: '프리미엄' },
+    price: '$3,500–6,000',
+    forWho: { en: 'Clinics, professional practices, multi-language brands', ko: '병원·전문직 · 다국어 브랜드' },
+    timeline: { en: 'Typically 4–6 weeks', ko: '보통 4–6주' },
+    includes: {
+      en: [
+        '16–40 pages, up to 4 languages',
+        'A detailed page per treatment or service (process · FAQ · summary)',
+        'One custom interaction, such as picking a treatment on a tooth chart',
+        'Naver Search Advisor + Google setup, industry structured data',
+        'Copy written to advertising rules for your field',
+        'Several design directions to choose from before the build',
+      ],
+      ko: [
+        '16–40페이지 · 최대 4개 언어',
+        '진료·서비스별 상세 페이지 (과정 · 자주 묻는 질문 · 요약)',
+        '맞춤 인터랙션 1개 (예: 치아 그림에서 진료 고르기)',
+        '네이버 서치어드바이저·구글 등록 · 업종 구조화 데이터',
+        '업종 광고 기준에 맞춘 문구',
+        '제작 전 여러 방향의 시안 중 선택',
+      ],
+    },
+  },
+  {
+    name: { en: 'Signature', ko: '시그니처' },
+    price: '$8,000+',
+    forWho: { en: 'Brands that want a site people remember', ko: '기억에 남는 사이트가 필요한 브랜드' },
+    timeline: { en: 'Typically 6–10 weeks', ko: '보통 6–10주' },
+    includes: {
+      en: [
+        'Everything in Premium',
+        'A design system and every page made to measure',
+        'Cinematic scroll scenes (3D renders, image sequences)',
+        'An admin panel your team edits in Korean or English',
+        'Booking, payment and outside-system integrations',
+        'Korean and English copywriting',
+      ],
+      ko: [
+        '프리미엄의 모든 항목',
+        '디자인 시스템과 모든 페이지 맞춤 제작',
+        '스크롤 시네마틱 장면 (3D 렌더 · 이미지 시퀀스)',
+        '한국어·영어로 직접 고치는 관리자 화면',
+        '예약·결제·외부 시스템 연동',
+        '한·영 카피라이팅',
+      ],
+    },
+  },
+]
+
+// Ongoing marketing — the same figures public/pricing.md already published, now on the page too.
+const GROWTH_SERVICES: Array<{ name: L; price: L; note: L; href: { en: string; ko: string } }> = [
+  {
+    name: { en: 'SEO retainer (local + bilingual)', ko: 'SEO 리테이너 (로컬 + 한·영)' },
+    price: { en: 'from $500/mo', ko: '월 $500부터' },
+    note: { en: 'Rankings, content and Google Business Profile', ko: '검색 순위 · 콘텐츠 · 구글 비즈니스 프로필' },
+    href: { en: '/englewood-nj-seo', ko: '/ko/englewood-nj-seo' },
+  },
+  {
+    name: { en: 'Google Ads management', ko: '구글 광고 운영' },
+    price: { en: 'from $300/mo', ko: '월 $300부터' },
+    note: { en: 'Standalone; +$150/mo as a care-plan add-on. Ad spend separate', ko: '단독 기준 · 관리 플랜 추가 시 월 +$150 · 광고비 별도' },
+    href: { en: '/광고대행', ko: '/ko/광고대행' },
+  },
+  {
+    name: { en: 'KakaoTalk Channel', ko: '카카오톡 채널' },
+    price: { en: '$400 setup', ko: '셋업 $400' },
+    note: { en: 'Optional management $150/mo', ko: '관리 선택 시 월 $150' },
+    href: { en: '/services/kakaotalk-marketing-usa', ko: '/ko/services/kakaotalk-marketing-usa' },
+  },
+  {
+    name: { en: 'Naver marketing (Korea)', ko: '네이버 마케팅 (한국)' },
+    price: { en: 'Quoted per scope', ko: '범위별 견적' },
+    note: { en: 'Naver Place, a brand blog, search ads', ko: '네이버 플레이스 · 브랜드 블로그 · 검색광고' },
+    href: { en: '/services', ko: '/ko/services' },
+  },
+]
+
+// B2B and logistics systems. Starting points from real scoped engagements; every project gets a fixed quote after
+// an assessment, and cloud costs bill to the client's own AWS account.
+const B2B_SYSTEMS: Array<{ name: L; detail: L; price: L }> = [
+  {
+    name: { en: 'B2B website + quote requests (RFQ)', ko: 'B2B 홈페이지 + 견적 요청(RFQ)' },
+    detail: { en: 'Locations, capacity and services; RFQs routed to sales', ko: '거점·규모·서비스 정리, 견적 요청은 영업 담당자에게 바로' },
+    price: { en: 'from $3,500', ko: '$3,500부터' },
+  },
+  {
+    name: { en: 'WMS data + operations dashboard', ko: 'WMS 데이터 연동 + 운영 대시보드' },
+    detail: {
+      en: 'Read-only first; one screen across warehouses, even on different WMSs (API or scheduled reports)',
+      ko: '읽기 전용으로 시작 · 서로 다른 WMS의 여러 창고를 한 화면에 (API 또는 정기 리포트)',
+    },
+    price: { en: 'from $20,000', ko: '$20,000부터' },
+  },
+  {
+    name: { en: 'EDI integration: receive', ko: 'EDI 연동 · 수신' },
+    detail: { en: 'Copies of 944 / 945 (receipts, shipments) read into the same data', ko: '944·945(입고·출고) 사본을 같은 데이터로 읽어들임' },
+    price: { en: 'from $8,000', ko: '$8,000부터' },
+  },
+  {
+    name: { en: 'EDI integration: two-way', ko: 'EDI 연동 · 양방향' },
+    detail: { en: 'Adds sending 940 / 943 with an approval step and staged rollout', ko: '940·943 발신 추가 · 승인 단계와 단계적 적용' },
+    price: { en: 'from $19,000', ko: '$19,000부터' },
+  },
+  {
+    name: { en: 'Move a WMS feed from files to its API', ko: 'WMS 연결을 파일에서 API로 전환' },
+    detail: { en: 'When the WMS publishes an API, the same data switches over', ko: 'WMS가 API를 열면 같은 데이터를 API로 전환' },
+    price: { en: 'from $6,000', ko: '$6,000부터' },
+  },
+  {
+    name: { en: 'Shipper (customer) portal', ko: '화주용 고객 포털' },
+    detail: { en: 'Your brand; each shipper sees only its own inventory and orders', ko: '우리 회사 브랜드 · 화주별로 자기 재고·주문만' },
+    price: { en: 'Quoted per scope', ko: '범위별 견적' },
+  },
+]
+
 const FAQS: Array<{ q: { en: string; ko: string }; a: { en: string; ko: string } }> = [
   {
     q: { en: 'Which plan should I choose?', ko: '어떤 플랜을 선택해야 하나요?' },
@@ -146,8 +271,8 @@ const FAQS: Array<{ q: { en: string; ko: string }; a: { en: string; ko: string }
   {
     q: { en: 'What are the conditions for the setup-fee waiver?', ko: '셋업비 면제 조건이 무엇인가요?' },
     a: {
-      en: 'The website build setup fee is waived when you commit to any monthly care plan for 12 months. In other words, instead of paying the one-time build cost ($500–$2,400 depending on scope) upfront, you start with a monthly plan and we build the site as part of the engagement.',
-      ko: '월 관리 플랜을 12개월 약정하면 웹사이트 제작 셋업비가 면제됩니다. 즉 일회성 제작비(범위에 따라 $500–$2,400)를 선불로 내는 대신, 월 플랜으로 시작하면 제작을 약정에 포함해 진행해 드립니다.',
+      en: 'The website build setup fee is waived when you commit to any monthly care plan for 12 months. In other words, instead of paying the one-time build cost ($500–$2,400 depending on scope) upfront, you start with a monthly plan and we build the site as part of the engagement. The waiver covers the Basic, Standard and Store builds; Premium, Signature and B2B systems are billed as projects.',
+      ko: '월 관리 플랜을 12개월 약정하면 웹사이트 제작 셋업비가 면제됩니다. 즉 일회성 제작비(범위에 따라 $500–$2,400)를 선불로 내는 대신, 월 플랜으로 시작하면 제작을 약정에 포함해 진행해 드립니다. 면제는 기본·일반·스토어 제작에 적용되며, 프리미엄·시그니처·B2B 시스템은 프로젝트 비용으로 따로 청구됩니다.',
     },
   },
   {
@@ -162,6 +287,20 @@ const FAQS: Array<{ q: { en: string; ko: string }; a: { en: string; ko: string }
     a: {
       en: 'A Basic build at $500–800 includes up to 5 responsive pages, basic SEO, and a contact form. Standard at $1,100–1,500 adds custom design, bilingual Korean/English, and local SEO for 6–15 pages. A Store build at $1,800–2,400 covers Shopify or e-commerce with products, checkout, and ordering or booking. Two revision rounds per phase are included in every build.',
       ko: '기본 제작($500–800)에는 5페이지 이하 반응형 웹사이트, 기본 SEO, 문의 폼이 포함됩니다. 일반($1,100–1,500)은 6–15페이지에 맞춤 디자인, 한·영 이중언어, 로컬 SEO가 더해지고, 스토어($1,800–2,400)는 Shopify/이커머스 상품·결제·주문/예약까지 포함합니다. 모든 제작에는 단계별 수정 2회가 기본 포함됩니다.',
+    },
+  },
+  {
+    q: { en: 'How are Premium and Signature different from a Standard build?', ko: '프리미엄·시그니처는 일반 제작과 무엇이 다른가요?' },
+    a: {
+      en: 'Premium ($3,500–6,000) is for clinics, professional practices and brands that need more pages and languages: 16–40 pages in up to 4 languages, a detailed page for every treatment or service, one custom interaction, Naver and Google setup with industry structured data, and several design directions before the build. Signature (from $8,000) makes every page to measure on its own design system, adds cinematic scroll scenes, an admin panel your team edits in Korean or English, and booking, payment or outside-system integrations.',
+      ko: '프리미엄($3,500–6,000)은 페이지와 언어가 많은 병원·전문직·브랜드를 위한 제작입니다. 최대 4개 언어 16–40페이지, 진료·서비스별 상세 페이지, 맞춤 인터랙션 1개, 네이버·구글 등록과 업종 구조화 데이터, 제작 전 여러 방향의 시안이 포함됩니다. 시그니처($8,000부터)는 디자인 시스템부터 모든 페이지를 맞춤으로 만들고, 스크롤 시네마틱 장면, 한국어·영어로 직접 고치는 관리자 화면, 예약·결제·외부 시스템 연동까지 더합니다.',
+    },
+  },
+  {
+    q: { en: 'How are B2B and logistics (3PL) systems priced?', ko: 'B2B·물류(3PL) 시스템 비용은 어떻게 정해지나요?' },
+    a: {
+      en: 'They start from published floors: a B2B website with quote requests from $3,500, WMS data with an operations dashboard from $20,000, EDI receive from $8,000 and two-way EDI from $19,000. The final price is fixed after an assessment of your WMS, partners and data. Most clients start read-only with one dashboard and add a shipper portal and EDI in phases. Cloud costs bill to your own AWS account.',
+      ko: '공개된 시작가가 있습니다. 견적 요청이 되는 B2B 홈페이지 $3,500부터, WMS 데이터 연동과 운영 대시보드 $20,000부터, EDI 수신 $8,000부터, 양방향 EDI $19,000부터입니다. 최종 금액은 사용 중인 WMS, 거래처, 데이터 범위를 진단한 뒤 고정 견적으로 확정합니다. 대부분 읽기 전용 대시보드 하나로 시작해 화주 포털과 EDI를 단계적으로 더합니다. 클라우드 비용은 고객사 명의 AWS 계정으로 직접 청구됩니다.',
     },
   },
 ]
@@ -205,6 +344,22 @@ export default function PricingPage({ params }: { params: { locale: string } }) 
       ? '범위에 따라 달라집니다 — 30초 만에 내 프로젝트 예상 견적 보기 →'
       : 'Varies by scope — get your own 30-second estimate →',
     estimatorLink: isKo ? '무료 견적 계산기' : 'Free cost estimator',
+    premiumTitle: isKo ? '프리미엄 제작' : 'Premium builds',
+    premiumSub: isKo
+      ? '페이지와 언어가 많은 병원·전문직, 그리고 디자인으로 기억되고 싶은 브랜드를 위한 제작입니다. 범위가 큰 만큼 시안과 인터랙션, 검수에 시간을 더 씁니다.'
+      : 'For clinics and practices with more pages and languages, and for brands that want to be remembered for their design. Bigger scope, more time on design directions, interaction and review.',
+    premiumCta: isKo ? '상담하기' : 'Talk to us',
+    growthTitle: isKo ? '마케팅 · 성장 서비스' : 'Marketing and growth',
+    growthSub: isKo
+      ? '사이트를 만든 뒤 손님을 데려오는 일. 관리 플랜과 따로, 또는 함께 쓰실 수 있습니다.'
+      : 'Bringing customers to the site after launch, on its own or alongside a care plan.',
+    b2bTitle: isKo ? 'B2B · 물류(3PL) 시스템' : 'B2B and logistics (3PL) systems',
+    b2bSub: isKo
+      ? 'B2B 홈페이지부터 WMS·EDI 연동, 운영 대시보드, 화주 포털까지. 실제 진행한 프로젝트 범위를 기준으로 시작가를 공개합니다.'
+      : 'From a B2B website to WMS and EDI integration, operations dashboards and shipper portals. Starting prices come from real scoped engagements.',
+    b2bNote: isKo
+      ? '시작가 기준입니다. 사용 중인 WMS·거래처·데이터 범위를 진단한 뒤 고정 견적으로 확정하며, 클라우드 비용은 고객사 명의 AWS 계정으로 직접 청구됩니다.'
+      : 'Starting prices. A fixed quote follows an assessment of your WMS, partners and data; cloud costs bill to your own AWS account.',
     guaranteeTitle: isKo ? '저희가 지키는 약속' : 'What we guarantee',
     guaranteeSub: isKo
       ? '과장 없이, 이미 모든 프로젝트에 적용되는 원칙만 적었습니다.'
@@ -250,7 +405,7 @@ export default function PricingPage({ params }: { params: { locale: string } }) 
                   className={`relative rounded-2xl p-6 border flex flex-col ${
                     tier.recommended
                       ? 'bg-action/[0.08] border-action/50 shadow-[0_0_30px_rgba(0,113,227,0.12)]'
-                      : 'bg-paper border-black/[0.08]'
+                      : 'bg-paper border-ink/10'
                   }`}
                 >
                   {tier.recommended && (
@@ -284,7 +439,7 @@ export default function PricingPage({ params }: { params: { locale: string } }) 
                     className={`block text-center rounded-xl px-4 py-2.5 text-[13px] font-bold transition-colors ${
                       tier.recommended
                         ? 'bg-action text-white hover:bg-[#0077ED]'
-                        : 'bg-black/[0.03] text-graphite border border-black/[0.08] hover:bg-bone hover:text-ink'
+                        : 'bg-ink/[0.04] text-graphite border border-ink/10 hover:bg-bone hover:text-ink'
                     }`}
                   >
                     {isKo ? '이 플랜으로 상담' : 'Talk about this plan'}
@@ -298,7 +453,7 @@ export default function PricingPage({ params }: { params: { locale: string } }) 
           {/* ── Comparison table ── */}
           <section aria-label={t.compareTitle} className="mb-20">
             <h2 className="text-2xl md:text-3xl font-black text-ink mb-6">{t.compareTitle}</h2>
-            <div className="overflow-x-auto rounded-2xl border border-black/[0.08]">
+            <div className="overflow-x-auto rounded-2xl border border-ink/10">
               <table className="w-full min-w-[640px] text-left border-collapse">
                 <thead>
                   <tr className="bg-paper">
@@ -319,7 +474,7 @@ export default function PricingPage({ params }: { params: { locale: string } }) 
                 </thead>
                 <tbody>
                   {COMPARE_ROWS.map((row, i) => (
-                    <tr key={i} className={i % 2 === 0 ? 'bg-transparent' : 'bg-black/[0.03]'}>
+                    <tr key={i} className={i % 2 === 0 ? 'bg-transparent' : 'bg-ink/[0.04]'}>
                       <th scope="row" className="text-left px-5 py-3 text-[13px] text-graphite font-medium whitespace-nowrap">
                         {row.label[locale]}
                       </th>
@@ -357,7 +512,7 @@ export default function PricingPage({ params }: { params: { locale: string } }) 
             <p className="text-ash text-sm mb-8 max-w-2xl">{t.buildSub}</p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               {BUILD_TIERS.map((b) => (
-                <div key={b.price} className="rounded-2xl p-6 bg-paper border border-black/[0.08]">
+                <div key={b.price} className="rounded-2xl p-6 bg-paper border border-ink/10">
                   <p className="text-[12px] uppercase tracking-[0.2em] text-ash font-black mb-2">{b.name[locale]}</p>
                   <p className="text-3xl font-black text-ink mb-3">{b.price}</p>
                   <p className="text-[13px] text-ash leading-relaxed">{b.desc[locale]}</p>
@@ -378,6 +533,95 @@ export default function PricingPage({ params }: { params: { locale: string } }) 
             </div>
           </section>
 
+          {/* ── Premium builds ── */}
+          <section id="premium" aria-label={t.premiumTitle} className="mb-20 scroll-mt-28">
+            <h2 className="text-2xl md:text-3xl font-black text-ink mb-2">{t.premiumTitle}</h2>
+            <p className="text-ash text-sm mb-8 max-w-2xl">{t.premiumSub}</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {PREMIUM_TIERS.map((p, i) => (
+                <div
+                  key={p.price}
+                  className={`relative rounded-2xl p-7 md:p-9 border flex flex-col ${
+                    i === 1
+                      ? 'border-ink/25 bg-[linear-gradient(155deg,rgb(var(--c-ink)/0.07),transparent_55%)]'
+                      : 'border-ink/10 bg-paper'
+                  }`}
+                >
+                  <div className="flex items-baseline justify-between gap-4 mb-2">
+                    <h3 className="text-lg font-black text-ink m-0">{p.name[locale]}</h3>
+                    <span className="text-[12px] text-ash">{p.timeline[locale]}</span>
+                  </div>
+                  <p className="text-4xl md:text-5xl font-black text-ink tracking-tight tabular-nums mb-2">{p.price}</p>
+                  <p className="text-[13px] text-ash mb-7">{p.forWho[locale]}</p>
+                  <ul className="space-y-3 mb-8 flex-1 list-none p-0">
+                    {p.includes[locale].map((item) => (
+                      <li key={item} className="flex items-start gap-3 text-[14px] text-graphite leading-snug">
+                        <span className="mt-[7px] h-1 w-1 shrink-0 rounded-full bg-link" aria-hidden />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                  <Link href={`${prefix}/contact`} className="btn-outline justify-center min-h-[44px] text-[14px]">
+                    {p.name[locale]} {t.premiumCta}
+                  </Link>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* ── Marketing and growth ── */}
+          <section aria-label={t.growthTitle} className="mb-20">
+            <h2 className="text-2xl md:text-3xl font-black text-ink mb-2">{t.growthTitle}</h2>
+            <p className="text-ash text-sm mb-8 max-w-2xl">{t.growthSub}</p>
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 list-none p-0">
+              {GROWTH_SERVICES.map((g) => (
+                <li key={g.name.en} className="flex">
+                  <Link href={g.href[locale]} className="kn-card group flex w-full items-start justify-between gap-6 p-6">
+                    <span>
+                      <span className="block text-[15px] font-bold text-ink">{g.name[locale]}</span>
+                      <span className="block mt-1 text-[13px] text-ash leading-snug">{g.note[locale]}</span>
+                    </span>
+                    <span className="shrink-0 text-right">
+                      <span className="block text-[15px] font-black text-ink tabular-nums">{g.price[locale]}</span>
+                      <span aria-hidden className="inline-block mt-2 text-ash transition-transform duration-300 group-hover:translate-x-1 group-hover:text-link">→</span>
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          {/* ── B2B and logistics systems ── */}
+          <section id="b2b" aria-label={t.b2bTitle} className="mb-20 scroll-mt-28">
+            <h2 className="text-2xl md:text-3xl font-black text-ink mb-2">{t.b2bTitle}</h2>
+            <p className="text-ash text-sm mb-8 max-w-2xl">{t.b2bSub}</p>
+            <div className="rounded-2xl border border-ink/10 bg-paper overflow-hidden">
+              <ul className="divide-y divide-ink/10 list-none m-0 p-0">
+                {B2B_SYSTEMS.map((s) => (
+                  <li key={s.name.en} className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-1 md:gap-10 px-6 py-5">
+                    <div>
+                      <p className="text-[15px] font-bold text-ink m-0">{s.name[locale]}</p>
+                      <p className="text-[13px] text-ash leading-snug mt-1 mb-0">{s.detail[locale]}</p>
+                    </div>
+                    <p className="text-[15px] font-black text-ink tabular-nums m-0 md:self-center md:text-right whitespace-nowrap">
+                      {s.price[locale]}
+                    </p>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <p className="mt-5 text-[13px] text-ash max-w-3xl">
+              {t.b2bNote}{' '}
+              <Link href={isKo ? LOGISTICS_PATHS.ko : LOGISTICS_PATHS.en} className="text-ink underline underline-offset-4 decoration-ink/30 hover:decoration-ink">
+                {isKo ? '물류·3PL 시스템 자세히' : 'Logistics & 3PL systems'}
+              </Link>
+              {' · '}
+              <Link href={isKo ? AWS_PATHS.ko : AWS_PATHS.en} className="text-ink underline underline-offset-4 decoration-ink/30 hover:decoration-ink">
+                {isKo ? 'AWS·API 연동' : 'AWS and API integration'}
+              </Link>
+            </p>
+          </section>
+
           {/* ── Guarantee ── */}
           <section aria-label={t.guaranteeTitle} className="mb-20">
             <h2 className="text-2xl md:text-3xl font-black text-ink mb-2">{t.guaranteeTitle}</h2>
@@ -391,7 +635,7 @@ export default function PricingPage({ params }: { params: { locale: string } }) 
             <ul className="space-y-3 m-0 p-0 list-none">
               {FAQS.map((f, i) => (
                 <li key={i}>
-                  <details className="group rounded-2xl bg-paper border border-black/[0.08] px-6 py-5">
+                  <details className="group rounded-2xl bg-paper border border-ink/10 px-6 py-5">
                     <summary className="flex items-start justify-between gap-6 cursor-pointer list-none">
                       <h3 className="text-[15px] font-bold text-ink m-0 leading-snug group-open:text-link transition-colors">
                         {f.q[locale]}
@@ -418,7 +662,7 @@ export default function PricingPage({ params }: { params: { locale: string } }) 
               </Link>
               <Link
                 href={`${prefix}/tools/website-cost-estimator`}
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-black/[0.03] border border-black/[0.08] text-graphite hover:bg-bone hover:text-ink transition text-sm font-bold"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-ink/[0.04] border border-ink/10 text-graphite hover:bg-bone hover:text-ink transition text-sm font-bold"
               >
                 {t.ctaEstimator}
               </Link>
@@ -426,7 +670,7 @@ export default function PricingPage({ params }: { params: { locale: string } }) 
           </section>
 
           {/* ── Existing 2-step custom-plan form (kept as final section) ── */}
-          <section id="start" className="pt-4 border-t border-black/[0.08]">
+          <section id="start" className="pt-4 border-t border-ink/10">
             <div className="pt-16">
               <StartProjectForm locale={locale} />
             </div>

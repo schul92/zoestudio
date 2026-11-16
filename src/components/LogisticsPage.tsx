@@ -7,9 +7,12 @@ import {
   ClipboardList,
   CodeXml,
   FileCode2,
+  FileSpreadsheet,
   Globe,
+  Inbox,
   Keyboard,
   Languages,
+  Layers,
   MonitorSmartphone,
   PenTool,
   Rocket,
@@ -47,7 +50,9 @@ export { LOGISTICS_PATHS }
  * portals, WMS and X12 EDI integration, dashboards, on AWS. KO on a Korean slug, EN on an English slug.
  *
  * No logistics clients are named and no results are claimed; the portal and event cards are a labelled
- * sample. Third-party systems are listed as integration examples only. No prices, no phone.
+ * sample. Third-party systems are listed as integration examples only. No phone. Starting prices live on
+ * /pricing#b2b (the FAQ points there); the multi-WMS, scheduled-report and spreadsheet-replacement modules
+ * describe the scope 3PL enquiries actually ask for, generalised.
  */
 
 const ic = 'h-5 w-5'
@@ -143,6 +148,30 @@ const modules: { icon: ReactNode; title: T; body: T }[] = [
     },
   },
   {
+    icon: <Layers className={ic} aria-hidden />,
+    title: { en: 'Several warehouses, several WMSs, one view', ko: '여러 창고 · 여러 WMS를 한 화면에' },
+    body: {
+      en: 'Frozen on one WMS, ambient on another, one of them run by an outside operator: inventory, receipts and orders still land in one view. It starts read-only, so nothing touches warehouse operations.',
+      ko: '냉동 창고와 상온 창고의 WMS가 다르고 한 곳은 운영사가 따로 있어도, 재고·입고·출고를 한 화면에 모읍니다. 읽기 전용으로 시작하므로 현장 운영에는 손대지 않습니다.',
+    },
+  },
+  {
+    icon: <Inbox className={ic} aria-hidden />,
+    title: { en: 'A WMS without an API', ko: 'API가 없는 WMS도 연결' },
+    body: {
+      en: 'If the WMS has no open API yet, we read the scheduled reports (CSV) or EDI copies it already sends, by email or SFTP. When an API opens, the same data switches over.',
+      ko: 'WMS가 아직 API를 열지 않았다면, 이미 받고 계신 정기 리포트(CSV)나 EDI 사본을 메일·SFTP로 받아 자동으로 읽습니다. 나중에 API가 열리면 같은 데이터를 API로 전환합니다.',
+    },
+  },
+  {
+    icon: <FileSpreadsheet className={ic} aria-hidden />,
+    title: { en: 'From spreadsheets to a portal', ko: '엑셀 · SharePoint 파일을 포털로' },
+    body: {
+      en: 'Inventory workbooks refreshed by Power Automate and files dropped into SharePoint for each customer become a branded portal and scheduled report emails.',
+      ko: 'Power Automate로 갱신하던 재고 엑셀, SharePoint로 화주에게 나눠 주던 파일을 우리 회사 브랜드의 포털과 예약 리포트 메일로 바꿉니다.',
+    },
+  },
+  {
     icon: <FileCode2 className={ic} aria-hidden />,
     title: { en: 'EDI integration', ko: 'EDI 연동' },
     body: {
@@ -204,7 +233,8 @@ const reasons: { icon: ReactNode; title: T; body: T }[] = [
 ]
 
 const integrations: { group: T; items: string[] }[] = [
-  { group: { en: 'WMS · OMS', ko: 'WMS · OMS' }, items: ['Extensiv 3PL Warehouse Manager', 'Extensiv Integration Manager', 'ShipStation'] },
+  { group: { en: 'WMS · OMS', ko: 'WMS · OMS' }, items: ['Extensiv 3PL Warehouse Manager', 'Extensiv Integration Manager', 'Körber (HighJump) WMS', 'ShipStation'] },
+  { group: { en: 'Reports and files', ko: '리포트 · 파일' }, items: ['Scheduled CSV reports (email · SFTP)', 'Excel', 'SharePoint', 'Power Automate'] },
   { group: { en: 'Marketplaces', ko: '쇼핑몰' }, items: ['Shopify', 'Amazon SP-API', 'WooCommerce'] },
   { group: { en: 'Carriers', ko: '운송사' }, items: ['UPS', 'FedEx', 'USPS', 'DHL Express'] },
   { group: { en: 'Accounting', ko: '회계' }, items: ['QuickBooks Online', 'Xero'] },
@@ -263,6 +293,30 @@ export const LOGISTICS_FAQ: FaqItem[] = [
     a: {
       en: 'No. We connect to the API and EDI features of the WMS you already run, such as Extensiv 3PL Warehouse Manager. Nothing assumes a replacement.',
       ko: '아니요. Extensiv 3PL Warehouse Manager 같은 기존 WMS의 API·EDI 기능에 연결합니다. 교체를 전제로 하지 않습니다.',
+    },
+  },
+  {
+    q: {
+      en: 'Our warehouses run different WMSs, and one is operated by an outside company. Can you still show them together?',
+      ko: '창고마다 WMS가 다르고, 한 곳은 운영사가 따로 있습니다. 그래도 한 화면에 볼 수 있나요?',
+    },
+    a: {
+      en: 'Yes. Each warehouse connects the way its WMS allows: an API with view-only credentials, or copies of the reports and EDI files the operator already produces. We coordinate the file copy or access with the operator’s technical contact, and the data lands in one database and one screen.',
+      ko: '네. 창고마다 WMS가 허용하는 방식으로 연결합니다. 보기 전용 권한의 API, 또는 운영사가 이미 만들고 있는 리포트·EDI 파일의 사본입니다. 파일 사본이나 권한은 운영사 기술 담당자와 직접 조율하고, 데이터는 하나의 데이터베이스와 한 화면으로 모입니다.',
+    },
+  },
+  {
+    q: { en: 'Can we start read-only?', ko: '처음에는 읽기 전용으로만 시작할 수 있나요?' },
+    a: {
+      en: 'Yes, and we recommend it. Phase one only reads data, so nothing we build can affect warehouse operations. Sending orders out (940s) comes later, with an approval step and a staged rollout, because a 940 makes the warehouse physically ship.',
+      ko: '네, 그렇게 권해 드립니다. 첫 단계는 데이터를 읽기만 하므로 현장 운영에 영향을 줄 수 없습니다. 주문 발신(940)은 창고가 실제로 출고하게 만드는 문서라, 다음 단계에서 승인 절차와 단계적 적용으로 더합니다.',
+    },
+  },
+  {
+    q: { en: 'What does it cost?', ko: '비용은 어느 정도인가요?' },
+    a: {
+      en: 'Starting prices are published on our pricing page: a B2B website with quote requests from $3,500, WMS data with an operations dashboard from $20,000, EDI receive from $8,000 and two-way EDI from $19,000. A fixed quote follows an assessment, and cloud costs bill to your own AWS account.',
+      ko: '가격 페이지에 시작가를 공개하고 있습니다. 견적 요청이 되는 B2B 홈페이지 $3,500부터, WMS 데이터 연동과 운영 대시보드 $20,000부터, EDI 수신 $8,000부터, 양방향 EDI $19,000부터입니다. 진단 후 고정 견적으로 확정하며, 클라우드 비용은 고객사 명의 AWS 계정으로 직접 청구됩니다.',
     },
   },
   {
@@ -441,7 +495,7 @@ export default function LogisticsPage({ locale }: { locale: L }) {
             eyebrow={isKo ? '연동 대상' : 'Integrations'}
             title={isKo ? '이미 쓰고 있는 시스템에 연결합니다' : 'We connect to the systems you already use'}
           />
-          <div data-reveal-group className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-5 md:gap-4">
+          <div data-reveal-group className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 md:gap-4">
             {integrations.map((g) => (
               <div key={g.group.en} className="ul-panel rounded-[20px] p-5">
                 <p className="text-[12px] font-semibold text-[var(--gold)]">{g.group[locale]}</p>

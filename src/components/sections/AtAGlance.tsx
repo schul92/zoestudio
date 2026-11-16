@@ -15,7 +15,7 @@ const AT_A_GLANCE: Record<'en' | 'ko', QA[]> = {
     },
     {
       q: 'How much does it cost?',
-      a: 'Builds are $500–$2,400 one-time (Basic, Standard, Store). Monthly care plans are $49, $129, $199 or $499. Every price is published on the pricing page; B2B portals and system integrations are quoted per project.',
+      a: 'Standard builds are $500–$2,400 one-time (Basic, Standard, Store). Premium builds for clinics and multi-language sites are $3,500–$6,000, and Signature builds start at $8,000. Monthly care plans are $49, $129, $199 or $499. B2B and logistics systems start at $3,500 (EDI from $8,000, WMS dashboards from $20,000). Every price is published on the pricing page.',
     },
     {
       q: 'How long does it take?',
@@ -33,7 +33,7 @@ const AT_A_GLANCE: Record<'en' | 'ko', QA[]> = {
     },
     {
       q: '비용은 얼마인가요?',
-      a: '제작은 1회 $500–$2,400 (기본·일반·스토어)이며, 월 관리 플랜은 $49, $129, $199, $499입니다. 모든 가격은 가격 페이지에 공개되어 있으며, B2B 포털·시스템 연동은 프로젝트별로 견적드립니다.',
+      a: '기본 제작은 1회 $500–$2,400 (기본·일반·스토어)이고, 병원·다국어 사이트를 위한 프리미엄은 $3,500–$6,000, 시그니처는 $8,000부터입니다. 월 관리 플랜은 $49, $129, $199, $499입니다. B2B·물류 시스템은 $3,500부터 (EDI 연동 $8,000부터, WMS 대시보드 $20,000부터). 모든 가격은 가격 페이지에 공개되어 있습니다.',
     },
     {
       q: '기간은 얼마나 걸리나요?',
