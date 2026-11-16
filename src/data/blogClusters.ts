@@ -20,6 +20,9 @@ export const PILLARS = {
       'bilingual-seo-new-york-korean-business',
       'naver-vs-google-korean-business-usa',
       'naver-seo-from-usa-korean-business',
+      'naver-marketing-glossary-2026',
+      'naver-ads-conversion-tracking-naver-analytics-2026',
+      'korea-us-two-markets-naver-google-2026',
       'website-translation-vs-localization-korean-business',
       'local-seo-korean-business-2026',
       'local-seo-guide-korean-business-2026',
@@ -145,6 +148,7 @@ export const PILLARS = {
     posts: [
       'korean-dental-practice-website-guide',
       'seoul-dental-clinic-website-case-study',
+      'med-spa-website-case-study-duluth-ga',
       'korean-medical-clinic-online-booking-system-guide',
       'korean-law-firm-website-guide',
       'korean-real-estate-agent-website',
@@ -198,6 +202,9 @@ export const POST_TO_PILLAR: Record<string, PillarKey> = {
   'bilingual-seo-new-york-korean-business': 'bilingual-seo',
   'naver-vs-google-korean-business-usa': 'bilingual-seo',
   'naver-seo-from-usa-korean-business': 'bilingual-seo',
+  'naver-marketing-glossary-2026': 'bilingual-seo',
+  'naver-ads-conversion-tracking-naver-analytics-2026': 'bilingual-seo',
+  'korea-us-two-markets-naver-google-2026': 'bilingual-seo',
   'website-translation-vs-localization-korean-business': 'bilingual-seo',
   'local-seo-korean-business-2026': 'bilingual-seo',
   'local-seo-guide-korean-business-2026': 'bilingual-seo',
@@ -244,6 +251,8 @@ export const POST_TO_PILLAR: Record<string, PillarKey> = {
   'korean-medical-clinic-online-booking-system-guide': 'professional-services',
   // 2026-11-06 — Seoul Choice Dental launch case study (clinic in Seoul, Korea)
   'seoul-dental-clinic-website-case-study': 'professional-services',
+  // 2026-11-13 — TopSkin Clinic Med Spa launch case study (Duluth, Georgia)
+  'med-spa-website-case-study-duluth-ga': 'professional-services',
   'korean-law-firm-website-guide': 'professional-services',
   'korean-real-estate-agent-website': 'professional-services',
   'korean-insurance-financial-services-website': 'professional-services',

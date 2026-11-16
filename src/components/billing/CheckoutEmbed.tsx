@@ -33,7 +33,7 @@ function Fallback({ children }: { children: React.ReactNode }) {
   )
 }
 
-export default function CheckoutEmbed({ token }: { token: string }) {
+export default function CheckoutEmbed({ token, method }: { token: string; method?: 'bank' | 'card' }) {
   const [failed, setFailed] = useState<'error' | 'already_paid' | null>(null)
 
   const fetchClientSecret = useCallback(
@@ -41,7 +41,7 @@ export default function CheckoutEmbed({ token }: { token: string }) {
       fetch('/api/checkout', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ token }),
+        body: JSON.stringify(method ? { token, method } : { token }),
       })
         .then((r) => r.json())
         .then((d: { clientSecret?: string; error?: string }) => {
@@ -56,7 +56,7 @@ export default function CheckoutEmbed({ token }: { token: string }) {
           setFailed(msg === 'already_paid' ? 'already_paid' : 'error')
           throw e instanceof Error ? e : new Error('checkout_failed')
         }),
-    [token]
+    [token, method]
   )
 
   // Operator misconfiguration: publishable key not set.

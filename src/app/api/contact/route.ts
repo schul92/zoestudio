@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
+import { attributionRows, sanitizeAttribution } from '@/lib/attribution'
 
 const escapeHtml = (s: string) =>
   s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
@@ -35,7 +36,9 @@ export async function POST(request: Request) {
       landing: clip(body.landing, 300),
       lead_source: clip(body.lead_source, 60),
     }
-    lead = { name, email, phone, business, services, message, ...ads }
+    const attribution = sanitizeAttribution(body)
+    const sourceRows = attributionRows(attribution)
+    lead = { name, email, phone, business, services, message, ...ads, attribution }
 
     // Message is optional — the homepage form allows submitting with just
     // name + email, and rejecting those was silently dropping leads.
@@ -84,6 +87,11 @@ export async function POST(request: Request) {
         ` : ''}
         <p><strong>Message:</strong></p>
         <p>${h.message.replace(/\n/g, '<br>')}</p>
+        ${sourceRows.length ? `
+        <div style="margin: 20px 0; padding: 12px 15px; border-left: 3px solid #c9a227; background: #faf8f2;">
+          ${sourceRows.map(([k, v]) => `<p style="margin: 4px 0; font-size: 13px; color: #333;"><strong>${escapeHtml(k)}:</strong> ${escapeHtml(v)}</p>`).join('')}
+        </div>
+        ` : ''}
         ${adLine ? `<p style="color:#666;font-size:12px;"><strong>Attribution:</strong> ${escapeHtml(adLine)}</p>` : ''}
         <hr>
         <p><small>This email was sent from the ZOE LUMOS website contact form.</small></p>
@@ -99,7 +107,7 @@ ${services ? `\nSelected Services/Plans: ${services}\n` : ''}
 
 Message:
 ${safeMessage}
-${adLine ? `\nAttribution: ${adLine}\n` : ''}
+${sourceRows.length ? `\n${sourceRows.map(([k, v]) => `${k}: ${v}`).join('\n')}\n` : ''}${adLine ? `\nAttribution: ${adLine}\n` : ''}
 ---
 This email was sent from the ZOE LUMOS website contact form.
       `

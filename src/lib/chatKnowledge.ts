@@ -93,7 +93,10 @@ Specialty: doctors and medical/dental practices, medical-device companies, and B
 (FDA 510(k) medical-device U.S. launch site, live) and Seoul Choice Dental (서울초이스치과의원,
 a dental clinic in Yeongdeungpo, Seoul, Korea; launched November 2026 at
 https://www.seoulchoicedent.com with 132 pages in Korean, English, Japanese and Chinese and
-19 treatment pages; case study: /ko/blog/seoul-dental-clinic-website-case-study).
+19 treatment pages; case study: /ko/blog/seoul-dental-clinic-website-case-study); and TopSkin Clinic Med Spa,
+a K-beauty med spa in Duluth, Georgia, launched November 2026 at https://www.topskinclinicmedspa.com
+with 36 pages in English, Korean and Vietnamese, 6 treatment pages by skin concern and the clinic's
+own before-and-after photos; case study: /blog/med-spa-website-case-study-duluth-ga).
 Clinics in Korea are welcome: work runs in Korean over KakaoTalk and email, and payment is by an
 internationally enabled card (Visa, Mastercard, Amex) billed in USD.
 Also: Korean restaurants and cafes, beauty and hair salons, churches, academies and hagwons,

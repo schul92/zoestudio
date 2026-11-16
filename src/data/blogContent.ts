@@ -43,6 +43,1114 @@ export interface BlogPost {
 }
 
 const allBlogPosts: BlogPost[] = [
+  // Naver marketing series (2026-11-15): glossary, tracking, Korea + US. Facts checked against ads.naver.com notices and naver.github.io/conversion-tracking.
+  {
+    slug: "naver-marketing-glossary-2026",
+    date: "2026-11-15",
+    updatedDate: "2026-11-15",
+    readTime: 11,
+    category: {
+      "en": "Naver Marketing",
+      "ko": "네이버 마케팅"
+    },
+    title: {
+      "en": "Naver Marketing Glossary 2026: Place, Powerlink, Brand Search and Conversion Tracking, Explained for Business Owners",
+      "ko": "네이버 마케팅 용어 총정리 2026: 플레이스 · 파워링크 · 브랜드검색 · 전환추적, 사장님 말로 풀었습니다"
+    },
+    metaDescription: {
+      "en": "Every Naver marketing term a clinic or brand owner hears in 2026, in plain words: Naver Place and Smartplace, Powerlink, shopping and brand search ads, display ads (formerly GFA), bizmoney, Search Advisor, Naver Analytics and conversion tracking. Includes what changed in 2026 and what clinics may not use.",
+      "ko": "2026년 기준 네이버 마케팅 용어를 사장님 말로 정리했습니다. 네이버 플레이스 · 스마트플레이스, 파워링크, 쇼핑검색광고, 브랜드검색, 디스플레이 광고(옛 GFA), 비즈머니, 서치어드바이저, 네이버 애널리틱스, 전환추적까지. 2026년에 바뀐 것과 병원이 못 쓰는 상품도 함께."
+    },
+    author: "Steve Song",
+    image: "/blog/naver-marketing-glossary-2026.png",
+    faq: [
+      {
+        "q": {
+          "en": "Can a US company run Naver ads?",
+          "ko": "미국 회사도 네이버 광고를 할 수 있나요?"
+        },
+        "a": {
+          "en": "Yes. Since September 2025 overseas advertisers open accounts in Naver's unified ad center the same way Korean ones do, and Naver's own FAQ says global companies can create and operate Naver ad accounts. Zoe Lumos holds a Naver overseas advertiser account, and we run a client's campaigns inside the client's own account through a member invite.",
+          "ko": "네. 2025년 9월부터 해외 광고주도 통합 광고주센터에서 국내 광고주와 같은 방식으로 계정을 만듭니다. 네이버 공식 FAQ도 해외 기업이 네이버 광고 계정을 만들고 운영할 수 있다고 안내합니다. 조이루모스는 네이버 해외 광고주 계정을 갖고 있고, 고객 광고는 고객 명의 계정에 멤버로 초대받아 운영합니다."
+        }
+      },
+      {
+        "q": {
+          "en": "What is the difference between Naver Place and Smartplace?",
+          "ko": "네이버 플레이스와 스마트플레이스는 뭐가 다른가요?"
+        },
+        "a": {
+          "en": "Naver Place is the listing customers see in Naver Map and search. Smartplace is the owner's admin tool where you edit that listing: hours, photos, menus or treatments, booking and TalkTalk.",
+          "ko": "네이버 플레이스는 손님이 네이버 지도와 검색에서 보는 업체 정보이고, 스마트플레이스는 사장님이 그 정보를 고치는 관리 도구입니다. 영업시간, 사진, 메뉴나 진료 항목, 예약 · 톡톡 설정을 여기서 합니다."
+        }
+      },
+      {
+        "q": {
+          "en": "Can clinics in Korea use every Naver ad product?",
+          "ko": "병원도 네이버 광고를 다 쓸 수 있나요?"
+        },
+        "a": {
+          "en": "No. Clinics can run Powerlink, Power Content, Brand Search and Place ads, but the copy must match a draft approved in medical-ad pre-review and carry its approval number. Some extensions such as images, prices and Place info are restricted, ADVoost Place is not open to clinics, and the brand-recommendation Brand Search template has been closed to clinics since March 19, 2026.",
+          "ko": "아닙니다. 병원은 파워링크 · 파워콘텐츠 · 브랜드검색 · 플레이스 광고를 쓸 수 있지만, 광고 문구가 의료광고 사전심의를 통과한 시안과 같아야 하고 심의필 번호를 넣어야 합니다. 이미지 · 가격 · 플레이스정보 같은 확장소재는 제한되고, ADVoost 플레이스는 병 · 의원이 쓸 수 없으며, 브랜드검색의 브랜드추천형 템플릿은 2026년 3월 19일부터 병 · 의원에 막혔습니다."
+        }
+      }
+    ],
+    sections: {
+      "ko": [
+        {
+          "type": "intro",
+          "content": "네이버 대행사와 통화하면 모르는 단어가 쏟아집니다. 플레이스, 파워링크, 브랜드검색, 비즈머니, 전환추적. 무슨 뜻인지 모르면 견적이 비싼지 싼지도, 일을 제대로 했는지도 판단할 수 없습니다. 2026년 11월 기준으로 실제 쓰이는 용어만 골라, 사장님이 바로 이해할 수 있는 말로 정리했습니다."
+        },
+        {
+          "type": "h2",
+          "content": "먼저 큰 그림: 네이버는 세 칸으로 나뉩니다"
+        },
+        {
+          "type": "ul",
+          "content": "네이버 마케팅은 결국 이 세 가지입니다.",
+          "items": [
+            "무료로 보이는 칸: 네이버 플레이스(지도), 블로그, 홈페이지 검색 결과. 돈은 안 들지만 관리해야 올라갑니다.",
+            "돈 내고 보이는 칸: 파워링크, 플레이스 광고, 브랜드검색 같은 광고. 클릭이나 기간 단위로 돈이 나갑니다.",
+            "재는 칸: 서치어드바이저, 네이버 애널리틱스, 전환추적. 이게 없으면 위 두 칸이 효과가 있었는지 알 수 없습니다."
+          ]
+        },
+        {
+          "type": "h2",
+          "content": "지도 · 매장: 네이버 플레이스"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "네이버 플레이스: 네이버 지도와 검색에 뜨는 업체 정보 카드. 주소, 영업시간, 사진, 리뷰가 여기 모입니다.",
+            "스마트플레이스: 플레이스 정보를 고치는 사장님용 관리 도구. 직원이나 대행사는 '운영자'로 초대해서 권한만 줍니다.",
+            "네이버 예약: 플레이스에서 바로 예약받는 무료 기능. 병원 · 미용실 · 식당이 많이 씁니다.",
+            "톡톡: 네이버 안에서 손님과 채팅하는 기능. 카카오톡 채널과 비슷한 역할입니다.",
+            "방문자 리뷰 · 블로그 리뷰: 손님이 남긴 후기. 2026년에 별점이 다시 생겼고, 사장님이 별점 표시를 켜고 끌 수 있습니다.",
+            "저장하기 · 알림받기: 손님이 업체를 찜해 두는 버튼. 많이 저장될수록 관심이 많다는 신호입니다.",
+            "플레이스 쿠폰 · 네이버 주문(스마트주문): 쿠폰 발행과 QR · 원격 주문 기능. 업종에 따라 씁니다.",
+            "AI 브리핑: 검색 결과 맨 위에 AI가 요약해 주는 답. 업체 정보와 리뷰를 읽어서 만들기 때문에 플레이스 정보가 정확해야 합니다."
+          ],
+          "content": ""
+        },
+        {
+          "type": "h2",
+          "content": "콘텐츠: 블로그와 그 주변"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "네이버 블로그(브랜드 블로그): 업체 명의로 운영하는 블로그. 글이 업체 것으로 남는다는 점이 중요합니다.",
+            "최적화 블로그 · 배포 블로그: 대행사가 자기 아이디(또는 빌린 아이디)로 운영하는 블로그. 글이 대행사 것이라 계약이 끝나거나 대행사가 지우면 사라집니다.",
+            "인플루언서: 네이버가 분야별로 인정한 크리에이터. 체험단 형태로 쓰이는데, 병원은 의료법상 후기 광고가 막혀 있어 조심해야 합니다.",
+            "카페 · 지식iN: 커뮤니티와 질문 답변 서비스. 동네 카페, 맘카페에서 업체 이름이 오가는 곳입니다.",
+            "클립: 네이버의 짧은 동영상. 네이버TV가 2026년 9월 30일 종료되고 클립으로 합쳐졌습니다."
+          ],
+          "content": ""
+        },
+        {
+          "type": "h2",
+          "content": "광고: 네이버 광고(옛 통합광고주센터)"
+        },
+        {
+          "type": "ul",
+          "content": "2026년 3월 30일부터 광고 관리 화면 이름이 '네이버 광고'로 하나가 됐습니다.",
+          "items": [
+            "파워링크(사이트검색광고): 검색 결과에 뜨는 글자 광고. 클릭할 때마다 돈이 나갑니다(CPC).",
+            "쇼핑검색광고: 네이버 쇼핑 검색에 뜨는 상품 광고. 스마트스토어 · 쇼핑몰이 씁니다.",
+            "파워콘텐츠(콘텐츠검색광고): '임플란트 과정'처럼 정보를 찾는 검색에 블로그 글을 광고로 띄우는 상품.",
+            "브랜드검색: 우리 업체 이름을 검색했을 때 맨 위에 크게 뜨는 고정 광고. 기간 단위로 돈을 냅니다. 2026년 6월에 템플릿이 7개로 줄었습니다.",
+            "플레이스 광고: 지도 · 플레이스 검색 결과에 뜨는 광고. 2026년 9월부터 자동 입찰형 'ADVoost 플레이스'가 베타로 나왔지만 병 · 의원은 쓸 수 없습니다.",
+            "디스플레이 광고(옛 성과형 디스플레이, GFA): 관심사 · 나이 · 지역을 골라 배너나 피드에 보여 주는 광고.",
+            "비즈머니: 광고비 선불 충전금. 2025년 9월부터 검색광고와 디스플레이 광고가 비즈머니 하나를 같이 씁니다.",
+            "키워드도구: 사람들이 어떤 단어를 한 달에 몇 번 검색하는지 보여 주는 무료 도구.",
+            "광고연관지수 · 클릭기대지수: 예전 '품질지수'를 대신하는 1~10점 점수. 품질지수 표시는 2026년 7월 29일에 끝났습니다.",
+            "검색광고 API: 광고 계정을 프로그램으로 조회하고 관리하는 공식 연결 통로. 매일 리포트를 자동으로 뽑을 때 씁니다.",
+            "디지털옥외광고(DOOH): 2026년 1월부터 플레이스 업체에도 팔기 시작한 옥외 전광판 광고."
+          ]
+        },
+        {
+          "type": "h2",
+          "content": "재는 도구: 이게 없으면 광고비가 어디로 갔는지 모릅니다"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "서치어드바이저: 홈페이지를 네이버 검색에 등록하고 사이트맵 · RSS를 내는 무료 도구. 구글 서치 콘솔의 네이버판입니다.",
+            "네이버 애널리틱스: 홈페이지 방문자를 재는 무료 도구. 몇 명이 어떤 검색어로 들어왔는지 보여 줍니다. 홈페이지에 스크립트를 달아야 작동합니다.",
+            "전환추적(옛 프리미엄 로그분석): 광고를 클릭한 사람이 예약 · 문의 · 구매까지 했는지 세는 기능. 2026년 3월 30일에 이름이 바뀌었습니다.",
+            "공통 스크립트 · 전환 스크립트: 홈페이지에 붙이는 짧은 코드. 공통 스크립트는 모든 페이지에, 전환 스크립트는 예약 완료 · 구매 완료 같은 페이지에 답니다.",
+            "기여전환: 마지막 클릭은 아니었지만 중간에 도움을 준 광고를 세는 새 지표(2026년 3월 도입)."
+          ],
+          "content": ""
+        },
+        {
+          "type": "tip",
+          "content": "2026년 3월 광고주센터 개편 뒤로 광고 계정과 네이버 애널리틱스가 자동으로 연결되지 않습니다. 예전에 설치했더라도 애널리틱스에 사이트를 다시 등록하고 스크립트를 새로 달아야 하고, 그전 데이터는 넘어오지 않습니다."
+        },
+        {
+          "type": "h2",
+          "content": "없어진 것들"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "연관검색어: 2026년 4월 30일 종료.",
+            "품질지수 표시: 2026년 7월 29일부터 광고연관지수 · 클릭기대지수로 대체.",
+            "네이버TV: 2026년 9월 30일 종료, 클립으로 이동.",
+            "예전 광고 관리 주소들: 2026년 3월 30일부터 '네이버 광고' 한 곳으로."
+          ],
+          "content": ""
+        },
+        {
+          "type": "h2",
+          "content": "병원이라면 다르게 봐야 하는 것"
+        },
+        {
+          "type": "p",
+          "content": "네이버는 하루 이용자가 10만 명이 넘는 매체라서, 병원 광고는 의료법 57조에 따라 의사협회 · 치과의사협회 · 한의사협회 심의위원회의 사전심의를 먼저 받아야 합니다. 광고 문구는 심의를 통과한 시안과 같아야 하고, 심의필 번호를 넣어야 합니다. 병원 이름 · 주소 · 전화 · 진료과목만 있는 광고는 심의가 면제됩니다. 이미지 · 가격 · 플레이스정보 같은 확장소재는 제한되고, ADVoost 플레이스와 브랜드검색 브랜드추천형은 병 · 의원이 쓸 수 없습니다."
+        },
+        {
+          "type": "h2",
+          "content": "미국 회사가 네이버를 맡아도 되나요?"
+        },
+        {
+          "type": "p",
+          "content": "됩니다. 조이루모스는 미국 법인(ZOE STUDIO LLC) 명의로 네이버 광고 해외 광고주 계정을 갖고 있습니다. 2025년 9월부터 해외 광고주도 국내 광고주와 같은 통합 광고주센터에서 계정을 만들고, 해외 통화로 결제하면 부가세 영세율이 적용됩니다. 고객 광고는 고객 명의 계정에 멤버로 초대받아 운영하기 때문에 계정과 광고비는 늘 고객 것으로 남습니다."
+        },
+        {
+          "type": "ul",
+          "content": "조이루모스가 맡는 네이버 일",
+          "items": [
+            "네이버 플레이스(스마트플레이스) 정보 · 사진 · 소식 관리",
+            "업체 명의 네이버 브랜드 블로그 운영 (병원은 의료법 56조 기준, 필요하면 사전심의)",
+            "파워링크 · 쇼핑검색 · 브랜드검색 · 플레이스 광고 운영",
+            "서치어드바이저 등록, 네이버 애널리틱스 · 전환추적 설치",
+            "매달 네이버 · 구글 순위와 문의 리포트",
+            "하지 않는 것: 블로그 임대, 체험단 후기, 리뷰 구매, 순위 보장"
+          ]
+        },
+        {
+          "type": "cta",
+          "content": "지금 쓰는 네이버 계정과 광고가 제대로 돌아가는지부터 무료로 봐 드립니다. 한국 병원, B2B 의류 · 유아복 브랜드 모두 한국어로 상담합니다."
+        }
+      ],
+      "en": [
+        {
+          "type": "intro",
+          "content": "Call a Naver marketing agency in Korea and the jargon starts right away: Place, Powerlink, Brand Search, bizmoney, conversion tracking. If you don't know what the words mean, you can't tell whether a quote is fair or whether the work got done. This glossary covers only the terms in use as of November 2026, in plain words for business owners."
+        },
+        {
+          "type": "h2",
+          "content": "The big picture: Naver has three boxes"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Free visibility: Naver Place (the map listing), blogs and your website in search results. No ad spend, but it has to be maintained.",
+            "Paid visibility: Powerlink, Place ads, Brand Search and other ads, billed per click or per period.",
+            "Measurement: Search Advisor, Naver Analytics and conversion tracking. Without these you can't tell whether the other two worked."
+          ],
+          "content": ""
+        },
+        {
+          "type": "h2",
+          "content": "Maps and storefront: Naver Place"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Naver Place: the business card that shows in Naver Map and search, with address, hours, photos and reviews.",
+            "Smartplace: the owner's admin tool for that listing. Staff or agencies are invited as operators, so the owner keeps control.",
+            "Naver Booking (네이버 예약): free online booking right on the Place listing.",
+            "TalkTalk (톡톡): Naver's built-in chat, similar to a KakaoTalk Channel.",
+            "Visitor and blog reviews: star ratings returned in 2026, and the owner can turn their display on or off.",
+            "Save and notifications: customers bookmarking your business, a signal of interest.",
+            "Place coupons and Naver Order (스마트주문): coupons and QR or remote ordering, depending on the business type.",
+            "AI Briefing: the AI summary at the top of Naver results, built from Place data and reviews, so the listing has to be accurate."
+          ],
+          "content": ""
+        },
+        {
+          "type": "h2",
+          "content": "Content: the blog and around it"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Naver blog (brand blog): a blog under your own business account. Posts stay yours.",
+            "\"Optimized\" or distribution blogs: blogs an agency runs under its own or rented accounts. The posts belong to the agency and vanish when it deletes them or the contract ends.",
+            "Influencers: creators Naver recognizes by topic. Clinics in Korea must be careful, since testimonial-style medical ads are restricted.",
+            "Cafe and Knowledge iN (지식iN): community forums and Q&A, where neighborhood word of mouth happens.",
+            "Clip: Naver's short video. Naver TV closed on September 30, 2026 and moved into Clip."
+          ],
+          "content": ""
+        },
+        {
+          "type": "h2",
+          "content": "Ads: Naver Ads (the unified ad center)"
+        },
+        {
+          "type": "ul",
+          "content": "Since March 30, 2026 the ad dashboard is one platform called Naver Ads.",
+          "items": [
+            "Powerlink (site search ads): text ads in search results, paid per click.",
+            "Shopping search ads: product ads in Naver Shopping, for Smart Store and online shops.",
+            "Power Content (content search ads): blog-style ads for informational searches.",
+            "Brand Search: a fixed-fee brand block when someone searches your name. Templates were cut to 7 in June 2026.",
+            "Place ads: ads in map and Place results. ADVoost Place (automated bidding) launched in beta in September 2026; clinics can't use it.",
+            "Display ads (formerly GFA): banner and feed ads targeted by interest, age and location.",
+            "Bizmoney: the prepaid ad balance, shared by search and display ads since September 2025.",
+            "Keyword Tool: free monthly search volumes.",
+            "Ad relevance and expected-click scores: 1–10 scores that replaced the Quality Index, which stopped showing on July 29, 2026.",
+            "Search Ad API: the official programmatic access, used for automated daily reports.",
+            "Digital out-of-home (DOOH): screen ads sold to Place businesses since January 2026."
+          ]
+        },
+        {
+          "type": "h2",
+          "content": "Measurement: without it, you can't see where the money went"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Search Advisor: Naver's webmaster tool, the Naver version of Google Search Console.",
+            "Naver Analytics: free visitor analytics, including the search terms people used. Needs a script on your site.",
+            "Conversion tracking (formerly Premium Log Analysis, renamed March 30, 2026): counts whether an ad click led to a booking, inquiry or purchase.",
+            "Common script and conversion script: short code on your site, the first on every page, the second on completion pages.",
+            "Assisted conversions: a 2026 metric that credits ads that helped before the last click."
+          ],
+          "content": ""
+        },
+        {
+          "type": "tip",
+          "content": "Since the March 2026 ad-center overhaul, ad accounts no longer link to Naver Analytics automatically. Even if you installed it before, you have to register the site again and install the new script, and older data does not carry over."
+        },
+        {
+          "type": "h2",
+          "content": "Gone in 2026"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Related searches (연관검색어): ended April 30, 2026.",
+            "Quality Index display: replaced July 29, 2026.",
+            "Naver TV: closed September 30, 2026.",
+            "The old per-platform ad URLs: merged into Naver Ads on March 30, 2026."
+          ],
+          "content": ""
+        },
+        {
+          "type": "h2",
+          "content": "Clinics in Korea play by different rules"
+        },
+        {
+          "type": "p",
+          "content": "Naver has more than 100,000 daily users, so under Article 57 of Korea's Medical Service Act clinic ads need pre-review by the medical, dental or Korean-medicine association before they run. Ad copy must match the approved draft and carry its approval number; ads with only the name, address, phone and specialties are exempt. Image, price and Place-info extensions are restricted, and ADVoost Place and the brand-recommendation Brand Search template are closed to clinics."
+        },
+        {
+          "type": "h2",
+          "content": "Can a US company handle your Naver marketing?"
+        },
+        {
+          "type": "p",
+          "content": "Yes. Zoe Lumos holds a Naver overseas advertiser account under our US company, ZOE STUDIO LLC. Since September 2025 overseas advertisers use the same unified ad center as Korean ones. We run each client's ads inside the client's own account through a member invite, so the account and the ad spend always stay theirs."
+        },
+        {
+          "type": "ul",
+          "content": "What we handle on Naver",
+          "items": [
+            "Naver Place (Smartplace) info, photos and posts",
+            "Your own Naver brand blog, written to Korea's medical-ad rules for clinics",
+            "Powerlink, shopping, Brand Search and Place ads",
+            "Search Advisor, Naver Analytics and conversion tracking setup",
+            "A monthly Naver and Google rank and inquiry report",
+            "What we don't do: rented blogs, review groups, paid reviews or rank guarantees"
+          ]
+        },
+        {
+          "type": "cta",
+          "content": "We'll start with a free check of your current Naver accounts and ads, for clinics in Korea and for B2B apparel and kids' clothing brands."
+        }
+      ]
+    },
+  },
+  {
+    slug: "naver-ads-conversion-tracking-naver-analytics-2026",
+    date: "2026-11-15",
+    updatedDate: "2026-11-15",
+    readTime: 9,
+    category: {
+      "en": "Naver Marketing",
+      "ko": "네이버 마케팅"
+    },
+    title: {
+      "en": "Running Naver Ads but Can't See Results? Check Naver Analytics and Conversion Tracking on Your Website (2026 Guide)",
+      "ko": "네이버 광고는 하는데 추적이 안 된다면: 홈페이지에 네이버 애널리틱스 · 전환추적을 달았나요? (2026 설치 가이드)"
+    },
+    metaDescription: {
+      "en": "If your Naver ad reports show clicks but no bookings or inquiries, the tracking code is probably missing. What Naver Analytics and conversion tracking (formerly Premium Log Analysis) do, what changed in March 2026, which conversions to set up for clinics and shops, and how to install and check them.",
+      "ko": "네이버 광고 보고서에 클릭만 있고 예약 · 문의가 0이라면 홈페이지에 추적 장치가 없을 가능성이 큽니다. 네이버 애널리틱스와 전환추적(옛 프리미엄 로그분석)의 차이, 2026년 3월에 바뀐 점, 병원 · 쇼핑몰이 잡아야 할 전환, 설치와 확인 방법을 정리했습니다."
+    },
+    author: "Steve Song",
+    image: "/blog/naver-ads-conversion-tracking-naver-analytics-2026.png",
+    howto: {
+      "name": {
+        "en": "How to set up Naver Analytics and Naver ad conversion tracking",
+        "ko": "네이버 애널리틱스와 네이버 광고 전환추적 설치하기"
+      },
+      "description": {
+        "en": "The order we follow on client websites so Naver ad reports show real bookings and inquiries.",
+        "ko": "광고 보고서에 실제 예약 · 문의가 잡히도록 저희가 고객 홈페이지에 적용하는 순서입니다."
+      },
+      "totalTime": "PT2H",
+      "steps": [
+        {
+          "name": {
+            "en": "Register the site in Naver Analytics",
+            "ko": "네이버 애널리틱스에 사이트 등록"
+          },
+          "text": {
+            "en": "At analytics.naver.com, add the website and copy the issued ID and script.",
+            "ko": "analytics.naver.com에서 홈페이지를 등록하고 발급된 ID와 스크립트를 복사합니다."
+          }
+        },
+        {
+          "name": {
+            "en": "Install the common script on every page",
+            "ko": "모든 페이지에 공통 스크립트 설치"
+          },
+          "text": {
+            "en": "Place it just before the closing body tag on every page. The script loads wcslog.js and sets your account ID (wcs_add[\"wa\"]).",
+            "ko": "모든 페이지의 </body> 바로 앞에 넣습니다. wcslog.js를 불러오고 계정 ID(wcs_add[\"wa\"])를 지정하는 코드입니다."
+          }
+        },
+        {
+          "name": {
+            "en": "Apply for conversion tracking in Naver Ads",
+            "ko": "네이버 광고에서 전환추적 신청"
+          },
+          "text": {
+            "en": "In the ad center, open Conversion tracking (formerly Premium Log Analysis) and apply for the site.",
+            "ko": "광고 관리 화면의 전환추적(옛 프리미엄 로그분석) 메뉴에서 사이트를 신청합니다."
+          }
+        },
+        {
+          "name": {
+            "en": "Add conversion scripts to completion pages",
+            "ko": "완료 페이지에 전환 스크립트 추가"
+          },
+          "text": {
+            "en": "Fire the matching type (schedule, inquiry, call, lead, purchase) on the booking-complete, form-sent or order-complete step.",
+            "ko": "예약 완료 · 문의 접수 · 주문 완료 단계에서 맞는 종류(예약 schedule, 문의 inquiry, 전화 call, 신청 lead, 구매 purchase)를 보냅니다."
+          }
+        },
+        {
+          "name": {
+            "en": "Check with Naver's Chrome extension",
+            "ko": "네이버 크롬 확장 프로그램으로 확인"
+          },
+          "text": {
+            "en": "Use the Naver Conversion Script Assistant extension to confirm both scripts fire, and keep the NaPm parameter through any redirect.",
+            "ko": "'네이버 전환 스크립트 어시스턴트'로 두 스크립트가 실행되는지 보고, 리디렉션이 있으면 NaPm 값이 지워지지 않는지 확인합니다."
+          }
+        },
+        {
+          "name": {
+            "en": "Wait for the In use status",
+            "ko": "'사용중' 상태 확인"
+          },
+          "text": {
+            "en": "Data starts once the ad center shows the site as In use. Then compare clicks with real bookings each month.",
+            "ko": "광고 관리 화면에 '사용중'이 뜨면 집계가 시작됩니다. 그다음부터 매달 클릭과 실제 예약을 비교합니다."
+          }
+        }
+      ]
+    },
+    faq: [
+      {
+        "q": {
+          "en": "My Naver ad report shows zero conversions. Is the ad failing?",
+          "ko": "네이버 광고 보고서에 전환이 0이에요. 광고가 안 되는 건가요?"
+        },
+        "a": {
+          "en": "Not necessarily. If the conversion script isn't installed, the report simply can't show conversions. Check whether your site has the common script on every page and a conversion script on the booking or inquiry completion page.",
+          "ko": "꼭 그렇지는 않습니다. 전환 스크립트가 없으면 보고서에 전환이 나올 수가 없습니다. 홈페이지 모든 페이지에 공통 스크립트가, 예약 · 문의 완료 페이지에 전환 스크립트가 달려 있는지부터 확인하세요."
+        }
+      },
+      {
+        "q": {
+          "en": "Do Naver Booking and TalkTalk count as conversions?",
+          "ko": "네이버 예약이나 톡톡도 전환으로 잡히나요?"
+        },
+        "a": {
+          "en": "Not through your website's script, because they happen on Naver's own pages. Check them in Smartplace and Place statistics, and track the booking and chat buttons on your own website separately.",
+          "ko": "홈페이지 스크립트로는 잡히지 않습니다. 네이버 안에서 일어나는 행동이기 때문입니다. 스마트플레이스 통계에서 따로 보고, 홈페이지 안의 예약 · 톡톡 버튼 클릭은 별도로 측정해야 합니다."
+        }
+      },
+      {
+        "q": {
+          "en": "We installed Naver Analytics years ago. Do we need to do anything?",
+          "ko": "몇 년 전에 네이버 애널리틱스를 달았는데 또 해야 하나요?"
+        },
+        "a": {
+          "en": "Probably yes. Since the March 2026 ad-center overhaul the automatic link between ad accounts and Naver Analytics is gone. Naver asks advertisers to register the site again and install the script; older data does not carry over.",
+          "ko": "대부분 다시 해야 합니다. 2026년 3월 광고주센터 개편 뒤로 광고 계정과 네이버 애널리틱스의 자동 연결이 끊겼습니다. 네이버는 사이트를 다시 등록하고 스크립트를 새로 설치하라고 안내하고, 그전 데이터는 넘어오지 않습니다."
+        }
+      }
+    ],
+    sections: {
+      "ko": [
+        {
+          "type": "intro",
+          "content": "\"네이버 광고는 매달 하는데, 그래서 예약이 몇 건 늘었는지 모르겠어요.\" 병원 원장님과 브랜드 대표님께 가장 자주 듣는 말입니다. 그럴 때 저희가 먼저 묻는 질문은 하나입니다. 홈페이지에 네이버 애널리틱스, 그러니까 추적 장치를 달아 두셨나요?"
+        },
+        {
+          "type": "h2",
+          "content": "이런 증상이면 추적 장치부터 의심하세요"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "광고 보고서에 클릭은 있는데 전환은 계속 0이다.",
+            "어떤 검색어로 들어온 손님이 예약했는지 아무도 모른다.",
+            "홈페이지를 새로 만든 뒤로 숫자가 끊겼다.",
+            "2026년 봄 이후 네이버 애널리틱스 화면이 비어 있다.",
+            "대행사 보고서가 노출 · 클릭 수만 보여 준다."
+          ],
+          "content": ""
+        },
+        {
+          "type": "h2",
+          "content": "추적 장치는 두 가지입니다. 둘 다 있어야 합니다"
+        },
+        {
+          "type": "p",
+          "content": "네이버 애널리틱스는 가게 입구의 방문객 카운터와 같습니다. 오늘 몇 명이 왔는지, 어떤 검색어와 어떤 사이트를 거쳐 왔는지, 어느 페이지를 오래 봤는지 보여 줍니다. 무료이고, 광고를 안 해도 씁니다."
+        },
+        {
+          "type": "p",
+          "content": "전환추적(예전 이름은 프리미엄 로그분석)은 광고 영수증입니다. 광고를 클릭한 사람이 예약 완료 · 문의 · 구매까지 했는지를 광고별 · 키워드별로 셉니다. 이게 있어야 '이 키워드는 돈만 쓰고 예약이 없다'를 알 수 있습니다. 네이버 안내에 따르면 둘은 서로를 대신하지 못해서 두 코드를 모두 달아야 합니다."
+        },
+        {
+          "type": "h2",
+          "content": "2026년에 바뀐 것: 예전에 달았어도 다시 확인하세요"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "2026년 3월 광고주센터 개편 뒤로 광고 계정과 네이버 애널리틱스가 자동으로 연결되지 않습니다. 사이트를 다시 등록하고 스크립트를 새로 달아야 하고, 그전 데이터는 넘어오지 않습니다.",
+            "2026년 3월 30일부터 '프리미엄 로그분석' 메뉴 이름이 '전환추적'으로 바뀌었습니다.",
+            "새 대시보드에 총 전환수와 기여전환(마지막 클릭은 아니어도 도움을 준 광고) 지표가 생겼습니다.",
+            "전환 스크립트는 새 방식(wcs.trans)으로 바뀌는 중입니다. 예약 · 문의 · 전화 · 신청처럼 종류가 훨씬 세분화됐습니다."
+          ],
+          "content": ""
+        },
+        {
+          "type": "h2",
+          "content": "무엇을 '전환'으로 잡아야 할까"
+        },
+        {
+          "type": "ul",
+          "content": "병원이라면",
+          "items": [
+            "예약 완료(schedule): 홈페이지 예약이 끝난 화면",
+            "문의 · 상담 신청(inquiry, lead): 상담 폼 접수 화면",
+            "전화하기(call): 모바일에서 전화 버튼을 누른 순간"
+          ]
+        },
+        {
+          "type": "ul",
+          "content": "쇼핑몰 · 브랜드라면",
+          "items": [
+            "구매 완료(purchase)와 주문 금액",
+            "장바구니 담기(add_to_cart), 결제 시작(begin_checkout)",
+            "회원가입(sign_up), B2B라면 견적 요청(lead)"
+          ]
+        },
+        {
+          "type": "h2",
+          "content": "자주 빠지는 함정 네 가지"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "네이버 예약 · 톡톡은 네이버 안에서 일어나서 홈페이지 스크립트로 잡히지 않습니다. 스마트플레이스 통계를 따로 봐야 합니다.",
+            "광고 링크에 붙는 NaPm 값이 리디렉션 과정에서 지워지면 광고 유입을 못 알아봅니다. 주소를 바꾸거나 http에서 https로 넘길 때 특히 확인해야 합니다.",
+            "홈페이지 리뉴얼 때 예전 스크립트가 빠지는 일이 많습니다. 새 사이트 오픈 체크리스트에 꼭 넣으세요.",
+            "구글 태그(GA4)만 달려 있고 네이버 코드는 없는 경우. 구글 숫자로는 네이버 광고 성과를 알 수 없습니다."
+          ],
+          "content": ""
+        },
+        {
+          "type": "h2",
+          "content": "설치 순서"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "1. analytics.naver.com에 사이트를 등록하고 발급 ID와 스크립트를 받습니다.",
+            "2. 공통 스크립트를 모든 페이지 </body> 바로 앞에 넣습니다. 임대형 쇼핑몰이면 푸터 영역에 넣습니다.",
+            "3. 네이버 광고의 전환추적 메뉴에서 신청합니다. 안내 메일이 보통 하루 안에 옵니다.",
+            "4. 예약 완료 · 주문 완료 페이지에 전환 스크립트를 넣습니다. 직접 설치하고 검수를 요청하거나, 네이버 측 설치 지원(FTP 정보 필요, 5~7영업일)을 받을 수 있습니다.",
+            "5. 크롬 확장 '네이버 전환 스크립트 어시스턴트'로 실제로 실행되는지 확인합니다.",
+            "6. 광고 화면에 '사용중'이 뜨면 그때부터 집계됩니다."
+          ],
+          "content": ""
+        },
+        {
+          "type": "tip",
+          "content": "구글 광고도 같이 한다면 같은 날 GA4와 구글 광고 전환도 정리하세요. 저희가 최근 본 한 병원 광고 계정은 전환 기준이 예전 홈페이지의 이벤트에 그대로 묶여 있어서, 새 홈페이지의 전화 · 예약 클릭이 한 건도 광고 성과로 잡히지 않고 있었습니다."
+        },
+        {
+          "type": "h2",
+          "content": "조이루모스가 해 드리는 것"
+        },
+        {
+          "type": "p",
+          "content": "홈페이지를 저희가 만들었든 아니든, 네이버 애널리틱스 · 전환추적 · 서치어드바이저와 구글 쪽(GA4, 서치 콘솔, 구글 광고 전환)을 한 번에 점검하고 설치합니다. 그다음 매달 '광고비 얼마에 예약 · 문의 몇 건'으로 정리한 리포트를 드립니다. 조이루모스는 네이버 광고 해외 광고주 계정을 갖고 있어 미국 회사라도 네이버 광고를 직접 다룰 수 있습니다. 광고는 고객 명의 계정에 멤버로 초대받아 운영합니다."
+        },
+        {
+          "type": "cta",
+          "content": "광고는 하는데 숫자가 안 보인다면, 지금 홈페이지에 무엇이 달려 있는지부터 무료로 확인해 드립니다."
+        }
+      ],
+      "en": [
+        {
+          "type": "intro",
+          "content": "\"We pay for Naver ads every month, but we have no idea how many bookings they bring.\" We hear this from clinic directors and brand owners all the time. Our first question is always the same: is Naver Analytics, the tracking code, actually installed on your website?"
+        },
+        {
+          "type": "h2",
+          "content": "Signs the tracking is missing"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Ad reports show clicks but zero conversions, month after month.",
+            "Nobody knows which search terms brought the customers who booked.",
+            "The numbers stopped after a website rebuild.",
+            "Naver Analytics has been empty since spring 2026.",
+            "Your agency report only shows impressions and clicks."
+          ],
+          "content": ""
+        },
+        {
+          "type": "h2",
+          "content": "There are two tracking tools, and you need both"
+        },
+        {
+          "type": "p",
+          "content": "Naver Analytics is the visitor counter at your door: how many people came, which searches and sites sent them, which pages they read. It's free and useful even without ads."
+        },
+        {
+          "type": "p",
+          "content": "Conversion tracking (formerly Premium Log Analysis) is the receipt for your ads. It counts, per ad and per keyword, whether someone who clicked went on to book, inquire or buy. That's how you find keywords that spend money and bring nothing. Naver's guidance is that neither replaces the other, so both scripts are needed."
+        },
+        {
+          "type": "h2",
+          "content": "What changed in 2026"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Since the March 2026 ad-center overhaul, ad accounts no longer link to Naver Analytics automatically. Register the site again and install the new script; older data does not carry over.",
+            "On March 30, 2026 the Premium Log Analysis menu was renamed Conversion tracking.",
+            "The new dashboard adds total conversions and assisted conversions.",
+            "Conversion scripts are moving to the newer wcs.trans format, with finer types such as booking, inquiry, call and lead."
+          ],
+          "content": ""
+        },
+        {
+          "type": "h2",
+          "content": "What to count as a conversion"
+        },
+        {
+          "type": "ul",
+          "content": "For clinics",
+          "items": [
+            "Booking complete (schedule)",
+            "Consultation or inquiry form sent (inquiry, lead)",
+            "Tap on the phone button on mobile (call)"
+          ]
+        },
+        {
+          "type": "ul",
+          "content": "For shops and brands",
+          "items": [
+            "Purchase with order value",
+            "Add to cart and begin checkout",
+            "Sign-up, or a quote request (lead) for B2B"
+          ]
+        },
+        {
+          "type": "h2",
+          "content": "Four common traps"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Naver Booking and TalkTalk happen inside Naver, so your site's script can't see them. Check Smartplace statistics separately.",
+            "If a redirect strips the NaPm parameter from the ad link, the visit no longer counts as an ad visit. Check this when URLs change or http redirects to https.",
+            "Old scripts often disappear in a website rebuild. Put them on the launch checklist.",
+            "Only Google's tag (GA4) is installed. Google's numbers can't tell you how Naver ads performed."
+          ],
+          "content": ""
+        },
+        {
+          "type": "h2",
+          "content": "How to install it"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "1. Register the site at analytics.naver.com and copy the issued ID and script.",
+            "2. Put the common script just before </body> on every page (in the footer skin on hosted shop platforms).",
+            "3. Apply in the Conversion tracking menu of Naver Ads; a guide email usually arrives within a day.",
+            "4. Add conversion scripts on booking-complete and order-complete pages, either yourself followed by a review, or through Naver's free installation support (FTP access, 5–7 business days).",
+            "5. Confirm with the Naver Conversion Script Assistant Chrome extension.",
+            "6. Counting starts once the ad center shows In use."
+          ],
+          "content": ""
+        },
+        {
+          "type": "tip",
+          "content": "If you also run Google Ads, fix GA4 and Google Ads conversions the same day. One clinic account we reviewed recently still had its conversions tied to events from the old website, so not a single call or booking tap on the new site counted as an ad result."
+        },
+        {
+          "type": "h2",
+          "content": "What Zoe Lumos does"
+        },
+        {
+          "type": "p",
+          "content": "Whether or not we built your website, we audit and install Naver Analytics, conversion tracking and Search Advisor together with Google's side (GA4, Search Console, Google Ads conversions), then report monthly in plain terms: this much ad spend, this many bookings and inquiries. Zoe Lumos holds a Naver overseas advertiser account, so a US company can work on Naver ads directly; we run your ads inside your own account through a member invite."
+        },
+        {
+          "type": "cta",
+          "content": "Paying for ads but can't see the results? We'll check what's installed on your website for free."
+        }
+      ]
+    },
+  },
+  {
+    slug: "korea-us-two-markets-naver-google-2026",
+    date: "2026-11-15",
+    updatedDate: "2026-11-15",
+    readTime: 9,
+    category: {
+      "en": "Strategy",
+      "ko": "전략"
+    },
+    title: {
+      "en": "Selling in Korea and the US at Once: How to Split Naver and Google (Clinics, B2B Apparel and Kids' Clothing Brands)",
+      "ko": "한국과 미국 두 시장을 같이 공략한다면: 네이버와 구글 나눠 쓰는 법 (병원 · B2B 의류 · 유아복 브랜드)"
+    },
+    metaDescription: {
+      "en": "Korean customers search on Naver, American customers on Google. How clinics in Korea with foreign patients, B2B apparel makers and kids' clothing brands can run one website for both markets: bilingual structure, Search Advisor plus Search Console, Smart Store vs Shopify, ads on both sides, and tracking. Consulting-only engagements available.",
+      "ko": "한국 손님은 네이버로, 미국 손님은 구글로 찾습니다. 외국인 환자를 받는 한국 병원, B2B 의류 · OEM 회사, 유아복 브랜드가 홈페이지 하나로 두 시장을 함께 공략하는 방법. 한영 구조, 서치어드바이저와 서치 콘솔, 스마트스토어와 Shopify, 양쪽 광고와 측정까지. 컨설팅만도 가능합니다."
+    },
+    author: "Steve Song",
+    image: "/blog/korea-us-two-markets-naver-google-2026.png",
+    faq: [
+      {
+        "q": {
+          "en": "Do we need two websites for Korea and the US?",
+          "ko": "한국용 · 미국용 홈페이지를 따로 만들어야 하나요?"
+        },
+        "a": {
+          "en": "Usually not. One website with Korean and English sections, linked with hreflang, registered in both Naver Search Advisor and Google Search Console, serves both markets and keeps one place to update. Separate sites make sense only when the products, prices or legal entity differ by country.",
+          "ko": "대부분 필요 없습니다. 한국어 · 영어 페이지를 나누고 hreflang으로 연결한 홈페이지 하나를 네이버 서치어드바이저와 구글 서치 콘솔에 모두 등록하면 두 시장을 함께 다룰 수 있고, 고칠 곳도 하나로 줄어듭니다. 나라별로 상품 · 가격 · 법인이 다를 때만 따로 만드는 게 낫습니다."
+        }
+      },
+      {
+        "q": {
+          "en": "Can we hire Zoe Lumos for consulting only?",
+          "ko": "제작 없이 컨설팅만 맡길 수 있나요?"
+        },
+        "a": {
+          "en": "Yes. We can review your current website, Naver and Google accounts and ads, and hand you a written plan your own team or agency can carry out, in Korean or English.",
+          "ko": "네. 지금 홈페이지와 네이버 · 구글 계정, 광고를 점검하고, 내부 팀이나 기존 대행사가 그대로 실행할 수 있는 계획서를 한국어 또는 영어로 드립니다."
+        }
+      },
+      {
+        "q": {
+          "en": "Is Zoe Lumos in Korea or the US?",
+          "ko": "조이루모스는 한국 회사인가요, 미국 회사인가요?"
+        },
+        "a": {
+          "en": "We are a US company (ZOE STUDIO LLC, Fort Lee, New Jersey) that works in Korean and English. We build for clinics in Seoul as well as businesses across the US, hold a Naver overseas advertiser account, and run Google Ads from the US.",
+          "ko": "미국 뉴저지 포트리의 미국 회사(ZOE STUDIO LLC)이고, 한국어와 영어로 일합니다. 서울의 병원과 미국 전역의 업체를 함께 작업하고, 네이버 광고 해외 광고주 계정과 구글 광고 운영 경험을 모두 갖고 있습니다."
+        }
+      }
+    ],
+    sections: {
+      "ko": [
+        {
+          "type": "intro",
+          "content": "한국과 미국, 두 시장을 같이 공략하신다구요? 그렇다면 먼저 받아들여야 할 사실이 있습니다. 한국 손님은 네이버로 찾고, 미국 손님은 구글로 찾습니다. 한국 검색의 절반 안팎은 여전히 네이버이고, 미국에서는 거의 모두 구글입니다. 한쪽에만 맞춘 홈페이지와 광고는 다른 쪽에서 보이지 않습니다."
+        },
+        {
+          "type": "h2",
+          "content": "같은 회사, 다른 검색창"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "한국: 네이버 검색 · 네이버 플레이스(지도) · 블로그 · 스마트스토어 · 카카오톡",
+            "미국: 구글 검색 · 구글 지도(구글 비즈니스 프로필) · Instagram · Amazon · LinkedIn(B2B)",
+            "AI 검색: 한국은 네이버 AI 브리핑, 미국은 ChatGPT · 구글 AI 개요가 업체 정보를 요약해서 보여 줍니다. 두 쪽 모두 홈페이지의 구조화 데이터와 정확한 업체 정보를 읽습니다."
+          ],
+          "content": ""
+        },
+        {
+          "type": "h2",
+          "content": "한국 병원: 국내 환자는 네이버, 외국인 환자는 구글"
+        },
+        {
+          "type": "p",
+          "content": "서울의 병원이라도 외국인 환자는 구글과 ChatGPT로 병원을 찾습니다. 저희가 2026년 11월에 리뉴얼한 서울초이스치과의원은 한국어 · 영어 · 일본어 · 중국어 132페이지로 만들고, 네이버 서치어드바이저와 구글 서치 콘솔에 함께 등록했습니다. 국내 환자용으로는 네이버 플레이스와 병원 명의 블로그, 파워링크가 기본이고, 외국인 환자용으로는 구글 비즈니스 프로필과 영문 진료 페이지가 기본입니다. 광고 문구는 한국 의료법(56조 · 57조)을 지켜야 하고, 네이버 병원 광고는 사전심의 번호가 필요합니다."
+        },
+        {
+          "type": "h2",
+          "content": "B2B 의류 · OEM: 한국 거래처와 미국 바이어는 찾는 곳이 다릅니다"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "미국 바이어는 구글에서 'private label', 'cut and sew manufacturer'처럼 영어로 찾고, LinkedIn으로 회사를 확인합니다. 영문 회사 소개, 생산 가능 품목 · 최소 주문 수량(MOQ) · 리드타임, 견적 요청(RFQ) 폼이 있어야 합니다.",
+            "한국 거래처는 네이버에서 회사 이름과 품목으로 찾습니다. 회사 명의 네이버 블로그와 플레이스(사무실 · 쇼룸) 정보가 신뢰를 만듭니다.",
+            "견적 요청이 어느 나라 어느 검색에서 왔는지 남도록 문의 폼에 출처 추적을 붙입니다."
+          ],
+          "content": ""
+        },
+        {
+          "type": "h2",
+          "content": "유아복 브랜드: 한국은 스마트스토어, 미국은 Shopify"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "한국 판매는 네이버 스마트스토어 + 쇼핑검색광고 + 브랜드 블로그 조합이 기본입니다. 엄마들이 블로그 · 카페 후기를 많이 보기 때문에 블로그가 중요합니다.",
+            "미국 판매는 Shopify 자사몰 + 구글 쇼핑 광고 + Instagram이 기본입니다.",
+            "미국에서 12세 이하 어린이용 제품을 팔려면 CPSIA 기준에 맞춘 어린이 제품 인증서(CPC)가 필요합니다. 상품 페이지와 판매 전에 꼭 확인하세요.",
+            "같은 상품을 두 나라에 팔 때는 사이즈 표기(한국 cm · 미국 개월 수 · T 사이즈)와 배송 · 반품 안내를 따로 씁니다."
+          ],
+          "content": ""
+        },
+        {
+          "type": "h2",
+          "content": "홈페이지 하나로 두 시장을 다루는 구조"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "한국어 · 영어 페이지를 나누고 hreflang으로 연결합니다. 한국어 주소는 한글 그대로 써도 네이버 · 구글 모두 잘 읽습니다.",
+            "네이버 서치어드바이저와 구글 서치 콘솔에 모두 등록하고, 사이트맵과 RSS를 냅니다.",
+            "측정은 네이버 애널리틱스 + 전환추적, GA4 + 구글 광고 전환을 함께 답니다.",
+            "업체 정보(이름 · 주소 · 전화 · 영업시간)를 네이버 플레이스, 구글 비즈니스 프로필, 홈페이지 구조화 데이터에서 똑같이 맞춥니다.",
+            "모든 계정은 회사 명의로 만들고, 대행사는 권한만 받습니다."
+          ],
+          "content": ""
+        },
+        {
+          "type": "h2",
+          "content": "광고는 양쪽에 따로, 리포트는 하나로"
+        },
+        {
+          "type": "p",
+          "content": "네이버 광고(파워링크 · 쇼핑검색 · 브랜드검색)와 구글 광고는 계정도 결제도 다릅니다. 조이루모스는 네이버 광고 해외 광고주 계정을 갖고 있어 미국에서도 네이버 광고를 직접 다루고, 구글 광고와 함께 운영합니다. 매달 리포트는 한 장으로 드립니다. 나라별 광고비, 문의 · 주문 수, 다음 달에 바꿀 것."
+        },
+        {
+          "type": "h2",
+          "content": "제작 없이 컨설팅만도 됩니다"
+        },
+        {
+          "type": "p",
+          "content": "이미 홈페이지와 대행사가 있다면 점검과 계획만 맡기셔도 됩니다. 지금 홈페이지, 네이버 · 구글 계정, 광고 설정을 보고, 내부 팀이나 기존 대행사가 그대로 실행할 수 있는 계획서를 한국어 또는 영어로 드립니다. 한국 시간에 맞춘 화상 미팅도 가능합니다."
+        },
+        {
+          "type": "cta",
+          "content": "한국 병원, B2B 의류 · OEM, 유아복 브랜드라면 지금 상태를 먼저 무료로 봐 드립니다. 상담은 한국어로 합니다."
+        }
+      ],
+      "en": [
+        {
+          "type": "intro",
+          "content": "Selling in both Korea and the US? Start with one fact: Korean customers search on Naver, American customers on Google. Roughly half of searches in Korea still go to Naver, while in the US nearly all go to Google. A website and ad plan built for one side is close to invisible on the other."
+        },
+        {
+          "type": "h2",
+          "content": "One company, two search boxes"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Korea: Naver search, Naver Place (maps), blogs, Smart Store, KakaoTalk",
+            "US: Google search, Google Maps (Google Business Profile), Instagram, Amazon, LinkedIn for B2B",
+            "AI search: Naver's AI Briefing in Korea; ChatGPT and Google AI Overviews in the US. Both read your site's structured data and business facts."
+          ],
+          "content": ""
+        },
+        {
+          "type": "h2",
+          "content": "Clinics in Korea: local patients on Naver, foreign patients on Google"
+        },
+        {
+          "type": "p",
+          "content": "Even for a clinic in Seoul, foreign patients find doctors through Google and ChatGPT. Seoul Choice Dental, which we rebuilt in November 2026, now has 132 pages in Korean, English, Japanese and Chinese, registered in both Naver Search Advisor and Google Search Console. For local patients the basics are Naver Place, the clinic's own blog and Powerlink; for foreign patients, a Google Business Profile and English treatment pages. Copy has to follow Korea's Medical Service Act (Articles 56 and 57), and Naver clinic ads need a pre-review approval number."
+        },
+        {
+          "type": "h2",
+          "content": "B2B apparel and OEM: Korean partners and US buyers look in different places"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "US buyers search Google in English (\"private label\", \"cut and sew manufacturer\") and check you on LinkedIn. You need an English company page, product categories, MOQ and lead times, and an RFQ form.",
+            "Korean partners search your company name and products on Naver, where a company blog and a Place listing for your office or showroom build trust.",
+            "Add source tracking to the inquiry form so every RFQ shows which country and which search it came from."
+          ],
+          "content": ""
+        },
+        {
+          "type": "h2",
+          "content": "Kids' clothing brands: Smart Store in Korea, Shopify in the US"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "In Korea the usual mix is Naver Smart Store, shopping search ads and a brand blog; parents read blog and cafe reviews closely.",
+            "In the US it's a Shopify store, Google Shopping ads and Instagram.",
+            "Selling children's products (age 12 and under) in the US requires a Children's Product Certificate under the CPSIA. Check this before listing.",
+            "When the same item sells in both countries, write sizing (cm in Korea, months and toddler sizes in the US), shipping and returns separately."
+          ],
+          "content": ""
+        },
+        {
+          "type": "h2",
+          "content": "One website, two markets"
+        },
+        {
+          "type": "ul",
+          "items": [
+            "Separate Korean and English pages linked with hreflang. Hangul URLs work well on both Naver and Google.",
+            "Register in both Naver Search Advisor and Google Search Console, with sitemaps and RSS.",
+            "Measure with Naver Analytics plus conversion tracking, and GA4 plus Google Ads conversions.",
+            "Keep name, address, phone and hours identical across Naver Place, Google Business Profile and your structured data.",
+            "Open every account in the company's name; agencies only get access."
+          ],
+          "content": ""
+        },
+        {
+          "type": "h2",
+          "content": "Ads on both sides, one report"
+        },
+        {
+          "type": "p",
+          "content": "Naver Ads (Powerlink, shopping search, Brand Search) and Google Ads are separate accounts with separate billing. Zoe Lumos holds a Naver overseas advertiser account, so we work on Naver ads directly from the US alongside Google Ads, and send one monthly report: spend by country, inquiries and orders, and what we'll change next month."
+        },
+        {
+          "type": "h2",
+          "content": "Consulting only is fine"
+        },
+        {
+          "type": "p",
+          "content": "If you already have a website and an agency, you can hire us just to review and plan. We look at your site, your Naver and Google accounts and your ad setup, and hand over a written plan your team or agency can carry out, in Korean or English, with calls on Korea time if needed."
+        },
+        {
+          "type": "cta",
+          "content": "Clinic in Korea, B2B apparel maker or kids' clothing brand? We'll review where you stand for free, in Korean or English."
+        }
+      ]
+    },
+  },
+  // ─────────────────────────────────────────────────────────────────
+  // 2026-11-13 — TopSkin Clinic Med Spa launch case study (med spa in Duluth, Georgia).
+  // EN-first: written for med spa and clinic owners in the US. Every number was checked on the
+  // live site (sitemap, treatment pages, device list, before/after cases, Lighthouse) on launch week.
+  // ─────────────────────────────────────────────────────────────────
+  {
+    slug: 'med-spa-website-case-study-duluth-ga',
+    date: '2026-11-13',
+    updatedDate: '2026-11-13',
+    readTime: 7,
+    category: { en: 'Case Study', ko: '케이스 스터디' },
+    title: {
+      en: 'Med Spa Website Case Study: TopSkin Clinic in Duluth, GA (English, Korean, Vietnamese)',
+      ko: '메드스파 홈페이지 제작 사례: 미국 조지아 둘루스 TopSkin Clinic (영어·한국어·베트남어)',
+    },
+    metaDescription: {
+      en: 'How we rebuilt the website of TopSkin Clinic Med Spa in Duluth, Georgia: 36 pages in English, Korean and Vietnamese, treatments by skin concern, real before-and-after photos, a 3D map, booking requests to the clinic inbox, and a domain move that kept every old URL working.',
+      ko: '미국 조지아주 둘루스 TopSkin Clinic Med Spa 홈페이지 리뉴얼 사례. 영어·한국어·베트남어 36페이지, 피부 고민별 시술 안내, 실제 환자 전후 사진, 3D 지도, 클리닉 메일로 바로 가는 예약 요청, 기존 주소를 그대로 살린 도메인 이전까지 정리했습니다.',
+    },
+    author: 'Steve Song',
+    image: '/blog/topskin-clinic/og.jpg',
+    schemaExtras: {
+      // The clinic this case study is about — same @id as the clinic's own MedicalClinic schema.
+      about: {
+        '@type': ['MedicalClinic', 'HealthAndBeautyBusiness'],
+        '@id': 'https://www.topskinclinicmedspa.com/#clinic',
+        name: 'TopSkin Clinic Med Spa',
+        url: 'https://www.topskinclinicmedspa.com/',
+        telephone: '+16786650622',
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: '3796 Satellite Blvd, Suite 200',
+          addressLocality: 'Duluth',
+          addressRegion: 'GA',
+          postalCode: '30096',
+          addressCountry: 'US',
+        },
+        geo: { '@type': 'GeoCoordinates', latitude: 33.954925, longitude: -84.139733 },
+      },
+      contentLocation: {
+        '@type': 'Place',
+        name: 'Duluth, Georgia (Gwinnett County)',
+        address: { '@type': 'PostalAddress', addressLocality: 'Duluth', addressRegion: 'GA', addressCountry: 'US' },
+      },
+    },
+    faq: [
+      {
+        q: {
+          en: 'How long does a med spa website take?',
+          ko: '메드스파 홈페이지 제작 기간은 얼마나 걸리나요?',
+        },
+        a: {
+          en: 'Most single-language med spa sites take two to three weeks from the approved design to launch. Each extra language adds time for translation and review. We show design options first, then build every page in the direction the clinic picks.',
+          ko: '한 가지 언어의 메드스파 홈페이지는 시안 확정부터 오픈까지 보통 2~3주가 걸립니다. 언어가 하나 늘 때마다 번역과 검수 시간이 더 듭니다. 먼저 시안을 보여 드리고, 클리닉이 고른 방향으로 전체 페이지를 만듭니다.',
+        },
+      },
+      {
+        q: {
+          en: 'Can we use before-and-after photos from our Instagram?',
+          ko: '인스타그램에 올린 전후 사진을 홈페이지에 써도 되나요?',
+        },
+        a: {
+          en: 'Yes, if they are your own patients and you already publish them. We keep them as published, apply the same processing to both photos of a pair, and never use AI-generated or edited results. Model photos elsewhere on the site are labeled as models.',
+          ko: '클리닉 환자의 사진이고 이미 공개해 온 사진이라면 가능합니다. 올린 그대로 쓰되 한 쌍의 전후 사진에는 똑같은 보정만 적용하고, AI로 만들거나 고친 결과 사진은 쓰지 않습니다. 그 밖의 모델 사진에는 모델이라고 표시합니다.',
+        },
+      },
+      {
+        q: {
+          en: 'Will moving to a new website hurt our Google rankings?',
+          ko: '홈페이지를 새로 옮기면 구글 검색 순위가 떨어지나요?',
+        },
+        a: {
+          en: 'Not if every old page address redirects to its new page and the new site is verified in Google Search Console with a sitemap. Some movement in the first few weeks is normal while Google recrawls the site.',
+          ko: '기존 페이지 주소를 모두 새 페이지로 연결(301 리디렉션)하고, 새 사이트를 구글 서치 콘솔에 사이트맵과 함께 등록하면 크게 떨어지지 않습니다. 구글이 사이트를 다시 읽는 처음 몇 주 동안 순위가 조금 움직이는 것은 정상입니다.',
+        },
+      },
+      {
+        q: {
+          en: 'Do you build Korean and Vietnamese versions of a clinic website?',
+          ko: '병원 홈페이지를 한국어·베트남어로도 만들 수 있나요?',
+        },
+        a: {
+          en: 'Yes. Every page is built in each language with the same structure. Our team writes English and Korean; for Vietnamese and other languages we recommend a native-speaker review before or soon after launch.',
+          ko: '네. 모든 페이지를 언어마다 같은 구조로 만듭니다. 영어와 한국어는 저희 팀이 직접 쓰고, 베트남어 등 다른 언어는 오픈 전후로 원어민 검수를 권합니다.',
+        },
+      },
+    ],
+    sections: {
+      en: [
+        { type: 'intro', content: 'We built a new website for TopSkin Clinic Med Spa, a K-beauty med spa on Satellite Boulevard in Duluth, Georgia, and moved the clinic’s domain to it on November 12, 2026. The site runs in English, Korean and Vietnamese, sorts treatments by skin concern, shows the clinic’s own before-and-after photos, and sends booking requests straight to the clinic’s inbox. Here is what we built and why.' },
+        { type: 'screenshot', content: '/blog/topskin-clinic/home.jpg', items: ['The new TopSkin home screen (topskinclinicmedspa.com): book or call from the first screen'] },
+        { type: 'stats', content: 'The new site at a glance', items: [
+          '3|languages|English · Korean · Vietnamese',
+          '36|pages|12 per language',
+          '6|treatment pages|one per skin concern',
+          '9|before & after cases|the clinic’s own patients',
+        ] },
+        { type: 'h2', content: 'Start from what the clinic already says' },
+        { type: 'p', content: 'The clinic’s old site, built on a website builder, already described its treatments, devices, team and frequently asked questions. We treated that text as the source. Every fact on the new site, from device names to opening hours, comes from the old site or from the clinic directly, and nothing was added to fill space. The old site named ten devices, so the new technology page explains those ten and what each one is used for.' },
+        { type: 'h2', content: 'Treatments by skin concern, not by machine' },
+        { type: 'p', content: 'Patients rarely search for a device name. They search for “melasma treatment” or “acne scar treatment near me.” So the six treatment pages follow concerns: Pigmentation & Tone, Glow & Renewal, Pores & Acne Scars, Lifting & Firming, Redness & Vessels, and Injectables & Natural Rejuvenation. Each page covers where the concern shows on the face, which devices the clinic uses for it, how a series of sessions goes, and the questions people ask at a consultation.' },
+        { type: 'screenshot', content: '/blog/topskin-clinic/treatment.jpg', items: ['The Pores & Acne Scars page: the concern, the devices and the steps on one page'] },
+        { type: 'p', content: 'A 3D cross-section of the skin shows which layer each device reaches, using the depths the clinic’s own descriptions give. On phones, a concern picker replaces the wide device-by-concern table so nothing needs sideways scrolling.' },
+        { type: 'h2', content: 'Real before-and-after photos, clearly labeled' },
+        { type: 'p', content: 'Med spa visitors look for proof first. The Before & After page uses only the clinic’s own patient photos, nine cases grouped by concern, each with a slider you drag to compare. Both photos in a pair get exactly the same processing, so the difference you see is the treatment, not the editing. Every other photo on the site is marked as a model, and the footer says that individual results vary.' },
+        { type: 'screenshot', content: '/blog/topskin-clinic/results.jpg', items: ['Before & After: the clinic’s own patients, drag the line to compare'] },
+        { type: 'tip', content: 'Skip AI-generated “results.” They are easy to spot, they mislead patients, and in the US they invite trouble under FTC advertising rules. A few real cases with matching light and angles do more than a gallery of perfect fakes.' },
+        { type: 'h2', content: 'One tap to call, text, find or book' },
+        { type: 'p', content: 'Most visits to a med spa site happen on a phone. A small dock at the bottom of every page holds Call, Text, Map and Book. It slides out of the way when the page already shows those buttons and while the visitor is typing. The booking form sends the request to the clinic’s inbox, and a visitor can also send the same request as a text message instead.' },
+        { type: 'screenshot', content: '/blog/topskin-clinic/mobile.jpg', items: ['On phones: English and Korean home screens, and the before-and-after page with the Call · Text · Map · Book dock'] },
+        { type: 'h2', content: 'A 3D map to Suite 200' },
+        { type: 'p', content: 'The Visit page has a 3D map of the blocks around the clinic, drawn from map tiles we host ourselves rather than a Google Maps embed, so it carries no third-party tracking. It marks the building and Suite 200, with the week’s hours beside it. On phones the map loads only when the visitor taps it, which keeps scrolling smooth.' },
+        { type: 'screenshot', content: '/blog/topskin-clinic/visit.jpg', items: ['The Visit page: hours, call and request buttons, and the 3D map to the suite'] },
+        { type: 'h2', content: 'English, Korean and Vietnamese' },
+        { type: 'p', content: 'Every page exists in all three languages with the same structure, so a patient reading Korean or Vietnamese finds the same information in the same place. The language menu sits in the header, and the booking form works in each language.' },
+        { type: 'screenshot', content: '/blog/topskin-clinic/vietnamese.jpg', items: ['The Vietnamese home screen: all three languages share one layout'] },
+        { type: 'h2', content: 'Moving the domain without losing search history' },
+        { type: 'ul', content: 'Shipped with the launch', items: [
+          'Every old page address redirects (301) to its new page, so existing links, bookmarks and search results keep working',
+          'MedicalClinic structured data with the address, map coordinates, opening hours and phone number',
+          'hreflang tags that tie together the English, Korean and Vietnamese version of each page',
+          'A 36-URL sitemap verified in Google Search Console, with the new pages also announced to Bing through IndexNow',
+          'Google Analytics 4 with calls and booking requests counted as key events, plus a privacy notice in all three languages',
+          'Lighthouse on a mobile profile, home page: 100 for accessibility, best practices and SEO, and 90+ for performance',
+        ] },
+        { type: 'p', content: 'Rankings take a few weeks to settle after a domain moves. We will update this post as calls and booking requests come in.' },
+        { type: 'h2', content: 'Checklist before you rebuild a med spa website' },
+        { type: 'ul', content: 'Check these on your current site first', items: [
+          'Are your before-and-after photos your own patients, with matching light and angles? Is every model photo labeled?',
+          'Can a visitor call, text or book in one tap on a phone?',
+          'Does each skin concern have its own page, or is everything on one services page?',
+          'When you change website platforms, will every old URL redirect to its new page?',
+          'Is the site verified in Google Search Console, and are calls and booking requests tracked?',
+          'If many of your patients read Korean or Vietnamese, can they read the whole site in their language?',
+        ] },
+        { type: 'cta', content: 'Want a second look at your med spa or clinic website? Zoe Lumos builds clinic sites in English and Korean for practices in the US and Korea. It starts with a free review of your current site.' },
+      ],
+      ko: [
+        { type: 'intro', content: '미국 조지아주 둘루스 새틀라이트 대로에 있는 K-뷰티 메드스파, TopSkin Clinic Med Spa의 홈페이지를 새로 만들고 2026년 11월 12일에 도메인을 옮겨 오픈했습니다. 영어·한국어·베트남어로 운영되고, 시술을 피부 고민별로 나눴으며, 클리닉 환자의 실제 전후 사진을 보여 주고, 예약 요청은 클리닉 메일로 바로 갑니다. 미국에서 메드스파나 피부과 홈페이지를 고민하는 원장님께 참고가 되도록 무엇을 왜 그렇게 만들었는지 정리합니다.' },
+        { type: 'screenshot', content: '/blog/topskin-clinic/home.jpg', items: ['TopSkin 새 홈페이지 첫 화면 (topskinclinicmedspa.com) — 첫 화면에서 바로 예약하거나 전화할 수 있습니다'] },
+        { type: 'stats', content: '새 홈페이지 한눈에 보기', items: [
+          '3개|언어|영어 · 한국어 · 베트남어',
+          '36|페이지|언어마다 12페이지',
+          '6개|시술 안내|피부 고민마다 한 페이지',
+          '9건|전후 사진|클리닉 환자의 실제 사례',
+        ] },
+        { type: 'h2', content: '클리닉이 이미 쓴 내용에서 시작' },
+        { type: 'p', content: '웹사이트 빌더로 만든 기존 홈페이지에는 시술, 장비, 의료진, 자주 묻는 질문이 이미 적혀 있었습니다. 저희는 그 내용을 원본으로 삼았습니다. 장비 이름부터 진료시간까지 새 사이트의 모든 정보는 기존 사이트나 클리닉에서 직접 받은 내용이고, 빈자리를 채우려고 지어낸 문구는 없습니다. 기존 사이트에 장비가 10종 있었기 때문에 새 장비 소개 페이지도 그 10종과 각 장비의 용도를 설명합니다.' },
+        { type: 'h2', content: '장비가 아니라 피부 고민별로' },
+        { type: 'p', content: '환자는 장비 이름보다 "기미 치료", "여드름 흉터 치료"처럼 고민으로 검색합니다. 그래서 시술 페이지 6개를 고민별로 나눴습니다: 색소·톤, 광채·재생, 모공·여드름 흉터, 리프팅·탄력, 붉은기·혈관, 주사 시술·자연스러운 리쥬비네이션. 페이지마다 얼굴 어디에 나타나는지, 클리닉이 어떤 장비를 쓰는지, 시술을 몇 번에 걸쳐 어떻게 받는지, 상담 때 많이 묻는 질문을 같은 순서로 담았습니다.' },
+        { type: 'screenshot', content: '/blog/topskin-clinic/treatment.jpg', items: ['모공·여드름 흉터 페이지 — 고민, 장비, 시술 과정을 한 페이지에'] },
+        { type: 'p', content: '피부 단면을 3D로 보여 주는 그림에서 장비마다 어느 층까지 닿는지 표시했고, 깊이는 클리닉이 쓴 설명을 그대로 따랐습니다. 휴대폰에서는 넓은 장비×고민 표 대신 고민을 고르는 화면이 나와 옆으로 스크롤할 일이 없습니다.' },
+        { type: 'h2', content: '실제 환자 전후 사진, 표시는 분명하게' },
+        { type: 'p', content: '메드스파 홈페이지 방문자가 가장 먼저 찾는 것은 결과입니다. 전후 사진 페이지에는 클리닉 환자의 실제 사진만 썼고, 9건을 고민별로 묶어 가운데 선을 끌어 비교하게 했습니다. 한 쌍의 전후 사진에는 똑같은 보정만 적용해, 보이는 차이가 보정이 아니라 시술의 차이가 되도록 했습니다. 그 밖의 사진에는 모델이라고 표시하고, 하단에는 결과가 사람마다 다르다는 안내를 넣었습니다.' },
+        { type: 'screenshot', content: '/blog/topskin-clinic/results.jpg', items: ['전후 사진 페이지 — 클리닉 환자의 실제 사례, 선을 끌어 비교합니다'] },
+        { type: 'tip', content: 'AI로 만든 "결과 사진"은 쓰지 마세요. 금방 티가 나고 환자를 오해하게 만들며, 미국에서는 FTC 광고 규정 문제로 이어질 수 있습니다. 조명과 각도가 맞는 실제 사례 몇 건이 완벽해 보이는 가짜 여러 장보다 낫습니다.' },
+        { type: 'h2', content: '전화·문자·지도·예약을 한 번에' },
+        { type: 'p', content: '메드스파 홈페이지 방문은 대부분 휴대폰에서 일어납니다. 모든 페이지 하단에 전화, 문자, 지도, 예약 네 버튼을 담은 작은 바를 두었고, 화면에 같은 버튼이 이미 보이거나 입력 중일 때는 자연스럽게 내려가 숨습니다. 예약 폼은 요청을 클리닉 메일로 보내고, 같은 내용을 문자로 보낼 수도 있습니다.' },
+        { type: 'screenshot', content: '/blog/topskin-clinic/mobile.jpg', items: ['휴대폰 화면 — 영어·한국어 첫 화면과, 하단에 전화 · 문자 · 지도 · 예약 바가 있는 전후 사진 페이지'] },
+        { type: 'h2', content: '스위트 200까지 안내하는 3D 지도' },
+        { type: 'p', content: '오시는 길 페이지에는 클리닉 주변 블록을 3D로 그린 지도를 넣었습니다. 구글 지도를 끼워 넣는 대신 저희가 직접 호스팅하는 지도 데이터를 써서 외부 추적이 붙지 않습니다. 건물과 스위트 200을 표시하고, 옆에 요일별 진료시간을 함께 보여 줍니다. 휴대폰에서는 방문자가 누를 때만 지도를 불러와 스크롤이 무거워지지 않게 했습니다.' },
+        { type: 'screenshot', content: '/blog/topskin-clinic/visit.jpg', items: ['오시는 길 페이지 — 진료시간, 전화·예약 버튼, 스위트까지 안내하는 3D 지도'] },
+        { type: 'h2', content: '영어·한국어·베트남어' },
+        { type: 'p', content: '모든 페이지를 세 언어로 같은 구조로 만들어, 한국어나 베트남어로 읽는 환자도 같은 정보를 같은 자리에서 찾습니다. 언어는 상단 메뉴에서 바꾸고, 예약 폼도 언어마다 그대로 작동합니다.' },
+        { type: 'screenshot', content: '/blog/topskin-clinic/vietnamese.jpg', items: ['베트남어 첫 화면 — 세 언어 모두 같은 구성입니다'] },
+        { type: 'h2', content: '검색 기록을 잃지 않는 도메인 이전' },
+        { type: 'ul', content: '오픈과 함께 넣은 것', items: [
+          '기존 페이지 주소를 모두 새 페이지로 301 리디렉션 — 기존 링크, 즐겨찾기, 검색 결과가 그대로 작동',
+          '병원(MedicalClinic) 구조화 데이터: 주소, 지도 좌표, 요일별 진료시간, 전화번호',
+          '페이지마다 영어·한국어·베트남어 버전을 잇는 hreflang 태그',
+          '36개 주소 사이트맵을 구글 서치 콘솔에 등록하고, IndexNow로 빙(Bing)에도 새 페이지 알림',
+          '구글 애널리틱스 4에서 전화와 예약 요청을 주요 이벤트로 측정, 세 언어 개인정보 처리방침',
+          '라이트하우스 모바일 측정(홈): 접근성·권장사항·SEO 100점, 성능 90점 이상',
+        ] },
+        { type: 'p', content: '도메인을 옮긴 뒤 검색 순위가 자리 잡기까지는 몇 주가 걸립니다. 전화와 예약 요청이 어떻게 바뀌는지는 이 글에 이어서 업데이트하겠습니다.' },
+        { type: 'h2', content: '메드스파 홈페이지 리뉴얼 전 체크리스트' },
+        { type: 'ul', content: '지금 홈페이지에서 먼저 확인해 보세요', items: [
+          '전후 사진이 우리 클리닉 환자의 실제 사진이고, 조명과 각도가 맞는가? 모델 사진에는 모델이라고 표시했는가',
+          '휴대폰에서 전화, 문자, 예약이 한 번에 되는가',
+          '피부 고민마다 별도 페이지가 있는가 (시술 목록 페이지 하나에 모두 몰려 있지 않은가)',
+          '홈페이지 플랫폼을 바꿀 때 기존 주소가 모두 새 페이지로 연결되는가',
+          '구글 서치 콘솔에 등록되어 있고, 전화와 예약 요청을 측정하고 있는가',
+          '한국어나 베트남어를 쓰는 환자가 많다면, 사이트 전체를 그 언어로 읽을 수 있는가',
+        ] },
+        { type: 'cta', content: '우리 클리닉 홈페이지도 점검해 볼까요? 조이루모스는 미국과 한국의 병원·메드스파 홈페이지를 한국어와 영어로 만듭니다. 현재 홈페이지 무료 진단부터 시작합니다.' },
+      ],
+    },
+  },
   // ─────────────────────────────────────────────────────────────────
   // 2026-11-06 — Seoul Choice Dental launch case study (clinic in Seoul, Korea).
   // KO-first: written for clinic owners in Korea searching 치과/병원 홈페이지 제작·리뉴얼.

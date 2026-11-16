@@ -19,6 +19,24 @@ type Launch = {
 
 const NEW_LAUNCHES: Launch[] = [
   {
+    name: { en: 'TopSkin Clinic Med Spa', ko: 'TopSkin Clinic Med Spa' },
+    meta: {
+      en: 'Duluth, Georgia · Med spa · Launched November 2026',
+      ko: '미국 조지아 둘루스 · 메드스파 · 2026년 11월 오픈',
+    },
+    body: {
+      en: 'A new website for a K-beauty med spa in Duluth, Georgia: treatments sorted by skin concern, the clinic’s own before-and-after photos with a drag-to-compare slider, a 3D map to the suite, and English, Korean and Vietnamese versions.',
+      ko: '조지아주 둘루스의 K-뷰티 메드스파 홈페이지를 새로 만들었습니다. 피부 고민별로 나눈 시술 안내, 클리닉이 직접 시술한 환자의 전후 사진(드래그로 비교), 클리닉까지 안내하는 3D 지도, 영어·한국어·베트남어 3개 국어까지.',
+    },
+    chips: {
+      en: ['3 languages · 36 pages', '6 treatment pages', 'Real before & after'],
+      ko: ['3개 국어 · 36페이지', '고민별 시술 안내 6개', '실제 환자 전후 사진'],
+    },
+    url: 'https://www.topskinclinicmedspa.com/',
+    caseStudy: 'med-spa-website-case-study-duluth-ga',
+    image: '/portfolio/topskin-clinic-live.jpg',
+  },
+  {
     name: { en: 'Seoul Choice Dental', ko: '서울초이스치과의원' },
     meta: {
       en: 'Seoul, Korea · Dental clinic · Launched November 2026',

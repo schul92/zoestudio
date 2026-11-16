@@ -98,7 +98,7 @@ export type LeadMethod = 'form' | 'chat' | 'kakao' | 'magnet'
 
 // GA4 recommended lead event: the key event imported into Google Ads as the conversion. Fired exactly once per
 // confirmed submission (KakaoTalk clicks fire it from the global click listener in the locale layout).
-export const trackLead = (method: LeadMethod, source: string) => {
+export const trackLead = (method: LeadMethod, source: string, channels?: { first_channel: string; last_channel: string }) => {
   if (typeof window === 'undefined' || !window.gtag) return
   window.gtag('event', 'generate_lead', {
     method,
@@ -106,6 +106,7 @@ export const trackLead = (method: LeadMethod, source: string) => {
     currency: 'USD',
     value: 1,
     page_path: window.location.pathname,
+    ...channels,
   })
 }
 
@@ -204,8 +205,9 @@ export const trackPhoneClick = (phoneNumber: string) => {
   })
 }
 
-// KakaoTalk clicks (`kakao_click`) are tracked by one delegated listener in the locale layout, so every Kakao
-// link on the site — including ones inside blog content — is counted without per-link handlers.
+// KakaoTalk, tel: and mailto: clicks (`kakao_click`, `phone_click`, `email_click`) are tracked by one delegated
+// listener in the locale layout (src/lib/analyticsBoot.ts), so every such link on the site — including ones inside
+// blog content — is counted without per-link handlers. Don't add onClick tracking to those links: it double-counts.
 
 // Track email clicks
 export const trackEmailClick = (email: string) => {

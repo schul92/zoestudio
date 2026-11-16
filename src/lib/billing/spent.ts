@@ -35,6 +35,8 @@ export async function spentPriceIds(customerId: string): Promise<Set<string>> {
   for (const sub of subs.data) {
     if (!LIVE.includes(sub.status)) continue
     for (const item of sub.items.data) spent.add(item.price.id)
+    // A card-priced checkout (zl_card_fee) bills an inline price, so the link's own Price is only in the metadata.
+    if (sub.metadata?.zl_price) spent.add(sub.metadata.zl_price)
   }
 
   for (const session of sessions.data) {

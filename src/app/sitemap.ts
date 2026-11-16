@@ -10,7 +10,7 @@ import { AWS_PATHS, LOGISTICS_PATHS, ENTERPRISE_UPDATED } from '@/data/enterpris
 import { STATE_SLUG_PAIRS } from '@/lib/stateSlugs'
 
 // Last real content change for non-blog pages; bump it when page copy changes (not on every build).
-const CONTENT_UPDATED = '2026-11-07'
+const CONTENT_UPDATED = '2026-11-13'
 const LOCAL_LANDINGS_UPDATED = '2026-09-30'
 
 export default function sitemap(): MetadataRoute.Sitemap {

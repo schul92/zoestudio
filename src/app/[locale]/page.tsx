@@ -157,6 +157,15 @@ export default function Home({ params }: { params: { locale: string } }) {
       disciplines: ['Web design', '4 languages (KO/EN/JA/ZH)', 'Naver & Google SEO'],
     },
     {
+      name: 'TopSkin Clinic Med Spa',
+      url: 'https://www.topskinclinicmedspa.com/',
+      image: '/portfolio/topskin-clinic-live.jpg',
+      year: '2026',
+      location: 'Duluth, GA',
+      industry: 'Med spa',
+      disciplines: ['Web design', '3 languages (EN/KO/VI)', 'Before & after gallery', 'Local SEO'],
+    },
+    {
       name: 'EndoPia',
       url: 'https://endopiaglobal.com/',
       image: '/portfolio/endopia.jpg',

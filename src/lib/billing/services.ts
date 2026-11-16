@@ -77,3 +77,17 @@ export const isClientRegion = (v: unknown): v is ClientRegion => typeof v === 's
 
 /** Recurring intervals only — `once` has no Stripe `recurring` object. */
 export const isRecurring = (p: BillingPeriod): p is 'month' | 'year' => p !== 'once'
+
+/**
+ * Card processing fee, in cents, stored as the Price's `zl_card_fee` metadata (US links only). When set, the /pay page
+ * asks how the client will pay before Checkout opens: US bank account at the Price's amount with no fee, or card with
+ * the fee as its own labelled line (Steve, Nov 13: show exactly that the extra is the card fee). Keep it at or under 3%
+ * of the amount, the card networks' surcharge cap.
+ */
+export const cardFeeOf = (meta?: Record<string, string> | null): number => {
+  const n = Number(meta?.zl_card_fee ?? 0)
+  return Number.isInteger(n) && n > 0 ? n : 0
+}
+
+export type PayMethod = 'bank' | 'card'
+export const isPayMethod = (v: unknown): v is PayMethod => v === 'bank' || v === 'card'
