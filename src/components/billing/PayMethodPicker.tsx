@@ -27,8 +27,8 @@ export default function PayMethodPicker({
   const options = [
     {
       key: 'card' as const,
-      ko: '카드',
-      en: 'Credit or debit card',
+      ko: '신용카드',
+      en: 'Credit card',
       amount: card,
       feeKo: `${bank} + 카드 수수료 ${fee}`,
       feeEn: `incl. ${fee} card processing fee`,
@@ -39,7 +39,7 @@ export default function PayMethodPicker({
   return (
     <div>
       <p className="mb-3 text-sm font-medium text-graphite">결제 방법 / Pay with</p>
-      <div role="radiogroup" aria-label="결제 방법 / Pay with" className="mb-5 grid grid-cols-2 gap-3">
+      <div role="radiogroup" aria-label="결제 방법 / Pay with" className="mb-3 grid grid-cols-2 gap-3">
         {options.map((o) => {
           const on = method === o.key
           return (
@@ -70,6 +70,12 @@ export default function PayMethodPicker({
           )
         })}
       </div>
+      {/* Card networks allow a surcharge on credit cards only, so debit-card holders are pointed to the bank option. */}
+      <p className="mb-5 text-xs leading-relaxed text-mute">
+        체크카드(debit card)는 은행 계좌로 결제해 주세요. 수수료가 없습니다.
+        <br />
+        Paying with a debit card? Please choose US bank account. There is no fee.
+      </p>
       {method && <CheckoutEmbed key={method} token={token} method={method} />}
     </div>
   )
