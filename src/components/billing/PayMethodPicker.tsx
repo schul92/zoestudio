@@ -58,7 +58,7 @@ export default function PayMethodPicker({
               <span className="mt-3 block font-display text-2xl text-ink">
                 {o.amount}
                 {suffixKo && (
-                  <span className="ml-1 text-sm text-ash">
+                  <span className="ml-1 inline-block whitespace-nowrap text-sm text-ash">
                     {suffixKo}
                     <span className="ml-0.5 text-xs text-mute">{suffixEn}</span>
                   </span>
