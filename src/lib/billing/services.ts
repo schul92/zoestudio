@@ -17,6 +17,7 @@ export const SERVICES = {
   pos: { en: 'POS integration (Toast / Clover)', ko: 'POS 연동 관리 (Toast / Clover)' },
   ads: { en: 'Google Ads management', ko: '구글 광고 운영' },
   seo: { en: 'Local SEO & Google Business Profile', ko: '로컬 SEO · 구글 비즈니스 프로필' },
+  social: { en: 'Instagram management + Meta ads', ko: '인스타그램 운영 + 메타 광고 운영' },
   kakao: { en: 'KakaoTalk Channel management', ko: '카카오톡 채널 관리' },
   domain: { en: 'Email & domain management', ko: '이메일 · 도메인 관리' },
   deposit: { en: 'Website build — deposit', ko: '홈페이지 제작 착수금' },
