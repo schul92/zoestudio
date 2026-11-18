@@ -35,8 +35,9 @@ export const parseServices = (csv?: string | null): ServiceKey[] =>
     .map((s) => s.trim())
     .filter(isServiceKey)
 
+/** Whole dollars print bare ($300); an amount with cents prints both digits ($29.70, never $29.7). */
 export const fmtUSD = (cents: number): string =>
-  `$${(cents / 100).toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 2 })}`
+  `$${(cents / 100).toLocaleString('en-US', { minimumFractionDigits: cents % 100 === 0 ? 0 : 2, maximumFractionDigits: 2 })}`
 
 /**
  * Two Products cover every client; the amount lives on a per-client Price.
