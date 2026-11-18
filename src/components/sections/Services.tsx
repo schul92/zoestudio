@@ -134,27 +134,18 @@ export default function Services({ locale = 'en' }: { locale?: string }) {
         </div>
 
         <p className="mt-12 md:mt-16 text-[13px] font-semibold text-ash">{isKo ? '매장 · 소상공인' : 'For local businesses'}</p>
-        <ul data-reveal-group className="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-5">
+        {/* Local-business services as a compact index, so the doctor/B2B cards above carry the weight. Each row
+            still links to its full service page (blurbs and features live there). */}
+        <ul data-reveal-group className="mt-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-x-8 border-t border-hairline">
           {items.map((it) => (
-            <li key={it.no} className={`flex ${it.no === '01' ? 'lg:col-span-2' : it.no === '07' ? 'md:col-span-2' : ''}`}>
+            <li key={it.no} className="border-b border-hairline">
               <Link
                 href={it.href}
-                className="group kn-card flex flex-col w-full p-7 md:p-8 transition-[transform,box-shadow] duration-300 hover:-translate-y-1 hover:shadow-[0_24px_60px_-30px_rgba(0,0,0,.25)]"
+                className="group flex items-center justify-between gap-4 min-h-[60px] py-3 text-[16px] md:text-[17px] font-medium tracking-[-0.01em] text-graphite hover:text-ink transition-colors"
               >
-                <span className="text-[13px] font-medium text-ash tabular-nums">{it.no}</span>
-                <h3 className="mt-3 text-[24px] md:text-[26px] font-semibold tracking-[-0.035em] leading-[1.12] text-ink">
-                  {it.title}
-                </h3>
-                <p className="mt-3 text-[15px] text-graphite leading-relaxed">{it.blurb}</p>
-                <ul className="mt-5 flex flex-wrap gap-2">
-                  {it.tags.map((tag: string) => (
-                    <li key={tag} className="text-[12px] text-graphite bg-bone rounded-full px-3 py-1">
-                      {tag}
-                    </li>
-                  ))}
-                </ul>
-                <span className="mt-auto pt-6 text-[15px] font-semibold text-link group-hover:underline">
-                  {isKo ? '자세히 보기' : 'Learn more'} <span aria-hidden>›</span>
+                <span>{it.title}</span>
+                <span aria-hidden className="text-ash transition-[transform,color] duration-300 group-hover:translate-x-1 group-hover:text-link">
+                  →
                 </span>
               </Link>
             </li>

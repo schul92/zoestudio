@@ -1,6 +1,7 @@
 'use client'
 
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
+import { Check } from 'lucide-react'
 import InView from '@/components/ui/motion/InView'
 import Magnetic from '@/components/ui/motion/Magnetic'
 import Toast, { ToastMessage } from '@/components/ui/motion/Toast'
@@ -9,6 +10,7 @@ import { submitLead, loadDraft, leadText } from '@/lib/leadCapture'
 import LeadFallback from '@/components/ui/LeadFallback'
 
 const DRAFT_KEY = 'home_contact'
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
 
 type Status = 'idle' | 'loading' | 'success' | 'error'
 
@@ -45,6 +47,11 @@ const copy = {
     successBody: "We've received your message. Expect a reply within one business day.",
     requiredTitle: 'Almost there',
     required_err: 'Please complete your name and email so we can reply.',
+    errors: {
+      name: 'Add your name so we know who to reply to.',
+      email: 'Add the email we should reply to.',
+      emailFormat: 'Check the email address (for example, you@company.com).',
+    },
     privacy: 'Your information is used only to reply to your inquiry.',
     altContact: {
       label: 'Prefer to skip the form?',
@@ -92,6 +99,11 @@ const copy = {
     successBody: '메시지 수신 완료. 영업일 기준 1일 이내에 회신드립니다.',
     requiredTitle: '거의 다 됐어요',
     required_err: '회신을 위해 이름과 이메일을 입력해 주세요.',
+    errors: {
+      name: '회신드릴 분의 이름을 입력해 주세요.',
+      email: '회신받으실 이메일을 입력해 주세요.',
+      emailFormat: '이메일 주소 형식을 확인해 주세요 (예: you@company.com).',
+    },
     privacy: '입력하신 정보는 상담 회신 목적으로만 사용됩니다.',
     altContact: {
       label: '폼이 아니어도 좋습니다',
@@ -149,15 +161,26 @@ export default function ContactWrapper({
     )
   }
 
-  const valid = form.name.trim() && form.email.trim()
+  const [errors, setErrors] = useState<{ name?: string; email?: string }>({})
+  const nameRef = useRef<HTMLInputElement>(null)
+  const emailRef = useRef<HTMLInputElement>(null)
+
+  // Errors sit under their field and the first one takes focus, instead of a toast across the screen.
+  const validate = () => {
+    const next: { name?: string; email?: string } = {}
+    if (!form.name.trim()) next.name = t.errors.name
+    if (!form.email.trim()) next.email = t.errors.email
+    else if (!EMAIL_RE.test(form.email.trim())) next.email = t.errors.emailFormat
+    setErrors(next)
+    if (next.name) nameRef.current?.focus()
+    else if (next.email) emailRef.current?.focus()
+    return !next.name && !next.email
+  }
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault()
     if (status === 'loading') return
-    if (!valid) {
-      setToast({ id: Date.now(), kind: 'info', title: t.requiredTitle, body: t.required_err })
-      return
-    }
+    if (!validate()) return
     setStatus('loading')
     setUnsent('')
     trackEvent('form_submit_attempt', 'conversion', 'home_contact')
@@ -197,7 +220,7 @@ export default function ContactWrapper({
         className="pointer-events-none absolute inset-0"
         style={{
           background: `
-            radial-gradient(40% 35% at 88% 12%, rgba(0,163,163, 0.28) 0%, rgba(0,163,163, 0) 60%),
+            radial-gradient(40% 35% at 88% 12%, rgba(0,113,227, 0.22) 0%, rgba(0,113,227, 0) 60%),
             radial-gradient(35% 30% at 8% 92%, rgba(0,113,227, 0.10) 0%, rgba(0,113,227, 0) 65%)
           `,
         }}
@@ -246,19 +269,31 @@ export default function ContactWrapper({
             {/* Name + Email row */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-6">
               <Field
+                id="contact-name"
+                inputRef={nameRef}
                 label={t.labels.name}
                 placeholder={t.placeholders.name}
                 value={form.name}
-                onChange={(v) => setForm({ ...form, name: v })}
+                error={errors.name}
+                onChange={(v) => {
+                  setForm({ ...form, name: v })
+                  if (errors.name) setErrors((er) => ({ ...er, name: undefined }))
+                }}
                 autoComplete="name"
                 required
               />
               <Field
+                id="contact-email"
+                inputRef={emailRef}
                 label={t.labels.email}
                 placeholder={t.placeholders.email}
                 type="email"
                 value={form.email}
-                onChange={(v) => setForm({ ...form, email: v })}
+                error={errors.email}
+                onChange={(v) => {
+                  setForm({ ...form, email: v })
+                  if (errors.email) setErrors((er) => ({ ...er, email: undefined }))
+                }}
                 autoComplete="email"
                 required
               />
@@ -268,7 +303,7 @@ export default function ContactWrapper({
             <div className="mt-7">
               <label
                 className="block uppercase text-[12px] mb-3"
-                style={{ letterSpacing: '0.18em', color: 'var(--ash)' }}
+                style={{ letterSpacing: 'var(--ovl-track)', color: 'var(--ash)' }}
               >
                 {t.labels.scope}
                 <span className="ml-2 normal-case tracking-normal text-[12px]" style={{ color: 'var(--ash)' }}>
@@ -282,15 +317,11 @@ export default function ContactWrapper({
                     <button
                       key={s}
                       type="button"
+                      aria-pressed={active}
                       onClick={() => toggleScope(s)}
-                      className="px-4 min-h-[44px] rounded-full text-[14px] transition duration-200 border"
-                      style={{
-                        background: active ? 'var(--ink)' : 'transparent',
-                        color: active ? 'var(--ivory)' : 'var(--graphite)',
-                        borderColor: active ? 'var(--ink)' : 'var(--line)',
-                      }}
+                      className="zl-chip"
                     >
-                      {active && <span className="mr-1">✓</span>}
+                      {active && <Check aria-hidden size={15} strokeWidth={2.25} />}
                       {s}
                     </button>
                   )
@@ -302,7 +333,7 @@ export default function ContactWrapper({
             <div className="mt-7">
               <label
                 className="block uppercase text-[12px] mb-3"
-                style={{ letterSpacing: '0.18em', color: 'var(--ash)' }}
+                style={{ letterSpacing: 'var(--ovl-track)', color: 'var(--ash)' }}
               >
                 {t.labels.message}
               </label>
@@ -311,21 +342,7 @@ export default function ContactWrapper({
                 onChange={(e) => setForm({ ...form, message: e.target.value })}
                 placeholder={t.placeholders.message}
                 rows={5}
-                className="w-full rounded-xl px-4 py-3.5 text-[15px] leading-[1.6] resize-y transition duration-200 outline-none focus:ring-2"
-                style={{
-                  background: 'var(--ivory)',
-                  border: '1px solid var(--line)',
-                  color: 'var(--ink)',
-                  minHeight: '128px',
-                }}
-                onFocus={(e) => {
-                  e.currentTarget.style.borderColor = '#0071E3'
-                  e.currentTarget.style.background = 'var(--paper)'
-                }}
-                onBlur={(e) => {
-                  e.currentTarget.style.borderColor = 'rgba(0,0,0,0.12)'
-                  e.currentTarget.style.background = 'var(--ivory)'
-                }}
+                className="zl-field rounded-xl px-4 py-3.5 text-[15px] leading-[1.6] resize-y min-h-[128px]"
               />
             </div>
 
@@ -343,13 +360,13 @@ export default function ContactWrapper({
                   type="submit"
                   data-cursor={isKo ? '보내기' : 'Send'}
                   disabled={status === 'loading'}
-                  className="inline-flex items-center gap-3 px-8 py-[18px] rounded-full text-[15px] font-medium transition duration-300 hover:scale-[1.02] hover:shadow-[0_24px_50px_-16px_rgba(0,113,227,0.55)] disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
+                  className="inline-flex items-center gap-3 px-8 py-[18px] rounded-full text-[15px] font-medium transition duration-300 hover:scale-[1.02] hover:shadow-[0_24px_50px_-16px_rgba(0,113,227,0.55)] active:scale-[.97] active:duration-100 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:scale-100"
+                  // Always the primary colour: a grey "not yet valid" button read as disabled. Missing fields are
+                  // explained under the field on submit instead.
                   style={{
-                    background: valid ? 'var(--ink)' : 'var(--graphite)',
+                    background: 'var(--ink)',
                     color: 'var(--ivory)',
-                    boxShadow: valid
-                      ? '0 18px 40px -14px rgba(0,113,227,0.55), inset 0 0 0 1px rgba(255,255,255,0.08)'
-                      : '0 14px 40px -14px rgba(0,0,0,0.45)',
+                    boxShadow: '0 18px 40px -14px rgba(0,113,227,0.55), inset 0 0 0 1px rgba(255,255,255,0.08)',
                   }}
                 >
                   {status === 'loading' ? (
@@ -380,7 +397,7 @@ export default function ContactWrapper({
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6 justify-center">
             <span
               className="text-[12px] uppercase"
-              style={{ letterSpacing: '0.18em', color: 'var(--ash)' }}
+              style={{ letterSpacing: 'var(--ovl-track)', color: 'var(--ash)' }}
             >
               {t.altContact.label}
             </span>
@@ -421,7 +438,7 @@ export default function ContactWrapper({
         <div className="mt-16 md:mt-20 max-w-4xl mx-auto">
           <p
             className="text-center text-[12px] uppercase mb-8"
-            style={{ letterSpacing: '0.22em', color: 'var(--ash)' }}
+            style={{ letterSpacing: 'var(--ovl-track)', color: 'var(--ash)' }}
           >
             {t.nextLabel}
           </p>
@@ -459,29 +476,36 @@ export default function ContactWrapper({
 
 // ─── Field — clean labeled input with focus state ────────────────
 function Field({
+  id,
+  inputRef,
   label,
   placeholder,
   helper,
+  error,
   value,
   onChange,
   type = 'text',
   required = false,
   autoComplete,
 }: {
+  id: string
+  inputRef?: React.Ref<HTMLInputElement>
   label: string
   placeholder?: string
   helper?: string
+  error?: string
   value: string
   onChange: (v: string) => void
   type?: string
   required?: boolean
   autoComplete?: string
 }) {
+  const errorId = `${id}-error`
   return (
-    <label className="block">
+    <label className="block" htmlFor={id}>
       <span
         className="block uppercase text-[12px] mb-2.5"
-        style={{ letterSpacing: '0.18em', color: 'var(--ash)' }}
+        style={{ letterSpacing: 'var(--ovl-track)', color: 'var(--ash)' }}
       >
         {label}
         {required && (
@@ -489,27 +513,23 @@ function Field({
         )}
       </span>
       <input
+        id={id}
+        ref={inputRef}
         type={type}
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
         required={required}
         autoComplete={autoComplete}
-        className="w-full rounded-xl px-4 py-3 text-[15px] transition duration-200 outline-none"
-        style={{
-          background: 'var(--ivory)',
-          border: '1px solid var(--line)',
-          color: 'var(--ink)',
-        }}
-        onFocus={(e) => {
-          e.currentTarget.style.borderColor = '#0071E3'
-          e.currentTarget.style.background = 'var(--paper)'
-        }}
-        onBlur={(e) => {
-          e.currentTarget.style.borderColor = 'rgba(0,0,0,0.12)'
-          e.currentTarget.style.background = 'var(--ivory)'
-        }}
+        aria-invalid={error ? true : undefined}
+        aria-describedby={error ? errorId : undefined}
+        className="zl-field rounded-xl px-4 py-3 text-[15px]"
       />
+      {error && (
+        <span id={errorId} role="alert" className="zl-error block mt-2 text-[13px] leading-snug">
+          {error}
+        </span>
+      )}
       {helper && (
         <span className="block mt-1.5 text-[12px]" style={{ color: 'var(--ash)' }}>
           {helper}
