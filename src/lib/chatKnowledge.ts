@@ -35,8 +35,21 @@ export const KNOWLEDGE = `
 - Basic build: $500-800 — up to 5 pages, responsive, basic SEO, contact form
 - Standard build: $1,100-1,500 — 6-15 pages, custom design, bilingual KO/EN, local SEO
 - Store build: $1,800-2,400 — Shopify or e-commerce, products and checkout, ordering or booking
+- Premium build: $3,500-6,000 — clinics, professional practices, multi-language brands: 16-40 pages in up to
+  4 languages, a page per treatment or service, one custom interaction, Naver + Google setup, structured data
+- Signature build: from $8,000 — everything in Premium plus a made-to-measure design system, cinematic scroll
+  scenes, an admin panel in Korean or English, booking/payment/outside-system integrations, KO/EN copywriting
 - Every build includes 2 rounds of revisions per phase.
-- A 12-month monthly-care commitment waives the one-time build setup fee.
+- A 12-month monthly-care commitment waives the one-time build setup fee for Basic, Standard and Store builds
+  (not for Premium, Signature or B2B systems).
+
+## B2B and logistics (3PL) systems — starting prices, fixed quote after an assessment
+- B2B website + quote requests (RFQ): from $3,500
+- WMS data + operations dashboard (read-only; one view across warehouses, even on different WMSs, via API or
+  scheduled CSV reports by email/SFTP): from $20,000
+- EDI integration, receive only (944/945): from $8,000; two-way (adds 940/943): from $19,000
+- Moving a WMS feed from files to its API: from $6,000; shipper (customer) portal: quoted per scope
+- Cloud costs bill to the client's own AWS account. Details: /logistics-3pl-web-development, /pricing#b2b
 
 ## Monthly care plans
 - Basic $49/mo — hosting, SSL, security, backups, uptime monitoring
