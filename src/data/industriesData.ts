@@ -455,11 +455,11 @@ export const industries: Industry[] = [
     cta: { en: 'Want to see a draft first?', ko: '시안 초안부터 받아보시겠어요?' },
     seo: {
       title: {
-        en: 'Clinic & Dental Website Design for Doctors in Korea and the US — Draft First | Zoe Lumos',
+        en: 'Clinic & Dental Website Design for Doctors, Korea and US | Zoe Lumos',
         ko: '병원·치과 홈페이지 제작 — 서울·미국 의사를 위한 홈페이지, 시안 먼저 | 조이루모스',
       },
       description: {
-        en: 'Websites for doctors of every specialty in Korea and the US. Just launched: Seoul Choice Dental, Seoul (132 pages, 4 languages). Treatment illustrations, motion first screens, medical-ad compliant copy, Naver and Google search, plus Naver marketing (Place, blog, search ads). See a working draft before you sign.',
+        en: 'Clinic and dental websites for doctors in Korea and the US, with Naver and Google marketing. See a working draft before you sign. Recent: Seoul Choice Dental, 132 pages.',
         ko: '치과 · 피부과 · 정형외과 · 한의원 등 모든 진료과 병원 홈페이지 제작·리뉴얼. 2026년 11월 오픈한 서울초이스치과의원(4개 국어 132페이지) 사례. 진료 일러스트와 움직이는 첫 화면, 의료법 기준 문구, 네이버 · 구글 검색 등록, 네이버 마케팅(플레이스 · 블로그 · 검색광고). 계약 전 시안 초안을 먼저 보여드립니다.',
       },
     },

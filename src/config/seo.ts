@@ -1,7 +1,7 @@
 export const seoConfig = {
   en: {
     title: 'Medical & B2B Website Design · Bilingual EN/KR | ZOE LUMOS',
-    description: 'Websites for doctors, dental clinics and B2B companies in the US and Korea: bilingual EN/KR, online booking, portals and integrations. Launched Seoul Choice Dental (Seoul, 2026, 4 languages) and EndoPia\'s FDA 510(k) U.S. site.',
+    description: 'Websites for doctors, dental clinics and B2B companies in the US and Korea, in English and Korean: booking, portals, Google and Naver marketing. Recent: Seoul Choice Dental.',
     keywords: 'medical website design, doctor website design, dental website design, dental clinic website, medical practice website, healthcare web design, clinic website Korea, dental clinic website Seoul, multilingual clinic website, Korean medical advertising law compliant website, Naver SEO for clinics, medical device website, B2B website design, B2B portal development, Korean doctor website, bilingual medical website, Shopify Expert NJ, Shopify developer Korean, Korean American web design, bilingual web design agency, Korean web design studio, Korean business website, Korean American website, bilingual SEO, Korean SEO agency, NJ web design, NY web design, Fort Lee web design, Bergen County web design, Shopify development, e-commerce website design, local SEO expert, digital marketing agency, Google Ads management, small business SEO NJ, Korean web agency, editorial web design, boutique web design studio, 한인 마케팅 에이전시, 한인 웹디자인, Korean American web designer, Palisades Park marketing, Ridgefield web design, Edgewater web design, Cliffside Park web design, Fairview NJ web design, Hackensack web design, Leonia web design, Tenafly web design, Teaneck web design, Korean restaurant website NJ, Korean spa website NJ, Korean nail salon website, Korean hair salon website, Korean grocery store website, bilingual website Korean English NJ, Korean American small business website, Fort Lee Korean marketing agency, Palisades Park Korean business SEO, Bergen County Korean marketing agency, Korean business Google Ads, Google My Business Korean business, Instagram marketing Korean business NJ, affordable web design Bergen County, how to get more customers for Korean restaurant NJ',
     openGraph: {
       title: 'Zoe Lumos — Websites for Doctors & B2B Companies',
@@ -60,7 +60,11 @@ export const structuredData = {
       "Generative Engine Optimization (GEO)",
       "Web accessibility (WCAG)",
       "Shopify development",
-      "Google Ads"
+      "Google Ads",
+      "Naver marketing (Naver Place / Smartplace, brand blog, Powerlink and Naver search ads)",
+      "Naver Analytics and Naver ads conversion tracking",
+      "Korea and US go-to-market for B2B apparel and kids' clothing brands",
+      "Marketing consulting for clinics and B2B companies"
     ],
     "contactPoint": [
       {

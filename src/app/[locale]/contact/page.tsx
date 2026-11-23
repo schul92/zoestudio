@@ -46,6 +46,7 @@ export async function generateMetadata({
       siteName: 'ZOE LUMOS',
       locale: isKo ? 'ko_KR' : 'en_US',
       type: 'website',
+      images: [{ url: `${BASE}/api/og?title=Contact+Zoe+Lumos&subtitle=Free+consultation+%C2%B7+English+%26+Korean`, width: 1200, height: 630, alt: 'ZOE LUMOS' }],
     },
     robots: { index: true, follow: true },
   }

@@ -22,12 +22,12 @@ export async function generateMetadata({
   
   const metadata = {
     en: {
-      title: 'About ZOE LUMOS | Fort Lee NJ Web Design & SEO Expert',
-      description: 'ZOE LUMOS — Next.js web design for small businesses to organizations in NJ & NYC. SEO-first builds, transparent pricing, special promos running now.',
+      title: 'About ZOE LUMOS | Websites & Marketing for Doctors and B2B, US and Korea',
+      description: 'Zoe Lumos is a Fort Lee, NJ studio building websites, Google and Naver marketing for doctors, clinics and B2B companies in the US and Korea, in English and Korean.',
     },
     ko: {
-      title: 'ZOE LUMOS 소개 | 포트리 NJ 웹디자인 & SEO 전문가',
-      description: 'ZOE LUMOS — NJ & NYC 소규모 비즈니스부터 중견 기업까지 Next.js 웹사이트 제작. SEO 중심 개발, 투명한 가격, 신규 고객 프로모션 진행 중.',
+      title: '조이루모스 소개 | 병원 · B2B 홈페이지와 구글 · 네이버 마케팅, 한국 · 미국',
+      description: '조이루모스는 미국 뉴저지 포트리의 스튜디오입니다. 한국과 미국의 병원 · 치과 · B2B 기업 홈페이지 제작과 구글 · 네이버 마케팅을 한국어와 영어로 진행합니다.',
     }
   }
   
@@ -50,6 +50,7 @@ export async function generateMetadata({
       locale: locale === 'ko' ? 'ko_KR' : 'en_US',
       alternateLocale: locale === 'ko' ? 'en_US' : 'ko_KR',
       type: 'website',
+      images: [{ url: `${baseUrl}/api/og?title=About+Zoe+Lumos&subtitle=Doctors+%C2%B7+B2B+%C2%B7+US+%26+Korea`, width: 1200, height: 630, alt: 'ZOE LUMOS' }],
     },
     robots: {
       index: true,

@@ -22,11 +22,11 @@ export async function generateMetadata({
   const baseUrl = SITE_URL
   return {
     title: isKo
-      ? '서비스 — 웹사이트 제작 · 구글 광고대행 · SEO · 카카오톡 마케팅 | 조이루모스'
-      : 'Services — Website Design, Google Ads, SEO & KakaoTalk Marketing | ZOE LUMOS',
+      ? '서비스 — 홈페이지 제작 · 구글 광고 · 네이버 마케팅 · SEO | 조이루모스'
+      : 'Services — Websites, Google Ads, Naver Marketing & SEO | ZOE LUMOS',
     description: isKo
-      ? '미국 한인 비즈니스를 위한 디지털 서비스 한곳에서. 웹사이트 제작·유지보수, 구글 광고대행, 로컬 SEO, 카카오톡 · 네이버 마케팅, 쇼핑몰 제작. 한영 이중언어, 계정·도메인 소유권은 100% 고객님께. 무료 상담.'
-      : 'Every digital service for US Korean-American businesses in one place: website design & maintenance, Google Ads management, local SEO, KakaoTalk and Naver marketing, and e-commerce builds. Bilingual, you own your accounts and domain. Free consultation.',
+      ? '한국 · 미국 병원과 B2B 기업, 한인 비즈니스를 위한 홈페이지 제작 · 관리, 구글 광고, 네이버 마케팅, SEO, 쇼핑몰. 한영 이중언어, 계정은 100% 고객 명의. 무료 상담.'
+      : 'Websites, Google Ads, Naver marketing, SEO and e-commerce for clinics, B2B companies and Korean-American businesses in the US and Korea. Bilingual; you own every account.',
     keywords: isKo
       ? '한인 마케팅 서비스, 웹사이트 제작, 구글 광고대행, 한인 SEO, 카카오톡 마케팅, 네이버 마케팅, 네이버 플레이스, 미국 한인 디지털 마케팅, 홈페이지 제작 유지보수'
       : 'Korean marketing services, website design, Google Ads agency, Korean SEO, KakaoTalk marketing, Naver marketing, Korean American digital marketing',

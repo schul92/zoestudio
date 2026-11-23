@@ -46,13 +46,13 @@ export async function generateMetadata({
 
   const metadata = {
     en: {
-      title: 'Digital Marketing Blog - ZOE LUMOS | SEO, Google Ads & Web Design Tips',
-      description: 'Expert digital marketing insights, SEO tips, Google Ads strategies, and web design best practices. Learn how to grow your business online with ZOE LUMOS.',
+      title: 'Blog — Clinic Websites, Google & Naver Marketing, SEO | ZOE LUMOS',
+      description: 'Guides and case studies on clinic and B2B websites, Google Ads, Naver marketing, SEO and AI search for businesses in the US and Korea, in English and Korean.',
       keywords: 'digital marketing blog, SEO tips, Google Ads tips, web design tips, small business marketing, local SEO guide, e-commerce tips',
     },
     ko: {
-      title: '디지털 마케팅 블로그 - ZOE LUMOS | SEO, 구글 광고 & 웹 디자인 팁',
-      description: '전문 디지털 마케팅 인사이트, SEO 팁, 구글 광고 전략, 웹 디자인 모범 사례. ZOE LUMOS와 함께 온라인 비즈니스 성장 방법을 배워보세요.',
+      title: '블로그 — 병원 홈페이지 · 구글 · 네이버 마케팅 · SEO | 조이루모스',
+      description: '병원 · B2B 홈페이지, 구글 광고, 네이버 마케팅, SEO와 AI 검색에 관한 가이드와 제작 사례. 한국과 미국 비즈니스를 위해 한국어와 영어로 씁니다.',
       keywords: '디지털 마케팅 블로그, SEO 팁, 구글 광고 팁, 웹 디자인 팁, 소규모 비즈니스 마케팅, 로컬 SEO 가이드, 이커머스 팁',
     }
   }
@@ -76,6 +76,7 @@ export async function generateMetadata({
       siteName: 'ZOE LUMOS',
       locale: locale === 'ko' ? 'ko_KR' : 'en_US',
       type: 'website',
+      images: [{ url: `${SITE_URL}/api/og?title=Zoe+Lumos+Blog&subtitle=Websites+%C2%B7+Google+%C2%B7+Naver+%C2%B7+SEO`, width: 1200, height: 630, alt: 'ZOE LUMOS Blog' }],
     },
     robots: {
       index: true,
