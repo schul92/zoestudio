@@ -316,11 +316,10 @@ export default async function PayPage({
               <p className="text-xs leading-relaxed text-graphite">
                 <strong className="font-medium text-ink">해외 결제가 되는 카드(Visa · Mastercard · Amex)로 결제해 주세요.</strong>
                 <br />
-                금액은 미국 달러(USD)로 청구되며, 원화 금액은 결제일의 카드사 환율로 정해집니다. 카드사 해외이용 수수료가 붙을 수
-                있습니다. 결제가 끝나면 영수증과 인보이스가 이메일로 발송됩니다.
+                금액은 미국 달러(USD)로 청구됩니다. 카드사 해외이용 수수료가 붙을 수 있습니다. 결제가 끝나면 영수증과 인보이스가 이메일로 발송됩니다.
                 <br />
                 <span className="text-mute">
-                  Please pay with a card enabled for overseas payments. Charged in USD; your card issuer sets the KRW amount.
+                  Please pay with a card enabled for overseas payments. Charged in US dollars (USD).
                 </span>
               </p>
             </div>

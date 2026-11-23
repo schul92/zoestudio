@@ -110,6 +110,8 @@ export async function POST(req: Request) {
     line_items: [{ price: payload.priceId, quantity: 1 }, ...feeLine],
     payment_method_types: [...methodTypes],
     ...(kr ? { locale: 'ko' as const } : method === 'card' ? {} : { payment_method_options: PAYMENT_METHOD_OPTIONS }),
+    // Korean clients see the amount in USD only: Adaptive Pricing would offer a KRW price at Stripe's rate.
+    ...(kr ? { adaptive_pricing: { enabled: false } } : {}),
     return_url: `${SITE_URL}/pay/${token}?done={CHECKOUT_SESSION_ID}`,
     // zl_price on the session lets the webhook burn the pay link the moment
     // this checkout completes, and lets spentPriceIds() see one-time payments.
