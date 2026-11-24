@@ -43,6 +43,217 @@ export interface BlogPost {
 }
 
 const allBlogPosts: BlogPost[] = [
+  // 2026-11-23 — US Korean-American clinic website checklist (landing for clinic outreach).
+  {
+    slug: "korean-american-dental-clinic-website-checklist-2026",
+    date: "2026-11-23",
+    updatedDate: "2026-11-23",
+    readTime: 8,
+    category: {
+      "en": "Industry Guide",
+      "ko": "업종별 가이드"
+    },
+    title: {
+      "en": "Korean-American Dental and Medical Clinic Website Checklist 2026: 12 Things Patients Check Before They Book",
+      "ko": "미국 한인 치과 · 병원 홈페이지 체크리스트 2026: 환자가 예약 전에 확인하는 12가지"
+    },
+    metaDescription: {
+      "en": "A 12-point checklist for Korean-American dental, dermatology and family practices in NJ, NY, LA, Atlanta and Dallas: mobile speed, Korean and English pages, insurance info, online booking, Google Business Profile, ADA accessibility, HIPAA-safe forms and AI search.",
+      "ko": "뉴저지 · 뉴욕 · LA · 애틀랜타 · 달라스의 한인 치과 · 피부과 · 가정의학과를 위한 홈페이지 점검표 12가지. 모바일 속도, 한국어 · 영어 페이지, 보험 안내, 온라인 예약, 구글 비즈니스 프로필, ADA 웹 접근성, HIPAA 기준 양식, AI 검색까지."
+    },
+    author: "Steve Song",
+    image: "/blog/korean-american-dental-clinic-website-checklist-2026.png",
+    faq: [
+      {
+        "q": {
+          "en": "Does a Korean-American clinic need both Korean and English pages?",
+          "ko": "미국 한인 병원은 한국어 · 영어 페이지가 둘 다 있어야 하나요?"
+        },
+        "a": {
+          "en": "Usually yes. Many patients are Korean-speaking parents while their children and many new patients search in English. Separate Korean and English pages linked with hreflang let Google show each patient the right language, which one mixed-language page cannot do.",
+          "ko": "대부분 그렇습니다. 부모님 세대는 한국어로, 자녀 세대와 새 환자 상당수는 영어로 찾습니다. 한국어 · 영어 페이지를 나누고 hreflang으로 연결해야 구글이 환자마다 맞는 언어를 보여 줍니다. 한 페이지에 두 언어를 섞으면 이게 안 됩니다."
+        }
+      },
+      {
+        "q": {
+          "en": "Can a clinic website collect patient information through a normal contact form?",
+          "ko": "병원 홈페이지에서 일반 문의 폼으로 환자 정보를 받아도 되나요?"
+        },
+        "a": {
+          "en": "Keep the open contact form to name, phone and a preferred time. Symptoms, medical history and insurance details belong in a HIPAA-compliant intake or booking system with a signed business associate agreement, not in a plain email form.",
+          "ko": "일반 문의 폼에는 이름 · 연락처 · 희망 시간 정도만 받으세요. 증상, 병력, 보험 정보는 일반 이메일 폼이 아니라 업무제휴계약(BAA)을 맺은 HIPAA 기준 접수 · 예약 시스템으로 받아야 합니다."
+        }
+      },
+      {
+        "q": {
+          "en": "How do I know if my clinic website needs a rebuild?",
+          "ko": "우리 병원 홈페이지를 새로 만들어야 하는지 어떻게 알 수 있나요?"
+        },
+        "a": {
+          "en": "Run through the 12 points below on your phone. If four or more fail, especially mobile layout, booking and the Google Business Profile, a rebuild usually costs less than patching. We review clinic sites for free and send the results in Korean or English.",
+          "ko": "아래 12가지를 휴대폰으로 직접 확인해 보세요. 4개 이상, 특히 모바일 화면 · 예약 · 구글 비즈니스 프로필에서 걸리면 고치는 것보다 새로 만드는 게 대개 쌉니다. 조이루모스는 병원 홈페이지를 무료로 점검해 한국어나 영어로 결과를 보내 드립니다."
+        }
+      }
+    ],
+    sections: {
+      "ko": [
+        {
+          "type": "intro",
+          "content": "환자는 병원을 고를 때 홈페이지를 1분도 안 봅니다. 그 짧은 시간에 '여기 믿어도 되나, 내 보험 되나, 지금 예약되나'를 판단합니다. 뉴저지 포트리 · 팰리세이즈파크, 뉴욕 플러싱, LA 코리아타운, 애틀랜타 둘루스, 달라스 캐럴턴의 한인 치과와 병원 홈페이지를 만들고 고치면서 본, 환자가 실제로 확인하는 12가지를 정리했습니다. 휴대폰을 들고 우리 병원 사이트를 하나씩 눌러 보세요."
+        },
+        {
+          "type": "h2",
+          "content": "처음 3초: 믿을 만한가"
+        },
+        {
+          "type": "ul",
+          "content": "",
+          "items": [
+            "1. 휴대폰에서 글자가 작지 않고 옆으로 밀리지 않는가. 모바일 화면 설정(viewport)이 없는 오래된 사이트가 아직 많습니다.",
+            "2. 주소창에 자물쇠(https)가 있는가. 없으면 크롬이 '안전하지 않음'을 먼저 보여 줍니다.",
+            "3. 휴대폰 데이터로 3초 안에 열리는가. 구글 PageSpeed Insights에서 모바일 점수를 무료로 볼 수 있습니다.",
+            "4. 원장님 사진, 이름, 면허 · 전문 분야, 실제 진료실 사진이 있는가. 스톡 사진만 있으면 다른 병원과 구별이 안 됩니다."
+          ]
+        },
+        {
+          "type": "h2",
+          "content": "다음 30초: 나한테 맞는가"
+        },
+        {
+          "type": "ul",
+          "content": "",
+          "items": [
+            "5. 한국어와 영어 페이지가 따로 있는가. 부모님은 한국어로, 자녀와 새 환자는 영어로 찾습니다. 두 페이지는 hreflang으로 연결해야 구글이 언어별로 맞게 보여 줍니다.",
+            "6. 받는 보험(PPO · HMO · Medicare · Medicaid 등)과 보험이 없을 때의 안내가 있는가. 한인 환자가 가장 많이 묻는 질문입니다.",
+            "7. 진료 항목별 페이지가 있는가. '임플란트', '인비절라인', '보톡스'처럼 진료마다 페이지가 있어야 그 검색어로 노출됩니다.",
+            "8. 영업시간, 토요일 진료, 주차, 지하철 · 버스 안내가 정확한가. 구글 비즈니스 프로필과 홈페이지 시간이 다르면 신뢰가 떨어집니다."
+          ]
+        },
+        {
+          "type": "h2",
+          "content": "마지막 단계: 지금 연락되는가"
+        },
+        {
+          "type": "ul",
+          "content": "",
+          "items": [
+            "9. 휴대폰 화면 아래에 전화 · 예약 · 카카오톡 버튼이 항상 보이는가.",
+            "10. 온라인 예약이 실제로 되는가. 예약 링크가 깨져 있거나 '전화 주세요'만 있는 사이트가 많습니다.",
+            "11. 문의 폼은 이름 · 연락처 · 희망 시간만 받는가. 증상 · 병력 · 보험번호는 HIPAA 기준 접수 시스템(업무제휴계약 BAA 포함)으로 받아야 합니다.",
+            "12. 웹 접근성(ADA)을 지키는가. 이미지 대체 텍스트, 충분한 글자 대비, 키보드로 이동 가능한 메뉴. 미국에서는 웹 접근성 소송이 매년 수천 건 제기되고, 병원도 예외가 아닙니다."
+          ]
+        },
+        {
+          "type": "h2",
+          "content": "홈페이지 밖에서 같이 맞춰야 하는 것"
+        },
+        {
+          "type": "ul",
+          "content": "",
+          "items": [
+            "구글 비즈니스 프로필: 지도 검색에서 먼저 보입니다. 사진, 진료 항목, 시간, 예약 링크를 홈페이지와 똑같이 맞춥니다.",
+            "구조화 데이터(Dentist · MedicalClinic 스키마): 구글과 ChatGPT 같은 AI 검색이 병원 이름 · 주소 · 진료 · 시간을 정확히 읽게 합니다.",
+            "측정: GA4와 서치 콘솔을 연결하고, 전화 · 예약 버튼 클릭을 전환으로 잡아야 광고비가 어디서 환자로 바뀌는지 보입니다.",
+            "리뷰: 미국은 구글 리뷰가 큰 영향을 줍니다. 진료 후 문자로 리뷰 링크를 보내는 흐름을 만들어 두세요. 리뷰를 사거나 대가를 주는 건 하지 마세요."
+          ]
+        },
+        {
+          "type": "tip",
+          "content": "점검 순서 팁: 1, 9, 10번부터 보세요. 휴대폰에서 깨지거나 예약 버튼이 안 보이면, 나머지가 아무리 좋아도 환자는 뒤로 가기를 누릅니다."
+        },
+        {
+          "type": "h2",
+          "content": "조이루모스가 하는 일"
+        },
+        {
+          "type": "p",
+          "content": "조이루모스는 뉴저지 포트리의 스튜디오로, 한국과 미국의 병원 홈페이지를 한국어와 영어로 만듭니다. 최근에는 미국 조지아 둘루스의 TopSkin Clinic Med Spa(영어 · 한국어 · 베트남어 36페이지)와 서울의 서울초이스치과의원(4개 국어 132페이지)을 오픈했습니다. 계약 전에 대표 화면 1~2개를 시안으로 먼저 보여 드리고, 구글 광고 · 구글 비즈니스 프로필 · 측정 설정까지 함께 맡습니다."
+        },
+        {
+          "type": "cta",
+          "content": "우리 병원 홈페이지가 12가지 중 몇 개를 통과하는지 무료로 점검해 드립니다. 결과는 한국어 또는 영어로 보내 드립니다."
+        }
+      ],
+      "en": [
+        {
+          "type": "intro",
+          "content": "Patients spend less than a minute on a clinic website. In that minute they decide whether they trust you, whether you take their insurance, and whether they can book now. From building and fixing sites for Korean-American dental and medical practices in Fort Lee and Palisades Park, Flushing, LA Koreatown, Duluth and Carrollton, here are the 12 things patients actually check. Grab your phone and go through your own site."
+        },
+        {
+          "type": "h2",
+          "content": "The first three seconds: can I trust this?"
+        },
+        {
+          "type": "ul",
+          "content": "",
+          "items": [
+            "1. Does it fit the phone screen, with readable text and no sideways scrolling? Many older sites still lack a mobile viewport.",
+            "2. Is there a padlock (https)? Without it Chrome shows Not secure before anything else.",
+            "3. Does it load in about three seconds on mobile data? Google PageSpeed Insights shows a free mobile score.",
+            "4. Are the doctor's photo, name, license or specialty and real office photos there? Stock photos make every clinic look the same."
+          ]
+        },
+        {
+          "type": "h2",
+          "content": "The next thirty seconds: is this for me?"
+        },
+        {
+          "type": "ul",
+          "content": "",
+          "items": [
+            "5. Separate Korean and English pages? Parents search in Korean, their children and many new patients in English. Link the two with hreflang so Google shows each patient the right one.",
+            "6. Accepted insurance (PPO, HMO, Medicare, Medicaid) and what happens without insurance. This is the most common question from Korean-American patients.",
+            "7. A page for each treatment: implants, Invisalign, Botox and so on. Each page is what ranks for that search.",
+            "8. Accurate hours, Saturday hours, parking and transit. If the website and Google Business Profile disagree, trust drops."
+          ]
+        },
+        {
+          "type": "h2",
+          "content": "The last step: can I reach them now?"
+        },
+        {
+          "type": "ul",
+          "content": "",
+          "items": [
+            "9. Call, book and KakaoTalk buttons always visible at the bottom of the phone screen.",
+            "10. Online booking that actually works. Broken booking links and \"please call\" pages are common.",
+            "11. A contact form that asks only for name, phone and a preferred time. Symptoms, history and insurance numbers belong in a HIPAA-compliant intake system with a signed business associate agreement.",
+            "12. ADA web accessibility: image alt text, enough contrast, menus that work with a keyboard. Thousands of web-accessibility lawsuits are filed in the US every year, and clinics are not exempt."
+          ]
+        },
+        {
+          "type": "h2",
+          "content": "Outside the website"
+        },
+        {
+          "type": "ul",
+          "content": "",
+          "items": [
+            "Google Business Profile: shows first in map searches. Keep photos, services, hours and the booking link identical to the site.",
+            "Structured data (Dentist or MedicalClinic schema): helps Google and AI search like ChatGPT read your name, address, services and hours correctly.",
+            "Measurement: connect GA4 and Search Console and count call and booking taps as conversions, so you can see which ad spend turns into patients.",
+            "Reviews: Google reviews carry a lot of weight in the US. Text a review link after the visit; never buy reviews or offer anything for them."
+          ]
+        },
+        {
+          "type": "tip",
+          "content": "Start with points 1, 9 and 10. If the page breaks on a phone or the booking button is hidden, patients hit back no matter how good the rest is."
+        },
+        {
+          "type": "h2",
+          "content": "What Zoe Lumos does"
+        },
+        {
+          "type": "p",
+          "content": "Zoe Lumos is a Fort Lee, NJ studio that builds clinic websites in Korean and English for practices in the US and Korea. Recent launches include TopSkin Clinic Med Spa in Duluth, Georgia (36 pages in English, Korean and Vietnamese) and Seoul Choice Dental in Seoul (132 pages in four languages). We show one or two key screens as a draft before you sign, and we can also run Google Ads, the Google Business Profile and tracking."
+        },
+        {
+          "type": "cta",
+          "content": "We'll check how many of the 12 points your clinic website passes, for free, and send the results in English or Korean."
+        }
+      ]
+    },
+  },
   // Naver marketing series (2026-11-15): glossary, tracking, Korea + US. Facts checked against ads.naver.com notices and naver.github.io/conversion-tracking.
   {
     slug: "naver-marketing-glossary-2026",
