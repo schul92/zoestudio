@@ -166,6 +166,15 @@ export default function Home({ params }: { params: { locale: string } }) {
       disciplines: ['Web design', '3 languages (EN/KO/VI)', 'Before & after gallery', 'Local SEO'],
     },
     {
+      name: 'Nailism',
+      url: 'https://www.nailismusa.com/',
+      image: '/portfolio/nailism-live.jpg',
+      year: '2026',
+      location: 'Saddle Brook, NJ',
+      industry: 'Salon furniture maker (B2B)',
+      disciplines: ['Web design', '3 languages (EN/KO/ES)', '244-design catalog with quote requests'],
+    },
+    {
       name: 'EndoPia',
       url: 'https://endopiaglobal.com/',
       image: '/portfolio/endopia.jpg',

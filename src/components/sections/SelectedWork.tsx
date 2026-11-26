@@ -45,6 +45,19 @@ export const projects: Project[] = [
     caseStudy: 'med-spa-website-case-study-duluth-ga',
   },
   {
+    name: 'Nailism',
+    industry: { en: 'Salon furniture maker · New website', ko: '네일살롱 가구 제조 · 홈페이지 리뉴얼' },
+    location: 'Saddle Brook · NJ',
+    year: '2026',
+    disciplines: {
+      en: ['Web design', '3 languages', '244-design catalog'],
+      ko: ['웹디자인', '3개 국어', '디자인 244개 카탈로그'],
+    },
+    image: '/portfolio/nailism-live.jpg',
+    url: 'https://www.nailismusa.com/',
+    status: 'new',
+  },
+  {
     name: 'EndoPia',
     industry: { en: 'Medical device · U.S. launch', ko: '의료기기 · 미국 런칭' },
     location: 'United States',

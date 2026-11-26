@@ -13,11 +13,28 @@ type Launch = {
   body: { en: string; ko: string }
   chips: { en: string[]; ko: string[] }
   url: string
-  caseStudy: string // blog slug
+  caseStudy?: string // blog slug
   image: string
 }
 
 const NEW_LAUNCHES: Launch[] = [
+  {
+    name: { en: 'Nailism', ko: 'Nailism (네일리즘)' },
+    meta: {
+      en: 'Saddle Brook, New Jersey · Salon furniture maker · Launched November 2026',
+      ko: '미국 뉴저지 새들브룩 · 네일살롱 가구 제조 · 2026년 11월 오픈',
+    },
+    body: {
+      en: 'A new website for a maker of custom pedicure spas and nail salon furniture, with a factory in New Jersey and showrooms in Saddle Brook, NJ and Flushing, NY: 244 designs the company has built, sorted into 11 categories with a quote request on each, a materials page with vinyl colour charts, and English, Korean and Spanish versions for salon owners.',
+      ko: '뉴저지에 공장을 둔 맞춤 페디큐어 스파·네일살롱 가구 제조사의 홈페이지를 새로 만들었습니다. 직접 제작한 디자인 244개를 11개 카테고리로 정리하고 디자인마다 견적 요청을 붙였고, 비닐 색상표가 있는 자재 페이지, 뉴저지 새들브룩·뉴욕 플러싱 쇼룸 안내, 살롱 오너를 위한 영어·한국어·스페인어 3개 국어까지.',
+    },
+    chips: {
+      en: ['3 languages · 132 pages', '244 designs · 11 categories', 'Quote request on every design'],
+      ko: ['3개 국어 · 132페이지', '디자인 244개 · 11개 카테고리', '디자인마다 견적 요청'],
+    },
+    url: 'https://www.nailismusa.com/',
+    image: '/portfolio/nailism-live.jpg',
+  },
   {
     name: { en: 'TopSkin Clinic Med Spa', ko: 'TopSkin Clinic Med Spa' },
     meta: {
@@ -105,12 +122,14 @@ export default function NewLaunch({ locale = 'en' }: { locale?: string }) {
                     <a href={l.url} target="_blank" rel="noopener noreferrer" className="btn-ink">
                       {isKo ? '사이트 보기' : 'Visit the site'} <span aria-hidden>↗</span>
                     </a>
-                    <Link
-                      href={`${prefix}/blog/${l.caseStudy}`}
-                      className="inline-flex items-center min-h-[44px] text-[15px] font-semibold text-link hover:underline"
-                    >
-                      {isKo ? '제작 사례 읽기' : 'Read the case study'} <span aria-hidden>›</span>
-                    </Link>
+                    {l.caseStudy && (
+                      <Link
+                        href={`${prefix}/blog/${l.caseStudy}`}
+                        className="inline-flex items-center min-h-[44px] text-[15px] font-semibold text-link hover:underline"
+                      >
+                        {isKo ? '제작 사례 읽기' : 'Read the case study'} <span aria-hidden>›</span>
+                      </Link>
+                    )}
                   </div>
                 </div>
               </article>
