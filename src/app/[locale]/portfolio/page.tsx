@@ -133,6 +133,34 @@ const projects = [
     },
   },
   {
+    id: 'nailism',
+    url: 'https://www.nailismusa.com/',
+    image: '/portfolio/nailism-live-5x4.jpg',
+    status: 'new' as const,
+    b2b: true,
+    launched: '2026-11',
+    // Same @id as the Organization schema on nailismusa.com.
+    entity: {
+      '@type': 'Organization',
+      '@id': 'https://www.nailismusa.com/#organization',
+      name: 'Nailism',
+      url: 'https://www.nailismusa.com/',
+      address: { '@type': 'PostalAddress', addressLocality: 'Saddle Brook', addressRegion: 'NJ', addressCountry: 'US' },
+    },
+    en: {
+      title: 'Nailism',
+      category: 'Salon Furniture Maker (B2B) / New Website · Saddle Brook, NJ',
+      description: 'New website for Nailism, a maker of custom pedicure spas and nail salon furniture with a factory and showroom in Saddle Brook, New Jersey and a showroom in Flushing, New York, launched November 2026: 132 pages in English, Korean and Spanish, 244 designs the company has built in 11 categories with a quote request on each, a materials page with vinyl colour charts, showroom hours with FurnitureStore structured data, and the old Wix addresses redirected to their new pages.',
+      services: ['Website Design', '3 Languages', 'Product Catalog & Quotes', 'Local SEO'],
+    },
+    ko: {
+      title: 'Nailism (네일리즘)',
+      category: '네일살롱 가구 제조 (B2B) / 홈페이지 리뉴얼 · 미국 뉴저지 새들브룩',
+      description: '뉴저지 새들브룩에 공장과 쇼룸, 뉴욕 플러싱에 쇼룸을 둔 맞춤 페디큐어 스파·네일살롱 가구 제조사 Nailism의 홈페이지를 새로 만들어 2026년 11월에 오픈했습니다. 영어·한국어·스페인어 132페이지, 직접 제작한 디자인 244개를 11개 카테고리로 정리하고 디자인마다 견적 요청, 비닐 색상표가 있는 자재 페이지, 쇼룸 영업시간과 가구 매장(FurnitureStore) 구조화 데이터, 기존 Wix 주소는 새 페이지로 리디렉션까지.',
+      services: ['웹사이트 디자인', '3개 국어', '제품 카탈로그·견적', '로컬 SEO'],
+    },
+  },
+  {
     id: 'endopia',
     url: 'https://endopiaglobal.com/',
     image: '/portfolio/endopia.jpg',

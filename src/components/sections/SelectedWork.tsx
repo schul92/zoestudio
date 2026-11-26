@@ -13,6 +13,8 @@ export type Project = {
   status?: 'in-progress' | 'new'
   /** Blog slug of the project's case study, linked from the card. */
   caseStudy?: string
+  /** Business-to-business client (sells to other businesses): shows a B2B label on the card. */
+  b2b?: boolean
 }
 
 export const projects: Project[] = [
@@ -43,6 +45,20 @@ export const projects: Project[] = [
     url: 'https://www.topskinclinicmedspa.com/',
     status: 'new',
     caseStudy: 'med-spa-website-case-study-duluth-ga',
+  },
+  {
+    name: 'Nailism',
+    industry: { en: 'Salon furniture maker · New website', ko: '네일살롱 가구 제조 · 홈페이지 리뉴얼' },
+    location: 'Saddle Brook · NJ',
+    year: '2026',
+    disciplines: {
+      en: ['Web design', '3 languages', '244-design catalog'],
+      ko: ['웹디자인', '3개 국어', '디자인 244개 카탈로그'],
+    },
+    image: '/portfolio/nailism-live.jpg',
+    url: 'https://www.nailismusa.com/',
+    status: 'new',
+    b2b: true,
   },
   {
     name: 'EndoPia',
@@ -187,9 +203,18 @@ export default function SelectedWork({
                     </span>
                   )}
                   {/* Top-right so the client's logo (top-left in most screenshots) stays visible. */}
-                  {p.status === 'new' && (
-                    <span className="absolute top-4 right-4 inline-flex items-center rounded-full bg-[#0071E3] text-white text-[12px] font-bold tracking-[0.08em] px-3 py-1.5">
-                      NEW
+                  {(p.status === 'new' || p.b2b) && (
+                    <span className="absolute top-4 right-4 flex items-center gap-2">
+                      {p.b2b && (
+                        <span className="inline-flex items-center rounded-full bg-[#1d1d1f] text-white text-[12px] font-bold tracking-[0.08em] px-3 py-1.5">
+                          B2B
+                        </span>
+                      )}
+                      {p.status === 'new' && (
+                        <span className="inline-flex items-center rounded-full bg-[#0071E3] text-white text-[12px] font-bold tracking-[0.08em] px-3 py-1.5">
+                          NEW
+                        </span>
+                      )}
                     </span>
                   )}
                 </Link>

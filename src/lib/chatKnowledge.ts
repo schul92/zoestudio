@@ -94,6 +94,7 @@ export const KNOWLEDGE = `
   We do not promise short-term rankings.
 
 ## Selected work
+- Nailism — custom pedicure spa and nail salon furniture maker (B2B) with a factory and showroom in Saddle Brook, New Jersey and a showroom in Flushing, New York. New website launched November 2026 at https://www.nailismusa.com: 132 pages in English, Korean and Spanish, 244 designs in 11 categories with a quote request on each.
 - EndoPia — U.S. launch site for the TISE digital spinal endoscope, an FDA 510(k)-cleared device: product, surgeon training, events and investor pages (https://endopiaglobal.com/).
 - TJ Flowers — Manhattan florist. Revenue passed $10,000 within 3 months of the Shopify rebuild; daily revenue went from $87 to $268 in the first weeks.
 - Vito's Pizza & Ristorante — Alpharetta, Georgia. Catering inquiry form actively bringing in group orders.

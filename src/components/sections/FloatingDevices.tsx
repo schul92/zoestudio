@@ -10,7 +10,7 @@ type Device = {
 const devices: Device[] = [
   { name: 'Seoul Choice Dental', src: '/portfolio/seoul-choice-dental-live.jpg', industry: { en: 'Seoul · Dental clinic · New', ko: '서울 · 치과의원 · 신규 오픈' } },
   { name: 'TopSkin Clinic', src: '/portfolio/topskin-clinic-live.jpg', industry: { en: 'Duluth, GA · Med spa · New', ko: '조지아 둘루스 · 메드스파 · 신규 오픈' } },
-  { name: 'TJ Flowers', src: '/portfolio/tj-flowers.jpg', industry: { en: 'Manhattan · Floral studio', ko: '맨하탄 · 플라워 스튜디오' } },
+  { name: 'Nailism', src: '/portfolio/nailism-live.jpg', industry: { en: 'Saddle Brook, NJ · B2B salon furniture · New', ko: '뉴저지 새들브룩 · B2B 네일살롱 가구 · 신규 오픈' } },
 ]
 
 export default function FloatingDevices({ locale = 'en' }: { locale?: 'en' | 'ko' }) {

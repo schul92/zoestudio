@@ -49,6 +49,7 @@ const CLIENT_LOGOS: { name: string; url: string }[] = [
   { name: 'Seoul Choice Dental', url: 'https://www.seoulchoicedent.com/' },
   { name: 'TopSkin Clinic', url: 'https://www.topskinclinicmedspa.com/' },
   { name: 'EndoPia', url: 'https://endopiaglobal.com/' },
+  { name: 'Nailism', url: 'https://www.nailismusa.com/' },
   { name: 'TJ Flowers', url: 'https://tjflowersandevents.com/' },
   { name: "Vito's Pizza", url: 'https://www.vitospizzaandristorante.com/' },
   { name: 'Salt & Polish', url: 'https://saltpolish.com/' },

@@ -11,6 +11,8 @@ interface Project {
   /** Omitted while a project is still in build. */
   url?: string
   status?: 'in-progress' | 'new'
+  /** Sells to other businesses: B2B label next to NEW. */
+  b2b?: boolean
   image: string
   title: string
   category: string
@@ -168,10 +170,19 @@ export default function PortfolioClient({ t, projects, locale }: PortfolioClient
                       <span className="gold-dot" />
                       {isKo ? '도판' : 'Plate'} · {String(index + 1).padStart(2, '0')}
                     </div>
-                    {project.status === 'new' && (
+                    {(project.status === 'new' || project.b2b) && (
                       // Fixed colors: sits on a screenshot, so it must not flip with the theme tokens.
-                      <span className="absolute top-4 right-4 bg-[#0071E3] text-white px-3 py-1 rounded-full text-[12px] font-bold tracking-[0.08em]">
-                        NEW
+                      <span className="absolute top-4 right-4 flex items-center gap-2">
+                        {project.b2b && (
+                          <span className="bg-[#1d1d1f] text-white px-3 py-1 rounded-full text-[12px] font-bold tracking-[0.08em]">
+                            B2B
+                          </span>
+                        )}
+                        {project.status === 'new' && (
+                          <span className="bg-[#0071E3] text-white px-3 py-1 rounded-full text-[12px] font-bold tracking-[0.08em]">
+                            NEW
+                          </span>
+                        )}
                       </span>
                     )}
                     {project.status === 'in-progress' ? (
