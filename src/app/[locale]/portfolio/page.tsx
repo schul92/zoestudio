@@ -137,6 +137,7 @@ const projects = [
     url: 'https://www.nailismusa.com/',
     image: '/portfolio/nailism-live-5x4.jpg',
     status: 'new' as const,
+    b2b: true,
     launched: '2026-11',
     // Same @id as the Organization schema on nailismusa.com.
     entity: {

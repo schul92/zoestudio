@@ -14,6 +14,7 @@ type Launch = {
   chips: { en: string[]; ko: string[] }
   url: string
   caseStudy?: string // blog slug
+  b2b?: boolean // sells to other businesses: B2B label before the meta line
   image: string
 }
 
@@ -34,6 +35,7 @@ const NEW_LAUNCHES: Launch[] = [
     },
     url: 'https://www.nailismusa.com/',
     image: '/portfolio/nailism-live.jpg',
+    b2b: true,
   },
   {
     name: { en: 'TopSkin Clinic Med Spa', ko: 'TopSkin Clinic Med Spa' },
@@ -108,7 +110,13 @@ export default function NewLaunch({ locale = 'en' }: { locale?: string }) {
                   />
                 </a>
                 <div className="lg:col-span-5 p-7 md:p-10 flex flex-col gap-4">
-                  <p className="text-[13px] text-ash">{l.meta[l10n]}</p>
+                  <p className="text-[13px] text-ash flex flex-wrap items-center gap-x-2 gap-y-1">
+                    {l.b2b && (
+                      // Fixed colors so the label reads the same in both themes.
+                      <span className="rounded-full bg-[#1d1d1f] text-white text-[11px] font-bold tracking-[0.08em] px-2.5 py-0.5">B2B</span>
+                    )}
+                    {l.meta[l10n]}
+                  </p>
                   <h3 className="text-[28px] md:text-[34px] font-semibold tracking-[-0.035em] leading-[1.1] text-ink">
                     {l.name[l10n]}
                   </h3>
